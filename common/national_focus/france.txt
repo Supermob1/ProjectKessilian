@@ -1,0 +1,348 @@
+﻿add_namespace = focus_tree
+
+focus_tree = {
+
+	id = french_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = FRA
+			}
+		}
+
+	default = no
+
+	#Unrest in the Galactic Senate
+	focus = {
+		id = REP_unrest_in_the_galactic_senate
+		icon = REP_unrestinthegalacticsenate
+		cost = 1
+		x = 5
+		y = 0
+      		completion_reward = {
+		country_event = { days = 0 id = twrfrance.1 }
+				    }
+		}
+
+	#Attack On A Senator
+	focus = {
+		id = REP_attack_on_a_senator
+		icon = REP_attackonasenator
+		cost = 2
+		prerequisite = {
+			focus = REP_unrest_in_the_galactic_senate
+			}
+		mutually_exclusive = {
+			focus = REP_the_death_of_padme_amidala
+			}
+		x = 2
+		y = 1
+        	completion_reward = {
+				}
+		}
+		
+	#Attack On A Senator FILLER
+	focus = {
+		id = REP_attack_on_a_senator2
+		icon = REP_attackonasenator
+		cost = 2
+		prerequisite = {
+			focus = REP_unrest_in_the_galactic_senate
+			}
+		mutually_exclusive = {
+			focus = REP_the_death_of_padme_amidala
+			}
+		x = 2
+		y = 2
+        	completion_reward = {
+				}
+		}
+		
+	#The Death of Padme Amidala
+	focus = {
+		id = REP_the_death_of_padme_amidala
+		icon = REP_thedeathofpadmeadmidala
+		cost = 2
+		prerequisite = {
+			focus = REP_unrest_in_the_galactic_senate
+			}
+		mutually_exclusive = {
+			focus = REP_attack_on_a_senator
+			}
+		x = 8
+		y = 1
+        	completion_reward = {
+				}
+		}
+		
+	#The Death of Padme Amidala FILLER
+	focus = {
+		id = REP_the_death_of_padme_amidala2
+		icon = REP_thedeathofpadmeadmidala
+		cost = 2
+		prerequisite = {
+			focus = REP_the_death_of_padme_amidala
+			}
+		mutually_exclusive = {
+			focus = REP_attack_on_a_senator
+			}
+		x = 8
+		y = 2
+        	completion_reward = {
+				}
+		}
+		
+	#The War Escalates
+	focus = {
+		id = REP_the_war_escalates
+		icon = REP_thewarescalates
+		cost = 1
+		x = 5
+		y = 3
+      		completion_reward = {
+				    }
+		}
+		
+	#Begin Developing Phase II
+	focus = {
+		id = REP_begin_developing_phase2
+		icon = REP_begindevelopingphase2
+		cost = 2
+		prerequisite = {
+			focus = REP_the_war_escalates
+			}
+		x = 3
+		y = 4
+        	completion_reward = {
+				}
+		}
+		
+	#The Christophsis Campaign
+	focus = {
+		id = REP_the_christophsis_campaign
+		icon = REP_thechristophsiscampaign
+		cost = 2
+		prerequisite = {
+			focus = REP_begin_developing_phase2
+			}
+		x = 3
+		y = 5
+        	completion_reward = {
+				}
+		}
+
+	#The Christophsis Campaign FILLER
+	focus = {
+		id = REP_the_christophsis_campaign2
+		icon = REP_thechristophsiscampaign
+		cost = 2
+		prerequisite = {
+			focus = REP_the_christophsis_campaign
+			}
+		x = 3
+		y = 6
+        	completion_reward = {
+				}
+		}
+
+	#Outmaneuver the Inclusivists
+	focus = {
+		id = REP_outmaneuver_the_inclusivists
+		icon = REP_outmaneuvertheinclusivists
+		cost = 2
+		prerequisite = {
+			focus = REP_the_war_escalates
+			}
+		x = 5
+		y = 4
+        	completion_reward = {
+				}
+		}
+		
+	#Pacifists Are Separatists
+	focus = {
+		id = REP_pacifists_are_separatists
+		icon = REP_pacifistsareseparatists
+		cost = 2
+		prerequisite = {
+			focus = REP_outmaneuver_the_inclusivists
+			}
+		x = 5
+		y = 5
+        	completion_reward = {
+				}
+		}
+
+	#Pacifists Are Separatists FILLER
+	focus = {
+		id = REP_pacifists_are_separatists2
+		icon = REP_pacifistsareseparatists
+		cost = 2
+		prerequisite = {
+			focus = REP_pacifists_are_separatists
+			}
+		x = 5
+		y = 6
+        	completion_reward = {
+				}
+		}
+		
+	#Increase Jedi Deployment
+	focus = {
+		id = REP_increase_jedi_employment
+		icon = REP_increasejediemployment
+		cost = 2
+		prerequisite = {
+			focus = REP_the_war_escalates
+			}
+		x = 7
+		y = 4
+        	completion_reward = {
+				}
+		}
+		
+	#Padawan Commanders
+	focus = {
+		id = REP_padawan_commanders
+		icon = REP_padawancommanders
+		cost = 2
+		prerequisite = {
+			focus = REP_increase_jedi_employment
+			}
+		x = 7
+		y = 5
+        	completion_reward = {
+				}
+		}
+		
+	#Padawan Commanders FILLER
+	focus = {
+		id = REP_padawan_commanders2
+		icon = REP_padawancommanders
+		cost = 2
+		prerequisite = {
+			focus = REP_padawan_commanders
+			}
+		x = 7
+		y = 6
+        	completion_reward = {
+				}
+		}
+		
+	#He Came Back For Us...
+	focus = {
+		id = TAT_he_came_back_for_us
+		icon = TAT_hecamebackforus
+		cost = 2
+		x = 6
+		y = 11
+        	completion_reward = {
+				}
+		}
+		
+	#Seize Mos Espa
+	focus = {
+		id = TAT_seize_mos_espa
+		icon = TAT_seizemosespa
+		cost = 2
+		prerequisite = {
+			focus = TAT_he_came_back_for_us
+			}
+		x = 6
+		y = 12
+        	completion_reward = {
+				}
+		}
+		
+	#Raid Local Slavers
+	focus = {
+		id = TAT_raid_local_slavers
+		icon = TAT_raidlocalslavers
+		cost = 2
+		prerequisite = {
+			focus = TAT_seize_mos_espa
+			}
+		x = 6
+		y = 13
+        	completion_reward = {
+				}
+		}
+		
+	#Execute Jabba
+	focus = {
+		id = TAT_execute_jabba
+		icon = TAT_executejabba
+		cost = 2
+		prerequisite = {
+			focus = TAT_raid_local_slavers
+			}
+		x = 6
+		y = 14
+        	completion_reward = {
+				}
+		}
+		
+	#House Skywalker
+	focus = {
+		id = TAT_house_skywalker
+		icon = TAT_houseskywalker
+		cost = 2
+		prerequisite = {
+			focus = TAT_execute_jabba
+			}
+		mutually_exclusive = {
+			focus = TAT_house_vader
+			}
+		x = 3
+		y = 15
+        	completion_reward = {
+				}
+		}
+
+	#House Skywalker FILLER
+	focus = {
+		id = TAT_house_skywalker2
+		icon = TAT_houseskywalker
+		cost = 2
+		prerequisite = {
+			focus = TAT_house_skywalker
+			}
+		x = 3
+		y = 16
+        	completion_reward = {
+				}
+		}
+		
+	#House Vader
+	focus = {
+		id = TAT_house_vader
+		icon = TAT_housevader
+		cost = 2
+		prerequisite = {
+			focus = TAT_execute_jabba
+			}
+		mutually_exclusive = {
+			focus = TAT_house_skywalker
+			}
+		x = 9
+		y = 15
+        	completion_reward = {
+				}
+		}
+		
+	#House Vader FILLER
+	focus = {
+		id = TAT_house_vader2
+		icon = TAT_housevader
+		cost = 2
+		prerequisite = {
+			focus = TAT_house_vader
+			}
+		x = 9
+		y = 16
+        	completion_reward = {
+				}
+		}
+}
