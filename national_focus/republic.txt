@@ -1,0 +1,31 @@
+focus_tree = {
+	id = republic_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = REP
+		}
+	}
+	
+	default = no
+
+	focus = {
+		id = REP_MCA
+		icon = GFX_goal_generic_military_deal
+
+		x = 10
+		y = 0
+		cost = 20
+		ai_will_do = {
+			factor = 100000
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 120
+		}
+	}
