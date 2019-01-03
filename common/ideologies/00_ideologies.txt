@@ -1,0 +1,317 @@
+#LuxLoser: We are utilizing the same AI principle as Kaiserreich and Fuhrerreich, i.e. all AIs are set to Neutral in order to make them easier for direction by event and focus rather than pursuing autonomous goals like random wars and so on.
+
+ideologies = {
+
+	new_order = {
+		types = {
+		new_order_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_NEW_ORDER_1"
+			"FACTION_NAME_NEW_ORDER_2"
+			"FACTION_NAME_NEW_ORDER_3"
+			"FACTION_NAME_NEW_ORDER_4"
+			"FACTION_NAME_NEW_ORDER_5"
+			"FACTION_NAME_NEW_ORDER_6"
+		}
+		color = { 136 2 13 }
+		rules = {
+			can_force_government = no
+			can_puppet = no
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			production_speed_buildings_factor = 0.05
+			conscription = 0.005
+		}
+		ai_neutral = yes			
+		can_be_boosted = no
+	}
+	
+	dark_side = {
+		types = {
+			dark_side_subtype = {}
+			}
+		dynamic_faction_names = {
+			"FACTION_NAME_DARK_SIDE_1"
+			"FACTION_NAME_DARK_SIDE_2"
+			"FACTION_NAME_DARK_SIDE_3"
+			"FACTION_NAME_DARK_SIDE_4"
+			"FACTION_NAME_DARK_SIDE_5"
+			"FACTION_NAME_DARK_SIDE_6"
+		}
+		color = { 255 0 25 } 
+		rules = {
+			can_force_government = no
+			can_puppet = no
+			can_join_factions = no
+			can_send_volunteers = yes
+		}		
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			conscription = 0.005
+		}
+		ai_neutral = yes	
+		can_be_boosted = no
+
+	}
+
+	akaanadocrat = {
+		types = {
+			akaanadocrat_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_AKAANADOCRAT_1"
+			"FACTION_NAME_AKAANADOCRAT_2"
+			"FACTION_NAME_AKAANADOCRAT_3"
+			"FACTION_NAME_AKAANADOCRAT_4"
+			"FACTION_NAME_AKAANADOCRAT_5"
+			"FACTION_NAME_AKAANADOCRAT_6"
+		}
+		color = { 13 99 2 } 
+		rules = {
+			can_force_government = yes
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			conscription = 0.01
+		}
+		ai_neutral = yes		
+		can_be_boosted = no
+
+	}
+	
+	unitist = {
+		types = {
+			unitist_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_UNITIST_1"
+			"FACTION_NAME_UNITIST_2"
+			"FACTION_NAME_UNITIST_3"
+			"FACTION_NAME_UNITIST_4"
+			"FACTION_NAME_UNITIST_5"
+			"FACTION_NAME_UNITIST_6"
+		}
+		color = { 153 10 105 }
+		rules = {
+			can_force_government = yes
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.50
+			industrial_capacity_factory = 0.05
+		}
+		ai_neutral = yes	
+		can_be_boosted = no
+
+	}
+	
+	corist = {
+		types = {
+		corist_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_CORIST_1"
+			"FACTION_NAME_CORIST_2"
+			"FACTION_NAME_CORIST_3"
+			"FACTION_NAME_CORIST_4"
+			"FACTION_NAME_CORIST_5"
+			"FACTION_NAME_CORIST_6"
+		}
+		color = { 208 176 3 } 
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.75
+			industrial_capacity_factory = 0.05
+		}
+		ai_neutral = yes		
+		can_be_boosted = no
+	}
+
+	distributionist = {
+		types = {
+		distributionist_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_DISTRIBUTIONIST_1"
+			"FACTION_NAME_DISTRIBUTIONIST_2"
+			"FACTION_NAME_DISTRIBUTIONIST_3"
+			"FACTION_NAME_DISTRIBUTIONIST_4"
+			"FACTION_NAME_DISTRIBUTIONIST_5"
+			"FACTION_NAME_DISTRIBUTIONIST_6"
+		}
+		color = { 23 225 149 }
+		rules = {
+			can_force_government = yes
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			industrial_capacity_factory = 0.05
+			conscription = 0.005
+		}
+		ai_neutral = yes	
+		can_be_boosted = no
+	}
+	
+	corporate_consortium = {
+		types = {
+		corporate_consortium_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_CORPORATE_CONSORTIUM_1"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_2"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_3"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_4"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_5"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_6"
+		}
+		color = { 18 229 21 }
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			industrial_capacity_factory = 0.05
+			production_speed_buildings_factor = 0.1
+		}
+		ai_neutral = yes		
+		can_be_boosted = no
+	}
+	
+	trade_democrat = {
+		types = {
+		trade_democrat_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_TRADE_DEMOCRAT_1"
+			"FACTION_NAME_TRADE_DEMOCRAT_2"
+			"FACTION_NAME_TRADE_DEMOCRAT_3"
+			"FACTION_NAME_TRADE_DEMOCRAT_4"
+			"FACTION_NAME_TRADE_DEMOCRAT_5"
+			"FACTION_NAME_TRADE_DEMOCRAT_6"
+		}
+		color = { 217 215 218 }
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.75
+			industrial_capacity_factory = 0.1
+			production_speed_buildings_factor = 0.05
+		}
+		ai_neutral = yes		
+		can_be_boosted = no
+	}
+	
+	ruusanist = {
+		types = {
+		ruusanist_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_RUUSANIST_1"
+			"FACTION_NAME_RUUSANIST_2"
+			"FACTION_NAME_RUUSANIST_3"
+			"FACTION_NAME_RUUSANIST_4"
+			"FACTION_NAME_RUUSANIST_5"
+			"FACTION_NAME_RUUSANIST_6"
+		}
+		color = { 250 114 4 }
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = no
+		}
+		modifiers = {
+			join_faction_tension = 0.90
+			generate_wargoal_tension = 0.80
+		}
+		ai_neutral = yes			
+		can_be_boosted = no
+	}
+	
+	inclusivist = {
+		types = {
+		inclusivist_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_INCLUSIVIST_1"
+			"FACTION_NAME_INCLUSIVIST_2"
+			"FACTION_NAME_INCLUSIVIST_3"
+			"FACTION_NAME_INCLUSIVIST_4"
+			"FACTION_NAME_INCLUSIVIST_5"
+			"FACTION_NAME_INCLUSIVIST_6"
+		}
+		color = { 38 44 224 } #142 57 0 is original
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.75
+		}
+		ai_neutral = yes	
+		can_be_boosted = no
+	}
+
+	light_side = {
+		types = {
+		light_side_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_LIGHT_SIDE_1"
+			"FACTION_NAME_LIGHT_SIDE_2"
+			"FACTION_NAME_LIGHT_SIDE_3"
+			"FACTION_NAME_LIGHT_SIDE_4"
+			"FACTION_NAME_LIGHT_SIDE_5"
+			"FACTION_NAME_LIGHT_SIDE_6"
+		}
+		color = { 100 159 193 }
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.80
+			conscription = 0.01
+		}
+		ai_neutral = yes	
+		can_be_boosted = no
+	}
+}
