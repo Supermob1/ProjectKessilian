@@ -6,4 +6,4 @@ tags={
 	"Utilities"
 }
 picture="blank_map_template_5632x2048.jpg"
-supported_version="1.5.*"
+supported_version="1.6.*"
