@@ -1,0 +1,73 @@
+bookmarks = {
+	bookmark = {
+		name = "UNREST_NAME"
+		desc = "UNREST_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "REP"
+		default = yes
+		
+		"HTT"={
+			history = "HTT_UNREST_DESC"
+			ideology = corporate_consortium_subtype
+			ideas = {}
+			focuses = {}
+		}		
+		"CHS"={
+			history = "CHS_UNREST_DESC"
+			ideology = corist_subtype
+			ideas = {}
+			focuses = {}
+		}		
+		"MAN"={
+			history = "MAN_UNREST_DESC"
+			ideology = inclusivist_subtype
+			ideas = {}
+			focuses = {}
+		}
+				"REP"={
+			history = "REP_UNREST_DESC"
+			ideology = inclusivist_subtype
+			ideas = {}
+			focuses = {}
+		}
+		"CIS"={
+			history = "CIS_UNREST_DESC"
+			ideology = trade_democrat_subtype
+			ideas = {}
+			focuses = {}
+		}
+		"TCU"={
+			history = "TCU_UNREST_DESC"
+			ideology = corporate_consortium_subtype
+			ideas = {}
+			focuses = {}
+		}
+		"TDF"={
+			history = "TDF_UNREST_DESC"
+			ideology = corporate_consortium_subtype
+			ideas = {}
+			focuses = {}
+		}
+		"---" = {
+           history = <OTHER_UNREST_DESC>
+        }
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			123 = { rain_light = yes }
+		}
+	}
+	bookmark = {
+		name = ""
+		desc = ""
+		date = 1936.1.2.12
+		picture = "GFX_select_date_1936"
+		default_country = "REP"
+		"REP"={
+			history = ""
+			ideology = corist
+			ideas = {}
+			focuses = {}
+		}
+	}
+}

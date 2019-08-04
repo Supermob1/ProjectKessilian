@@ -28,13 +28,12 @@ ideologies = {
 			conscription = 0.005
 		}
 		ai_neutral = yes			
-		can_be_boosted = no
 	}
 	
 	dark_side = {
 		types = {
-			dark_side_subtype = {}
-			}
+		dark_side_subtype = {}
+		}
 		dynamic_faction_names = {
 			"FACTION_NAME_DARK_SIDE_1"
 			"FACTION_NAME_DARK_SIDE_2"
@@ -43,26 +42,24 @@ ideologies = {
 			"FACTION_NAME_DARK_SIDE_5"
 			"FACTION_NAME_DARK_SIDE_6"
 		}
-		color = { 255 0 25 } 
+		color = { 255 0 25 }
 		rules = {
 			can_force_government = no
 			can_puppet = no
 			can_join_factions = no
 			can_send_volunteers = yes
-		}		
+		}
 		modifiers = {
 			join_faction_tension = 0.80
 			generate_wargoal_tension = 0.25
 			conscription = 0.005
 		}
-		ai_neutral = yes	
-		can_be_boosted = no
-
+		ai_neutral = yes			
 	}
 
 	akaanadocrat = {
 		types = {
-			akaanadocrat_subtype = {}
+		akaanadocrat_subtype = {}
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_AKAANADOCRAT_1"
@@ -85,13 +82,12 @@ ideologies = {
 			conscription = 0.01
 		}
 		ai_neutral = yes		
-		can_be_boosted = no
 
 	}
 	
 	unitist = {
 		types = {
-			unitist_subtype = {}
+		unitist_subtype = {}
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_UNITIST_1"
@@ -315,3 +311,4 @@ ideologies = {
 		can_be_boosted = no
 	}
 }
+
