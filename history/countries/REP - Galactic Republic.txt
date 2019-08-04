@@ -1,4 +1,4 @@
-capital = 34 
+﻿capital = 34 
 
 set_research_slots = 4
 
@@ -6,43 +6,20 @@ set_stability = 0.10
 
 set_war_support = 0.02
 
-set_politics = {
-
-	parties = {
-		new_order = {
-			popularity = 3
-		}
-		dark_side = {
-			popularity = 0
-		}
-		akaanadocrat = {
-			popularity = 1
-		}
-		unitist = {
-			popularity = 11
-		}
-		corist = {
-			popularity = 26
-		}
-		distributionist = {
-			popularity = 1
-		}
-		corporate_consortium = {
-			popularity = 12
-		}
-		trade_democrat = {
-			popularity = 4
-		}
-		ruusanist = {
-			popularity = 12
-		}
-		inclusivist = {
-			popularity = 29
-		}
-		light_side = {
-			popularity = 1
+set_popularities = {
+		new_order = 3
+		dark_side = 0
+		akaanadocrat = 1
+		unitist = 11
+		corist = 21
+		distributionist =  1
+		corporate_consortium = 12
+		trade_democrat = 4
+		ruusanist = 12
+		inclusivist = 29
+		light_side = 5
 	}
-
+set_politics = {
 	ruling_party = inclusivist
 	last_election = "1888.15.6"
 	election_frequency = 48
@@ -52,7 +29,7 @@ set_politics = {
 create_country_leader = {
 	name = "Sheev Palpatine"
 	desc = "REP_palpatine_desc"
-	picture = "Portrait_Sheev_Palpatine.tga"
+	picture = "gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
 	expire = "1965.1.1"
 	ideology = inclusivist_subtype
 	traits = { }

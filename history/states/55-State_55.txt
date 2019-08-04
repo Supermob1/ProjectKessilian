@@ -1,12 +1,15 @@
 state={
 	id=55
 	name="STATE_55"
+	history = {
+		owner = REP
+		buildings = {
+			infrastructure = 10
+			}
+		add_core_of = REP
+		}
 	provinces={
 		35 605 
-	}
-	history = {
-	owner = REP
-	add_core_of = REP
 	}
 	manpower=0
 	buildings_max_level_factor=1.000
