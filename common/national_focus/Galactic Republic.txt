@@ -17,7 +17,641 @@ focus_tree = {
 	default = yes
 	reset_on_civilwar = no
 	
-   #########WAR ECONOMY TREE START##############
+	continuous_focus_position = { x = 50 y = 2000 }
+		
+		
+	########### UNREST IN THE REPUBLIC TREE START ###########
+	focus = { 
+		id = REP_unrest_in_the_republic
+		icon = REP_unrest_in_the_republic
+		cost = 10
+		
+		prerequisite = {
+			#no prereq, start of tree
+		}
+		
+		x = 7
+		y = 0
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_the_military_creation_act
+		icon = REP_the_military_creation_act
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_unrest_in_the_republic
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_unrest_in_the_republic
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_call_the_senate_to_vote
+		icon = REP_call_the_senate_to_vote
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_military_creation_act
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_the_military_creation_act
+		completion_reward = {
+		
+		}
+	}
+	## LEFT BRANCH ##
+	focus = { 
+		id = REP_attack_on_a_senator
+		icon = REP_attack_on_a_senator
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_call_the_senate_to_vote
+		}
+		mutually_exclusive = {
+			focus = REP_death_of_padme_amidala
+		}
+		
+		x = -3
+		y = 1
+		
+		relative_position_id = REP_call_the_senate_to_vote
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_battle_of_geonosis
+		icon = REP_battle_of_geonosis
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_attack_on_a_senator
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_attack_on_a_senator
+		completion_reward = {
+		
+		}
+	}
+	#left path#
+	focus = { 
+		id = REP_a_fully_clone_army
+		icon = REP_a_fully_clone_army
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_battle_of_geonosis
+		}
+		
+		mutually_exclusive = {
+			focus = REP_integrate_the_clones
+		}
+		
+		x = -1
+		y = 1
+		
+		relative_position_id = REP_battle_of_geonosis
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = REP_immediate_martial_law
+		icon = REP_immediate_martial_law
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_a_fully_clone_army
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_a_fully_clone_army
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_jedi_in_command
+		icon = REP_jedi_in_command
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_immediate_martial_law
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_immediate_martial_law
+		completion_reward = {
+		
+		}
+	}
+	#end#
+	#right path#
+	focus = { 
+		id = REP_integrate_the_clones
+		icon = REP_integrate_the_clones
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_battle_of_geonosis
+		}
+		mutually_exclusive = {
+			focus = REP_a_fully_clone_army
+		}
+		
+		x = 1
+		y = 1
+		
+		relative_position_id = REP_battle_of_geonosis
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_win_hearts_and_minds
+		icon = REP_win_hearts_and_minds
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_integrate_the_clones
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_integrate_the_clones
+		completion_reward = {
+		}
+	}
+	
+	focus = { 
+		id = REP_jedi_as_heroes
+		icon = REP_jedi_as_heroes
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_win_hearts_and_minds
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_win_hearts_and_minds
+		completion_reward = {
+	
+		}
+	}
+	#end#
+	
+	focus = { 
+		id = REP_the_christophsis_campaign
+		icon = REP_the_christophsis_campaign
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_jedi_in_command
+			focus = REP_jedi_as_heroes
+		}
+		
+		x = 0
+		y = 4
+		
+		relative_position_id = REP_battle_of_geonosis
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_hard_times_need_strong_men
+		icon = REP_hard_times_need_strong_men
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_christophsis_campaign
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_the_christophsis_campaign
+		completion_reward = {
+		
+		}
+	}
+	#left path#
+	focus = { 
+		id = REP_outmaneuver_the_inclusivists
+		icon = REP_outmaneuver_the_inclusivists
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_hard_times_need_strong_men
+		}
+		
+		x = -1
+		y = 1
+		
+		relative_position_id = REP_hard_times_need_strong_men
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_pacifists_are_separatists
+		icon = REP_pacifists_are_separatists
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_outmaneuver_the_inclusivists
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_outmaneuver_the_inclusivists
+		completion_reward = {
+		
+		}
+	}
+	#end#
+	#right path#
+	focus = { 
+		id = REP_increase_jedi_involvement
+		icon = REP_increase_jedi_involvement
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_hard_times_need_strong_men
+		}
+		
+		x = 1
+		y = 1
+		
+		relative_position_id = REP_hard_times_need_strong_men
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_increase_padawan_participation
+		icon = REP_increase_padawan_participation
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_increase_jedi_involvement
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_increase_jedi_involvement
+		completion_reward = {
+		
+		}
+	}
+	#end#
+	
+	focus = { 
+		id = REP_the_war_escalates
+		icon = REP_the_war_escalates
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_pacifists_are_separatists
+		}
+		prerequisite = {
+			focus = REP_increase_padawan_participation
+		}
+		
+		x = 0
+		y = 3
+		
+		relative_position_id = REP_hard_times_need_strong_men
+		completion_reward = {
+		
+		}
+	}
+	##END OF LEFT BRANCH##
+	##RIGHT BRANCH##
+	focus = { 
+		id = REP_death_of_padme_amidala
+		icon = REP_death_of_padme_amidala
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_call_the_senate_to_vote
+		}
+		mutually_exclusive = {
+			focus = REP_attack_on_a_senator
+		}
+		
+		x = 3
+		y = 1
+		
+		relative_position_id = REP_call_the_senate_to_vote
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_the_republic_at_war
+		icon = REP_the_republic_at_war
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_death_of_padme_amidala
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_death_of_padme_amidala
+		completion_reward = {
+		
+		}
+	}
+	#LEFT PATH#
+	focus = { 
+		id = REP_first_response_clones
+		icon = REP_first_response_clones
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_republic_at_war
+		}
+		
+		x = -1
+		y = 1
+		
+		relative_position_id = REP_the_republic_at_war
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_authorize_the_treason_act
+		icon = REP_authorize_the_treason_act
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_first_response_clones
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_first_response_clones
+		completion_reward = {
+		
+		}
+	}
+	#END#
+	#RIGHT PATH#
+	focus = { 
+		id = REP_amidala_the_martyr
+		icon = REP_amidala_the_martyr
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_republic_at_war
+		}
+		
+		x = 1
+		y = 1
+		
+		relative_position_id = REP_the_republic_at_war
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_soldiers_of_the_core
+		icon = REP_soldiers_of_the_core
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_amidala_the_martyr
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_amidala_the_martyr
+		completion_reward = {
+		
+		}
+	}
+	#END#
+	
+	focus = { 
+		id = REP_new_jedi_lords
+		icon = REP_new_jedi_lords
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_soldiers_of_the_core
+		}
+		prerequisite = {
+			focus = REP_authorize_the_treason_act
+		}
+		
+		x = 0
+		y = 3
+		
+		relative_position_id = REP_the_republic_at_war
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_the_geonosis_campaign
+		icon = REP_the_geonosis_campaign
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_new_jedi_lords
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_new_jedi_lords
+		completion_reward = {
+		
+		}
+	}
+	#LEFT PATH#
+	focus = { 
+		id = REP_peace_was_never_an_option
+		icon = REP_peace_was_never_an_option
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_geonosis_campaign
+		}
+		mutually_exclusive = {
+			focus = REP_the_new_system
+		}
+		
+		x = -1
+		y = 1
+		
+		relative_position_id = REP_the_geonosis_campaign
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_soften_them_up
+		icon = REP_soften_them_up
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_peace_was_never_an_option
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_peace_was_never_an_option
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_better_dead_than_confed
+		icon = REP_better_dead_than_confed
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_soften_them_up
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_soften_them_up
+		completion_reward = {
+		
+		}
+	}
+	#END#
+	#RIGHT PATH#
+	focus = { 
+		id = REP_the_new_system
+		icon = REP_the_new_system
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_geonosis_campaign
+		}
+		mutually_exclusive = {
+			focus = REP_peace_was_never_an_option
+		}
+		
+		x = 1
+		y = 1
+		
+		relative_position_id = REP_the_geonosis_campaign
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_jedi_commissariats
+		icon = REP_jedi_commissariats
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_new_system
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_the_new_system
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_legitimize_unitism
+		icon = REP_legitimize_unitism
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_jedi_commissariats
+		}
+		
+		x = 0
+		y = 1
+		
+		relative_position_id = REP_jedi_commissariats
+		completion_reward = {
+		
+		}
+	}
+	#END#
+	
+	focus = { 
+		id = REP_forward_unto_victory
+		icon = REP_forward_unto_victory
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_better_dead_than_confed
+			focus = REP_legitimize_unitism
+		}
+		
+		x = 0
+		y = 4
+		
+		relative_position_id = REP_the_geonosis_campaign
+		completion_reward = {
+		
+		}
+	}
+	##END OF RIGHT BRANCH##
+	##########UNREST IN THE REPUBLIC TREE END############
+		
+    #########WAR ECONOMY TREE START##############
 	focus = { 
 		id = REP_the_war_economy
 		icon = REP_the_war_economy
@@ -27,7 +661,7 @@ focus_tree = {
 			#no prereq, start of tree
 		}
 		
-		x = 10
+		x = 24
 		y = 0
 		
 		completion_reward = {
