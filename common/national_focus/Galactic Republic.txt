@@ -691,8 +691,8 @@ focus_tree = {
 	}
 	##LEFT PATH
 	focus = { 
-		id = REP_blas-tech_contracts
-		icon = REP_blas-tech_contracts
+		id = REP_blastech_contracts
+		icon = REP_blastech_contracts
 		cost = 10
 		
 		prerequisite = {
@@ -717,14 +717,14 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = REP_blas-tech_contracts
+			focus = REP_blastech_contracts
 		}
 		available = {
 		}
 		
 		x = 0
 		y = 2
-		relative_position_id = REP_blas-tech_contracts
+		relative_position_id = REP_blastech_contracts
 		
 		completion_reward = {
 		
