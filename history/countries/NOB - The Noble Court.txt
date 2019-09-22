@@ -1,0 +1,36 @@
+﻿capital = 14 
+
+set_research_slots = 3
+
+set_stability = 0.10
+
+set_war_support = 0.02
+
+set_popularities = {
+		new_order = 0
+		dark_side = 0
+		akaanadocrat = 0
+		unitist = 8
+		corist = 61
+		distributionist = 2
+		corporate_consortium = 6
+		trade_democrat = 1
+		ruusanist = 0
+		inclusivist = 21
+		light_side = 0
+	}
+set_politics = {
+	ruling_party = corist
+	last_election = "1936.1.1.12"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "Her Majesty"
+	desc = "CHS_aristocra_desc"
+	picture = "gfx/leaders/NOB/portrait_her_majesty.tga"
+	expire = "1965.1.1"
+	ideology = corist_subtype
+	traits = {}
+}

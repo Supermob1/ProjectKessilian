@@ -1,0 +1,36 @@
+﻿capital = 14 
+
+set_research_slots = 3
+
+set_stability = 0.10
+
+set_war_support = 0.02
+
+set_popularities = {
+		new_order = 2
+		dark_side = 0
+		akaanadocrat = 23
+		unitist = 4
+		corist = 0
+		distributionist =  3
+		corporate_consortium = 65
+		trade_democrat = 1
+		ruusanist = 1
+		inclusivist = 1
+		light_side = 0
+	}
+set_politics = {
+	ruling_party = corporate_consortium
+	last_election = "1936.1.1.12"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "Marlo"
+	desc = "CHS_aristocra_desc"
+	picture = "gfx/leaders/CHS/portrait_marlo.tga"
+	expire = "1965.1.1"
+	ideology = corporate_consortium_subtype
+	traits = {}
+}
