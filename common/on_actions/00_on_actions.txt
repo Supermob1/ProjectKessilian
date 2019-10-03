@@ -1,0 +1,21 @@
+on_startup = {
+	effect = { 
+		if = {
+			limit = {
+				original_tag = REP
+			}
+			enable_subunits = {
+				basic_clone
+			}
+		}
+		
+		if = {
+			limit = {
+				original_tag = CIS
+			}
+			enable_subunits = {
+				basic_droid
+			}
+		}
+	}
+}
