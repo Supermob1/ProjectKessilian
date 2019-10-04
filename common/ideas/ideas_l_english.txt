@@ -1,7 +1,8 @@
 ideas = {
 	country = {
+	
 		DKJ_clan_desilijic = {
-			 allowed = {
+			allowed = {
                 always = no
             }
             allowed_civil_war = {
@@ -17,6 +18,7 @@ ideas = {
 				encryption_factor = 0.2
             }
 		}
+		
 		BKJ_clan_besadii = {
 			 allowed = {
                 always = no
@@ -33,6 +35,7 @@ ideas = {
 				offence = 0.1
             }
 		}
+		
 		GKJ_clan_gorensla = {
 			 allowed = {
                 always = no
@@ -42,15 +45,19 @@ ideas = {
             }
 			picture = clan_gorensla
             removal_cost = -1
+			
 			modifier = {
-				political_advisor_cost_factor = -0.3
-				trade_laws_cost_factor = -0.3
-				mobilization_laws_cost_factor = -0.3
-				economy_cost_factor = -0.3
+				# ?????????????????????
+				#political_advisor_cost_factor = -0.3#This gives an error for some reason
+				#trade_laws_cost_factor = -0.3#This gives an error for some reason
+				#mobilization_laws_cost_factor = -0.3#this gives an error for some reason
+				#economy_cost_factor = -0.3#this gives an error for some reason
+				
 				trade_opinion_factor = 0.50
 				industrial_capacity_dockyard = 0.15
             }
 		}
+		
 		QKJ_clan_qunalaac = {
 			 allowed = {
                 always = no
@@ -69,6 +76,7 @@ ideas = {
 				naval_strike_attack_factor = 0.05
             }
 		}
+		
 		HTT_hutt_council = {
 			 allowed = {
                 always = no
