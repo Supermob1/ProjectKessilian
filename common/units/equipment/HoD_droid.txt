@@ -1,0 +1,467 @@
+# All droid equipment
+
+equipments = {
+
+	light_droid_equipment = {
+		year = 11
+	
+		is_archetype = yes
+		picture = archetype_infantry_equipment		
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = yes
+		
+		#Misc Abilities
+		reliability = 0.9
+		maximum_speed = 4
+
+		#Defensive Abilities
+		defense = 20
+		breakthrough = 2
+		hardness = 0
+		armor_value = 0
+
+		#Offensive Abilities
+		soft_attack = 3
+		hard_attack = 0.5
+		ap_attack = 1
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.4
+		resources = {
+			steel = 2
+		}
+		
+	}
+
+	b1_battle_droid_equipment = {
+		year = 11
+	
+		archetype = light_droid_equipment
+		priority = 10
+		visual_level = 0
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	b1-631_battle_droid_equipment = {
+		year = 12
+	
+		archetype = light_droid_equipment
+		priority = 10
+		visual_level = 1
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	b1_battle_droid_autonomous_equipment = {
+		year = 13
+	
+		archetype = light_droid_equipment
+		priority = 10
+		visual_level = 2
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	bx_commando_droid_equipment = {
+		year = 15
+	
+		archetype = light_droid_equipment
+		priority = 10
+		visual_level = 3
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	b1-a_aerial_droid_equipment = {
+		year = 15
+	
+		archetype = light_droid_equipment
+		priority = 10
+		visual_level = 3
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+    #end of light droids############################
+
+	medium_droid_equipment = {
+		year = 11
+	
+		is_archetype = yes
+		picture = archetype_infantry_equipment		
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = yes
+		
+		#Misc Abilities
+		reliability = 0.9
+		maximum_speed = 4
+
+		#Defensive Abilities
+		defense = 30
+		breakthrough = 6
+		hardness = 10
+		armor_value = 5
+
+		#Offensive Abilities
+		soft_attack = 7
+		hard_attack = 3
+		ap_attack = 2
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.4
+		resources = {
+			steel = 2
+		}
+		
+	}
+
+	b2_super_battle_droid_equipment = {
+		year = 11
+	
+		archetype = medium_droid_equipment
+		priority = 10
+		visual_level = 0
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	b2-rp_super_battle_droid_equipment = {
+		year = 13
+	
+		archetype = medium_droid_equipment
+		priority = 10
+		visual_level = 1
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	b2-acm_super_battle_droid_equipment = {
+		year = 14
+	
+		archetype = medium_droid_equipment
+		priority = 10
+		visual_level = 2
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	b2-rp_marktwo_super_battle_droid_equipment = {
+		year = 15
+	
+		archetype = medium_droid_equipment
+		priority = 10
+		visual_level = 3
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	mustafar-class_marktwo_b2_equipment = {
+		year = 16
+	
+		archetype = medium_droid_equipment
+		priority = 10
+		visual_level = 4
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+
+	#END OF MEDIUM DROIDS #####################
+	
+	heavy_droid_equipment = {
+		year = 11
+	
+		is_archetype = yes
+		picture = archetype_infantry_equipment		
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = yes
+		
+		#Misc Abilities
+		reliability = 0.9
+		maximum_speed = 4
+
+		#Defensive Abilities
+		defense = 30
+		breakthrough = 6
+		hardness = 10
+		armor_value = 5
+
+		#Offensive Abilities
+		soft_attack = 7
+		hard_attack = 3
+		ap_attack = 2
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.4
+		resources = {
+			steel = 2
+		}
+		
+	}
+	
+	
+	p-series_droideka_equipment = {
+		year = 11
+	
+		archetype = heavy_droid_equipment
+		priority = 10
+		visual_level = 0
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	w-series_droideka_equipment = {
+		year = 12
+	
+		archetype = heavy_droid_equipment
+		priority = 10
+		visual_level = 1
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+    q-series_droideka_equipment = {
+		year = 13
+	
+		archetype = heavy_droid_equipment
+		priority = 10
+		visual_level = 2
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	b3-ultra_battle_droid_equipment = {
+		year = 14
+	
+		archetype = heavy_droid_equipment
+		priority = 10
+		visual_level = 3
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	c-b3-cortosis_droid_equipment = {
+		year = 16
+	
+		archetype = heavy_droid_equipment
+		priority = 10
+		visual_level = 4
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	ultra-class_droideka_equipment = {
+		year = 14
+	
+		archetype = heavy_droid_equipment
+		priority = 10
+		visual_level = 3
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+	
+	marktwo_droideka_equipment = {
+		year = 16
+	
+		archetype = heavy_droid_equipment
+		priority = 10
+		visual_level = 4
+
+		#Defensive Abilities
+		defense = 22
+		breakthrough = 3
+
+		#Offensive Abilities
+		soft_attack = 6
+		hard_attack = 1
+		ap_attack = 4
+		air_attack = 0
+
+		build_cost_ic = 0.5
+	}
+
+}
