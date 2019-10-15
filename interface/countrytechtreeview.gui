@@ -1,3 +1,10 @@
+# MasterVeo1: I've kept all positions here the same, i'm using the actual Technologies Text File to move around the positioning.
+ 
+#Key Terms for Searching to make finding things easier.
+# Droid Tech Screen
+# Droid Tech Folder Tab GFX/Position
+# Droid Tech Progress Boxes
+
 guiTypes = {
 	containerWindowType = {
 		name = "subunit_icon_entry"
@@ -33,6 +40,96 @@ guiTypes = {
 			quadTextureSprite ="GFX_tiled_plain_bg2"
 		}
 
+		# Droid Tech Screen
+		containerWindowType = {
+			name = "droid_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+			
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = { 
+					width = 1400 height = 1275
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+				
+				instantTextBoxType = {
+					name = "droid_subtitle0"
+					position = { x = 30 y = 240 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "LIGHT DROIDS"
+					maxWidth = 140
+					maxHeight = 200
+					format = left
+					Orientation = "LEFT"
+				}
+				
+				instantTextBoxType = {
+					name = "droid_subtitle1"
+					position = { x = 30 y = 520 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "MEDIUM DROIDS"
+					maxWidth = 140
+					maxHeight = 200
+					format = left
+					Orientation = "LEFT"
+				}
+				
+				instantTextBoxType = {
+					name = "droid_subtitle2"
+					position = { x = 30 y = 800 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "HEAVY DROIDS"
+					maxWidth = 140
+					maxHeight = 200
+					format = left
+					Orientation = "LEFT"
+				}
+			}
+			
+			gridboxtype = {
+				name = "b1_battle_droid_tree"
+				position = { x = 140 y = 210 }
+				#size = { width = 420 height = 500 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}	
+			
+			gridboxtype = {
+				name = "b2_super_battle_droid_tree"
+				position = { x = 140 y = 210 }
+				#size = { width = 420 height = 500 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+			gridboxtype = {
+				name = "p-series_droideka_tree"
+				position = { x = 140 y = 210 }
+				#size = { width = 420 height = 500 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}	
+		}
+		# END #
+		
 		containerWindowType = {
 			name = "infantry_folder"
 			position = { x=0 y=47 }
@@ -3530,7 +3627,17 @@ guiTypes = {
 			name = "folder_tabs"
 			position = { x=0 y=7 }
 			size = { width = 100%% height = 30 }
-	
+			
+			# Droid Tech Folder Tab GFX/Position
+			buttonType = {
+				name = "droid_folder_tab"
+				position = { x = 1120 y = 0 }
+				quadTextureSprite = "GFX_infantry_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+			# End #
+			
 			buttonType = {
 				name = "infantry_folder_tab"
 				position = { x = 22 y = 0 }
@@ -3813,6 +3920,120 @@ guiTypes = {
 			
 		}
 	}
+	
+	# Droid Tech Progress Boxes #
+	containerWindowType = {
+		name = "techtree_droid_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=3 y=3 }
+			spriteType = "GFX_technology_medium"
+			alwaystransparent = yes
+		}	
+		
+		iconType = {
+			name = "bonus_icon"
+			position = { x=-1 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = -1 y = -21 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_droid_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=111 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 111 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+		
+		
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+			
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+			
+			iconType = {
+				name = "picture"
+				position = { x=2 y=2 }
+				spriteType = "GFX_subtech_rocket"
+				alwaystransparent = yes
+			}
+		}		
+		
+	}
+	
+	# End #
+	
 
 	containerWindowType = {
 		name = "techtree_infantry_folder_small_item"
