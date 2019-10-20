@@ -1349,6 +1349,838 @@ focus_tree = {
 	### END OF RIGHT BRANCH ###
 	
 	######### END OF "THE WAR ECONOMY" TREE ############
+    
+	#########PALPATINE DEATH TREE START##############
+	focus = { 
+		id = REP_the_unthinkable
+		icon = REP_theunthinkable
+		cost = 10
+		
+		prerequisite = {
+			#no prereq, start of tree
+		}
+		
+		x = 43
+		y = 0
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_close_the_banks
+		icon = REP_closethebanks
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_unthinkable
+		}
+		available = {
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_a_national_tragedy
+		icon = generic_nationaltragedy
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_unthinkable
+		}
+		available = {
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_maintain_the_war_effort
+		icon = generic_maintainwareffort
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_unthinkable
+		}
+		available = {
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_period_of_mourning
+		icon = REP_periodofmourning
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_a_national_tragedy
+		}
+		available = {
+		}
+		
+		x = -3
+		y = 2
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_present_strength
+		icon = REP_presentstrength
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_a_national_tragedy
+			focus = REP_close_the_banks
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_temporary_jedi_command
+		icon = REP_temporaryjedicommand
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_maintain_the_war_effort
+			focus = REP_close_the_banks
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_investigate_hidden_files
+		icon = generic_sithknowledge
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_maintain_the_war_effort
+		}
+		available = {
+		}
+		
+		x = 3
+		y = 2
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_emergency_election
+		icon = REP_emergencyelection
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_investigate_hidden_files
+			focus = REP_temporary_jedi_command
+			focus = REP_present_strength
+			focus = REP_period_of_mourning
+		}
+		available = {
+		}
+		
+		x = 0
+		y = 3
+		relative_position_id = REP_the_unthinkable
+		
+		completion_reward = {
+		
+		}
+	}
+	#Organa Tree Start
+	focus = { 
+		id = REP_chancellor_organa
+		icon = REP_chancellororgana
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+		
+		x = -6
+		y = 1
+		relative_position_id = REP_emergency_election
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_tragic_but_righteous
+		icon = REP_tragicbutrighteous
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_chancellor_organa
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 1
+		relative_position_id = REP_chancellor_organa
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_the_new_republic
+		icon = REP_thenewrepublic
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_chancellor_organa
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 1
+		relative_position_id = REP_chancellor_organa
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_a_discreet_purge
+		icon = REP_adiscreetpurge
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_tragic_but_righteous
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = REP_chancellor_organa
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_accept_limitations
+		icon = REP_acceptlimitations
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_new_republic
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = REP_chancellor_organa
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_playing_the_game
+		icon = REP_playingthegame
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_a_discreet_purge
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 3
+		relative_position_id = REP_chancellor_organa
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_reach_out_to_the_rim
+		icon = REP_reachouttotherim
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_accept_limitations
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 3
+		relative_position_id = REP_chancellor_organa
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_civility_and_stability
+		icon = REP_civilityandstability
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_playing_the_game
+			focus = REP_reach_out_to_the_rim
+		}
+		available = {
+		}
+		
+		x = 0
+		y = 4
+		relative_position_id = REP_chancellor_organa
+		
+		completion_reward = {
+		
+		}
+	}
+	#Organa Tree End
+	#Amidala Tree Start
+	focus = { 
+		id = REP_chancellor_amidala
+		icon = REP_chancelloramidala
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = REP_emergency_election
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_the_peace_committee
+		icon = REP_thepeacecommittee
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_chancellor_amidala
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 1
+		relative_position_id = REP_chancellor_amidala
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_a_better_republic
+		icon = REP_abetterrepublic
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_chancellor_amidala
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 1
+		relative_position_id = REP_chancellor_amidala
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_reject_emergency_powers
+		icon = REP_rejectemergencypowers
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_peace_committee
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = REP_chancellor_amidala
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_crusade_against_corruption
+		icon = REP_crusadeagainstcorruption
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_a_better_republic
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = REP_chancellor_amidala
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_political_savant
+		icon = REP_politicalsavant
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_reject_emergency_powers
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 3
+		relative_position_id = REP_chancellor_amidala
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_zero_tolerance_for_intolerance
+		icon = REP_zerotoleranceforintolerance
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_crusade_against_corruption
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 3
+		relative_position_id = REP_chancellor_amidala
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_reform_and_repair
+		icon = REP_reformandrepair
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_political_savant
+			focus = REP_zero_tolerance_for_intolerance
+		}
+		available = {
+		}
+		
+		x = 0
+		y = 4
+		relative_position_id = REP_chancellor_amidala
+		
+		completion_reward = {
+		
+		}
+	}
+	#Amidala Tree End
+	#Amedda Tree Start
+	focus = { 
+		id = REP_chancellor_amedda
+		icon = REP_chancelloramedda
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = REP_emergency_election
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_reaching_out_to_old_friends
+		icon = REP_reachouttooldfriends
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_chancellor_amedda
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 1
+		relative_position_id = REP_chancellor_amedda
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_voice_of_the_emperor
+		icon = REP_voiceoftheemperor
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_chancellor_amedda
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 1
+		relative_position_id = REP_chancellor_amedda
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_false_war
+		icon = REP_falsewar
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_reaching_out_to_old_friends
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = REP_chancellor_amedda
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_man_behind_the_curtain
+		icon = REP_manbehindthecurtain
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_voice_of_the_emperor
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = REP_chancellor_amedda
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_fostering_palpatines_legacy
+		icon = REP_fosteringpalpatineslegacy
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_false_war
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 3
+		relative_position_id = REP_chancellor_amedda
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_working_in_the_shadows
+		icon = REP_workingintheshadows
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_man_behind_the_curtain
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 3
+		relative_position_id = REP_chancellor_amedda
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_fear_and_guile
+		icon = REP_fearandguile
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_fostering_palpatines_legacy
+			focus = REP_working_in_the_shadows
+		}
+		available = {
+		}
+		
+		x = 0
+		y = 4
+		relative_position_id = REP_chancellor_amedda
+		
+		completion_reward = {
+		
+		}
+	}
+	#Amedda Tree End
+	#Emergency Tree Start
+	focus = { 
+		id = REP_emergency_government
+		icon = REP_emergencygovernment
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+		
+		x = 6
+		y = 1
+		relative_position_id = REP_emergency_election
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_dauntless_to_domination
+		icon = REP_dauntlesstodomination
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_emergency_government
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 1
+		relative_position_id = REP_emergency_government
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_a_stronger_order
+		icon = REP_astrongerorder
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_emergency_government
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 1
+		relative_position_id = REP_emergency_government
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_managing_the_populace
+		icon = REP_managingthepopulace
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_dauntless_to_domination
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = REP_emergency_government
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_placate_rivalries
+		icon = REP_placaterivalries
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_a_stronger_order
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = REP_emergency_government
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_foment_fanatacism
+		icon = REP_fomentfanatacism
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_managing_the_populace
+		}
+		available = {
+		}
+		
+		x = -1
+		y = 3
+		relative_position_id = REP_emergency_government
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_one_state_one_galaxy
+		icon = REP_onestateonegalaxy
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_placate_rivalries
+		}
+		available = {
+		}
+		
+		x = 1
+		y = 3
+		relative_position_id = REP_emergency_government
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_law_and_order
+		icon = REP_lawandorder
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_foment_fanatacism
+			focus = REP_one_state_one_galaxy
+		}
+		available = {
+		}
+		
+		x = 0
+		y = 4
+		relative_position_id = REP_emergency_government
+		
+		completion_reward = {
+		
+		}
+	}
+	#Emergency Tree End
+	###PALPATINE DEATH TREE END###
 
 }
 
