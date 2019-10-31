@@ -1,0 +1,330 @@
+# Generic Hutt focus tree
+# By ZornMauser & TheCrusaderKing
+#################################
+focus_tree = {
+	id = HTT_focus_tree
+
+    country = { 
+        factor = 0
+       modifier = { 
+         add = 10 
+         tag = DKJ
+       } 
+       modifier = { 
+         add = 10 
+         tag = BKJ
+       } 
+       modifier = { 
+         add = 10 
+         tag = QKJ
+       } 
+       modifier = { 
+         add = 10 
+         tag = GKJ
+       } 
+    }
+
+    default = yes
+	reset_on_civilwar = no
+	
+	continuous_focus_position = { x = 50 y = 2000 }
+
+ ## Tree Start ##
+
+    focus = { 
+        id = HTT_dangerous_times_dangerous_associates
+        icon = HTT_dangerous_times_dangerous_associates
+        cost = 10
+
+        prerequisite = { 
+           #No prereq - first focus
+        } 
+
+        x = 7
+        y = 1
+
+        relative_position_id = HTT_dangerous_times_dangerous_associates
+        completion_reward = {
+
+        }
+    } 
+      ## LEFT BRANCH START ##
+    focus = { 
+        id = HTT_spaceport_expansions
+        icon = HTT_spaceport_expansions
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_dangerous_times_dangerous_associates
+        } 
+
+        x = 4
+        y = 2
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_buy_up_civillian_freighters
+        icon = HTT_buy_up_civillian_freighters
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_spaceport_expansions
+        } 
+
+        x = 2
+        y = 3
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_terms_with_the_weequay_pirates
+        icon = HTT_terms_with_the_weequay_pirates
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_buy_up_civillian_freighters
+        } 
+
+        x = 2
+        y = 4
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_muscle_in_on_the_shipyard_business
+        icon = HTT_muscle_in_on_the_shipyard_business
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_spaceport_expansions
+        } 
+
+        x = 4
+        y = 3
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_special_rights_for_starship_companies
+        icon = HTT_special_rights_for_starship_companies
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_muscle_in_on_the_shipyard_business
+        } 
+
+        x = 4
+        y = 4
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_develop_starfighter_carrier_tactics
+        icon = HTT_develop_starfighter_carrier_tactics
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_special_rights_for_starship_companies
+        } 
+
+        x = 4
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_dust_off_old_designs
+        icon = HTT_dust_off_old_designs
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_special_rights_for_starship_companies
+        } 
+
+        x = 2
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+      ## RIGHT BRANCH START ##
+    focus = { 
+        id = HTT_increase_military_strength
+        icon = HTT_increase_military_strength
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_dangerous_times_dangerous_associates
+        } 
+
+        x = 10
+        y = 2
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_ktg_propaganda_endeavours
+        icon = HTT_ktg_propaganda_endeavours
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_increase_military_strength
+        } 
+
+        x = 11
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_talk_to_the_gammorean_clans
+        icon = HTT_talk_to_the_gammorean_clans
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_ktg_propaganda_endeavours
+        } 
+
+        x = 12
+        y = 4
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_reward_the_vodran_serfs
+        icon = HTT_reward_the_vodran_serfs
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_increase_military_strength
+        } 
+
+        x = 9
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_stamp_out_nikto_blood_cults
+        icon = HTT_stamp_out_nikto_blood_cults
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_reward_the_vodran_serfs
+        } 
+
+        x = 8
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_follow_huttese_guerrila_doctrine
+        icon = HTT_follow_huttese_guerrila_doctrine
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_increase_military_strength
+        } 
+
+        x = 10
+        y = 4
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_stockpile_mines_and_bombs
+        icon = HTT_stockpile_mines_and_bombs
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_follow_huttese_guerrila_doctrine
+        } 
+
+        x = 8
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_smuggle_in_experimental_weapons
+        icon = HTT_smuggle_in_experimental_weapons
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_follow_huttese_guerrila_doctrine
+        } 
+
+        x = 10
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+     focus = { 
+        id = HTT_foster_the_criminal_spirit
+        icon = HTT_foster_the_criminal_spirit
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_follow_huttese_guerrila_doctrine
+        } 
+
+        x = 12
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = HTT_make_every_step_cost_them
+        icon = HTT_make_every_step_cost_them
+        cost = 10
+
+        prerequisite = { 
+            focus = HTT_stockpile_mines_and_bombs
+        }
+        prerequisite = { 
+            focus = HTT_smuggle_in_experimental_weapons   
+        }
+        prerequisite = { 
+            focus = HTT_foster_the_criminal_spirit   
+        } 
+
+        x = 10
+        y = 6
+
+        completion_reward = {
+
+        }
+    } 
