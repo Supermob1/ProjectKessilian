@@ -327,4 +327,511 @@ focus_tree = {
         completion_reward = {
 
         }
+
+    }  ##### DIPLOMACY TREE ####
+    focus = { 
+        id = HTT_galactic_military_escalation
+        icon = HTT_galactic_military_escalation
+        cost = 10
+
+        prerequisite = { 
+           #No prereq - first focus
+        } 
+
+        x = 25
+        y = 1
+
+        
+        completion_reward = {
+
+        }
+    } #### CARTEL PATH ####
+    focus = { 
+        id = HTT_the_cartel_life
+        icon = HTT_the_cartel_life
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_galactic_military_escalation
+        } 
+
+        x = 25
+        y = 2
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_up_protection_money
+        icon = HTT_up_protection_money
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_the_cartel_life
+        } 
+
+        x = 24
+        y = 3
+
+        
+        completion_reward = {
+
+        }
     } 
+    focus = { 
+        id = HTT_more_smugglers_on_our_payroll
+        icon = HTT_more_smugglers_on_our_payroll
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_the_cartel_life
+        } 
+
+        x = 26
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_business_as_usual
+        icon = HTT_business_as_usual
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_more_smugglers_on_our_payroll   
+        } 
+        prerequisite = {
+           focus = HTT_up_protection_money
+        }
+        x = 25
+        y = 4
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_lavish_spending_spree
+        icon = HTT_lavish_spending_spree
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_business_as_usual  
+        }
+        x = 24
+        y = 5
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_extortionate_hyperlane_tolls
+        icon = HTT_extortionate_hyperlane_tolls
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_business_as_usual  
+        }
+        x = 26
+        y = 5
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_hedging_our_bets
+        icon = HTT_hedging_our_bets
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_lavish_spending_spree 
+        } 
+        prerequisite = {
+           focus = HTT_extortionate_hyperlane_tolls
+        }
+
+        mutually_exclusive = {
+           focus = HTT_grant_the_republic_access
+        }
+         mutually_exclusive = {
+           focus = HTT_battledroid_imports
+        }   
+
+        x = 25
+        y = 6
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_maximum_war_profiteering
+        icon = HTT_maximum_war_profiteering
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_hedging_our_bets
+        } 
+        
+        x = 25
+        y = 7
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_what_happens_on_nal_hutta_stays_on_nal_hutta
+        icon = HTT_what_happens_on_nal_hutta_stays_on_nal_hutta
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_maximum_war_profiteering
+        } 
+        
+        x = 25
+        y = 8
+
+        
+        completion_reward = {
+
+        }
+    }   #### REPUBLIC PATH ####
+    focus = { 
+        id = HTT_court_the_republic
+        icon = HTT_court_the_republic
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_galactic_military_escalation
+        } 
+
+        x = 19
+        y = 2
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_anything_can_be_bought
+        icon = HTT_anything_can_be_bought
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_court_the_republic
+        } 
+
+        x = 17
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_anyone_can_be_bought
+        icon = HTT_anyone_can_be_bought
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_court_the_republic
+        } 
+
+        x = 19
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_if_the_price_is_right
+        icon = HTT_if_the_price_is_right
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_court_the_republic
+        } 
+
+        x = 21
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_procure_rare_materials_they_need
+        icon = HTT_procure_rare_materials_they_need
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_anything_can_be_bought
+        } 
+        prerequisite = { 
+           focus = HTT_anyone_can_be_bought
+        } 
+        prerequisite = { 
+           focus = HTT_if_the_price_is_right
+        } 
+
+        x = 19
+        y = 4
+    }
+     focus = { 
+        id = HTT_selective_tipoffs
+        icon = HTT_selective_tipoffs
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_procure_rare_materials_they_need
+        } 
+        
+        x = 18
+        y = 5
+    }
+    focus = { 
+        id = HTT_republican_ambassadors
+        icon = HTT_republican_ambassadors
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_procure_rare_materials_they_need
+        } 
+        
+        x = 20
+        y = 5
+    }
+     focus = { 
+        id = HTT_grant_the_republic_access
+        icon = HTT_grant_the_republic_access
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_republican_ambassadors
+        } 
+        prerequisite = { 
+           focus = HTT_selective_tipoffs
+        } 
+
+        mutually_exclusive = {
+           focus = HTT_hedging_our_bets
+        }
+         mutually_exclusive = {
+           focus = HTT_battledroid_imports
+        }   
+
+        x = 19
+        y = 6
+    }
+    focus = { 
+        id = HTT_semi_legitimate_trading
+        icon = HTT_semi_legitimate_trading
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_grant_the_republic_access
+        } 
+        
+
+        x = 19
+        y = 7
+    }
+    focus = { 
+        id = HTT_hutts_on_the_senate
+        icon = HTT_hutts_on_the_senate
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_semi_legitimate_trading
+        } 
+        
+
+        x = 19
+        y = 8
+    } #### CONFEDERACY PATH ####
+    focus = { 
+        id = HTT_court_the_cis
+        icon = HTT_court_the_cis
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_galactic_military_escalation
+        } 
+
+        x = 30
+        y = 2
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_monetise_their_desperation
+        icon = HTT_monetise_their_desperation
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_court_the_cis
+        } 
+
+        x = 30
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_trade_federation_representatives
+        icon = HTT_trade_federation_representatives
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_court_the_cis
+        } 
+
+        x = 32
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_guarantees_of_our_continued_neccessity
+        icon = HTT_guarantees_of_our_continued_neccessity
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_monetise_their_desperation
+        } 
+
+        x = 29
+        y = 4
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_gamorreans_for_hire
+        icon = HTT_gamorreans_for_hire
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_guarantees_of_our_continued_neccessity
+        } 
+
+        x = 29
+        y = 5
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = HTT_escorts_through_hutt_space
+        icon = HTT_escorts_through_hutt_space
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_trade_federation_representatives
+        } 
+        prerequisite = { 
+           focus = HTT_monetise_their_desperation
+        } 
+
+        x = 31
+        y = 4
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_officially_recognise_the_cis
+        icon = HTT_officially_recognise_the_cis
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_escorts_through_hutt_space
+        } 
+
+        x = 31
+        y = 5
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_battledroid_imports
+        icon = HTT_battledroid_imports
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_officially_recognise_the_cis
+        }
+         prerequisite = { 
+           focus = HTT_gamorreans_for_hire
+        }
+
+        mutually_exclusive = {
+           focus = HTT_hedging_our_bets
+        }   
+         mutually_exclusive = {
+           focus = HTT_grant_the_republic_access
+        } 
+
+        x = 31
+        y = 6
+    }
+     focus = { 
+        id = HTT_a_banquet_for_dooku
+        icon = HTT_a_banquet_for_dooku
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_battledroid_imports
+        }
+
+        x = 31
+        y = 7
+    }
+    focus = { 
+        id = HTT_allow_secret_cis_bases
+        icon = HTT_allow_secret_cis_bases
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_a_banquet_for_dooku
+        }
+
+        x = 31
+        y = 8
+    }                    
