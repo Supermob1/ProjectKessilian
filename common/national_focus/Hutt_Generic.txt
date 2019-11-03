@@ -8,29 +8,276 @@ focus_tree = {
         factor = 0
        modifier = { 
          add = 10 
-         tag = DKJ
-       } 
-       modifier = { 
-         add = 10 
-         tag = BKJ
-       } 
-       modifier = { 
-         add = 10 
          tag = QKJ
        } 
-       modifier = { 
-         add = 10 
-         tag = GKJ
-       } 
-    }
+    }   
 
     default = yes
 	reset_on_civilwar = no
 	
 	continuous_focus_position = { x = 50 y = 2000 }
+    ########### UNIQUE TREE START ############
+    focus = { 
+        id = HTT_qunalaac_kajidic
+        icon = HTT_qunalaac_kajidic
+        cost = 10
 
- ## Tree Start ##
+       prerequisite = { 
+           #No prereq - first focus
+        } 
 
+        x = 40
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_maintain_fleet_size
+        icon = HTT_maintain_fleet_size
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_qunalaac_kajidic
+        } 
+
+        x = 38
+        y = 2
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_ancient_warriors_of_varl
+        icon = HTT_ancient_warriors_of_varl
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_qunalaac_kajidic
+        } 
+
+        x = 42
+        y = 2
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_capital_ship_doctrine
+        icon = HTT_capital_ship_doctrine
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_ancient_warriors_of_varl
+        } 
+        mutually_exclusive = {
+           focus = HTT_focus_on_carriers
+        }
+        x = 42
+        y = 3
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_focus_on_carriers
+        icon = HTT_focus_on_carriers
+        cost = 10
+        prerequisite = { 
+           focus = HTT_ancient_warriors_of_varl
+        } 
+         mutually_exclusive = {
+           focus = HTT_capital_ship_doctrine
+        }
+
+        x = 44
+        y = 3
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_mediate_fleet_captaining_assignments
+        icon = HTT_mediate_fleet_captaining_assignments
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_capital_ship_doctrine
+           focus = HTT_focus_on_carriers
+        }
+
+        x = 44
+        y = 4
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_shrewd_political_maneuvering
+        icon = HTT_shrewd_political_maneuvering
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_qunalaac_kajidic
+        }
+
+        x = 40
+        y = 4
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_smooth_over_council_conflicts
+        icon = HTT_smooth_over_council_conflicts
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_shrewd_political_maneuvering
+        }
+
+        x = 40
+        y = 5
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_subsidise_plakots_enterprises
+        icon = HTT_subsidise_plakots_enterprises
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_shrewd_political_maneuvering
+        }
+
+        x = 42
+        y = 5
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_expand_fort_dandunc
+        icon = HTT_expand_fort_dandunc
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_shrewd_political_maneuvering
+        }
+
+        x = 38
+        y = 5
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_wardens_of_bootana_hutta
+        icon = HTT_wardens_of_bootana_hutta
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_mediate_fleet_captaining_assignments
+        }
+
+        x = 44
+        y = 5
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_our_words_are_backed_by_blasters
+        icon = HTT_our_words_are_backed_by_blasters
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_maintain_fleet_size
+        } 
+
+        x = 38
+        y = 3
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_monopolise_protection_racketeering
+        icon = HTT_monopolise_protection_racketeering
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_maintain_fleet_size
+        } 
+
+        x = 36
+        y = 3
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_extortionate_transport_safety_costs
+        icon = HTT_extortionate_transport_safety_costs
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_monopolise_protection_racketeering
+        } 
+        prerequisite = { 
+           focus = HTT_our_words_are_backed_by_blasters
+        }
+        x = 36
+        y = 4
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = HTT_hire_the_best_starship_engineers
+        icon = HTT_hire_the_best_starship_engineers
+        cost = 10
+
+        prerequisite = { 
+           focus = HTT_extortionate_transport_safety_costs
+        } 
+        
+        x = 36
+        y = 5
+
+
+        completion_reward = {
+
+        }
+    }        ########GENERIC TREE START#########
     focus = { 
         id = HTT_dangerous_times_dangerous_associates
         icon = HTT_dangerous_times_dangerous_associates
