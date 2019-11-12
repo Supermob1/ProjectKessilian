@@ -2,7 +2,7 @@
 # By ZornMauser & TheCrusaderKing
 #################################
 focus_tree = {
-	id = HTT_focus_tree
+	id = QKJ_focus_tree
 
     country = { 
         factor = 0
@@ -18,8 +18,8 @@ focus_tree = {
 	continuous_focus_position = { x = 50 y = 2000 }
     ########### UNIQUE TREE START ############
     focus = { 
-        id = HTT_qunalaac_kajidic
-        icon = HTT_qunalaac_kajidic
+        id = QKJ_qunalaac_kajidic
+        icon = QKJ_qunalaac_kajidic
         cost = 10
 
        prerequisite = { 
@@ -34,12 +34,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_maintain_fleet_size
-        icon = HTT_maintain_fleet_size
+        id = QKJ_maintain_fleet_size
+        icon = QKJ_maintain_fleet_size
         cost = 10
 
         prerequisite = { 
-           focus = HTT_qunalaac_kajidic
+           focus = QKJ_qunalaac_kajidic
         } 
 
         x = 38
@@ -51,12 +51,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_ancient_warriors_of_varl
-        icon = HTT_ancient_warriors_of_varl
+        id = QKJ_ancient_warriors_of_varl
+        icon = QKJ_ancient_warriors_of_varl
         cost = 10
 
         prerequisite = { 
-           focus = HTT_qunalaac_kajidic
+           focus = QKJ_qunalaac_kajidic
         } 
 
         x = 42
@@ -68,15 +68,15 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_capital_ship_doctrine
-        icon = HTT_capital_ship_doctrine
+        id = QKJ_capital_ship_doctrine
+        icon = QKJ_capital_ship_doctrine
         cost = 10
 
         prerequisite = { 
-           focus = HTT_ancient_warriors_of_varl
+           focus = QKJ_ancient_warriors_of_varl
         } 
         mutually_exclusive = {
-           focus = HTT_focus_on_carriers
+           focus = QKJ_focus_on_carriers
         }
         x = 42
         y = 3
@@ -87,14 +87,14 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_focus_on_carriers
-        icon = HTT_focus_on_carriers
+        id = QKJ_focus_on_carriers
+        icon = QKJ_focus_on_carriers
         cost = 10
         prerequisite = { 
-           focus = HTT_ancient_warriors_of_varl
+           focus = QKJ_ancient_warriors_of_varl
         } 
          mutually_exclusive = {
-           focus = HTT_capital_ship_doctrine
+           focus = QKJ_capital_ship_doctrine
         }
 
         x = 44
@@ -106,13 +106,13 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_mediate_fleet_captaining_assignments
-        icon = HTT_mediate_fleet_captaining_assignments
+        id = QKJ_mediate_fleet_captaining_assignments
+        icon = QKJ_mediate_fleet_captaining_assignments
         cost = 10
 
         prerequisite = { 
-           focus = HTT_capital_ship_doctrine
-           focus = HTT_focus_on_carriers
+           focus = QKJ_capital_ship_doctrine
+           focus = QKJ_focus_on_carriers
         }
 
         x = 44
@@ -124,12 +124,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_shrewd_political_maneuvering
-        icon = HTT_shrewd_political_maneuvering
+        id = QKJ_shrewd_political_maneuvering
+        icon = QKJ_shrewd_political_maneuvering
         cost = 10
 
         prerequisite = { 
-           focus = HTT_qunalaac_kajidic
+           focus = QKJ_qunalaac_kajidic
         }
 
         x = 40
@@ -141,12 +141,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_smooth_over_council_conflicts
-        icon = HTT_smooth_over_council_conflicts
+        id = QKJ_smooth_over_council_conflicts
+        icon = QKJ_smooth_over_council_conflicts
         cost = 10
 
         prerequisite = { 
-           focus = HTT_shrewd_political_maneuvering
+           focus = QKJ_shrewd_political_maneuvering
         }
 
         x = 40
@@ -158,12 +158,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_subsidise_plakots_enterprises
-        icon = HTT_subsidise_plakots_enterprises
+        id = QKJ_subsidise_plakots_enterprises
+        icon = QKJ_subsidise_plakots_enterprises
         cost = 10
 
         prerequisite = { 
-           focus = HTT_shrewd_political_maneuvering
+           focus = QKJ_shrewd_political_maneuvering
         }
 
         x = 42
@@ -175,12 +175,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_expand_fort_dandunc
-        icon = HTT_expand_fort_dandunc
+        id = QKJ_expand_fort_dandunc
+        icon = QKJ_expand_fort_dandunc
         cost = 10
 
         prerequisite = { 
-           focus = HTT_shrewd_political_maneuvering
+           focus = QKJ_shrewd_political_maneuvering
         }
 
         x = 38
@@ -192,12 +192,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_wardens_of_bootana_hutta
-        icon = HTT_wardens_of_bootana_hutta
+        id = QKJ_wardens_of_bootana_hutta
+        icon = QKJ_wardens_of_bootana_hutta
         cost = 10
 
         prerequisite = { 
-           focus = HTT_mediate_fleet_captaining_assignments
+           focus = QKJ_mediate_fleet_captaining_assignments
         }
 
         x = 44
@@ -209,12 +209,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_our_words_are_backed_by_blasters
-        icon = HTT_our_words_are_backed_by_blasters
+        id = QKJ_our_words_are_backed_by_blasters
+        icon = QKJ_our_words_are_backed_by_blasters
         cost = 10
 
         prerequisite = { 
-           focus = HTT_maintain_fleet_size
+           focus = QKJ_maintain_fleet_size
         } 
 
         x = 38
@@ -226,12 +226,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_monopolise_protection_racketeering
-        icon = HTT_monopolise_protection_racketeering
+        id = QKJ_monopolise_protection_racketeering
+        icon = QKJ_monopolise_protection_racketeering
         cost = 10
 
         prerequisite = { 
-           focus = HTT_maintain_fleet_size
+           focus = QKJ_maintain_fleet_size
         } 
 
         x = 36
@@ -243,15 +243,15 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_extortionate_transport_safety_costs
-        icon = HTT_extortionate_transport_safety_costs
+        id = QKJ_extortionate_transport_safety_costs
+        icon = QKJ_extortionate_transport_safety_costs
         cost = 10
 
         prerequisite = { 
-           focus = HTT_monopolise_protection_racketeering
+           focus = QKJ_monopolise_protection_racketeering
         } 
         prerequisite = { 
-           focus = HTT_our_words_are_backed_by_blasters
+           focus = QKJ_our_words_are_backed_by_blasters
         }
         x = 36
         y = 4
@@ -262,12 +262,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_hire_the_best_starship_engineers
-        icon = HTT_hire_the_best_starship_engineers
+        id = QKJ_hire_the_best_starship_engineers
+        icon = QKJ_hire_the_best_starship_engineers
         cost = 10
 
         prerequisite = { 
-           focus = HTT_extortionate_transport_safety_costs
+           focus = QKJ_extortionate_transport_safety_costs
         } 
         
         x = 36
@@ -279,8 +279,8 @@ focus_tree = {
         }
     }        ########GENERIC TREE START#########
     focus = { 
-        id = HTT_dangerous_times_dangerous_associates
-        icon = HTT_dangerous_times_dangerous_associates
+        id = QKJ_dangerous_times_dangerous_associates
+        icon = QKJ_dangerous_times_dangerous_associates
         cost = 10
 
         prerequisite = { 
@@ -290,19 +290,19 @@ focus_tree = {
         x = 7
         y = 1
 
-        relative_position_id = HTT_dangerous_times_dangerous_associates
+        relative_position_id = QKJ_dangerous_times_dangerous_associates
         completion_reward = {
 
         }
     } 
       ## LEFT BRANCH START ##
     focus = { 
-        id = HTT_spaceport_expansions
-        icon = HTT_spaceport_expansions
+        id = QKJ_spaceport_expansions
+        icon = QKJ_spaceport_expansions
         cost = 10
 
         prerequisite = { 
-            focus = HTT_dangerous_times_dangerous_associates
+            focus = QKJ_dangerous_times_dangerous_associates
         } 
 
         x = 4
@@ -313,12 +313,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_buy_up_civillian_freighters
-        icon = HTT_buy_up_civillian_freighters
+        id = QKJ_buy_up_civillian_freighters
+        icon = QKJ_buy_up_civillian_freighters
         cost = 10
 
         prerequisite = { 
-            focus = HTT_spaceport_expansions
+            focus = QKJ_spaceport_expansions
         } 
 
         x = 2
@@ -329,12 +329,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_terms_with_the_weequay_pirates
-        icon = HTT_terms_with_the_weequay_pirates
+        id = QKJ_terms_with_the_weequay_pirates
+        icon = QKJ_terms_with_the_weequay_pirates
         cost = 10
 
         prerequisite = { 
-            focus = HTT_buy_up_civillian_freighters
+            focus = QKJ_buy_up_civillian_freighters
         } 
 
         x = 2
@@ -345,12 +345,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_muscle_in_on_the_shipyard_business
-        icon = HTT_muscle_in_on_the_shipyard_business
+        id = QKJ_muscle_in_on_the_shipyard_business
+        icon = QKJ_muscle_in_on_the_shipyard_business
         cost = 10
 
         prerequisite = { 
-            focus = HTT_spaceport_expansions
+            focus = QKJ_spaceport_expansions
         } 
 
         x = 4
@@ -361,12 +361,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_special_rights_for_starship_companies
-        icon = HTT_special_rights_for_starship_companies
+        id = QKJ_special_rights_for_starship_companies
+        icon = QKJ_special_rights_for_starship_companies
         cost = 10
 
         prerequisite = { 
-            focus = HTT_muscle_in_on_the_shipyard_business
+            focus = QKJ_muscle_in_on_the_shipyard_business
         } 
 
         x = 4
@@ -377,12 +377,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_develop_starfighter_carrier_tactics
-        icon = HTT_develop_starfighter_carrier_tactics
+        id = QKJ_develop_starfighter_carrier_tactics
+        icon = QKJ_develop_starfighter_carrier_tactics
         cost = 10
 
         prerequisite = { 
-            focus = HTT_special_rights_for_starship_companies
+            focus = QKJ_special_rights_for_starship_companies
         } 
 
         x = 4
@@ -393,12 +393,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_dust_off_old_designs
-        icon = HTT_dust_off_old_designs
+        id = QKJ_dust_off_old_designs
+        icon = QKJ_dust_off_old_designs
         cost = 10
 
         prerequisite = { 
-            focus = HTT_special_rights_for_starship_companies
+            focus = QKJ_special_rights_for_starship_companies
         } 
 
         x = 2
@@ -410,12 +410,12 @@ focus_tree = {
     } 
       ## RIGHT BRANCH START ##
     focus = { 
-        id = HTT_increase_military_strength
-        icon = HTT_increase_military_strength
+        id = QKJ_increase_military_strength
+        icon = QKJ_increase_military_strength
         cost = 10
 
         prerequisite = { 
-            focus = HTT_dangerous_times_dangerous_associates
+            focus = QKJ_dangerous_times_dangerous_associates
         } 
 
         x = 10
@@ -426,12 +426,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_ktg_propaganda_endeavours
-        icon = HTT_ktg_propaganda_endeavours
+        id = QKJ_ktg_propaganda_endeavours
+        icon = QKJ_ktg_propaganda_endeavours
         cost = 10
 
         prerequisite = { 
-            focus = HTT_increase_military_strength
+            focus = QKJ_increase_military_strength
         } 
 
         x = 11
@@ -442,12 +442,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_talk_to_the_gammorean_clans
-        icon = HTT_talk_to_the_gammorean_clans
+        id = QKJ_talk_to_the_gammorean_clans
+        icon = QKJ_talk_to_the_gammorean_clans
         cost = 10
 
         prerequisite = { 
-            focus = HTT_ktg_propaganda_endeavours
+            focus = QKJ_ktg_propaganda_endeavours
         } 
 
         x = 12
@@ -458,12 +458,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_reward_the_vodran_serfs
-        icon = HTT_reward_the_vodran_serfs
+        id = QKJ_reward_the_vodran_serfs
+        icon = QKJ_reward_the_vodran_serfs
         cost = 10
 
         prerequisite = { 
-            focus = HTT_increase_military_strength
+            focus = QKJ_increase_military_strength
         } 
 
         x = 9
@@ -474,12 +474,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_stamp_out_nikto_blood_cults
-        icon = HTT_stamp_out_nikto_blood_cults
+        id = QKJ_stamp_out_nikto_blood_cults
+        icon = QKJ_stamp_out_nikto_blood_cults
         cost = 10
 
         prerequisite = { 
-            focus = HTT_reward_the_vodran_serfs
+            focus = QKJ_reward_the_vodran_serfs
         } 
 
         x = 8
@@ -490,12 +490,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_follow_huttese_guerrila_doctrine
-        icon = HTT_follow_huttese_guerrila_doctrine
+        id = QKJ_follow_huttese_guerrila_doctrine
+        icon = QKJ_follow_huttese_guerrila_doctrine
         cost = 10
 
         prerequisite = { 
-            focus = HTT_increase_military_strength
+            focus = QKJ_increase_military_strength
         } 
 
         x = 10
@@ -506,12 +506,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_stockpile_mines_and_bombs
-        icon = HTT_stockpile_mines_and_bombs
+        id = QKJ_stockpile_mines_and_bombs
+        icon = QKJ_stockpile_mines_and_bombs
         cost = 10
 
         prerequisite = { 
-            focus = HTT_follow_huttese_guerrila_doctrine
+            focus = QKJ_follow_huttese_guerrila_doctrine
         } 
 
         x = 8
@@ -522,12 +522,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_smuggle_in_experimental_weapons
-        icon = HTT_smuggle_in_experimental_weapons
+        id = QKJ_smuggle_in_experimental_weapons
+        icon = QKJ_smuggle_in_experimental_weapons
         cost = 10
 
         prerequisite = { 
-            focus = HTT_follow_huttese_guerrila_doctrine
+            focus = QKJ_follow_huttese_guerrila_doctrine
         } 
 
         x = 10
@@ -538,12 +538,12 @@ focus_tree = {
         }
     } 
      focus = { 
-        id = HTT_foster_the_criminal_spirit
-        icon = HTT_foster_the_criminal_spirit
+        id = QKJ_foster_the_criminal_spirit
+        icon = QKJ_foster_the_criminal_spirit
         cost = 10
 
         prerequisite = { 
-            focus = HTT_follow_huttese_guerrila_doctrine
+            focus = QKJ_follow_huttese_guerrila_doctrine
         } 
 
         x = 12
@@ -554,18 +554,18 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_make_every_step_cost_them
-        icon = HTT_make_every_step_cost_them
+        id = QKJ_make_every_step_cost_them
+        icon = QKJ_make_every_step_cost_them
         cost = 10
 
         prerequisite = { 
-            focus = HTT_stockpile_mines_and_bombs
+            focus = QKJ_stockpile_mines_and_bombs
         }
         prerequisite = { 
-            focus = HTT_smuggle_in_experimental_weapons   
+            focus = QKJ_smuggle_in_experimental_weapons   
         }
         prerequisite = { 
-            focus = HTT_foster_the_criminal_spirit   
+            focus = QKJ_foster_the_criminal_spirit   
         } 
 
         x = 10
@@ -577,8 +577,8 @@ focus_tree = {
 
     }  ##### DIPLOMACY TREE ####
     focus = { 
-        id = HTT_galactic_military_escalation
-        icon = HTT_galactic_military_escalation
+        id = QKJ_galactic_military_escalation
+        icon = QKJ_galactic_military_escalation
         cost = 10
 
         prerequisite = { 
@@ -594,12 +594,12 @@ focus_tree = {
         }
     } #### CARTEL PATH ####
     focus = { 
-        id = HTT_the_cartel_life
-        icon = HTT_the_cartel_life
+        id = QKJ_the_cartel_life
+        icon = QKJ_the_cartel_life
         cost = 10
 
         prerequisite = { 
-           focus = HTT_galactic_military_escalation
+           focus = QKJ_galactic_military_escalation
         } 
 
         x = 25
@@ -611,12 +611,12 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_up_protection_money
-        icon = HTT_up_protection_money
+        id = QKJ_up_protection_money
+        icon = QKJ_up_protection_money
         cost = 10
 
         prerequisite = { 
-           focus = HTT_the_cartel_life
+           focus = QKJ_the_cartel_life
         } 
 
         x = 24
@@ -628,12 +628,12 @@ focus_tree = {
         }
     } 
     focus = { 
-        id = HTT_more_smugglers_on_our_payroll
-        icon = HTT_more_smugglers_on_our_payroll
+        id = QKJ_more_smugglers_on_our_payroll
+        icon = QKJ_more_smugglers_on_our_payroll
         cost = 10
 
         prerequisite = { 
-           focus = HTT_the_cartel_life
+           focus = QKJ_the_cartel_life
         } 
 
         x = 26
@@ -645,15 +645,15 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_business_as_usual
-        icon = HTT_business_as_usual
+        id = QKJ_business_as_usual
+        icon = QKJ_business_as_usual
         cost = 10
 
         prerequisite = { 
-           focus = HTT_more_smugglers_on_our_payroll   
+           focus = QKJ_more_smugglers_on_our_payroll   
         } 
         prerequisite = {
-           focus = HTT_up_protection_money
+           focus = QKJ_up_protection_money
         }
         x = 25
         y = 4
@@ -664,12 +664,12 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_lavish_spending_spree
-        icon = HTT_lavish_spending_spree
+        id = QKJ_lavish_spending_spree
+        icon = QKJ_lavish_spending_spree
         cost = 10
 
         prerequisite = { 
-           focus = HTT_business_as_usual  
+           focus = QKJ_business_as_usual  
         }
         x = 24
         y = 5
@@ -680,12 +680,12 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_extortionate_hyperlane_tolls
-        icon = HTT_extortionate_hyperlane_tolls
+        id = QKJ_extortionate_hyperlane_tolls
+        icon = QKJ_extortionate_hyperlane_tolls
         cost = 10
 
         prerequisite = { 
-           focus = HTT_business_as_usual  
+           focus = QKJ_business_as_usual  
         }
         x = 26
         y = 5
@@ -696,22 +696,22 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_hedging_our_bets
-        icon = HTT_hedging_our_bets
+        id = QKJ_hedging_our_bets
+        icon = QKJ_hedging_our_bets
         cost = 10
 
         prerequisite = { 
-           focus = HTT_lavish_spending_spree 
+           focus = QKJ_lavish_spending_spree 
         } 
         prerequisite = {
-           focus = HTT_extortionate_hyperlane_tolls
+           focus = QKJ_extortionate_hyperlane_tolls
         }
 
         mutually_exclusive = {
-           focus = HTT_grant_the_republic_access
+           focus = QKJ_grant_the_republic_access
         }
          mutually_exclusive = {
-           focus = HTT_battledroid_imports
+           focus = QKJ_battledroid_imports
         }   
 
         x = 25
@@ -723,12 +723,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_maximum_war_profiteering
-        icon = HTT_maximum_war_profiteering
+        id = QKJ_maximum_war_profiteering
+        icon = QKJ_maximum_war_profiteering
         cost = 10
 
         prerequisite = { 
-           focus = HTT_hedging_our_bets
+           focus = QKJ_hedging_our_bets
         } 
         
         x = 25
@@ -740,12 +740,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_what_happens_on_nal_hutta_stays_on_nal_hutta
-        icon = HTT_what_happens_on_nal_hutta_stays_on_nal_hutta
+        id = QKJ_what_happens_on_nal_hutta_stays_on_nal_hutta
+        icon = QKJ_what_happens_on_nal_hutta_stays_on_nal_hutta
         cost = 10
 
         prerequisite = { 
-           focus = HTT_maximum_war_profiteering
+           focus = QKJ_maximum_war_profiteering
         } 
         
         x = 25
@@ -757,12 +757,12 @@ focus_tree = {
         }
     }   #### REPUBLIC PATH ####
     focus = { 
-        id = HTT_court_the_republic
-        icon = HTT_court_the_republic
+        id = QKJ_court_the_republic
+        icon = QKJ_court_the_republic
         cost = 10
 
         prerequisite = { 
-           focus = HTT_galactic_military_escalation
+           focus = QKJ_galactic_military_escalation
         } 
 
         x = 19
@@ -774,12 +774,12 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_anything_can_be_bought
-        icon = HTT_anything_can_be_bought
+        id = QKJ_anything_can_be_bought
+        icon = QKJ_anything_can_be_bought
         cost = 10
 
         prerequisite = { 
-           focus = HTT_court_the_republic
+           focus = QKJ_court_the_republic
         } 
 
         x = 17
@@ -791,12 +791,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_anyone_can_be_bought
-        icon = HTT_anyone_can_be_bought
+        id = QKJ_anyone_can_be_bought
+        icon = QKJ_anyone_can_be_bought
         cost = 10
 
         prerequisite = { 
-           focus = HTT_court_the_republic
+           focus = QKJ_court_the_republic
         } 
 
         x = 19
@@ -808,12 +808,12 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_if_the_price_is_right
-        icon = HTT_if_the_price_is_right
+        id = QKJ_if_the_price_is_right
+        icon = QKJ_if_the_price_is_right
         cost = 10
 
         prerequisite = { 
-           focus = HTT_court_the_republic
+           focus = QKJ_court_the_republic
         } 
 
         x = 21
@@ -825,76 +825,76 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_procure_rare_materials_they_need
-        icon = HTT_procure_rare_materials_they_need
+        id = QKJ_procure_rare_materials_they_need
+        icon = QKJ_procure_rare_materials_they_need
         cost = 10
 
         prerequisite = { 
-           focus = HTT_anything_can_be_bought
+           focus = QKJ_anything_can_be_bought
         } 
         prerequisite = { 
-           focus = HTT_anyone_can_be_bought
+           focus = QKJ_anyone_can_be_bought
         } 
         prerequisite = { 
-           focus = HTT_if_the_price_is_right
+           focus = QKJ_if_the_price_is_right
         } 
 
         x = 19
         y = 4
     }
      focus = { 
-        id = HTT_selective_tipoffs
-        icon = HTT_selective_tipoffs
+        id = QKJ_selective_tipoffs
+        icon = QKJ_selective_tipoffs
         cost = 10
 
         prerequisite = { 
-           focus = HTT_procure_rare_materials_they_need
+           focus = QKJ_procure_rare_materials_they_need
         } 
         
         x = 18
         y = 5
     }
     focus = { 
-        id = HTT_republican_ambassadors
-        icon = HTT_republican_ambassadors
+        id = QKJ_republican_ambassadors
+        icon = QKJ_republican_ambassadors
         cost = 10
 
         prerequisite = { 
-           focus = HTT_procure_rare_materials_they_need
+           focus = QKJ_procure_rare_materials_they_need
         } 
         
         x = 20
         y = 5
     }
      focus = { 
-        id = HTT_grant_the_republic_access
-        icon = HTT_grant_the_republic_access
+        id = QKJ_grant_the_republic_access
+        icon = QKJ_grant_the_republic_access
         cost = 10
 
         prerequisite = { 
-           focus = HTT_republican_ambassadors
+           focus = QKJ_republican_ambassadors
         } 
         prerequisite = { 
-           focus = HTT_selective_tipoffs
+           focus = QKJ_selective_tipoffs
         } 
 
         mutually_exclusive = {
-           focus = HTT_hedging_our_bets
+           focus = QKJ_hedging_our_bets
         }
          mutually_exclusive = {
-           focus = HTT_battledroid_imports
+           focus = QKJ_battledroid_imports
         }   
 
         x = 19
         y = 6
     }
     focus = { 
-        id = HTT_semi_legitimate_trading
-        icon = HTT_semi_legitimate_trading
+        id = QKJ_semi_legitimate_trading
+        icon = QKJ_semi_legitimate_trading
         cost = 10
 
         prerequisite = { 
-           focus = HTT_grant_the_republic_access
+           focus = QKJ_grant_the_republic_access
         } 
         
 
@@ -902,12 +902,12 @@ focus_tree = {
         y = 7
     }
     focus = { 
-        id = HTT_hutts_on_the_senate
-        icon = HTT_hutts_on_the_senate
+        id = QKJ_hutts_on_the_senate
+        icon = QKJ_hutts_on_the_senate
         cost = 10
 
         prerequisite = { 
-           focus = HTT_semi_legitimate_trading
+           focus = QKJ_semi_legitimate_trading
         } 
         
 
@@ -915,12 +915,12 @@ focus_tree = {
         y = 8
     } #### CONFEDERACY PATH ####
     focus = { 
-        id = HTT_court_the_cis
-        icon = HTT_court_the_cis
+        id = QKJ_court_the_cis
+        icon = QKJ_court_the_cis
         cost = 10
 
         prerequisite = { 
-           focus = HTT_galactic_military_escalation
+           focus = QKJ_galactic_military_escalation
         } 
 
         x = 30
@@ -932,12 +932,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_monetise_their_desperation
-        icon = HTT_monetise_their_desperation
+        id = QKJ_monetise_their_desperation
+        icon = QKJ_monetise_their_desperation
         cost = 10
 
         prerequisite = { 
-           focus = HTT_court_the_cis
+           focus = QKJ_court_the_cis
         } 
 
         x = 30
@@ -949,12 +949,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_trade_federation_representatives
-        icon = HTT_trade_federation_representatives
+        id = QKJ_trade_federation_representatives
+        icon = QKJ_trade_federation_representatives
         cost = 10
 
         prerequisite = { 
-           focus = HTT_court_the_cis
+           focus = QKJ_court_the_cis
         } 
 
         x = 32
@@ -966,12 +966,12 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_guarantees_of_our_continued_neccessity
-        icon = HTT_guarantees_of_our_continued_neccessity
+        id = QKJ_guarantees_of_our_continued_neccessity
+        icon = QKJ_guarantees_of_our_continued_neccessity
         cost = 10
 
         prerequisite = { 
-           focus = HTT_monetise_their_desperation
+           focus = QKJ_monetise_their_desperation
         } 
 
         x = 29
@@ -983,12 +983,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_gamorreans_for_hire
-        icon = HTT_gamorreans_for_hire
+        id = QKJ_gamorreans_for_hire
+        icon = QKJ_gamorreans_for_hire
         cost = 10
 
         prerequisite = { 
-           focus = HTT_guarantees_of_our_continued_neccessity
+           focus = QKJ_guarantees_of_our_continued_neccessity
         } 
 
         x = 29
@@ -1000,15 +1000,15 @@ focus_tree = {
         }
     }
      focus = { 
-        id = HTT_escorts_through_hutt_space
-        icon = HTT_escorts_through_hutt_space
+        id = QKJ_escorts_through_hutt_space
+        icon = QKJ_escorts_through_hutt_space
         cost = 10
 
         prerequisite = { 
-           focus = HTT_trade_federation_representatives
+           focus = QKJ_trade_federation_representatives
         } 
         prerequisite = { 
-           focus = HTT_monetise_their_desperation
+           focus = QKJ_monetise_their_desperation
         } 
 
         x = 31
@@ -1020,12 +1020,12 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_officially_recognise_the_cis
-        icon = HTT_officially_recognise_the_cis
+        id = QKJ_officially_recognise_the_cis
+        icon = QKJ_officially_recognise_the_cis
         cost = 10
 
         prerequisite = { 
-           focus = HTT_escorts_through_hutt_space
+           focus = QKJ_escorts_through_hutt_space
         } 
 
         x = 31
@@ -1037,46 +1037,46 @@ focus_tree = {
         }
     }
     focus = { 
-        id = HTT_battledroid_imports
-        icon = HTT_battledroid_imports
+        id = QKJ_battledroid_imports
+        icon = QKJ_battledroid_imports
         cost = 10
 
         prerequisite = { 
-           focus = HTT_officially_recognise_the_cis
+           focus = QKJ_officially_recognise_the_cis
         }
          prerequisite = { 
-           focus = HTT_gamorreans_for_hire
+           focus = QKJ_gamorreans_for_hire
         }
 
         mutually_exclusive = {
-           focus = HTT_hedging_our_bets
+           focus = QKJ_hedging_our_bets
         }   
          mutually_exclusive = {
-           focus = HTT_grant_the_republic_access
+           focus = QKJ_grant_the_republic_access
         } 
 
         x = 31
         y = 6
     }
      focus = { 
-        id = HTT_a_banquet_for_dooku
-        icon = HTT_a_banquet_for_dooku
+        id = QKJ_a_banquet_for_dooku
+        icon = QKJ_a_banquet_for_dooku
         cost = 10
 
         prerequisite = { 
-           focus = HTT_battledroid_imports
+           focus = QKJ_battledroid_imports
         }
 
         x = 31
         y = 7
     }
     focus = { 
-        id = HTT_allow_secret_cis_bases
-        icon = HTT_allow_secret_cis_bases
+        id = QKJ_allow_secret_cis_bases
+        icon = QKJ_allow_secret_cis_bases
         cost = 10
 
         prerequisite = { 
-           focus = HTT_a_banquet_for_dooku
+           focus = QKJ_a_banquet_for_dooku
         }
 
         x = 31

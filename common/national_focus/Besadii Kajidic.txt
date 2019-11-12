@@ -1,0 +1,259 @@
+# Qunalaac Kajidic focus tree
+# By ZornMauser & TheCrusaderKing
+#################################
+focus_tree = {
+  id = BKJ_focus_tree
+
+    country = { 
+        factor = 0
+       modifier = { 
+         add = 10 
+         tag = BKJ
+       } 
+    }   
+
+    default = yes
+  reset_on_civilwar = no
+  
+  continuous_focus_position = { x = 50 y = 2000 }
+   ########### UNIQUE TREE START ############
+    focus = { 
+        id = BKJ_besadii_kajidic
+        icon = BKJ_besadii_kajidic
+        cost = 10
+
+       prerequisite = { 
+           #No prereq - first focus
+        } 
+
+        x = 40
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_new_slave_armies
+        icon = BKJ_new_slave_armies
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_besadii_kajidic
+        } 
+
+        x = 38
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_the_clan_before_all_else
+        icon = BKJ_the_clan_before_all_else
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_besadii_kajidic
+        } 
+
+        x = 40
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_sell_hutt_secrets
+        icon = BKJ_sell_hutt_secrets
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_besadii_kajidic
+        } 
+
+        x = 42
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_behind_closed_doors
+        icon = BKJ_sell_hutt_secrets
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_sell_hutt_secrets
+        }
+         prerequisite = { 
+           focus = BKJ_the_clan_before_all_else
+        }
+         prerequisite = { 
+           focus = BKJ_new_slave_armies
+        }   
+
+        x = 40
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_more_runners_on_the_payroll
+        icon = BKJ_more_runners_on_the_payroll
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_behind_closed_doors
+        }
+
+        x = 39
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_asserting_our_strength
+        icon = BKJ_asserting_our_strength
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_more_runners_on_the_payroll
+        }
+
+        x = 39
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_arsenal_of_the_clan
+        icon = BKJ_arsenal_of_the_clan
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_more_runners_on_the_payroll
+        }
+
+        x = 37
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_antidesilijic_operations
+        icon = BKJ_antidesilijic_operations
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_arsenal_of_the_clan
+        }
+        prerequisite = { 
+           focus = BKJ_asserting_our_strength
+        }
+
+        x = 38
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_up_ylesia_spice_quotas
+        icon = BKJ_up_ylesia_spice_quotas
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_behind_closed_doors
+        }
+
+        x = 41
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_entice_cheap_workers
+        icon = BKJ_entice_cheap_workers
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_up_ylesia_spice_quotas
+        }
+
+        x = 41
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_diversify_the_drug_trade
+        icon = BKJ_diversify_the_drug_trade
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_up_ylesia_spice_quotas
+        }
+
+        x = 43
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_cooperate_with_local_kingpins
+        icon = BKJ_cooperate_with_local_kingpins
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_entice_cheap_workers
+        }
+        prerequisite = { 
+           focus = BKJ_diversify_the_drug_trade
+        }
+
+        x = 42
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = BKJ_ties_to_the_black_sun
+        icon = BKJ_ties_to_the_black_sun
+        cost = 10
+
+       prerequisite = { 
+           focus = BKJ_antidesilijic_operations
+        }
+        prerequisite = { 
+           focus = BKJ_cooperate_with_local_kingpins
+        }
+
+        x = 40
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+   
