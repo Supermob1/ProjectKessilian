@@ -1,4 +1,4 @@
-﻿name="Hearts of Durasteel"
+name="Hearts of Durasteel"
 path="mod/HeartsOfDurasteel/"
 tags={
 	"Alternative History"
