@@ -1,0 +1,547 @@
+# C.I.S Focus Tree
+# By ZornMauser 
+#################################
+focus_tree = {
+  id = CIS_focus_tree
+  
+  country = {
+    factor = 0
+    modifier = {
+      add = 10
+      tag = CIS
+    }
+  }
+  
+  default = yes
+  reset_on_civilwar = no
+  
+  continuous_focus_position = { x = 50 y = 2000 }
+    
+    
+  ########### TREE START ###########
+  #     Dooku's Dilemma Branch     # 
+  focus = { 
+    id = CIS_dookus_dilemma
+    icon = CIS_dookus_dilemma
+    cost = 10
+    
+    prerequisite = {
+      #no prereq, start of tree
+    }
+    
+    x = 35
+    y = 0
+    
+    completion_reward = {
+    
+    }
+  }  #### Stay with Sidious Path ####
+  focus = { 
+    id = CIS_stick_to_the_plan
+    icon = CIS_stick_to_the_plan
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_dookus_dilemma
+    }
+    mutually_exclusive = {
+      focus = CIS_ideals_above_all
+      focus = CIS_path_to_power
+    }
+    
+    x = 33
+    y = 1
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_enforce_a_competitive_bureaucracy
+    icon = CIS_enforce_a_competitive_bureaucracy
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_stick_to_the_plan
+    }
+    
+    x = 33
+    y = 2
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_sabotage_peace_rallies
+    icon = CIS_sabotage_peace_rallies
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_enforce_a_competitive_bureaucracy
+    }
+    
+    x = 33
+    y = 3
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_keep_separatists_fragmented
+    icon = CIS_keep_separatists_fragmented
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_sabotage_peace_rallies
+    }
+    
+    x = 33
+    y = 4
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_the_war_rages_on
+    icon = CIS_the_war_rages_on
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_keep_separatists_fragmented
+      focus = CIS_sever_ties_with_sidious
+    }
+    mutually_exclusive = {
+      focus = CIS_peace_finds_a_way
+    }
+
+    x = 33
+    y = 5
+    
+    completion_reward = {
+    
+    }
+  }       ##### Independent Path ####
+  focus = { 
+    id = CIS_ideals_above_all
+    icon = CIS_ideals_above_all
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_dookus_dilemma
+    }
+    mutually_exclusive = {
+      focus = CIS_stick_to_the_plan
+      focus = CIS_path_to_power
+    }
+    
+    x = 35
+    y = 1
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_meet_with_grievous_and_bonteri
+    icon = CIS_meet_with_grievous_and_bonteri
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_ideals_above_all
+    }
+    
+    
+    x = 35
+    y = 2
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_get_rid_of_gunray
+    icon = CIS_get_rid_of_gunray
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_meet_with_grievous_and_bonteri
+    }
+    
+    
+    x = 35
+    y = 3
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_sever_ties_with_sidious
+    icon = CIS_sever_ties_with_sidious
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_get_rid_of_gunray
+    }
+    
+    
+    x = 35
+    y = 4
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_peace_finds_a_way
+    icon = CIS_peace_finds_a_way
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_sever_ties_with_sidious
+    }
+    mutually_exclusive = {
+      focus = CIS_the_war_rages_on
+    }
+    
+    x = 35
+    y = 5
+    
+    completion_reward = {
+    
+    }
+  } #### Path to Power Path ####
+  focus = {
+    id = CIS_path_to_power
+    icon = CIS_path_to_power
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_dookus_dilemma
+    }
+    
+    mutually_exclusive = {
+      focus = CIS_ideals_above_all
+      focus = CIS_stick_to_the_plan
+    }
+
+    
+    x = 37
+    y = 1
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = {
+    id = CIS_gather_more_apprentices
+    icon = CIS_gather_more_apprentices
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_path_to_power
+    }
+    
+    x = 37
+    y = 2
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = {
+    id = CIS_sith_war_droids
+    icon = CIS_sith_war_droids
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_gather_more_apprentices
+    }
+    
+    x = 37
+    y = 3
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = {
+    id = CIS_prepare_to_reveal_sidious
+    icon = CIS_prepare_to_reveal_sidious
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_sith_war_droids
+    }
+    
+    x = 37
+    y = 4
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = {
+    id = CIS_the_rule_of_sith
+    icon = CIS_the_rule_of_sith
+    
+    prerequisite = {
+      focus = CIS_prepare_to_reveal_sidious
+    }
+    
+    x = 37
+    y = 5
+    
+    completion_reward = {
+    
+    }
+  } #### Corporate Integration Branch ####
+  focus = { 
+    id = CIS_words_of_truth
+    icon = CIS_words_of_truth
+    cost = 10
+    
+    prerequisite = {
+      #no prereq, start of tree
+    }
+    
+    x = 5
+    y = 0
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_the_price_of_liberty
+    icon = CIS_the_price_of_liberty
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_words_of_truth
+    }
+    
+    x = 5
+    y = 1
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_money_from_the_clan
+    icon = CIS_money_from_the_clan
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_the_price_of_liberty
+    }
+    
+    x = 3
+    y = 2
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_stimulate_the_people
+    icon = CIS_stimulate_the_people
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_money_from_the_clan
+    }
+    
+    x = 3
+    y = 3
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_a_kind_word_and_a_credit
+    icon = CIS_a_kind_word_and_a_credit
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_stimulate_the_people
+    }
+    
+    x = 3
+    y = 4
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_begin_the_independent_economy
+    icon = CIS_begin_the_independent_economy
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_a_kind_word_and_a_credit
+    }
+    
+    x = 3
+    y = 5
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_foundries_from_the_union
+    icon = CIS_foundries_from_the_union
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_the_price_of_liberty
+    }
+    
+    x = 5
+    y = 2
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_marginalize_the_bootlickers
+    icon = CIS_marginalize_the_bootlickers
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_foundries_from_the_union
+    }
+    
+    x = 5
+    y = 3
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_expand_the_hidden_foundries
+    icon = CIS_expand_the_hidden_foundries
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_marginalize_the_bootlickers
+    }
+    
+    x = 5
+    y = 4
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_the_forge_of_liberty
+    icon = CIS_the_forge_of_liberty
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_expand_the_hidden_foundries
+    }
+    
+    x = 5
+    y = 5
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_armies_from_the_federation
+    icon = CIS_armies_from_the_federation
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_the_price_of_liberty
+    }
+    
+    x = 7
+    y = 2
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_promises_of_prosperity
+    icon = CIS_promises_of_prosperity
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_armies_from_the_federation
+    }
+    
+    x = 7
+    y = 3
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_gunrays_demands
+    icon = CIS_gunrays_demands
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_promises_of_prosperity
+    }
+    
+    x = 7
+    y = 4
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_found_the_droid_army
+    icon = CIS_found_the_droid_army
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_gunrays_demands
+    }
+    
+    x = 7
+    y = 5
+    
+    completion_reward = {
+    
+    }
+  }
+  focus = { 
+    id = CIS_articles_of_secession
+    icon = CIS_articles_of_secession
+    cost = 10
+    
+    prerequisite = {
+      focus = CIS_the_forge_of_liberty
+    }
+    prerequisite = {
+      focus = CIS_found_the_droid_army
+    }
+    prerequisite = {
+      focus = CIS_begin_the_independent_economy
+    }
+
+    x = 5
+    y = 6
+    
+    completion_reward = {
+    
+    }
+  }

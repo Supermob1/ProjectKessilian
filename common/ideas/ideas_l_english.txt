@@ -1,0 +1,94 @@
+ideas = {
+	country = {
+	
+		DKJ_clan_desilijic = {
+			allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+			picture = clan_desilijic
+            removal_cost = -1
+			modifier = {
+				political_power_gain = 0.3
+				stability_factor = 0.20
+				planning_speed = 0.10
+				decryption_factor = 0.2
+				encryption_factor = 0.2
+            }
+		}
+		
+		BKJ_clan_besadii = {
+			 allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+			picture = clan_besadii
+            removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				local_resources_factor = 0.15
+				research_speed_factor = 0.10
+				offence = 0.1
+            }
+		}
+		
+		GKJ_clan_gorensla = {
+			 allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+			picture = clan_gorensla
+            removal_cost = -1
+			
+			modifier = {
+				# ?????????????????????
+				#political_advisor_cost_factor = -0.3#This gives an error for some reason
+				#trade_laws_cost_factor = -0.3#This gives an error for some reason
+				#mobilization_laws_cost_factor = -0.3#this gives an error for some reason
+				#economy_cost_factor = -0.3#this gives an error for some reason
+				
+				trade_opinion_factor = 0.50
+				industrial_capacity_dockyard = 0.15
+            }
+		}
+		
+		QKJ_clan_qunalaac = {
+			 allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+			picture = clan_qunalaac
+            removal_cost = -1
+			modifier = {
+				war_support_factor = 0.25
+				army_core_defence_factor = 0.15
+				army_org_factor = 0.05
+				attrition = -0.1
+				dig_in_speed = 0.20
+				naval_strike_attack_factor = 0.05
+            }
+		}
+		
+		HTT_hutt_council = {
+			 allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+			picture = hutt_council
+            removal_cost = -1
+			modifier = {
+				stability_factor = 0.35
+            }
+		}
+	}
+}
