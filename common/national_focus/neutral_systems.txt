@@ -1,0 +1,1258 @@
+###########################
+# Neutral Systems Focus Tree
+# By Kakletron
+###########################
+
+focus_tree = {
+	id = MAN_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MAN
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2000 }
+
+	focus = {
+		id = MAN_mandalore_plot
+		icon = GFX_mandalore_plot
+		cost = 10.00
+		x = 6
+		y = 0
+
+		ai_will_do = {
+		factor = 25
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_takeover_of_mandalore
+		icon = GFX_takeover_of_mandalore
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_mandalore_plot
+		}
+		x = 6
+		y = 1
+
+		ai_will_do = {
+		factor = 25
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_new_regime
+		icon = GFX_new_regime
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_takeover_of_mandalore
+		}
+		x = 1
+		y = 2
+		
+		mutually_exclusive = {
+        focus = MAN_a_coup_foiled
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_duel_of_fates
+		icon = GFX_duel_of_fates
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_new_regime
+		}
+		x = 1
+		y = 3
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_second_in_command
+		icon = GFX_second_in_command
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_duel_of_fates
+		}
+		x = 1
+		y = 4
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_almec
+		icon = GFX_almec
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_second_in_command
+		}
+		x = 0
+		y = 5
+		
+		mutually_exclusive = {
+        focus = MAN_bo-katan
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_bo-katan
+		icon = GFX_bo-katan
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_second_in_command
+		}
+		x = 2
+		y = 5
+		
+		mutually_exclusive = {
+        focus = MAN_almec
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_her_life
+		icon = GFX_her_life
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_bo-katan
+			focus = MAN_almec
+		}
+		x = 1
+		y = 6
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_alliance
+		icon = GFX_alliance
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_her_life
+		}
+		x = 1
+		y = 7
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_subsume_death_watch
+		icon = GFX_subsume_death_watch
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_alliance
+		}
+		x = 0
+		y = 8
+		
+		mutually_exclusive = {
+        focus = MAN_promote_death_watch
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_promote_death_watch
+		icon = GFX_promote_death_watch
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_alliance
+		}
+		x = 2
+		y = 8
+		
+		mutually_exclusive = {
+        focus = MAN_subsume_death_watch
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_nightbrothers
+		icon = GFX_nightbrothers
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_promote_death_watch
+			focus = MAN_subsume_death_watch
+		}
+		x = 0
+		y = 9
+		
+		mutually_exclusive = {
+        focus = MAN_nite_owls
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_nite_owls
+		icon = GFX_nite_owls
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_promote_death_watch
+			focus = MAN_subsume_death_watch
+		}
+		x = 2
+		y = 9
+		
+		mutually_exclusive = {
+        focus = MAN_nightbrothers
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_black_sun
+		icon = GFX_black_sun
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_nightbrothers
+			focus = MAN_nite_owls
+		}
+		x = 0
+		y = 10
+		
+		mutually_exclusive = {
+        focus = MAN_reconcile_new_mandalorians
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_reconcile_new_mandalorians
+		icon = GFX_reconcile_new_mandalorians
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_nightbrothers
+			focus = MAN_nite_owls
+		}
+		x = 2
+		y = 10
+		
+		mutually_exclusive = {
+        focus = MAN_black_sun
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_pyke_syndicate
+		icon = GFX_pyke_syndicate
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_black_sun
+			focus = MAN_reconcile_new_mandalorians
+		}
+		x = 0
+		y = 11
+		
+		mutually_exclusive = {
+        focus = MAN_mando_cabure
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_mando_cabure
+		icon = GFX_mando_cabure
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_black_sun
+			focus = MAN_reconcile_new_mandalorians
+		}
+		x = 2
+		y = 11
+		
+		mutually_exclusive = {
+        focus = MAN_pyke_syndicate
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_hutt_support
+		icon = GFX_hutt_support
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_pyke_syndicate
+			focus = MAN_mando_cabure
+		}
+		x = 0
+		y = 12
+		
+		mutually_exclusive = {
+        focus = MAN_the_protectors
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_the_protectors
+		icon = GFX_the_protectors
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_pyke_syndicate
+			focus = MAN_mando_cabure
+		}
+		x = 2
+		y = 12
+		
+		mutually_exclusive = {
+        focus = MAN_hutt_support
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_new_ruler
+		icon = GFX_new_ruler
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_hutt_support
+			focus = MAN_the_protectors
+		}
+		x = 1
+		y = 13
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_a_coup_foiled
+		icon = GFX_a_coup_foiled
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_takeover_of_mandalore
+		}
+		x = 11
+		y = 2
+		
+		mutually_exclusive = {
+        focus = MAN_new_regime
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_morning_after
+		icon = GFX_morning_after
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_a_coup_foiled
+		}
+		x = 11
+		y = 3
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_stay_the_course
+		icon = GFX_stay_the_course
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_morning_after
+		}
+		x = 7
+		y = 4
+		
+		mutually_exclusive = {
+        focus = MAN_abandon_neutrality
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_against_all_odds
+		icon = GFX_against_all_odds
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_stay_the_course
+		}
+		x = 7
+		y = 5
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_exploit_discontentment
+		icon = GFX_exploit_discontentment
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_against_all_odds
+		}
+		x = 7
+		y = 6
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_new_mandalorians
+		icon = GFX_new_mandalorians
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_exploit_discontentment
+		}
+		x = 7
+		y = 7
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_new_systems
+		icon = GFX_new_systems
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_new_mandalorians
+		}
+		x = 6
+		y = 8
+		
+		mutually_exclusive = {
+        focus = MAN_megacorps
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_resist_and_reform
+		icon = GFX_resist_and_reform
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_new_systems
+		}
+		x = 6
+		y = 9
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_decentralisation
+		icon = GFX_decentralisation
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_resist_and_reform
+		}
+		x = 6
+		y = 10
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_collective_defence
+		icon = GFX_collective_defence
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_decentralisation
+		}
+		x = 6
+		y = 11
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_more_equal_union
+		icon = GFX_more_equal_union
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_collective_defence
+		}
+		x = 6
+		y = 12
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_megacorps
+		icon = GFX_megacorps
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_new_mandalorians
+		}
+		x = 8
+		y = 8
+		
+		mutually_exclusive = {
+        focus = MAN_new_systems
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_peace_is_good
+		icon = GFX_peace_is_good
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_megacorps
+		}
+		x = 8
+		y = 9
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_cut_red_tape
+		icon = GFX_cut_red_tape
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_peace_is_good
+		}
+		x = 8
+		y = 10
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_slash_tariffs
+		icon = GFX_slash_tariffs
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_cut_red_tape
+		}
+		x = 8
+		y = 11
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_merchant_paradise
+		icon = GFX_merchant_paradise
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_slash_tariffs
+		}
+		x = 8
+		y = 12
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_transformation_of_mandalore
+		icon = GFX_transformation_of_mandalore
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_merchant_paradise
+			focus = MAN_more_equal_union
+		}
+		x = 7
+		y = 13
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+	
+	focus = {
+		id = MAN_kingmaker
+		icon = GFX_kingmaker
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_transformation_of_mandalore
+		}
+		x = 7
+		y = 14
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_abandon_neutrality
+		icon = GFX_abandon_neutrality
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_morning_after
+		}
+		x = 16
+		
+		mutually_exclusive = {
+        focus = MAN_stay_the_course
+		}
+
+		y = 4
+		
+		mutually_exclusive = {
+        focus = MAN_stay_the_course
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_kenobi_plea
+		icon = GFX_kenobi_plea
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_abandon_neutrality
+		}
+		x = 13
+		y = 5
+		
+		mutually_exclusive = {
+        focus = MAN_satine_gambit
+        focus = MAN_dooku_promise
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_arrest_seditious_senators
+		icon = GFX_arrest_seditious_senators
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_kenobi_plea
+		}
+		x = 13
+		y = 6
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_resume_senate_attendance
+		icon = GFX_resume_senate_attendance
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_arrest_seditious_senators
+		}
+		x = 13
+		y = 7
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_standard_law
+		icon = GFX_standard_law
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_resume_senate_attendance
+		}
+		x = 13
+		y = 8
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_mass_compliance
+		icon = GFX_mass_compliance
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_standard_law
+		}
+		x = 13
+		y = 9
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_meet_with_the_chancellor
+		icon = GFX_meet_with_the_chancellor
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_mass_compliance
+		}
+		x = 13
+		y = 10
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_declare_for_the_republic
+		icon = GFX_declare_for_the_republic
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_meet_with_the_chancellor
+		}
+		x = 13
+		y = 11
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_satine_gambit
+		icon = GFX_satine_gambit
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_abandon_neutrality
+		}
+		x = 16
+		y = 5
+		
+		mutually_exclusive = {
+        focus = MAN_kenobi_plea
+        focus = MAN_dooku_promise
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_sideline_senators
+		icon = GFX_sideline_senators
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_satine_gambit
+		}
+		x = 16
+		y = 6
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_new_senate
+		icon = GFX_new_senate
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_sideline_senators
+		}
+		x = 16
+		y = 7
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_formalise_law
+		icon = GFX_formalise_law
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_new_senate
+		}
+		x = 16
+		y = 8
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_popular_support
+		icon = GFX_popular_support
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_formalise_law
+		}
+		x = 16
+		y = 9
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_elect_a_neutral_president
+		icon = GFX_elect_a_neutral_president
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_popular_support
+		}
+		x = 16
+		y = 10
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_third_contender
+		icon = GFX_third_contender
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_elect_a_neutral_president
+		}
+		x = 16
+		y = 11
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_dooku_promise
+		icon = GFX_dooku_promise
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_abandon_neutrality
+		}
+		x = 19
+		y = 5
+		
+		mutually_exclusive = {
+        focus = MAN_kenobi_plea
+        focus = MAN_satine_gambit
+		}
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_expel_senators
+		icon = GFX_expel_senators
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_dooku_promise
+		}
+		x = 19
+		y = 6
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_join_parliament
+		icon = GFX_join_parliament
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_expel_senators
+		}
+		x = 19
+		y = 7
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_draft_new_law
+		icon = GFX_draft_new_law
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_join_parliament
+		}
+		x = 19
+		y = 8
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_censor_loyalists
+		icon = GFX_censor_loyalists
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_draft_new_law
+		}
+		x = 19
+		y = 9
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_meet_with_the_head_of_state
+		icon = GFX_meet_with_the_head_of_state
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_censor_loyalists
+		}
+		x = 19
+		y = 10
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+
+	focus = {
+		id = MAN_seccession
+		icon = GFX_seccession
+		cost = 10.00
+		prerequisite = {
+			focus = MAN_meet_with_the_head_of_state
+		}
+		x = 19
+		y = 11
+
+		ai_will_do = {
+		factor = 50
+		}
+
+	completion_reward = {
+		}
+
+	}
+}

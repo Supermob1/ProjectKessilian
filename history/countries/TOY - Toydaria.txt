@@ -1,0 +1,36 @@
+﻿capital = 89
+
+set_research_slots = 3
+
+set_stability = 0.10
+
+set_war_support = 0.02
+
+set_popularities = {
+        new_order = 0
+        dark_side = 0
+        akaanadocrat = 2
+        unitist = 6
+        corist = 65
+        distributionist =  4
+        corporate_consortium = 18
+        trade_democrat = 0
+        ruusanist = 0
+        inclusivist = 5
+        light_side = 0
+    }
+set_politics = {
+	ruling_party = corist
+	last_election = "1936.1.1.12"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "King Katuunko"
+	desc = "CHS_aristocra_desc"
+	picture = "gfx/leaders/TOY/portrait_katuunko.tga"
+	expire = "1965.1.1"
+	ideology = corist_subtype
+	traits = {}
+}

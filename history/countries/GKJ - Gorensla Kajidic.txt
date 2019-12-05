@@ -1,0 +1,41 @@
+﻿capital = 151
+
+set_research_slots = 3
+
+set_stability = 0.10
+
+set_war_support = 0.02
+
+set_popularities = {
+		new_order = 0
+		dark_side = 0
+		akaanadocrat = 0
+		unitist = 4
+		corist = 7
+		distributionist =  6
+		corporate_consortium = 65
+		trade_democrat = 12
+		ruusanist = 2
+		inclusivist = 4
+		light_side = 0
+	}
+	
+add_ideas = {
+	GKJ_clan_gorensla
+}
+
+set_politics = {
+	ruling_party = corporate_consortium
+	last_election = "1936.1.1.12"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "Oruba"
+	desc = "CHS_aristocra_desc"
+	picture = "gfx/leaders/HTT/portrait_oruba.tga"
+	expire = "1965.1.1"
+	ideology = corporate_consortium_subtype
+	traits = {}
+}

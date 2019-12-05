@@ -1,0 +1,36 @@
+﻿capital = 42
+
+set_research_slots = 3
+
+set_stability = 0.10
+
+set_war_support = 0.02
+
+set_popularities = {
+		new_order = 0
+		dark_side = 0
+		akaanadocrat = 20
+		unitist = 4
+		corist = 70
+		distributionist =  6
+		corporate_consortium = 0
+		trade_democrat = 0
+		ruusanist = 0
+		inclusivist = 0
+		light_side = 0
+	}
+set_politics = {
+	ruling_party = corist
+	last_election = "1936.1.1.12"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "Chiss Ascendancy"
+	desc = "CHS_aristocra_desc"
+	picture = "gfx/leaders/CHS/Portrait_Aristocra.tga"
+	expire = "1965.1.1"
+	ideology = corist_subtype
+	traits = {}
+}

@@ -1,0 +1,97 @@
+﻿capital = 91
+
+set_research_slots = 3
+
+set_stability = 0.10
+
+set_war_support = 0.02
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = DKJ
+		autonomous_state = autonomy_independent
+	}
+	else = {
+		puppet = DKJ
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = BKJ
+		autonomous_state = autonomy_independent
+	}
+	else = {
+		puppet = BKJ
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = GKJ
+		autonomous_state = autonomy_independent
+	}
+	else = {
+		puppet = GKJ
+	}
+}
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = QKJ
+		autonomous_state = autonomy_independent
+	}
+	else = {
+		puppet = QKJ
+	}
+}
+
+create_faction = "Hutt Cartel"
+
+add_to_faction = DKJ
+add_to_faction = BKJ
+add_to_faction = GKJ
+add_to_faction = QKJ
+
+set_popularities = {
+		new_order = 0
+		dark_side = 0
+		akaanadocrat = 1
+		unitist = 5
+		corist = 6
+		distributionist =  5
+		corporate_consortium = 80
+		trade_democrat = 3
+		ruusanist = 0
+		inclusivist = 0
+		light_side = 0
+	}
+
+add_ideas = {
+	HTT_hutt_council
+}
+
+set_politics = {
+	ruling_party = corporate_consortium
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "Grand Hutt Council"
+	desc = "HTT_council_desc"
+	picture = "gfx/leaders/HTT/portrait_hutt_council.tga"
+	expire = "1965.1.1"
+	ideology = corporate_consortium_subtype
+	traits = { }
+}
