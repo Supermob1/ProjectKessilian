@@ -182,7 +182,7 @@ guiTypes = {
 			maxHeight = 24
 			fixedsize = yes
 			Orientation = "LOWER_LEFT"
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 	}
 	
@@ -677,6 +677,13 @@ guiTypes = {
 			maxWidth = 193
 			maxHeight = 20
 			fixedsize = yes
+		}
+		
+		buttonType = {
+			name = "expand"
+			position = { x=267 y= 0 }
+			clicksound = click_ok
+			quadTextureSprite ="GFX_peace_drop_down_button"
 		}
 	}
 	
