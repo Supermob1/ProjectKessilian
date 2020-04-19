@@ -34,5 +34,9 @@ replace_path="gfx/flags"
 replace_path="gfx/loadingscreens"
 replace_path="gfx/interface"
 picture="blank_map_template_5632x2048.jpg"
+<<<<<<< HEAD
 supported_version="1.8.*"
 path="C:/Users/Thomas/Documents/Paradox Interactive/Hearts of Iron IV/mod/HeartsOfDurasteel"
+=======
+supported_version="1.9.*"
+>>>>>>> 67644454d21b8bbaf7c19f9d5b79f8e28e6bca91
