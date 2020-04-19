@@ -2182,6 +2182,317 @@ focus_tree = {
 	#Emergency Tree End
 	###PALPATINE DEATH TREE END###
 
+	#OUTER RIM TREE
+focus = { 
+		id = ORM_provisional_revolutionary_government
+		icon = ORM_provisional_revolutionary_government
+		cost = 10
+		
+		prerequisite = {
+			#no prereq, start of tree
+		}
+		
+		x = 70
+		y = 0
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	#ORM Army Tree
+focus = { 
+		id = ORM_creating_an_army
+		icon = ORM_creating_an_army
+		cost = 10
+		
+		prerequisite = {
+			focus = ORM_provisional_revolutionary_government
+		}
+		
+		x = -7
+		y = 1
+		relative_position_id = ORM_provisional_revolutionary_government
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_rally_the_unions
+		icon = ORM_rally_the_unions
+		cost = 10
+		
+		prerequisite = {
+			focus = ORM_creating_an_army
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = ORM_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_rally_freed_slaves
+		icon = ORM_rally_freed_slaves
+		cost = 10
+		
+		prerequisite = {
+			focus = ORM_creating_an_army
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = ORM_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_rally_planetary_militias
+		icon = ORM_rally_planetary_militias
+		cost = 10
+		
+		prerequisite = {
+			focus = ORM_creating_an_army
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = ORM_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_elected_officers
+		icon = ORM_elected_officers
+		cost = 10
+		
+		prerequisite = {
+			focus = ORM_rally_freed_slaves
+		}
+
+		prerequisite = {
+			focus = ORM_rally_the_unions
+		}
+
+		prerequisite = {
+			focus = ORM_rally_planetary_militias
+		}
+
+		mutually_exclusive = {
+			focus = ORM_appointed_officers
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = ORM_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_appointed_officers
+		icon = ORM_appointed_officers
+		cost = 10
+		
+		prerequisite = {
+			focus = ORM_rally_freed_slaves
+		}
+
+		prerequisite = {
+			focus = ORM_rally_the_unions
+		}
+
+		prerequisite = {
+			focus = ORM_rally_planetary_militias
+		}
+
+		mutually_exclusive = {
+			focus = ORM_elected_officers
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = ORM_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_guerilla_tactics
+		icon = ORM_guerilla_tactics
+		cost = 10
+
+		prerequisite = {
+			focus = ORM_elected_officers
+			focus = ORM_appointed_officers
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = ORM_appointed_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_countering_combined_arms
+		icon = ORM_countering_combined_arms
+		cost = 10
+
+		prerequisite = {
+			focus = ORM_elected_officers
+			focus = ORM_appointed_officers
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = ORM_appointed_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_call_for_volunteers
+		icon = ORM_call_for_volunteers
+		cost = 10
+
+		prerequisite = {
+			focus = ORM_elected_officers
+			focus = ORM_appointed_officers
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = ORM_elected_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_innovative_strategic_thinking
+		icon = ORM_innovative_strategic_thinking
+		cost = 10
+
+		prerequisite = {
+			focus = ORM_elected_officers
+			focus = ORM_appointed_officers
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = ORM_elected_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_republic_defectors
+		icon = ORM_republic_defectors
+		cost = 10
+
+		prerequisite = {
+			focus = ORM_guerilla_tactics
+		}
+
+		prerequisite = {
+			focus = ORM_countering_combined_arms
+		}
+
+		prerequisite = {
+			focus = ORM_call_for_volunteers
+		}
+
+		prerequisite = {
+			focus = ORM_innovative_strategic_thinking
+		}
+		
+		x = 0
+		y = 2
+		relative_position_id = ORM_appointed_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_separatist_defectors
+		icon = ORM_separatist_defectors
+		cost = 10
+
+		prerequisite = {
+			focus = ORM_guerilla_tactics
+		}
+
+		prerequisite = {
+			focus = ORM_countering_combined_arms
+		}
+
+		prerequisite = {
+			focus = ORM_call_for_volunteers
+		}
+
+		prerequisite = {
+			focus = ORM_innovative_strategic_thinking
+		}
+		
+		x = 0
+		y = 2
+		relative_position_id = ORM_elected_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+focus = { 
+		id = ORM_to_the_barricades
+		icon = ORM_to_the_barricades
+		cost = 10
+
+		prerequisite = {
+			focus = ORM_republic_defectors
+		}
+
+		prerequisite = {
+			focus = ORM_separatist_defectors
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = ORM_separatist_defectors
+
+		completion_reward = {
+		
+		}
+	}
+
+
+
 }
 
 # NOW YOU WILL EXPERIENCE THE FULL POWER OF THE DARK SIDE! #
