@@ -1,4 +1,4 @@
-# C.I.S Focus Tree
+﻿# C.I.S Focus Tree
 # By ZornMauser 
 #################################
 focus_tree = {
@@ -545,3 +545,369 @@ focus_tree = {
     
     }
   }
+  
+ ###SITH EMPIRE TREE###
+ 
+   focus = { 
+    id = CIS_peace_is_a_lie2
+    icon = CIS_peace_is_a_lie2
+    cost = 10
+    
+    prerequisite = {
+	}
+
+    x = 70
+    y = 0
+    
+    completion_reward = {
+    }
+  }
+  
+   focus = { 
+     id = CIS_the_future_of_the_dark_side
+     icon = CIS_the_future_of_the_dark_side
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_peace_is_a_lie2
+	 }
+
+     x = 0
+     y = 1
+	 relative_position_id = CIS_the_future_of_the_dark_side
+    
+     completion_reward = {
+    } 
+  }
+  
+   focus = { 
+    id = CIS_from_the_ashes
+    icon = CIS_from_the_ashes
+    cost = 10
+    
+    prerequisite = {
+		focus = CIS_the_future_of_the_dark_side
+	}
+
+    mutually_exclusive = {
+      focus = CIS_always_two
+    }
+
+    x = 10
+    y = 1
+	relative_position_id = CIS_the_future_of_the_dark_side
+    
+    completion_reward = {
+    }
+  }
+  
+   focus = { 
+    id = CIS_always_two
+    icon = CIS_always_two
+    cost = 10
+  
+    mutually_exclusive = {
+      focus = CIS_from_the_ashes
+    }
+  
+    prerequisite = {
+		focus = CIS_the_future_of_the_dark_side
+	}
+
+    x = -10
+    y = 1
+	relative_position_id = CIS_the_future_of_the_dark_side
+    
+    completion_reward = {
+    }
+  }
+  
+   focus = { 
+    id = CIS_betrayal_is_the_sith_way
+    icon = CIS_betrayal_is_the_sith_way
+    cost = 10
+    
+    prerequisite = {
+		focus = CIS_always_two
+	}
+
+    x = 0
+    y = 1
+	relative_position_id = CIS_always_two
+    
+    completion_reward = {
+    }
+  }
+  
+    focus = { 
+    id = CIS_his_loyal_right_hand
+    icon = CIS_his_loyal_right_hand
+    cost = 10
+    
+    prerequisite = {
+		focus = CIS_betrayal_is_the_sith_way
+	}
+	
+    mutually_exclusive = {
+      focus = CIS_the_prodigal_daughter
+    }
+
+    x = -4
+    y = 2
+	relative_position_id = CIS_always_two
+    
+    completion_reward = {
+    }
+  }
+  
+   focus = { 
+    id = CIS_the_prodigal_daughter
+    icon = CIS_the_prodigal_daughter
+    cost = 10
+    
+    prerequisite = {
+		focus = CIS_betrayal_is_the_sith_way
+	}
+	
+    mutually_exclusive = {
+      focus = CIS_his_loyal_right_hand
+    }
+
+    x = 4
+    y = 2
+	relative_position_id = CIS_always_two
+    
+    completion_reward = {
+    }
+  }
+  
+   focus = { 
+     id = CIS_continue_her_training
+     icon = CIS_continue_her_training
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_his_loyal_right_hand
+	 }
+
+     x = -4
+     y = 3
+	 relative_position_id = CIS_always_two
+    
+     completion_reward = {
+     }
+   }
+   
+   focus = { 
+     id = CIS_confirm_her_allegiance
+     icon = CIS_confirm_her_allegiance
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_continue_her_training
+	 }
+
+     x = -4
+     y = 4
+	 relative_position_id = CIS_always_two
+    
+     completion_reward = {
+     }
+   }
+   
+   focus = { 
+     id = CIS_demand_her_obedience
+     icon = CIS_demand_her_obedience
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_confirm_her_allegiance
+	 }
+
+     x = -4
+     y = 5
+	 relative_position_id = CIS_always_two
+    
+     completion_reward = {
+     }
+    }
+   
+    focus = { 
+     id = CIS_seek_a_new_apprentice
+     icon = CIS_seek_a_new_apprentice
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_the_prodigal_daughter
+	 }
+
+     x = 0
+     y = 1
+	 relative_position_id = CIS_the_prodigal_daughter
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_the_renegade
+     icon = CIS_the_renegade
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_seek_a_new_apprentice
+	 }
+
+     mutually_exclusive = {
+      focus = CIS_the_butcher
+      focus = CIS_the_ideologue
+      focus = CIS_the_outsider
+     }
+
+     x = -4
+     y = 2
+	 relative_position_id = CIS_the_prodigal_daughter
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_the_butcher
+     icon = CIS_the_butcher
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_seek_a_new_apprentice
+	 }
+
+     mutually_exclusive = {
+      focus = CIS_the_renegade
+      focus = CIS_the_ideologue
+      focus = CIS_the_outsider
+     }
+
+     x = -2
+     y = 2
+	 relative_position_id = CIS_the_prodigal_daughter
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_the_ideologue
+     icon = CIS_the_ideologue
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_seek_a_new_apprentice
+	 }
+
+     mutually_exclusive = {
+      focus = CIS_the_renegade
+      focus = CIS_the_butcher
+      focus = CIS_the_outsider
+     }
+
+     x = 2
+     y = 2
+	 relative_position_id = CIS_the_prodigal_daughter
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_the_outsider
+     icon = CIS_the_outsider
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_seek_a_new_apprentice
+	 }
+
+     mutually_exclusive = {
+      focus = CIS_the_renegade
+      focus = CIS_the_butcher
+      focus = CIS_the_ideologue
+     }
+
+     x = 4
+     y = 2
+	 relative_position_id = CIS_the_prodigal_daughter
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_break_him_down
+     icon = CIS_break_him_down
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_the_renegade
+	 }
+
+     x = 0
+     y = 1
+	 relative_position_id = CIS_the_renegade
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_encourage_his_bloodlust
+     icon = CIS_encourage_his_bloodlust
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_the_butcher
+	 }
+
+     x = 0
+     y = 1
+	 relative_position_id = CIS_the_butcher
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_twist_her_morals
+     icon = CIS_twist_her_morals
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_the_ideologue
+	 }
+
+     x = 0
+     y = 1
+	 relative_position_id = CIS_the_ideologue
+    
+     completion_reward = {
+     }
+	}
+	
+    focus = { 
+     id = CIS_alter_his_body
+     icon = CIS_alter_his_body
+     cost = 10
+    
+     prerequisite = {
+		focus = CIS_the_outsider
+	 }
+
+     x = 0
+     y = 1
+	 relative_position_id = CIS_the_outsider
+    
+     completion_reward = {
+     }
+	}
+  
+  
+}
