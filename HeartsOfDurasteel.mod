@@ -1,5 +1,4 @@
 name="Hearts of Durasteel"
-path="mod/HeartsOfDurasteel"
 tags={
 	"Alternative History"
 	"Events"
@@ -34,6 +33,6 @@ replace_path="common/ai_templates"
 replace_path="gfx/flags"
 replace_path="gfx/loadingscreens"
 replace_path="gfx/interface"
-
-supported_version="1.8.*"
 picture="blank_map_template_5632x2048.jpg"
+supported_version="1.8.*"
+path="C:/Users/Thomas/Documents/Paradox Interactive/Hearts of Iron IV/mod/HeartsOfDurasteel/"
