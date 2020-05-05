@@ -2183,7 +2183,7 @@ focus_tree = {
 	###PALPATINE DEATH TREE END###
 
 	#OUTER RIM TREE
-focus = { 
+	focus = { 
 		id = ORM_provisional_revolutionary_government
 		icon = ORM_provisional_revolutionary_government
 		cost = 10
@@ -2201,7 +2201,7 @@ focus = {
 	}
 	
 	#ORM Army Tree
-focus = { 
+	focus = { 
 		id = ORM_creating_an_army
 		icon = ORM_creating_an_army
 		cost = 10
@@ -2219,7 +2219,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_rally_the_unions
 		icon = ORM_rally_the_unions
 		cost = 10
@@ -2237,7 +2237,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_rally_freed_slaves
 		icon = ORM_rally_freed_slaves
 		cost = 10
@@ -2255,7 +2255,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_rally_planetary_militias
 		icon = ORM_rally_planetary_militias
 		cost = 10
@@ -2273,7 +2273,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_elected_officers
 		icon = ORM_elected_officers
 		cost = 10
@@ -2303,7 +2303,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_appointed_officers
 		icon = ORM_appointed_officers
 		cost = 10
@@ -2333,7 +2333,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_guerilla_tactics
 		icon = ORM_guerilla_tactics
 		cost = 10
@@ -2352,7 +2352,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_countering_combined_arms
 		icon = ORM_countering_combined_arms
 		cost = 10
@@ -2371,7 +2371,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_call_for_volunteers
 		icon = ORM_call_for_volunteers
 		cost = 10
@@ -2390,7 +2390,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_innovative_strategic_thinking
 		icon = ORM_innovative_strategic_thinking
 		cost = 10
@@ -2409,7 +2409,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_republic_defectors
 		icon = ORM_republic_defectors
 		cost = 10
@@ -2439,7 +2439,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_separatist_defectors
 		icon = ORM_separatist_defectors
 		cost = 10
@@ -2469,7 +2469,7 @@ focus = {
 		}
 	}
 
-focus = { 
+	focus = { 
 		id = ORM_to_the_barricades
 		icon = ORM_to_the_barricades
 		cost = 10
@@ -2494,364 +2494,766 @@ focus = {
 	
 #SITH EMPIRE TREE
  
-focus = { 
-	 id = CIS_peace_is_a_lie2
-     icon = CIS_peace_is_a_lie2
-     cost = 10
-    
-		prerequisite = {
-		}
+	focus = { 
+		 id = CIS_peace_is_a_lie2
+	     icon = CIS_peace_is_a_lie2
+	     cost = 10
+	    
+			prerequisite = {
+			}
 
-		x = 140
+			x = 140
+			y = 0
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+	     id = CIS_the_future_of_the_dark_side
+	     icon = CIS_the_future_of_the_dark_side
+	     cost = 10
+	    
+			prerequisite = {
+			focus = CIS_peace_is_a_lie2
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_peace_is_a_lie2
+	    
+			completion_reward = {
+			} 
+	}
+	  
+	focus = { 
+			id = CIS_from_the_ashes
+			icon = CIS_from_the_ashes
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_future_of_the_dark_side
+			}
+
+			mutually_exclusive = {
+			focus = CIS_always_two
+			}
+
+			x = 10
+			y = 1
+			relative_position_id = CIS_the_future_of_the_dark_side
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_always_two
+			icon = CIS_always_two
+			cost = 10
+	  
+			mutually_exclusive = {
+			focus = CIS_from_the_ashes
+			}
+	  
+			prerequisite = {
+			focus = CIS_the_future_of_the_dark_side
+			}
+
+			x = -10
+			y = 1
+			relative_position_id = CIS_the_future_of_the_dark_side
+	    
+			completion_reward = {
+			}	
+	}
+	  
+	focus = { 
+			id = CIS_betrayal_is_the_sith_way
+			icon = CIS_betrayal_is_the_sith_way
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_always_two
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_his_loyal_right_hand
+			icon = CIS_his_loyal_right_hand
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_betrayal_is_the_sith_way
+			}
+		
+			mutually_exclusive = {
+			focus = CIS_the_prodigal_daughter
+			}
+
+			x = -4
+			y = 2
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_the_prodigal_daughter
+			icon = CIS_the_prodigal_daughter
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_betrayal_is_the_sith_way
+			}
+		
+			mutually_exclusive = {
+			focus = CIS_his_loyal_right_hand
+			}
+
+			x = 4
+			y = 2
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_continue_her_training
+			icon = CIS_continue_her_training
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_his_loyal_right_hand
+			}
+
+			x = -4
+			y = 3
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	   
+	focus = { 
+			id = CIS_confirm_her_allegiance
+			icon = CIS_confirm_her_allegiance
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_continue_her_training
+			}
+
+			x = -4
+			y = 4
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	   
+	focus = { 
+			id = CIS_demand_her_obedience
+			icon = CIS_demand_her_obedience
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_confirm_her_allegiance
+			}
+
+			x = -4
+			y = 5
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	   
+	focus = { 
+			id = CIS_seek_a_new_apprentice
+			icon = CIS_seek_a_new_apprentice
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_prodigal_daughter
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_renegade
+			icon = CIS_the_renegade
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_butcher
+			focus = CIS_the_ideologue
+			focus = CIS_the_outsider
+			}
+
+			x = -4
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_butcher
+			icon = CIS_the_butcher
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_renegade
+			focus = CIS_the_ideologue
+			focus = CIS_the_outsider
+			}
+
+			x = -2
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_ideologue
+			icon = CIS_the_ideologue
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_renegade
+			focus = CIS_the_butcher
+			focus = CIS_the_outsider
+			}
+
+			x = 2
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_outsider
+			icon = CIS_the_outsider
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_renegade
+			focus = CIS_the_butcher
+			focus = CIS_the_ideologue
+			}
+
+			x = 4
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_break_him_down
+			icon = CIS_break_him_down
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_renegade
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_renegade
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_encourage_his_bloodlust
+			icon = CIS_encourage_his_bloodlust
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_butcher
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_butcher
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_twist_her_morals
+			icon = CIS_twist_her_morals
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_ideologue
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_ideologue
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_alter_his_body
+			icon = CIS_alter_his_body
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_outsider
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_outsider
+	    
+			completion_reward = {
+			}
+	}
+
+
+	#jedi kill palps
+	#Focus for The Greater Good
+	focus = {
+		id = REP_the_greater_good
+		icon = GFX_goal_unknown
+		x = 100
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_in_the_name_of_the_galactic_senate_of_the_republic }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for In The Chosen One We Trust
+	focus = {
+		id = REP_in_the_chosen_one_we_trust
+		icon = GFX_goal_unknown
+		x = 100
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_greater_good }
+		mutually_exclusive = { 
+			focus = REP_we_are_the_senate 
+		}
+		mutually_exclusive = { 
+			focus = REP_a_guid_hand 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for In The Name Of The Galactic Senate Of The Republic
+	focus = {
+		id = REP_in_the_name_of_the_galactic_senate_of_the_republic
+		icon = GFX_goal_unknown
+		x = 100
 		y = 0
-    
-		completion_reward = {
-		}
-    }
-  
-focus = { 
-     id = CIS_the_future_of_the_dark_side
-     icon = CIS_the_future_of_the_dark_side
-     cost = 10
-    
-		prerequisite = {
-		focus = CIS_peace_is_a_lie2
-		}
-
-		x = 0
-		y = 1
-		relative_position_id = CIS_peace_is_a_lie2
-    
-		completion_reward = {
-		} 
-    }
-  
-focus = { 
-		id = CIS_from_the_ashes
-		icon = CIS_from_the_ashes
 		cost = 10
-    
-		prerequisite = {
-		focus = CIS_the_future_of_the_dark_side
-		}
-
-		mutually_exclusive = {
-		focus = CIS_always_two
-		}
-
-		x = 10
-		y = 1
-		relative_position_id = CIS_the_future_of_the_dark_side
-    
-		completion_reward = {
-		}
-    }
-  
-focus = { 
-		id = CIS_always_two
-		icon = CIS_always_two
-		cost = 10
-  
-		mutually_exclusive = {
-		focus = CIS_from_the_ashes
-		}
-  
-		prerequisite = {
-		focus = CIS_the_future_of_the_dark_side
-		}
-
-		x = -10
-		y = 1
-		relative_position_id = CIS_the_future_of_the_dark_side
-    
-		completion_reward = {
-		}	
-    }
-  
-focus = { 
-		id = CIS_betrayal_is_the_sith_way
-		icon = CIS_betrayal_is_the_sith_way
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_always_two
-		}
-
-		x = 0
-		y = 1
-		relative_position_id = CIS_always_two
-    
-		completion_reward = {
-		}
-    }
-  
-focus = { 
-		id = CIS_his_loyal_right_hand
-		icon = CIS_his_loyal_right_hand
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_betrayal_is_the_sith_way
-		}
-	
-		mutually_exclusive = {
-		focus = CIS_the_prodigal_daughter
-		}
-
-		x = -4
-		y = 2
-		relative_position_id = CIS_always_two
-    
-		completion_reward = {
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
 		}
 	}
-  
-focus = { 
-		id = CIS_the_prodigal_daughter
-		icon = CIS_the_prodigal_daughter
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_betrayal_is_the_sith_way
-		}
-	
-		mutually_exclusive = {
-		focus = CIS_his_loyal_right_hand
-		}
 
-		x = 4
-		y = 2
-		relative_position_id = CIS_always_two
-    
-		completion_reward = {
-		}
-	}
-  
-focus = { 
-		id = CIS_continue_her_training
-		icon = CIS_continue_her_training
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_his_loyal_right_hand
-		}
-
-		x = -4
-		y = 3
-		relative_position_id = CIS_always_two
-    
-		completion_reward = {
-		}
-    }
-   
-focus = { 
-		id = CIS_confirm_her_allegiance
-		icon = CIS_confirm_her_allegiance
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_continue_her_training
-		}
-
-		x = -4
+	#Focus for Expand The Service Corps
+	focus = {
+		id = REP_expand_the_service_corps
+		icon = GFX_goal_unknown
+		x = 91
 		y = 4
-		relative_position_id = CIS_always_two
-    
-		completion_reward = {
-		}
-    }
-   
-focus = { 
-		id = CIS_demand_her_obedience
-		icon = CIS_demand_her_obedience
 		cost = 10
-    
-		prerequisite = {
-		focus = CIS_confirm_her_allegiance
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_from_war_dogs_to_watchdogs }
+		ai_will_do = {
+			factor = 1
 		}
+	}
 
-		x = -4
+	#Focus for No More Games
+	focus = {
+		id = REP_no_more_games
+		icon = GFX_goal_unknown
+		x = 97
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = REP_a_slave_born_to_lead 
+			focus = REP_from_war_dogs_to_watchdogs 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Anti-Corruption Task Force
+	focus = {
+		id = REP_anticorruption_task_force
+		icon = GFX_goal_unknown
+		x = 97
 		y = 5
-		relative_position_id = CIS_always_two
-    
-		completion_reward = {
-		}
-    }
-   
-focus = { 
-		id = CIS_seek_a_new_apprentice
-		icon = CIS_seek_a_new_apprentice
 		cost = 10
-    
-		prerequisite = {
-		focus = CIS_the_prodigal_daughter
-		}
-
-		x = 0
-		y = 1
-		relative_position_id = CIS_the_prodigal_daughter
-    
-		completion_reward = {
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_no_more_games }
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_the_renegade
-		icon = CIS_the_renegade
+
+	#Focus for The Force Incarnate
+	focus = {
+		id = REP_the_force_incarnate
+		icon = GFX_goal_unknown
+		x = 100
+		y = 6
 		cost = 10
-    
-		prerequisite = {
-		focus = CIS_seek_a_new_apprentice
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = REP_never_compromise 
 		}
-
-		mutually_exclusive = {
-		focus = CIS_the_butcher
-		focus = CIS_the_ideologue
-		focus = CIS_the_outsider
+		prerequisite = { 
+			focus = REP_anticorruption_task_force 
 		}
+		prerequisite = { 
+			focus = REP_armed_vigilance 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
-		x = -4
+	#Focus for Having The Final Say
+	focus = {
+		id = REP_having_the_final_say
+		icon = GFX_goal_unknown
+		x = 106
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_upper_house }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Never Compromise
+	focus = {
+		id = REP_never_compromise
+		icon = GFX_goal_unknown
+		x = 100
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_a_perfect_democracy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Guided By Light
+	focus = {
+		id = REP_guided_by_light
+		icon = GFX_goal_unknown
+		x = 109
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_expand_the_order }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Master & Supreme Commander
+	focus = {
+		id = REP_master__supreme_commander
+		icon = GFX_goal_unknown
+		x = 103
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = REP_a_slave_born_to_lead 
+			focus = REP_dissolve_the_executive_branch 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for One Nation Within The Force
+	focus = {
+		id = REP_one_nation_within_the_force
+		icon = GFX_goal_unknown
+		x = 106
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = REP_armed_vigilance 
+		}
+		prerequisite = { 
+			focus = REP_having_the_final_say 
+		}
+		prerequisite = { 
+			focus = REP_guided_by_light 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Vetting Senators
+	focus = {
+		id = REP_vetting_senators
+		icon = GFX_goal_unknown
+		x = 94
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_a_higher_court }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Guiding Hand
+	focus = {
+		id = REP_a_guid_hand
+		icon = GFX_goal_unknown
+		x = 94
 		y = 2
-		relative_position_id = CIS_the_prodigal_daughter
-    
-		completion_reward = {
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_greater_good }
+		mutually_exclusive = { 
+			focus = REP_in_the_chosen_one_we_trust 
+		}
+		mutually_exclusive = { 
+			focus = REP_we_are_the_senate 
+		}
+		mutually_exclusive = { 
+			focus = REP_ 
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_the_butcher
-		icon = CIS_the_butcher
+
+	#Focus for From War Dogs To Watchdogs
+	focus = {
+		id = REP_from_war_dogs_to_watchdogs
+		icon = GFX_goal_unknown
+		x = 94
+		y = 3
 		cost = 10
-    
-		prerequisite = {
-		focus = CIS_seek_a_new_apprentice
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_a_guid_hand }
+		ai_will_do = {
+			factor = 1
 		}
+	}
 
-		mutually_exclusive = {
-		focus = CIS_the_renegade
-		focus = CIS_the_ideologue
-		focus = CIS_the_outsider
+	#Focus for A Higher Court
+	focus = {
+		id = REP_a_higher_court
+		icon = GFX_goal_unknown
+		x = 94
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_from_war_dogs_to_watchdogs }
+		ai_will_do = {
+			factor = 1
 		}
+	}
 
-		x = -2
+	#Focus for The Upper House
+	focus = {
+		id = REP_the_upper_house
+		icon = GFX_goal_unknown
+		x = 106
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_dissolve_the_executive_branch }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Perfect Democracy
+	focus = {
+		id = REP_a_perfect_democracy
+		icon = GFX_goal_unknown
+		x = 100
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_a_slave_born_to_lead }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for We ARE The Senate
+	focus = {
+		id = REP_we_are_the_senate
+		icon = GFX_goal_unknown
+		x = 106
 		y = 2
-		relative_position_id = CIS_the_prodigal_daughter
-    
-		completion_reward = {
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_greater_good }
+		mutually_exclusive = { 
+			focus = REP_in_the_chosen_one_we_trust 
+		}
+		mutually_exclusive = { 
+			focus = REP_a_guid_hand 
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_the_ideologue
-		icon = CIS_the_ideologue
+
+	#Focus for A Slave Born To Lead
+	focus = {
+		id = REP_a_slave_born_to_lead
+		icon = GFX_goal_unknown
+		x = 100
+		y = 3
 		cost = 10
-    
-		prerequisite = {
-		focus = CIS_seek_a_new_apprentice
-		}
-
-		mutually_exclusive = {
-		focus = CIS_the_renegade
-		focus = CIS_the_butcher
-		focus = CIS_the_outsider
-		}
-
-		x = 2
-		y = 2
-		relative_position_id = CIS_the_prodigal_daughter
-    
-		completion_reward = {
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_in_the_chosen_one_we_trust }
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_the_outsider
-		icon = CIS_the_outsider
+
+	#Focus for Dissolve The Executive Branch
+	focus = {
+		id = REP_dissolve_the_executive_branch
+		icon = GFX_goal_unknown
+		x = 106
+		y = 3
 		cost = 10
-    
-		prerequisite = {
-		focus = CIS_seek_a_new_apprentice
-		}
-
-		mutually_exclusive = {
-		focus = CIS_the_renegade
-		focus = CIS_the_butcher
-		focus = CIS_the_ideologue
-		}
-
-		x = 4
-		y = 2
-		relative_position_id = CIS_the_prodigal_daughter
-    
-		completion_reward = {
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_we_are_the_senate }
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_break_him_down
-		icon = CIS_break_him_down
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_the_renegade
-		}
 
-		x = 0
-		y = 1
-		relative_position_id = CIS_the_renegade
-    
-		completion_reward = {
+	#Focus for Expand The Order
+	focus = {
+		id = REP_expand_the_order
+		icon = GFX_goal_unknown
+		x = 109
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_dissolve_the_executive_branch }
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_encourage_his_bloodlust
-		icon = CIS_encourage_his_bloodlust
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_the_butcher
-		}
 
-		x = 0
-		y = 1
-		relative_position_id = CIS_the_butcher
-    
-		completion_reward = {
+	#Focus for Armed Vigilance
+	focus = {
+		id = REP_armed_vigilance
+		icon = GFX_goal_unknown
+		x = 103
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_master__supreme_commander }
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_twist_her_morals
-		icon = CIS_twist_her_morals
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_the_ideologue
-		}
 
-		x = 0
-		y = 1
-		relative_position_id = CIS_the_ideologue
-    
-		completion_reward = {
+	#Focus for Jedi Autonomy
+	focus = {
+		id = REP_jedi_autonomy
+		icon = GFX_goal_unknown
+		x = 91
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_expand_the_service_corps }
+		ai_will_do = {
+			factor = 1
 		}
 	}
-	
-focus = { 
-		id = CIS_alter_his_body
-		icon = CIS_alter_his_body
-		cost = 10
-    
-		prerequisite = {
-		focus = CIS_the_outsider
-		}
 
-		x = 0
-		y = 1
-		relative_position_id = CIS_the_outsider
-    
-		completion_reward = {
+	#Focus for Hand Over The Reins
+	focus = {
+		id = REP_hand_over_the_reins
+		icon = GFX_goal_unknown
+		x = 94
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = REP_vetting_senators 
+		}
+		prerequisite = { 
+			focus = REP_jedi_autonomy 
+		}
+		prerequisite = { 
+			focus = REP_anticorruption_task_force 
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
