@@ -2907,7 +2907,7 @@ focus_tree = {
 	#Focus for Expand The Service Corps
 	focus = {
 		id = REP_expand_the_service_corps
-		icon = GFX_goal_unknown
+		icon = REP_expand_the_service_corps
 		x = 91
 		y = 4
 		cost = 10
@@ -3055,7 +3055,7 @@ focus_tree = {
 	#Focus for Vetting Senators
 	focus = {
 		id = REP_vetting_senators
-		icon = GFX_goal_unknown
+		icon = REP_vetting_senators
 		x = 94
 		y = 5
 		cost = 10
@@ -3068,8 +3068,8 @@ focus_tree = {
 
 	#Focus for A Guiding Hand
 	focus = {
-		id = REP_a_guid_hand
-		icon = GFX_goal_unknown
+		id = REP_a_guiding_hand
+		icon = REP_a_guiding_hand
 		x = 94
 		y = 2
 		cost = 10
@@ -3092,12 +3092,12 @@ focus_tree = {
 	#Focus for From War Dogs To Watchdogs
 	focus = {
 		id = REP_from_war_dogs_to_watchdogs
-		icon = GFX_goal_unknown
+		icon = REP_from_war_dogs_to_watchdogs
 		x = 94
 		y = 3
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = REP_a_guid_hand }
+		prerequisite = { focus = REP_a_guiding_hand }
 		ai_will_do = {
 			factor = 1
 		}
@@ -3106,7 +3106,7 @@ focus_tree = {
 	#Focus for A Higher Court
 	focus = {
 		id = REP_a_higher_court
-		icon = GFX_goal_unknown
+		icon = REP_a_higher_court
 		x = 94
 		y = 4
 		cost = 10
@@ -3224,7 +3224,7 @@ focus_tree = {
 	#Focus for Jedi Autonomy
 	focus = {
 		id = REP_jedi_autonomy
-		icon = GFX_goal_unknown
+		icon = REP_jedi_autonomy
 		x = 91
 		y = 5
 		cost = 10
@@ -3238,7 +3238,7 @@ focus_tree = {
 	#Focus for Hand Over The Reins
 	focus = {
 		id = REP_hand_over_the_reins
-		icon = GFX_goal_unknown
+		icon = REP_hand_over_the_reins
 		x = 94
 		y = 6
 		cost = 10
