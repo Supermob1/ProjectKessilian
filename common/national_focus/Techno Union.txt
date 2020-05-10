@@ -107,7 +107,10 @@ focus_tree = {
 
        prerequisite = { 
            focus = TCU_combat_tambors_influence
-        } 
+        }
+       mutually_exclusive = {
+           focus = TCU_turn_his_supporters_against_him
+        }    
 
         x = 7
         y = 5
