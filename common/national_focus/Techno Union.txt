@@ -1,0 +1,1273 @@
+# Techno Union focus tree
+# By Epic ZornMauser
+#################################
+focus_tree = {
+	id = TCU_focus_tree
+
+    country = { 
+        factor = 0
+       modifier = { 
+         add = 10 
+         tag = TCU
+       } 
+    }   
+
+    default = yes
+	reset_on_civilwar = no
+	
+	continuous_focus_position = { x = 50 y = 4000 }
+    ########### UNIQUE TREE START ############
+    focus = { 
+        id = TCU_our_future_with_the_republic
+        icon = TCU_our_future_with_the_republic
+        cost = 10
+
+       prerequisite = { 
+           #No prereq - first focus
+        } 
+
+        x = 12
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_public_support_on_the_senate
+        icon = TCU_public_support_on_the_senate
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_our_future_with_the_republic
+        } 
+
+        x = 10
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_no_business_with_the_separatists
+        icon = TCU_no_business_with_the_separatists
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_our_future_with_the_republic
+        } 
+
+        x = 14
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_toe_the_line
+        icon = TCU_toe_the_line
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_public_support_on_the_senate
+        } 
+       prerequisite = { 
+           focus = TCU_no_business_with_the_separatists
+        } 
+
+        x = 12
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_combat_tambors_influence
+        icon = TCU_combat_tambors_influence
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_toe_the_line
+        } 
+
+        x = 5
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_with_him_or_against_him
+        icon = TCU_with_him_or_against_him
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_combat_tambors_influence
+        }
+       mutually_exclusive = {
+           focus = TCU_turn_his_supporters_against_him
+        }    
+
+        x = 7
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_against_tambor_at_all_costs
+        icon = TCU_against_tambor_at_all_costs
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_with_him_or_against_him
+        } 
+
+        x = 7
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_undermine_his_influence
+        icon = TCU_undermine_his_influence
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_against_tambor_at_all_costs
+        } 
+
+        x = 7
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_mass_arrests
+        icon = TCU_mass_arrests
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_with_him_or_against_him
+        } 
+
+        x = 9
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_high_tensions_on_skako
+        icon = TCU_high_tensions_on_skako
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_mass_arrests
+        } 
+
+        x = 9
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_corporate_civil_war
+        icon = TCU_the_corporate_civil_war
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_undermine_his_influence
+        } 
+       prerequisite = { 
+           focus = TCU_high_tensions_on_skako
+        }
+
+        x = 8
+        y = 9
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_turn_his_supporters_against_him
+        icon = TCU_turn_his_supporters_against_him
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_combat_tambors_influence
+        }
+        mutually_exclusive = {
+           focus = TCU_with_him_or_against_him
+        }  
+
+        x = 3
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_mass_bribing
+        icon = TCU_mass_bribing
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_turn_his_supporters_against_him
+        }
+        
+
+        x = 3
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_power_of_credits
+        icon = TCU_the_power_of_credits
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_turn_his_supporters_against_him
+        }
+        
+
+        x = 1
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_arrest_separatist_supporters
+        icon = TCU_arrest_separatist_supporters
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_power_of_credits
+        }
+        
+
+        x = 1
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = TCU_corporate_campaign_against_tambor
+        icon = TCU_corporate_campaign_against_tambor
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_mass_bribing
+        }
+        
+
+        x = 3
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_drive_him_out
+        icon = TCU_drive_him_out
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_corporate_campaign_against_tambor
+        } 
+       prerequisite = { 
+           focus = TCU_arrest_separatist_supporters
+        }
+
+        x = 2
+        y = 9
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_new_techno_union
+        icon = TCU_the_new_techno_union
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_corporate_civil_war
+           focus = TCU_drive_him_out
+        }   
+       
+
+        x = 5
+        y = 11
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_grand_armys_supplier
+        icon = TCU_the_grand_armys_supplier
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_toe_the_line
+        } 
+
+        x = 19
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_mass_production_of_infantry_weapons
+        icon = TCU_mass_production_of_infantry_weapons
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_grand_armys_supplier
+        } 
+
+        x = 18
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_techno_union_quality_assurance
+        icon = TCU_techno_union_quality_assurance
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_mass_production_of_infantry_weapons
+        } 
+
+        x = 17
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_equip_the_baktoid_armor_workshop
+        icon = TCU_equip_the_baktoid_armor_workshop
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_grand_armys_supplier
+        } 
+
+        x = 20
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_heavy_vehicles_for_the_republic
+        icon = TCU_heavy_vehicles_for_the_republic
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_equip_the_baktoid_armor_workshop
+        } 
+
+        x = 21
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_lease_out_shipyards
+        icon = TCU_lease_out_shipyards
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_grand_armys_supplier
+        } 
+
+        x = 19
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_draw_up_starfighter_designs
+        icon = TCU_draw_up_starfighter_designs
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_lease_out_shipyards
+        } 
+
+        x = 18
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_inspiration_from_the_republic
+        icon = TCU_inspiration_from_the_republic
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_draw_up_starfighter_designs
+        } 
+
+        x = 17
+        y = 8
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_birthplace_of_the_republic_navy
+        icon = TCU_birthplace_of_the_republic_navy
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_lease_out_shipyards
+        } 
+
+        x = 20
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = TCU_cooperation_on_naval_doctrine
+        icon = TCU_cooperation_on_naval_doctrine
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_birthplace_of_the_republic_navy
+        } 
+
+        x = 21
+        y = 8
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_a_true_powerhouse
+        icon = TCU_a_true_powerhouse
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_lease_out_shipyards
+        } 
+
+        x = 19
+        y = 8
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_a_trusted_ally
+        icon = TCU_a_trusted_ally
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_a_true_powerhouse
+        } 
+
+        x = 19
+        y = 9
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_together_on_the_galactic_stage
+        icon = TCU_together_on_the_galactic_stage
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_a_trusted_ally
+        } 
+
+        x = 19
+        y = 11
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_pioneers_of_the_future
+        icon = TCU_pioneers_of_the_future
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_together_on_the_galactic_stage
+        }
+        prerequisite = { 
+           focus = TCU_the_new_techno_union
+        }   
+
+        x = 12
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_technological_breakthroughs
+        icon = TCU_technological_breakthroughs
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_pioneers_of_the_future
+        }
+
+        x = 14
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_civillian_industry_subsidies
+        icon = TCU_civillian_industry_subsidies
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_pioneers_of_the_future
+        }
+
+        x = 16
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_corporate_paradise
+        icon = TCU_corporate_paradise
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_technological_breakthroughs
+        }
+       prerequisite = { 
+           focus = TCU_civillian_industry_subsidies
+        } 
+
+        x = 15
+        y = 15
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_naval_technology_to_rival_giants
+        icon = TCU_naval_technology_to_rival_giants
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_pioneers_of_the_future
+        }
+
+        x = 10
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_advancements_in_weapon_designs
+        icon = TCU_advancements_in_weapon_designs
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_pioneers_of_the_future
+        }
+
+        x = 8
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_assembly_lines_never_stop
+        icon = TCU_the_assembly_lines_never_stop
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_advancements_in_weapon_designs
+        }
+       prerequisite = { 
+           focus = TCU_naval_technology_to_rival_giants
+        } 
+
+        x = 9
+        y = 15
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_forward_unto_dawn
+        icon = TCU_the_assembly_lines_never_stop
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_assembly_lines_never_stop
+        }
+       prerequisite = { 
+           focus = TCU_corporate_paradise
+        } 
+
+        x = 12
+        y = 17
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_profit_opportunity
+        icon = TCU_the_profit_opportunity
+        cost = 10
+
+       prerequisite = { 
+           focus = #
+        }
+       
+
+        x = 40
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_host_dooku
+        icon = TCU_host_dooku
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_profit_opportunity
+        }
+       
+
+        x = 40
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_openly_oppose_the_republic
+        icon = TCU_openly_oppose_the_republic
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_host_dooku
+        }
+       
+
+        x = 37
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_leave_the_senate
+        icon = TCU_leave_the_senate
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_openly_oppose_the_republic
+        }
+       
+
+        x = 34
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_accept_separatist_overlordship
+        icon = TCU_accept_separatist_overlordship
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_leave_the_senate
+        }
+       mutually_exclusive = {
+           focus = TCU_all_power_to_wat_tambor
+        }  
+       
+
+        x = 36
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_all_power_to_wat_tambor
+        icon = TCU_all_power_to_wat_tambor
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_leave_the_senate
+        }
+        mutually_exclusive = {
+           focus = TCU_accept_separatist_overlordship
+        } 
+       
+
+        x = 32
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_fuel_the_separatist_war_machine
+        icon = TCU_fuel_the_separatist_war_machine
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_all_power_to_wat_tambor
+           focus = TCU_accept_separatist_overlordship
+        }
+
+        x = 34
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_b2_super_battle_droids
+        icon = TCU_b2_super_battle_droids
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_fuel_the_separatist_war_machine
+        }
+
+        x = 36
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_super_tactical_droids
+        icon = TCU_super_tactical_droids
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_fuel_the_separatist_war_machine
+        }
+
+        x = 32
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_accept_a_cis_council_seat
+        icon = TCU_accept_a_cis_council_seat
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_openly_oppose_the_republic
+           focus = TCU_secretly_align_with_dooku
+        }
+       
+
+        x = 40
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_separatist_funding
+        icon = TCU_separatist_funding
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_accept_a_cis_council_seat
+        }
+       
+
+        x = 38
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_no_war_no_profit
+        icon = TCU_no_war_no_profit
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_accept_a_cis_council_seat
+        }
+       
+
+        x = 42
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_accept_emir_of_ryloth
+        icon = TCU_accept_emir_of_ryloth
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_separatist_funding
+        }
+       prerequisite = { 
+           focus = TCU_no_war_no_profit
+        } 
+       
+
+        x = 40
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_iron_fist
+        icon = TCU_the_iron_fist
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_accept_emir_of_ryloth
+        }
+      
+       
+
+        x = 38
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_expand_techno_union_influence
+        icon = TCU_expand_techno_union_influence
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_accept_emir_of_ryloth
+        }
+      
+       
+
+        x = 42
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_a_deal_with_the_banking_clan
+        icon = TCU_a_deal_with_the_banking_clan
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_iron_fist
+        }
+       prerequisite = { 
+           focus = TCU_expand_techno_union_influence
+        } 
+      
+       
+
+        x = 40
+        y = 8
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_resource_expansion
+        icon = TCU_resource_expansion
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_a_deal_with_the_banking_clan
+        }
+      
+       
+
+        x = 37
+        y = 9
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_invest_in_mustafar
+        icon = TCU_invest_in_mustafar
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_resource_expansion
+        }
+      
+       
+
+        x = 35
+        y = 10
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_exploit_the_natives
+        icon = TCU_exploit_the_natives
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_invest_in_mustafar
+        }
+        mutually_exclusive = {
+           focus = TCU_droid_efficiency
+        } 
+      
+       
+
+        x = 33
+        y = 11
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_droid_efficiency
+        icon = TCU_droid_efficiency
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_invest_in_mustafar
+        }
+        mutually_exclusive = {
+           focus = TCU_exploit_the_natives
+        } 
+      
+       
+
+        x = 37
+        y = 11
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_expand_galactic_shipping_yards
+        icon = TCU_expand_galactic_shipping_yards
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_droid_efficiency
+           focus = TCU_exploit_the_natives
+        }
+       
+
+        x = 35
+        y = 12
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_expand_purkroll
+        icon = TCU_expand_purkroll
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_a_deal_with_the_banking_clan
+        }
+      
+       
+
+        x = 43
+        y = 9
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_the_beginnings_of_the_skako_minor_project
+        icon = TCU_the_beginnings_of_the_skako_minor_project
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_expand_purkroll
+        }
+      
+       
+
+        x = 45
+        y = 10
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_deal_with_poletec
+        icon = TCU_deal_with_poletec
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_beginnings_of_the_skako_minor_project
+        }
+      
+       
+
+        x = 47
+        y = 11
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_show_dooku_early_results
+        icon = TCU_show_dooku_early_results
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_the_beginnings_of_the_skako_minor_project
+        }
+      
+       
+
+        x = 43
+        y = 11
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_expand_the_project
+        icon = TCU_expand_the_project
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_show_dooku_early_results
+        }
+       prerequisite = { 
+           focus = TCU_deal_with_poletec
+        } 
+      
+       
+
+        x = 45
+        y = 12
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_secretly_align_with_dooku
+        icon = TCU_secretly_align_with_dooku
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_host_dooku
+        }
+       
+
+        x = 43
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_our_seat_in_the_republic
+        icon = TCU_our_seat_in_the_republic
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_secretly_align_with_dooku
+        }
+       
+
+        x = 46
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_gume_seams_idea
+        icon = TCU_gume_seams_idea
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_our_seat_in_the_republic
+        }
+       
+
+        x = 48
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_deregulation_of_the_banks
+        icon = TCU_deregulation_of_the_banks
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_gume_seams_idea
+        }
+       
+
+        x = 48
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_one_warship_one_million_battledroids
+        icon = TCU_one_warship_one_million_battledroids
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_our_seat_in_the_republic
+        }
+       
+
+        x = 44
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_increase_weapon_production
+        icon = TCU_increase_weapon_production
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_one_warship_one_million_battledroids
+        }
+       
+
+        x = 44
+        y = 6
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = TCU_loyalty_only_to_credits
+        icon = TCU_loyalty_only_to_credits
+        cost = 10
+
+       prerequisite = { 
+           focus = TCU_increase_weapon_production
+        }
+       prerequisite = { 
+           focus = TCU_deregulation_of_the_banks
+        } 
+       
+
+        x = 46
+        y = 7
+
+        completion_reward = {
+
+        }
+    }
