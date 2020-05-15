@@ -3068,8 +3068,8 @@ focus_tree = {
 
 	#Focus for A Guiding Hand
 	focus = {
-		id = REP_a_guiding_hand
-		icon = REP_a_guiding_hand
+		id = REP_the_helping_hand
+		icon = REP_the_helping_hand
 		x = 94
 		y = 2
 		cost = 10
@@ -3097,7 +3097,7 @@ focus_tree = {
 		y = 3
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = REP_a_guiding_hand }
+		prerequisite = { focus = REP_the_helping_hand }
 		ai_will_do = {
 			factor = 1
 		}
