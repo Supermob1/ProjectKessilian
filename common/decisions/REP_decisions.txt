@@ -1,0 +1,33 @@
+foreign_politics = {
+
+	REP_clone_legions = {
+	
+		icon = generic_intelligence_operation
+
+		allowed = {
+			original_tag = REP
+		}
+
+		available = {
+
+		}
+
+		cost = 150
+		days_remove = 50
+		
+		visible = {
+			always = yes
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = clone_legions_tt
+			hidden_effect = {
+			load_oob = "clone_legion"				
+							}			
+						}
+
+		ai_will_do = {
+			factor = 0
+					}
+	}
+}
