@@ -1,0 +1,32 @@
+﻿division_template = {
+	name = "Battle Droid Batallion"
+	####division_names_group = CIS_Inf_01#####
+
+	regiments = {
+		droid_basic = { x = 0 y = 0 }
+		droid_basic = { x = 0 y = 1 }
+        droid_basic = { x = 0 y = 2 }
+		droid_basic = { x = 1 y = 0 }
+		droid_basic = { x = 1 y = 1 }
+        droid_basic = { x = 1 y = 2 }
+		droid_basic = { x = 2 y = 0 }
+		droid_basic = { x = 2 y = 1 }
+        droid_basic = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	##### Trade Federation Droids #####
+	division {
+		name =	"1st B1 Battle Group"
+		location = 468 
+		division_template = "Battle Droid Batallion"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+	}
+}

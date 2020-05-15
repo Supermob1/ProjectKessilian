@@ -1,0 +1,33 @@
+foreign_politics = {
+
+	CIS_droids_divisions = {
+	
+		icon = generic_intelligence_operation
+
+		allowed = {
+			original_tag = CIS
+		}
+
+		available = {
+
+		}
+
+		cost = 150
+		days_remove = 50
+		
+		visible = {
+			always = yes
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = droids_divisions_tt
+			hidden_effect = {
+			load_oob = "droid_troops"				
+							}			
+						}
+
+		ai_will_do = {
+			factor = 0
+					}
+	}
+}
