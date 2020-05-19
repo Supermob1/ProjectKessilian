@@ -170,7 +170,7 @@ categories =  {
 	}
 	
 	ecumenpolis = {
-		color = { 25 4 4 }
+		color = { 0 86 6 }
 		movement_cost = 1.2
 		ai_terrain_importance_factor = 4.0
 		sound_type = plains
@@ -179,6 +179,18 @@ categories =  {
 			attack = -0.3
 			#movement = -0.2
 		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+	}
+	
+	hyperlane = {
+		color = { 112 74 31 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		sound_type = plains
+
+		naval_speed_factor = 100.0
+		spotting_chance = -9999.0
 
 		enemy_army_bonus_air_superiority_factor = -0.50
 	}
@@ -194,8 +206,8 @@ categories =  {
 
 terrain = {
 	terrain_0					= { type = plains			color = { 	0	 } texture = 1 }
-	terrain_1					= { type = forest			color = { 	1	 } texture = 4 } 
-	desert_mountain				= { type = hills			color = { 	2	 } texture = 3 }
+	terrain_1					= { type = ecumenpolis		color = { 	1	 } texture = 19 spawn_city = yes } 
+	terrain_2					= { type = hyperlane		color = { 	2	 } texture = 20 }
 	desert						= { type = desert			color = { 	3	 } texture = 11 }
 		
 	terrain_4					= { type = forest			color = { 	4	 } texture = 6 }
@@ -218,7 +230,7 @@ terrain = {
 	
 	hills_blend					= { type = hills			color = { 	17	 } texture = 2 }
 	mountain_variation_sand	 	= { type = mountain			color = { 	18	 } texture = 8 }
-	mountain_variation_grass 	= { type = mountain			color = { 	20	 } texture = 8 }
+	mountain_variation_grass 	= { type = mountain			color = { 	34	 } texture = 8 }
 	jungle_18					= { type = jungle			color = { 	21	 } texture = 4 }
 	jungle_blend_18				= { type = jungle			color = { 	22	 } texture = 6 }
 	
@@ -227,6 +239,5 @@ terrain = {
 	
 	ice_world					= { type = ice_world		color = { 	32	 } texture = 10  perm_snow = yes }
 	wroshyr_forest				= { type = wroshyr_forest	color = { 	33	 } texture = 15 }
-	ecumenpolis					= { type = urban			color = { 	34	 } texture = 20 spawn_city = yes }
 	
 }
