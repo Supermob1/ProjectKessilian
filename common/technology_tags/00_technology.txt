@@ -105,6 +105,11 @@ technology_folders = {
 	}
 	artillery_folder = {
 		ledger = army
+		available = {
+			NOT = {
+				tag = CIS
+			}
+		}
 	}
 	air_techs_folder = {
 		ledger = air

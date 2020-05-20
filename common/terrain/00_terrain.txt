@@ -140,20 +140,6 @@ categories =  {
 		sickness_chance = 1.0
 	}
 	
-	ice_world = {
-		color = { 191 206 229 }
-		movement_cost = 1.20
-		attrition = 0.4
-		combat_width = -0.2
-		ai_terrain_importance_factor = 1.0
-		sound_type = desert
-
-		units = {
-			attack = -0.9
-			#movement = -0.9
-		}
-	}
-	
 	wroshyr_forest = {
 		color = { 0 97 34 }
 		movement_cost = 1.5
@@ -194,6 +180,40 @@ categories =  {
 
 		enemy_army_bonus_air_superiority_factor = -0.50
 	}
+	
+	volcano = {
+		color = { 206 169 99 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		sound_type = plains
+
+	}
+	ice_world = {
+		color = { 6 200 11 }
+		movement_cost = 1.20
+		attrition = 0.4
+		combat_width = -0.2
+		ai_terrain_importance_factor = 1.0
+		sound_type = desert
+
+		units = {
+			attack = -0.9
+			#movement = -0.9
+		}
+	}
+	desert_world = {
+		color = { 255 0 24 }
+		movement_cost = 1.20
+		attrition = 0.4
+		combat_width = -0.2
+		ai_terrain_importance_factor = 1.0
+		sound_type = desert
+
+		units = {
+			attack = -0.9
+			#movement = -0.9
+		}
+	}
 }
 	
 
@@ -206,12 +226,12 @@ categories =  {
 
 terrain = {
 	terrain_0					= { type = plains			color = { 	0	 } texture = 1 }
-	terrain_1					= { type = ecumenpolis		color = { 	1	 } texture = 19 spawn_city = yes } 
-	terrain_2					= { type = hyperlane		color = { 	2	 } texture = 20 }
-	desert						= { type = desert			color = { 	3	 } texture = 11 }
+	ecumenopolis				= { type = ecumenpolis		color = { 	1	 } texture = 19 } 
+	hyperlane					= { type = hyperlane		color = { 	2	 } texture = 20 }
+	volcano						= { type = volcano			color = { 	3	 } texture = 18 }
 		
-	terrain_4					= { type = forest			color = { 	4	 } texture = 6 }
-	terrain_5					= { type = plains	 		color = { 	5	 } texture = 0 }
+	ice_world					= { type = ice_world		color = { 	4	 } texture = 17 }
+	desert_world				= { type = desert_world		color = { 	5	 } texture = 15 }
 	terrain_6					= { type = mountain			color = { 	6	 } texture = 13 }
 	terrain_7					= { type = desert			color = { 	7	 } texture = 14 }
 	desert_hills				= { type = desert			color = { 	8	 } texture = 17 }
@@ -237,7 +257,6 @@ terrain = {
 	jungle_blend_18				= { type = mountain			color = { 	27	 } texture = 8 }
 	desert_mountain_tops		= { type = mountain			color = { 	31	 } texture = 18 }
 	
-	ice_world					= { type = ice_world		color = { 	32	 } texture = 10  perm_snow = yes }
 	wroshyr_forest				= { type = wroshyr_forest	color = { 	33	 } texture = 15 }
 	
 }
