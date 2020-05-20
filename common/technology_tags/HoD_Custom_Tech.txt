@@ -3,10 +3,17 @@
 
 technology_categories = {
 	droid_tech
+	droid_artillery_tech
 }
 
 technology_folders = {
 	droid_folder = {
+		ledger = army
+		available = {
+			tag = CIS
+		}
+	}
+	droid_artillery_folder = {
 		ledger = army
 		available = {
 			tag = CIS

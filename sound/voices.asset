@@ -1,0 +1,169 @@
+
+category = 
+{
+ name = "Voices"
+ soundeffects = {
+	CIS_infantry_idle
+	CIS_infantry_neutral_combat
+	CIS_infantry_positive_combat
+	CIS_infantry_retreat
+	CIS_infantry_move_out
+ }
+  compressor = 
+ {
+	enabled = yes
+	pregain = 0.0
+	postgain = 2.0
+	ratio = 10.0
+	threshold = -10.0
+	attacktime = 0.030
+	releasetime = 1.2
+ }
+}
+########## CIS
+
+soundeffect = 
+{
+    name = "CIS_infantry_idle"
+    sounds = {
+        sound = cis_Idle_001
+        sound = cis_Idle_002
+        sound = cis_Idle_003
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.55
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "CIS_infantry_neutral_combat"
+    sounds = {
+        sound = cis_Neutral_001
+        sound = cis_Neutral_002
+        sound = cis_Neutral_003
+        sound = cis_Neutral_004
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.55
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "CIS_infantry_positive_combat"
+    sounds = {
+        sound = cis_Positive_001
+        sound = cis_Positive_002
+        sound = cis_Positive_003
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.55
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "CIS_infantry_retreat"
+    sounds = {
+        sound = cis_Retreat_001
+        sound = cis_Retreat_002
+        sound = cis_Retreat_003
+        sound = cis_Retreat_004
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.55
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "CIS_infantry_move_out"
+    sounds = {
+        sound = cis_Positive_003
+        sound = cis_Positive_004
+
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.55
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+############## AUDIO ASSETS
+
+############## CIS
+sound = 
+{
+	name = "cis_Idle_001"
+	file = "cis/cis_Idle_001.wav"
+}
+sound = 
+{
+	name = "cis_Idle_002"
+	file = "cis/cis_Idle_002.wav"
+}
+sound = 
+{
+	name = "cis_Idle_003"
+	file = "cis/cis_Idle_003.wav"
+}
+sound = 
+{
+	name = "cis_Neutral_001"
+	file = "cis/cis_Neutral_001.wav"
+}
+sound = 
+{
+	name = "cis_Neutral_002"
+	file = "cis/cis_Neutral_002.wav"
+}
+sound = 
+{
+	name = "cis_Neutral_003"
+	file = "cis/cis_Neutral_003.wav"
+}
+sound = 
+{
+	name = "cis_Neutral_004"
+	file = "cis/cis_Neutral_004.wav"
+}
+sound = 
+{
+	name = "cis_Positive_001"
+	file = "cis/cis_Positive_001.wav"
+}
+sound = 
+{
+	name = "cis_Positive_002"
+	file = "cis/cis_Positive_002.wav"
+}
+sound = 
+{
+	name = "cis_Positive_003"
+	file = "cis/cis_Positive_003.wav"
+}
+sound = 
+{
+	name = "cis_Retreat_001"
+	file = "cis/cis_Retreat_001.wav"
+}
+sound = 
+{
+	name = "cis_Retreat_002"
+	file = "cis/cis_Retreat_002.wav"
+}
+sound = 
+{
+	name = "cis_Retreat_003"
+	file = "cis/cis_Retreat_003.wav"
+}
+sound = 
+{
+	name = "cis_Retreat_004"
+	file = "cis/cis_Retreat_004.wav"
+}
