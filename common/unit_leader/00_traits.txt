@@ -103,5 +103,33 @@ leader_traits = {
 		parent = skilled_staffer
 
 	}
+	
+	aggression_chip = { 
+		type = field_marshal
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 1000
+
+		non_shared_modifier = {
+		
+		}
+		
+		field_marshal_modifier = {
+			planning_speed = 1
+			wounded_chance_factor = -0.75
+			army_morale_factor = -2
+		}
+
+		attack_skill_factor = 0.3
+		defense_skill_factor = -0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		parent = skilled_staffer
+
+	}
 
 }
