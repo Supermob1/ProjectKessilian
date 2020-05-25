@@ -2577,7 +2577,521 @@ focus_tree = {
 	}
 	#Emergency Tree End
 	###PALPATINE DEATH TREE END###
+	#CLONE COUP TREE#
+	focus = { 
+		id = REP_hardline_clone_coup
+		icon = REP_hardline_clone_coup
+		cost = 10
+		
+		prerequisite = {
+			#no prereq, start of tree
+		}
+		
+		x = 24
+		y = 8
+		
+		completion_reward = {
+		
+		}
+	}	
 
+	focus = { 
+		id = REP_trials_of_the_senate
+		icon = REP_trials_of_the_senate
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_hardline_clone_coup
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = REP_wartime_footing
+		icon = REP_wartime_footing
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_hardline_clone_coup
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	
+	focus = { 
+		id = REP_trials_of_the_jedi
+		icon = REP_trials_of_the_jedi
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_hardline_clone_coup
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = REP_cleaning_house
+		icon = REP_cleaning_house
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_trials_of_the_senate
+		}
+		
+		prerequisite = {
+			focus = REP_wartime_footing
+		}
+
+		prerequisite = {
+			focus = REP_trials_of_the_jedi
+		}
+		
+		x = 0
+		y = 2
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	#LEFT BRANCH#
+	focus = { 
+		id = REP_the_boys_in_white
+		icon = REP_the_boys_in_white
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_cleaning_house
+		}
+		
+		mutually_exclusive = {
+			focus = REP_the_new_mando'ade
+		}
+		
+		x = -1
+		y = 3
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_erase_jedi_heroism
+		icon = REP_erase_jedi_heroism
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_boys_in_white
+		}
+		
+		x = -3
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_the_last_ones_standing
+		icon = REP_the_last_ones_standing
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_erase_jedi_heroism
+		}
+		
+		x = -3
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_democracys_unwavering_guard
+		icon = REP_democracys_unwavering_guard
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_boys_in_white
+		}
+		
+		x = -1
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	
+	focus = { 
+		id = REP_clone_senators
+		icon = REP_clone_senators
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_democracys_unwavering_guard
+		}
+		
+		x = -1
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_democracy_at_blasterpoint
+		icon = REP_democracy_at_blasterpoint
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_last_ones_standing
+		}
+		
+		prerequisite = {
+			focus = REP_clone_senators
+		}		
+		
+		x = -2
+		y = 6
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	#LEFT BRANCH END#
+	#RIGHT BRANCH#
+	focus = { 
+		id = REP_the_new_mando'ade
+		icon = REP_democracy_at_blasterpoint
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_cleaning_house
+		}
+		
+		x = 1
+		y = 3
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_mass_initiation_ceremonies
+		icon = REP_mass_initiation_ceremonies
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_new_mando'ade
+		}
+		
+		x = 1
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_a_reason_to_be
+		icon = REP_a_reason_to_be
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_mass_initiation_ceremonies
+		}
+		
+		x = 1
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_celebrate_clone_culture
+		icon = REP_celebrate_clone_culture
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_the_new_mando'ade
+		}
+		
+		x = 3
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	
+	focus = { 
+		id = REP_untangle_doctrinal_contradictions
+		icon = REP_untangle_doctrinal_contradictions
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_celebrate_clone_culture
+		}
+		
+		x = 3
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	
+	focus = { 
+		id = REP_a_new_mandalore
+		icon = REP_a_new_mandalore
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_a_reason_to_be
+		}
+		
+		prerequisite = {
+			focus = REP_untangle_doctrinal_contradictions
+		}		
+		
+		x = 2
+		y = 6
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	#RIGHT BRANCH END#
+	focus = { 
+		id = REP_picking_up_the_pieces
+		icon = REP_picking_up_the_pieces
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_cleaning_house
+		}
+		
+		x = 0
+		y = 6
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = REP_clone_economic_direction
+		icon = REP_clone_economic_direction
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_picking_up_the_pieces
+		}
+		
+		x = -1
+		y = 7
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = REP_appropriate_traitors_assets
+		icon = REP_appropriate_traitors_assets
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_picking_up_the_pieces
+		}
+		
+		x = 1
+		y = 7
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	focus = { 
+		id = REP_the_issue_of_clone_production
+		icon = REP_the_issue_of_clone_production
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_clone_economic_direction
+		}
+		
+		x = -3
+		y = 8
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	
+	focus = { 
+		id = REP_shot-in-the-back_myth
+		icon = REP_shot-in-the-back_myth
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_clone_economic_direction
+		}
+
+		prerequisite = {
+			focus = REP_appropriate_traitors_assets
+		}
+		
+		x = 0
+		y = 8
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	
+	focus = { 
+		id = REP_investigate_our_programming
+		icon = REP_investigate_our_programming
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_appropriate_traitors_assets
+		}
+		
+		x = 3
+		y = 8
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	
+	focus = { 
+		id = REP_purge_the_navy
+		icon = REP_purge_the_navy
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_shot-in-the-back_myth
+		}
+		
+		x = -1
+		y = 9
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = REP_weapons_of_the_next_war
+		icon = REP_weapons_of_the_next_war
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_shot-in-the-back_myth
+		}
+		
+		x = 1
+		y = 9
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { 
+		id = REP_rip_up_peace_agreements
+		icon = REP_rip_up_peace_agreements
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_purge_the_navy
+		}
+
+		prerequisite = {
+			focus = REP_weapons_of_the_next_war
+		}
+		
+		x = 0
+		y = 10
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = REP_give_em_hell
+		icon = REP_give_em_hell
+		cost = 10
+		
+		prerequisite = {
+			focus = REP_rip_up_peace_agreements
+		}
+
+		x = 0
+		y = 11
+		relative_position_id = REP_hardline_clone_coup
+		
+		completion_reward = {
+		
+		}
+	}
+	#CLONE COUP END#
 	#OUTER RIM TREE
 	focus = { 
 		id = ORM_provisional_revolutionary_government
