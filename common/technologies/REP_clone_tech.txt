@@ -1,0 +1,175 @@
+technologies = {
+	# Years:
+	# 11 Start Date
+	# 13 Clone wars starts
+	# 16 Clone Wars Ends
+
+	#Section
+	@light_above = -1
+	@light = 1
+	@light_below = 3
+	@medium = 5
+	@medium_below = 7
+	@heavy = 9
+	@heavy_below = 11
+	
+	#Tier
+	@base = 2
+	@level1 = 6
+	@level2 = 10
+	@level3 = 14
+	@level4 = 18
+	
+	standard_kit = {
+	
+		enable_equipments = {
+			standard_kit
+		}
+		
+		path = { 
+			leads_to_tech = dc-15
+			research_cost_coeff = 1
+		}
+		path = { 
+			leads_to_tech = dc-15a
+			research_cost_coeff = 1
+		}
+		path = { 
+			leads_to_tech = dc-15x
+			research_cost_coeff = 1
+		}
+		path = { 
+			leads_to_tech = plx-1
+			research_cost_coeff = 1
+		}
+		path = { 
+			leads_to_tech = v-1_thermal_detonator
+			research_cost_coeff = 1		
+		}
+		path = { 
+			leads_to_tech = hx-2_ap_mine
+			research_cost_coeff = 1		
+		}		
+		research_cost = 1.5
+		start_year = 11
+		folder = {
+			name = clone_folder
+			position = { x = @light_below y = -1 }
+		}
+		
+		categories = {
+			clone_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	dc-15 = {
+		research_cost = 2
+		start_year = 12
+		
+		folder = {
+			name = clone_folder
+			position = { x = @light_above y = @level1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			droid_tech
+		}
+	}
+	
+	dc-15a = {
+		research_cost = 2
+		start_year = 12
+		
+		folder = {
+			name = clone_folder
+			position = { x = @light y = @level1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			clone_tech
+		}
+	}
+	
+	dc-15x = {
+		research_cost = 2
+		start_year = 12
+		
+		folder = {
+			name = clone_folder
+			position = { x = @light_below y = @level1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			clone_tech
+		}
+	}
+	
+	plx-1 = {
+		research_cost = 2
+		start_year = 12
+		
+		folder = {
+			name = clone_folder
+			position = { x = @medium y = @level1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			clone_tech
+		}
+	}
+	
+	v-1_thermal_detonator = {
+		research_cost = 2
+		start_year = 12
+		
+		folder = {
+			name = clone_folder
+			position = { x = @medium_below y = @level1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			clone_tech
+		}
+	}
+	
+	hx-2_ap_mine = {
+		research_cost = 2
+		start_year = 12
+		
+		folder = {
+			name = clone_folder
+			position = { x = @heavy y = @level1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			clone_tech
+		}
+	}

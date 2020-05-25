@@ -4,6 +4,7 @@
 technology_categories = {
 	droid_tech
 	droid_artillery_tech
+	clone_tech
 }
 
 technology_folders = {
@@ -17,6 +18,12 @@ technology_folders = {
 		ledger = army
 		available = {
 			tag = CIS
+		}
+	}
+	clone_folder = {
+		ledger = army
+		available = {
+			tag = REP
 		}
 	}
 }
