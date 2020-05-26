@@ -1,5 +1,5 @@
 ﻿name="Hearts of Durasteel"
-path="mod/HeartsOfDurasteel/"
+path="mod/HeartsOfDurasteel"
 tags={
 	"Alternative History"
 	"Events"
