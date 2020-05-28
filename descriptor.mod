@@ -4,9 +4,9 @@ tags={
 	"Alternative History"
 	"Events"
 	"National Focuses"
-	"Gameplay""
+	"Gameplay"
 }
-version="1.9.*"
+supported_version="1.9.*"
 replace_path="history/states"
 replace_path="history/countries"
 replace_path="history/units"
