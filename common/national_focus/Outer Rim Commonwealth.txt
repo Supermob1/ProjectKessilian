@@ -694,4 +694,315 @@ focus_tree = {
 		completion_reward = {
 		
 		}
-	}	  
+	}	
+	#OUTER RIM TREE
+	focus = { 
+		id = ORC_provisional_revolutionary_government
+		icon = ORC_provisional_revolutionary_government
+		cost = 10
+		
+		prerequisite = {
+			#no prereq, start of tree
+		}
+		
+		x = 70
+		y = 0
+		
+		completion_reward = {
+		
+		}
+	}
+	
+	#ORM Army Tree
+	focus = { 
+		id = ORC_creating_an_army
+		icon = ORC_creating_an_army
+		cost = 10
+		
+		prerequisite = {
+			focus = ORC_provisional_revolutionary_government
+		}
+		
+		x = -7
+		y = 1
+		relative_position_id = ORC_provisional_revolutionary_government
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_rally_the_unions
+		icon = ORC_rally_the_unions
+		cost = 10
+		
+		prerequisite = {
+			focus = ORC_creating_an_army
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = ORC_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_rally_freed_slaves
+		icon = ORC_rally_freed_slaves
+		cost = 10
+		
+		prerequisite = {
+			focus = ORC_creating_an_army
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = ORC_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_rally_planetary_militias
+		icon = ORC_rally_planetary_militias
+		cost = 10
+		
+		prerequisite = {
+			focus = ORC_creating_an_army
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = ORC_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_elected_officers
+		icon = ORC_elected_officers
+		cost = 10
+		
+		prerequisite = {
+			focus = ORC_rally_freed_slaves
+		}
+
+		prerequisite = {
+			focus = ORC_rally_the_unions
+		}
+
+		prerequisite = {
+			focus = ORC_rally_planetary_militias
+		}
+
+		mutually_exclusive = {
+			focus = ORC_appointed_officers
+		}
+		
+		x = 1
+		y = 2
+		relative_position_id = ORC_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_appointed_officers
+		icon = ORC_appointed_officers
+		cost = 10
+		
+		prerequisite = {
+			focus = ORC_rally_freed_slaves
+		}
+
+		prerequisite = {
+			focus = ORC_rally_the_unions
+		}
+
+		prerequisite = {
+			focus = ORC_rally_planetary_militias
+		}
+
+		mutually_exclusive = {
+			focus = ORC_elected_officers
+		}
+		
+		x = -1
+		y = 2
+		relative_position_id = ORC_creating_an_army
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_guerilla_tactics
+		icon = ORC_guerilla_tactics
+		cost = 10
+
+		prerequisite = {
+			focus = ORC_elected_officers
+			focus = ORC_appointed_officers
+		}
+		
+		x = -2
+		y = 1
+		relative_position_id = ORC_appointed_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_countering_combined_arms
+		icon = ORC_countering_combined_arms
+		cost = 10
+
+		prerequisite = {
+			focus = ORC_elected_officers
+			focus = ORC_appointed_officers
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = ORC_appointed_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_call_for_volunteers
+		icon = ORC_call_for_volunteers
+		cost = 10
+
+		prerequisite = {
+			focus = ORC_elected_officers
+			focus = ORC_appointed_officers
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = ORC_elected_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_innovative_strategic_thinking
+		icon = ORC_innovative_strategic_thinking
+		cost = 10
+
+		prerequisite = {
+			focus = ORC_elected_officers
+			focus = ORC_appointed_officers
+		}
+		
+		x = 2
+		y = 1
+		relative_position_id = ORC_elected_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_republic_defectors
+		icon = ORC_republic_defectors
+		cost = 10
+
+		prerequisite = {
+			focus = ORC_guerilla_tactics
+		}
+
+		prerequisite = {
+			focus = ORC_countering_combined_arms
+		}
+
+		prerequisite = {
+			focus = ORC_call_for_volunteers
+		}
+
+		prerequisite = {
+			focus = ORC_innovative_strategic_thinking
+		}
+		
+		x = 0
+		y = 2
+		relative_position_id = ORC_appointed_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_separatist_defectors
+		icon = ORC_separatist_defectors
+		cost = 10
+
+		prerequisite = {
+			focus = ORC_guerilla_tactics
+		}
+
+		prerequisite = {
+			focus = ORC_countering_combined_arms
+		}
+
+		prerequisite = {
+			focus = ORC_call_for_volunteers
+		}
+
+		prerequisite = {
+			focus = ORC_innovative_strategic_thinking
+		}
+		
+		x = 0
+		y = 2
+		relative_position_id = ORC_elected_officers
+
+		completion_reward = {
+		
+		}
+	}
+
+	focus = { 
+		id = ORC_to_the_barricades
+		icon = ORC_to_the_barricades
+		cost = 10
+
+		prerequisite = {
+			focus = ORC_republic_defectors
+		}
+
+		prerequisite = {
+			focus = ORC_separatist_defectors
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = ORC_separatist_defectors
+
+		completion_reward = {
+		
+		}
+	}
+}
+	
+		
