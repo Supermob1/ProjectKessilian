@@ -7,7 +7,7 @@ guiTypes = {
 		iconType ={
 			name ="era_window"
 			spriteType = "GFX_generic_box_125"
-			position = { x=1395 y=2 }
+			position = { x=1395 y=3 }
 			Orientation = "UPPER_LEFT"
 			scale = 1.2
 			pdx_tooltip = "ERA_TOOLTIP"
@@ -25,6 +25,28 @@ guiTypes = {
 			vertical_alignment = center	
 			pdx_tooltip = "ERA_TOOLTIP"
 			pdx_tooltip_delayed = "ERA_TOOLTIP_DESC"
+		}
+		iconType ={
+			name ="credits_window"
+			spriteType = "GFX_generic_box_small"
+			position = { x=1300 y=5 }
+			Orientation = "UPPER_LEFT"
+			scale = 1
+			pdx_tooltip = "CREDITS_TOOLTIP"
+			pdx_tooltip_delayed = "CREDITS_TOOLTIP_DESC"
+		}
+		instantTextboxType = {
+			name = "credits_name"
+			position = { x = 1270 y = 8 }
+			font = "hoi_18mbs"
+			fixedsize = yes
+			text = "[?root.creditsamount] Credits"
+			maxWidth = 150
+			maxHeight = 18
+			format = center	
+			vertical_alignment = center	
+			pdx_tooltip = "CREDITS_TOOLTIP"
+			pdx_tooltip_delayed = "CREDITS_TOOLTIP_DESC"
 		}
 	}
 }

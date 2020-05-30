@@ -9,11 +9,18 @@ foreign_politics = {
 		}
 
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = "[?ROOT.GetName] amount of credits atleast 5"
+				check_variable = {
+					var = creditsamount
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
 		}
 
-		cost = 150
-		days_remove = 50
+		cost = 0
+		days_remove = 0
 		
 		visible = {
 			always = yes
@@ -21,11 +28,43 @@ foreign_politics = {
 
 		complete_effect = {
 			custom_effect_tooltip = clone_legions_tt
+			subtract_from_variable = { creditsamount = 5 }
 			hidden_effect = {
 			load_oob = "clone_legion"				
-							}			
-						}
+			}			
+		}
 
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	credits_test = {
+	
+		icon = generic_intelligence_operation
+
+		allowed = {
+			original_tag = REP
+		}
+
+		available = {
+
+		}
+
+		cost = 0
+		days_remove = 0
+		
+		visible = {
+			always = yes
+		}
+
+		complete_effect = {
+			add_to_variable = { creditsamount = resource@credits }
+			clamp_variable = {
+				var = creditsamount
+				min = 0
+				max = 5000
+			}
+		}
 		ai_will_do = {
 			factor = 0
 					}
