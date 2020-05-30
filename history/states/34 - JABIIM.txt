@@ -4,13 +4,17 @@ state={
 	history = {
 		owner = CIS
 		add_core_of = CIS
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+		}
 		victory_points = {
-		1054 1
+			1054 1
 		}
 	}
 	provinces={
 		61 186 244 342 468 545 557 1053 1054 1058 1060 1063 1064 1065 1066 1067 1068 
 	}
 	manpower=10000
-	buildings_max_level_factor=1.000	state_category = capital_sector
+	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
 }

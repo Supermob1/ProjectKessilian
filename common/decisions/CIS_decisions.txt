@@ -19,8 +19,8 @@ foreign_politics = {
 			}
 		}
 
-		cost = 150
-		days_remove = 50
+		cost = 0
+		days_remove = 0
 		
 		visible = {
 			always = yes
@@ -28,13 +28,31 @@ foreign_politics = {
 
 		complete_effect = {
 			custom_effect_tooltip = droids_divisions_tt
-			hidden_effect = {
-			load_oob = "droid_troops"				
-							}			
-						}
+			if = {
+				limit = {
+					NOT = { has_country_flag = OOB_LOADED }
+				}
+				hidden_effect = {
+					load_oob = "droid_troops"
+					set_country_flag = OOB_LOADED
+					set_division_template_lock = {
+						division_template = "Battle Droid Batallion"
+						is_locked = yes
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"Battle Droid Batallion\" start_experience_factor = 0 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
 
 		ai_will_do = {
 			factor = 0
-					}
+		}
 	}
 }
