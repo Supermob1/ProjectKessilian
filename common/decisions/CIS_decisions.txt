@@ -28,6 +28,7 @@ foreign_politics = {
 
 		complete_effect = {
 			custom_effect_tooltip = droids_divisions_tt
+			subtract_from_variable = { creditsamount = 5 }
 			if = {
 				limit = {
 					NOT = { has_country_flag = OOB_LOADED }
@@ -52,7 +53,8 @@ foreign_politics = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
+			modifier = { num_divisions > 100 factor = 0 }
 		}
 	}
 }
