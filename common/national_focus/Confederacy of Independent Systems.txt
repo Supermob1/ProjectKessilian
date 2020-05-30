@@ -544,6 +544,306 @@ focus_tree = {
     
     }
   }
+###CIS JEDI TREE###
+	focus = { 
+		 id = CIS_a_new_hope
+	     icon = CIS_a_new_hope
+	     cost = 10
+	    
+			prerequisite = {
+			}
+
+			x = 12
+			y = 0
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_atoning_for_his_failures
+	     icon = CIS_atoning_for_his_failures
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_a_new_hope
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_rescue_the_republics_lost
+	     icon = CIS_rescue_the_republics_lost
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_atoning_for_his_failures
+			}
+
+			x = 0
+			y = 2
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_lightbringer_crops
+	     icon = CIS_the_lightbringer_crops
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_rescue_the_republics_lost
+			}
+
+			x = 0
+			y = 3
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_young_and_eager
+	     icon = CIS_the_young_and_eager
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_lightbringer_crops
+			}
+
+			x = -2
+			y = 4
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_nothing_but_a_number
+	     icon = CIS_nothing_but_a_number
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_young_and_eager
+			}
+
+			x = -2
+			y = 5
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_all_who_hear_the_call
+	     icon = CIS_all_who_hear_the_call
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_nothing_but_a_number
+			}
+
+			x = -2
+			y = 6
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_jedi_citizens_corps
+	     icon = CIS_the_jedi_citizens_corps
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_all_who_hear_the_call
+			}
+
+			x = -2
+			y = 7
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_a_pure_order
+	     icon = CIS_a_pure_order
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_lightbringer_crops
+			}
+
+			mutually_exclusive = {
+				focus = CIS_a_free_order
+			}
+
+			x = 0
+			y = 4
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_never_for_attack
+	     icon = CIS_never_for_attack
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_a_pure_order
+			}
+
+			x = 0
+			y = 5
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_disgrace_the_slavers
+	     icon = CIS_disgrace_the_slavers
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_never_for_attack
+			}
+
+			x = 0
+			y = 6
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_operation_zone
+	     icon = CIS_operation_zone
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_disgrace_the_slavers
+			}
+
+			x = 0
+			y = 7
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_reformed_order_rises
+	     icon = CIS_the_reformed_order_rises
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_jedi_citizens_corps
+				focus = CIS_operation_zone
+				focus = CIS_the_vanguard_corps
+			}
+
+			x = 0
+			y = 8
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_a_free_order
+	     icon = CIS_a_free_order
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_lightbringer_crops
+			}
+
+			mutually_exclusive = {
+				focus = CIS_a_pure_order
+			}
+
+			x = 2
+			y = 4
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_infinite_facets
+	     icon = CIS_infinite_facets
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_a_free_order
+			}
+
+
+			x = 2
+			y = 5
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_form_one_crystal
+	     icon = CIS_form_one_crystal
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_infinite_facets
+			}
+
+
+			x = 2
+			y = 6
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_vanguard_corps
+	     icon = CIS_the_vanguard_corps
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_form_one_crystal
+			}
+
+
+			x = 2
+			y = 7
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
 #SITH EMPIRE TREE
  
 	focus = { 
