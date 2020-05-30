@@ -27,46 +27,34 @@ foreign_politics = {
 		}
 
 		complete_effect = {
-			custom_effect_tooltip = clone_legions_tt
+			custom_effect_tooltip = droids_divisions_tt
 			subtract_from_variable = { creditsamount = 5 }
-			hidden_effect = {
-			load_oob = "clone_legion"				
-			}			
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	credits_test = {
-	
-		icon = generic_intelligence_operation
-
-		allowed = {
-			original_tag = REP
-		}
-
-		available = {
-
-		}
-
-		cost = 0
-		days_remove = 0
-		
-		visible = {
-			always = yes
-		}
-
-		complete_effect = {
-			add_to_variable = { creditsamount = resource@credits }
-			clamp_variable = {
-				var = creditsamount
-				min = 0
-				max = 5000
+			if = {
+				limit = {
+					NOT = { has_country_flag = OOB_LOADED }
+				}
+				hidden_effect = {
+					load_oob = "clone_legion"
+					set_country_flag = OOB_LOADED
+					set_division_template_lock = {
+						division_template = "Clone Armored Batallion"
+						is_locked = yes
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"Clone Armored Batallion\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
 			}
 		}
+
 		ai_will_do = {
-			factor = 0
-					}
+			factor = 1
+			modifier = { num_divisions > 100 factor = 0 }
+		}
 	}
 }
