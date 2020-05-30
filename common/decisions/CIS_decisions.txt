@@ -9,7 +9,14 @@ foreign_politics = {
 		}
 
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = "[?ROOT.GetName] amount of credits atleast 5"
+				check_variable = {
+					var = creditsamount
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
 		}
 
 		cost = 150
