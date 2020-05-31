@@ -1,0 +1,23 @@
+﻿division_template = {
+	name = "Super Battle Droid Batallion"
+	####division_names_group = CIS_Inf_01#####
+
+	regiments = {
+		b2_battledroid = { x = 0 y = 0 }
+		b2_battledroid = { x = 0 y = 1 }
+        b2_battledroid = { x = 0 y = 2 }
+		b2_battledroid = { x = 1 y = 0 }
+	}
+	support = {
+	}
+}
+units = {
+	##### Trade Federation Droids #####
+	division {
+		name =	"1st B2 Battle Group"
+		location = 468 
+		division_template = "Super Battle Droid Batallion"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+	}
+}

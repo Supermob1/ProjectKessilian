@@ -1,0 +1,23 @@
+﻿division_template = {
+	name = "Battle Droideka Division"
+	####division_names_group = CIS_Inf_01#####
+
+	regiments = {
+		droideka_droid = { x = 0 y = 0 }
+		droideka_droid = { x = 0 y = 1 }
+        droideka_droid = { x = 0 y = 2 }
+		droideka_droid = { x = 1 y = 0 }
+	}
+	support = {
+	}
+}
+units = {
+	##### Trade Federation Droids #####
+	division {
+		name =	"1st Droid Destroyer Division"
+		location = 468 
+		division_template = "Battle Droideka Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+	}
+}
