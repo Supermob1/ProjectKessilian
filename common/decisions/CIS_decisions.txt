@@ -31,11 +31,11 @@ foreign_politics = {
 			subtract_from_variable = { creditsamount = 5 }
 			if = {
 				limit = {
-					NOT = { has_country_flag = OOB_LOADED }
+					NOT = { has_country_flag = OOB_LOADED_B1 }
 				}
 				hidden_effect = {
 					load_oob = "droid_troops"
-					set_country_flag = OOB_LOADED
+					set_country_flag = OOB_LOADED_B1
 					set_division_template_lock = {
 						division_template = "Battle Droid Batallion"
 						is_locked = yes
@@ -45,7 +45,7 @@ foreign_politics = {
 			else = {
 				capital_scope = {
 					create_unit = {
-						division = "name = \"1st B1 Battle Group\" start_experience_factor = 0 start_equipment_factor = 1"
+						division = "name = \"Battle Droid Batallion\" start_experience_factor = 0 start_equipment_factor = 1"
 						owner = ROOT
 					}
 				}
@@ -90,11 +90,11 @@ foreign_politics = {
 			subtract_from_variable = { creditsamount = 10 }
 			if = {
 				limit = {
-					NOT = { has_country_flag = OOB_LOADED }
+					NOT = { has_country_flag = OOB_LOADED_B2 }
 				}
 				hidden_effect = {
 					load_oob = "droid_troops_1"
-					set_country_flag = OOB_LOADED
+					set_country_flag = OOB_LOADED_B2
 					set_division_template_lock = {
 						division_template = "Super Battle Droid Batallion"
 						is_locked = yes
@@ -104,7 +104,7 @@ foreign_politics = {
 			else = {
 				capital_scope = {
 					create_unit = {
-						division = "name = \"1st B2 Battle Group\" start_experience_factor = 0 start_equipment_factor = 1"
+						division = "name = \"Super Battle Droid Batallion\" start_experience_factor = 0 start_equipment_factor = 1"
 						owner = ROOT
 					}
 				}
@@ -149,11 +149,11 @@ foreign_politics = {
 			subtract_from_variable = { creditsamount = 20 }
 			if = {
 				limit = {
-					NOT = { has_country_flag = OOB_LOADED }
+					NOT = { has_country_flag = OOB_LOADED_B3 }
 				}
 				hidden_effect = {
 					load_oob = "droid_troops_2"
-					set_country_flag = OOB_LOADED
+					set_country_flag = OOB_LOADED_B3
 					set_division_template_lock = {
 						division_template = "Commando Battle Droid Division"
 						is_locked = yes
@@ -163,7 +163,7 @@ foreign_politics = {
 			else = {
 				capital_scope = {
 					create_unit = {
-						division = "name = \"1st Commando Infiltration Group\" start_experience_factor = 0 start_equipment_factor = 1"
+						division = "name = \"Commando Battle Droid Division\" start_experience_factor = 0 start_equipment_factor = 1"
 						owner = ROOT
 					}
 				}
@@ -208,11 +208,11 @@ foreign_politics = {
 			subtract_from_variable = { creditsamount = 20 }
 			if = {
 				limit = {
-					NOT = { has_country_flag = OOB_LOADED }
+					NOT = { has_country_flag = OOB_LOADED_B4 }
 				}
 				hidden_effect = {
 					load_oob = "droid_troops_3"
-					set_country_flag = OOB_LOADED
+					set_country_flag = OOB_LOADED_B4
 					set_division_template_lock = {
 						division_template = "Battle Droideka Division"
 						is_locked = yes
@@ -222,7 +222,7 @@ foreign_politics = {
 			else = {
 				capital_scope = {
 					create_unit = {
-						division = "name = \"1st Droid Destroyer Division\" start_experience_factor = 0 start_equipment_factor = 1"
+						division = "name = \"Battle Droideka Division\" start_experience_factor = 0 start_equipment_factor = 1"
 						owner = ROOT
 					}
 				}
