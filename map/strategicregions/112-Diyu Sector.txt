@@ -1,3 +1,4 @@
+
 strategic_region={
 	id=112
 	name="STRATEGICREGION_112"
@@ -5,5 +6,19 @@ strategic_region={
 		233 361 456 520 1946 1952 1960 1961 1967 1968 1971 1974 1977 1978 1983 1984 1985 1990 1991 3104 3105 3110 
 	}
 	weather={
+		period={
+			between={ 0.0 30.11 }
+			temperature={ -10.0 35.0 }
+			temperature_day_night={ 2.0 -2.0 }
+			no_phenomenon=1.500
+			rain_light=0.250
+			rain_heavy=0.100
+			snow=0.000
+			blizzard=0.000
+			arctic_water=0.000
+			mud=0.000
+			sandstorm=0.000
+			min_snow_level=0.000
+		}
 	}
 }

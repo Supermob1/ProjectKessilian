@@ -1,9 +1,25 @@
+
 strategic_region={
 	id=47
 	name="STRATEGICREGION_47"
 	provinces={
 		3538 3549 3550 3557 3558 3560 
 	}
-	naval_terrain=hyperlane	weather={
+	naval_terrain=hyperlane
+	weather={
+		period={
+			between={ 0.0 30.11 }
+			temperature={ -10.0 35.0 }
+			temperature_day_night={ 2.0 -2.0 }
+			no_phenomenon=1.500
+			rain_light=0.250
+			rain_heavy=0.100
+			snow=0.000
+			blizzard=0.000
+			arctic_water=0.000
+			mud=0.000
+			sandstorm=0.000
+			min_snow_level=0.000
+		}
 	}
 }

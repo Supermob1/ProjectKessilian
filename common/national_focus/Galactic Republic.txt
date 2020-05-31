@@ -644,6 +644,9 @@ focus_tree = {
 		prerequisite = {
 			focus = REP_the_unitist_movement
 		}
+		mutually_exclusive = {
+			focus = REP_an_attempt_on_a_senator
+		}
 
 		x = 9
 		y = 6
@@ -2801,6 +2804,9 @@ focus_tree = {
 		prerequisite = {
 			focus = REP_cleaning_house
 		}
+		mutually_exclusive = {
+			focus = REP_the_boys_in_white
+		}
 		
 		x = 1
 		y = 3
@@ -3122,7 +3128,7 @@ focus_tree = {
 			focus = REP_we_are_the_senate 
 		}
 		mutually_exclusive = { 
-			focus = REP_a_guid_hand 
+			focus = REP_the_helping_hand 
 		}
 		ai_will_do = {
 			factor = 1
@@ -3319,9 +3325,6 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = REP_we_are_the_senate 
 		}
-		mutually_exclusive = { 
-			focus = REP_ 
-		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -3396,7 +3399,7 @@ focus_tree = {
 			focus = REP_in_the_chosen_one_we_trust 
 		}
 		mutually_exclusive = { 
-			focus = REP_a_guid_hand 
+			focus = REP_the_helping_hand 
 		}
 		ai_will_do = {
 			factor = 1

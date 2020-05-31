@@ -1,3 +1,4 @@
+
 strategic_region={
 	id=30
 	name="STRATEGICREGION_30"
@@ -5,5 +6,19 @@ strategic_region={
 		57 69 259 389 2035 2036 2039 2040 2041 2042 2044 2045 2046 2047 2048 2049 2050 2052 2053 2056 3088 3089 3091 
 	}
 	weather={
+		period={
+			between={ 0.0 30.11 }
+			temperature={ -10.0 35.0 }
+			temperature_day_night={ 2.0 -2.0 }
+			no_phenomenon=1.500
+			rain_light=0.250
+			rain_heavy=0.100
+			snow=0.000
+			blizzard=0.000
+			arctic_water=0.000
+			mud=0.000
+			sandstorm=0.000
+			min_snow_level=0.000
+		}
 	}
 }
