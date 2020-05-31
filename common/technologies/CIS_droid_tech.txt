@@ -20,30 +20,6 @@ technologies = {
 	@level3 = 14
 	@level4 = 18
 	
-    #Light Droid#
-	light_droid_base_equipment = {
-	
-
-		enable_equipments = {
-			light_droid_equipment
-		}
-		
-		research_cost = 2
-		start_year = 11
-		
-		folder = {
-			name = droid_folder
-			position = { x = @light y = @base }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			droid_tech
-		}
-	}
 	#Light Droid#
 	b1_battle_droid = {
 	
