@@ -10,7 +10,7 @@ categories =  {
 	}
 
 	ocean = {
-		color = { 58 91 255 }
+		color = { 40 83 176 }
 		movement_cost = 1.0
 		is_water = yes
 		sound_type = sea
@@ -19,15 +19,8 @@ categories =  {
 	lakes = {
 		color = { 58 91 255 }
 		movement_cost = 5.0
-		attrition = 0.9
-		combat_width = -0.5
-		ai_terrain_importance_factor = 0.1
 		sound_type = sea
-
-		units = {
-			attack = -0.9
-			#movement = -0.9
-		}
+		
 	}
 	
 	forest = {
@@ -169,16 +162,15 @@ categories =  {
 		enemy_army_bonus_air_superiority_factor = -0.50
 	}
 	
-	hyperlane = {
+	water_hyperlane = {
+		naval_terrain = yes
 		color = { 112 74 31 }
-		movement_cost = 1.2
-		ai_terrain_importance_factor = 4.0
-		sound_type = plains
+		movement_cost = 0.5
+		is_water = yes
+		sound_type = sea
 
-		naval_speed_factor = 100.0
+		naval_speed_factor = 1.0
 		spotting_chance = -9999.0
-
-		enemy_army_bonus_air_superiority_factor = -0.50
 	}
 	
 	volcano = {
@@ -227,7 +219,7 @@ categories =  {
 terrain = {
 	terrain_0					= { type = plains			color = { 	0	 } texture = 1 }
 	ecumenopolis				= { type = ecumenpolis		color = { 	1	 } texture = 19 } 
-	hyperlane					= { type = hyperlane		color = { 	2	 } texture = 20 }
+	water_hyperlane			= { type = water_hyperlane	color = { 	2	 } texture = 20 }
 	volcano						= { type = volcano			color = { 	3	 } texture = 18 }
 		
 	ice_world					= { type = ice_world		color = { 	4	 } texture = 17 }
