@@ -1,11 +1,11 @@
 ﻿capital = 62
 
-oob = "REP_1936"
+oob = "garrison_generic"
 
 set_research_slots = 4
 
 set_stability = 0.10
-
+set_convoys = 300
 set_war_support = 0.02
 
 set_technology = {
@@ -25,6 +25,9 @@ set_popularities = {
 		inclusivist = 39
 		light_side = 17
 	}
+add_ideas = {
+	dontusemanpower
+}
 set_politics = {
 	ruling_party = inclusivist
 	last_election = "10.15.6"

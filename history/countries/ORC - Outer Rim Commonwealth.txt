@@ -1,7 +1,6 @@
 capital = 140
 
-oob = "ORC_1936"
-
+oob = "garrison_generic"
 set_research_slots = 2
 
 set_stability = 0.20
@@ -23,6 +22,9 @@ set_popularities = {
 		inclusivist = 0
 		light_side = 0
 	}
+add_ideas = {
+	dontusemanpower
+}
 set_politics = {
 	ruling_party = distributionist
 	last_election = "10.15.6"
