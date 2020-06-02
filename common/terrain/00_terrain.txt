@@ -18,9 +18,15 @@ categories =  {
 	
 	lakes = {
 		color = { 58 91 255 }
-		movement_cost = 10.0
-		ai_terrain_importance_factor = -10.0
+		movement_cost = 100.0
+		ai_terrain_importance_factor = 0.0
 		sound_type = sea
+		is_water = no
+		naval_speed_factor = -9999.0
+		spotting_chance = -9999.0
+		units = {
+			movement = -20.0
+		}
 	}
 	
 	forest = {
