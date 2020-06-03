@@ -1759,7 +1759,7 @@ focus_tree = {
 			#no prereq, start of tree
 		}
 		
-		x = 43
+		x = 50
 		y = 0
 		
 		completion_reward = {
@@ -3098,8 +3098,440 @@ focus_tree = {
 		}
 	}
 	#CLONE COUP END#
+	#PLO KOON START#
+	focus = { 
+		id = REP_clone_counter-coup
+		icon = REP_clone_counter-coup
+		cost = 10
+		
 
+		x = 35
+		y = 8
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_acting_chancellor_plo_koon
+		icon = REP_acting_chancellor_plo_koon
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_clone_counter-coup
+		}
 
+		x = 0
+		y = 1
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_placate_the_senate
+		icon = REP_placate_the_senate
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_acting_chancellor_plo_koon
+		}
+
+		mutually_exclusive = {
+			focus = REP_ensure_the_senates_loyalty
+		}
+
+		x = -3
+		y = 2
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_promises_of_democracy
+		icon = REP_promises_of_democracy
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_placate_the_senate
+			focus = REP_ensure_the_senates_loyalty
+		}
+
+		x = -2
+		y = 3
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_meet_with_the_delegation_of_2000
+		icon = REP_meet_with_the_delegation_of_2000
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_placate_the_senate
+		}
+
+		prerequisite = {
+			focus = REP_promises_of_democracy
+		}
+
+		x = -3
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_ensure_the_senates_loyalty
+		icon = REP_ensure_the_senates_loyalty
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_acting_chancellor_plo_koon
+		}
+
+		mutually_exclusive = {
+			focus = REP_placate_the_senate
+		}
+
+		x = -1
+		y = 2
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_invoke_the_emergency_powers_act
+		icon = REP_invoke_the_emergency_powers_act
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_placate_the_senate
+		}
+
+		prerequisite = {
+			focus = REP_promises_of_democracy
+		}
+
+		x = -1
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_hunt_the_co-conspirators
+		icon = REP_hunt_the_co-conspirators
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_acting_chancellor_plo_koon
+		}
+
+		x = 3
+		y = 2
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_jedi_oversight_committee
+		icon = REP_jedi_oversight_committee
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_hunt_the_co-conspirators
+		}
+		
+		mutually_exclusive = {
+			focus = REP_reform_the_jedi_order
+		}
+
+		x = 2
+		y = 3
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_appoint_the_clones_as_generals
+		icon = REP_appoint_the_clones_as_generals
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_jedi_oversight_committee
+		}
+		
+
+		x = 1
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_jedi_by_choice
+		icon = REP_jedi_by_choice
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_jedi_oversight_committee
+			focus = REP_reform_the_jedi_order
+		}
+		
+
+		x = 3
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	focus = { 
+		id = REP_allegiance_to_the_republic
+		icon = REP_allegiance_to_the_republic
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_reform_the_jedi_order
+		}
+		
+
+		x = 5
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}	
+	focus = { 
+		id = REP_reform_the_jedi_order
+		icon = REP_reform_the_jedi_order
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_hunt_the_co-conspirators
+		}
+		
+		mutually_exclusive = {
+			focus = REP_jedi_oversight_committee
+		}
+
+		x = 4
+		y = 3
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_fight_congressional_corruption
+		icon = REP_fight_congressional_corruption
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_meet_with_the_delegation_of_2000
+			focus = REP_invoke_the_emergency_powers_act
+		}
+
+		x = -2
+		y = 5
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_liquidate_banking_clan_assets
+		icon = REP_liquidate_banking_clan_assets
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_fight_congressional_corruption
+		}
+
+		x = -2
+		y = 6
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_not_expendable_to_me
+		icon = REP_not_expendable_to_me
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_liquidate_banking_clan_assets
+		}
+		
+		prerequisite = {
+			focus = REP_the_trials_of_treasonous_jedi
+		}
+
+		x = 0
+		y = 7
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_serving_at_the_pleasure
+		icon = REP_serving_at_the_pleasure
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_invoke_the_emergency_powers_act
+			focus = REP_appoint_the_clones_as_generals
+		}
+		
+
+		x = 0
+		y = 6
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_the_jedi_non-interference_act
+		icon = REP_the_jedi_non-interference_act
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_appoint_the_clones_as_generals
+		}
+		
+		prerequisite = {
+			focus = REP_jedi_by_choice
+		}
+
+		x = 2
+		y = 5
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_compassion_through_attachment
+		icon = REP_compassion_through_attachment
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_jedi_by_choice
+		}
+		
+		prerequisite = {
+			focus = REP_allegiance_to_the_republic
+		}
+
+		x = 4
+		y = 5
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_the_trials_of_treasonous_jedi
+		icon = REP_the_trials_of_treasonous_jedi
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_the_jedi_non-interference_act
+			focus = REP_compassion_through_attachment
+		}
+
+		x = 3
+		y = 6
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_the_clone_citizenship_act
+		icon = REP_the_clone_citizenship_act
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_not_expendable_to_me
+		}
+
+		x = -2
+		y = 8
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_meritocratic_army_act
+		icon = REP_meritocratic_army_act
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_not_expendable_to_me
+		}
+
+		x = 0
+		y = 8
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	focus = { 
+		id = REP_end_of_genetic_slavery_act
+		icon = REP_end_of_genetic_slavery_act
+		cost = 10
+	
+		prerequisite = {
+			focus = REP_not_expendable_to_me
+		}
+
+		x = 2
+		y = 8
+		relative_position_id = REP_clone_counter-coup
+		
+		completion_reward = {
+		
+		}
+	}
+	#END OF PLO KOON TREE#
 	#jedi kill palps
 	#Focus for The Greater Good
 	focus = {
