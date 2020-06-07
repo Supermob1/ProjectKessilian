@@ -16,8 +16,7 @@ focus_tree = {
   reset_on_civilwar = no
   
   continuous_focus_position = { x = 50 y = 2000 }
-    
-    
+
   ########### TREE START ###########
   #     Dooku's Dilemma Branch     # 
   focus = { 
@@ -545,7 +544,1945 @@ focus_tree = {
     
     }
   }
-  
-  
-  
+###CIS JEDI TREE###
+	focus = { 
+		 id = CIS_a_new_hope
+	     icon = CIS_a_new_hope
+	     cost = 10
+	    
+			prerequisite = {
+			}
+
+			x = 12
+			y = 0
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_atoning_for_his_failures
+	     icon = CIS_atoning_for_his_failures
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_a_new_hope
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_rescue_the_republics_lost
+	     icon = CIS_rescue_the_republics_lost
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_atoning_for_his_failures
+			}
+
+			x = 0
+			y = 2
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_lightbringer_crops
+	     icon = CIS_the_lightbringer_crops
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_rescue_the_republics_lost
+			}
+
+			x = 0
+			y = 3
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_young_and_eager
+	     icon = CIS_the_young_and_eager
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_lightbringer_crops
+			}
+
+			x = -2
+			y = 4
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_nothing_but_a_number
+	     icon = CIS_nothing_but_a_number
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_young_and_eager
+			}
+
+			x = -2
+			y = 5
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_all_who_hear_the_call
+	     icon = CIS_all_who_hear_the_call
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_nothing_but_a_number
+			}
+
+			x = -2
+			y = 6
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_jedi_citizens_corps
+	     icon = CIS_the_jedi_citizens_corps
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_all_who_hear_the_call
+			}
+
+			x = -2
+			y = 7
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_a_pure_order
+	     icon = CIS_a_pure_order
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_lightbringer_crops
+			}
+
+			mutually_exclusive = {
+				focus = CIS_a_free_order
+			}
+
+			x = 0
+			y = 4
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_never_for_attack
+	     icon = CIS_never_for_attack
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_a_pure_order
+			}
+
+			x = 0
+			y = 5
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_disgrace_the_slavers
+	     icon = CIS_disgrace_the_slavers
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_never_for_attack
+			}
+
+			x = 0
+			y = 6
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_operation_zone
+	     icon = CIS_operation_zone
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_disgrace_the_slavers
+			}
+
+			x = 0
+			y = 7
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_reformed_order_rises
+	     icon = CIS_the_reformed_order_rises
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_jedi_citizens_corps
+				focus = CIS_operation_zone
+				focus = CIS_the_vanguard_corps
+			}
+
+			x = 0
+			y = 8
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_a_free_order
+	     icon = CIS_a_free_order
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_the_lightbringer_crops
+			}
+
+			mutually_exclusive = {
+				focus = CIS_a_pure_order
+			}
+
+			x = 2
+			y = 4
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_infinite_facets
+	     icon = CIS_infinite_facets
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_a_free_order
+			}
+
+
+			x = 2
+			y = 5
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_form_one_crystal
+	     icon = CIS_form_one_crystal
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_infinite_facets
+			}
+
+
+			x = 2
+			y = 6
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+		 id = CIS_the_vanguard_corps
+	     icon = CIS_the_vanguard_corps
+	     cost = 10
+	    
+			prerequisite = {
+				focus = CIS_form_one_crystal
+			}
+
+
+			x = 2
+			y = 7
+			relative_position_id = CIS_a_new_hope
+			
+	    
+			completion_reward = {
+			}
+	}
+#SITH EMPIRE TREE
+ 
+	focus = { 
+		 id = CIS_peace_is_a_lie2
+	     icon = CIS_peace_is_a_lie2
+	     cost = 10
+	    
+			prerequisite = {
+			}
+
+			x = 60
+			y = 0
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+	     id = CIS_the_future_of_the_dark_side
+	     icon = CIS_the_future_of_the_dark_side
+	     cost = 10
+	    
+			prerequisite = {
+			focus = CIS_peace_is_a_lie2
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_peace_is_a_lie2
+	    
+			completion_reward = {
+			} 
+	}
+	  
+	focus = { 
+			id = CIS_from_the_ashes
+			icon = CIS_from_the_ashes
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_future_of_the_dark_side
+			}
+
+			mutually_exclusive = {
+				focus = CIS_always_two
+			}
+
+			x = 10
+			y = 1
+			relative_position_id = CIS_the_future_of_the_dark_side
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_always_two
+			icon = CIS_always_two
+			cost = 10
+	  
+			mutually_exclusive = {
+			focus = CIS_from_the_ashes
+			}
+	  
+			prerequisite = {
+			focus = CIS_the_future_of_the_dark_side
+			}
+
+			x = -10
+			y = 1
+			relative_position_id = CIS_the_future_of_the_dark_side
+	    
+			completion_reward = {
+			}	
+	}
+	  
+	focus = { 
+			id = CIS_betrayal_is_the_sith_way
+			icon = CIS_betrayal_is_the_sith_way
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_always_two
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_his_loyal_right_hand
+			icon = CIS_his_loyal_right_hand
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_betrayal_is_the_sith_way
+			}
+		
+			mutually_exclusive = {
+			focus = CIS_the_prodigal_daughter
+			}
+
+			x = -4
+			y = 2
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_the_prodigal_daughter
+			icon = CIS_the_prodigal_daughter
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_betrayal_is_the_sith_way
+			}
+		
+			mutually_exclusive = {
+			focus = CIS_his_loyal_right_hand
+			}
+
+			x = 4
+			y = 2
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	  
+	focus = { 
+			id = CIS_continue_her_training
+			icon = CIS_continue_her_training
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_his_loyal_right_hand
+			}
+
+			x = -4
+			y = 3
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	   
+	focus = { 
+			id = CIS_confirm_her_allegiance
+			icon = CIS_confirm_her_allegiance
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_continue_her_training
+			}
+
+			x = -4
+			y = 4
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	   
+	focus = { 
+			id = CIS_demand_her_obedience
+			icon = CIS_demand_her_obedience
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_confirm_her_allegiance
+			}
+
+			x = -4
+			y = 5
+			relative_position_id = CIS_always_two
+	    
+			completion_reward = {
+			}
+	}
+	   
+	focus = { 
+			id = CIS_seek_a_new_apprentice
+			icon = CIS_seek_a_new_apprentice
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_prodigal_daughter
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_renegade
+			icon = CIS_the_renegade
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_butcher
+			focus = CIS_the_ideologue
+			focus = CIS_the_outsider
+			}
+
+			x = -4
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_butcher
+			icon = CIS_the_butcher
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_renegade
+			focus = CIS_the_ideologue
+			focus = CIS_the_outsider
+			}
+
+			x = -2
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_ideologue
+			icon = CIS_the_ideologue
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_renegade
+			focus = CIS_the_butcher
+			focus = CIS_the_outsider
+			}
+
+			x = 2
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_the_outsider
+			icon = CIS_the_outsider
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_seek_a_new_apprentice
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_renegade
+			focus = CIS_the_butcher
+			focus = CIS_the_ideologue
+			}
+
+			x = 4
+			y = 2
+			relative_position_id = CIS_the_prodigal_daughter
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_break_him_down
+			icon = CIS_break_him_down
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_renegade
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_renegade
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_encourage_his_bloodlust
+			icon = CIS_encourage_his_bloodlust
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_butcher
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_butcher
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_twist_her_morals
+			icon = CIS_twist_her_morals
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_ideologue
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_ideologue
+	    
+			completion_reward = {
+			}
+	}
+		
+	focus = { 
+			id = CIS_alter_his_body
+			icon = CIS_alter_his_body
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_outsider
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_outsider
+	    
+			completion_reward = {
+			}
+	}
+	
+	focus = { 
+			id = CIS_build_him_anew
+			icon = CIS_build_him_anew
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_break_him_down
+			}
+
+			x = 0
+			y = 2
+			relative_position_id = CIS_the_renegade
+	    
+			completion_reward = {
+			}
+	}
+	
+	focus = { 
+			id = CIS_rise_darth_enigma
+			icon = CIS_rise_darth_enigma
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_build_him_anew
+			}
+
+			x = 0
+			y = 3
+			relative_position_id = CIS_the_renegade
+	    
+			completion_reward = {
+			}
+	}
+	
+	focus = { 
+			id = CIS_feed_his_malice
+			icon = CIS_feed_his_malice
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_encourage_his_bloodlust
+			}
+
+			x = 0
+			y = 2
+			relative_position_id = CIS_the_butcher
+	    
+			completion_reward = {
+			}
+	}  
+ 	
+	focus = { 
+			id = CIS_rise_darth_lanius
+			icon = CIS_rise_darth_lanius
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_feed_his_malice
+			}
+
+			x = 0
+			y = 3
+			relative_position_id = CIS_the_butcher
+	    
+			completion_reward = {
+			}
+	}  
+ 	
+	focus = { 
+			id = CIS_nurture_her_rage
+			icon = CIS_nurture_her_rage
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_twist_her_morals
+			}
+
+			x = 0
+			y = 2
+			relative_position_id = CIS_the_ideologue
+	    
+			completion_reward = {
+			}
+	}  
+
+	focus = { 
+			id = CIS_rise_darth_abyssal
+			icon = CIS_rise_darth_abyssal
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_nurture_her_rage
+			}
+
+			x = 0
+			y = 3
+			relative_position_id = CIS_the_ideologue
+	    
+			completion_reward = {
+			}
+	}  	
+ 
+	focus = { 
+			id = CIS_corrupt_his_mind
+			icon = CIS_corrupt_his_mind
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_alter_his_body
+			}
+
+			x = 0
+			y = 2
+			relative_position_id = CIS_the_outsider
+	    
+			completion_reward = {
+			}
+	}
+	
+	focus = { 
+			id = CIS_rise_darth_irae
+			icon = CIS_rise_darth_irae
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_corrupt_his_mind
+			}
+
+			x = 0
+			y = 3
+			relative_position_id = CIS_the_outsider
+	    
+			completion_reward = {
+			}
+	}
+	
+	focus = { 
+			id = CIS_rise_darth_umbral
+			icon = CIS_rise_darth_umbral
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_demand_her_obedience
+			}
+
+			x = 0
+			y = 3
+			relative_position_id = CIS_confirm_her_allegiance
+	    
+			completion_reward = {
+			}
+	}  	
+	####LEFT BRANCH END####
+	####RIGHT BRANCH####
+	focus = { 
+			id = CIS_the_sith_must_be_pure
+			icon = CIS_the_sith_must_be_pure
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_from_the_ashes
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_the_dark_side_has_many_forces
+			}
+
+			x = -4
+			y = 1
+			relative_position_id = CIS_from_the_ashes
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_recruit_new_acolytes
+			icon = CIS_recruit_new_acolytes
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_sith_must_be_pure
+			}
+
+			x = -2
+			y = 1
+			relative_position_id = CIS_the_sith_must_be_pure
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_seek_out_force-sensitive_children
+			icon = CIS_seek_out_force-sensitive_children
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_sith_must_be_pure
+			}
+
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_sith_must_be_pure
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_construct_sith_temples
+			icon = CIS_construct_sith_temples
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_sith_must_be_pure
+			}
+
+			x = 2
+			y = 1
+			relative_position_id = CIS_the_sith_must_be_pure
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_purge_the_pretenders
+			icon = CIS_purge_the_pretenders
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_recruit_new_acolytes
+			}
+			
+			prerequisite = {
+			focus = CIS_seek_out_force-sensitive_children
+			}	
+			
+			prerequisite = {
+			focus = CIS_construct_sith_temples
+			}
+			
+			x = 0
+			y = 2
+			relative_position_id = CIS_the_sith_must_be_pure
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_sith_empire
+			icon = CIS_the_sith_empire
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_purge_the_pretenders
+			}
+			
+			x = 0
+			y = 3
+			relative_position_id = CIS_the_sith_must_be_pure
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_dark_side_has_many_forces
+			icon = CIS_the_dark_side_has_many_forces
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_from_the_ashes
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_the_sith_must_be_pure
+			}
+			
+			x = 4
+			y = 1
+			relative_position_id = CIS_from_the_ashes
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_reach_out_to_the_nightsisters
+			icon = CIS_reach_out_to_the_nightsisters
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_dark_side_has_many_forces
+			}
+			
+			x = -2
+			y = 1
+			relative_position_id = CIS_the_dark_side_has_many_forces
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_shadow_collective
+			icon = CIS_the_shadow_collective
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_dark_side_has_many_forces
+			}
+			
+			x = 0
+			y = 1
+			relative_position_id = CIS_the_dark_side_has_many_forces
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_an_alliance_with_zygerria
+			icon = CIS_an_alliance_with_zygerria
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_the_dark_side_has_many_forces
+			}
+			
+			x = 2
+			y = 1
+			relative_position_id = CIS_the_dark_side_has_many_forces
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_united_in_shadow
+			icon = CIS_united_in_shadow
+			cost = 10
+	    
+			prerequisite = {
+			focus = CIS_reach_out_to_the_nightsisters
+			}
+			
+			prerequisite = {
+			focus = CIS_the_shadow_collective
+			}
+			
+			prerequisite = {
+			focus = CIS_an_alliance_with_zygerria
+			}			
+			
+			x = 0
+			y = 2
+			relative_position_id = CIS_the_dark_side_has_many_forces
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_infinite_empire
+			icon = CIS_the_infinite_empire
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_united_in_shadow
+			}			
+			
+			x = 0
+			y = 3
+			relative_position_id = CIS_the_dark_side_has_many_forces
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_through_passion_i_gain_strength
+			icon = CIS_through_passion_i_gain_strength
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_rise_darth_umbral
+			focus = CIS_rise_darth_enigma
+			focus = CIS_rise_darth_lanius
+			focus = CIS_rise_darth_abyssal
+			focus = CIS_rise_darth_irae
+			focus = CIS_the_sith_empire
+			focus = CIS_the_infinite_empire
+			}			
+			
+			x = 5
+			y = 9
+			relative_position_id = CIS_the_future_of_the_dark_side
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_dark_side_theology
+			icon = CIS_dark_side_theology
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_passion_i_gain_strength
+			}			
+			
+			x = 0
+			y = 1
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_expedition_to_moraband
+			icon = CIS_expedition_to_moraband
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_dark_side_theology
+			}			
+			
+			x = -4
+			y = 2
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_expedition_to_malachor
+			icon = CIS_expedition_to_malachor
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_dark_side_theology
+			}			
+			
+			x = 0
+			y = 2
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_expedition_to_exegol
+			icon = CIS_expedition_to_exegol
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_dark_side_theology
+			}			
+			
+			x = 4
+			y = 2
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_stamp_out_competing_faiths
+			icon = CIS_stamp_out_competing_faiths
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_expedition_to_moraband
+			focus = CIS_expedition_to_malachor
+			focus = CIS_expedition_to_exegol
+			}			
+			
+			x = -6
+			y = 3
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_recover_sith_holocrons
+			icon = CIS_stamp_out_competing_faiths
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_expedition_to_moraband
+			focus = CIS_expedition_to_malachor
+			focus = CIS_expedition_to_exegol
+			}			
+			
+			x = -3
+			y = 3
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_construct_new_lightsabers
+			icon = CIS_construct_new_lightsabers
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_expedition_to_moraband
+			focus = CIS_expedition_to_malachor
+			focus = CIS_expedition_to_exegol
+			}			
+			
+			x = 3
+			y = 3
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_encourage_political_assassinations
+			icon = CIS_encourage_political_assassinations
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_expedition_to_moraband
+			focus = CIS_expedition_to_malachor
+			focus = CIS_expedition_to_exegol
+			}			
+			
+			x = 6
+			y = 3
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_closely_guarded_secrets
+			icon = CIS_closely_guarded_secrets
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_recover_sith_holocrons
+			}			
+			
+			prerequisite = {
+			focus = CIS_construct_new_lightsabers
+			}					
+			
+			mutually_exclusive = {
+			focus = CIS_cult_of_the_ancient_sith
+			}			
+			
+			x = -3
+			y = 4
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_cult_of_the_ancient_sith
+			icon = CIS_cult_of_the_ancient_sith
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_recover_sith_holocrons
+			}			
+			
+			prerequisite = {
+			focus = CIS_construct_new_lightsabers
+			}
+
+			mutually_exclusive = {
+			focus = CIS_closely_guarded_secrets
+			}
+			
+			x = 3
+			y = 4
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_through_strength_i_gain_power
+			icon = CIS_through_strength_i_gain_power
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_closely_guarded_secrets
+			focus = CIS_cult_of_the_ancient_sith
+			}			
+			
+			x = 0
+			y = 5
+			relative_position_id = CIS_through_passion_i_gain_strength
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_army_of_darkness
+			icon = CIS_the_army_of_darkness
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_strength_i_gain_power
+			}
+
+			mutually_exclusive = {
+			focus = CIS_maintain_the_droid_army
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_droids_and_conscripts
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_scrap_the_droids
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_the_sith_vanguard
+			}			
+			
+			x = -6
+			y = 1
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_sith_vanguard
+			icon = CIS_the_army_of_darkness
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_strength_i_gain_power
+			}
+
+			mutually_exclusive = {
+			focus = CIS_maintain_the_droid_army
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_droids_and_conscripts
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_scrap_the_droids
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_the_army_of_darkness
+			}			
+			
+			x = -3
+			y = 1
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_maintain_the_droid_army
+			icon = CIS_maintain_the_droid_army
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_strength_i_gain_power
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_sith_vanguard
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_droids_and_conscripts
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_scrap_the_droids
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_the_army_of_darkness
+			}			
+			
+			x = 0
+			y = 1
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_droids_and_conscripts
+			icon = CIS_droids_and_conscripts
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_strength_i_gain_power
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_sith_vanguard
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_maintain_the_droid_army
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_scrap_the_droids
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_the_army_of_darkness
+			}			
+			
+			x = 3
+			y = 1
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_scrap_the_droids
+			icon = CIS_scrap_the_droids
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_strength_i_gain_power
+			}
+
+			mutually_exclusive = {
+			focus = CIS_the_sith_vanguard
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_maintain_the_droid_army
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_droids_and_conscripts
+			}
+			
+			mutually_exclusive = {
+		    focus = CIS_the_army_of_darkness
+			}			
+			
+			x = 6
+			y = 1
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_new_army_for_a_new_empire
+			icon = CIS_scrap_the_droids
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_army_of_darkness
+			focus = CIS_the_sith_vanguard
+			focus = CIS_maintain_the_droid_army
+			focus = CIS_droids_and_conscripts
+			focus = CIS_scrap_the_droids	
+			}	
+			
+			x = 0
+			y = 2
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_seize_corporate_factories
+			icon = CIS_seize_corporate_factories
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_new_army_for_a_new_empire
+			}
+		
+			
+			x = -3
+			y = 3
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_claim_dookus_birthright
+			icon = CIS_claim_dookus_birthright
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_new_army_for_a_new_empire
+			}
+		
+			
+			x = 0
+			y = 3
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_exploit_slave_labour
+			icon = CIS_exploit_slave_labour
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_new_army_for_a_new_empire
+			}
+		
+			
+			x = 3
+			y = 3
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_imperial_foundries
+			icon = CIS_the_imperial_foundries
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_seize_corporate_factories
+			}
+			
+			prerequisite = {
+			focus = CIS_claim_dookus_birthright
+			}		
+			
+			prerequisite = {
+			focus = CIS_exploit_slave_labour
+			}			
+			
+			x = 0
+			y = 4
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_establish_press_gangs
+			icon = CIS_establish_press_gangs
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_imperial_foundries
+			}
+						
+			
+			x = -3
+			y = 5
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_convert_captured_warships
+			icon = CIS_convert_captured_warships
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_imperial_foundries
+			}
+						
+			
+			x = 0
+			y = 5
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_sith_admiralty
+			icon = CIS_the_sith_admiralty
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_imperial_foundries
+			}
+						
+			
+			x = 3
+			y = 5
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_black_armada
+			icon = CIS_the_black_armada
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_establish_press_gangs
+			}
+			
+			prerequisite = {
+			focus = CIS_convert_captured_warships
+			}						
+			
+			prerequisite = {
+			focus = CIS_the_sith_admiralty
+			}			
+			
+			x = 0
+			y = 6
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_through_power_i_gain_victory
+			icon = CIS_through_power_i_gain_victory
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_black_armada
+			}		
+			
+			x = 0
+			y = 7
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_invite_the_death_watch
+			icon = CIS_invite_the_death_watch
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_power_i_gain_victory
+			}		
+			
+			x = -7
+			y = 8
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_outlived_their_usefulness
+			icon = CIS_outlived_their_usefulness
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_invite_the_death_watch
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_sith_supercommandos
+			}
+			
+			x = -9
+			y = 9
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_sith_supercommandos
+			icon = CIS_sith_supercommandos
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_invite_the_death_watch
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_outlived_their_usefulness
+			}
+			
+			x = -5
+			y = 9
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_coerce_the_hutts
+			icon = CIS_coerce_the_hutts
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_power_i_gain_victory
+			}
+			
+			
+			x = -3
+			y = 8
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_an_offer_they_cant_refuse
+			icon = CIS_an_offer_they_cant_refuse
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_coerce_the_hutts
+			}
+			
+			
+			x = -3
+			y = 9
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_coerce_the_neutral_systems
+			icon = CIS_coerce_the_neutral_systems
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_power_i_gain_victory
+			}
+			
+			
+			x = 3
+			y = 8
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_apathy_is_death
+			icon = CIS_apathy_is_death
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_coerce_the_neutral_systems
+			}
+			
+			
+			x = 3
+			y = 9
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_infiltrate_the_republic
+			icon = CIS_infiltrate_the_republic
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_power_i_gain_victory
+			}
+			
+			
+			x = 7
+			y = 8
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_support_our_cause
+			icon = CIS_support_our_cause
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_infiltrate_the_republic
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_sabotage_their_efforts
+			}
+			
+			x = 5
+			y = 9
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_sabotage_their_efforts
+			icon = CIS_sabotage_their_efforts
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_infiltrate_the_republic
+			}
+			
+			mutually_exclusive = {
+			focus = CIS_support_our_cause
+			}
+			
+			x = 9
+			y = 9
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_final_war
+			icon = CIS_the_final_war
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_power_i_gain_victory
+			}
+			
+			
+			x = 0
+			y = 10
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_through_victory_my_chains_are_broken
+			icon = CIS_through_victory_my_chains_are_broken
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_final_war
+			}
+			
+			
+			x = 0
+			y = 11
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_secure_imperial_power
+			icon = CIS_secure_imperial_power
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_through_victory_my_chains_are_broken
+			}
+			
+			
+			x = 0
+			y = 12
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_destroy_republic_holdouts
+			icon = CIS_destroy_republic_holdouts
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_secure_imperial_power
+			}
+			
+			
+			x = -3
+			y = 13
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_hold_court_in_the_senate_building
+			icon = CIS_hold_court_in_the_senate_building
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_secure_imperial_power
+			}
+			
+			
+			x = 0
+			y = 13
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_raze_the_jedi_temple
+			icon = CIS_raze_the_jedi_temple
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_secure_imperial_power
+			}
+			
+			
+			x = 3
+			y = 13
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_revenge_of_the_sith
+			icon = CIS_revenge_of_the_sith
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_destroy_republic_holdouts
+			}
+			
+			prerequisite = {
+			focus = CIS_hold_court_in_the_senate_building
+			}			
+			
+			prerequisite = {
+			focus = CIS_raze_the_jedi_temple
+			}			
+			
+			x = 0
+			y = 14
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_jedi_purge
+			icon = CIS_the_jedi_purge
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_revenge_of_the_sith
+			}		
+			
+			x = 0
+			y = 15
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
+	focus = { 
+			id = CIS_the_force_shall_free_me
+			icon = CIS_the_force_shall_free_me
+			cost = 10
+			
+			prerequisite = {
+			focus = CIS_the_jedi_purge
+			}		
+			
+			x = 0
+			y = 16
+			relative_position_id = CIS_through_strength_i_gain_power
+	    
+			completion_reward = {
+			}
+	}
 }

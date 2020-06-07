@@ -1,0 +1,42 @@
+capital = 140
+
+oob = "garrison_generic"
+set_research_slots = 2
+
+set_stability = 0.20
+
+set_war_support = 0.80
+
+set_technology = {}
+
+set_popularities = {
+		new_order = 0
+		dark_side = 0
+		akaanadocrat = 0
+		unitist = 0
+		corist = 0
+		distributionist = 33
+		corporate_consortium = 33
+		trade_democrat = 1
+		ruusanist = 33
+		inclusivist = 0
+		light_side = 0
+	}
+add_ideas = {
+	dontusemanpower
+}
+set_politics = {
+	ruling_party = distributionist
+	last_election = "10.15.6"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "Cham Syndulla"
+	desc = "REP_syndullah_desc"
+	picture = "gfx/leaders/ORC/Portrait_Cham_Syndulla.dds"
+	expire = "1965.1.1"
+	ideology = distributionist_subtype
+	traits = { }
+}
