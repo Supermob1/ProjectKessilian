@@ -2,12 +2,17 @@ state={
 	id=6
 	name="STATE_6"
 	history = {
+		buildings = {
+			infrastructure = 1
+
+				#naval_base  = 1
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
 	provinces={
 		136 300 328 469 622 623 628 630 631 633 635 636 637 640 642 644 647 648 652 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+	manpower=25000
+	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
 }

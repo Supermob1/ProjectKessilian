@@ -2,6 +2,11 @@ state={
 	id=136
 	name="STATE_136"
 	history = {
+		buildings = {
+			infrastructure = 1
+
+				#naval_base  = 1
+		}
 		owner = REP
 		add_core_of = REP
 		victory_points = {
@@ -11,6 +16,6 @@ state={
 	provinces={
 		36 204 246 257 2511 2512 2519 2520 2529 2530 2531 2541 2545 2546 2554 2556 2561 2562 2567 2575 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+	manpower=20000
+	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
 }

@@ -1,17 +1,19 @@
 ﻿capital = 34
 
-oob = "CIS_1936"
-
+oob = "garrison_generic"
 set_research_slots = 3
 
 set_stability = 0.10
-
+#set_convoys = 300
 set_war_support = 0.02
 
 set_technology = {
 	droid_army = 1 #Hidden Tech
+	b1_battle_droid = 1
 }
-
+add_ideas = {
+	dontusemanpower
+}
 set_popularities = {
         new_order = 0
         dark_side = 0
@@ -39,4 +41,17 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = trade_democrat_subtype
 	traits = { }
+}
+
+###Field marshal####
+
+create_field_marshal = {
+	name = "Grievous"
+	picture = "portrait_grievous.dds"
+	traits = { aggression_chip }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
 }

@@ -30,10 +30,22 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "date"
-			position = { x = 22 y = 147 }
+			position = { x = 22 y = 140 }
 			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
 			text = "FE_BOOKMARK_DATE"
+			maxWidth = 185
+			maxHeight = 20
+			fixedsize = yes	
+			format = centre
+		}
+		
+		instantTextBoxType = {
+			name = "date_replace"
+			position = { x = 22 y = 155 }
+			font = "hoi_20b"
+			borderSize = {x = 0 y = 0}
+			text = "22 Years BBY"
 			maxWidth = 185
 			maxHeight = 20
 			fixedsize = yes	
@@ -533,9 +545,9 @@ guiTypes = {
 			
 			gridboxType = {
 				name ="bookmarks_grid"
-				position = { x = 0 y = 0 }
+				position = { x = 130 y = 0 }
 				size = { width = 100%% height = 100%% }
-				slotsize = { width = 260 height = 0 }
+				slotsize = { width = 9999 height = 0 }
 				add_horizontal = yes
 				max_slots_vertical = 1
 				format = "UPPER_LEFT"
@@ -1817,10 +1829,20 @@ guiTypes = {
 				
 				instantTextBoxType = {
 					name = "date"
-					position = { x = -170 y = 65 }
+					position = { x = 170000 y = 65 }
 					font = "hoi_24header"
 					borderSize = {x = 4 y = 4}
 					text = "Pikku Saippuakauppias Itkee!!"	
+					maxWidth = 340
+					maxHeight = 30	
+					format = centre
+				}
+				instantTextBoxType = {
+					name = "date_replace"
+					position = { x = -170 y = 65 }
+					font = "hoi_24header"
+					borderSize = {x = 4 y = 4}
+					text = "22 BBY"	
 					maxWidth = 340
 					maxHeight = 30	
 					format = centre
