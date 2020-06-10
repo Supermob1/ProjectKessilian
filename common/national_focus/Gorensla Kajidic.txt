@@ -1,0 +1,1021 @@
+# Generic Hutt Focus Tree
+# By Their Excellencies, Matthew K. Selby & TheCrusaderKing
+#################################
+focus_tree = {
+	id = GKJ_focus_tree
+
+    country = { 
+        factor = 0
+       modifier = { 
+         add = 10 
+         tag = GKJ
+       } 
+    }   
+
+    default = no
+	reset_on_civilwar = no
+	
+	continuous_focus_position = { x = 50 y = 2000 }
+#######MILITARY#########
+    focus = { 
+        id = GKJ_renewed_galactic_threat
+        icon = GKJ_renewed_galactic_threat
+        cost = 10
+
+        prerequisite = { 
+           #noprerequisite
+        }
+
+        x = 0
+        y = 0
+    }
+####LEFT BRANCH####   
+	focus = { 
+        id = GKJ_reinforce_spaceport_domination
+        icon = GKJ_reinforce_spaceport_domination
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_renewed_galactic_threat
+        }
+
+        x = -2
+        y = 1
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_requisition_civilian_freighters
+        icon = GKJ_requisition_civilian_freighters
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_reinforce_spaceport_domination
+        }
+
+        x = -4
+        y = 2
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_recruit_weequay_pirate_gangs
+        icon = GKJ_recruit_weequay_pirate_gangs
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_requisition_civilian_freighters
+        }
+
+        x = -4
+        y = 3
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_business_with_starship_companies
+        icon = GKJ_business_with_starship_companies
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_reinforce_spaceport_domination
+        }
+
+        x = -2
+        y = 2
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_resolve_inter_captain_power_struggles
+        icon = GKJ_resolve_inter_captain_power_struggles
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_business_with_starship_companies
+        }
+
+        x = -2
+        y = 3
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_dust_off_ancient_designs
+        icon = GKJ_dust_off_ancient_designs
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_resolve_inter_captain_power_struggles
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_patchwork_fleets
+		}
+
+        x = -4
+        y = 4
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_ancient_huttese_carrier_tactics
+        icon = GKJ_ancient_huttese_carrier_tactics
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_dust_off_ancient_designs
+        }
+
+        x = -4
+        y = 5
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_patchwork_fleets
+        icon = GKJ_patchwork_fleets
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_resolve_inter_captain_power_struggles
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_dust_off_ancient_designs
+		}
+
+        x = -2
+        y = 4
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_mercenary_mavericks
+        icon = GKJ_mercenary_mavericks
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_patchwork_fleets
+        }
+
+        x = -2
+        y = 5
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+####END OF LEFT BRANCH####
+####RIGHT BRANCH####
+    focus = { 
+        id = GKJ_build_military_strength
+        icon = GKJ_build_military_strength
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_renewed_galactic_threat
+        }
+
+        x = 2
+        y = 1
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_legacy_of_kossack
+        icon = GKJ_legacy_of_kossack
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_build_military_strength
+        }
+
+        x = 2
+        y = 2
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_acquire_exotic_weaponry
+        icon = GKJ_acquire_exotic_weaponry
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_legacy_of_kossack
+        }
+
+        x = 1
+        y = 3
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_stockpile_mines_and_bombs
+        icon = GKJ_stockpile_mines_and_bombs
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_acquire_exotic_weaponry
+        }
+
+        x = 1
+        y = 4
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_aggressive_bribery
+        icon = GKJ_aggressive_bribery
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_legacy_of_kossack
+        }
+
+        x = 3
+        y = 3
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_foster_the_criminal_spirit
+        icon = GKJ_foster_the_criminal_spirit
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_aggressive_bribery
+        }
+
+        x = 3
+        y = 4
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = varlian_legacy_unchained
+        icon = GKJ_foster_the_criminal_spirit
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_stockpile_mines_and_bombs
+        }
+        prerequisite = { 
+           focus = GKJ_foster_the_criminal_spirit
+        }
+
+        x = 2
+        y = 5
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_stamp_out_nikto_blood_cults	
+        icon = GKJ_stamp_out_nikto_blood_cults
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_build_military_strength
+        }
+
+        x = 4
+        y = 2
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_raise_the_vodran_serfs	
+        icon = GKJ_raise_the_vodran_serfs
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_build_military_strength
+        }
+
+        x = 6
+        y = 2
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_talk_to_the_gammorean_tribes
+        icon = GKJ_talk_to_the_gammorean_tribes
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_stamp_out_nikto_blood_cults
+		   focus = GKJ_raise_the_vodran_serfs
+        }
+
+        x = 5
+        y = 3
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+    focus = { 
+        id = GKJ_ktg_recruitment_drive
+        icon = GKJ_ktg_recruitment_drive
+        cost = 10
+
+        prerequisite = { 
+           focus = GKJ_stamp_out_nikto_blood_cults
+		   focus = GKJ_raise_the_vodran_serfs
+        }
+
+        x = 7
+        y = 3
+		relative_position_id = GKJ_renewed_galactic_threat
+    }
+####END OF MILITARY#####
+####START OF CLONE WARS####
+    focus = { 
+        id = GKJ_opportunity_of_a_lifetime
+        icon = GKJ_opportunity_of_a_lifetime
+        cost = 10
+
+        prerequisite = { 
+			#noprerequisite
+        }
+
+        x = 14
+        y = 0
+    }
+    focus = { 
+        id = GKJ_expand_core_underworld_influence
+        icon = GKJ_expand_core_underworld_influence
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_opportunity_of_a_lifetime
+        }
+
+        x = -3
+        y = 1
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_expand_border_world_influence
+        icon = GKJ_expand_border_world_influence
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_opportunity_of_a_lifetime
+        }
+
+        x = -1
+        y = 1
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_supplying_rare_materials_to_the_republic
+        icon = GKJ_supplying_rare_materials_to_the_republic
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_opportunity_of_a_lifetime
+        }
+
+        x = 1
+        y = 1
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_supplying_rare_materials_to_the_cis
+        icon = GKJ_supplying_rare_materials_to_the_cis
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_opportunity_of_a_lifetime
+        }
+
+        x = 3
+        y = 1
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_intelligence_for_sale
+        icon = GKJ_intelligence_for_sale
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_expand_core_underworld_influence
+        }
+
+        x = -4
+        y = 2
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_bow_down_and_pay
+        icon = GKJ_bow_down_and_pay
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_expand_border_world_influence
+        }
+
+        x = -2
+        y = 2
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_your_new_saviours
+        icon = GKJ_your_new_saviours
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_expand_border_world_influence
+        }
+
+        x = 0
+        y = 2
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_better_us_than_the_war
+        icon = GKJ_better_us_than_the_war
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_bow_down_and_pay
+        }
+        
+		prerequisite = { 
+			focus = GKJ_your_new_saviours
+        }
+
+        x = -1
+        y = 3
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_desperate_times_desperate_customers
+        icon = GKJ_desperate_times_desperate_customers
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_supplying_rare_materials_to_the_republic
+        }
+        
+		prerequisite = { 
+			focus = GKJ_supplying_rare_materials_to_the_cis
+        }
+
+        x = 2
+        y = 2
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_extort_hyperlane_passage
+        icon = GKJ_extort_hyperlane_passage
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_supplying_rare_materials_to_the_republic
+        }
+        
+		prerequisite = { 
+			focus = GKJ_supplying_rare_materials_to_the_cis
+        }
+
+        x = 4
+        y = 2
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+    focus = { 
+        id = GKJ_attract_war_weary_tourists
+        icon = GKJ_attract_war_weary_tourists
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_desperate_times_desperate_customers
+        }
+
+        x = 1
+        y = 3
+		relative_position_id = GKJ_opportunity_of_a_lifetime
+    }
+####END TO MILITARY#####
+####OUTER RIM REBELLION####
+    focus = { 
+        id = GKJ_trouble_in_the_rim
+        icon = GKJ_trouble_in_the_rim
+        cost = 10
+
+        prerequisite = { 
+			#NOPREREQUISITE
+        }
+
+        x = 14
+        y = 5
+    }
+    focus = { 
+        id = GKJ_securing_hutt_space
+        icon = GKJ_securing_hutt_space
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_trouble_in_the_rim
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_crush_the_shag_peedunkies
+		}
+
+        x = -1
+        y = 1
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+    focus = { 
+        id = GKJ_prevent_illegal_border_crossing
+        icon = GKJ_prevent_illegal_border_crossing
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_securing_hutt_space
+        }
+
+        x = -2
+        y = 2
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+    focus = { 
+        id = GKJ_post_slave_bounties
+        icon = GKJ_post_slave_bounties
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_trouble_in_the_rim
+        }
+
+        x = 0
+        y = 2
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+    focus = { 
+        id = GKJ_suppress_revolutionary_propaganda
+        icon = GKJ_suppress_revolutionary_propaganda
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_post_slave_bounties
+        }
+
+        x = -1
+        y = 3
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+    focus = { 
+        id = GKJ_hire_trandoshan_slavecatchers
+        icon = GKJ_hire_trandoshan_slavecatchers
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_post_slave_bounties
+        }
+
+        x = 1
+        y = 3
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+    focus = { 
+        id = GKJ_safeguarding_our_property
+        icon = GKJ_safeguarding_our_property
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_suppress_revolutionary_propaganda
+        }
+		
+        prerequisite = { 
+			focus = GKJ_hire_trandoshan_slavecatchers
+        }		
+
+        x = 0
+        y = 4
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+    focus = { 
+        id = GKJ_crush_the_shag_peedunkies
+        icon = GKJ_crush_the_shag_peedunkies
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_trouble_in_the_rim
+        }
+		
+        mutually_exclusive = { 
+			focus = GKJ_securing_hutt_space
+        }		
+
+        x = 1
+        y = 1
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+    focus = { 
+        id = GKJ_counter_guerrilla_tactics
+        icon = GKJ_counter_guerrilla_tactics
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_crush_the_shag_peedunkies
+        }
+				
+
+        x = 2
+        y = 2
+		relative_position_id = GKJ_trouble_in_the_rim
+    }
+####END OF OUTER RIM REBELLION####
+####DROIDS####
+    focus = { 
+        id = GKJ_confederate_droids
+        icon = GKJ_confederate_droids
+        cost = 10
+
+        prerequisite = { 
+			#NOPREREQUISITE
+        }
+				
+
+        x = 2
+        y = 7
+    }
+    focus = { 
+        id = GKJ_preparing_for_the_worst
+        icon = GKJ_preparing_for_the_worst
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_confederate_droids
+        }
+				
+
+        x = -1
+        y = 1
+		relative_position_id = GKJ_confederate_droids
+    }
+    focus = { 
+        id = GKJ_establish_trade_relations
+        icon = GKJ_establish_trade_relations
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_confederate_droids
+        }
+				
+
+        x = 1
+        y = 1
+		relative_position_id = GKJ_confederate_droids
+    }
+    focus = { 
+        id = GKJ_war_for_the_galaxys_survival
+        icon = GKJ_war_for_the_galaxys_survival
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_preparing_for_the_worst
+			focus = GKJ_establish_trade_relations
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_even_droids_have_prices
+		}
+				
+
+        x = -1
+        y = 2
+		relative_position_id = GKJ_confederate_droids
+    }
+    focus = { 
+        id = GKJ_even_droids_have_prices
+        icon = GKJ_even_droids_have_prices
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_preparing_for_the_worst
+			focus = GKJ_establish_trade_relations
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_war_for_the_galaxys_survival
+		}
+				
+
+        x = 1
+        y = 2
+		relative_position_id = GKJ_confederate_droids
+    }
+    focus = { 
+        id = GKJ_even_droids_have_prices
+        icon = GKJ_even_droids_have_prices
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_preparing_for_the_worst
+			focus = GKJ_establish_trade_relations
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_war_for_the_galaxys_survival
+		}
+				
+
+        x = 1
+        y = 2
+		relative_position_id = GKJ_confederate_droids
+    }
+    focus = { 
+        id = GKJ_self_aggrandising_propaganda
+        icon = GKJ_self_aggrandising_propaganda
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_war_for_the_galaxys_survival
+        }				
+
+        x = -2
+        y = 3
+		relative_position_id = GKJ_confederate_droids
+    }
+    focus = { 
+        id = GKJ_assist_the_resistance
+        icon = GKJ_assist_the_resistance
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_war_for_the_galaxys_survival
+			focus = GKJ_even_droids_have_prices
+        }				
+
+        x = 0
+        y = 3
+		relative_position_id = GKJ_confederate_droids
+    }
+    focus = { 
+        id = GKJ_watching_our_enemies_crumble
+        icon = GKJ_watching_our_enemies_crumble
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_even_droids_have_prices
+        }				
+
+        x = 2
+        y = 3
+		relative_position_id = GKJ_confederate_droids
+    }
+####END OF DROIDS####
+####POLITICAL TREE####
+    focus = { 
+        id = GKJ_under_a_red_shadow
+        icon = GKJ_under_a_red_shadow
+        cost = 10
+
+        prerequisite = { 
+			#NOPREREQUISITE
+        }				
+
+        x = 25
+        y = 0
+    }
+    focus = { 
+        id = GKJ_playing_his_game
+        icon = GKJ_playing_his_game
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_under_a_red_shadow
+        }	
+			
+		mutually_exclusive = {
+			focus = GKJ_sabotage_from_within
+		}
+
+        x = -1
+        y = 1
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_sabotage_from_within
+        icon = GKJ_sabotage_from_within
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_under_a_red_shadow
+        }
+
+		mutually_exclusive = {
+			focus = GKJ_playing_his_game
+		}
+
+        x = 1
+        y = 1
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_feud_with_the_black_sun_and_pykes
+        icon = GKJ_feud_with_the_black_sun_and_pykes
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_playing_his_game
+			focus = GKJ_sabotage_from_within
+        }
+
+		mutually_exclusive = {
+			focus = GKJ_loyalty_to_the_cartel
+		}
+
+        x = -1
+        y = 2
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_loyalty_to_the_cartel
+        icon = GKJ_loyalty_to_the_cartel
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_playing_his_game
+			focus = GKJ_sabotage_from_within
+        }
+
+		mutually_exclusive = {
+			focus = GKJ_feud_with_the_black_sun_and_pykes
+		}
+
+        x = 1
+        y = 2
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_a_serious_venture
+        icon = GKJ_a_serious_venture
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_loyalty_to_the_cartel
+			focus = GKJ_feud_with_the_black_sun_and_pykes
+        }
+
+        x = 0
+        y = 3
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_fighting_for_a_new_hutt_order
+        icon = GKJ_fighting_for_a_new_hutt_order
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_a_serious_venture
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_fighting_for_our_lives
+		}
+
+        x = -3
+        y = 4
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_support_mauls_order
+        icon = GKJ_support_mauls_order
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_fighting_for_a_new_hutt_order
+        }
+
+        x = -5
+        y = 5
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_contact_beldorian
+        icon = GKJ_contact_beldorian
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_fighting_for_a_new_hutt_order
+        }
+
+        x = -3
+        y = 5
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_a_generation_of_hutt_sith
+        icon = GKJ_a_generation_of_hutt_sith
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_support_mauls_order
+        }
+
+        prerequisite = { 
+			focus = GKJ_contact_beldorian
+        }
+		
+        x = -4
+        y = 6
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_fighting_for_our_lives
+        icon = GKJ_fighting_for_our_lives
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_a_serious_venture
+        }
+		
+		mutually_exclusive = {
+			focus = GKJ_fighting_for_a_new_hutt_order
+		}
+
+        x = 3
+        y = 4
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_gather_strength
+        icon = GKJ_gather_strength
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_fighting_for_our_lives
+        }
+
+        x = 3
+        y = 5
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_consolidate_the_cartel
+        icon = GKJ_consolidate_the_cartel
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_fighting_for_our_lives
+        }
+
+        x = 5
+        y = 5
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_war_for_independence
+        icon = GKJ_war_for_independence
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_gather_strength
+        }
+
+        prerequisite = { 
+			focus = GKJ_consolidate_the_cartel
+        }
+
+        x = 4
+        y = 6
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_the_taste_of_sweet_revenge
+        icon = GKJ_the_taste_of_sweet_revenge
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_a_serious_venture
+        }
+
+        x = 0
+        y = 5
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_senators_into_slaves
+        icon = GKJ_senators_into_slaves
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_the_taste_of_sweet_revenge
+        }
+
+        x = -1
+        y = 6
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_reclaim_ryloth
+        icon = GKJ_reclaim_ryloth
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_the_taste_of_sweet_revenge
+        }
+
+        x = 1
+        y = 6
+		relative_position_id = GKJ_under_a_red_shadow
+    }
+    focus = { 
+        id = GKJ_ohta_su_marvalic_plesodoro
+        icon = GKJ_ohta_su_marvalic_plesodoro
+        cost = 10
+
+        prerequisite = { 
+			focus = GKJ_senators_into_slaves
+        }
+
+        prerequisite = { 
+			focus = GKJ_reclaim_ryloth
+        }
+
+        x = 0
+        y = 7
+		relative_position_id = GKJ_under_a_red_shadow
+    }
