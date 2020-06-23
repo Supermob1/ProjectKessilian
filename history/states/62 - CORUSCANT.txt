@@ -1,15 +1,7 @@
-		state={
+state={
 	id=62
 	name="STATE_62"
 	history = {
-		buildings = {
-			infrastructure = 1
-			arms_factory = 1
-			dockyard = 1
-			1436 = {
-				naval_base  = 1
-			}
-		}
 		owner = REP
 		add_core_of = REP
 	}
@@ -17,5 +9,6 @@
 		26 112 117 196 363 387 460 1436 1437 1438 1449 1450 1451 1452 1453 1454 1455 1456 1458 1461 1462 1463 1464 1465 1469 1470 1471 1472 1475 1478 1479 1480 1482 1486 1489 1494
 	}
 	manpower=10000000
-	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
+	buildings_max_level_factor=1.000
+	state_category = capital_planet
 }

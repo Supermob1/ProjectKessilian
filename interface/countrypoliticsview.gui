@@ -60,9 +60,10 @@ guiTypes = {
 			margin = { top = 3 bottom = 2 }
 			
 			background = {
-				name = "Background"
-				spriteType ="GFX_tiled_plain_bg"
-				position = { x = 35 y = 0 }
+				name = "Background"		
+				spriteType ="GFX_tiled_plain_transparent_nothing"
+				size = { width = 150 height = 60 }
+				slotsize = { width = 150 height = 60 }	
 			}
 			
 			gridBoxType = {

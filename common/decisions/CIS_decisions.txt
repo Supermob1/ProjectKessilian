@@ -9,18 +9,11 @@ foreign_politics = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = "[?ROOT.GetName] amount of credits atleast 5"
-				check_variable = {
-					var = creditsamount
-					value = 5
-					compare = greater_than_or_equals
-				}
-			}
+
 		}
 
-		cost = 0
-		days_remove = 0
+		cost = 150
+		days_remove = 50
 		
 		visible = {
 			always = yes
@@ -28,194 +21,13 @@ foreign_politics = {
 
 		complete_effect = {
 			custom_effect_tooltip = droids_divisions_tt
-			subtract_from_variable = { creditsamount = 5 }
-			if = {
-				limit = {
-					NOT = { has_country_flag = OOB_LOADED_B1 }
-				}
-				hidden_effect = {
-					load_oob = "droid_troops"
-					set_country_flag = OOB_LOADED_B1
-				}
-			}
-			else = {
-				capital_scope = {
-					create_unit = {
-						division = "name = \"Battle Droid Batallion\" start_experience_factor = 0 start_equipment_factor = 1"
-						owner = ROOT
-					}
-				}
-			}
-		}
+			hidden_effect = {
+			load_oob = "droid_troops"				
+							}			
+						}
 
 		ai_will_do = {
-			factor = 1
-			modifier = { num_divisions > 100 factor = 0 }
-		}
-	}
-
-	CIS_droids_divisions_2 = {
-	
-		icon = generic_intelligence_operation
-
-		allowed = {
-			original_tag = CIS
-		}
-
-		available = {
-		has_tech = b2_super_battle_droid
-			custom_trigger_tooltip = {
-				tooltip = "[?ROOT.GetName] amount of credits atleast 10"
-				check_variable = {
-					var = creditsamount
-					value = 10
-					compare = greater_than_or_equals
-				}
-			}
-		}
-
-		cost = 0
-		days_remove = 0
-		
-		visible = {
-			always = yes
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = droids_divisions2_tt
-			subtract_from_variable = { creditsamount = 10 }
-			if = {
-				limit = {
-					NOT = { has_country_flag = OOB_LOADED_B2 }
-				}
-				hidden_effect = {
-					load_oob = "droid_troops_1"
-					set_country_flag = OOB_LOADED_B2
-				}
-			}
-			else = {
-				capital_scope = {
-					create_unit = {
-						division = "name = \"Super Battle Droid Batallion\" start_experience_factor = 0 start_equipment_factor = 1"
-						owner = ROOT
+			factor = 0
 					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = { num_divisions > 100 factor = 0 }
-		}
-	}
-
-	CIS_droids_divisions_3 = {
-	
-		icon = generic_intelligence_operation
-
-		allowed = {
-			original_tag = CIS
-		}
-
-		available = {
-		has_tech = bx_commando_droid
-			custom_trigger_tooltip = {
-				tooltip = "[?ROOT.GetName] amount of credits atleast 20"
-				check_variable = {
-					var = creditsamount
-					value = 20
-					compare = greater_than_or_equals
-				}
-			}
-		}
-
-		cost = 0
-		days_remove = 0
-		
-		visible = {
-			always = yes
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = droids_divisions3_tt
-			subtract_from_variable = { creditsamount = 20 }
-			if = {
-				limit = {
-					NOT = { has_country_flag = OOB_LOADED_B3 }
-				}
-				hidden_effect = {
-					load_oob = "droid_troops_2"
-					set_country_flag = OOB_LOADED_B3
-				}
-			}
-			else = {
-				capital_scope = {
-					create_unit = {
-						division = "name = \"Commando Battle Droid Division\" start_experience_factor = 0 start_equipment_factor = 1"
-						owner = ROOT
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = { num_divisions > 100 factor = 0 }
-		}
-	}
-
-	CIS_droids_divisions_4 = {
-	
-		icon = generic_intelligence_operation
-
-		allowed = {
-			original_tag = CIS
-		}
-
-		available = {
-		has_tech = p-series_droideka
-			custom_trigger_tooltip = {
-				tooltip = "[?ROOT.GetName] amount of credits atleast 20"
-				check_variable = {
-					var = creditsamount
-					value = 20
-					compare = greater_than_or_equals
-				}
-			}
-		}
-
-		cost = 0
-		days_remove = 0
-		
-		visible = {
-			always = yes
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = droids_divisions4_tt
-			subtract_from_variable = { creditsamount = 20 }
-			if = {
-				limit = {
-					NOT = { has_country_flag = OOB_LOADED_B4 }
-				}
-				hidden_effect = {
-					load_oob = "droid_troops_3"
-					set_country_flag = OOB_LOADED_B4
-				}
-			}
-			else = {
-				capital_scope = {
-					create_unit = {
-						division = "name = \"Battle Droideka Division\" start_experience_factor = 0 start_equipment_factor = 1"
-						owner = ROOT
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = { num_divisions > 100 factor = 0 }
-		}
 	}
 }
