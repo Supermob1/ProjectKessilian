@@ -1,5 +1,5 @@
-# Generic Hutt Focus Tree
-# By Their Excellencies, Matthew K. Selby & TheCrusaderKing
+# Generic Hutt focus tree
+# By ZornMauser & TheCrusaderKing
 #################################
 focus_tree = {
 	id = QKJ_focus_tree
@@ -16,1015 +16,1068 @@ focus_tree = {
 	reset_on_civilwar = no
 	
 	continuous_focus_position = { x = 50 y = 2000 }
-#######MILITARY#########
+    ########### UNIQUE TREE START ############
     focus = { 
-        id = QKJ_renewed_galactic_threat
-        icon = QKJ_renewed_galactic_threat
+        id = QKJ_qunalaac_kajidic
+        icon = QKJ_qunalaac_kajidic
         cost = 10
 
-        prerequisite = { 
-           #noprerequisite
-        }
+       prerequisite = { 
+           #No prereq - first focus
+        } 
 
-        x = 0
-        y = 0
-    }
-####LEFT BRANCH####   
-	focus = { 
-        id = QKJ_reinforce_spaceport_domination
-        icon = QKJ_reinforce_spaceport_domination
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_renewed_galactic_threat
-        }
-
-        x = -2
+        x = 40
         y = 1
-		relative_position_id = QKJ_renewed_galactic_threat
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_requisition_civilian_freighters
-        icon = QKJ_requisition_civilian_freighters
+        id = QKJ_maintain_fleet_size
+        icon = QKJ_maintain_fleet_size
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_reinforce_spaceport_domination
-        }
+           focus = QKJ_qunalaac_kajidic
+        } 
 
-        x = -4
+        x = 38
         y = 2
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_recruit_weequay_pirate_gangs
-        icon = QKJ_recruit_weequay_pirate_gangs
+        id = QKJ_ancient_warriors_of_varl
+        icon = QKJ_ancient_warriors_of_varl
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_requisition_civilian_freighters
-        }
+           focus = QKJ_qunalaac_kajidic
+        } 
 
-        x = -4
-        y = 3
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_business_with_starship_companies
-        icon = QKJ_business_with_starship_companies
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_reinforce_spaceport_domination
-        }
-
-        x = -2
+        x = 42
         y = 2
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_resolve_inter_captain_power_struggles
-        icon = QKJ_resolve_inter_captain_power_struggles
+        id = QKJ_capital_ship_doctrine
+        icon = QKJ_capital_ship_doctrine
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_business_with_starship_companies
+           focus = QKJ_ancient_warriors_of_varl
+        } 
+        mutually_exclusive = {
+           focus = QKJ_focus_on_carriers
         }
-
-        x = -2
+        x = 42
         y = 3
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_dust_off_ancient_designs
-        icon = QKJ_dust_off_ancient_designs
+        id = QKJ_focus_on_carriers
+        icon = QKJ_focus_on_carriers
+        cost = 10
+        prerequisite = { 
+           focus = QKJ_ancient_warriors_of_varl
+        } 
+         mutually_exclusive = {
+           focus = QKJ_capital_ship_doctrine
+        }
+
+        x = 44
+        y = 3
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_mediate_fleet_captaining_assignments
+        icon = QKJ_mediate_fleet_captaining_assignments
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_resolve_inter_captain_power_struggles
+           focus = QKJ_capital_ship_doctrine
+           focus = QKJ_focus_on_carriers
         }
-		
-		mutually_exclusive = {
-			focus = QKJ_patchwork_fleets
-		}
 
-        x = -4
+        x = 44
         y = 4
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_ancient_huttese_carrier_tactics
-        icon = QKJ_ancient_huttese_carrier_tactics
+        id = QKJ_shrewd_political_maneuvering
+        icon = QKJ_shrewd_political_maneuvering
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_dust_off_ancient_designs
+           focus = QKJ_qunalaac_kajidic
         }
 
-        x = -4
+        x = 40
+        y = 4
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_smooth_over_council_conflicts
+        icon = QKJ_smooth_over_council_conflicts
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_shrewd_political_maneuvering
+        }
+
+        x = 40
         y = 5
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_patchwork_fleets
-        icon = QKJ_patchwork_fleets
+        id = QKJ_subsidise_plakots_enterprises
+        icon = QKJ_subsidise_plakots_enterprises
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_resolve_inter_captain_power_struggles
-        }
-		
-		mutually_exclusive = {
-			focus = QKJ_dust_off_ancient_designs
-		}
-
-        x = -2
-        y = 4
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_mercenary_mavericks
-        icon = QKJ_mercenary_mavericks
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_patchwork_fleets
+           focus = QKJ_shrewd_political_maneuvering
         }
 
-        x = -2
+        x = 42
         y = 5
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
-####END OF LEFT BRANCH####
-####RIGHT BRANCH####
     focus = { 
-        id = QKJ_build_military_strength
-        icon = QKJ_build_military_strength
+        id = QKJ_expand_fort_dandunc
+        icon = QKJ_expand_fort_dandunc
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_renewed_galactic_threat
+           focus = QKJ_shrewd_political_maneuvering
         }
 
-        x = 2
-        y = 1
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_legacy_of_kossack
-        icon = QKJ_legacy_of_kossack
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_build_military_strength
-        }
-
-        x = 2
-        y = 2
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_acquire_exotic_weaponry
-        icon = QKJ_acquire_exotic_weaponry
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_legacy_of_kossack
-        }
-
-        x = 1
-        y = 3
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_stockpile_mines_and_bombs
-        icon = QKJ_stockpile_mines_and_bombs
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_acquire_exotic_weaponry
-        }
-
-        x = 1
-        y = 4
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_aggressive_bribery
-        icon = QKJ_aggressive_bribery
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_legacy_of_kossack
-        }
-
-        x = 3
-        y = 3
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_foster_the_criminal_spirit
-        icon = QKJ_foster_the_criminal_spirit
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_aggressive_bribery
-        }
-
-        x = 3
-        y = 4
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = varlian_legacy_unchained
-        icon = QKJ_foster_the_criminal_spirit
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_stockpile_mines_and_bombs
-        }
-        prerequisite = { 
-           focus = QKJ_foster_the_criminal_spirit
-        }
-
-        x = 2
+        x = 38
         y = 5
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_stamp_out_nikto_blood_cults	
-        icon = QKJ_stamp_out_nikto_blood_cults
+        id = QKJ_wardens_of_bootana_hutta
+        icon = QKJ_wardens_of_bootana_hutta
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_build_military_strength
+           focus = QKJ_mediate_fleet_captaining_assignments
         }
 
-        x = 4
-        y = 2
-		relative_position_id = QKJ_renewed_galactic_threat
+        x = 44
+        y = 5
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_raise_the_vodran_serfs	
-        icon = QKJ_raise_the_vodran_serfs
+        id = QKJ_our_words_are_backed_by_blasters
+        icon = QKJ_our_words_are_backed_by_blasters
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_build_military_strength
-        }
+           focus = QKJ_maintain_fleet_size
+        } 
 
-        x = 6
-        y = 2
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-    focus = { 
-        id = QKJ_talk_to_the_gammorean_tribes
-        icon = QKJ_talk_to_the_gammorean_tribes
-        cost = 10
-
-        prerequisite = { 
-           focus = QKJ_stamp_out_nikto_blood_cults
-		   focus = QKJ_raise_the_vodran_serfs
-        }
-
-        x = 5
+        x = 38
         y = 3
-		relative_position_id = QKJ_renewed_galactic_threat
+
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_ktg_recruitment_drive
-        icon = QKJ_ktg_recruitment_drive
+        id = QKJ_monopolise_protection_racketeering
+        icon = QKJ_monopolise_protection_racketeering
         cost = 10
 
         prerequisite = { 
-           focus = QKJ_stamp_out_nikto_blood_cults
-		   focus = QKJ_raise_the_vodran_serfs
+           focus = QKJ_maintain_fleet_size
+        } 
+
+        x = 36
+        y = 3
+
+
+        completion_reward = {
+
         }
+    }
+    focus = { 
+        id = QKJ_extortionate_transport_safety_costs
+        icon = QKJ_extortionate_transport_safety_costs
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_monopolise_protection_racketeering
+        } 
+        prerequisite = { 
+           focus = QKJ_our_words_are_backed_by_blasters
+        }
+        x = 36
+        y = 4
+
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_hire_the_best_starship_engineers
+        icon = QKJ_hire_the_best_starship_engineers
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_extortionate_transport_safety_costs
+        } 
+        
+        x = 36
+        y = 5
+
+
+        completion_reward = {
+
+        }
+    }        ########GENERIC TREE START#########
+    focus = { 
+        id = QKJ_dangerous_times_dangerous_associates
+        icon = HTT_dangerous_times_dangerous_associates
+        cost = 10
+
+        prerequisite = { 
+           #No prereq - first focus
+        } 
 
         x = 7
-        y = 3
-		relative_position_id = QKJ_renewed_galactic_threat
-    }
-####END OF MILITARY#####
-####START OF CLONE WARS####
-    focus = { 
-        id = QKJ_opportunity_of_a_lifetime
-        icon = QKJ_opportunity_of_a_lifetime
-        cost = 10
-
-        prerequisite = { 
-			#noprerequisite
-        }
-
-        x = 14
-        y = 0
-    }
-    focus = { 
-        id = QKJ_expand_core_underworld_influence
-        icon = QKJ_expand_core_underworld_influence
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_opportunity_of_a_lifetime
-        }
-
-        x = -3
         y = 1
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
+
+        completion_reward = {
+
+        }
+    } 
+      ## LEFT BRANCH START ##
     focus = { 
-        id = QKJ_expand_border_world_influence
-        icon = QKJ_expand_border_world_influence
+        id = QKJ_spaceport_expansions
+        icon = HTT_spaceport_expansions
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_opportunity_of_a_lifetime
-        }
-
-        x = -1
-        y = 1
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_supplying_rare_materials_to_the_republic
-        icon = QKJ_supplying_rare_materials_to_the_republic
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_opportunity_of_a_lifetime
-        }
-
-        x = 1
-        y = 1
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_supplying_rare_materials_to_the_cis
-        icon = QKJ_supplying_rare_materials_to_the_cis
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_opportunity_of_a_lifetime
-        }
-
-        x = 3
-        y = 1
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_intelligence_for_sale
-        icon = QKJ_intelligence_for_sale
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_expand_core_underworld_influence
-        }
-
-        x = -4
-        y = 2
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_bow_down_and_pay
-        icon = QKJ_bow_down_and_pay
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_expand_border_world_influence
-        }
-
-        x = -2
-        y = 2
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_your_new_saviours
-        icon = QKJ_your_new_saviours
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_expand_border_world_influence
-        }
-
-        x = 0
-        y = 2
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_better_us_than_the_war
-        icon = QKJ_better_us_than_the_war
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_bow_down_and_pay
-        }
-        
-		prerequisite = { 
-			focus = QKJ_your_new_saviours
-        }
-
-        x = -1
-        y = 3
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_desperate_times_desperate_customers
-        icon = QKJ_desperate_times_desperate_customers
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_supplying_rare_materials_to_the_republic
-        }
-        
-		prerequisite = { 
-			focus = QKJ_supplying_rare_materials_to_the_cis
-        }
-
-        x = 2
-        y = 2
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-    focus = { 
-        id = QKJ_extort_hyperlane_passage
-        icon = QKJ_extort_hyperlane_passage
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_supplying_rare_materials_to_the_republic
-        }
-        
-		prerequisite = { 
-			focus = QKJ_supplying_rare_materials_to_the_cis
-        }
+            focus = QKJ_dangerous_times_dangerous_associates
+        } 
 
         x = 4
         y = 2
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
+
+        completion_reward = {
+
+        }
+    } 
     focus = { 
-        id = QKJ_attract_war_weary_tourists
-        icon = QKJ_attract_war_weary_tourists
+        id = QKJ_buy_up_civillian_freighters
+        icon = HTT_buy_up_civillian_freighters
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_desperate_times_desperate_customers
-        }
+            focus = QKJ_spaceport_expansions
+        } 
 
-        x = 1
+        x = 2
         y = 3
-		relative_position_id = QKJ_opportunity_of_a_lifetime
-    }
-####END TO MILITARY#####
-####OUTER RIM REBELLION####
+
+        completion_reward = {
+
+        }
+    } 
     focus = { 
-        id = QKJ_trouble_in_the_rim
-        icon = QKJ_trouble_in_the_rim
+        id = QKJ_terms_with_the_weequay_pirates
+        icon = HTT_terms_with_the_weequay_pirates
         cost = 10
 
         prerequisite = { 
-			#NOPREREQUISITE
-        }
+            focus = QKJ_buy_up_civillian_freighters
+        } 
 
-        x = 14
-        y = 5
-    }
-    focus = { 
-        id = QKJ_securing_hutt_space
-        icon = QKJ_securing_hutt_space
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_trouble_in_the_rim
-        }
-		
-		mutually_exclusive = {
-			focus = QKJ_crush_the_shag_peedunkies
-		}
-
-        x = -1
-        y = 1
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
-    focus = { 
-        id = QKJ_prevent_illegal_border_crossing
-        icon = QKJ_prevent_illegal_border_crossing
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_securing_hutt_space
-        }
-
-        x = -2
-        y = 2
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
-    focus = { 
-        id = QKJ_post_slave_bounties
-        icon = QKJ_post_slave_bounties
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_trouble_in_the_rim
-        }
-
-        x = 0
-        y = 2
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
-    focus = { 
-        id = QKJ_suppress_revolutionary_propaganda
-        icon = QKJ_suppress_revolutionary_propaganda
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_post_slave_bounties
-        }
-
-        x = -1
-        y = 3
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
-    focus = { 
-        id = QKJ_hire_trandoshan_slavecatchers
-        icon = QKJ_hire_trandoshan_slavecatchers
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_post_slave_bounties
-        }
-
-        x = 1
-        y = 3
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
-    focus = { 
-        id = QKJ_safeguarding_our_property
-        icon = QKJ_safeguarding_our_property
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_suppress_revolutionary_propaganda
-        }
-		
-        prerequisite = { 
-			focus = QKJ_hire_trandoshan_slavecatchers
-        }		
-
-        x = 0
+        x = 2
         y = 4
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
+
+        completion_reward = {
+
+        }
+    } 
     focus = { 
-        id = QKJ_crush_the_shag_peedunkies
-        icon = QKJ_crush_the_shag_peedunkies
+        id = QKJ_muscle_in_on_the_shipyard_business
+        icon = HTT_muscle_in_on_the_shipyard_business
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_trouble_in_the_rim
-        }
-		
-        mutually_exclusive = { 
-			focus = QKJ_securing_hutt_space
-        }		
+            focus = QKJ_spaceport_expansions
+        } 
 
-        x = 1
-        y = 1
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
+        x = 4
+        y = 3
+
+        completion_reward = {
+
+        }
+    } 
     focus = { 
-        id = QKJ_counter_guerrilla_tactics
-        icon = QKJ_counter_guerrilla_tactics
+        id = QKJ_special_rights_for_starship_companies
+        icon = HTT_special_rights_for_starship_companies
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_crush_the_shag_peedunkies
+            focus = QKJ_muscle_in_on_the_shipyard_business
+        } 
+
+        x = 4
+        y = 4
+
+        completion_reward = {
+
         }
-				
+    } 
+    focus = { 
+        id = QKJ_develop_starfighter_carrier_tactics
+        icon = HTT_develop_starfighter_carrier_tactics
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_special_rights_for_starship_companies
+        } 
+
+        x = 4
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = QKJ_dust_off_old_designs
+        icon = HTT_dust_off_old_designs
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_special_rights_for_starship_companies
+        } 
 
         x = 2
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+      ## RIGHT BRANCH START ##
+    focus = { 
+        id = QKJ_increase_military_strength
+        icon = HTT_increase_military_strength
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_dangerous_times_dangerous_associates
+        } 
+
+        x = 10
         y = 2
-		relative_position_id = QKJ_trouble_in_the_rim
-    }
-####END OF OUTER RIM REBELLION####
-####DROIDS####
-    focus = { 
-        id = QKJ_confederate_droids
-        icon = QKJ_confederate_droids
-        cost = 10
 
-        prerequisite = { 
-			#NOPREREQUISITE
+        completion_reward = {
+
         }
-				
-
-        x = 2
-        y = 7
-    }
+    } 
     focus = { 
-        id = QKJ_preparing_for_the_worst
-        icon = QKJ_preparing_for_the_worst
+        id = QKJ_ktg_propaganda_endeavours
+        icon = HTT_ktg_propaganda_endeavours
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_confederate_droids
-        }
-				
+            focus = QKJ_increase_military_strength
+        } 
 
-        x = -1
-        y = 1
-		relative_position_id = QKJ_confederate_droids
-    }
-    focus = { 
-        id = QKJ_establish_trade_relations
-        icon = QKJ_establish_trade_relations
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_confederate_droids
-        }
-				
-
-        x = 1
-        y = 1
-		relative_position_id = QKJ_confederate_droids
-    }
-    focus = { 
-        id = QKJ_war_for_the_galaxys_survival
-        icon = QKJ_war_for_the_galaxys_survival
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_preparing_for_the_worst
-			focus = QKJ_establish_trade_relations
-        }
-		
-		mutually_exclusive = {
-			focus = QKJ_even_droids_have_prices
-		}
-				
-
-        x = -1
-        y = 2
-		relative_position_id = QKJ_confederate_droids
-    }
-    focus = { 
-        id = QKJ_even_droids_have_prices
-        icon = QKJ_even_droids_have_prices
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_preparing_for_the_worst
-			focus = QKJ_establish_trade_relations
-        }
-		
-		mutually_exclusive = {
-			focus = QKJ_war_for_the_galaxys_survival
-		}
-				
-
-        x = 1
-        y = 2
-		relative_position_id = QKJ_confederate_droids
-    }
-    focus = { 
-        id = QKJ_even_droids_have_prices
-        icon = QKJ_even_droids_have_prices
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_preparing_for_the_worst
-			focus = QKJ_establish_trade_relations
-        }
-		
-		mutually_exclusive = {
-			focus = QKJ_war_for_the_galaxys_survival
-		}
-				
-
-        x = 1
-        y = 2
-		relative_position_id = QKJ_confederate_droids
-    }
-    focus = { 
-        id = QKJ_self_aggrandising_propaganda
-        icon = QKJ_self_aggrandising_propaganda
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_war_for_the_galaxys_survival
-        }				
-
-        x = -2
+        x = 11
         y = 3
-		relative_position_id = QKJ_confederate_droids
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_assist_the_resistance
-        icon = QKJ_assist_the_resistance
+        id = QKJ_talk_to_the_gammorean_clans
+        icon = HTT_talk_to_the_gammorean_clans
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_war_for_the_galaxys_survival
-			focus = QKJ_even_droids_have_prices
-        }				
+            focus = QKJ_ktg_propaganda_endeavours
+        } 
 
-        x = 0
+        x = 12
+        y = 4
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = QKJ_reward_the_vodran_serfs
+        icon = HTT_reward_the_vodran_serfs
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_increase_military_strength
+        } 
+
+        x = 9
         y = 3
-		relative_position_id = QKJ_confederate_droids
+
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_watching_our_enemies_crumble
-        icon = QKJ_watching_our_enemies_crumble
+        id = QKJ_stamp_out_nikto_blood_cults
+        icon = HTT_stamp_out_nikto_blood_cults
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_even_droids_have_prices
-        }				
+            focus = QKJ_reward_the_vodran_serfs
+        } 
 
-        x = 2
-        y = 3
-		relative_position_id = QKJ_confederate_droids
+        x = 8
+        y = 4
+
+        completion_reward = {
+
+        }
     }
-####END OF DROIDS####
-####POLITICAL TREE####
     focus = { 
-        id = QKJ_under_a_red_shadow
-        icon = QKJ_under_a_red_shadow
+        id = QKJ_follow_huttese_guerrilla_doctrine
+        icon = HTT_follow_huttese_guerrilla_doctrine
         cost = 10
 
         prerequisite = { 
-			#NOPREREQUISITE
-        }				
+            focus = QKJ_increase_military_strength
+        } 
+
+        x = 10
+        y = 4
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = QKJ_stockpile_mines_and_bombs
+        icon = HTT_stockpile_mines_and_bombs
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_follow_huttese_guerrilla_doctrine
+        } 
+
+        x = 8
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_smuggle_in_experimental_weapons
+        icon = HTT_smuggle_in_experimental_weapons
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_follow_huttese_guerrilla_doctrine
+        } 
+
+        x = 10
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+     focus = { 
+        id = QKJ_foster_the_criminal_spirit
+        icon = HTT_foster_the_criminal_spirit
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_follow_huttese_guerrilla_doctrine
+        } 
+
+        x = 12
+        y = 5
+
+        completion_reward = {
+
+        }
+    } 
+    focus = { 
+        id = QKJ_make_every_step_cost_them
+        icon = HTT_make_every_step_cost_them
+        cost = 10
+
+        prerequisite = { 
+            focus = QKJ_stockpile_mines_and_bombs
+        }
+        prerequisite = { 
+            focus = QKJ_smuggle_in_experimental_weapons   
+        }
+        prerequisite = { 
+            focus = QKJ_foster_the_criminal_spirit   
+        } 
+
+        x = 10
+        y = 6
+
+        completion_reward = {
+
+        }
+
+    }  ##### DIPLOMACY TREE ####
+    focus = { 
+        id = QKJ_galactic_military_escalation
+        icon = QKJ_galactic_military_escalation
+        cost = 10
+
+        prerequisite = { 
+           #No prereq - first focus
+        } 
 
         x = 25
-        y = 0
-    }
-    focus = { 
-        id = QKJ_playing_his_game
-        icon = QKJ_playing_his_game
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_under_a_red_shadow
-        }	
-			
-		mutually_exclusive = {
-			focus = QKJ_sabotage_from_within
-		}
-
-        x = -1
         y = 1
-		relative_position_id = QKJ_under_a_red_shadow
-    }
+
+        
+        completion_reward = {
+
+        }
+    } #### CARTEL PATH ####
     focus = { 
-        id = QKJ_sabotage_from_within
-        icon = QKJ_sabotage_from_within
+        id = QKJ_the_cartel_life
+        icon = QKJ_the_cartel_life
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_under_a_red_shadow
-        }
+           focus = QKJ_galactic_military_escalation
+        } 
 
-		mutually_exclusive = {
-			focus = QKJ_playing_his_game
-		}
-
-        x = 1
-        y = 1
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_feud_with_the_black_sun_and_pykes
-        icon = QKJ_feud_with_the_black_sun_and_pykes
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_playing_his_game
-			focus = QKJ_sabotage_from_within
-        }
-
-		mutually_exclusive = {
-			focus = QKJ_loyalty_to_the_cartel
-		}
-
-        x = -1
+        x = 25
         y = 2
-		relative_position_id = QKJ_under_a_red_shadow
+
+        
+        completion_reward = {
+
+        }
     }
-    focus = { 
-        id = QKJ_loyalty_to_the_cartel
-        icon = QKJ_loyalty_to_the_cartel
+     focus = { 
+        id = QKJ_up_protection_money
+        icon = QKJ_up_protection_money
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_playing_his_game
-			focus = QKJ_sabotage_from_within
-        }
+           focus = QKJ_the_cartel_life
+        } 
 
-		mutually_exclusive = {
-			focus = QKJ_feud_with_the_black_sun_and_pykes
-		}
-
-        x = 1
-        y = 2
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_a_serious_venture
-        icon = QKJ_a_serious_venture
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_loyalty_to_the_cartel
-			focus = QKJ_feud_with_the_black_sun_and_pykes
-        }
-
-        x = 0
+        x = 24
         y = 3
-		relative_position_id = QKJ_under_a_red_shadow
-    }
+
+        
+        completion_reward = {
+
+        }
+    } 
     focus = { 
-        id = QKJ_fighting_for_a_new_hutt_order
-        icon = QKJ_fighting_for_a_new_hutt_order
+        id = QKJ_more_smugglers_on_our_payroll
+        icon = QKJ_more_smugglers_on_our_payroll
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_a_serious_venture
-        }
-		
-		mutually_exclusive = {
-			focus = QKJ_fighting_for_our_lives
-		}
+           focus = QKJ_the_cartel_life
+        } 
 
-        x = -3
+        x = 26
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_business_as_usual
+        icon = QKJ_business_as_usual
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_more_smugglers_on_our_payroll   
+        } 
+        prerequisite = {
+           focus = QKJ_up_protection_money
+        }
+        x = 25
         y = 4
-		relative_position_id = QKJ_under_a_red_shadow
+
+        
+        completion_reward = {
+
+        }
     }
-    focus = { 
-        id = QKJ_support_mauls_order
-        icon = QKJ_support_mauls_order
+     focus = { 
+        id = QKJ_lavish_spending_spree
+        icon = QKJ_lavish_spending_spree
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_fighting_for_a_new_hutt_order
+           focus = QKJ_business_as_usual  
         }
-
-        x = -5
+        x = 24
         y = 5
-		relative_position_id = QKJ_under_a_red_shadow
+
+        
+        completion_reward = {
+
+        }
     }
-    focus = { 
-        id = QKJ_contact_beldorian
-        icon = QKJ_contact_beldorian
+     focus = { 
+        id = QKJ_extortionate_hyperlane_tolls
+        icon = QKJ_extortionate_hyperlane_tolls
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_fighting_for_a_new_hutt_order
+           focus = QKJ_business_as_usual  
         }
-
-        x = -3
+        x = 26
         y = 5
-		relative_position_id = QKJ_under_a_red_shadow
+
+        
+        completion_reward = {
+
+        }
     }
-    focus = { 
-        id = QKJ_a_generation_of_hutt_sith
-        icon = QKJ_a_generation_of_hutt_sith
+     focus = { 
+        id = QKJ_hedging_our_bets
+        icon = QKJ_hedging_our_bets
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_support_mauls_order
+           focus = QKJ_lavish_spending_spree 
+        } 
+        prerequisite = {
+           focus = QKJ_extortionate_hyperlane_tolls
         }
 
-        prerequisite = { 
-			focus = QKJ_contact_beldorian
+        mutually_exclusive = {
+           focus = QKJ_grant_the_republic_access
         }
-		
-        x = -4
+         mutually_exclusive = {
+           focus = QKJ_battledroid_imports
+        }   
+
+        x = 25
         y = 6
-		relative_position_id = QKJ_under_a_red_shadow
+
+        
+        completion_reward = {
+
+        }
     }
     focus = { 
-        id = QKJ_fighting_for_our_lives
-        icon = QKJ_fighting_for_our_lives
+        id = QKJ_maximum_war_profiteering
+        icon = QKJ_maximum_war_profiteering
         cost = 10
 
         prerequisite = { 
-			focus = QKJ_a_serious_venture
-        }
-		
-		mutually_exclusive = {
-			focus = QKJ_fighting_for_a_new_hutt_order
-		}
-
-        x = 3
-        y = 4
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_gather_strength
-        icon = QKJ_gather_strength
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_fighting_for_our_lives
-        }
-
-        x = 3
-        y = 5
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_consolidate_the_cartel
-        icon = QKJ_consolidate_the_cartel
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_fighting_for_our_lives
-        }
-
-        x = 5
-        y = 5
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_war_for_independence
-        icon = QKJ_war_for_independence
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_gather_strength
-        }
-
-        prerequisite = { 
-			focus = QKJ_consolidate_the_cartel
-        }
-
-        x = 4
-        y = 6
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_the_taste_of_sweet_revenge
-        icon = QKJ_the_taste_of_sweet_revenge
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_a_serious_venture
-        }
-
-        x = 0
-        y = 5
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_senators_into_slaves
-        icon = QKJ_senators_into_slaves
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_the_taste_of_sweet_revenge
-        }
-
-        x = -1
-        y = 6
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_reclaim_ryloth
-        icon = QKJ_reclaim_ryloth
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_the_taste_of_sweet_revenge
-        }
-
-        x = 1
-        y = 6
-		relative_position_id = QKJ_under_a_red_shadow
-    }
-    focus = { 
-        id = QKJ_ohta_su_marvalic_plesodoro
-        icon = QKJ_ohta_su_marvalic_plesodoro
-        cost = 10
-
-        prerequisite = { 
-			focus = QKJ_senators_into_slaves
-        }
-
-        prerequisite = { 
-			focus = QKJ_reclaim_ryloth
-        }
-
-        x = 0
+           focus = QKJ_hedging_our_bets
+        } 
+        
+        x = 25
         y = 7
-		relative_position_id = QKJ_under_a_red_shadow
+
+        
+        completion_reward = {
+
+        }
     }
+    focus = { 
+        id = QKJ_what_happens_on_nal_hutta_stays_on_nal_hutta
+        icon = QKJ_what_happens_on_nal_hutta_stays_on_nal_hutta
+        cost = 10
 
+        prerequisite = { 
+           focus = QKJ_maximum_war_profiteering
+        } 
+        
+        x = 25
+        y = 8
 
+        
+        completion_reward = {
 
+        }
+    }   #### REPUBLIC PATH ####
+    focus = { 
+        id = QKJ_court_the_republic
+        icon = QKJ_court_the_republic
+        cost = 10
 
+        prerequisite = { 
+           focus = QKJ_galactic_military_escalation
+        } 
 
+        x = 19
+        y = 2
 
+        
+        completion_reward = {
 
+        }
+    }
+     focus = { 
+        id = QKJ_anything_can_be_bought
+        icon = QKJ_anything_can_be_bought
+        cost = 10
 
-	
+        prerequisite = { 
+           focus = QKJ_court_the_republic
+        } 
+
+        x = 17
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_anyone_can_be_bought
+        icon = QKJ_anyone_can_be_bought
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_court_the_republic
+        } 
+
+        x = 19
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = QKJ_if_the_price_is_right
+        icon = QKJ_if_the_price_is_right
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_court_the_republic
+        } 
+
+        x = 21
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_procure_rare_materials_they_need
+        icon = QKJ_procure_rare_materials_they_need
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_anything_can_be_bought
+        } 
+        prerequisite = { 
+           focus = QKJ_anyone_can_be_bought
+        } 
+        prerequisite = { 
+           focus = QKJ_if_the_price_is_right
+        } 
+
+        x = 19
+        y = 4
+    }
+     focus = { 
+        id = QKJ_selective_tipoffs
+        icon = QKJ_selective_tipoffs
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_procure_rare_materials_they_need
+        } 
+        
+        x = 18
+        y = 5
+    }
+    focus = { 
+        id = QKJ_republican_ambassadors
+        icon = QKJ_republican_ambassadors
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_procure_rare_materials_they_need
+        } 
+        
+        x = 20
+        y = 5
+    }
+     focus = { 
+        id = QKJ_grant_the_republic_access
+        icon = QKJ_grant_the_republic_access
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_republican_ambassadors
+        } 
+        prerequisite = { 
+           focus = QKJ_selective_tipoffs
+        } 
+
+        mutually_exclusive = {
+           focus = QKJ_hedging_our_bets
+        }
+         mutually_exclusive = {
+           focus = QKJ_battledroid_imports
+        }   
+
+        x = 19
+        y = 6
+    }
+    focus = { 
+        id = QKJ_semi_legitimate_trading
+        icon = QKJ_semi_legitimate_trading
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_grant_the_republic_access
+        } 
+        
+
+        x = 19
+        y = 7
+    }
+    focus = { 
+        id = QKJ_hutts_on_the_senate
+        icon = QKJ_hutts_on_the_senate
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_semi_legitimate_trading
+        } 
+        
+
+        x = 19
+        y = 8
+    } #### CONFEDERACY PATH ####
+    focus = { 
+        id = QKJ_court_the_cis
+        icon = QKJ_court_the_cis
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_galactic_military_escalation
+        } 
+
+        x = 30
+        y = 2
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_monetise_their_desperation
+        icon = QKJ_monetise_their_desperation
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_court_the_cis
+        } 
+
+        x = 30
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_trade_federation_representatives
+        icon = QKJ_trade_federation_representatives
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_court_the_cis
+        } 
+
+        x = 32
+        y = 3
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = QKJ_guarantees_of_our_continued_neccessity
+        icon = QKJ_guarantees_of_our_continued_neccessity
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_monetise_their_desperation
+        } 
+
+        x = 29
+        y = 4
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_gamorreans_for_hire
+        icon = QKJ_gamorreans_for_hire
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_guarantees_of_our_continued_neccessity
+        } 
+
+        x = 29
+        y = 5
+
+        
+        completion_reward = {
+
+        }
+    }
+     focus = { 
+        id = QKJ_escorts_through_hutt_space
+        icon = QKJ_escorts_through_hutt_space
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_trade_federation_representatives
+        } 
+        prerequisite = { 
+           focus = QKJ_monetise_their_desperation
+        } 
+
+        x = 31
+        y = 4
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_officially_recognise_the_cis
+        icon = QKJ_officially_recognise_the_cis
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_escorts_through_hutt_space
+        } 
+
+        x = 31
+        y = 5
+
+        
+        completion_reward = {
+
+        }
+    }
+    focus = { 
+        id = QKJ_battledroid_imports
+        icon = QKJ_battledroid_imports
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_officially_recognise_the_cis
+        }
+         prerequisite = { 
+           focus = QKJ_gamorreans_for_hire
+        }
+
+        mutually_exclusive = {
+           focus = QKJ_hedging_our_bets
+        }   
+         mutually_exclusive = {
+           focus = QKJ_grant_the_republic_access
+        } 
+
+        x = 31
+        y = 6
+    }
+     focus = { 
+        id = QKJ_a_banquet_for_dooku
+        icon = QKJ_a_banquet_for_dooku
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_battledroid_imports
+        }
+
+        x = 31
+        y = 7
+    }
+    focus = { 
+        id = QKJ_allow_secret_cis_bases
+        icon = QKJ_allow_secret_cis_bases
+        cost = 10
+
+        prerequisite = { 
+           focus = QKJ_a_banquet_for_dooku
+        }
+
+        x = 31
+        y = 8
+    }                    
