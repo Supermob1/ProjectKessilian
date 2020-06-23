@@ -10,7 +10,7 @@ country_event = { #The State of the Galaxy
 	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.1"}
 	title = republic.1.t
 	desc = republic.1.d
-	picture = GFX_report_event_rep_senate
+	picture = GFX_news_event_unthinkable
 	
 	is_triggered_only = yes
 	
@@ -51,3 +51,53 @@ country_event = { #Palpatine's Ritual
 		
 	}
 }
+country_event = { #Order 66
+	id = republic.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.3.t
+	desc = republic.3.d
+	picture = GFX_report_event_rep_senate
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #Good riddance! 
+		name = republic.3.a
+		ai_chance = { 
+			factor = 25	
+		}
+		sound_effect = "order66"
+		hidden_effect = {
+			news_event = {
+				id = news.66
+			}
+		}
+	}
+}
+country_event = { #Battle of Heroes
+	id = republic.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.4.t
+	desc = republic.4.d
+	picture = GFX_country_event_battleofheroes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # Obi-Wan Wins
+		name = republic.4.a
+		ai_chance = { 
+			factor = 0	
+		}
+		sound_effect = "battleofheroes"
+		}
+	option = { # Anakin Wins
+		name = republic.4.b
+		ai_chance = { 
+			factor = 0	
+		}
+		sound_effect = "battleofheroes"
+		}
+	}
