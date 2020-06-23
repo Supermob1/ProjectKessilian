@@ -1,0 +1,46 @@
+######EVENTS#########
+category = 
+{
+ name = "Events"
+ soundeffects = {
+	"order66"
+	"battleofheroes"
+ }
+  compressor = 
+ {
+	enabled = yes
+	pregain = 0.0
+	postgain = 2.0
+	ratio = 10.0
+	threshold = -10.0
+	attacktime = 0.030
+	releasetime = 1.2
+ }
+}
+
+soundeffect = 
+{
+	name = "order66"
+	sounds = {
+		sound = "order66"
+	}
+	volume = 1
+}
+sound = 
+{
+	name = "order66"
+	file = "rep/order66.wav"
+}
+soundeffect = 
+{
+	name = "battleofheroes"
+	sounds = {
+		sound = "battleofheroes"
+	}
+	volume = 1
+}
+sound = 
+{
+	name = "battleofheroes"
+	file = "rep/battleofheroes.wav"
+}
