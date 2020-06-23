@@ -1,16 +1,15 @@
 ﻿capital = 62
 
-oob = "garrison_generic"
+oob = "REP_1936"
 
 set_research_slots = 4
 
 set_stability = 0.10
-set_convoys = 300
+
 set_war_support = 0.02
 
 set_technology = {
 	clone_army = 1 #Hidden Tech
-	early_ship_hull_light = 1
 }
 
 set_popularities = {
@@ -26,9 +25,6 @@ set_popularities = {
 		inclusivist = 39
 		light_side = 17
 	}
-add_ideas = {
-	dontusemanpower
-}
 set_politics = {
 	ruling_party = inclusivist
 	last_election = "10.15.6"
@@ -46,7 +42,7 @@ create_country_leader = {
 }
 
 
-###Field marshal####
+###Field marshall####
 
 create_field_marshal = {
 	name = "Obi-Wan Kenobi"
