@@ -9,25 +9,48 @@ foreign_politics = {
 		}
 
 		available = {
-
+			custom_trigger_tooltip = {
+				tooltip = "[?ROOT.GetName] amount of credits atleast 5"
+				check_variable = {
+					var = creditsamount
+					value = 5
+					compare = greater_than_or_equals
+				}
+			}
 		}
 
-		cost = 150
-		days_remove = 50
+		cost = 0
+		days_remove = 0
 		
 		visible = {
 			always = yes
 		}
 
 		complete_effect = {
-			custom_effect_tooltip = clone_legions_tt
-			hidden_effect = {
-			load_oob = "clone_legion"				
-							}			
-						}
+			custom_effect_tooltip = droids_divisions_tt
+			subtract_from_variable = { creditsamount = 5 }
+			if = {
+				limit = {
+					NOT = { has_country_flag = OOB_LOADED }
+				}
+				hidden_effect = {
+					load_oob = "clone_legion"
+					set_country_flag = OOB_LOADED
+				}
+			}
+			else = {
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"Clone Armored Batallion\" start_experience_factor = 0.5 start_equipment_factor = 1"
+						owner = ROOT
+					}
+				}
+			}
+		}
 
 		ai_will_do = {
-			factor = 0
-					}
+			factor = 1
+			modifier = { num_divisions > 100 factor = 0 }
+		}
 	}
 }

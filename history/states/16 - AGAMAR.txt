@@ -2,6 +2,11 @@ state={
 	id=16
 	name="STATE_16"
 	history = {
+		buildings = {
+			infrastructure = 1
+
+				#naval_base  = 1
+		}
 		owner = CIS
 		add_core_of = CIS
 		victory_points = {
@@ -14,6 +19,6 @@ state={
 	provinces={
 		338 489 528 783 784 785 788 789 790 792 795 796 797 798 801 802 803 808 809 810 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+	manpower=25000
+	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
 }

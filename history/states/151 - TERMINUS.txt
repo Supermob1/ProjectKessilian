@@ -2,12 +2,17 @@ state={
 	id=151
 	name="STATE_151"
 	history = {
+		buildings = {
+			infrastructure = 1
+
+				#naval_base  = 1
+		}
 		owner = GKJ
 		add_core_of = GKJ
 	}
 	provinces={
 		219 307 429 2758 2759 2760 2761 2762 2763 2764 2765 2766 2767 2768 2769 2770 2771 2772 2773 2774 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+	manpower=500000
+	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
 }

@@ -2,6 +2,11 @@ state={
 	id=142
 	name="STATE_142"
 	history = {
+		buildings = {
+			infrastructure = 1
+
+				#naval_base  = 1
+		}
 		owner = NOB
 		add_core_of = NOB
 		victory_points = {
@@ -11,6 +16,6 @@ state={
 	provinces={
 		159 332 350 493 2628 2629 2630 2631 2632 2633 2636 2637 2638 2639 2646 2647 2651 2654 2657 
 	}
-	manpower=0
-	buildings_max_level_factor=1.000
+	manpower=100000
+	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
 }

@@ -1,0 +1,49 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+############################################
+# Era Name
+############################################
+defined_text = {
+	name = Era_name
+	#### Republic Era
+	text = {
+		trigger = {
+			has_global_flag = Republic_Era
+		}
+		localization_key = "Republic Era"
+	}
+	#### Empire Era
+	text = {
+		trigger = {
+			has_global_flag = Empire_Era
+		}
+		localization_key = "Empire Era"
+	}
+}
+############################################
+# Era Desc
+############################################
+defined_text = {
+	name = Era_desc
+	#### Republic Era
+	text = {
+		trigger = {
+			has_global_flag = Republic_Era
+		}
+		localization_key = "BLABLABLA"
+	}
+	#### Empire Era
+	text = {
+		trigger = {
+			has_global_flag = Empire_Era
+		}
+		localization_key = "BLABLABLA"
+	}
+}
