@@ -1,0 +1,52 @@
+guiTypes = {
+	containerWindowType = {
+		name = "era_main_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height = 300 }
+		
+		iconType ={
+			name ="era_window"
+			spriteType = "GFX_generic_box_125"
+			position = { x=-530 y=3 }
+			Orientation = "UPPER_RIGHT"
+			scale = 1.2
+			pdx_tooltip = "ERA_TOOLTIP"
+			pdx_tooltip_delayed = "ERA_TOOLTIP_DESC"
+		}
+		instantTextboxType = {
+			name = "date"
+			position = { x = -535 y = 8 }
+			font = "hoi_18mbs"
+			fixedsize = yes
+			text = "[?global.BBY_Date] BBY [Era_name]"
+			maxWidth = 160
+			maxHeight = 18
+			Orientation = "UPPER_RIGHT"
+			format = center	
+			vertical_alignment = center	
+			alwaystransparent = yes
+		}
+		iconType ={
+			name ="credits_window"
+			spriteType = "GFX_generic_box_small"
+			position = { x=-620 y=5 }
+			Orientation = "UPPER_RIGHT"
+			scale = 1
+			pdx_tooltip = "CREDITS_TOOLTIP"
+			pdx_tooltip_delayed = "CREDITS_TOOLTIP_DESC"
+		}
+		instantTextboxType = {
+			name = "credits_name"
+			position = { x = -650 y = 8 }
+			font = "hoi_18mbs"
+			fixedsize = yes
+			text = "[?root.creditsamount]T Credits"
+			maxWidth = 150
+			maxHeight = 18
+			Orientation = "UPPER_RIGHT"
+			format = center	
+			vertical_alignment = center	
+			alwaystransparent = yes
+		}
+	}
+}
