@@ -236,7 +236,7 @@ focus_tree = {
 		relative_position_id = DKJ_renewed_galactic_threat
     }
     focus = { 
-        id = varlian_legacy_unchained
+        id = DKJ_varlian_legacy_unchained
         icon = DKJ_foster_the_criminal_spirit
         cost = 10
 
@@ -664,25 +664,6 @@ focus_tree = {
 				
 
         x = -1
-        y = 2
-		relative_position_id = DKJ_confederate_droids
-    }
-    focus = { 
-        id = DKJ_even_droids_have_prices
-        icon = DKJ_even_droids_have_prices
-        cost = 10
-
-        prerequisite = { 
-			focus = DKJ_preparing_for_the_worst
-			focus = DKJ_establish_trade_relations
-        }
-		
-		mutually_exclusive = {
-			focus = DKJ_war_for_the_galaxys_survival
-		}
-				
-
-        x = 1
         y = 2
 		relative_position_id = DKJ_confederate_droids
     }
