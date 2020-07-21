@@ -1,0 +1,28 @@
+add_namespace = neutralsystems
+
+##Event: Mandalore In Flames
+country_event = {
+	id = neutralsystems.1
+	title = neutralsystems.1.title
+	desc = neutralsystems.1.desc
+	picture = GFX_country_event_black_sun_attack
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = neutralsystems.1.a
+		ai_chance = { factor = 1}
+		set_politics = {
+			ruling_party = akaanadocrat
+			elections_allowed = no
+		}
+	
+	}
+	option = {
+		name = neutralsystems.1.b
+		ai_chance = { factor = 1}
+		start_civil_war = {
+        		ruling_party = akaanadocrat
+        		size = 0.5
+    		}
+	}
+}
