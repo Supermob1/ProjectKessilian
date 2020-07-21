@@ -46,7 +46,12 @@ focus_tree = {
 		factor = 25
 		}
 
-	completion_reward = {
+		completion_reward = {
+			custom_effect_tooltip = 1_NEU_tt
+			hidden_effect = {
+				country_event = { id = neutralsystems.1 days = 0 }
+				add_stability = -0.3
+			}
 		}
 
 	}
