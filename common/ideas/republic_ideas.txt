@@ -1,0 +1,23 @@
+ideas = {
+	country = {
+		military_creation_idea = {
+			picture = rep_military_creation_idea
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			 weekly_manpower = 58000 #58k for two years equals about 3 million total
+			 production_factory_start_efficiency_factor = 0.1 #small boost to producing weapons during this time
+			 production_factory_max_efficiency_factor = 0.1
+			}
+		}
+	}
+}
