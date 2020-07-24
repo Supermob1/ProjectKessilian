@@ -1,19 +1,26 @@
 ideas = {
-	hidden_ideas = {
-		dontusemanpower = {
+	country = {
+
+		unity_shift = {
+			picture = unity_shift
+
 			allowed = {
-                always = yes
-            }
-            allowed_civil_war = {
-				always = yes
-            }
-			picture = clan_desilijic
-            removal_cost = -1
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
 			modifier = {
-				conscription = -10.0
-				non_core_manpower = -10.0
-				monthly_population = -0.5
-            }
+			 unitist_drift = 0.10
+			}
 		}
+	}
+
+	hidden_ideas = {
+		
 	}
 }
