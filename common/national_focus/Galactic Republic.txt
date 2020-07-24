@@ -123,7 +123,6 @@ focus_tree = {
 
 		completion_reward = {
 				add_war_support = 0.05
-				add_stability = 0.05
 		}
 	}
 
@@ -141,7 +140,9 @@ focus_tree = {
 		y = 3
 
 		completion_reward = {
-
+			#start a war in naboo
+			custom_effect_tooltip = "The Counter Attack at Naboo Begins."
+			add_war_support = 0.1
 		}
 	}
 
@@ -159,7 +160,71 @@ focus_tree = {
 		y = 3
 
 		completion_reward = {
+			custom_effect_tooltip = "Raise Militia in various planets."
+			hidden_effect = {
+			62 = {
+					create_unit = {
+	    		division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+	    		owner = REP
+				}
+			}
 
+			55 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+
+			75 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+
+			90 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+
+			92 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+
+			101 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+
+			143 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+
+			105 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+
+			134 = {
+				create_unit = {
+				division = "name = \"Militia\" division_template = \"Planetary Garrisons\" start_experience_factor = 0.1 start_equipment_factor = 0.5"
+				owner = REP
+			}
+			}
+		}
 		}
 	}
 
@@ -180,7 +245,10 @@ focus_tree = {
 		y = 4
 
 		completion_reward = {
-
+			add_popularity = {
+		    ideology = inclusivist
+		    popularity = -0.10
+			}
 		}
 	}
 
@@ -197,7 +265,10 @@ focus_tree = {
 		y = 5
 
 		completion_reward = {
-
+			add_timed_idea = {
+				idea = unity_shift
+				days = 720
+			}
 		}
 	}
 	#LEFT BRANCH START#
@@ -218,7 +289,7 @@ focus_tree = {
 		y = 6
 
 		completion_reward = {
-
+			add_stability = 0.05
 		}
 	}
 
@@ -673,7 +744,7 @@ focus_tree = {
 		y = 6
 
 		completion_reward = {
-
+			add_war_support = 0.05
 		}
 	}
 
@@ -690,7 +761,12 @@ focus_tree = {
 		y = 7
 
 		completion_reward = {
-
+			REP = {
+				create_wargoal = {
+				  type = annex_wargoal_type
+				  target = CIS
+				}
+			}
 		}
 	}
 
@@ -707,7 +783,7 @@ focus_tree = {
 		y = 8
 
 		completion_reward = {
-
+			add_stability = 0.1
 		}
 	}
 
@@ -724,7 +800,7 @@ focus_tree = {
 		y = 8
 
 		completion_reward = {
-
+			add_war_support = 0.1
 		}
 	}
 
@@ -779,7 +855,15 @@ focus_tree = {
 		y = 10
 
 		completion_reward = {
-
+			135 = {
+				damage_building = {
+				  type = infrastructure
+				  damage = 10
+				}
+				add_manpower = -600000
+				add_core_of = REP
+				remove_core_of = CIS
+			}
 		}
 	}
 
@@ -801,7 +885,11 @@ focus_tree = {
 		y = 11
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.05
+			}
+			add_war_support = 0.05
 		}
 	}
 
@@ -822,7 +910,11 @@ focus_tree = {
 		y = 11
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = inclusivist
+				popularity = 0.05
+			}
+			add_stability = 0.05
 		}
 	}
 
@@ -907,7 +999,11 @@ focus_tree = {
 		y = 12
 
 		completion_reward = {
-
+			add_ideas = jedi_commissariats
+			add_popularity = {
+				ideology = light_side
+				popularity = 0.05
+			}
 		}
 	}
 
@@ -960,6 +1056,7 @@ focus_tree = {
 		y = 15
 
 		completion_reward = {
+			add_stability = 0.05
 
 		}
 	}

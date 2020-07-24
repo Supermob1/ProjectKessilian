@@ -1,7 +1,7 @@
 foreign_politics = {
 
 	REP_clone_legions = {
-	
+
 		icon = generic_intelligence_operation
 
 		allowed = {
@@ -9,8 +9,9 @@ foreign_politics = {
 		}
 
 		available = {
+			has_manpower > 81600
 			custom_trigger_tooltip = {
-				tooltip = "[?ROOT.GetName] amount of credits atleast 5"
+				tooltip = "[?ROOT.GetName] has atleast 5 trillion Credits."
 				check_variable = {
 					var = creditsamount
 					value = 5
@@ -21,13 +22,13 @@ foreign_politics = {
 
 		cost = 0
 		days_remove = 0
-		
+
 		visible = {
 			always = yes
 		}
 
 		complete_effect = {
-			custom_effect_tooltip = droids_divisions_tt
+			custom_effect_tooltip = clone_legions_tt
 			subtract_from_variable = { creditsamount = 5 }
 			if = {
 				limit = {
