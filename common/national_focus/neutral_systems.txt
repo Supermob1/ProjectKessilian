@@ -31,7 +31,7 @@ focus_tree = {
 		}
 
 	}
-	
+
 	focus = {
 		id = MAN_deathwatch_coup
 		icon = GFX_deathwatch_coup
@@ -65,7 +65,7 @@ focus_tree = {
 		}
 		x = 4
 		y = 2
-		
+
 		mutually_exclusive = {
         focus = MAN_a_failed_coup
 		}
@@ -125,7 +125,7 @@ focus_tree = {
 		}
 		x = 0
 		y = 5
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -143,7 +143,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 5
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -164,7 +164,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 6
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -182,7 +182,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 7
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -200,7 +200,7 @@ focus_tree = {
 		}
 		x = -1
 		y = 8
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -218,7 +218,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 8
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -236,7 +236,7 @@ focus_tree = {
 		}
 		x = 3
 		y = 8
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -260,7 +260,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 9
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -278,7 +278,7 @@ focus_tree = {
 		}
 		x = 1
 		y = 10
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -458,7 +458,7 @@ focus_tree = {
 		}
 		x = 16
 		y = 2
-		
+
 		mutually_exclusive = {
         focus = MAN_a_new_age
 		}
@@ -485,7 +485,7 @@ focus_tree = {
 		factor = 50
 		}
 
-	completion_reward = {
+		completion_reward = {
 		}
 
 	}
@@ -493,12 +493,21 @@ focus_tree = {
 		id = MAN_stay_with_satine
 		icon = GFX_stay_with_satine
 		cost = 10.00
+
+		available = {
+			OR = {
+				has_country_flag = MAN_proneutral_flag
+				has_country_flag = MAN_indecisive_govt
+			}
+		}
+
+
 		prerequisite = {
 			focus = MAN_morning_affair
 		}
 		x = 11
 		y = 4
-		
+
 		mutually_exclusive = {
         focus = MAN_new_leadership_needed
 		}
@@ -508,6 +517,7 @@ focus_tree = {
 		}
 
 	completion_reward = {
+
 		}
 
 	}
@@ -631,11 +641,11 @@ focus_tree = {
 		}
 		x = 10
 		y = 9
-		
+
 		mutually_exclusive = {
 			focus = MAN_deal_with_the_devils
 		}
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -653,7 +663,7 @@ focus_tree = {
 		}
 		x = 9
 		y = 10
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -671,11 +681,11 @@ focus_tree = {
 		}
 		x = 12
 		y = 9
-		
+
 		mutually_exclusive = {
 			focus = MAN_make_arrests
 		}
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -696,7 +706,7 @@ focus_tree = {
 		}
 		x = 11
 		y = 10
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -714,7 +724,7 @@ focus_tree = {
 		}
 		x = 13
 		y = 10
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -736,7 +746,7 @@ focus_tree = {
 		}
 		x = 11
 		y = 11
-		
+
 		ai_will_do = {
 		factor = 50
 		}
@@ -749,12 +759,19 @@ focus_tree = {
 		id = MAN_new_leadership_needed
 		icon = GFX_new_leadership_needed
 		cost = 10.00
+
+		available = {
+			OR = {
+				has_country_flag = MAN_prowar_flag
+				has_country_flag = MAN_indecisive_govt
+			}
+		}
 		prerequisite = {
 			focus = MAN_morning_affair
 		}
 		x = 18
 		y = 4
-		
+
 		mutually_exclusive = {
         focus = MAN_stay_with_satine
 		}
@@ -764,6 +781,7 @@ focus_tree = {
 		}
 
 	completion_reward = {
+
 		}
 
 	}
@@ -776,7 +794,7 @@ focus_tree = {
 		}
 		x = 16
 		y = 5
-		
+
 		mutually_exclusive = {
         focus = MAN_dookus_promise
 		}
@@ -948,7 +966,7 @@ focus_tree = {
 		}
 		x = 20
 		y = 5
-		
+
 		mutually_exclusive = {
         focus = MAN_republic_ambassadors
 		}
