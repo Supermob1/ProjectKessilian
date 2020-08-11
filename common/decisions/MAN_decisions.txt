@@ -2,7 +2,7 @@ MAN_referendum_category = {
 	MAN_prowar_speech = {
 
 		cost = 50
-		fire_only_once = yes
+		fire_only_once = no
 
 		complete_effect = {
 			add_to_variable = {
@@ -17,7 +17,7 @@ MAN_referendum_category = {
 
 
 		cost = 50
-		fire_only_once = yes
+		fire_only_once = no
 
 		complete_effect = {
 			add_to_variable = {
@@ -31,7 +31,7 @@ MAN_referendum_category = {
 	MAN_antiwar_rally = {
 
 		cost = 50
-		fire_only_once = yes
+		fire_only_once = no
 
 		complete_effect = {
 			add_to_variable = {
@@ -45,7 +45,7 @@ MAN_referendum_category = {
 	MAN_rep_represent = {
 
 		cost = 50
-		fire_only_once = yes
+		fire_only_once = no
 
 		complete_effect = {
 			add_to_variable = {
@@ -59,12 +59,17 @@ MAN_referendum_category = {
 	MAN_the_referendum = {
 
 		days_mission_timeout = 100
-		is_good = no
-		fire_only_once = no
+		is_good = yes
+		selectable_mission = no
+		fire_only_once = yes
 
+		available = {
+			always = no
+		}
 		activation = {
 			has_completed_focus = MAN_morning_affair
 		}
+
 		timeout_effect = {
 			if = {
 				limit = {
