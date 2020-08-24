@@ -81,8 +81,7 @@ MAN_referendum_category = {
 				}
 				add_stability = -0.1 #THE PEOPLE HAVE VOTED BUT NEITHER SIDE IS GREATER THAN THE OTHER. REGARDLES OF THE OUTCOME, PEOPLE WILL NOT BE HAPPY!
 				set_country_flag = MAN_indecisive_govt
-				#country_event =
-				#Someone put a referendum news event here
+				#country_event = neutralsystems.2
 			}
 			if = {
 				limit = {
@@ -93,13 +92,11 @@ MAN_referendum_category = {
 					}
 				}
 				set_country_flag = MAN_prowar_flag
-				#country_event =
-				#Someone put a referendum news event here
+				news_event = neutralsystems.4
 			}
 			else = {
 				set_country_flag = MAN_proneutral_flag
-				#country_event =
-				#Someone put a referendum news event here
+				news_event = neutralsystems.3
 			}
 		}
 	}
