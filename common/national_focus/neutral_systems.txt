@@ -773,15 +773,20 @@ focus_tree = {
 		y = 4
 
 		mutually_exclusive = {
-        focus = MAN_stay_with_satine
+        		focus = MAN_stay_with_satine
 		}
 
 		ai_will_do = {
 		factor = 50
 		}
 
-	completion_reward = {
-
+		completion_reward = {
+			set_politics = {
+				ruling_party = corist
+				last_election = "1888.15.6"
+				election_frequency = 48
+				elections_allowed = no
+			}
 		}
 
 	}
