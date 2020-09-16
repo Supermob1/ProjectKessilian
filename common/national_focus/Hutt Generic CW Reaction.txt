@@ -1,0 +1,183 @@
+# Generic Hutt Focus Tree
+# By Their Excellencies, Matthew K. Selby & TheCrusaderKing
+#################################
+####START OF CLONE WARS####
+    shared_focus = { 
+        id = DKJ_opportunity_of_a_lifetime
+        icon = HTT_dangerous_times_dangerous_associates
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			#noprerequisite
+        }
+
+        x = 14
+        y = 0
+    }
+    shared_focus = { 
+        id = DKJ_expand_core_underworld_influence
+        icon = DKJ_expand_core_underworld_influence
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_opportunity_of_a_lifetime
+        }
+
+        x = -3
+        y = 1
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_expand_border_world_influence
+        icon = DKJ_expand_border_world_influence
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_opportunity_of_a_lifetime
+        }
+
+        x = -1
+        y = 1
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_supplying_rare_materials_to_the_republic
+        icon = DKJ_supplying_rare_materials_to_the_republic
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_opportunity_of_a_lifetime
+        }
+
+        x = 1
+        y = 1
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_supplying_rare_materials_to_the_cis
+        icon = DKJ_supplying_rare_materials_to_the_cis
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_opportunity_of_a_lifetime
+        }
+
+        x = 3
+        y = 1
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_intelligence_for_sale
+        icon = DKJ_intelligence_for_sale
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_expand_core_underworld_influence
+        }
+
+        x = -4
+        y = 2
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_bow_down_and_pay
+        icon = DKJ_bow_down_and_pay
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_expand_border_world_influence
+        }
+
+        x = -2
+        y = 2
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_your_new_saviours
+        icon = DKJ_your_new_saviours
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_expand_border_world_influence
+        }
+
+        x = 0
+        y = 2
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_better_us_than_the_war
+        icon = DKJ_better_us_than_the_war
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_bow_down_and_pay
+        }
+        
+		prerequisite = { 
+			focus = DKJ_your_new_saviours
+        }
+
+        x = -1
+        y = 3
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_desperate_times_desperate_customers
+        icon = DKJ_desperate_times_desperate_customers
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_supplying_rare_materials_to_the_republic
+        }
+        
+		prerequisite = { 
+			focus = DKJ_supplying_rare_materials_to_the_cis
+        }
+
+        x = 2
+        y = 2
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_extort_hyperlane_passage
+        icon = DKJ_extort_hyperlane_passage
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_supplying_rare_materials_to_the_republic
+        }
+        
+		prerequisite = { 
+			focus = DKJ_supplying_rare_materials_to_the_cis
+        }
+
+        x = 4
+        y = 2
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }
+    shared_focus = { 
+        id = DKJ_attract_war_weary_tourists
+        icon = DKJ_attract_war_weary_tourists
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_desperate_times_desperate_customers
+        }
+
+        x = 1
+        y = 3
+		relative_position_id = DKJ_opportunity_of_a_lifetime
+    }

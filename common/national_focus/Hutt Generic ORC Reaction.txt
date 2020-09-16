@@ -1,0 +1,143 @@
+# Generic Hutt Focus Tree
+# By Their Excellencies, Matthew K. Selby & TheCrusaderKing
+#################################
+####OUTER RIM REBELLION####
+    shared_focus = { 
+        id = DKJ_trouble_in_the_rim
+        icon = DKJ_trouble_in_the_rim
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			#NOPREREQUISITE
+        }
+
+        x = 14
+        y = 5
+    }
+    shared_focus = { 
+        id = DKJ_securing_hutt_space
+        icon = DKJ_securing_hutt_space
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_trouble_in_the_rim
+        }
+		
+		mutually_exclusive = {
+			focus = DKJ_crush_the_shag_peedunkies
+		}
+
+        x = -1
+        y = 1
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+    shared_focus = { 
+        id = DKJ_prevent_illegal_border_crossing
+        icon = DKJ_prevent_illegal_border_crossing
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_securing_hutt_space
+        }
+
+        x = -2
+        y = 2
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+    shared_focus = { 
+        id = DKJ_post_slave_bounties
+        icon = DKJ_post_slave_bounties
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_trouble_in_the_rim
+        }
+
+        x = 0
+        y = 2
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+    shared_focus = { 
+        id = DKJ_suppress_revolutionary_propaganda
+        icon = DKJ_suppress_revolutionary_propaganda
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_post_slave_bounties
+        }
+
+        x = -1
+        y = 3
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+    shared_focus = { 
+        id = DKJ_hire_trandoshan_slavecatchers
+        icon = DKJ_hire_trandoshan_slavecatchers
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_post_slave_bounties
+        }
+
+        x = 1
+        y = 3
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+    shared_focus = { 
+        id = DKJ_safeguarding_our_property
+        icon = DKJ_safeguarding_our_property
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_suppress_revolutionary_propaganda
+        }
+		
+        prerequisite = { 
+			focus = DKJ_hire_trandoshan_slavecatchers
+        }		
+
+        x = 0
+        y = 4
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+    shared_focus = { 
+        id = DKJ_crush_the_shag_peedunkies
+        icon = DKJ_crush_the_shag_peedunkies
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_trouble_in_the_rim
+        }
+		
+        mutually_exclusive = { 
+			focus = DKJ_securing_hutt_space
+        }		
+
+        x = 1
+        y = 1
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+    shared_focus = { 
+        id = DKJ_counter_guerrilla_tactics
+        icon = DKJ_counter_guerrilla_tactics
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_crush_the_shag_peedunkies
+        }
+				
+
+        x = 2
+        y = 2
+		relative_position_id = DKJ_trouble_in_the_rim
+    }
+####END OF OUTER RIM REBELLION####

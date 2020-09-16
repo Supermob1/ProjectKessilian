@@ -1,0 +1,132 @@
+# Generic Hutt Focus Tree
+# By Their Excellencies, Matthew K. Selby & TheCrusaderKing
+#################################
+####DROIDS####
+    shared_focus = { 
+        id = DKJ_confederate_droids
+        icon = DKJ_confederate_droids
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			#NOPREREQUISITE
+        }
+				
+
+        x = 2
+        y = 7
+    }
+    shared_focus = { 
+        id = DKJ_preparing_for_the_worst
+        icon = DKJ_preparing_for_the_worst
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_confederate_droids
+        }
+				
+
+        x = -1
+        y = 1
+		relative_position_id = DKJ_confederate_droids
+    }
+    shared_focus = { 
+        id = DKJ_establish_trade_relations
+        icon = DKJ_establish_trade_relations
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_confederate_droids
+        }
+				
+
+        x = 1
+        y = 1
+		relative_position_id = DKJ_confederate_droids
+    }
+    shared_focus = { 
+        id = DKJ_war_for_the_galaxys_survival
+        icon = DKJ_war_for_the_galaxys_survival
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_preparing_for_the_worst
+			focus = DKJ_establish_trade_relations
+        }
+		
+		mutually_exclusive = {
+			focus = DKJ_even_droids_have_prices
+		}
+				
+
+        x = -1
+        y = 2
+		relative_position_id = DKJ_confederate_droids
+    }
+    shared_focus = { 
+        id = DKJ_even_droids_have_prices
+        icon = DKJ_even_droids_have_prices
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_preparing_for_the_worst
+			focus = DKJ_establish_trade_relations
+        }
+		
+		mutually_exclusive = {
+			focus = DKJ_war_for_the_galaxys_survival
+		}
+				
+
+        x = 1
+        y = 2
+		relative_position_id = DKJ_confederate_droids
+    }
+    shared_focus = { 
+        id = DKJ_self_aggrandising_propaganda
+        icon = DKJ_self_aggrandising_propaganda
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_war_for_the_galaxys_survival
+        }				
+
+        x = -2
+        y = 3
+		relative_position_id = DKJ_confederate_droids
+    }
+    shared_focus = { 
+        id = DKJ_assist_the_resistance
+        icon = DKJ_assist_the_resistance
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_war_for_the_galaxys_survival
+			focus = DKJ_even_droids_have_prices
+        }				
+
+        x = 0
+        y = 3
+		relative_position_id = DKJ_confederate_droids
+    }
+    shared_focus = { 
+        id = DKJ_watching_our_enemies_crumble
+        icon = DKJ_watching_our_enemies_crumble
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_even_droids_have_prices
+        }				
+
+        x = 2
+        y = 3
+		relative_position_id = DKJ_confederate_droids
+    }
+####END OF DROIDS####

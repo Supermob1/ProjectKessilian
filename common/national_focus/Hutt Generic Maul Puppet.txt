@@ -1,0 +1,295 @@
+# Generic Hutt Focus Tree
+# By Their Excellencies, Matthew K. Selby & TheCrusaderKing
+#################################
+
+####POLITICAL TREE####
+    shared_focus = { 
+        id = DKJ_under_a_red_shadow
+        icon = DKJ_under_a_red_shadow
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			#NOPREREQUISITE
+        }				
+
+        x = 25
+        y = 0
+    }
+    shared_focus = { 
+        id = DKJ_playing_his_game
+        icon = DKJ_playing_his_game
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_under_a_red_shadow
+        }	
+			
+		mutually_exclusive = {
+			focus = DKJ_sabotage_from_within
+		}
+
+        x = -1
+        y = 1
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_sabotage_from_within
+        icon = DKJ_sabotage_from_within
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_under_a_red_shadow
+        }
+
+		mutually_exclusive = {
+			focus = DKJ_playing_his_game
+		}
+
+        x = 1
+        y = 1
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_feud_with_the_black_sun_and_pykes
+        icon = DKJ_feud_with_the_black_sun_and_pykes
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_playing_his_game
+			focus = DKJ_sabotage_from_within
+        }
+
+		mutually_exclusive = {
+			focus = DKJ_loyalty_to_the_cartel
+		}
+
+        x = -1
+        y = 2
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_loyalty_to_the_cartel
+        icon = DKJ_loyalty_to_the_cartel
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_playing_his_game
+			focus = DKJ_sabotage_from_within
+        }
+
+		mutually_exclusive = {
+			focus = DKJ_feud_with_the_black_sun_and_pykes
+		}
+
+        x = 1
+        y = 2
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_a_serious_venture
+        icon = DKJ_a_serious_venture
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_loyalty_to_the_cartel
+			focus = DKJ_feud_with_the_black_sun_and_pykes
+        }
+
+        x = 0
+        y = 3
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_fighting_for_a_new_hutt_order
+        icon = DKJ_fighting_for_a_new_hutt_order
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_a_serious_venture
+        }
+		
+		mutually_exclusive = {
+			focus = DKJ_fighting_for_our_lives
+		}
+
+        x = -3
+        y = 4
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_support_mauls_order
+        icon = DKJ_support_mauls_order
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_fighting_for_a_new_hutt_order
+        }
+
+        x = -5
+        y = 5
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_contact_beldorian
+        icon = DKJ_contact_beldorian
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_fighting_for_a_new_hutt_order
+        }
+
+        x = -3
+        y = 5
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_a_generation_of_hutt_sith
+        icon = DKJ_a_generation_of_hutt_sith
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_support_mauls_order
+        }
+
+        prerequisite = { 
+			focus = DKJ_contact_beldorian
+        }
+		
+        x = -4
+        y = 6
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_fighting_for_our_lives
+        icon = DKJ_fighting_for_our_lives
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_a_serious_venture
+        }
+		
+		mutually_exclusive = {
+			focus = DKJ_fighting_for_a_new_hutt_order
+		}
+
+        x = 3
+        y = 4
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_gather_strength
+        icon = DKJ_gather_strength
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_fighting_for_our_lives
+        }
+
+        x = 3
+        y = 5
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_consolidate_the_cartel
+        icon = DKJ_consolidate_the_cartel
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_fighting_for_our_lives
+        }
+
+        x = 5
+        y = 5
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_war_for_independence
+        icon = DKJ_war_for_independence
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_gather_strength
+        }
+
+        prerequisite = { 
+			focus = DKJ_consolidate_the_cartel
+        }
+
+        x = 4
+        y = 6
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_the_taste_of_sweet_revenge
+        icon = DKJ_the_taste_of_sweet_revenge
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_a_serious_venture
+        }
+
+        x = 0
+        y = 5
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_senators_into_slaves
+        icon = DKJ_senators_into_slaves
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_the_taste_of_sweet_revenge
+        }
+
+        x = -1
+        y = 6
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_reclaim_ryloth
+        icon = DKJ_reclaim_ryloth
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_the_taste_of_sweet_revenge
+        }
+
+        x = 1
+        y = 6
+		relative_position_id = DKJ_under_a_red_shadow
+    }
+    shared_focus = { 
+        id = DKJ_ohta_su_marvalic_plesodoro
+        icon = DKJ_ohta_su_marvalic_plesodoro
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+			focus = DKJ_senators_into_slaves
+        }
+
+        prerequisite = { 
+			focus = DKJ_reclaim_ryloth
+        }
+
+        x = 0
+        y = 7
+		relative_position_id = DKJ_under_a_red_shadow
+    }

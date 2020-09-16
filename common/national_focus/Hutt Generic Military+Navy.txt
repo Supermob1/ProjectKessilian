@@ -1,0 +1,315 @@
+# Generic Hutt Focus Tree
+# By Their Excellencies, Matthew K. Selby & TheCrusaderKing
+#################################
+
+#######MILITARY#########
+    shared_focus = { 
+        id = DKJ_renewed_galactic_threat
+        icon = DKJ_renewed_galactic_threat
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           #noprerequisite
+        }
+
+        x = 0
+        y = 0
+    }
+####LEFT BRANCH####   
+	shared_focus = { 
+        id = DKJ_reinforce_spaceport_domination
+        icon = HTT_muscle_in_on_the_shipyard_business
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_renewed_galactic_threat
+        }
+
+        x = -2
+        y = 1
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_requisition_civilian_freighters
+        icon = HTT_buy_up_civillian_freighters
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_reinforce_spaceport_domination
+        }
+
+        x = -4
+        y = 2
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_recruit_weequay_pirate_gangs
+        icon = HTT_terms_with_the_weequay_pirates
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_requisition_civilian_freighters
+        }
+
+        x = -4
+        y = 3
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_business_with_starship_companies
+        icon = HTT_spaceport_expansions
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_reinforce_spaceport_domination
+        }
+
+        x = -2
+        y = 2
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_resolve_inter_captain_power_struggles
+        icon = HTT_special_rights_for_starship_companies
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_business_with_starship_companies
+        }
+
+        x = -2
+        y = 3
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_dust_off_ancient_designs
+        icon = HTT_dust_off_old_designs
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_resolve_inter_captain_power_struggles
+        }
+		
+		mutually_exclusive = {
+			focus = DKJ_patchwork_fleets
+		}
+
+        x = -4
+        y = 4
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_ancient_huttese_carrier_tactics
+        icon = HTT_develop_starfighter_carrier_tactics
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_dust_off_ancient_designs
+        }
+
+        x = -4
+        y = 5
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_patchwork_fleets
+        icon = DKJ_patchwork_fleets
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_resolve_inter_captain_power_struggles
+        }
+		
+		mutually_exclusive = {
+			focus = DKJ_dust_off_ancient_designs
+		}
+
+        x = -2
+        y = 4
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_mercenary_mavericks
+        icon = DKJ_mercenary_mavericks
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_patchwork_fleets
+        }
+
+        x = -2
+        y = 5
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+####END OF LEFT BRANCH####
+####RIGHT BRANCH####
+    shared_focus = { 
+        id = DKJ_build_military_strength
+        icon = HTT_increase_military_strength
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_renewed_galactic_threat
+        }
+
+        x = 2
+        y = 1
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_legacy_of_kossack
+        icon = HTT_follow_huttese_guerrilla_doctrine
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_build_military_strength
+        }
+
+        x = 2
+        y = 2
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_acquire_exotic_weaponry
+        icon = HTT_smuggle_in_experimental_weapons
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_legacy_of_kossack
+        }
+
+        x = 1
+        y = 3
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_stockpile_mines_and_bombs
+        icon = HTT_stockpile_mines_and_bombs
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_acquire_exotic_weaponry
+        }
+
+        x = 1
+        y = 4
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_aggressive_bribery
+        icon = DKJ_aggressive_bribery
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_legacy_of_kossack
+        }
+
+        x = 3
+        y = 3
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_foster_the_criminal_spirit
+        icon = HTT_foster_the_criminal_spirit
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_aggressive_bribery
+        }
+
+        x = 3
+        y = 4
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_varlian_legacy_unchained
+        icon = HTT_make_every_step_cost_them
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_stockpile_mines_and_bombs
+        }
+        prerequisite = { 
+           focus = DKJ_foster_the_criminal_spirit
+        }
+
+        x = 2
+        y = 5
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_stamp_out_nikto_blood_cults	
+        icon = HTT_stamp_out_nikto_blood_cults
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_build_military_strength
+        }
+
+        x = 4
+        y = 2
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_raise_the_vodran_serfs	
+        icon = HTT_reward_the_vodran_serfs
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_build_military_strength
+        }
+
+        x = 6
+        y = 2
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_talk_to_the_gammorean_tribes
+        icon = HTT_talk_to_the_gammorean_clans
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_stamp_out_nikto_blood_cults
+		   focus = DKJ_raise_the_vodran_serfs
+        }
+
+        x = 5
+        y = 3
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+    shared_focus = { 
+        id = DKJ_ktg_recruitment_drive
+        icon = HTT_ktg_propaganda_endeavors
+		dynamic = yes
+        cost = 10
+
+        prerequisite = { 
+           focus = DKJ_stamp_out_nikto_blood_cults
+		   focus = DKJ_raise_the_vodran_serfs
+        }
+
+        x = 7
+        y = 3
+		relative_position_id = DKJ_renewed_galactic_threat
+    }
+####END OF MILITARY#####
