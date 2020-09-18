@@ -486,9 +486,6 @@
  REP_end_of_genetic_slavery_act:0 "End of Genetic Slavery Act"
  REP_end_of_genetic_slavery_act_desc:0 ""
  
- #HEARTS OF DURASTEEL HUTT GENERIC FOCUSES
- #moved to hutt loc file
- 
  
  #SITH EMPIRE
  CIS_peace_is_a_lie2:0 "Peace is a Lie, There is Only Passion"
@@ -1213,19 +1210,82 @@
  DKJ_ohta_su_marvalic_plesodoro_desc:0 ""
 
 ###Ideas
- DKJ_clan_desilijic:0 "Desilijic Traditions"
- DKJ_clan_desilijic_desc:0 "Desilijic is an ancient and powerful clan, tracing its ancestry back well before the Hutt Cataclysms to the forgotten history of Varl. Like most clans, its power has waxed and waned over the centuries. Myths and stories say that Desilijic was a powerful warrior clan that participated in many of the ancient legendary battles. It is said that Desilijic suffered greatly in the Hutt Cataclysms, as many enemy clans banded together to exact revenge for past humiliating defeats. Desilijic became one of the earliest adopters of the kajidic philosophies, which fit its scheming nature almost perfectly. The clan rebuilt its wealth and prestige, establishing its throneworld of Kor Desilijic in the Bootana Hutta. The Desilijic built estates on Nal Hutta, but they became truly at home amid Nar Shaddaa’s wealth and politics, influenced as they were by systems throughout the galaxy. As Nar Shaddaa transformed into the Smuggler’s Moon, Desilijic power expanded steadily throughout the galactic underworld. Desilijic has claimed a seat on the Hutt Ruling Council for decades. For the past few decades it has actually claimed two seats, giving it extraordinary influence on the Council’s decisions."
- BKJ_clan_besadii:0 "Besadii Traditions"
- BKJ_clan_besadii_desc:0 "Since before the Hutt Cataclysms, Besadii has wielded considerable power and influence in Hutt Space. Though the clan is not always on the Hutt Ruling Council, it is never far fromthe seats of power. When winds change or Besadii experiences leaner times, it always seems to rebuild in a new and powerful way, ready to reclaim a leadership role. While all Hutts are enormously selfish, the Hutts of Besadii are known for placing their own kajidic needs well before those of the other clans. They are masters of secret deals and are not above selling out the other Hutts in the name of profit.  The clan’s greed, notable even among Hutts, drives its members; these Hutts hunger endlessly for power, and play by their own rules when it benefits them."
- GKJ_clan_gorensla:0 "Gorensla Traditions"
- GKJ_clan_gorensla_desc:0 "The Gorensla kajidic is the Hutts’ preeminent black marketeer. The clan ships and smuggles millions of tons of legitimate and illegal goods throughout the galaxy every year. Gorensla operates an extensive smuggling network, however its real power lies in manipulation and subversion, Gorensla uses layer upon layer of front companies and intermediaries to hide its involvement whenever possible - some shadowports have no idea that they are dependent on Gorensla until the clan decides to make a power play for control. Being galactic black marketeers, the Gorensla often operate secretly within the shadows; rigging laws, controlling entire spaceports, and their organizations become the front of entire economies. To them no government official is too clean, no administrator too incorruptible, and no commodity that cannot be bought and sold for the right price."
- QKJ_clan_qunalaac:0 "Qunalaac Traditions"
- QKJ_clan_qunalaac_desc:0 "The Qunaalac kajidic controls the majority of Hutt warships that defend the Bootana Hutta. Qunaalac is one of the most heavily armed Hutt clans, and it wields that power whenever it provides an advantage. While Qunaalac is the dedicated defender of the Bootana Hutta and other selected Hutt systems and holdings, its members are not above using their power to exert a little pressure here or there to gain the advantage. Many Hutts believe the Qunaalac clan retains more of the Hutt warrior past than most surviving Clans of the Ancients. Qunaalac history recounts near-mythical, ancient accounts of battles against Xim the Despot and other early enemies in the time before the Hutt Cataclysms."
- HTT_hutt_council:0 "Hutt Council of the Ancients"
- HTT_hutt_council_desc:0 "To prevent a repeat of the Hutt Cataclysms, the Hutts realized that their entire culture must change and develop new philosophies if they wanted to avoid destroying themselves. Budhila Hestilic Amura created the Council of Elders, also known as the Hutt Ruling Council, as the ultimate arbiter for Hutt activities. The council’s decisions would be binding on any Hutt claiming clan rights, which gave it authority over nearly all Hutts. The hope was that this would restrain rivalries from getting too out of hand ever again and prevent widespread internecine war. The membership of the council was restricted to Hutts from the so-called Clans of the Ancients, which were clans that could trace their ancestry back to their homeworld of Varl. For the Hutts to survive, they needed to replace their warrior traditions with new philosophies. Budhila created the idea of the kajidic, where the Hutts strive to control from within organizations instead of via dominance through outright combat. Eventually, the kajidic would evolve to nearly displace or become indivisible from some clans, but it was originally a philosophy to be followed, and would be through the millennia" 
 
- DKJ_hutt_warfare
+ DKJ_hutt_enter_1:0 "''Entertainment'' Profits: Abyssmal"
+ DKJ_hutt_enter_1_desc:0 ""
+ DKJ_hutt_enter_2:0 "''Entertainment'' Profits: Low"
+ DKJ_hutt_enter_2_desc:0 ""
+ DKJ_hutt_enter_3:0 "''Entertainment'' Profits: Medium"
+ DKJ_hutt_enter_3_desc:0 ""
+ DKJ_hutt_enter_4:0 "''Entertainment'' Profits: High"
+ DKJ_hutt_enter_4_desc:0 ""
+ DKJ_hutt_enter_5:0 "''Entertainment'' Profits: Lucrative"
+ DKJ_hutt_enter_5_desc:0 ""
+ 
+ DKJ_hutt_legit_1:0 "''Legitimate'' Profits: Abyssmal"
+ DKJ_hutt_legit_1_desc:0 ""
+ DKJ_hutt_legit_2:0 "''Legitimate'' Profits: Low"
+ DKJ_hutt_legit_2_desc:0 ""
+ DKJ_hutt_legit_3:0 "''Legitimate'' Profits: Medium"
+ DKJ_hutt_legit_3_desc:0 ""
+ DKJ_hutt_legit_4:0 "''Legitimate'' Profits: High"
+ DKJ_hutt_legit_4_desc:0 ""
+ DKJ_hutt_legit_5:0 "''Legitimate'' Profits: Lucrative"
+ DKJ_hutt_legit_5_desc:0 ""
+ 
+ DKJ_hutt_prot_1:0 "''Protection'' Profits: Abyssmal"
+ DKJ_hutt_prot_1_desc:0 ""
+ DKJ_hutt_prot_2:0 "''Protection'' Profits: Low"
+ DKJ_hutt_prot_2_desc:0 ""
+ DKJ_hutt_prot_3:0 "''Protection'' Profits: Medium"
+ DKJ_hutt_prot_3_desc:0 ""
+ DKJ_hutt_prot_4:0 "''Protection'' Profits: High"
+ DKJ_hutt_prot_4_desc:0 ""
+ DKJ_hutt_prot_5:0 "''Protection'' Profits: Lucrative"
+ DKJ_hutt_prot_5_desc:0 ""
+ 
+ DKJ_hutt_slave_1:0 "Slave Conformity: Rebellion"
+ DKJ_hutt_slave_1_desc:0 ""
+ DKJ_hutt_slave_2:0 "Slave Conformity: Low"
+ DKJ_hutt_slave_2_desc:0 ""
+ DKJ_hutt_slave_3:0 "Slave Conformity: Moderate"
+ DKJ_hutt_slave_3_desc:0 ""
+ DKJ_hutt_slave_4:0 "Slave Conformity: Good"
+ DKJ_hutt_slave_4_desc:0 ""
+ DKJ_hutt_slave_5:0 "Slave Conformity: Excellent"
+ DKJ_hutt_slave_5_desc:0 ""
+ 
+ DKJ_hutt_mil_1:0 "Military Organisation: Feuding Gangsters"
+ DKJ_hutt_mil_1_desc:0 ""
+ DKJ_hutt_mil_2:0 "Military Organisation: Low"
+ DKJ_hutt_mil_2_desc:0 ""
+ DKJ_hutt_mil_3:0 "Military Organisation: Moderate"
+ DKJ_hutt_mil_3_desc:0 ""
+ DKJ_hutt_mil_4:0 "Military Organisation: High"
+ DKJ_hutt_mil_4_desc:0 ""
+ DKJ_hutt_mil_5:0 "Military Organisation: Everything for the Cartel"
+ DKJ_hutt_mil_5_desc:0 ""
+ 
+ DKJ_internal_decisions:0 "Internal Decisions"
+ DKJ_internal_decisions_desc:0 "dusfhsdkjc"
+ DKJ_develop_enter:0 "Develop ''Entertainment'' Businesses"
+ DKJ_develop_legit:0 "Develop ''Legitimate'' Businesses"
+ DKJ_develop_prot:0 "Develop ''Protection'' Businesses"
+ DKJ_develop_slave:0 "Repress Slaves"
+ DKJ_attract_scientists:0 "Attract Rogue Scientists"
+ DKJ_cis_commerce:0 "Commerce with the CIS"
+ DKJ_rep_commerce:0 "Commerce with the Republic"
+
  
  
- 
+ DKJ_military_decisions:0 "Military Decisions"
+ DKJ_military_decisions_desc:0 ""jnhdjkjcscxh"
+ DKJ_black_market:0 "Visit the Black Market"
+ DKJ_merc_xp:0 "Hire Mercenary Trainers"
+ DKJ_merc_agents:0 "Hire Mercenary Agents"
+ DKJ_merc_generals:0 "Hire Mercenary Generals"
+ DKJ_merc_armies:0 "Hire Mercenary Armies"
+ DKJ_merc_fleets:0 "Hire Mercenary Fleets"
+ DKJ_raise_armies:0 "Raise Native Armies"
+ DKJ_develop_military:0 "Upgrade Military Organisation"
  
