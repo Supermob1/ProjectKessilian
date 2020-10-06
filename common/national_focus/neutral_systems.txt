@@ -1131,4 +1131,379 @@ focus_tree = {
 		}
 
 	}
+	#Focus for Subsidies To Civilian Industries
+	focus = {
+		id = MAN_subsidies_to_civilian_industries
+		icon = GFX_goal_unknown
+		x = 28
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_direct_intervention }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Invite Foreign Corporations
+	focus = {
+		id = MAN_invite_foreign_corporations
+		icon = GFX_goal_unknown
+		x = 26
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_subsidies_to_civilian_industries }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Spending On Education
+	focus = {
+		id = MAN_spending_on_education
+		icon = GFX_goal_unknown
+		x = 28
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAN_invite_foreign_corporations 
+		}
+		prerequisite = { 
+			focus = MAN_expand_the_public_sector 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Make Loans More Accessable
+	focus = {
+		id = MAN_make_loans_more_accessable
+		icon = GFX_goal_unknown
+		x = 36
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_indirect_intervention }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Privatisation
+	focus = {
+		id = MAN_privatisation
+		icon = GFX_goal_unknown
+		x = 38
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_make_loans_more_accessable }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tax Free Research And Devlopment
+	focus = {
+		id = MAN_tax_free_research_and_devlopment
+		icon = GFX_goal_unknown
+		x = 36
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAN_privatisation 
+		}
+		prerequisite = { 
+			focus = MAN_lower_interest_rates 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Pardon Corrupt Officials
+	focus = {
+		id = MAN_pardon_corrupt_officials
+		icon = GFX_goal_unknown
+		x = 36
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_coming_to_an_arrangement }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Direct Intervention
+	focus = {
+		id = MAN_direct_intervention
+		icon = GFX_goal_unknown
+		x = 31
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_market_intervention }
+		mutually_exclusive = { focus = MAN_indirect_intervention }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Indirect Intervention
+	focus = {
+		id = MAN_indirect_intervention
+		icon = GFX_goal_unknown
+		x = 33
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_market_intervention }
+		mutually_exclusive = { focus = MAN_direct_intervention }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Allocate More Funding
+	focus = {
+		id = MAN_allocate_more_funding
+		icon = GFX_goal_unknown
+		x = 28
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_gathering_evidence }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Take Back Control Of The Docks
+	focus = {
+		id = MAN_take_back_control_of_the_docks
+		icon = GFX_goal_unknown
+		x = 24
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_gathering_evidence }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Create A 3 Year Plan
+	focus = {
+		id = MAN_create_a_3_year_plan
+		icon = GFX_goal_unknown
+		x = 32
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAN_clamp_down_on_corruption 
+			focus = MAN_coming_to_an_arrangement 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A New Look Economy
+	focus = {
+		id = MAN_a_new_look_economy
+		icon = GFX_goal_unknown
+		x = 32
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Clamp Down On Corruption
+	focus = {
+		id = MAN_clamp_down_on_corruption
+		icon = GFX_goal_unknown
+		x = 26
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_a_new_look_economy }
+		mutually_exclusive = { focus = MAN_coming_to_an_arrangement }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Coming To An Arrangement
+	focus = {
+		id = MAN_coming_to_an_arrangement
+		icon = GFX_goal_unknown
+		x = 38
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_a_new_look_economy }
+		mutually_exclusive = { focus = MAN_clamp_down_on_corruption }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Gathering Evidence
+	focus = {
+		id = MAN_gathering_evidence
+		icon = GFX_goal_unknown
+		x = 26
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAN_secret_police 
+		}
+		prerequisite = { 
+			focus = MAN_invest_in_security_systems 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for New Food Souces
+	focus = {
+		id = MAN_new_food_souces
+		icon = GFX_goal_unknown
+		x = 40
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_coming_to_an_arrangement }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Acceptance Of Bribes
+	focus = {
+		id = MAN_acceptance_of_bribes
+		icon = GFX_goal_unknown
+		x = 38
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = MAN_new_food_souces 
+		}
+		prerequisite = { 
+			focus = MAN_pardon_corrupt_officials 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Corruption Is Simply A Word
+	focus = {
+		id = MAN_corruption_is_simply_a_word
+		icon = GFX_goal_unknown
+		x = 40
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_acceptance_of_bribes }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Market Intervention
+	focus = {
+		id = MAN_market_intervention
+		icon = GFX_goal_unknown
+		x = 32
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_create_a_3_year_plan }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Secret Police
+	focus = {
+		id = MAN_secret_police
+		icon = GFX_goal_unknown
+		x = 24
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_clamp_down_on_corruption }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Invest In Security Systems
+	focus = {
+		id = MAN_invest_in_security_systems
+		icon = GFX_goal_unknown
+		x = 28
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_clamp_down_on_corruption }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for For The Right Price
+	focus = {
+		id = MAN_for_the_right_price
+		icon = GFX_goal_unknown
+		x = 36
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_acceptance_of_bribes }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Expand The Public Sector
+	focus = {
+		id = MAN_expand_the_public_sector
+		icon = GFX_goal_unknown
+		x = 30
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_subsidies_to_civilian_industries }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Lower Interest Rates
+	focus = {
+		id = MAN_lower_interest_rates
+		icon = GFX_goal_unknown
+		x = 34
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = MAN_make_loans_more_accessable }
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
