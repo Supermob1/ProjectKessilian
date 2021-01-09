@@ -51,24 +51,7 @@ focus_tree = {
 		y = 1
 
 		completion_reward = {
-				if = {
-					limit = {
-						has_idea = civilian_economy
-					}
-					swap_ideas = {
-						remove_idea = civilian_economy
-						add_idea = low_economic_mobilisation
-					}
-				}
-				if = {
-					limit = {
-						has_idea = low_economic_mobilisation
-					}
-					swap_ideas = {
-						remove_idea = low_economic_mobilisation
-						add_idea = partial_economic_mobilisation
-					}
-				}
+			level_up_economy = 1
 		}
 	}
 
@@ -85,10 +68,10 @@ focus_tree = {
 		y = 2
 
 		completion_reward = {
-				add_timed_idea = {
-					idea = military_creation_idea
-					days = 730
-				}
+			add_timed_idea = {
+				idea = military_creation_idea
+				days = 730
+			}
 		}
 	}
 
@@ -1173,17 +1156,22 @@ focus_tree = {
 	focus = {
 		id = REP_the_war_economy
 		icon = REP_the_war_economy
-		cost = 10
+		cost = 5
 
 		prerequisite = {
 			#no prereq, start of tree
+		}
+		
+		available = {
+			has_completed_focus = REP_the_military_creation_act
+			has_war = yes
 		}
 
 		x = 24
 		y = 0
 
 		completion_reward = {
-
+			add_political_power = 70
 		}
 	}
 
@@ -1204,6 +1192,13 @@ focus_tree = {
 		relative_position_id = REP_the_war_economy
 
 		completion_reward = {
+			62 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 
 		}
 	}
@@ -1440,6 +1435,7 @@ focus_tree = {
 		relative_position_id = REP_the_war_economy
 
 		completion_reward = {
+			add_ideas = regulated_markets_idea
 
 		}
 	}
@@ -1462,7 +1458,8 @@ focus_tree = {
 		relative_position_id = REP_desperate_times
 
 		completion_reward = {
-
+		#Gyndine doesn't exist on the map so just off-map factories will have to do
+			add_offsite_building = { type = industrial_complex level = 2 }
 		}
 	}
 
@@ -1484,6 +1481,7 @@ focus_tree = {
 		relative_position_id = REP_droid_reclamation_on_gyndine
 
 		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 3 }
 
 		}
 	}
@@ -1498,10 +1496,12 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = REP_improved_restraining_bolts
+			focus = REP_improved_restraining_bolts  
 		}
 
 		available = {
+			
+			
 		}
 
 
@@ -1510,14 +1510,15 @@ focus_tree = {
 		relative_position_id = REP_nationalize_key_industries
 
 		completion_reward = {
-
+			add_ideas = extreme_rationing_idea
+			add_war_support = -0.05
 		}
 	}
 	##END OF RIGHT PATH
 
 	##START OF LEFT PATH
 
-	focus = {
+	focus = { #recommended to have an event chain for this focus, people will lose their jobs and be replaced by droids
 		id = REP_droid_assisted_manufacturing
 		icon = REP_droid_assisted_manufacturing
 		cost = 10
@@ -1535,7 +1536,8 @@ focus_tree = {
 		relative_position_id = REP_desperate_times
 
 		completion_reward = {
-
+			add_stability = -0.05
+			add_ideas = improved_manufacturing_1
 		}
 	}
 
@@ -1557,7 +1559,11 @@ focus_tree = {
 		relative_position_id = REP_droid_assisted_manufacturing
 
 		completion_reward = {
-
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = improved_manufacturing_1
+				add_idea = improved_manufacturing_2
+			}
 		}
 	}
 
@@ -1574,7 +1580,7 @@ focus_tree = {
 			focus = REP_nationalize_key_industries
 		}
 
-		available = {
+		available = { 
 		}
 
 
@@ -1583,12 +1589,15 @@ focus_tree = {
 		relative_position_id = REP_improved_restraining_bolts
 
 		completion_reward = {
-
+			swap_ideas = {
+				remove_idea = improved_manufacturing_2
+				add_idea = improved_manufacturing_3
+			}
 		}
 	}
 	## END OF LEFT PATH
 
-	focus = {
+	focus = { #capped at war economy, will just give war support and stability if already there.
 		id = REP_desperate_measures
 		icon = REP_desperate_measures
 		cost = 10
@@ -1610,7 +1619,7 @@ focus_tree = {
 		relative_position_id = REP_desperate_times
 
 		completion_reward = {
-
+			level_up_economy = 1
 		}
 	}
 	### END OF LEFT BRANCH ###

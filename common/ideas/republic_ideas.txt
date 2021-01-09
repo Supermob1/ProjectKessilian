@@ -19,7 +19,101 @@ ideas = {
 			 production_factory_max_efficiency_factor = 0.1
 			}
 		}
+		
+		regulated_markets_idea = {
+			picture = rep_regulated_markets_idea
+			
+			allowed = {
+				always = no
+			}
 
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				min_export = -0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+		
+		improved_manufacturing_1 = {
+			picture = rep_improved_manufacturing_1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		
+		improved_manufacturing_2 = {
+			picture = rep_improved_manufacturing_2
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.15
+				industry_air_damage_factor = -0.15
+			}
+		}
+		
+		improved_manufacturing_3 = {
+			picture = rep_improved_manufacturing_3
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.10
+				industry_air_damage_factor = -0.15
+			}
+		}
+
+		extreme_rationing_idea = {
+			picture = rep_extreme_rationing_idea
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.03
+			}
+		}
+		
 		jedi_commissariats = {
 			picture = jedi_commissariats
 
@@ -45,4 +139,149 @@ ideas = {
 			}
 		}
 	}
+	
+	#Military of the Republic
+	army_chief = {
+
+		anakin_skywalker = {
+
+			#Might have to change original_tag to tag if civil war happens or government change
+			allowed = {
+				original_tag = REP
+			}
+			
+			traits = { anakin_chief_of_army }			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		yoda  = {
+
+			
+			allowed = {
+				original_tag = REP
+			}
+						
+			traits = { yoda_chief_of_army }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		obi-wan = {
+
+			
+			allowed = {
+				original_tag = REP
+			}
+						
+			traits = { obiwan_chief_of_army }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	navy_chief = { #CHIEF OF NAVY
+		
+		ki-adi-mundi = {
+
+			
+			allowed = {
+				original_tag = REP
+			}
+						
+			traits = { navy_chief_decisive_battle }
+			
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+	
+	air_chief = {
+		
+		mace_windu = {
+
+			
+			allowed = {
+				original_tag = REP
+			}
+
+			available = {
+			}
+						
+			traits = { air_chief_ground_support }
+			
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	
+	high_command = {
+
+		kit_fisto = {
+			ledger = army
+
+			
+			allowed = {
+				original_tag = REP
+			}
+			
+			traits = { army_infantry }
+			
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		
+		pio_koon = {
+			ledger = army
+
+			
+			allowed = {
+				original_tag = REP
+			}
+			
+			traits = { army_regrouping }
+			
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+		
+		pio_koon = {
+			ledger = air
+
+			
+			allowed = {
+				original_tag = REP
+			}
+			
+			traits = { }
+			
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+		
+		shaak_ti = {
+			ledger = air
+
+			
+			allowed = {
+				original_tag = REP
+			}
+			
+			traits = { }
+			
+			ai_will_do = {
+				factor = 1.5
+			}
+		}
+	}
+	
 }
