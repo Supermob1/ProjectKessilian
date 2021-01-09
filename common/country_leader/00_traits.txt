@@ -1,1 +1,91 @@
-﻿
+﻿leader_traits = {
+	#Republic
+	shrewd_chancellor = {
+		random = no
+		political_power_gain = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	anakin_chief_of_army = { 
+		sprite = 7
+		#Aggressive, Reckless, and a Hero, Takes the fight to the enemy.
+		political_power_factor = 0.05
+		army_org_factor = 0.04
+		army_attack_factor = 0.15
+		army_defence_factor = -0.05
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	yoda_chief_of_army = { 
+		sprite = 7
+		#Calm, collected
+		political_power_factor = 0.05
+		planning_speed = 0.05
+		army_org_factor = 0.12
+		army_defence_factor = 0.10
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	obiwan_chief_of_army = {
+		sprite = 7
+		#Tactician
+		political_power_factor = 0.05
+		planning_speed = 0.15
+		army_org_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	#Misc
+	
+	air_chief_ground_support = {  # Air superiority impact on land units improved by 15%
+		sprite = 2
+		army_bonus_air_superiority_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	navy_chief_decisive_battle = {
+		sprite = 3
+		navy_capital_ship_attack_factor = 0.15
+		navy_capital_ship_defence_factor = 0.15
+		navy_screen_attack_factor = 0.15
+		navy_screen_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	army_infantry = { # +12 infantry efficiency
+		sprite = 5
+		army_infantry_attack_factor = 0.15
+		army_infantry_defence_factor = 0.2
+		
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	
+	army_regrouping = { # Org regenerates 12% faster
+		sprite = 5
+		army_morale_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+}
