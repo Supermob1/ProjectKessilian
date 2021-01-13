@@ -1172,6 +1172,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 70
+			add_stability = 0.1
+			add_war_support = 0.1
 		}
 	}
 
@@ -1219,7 +1221,8 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
-
+			add_political_power = 70
+			custom_effect_tooltip = blastech_company_enable
 		}
 	}
 
@@ -1239,7 +1242,8 @@ focus_tree = {
 		relative_position_id = REP_blastech_contracts
 
 		completion_reward = {
-
+			#Byblos isn't on the map so this will do
+			add_offsite_building = { type = industrial_complex level = 3 }
 		}
 	}
 	##END OF LEFT PATH
@@ -1268,7 +1272,7 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
-
+			add_ideas = make_it_better_idea
 		}
 	}
 
@@ -1294,7 +1298,7 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
-
+			add_ideas = make_it_faster_idea
 		}
 	}
 
@@ -1309,6 +1313,9 @@ focus_tree = {
 		}
 
 		available = {
+			REP = {
+				controls_state = 144
+			}
 		}
 
 
@@ -1317,6 +1324,19 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
+		
+			144 = {
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 4
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						local_resources_factor = 0.3
+					}
+				}
+			}
 
 		}
 	}
@@ -1338,7 +1358,20 @@ focus_tree = {
 		relative_position_id = REP_expanding_the_refineries_on_bespin
 
 		completion_reward = {
-
+			
+			74 = {
+				add_state_modifier = {
+					modifier = {
+						production_speed_buildings_factor = 0.4
+						
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -1360,6 +1393,7 @@ focus_tree = {
 		}
 
 		available = {
+			
 		}
 
 
@@ -1368,7 +1402,7 @@ focus_tree = {
 		relative_position_id = REP_the_might_of_balmora
 
 		completion_reward = {
-
+			level_up_economy = 1
 		}
 	}
 	##END OF CENTER PATH
@@ -1383,7 +1417,7 @@ focus_tree = {
 			focus = REP_managing_the_manufacturing_sector
 		}
 		available = {
-		}
+		} 
 
 
 		x = 3
@@ -1391,7 +1425,8 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
-
+			add_political_power = 70
+			custom_effect_tooltip = rothana_company_enable
 		}
 	}
 
@@ -1412,7 +1447,7 @@ focus_tree = {
 		relative_position_id = REP_rothana_heavy_engineering_contracts
 
 		completion_reward = {
-
+			add_offsite_building = { type = arms_factory level = 5 }
 		}
 	}
 	##END OF RIGHT PATH
@@ -1459,7 +1494,7 @@ focus_tree = {
 
 		completion_reward = {
 		#Gyndine doesn't exist on the map so just off-map factories will have to do
-			add_offsite_building = { type = industrial_complex level = 2 }
+			add_offsite_building = { type = industrial_complex level = 3 }
 		}
 	}
 
@@ -1619,7 +1654,11 @@ focus_tree = {
 		relative_position_id = REP_desperate_times
 
 		completion_reward = {
-			level_up_economy = 1
+			swap_ideas = {
+				remove_idea = extreme_rationing_idea
+				add_idea = extreme_rationing_idea_2
+			}
+			add_war_support = -0.05
 		}
 	}
 	### END OF LEFT BRANCH ###
@@ -1643,7 +1682,7 @@ focus_tree = {
 		relative_position_id = REP_the_war_economy
 
 		completion_reward = {
-
+			add_political_power = 120
 		}
 	}
 	##START OF CENTER PATH
@@ -1665,7 +1704,8 @@ focus_tree = {
 		relative_position_id = REP_control_the_banks
 
 		completion_reward = {
-
+			add_ideas = longer_hours_idea
+			add_stability = -0.05
 		}
 	}
 
@@ -1687,7 +1727,11 @@ focus_tree = {
 		relative_position_id = REP_longer_hours
 
 		completion_reward = {
-
+			swap_ideas = {
+				remove_idea = longer_hours_idea
+				add_idea = longer_hours_idea_2
+			}
+			add_stability = -0.05
 		}
 	}
 	##END OF CENTER PATH
@@ -1711,7 +1755,8 @@ focus_tree = {
 		relative_position_id = REP_control_the_banks
 
 		completion_reward = {
-
+			add_political_power = 70
+			custom_effect_tooltip = kuat_enable_company
 		}
 	}
 
@@ -1733,6 +1778,19 @@ focus_tree = {
 		relative_position_id = REP_contacts_in_kuat
 
 		completion_reward = {
+			71 = {
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						production_speed_dockyard_factor = 0.5
+					}
+				}
+				
+			}
 		}
 	}
 
@@ -1766,7 +1824,9 @@ focus_tree = {
 		relative_position_id = REP_control_the_banks
 
 		completion_reward = {
-
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_ideas = all_must_give_idea
 		}
 	}
 	##END OF LEFT PATH
@@ -1790,6 +1850,7 @@ focus_tree = {
 		relative_position_id = REP_control_the_banks
 
 		completion_reward = {
+			add_stability = 0.05
 		}
 	}
 
@@ -1811,6 +1872,8 @@ focus_tree = {
 		relative_position_id = REP_a_guiding_hand
 
 		completion_reward = {
+			add_ideas = ensure_loyalty_idea
+			add_stability = 0.1
 		}
 	}
 
@@ -1844,6 +1907,10 @@ focus_tree = {
 		relative_position_id = REP_ensure_loyalty
 
 		completion_reward = {
+			add_timed_idea = {
+				idea = wartime_relief_efforts_idea
+				days = 360
+			}
 		}
 	}
 
@@ -1869,6 +1936,8 @@ focus_tree = {
 		relative_position_id = REP_control_the_banks
 
 		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
 		}
 	}
 

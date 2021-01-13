@@ -1,15 +1,15 @@
-﻿leader_traits = {
+leader_traits = {
 	#Republic
 	shrewd_chancellor = {
 		random = no
-		political_power_gain = 0.05
+		political_power_factor = 0.25
 		
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	
-	anakin_chief_of_army = { 
+	hero_with_no_fear = { 
 		sprite = 7
 		#Aggressive, Reckless, and a Hero, Takes the fight to the enemy.
 		political_power_factor = 0.05
@@ -22,7 +22,7 @@
 		}
 	}
 	
-	yoda_chief_of_army = { 
+	strategist_chief_of_army = { 
 		sprite = 7
 		#Calm, collected
 		political_power_factor = 0.05
@@ -35,7 +35,7 @@
 		}
 	}
 	
-	obiwan_chief_of_army = {
+	tactician_chief_of_army = {
 		sprite = 7
 		#Tactician
 		political_power_factor = 0.05
