@@ -1330,10 +1330,10 @@ focus_tree = {
 					type = synthetic_refinery
 					level = 4
 					instant_build = yes
-				}
+				} 
 				add_state_modifier = {
 					modifier = {
-						local_resources_factor = 0.3
+						local_resources = 1.0
 					}
 				}
 			}
@@ -1360,17 +1360,17 @@ focus_tree = {
 		completion_reward = {
 			
 			74 = {
-				add_state_modifier = {
-					modifier = {
-						production_speed_buildings_factor = 0.4
-						
-					}
-				}
 				add_building_construction = {
 					type = arms_factory
 					level = 4
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_buildings_factor = 0.5
+					}
+				}
+				
 			}
 		}
 	}
@@ -1786,7 +1786,7 @@ focus_tree = {
 				}
 				add_state_modifier = {
 					modifier = {
-						production_speed_dockyard_factor = 0.5
+						state_production_speed_dockyard_factor = 1.0
 					}
 				}
 				
