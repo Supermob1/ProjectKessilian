@@ -1,0 +1,830 @@
+focus_tree = {
+	id = TRA_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TRA
+		}
+	}
+	#Focus for Attack Kashyyyk
+	focus = {
+		id = TRA_attack_kashyyyk
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TRA_join_the_confederacy 
+			focus = TRA_join_the_shadow_collective 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Warrior Spirit
+	focus = {
+		id = TRA_warrior_spirit
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_our_traditions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support= 5
+		}
+	}
+
+	#Focus for Purge The Disloyal
+	focus = {
+		id = TRA_purge_the_disloyal
+		icon = GFX_focus_mex_triumph_over_the_cristeros
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_warrior_spirit }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support= 10
+		}
+	}
+
+	#Focus for Grand Game
+	focus = {
+		id = TRA_grand_game
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 1
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_masters_of_the_hunt }
+		completion_reward = {
+			add_stability= 0.05  add_war_support= 5
+		}
+	}
+
+	#Focus for Our Traditions
+	focus = {
+		id = TRA_our_traditions
+		icon = GFX_goal_support_fascism
+		x = 10
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_grand_game }
+		mutually_exclusive = { focus = TRA_restrict_slavery }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = akaandocrat 
+popularity = 0.10 
+}
+		}
+	}
+
+	#Focus for The Floating Fortress
+	focus = {
+		id = TRA_the_floating_fortress
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_masters_of_the_hunt }
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Masters of The Hunt
+	focus = {
+		id = TRA_masters_of_the_hunt
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 0
+		cost = 15
+		available_if_capitulated = yes
+		completion_reward = {
+			retire_country_leader= yes
+		}
+	}
+
+	#Focus for ACP Array Gun Purchase
+	focus = {
+		id = TRA_acp_array_gun_purchase
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_the_floating_fortress }
+		completion_reward = {
+			add_equipment_to_stockpile= {
+ type = infantry_equipment_0 
+amount = 10000  
+}
+		}
+	}
+
+	#Focus for Defensive Construction
+	focus = {
+		id = TRA_defensive_construction
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 20
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TRA_loan_from_republic 
+			focus = TRA_loan_from_cis 
+		}
+		completion_reward = {
+			add_ideas= deterrence
+		}
+	}
+
+	#Focus for Loan From Republic
+	focus = {
+		id = TRA_loan_from_republic
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 19
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_open_civilian_workshops }
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 2
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Open Arms Workshops"
+	focus = {
+		id = TRA_open_arms_workshops
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 21
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_questions_of_our_economy }
+		mutually_exclusive = { focus = TRA_open_civilian_workshops }
+		completion_reward = {
+			
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		
+		}
+	}
+
+	#Focus for Questions Of Our Economy
+	focus = {
+		id = TRA_questions_of_our_economy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 20
+		y = 3
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_galactic_loot }
+		completion_reward = {
+			add_political_power= 25
+		}
+	}
+
+	#Focus for Open Civilian Workshops
+	focus = {
+		id = TRA_open_civilian_workshops
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_questions_of_our_economy }
+		mutually_exclusive = { focus = TRA_open_arms_workshops }
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Raid on Trade Ships
+	focus = {
+		id = TRA_raid_on_trade_ships
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_pirate_doctrine }
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = ss_tech 
+}
+		}
+	}
+
+	#Focus for Salvage The Old Starfighters
+	focus = {
+		id = TRA_salvage_the_old_starfighters
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_develop_bigger_slave_ships }
+		completion_reward = {
+			add_equipment_to_stockpile= {
+ type = fighter_equipment_0 
+amount = 150  
+}
+		}
+	}
+
+	#Focus for Develop Bigger Slave Ships
+	focus = {
+		id = TRA_develop_bigger_slave_ships
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_develop_the_trandosha_shipyards }
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = ss_tech 
+}
+		}
+	}
+
+	#Focus for Pirate Doctrine
+	focus = {
+		id = TRA_pirate_doctrine
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_develop_the_trandosha_shipyards }
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = dockyard
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Develop The Trandosha Shipyards
+	focus = {
+		id = TRA_develop_the_trandosha_shipyards
+		icon = GFX_focus_generic_navy_battleship2
+		x = 16
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_a_ship_commander }
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = dockyard
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Mercanary Contracts
+	focus = {
+		id = TRA_mercanary_contracts
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 6
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_raid_councils_plan }
+		completion_reward = {
+			create_field_marshal= { 
+name = 'Dengar' 
+gfx = 'dengar.dds' 
+traits = {
+}
+ 
+skill = 3 
+}
+		}
+	}
+
+	#Focus for Weapon Production
+	focus = {
+		id = TRA_weapon_production
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TRA_recall_bosk 
+		}
+		prerequisite = { 
+			focus = TRA_mercanary_contracts 
+		}
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Raid Council's Plan
+	focus = {
+		id = TRA_raid_councils_plan
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 6
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_develop_new_blasters }
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 2 
+uses = 1 
+category = land_doctrine 
+}
+		}
+	}
+
+	#Focus for Recall Bosk
+	focus = {
+		id = TRA_recall_bosk
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 4
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_hire_a_new_mercenary_company }
+		completion_reward = {
+			create_field_marshal= { 
+name = Bossk 
+gfx = 'bossk.dds' 
+traits = {
+}
+ 
+skill = 3 
+}
+		}
+	}
+
+	#Focus for Get Rid Of Garnac
+	focus = {
+		id = TRA_get_rid_of_garnac
+		icon = GFX_focus_hun_assassinate_horthy
+		x = 12
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_progressive_thought }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			retire_country_leader= yes
+		}
+	}
+
+	#Focus for Cult of Personality
+	focus = {
+		id = TRA_cult_of_personality
+		icon = GFX_focus_focus_fra_fascist_threat
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_purge_the_disloyal }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower= 10000  add_ideas= militarism
+		}
+	}
+
+	#Focus for Trandoshan Mercenary Tactics
+	focus = {
+		id = TRA_trandoshan_mercenary_tactics
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TRA_acp_array_gun_purchase 
+		}
+		prerequisite = { 
+			focus = TRA_starfighter_purchase 
+		}
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = land_doctrine 
+}
+		}
+	}
+
+	#Focus for Develop New Blasters"
+	focus = {
+		id = TRA_develop_new_blasters
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_trandoshan_mercenary_tactics }
+		completion_reward = {
+			add_tech_bonus= {
+ bonus = 0.5 
+uses = 2 
+category = infantry_weapons 
+}
+		}
+	}
+
+	#Focus for Hire A New Mercenary Company
+	focus = {
+		id = TRA_hire_a_new_mercenary_company
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_develop_new_blasters }
+		completion_reward = {
+			add_manpower= 60000
+		}
+	}
+
+	#Focus for A Pirate Navy
+	focus = {
+		id = TRA_a_pirate_navy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 16
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TRA_salvage_the_old_starfighters 
+			focus = TRA_raid_on_trade_ships 
+		}
+		completion_reward = {
+			navy_experience= 50
+		}
+	}
+
+	#Focus for Loan From CIS
+	focus = {
+		id = TRA_loan_from_cis
+		icon = GFX_goal_generic_trade
+		x = 21
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_open_arms_workshops }
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = arms_factory
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = arms_factory
+ level = 2
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Starfighter Purchase
+	focus = {
+		id = TRA_starfighter_purchase
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 6
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_the_floating_fortress }
+		completion_reward = {
+			add_equipment_to_stockpile= {
+ type = fighter_equipment_0 
+amount = 100  
+}
+		}
+	}
+
+	#Focus for A Ship Commander
+	focus = {
+		id = TRA_a_ship_commander
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_expedition_to_felucia }
+		completion_reward = {
+			create_navy_leader= { 
+name = Dar 
+gfx = 'dar.dds' 
+traits = {
+}
+ 
+skill = 2 
+}
+		}
+	}
+
+	#Focus for Galactic Loot
+	focus = {
+		id = TRA_galactic_loot
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 20
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_expedition_to_felucia }
+		completion_reward = {
+			random_owned_controlled_state={
+ limit = {
+ free_building_slots = {
+ building = industrial_complex
+ size > 0
+ include_locked = yes
+ }
+
+ }
+
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+ }
+
+ set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+ }
+		}
+	}
+
+	#Focus for Expedition To Felucia
+	focus = {
+		id = TRA_expedition_to_felucia
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 18
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_masters_of_the_hunt }
+		completion_reward = {
+			add_political_power= 25
+		}
+	}
+
+	#Focus for Join The Republic
+	focus = {
+		id = TRA_join_the_republic
+		icon = GFX_goal_unknown
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_cement_the_councils_rule }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Join The Shadow Collective
+	focus = {
+		id = TRA_join_the_shadow_collective
+		icon = GFX_goal_unknown
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_cult_of_personality }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Restrict Slavery
+	focus = {
+		id = TRA_restrict_slavery
+		icon = GFX_goal_support_democracy
+		x = 12
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_grand_game }
+		mutually_exclusive = { focus = TRA_our_traditions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = inclusivist 
+popularity = 0.20 
+}
+		}
+	}
+
+	#Focus for Progressive Thought
+	focus = {
+		id = TRA_progressive_thought
+		icon = GFX_focus_smiling_buddha
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_restrict_slavery }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability= 0.05
+		}
+	}
+
+	#Focus for Cement The Council's Rule
+	focus = {
+		id = TRA_cement_the_councils_rule
+		icon = GFX_focus_BUL_destroy_the_zveno
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TRA_get_rid_of_garnac }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_politics= {
+ ruling_party = inclusivist  
+elections_allowed = yes 
+}
+  add_manpower= 70000
+		}
+	}
+
+	#Focus for Join The Confederacy
+	focus = {
+		id = TRA_join_the_confederacy
+		icon = GFX_goal_unknown
+		x = 11
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TRA_cult_of_personality 
+			focus = TRA_cement_the_councils_rule 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }
