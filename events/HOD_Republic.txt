@@ -94,12 +94,66 @@ country_event = { #Battle of Heroes
 			factor = 0	
 		}
 		sound_effect = "battleofheroes"
-		}
+	}
 	option = { # Anakin Wins
 		name = republic.4.b
 		ai_chance = { 
 			factor = 0	
 		}
 		sound_effect = "battleofheroes"
+	}
+}
+
+country_event = { #Investigate Kamino
+	id = republic.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.5.t
+	desc = republic.5.d
+	picture = GFX_country_event_investigate_kamino
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # Obi-Wan goes to Kamino to get to the bottom of this.
+		name = republic.5.a
+		ai_chance = { 
+			factor = 0	
+		}
+		#sound_effect = ""
+		country_event = {
+			id = republic.6
+			days = 14
+			random_days = 7
 		}
 	}
+}
+
+country_event = { #Encounter at Kamino
+	id = republic.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.6.t
+	desc = republic.6.d
+	picture = GFX_country_event_encounter_at_kamino
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # Jango Fett escapes!
+		name = republic.6.a
+		ai_chance = { 
+			factor = 0	
+		}
+		#sound_effect = ""
+	}
+	
+	option = { # Jango Fett is captured!
+		name = republic.6.b
+		ai_chance = { 
+			factor = 0	
+		}
+		#sound_effect = ""
+	}
+}
+
