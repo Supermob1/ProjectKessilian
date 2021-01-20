@@ -41,7 +41,7 @@ country_event = { #Palpatine's Ritual
 			factor = 50	
 		}
 		sound_effect = "palpatinedies"
-		}
+	}
 
 	option = { #I submit! 
 		name = republic.2.b
@@ -49,10 +49,10 @@ country_event = { #Palpatine's Ritual
 			factor = 50	
 		}
 		sound_effect ="palpatineuh"
-		}
-		
 	}
+		
 }
+
 country_event = { #Order 66
 	id = republic.3
 	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
@@ -157,3 +157,86 @@ country_event = { #Encounter at Kamino
 	}
 }
 
+country_event = { #battle_of_geonosis
+	id = republic.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.7.t
+	desc = republic.7.d
+	picture = GFX_country_event_battle_of_geonosis
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # The raid on geonosis begins!
+		name = republic.7.a
+		ai_chance = { 
+			factor = 0	
+		}
+		set_global_flag = geonosis_attacked_flag
+		#sound_effect = ""
+	}
+}
+
+country_event = { #defend_the_core
+	id = republic.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.8.t
+	desc = republic.8.d
+	picture = GFX_country_event_defend_the_core
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # defend the core
+		name = republic.8.a
+		ai_chance = { 
+			factor = 0	
+		}
+		add_war_support = 0.05
+		#sound_effect = ""
+	}
+}
+
+country_event = { #focus_on_the_midrim
+	id = republic.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.9.t
+	desc = republic.9.d
+	picture = GFX_country_event_focus_on_the_midrim
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # mid rim
+		name = republic.9.a
+		ai_chance = { 
+			factor = 0	
+		}
+		add_war_support = 0.05
+		#sound_effect = ""
+	}
+}
+
+country_event = { #focus_on_the_outerrim
+	id = republic.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	title = republic.10.t
+	desc = republic.10.d
+	picture = GFX_country_event_focus_on_the_outerrim
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # outer rim
+		name = republic.10.a
+		ai_chance = { 
+			factor = 0	
+		}
+		add_war_support = 0.05
+		#sound_effect = ""
+	}
+}

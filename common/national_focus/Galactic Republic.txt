@@ -273,6 +273,14 @@ focus_tree = {
 
 		completion_reward = {
 			add_stability = 0.05
+			add_popularity = {
+				ideology = corist
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.2
+			}
 		}
 	}
 
@@ -308,14 +316,20 @@ focus_tree = {
 		y = 8
 
 		completion_reward = {
-
+			country_event = {
+				id = republic.7
+			}
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.1
+			}
 		}
 	}
 
 	focus = {
 		id = REP_hurrah_for_the_clones
 		icon = REP_hurrah_for_the_clones
-		cost = 10
+		cost = 5
 
 		prerequisite = {
 			focus = REP_the_battle_of_geonosis
@@ -325,7 +339,12 @@ focus_tree = {
 		y = 9
 
 		completion_reward = {
-
+			
+			add_popularity = {
+				ideology = akaanadocrat
+				popularity = 0.05
+			}
+			add_stability = 0.05
 		}
 	}
 
@@ -342,7 +361,12 @@ focus_tree = {
 		y = 10
 
 		completion_reward = {
-
+			#TODO give new clone generals
+			add_popularity = {
+				ideology = akaanadocrat
+				popularity = 0.05
+			}
+			add_stability = 0.03
 		}
 	}
 
@@ -359,7 +383,11 @@ focus_tree = {
 		y = 9
 
 		completion_reward = {
-
+			add_war_support = 0.05
+			add_popularity = {
+				ideology = light_side
+				popularity = 0.05
+			}
 		}
 	}
 
@@ -376,7 +404,8 @@ focus_tree = {
 		y = 10
 
 		completion_reward = {
-
+			#TODO promote more jedi to government/general positions
+			add_war_support = 0.03
 		}
 	}
 
@@ -393,7 +422,11 @@ focus_tree = {
 		y = 11
 
 		completion_reward = {
-
+			add_ideas = padawans_on_the_front_line_idea
+			add_popularity = {
+				ideology = light_side
+				popularity = 0.05
+			}
 		}
 	}
 
@@ -410,7 +443,12 @@ focus_tree = {
 		y = 11
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = akaanadocrat
+				popularity = -0.03
+			}
+			add_stability = 0.03
+			add_war_support = -0.03
 		}
 	}
 
@@ -431,7 +469,15 @@ focus_tree = {
 		y = 12
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = new_order
+				popularity = 0.025
+			}
+			add_stability = -0.05
 		}
 	}
 
@@ -456,7 +502,17 @@ focus_tree = {
 		y = 13
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = corist
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = new_order
+				popularity = 0.08
+			}
+			country_event = {
+				id = republic.8
+			}
 		}
 	}
 
@@ -473,7 +529,7 @@ focus_tree = {
 		y = 14
 
 		completion_reward = {
-
+			add_ideas = clone_garrisons_idea
 		}
 	}
 
@@ -490,7 +546,14 @@ focus_tree = {
 		y = 15
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = corist
+				popularity = 0.12
+			}
+			add_popularity = {
+				ideology = new_order
+				popularity = 0.05
+			}
 		}
 	}
 
@@ -514,7 +577,17 @@ focus_tree = {
 		y = 13
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = new_order
+				popularity = 0.04
+			}
+			country_event = {
+				id = republic.9
+			}
 		}
 	}
 
@@ -531,7 +604,7 @@ focus_tree = {
 		y = 14
 
 		completion_reward = {
-
+			#TODO create ships when those are done
 		}
 	}
 
@@ -548,7 +621,14 @@ focus_tree = {
 		y = 15
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = new_order
+				popularity = 0.02
+			}
 		}
 	}
 
@@ -572,7 +652,17 @@ focus_tree = {
 		y = 13
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = inclusivist
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.1
+			}
+			country_event = {
+				id = republic.10
+			}
 		}
 	}
 
@@ -606,7 +696,14 @@ focus_tree = {
 		y = 15
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = inclusivist
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.05
+			}
 		}
 	}
 
@@ -622,10 +719,10 @@ focus_tree = {
 		}
 
 		x = 1
-		y = 15
+		y = 16
 
 		completion_reward = {
-
+			add_stability = 0.05
 		}
 	}
 
@@ -636,15 +733,21 @@ focus_tree = {
 
 		prerequisite = {
 			focus = REP_no_more
-			focus = REP_we_allowed_corruption_to_fester
-			focus = REP_we_werent_strong_enough
 		}
 
 		x = -1
-		y = 16
+		y = 17
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.07
+			}
+			add_popularity = {
+				ideology = new_order
+				popularity = 0.07
+			}
+			add_stability = 0.03
 		}
 	}
 
@@ -655,15 +758,25 @@ focus_tree = {
 
 		prerequisite = {
 			focus = REP_no_more
-			focus = REP_we_allowed_corruption_to_fester
-			focus = REP_we_werent_strong_enough
 		}
 
 		x = 1
-		y = 16
+		y = 17
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.07
+			}
+			add_popularity = {
+				ideology = new_order
+				popularity = 0.07
+			}
+			add_popularity = {
+				ideology = inclusivist
+				popularity = -0.04
+			}
+			add_stability = -0.05
 		}
 	}
 
@@ -674,15 +787,17 @@ focus_tree = {
 
 		prerequisite = {
 			focus = REP_no_more
-			focus = REP_we_allowed_corruption_to_fester
-			focus = REP_we_werent_strong_enough
 		}
 
 		x = 3
-		y = 16
+		y = 17
 
 		completion_reward = {
-
+			add_popularity = {
+				ideology = light_side
+				popularity = -0.1
+			}
+			add_stability = -0.05
 		}
 	}
 
@@ -704,11 +819,22 @@ focus_tree = {
 		}
 
 		x = 1
-		y = 17
+		y = 18
 
 		completion_reward = {
-
-		}
+			set_politics = {
+				ruling_party = unitist
+			}
+			create_country_leader = {
+				name = "Grand Chancellor Palpatine"
+				desc = "REP_palpatine_desc"
+				picture = "gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
+				expire = "1965.1.1"
+				ideology = unitist_subtype
+				traits = { shrewd_chancellor }
+			}
+			add_stability = 0.05
+		} 
 	}
 	##END OF LEFT BRANCH##
 
@@ -746,12 +872,12 @@ focus_tree = {
 		y = 7
 
 		completion_reward = {
+			set_global_flag = geonosis_attacked_flag
+			custom_effect_tooltip = "ATTACK THE SEPERATISTS!"
 			REP = {
-				create_wargoal = {
-				  type = annex_wargoal_type
-				  target = CIS
-				}
+				transfer_state = 135
 			}
+			
 		}
 	}
 
@@ -802,7 +928,7 @@ focus_tree = {
 		y = 9
 
 		completion_reward = {
-
+			add_manpower = 500000
 		}
 	}
 
@@ -2779,6 +2905,7 @@ focus_tree = {
 	#Emergency Tree End
 	###PALPATINE DEATH TREE END###
 	#CLONE COUP TREE#
+	#Galactic republic defeat and palpatine is dead
 	focus = {
 		id = REP_hardline_clone_coup
 		icon = REP_hardline_clone_coup
@@ -3297,6 +3424,7 @@ focus_tree = {
 	}
 	#CLONE COUP END#
 	#PLO KOON START#
+	#can happen if Jedi Coup Authoritarian Path happens
 	focus = {
 		id = REP_clone_counter-coup
 		icon = REP_clone_counter-coup
@@ -3730,6 +3858,8 @@ focus_tree = {
 		}
 	}
 	#END OF PLO KOON TREE#
+	#TODO These focuses are currently 'loose' they need to be 
+	#positioned in respect to each other for easier movement
 	#jedi kill palps
 	#Focus for The Greater Good
 	focus = {
@@ -3746,6 +3876,7 @@ focus_tree = {
 	}
 
 	#Focus for In The Chosen One We Trust
+	#
 	focus = {
 		id = REP_in_the_chosen_one_we_trust
 		icon = REP_in_the_chosen_one_we_trust
