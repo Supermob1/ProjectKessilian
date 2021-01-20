@@ -1,5 +1,43 @@
 ideas = {
 	country = {
+
+		padawans_on_the_front_line_idea = {
+			picture = rep_padawans_on_the_front_line_idea
+
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
+
+		clone_garrisons_idea = {
+			picture = rep_clone_garrisons_idea
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_growth = -0.5
+			}
+		}
+
 		military_creation_idea = {
 			picture = rep_military_creation_idea
 
