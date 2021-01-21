@@ -504,11 +504,7 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = corist
-				popularity = 0.15
-			}
-			add_popularity = {
-				ideology = new_order
-				popularity = 0.08
+				popularity = 0.10
 			}
 			country_event = {
 				id = republic.8
@@ -548,12 +544,9 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = corist
-				popularity = 0.12
+				popularity = 0.10
 			}
-			add_popularity = {
-				ideology = new_order
-				popularity = 0.05
-			}
+			add_stability = 0.1
 		}
 	}
 
@@ -578,12 +571,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_popularity = {
-				ideology = unitist
-				popularity = 0.15
-			}
-			add_popularity = {
-				ideology = new_order
-				popularity = 0.04
+				ideology = inclusivist
+				popularity = 0.10
 			}
 			country_event = {
 				id = republic.9
@@ -622,13 +611,11 @@ focus_tree = {
 
 		completion_reward = {
 			add_popularity = {
-				ideology = unitist
+				ideology = inclusivist
 				popularity = 0.1
 			}
-			add_popularity = {
-				ideology = new_order
-				popularity = 0.02
-			}
+			add_war_support = 0.05
+			add_stability = 0.05
 		}
 	}
 
@@ -652,10 +639,6 @@ focus_tree = {
 		y = 13
 
 		completion_reward = {
-			add_popularity = {
-				ideology = inclusivist
-				popularity = 0.1
-			}
 			add_popularity = {
 				ideology = unitist
 				popularity = 0.1
@@ -697,13 +680,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_popularity = {
-				ideology = inclusivist
-				popularity = 0.15
-			}
-			add_popularity = {
 				ideology = unitist
-				popularity = 0.05
+				popularity = 0.10
 			}
+			add_war_support = 0.1
 		}
 	}
 
@@ -741,11 +721,7 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = unitist
-				popularity = 0.07
-			}
-			add_popularity = {
-				ideology = new_order
-				popularity = 0.07
+				popularity = 0.10
 			}
 			add_stability = 0.03
 		}
@@ -766,17 +742,13 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = unitist
-				popularity = 0.07
+				popularity = 0.05
 			}
 			add_popularity = {
-				ideology = new_order
-				popularity = 0.07
+				ideology = corist
+				popularity = 0.05
 			}
-			add_popularity = {
-				ideology = inclusivist
-				popularity = -0.04
-			}
-			add_stability = -0.05
+			add_stability = -0.03
 		}
 	}
 
@@ -795,9 +767,9 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = light_side
-				popularity = -0.1
+				popularity = -0.05
 			}
-			add_stability = -0.05
+			add_stability = -0.03
 		}
 	}
 
@@ -822,18 +794,10 @@ focus_tree = {
 		y = 18
 
 		completion_reward = {
-			set_politics = {
-				ruling_party = unitist
+			add_timed_idea = {
+				idea = new_era_of_power_idea
+				days = 365
 			}
-			create_country_leader = {
-				name = "Grand Chancellor Palpatine"
-				desc = "REP_palpatine_desc"
-				picture = "gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
-				expire = "1965.1.1"
-				ideology = unitist_subtype
-				traits = { shrewd_chancellor }
-			}
-			add_stability = 0.05
 		} 
 	}
 	##END OF LEFT BRANCH##

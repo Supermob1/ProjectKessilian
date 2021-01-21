@@ -1,6 +1,26 @@
 ideas = {
 	country = {
 
+		new_era_of_power_idea = {
+			picture = rep_new_era_of_power_idea
+
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly = 0.01
+				new_order_drift = 0.05
+				unitist_drift = -0.05
+			}
+		}
+
 		padawans_on_the_front_line_idea = {
 			picture = rep_padawans_on_the_front_line_idea
 
@@ -15,8 +35,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				army_org_factor = 0.05
-				army_morale_factor = 0.05
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
 			}
 		}
 
@@ -443,7 +463,16 @@ ideas = {
 			allowed = {
 				original_tag = REP
 			}
-			
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+
 			traits = { hero_with_no_fear }			
 			ai_will_do = {
 				factor = 1
@@ -455,6 +484,16 @@ ideas = {
 			
 			allowed = {
 				original_tag = REP
+			}
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+						
+					}
+				}
 			}
 						
 			traits = { strategist_chief_of_army }
@@ -469,6 +508,16 @@ ideas = {
 			
 			allowed = {
 				original_tag = REP
+			}
+
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+						has_country_flag = obi-wan_missing_flag 
+					}
+				}
 			}
 						
 			traits = { tactician_chief_of_army }
@@ -485,6 +534,15 @@ ideas = {
 			
 			allowed = {
 				original_tag = REP
+			}
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
 			}
 						
 			traits = { navy_chief_decisive_battle }
@@ -505,6 +563,12 @@ ideas = {
 			}
 
 			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
 			}
 						
 			traits = { air_chief_ground_support }
@@ -525,6 +589,15 @@ ideas = {
 				original_tag = REP
 			}
 			
+			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+
 			traits = { army_infantry }
 			
 			ai_will_do = {
@@ -538,6 +611,15 @@ ideas = {
 			
 			allowed = {
 				original_tag = REP
+			}
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
 			}
 			
 			traits = { army_regrouping }
@@ -554,6 +636,15 @@ ideas = {
 			allowed = {
 				original_tag = REP
 			}
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
 			
 			traits = { }
 			
@@ -568,6 +659,15 @@ ideas = {
 			
 			allowed = {
 				original_tag = REP
+			}
+
+			available = {
+				NOT = {
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
 			}
 			
 			traits = { }

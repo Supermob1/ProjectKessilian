@@ -102,3 +102,23 @@ news_event = { #Clone wars has ended
 	}
 
 }
+
+news_event = { #The Seperatist Alliance Collapses
+	id = news.69
+	title = news.69.t
+	desc = news.69.d
+	picture = GFX_news_event_seperatist_defeat
+
+	trigger = { 
+		has_global_flag = clone_wars_republic_victory_flag
+	}
+
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		name = news.69.a
+	}
+
+}
+
