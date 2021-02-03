@@ -34,3 +34,91 @@ news_event = {
 	}
 
 }
+
+news_event = {
+	id = news.67
+	title = news.67.t
+	desc = news.67.d
+	picture = GFX_news_event_clonewars
+
+	mean_time_to_happen = {
+		days = 70
+	}
+
+	trigger = { has_global_flag = geonosis_attacked_flag }
+	immediate = { 
+		set_global_flag = clone_wars_start_flag 
+		CIS = {
+			declare_war_on = {
+				target = REP
+				type = puppet_wargoal_focus
+			}
+		}
+		REP = {
+			declare_war_on = {
+				target = CIS
+				type = annex_everything
+			}
+		}
+	}
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		name = news.67.a
+	}
+
+}
+
+news_event = { #Clone wars has ended
+	id = news.68
+	title = news.68.t
+	desc = news.68.d
+	picture = GFX_news_event_clonewars_end
+
+	trigger = { 
+		has_global_flag = clone_wars_start_flag
+		AND = {
+			REP = {
+				NOT = {
+					has_war_with = CIS
+				}
+			}
+			CIS = {
+				NOT = {
+					has_war_with = REP
+				}
+			}
+		}
+	}
+	immediate = { 
+		set_global_flag = clone_wars_end_flag
+	}
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		name = news.68.a
+	}
+
+}
+
+news_event = { #The Seperatist Alliance Collapses
+	id = news.69
+	title = news.69.t
+	desc = news.69.d
+	picture = GFX_news_event_seperatist_defeat
+
+	trigger = { 
+		has_global_flag = clone_wars_republic_victory_flag
+	}
+
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		name = news.69.a
+	}
+
+}
+

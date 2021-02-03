@@ -26,7 +26,7 @@ country_event = { #The State of the Galaxy
 
 country_event = { #Palpatine's Ritual 
 	id = republic.2
-	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.1"}
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.2"}
 	title = republic.2.t
 	desc = republic.2.d
 	picture = GFX_report_event_darkside
@@ -41,7 +41,7 @@ country_event = { #Palpatine's Ritual
 			factor = 50	
 		}
 		sound_effect = "palpatinedies"
-		}
+	}
 
 	option = { #I submit! 
 		name = republic.2.b
@@ -49,10 +49,10 @@ country_event = { #Palpatine's Ritual
 			factor = 50	
 		}
 		sound_effect ="palpatineuh"
-		}
-		
 	}
+		
 }
+
 country_event = { #Order 66
 	id = republic.3
 	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
@@ -69,17 +69,29 @@ country_event = { #Order 66
 		ai_chance = { 
 			factor = 25	
 		}
+		set_country_flag = order_66_executed_flag
 		sound_effect = "order66"
 		hidden_effect = {
 			news_event = {
 				id = news.66
+			}
+			create_country_leader = {
+				name = "Emperor Palpatine"
+				desc = "REP_palpatine_desc"
+				picture = "gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
+				expire = "1965.1.1"
+				ideology = new_order_subtype
+				traits = { galactic_emperor }
+			}
+			set_politics = {
+				ruling_party = new_order
 			}
 		}
 	}
 }
 country_event = { #Battle of Heroes
 	id = republic.4
-	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.3"}
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.4"}
 	title = republic.4.t
 	desc = republic.4.d
 	picture = GFX_country_event_battleofheroes
@@ -93,13 +105,368 @@ country_event = { #Battle of Heroes
 		ai_chance = { 
 			factor = 0	
 		}
+		set_country_flag = obi-wan_wins_flag
 		sound_effect = "battleofheroes"
-		}
+	}
 	option = { # Anakin Wins
 		name = republic.4.b
 		ai_chance = { 
 			factor = 0	
 		}
+		set_country_flag = anakin_wins_flag
 		sound_effect = "battleofheroes"
+	}
+}
+
+country_event = { #Investigate Kamino
+	id = republic.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.5"}
+	title = republic.5.t
+	desc = republic.5.d
+	picture = GFX_country_event_investigate_kamino
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # Obi-Wan goes to Kamino to get to the bottom of this.
+		name = republic.5.a
+		ai_chance = { 
+			factor = 0	
+		}
+		#sound_effect = ""
+		country_event = {
+			id = republic.6
+			days = 14
+			random_days = 7
 		}
 	}
+}
+
+country_event = { #Encounter at Kamino
+	id = republic.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.6"}
+	title = republic.6.t
+	desc = republic.6.d
+	picture = GFX_country_event_encounter_at_kamino
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # Jango Fett escapes!
+		name = republic.6.a
+		ai_chance = { 
+			factor = 0	
+		}
+		#sound_effect = ""
+	}
+	
+	option = { # Jango Fett is captured!
+		name = republic.6.b
+		ai_chance = { 
+			factor = 0	
+		}
+		#sound_effect = ""
+	}
+}
+
+country_event = { #battle_of_geonosis
+	id = republic.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.7"}
+	title = republic.7.t
+	desc = republic.7.d
+	picture = GFX_country_event_battle_of_geonosis
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # The raid on geonosis begins!
+		name = republic.7.a
+		ai_chance = { 
+			factor = 0	
+		}
+		set_global_flag = geonosis_attacked_flag
+		#sound_effect = ""
+	}
+}
+
+country_event = { #defend_the_core
+	id = republic.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.8"}
+	title = republic.8.t
+	desc = republic.8.d
+	picture = GFX_country_event_defend_the_core
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # defend the core
+		name = republic.8.a
+		ai_chance = { 
+			factor = 0	
+		}
+		add_war_support = 0.05
+		#sound_effect = ""
+	}
+}
+
+country_event = { #focus_on_the_midrim
+	id = republic.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.9"}
+	title = republic.9.t
+	desc = republic.9.d
+	picture = GFX_country_event_focus_on_the_midrim
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # mid rim
+		name = republic.9.a
+		ai_chance = { 
+			factor = 0	
+		}
+		add_war_support = 0.05
+		#sound_effect = ""
+	}
+}
+
+country_event = { #focus_on_the_outerrim
+	id = republic.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.10"}
+	title = republic.10.t
+	desc = republic.10.d
+	picture = GFX_country_event_focus_on_the_outerrim
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { # outer rim
+		name = republic.10.a
+		ai_chance = { 
+			factor = 0	
+		}
+		add_war_support = 0.05
+		#sound_effect = ""
+	}
+}
+
+country_event = { #hunt_for_grievous
+	id = republic.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.11"}
+	title = republic.11.t
+	desc = republic.11.d
+	picture = GFX_country_event_hunt_for_grievous
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+		REP = {
+			has_war_with = CIS
+		}
+		CIS = {
+			surrender_progress = 0.9
+		}
+		has_global_flag = dooku_is_dead_flag
+		tag = REP
+	}
+
+	option = { # Obi wan goes searching for grievous
+		name = republic.11.a
+		ai_chance = { 
+			factor = 0	
+		}
+		set_country_flag = obi-wan_missing_flag
+		set_global_flag = hunt_for_grievous_flag
+		#sound_effect = ""
+	}
+}
+
+country_event = { #battle of coruscant
+	id = republic.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.12"}
+	title = republic.12.t
+	desc = republic.12.d
+	picture = GFX_country_event_battle_of_coruscant
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+		REP = {
+			has_war_with = CIS
+		}
+		CIS = {
+			surrender_progress = 0.8
+		}
+		tag = REP
+	}
+
+	option = { # palpatine captured
+		name = republic.12.a
+		ai_chance = { 
+			factor = 0	
+		}
+		hidden_effect = {
+			country_event = {
+				id = republic.13
+				days = 14
+			}
+		}
+		#sound_effect = ""
+	}
+}
+
+country_event = { #encounter_with_dooku
+	id = republic.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.13"}
+	title = republic.13.t
+	desc = republic.13.d
+	picture = GFX_country_event_encounter_with_dooku
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+	}
+
+	option = { # dooku is dead
+		name = republic.13.a
+		ai_chance = { 
+			factor = 100	
+		}
+		set_global_flag = dooku_is_dead_flag
+		#sound_effect = ""
+	}
+
+	option = { # dooku is apprehended
+		name = republic.13.b
+		ai_chance = { 
+			factor = 0	
+		}
+		hidden_effect = {
+			country_event = {
+				id = republic.14
+				days = 14
+			}
+		}
+		#sound_effect = ""
+	}
+}
+
+country_event = { #Dooku is captured by the jedi
+	id = republic.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.14"}
+	title = republic.14.t
+	desc = republic.14.d
+	picture = GFX_country_event_dooku_apprehended
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+	}
+
+	option = {
+		name = republic.14.a
+		ai_chance = { 
+			factor = 0	
+		}
+		set_global_flag = dooku_apprehended_flag
+		#sound_effect = ""
+	}
+
+}
+
+country_event = { #Jedi Coup
+	id = republic.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.15"}
+	title = republic.15.t
+	desc = republic.15.d
+	picture = GFX_country_event_jedi_coup
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = obi-wan_missing_flag
+	}
+
+	option = { #Anakin Joins the Dark Side
+		name = republic.15.a
+		ai_chance = { 
+			factor = 100	
+		}
+		hidden_effect = {
+			country_event = {
+				id = republic.16
+				days = 35
+				random_days = 14
+			}
+			country_event = {
+				id = republic.3
+				days = 7
+			}
+		}
+		set_country_flag = palpatine_survives_flag
+		#sound_effect = ""
+	}
+
+	option = { #Anakin Stays Good
+		name = republic.15.b
+		ai_chance = { 
+			factor = 0	
+		}
+		trigger = { has_global_flag = dooku_apprehended_flag }
+		set_country_flag = palpatine_dies_flag
+		#sound_effect = ""
+	}
+
+}
+
+country_event = { #Anakin is sent to kill the remaining seperatists
+	id = republic.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event republic.16"}
+	title = republic.16.t
+	desc = republic.16.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #The War Is Over
+		name = republic.16.a
+		ai_chance = { 
+			factor = 0	
+		}
+		REP = {
+			annex_country = {
+				target = CIS
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = republic.4
+				days = 21
+				random_days = 14
+			}
+			news_event = {
+				id = news.68
+			}
+			set_global_flag = clone_wars_republic_victory_flag
+		}
+		#sound_effect = ""
+	}
+
+}
