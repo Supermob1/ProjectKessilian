@@ -1,0 +1,31 @@
+scripted_gui = {
+
+	parliament_decision_ui = {
+		context_type = decision_category
+		window_name = "parliament_decision_ui_window"
+
+		properties = {
+			senate_icon = {
+				frame = current_senate_icon_frame
+			}
+			house_icon = {
+				frame = current_house_icon_frame
+			}
+			ideology_dot = {
+		        image = "[GFX_Parliament_System]"
+		    }
+		}
+		dynamic_lists = {
+            chamber_grid = {
+                array = congress_chamber_array
+               change_scope = yes
+               entry_container = congress_entry
+            }
+            senate_grid = {
+                array = congress_senate_array
+                change_scope = yes
+                entry_container = congress_entry
+            }
+        }
+	}
+}
