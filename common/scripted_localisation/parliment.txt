@@ -1,0 +1,212 @@
+#Senate dots
+
+defined_text = { # Country
+	name = Parliament_System
+	text = {
+		trigger = {
+			check_variable = { v = 0 }
+		}
+		localization_key = dark_side_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 1 }
+		}
+		localization_key = new_order_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 2 }
+		}
+		localization_key = unitist_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+		}
+		localization_key = akaanadocrat_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 4 }
+		}
+		localization_key = corist_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 5 }
+		}
+		localization_key = ruusanist_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 6 }
+		}
+		localization_key = corporate_consortium_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 7 }
+		}
+		localization_key = trade_democrat_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 8 }
+		}
+		localization_key = inclusivist_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 0 }
+		}
+		localization_key = distributionist_subtype_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 10 }
+		}
+		localization_key = light_side_subtype_desc
+	}
+	text = {
+		localization_key = culture_unknown
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_System
+	text = {
+		trigger = {
+			check_variable = { v = 0 }
+		}
+		localization_key = GFX_dark_side_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 1 }
+		}
+		localization_key = GFX_new_order_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 2 }
+		}
+		localization_key = GFX_unitist_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+		}
+		localization_key = GFX_akaanadocrat_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 4 }
+		}
+		localization_key = GFX_corist_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 5 }
+		}
+		localization_key = GFX_ruusanist_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 6 }
+		}
+		localization_key = GFX_corporate_consortium_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 7 }
+		}
+		localization_key = GFX_trade_democrat_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 8 }
+		}
+		localization_key = GFX_inclusivist_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 9 }
+		}
+		localization_key = GFX_distributionist_dot
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 10 }
+		}
+		localization_key = GFX_light_side_dot
+	}
+	text = {
+		localization_key = GFX_unknown_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_dark_side
+	text = {
+		localization_key = GFX_dark_side_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_new_order
+	text = {
+		localization_key = GFX_new_order_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_unitist
+	text = {
+		localization_key = GFX_unitist_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_akaanadocrat
+	text = {
+		localization_key = GFX_akaanadocrat_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_corist
+	text = {
+		localization_key = GFX_corist_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_ruusanist
+	text = {
+		localization_key = GFX_ruusanist_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_corporate_consortium
+	text = {
+		localization_key = GFX_corporate_consortium_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_trade_democrat
+	text = {
+		localization_key = GFX_trade_democrat_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_inclusivist
+	text = {
+		localization_key = GFX_inclusivist_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_distributionist
+	text = {
+		localization_key = GFX_distributionist_dot
+	}
+}
+defined_text = { # Country
+	name = GFX_Parliament_light_side
+	text = {
+		localization_key = GFX_light_side_dot
+	}
+}
