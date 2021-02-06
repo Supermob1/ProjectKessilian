@@ -1,0 +1,20 @@
+# senate set up
+
+on_actions = {
+	on_startup = {
+		effect = {
+			REP = {
+				every_owned_state = {
+					add_to_variable = { PREV.congress_amount_senators = 1 }
+				}
+				Calculate_Parliament = yes
+			}
+			CIS = {
+				every_owned_state = {
+					add_to_variable = { PREV.congress_amount_senators = 1 }
+				}
+				Calculate_Parliament = yes
+			}
+		}
+	}
+}
