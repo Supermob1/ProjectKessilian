@@ -1,0 +1,1017 @@
+### Senate System
+# senate part skeleton from the U.S which had both a house and a senate. For this mod just using the chamber aka house to be the senate
+####################################################################################################################################
+#	The Parliament Script and election gimmick wip by Chuddly "Chud" Chudderston II
+####################################################################################################################################
+Calculate_Parliament = {
+	###############################################################################################################################
+	#	seats aka dots are done via the pie chart
+	###############################################################################################################################
+	set_variable = { congress_total_pop = 0 }
+	set_variable = { total_dark_side_pop = 0 }
+	set_variable = { total_new_order_pop = 0 }
+	set_variable = { total_unitist_pop = 0 }
+	set_variable = { total_akaanadocrat_pop = 0 }
+	set_variable = { total_corist_pop = 0 }
+	set_variable = { total_ruusanist_pop = 0 }
+	set_variable = { total_corporate_consortium_pop = 0 }
+	set_variable = { total_trade_democrat_pop = 0 }
+	set_variable = { total_inclusivist_pop = 0 }
+	set_variable = { total_distributionist_pop = 0 }
+	set_variable = { total_light_side_pop = 0 }
+	set_variable = { congress_dark_side_pop = party_popularity@dark_side }
+	set_variable = { congress_new_order_pop = party_popularity@new_order }
+	set_variable = { congress_unitist_pop = party_popularity@unitist }
+	set_variable = { congress_akaanadocrat_pop = party_popularity@akaanadocrat }
+	set_variable = { congress_corist_pop = party_popularity@corist }
+	set_variable = { congress_ruusanist_pop = party_popularity@ruusanist }
+	set_variable = { congress_corporate_consortium_pop = party_popularity@corporate_consortium }
+	set_variable = { congress_trade_democrat_pop = party_popularity@trade_democrat }
+	set_variable = { congress_inclusivist_pop = party_popularity@inclusivist }
+	set_variable = { congress_distributionist_pop = party_popularity@distributionist }
+	set_variable = { congress_light_side_pop = party_popularity@light_side }
+
+	###############################################################################################################################
+	#	
+	###############################################################################################################################
+	set_variable = { chamber_dark_side_pop = congress_amount_rep }
+	set_variable = { senate_dark_side_pop = congress_amount_senators }
+	multiply_variable = { chamber_dark_side_pop = congress_dark_side_pop }
+	multiply_variable = { senate_dark_side_pop = congress_dark_side_pop }
+	round_variable = chamber_dark_side_pop
+	round_variable = senate_dark_side_pop
+
+	set_variable = { chamber_new_order_pop = congress_amount_rep }
+	set_variable = { senate_new_order_pop = congress_amount_senators }
+	multiply_variable = { chamber_new_order_pop = congress_new_order_pop }
+	multiply_variable = { senate_new_order_pop = congress_new_order_pop }
+	round_variable = chamber_new_order_pop
+	round_variable = senate_new_order_pop
+
+	set_variable = { chamber_unitist_pop = congress_amount_rep }
+	set_variable = { senate_unitist_pop = congress_amount_senators }
+	multiply_variable = { chamber_unitist_pop = congress_unitist_pop }
+	multiply_variable = { senate_unitist_pop = congress_unitist_pop }
+	round_variable = chamber_unitist_pop
+	round_variable = senate_unitist_pop
+	
+	set_variable = { chamber_akaanadocrat_pop = congress_amount_rep }
+	set_variable = { senate_akaanadocrat_pop = congress_amount_senators }
+	multiply_variable = { chamber_akaanadocrat_pop = congress_akaanadocrat_pop }
+	multiply_variable = { senate_akaanadocrat_pop = congress_akaanadocrat_pop }
+	round_variable = chamber_akaanadocrat_pop
+	round_variable = senate_akaanadocrat_pop
+
+	set_variable = { chamber_corist_pop = congress_amount_rep }
+	set_variable = { senate_corist_pop = congress_amount_senators }
+	multiply_variable = { chamber_corist_pop = congress_corist_pop }
+	multiply_variable = { senate_corist_pop = congress_corist_pop }
+	round_variable = chamber_corist_pop
+	round_variable = senate_corist_pop
+
+	set_variable = { chamber_ruusanist_pop = congress_amount_rep }
+	set_variable = { senate_ruusanist_pop = congress_amount_senators }
+	multiply_variable = { chamber_ruusanist_pop = congress_ruusanist_pop }
+	multiply_variable = { senate_ruusanist_pop = congress_ruusanist_pop }
+	round_variable = chamber_ruusanist_pop
+	round_variable = senate_ruusanist_pop
+	
+	set_variable = { chamber_corporate_consortium_pop = congress_amount_rep }
+	set_variable = { senate_corporate_consortium_pop = congress_amount_senators }
+	multiply_variable = { chamber_corporate_consortium_pop = congress_corporate_consortium_pop }
+	multiply_variable = { senate_corporate_consortium_pop = congress_corporate_consortium_pop }
+	round_variable = chamber_corporate_consortium_pop
+	round_variable = senate_corporate_consortium_pop
+
+	set_variable = { chamber_trade_democrat_pop = congress_amount_rep }
+	set_variable = { senate_trade_democrat_pop = congress_amount_senators }
+	multiply_variable = { chamber_trade_democrat_pop = congress_trade_democrat_pop}
+	multiply_variable = { senate_trade_democrat_pop = congress_trade_democrat_pop}
+	round_variable = chamber_trade_democrat_pop
+	round_variable = senate_trade_democrat_pop
+
+	set_variable = { chamber_inclusivist_pop = congress_amount_rep }
+	set_variable = { senate_inclusivist_pop = congress_amount_senators }
+	multiply_variable = { chamber_inclusivist_pop = congress_inclusivist_pop }
+	multiply_variable = { senate_inclusivist_pop = congress_inclusivist_pop }
+	round_variable = chamber_inclusivist_pop
+	round_variable = senate_inclusivist_pop
+
+	set_variable = { chamber_distributionist_pop = congress_amount_rep }
+	set_variable = { senate_distributionist_pop = congress_amount_senators }
+	multiply_variable = { chamber_distributionist_pop = congress_distributionist_pop }
+	multiply_variable = { senate_distributionist_pop = congress_distributionist_pop }
+	round_variable = chamber_distributionist_pop
+	round_variable = senate_distributionist_pop
+
+	set_variable = { chamber_light_side_pop = congress_amount_rep }
+	set_variable = { senate_light_side_pop = congress_amount_senators }
+	multiply_variable = { chamber_light_side_pop = congress_light_side_pop }
+	multiply_variable = { senate_light_side_pop = congress_light_side_pop }
+	round_variable = chamber_light_side_pop
+	round_variable = senate_light_side_pop
+
+	set_variable = { chamber_tot = chamber_dark_side_pop }
+	add_to_variable = { chamber_tot = chamber_new_order_pop }
+	add_to_variable = { chamber_tot = chamber_unitist_pop }
+	add_to_variable = { chamber_tot = chamber_akaanadocrat_pop }
+	add_to_variable = { chamber_tot = chamber_corist_pop }
+	add_to_variable = { chamber_tot = chamber_ruusanist_pop }
+	add_to_variable = { chamber_tot = chamber_corporate_consortium_pop }
+	add_to_variable = { chamber_tot = chamber_trade_democrat_pop }
+	add_to_variable = { chamber_tot = chamber_inclusivist_pop }
+	add_to_variable = { chamber_tot = chamber_distributionist_pop }
+	add_to_variable = { chamber_tot = chamber_light_side_pop }
+	set_variable = { senate_tot = senate_dark_side_pop }
+	add_to_variable = { senate_tot = senate_new_order_pop }
+	add_to_variable = { senate_tot = senate_unitist_pop }
+	add_to_variable = { senate_tot = senate_akaanadocrat_pop }
+	add_to_variable = { senate_tot = senate_corist_pop }
+	add_to_variable = { senate_tot = senate_ruusanist_pop }
+	add_to_variable = { senate_tot = senate_corporate_consortium_pop }
+	add_to_variable = { senate_tot = senate_trade_democrat_pop }
+	add_to_variable = { senate_tot = senate_inclusivist_pop }
+	add_to_variable = { senate_tot = senate_distributionist_pop }
+	add_to_variable = { senate_tot = senate_light_side_pop }
+	if = {
+		limit = {
+			check_variable = {
+				chamber_tot < congress_amount_rep
+			}
+		}
+		set_temp_variable = { temp1 = congress_amount_rep }
+		subtract_from_temp_variable = { temp1 = chamber_tot }
+		add_to_variable = { chamber_tot = temp1 }
+		if = {
+			limit = {
+				has_government = dark_side
+			}
+			add_to_variable = { chamber_dark_side_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = new_order
+			}
+			add_to_variable = { chamber_new_order_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = unitist
+			}
+			add_to_variable = { chamber_unitist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = akaanadocrat
+			}
+			add_to_variable = { chamber_akaanadocrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corist
+			}
+			add_to_variable = { chamber_corist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = ruusanist
+			}
+			add_to_variable = { chamber_ruusanist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corporate_consortium
+			}
+			add_to_variable = { chamber_corporate_consortium_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = trade_democrat
+			}
+			add_to_variable = { chamber_trade_democrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = inclusivist
+			}
+			add_to_variable = { chamber_inclusivist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = distributionist
+			}
+			add_to_variable = { chamber_distributionist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = light_side
+			}
+			add_to_variable = { chamber_light_side_pop = temp1 }
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				senate_tot < congress_amount_senators
+			}
+		}
+		set_temp_variable = { temp1 = congress_amount_senators }
+		subtract_from_temp_variable = { temp1 = senate_tot }
+		add_to_variable = { senate_tot = temp1 }
+		if = {
+			limit = {
+				has_government = dark_side
+			}
+			add_to_variable = { senate_dark_side_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = new_order
+			}
+			add_to_variable = { senate_new_order_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = unitist
+			}
+			add_to_variable = { senate_unitist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = akaanadocrat
+			}
+			add_to_variable = { senate_akaanadocrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corist
+			}
+			add_to_variable = { senate_corist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = ruusanist
+			}
+			add_to_variable = { senate_ruusanist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corporate_consortium
+			}
+			add_to_variable = { senate_corporate_consortium_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = trade_democrat
+			}
+			add_to_variable = { senate_trade_democrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = inclusivist
+			}
+			add_to_variable = { senate_inclusivist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = distributionist
+			}
+			add_to_variable = { senate_distributionist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = light_side
+			}
+			add_to_variable = { senate_light_side_pop = temp1 }
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				chamber_tot > congress_amount_rep
+			}
+		}
+		set_temp_variable = { temp1 = chamber_tot }
+		subtract_from_temp_variable = { temp1 = congress_amount_rep }
+		subtract_from_variable = { chamber_tot = temp1 }
+		if = {
+			limit = {
+				has_government = dark_side
+			}
+			subtract_from_variable = { chamber_dark_side_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = new_order
+			}
+			subtract_from_variable = { chamber_new_order_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = unitist
+			}
+			subtract_from_variable = { chamber_unitist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = akaanadocrat
+			}
+			subtract_from_variable = { chamber_akaanadocrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corist
+			}
+			subtract_from_variable = { chamber_corist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = ruusanist
+			}
+			subtract_from_variable = { chamber_ruusanist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corporate_consortium
+			}
+			subtract_from_variable = { chamber_corporate_consortium_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = trade_democrat
+			}
+			subtract_from_variable = { chamber_trade_democrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = inclusivist
+			}
+			subtract_from_variable = { chamber_inclusivist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = distributionist
+			}
+			subtract_from_variable = { chamber_distributionist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = light_side
+			}
+			subtract_from_variable = { chamber_light_side_pop = temp1 }
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				senate_tot > congress_amount_senators
+			}
+		}
+		set_temp_variable = { temp1 = senate_tot }
+		subtract_from_temp_variable = { temp1 = congress_amount_senators }
+		subtract_from_variable = { senate_tot = temp1 }
+		if = {
+			limit = {
+				has_government = dark_side
+			}
+			subtract_from_variable = { senate_dark_side_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = new_order
+			}
+			subtract_from_variable = { senate_new_order_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = unitist
+			}
+			subtract_from_variable = { senate_unitist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = akaanadocrat
+			}
+			subtract_from_variable = { senate_akaanadocrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corist
+			}
+			subtract_from_variable = { senate_corist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = ruusanist
+			}
+			subtract_from_variable = { senate_ruusanist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = corporate_consortium
+			}
+			subtract_from_variable = { senate_corporate_consortium_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = trade_democrat
+			}
+			subtract_from_variable = { senate_trade_democrat_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = inclusivist
+			}
+			subtract_from_variable = { senate_inclusivist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = distributionist
+			}
+			subtract_from_variable = { senate_distributionist_pop = temp1 }
+		}
+		if = {
+			limit = {
+				has_government = light_side
+			}
+			subtract_from_variable = { senate_light_side_pop = temp1 }
+		}
+	}
+	log = "Chamber: [?chamber_tot]/[?congress_amount_rep]"
+	log = "Senate: [?senate_tot]/[?congress_amount_senators]"
+
+	###############################################################################################################################
+	#	Arrays
+	#
+	#	
+	#	
+	#
+	###############################################################################################################################
+	
+	add_to_array = { congress_chamber_array = 0 }
+	add_to_array = { congress_senate_array = 0 }
+	clear_array = congress_chamber_array
+	clear_array = congress_senate_array 
+	log = "Before: Length of Chamber Array: [?congress_chamber_array^num]"
+	log = "Before: Length of Senate Array: [?congress_senate_array^num]"
+
+	###Calculating the L รถ รถ p of chamber
+	log = "Calculating the L รถ รถ p of chamber"
+	set_variable = { dark_side_power = 0 } #0
+	set_variable = { new_order_power = 0 } #1
+	set_variable = { unitist_power = 0 } #2
+	set_variable = { akaanadocrat_power = 0 } #3
+	set_variable = { corist_power = 0 } #4
+	set_variable = { ruusanist_power = 0 } #5
+	set_variable = { corporate_consortium_power = 0 } #6
+	set_variable = { trade_democrat_power = 0 } #7
+	set_variable = { inclusivist_power = 0 } #8
+	set_variable = { distributionist_power = 0 } #9
+	set_variable = { light_side_power = 0 } #10
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				dark_side_power < chamber_dark_side_pop
+			}
+		}
+		add_to_variable = { dark_side_power = 1 }
+		add_to_array = { congress_chamber_array = 0 }
+		log = "Chamber Array Social Nationalist: [?cSN|0]:[?chamber_dark_side_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				new_order_power < chamber_new_order_pop
+			}
+		}
+		add_to_variable = { new_order_power = 1 }
+		add_to_array = { congress_chamber_array = 1 }
+		log = "Chamber Array new_order: [?cM|0]:[?chamber_new_order_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				unitist_power < chamber_unitist_pop
+			}
+		}
+		add_to_variable = { unitist_power = 1 }
+		add_to_array = { congress_chamber_array = 2 }
+		log = "Chamber Array unitist: [?cL|0]:[?chamber_unitist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				akaanadocrat_power < chamber_akaanadocrat_pop
+			}
+		}
+		add_to_variable = { akaanadocrat_power = 1 }
+		add_to_array = { congress_chamber_array = 3 }
+		log = "Chamber Array Moderate Socialist: [?cMS|0]:[?chamber_akaanadocrat_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				corist_power < chamber_corist_pop
+			}
+		}
+		add_to_variable = { corist_power = 1 }
+		add_to_array = { congress_chamber_array = 4 }
+		log = "Chamber Array Social Democrat: [?cSD|0]:[?chamber_corist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				ruusanist_power < chamber_ruusanist_pop
+			}
+		}
+		add_to_variable = { ruusanist_power = 1 }
+		add_to_array = { congress_chamber_array = 5 }
+		log = "Chamber Array Social Liberal: [?cSL|0]:[?chamber_ruusanist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				corporate_consortium_power < chamber_corporate_consortium_pop
+			}
+		}
+		add_to_variable = { corporate_consortium_power = 1 }
+		add_to_array = { congress_chamber_array = 6 }
+		log = "Chamber Array corporate_consortium: [?cC|0]:[?chamber_corporate_consortium_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				trade_democrat_power < chamber_trade_democrat_pop
+			}
+		}
+		add_to_variable = { trade_democrat_power = 1 }
+		add_to_array = { congress_chamber_array = 7 }
+		log = "Chamber Array Authoritarian Democrat: [?cAD|0]:[?chamber_trade_democrat_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				inclusivist_power < chamber_inclusivist_pop
+			}
+		}
+		add_to_variable = { inclusivist_power = 1 }
+		add_to_array = { congress_chamber_array = 8 }
+		log = "Chamber Array inclusivist: [?cA|0]:[?chamber_inclusivist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				distributionist_power < chamber_distributionist_pop
+			}
+		}
+		add_to_variable = { distributionist_power = 1 }
+		add_to_array = { congress_chamber_array = 9 }
+		log = "Chamber Array inclusivist: [?cA|0]:[?chamber_inclusivist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				light_side_power < chamber_light_side_pop
+			}
+		}
+		add_to_variable = { light_side_power = 1 }
+		add_to_array = { congress_chamber_array = 10 }
+		log = "Chamber Array inclusivist: [?cA|0]:[?chamber_inclusivist_pop|0]."
+	}
+
+	###
+	#	Senate
+	###
+	set_variable = { dark_side_power = 0 } #0
+	set_variable = { new_order_power = 0 } #1
+	set_variable = { unitist_power = 0 } #2
+	set_variable = { akaanadocrat_power = 0 } #3
+	set_variable = { corist_power = 0 } #4
+	set_variable = { ruusanist_power = 0 } #5
+	set_variable = { corporate_consortium_power = 0 } #6
+	set_variable = { trade_democrat_power = 0 } #7
+	set_variable = { inclusivist_power = 0 } #8
+	set_variable = { distributionist_power = 0 } #9
+	set_variable = { light_side_power = 0 } #10
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				dark_side_power < senate_dark_side_pop
+			}
+		}
+		add_to_variable = { dark_side_power = 1 }
+		add_to_array = { congress_senate_array = 0 }
+		log = "Senate Array Social Nationalist: [?cSN|0]:[?senate_dark_side_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				new_order_power < senate_new_order_pop
+			}
+		}
+		add_to_variable = { new_order_power = 1 }
+		add_to_array = { congress_senate_array = 1 }
+		log = "Senate Array new_order: [?cM|0]:[?senate_new_order_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				unitist_power < senate_unitist_pop
+			}
+		}
+		add_to_variable = { unitist_power = 1 }
+		add_to_array = { congress_senate_array = 2 }
+		log = "Senate Array unitist: [?cL|0]:[?senate_unitist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				akaanadocrat_power < senate_akaanadocrat_pop
+			}
+		}
+		add_to_variable = { akaanadocrat_power = 1 }
+		add_to_array = { congress_senate_array = 3 }
+		log = "Senate Array Moderate Socialist: [?cMS|0]:[?senate_akaanadocrat_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				corist_power < senate_corist_pop
+			}
+		}
+		add_to_variable = { corist_power = 1 }
+		add_to_array = { congress_senate_array = 4 }
+		log = "Senate Array Social Democrat: [?cSD|0]:[?senate_corist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				ruusanist_power < senate_ruusanist_pop
+			}
+		}
+		add_to_variable = { ruusanist_power = 1 }
+		add_to_array = { congress_senate_array = 5 }
+		log = "Senate Array Social Liberal: [?cSL|0]:[?senate_ruusanist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				corporate_consortium_power < senate_corporate_consortium_pop
+			}
+		}
+		add_to_variable = { corporate_consortium_power = 1 }
+		add_to_array = { congress_senate_array = 6 }
+		log = "Senate Array corporate_consortium: [?cC|0]:[?senate_corporate_consortium_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				trade_democrat_power < senate_trade_democrat_pop
+			}
+		}
+		add_to_variable = { trade_democrat_power = 1 }
+		add_to_array = { congress_senate_array = 7 }
+		log = "Senate Array Authoritarian Democrat: [?cAD|0]:[?senate_trade_democrat_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				inclusivist_power < senate_inclusivist_pop
+			}
+		}
+		add_to_variable = { inclusivist_power = 1 }
+		add_to_array = { congress_senate_array = 8 }
+		log = "Senate Array inclusivist: [?cA|0]:[?senate_inclusivist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				distributionist_power < senate_distributionist_pop
+			}
+		}
+		add_to_variable = { distributionist_power = 1 }
+		add_to_array = { congress_senate_array = 9 }
+		log = "Senate Array inclusivist: [?cA|0]:[?senate_inclusivist_pop|0]."
+	}
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				light_side_power < senate_light_side_pop
+			}
+		}
+		add_to_variable = { light_side_power = 1 }
+		add_to_array = { congress_senate_array = 10 }
+		log = "Senate Array inclusivist: [?cA|0]:[?senate_inclusivist_pop|0]."
+	}
+	log = "After: Length of Chamber Array: [?congress_chamber_array^num]"
+	log = "After: Length of Senate Array: [?congress_senate_array^num]"
+
+}
+######################
+# Ignore for now
+# Experimental for future gimmick, campaigning and elections
+#############################
+pie_adjustment_effect = {
+
+	set_variable = { dark_side_pie_var = 0}
+	set_variable = { new_order_pie_var = 0}
+	set_variable = { unitist_pie_var = 0}
+	set_variable = { akaanadocrat_pie_var = 0}
+	set_variable = { corist_pie_var = 0}
+	set_variable = { ruusanist_pie_var = 0}
+	set_variable = { light_side_pie_var = 0}
+	set_variable = { corporate_consortium_pie_var = 0}
+	set_variable = { trade_democrat_pie_var = 0}
+	set_variable = { inclusivist_pie_var = 0}
+	set_variable = { distributionist_pie_var = 0}
+	set_variable = { pie_var_total = 0}
+	every_owned_state = {
+		adjust_pie_state = yes
+		clamp_state_popularities = yes
+	}
+	add_to_variable = { pie_var_total = dark_side_pie_var }
+	add_to_variable = { pie_var_total = new_order_pie_var }
+	add_to_variable = { pie_var_total = unitist_pie_var }
+	add_to_variable = { pie_var_total = akaanadocrat_pie_var }
+	add_to_variable = { pie_var_total = corist_pie_var }
+	add_to_variable = { pie_var_total = ruusanist_pie_var }
+	add_to_variable = { pie_var_total = light_side_pie_var }
+	add_to_variable = { pie_var_total = corporate_consortium_pie_var }
+	add_to_variable = { pie_var_total = trade_democrat_pie_var }
+	add_to_variable = { pie_var_total = inclusivist_pie_var }
+	add_to_variable = { pie_var_total = distributionist_pie_var }
+	divide_variable = { dark_side_pie_var = pie_var_total }
+	divide_variable = { new_order_pie_var = pie_var_total }
+	divide_variable = { unitist_pie_var = pie_var_total }
+	divide_variable = { akaanadocrat_pie_var = pie_var_total }
+	divide_variable = { corist_pie_var = pie_var_total }
+	divide_variable = { ruusanist_pie_var = pie_var_total }
+	divide_variable = { light_side_pie_var = pie_var_total }
+	divide_variable = { corporate_consortium_pie_var = pie_var_total }
+	divide_variable = { trade_democrat_pie_var = pie_var_total }
+	divide_variable = { inclusivist_pie_var = pie_var_total }
+	divide_variable = { distributionist_pie_var = pie_var_total }
+
+	multiply_variable = { dark_side_pie_var = 100 }
+	multiply_variable = { new_order_pie_var = 100 }
+	multiply_variable = { unitist_pie_var = 100 }
+	multiply_variable = { akaanadocrat_pie_var = 100 }
+	multiply_variable = { corist_pie_var = 100 }
+	multiply_variable = { ruusanist_pie_var = 100 }
+	multiply_variable = { light_side_pie_var = 100 }
+	multiply_variable = { corporate_consortium_pie_var = 100 }
+	multiply_variable = { inclusivist_pie_var = 100 }
+	multiply_variable = { distributionist_pie_var = 100 }
+
+	round_variable =  dark_side_pie_var
+	round_variable =  new_order_pie_var
+	round_variable =  unitist_pie_var
+	round_variable =  akaanadocrat_pie_var
+	round_variable =  corist_pie_var
+	round_variable =  ruusanist_pie_var
+	round_variable =  light_side_pie_var
+	round_variable =  corporate_consortium_pie_var
+	round_variable =  inclusivist_pie_var
+	round_variable =  distributionist_pie_var
+	
+	set_temp_variable = { rounded_total = 0 } #Will store the total rounded %age
+	
+	add_to_temp_variable = { rounded_total = dark_side_pie_var }
+	add_to_temp_variable = { rounded_total = new_order_pie_var }
+	add_to_temp_variable = { rounded_total = unitist_pie_var }
+	add_to_temp_variable = { rounded_total = akaanadocrat_pie_var }
+	add_to_temp_variable = { rounded_total = corist_pie_var }
+	add_to_temp_variable = { rounded_total = ruusanist_pie_var }
+	add_to_temp_variable = { rounded_total = light_side_pie_var }
+	add_to_temp_variable = { rounded_total = corporate_consortium_pie_var }
+	add_to_temp_variable = { rounded_total = inclusivist_pie_var }
+	add_to_temp_variable = { rounded_total = distributionist_pie_var }
+	
+	set_temp_variable = { rounding_error = rounded_total}
+	add_to_temp_variable = { rounding_error = -100 } #Basically, the rounding error for our total of popularities. Commonly equal to 101
+	
+	
+	if = {
+	limit = { 
+		check_variable = {
+			var = rounding_error
+			value = 0
+			compare = not_equals
+			}
+		}
+		if = { #fix the rounding error by changing one party big enough for the rounding not to be seen too much (cant bother to compute the max)
+			limit = { 
+				check_variable = { dark_side_pie_var > 15 }
+				}
+			subtract_from_variable = { dark_side_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { new_order_pie_var > 15 }
+				}
+			subtract_from_variable = { new_order_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { unitist_pie_var > 15 }
+				}
+			subtract_from_variable = { unitist_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { akaanadocrat_pie_var > 15 }
+				}
+			subtract_from_variable = { akaanadocrat_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { corist_pie_var > 15 }
+				}
+			subtract_from_variable = { corist_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { ruusanist_pie_var > 15 }
+				}
+			subtract_from_variable = { ruusanist_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { light_side_pie_var > 15 }
+				}
+			subtract_from_variable = { light_side_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { corporate_consortium_pie_var > 15 }
+				}
+			subtract_from_variable = { corporate_consortium_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { inclusivist_pie_var > 15 }
+				}
+			subtract_from_variable = { inclusivist_pie_var = rounding_error }
+		}
+		else_if = { 
+			limit = { 
+				check_variable = { distributionist_pie_var > 15 }
+				}
+			subtract_from_variable = { distributionist_pie_var = rounding_error }
+		}
+	}
+
+	set_political_party = {
+		ideology = dark_side
+		popularity = dark_side_pie_var
+	}
+	set_political_party = {
+		ideology = new_order
+		popularity = new_order_pie_var
+	}
+	set_political_party = {
+		ideology = unitist
+		popularity = unitist_pie_var
+	}
+	set_political_party = {
+		ideology = akaanadocrat
+		popularity = akaanadocrat_pie_var
+	}
+	set_political_party = {
+		ideology = corist
+		popularity = corist_pie_var
+	}
+	set_political_party = {
+		ideology = ruusanist
+		popularity = ruusanist_pie_var
+	}
+	set_political_party = {
+		ideology = light_side
+		popularity = light_side_pie_var
+	}
+	set_political_party = {
+		ideology = corporate_consortium
+		popularity = corporate_consortium_pie_var
+	}
+	set_political_party = {
+		ideology = trade_democrat
+		popularity = trade_democrat_pie_var
+	}
+	set_political_party = {
+		ideology = inclusivist
+		popularity = inclusivist_pie_var
+	}
+	set_political_party = {
+		ideology = distributionist
+		popularity = distributionist_pie_var
+	}
+	
+}
+
+adjust_pie_state = {
+	#set temp variables to be used in the election
+	set_temp_variable = { dark_side_popularity  = dark_side_bonus_popularity }
+	set_temp_variable = { new_order_popularity  = new_order_bonus_popularity }
+	set_temp_variable = { unitist_popularity  = unitist_bonus_popularity }
+	set_temp_variable = { akaanadocrat_popularity  = akaanadocrat_bonus_popularity }
+	set_temp_variable = { corist_popularity  = corist_bonus_popularity }
+	set_temp_variable = { ruusanist_popularity = ruusanist_bonus_popularity }
+	set_temp_variable = { light_side_popularity = light_side_bonus_popularity }
+	set_temp_variable = { corporate_consortium_popularity = corporate_consortium_bonus_popularity }
+	set_temp_variable = { trade_democrat_popularity = trade_democrat_bonus_popularity }
+	set_temp_variable = { inclusivist_popularity = inclusivist_bonus_popularity }
+	set_temp_variable = { distributionist_popularity = distributionist_bonus_popularity }
+
+	################################################################
+	#Don't need this since its from TNO's party collation system.
+	#1
+	#make party pop percentages
+	#convert temp party pops into percentages
+	#set_temp_variable = { temp_RD_pop = RD_popularity }
+	#set_temp_variable = { temp_NPP_pop = NPP_popularity }
+	#set_temp_variable = { total_party_pop = RD_popularity}
+	#add_to_temp_variable = { total_party_pop = NPP_popularity }
+
+	#divide_temp_variable = { temp_RD_pop = total_party_pop }
+	#divide_temp_variable = { temp_NPP_pop = total_party_pop }
+	################################################################
+
+	#2
+	#make faction pops internal percentages within the party
+	#convert temp faction pops into percentages based on their importance of the faction
+	#add together RD faction pops, to make a total
+	#set_temp_variable = { RD_total_pop = RD_R_popularity }
+	#add_to_temp_variable = { RD_total_pop = RD_D_popularity}
+
+
+
+	#add together NPP faction pops, to make a total
+	#set_temp_variable = { NPP_total_pop = NPP_L_popularity}
+	#add_to_temp_variable = { NPP_total_pop = NPP_C_popularity}
+	#add_to_temp_variable = { NPP_total_pop = NPP_R_popularity}
+	#add_to_temp_variable = { NPP_total_pop = NPP_FR_popularity}
+
+	#divide the temporary faction variables with the sum of its party's factions' popularity
+	#divide_temp_variable = { RD_R_popularity = RD_total_pop }
+	#divide_temp_variable = { RD_D_popularity = RD_total_pop }
+	#divide_temp_variable = { NPP_L_popularity = NPP_total_pop }
+	#divide_temp_variable = { NPP_C_popularity = NPP_total_pop }
+	#divide_temp_variable = { NPP_R_popularity = NPP_total_pop }
+	#divide_temp_variable = { NPP_FR_popularity = NPP_total_pop }
+
+	################################################################
+
+	#3
+	#multiply party pop and faction pop
+	#RD-D
+	#multiply_temp_variable = {RD_R_popularity = temp_RD_pop }
+	#RD-R
+	#multiply_temp_variable = {RD_D_popularity = temp_RD_pop }
+	#NPP-R
+	#multiply_temp_variable = {NPP_R_popularity = temp_NPP_pop }
+	#NPP-FR
+	#multiply_temp_variable = {NPP_FR_popularity = temp_NPP_pop }
+	#NPP-C
+	#multiply_temp_variable = {NPP_C_popularity = temp_NPP_pop }
+	#NPP-L
+	#multiply_temp_variable = {NPP_L_popularity = temp_NPP_pop }
+	################################################################
+	#4
+	#multiply faction pop' with population
+	#Dark Side
+	multiply_temp_variable = {dark_side_popularity = state_population_k }
+	#New Order
+	multiply_temp_variable = {new_order_popularity = state_population_k }
+	#Unitist
+	multiply_temp_variable = {unitist_popularity = state_population_k }
+	#Akaanadrocrat
+	multiply_temp_variable = {akaanadocrat_popularity = state_population_k }
+	#Corist
+	multiply_temp_variable = {corist_popularity = state_population_k }
+	#Ruusanist
+	multiply_temp_variable = {ruusanist_popularity = state_population_k }
+	#Light Side
+	multiply_temp_variable = {light_side_popularity = state_population_k }
+	#Corporate Consortium
+	multiply_temp_variable = {corporate_consortium_popularity = state_population_k }
+	#Trade Democrat
+	multiply_temp_variable = {trade_democrat_popularity = state_population_k }
+	#Inclusivist
+	multiply_temp_variable = {inclusivist_popularity = state_population_k }
+	#Distributionist
+	multiply_temp_variable = {distributionist_popularity = state_population_k }
+
+	#5
+	#add to pre-pie vars
+	add_to_variable = { ROOT.dark_side_pie_var = dark_side_popularity}
+	add_to_variable = { ROOT.new_order_pie_var = new_order_popularity}
+	add_to_variable = { ROOT.unitist_pie_var = unitist_popularity}
+	add_to_variable = { ROOT.akaanadocrat_pie_var = akaanadocrat_popularity}
+	add_to_variable = { ROOT.corist_pie_var = corist_popularity}
+	add_to_variable = { ROOT.ruusanist_pie_var = ruusanist_popularity}
+	add_to_variable = { ROOT.light_side_pie_var = light_side_popularity}
+	add_to_variable = { ROOT.corporate_consortium_pie_var = corporate_consortium_popularity}
+	add_to_variable = { ROOT.trade_democrat_pie_var = trade_democrat_popularity}
+	add_to_variable = { ROOT.inclusivist_pie_var = inclusivist_popularity}
+	add_to_variable = { ROOT.distributionist_pie_var = distributionist_popularity}
+}
