@@ -1,0 +1,207 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "parliament_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 370 }
+
+		instantTextBoxType = {
+			name ="senate_support_header"
+			position = { x = 10 y = -20 }
+			text = "senate_title" 
+			pdx_tooltip = "senate_title_hover"
+			format = center
+			maxHeight = 24
+			maxWidth = 110
+		}
+		
+		gridboxtype = {
+			name = "senate_grid"
+			position = { x = 10 y = 10 }
+			size = { width = 16 height = 16 }
+			slotsize = { width = 16 height = 16 } 
+			max_slots_horizontal = 30
+			max_slots_vertical = 6 #Do 30 x what number you want to get this
+			add_horizontal = no
+		}
+		containerWindowType = {
+			name = "senate"
+			position = { x = 10 y = 106 } #Do 16 x max_slots_vertical then add ten to get the proper number for this
+			size = { width = 200 height= 100% }
+			iconType ={
+				name ="dark_side_dot"
+				spriteType = "GFX_dark_side_dot"
+				position = { x= 0 y = 0 }
+			}	
+			instantTextBoxType = {
+				name = "dark_side_text"
+				position = { x = 20 y = 0 }
+				maxWidth = 120
+				text = dark_side_senate
+				pdx_tooltip = dark_side_senate_long
+			}
+			iconType ={
+				name ="new_order_dot"
+				spriteType = "GFX_new_order_dot"
+				position = { x= 0 y = 20 }
+			}	
+			instantTextBoxType = {
+				name = "new_order_text"
+				position = { x = 20 y = 20 }
+				maxWidth = 120
+				text = new_order_senate
+				pdx_tooltip = new_order_senate_long
+			}
+			iconType ={
+				name ="unitist_dot"
+				spriteType = "GFX_unitist_dot"
+				position = { x = 0 y = 40 }
+			}	
+			instantTextBoxType = {
+				name = "unitist_text"
+				position = { x = 20 y = 40 }
+				maxWidth = 120
+				text = unitist_senate
+				pdx_tooltip = unitist_senate_long
+			}
+			iconType ={
+				name ="akaanadocrat_dot"
+				spriteType = "GFX_akaanadocrat_dot"
+				position = { x = 0 y = 60 }
+			}		
+			instantTextBoxType = {
+				name = "akaanadocrat_text"
+				position = { x = 20 y = 60 }
+				maxWidth = 120
+				text = akaanadocrat_senate
+				pdx_tooltip = akaanadocrat_senate_long
+			}
+			iconType ={
+				name ="corist_dot"
+				spriteType = "GFX_corist_dot"
+				position = { x = 0 y = 80 }
+			}			
+			instantTextBoxType = {
+				name = "corist_text"
+				position = { x = 20 y = 80 }
+				maxWidth = 120
+				text = corist_senate
+				pdx_tooltip = corist_senate_long
+			}
+			iconType ={
+				name ="ruusanist_dot"
+				spriteType = "GFX_ruusanist_dot"
+				position = { x = 0 y = 100 }
+			}			
+			instantTextBoxType = {
+				name = "ruusanist_text"
+				position = { x = 20 y = 100 }
+				maxWidth = 120
+				text = ruusanist_senate
+				pdx_tooltip = ruusanist_senate_long
+			}
+			iconType ={
+				name ="corporate_consortium_dot"
+				spriteType = "GFX_corporate_consortium_dot"
+				position = { x = 0 y = 120 }
+			}		
+			instantTextBoxType = {
+				name = "corporate_consortium_text"
+				position = { x = 20 y = 120 }
+				maxWidth = 120
+				text = corporate_consortium_senate
+				pdx_tooltip = corporate_consortium_senate_long
+			}
+			iconType ={
+				name ="trade_democrat_dot"
+				spriteType = "GFX_trade_democrat_dot"
+				position = { x = 0 y = 140 }
+			}		
+			instantTextBoxType = {
+				name = "trade_democrat_text"
+				position = { x = 20 y = 140 }
+				maxWidth = 120
+				text = trade_democrat_senate
+				pdx_tooltip = trade_democrat_senate_long
+			}
+			iconType ={
+				name ="inclusivist_dot"
+				spriteType = "GFX_inclusivist_dot"
+				position = { x = 0 y = 160 }
+			}		
+			instantTextBoxType = {
+				name = "inclusivist_text"
+				position = { x = 20 y = 160 }
+				maxWidth = 120
+				text = inclusivist_senate
+				pdx_tooltip = inclusivist_senate_long
+			}
+			iconType ={
+				name ="distributionist_dot"
+				spriteType = "GFX_distributionist_dot"
+				position = { x = 0 y = 180 }
+			}		
+			instantTextBoxType = {
+				name = "distributionist_text"
+				position = { x = 20 y = 180 }
+				maxWidth = 120
+				text = distributionist_senate
+				pdx_tooltip = distributionist_senate_long
+			}
+			iconType ={
+				name ="light_side_dot"
+				spriteType = "GFX_light_side_dot"
+				position = { x = 0 y = 200 }
+			}		
+			instantTextBoxType = {
+				name = "light_side_text"
+				position = { x = 20 y = 200 }
+				maxWidth = 120
+				text = light_side_senate
+				pdx_tooltip = light_side_senate_long
+			}
+			iconType ={
+				name ="unknown_dot"
+				spriteType = "GFX_unknown_dot"
+				position = { x = 0 y = 220 }
+			}		
+			instantTextBoxType = {
+				name = "unknown_text"
+				position = { x = 20 y = 220 }
+				maxWidth = 120
+				text = senate_parliament_total
+				pdx_tooltip = senate_parliament_total
+			}
+		}
+		
+		instantTextBoxType = {
+			name ="senate_vote_title"
+			position = { x = 5 y = -25000 }
+			text = "senate_vote_title"
+			pdx_tooltip = "senate_vote_desc"
+			format = center
+			maxHeight = 24
+			maxWidth = 225
+		}
+		instantTextBoxType = {
+			name ="house_vote_title"
+			position = { x = 265 y = -25000 }
+			text = "house_vote_title"
+			#pdx_tooltip = ""
+			format = center
+			maxHeight = 24
+			maxWidth = 225
+		}
+	}
+	containerWindowType = {
+		name = "congress_entry"
+		position = { x = 0 y = 0}	
+		size = { width = 16 height = 16 }
+		
+		iconType = {
+			name ="ideology_dot"
+			position = { x= 0 y = 0 }
+			pdx_tooltip = "ideology_dot_desc"
+		}
+	}
+}
