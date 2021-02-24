@@ -1065,8 +1065,8 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_mutual_aid
-		icon = ORC_mutual_aid
+		id = ORC_the_communal_militia
+		icon = ORC_the_communal_militia
 		cost = 10
 		
 		prerequisite = {
@@ -1083,8 +1083,8 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_the_communal_militia
-		icon = ORC_the_communal_militia
+		id = ORC_standard_organizing_methods
+		icon = ORC_standard_organizing_methods
 		cost = 10
 		
 		prerequisite = {
@@ -1101,12 +1101,12 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_social_liberation
-		icon = ORC_social_liberation
+		id = ORC_rainbow_coalitions
+		icon = ORC_rainbow_coalitions
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_the_conquest_of_portions
+			focus = ORC_from_stars_a_constellation
 		}
 		
 		x = -6
@@ -1124,15 +1124,15 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_mutual_aid
+			focus = ORC_standard_organizing_methods
 		}
 		
 		prerequisite = {
-			focus = ORC_community_self-defense
+			focus = ORC_the_communal_militia
 		}
 		
 		prerequisite = {
-			focus = ORC_social_liberation
+			focus = ORC_rainbow_coalitions
 		}
 		
 		x = -10
@@ -1150,7 +1150,7 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_mutual_aid
+			focus = ORC_standard_organizing_methods
 		}
 		
 		prerequisite = {
@@ -1158,7 +1158,7 @@ focus_tree = {
 		}
 		
 		prerequisite = {
-			focus = ORC_social_liberation
+			focus = ORC_rainbow_coalitions
 		}
 		x = -8
 		y = 4
@@ -1175,15 +1175,15 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_mutual_aid
+			focus = ORC_the_communal_militia
 		}
 		
 		prerequisite = {
-			focus = ORC_social_liberation
+			focus = ORC_rainbow_coalitions
 		}
 		
 		prerequisite = {
-			focus = ORC_community_self-defense
+			focus = ORC_standard_organizing_methods
 		}
 		x = -6
 		y = 4
@@ -1247,8 +1247,8 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_political_power_flows_from_the_barrel_of_a_blaster
-		icon = ORC_political_power_flows_from_the_barrel_of_a_blaster
+		id = ORC_apathy_is_death
+		icon = ORC_apathy_is_death
 		cost = 10
 		
 		prerequisite = {
@@ -1265,12 +1265,12 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_the_cultural_revolution
-		icon = ORC_the_cultural_revolution
+		id = ORC_there_is_no_try
+		icon = ORC_there_is_no_try
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_political_power_flows_from_the_barrel_of_a_blaster
+			focus = ORC_apathy_is_death
 		}
 		
 		x = -2
@@ -1300,8 +1300,8 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_continue_the_drive_to_industrialise
-		icon = ORC_continue_the_drive_to_industrialise
+		id = ORC_mutual_aid
+		icon = ORC_mutual_aid
 		cost = 10
 		
 		prerequisite = {
@@ -1323,7 +1323,7 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_the_cultural_revolution
+			focus = ORC_mutual_aid
 		}
 		
 		prerequisite = {
@@ -1343,12 +1343,12 @@ focus_tree = {
 	}	
 	
 	focus = { 
-		id = ORC_distributionist_internationalism
-		icon = ORC_distributionist_internationalism
+		id = ORC_revolutionary_internationalism
+		icon = ORC_revolutionary_internationalism
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_the_cultural_revolution
+			focus = ORC_mutual_aid
 		}
 		
 		prerequisite = {
@@ -1356,7 +1356,7 @@ focus_tree = {
 		}
 		
 		prerequisite = {
-			focus = ORC_continue_the_drive_to_industrialise
+			focus = ORC_there_is_no_try
 		}	
 		
 		x = 0
@@ -1369,12 +1369,12 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_expand_the_party
-		icon = ORC_expand_the_party
+		id = ORC_towards_post_scarcity
+		icon = ORC_towards_post_scarcity
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_the_cultural_revolution
+			focus = ORC_mutual_aid
 		}
 		
 		prerequisite = {
@@ -1382,7 +1382,7 @@ focus_tree = {
 		}
 		
 		prerequisite = {
-			focus = ORC_continue_the_drive_to_industrialise
+			focus = ORC_there_is_no_try
 		}	
 		
 		x = 2
@@ -1404,11 +1404,11 @@ focus_tree = {
 		}
 		
 		prerequisite = {
-			focus = ORC_distributionist_internationalism
+			focus = ORC_revolutionary_internationalism
 		}
 		
 		prerequisite = {
-			focus = ORC_expand_the_party
+			focus = ORC_towards_post_scarcity
 		}	
 		
 		x = 0
@@ -1484,22 +1484,14 @@ focus_tree = {
 	}
 	
 	focus = { 
-		id = ORC_worker_cooperatives
-		icon = ORC_worker_cooperatives
+		id = ORC_federal_democracy
+		icon = ORC_federal_democracy
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_state-owned_enterprise
+			focus = ORC_our_property_our_honour_our_lives
 		}
-		
-		prerequisite = {
-			focus = ORC_federal_democracy
-		}
-		
-		prerequisite = {
-			focus = ORC_the_diversity_initiative
-		}		
-		
+	
 		x = 6
 		y = 4
 		relative_position_id = ORC_the_congress_of_mos_espa
