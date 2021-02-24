@@ -1474,7 +1474,7 @@ focus_tree = {
 			focus = ORC_our_property_our_honour_our_lives
 		}
 		
-		x = 6
+		x = 7
 		y = 3
 		relative_position_id = ORC_the_congress_of_mos_espa
 		
@@ -1493,7 +1493,7 @@ focus_tree = {
 		}
 	
 		x = 6
-		y = 4
+		y = 3
 		relative_position_id = ORC_the_congress_of_mos_espa
 		
 		completion_reward = {
@@ -1503,8 +1503,8 @@ focus_tree = {
 	
 	
 	focus = { 
-		id = ORC_federal_democracy
-		icon = ORC_federal_democracy
+		id = ORC_the_diversity_initiative
+		icon = ORC_the_diversity_initiative
 		cost = 10
 		
 		prerequisite = {
@@ -1526,8 +1526,16 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_our_property_our_honour_our_lives
+			focus = ORC_state-owned_enterprise
 		}
+		
+		prerequisite = {
+			focus = ORC_federal_democracy
+		}
+		
+		prerequisite = {
+			focus = ORC_the_diversity_initiative
+		}		
 		
 		x = 10
 		y = 3
@@ -1539,8 +1547,8 @@ focus_tree = {
 	}	
 	
 	focus = { 
-		id = ORC_the_diversity_initiative
-		icon = ORC_the_diversity_initiative
+		id = ORC_worker_cooperatives
+		icon = ORC_worker_cooperatives
 		cost = 10
 		
 		prerequisite = {
@@ -1622,8 +1630,8 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_social_liberation
-			focus = ORC_the_cultural_revolution
+			focus = ORC_rainbow_coalitions
+			focus = ORC_there_is_no_try
 		}	
 		
 		x = -4
@@ -1641,8 +1649,8 @@ focus_tree = {
 		cost = 10
 		
 		prerequisite = {
-			focus = ORC_continue_the_drive_to_industrialise
-			focus = ORC_state-owned_enterprise
+			focus = ORC_mutual_aid
+			focus = ORC_standard_organizing_methods
 		}	
 		
 		x = 4
