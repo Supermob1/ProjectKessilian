@@ -6,7 +6,7 @@ tags={
 	"National Focuses"
 	"Gameplay"
 }
-supported_version="1.9.*"
+supported_version="1.10.*"
 replace_path="history/states"
 replace_path="history/countries"
 replace_path="history/units"
