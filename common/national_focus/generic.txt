@@ -32,6 +32,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = Face_Invasion
 		}
+		 prerequisite = { 
+			focus = A_Galaxy_divided_by_war
+        }
 		completion_reward = {
 			
 		}
@@ -48,6 +51,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = Droid_Garrisons
 		}
+		 prerequisite = { 
+			focus = A_Galaxy_divided_by_war
+        }
 		completion_reward = {
 			add_ideas = clone_garrisons_idea
 		}
@@ -61,6 +67,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 300
 		}
+		 prerequisite = { 
+			focus = Choose_a_side
+        }
 		mutually_exclusive = {
 			focus = Clone_Garrisons
 		}
@@ -80,6 +89,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = Choose_a_side
 		}
+		prerequisite = { 
+			focus = A_Galaxy_divided_by_war
+        }
 		completion_reward = {
 			add_ideas = extreme_rationing_idea
 			add_ideas = longer_hours_idea
@@ -94,6 +106,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 300
 		}
+		prerequisite = { 
+			focus = Face_Invasion
+        }
 		completion_reward = {
 			
 		}
@@ -107,6 +122,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 300
 		}
+		prerequisite = { 
+			focus = Face_Invasion
+        }
 		completion_reward = {
 			
 		}
