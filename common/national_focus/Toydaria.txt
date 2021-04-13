@@ -1,0 +1,136 @@
+focus_tree = {
+	id = Toydaria_Tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TOY
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+	focus = {
+		id = A_Galaxy_divided_by_war
+		icon = REP_peace_was_never_an_option
+		cost = 5.00
+		x = 20
+		y = 0
+		ai_will_do = { 
+			factor = 300
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = Choose_a_side
+		icon = REP_emergencyelection
+		cost = 5.00
+		x = 10
+		y = 1
+		ai_will_do = { 
+			factor = 300
+		}
+		mutually_exclusive = {
+			focus = Face_Invasion
+		}
+		 prerequisite = { 
+			focus = A_Galaxy_divided_by_war
+        }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = Clone_Garrisons
+		icon = REP_soften_them_up
+		cost = 5.00
+		x = 5
+		y = 2
+		ai_will_do = { 
+			factor = 300
+		}
+		mutually_exclusive = {
+			focus = Droid_Garrisons
+		}
+		 prerequisite = { 
+			focus = Choose_a_side
+        }
+		completion_reward = {
+			add_ideas = clone_garrisons_idea
+		}
+	}
+	focus = {
+		id = Droid_Garrisons
+		icon = CIS_his_loyal_right_hand
+		cost = 5.00
+		x = 15
+		y = 2
+		ai_will_do = { 
+			factor = 300
+		}
+		 prerequisite = { 
+			focus = Choose_a_side
+        }
+		mutually_exclusive = {
+			focus = Clone_Garrisons
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = Face_Invasion
+		icon = REP_weapons_of_the_next_war
+		cost = 5.00
+		x = 30
+		y = 1
+		ai_will_do = { 
+			factor = 300
+		}
+		mutually_exclusive = {
+			focus = Choose_a_side
+		}
+		prerequisite = { 
+			focus = A_Galaxy_divided_by_war
+        }
+		completion_reward = {
+			add_ideas = extreme_rationing_idea
+			add_ideas = longer_hours_idea
+		}
+	}
+	focus = {
+		id = Strict_neutrality
+		icon = REP_acceptlimitations
+		cost = 5.00
+		x = 25
+		y = 2
+		ai_will_do = { 
+			factor = 300
+		}
+		prerequisite = { 
+			focus = Face_Invasion
+        }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = Entrech_Sovereignty
+		icon = REP_authorize_the_treason_act
+		cost = 5.00
+		x = 35
+		y = 2
+		ai_will_do = { 
+			factor = 300
+		}
+		prerequisite = { 
+			focus = Face_Invasion
+        }
+		completion_reward = {
+			
+		}
+	}
+}
