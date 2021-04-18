@@ -1,23 +1,25 @@
 music_station = "base_music"
 
 music = {
-        song = "maintheme"
-        chance = {
-                 modifier = {
-                          factor = 0.5
-                 }
-        }
+        	song = "maintheme"
+        	chance = {
+                 	modifier = {
+                         		 factor = 0.5
+                	 }
+       	 }
 }
 
 # PEACE SONGS ###################
 music = {
-        song = "general_peace_1"
+       	 song = "peace_1"
         
-        chance = {
-                modifier = {
-                         factor = 0.5
-                }
-        }
+       	 chance = {
+                	modifier = {
+                        		 factor = 1
+			
+			has_war = no
+                	}
+      	  }
 }
 
 # WAR SONGS ###################
