@@ -2,10 +2,12 @@
 # If adding new technology, make sure they are uniquely named.
 
 technology_categories = {
-	droid_tech
-	droid_tank_tech
-	droid_artillery_tech
-	clone_tech
+	CIS_droid_tech
+	CIS_droid_tank_tech
+	CIS_droid_artillery_tech
+	REP_clone_tech
+	REP_clone_air_tech
+	
 }
 
 technology_folders = {
@@ -31,8 +33,13 @@ technology_folders = {
 		ledger = army
 		available = {
 			tag = REP
+	
 		}
 	}
+	clone_air_tech = {
+		ledger =
+		available = {
+			tag = REP
 }
 
  

@@ -1,0 +1,54 @@
+technologies = {
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Imperial Fighters# 
+tie_fighter = {
+		enable_equipments = {
+			tie_fighter_equipment
+		}
+
+		path = {
+			leads_to_tech = 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 14
+		
+		folder = {
+			name = droid_folder
+			position = { x = @heavy_below y = @level3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			REP_air_tech 
+		}
+	}	

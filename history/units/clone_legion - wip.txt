@@ -22,12 +22,23 @@
 }
 
 units = {
-	##### GAR #####
+	##### Grand Army of the Republic #####
 	division { 
-		name = "I. Clone Division"
+		name = ""
 		location = 26 
-		division_template = "Clone Armored Batallion"
+		division_template = ""
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 	}
+}
+
+air_wings = {
+	#
+	   = {
+	     # Black Squadron -- TIE Fighters
+	fighter_equipment_  { owner = "REP" amount =   } 
+		owner = "REP"
+		amount = 
+	}
+         }
 }

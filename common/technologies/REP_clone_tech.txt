@@ -39,6 +39,10 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		path = { 
+			leads_to_tech = e-11
+			research_cost_coeff = 1		
+		}		
+		path = { 
 			leads_to_tech = plx-1
 			research_cost_coeff = 1
 		}
@@ -80,7 +84,7 @@ technologies = {
 		}
 		
 		categories = {
-			droid_tech
+			clone_tech
 		}
 	}
 	
@@ -163,6 +167,24 @@ technologies = {
 		folder = {
 			name = clone_folder
 			position = { x = @heavy y = @level1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			clone_tech
+		}
+	}
+	
+	e-11 = {
+		research_cost = 2
+		start_year = 14
+		
+		folder = {
+			name = clone_folder
+			position = { x = @medium_below y = @level1 }
 		}
 		
 		ai_will_do = {
