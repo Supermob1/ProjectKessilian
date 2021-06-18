@@ -1,4 +1,4 @@
-﻿capital = 
+﻿capital = 9
 
 oob = "wip"
 set_research_slots = 3
@@ -8,33 +8,33 @@ set_stability = 0.10
 set_war_support = 0.02
 
 set_popularities = {
-        new_order = 0
+        new_order = 20
         dark_side = 0
-        akaanadocrat = 60
+        akaanadocrat = 46
         unitist = 0
-        corist = 0
-        distributionist =  0
-        corporate_consortium = 10
-        trade_democrat = 0
-        ruusanist = 0
-        inclusivist = 0
+        corist = 10
+        distributionist =  11
+        corporate_consortium = 8
+        trade_democrat = 1
+        ruusanist = 4
+        inclusivist = 9
         light_side = 0
     }
 add_ideas = {
 	dontusemanpower
 }
 set_politics = {
-	ruling_party = 
+	ruling_party = new_order
 	last_election = "1936.1.1.12"
 	election_frequency = 48
 	elections_allowed = no
 	}
 
 create_country_leader = {
-	name = ""
-	desc = ""
-	picture = ""
+	name = "Thrawn"
+	desc = "desc"
+	picture = ".tga"
 	expire = "1965.1.1"
-	ideology = akaanadocrat_subtype
+	ideology = new_order_subtype
 	traits = {}
 }
