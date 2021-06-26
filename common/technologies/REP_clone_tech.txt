@@ -1,64 +1,60 @@
 technologies = {
-	# Years:
-	# 11 Start Date
-	# 13 Clone wars starts
-	# 16 Clone Wars Ends
-
-	#Section
-	@light_above = -1
-	@light = 1
-	@light_below = 3
-	@medium = 5
-	@medium_below = 7
-	@heavy = 9
-	@heavy_below = 11
 	
-	#Tier
-	@base = 2
-	@level1 = 6
-	@level2 = 10
-	@level3 = 14
-	@level4 = 18
+	@24 = 0
+	@23 = 2
+	@22 = 4
+	@21 = 6
+	@20 = 8
+	@19 = 10
+	@18 = 12
+	@17 = 14
+	@16 = 16
+	@15 = 18
+	@14 = 20
 	
-	standard_kit = {
+	infantry_weapons = {
 	
 		enable_equipments = {
-			standard_kit
+			infantry_weapons
 		}
 		
 		path = { 
-			leads_to_tech = dc-15
+			leads_to_tech = 
 			research_cost_coeff = 1
 		}
 		path = { 
-			leads_to_tech = dc-15a
+			leads_to_tech = 
 			research_cost_coeff = 1
 		}
 		path = { 
-			leads_to_tech = dc-15x
+			leads_to_tech = 
 			research_cost_coeff = 1
 		}
 		path = { 
-			leads_to_tech = e-11
+			leads_to_tech = 
+			research_cost_coeff = 1
+		}
+		path = { 
+			leads_to_tech = 
 			research_cost_coeff = 1		
 		}		
 		path = { 
-			leads_to_tech = plx-1
+			leads_to_tech = 
 			research_cost_coeff = 1
 		}
 		path = { 
-			leads_to_tech = v-1_thermal_detonator
+			leads_to_tech = 
 			research_cost_coeff = 1		
 		}
 		path = { 
-			leads_to_tech = hx-2_ap_mine
+			leads_to_tech = 
 			research_cost_coeff = 1		
 		}		
 		research_cost = 1.5
-		start_year = 11
+		start_year = 24
 		folder = {
 			name = clone_folder
-			position = { x = @light_below y = -1 }
+			position = { x = @ }
 		}
 		
 		categories = {
@@ -76,7 +72,7 @@ technologies = {
 		
 		folder = {
 			name = clone_folder
-			position = { x = @light_above y = @level1 }
+			position = { x =  y = @ }
 		}
 		
 		ai_will_do = {
@@ -88,13 +84,36 @@ technologies = {
 		}
 	}
 	
-	dc-15a = {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	model_44 = {
 		research_cost = 2
-		start_year = 12
+		start_year = 
 		
 		folder = {
 			name = clone_folder
-			position = { x = @light y = @level1 }
+			position = { x =  y = @ }
 		}
 		
 		ai_will_do = {
@@ -106,92 +125,4 @@ technologies = {
 		}
 	}
 	
-	dc-15x = {
-		research_cost = 2
-		start_year = 12
-		
-		folder = {
-			name = clone_folder
-			position = { x = @light_below y = @level1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			clone_tech
-		}
-	}
 	
-	plx-1 = {
-		research_cost = 2
-		start_year = 12
-		
-		folder = {
-			name = clone_folder
-			position = { x = @medium y = @level1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			clone_tech
-		}
-	}
-	
-	v-1_thermal_detonator = {
-		research_cost = 2
-		start_year = 12
-		
-		folder = {
-			name = clone_folder
-			position = { x = @medium_below y = @level1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			clone_tech
-		}
-	}
-	
-	hx-2_ap_mine = {
-		research_cost = 2
-		start_year = 12
-		
-		folder = {
-			name = clone_folder
-			position = { x = @heavy y = @level1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			clone_tech
-		}
-	}
-	
-	e-11 = {
-		research_cost = 2
-		start_year = 14
-		
-		folder = {
-			name = clone_folder
-			position = { x = @medium_below y = @level1 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			clone_tech
-		}
-	}

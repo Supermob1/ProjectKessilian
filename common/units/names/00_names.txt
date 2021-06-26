@@ -1,22 +1,14 @@
-﻿REP = {
-	carrier = {
-		prefix = ""
-		generic = { "Attack Cruiser" }
-		unique = {
-			
-	}
-
-# Naval 
+﻿# Names are based on equipment types (picking equipment with highest amount from the pool)
+# Generic are used for countries that are not scripted in.
+generic = {
+	# Ships
 	submarine = {
 		prefix = ""
-		unique = {
-
-		}
+		unique = {}
 	}
 	destroyer = {
 		prefix = ""
-		unique = {
-		}
+		unique = {}
 	}
 	light_cruiser = {
 		prefix = ""
@@ -28,23 +20,11 @@
 	}
 	battle_cruiser = {
 		prefix = ""
-		unique = {
-			
-		}
+		unique = {}
 	}
 	battleship = {
 		prefix = ""
-		unique = {
-			#Victory I-Class 
-			"Dominator" "
-			# Imperial I-Class MkI
-			"Devastator" "Chimaera" 
-			# Imperial I-Class Mk2
-			"Conquest" "Tyrant" "Vengeance" "Accuser" "Judicator" 
-			"Thunderflare" "
-			# Imperial II-Class
-			"Stalker" "Avenger" "Chimaera" 
-		}
+		unique = {}
 	}
 	SH_battleship = {
 		prefix = ""
@@ -194,7 +174,11 @@
 		prefix = ""
 		generic = { "Agent" }
 		generic_pattern = "OPERATIVE_GENERIC_CODENAME_PATTERN"
-		unique = { "" }
+		unique = { "Agent 007" }
 	}
 }
 
+# Country specific names.
+# Prefix is always appended at the begin of each generated name.
+# Unique - only one unit can carry it at a time.
+# Generic - are used when all unique are used. Those have numbers appended at the end.
