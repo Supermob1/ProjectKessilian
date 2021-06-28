@@ -1,0 +1,23 @@
+﻿division_template = {
+	name = "Bespin Wing Guard Squad"				
+	####division_names_group = BES_Inf_01####
+	is_locked = yes
+
+	regiments = {
+		bespin_wing_guard = { x = 0 y = 0 }
+		bespin_wing_guard = { x = 0 y = 1 }
+	}
+	support={
+	}
+            }	
+
+units = {
+	##### BES #####
+	division { 
+		name = "Unit Tibanna"
+		location =  
+		division_template = "Bespin Wing Guard Squad"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+	}
+}
