@@ -1,15 +1,33 @@
 ﻿division_template = {
 	name = "Bespin Wing Guard Squad"				
-	####division_names_group = BES_Inf_01####
 	is_locked = yes
 
 	regiments = {
 		bespin_wing_guard = { x = 0 y = 0 }
 		bespin_wing_guard = { x = 0 y = 1 }
 	}
-	support={
+}
+	
+division_template = {
+	name = "Bespin Security Forces Garrison"				
+	is_locked = no
+
+	regiments = {
+		bespin_wing_guard = { x = 0 y = 0 }
+		bespin_wing_guard = { x = 0 y = 1 }
+		bespin_wing_guard = { x = 0 y = 2 }
+		bespin_wing_guard = { x = 1 y = 0 }
+		bespin_wing_guard = { x = 1 y = 1 }
+		bespin_wing_guard = { x = 1 y = 2 }
+		bespin_wing_guard = { x = 2 y = 0 }
+		bespin_wing_guard = { x = 2 y = 1 }
+		cloud_car_pilot_squad = { x = 2 y = 2 }
 	}
-            }	
+	support= {
+		cloud_car_pilot_squad = { x = 0 y = 0 }
+		cloud_car_pilot_squad = { x = 0 y = 1 }
+	}
+ }	
 
 units = {
 	##### BES #####
@@ -17,6 +35,27 @@ units = {
 		name = "Unit Tibanna"
 		location =  
 		division_template = "Bespin Wing Guard Squad"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+	}
+	division { 
+		name = "Unit Carbon"
+		location =  
+		division_template = "Bespin Wing Guard Squad"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+	}
+	division { 
+		name = "Cloud City Detachment"
+		location =  
+		division_template = "Bespin Security Forces Garrison"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1
+	}
+	division { 
+		name = "Tibannopolis Detachment"
+		location =  
+		division_template = "Bespin Security Forces Garrison"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 	}
