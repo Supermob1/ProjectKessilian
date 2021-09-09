@@ -4,6 +4,60 @@
 
 add_namespace = news
 
+news_event = { #Padme boom boom
+	id = news.1
+	title = news.1.t
+	desc = news.1.d
+	picture = GFX_news_event_seperatist_defeat
+
+	trigger = { 
+		#TBA
+	}
+
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		name = news.1.a
+	}
+
+}
+
+news_event = { #Padme boom boom
+	id = news.2
+	title = news.2.t
+	desc = { # She lives
+		text = news.2.d
+		trigger = {
+			#tba
+		}
+	}
+	desc = { # She dead yo :{
+		text = news.2.d.2
+		trigger = {
+			#tba
+		}
+	}
+	picture = GFX_news_event_seperatist_defeat
+
+	trigger = { 
+		#TBA
+	}
+
+	major = yes
+	fire_only_once = yes
+
+	option = {
+		trigger = {}
+		name = news.2.a #she lives
+	}
+	option = {
+		trigger = {}
+		name = news.2.a.2 #she dead
+	}
+
+}
+
 news_event = {
 	id = news.65
 	title = news.65.t
