@@ -1,0 +1,25 @@
+sub_units = {
+	
+	sheathipede_landing = {
+		sprite = heavy_plane
+		priority = 6
+		active = yes
+		type = { air_transport }
+		need = { sheathipede_equip = 1 }
+	}
+	sheathipede2_landing = {
+		sprite = heavy_plane
+		priority = 6
+		active = yes
+		type = { air_transport }
+		need = { sheathipede2_equip = 1 }
+	}
+	droid_bomber = {
+		sprite = light_plane
+		priority = 2
+		active = yes
+		type = { cas tactical_bomber strategic_bomber naval_bomber  }
+		need = { droid_bomber_equip = 1 }
+		categories = { category_cas }
+	}
+}

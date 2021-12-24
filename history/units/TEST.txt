@@ -1,0 +1,111 @@
+﻿division_template = {
+	name = "13th Battalion Division"
+	is_locked = yes
+
+	regiments = {
+		REP_13_clone = { x = 0 y = 0 }
+		REP_13_clone = { x = 0 y = 1 }
+		REP_13_clone = { x = 0 y = 2 }
+   		REP_13_clone = { x = 1 y = 0 }
+		REP_13_clone = { x = 1 y = 1 }
+		REP_13_clone = { x = 1 y = 2 }
+  		REP_13_clone = { x = 2 y = 0 }
+		REP_13_clone = { x = 2 y = 1 }
+		REP_13_clone = { x = 2 y = 2 }
+		REP_13_clone = { x = 0 y = 3 }
+	}
+	support = {
+		clone_medic = { x = 0 y = 0 }
+	}
+}
+
+
+###########################################UNITS###########################################
+
+units = {
+	division= {	
+		name = "13th Tarpal Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Wave Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Merit Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Throne Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1.0  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Brave Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1.0  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Break Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Miracle Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Albedo Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Maze Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Soul Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1.0  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Bracca Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+	division= {	
+		name = "13th Crash Company"
+		location = 10463 #Kamino
+		division_template = "13th Battalion Division"
+		start_experience_factor = 1  #optional, otherwise starts with 0 expereince
+		force_equipment_variants = { p2_clone_equip = { owner = "KAM" } }
+	}
+}
+
