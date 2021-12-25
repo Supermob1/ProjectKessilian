@@ -1,0 +1,75 @@
+##### Division Templates #####                ####How Units are Built 
+##### CIS #####
+division_template = {
+	name = ""		
+	is_locked = 
+	#
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 } 	# 
+	}
+}
+division_template = {
+	name = "" 		# 
+	is_locked =
+	# 
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+
+
+#### OOB ####       #Named Units 
+units = {
+	######### ########
+	
+	# 
+	division= {	# ""
+		name = {
+		location = 
+		division_template = "" 			# 
+		start_experience_factor = 0.
+	}
+	division= {	
+		name = ""
+		location = 
+		division_template = ""
+		start_experience_factor = 0.
+	}
+}
+
+
+
+
+### Air Wings
+air_wings = {
+	num = { 															# 
+		### ###
+		
+		fighter_equipment_ = { owner = "" amount =  }			
+		heavy_fighter_equipment_1  = { owner = ""  amount =  }	# 
+		tac_bomber_equipment_ =  { owner = "" amount =  }		# 
+		tac_bomber_equipment_1 =  { owner = "" amount =  }		# 
+		CAS_equipment_1 =  { owner = "" amount =  }			
+	}
+	
+	num = {															# 
+		###  ###
+		fighter_equipment_1 = { owner = "" amount =  }			# 
+		tac_bomber_equipment_0 =  { owner = "" amount =  }		# 
+	}
+
+}
