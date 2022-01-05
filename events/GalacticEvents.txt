@@ -1,0 +1,67 @@
+add_namespace = hod
+#Sojurn Gathering 
+news_event = {
+	id = hod.1
+	title = "Gathering on Sojurn" 
+	desc = "The rising business man, Hego Damask, is hosting his annual business meeting on the moon of Sojurn."
+	picture = GFX_inserteventpicname
+	major = yes
+
+	fire_only_once = yes
+
+trigger = {
+     has_global_flag = sojurngatheringeventtriggered
+}
+
+
+		mean_time_to_happen = {
+				days =
+		}
+		
+	option = {
+					name = "insert name of option"
+					trigger = {TAG = }
+					set_global_flag = eventnewstriggered
+		    }
+	
+	option = {
+					name = "insert name of option"
+					trigger = {TAG = }
+					set_global_flag = eventnewstriggered
+		    }
+			
+				}		
+
+
+#
+news_event = {
+	id = hod.1
+	title = hod.1.title
+	desc = hod.1.desc
+	picture = GFX_inserteventpicname
+	major = yes
+
+	fire_only_once = yes
+
+trigger = {
+     has_global_flag = eventtriggered
+}
+
+
+		mean_time_to_happen = {
+				days =
+		}
+		
+	option = {
+					name = "insert name of option"
+					trigger = {TAG = }
+					set_global_flag = eventnewstriggered
+		    }
+	
+	option = {
+					name = "insert name of option"
+					trigger = {TAG = }
+					set_global_flag = eventnewstriggered
+		    }
+			
+				}		
