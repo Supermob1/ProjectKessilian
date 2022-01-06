@@ -1,0 +1,154 @@
+## KEY ##
+# TREE = STARTING FOCUS
+# BRANCH = WHICH COMPONENT OF TREE
+# PATH = BRANCH WITHIN THE COMPONENT
+## KEY ##
+focus_tree = {
+	id = REP_fake_focus_tree
+
+	#country = {
+	#	factor = 0
+	#	modifier = {
+	#		add = 10
+	#		tag = REP
+	#	}
+	#}
+
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 50 y = 2500 }
+	
+	#### REPUBLIC FAKEOUT #### ### WIP###
+	
+	focus = {
+        id = REP_and_we_shall_not_stand_idle
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_but_we_are_threatened_once_more
+        }
+
+        x = -1
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_weakness_of_ruusan
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_not_stand_idle
+        }
+
+        x = -3
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_encourage_local_militarisation
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_weakness_of_ruusan
+        }
+
+        x = -3
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_war_on_pacifism
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_encourage_local_militarisation
+        }
+
+        x = -3
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_anti_separatist_propaganda
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_not_stand_idle
+        }
+
+        x = 1
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_fight_confederate_terrorism
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_anti_separatist_propaganda
+        }
+
+        x = 1
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_embargoes_in_all_but_name
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_fight_confederate_terrorism
+        }
+
+        x = 1
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_mobilise_the_jedi
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_war_on_pacifism
+		   focus = REP_embargoes_in_all_but_name
+        }
+
+        x = -1
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+
+ }
