@@ -1,0 +1,652 @@
+## KEY ##
+# TREE = STARTING FOCUS
+# BRANCH = WHICH COMPONENT OF TREE
+# PATH = BRANCH WITHIN THE COMPONENT
+## KEY ##
+focus_tree = {
+	id = REP_fake_focus_tree
+
+	#country = {
+	#	factor = 0
+	#	modifier = {
+	#		add = 10
+	#		tag = REP
+	#	}
+	#}
+
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 50 y = 2500 }
+	
+	#### REPUBLIC FAKEOUT #### ### WIP###
+
+	focus = {
+        id = REP_we_are_all_the_republic
+        icon = REP_
+        cost = 10
+
+        x = 5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	
+	focus = {
+        id = REP_and_we_have_survived_millennia
+        icon = REP_
+        cost = 10
+		relative_position_id = REP_we_are_all_the_republic
+        
+		prerequisite = {
+           focus = REP_we_are_all_the_republic
+        }
+
+        x = 0
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_but_we_are_threatened_once_more
+        icon = REP_
+        cost = 10
+		relative_position_id = REP_we_are_all_the_republic
+        
+		prerequisite = {
+           focus = REP_and_we_have_survived_millennia
+        }
+		
+		mutually_exclusive = {
+			focus = REP_but_crisis_has_divided_us
+		}
+
+        x = -2
+        y = 2
+
+        completion_reward = {
+			custom_effect_tooltip = fuuuuuuuuuuuuuture
+			hidden_effect = {
+				load_focus_tree = REP_but_crisis_has_divided_us
+			}				
+        }
+    }
+	focus = {
+        id = REP_but_crisis_has_divided_us
+        icon = REP_
+        cost = 10
+		relative_position_id = REP_we_are_all_the_republic
+        
+		prerequisite = {
+           focus = REP_and_we_have_survived_millennia
+        }
+		
+		mutually_exclusive = {
+			focus = REP_but_we_are_threatened_once_more
+		}
+
+        x = 2
+        y = 2
+
+        completion_reward = {
+			custom_effect_tooltip = fuuuuuuuuuuuuuture
+        }
+    }
+}
+	
+	focus = {
+        id = REP_promise_a_future
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_but_crisis_has_divided_us
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_galactic_riots
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_promise_a_future
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_endless_marches_below
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_galactic_riots
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_statues_to_rim_worlds
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_endless_marches_below
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_actions_speak_louder
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_promise_a_future
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_a_shot_at_the_monopolies
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_actions_speak_louder
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+	focus = {
+        id = REP_never_another_naboo
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_a_shot_at_the_monopolies
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_consult_the_peacekeepers
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_statues_to_rim_worlds
+		   focus = REP_never_another_naboo
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_promise_the_peace
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_but_crisis_has_divided_us
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_hear_out_the_separatists
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_promise_the_peace
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_long_corporate_shadow
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_hear_out_the_separatists
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_first_and_last_domino
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_long_corporate_shadow
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_hear_out_our_own
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_promise_the_peace
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_long_road_to_equality 
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_hear_out_our_own
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_recognition_of_non_humans
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_long_road_to_equality
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_beyond_the_core
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_first_and_last_domino
+		   focus = REP_recognition_of_non_humans
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_an_invitation_to_raxus
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_consult_the_peacekeepers
+		   focus = REP_beyond_the_core
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_and_we_shall_not_stand_idle
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_but_we_are_threatened_once_more
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_weakness_of_ruusan
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_not_stand_idle
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_encourage_local_militarisation
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_weakness_of_ruusan
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_war_on_pacifism
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_encourage_local_militarisation
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_anti_separatist_propaganda
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_not_stand_idle
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_fight_confederate_terrorism
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_anti_separatist_propaganda
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_embargoes_in_all_but_name
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_fight_confederate_terrorism
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_mobilise_the_jedi
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_war_on_pacifism
+		   focus = REP_embargoes_in_all_but_name
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_and_we_shall_give_up_no_ground
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_but_we_are_threatened_once_more
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_in_the_wider_galaxy
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_give_up_no_ground
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_loyal_of_the_rim
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_in_the_wider_galaxy
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_shield_against_corporations
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_loyal_of_the_rim
+        }
+
+        x = -5
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_or_at_home
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_give_up_no_ground
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_loyal_of_the_core
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_or_at_home
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_brewing_race_war
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_loyal_of_the_core
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_the_blue_scare
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_shield_against_corporations
+		   focus = REP_the_brewing_race_war
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+	focus = {
+        id = REP_and_we_shall_last_another_thousand
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_mobilise_the_jedi
+		   focus = REP_the_blue_scare
+        }
+
+        x = -5
+        y = 0 
+
+        completion_reward = {
+
+        }
+    }
+    
+	#### REPUBLIC FAKEOUT END ####
+}
