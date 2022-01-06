@@ -20,6 +20,22 @@ focus_tree = {
 	continuous_focus_position = { x = 50 y = 2500 }
 	
 	#### REPUBLIC FAKEOUT #### ### WIP###
+    focus = {
+        id = REP_but_we_are_threatened_once_more2
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           
+        }
+
+        x = 0
+        y = 0
+
+        completion_reward = {
+
+        }
+    }
 	
 	focus = {
         id = REP_and_we_shall_not_stand_idle
@@ -27,7 +43,7 @@ focus_tree = {
         cost = 10
         
 		prerequisite = {
-           focus = REP_but_we_are_threatened_once_more
+           focus = REP_but_we_are_threatened_once_more2
         }
 
         x = -1
@@ -140,11 +156,163 @@ focus_tree = {
         
 		prerequisite = {
            focus = REP_the_war_on_pacifism
-		   focus = REP_embargoes_in_all_but_name
         }
+        prerequisite = {
+            focus = REP_embargoes_in_all_but_name
+         }
 
         x = -2
         y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_and_we_shall_give_up_no_ground
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_but_we_are_threatened_once_more2
+        }
+
+        x = 1
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_in_the_wider_galaxy
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_give_up_no_ground
+        }
+
+        x = 1
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_loyal_of_the_rim
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_in_the_wider_galaxy
+        }
+
+        x = 1
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_shield_against_corporations
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_loyal_of_the_rim
+        }
+
+        x = 1
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_or_at_home
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_and_we_shall_give_up_no_ground
+        }
+
+        x = 3
+        y = 2
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_loyal_of_the_core
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_or_at_home
+        }
+
+        x = 3
+        y = 3
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_brewing_race_war
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_loyal_of_the_core
+        }
+
+        x = 3
+        y = 4
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_blue_scare
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_the_shield_against_corporations
+        }
+        prerequisite = {
+            focus = REP_the_brewing_race_war
+         }
+
+        x = 2
+        y = 5
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_and_we_shall_last_another_thousand
+        icon = REP_
+        cost = 10
+        
+		prerequisite = {
+           focus = REP_mobilise_the_jedi
+        }
+        prerequisite = {
+            focus = REP_the_blue_scare
+         }
+
+        x = 0
+        y = 6
 
         completion_reward = {
 
