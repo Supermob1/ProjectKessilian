@@ -26,7 +26,7 @@ focus_tree = {
         icon = REP_
         cost = 10
 
-        x = 0
+        x = 5
         y = 0
 
         completion_reward = {
@@ -69,7 +69,10 @@ focus_tree = {
         y = 2
 
         completion_reward = {
-			load_focus_tree = REP_but_crisis_has_divided_us 
+			custom_effect_tooltip = fuuuuuuuuuuuuuture
+			hidden_effect = {
+				load_focus_tree = REP_but_crisis_has_divided_us
+			}				
         }
     }
 	focus = {
@@ -90,7 +93,7 @@ focus_tree = {
         y = 2
 
         completion_reward = {
-
+			custom_effect_tooltip = fuuuuuuuuuuuuuture
         }
     }
 }
