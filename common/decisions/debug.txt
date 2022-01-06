@@ -1,0 +1,34 @@
+generic_debug = {
+	debug_flag = {
+		icon = GFX_decision_generic_form_nation
+		
+		visible = {
+			is_debug = yes
+			is_ai = no
+		}	
+
+		available = {
+			#has_global_flag = 
+			#has_country_flag = 
+		}
+		complete_effect = {
+			
+		}
+	}
+	debug_rep_focus_tree = {
+		icon = GFX_decision_generic_form_nation
+		
+		visible = {
+			is_debug = yes
+			is_ai = no
+			original_tag = REP
+		}	
+
+		available = {
+			original_tag = REP 
+		}
+		complete_effect = {
+			load_focus_tree = REP_but_crisis_has_divided_us_focus_tree
+		}
+	}
+}
