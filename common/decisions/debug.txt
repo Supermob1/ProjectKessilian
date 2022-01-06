@@ -10,6 +10,9 @@ generic_debug = {
 		available = {
 			#has_global_flag = 
 			#has_country_flag = 
+			hidden_trigger = {
+				always = no
+			}
 		}
 		complete_effect = {
 			
@@ -26,9 +29,33 @@ generic_debug = {
 
 		available = {
 			original_tag = REP 
+			hidden_trigger = {
+				always = yes
+			}
 		}
+		custom_cost_trigger = { always = yes } #no cost
 		complete_effect = {
 			load_focus_tree = REP_but_crisis_has_divided_us_focus_tree
+		}
+	}
+	debug_rep_focus_tree2 = {
+		icon = GFX_decision_generic_form_nation
+		
+		visible = {
+			is_debug = yes
+			is_ai = no
+			original_tag = REP
+		}	
+
+		available = {
+			original_tag = REP
+			hidden_trigger = {
+				always = yes
+			}
+		}
+		custom_cost_trigger = { always = yes } #no cost
+		complete_effect = {
+			load_focus_tree = REP_but_we_are_threatened_once_more_focus_tree
 		}
 	}
 }
