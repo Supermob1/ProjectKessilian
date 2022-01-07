@@ -26,7 +26,7 @@ focus_tree = {
         icon = REP_
         cost = 10
 
-        x = 0
+        x = 7
         y = 0
 
         completion_reward = {
@@ -160,6 +160,8 @@ focus_tree = {
         
 		prerequisite = {
            focus = REP_statues_to_rim_worlds
+        }
+		prerequisite = {
 		   focus = REP_never_another_naboo
         }
 
@@ -170,6 +172,7 @@ focus_tree = {
 
         }
     }
+	
 	focus = {
         id = REP_promise_the_peace
         icon = REP_
@@ -297,6 +300,8 @@ focus_tree = {
         
 		prerequisite = {
            focus = REP_the_first_and_last_domino
+        }
+		prerequisite = {
 		   focus = REP_recognition_of_non_humans
         }
 
@@ -315,6 +320,8 @@ focus_tree = {
         
 		prerequisite = {
            focus = REP_consult_the_peacekeepers
+        }
+		prerequisite = {
 		   focus = REP_beyond_the_core
         }
 
@@ -325,4 +332,5 @@ focus_tree = {
 
         }
     }
+	
 }
