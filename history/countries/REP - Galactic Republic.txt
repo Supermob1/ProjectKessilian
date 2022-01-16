@@ -4,11 +4,9 @@ oob = "garrison_generic"
 
 set_research_slots = 4
 
-set_stability = 0.10
+set_stability = 0.5
 set_convoys = 300
 set_war_support = 0.02
-
-load_focus_tree = REP_fake_focus_tree
 
 set_technology = {
 	clone_army = 1 #Hidden Tech
@@ -30,13 +28,16 @@ set_popularities = {
 	}
 add_ideas = {
 	no_conscription
+	legacy_of_ruusan
+	republic_of_thousands
+	widespread_race_war
 }
 set_politics = {
 	ruling_party = inclusivist
 	last_election = "10.15.6"
 	election_frequency = 48
 	elections_allowed = no
-	}
+}
 
 create_country_leader = {
 	name = "Sheev Palpatine"

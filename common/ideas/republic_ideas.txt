@@ -1,6 +1,79 @@
 ideas = {
 	country = {
 
+		legacy_of_ruusan = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = legacy_of_ruusan_idea
+			
+			modifier = {
+				war_support_factor = -1
+				consumer_goods_factor = 0.7
+				stability_factor = 0.2
+			}
+		}
+		republic_of_thousands = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = republic_of_thousands_idea
+			
+			modifier = {
+				war_support_factor = 0.1
+				political_power_factor = 0.1
+				stability_factor = -0.15
+			}
+		}
+		widespread_race_war = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = -0.02
+				political_power_factor = -0.15
+				stability_factor = -0.25
+			}
+		}
+		widespread_race_war_reduced = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = -0.03
+				political_power_factor = -0.15
+				stability_factor = -0.20
+			}
+		}
+		
 		new_era_of_power_idea = {
 			picture = rep_new_era_of_power_idea
 
