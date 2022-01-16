@@ -325,16 +325,16 @@ operation_fake_intel = { ### 2 1/40
 							has_country_flag = fake_intel_template_created
 						}
 					}
-					division_template = {
-						name = "Fake Intel Division"
+					# division_template = {
+						# name = "Fake Intel Division"
 						
-						is_fake_intel_division = yes
-						is_locked = yes
-						regiments = {
-							fake_intel_unit = { x = 0 y = 0 }
-						}
-					}
-					set_country_flag = fake_intel_template_created
+						# is_fake_intel_division = yes
+						# is_locked = yes
+						# regiments = {
+							# fake_intel_unit = { x = 0 y = 0 }
+						# }
+					# }
+					# set_country_flag = fake_intel_template_created
 				}
 				
 				# give it an id and store id & current date so it can be deleted later
