@@ -1,0 +1,33 @@
+# Character database
+#
+# Historical characters are listed within the `characters` root property. E.g.
+# 
+# characters = {
+#     # characters go here
+# }
+#
+# The following definition is supported inside:
+#
+# character = {
+# }
+characters = {
+	REP_obi_wan = {
+		name = "Obi-wan Kenobi" 
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/REP/portrait_obi_wan.dds"
+			}
+			army = {
+				large = "gfx/leaders/REP/portrait_obi_wan.dds"
+			}
+			navy = {
+				large = "gfx/leaders/REP/portrait_obi_wan.dds"
+			}
+		}
+		country_leader = {
+			ideology = stalinism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+}
