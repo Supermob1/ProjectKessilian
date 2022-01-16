@@ -10,10 +10,7 @@ news_event = { #Padme boom boom
 	desc = news.1.d
 	picture = GFX_news_event_seperatist_defeat
 
-	trigger = { 
-		#TBA
-	}
-
+	is_triggered_only = yes
 	major = yes
 	fire_only_once = yes
 
@@ -40,9 +37,7 @@ news_event = { #Padme boom boom
 	}
 	picture = GFX_news_event_seperatist_defeat
 
-	trigger = { 
-		#TBA
-	}
+	is_triggered_only = yes
 
 	major = yes
 	fire_only_once = yes
@@ -66,6 +61,8 @@ news_event = {
 
 	fire_only_once = yes
 
+	is_triggered_only = yes
+	
 	major = yes
 
 	option = {
@@ -80,6 +77,7 @@ news_event = {
 	desc = news.66.d
 	picture = GFX_news_event_order66
 
+	is_triggered_only = yes
 	major = yes
 	fire_only_once = yes
 	option = {
@@ -95,11 +93,10 @@ news_event = {
 	desc = news.67.d
 	picture = GFX_news_event_clonewars
 
-	mean_time_to_happen = {
-		days = 70
-	}
+	
+	is_triggered_only = yes
 
-	trigger = { has_global_flag = geonosis_attacked_flag }
+	# trigger = { has_global_flag = geonosis_attacked_flag }
 	immediate = { 
 		set_global_flag = clone_wars_start_flag 
 		CIS = {
@@ -117,6 +114,8 @@ news_event = {
 	}
 	major = yes
 	fire_only_once = yes
+	
+	is_triggered_only = yes
 
 	option = {
 		name = news.67.a

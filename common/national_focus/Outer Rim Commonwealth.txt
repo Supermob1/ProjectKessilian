@@ -20,7 +20,7 @@ focus_tree = {
   ###I'M NOT BRAVE ENOUGH FOR POLITICS###
 
 	###THE CONGRESS OF MOS ESPA###
-		focus = {
+	focus = {
 		id = ORC_the_congress_of_mos_espa
 		icon = ORC_the_congress_of_mos_espa
 		cost = 10
@@ -35,9 +35,10 @@ focus_tree = {
 		completion_reward = {
 		
 		}
+	}
  ###LEFT BRANCH### 
 			
-	focus = { 
+	focus = {
 		id = ORC_the_conquest_of_portions
 		icon = ORC_the_conquest_of_portions
 		cost = 10
@@ -55,7 +56,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = { 
+	focus = {
 		id = ORC_mutual_aid
 		icon = ORC_mutual_aid
 		cost = 10
@@ -91,7 +92,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = { 
+	focus = {
 		id = ORC_social_liberation
 		icon = ORC_social_liberation
 		cost = 10
@@ -109,7 +110,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = { 
+	focus = {
 		id = ORC_wretched_hives_no_more
 		icon = ORC_wretched_hives_no_more
 		cost = 10
@@ -132,23 +133,16 @@ focus_tree = {
 		relative_position_id = ORC_the_congress_of_mos_espa
 		
 		completion_reward = {
-			
 			add_building_construction = {
-					type = Infrastructure
-					state = random_owned_controlled_state
-					level = 3
-					
+				type = Infrastructure
+				state = random_owned_controlled_state
+				level = 3
+			}		
 		}
 	}
-	
-	
-	
-	
-	
-	
 	####RIGHT BRANCH END####
 	####CENTRE BRANCH####
-	focus = { 
+	focus = {
 		id = ORC_the_galactic_frontier_state
 		icon = ORC_the_galactic_frontier_state
 		cost = 10
@@ -174,7 +168,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = { 
+	focus = {
 		id = ORC_political_power_flows_from_the_barrel_of_a_blaster
 		icon = ORC_political_power_flows_from_the_barrel_of_a_blaster
 		cost = 10
@@ -192,7 +186,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = { 
+	focus = {
 		id = ORC_the_cultural_revolution
 		icon = ORC_the_cultural_revolution
 		cost = 10
@@ -226,8 +220,8 @@ focus_tree = {
 		
 		}
 	}
-	
-	focus = { 
+
+	focus = {
 		id = ORC_continue_the_drive_to_industrialise
 		icon = ORC_continue_the_drive_to_industrialise
 		cost = 10
@@ -245,7 +239,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = { 
+	focus = {
 		id = ORC_resistance_is_not_terrorism 
 		icon = ORC_resistance_is_not_terrorism
 		cost = 10
@@ -270,7 +264,7 @@ focus_tree = {
 		}
 	}	
 	
-	focus = { 
+	focus = {
 		id = ORC_distributionist_internationalism
 		icon = ORC_distributionist_internationalism
 		cost = 10
@@ -372,7 +366,7 @@ focus_tree = {
 		
 		completion_reward = {
 				add_political_power = 50
-				USOR = { change_tag_from_ORC }
+				#USOR = { change_tag_from_ORC }
 				add_popularity = {
 					ideology = inclusivist
 					popularity = 0.1
@@ -610,7 +604,7 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = ORC_rally_the_unions
 		icon = ORC_rally_the_unions
 		cost = 10
@@ -830,7 +824,7 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = ORC_separatist_defectors
 		icon = ORC_separatist_defectors
 		cost = 10
@@ -860,7 +854,7 @@ focus_tree = {
 		}
 	}
 
-	focus = { 
+	focus = {
 		id = ORC_to_the_barricades
 		icon = ORC_to_the_barricades
 		cost = 10
@@ -881,10 +875,7 @@ focus_tree = {
 		
 		}
 	}
-}
-	
-	
-	}###LEFT BRANCH###
+	###LEFT BRANCH###
 	focus = { 
 		id = ORC_the_communal_federation_of_outer_rim
 		icon = ORC_the_communal_federation_of_the_outer_rim
@@ -907,7 +898,7 @@ focus_tree = {
 	
 		completion_reward = {
 			add_political_power = 50
-			CFOR = { change_tag_from_ORC }
+			#CFOR = { change_tag_from_ORC }
 			add_popularity = {
 					ideology = distributionist
 					popularity = 0.1	 
@@ -1114,7 +1105,7 @@ focus_tree = {
 		
 		completion_reward = {
 				add_political_power = 50
-				USOR = { change_tag_from_ORC }
+				#USOR = { change_tag_from_ORC }
 				add_popularity = {
 					ideology = symbiotist
 					popularity = 0.1
@@ -1616,5 +1607,5 @@ focus_tree = {
 		completion_reward = {
 		
 		}
-	}	
-	
+	}
+}	

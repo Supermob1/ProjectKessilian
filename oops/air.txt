@@ -1,0 +1,68 @@
+sub_units = {
+	vulture_fighter = {
+		sprite = cis_fighter
+		priority = 1
+		active = yes
+		type = { fighter  }
+		need = { vulture_fighter_equip = 1 }
+		categories = { category_fighter }
+	}
+	hyena_bomber = {
+		sprite = cis_cas
+		priority = 2
+		active = yes
+		type = { cas tactical_bomber strategic_bomber naval_bomber  }
+		need = { hyena_bomber_equip = 1 }
+		categories = { category_cas }
+	}
+	C9979_landing_craft = {
+		sprite = c9979
+		priority = 6
+		active = yes
+		type = { air_transport }
+		need = { C9979_equip = 1 }
+	}
+	tri_fighter = {
+		sprite = cis_fighter_2
+		priority = 2
+		active = yes
+		type = { fighter  }
+		need = { tri_fighter_equip = 1 }
+	}
+	hmp_gunship = {
+		sprite = hmpgunship
+		priority = 2
+		active = yes
+		type = { fighter air_transport cas }
+		need = { hmp_equip = 1 }
+	}
+	rogue_fighter = {
+		sprite = cis_fighter
+		priority = 2
+		active = yes
+		type = { fighter  }
+		need = { rogue_fighter_equip = 1 }
+	}
+	belb_fighter = {
+		sprite = cis_fighter
+		priority = 2
+		active = yes
+		type = { fighter  }
+		need = { belb_fighter_equip = 1 }
+	}
+	nantex_fighter = {
+		sprite = cis_fighter
+		priority = 2
+		active = yes
+		type = { fighter  }
+		need = { nantex_fighter_equip = 1 }
+	}
+	belb_bomber = {
+		sprite = cis_fighter
+		priority = 2
+		active = yes
+		type = { cas tactical_bomber strategic_bomber naval_bomber  }
+		need = { belb_bomber_equip = 1 }
+		categories = { category_cas }
+	}
+}

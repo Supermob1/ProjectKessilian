@@ -9,8 +9,8 @@ guiTypes = {
 	### bookmark entry
 	containerWindowType = {
 		name = "bookmark_entry"
-		position = { x= 0 y = 0 }
-		size = { width=232 height=211}
+		position = { x= -160 y = -5 }
+		size = { width=578 height=211}
 		clipping = no
 		fade_time = 500
 		fade_type = linear
@@ -21,19 +21,19 @@ guiTypes = {
 			clicksound = click_checkbox
 		}
 
-		iconType = {
-			name = "icon"
-			spriteType = "GFX_select_date_1936"
-			position = { x = 27 y = 28 }
-			alwaystransparent = yes
-		}
+		 iconType = {
+			 name = "icon"
+			 spriteType = "GFX_select_date_1936"
+			 position = { x = 0 y = 0 }
+			 alwaystransparent = yes
+		 }
 
 		instantTextBoxType = {
 			name = "date"
-			position = { x = 22 y = 140 }
-			font = "hoi_20b"
+			position = { x = 5000 y = 140 }
+			font = ""
 			borderSize = {x = 0 y = 0}
-			text = "FE_BOOKMARK_DATE"
+			text = ""
 			maxWidth = 185
 			maxHeight = 20
 			fixedsize = yes	
@@ -42,11 +42,11 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "date_replace"
-			position = { x = 22 y = 155 }
-			font = "hoi_20b"
+			position = { x = 0 y = 190 }
+			font = "soloist"
 			borderSize = {x = 0 y = 0}
-			text = "22 Years BBY"
-			maxWidth = 185
+			text = "22 Years before the Battle of Yavin"
+			maxWidth = 400
 			maxHeight = 20
 			fixedsize = yes	
 			format = centre
@@ -165,8 +165,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "country_name"
-			position = { x = 8 y = 247 }
-			font = "hoi_20b"
+			position = { x = 8 y = 252 }
+			font = "soloistsmall"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 131
 			maxHeight = 20
@@ -525,9 +525,9 @@ guiTypes = {
 			name = "title"
 			position = { x = 120 y = 15 }
 			textureFile = ""
-			font = "hoi_20b"
+			font = "sfdistant16"
 			borderSize = {x = 0 y = 0}
-			text = "FE_SELECT_SCENARIO"
+			text = "Hearts of Durasteel"
 			maxWidth = 340
 			maxHeight = 30	
 			format = center
@@ -554,31 +554,31 @@ guiTypes = {
 			}
 		}
 		
-		instantTextBoxType = {
-			name = "history_title"
-			position = { x = 110 y = 275 }
-			font = "hoi_20b"
-			borderSize = {x = 0 y = 0}
-			text = "BM_HISTORY_TITLE"
-			maxWidth = 340
-			maxHeight = 30	
-			format = centre
-		}
+		# instantTextBoxType = {
+			# name = "history_title"
+			# position = { x = 110 y = 275 }
+			# font = "hoi_20b"
+			# borderSize = {x = 0 y = 0}
+			# text = "BM_HISTORY_TITLE"
+			# maxWidth = 340
+			# maxHeight = 30	
+			# format = centre
+		# }
 		
 		instantTextBoxType = {
 			name = "bookmark_title"
-			position = { x = 25 y = 305 }
-			font = "hoi4_typewriter22"
+			position = { x = 175 y = 276 }
+			font = "sfdistantgalaxytext"
 			borderSize = {x = 0 y = 0}
-			maxWidth = 340
+			maxWidth = 232
 			maxHeight = 30	
 			format = left
 		}
 		
 		instantTextBoxType = {
 			name = "bookmark_desc"
-			position = { x = 25 y = 330 }
-			font = "hoi4_typewriter16"
+			position = { x = 25 y = 300 }
+			font = "franklingothic"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 540
 			maxHeight = 30	
@@ -590,7 +590,7 @@ guiTypes = {
 			position = { x = 30 y = -57 }
 			quadTextureSprite ="GFX_button_221x34"	
 			buttonText = "BACK"
-			buttonFont = "hoi_18mbs"
+			buttonFont = "sfdistant20"
 			Orientation = "LOWER_LEFT"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -602,7 +602,7 @@ guiTypes = {
 			position = { x = -252 y = -57 }
 			quadTextureSprite ="GFX_button_221x34"
 			buttonText = "FE_SELECT_SCENARIO"
-			buttonFont = "hoi_18mbs"
+			buttonFont = "sfdistant20"
 			Orientation = "LOWER_RIGHT"
 			clicksound = click_ok
 			oversound = ui_menu_over
@@ -620,11 +620,11 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 435 y = 12 }
+			position = { x = 435 y = 14 }
 			textureFile = ""
-			font = "hoi_24header"
+			font = "sfdistant16"
 			borderSize = {x = 0 y = 0}
-			text = "FE_SELECT_COUNTRY"
+			text = "Hearts of Durasteel"
 			maxWidth = 340
 			maxHeight = 30	
 			format = centre
@@ -637,10 +637,10 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "back_button"
-			position = { x = -158 y = -52 }
+			position = { x = -190 y = -52 }
 			quadTextureSprite ="GFX_button_148x34"	
 			buttonText = "BACK"
-			buttonFont = "hoi_18mbs"
+			buttonFont = "sfdistant20"
 			Orientation = "CENTER_DOWN"
 			clicksound = click_close
 			oversound = ui_menu_over
@@ -649,10 +649,10 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "select_button"
-			position = { x = 10 y = -52 }
-			quadTextureSprite ="GFX_button_148x34"
+			position = { x = -40 y = -52 }
+			quadTextureSprite ="GFX_button_221x34"
 			buttonText = "FE_SELECT_COUNTRY"
-			buttonFont = "hoi_18mbs"
+			buttonFont = "sfdistant20"
 			Orientation = "CENTER_DOWN"
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -711,22 +711,22 @@ guiTypes = {
 		iconType = {
 			name = "minor_country_leader"
 			quadTextureSprite ="GFX_leader_unknown"
-			position = { x = 289 y = 441 }
-			scale=0.696
-			rotation=-0.04
+			position = { x = 255 y = 441 }
+			scale=0.92
 		}
 		
 		iconType = {
 				name ="minor_portrait_overlay"
 				spriteType = "GFX_minor_portrait_overlay"
-				position = { x= 280 y = 430 }
+				position = { x= 245 y = 433 }
+				scale=1.28
 		}
 		
 		
 		instantTextBoxType = {
 			name = "info_title"
-			position = { x = 10 y = 450 }
-			font = "hoi4_typewriter22"
+			position = { x = -50 y = 450 }
+			font = "sfdistantgalaxytitle"
 			borderSize = {x = 0 y = 0}
 			text = "FE_COUNTRY_INFO_TITLE"
 			maxWidth = 340
@@ -741,7 +741,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "leader_label"
 				position = { x = 0 y = -5 }
-				font = "hoi4_typewriter16"
+				font = "sfdistantgalaxytext"
 				borderSize = {x = 0 y = 0}
 				text = "LEADER"
 				maxWidth = 340
@@ -752,7 +752,7 @@ guiTypes = {
 				name = "leader"
 				position = { x = 0 y = 12 }
 				textureFile = ""
-				font = "hoi4_typewriter16"
+				font = "franklingothic"
 				borderSize = {x = 0 y = 0}
 				text = ""
 				maxWidth = 340
@@ -763,7 +763,7 @@ guiTypes = {
 				name = "ideology_label"
 				position = { x = 0 y = 35 }
 				textureFile = ""
-				font = "hoi4_typewriter16"
+				font = "sfdistantgalaxytext"
 				borderSize = {x = 0 y = 0}
 				text = "IDEOLOGY"
 				maxWidth = 340
@@ -773,7 +773,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "ideology"
 				position = { x = 0 y = 52 }
-				font = "hoi4_typewriter16"
+				font = "franklingothic"
 				borderSize = {x = 0 y = 0}
 				maxWidth = 340
 				format = left
@@ -782,7 +782,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "government_label"
 				position = { x = 0 y = 75 }
-				font = "hoi4_typewriter16"
+				font = "sfdistantgalaxytext"
 				borderSize = {x = 0 y = 0}
 				text = "GOVERNMENT"
 				maxWidth = 340
@@ -792,7 +792,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "government"
 				position = { x = 0 y = 92 }
-				font = "hoi4_typewriter16"
+				font = "franklingothic"
 				borderSize = {x = 0 y = 0}
 				text = "FE_INTERESTING_COUNTRIES"
 				maxWidth = 340
@@ -802,17 +802,17 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "elections_label"
 				position = { x = 0 y = 115 }
-				font = "hoi4_typewriter16"
+				font = ""
 				borderSize = {x = 0 y = 0}
-				text = "ELECTIONS"
+				text = ""
 				maxWidth = 340
 				format = left
 			}
 			
 			instantTextBoxType = {
 				name = "elections"
-				position = { x = 0 y = 132 }
-				font = "hoi4_typewriter16"
+				position = { x = 50000 y = 132 }
+				font = ""
 				borderSize = {x = 0 y = 0}
 				maxWidth = 340
 				format = left
@@ -820,8 +820,8 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "party_label"
-				position = { x = 0 y = 155 }
-				font = "hoi4_typewriter16"
+				position = { x = 0 y = 115 }
+				font = "sfdistantgalaxytext"
 				borderSize = {x = 0 y = 0}
 				text = "RULING_PARTY"
 				maxWidth = 340
@@ -830,8 +830,8 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "party"
-				position = { x = 0 y = 172 }
-				font = "hoi4_typewriter16"
+				position = { x = 0 y = 132 }
+				font = "franklingothic"
 				borderSize = {x = 0 y = 0}
 				maxWidth = 340
 				format = left
@@ -840,8 +840,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "nation_title"
-			position = { x = 437 y = 429 }
-			font = "hoi_24header"
+			position = { x = 95 y = 650 }
+			font = "sfdistantgalaxytext"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 340
 			maxHeight = 30	
@@ -892,21 +892,21 @@ guiTypes = {
 			}
 		}
 		
-		instantTextBoxType = {
-			name = "history_title"
-			position = { x = 830 y = 450 }
-			font = "hoi4_typewriter22"
-			borderSize = {x = 0 y = 0}
-			text = "FE_COUNTRY_HISTORY_TITLE"
-			maxWidth = 340
-			maxHeight = 30	
-			format = centre
-		}
+		# instantTextBoxType = {
+			# name = "history_title"
+			# position = { x = 830 y = 450 }
+			# font = "hoi4_typewriter22"
+			# borderSize = {x = 0 y = 0}
+			# text = "FE_COUNTRY_HISTORY_TITLE"
+			# maxWidth = 340
+			# maxHeight = 30	
+			# format = centre
+		# }
 		
 		instantTextBoxType = {
 			name = "history"
-			position = { x = 810 y = 490 }
-			font = "hoi4_typewriter16"
+			position = { x = 810 y = 450 }
+			font = "sfdistantgalaxytextsmall"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 380
 			maxHeight = 30	

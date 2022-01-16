@@ -122,6 +122,7 @@ equipments = {
 	}
 
 	ship_hull_cruiser_1 = {
+		abbreviation = "hba"
 		year = 1922
 		visual_level = 0
 		archetype = ship_hull_cruiser
@@ -132,6 +133,7 @@ equipments = {
 	}
 
 	ship_hull_cruiser_2 = {
+		abbreviation = "hbb"
 		year = 1936
 		visual_level = 1
 		archetype = ship_hull_cruiser
@@ -191,10 +193,12 @@ equipments = {
 
 		default_modules = {
 			front_1_custom_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
 		}
 	}
 
 	ship_hull_cruiser_3 = {
+		abbreviation = "hbc"
 		year = 1940
 		visual_level = 1
 		archetype = ship_hull_cruiser
@@ -270,6 +274,7 @@ equipments = {
 	}
 
 	ship_hull_cruiser_4 = {
+		abbreviation = "hbd"
 		year = 1944
 		visual_level = 1
 		archetype = ship_hull_cruiser
@@ -801,6 +806,7 @@ equipments = {
 	###### SPECIAL JAP TECH FROM FOCUS ######	
 
 	torpedo_cruiser = {
+		abbreviation = "hbh"
 		year = 1940
 
 		archetype = ship_hull_cruiser
@@ -914,6 +920,7 @@ equipments = {
 
 	###special snowflake hulls
 	ship_hull_torpedo_cruiser = {
+		abbreviation = "hbe"
 		year = 1940
 		visual_level = 0
 		archetype = ship_hull_cruiser
@@ -1004,6 +1011,7 @@ equipments = {
 		manpower = 960
 	}
 	ship_hull_cruiser_panzerschiff = {
+		abbreviation = "hbf"
 		year = 1929
 		visual_level = 0
 		archetype = ship_hull_cruiser
@@ -1013,6 +1021,7 @@ equipments = {
 		naval_speed = 20
 		surface_visibility = 22
 		naval_range = 7500
+		max_strength = 220
 		resources = {
 			steel = 3
 		}
@@ -1058,10 +1067,11 @@ equipments = {
 			front_1_custom_slot = ship_anti_air_1
 			fixed_ship_battery_slot = ship_heavy_battery_1
 			fixed_ship_secondaries_slot = ship_secondaries_1
-			rear_1_custom_slot = ship_torpedo
+			rear_1_custom_slot = ship_torpedo_1
 		}
 	}
 	ship_hull_cruiser_coastal_defense_ship = {
+		abbreviation = "hbg"
 		year = 1929
 		visual_level = 0
 		archetype = ship_hull_cruiser
