@@ -58,10 +58,36 @@ characters={
 		name="Obi-Wan Kenobi"
 		portraits={
 			army={
-				small=""
-			}
-			army={
+				small="gfx/interface/ideas/REP_obiwan_kenobi.tga"
 				large="gfx/leaders/REP/portrait_obi_wan.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = obi_wan
+			name = obi_wan
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+						has_country_flag = obi-wan_missing_flag 
+					}
+				}
+			}
+			traits = {
+				tactician_chief_of_army
+			}
+			ai_will_do = {
+				factor = 1
 			}
 		}
 		field_marshal={
@@ -98,10 +124,35 @@ characters={
 		name="Yoda"
 		portraits={
 			army={
-				small=""
-			}
-			army={
+				small="gfx/interface/ideas/REP_yoda.tga"
 				large="gfx/leaders/REP/portrait_yoda.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = yoda
+			name = yoda
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				strategist_chief_of_army
+			}
+			ai_will_do = {
+				factor = 1
 			}
 		}
 		field_marshal={
@@ -395,10 +446,64 @@ characters={
 		name="Anakin Skywalker"
 		portraits={
 			army={
-				small=""
-			}
-			army={
+				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
 				large="gfx/leaders/REP/portrait_anakin_skywalker.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = anakin
+			name = anakin
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+				NOT = { has_idea = anakin_high }
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				hero_with_no_fear
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = anakin_high
+			name = anakin
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+				NOT = { has_idea = anakin }
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				hero_with_no_fear
+			}
+			ai_will_do = {
+				factor = 1
 			}
 		}
 		corps_commander={
