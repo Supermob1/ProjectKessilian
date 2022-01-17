@@ -19,6 +19,24 @@ ideas = {
 				stability_factor = 0.2
 			}
 		}
+		legacy_of_ruusan_worsened = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = legacy_of_ruusan_idea
+			
+			modifier = {
+				war_support_factor = -1
+				consumer_goods_factor = 0.72
+				stability_factor = 0.2
+			}
+		}
 		republic_of_thousands = {
 			
 			allowed = {
@@ -55,6 +73,24 @@ ideas = {
 				stability_factor = -0.25
 			}
 		}
+		widespread_race_war_threat_1 = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = -0.01
+				political_power_factor = -0.15
+				stability_factor = -0.27
+			}
+		}
 		widespread_race_war_reduced = {
 			
 			allowed = {
@@ -69,6 +105,24 @@ ideas = {
 			
 			modifier = {
 				war_support_factor = -0.03
+				political_power_factor = -0.15
+				stability_factor = -0.20
+			}
+		}
+		widespread_race_war_reduced_more = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = -0.01
 				political_power_factor = -0.15
 				stability_factor = -0.20
 			}
