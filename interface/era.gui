@@ -6,25 +6,27 @@ guiTypes = {
 		
 		iconType ={
 			name ="era_window"
-			spriteType = "GFX_generic_box_125"
-			position = { x=-530 y=3 }
+			spriteType = "GFX_event_option_entry"
+			position = { x=-322 y=4 }
 			Orientation = "UPPER_RIGHT"
-			scale = 1.2
-			pdx_tooltip = "ERA_TOOLTIP"
-			pdx_tooltip_delayed = "ERA_TOOLTIP_DESC"
+			scale = 0.65
+			alwaystransparent = yes
 		}
 		instantTextboxType = {
 			name = "date"
-			position = { x = -535 y = 8 }
-			font = "hoi_18mbs"
+			position = { x = -342 y = 8 }
+			font = "sfdistant12full"
 			fixedsize = yes
-			text = "[?global.BBY_Date] BBY [Era_name]"
-			maxWidth = 160
+			#text = "[?global.date]"
+			#text = "[?global.BBY_Date] BBY [Era_name]"
+			text = "[?UTI.HODday], [Month_name] [?UTI.HODyear] [BBY_name]"
+			maxWidth = 250
 			maxHeight = 18
 			Orientation = "UPPER_RIGHT"
 			format = center	
-			vertical_alignment = center	
-			alwaystransparent = yes
+			vertical_alignment = center
+			pdx_tooltip = "ERA_TOOLTIP"
+			alwaystransparent = no
 		}
 		iconType ={
 			name ="credits_window"
@@ -38,7 +40,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "credits_name"
 			position = { x = -650 y = 8 }
-			font = "hoi_18mbs"
+			font = "sfdistant12full"
 			fixedsize = yes
 			text = "[?root.creditsamount]T Credits"
 			maxWidth = 150

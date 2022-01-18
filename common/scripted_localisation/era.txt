@@ -8,6 +8,144 @@
 # localization_key -> points to the localization key
 # that'll be used if trigger passes
 ############################################
+# DayMonthYear
+############################################
+defined_text = {
+	name = Month_name
+	#### Alderensis
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 1 }
+		}
+		localization_key = "Alderensis"
+	}
+	#### Corellia
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 2 }
+		}
+		localization_key = "Corellia"
+	}
+	#### Coruscant
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 3 }
+		}
+		localization_key = "Coruscant"
+	}
+	#### Duro
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 4 }
+		}
+		localization_key = "Duro"
+	}
+	#### Chandrila
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 5 }
+		}
+		localization_key = "Chandrila"
+	}
+	#### Bentaal
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 6 }
+		}
+		localization_key = "Bentaal"
+	}
+	#### Anaxes
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 7 }
+		}
+		localization_key = "Anaxes"
+	}
+	#### Kuat
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 8 }
+		}
+		localization_key = "Kuat"
+	}
+	#### Anaxes
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 9 }
+		}
+		localization_key = "Anaxes"
+	}
+	#### Esseles
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 10 }
+		}
+		localization_key = "Esseles"
+	}
+	#### Festivities
+	text = {
+		trigger = {
+			check_variable = { UTI.HODmonth = 11 }
+		}
+		localization_key = "Festivities"
+	}
+}
+defined_text = {
+	name = BBY_name
+	#### BBY
+	text = {
+		trigger = {
+			check_variable = { UTI.bby = 0 }
+		}
+		localization_key = "BBY"
+	}
+	#### ABY
+	text = {
+		trigger = {
+			check_variable = { UTI.bby = 1 }
+		}
+		localization_key = "ABY"
+	}
+}
+defined_text = {
+	name = Day_name
+	#### Primeday
+	text = {
+		trigger = {
+			check_variable = { UTI.weekday = 1 }
+		}
+		localization_key = "Primeday"
+	}
+	#### Centaxday
+	text = {
+		trigger = {
+			check_variable = { UTI.weekday = 2 }
+		}
+		localization_key = "Centaxday"
+	}
+	#### Taungsday
+	text = {
+		trigger = {
+			check_variable = { UTI.weekday = 3 }
+		}
+		localization_key = "Taungsday"
+	}
+	#### Zhellday
+	text = {
+		trigger = {
+			check_variable = { UTI.weekday = 4 }
+		}
+		localization_key = "Zhellday"
+	}
+	#### Benduday
+	text = {
+		trigger = {
+			check_variable = { UTI.weekday = 5 }
+		}
+		localization_key = "Benduday"
+	}
+}
+############################################
 # Era Name
 ############################################
 defined_text = {
@@ -15,14 +153,14 @@ defined_text = {
 	#### Republic Era
 	text = {
 		trigger = {
-			has_global_flag = Republic_Era
+			has_UTI_flag = Republic_Era
 		}
 		localization_key = "Republic Era"
 	}
 	#### Empire Era
 	text = {
 		trigger = {
-			has_global_flag = Empire_Era
+			has_UTI_flag = Empire_Era
 		}
 		localization_key = "Empire Era"
 	}
@@ -35,14 +173,14 @@ defined_text = {
 	#### Republic Era
 	text = {
 		trigger = {
-			has_global_flag = Republic_Era
+			has_UTI_flag = Republic_Era
 		}
 		localization_key = "BLABLABLA"
 	}
 	#### Empire Era
 	text = {
 		trigger = {
-			has_global_flag = Empire_Era
+			has_UTI_flag = Empire_Era
 		}
 		localization_key = "BLABLABLA"
 	}
