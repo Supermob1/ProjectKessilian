@@ -216,9 +216,65 @@ country_event = { #Hypocrisy
 		}
 	}
 }
+country_event = { #Ten Years Later
+	id = rep_fakeout.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.11"}
+	title = rep_fakeout.11.t
+	desc = rep_fakeout.11.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
 
-##################################
+	option = { #
+		name = rep_fakeout.11.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #The Thousandth Layer
+	id = rep_fakeout.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.12"}
+	title = rep_fakeout.12.t
+	desc = rep_fakeout.12.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
 
+	option = { #
+		name = rep_fakeout.12.a
+		add_popularity = {
+			ideology = inclusivist
+			popularity = 0.02
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+
+country_event = { #Our Best Chance
+	id = rep_fakeout.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.13"}
+	title = rep_fakeout.13.t
+	desc = rep_fakeout.13.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.13.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
 country_event = { #Clash in the Streets
 	id = rep_fakeout.14
 	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.14"}
@@ -240,6 +296,140 @@ country_event = { #Clash in the Streets
 			ideology = unitist
 			popularity = 0.02
 		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #The Senate's Steps
+	id = rep_fakeout.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.15"}
+	title = rep_fakeout.15.t
+	desc = rep_fakeout.15.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.15.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #The Plan
+	id = rep_fakeout.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.16"}
+	title = rep_fakeout.16.t
+	desc = rep_fakeout.16.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.16.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #Political Paralysis
+	id = rep_fakeout.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.17"}
+	title = rep_fakeout.17.t
+	desc = rep_fakeout.17.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.17.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #The Strike
+	id = rep_fakeout.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.18"}
+	title = rep_fakeout.18.t
+	desc = rep_fakeout.18.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.18.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #Symbolism
+	id = rep_fakeout.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.19"}
+	title = rep_fakeout.19.t
+	desc = rep_fakeout.19.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.19.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #The Aftermath
+	id = rep_fakeout.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.20"}
+	title = rep_fakeout.20.t
+	desc = rep_fakeout.20.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.20.a
+		add_popularity = {
+			ideology = distributionist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = unitist
+			popularity = 0.1
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #A New Mission
+	id = rep_fakeout.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.21"}
+	title = rep_fakeout.21.t
+	desc = rep_fakeout.21.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.21.a
 		ai_chance = { 
 			factor = 25
 		}
