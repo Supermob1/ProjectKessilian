@@ -1,6 +1,40 @@
 ideas = {
 	country = {
 
+		defence_militias = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = defence_militias_idea
+			
+			modifier = {
+				war_support_factor = 0.02
+				conscription = 0.01
+			}
+		}
+		defence_militias_buff = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = defence_militias_idea
+			
+			modifier = {
+				war_support_factor = 0.02
+				conscription = 0.03
+			}
+		}
 		legacy_of_ruusan = {
 			
 			allowed = {
@@ -125,6 +159,42 @@ ideas = {
 				war_support_factor = -0.01
 				political_power_factor = -0.15
 				stability_factor = -0.20
+			}
+		}
+		High_Racial_Tensions = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = High_Racial_Tensions_idea
+			
+			modifier = {
+				war_support_factor = -0.02
+				political_power_factor = -0.15
+				stability_factor = -0.20
+			}
+		}
+		High_Racial_Tensions_reduced = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = High_Racial_Tensions_idea
+			
+			modifier = {
+				war_support_factor = -0.02
+				political_power_factor = -0.15
+				stability_factor = -0.15
 			}
 		}
 		

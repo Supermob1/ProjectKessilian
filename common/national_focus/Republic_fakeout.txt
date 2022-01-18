@@ -414,7 +414,17 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			custom_effect_tooltip = promise_a_future_tooltip
+			add_political_power = 60
+			add_popularity = {
+				ideology = inclusivist
+				popularity = 0.005
+			}
+			add_popularity = {
+				ideology = trade_democrat
+				popularity = 0.005
+			}
+			
         }
     }
 	focus = {
@@ -431,7 +441,8 @@ focus_tree = {
         y = 2
 
         completion_reward = {
-
+			add_political_power = -10
+			country_event = rep_fakeout.15
         }
     }
 	focus = {
@@ -448,7 +459,8 @@ focus_tree = {
         y = 3
 
         completion_reward = {
-
+			add_political_power = -50
+			country_event = rep_fakeout.17
         }
     }
 	focus = {
@@ -465,6 +477,7 @@ focus_tree = {
         y = 4
 
         completion_reward = {
+			country_event = rep_fakeout.19
 
         }
     }
@@ -482,6 +495,8 @@ focus_tree = {
         y = 2
 
         completion_reward = {
+			add_political_power = 30
+			country_event = rep_fakeout.16
 
         }
     }
@@ -499,7 +514,8 @@ focus_tree = {
         y = 3
 
         completion_reward = {
-
+			add_political_power = -10
+			country_event = rep_fakeout.18
         }
     }
 	focus = {
@@ -516,6 +532,7 @@ focus_tree = {
         y = 4
 
         completion_reward = {
+			country_event = rep_fakeout.20
 
         }
     }
@@ -536,7 +553,8 @@ focus_tree = {
         y = 5
 
         completion_reward = {
-
+			add_political_power = 20
+			country_event = rep_fakeout.21
         }
     }
 	
@@ -617,7 +635,9 @@ focus_tree = {
         y = 4 
 
         completion_reward = {
-
+			add_stability = 0.1
+			add_ideas = defence_militias
+			country_event = rep_fakeout.11
         }
     }
 	focus = {
@@ -675,7 +695,12 @@ focus_tree = {
         y = 4
 
         completion_reward = {
-
+			add_stability = -0.05
+			swap_ideas = {
+				remove_idea = widespread_race_war_reduced_more
+				add_idea = High_Racial_Tensions
+			}
+			country_event = rep_fakeout.12
         }
     }
 	focus = {
@@ -695,7 +720,15 @@ focus_tree = {
         y = 5
 
         completion_reward = {
-
+			add_political_power = 30
+			swap_ideas = {
+				remove_idea = High_Racial_Tensions
+				add_idea = High_Racial_Tensions_reduced
+			}
+			swap_ideas = {
+				remove_idea = defence_militias
+				add_idea = defence_militias_buff
+			}
         }
     }
 	focus = {
@@ -715,7 +748,7 @@ focus_tree = {
         y = 6
 
         completion_reward = {
-
+			country_event = rep_fakeout.13
         }
     }
 }
