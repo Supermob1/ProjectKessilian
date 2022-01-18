@@ -7,7 +7,6 @@ on_actions = {
 			set_variable = { UTI.HODday = 1 }
 			set_variable = { UTI.HODmonth = 1 }
 			set_variable = { UTI.HODyear = -24 }
-			set_variable = { UTI.weekday = 1 }
 			set_variable = { UTI.bby = 0 }
 		}
 	}
@@ -16,7 +15,6 @@ on_actions = {
 		effect = {
 			UTI = {
 				add_to_variable = { UTI.HODday = 1 }
-				add_to_variable = { UTI.weekday = 1 }
 				if = {
 					limit = {
 						AND = {
@@ -34,12 +32,6 @@ on_actions = {
 					}
 					add_to_variable = { UTI.HODmonth = 1 }
 					set_variable = { UTI.HODday = 1 }
-				}
-				if = {
-					limit = {
-						check_variable = { UTI.weekday = 6 }
-					}
-					set_variable = { UTI.weekday = 1 }
 				}
 				if = {
 					limit = {
