@@ -1,0 +1,939 @@
+﻿# C.I.S Focus Tree
+# By ZornMauser 
+#################################
+focus_tree = {
+	id = CIS_intro
+  
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CIS
+		}
+	}
+  
+	default = no
+	reset_on_civilwar = no
+  
+	continuous_focus_position = { x = 0 y = 0 }
+
+	focus = { 
+		id = CIS_The_Raxus_Address
+		icon = CIS_the_raxus_address
+		cost = 7
+		
+		prerequisite = {
+		  #no prereq, start of tree
+		}
+		
+		x = 7
+		y = 0
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_A_New_Birth_of_Freedom
+		icon = CIS_A_New_Birth_of_Freedom
+		cost = 7
+		relative_position_id = CIS_The_Raxus_Address
+		prerequisite = {
+		  focus = CIS_The_Raxus_Address
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Opening_of_the_congress
+		icon = CIS_Opening_of_the_congress
+		cost = 7
+		relative_position_id = CIS_A_New_Birth_of_Freedom
+		prerequisite = {
+		  focus = CIS_A_New_Birth_of_Freedom
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_War_of_Words
+		icon = CIS_War_of_Words
+		cost = 7
+		relative_position_id = CIS_Opening_of_the_congress
+		prerequisite = {
+		  focus = CIS_Opening_of_the_congress
+		}
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_An_Open_Hand
+		icon = CIS_An_Open_Hand
+		cost = 7
+		relative_position_id = CIS_War_of_Words
+		prerequisite = {
+		  focus = CIS_War_of_Words
+		}
+		
+		x = -1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Only_the_movement_Brings_Democracy
+		icon = CIS_Only_the_movement_Brings_Democracy
+		cost = 7
+		relative_position_id = CIS_An_Open_Hand
+		prerequisite = {
+		  focus = CIS_An_Open_Hand
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Brushfire_Rebellions
+		icon = CIS_Brushfire_Rebellions
+		cost = 7
+		relative_position_id = CIS_Only_the_movement_Brings_Democracy
+		prerequisite = {
+		  focus = CIS_Only_the_movement_Brings_Democracy
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Against_Blackest_Injustice
+		icon = CIS_Against_Blackest_Injustice
+		cost = 7
+		relative_position_id = CIS_Brushfire_Rebellions
+		prerequisite = {
+		  focus = CIS_Brushfire_Rebellions
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Freedom_for_all_sapient_life
+		icon = CIS_Freedom_for_all_sapient_life
+		cost = 7
+		relative_position_id = CIS_Against_Blackest_Injustice
+		prerequisite = {
+		  focus = CIS_Against_Blackest_Injustice
+		}
+		mutually_exclusive = {
+		  focus = CIS_Independence_now_Democracy_later
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_A_Blade_in_the_Dark
+		icon = CIS_A_Blade_in_the_Dark
+		cost = 7
+		relative_position_id = CIS_War_of_Words
+		prerequisite = {
+		  focus = CIS_War_of_Words
+		}
+		
+		x = 1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Special_Interest_Groups
+		icon = CIS_Special_Interest_Groups
+		cost = 7
+		relative_position_id = CIS_A_Blade_in_the_Dark
+		prerequisite = {
+		  focus = CIS_A_Blade_in_the_Dark
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_A_Kind_Word_and_a_Blaster
+		icon = CIS_A_Kind_Word_and_a_Blaster
+		cost = 7
+		relative_position_id = CIS_Special_Interest_Groups
+		prerequisite = {
+		  focus = CIS_Special_Interest_Groups
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Against_the_Tyrant_Majorities
+		icon = CIS_Against_the_Tyrant_Majorities
+		cost = 7
+		relative_position_id = CIS_A_Kind_Word_and_a_Blaster
+		prerequisite = {
+		  focus = CIS_A_Kind_Word_and_a_Blaster
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Independence_now_Democracy_later
+		icon = CIS_Independence_now_Democracy_later
+		cost = 7
+		relative_position_id = CIS_Against_the_Tyrant_Majorities
+		prerequisite = {
+		  focus = CIS_Against_the_Tyrant_Majorities
+		}
+		mutually_exclusive = {
+			focus = CIS_Freedom_for_all_sapient_life
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Price_of_Liberty
+		icon = CIS_The_Price_of_Liberty
+		cost = 7
+		relative_position_id = CIS_Opening_of_the_congress
+		prerequisite = {
+		  focus = CIS_Opening_of_the_congress
+		}
+		
+		x = 3
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_To_forge_An_Army
+		icon = CIS_To_forge_An_Army
+		cost = 7
+		relative_position_id = CIS_The_Price_of_Liberty
+		prerequisite = {
+		  focus = CIS_The_Price_of_Liberty
+		}
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Hidden_Foundries
+		icon = CIS_Hidden_Foundries
+		cost = 7
+		relative_position_id = CIS_To_forge_An_Army
+		prerequisite = {
+		  focus = CIS_To_forge_An_Army
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Clans_Monster
+		icon = CIS_The_Clans_Monster
+		cost = 7
+		relative_position_id = CIS_Hidden_Foundries
+		prerequisite = {
+		  focus = CIS_Hidden_Foundries
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Flesh_Out_the_Admiralty
+		icon = CIS_Flesh_Out_the_Admiralty
+		cost = 7
+		relative_position_id = CIS_The_Clans_Monster
+		prerequisite = {
+		  focus = CIS_The_Clans_Monster
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Almighty_Credit
+		icon = CIS_The_Almighty_Credit
+		cost = 7
+		relative_position_id = CIS_The_Price_of_Liberty
+		prerequisite = {
+		  focus = CIS_The_Price_of_Liberty
+		}
+		
+		x = 2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Avoice_for_the_money_beings
+		icon = CIS_Avoice_for_the_money_beings
+		cost = 7
+		relative_position_id = CIS_The_Almighty_Credit
+		prerequisite = {
+		  focus = CIS_The_Almighty_Credit
+		}
+		
+		x = -1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Reassure_the_Congress
+		icon = CIS_Reassure_the_Congress
+		cost = 7
+		relative_position_id = CIS_The_Almighty_Credit
+		prerequisite = {
+		  focus = CIS_The_Almighty_Credit
+		}
+		
+		x = 1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_For_Liberty_and_Prosperity
+		icon = CIS_For_Liberty_and_Prosperity
+		cost = 7
+		relative_position_id = CIS_Avoice_for_the_money_beings
+		prerequisite = {
+		  focus = CIS_Avoice_for_the_money_beings
+		}
+		prerequisite = {
+		  focus = CIS_Reassure_the_Congress
+		}
+		
+		x = 1
+		y = 2
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Droid_Army_Realized
+		icon = CIS_The_Droid_Army_Realized
+		cost = 7
+		relative_position_id = CIS_Flesh_Out_the_Admiralty
+		prerequisite = {
+		  focus = CIS_Flesh_Out_the_Admiralty
+		}
+		prerequisite = {
+		  focus = CIS_For_Liberty_and_Prosperity
+		}
+		
+		x = 2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	##########################################################
+	#########################NEW TREE#########################
+	##########################################################
+	focus = { 
+		id = CIS_The_Buisness_of_Revolution
+		icon = CIS_The_Buisness_of_Revolution
+		cost = 7
+		prerequisite = {
+		}
+		allow_branch = {
+			has_global_flag = The_Clone_Wars
+		}
+		
+		x = 23
+		y = 0
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Trade_Federation
+		icon = CIS_The_Trade_Federation
+		cost = 7
+		relative_position_id = CIS_The_Buisness_of_Revolution
+		prerequisite = {
+			focus = CIS_The_Buisness_of_Revolution
+		}
+		
+		x = -5
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Lifeblood_of_the_Confederacy
+		icon = CIS_Lifeblood_of_the_Confederacy
+		cost = 7
+		relative_position_id = CIS_The_Trade_Federation
+		prerequisite = {
+			focus = CIS_The_Trade_Federation
+		}
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Free_trade_Propaganda
+		icon = CIS_Free_trade_Propaganda
+		cost = 7
+		relative_position_id = CIS_Lifeblood_of_the_Confederacy
+		prerequisite = {
+			focus = CIS_Lifeblood_of_the_Confederacy
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Letters_of_marque
+		icon = CIS_Letters_of_marque
+		cost = 7
+		relative_position_id = CIS_Free_trade_Propaganda
+		prerequisite = {
+			focus = CIS_Free_trade_Propaganda
+		}
+		
+		x = -1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_If_youre_armed_were_merchants
+		icon = CIS_If_youre_armed_were_merchants
+		cost = 7
+		relative_position_id = CIS_Letters_of_marque
+		prerequisite = {
+			focus = CIS_Letters_of_marque
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Masters_of_the_Spacelanes
+		icon = CIS_Masters_of_the_Spacelanes
+		cost = 7
+		relative_position_id = CIS_If_youre_armed_were_merchants
+		prerequisite = {
+			focus = CIS_If_youre_armed_were_merchants
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Sit_at_the_Cartels_Table
+		icon = CIS_Sit_at_the_Cartels_Table
+		cost = 7
+		relative_position_id = CIS_Free_trade_Propaganda
+		prerequisite = {
+			focus = CIS_Free_trade_Propaganda
+		}
+		
+		x = 1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Shadow_Syndicates
+		icon = CIS_Shadow_Syndicates
+		cost = 7
+		relative_position_id = CIS_Sit_at_the_Cartels_Table
+		prerequisite = {
+			focus = CIS_Sit_at_the_Cartels_Table
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_There_is_nothing_you_cant_buy
+		icon = CIS_There_is_nothing_you_cant_buy
+		cost = 7
+		relative_position_id = CIS_Shadow_Syndicates
+		prerequisite = {
+			focus = CIS_Shadow_Syndicates
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Subsidize_new_spaceports
+		icon = CIS_Subsidize_new_spaceports
+		cost = 7
+		relative_position_id = CIS_The_Trade_Federation
+		prerequisite = {
+			focus = CIS_The_Trade_Federation
+		}
+		
+		x = 1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_A_New_Generation_of_Mappers
+		icon = CIS_A_New_Generation_of_Mappers
+		cost = 7
+		relative_position_id = CIS_Subsidize_new_spaceports
+		prerequisite = {
+			focus = CIS_Subsidize_new_spaceports
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Carve_Out_New_Hyperlanes
+		icon = CIS_Carve_Out_New_Hyperlanes
+		cost = 7
+		relative_position_id = CIS_A_New_Generation_of_Mappers
+		prerequisite = {
+			focus = CIS_A_New_Generation_of_Mappers
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Everything_to_Everywhere
+		icon = CIS_Everything_to_Everywhere
+		cost = 7
+		relative_position_id = CIS_Carve_Out_New_Hyperlanes
+		prerequisite = {
+			focus = CIS_Carve_Out_New_Hyperlanes
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Techno_Union
+		icon = CIS_The_Techno_Union
+		cost = 7
+		relative_position_id = CIS_The_Buisness_of_Revolution
+		prerequisite = {
+			focus = CIS_The_Buisness_of_Revolution
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Freedoms_Forges
+		icon = CIS_Freedoms_Forges
+		cost = 7
+		relative_position_id = CIS_The_Techno_Union
+		prerequisite = {
+			focus = CIS_The_Techno_Union
+		}
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Industry_is_All
+		icon = CIS_Industry_is_All
+		cost = 7
+		relative_position_id = CIS_The_Techno_Union
+		prerequisite = {
+			focus = CIS_The_Techno_Union
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_No_World_Left_Behind
+		icon = CIS_No_World_Left_Behind
+		cost = 7
+		relative_position_id = CIS_Freedoms_Forges
+		prerequisite = {
+			focus = CIS_Freedoms_Forges
+		}
+		prerequisite = {
+			focus = CIS_Industry_is_All
+		}
+		
+		x = 1
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Colonies_for_the_Producers
+		icon = CIS_Colonies_for_the_Producers
+		cost = 7
+		relative_position_id = CIS_No_World_Left_Behind
+		prerequisite = {
+			focus = CIS_No_World_Left_Behind
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Live_For_the_Union_Live_For_Liberty
+		icon = CIS_Live_For_the_Union_Live_For_Liberty
+		cost = 7
+		relative_position_id = CIS_Colonies_for_the_Producers
+		prerequisite = {
+			focus = CIS_Colonies_for_the_Producers
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Boost_Production_Quotas
+		icon = CIS_Boost_Production_Quotas
+		cost = 7
+		relative_position_id = CIS_The_Techno_Union
+		prerequisite = {
+			focus = CIS_The_Techno_Union
+		}
+		
+		x = 2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Your_Fight_Is_In_The_Factory
+		icon = CIS_Your_Fight_Is_In_The_Factory
+		cost = 7
+		relative_position_id = CIS_Boost_Production_Quotas
+		prerequisite = {
+			focus = CIS_Boost_Production_Quotas
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_And_Shirking_Is_Treason
+		icon = CIS_And_Shirking_Is_Treason
+		cost = 7
+		relative_position_id = CIS_Your_Fight_Is_In_The_Factory
+		prerequisite = {
+			focus = CIS_Your_Fight_Is_In_The_Factory
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Our_Work_Will_Set_Us_Free
+		icon = CIS_Our_Work_Will_Set_Us_Free
+		cost = 7
+		relative_position_id = CIS_And_Shirking_Is_Treason
+		prerequisite = {
+			focus = CIS_And_Shirking_Is_Treason
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_All_Our_Corporate_Partners
+		icon = CIS_All_Our_Corporate_Partners
+		cost = 7
+		relative_position_id = CIS_The_Buisness_of_Revolution
+		prerequisite = {
+			focus = CIS_The_Buisness_of_Revolution
+		}
+		
+		x = 6
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Harvests_From_The_Guild
+		icon = CIS_Harvests_From_The_Guild
+		cost = 7
+		relative_position_id = CIS_All_Our_Corporate_Partners
+		prerequisite = {
+			focus = CIS_All_Our_Corporate_Partners
+		}
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Fuel_For_The_Forges
+		icon = CIS_Fuel_For_The_Forges
+		cost = 7
+		relative_position_id = CIS_Harvests_From_The_Guild
+		prerequisite = {
+			focus = CIS_Harvests_From_The_Guild
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Questions_Of_Labor
+		icon = CIS_Questions_Of_Labor
+		cost = 7
+		relative_position_id = CIS_Fuel_For_The_Forges
+		prerequisite = {
+			focus = CIS_Fuel_For_The_Forges
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Cartel_is_Our_Voice
+		icon = CIS_The_Cartel_is_Our_Voice
+		cost = 7
+		relative_position_id = CIS_All_Our_Corporate_Partners
+		prerequisite = {
+			focus = CIS_All_Our_Corporate_Partners
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Shadowfeed_Race
+		icon = CIS_The_Shadowfeed_Race
+		cost = 7
+		relative_position_id = CIS_The_Cartel_is_Our_Voice
+		prerequisite = {
+			focus = CIS_The_Cartel_is_Our_Voice
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Infiltrating_HNN
+		icon = CIS_Infiltrating_HNN
+		cost = 7
+		relative_position_id = CIS_The_Shadowfeed_Race
+		prerequisite = {
+			focus = CIS_The_Shadowfeed_Race
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_Open_Their_Eyes
+		icon = CIS_Open_Their_Eyes
+		cost = 7
+		relative_position_id = CIS_Infiltrating_HNN
+		prerequisite = {
+			focus = CIS_Infiltrating_HNN
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_First_Casualty
+		icon = CIS_The_First_Casualty
+		cost = 7
+		relative_position_id = CIS_Open_Their_Eyes
+		prerequisite = {
+			focus = CIS_Open_Their_Eyes
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Clans_Generosity
+		icon = CIS_The_Clans_Generosity
+		cost = 7
+		relative_position_id = CIS_All_Our_Corporate_Partners
+		prerequisite = {
+			focus = CIS_All_Our_Corporate_Partners
+		}
+		
+		x = 2
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Alliances_Largesse
+		icon = CIS_The_Alliances_Largesse
+		cost = 7
+		relative_position_id = CIS_The_Clans_Generosity
+		prerequisite = {
+			focus = CIS_The_Clans_Generosity
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+	focus = { 
+		id = CIS_The_Caucus_Friendship
+		icon = CIS_The_Caucus_Friendship
+		cost = 7
+		relative_position_id = CIS_The_Alliances_Largesse
+		prerequisite = {
+			focus = CIS_The_Alliances_Largesse
+		}
+		
+		x = 0
+		y = 1
+		
+		completion_reward = {
+		}
+	}
+}
