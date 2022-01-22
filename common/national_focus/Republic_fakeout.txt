@@ -17,7 +17,7 @@ focus_tree = {
 	default = no
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 50 y = 2500 }
+	continuous_focus_position = { x = 0 y = 0 }
 	
 	#### REPUBLIC FAKEOUT #### ### WIP###
 
@@ -97,8 +97,8 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = but_we_are_threatened_once_more_focus_tree
 		}
-
-        x = 6
+		relative_position_id = REP_but_we_are_threatened_once_more
+        x = -1
         y = 1
 
         completion_reward = {
@@ -110,13 +110,14 @@ focus_tree = {
         icon = REP_the_weakness_of_ruusan
         cost = 4
         cancelable = no
+		relative_position_id = REP_and_we_shall_not_stand_idle
         
 		prerequisite = {
            focus = REP_and_we_shall_not_stand_idle
         }
 
-        x = 4
-        y = 2
+        x = -2
+        y = 1
 
         completion_reward = {
         }
@@ -126,13 +127,14 @@ focus_tree = {
         icon = REP_encourage_local_militarisation
         cost = 4
         cancelable = no
+		relative_position_id = REP_the_weakness_of_ruusan
         
 		prerequisite = {
            focus = REP_the_weakness_of_ruusan
         }
 
-        x = 4
-        y = 3
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -143,13 +145,14 @@ focus_tree = {
         icon = REP_the_war_on_pacifism
         cost = 4
         cancelable = no
+		relative_position_id = REP_encourage_local_militarisation
         
 		prerequisite = {
            focus = REP_encourage_local_militarisation
         }
 
-        x = 4
-        y = 4
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -160,13 +163,14 @@ focus_tree = {
         icon = REP_anti_separatist_propaganda
         cost = 4
         cancelable = no
+		relative_position_id = REP_and_we_shall_not_stand_idle
         
 		prerequisite = {
            focus = REP_and_we_shall_not_stand_idle
         }
 
-        x = 6
-        y = 2
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -177,13 +181,14 @@ focus_tree = {
         icon = REP_fight_confederate_terrorism
         cost = 4
         cancelable = no
+		relative_position_id = REP_anti_separatist_propaganda
         
 		prerequisite = {
            focus = REP_anti_separatist_propaganda
         }
 
-        x = 6
-        y = 3
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -194,13 +199,14 @@ focus_tree = {
         icon = REP_embargoes_in_all_but_name
         cost = 4
         cancelable = no
+		relative_position_id = REP_fight_confederate_terrorism
         
 		prerequisite = {
            focus = REP_fight_confederate_terrorism
         }
 
-        x = 6
-        y = 4
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -211,6 +217,7 @@ focus_tree = {
         icon = REP_mobilise_the_jedi
         cost = 4
         cancelable = no
+		relative_position_id = REP_the_war_on_pacifism
         
 		prerequisite = {
            focus = REP_the_war_on_pacifism
@@ -219,8 +226,8 @@ focus_tree = {
             focus = REP_embargoes_in_all_but_name
          }
 
-        x = 5
-        y = 5
+        x = 1
+        y = 1
 
         completion_reward = {
 
@@ -231,6 +238,7 @@ focus_tree = {
         icon = REP_and_we_shall_give_up_no_ground
         cost = 4
         cancelable = no
+		relative_position_id = REP_but_we_are_threatened_once_more
         
 		prerequisite = {
            focus = REP_but_we_are_threatened_once_more
@@ -239,7 +247,7 @@ focus_tree = {
 			has_country_flag = but_we_are_threatened_once_more_focus_tree
 		}
 
-        x = 8
+        x = 1
         y = 1
 
         completion_reward = {
@@ -251,13 +259,14 @@ focus_tree = {
         icon = REP_in_the_wider_galaxy
         cost = 4
         cancelable = no
+		relative_position_id = REP_and_we_shall_give_up_no_ground
         
 		prerequisite = {
            focus = REP_and_we_shall_give_up_no_ground
         }
 
-        x = 8
-        y = 2
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -268,13 +277,14 @@ focus_tree = {
         icon = REP_the_loyal_of_the_rim
         cost = 4
         cancelable = no
+		relative_position_id = REP_in_the_wider_galaxy
         
 		prerequisite = {
            focus = REP_in_the_wider_galaxy
         }
 
-        x = 8
-        y = 3
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -285,13 +295,14 @@ focus_tree = {
         icon = REP_the_shield_against_corporations
         cost = 4
         cancelable = no
+		relative_position_id = REP_the_loyal_of_the_rim
         
 		prerequisite = {
            focus = REP_the_loyal_of_the_rim
         }
 
-        x = 8
-        y = 4
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -302,13 +313,14 @@ focus_tree = {
         icon = REP_or_at_home
         cost = 4
         cancelable = no
+		relative_position_id = REP_and_we_shall_give_up_no_ground
         
 		prerequisite = {
            focus = REP_and_we_shall_give_up_no_ground
         }
 
-        x = 10
-        y = 2
+        x = 2
+        y = 1
 
         completion_reward = {
 
@@ -319,13 +331,14 @@ focus_tree = {
         icon = REP_the_loyal_of_the_core
         cost = 4
         cancelable = no
+		relative_position_id = REP_or_at_home
         
 		prerequisite = {
            focus = REP_or_at_home
         }
 
-        x = 10
-        y = 3
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -336,13 +349,14 @@ focus_tree = {
         icon = REP_the_brewing_race_war
         cost = 4
         cancelable = no
+		relative_position_id = REP_the_loyal_of_the_core
         
 		prerequisite = {
            focus = REP_the_loyal_of_the_core
         }
 
-        x = 10
-        y = 4
+        x = 0
+        y = 1
 
         completion_reward = {
 
@@ -353,6 +367,7 @@ focus_tree = {
         icon = REP_the_blue_scare
         cost = 4
         cancelable = no
+		relative_position_id = REP_the_shield_against_corporations
         
 		prerequisite = {
            focus = REP_the_shield_against_corporations
@@ -361,8 +376,8 @@ focus_tree = {
             focus = REP_the_brewing_race_war
          }
 
-        x = 9
-        y = 5
+        x = 1
+        y = 1
 
         completion_reward = {
 
@@ -373,6 +388,7 @@ focus_tree = {
         icon = REP_and_we_shall_last_another_thousand
         cost = 4
         cancelable = no
+		relative_position_id = REP_mobilise_the_jedi
         
 		prerequisite = {
            focus = REP_mobilise_the_jedi
@@ -381,8 +397,8 @@ focus_tree = {
             focus = REP_the_blue_scare
          }
 
-        x = 7
-        y = 6
+        x = 2
+        y = 1
 
         completion_reward = {
 
