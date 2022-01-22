@@ -485,38 +485,6 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
-	
-	SpriteType = {
-		name = "REP_but_we_are_threatened_once_more_shine"
-		texturefile = "gfx/interface/goals/REP_but_we_are_threatened_once_more.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/REP_but_we_are_threatened_once_more.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-
-		animation = {
-			animationmaskfile = "gfx/interface/goals/REP_but_we_are_threatened_once_more.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
 
 	SpriteType = {
 		name = "REP_consult_the_peacekeepers_shine"

@@ -200,7 +200,7 @@ guiTypes = {
 					
 					background = {
 						name = "Background"
-						quadTextureSprite =""
+						quadTextureSprite ="GFX_tiled_window_thin_border2"
 					}
 					
 					instantTextboxType = {
@@ -209,7 +209,7 @@ guiTypes = {
 						textureFile = ""
 						font = "hoi_36header"
 						borderSize = {x = 0 y = 0}
-						text = ""
+						text = "CONTINUOUS_FOCUS_TREE_HEADER"
 						maxWidth = 350
 						maxHeight = 20
 						format = left
@@ -221,7 +221,7 @@ guiTypes = {
 						textureFile = ""
 						font = "hoi_16mbs"
 						borderSize = {x = 0 y = 0}
-						text = ""
+						text = "CONTINUOUS_FOCUS_TREE_DESC"
 						maxWidth = 300
 						maxHeight = 100
 					}
@@ -234,17 +234,17 @@ guiTypes = {
 
 						background = {
 							name = "Background"
-							quadTextureSprite =""
+							quadTextureSprite ="GFX_mini_tooltip"
 						}
 						
 						instantTextboxType = {
 							name = "continuous_focus_progress"
-							position = { x = 55550 y = 0 }
+							position = { x = 20 y = 10 }
 							textureFile = ""
 							font = "hoi_18mbs"
 							borderSize = { x = 0 y = 0 }
 							text = ""
-							maxWidth = 200
+							maxWidth = 360
 							maxHeight = 100
 							format = center
 						}
@@ -268,7 +268,7 @@ guiTypes = {
 						
 						background = {
 							name = "Background"
-							spriteType =""
+							spriteType ="GFX_tiled_paper_bg2"
 							alwaystransparent = yes
 						} 
 						
@@ -522,7 +522,7 @@ guiTypes = {
 
 		iconType = {
 			name = "checked_icon"
-			spriteType = ""
+			spriteType = "GFX_cont_focus_check_icon"
 #			frame = 1
 		}
 	}
