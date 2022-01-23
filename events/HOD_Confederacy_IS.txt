@@ -11,7 +11,7 @@ country_event = { # The Raxus Address
 	title = confederacy.1.t
 	desc = confederacy.1.d
 	picture = GFX_news_event_dooku_speech
-	
+	major = yes
 	is_triggered_only = yes
 	
 	fire_only_once = no
@@ -29,6 +29,20 @@ country_event = { # The Raxus Address
 		name = confederacy.1.b
 		trigger = {
 			original_tag = REP
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { # The Republic continues to crumble.
+		name = confederacy.1.c
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = REP
+					original_tag = CIS
+				}
+			}
 		}
 		ai_chance = { 
 			factor = 25	

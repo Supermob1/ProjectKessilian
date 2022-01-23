@@ -2,11 +2,11 @@
 
 oob = "garrison_generic"
 
-set_research_slots = 
+set_research_slots = 2
 
-set_stability = 0.
-set_convoys = 
-set_war_support = 0.
+set_stability = 0.1
+set_convoys = 100 
+set_war_support = 0.02 
 
 ######CHARACTERS######
 recruit_character = DWA_montross
@@ -16,23 +16,23 @@ set_technology = {
 }
 
 set_popularities = {
-		new_order = 0
+		new_order = 17
 		dark_side = 0
-		akaanadocrat = 1
+		akaanadocrat = 39
 		unitist = 10
 		corist = 15
 		distributionist =  0
 		corporate_consortium = 4
 		trade_democrat = 13
 		ruusanist = 1
-		inclusivist = 39
-		light_side = 17
+		inclusivist = 1
+		light_side = 0
 	}
 add_ideas = {
 	no_conscription
 }
 set_politics = {
-	ruling_party = 
+	ruling_party = akaanadocrat
 	last_election = "10.15.6"
 	election_frequency = 48
 	elections_allowed = no
@@ -43,7 +43,7 @@ create_country_leader = {
 	desc = ""
 	picture = ""
 	expire = "1965.1.1"
-	ideology = 
+	ideology = akaanadocrat_subtype
 	traits = {  }
 }
 
