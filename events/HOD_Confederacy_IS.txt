@@ -1,0 +1,37 @@
+﻿###########################
+# Death Watch Events
+###########################
+
+add_namespace = confederacy
+
+
+country_event = { # The Raxus Address
+	id = confederacy.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event confederacy.1"}
+	title = confederacy.1.t
+	desc = confederacy.1.d
+	picture = GFX_news_event_dooku_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { # For freedom, for the future!
+		name = confederacy.1.a
+		trigger = {
+			original_tag = CIS
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { # Damned Separatists!
+		name = confederacy.1.b
+		trigger = {
+			original_tag = REP
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
