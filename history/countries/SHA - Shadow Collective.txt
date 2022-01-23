@@ -2,11 +2,11 @@
 
 oob = "garrison_generic"
 
-set_research_slots = 
+set_research_slots = 2
 
-set_stability = 0.
-set_convoys = 
-set_war_support = 0.
+set_stability = 0.1
+set_convoys = 100 
+set_war_support = 0.02 
 
 set_technology = {
 	
@@ -14,33 +14,33 @@ set_technology = {
 
 set_popularities = {
 		new_order = 0
-		dark_side = 0
-		akaanadocrat = 1
-		unitist = 10
-		corist = 15
+		dark_side = 100
+		akaanadocrat = 0
+		unitist = 0
+		corist = 0
 		distributionist =  0
-		corporate_consortium = 4
-		trade_democrat = 13
-		ruusanist = 1
-		inclusivist = 39
-		light_side = 17
+		corporate_consortium = 0
+		trade_democrat = 0
+		ruusanist = 0
+		inclusivist = 0
+		light_side = 0
 	}
 add_ideas = {
 	no_conscription
 }
 set_politics = {
-	ruling_party = 
+	ruling_party = dark_side
 	last_election = "10.15.6"
 	election_frequency = 48
 	elections_allowed = no
 	}
 
 create_country_leader = {
-	name = ""
+	name = "Maul"
 	desc = ""
 	picture = ""
 	expire = "1965.1.1"
-	ideology = 
+	ideology = dark_side_subtype
 	traits = {  }
 }
 
