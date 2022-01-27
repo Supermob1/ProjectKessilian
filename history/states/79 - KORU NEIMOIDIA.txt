@@ -1,18 +1,26 @@
+
 state={
 	id=79
 	name="STATE_79"
-	history = {
+	resources={
+		credits=1.000
+	}
+
+	history={
 		buildings = {
 			infrastructure = 1
 
-				#naval_base  = 1
 		}
 		owner = TDF
 		add_core_of = TDF
+
 	}
+
 	provinces={
-		183 349 487 522 1708 1709 1710 1713 1714 1717 1719 1720 1721 1723 1726 1727 1732 1735 1737 3483 3159 3163 3158 3481 3477 3474 
+		183 349 487 522 1708 1709 1710 1713 1714 1717 1719 1720 1721 1723 1726 1727 1732 1735 1737 3158 3159 3163 3468 3477 3479 3481 3483 
 	}
 	manpower=1500000
-	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
+	buildings_max_level_factor=1.000
+	state_category=capital_sector
+	local_supplies=0.000
 }
