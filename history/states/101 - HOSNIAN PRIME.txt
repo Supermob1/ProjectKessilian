@@ -1,21 +1,29 @@
+
 state={
 	id=101
 	name="STATE_101"
-	history = {
+	resources={
+		credits=1.000
+	}
+
+	history={
 		buildings = {
 			infrastructure = 1
 
-				#naval_base  = 1
 		}
 		owner = REP
 		add_core_of = REP
 		victory_points = {
-		2022 3
+			2022 3 
 		}
+
 	}
+
 	provinces={
-		8 103 268 538 2010 2011 2014 2015 2018 2019 2021 2022 2024 2027 2028 2029 2030 2032 3093 3094 3096 3446 
+		8 103 268 538 2010 2011 2014 2015 2018 2019 2021 2022 2024 2027 2028 2029 2030 2032 3093 3094 3096 
 	}
 	manpower=10000000
-	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
+	buildings_max_level_factor=1.000
+	state_category=capital_sector
+	local_supplies=0.000
 }

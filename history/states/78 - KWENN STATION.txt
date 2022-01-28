@@ -1,18 +1,26 @@
+
 state={
 	id=78
 	name="STATE_78"
-	history = {
+	resources={
+		credits=1.000
+	}
+
+	history={
 		buildings = {
 			infrastructure = 1
 
-				#naval_base  = 1
 		}
 		owner = GKJ
 		add_core_of = GKJ
+
 	}
+
 	provinces={
-		6 1689 1690 1694 1696 1697 1701 1705 3168 3169 3167 3485 3486 3471
+		6 1689 1690 1694 1696 1697 1701 1705 3167 3168 3169 
 	}
 	manpower=424
-	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
+	buildings_max_level_factor=1.000
+	state_category=capital_sector
+	local_supplies=0.000
 }
