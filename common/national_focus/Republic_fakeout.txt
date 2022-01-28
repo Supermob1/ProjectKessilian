@@ -102,7 +102,9 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			custom_effect_tooltip = and_we_shall_not_stand_still_tooltip
+			country_event = rep_fakeout.22
+			add_political_power = 25
         }
     }
 	focus = {
@@ -120,6 +122,12 @@ focus_tree = {
         y = 1
 
         completion_reward = {
+			add_political_power = -30
+			country_event = rep_fakeout.23
+			swap_ideas = {
+				remove_idea = legacy_of_ruusan
+				add_idea = legacy_of_ruusan_improved
+			}
         }
     }
 	focus = {
@@ -137,7 +145,12 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = -50
+			country_event = rep_fakeout.24
+			swap_ideas = {
+				remove_idea = legacy_of_ruusan_improved
+				add_idea = legacy_of_ruusan_improved_again
+			}
         }
     }
 	focus = {
@@ -155,6 +168,16 @@ focus_tree = {
         y = 1
 
         completion_reward = {
+			add_political_power = 25
+			country_event = rep_fakeout.25
+			swap_ideas = {
+				remove_idea = legacy_of_ruusan_improved
+				add_idea = legacy_of_ruusan_improved_again_again
+			}
+			swap_ideas = {
+				remove_idea = Republic_Militias
+				add_idea = Republic_Militias_improved
+			}
 
         }
     }
@@ -173,7 +196,8 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = 30
+			country_event = rep_fakeout.26
         }
     }
 	focus = {
@@ -191,7 +215,9 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = 25
+			add_stability = 0.01
+			country_event = rep_fakeout.27
         }
     }
 	focus = {
@@ -209,7 +235,9 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = 25
+			add_stability = -0.05
+			country_event = rep_fakeout.28
         }
     }
 	focus = {
@@ -230,7 +258,12 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = -65
+			country_event = rep_fakeout.29
+			swap_ideas = {
+				remove_idea = legacy_of_ruusan_improved_again_again
+				add_idea = legacy_of_ruusan_jedi
+			}
         }
     }
     focus = {
@@ -251,7 +284,13 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			custom_effect_tooltip = and_we_shall_give_up_no_ground_tooltip
+			country_event = rep_fakeout.30
+			swap_ideas = {
+				remove_idea = widespread_race_war
+				add_idea = widespread_race_war_no_ground
+			}
+			add_political_power = 25
         }
     }
     focus = {
@@ -269,7 +308,23 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = -45
+			country_event = rep_fakeout.31
+			if = {
+				limit = {
+					has_ideas = widespread_race_war_brewing
+				}
+				swap_ideas = {
+					remove_idea = widespread_race_war_brewing
+					add_idea = widespread_race_war_brewing_wider_galaxy
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = widespread_race_war_no_ground
+					add_idea = widespread_race_war_wider_galaxy
+				}
+			}
         }
     }
     focus = {
@@ -287,6 +342,8 @@ focus_tree = {
         y = 1
 
         completion_reward = {
+			add_political_power = -60
+			country_event = rep_fakeout.32
 
         }
     }
@@ -305,7 +362,7 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			country_event = rep_fakeout.33
         }
     }
     focus = {
@@ -323,6 +380,8 @@ focus_tree = {
         y = 1
 
         completion_reward = {
+			add_political_power = -10
+			country_event = rep_fakeout.34
 
         }
     }
@@ -341,7 +400,8 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = 60
+			country_event = rep_fakeout.35
         }
     }
     focus = {
@@ -359,7 +419,22 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			country_event = rep_fakeout.36
+			if = {
+				limit = {
+					has_ideas = widespread_race_war_wider_galaxy
+				}
+				swap_ideas = {
+					remove_idea = widespread_race_war_wider_galaxy
+					add_idea = widespread_race_war_wider_galaxy_brewing
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = widespread_race_war_no_ground
+					add_idea = widespread_race_war_brewing
+				}
+			}
         }
     }
     focus = {
@@ -380,7 +455,16 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			add_political_power = 100
+			if = {
+				limit = {
+					has_country_flag = purged_corpos
+				}
+				country_event = rep_fakeout.39
+			}
+			else = {
+				country_event = rep_fakeout.37
+			}
         }
     }
     focus = {
@@ -401,7 +485,7 @@ focus_tree = {
         y = 1
 
         completion_reward = {
-
+			country_event = rep_fakeout.40
         }
     }
 	focus = {

@@ -1,22 +1,26 @@
+
 state={
 	id=236
 	name="STATE_236"
-	history = {
+	resources={
+		credits=1.000
+	}
+
+	history={
 		buildings = {
-			infrastructure = 1 
+			infrastructure = 1
 
 		}
 		owner = CIS
 		add_core_of = CIS
+
 	}
-	state_category = capital_sector
-    resources = {
-        credits = 1
-    }
+
 	provinces={
-		9032 9033 9034 9048 9052 9053 9059 9060 9072 9080 9089 9090 9091 9096 9101 9116 9117 9121 9129 9130 9146 9147 9161 9162 9168 9178 9194 9195 9203 9204 9210 9225 9233 9240 9248 9255 9263 10456 10462 10466 10765 10766 10770 
+		9032 9033 9034 9048 9052 9053 9059 9060 9072 9080 9089 9090 9091 9096 9101 9116 9117 9121 9129 9130 9146 9147 9161 9162 9168 9178 9194 9195 9203 9204 9210 9225 9233 9240 9248 9255 9263 10456 10466 10765 10766 10770 
 	}
 	manpower=0
 	buildings_max_level_factor=1.000
+	state_category=capital_sector
 	local_supplies=0.000
 }

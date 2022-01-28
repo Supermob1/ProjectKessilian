@@ -1,22 +1,26 @@
+
 state={
 	id=216
 	name="STATE_216"
-	history = {
+	resources={
+		credits=1.000
+	}
+
+	history={
 		buildings = {
-			infrastructure = 1 
+			infrastructure = 1
 
 		}
 		owner = CIS
 		add_core_of = CIS
+
 	}
-	state_category = capital_sector
-    resources = {
-        credits = 1
-    }
+
 	provinces={
-		3848 10471 10472 10678 
+		3848 9563 9566 9567 9570 9573 9576 9577 9578 10471 10472 10678 
 	}
 	manpower=0
 	buildings_max_level_factor=1.000
+	state_category=capital_sector
 	local_supplies=0.000
 }
