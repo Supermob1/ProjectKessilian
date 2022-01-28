@@ -435,6 +435,385 @@ country_event = { #A New Mission
 		}
 	}
 }
+country_event = { #
+	id = rep_fakeout.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.22"}
+	title = rep_fakeout.22.t
+	desc = rep_fakeout.22.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.22.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.23"}
+	title = rep_fakeout.23.t
+	desc = rep_fakeout.23.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.23.a
+		add_popularity = {
+			ideology = ruusanist
+			popularity = -0.02
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.24"}
+	title = rep_fakeout.24.t
+	desc = rep_fakeout.24.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.24.a
+		add_ideas = Republic_Militias
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.25"}
+	title = rep_fakeout.25.t
+	desc = rep_fakeout.25.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.25.a
+		add_popularity = {
+			ideology = ruusanist
+			popularity = -0.01
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.26"}
+	title = rep_fakeout.26.t
+	desc = rep_fakeout.26.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.26.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.27"}
+	title = rep_fakeout.27.t
+	desc = rep_fakeout.27.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.27.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.28"}
+	title = rep_fakeout.28.t
+	desc = rep_fakeout.28.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.28.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.29"}
+	title = rep_fakeout.29.t
+	desc = rep_fakeout.29.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.29.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.30"}
+	title = rep_fakeout.30.t
+	desc = rep_fakeout.30.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.30.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.31"}
+	title = rep_fakeout.31.t
+	desc = rep_fakeout.31.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.31.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.32"}
+	title = rep_fakeout.32.t
+	desc = rep_fakeout.32.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.32.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.33"}
+	title = rep_fakeout.33.t
+	desc = rep_fakeout.33.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.33.a
+		add_popularity = {
+			ideology = unitist
+			popularity = 0.01
+		}
+		add_popularity = {
+			ideology = distributionist
+			popularity = 0.02
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+	option = { #
+		name = rep_fakeout.33.b
+		add_political_power = -50
+		set_country_flag = purged_corpos
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.34"}
+	title = rep_fakeout.34.t
+	desc = rep_fakeout.34.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.34.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.35"}
+	title = rep_fakeout.35.t
+	desc = rep_fakeout.35.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.35.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.36"}
+	title = rep_fakeout.36.t
+	desc = rep_fakeout.36.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.36.a
+		add_popularity = {
+			ideology = distributionist
+			popularity = 0.02
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.37"}
+	title = rep_fakeout.37.t
+	desc = rep_fakeout.37.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.37.a
+		hidden_effect = {
+			country_event = { id = rep_fakeout.38 days = 2 }
+		}
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #The Oppressed of the Outer Rim awake
+	id = rep_fakeout.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.38"}
+	title = rep_fakeout.38.t
+	desc = rep_fakeout.38.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.38.a
+		add_popularity = {
+			ideology = distributionist
+			popularity = 0.02
+		}
+		set_country_flag = ORC_Rep_Start
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.39"}
+	title = rep_fakeout.39.t
+	desc = rep_fakeout.39.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.39.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
+country_event = { #
+	id = rep_fakeout.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_fakeout.40"}
+	title = rep_fakeout.40.t
+	desc = rep_fakeout.40.d
+	picture = GFX_country_event_seperatists_killed
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_fakeout.40.a
+		ai_chance = { 
+			factor = 25
+		}
+	}
+}
 
 country_event = { #The State of the Galaxy 
 	id = hidden_rep.1

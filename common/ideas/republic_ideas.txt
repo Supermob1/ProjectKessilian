@@ -1,6 +1,38 @@
 ideas = {
 	country = {
 
+		Republic_Militias = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = Republic_Militias_idea
+			
+			modifier = {
+				conscription = 0.002
+			}
+		}
+		Republic_Militias_improved = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = Republic_Militias_idea
+			
+			modifier = {
+				conscription = 0.003
+			}
+		}
 		defence_militias = {
 			
 			allowed = {
@@ -50,6 +82,78 @@ ideas = {
 			modifier = {
 				war_support_factor = -1
 				consumer_goods_factor = 0.7
+				stability_factor = 0.2
+			}
+		}
+		legacy_of_ruusan_improved = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = legacy_of_ruusan_idea
+			
+			modifier = {
+				war_support_factor = -0.95
+				consumer_goods_factor = 0.65
+				stability_factor = 0.2
+			}
+		}
+		legacy_of_ruusan_improved_again = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = legacy_of_ruusan_idea
+			
+			modifier = {
+				war_support_factor = -0.90
+				consumer_goods_factor = 0.6
+				stability_factor = 0.2
+			}
+		}
+		legacy_of_ruusan_improved_again_again = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = legacy_of_ruusan_idea
+			
+			modifier = {
+				war_support_factor = -0.85
+				consumer_goods_factor = 0.55
+				stability_factor = 0.2
+			}
+		}
+		legacy_of_ruusan_jedi = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = legacy_of_ruusan_idea
+			
+			modifier = {
+				war_support_factor = -0.8
+				consumer_goods_factor = 0.55
 				stability_factor = 0.2
 			}
 		}
@@ -105,6 +209,96 @@ ideas = {
 				war_support_factor = -0.02
 				political_power_factor = -0.15
 				stability_factor = -0.25
+			}
+		}
+		widespread_race_war_no_ground = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = -0.01
+				political_power_factor = -0.15
+				stability_factor = -0.25
+			}
+		}
+		widespread_race_war_brewing = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = 0.01
+				political_power_factor = -0.15
+				stability_factor = -0.30
+			}
+		}
+		widespread_race_war_brewing_wider_galaxy = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = 0.01
+				political_power_factor = -0.15
+				stability_factor = -0.28
+			}
+		}
+		widespread_race_war_wider_galaxy = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = -0.01
+				political_power_factor = -0.15
+				stability_factor = -0.27
+			}
+		}
+		widespread_race_war_wider_galaxy_brewing = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = widespread_race_war_idea
+			
+			modifier = {
+				war_support_factor = 0.01
+				political_power_factor = -0.15
+				stability_factor = -0.30
 			}
 		}
 		widespread_race_war_threat_1 = {
