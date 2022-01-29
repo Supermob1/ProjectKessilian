@@ -1,21 +1,29 @@
+
 state={
 	id=123
 	name="STATE_123"
-	history = {
+	resources={
+		credits=1.000
+	}
+
+	history={
 		buildings = {
 			infrastructure = 1
 
-				#naval_base  = 1
 		}
 		owner = CIS
 		add_core_of = CIS
 		victory_points = {
-		336 1
+			336 1 
 		}
+
 	}
+
 	provinces={
-		141 228 301 336 473 2299 2300 2308 2309 2312 2318 2319 2321 2322 2328 2329 2331 2332 3029 3030 3036 3419 3421 3426 
+		141 228 301 336 473 2299 2300 2308 2309 2312 2318 2319 2321 2322 2328 2329 2331 2332 3029 3030 3036 3419 
 	}
 	manpower=930000
-	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
+	buildings_max_level_factor=1.000
+	state_category=capital_sector
+	local_supplies=0.000
 }

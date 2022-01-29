@@ -1,21 +1,29 @@
+
 state={
 	id=115
 	name="STATE_115"
-	history = {
+	resources={
+		credits=1.000
+	}
+
+	history={
 		buildings = {
 			infrastructure = 1
 
-				#naval_base  = 1
 		}
 		owner = DKJ
 		add_core_of = DKJ
 		victory_points = {
-		2211 1
+			2211 1 
 		}
+
 	}
+
 	provinces={
-		37 323 2197 2198 2201 2202 2203 2206 2208 2210 2211 2214 2217 2218 2220 2221 2223 2225 2227 2228 2230 3052 3053 3054 3423 3439 
+		37 323 2197 2198 2201 2202 2203 2206 2208 2210 2211 2214 2217 2218 2220 2221 2223 2225 2227 2228 2230 3052 3053 3054 3423 
 	}
 	manpower=50000
-	buildings_max_level_factor=1.000	state_category = capital_sector    resources = {        credits = 1    }
+	buildings_max_level_factor=1.000
+	state_category=capital_sector
+	local_supplies=0.000
 }
