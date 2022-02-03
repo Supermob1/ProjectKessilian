@@ -1,0 +1,60 @@
+defined_text = { #SUPER EVENT TITLES
+    name = get_super_event_title
+    
+    text = { 
+        trigger = {
+            has_global_flag = Super_event_Jango_VS_Mace
+        }
+        localization_key = Battle_of_Geonosis_Jango_VS_Mace_title
+    }
+}
+defined_text = { #SUPER EVENT SUBTITLES
+    name = get_super_event_subtitle
+    
+    text = { 
+        trigger = {
+            has_global_flag = Super_event_Jango_VS_Mace
+        }
+        localization_key = Battle_of_Geonosis_Jango_VS_Mace_subtitle
+    }
+}
+
+defined_text = { #SUPER EVENT DESC
+    name = get_super_event_desc
+    
+    text = { 
+        trigger = {
+            has_global_flag = Super_event_Jango_VS_Mace
+        }
+        localization_key = Battle_of_Geonosis_Jango_VS_Mace_desc
+    }
+}
+defined_text = { #SUPER EVENT Option A
+    name = get_super_event_option_a
+    
+    text = { 
+        trigger = {
+            has_global_flag = Super_event_Jango_VS_Mace
+        }
+        localization_key = Battle_of_Geonosis_Jango_VS_Mace_option_a
+    }
+}
+defined_text = { #SUPER EVENT Option B
+    name = get_super_event_option_b
+    
+    text = { 
+        trigger = {
+            has_global_flag = Super_event_Jango_VS_Mace
+        }
+        localization_key = Battle_of_Geonosis_Jango_VS_Mace_option_b
+    }
+}
+defined_text = { # Country
+	name = super_event_texture
+	text = {
+		trigger = {
+			has_global_flag = Super_event_Jango_VS_Mace
+		}
+		localization_key = "GFX_Jango_VS_Mace"
+	}
+}
