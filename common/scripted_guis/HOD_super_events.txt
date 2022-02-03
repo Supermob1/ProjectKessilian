@@ -1,0 +1,49 @@
+scripted_gui = {
+
+	HOD_Super_Event_Window = {
+		context_type = player_context
+		window_name = "Super_Event_Window"
+
+		visible = {
+			has_global_flag = Super_Event_Visible
+		}
+
+		triggers = {
+			Super_Event_Exit_visible = {
+				has_global_flag = Super_Event_One_Option
+			}
+		}
+
+		properties = {
+			Super_Event_Icon = {
+				image = "[super_event_texture]"
+			}
+		}
+
+		effects = {
+			Super_Event_Option_A_click = {
+				clr_global_flag = Super_Event_Visible
+				if = {
+					limit = {
+						has_global_flag = Super_Event_Jango_VS_Mace
+					}
+					set_global_flag = Jango_Dead
+				}
+				clr_global_flag  = Super_Event_Jango_VS_Mace
+			}
+			Super_Event_Option_B_click = {
+				clr_global_flag = Super_Event_Visible
+				if = {
+					limit = {
+						has_global_flag = Super_Event_Jango_VS_Mace
+					}
+					set_global_flag = Jango_Alive
+				}
+				clr_global_flag  = Super_Event_Jango_VS_Mace
+			}
+			Super_Event_Exit_click = {
+				clr_global_flag = Super_Event_Visible
+			}
+		}
+	}
+}
