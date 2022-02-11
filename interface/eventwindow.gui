@@ -9,7 +9,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "EventWindow"
 		position = { x=-282 y=-310 }	
-		size = { width = 800 height =427 }
+		size = { width = 900 height =427 }
 		moveable = yes
 		Orientation = CENTER		
 		
@@ -82,7 +82,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "bottom_Window"
 			position = { x=0 y=221 }	
-			size = { width = 800 height = 206 }
+			size = { width = 580 height = 206 }
 			moveable = yes
 			clipping = no
 			Orientation = UPPER_LEFT
@@ -100,7 +100,7 @@ guiTypes = {
 			iconType = {
 				name ="event_picture"
 				spriteType = "GFX_report_event_001"
-				position = { x = 580 y = -500 }
+				position = { x = 571 y = -575 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes				
 			}
@@ -108,7 +108,7 @@ guiTypes = {
 			iconType = {
 				name ="event_pic_clip"
 				spriteType = "GFX_event_news_pic_overlay"
-				position = { x = 555 y = -520 }
+				position = { x = 545 y = -600 }
 				Orientation = "UPPER_LEFT"
 			}
 
