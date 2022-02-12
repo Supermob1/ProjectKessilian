@@ -626,7 +626,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "national_focus_detail_view"
 		position = { x=500 y=100 }
-		size = { width = 550 height = 550 }
+		size = { width = 550 height = 720 }
 		Orientation = UPPER_LEFT
 		moveable = yes
 		clipping = no
@@ -644,7 +644,7 @@ guiTypes = {
 		iconType ={
 			name ="info_top_win"
 			spriteType = "GFX_tech_info_top_win"
-			position = { x= 1 y = 1 }
+			position = { x= 10 y = 12 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -662,36 +662,36 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "name"
-			position = { x = 30 y = 12 }
+			position = { x = 22 y = 78 }
 			textureFile = ""
-			font = "sfdistant24full"
+			font = "soloist"
 			borderSize = {x = 0 y = 0}
 			text = ""
-			maxWidth = 450
+			maxWidth = 500
 			maxHeight = 30
 			format = center
 			fixedsize = yes		
 		}
 		iconType = {
 			name = "symbol"
-			position = { x = 55 y = 88 }
+			position = { x = 175 y = 115 }
 			spriteType = "GFX_goal_unknown"
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "prerequisites_bg"
-			position = { x = 205 y = 92 }
+			position = { x = 205 y = 230 }
 			spriteType = "GFX_generic_bg_307x113"
 			alwaystransparent = yes
 		}		
 		instantTextboxType = {
 			name = "prerequisites"
-			position = { x = 215 y = 100 }
+			position = { x = 215 y = 232 }
 			textureFile = ""
-			font = "sfdistant14full"
+			font = "franklingothicsmall"
 			borderSize = {x = 0 y = 0}
 			text = ""
-			maxWidth = 287
+			maxWidth = 275
 			maxHeight = 100
 			scrollbarType = standardtext_slider
 		}
@@ -699,7 +699,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "statsarea"
-			position = { x=20 y=220 }
+			position = { x=20 y=360 }
 			size = { width = 97%% height = 98%% }
 			horizontalScrollbar = "bottom_horizontal_slider"
 			verticalScrollbar = "right_vertical_slider"
@@ -714,26 +714,26 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "desc"
-			position = { x = 34 y = 250 }
+			position = { x = 25 y = 360 }
 			textureFile = ""
-			font = "soloist12full"
-			borderSize = {x = 5 y = 0}
+			font = "franklingothicsmall"
+			borderSize = {x = 0 y = 0 }
 			text = "Description"
-			maxWidth = 485
-			maxHeight = 150
-			format = center
+			maxWidth = 490
+			maxHeight = 200
+			format = left
 			scrollbarType = standardtext_slider
 		}
 
 		iconType = {
 			name = "reward_bg"
-			position = { x = 84 y = 403 }
+			position = { x = 84 y = 568 }
 			spriteType = "GFX_unit_list_header"
 		}		
 		
 		instantTextboxType = {
 			name = "reward_label"
-			position = { x = 34 y = 410 }
+			position = { x = 34 y = 575 }
 			textureFile = ""
 			font = "sfdistant16full"
 			borderSize = {x = 0 y = 0}
@@ -745,13 +745,13 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "reward"
-			position = { x = 50 y = 437 }
+			position = { x = 50 y = 602 }
 			textureFile = ""
-			font = "soloist12full"
+			font = "franklingothicsmall"
 			borderSize = {x = 0 y = 0}
 			text = ""
 			maxWidth = 455
-			maxHeight = 138
+			maxHeight = 95
 			scrollbarType = standardtext_slider
 #			format = center
 		}
@@ -761,7 +761,7 @@ guiTypes = {
 			quadTextureSprite = "GFX_button_123x34"
 			buttonText = "START_FOCUS"
 			buttonFont = "sfdistant20full"
-			position = { x=390 y=53 }
+			position = { x=50 y=260 }
 			clicksound = select_focus
 			shortcut = "RETURN"
 		}
@@ -769,19 +769,19 @@ guiTypes = {
 		iconType = {
 			name = "research_progressbar"
 			spriteType = "GFX_prod_progress_bar3"
-			position = { x=209 y=59 }
+			position = { x=31 y=227 }
 		}
 
 		iconType = {
 			name = "research_progressbar_frame"
 			spriteType = "GFX_production_progressbar_frame2"
-			position = { x=205 y=57 }
+			position = { x=27 y=223 }
 		}		
 		
 		instantTextboxType = {
 			name = "status"
-			position = { x = 208 y = 60 }
-			font = "sfdistant20full"
+			position = { x = 30 y = 230 }
+			font = "sfdistant14full"
 			borderSize = {x = 0 y = 0}
 			text = ""
 			maxWidth = 170
