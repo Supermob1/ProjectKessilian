@@ -889,4 +889,229 @@ focus_tree = {
 			country_event = rep_fakeout.13
         }
     }
+	##############MCA##############
+	focus = {
+        id = REP_the_military_creation_act
+        icon = REP_the_military_creation_act
+        cost = 0.2
+        cancelable = no
+		# relative_position_id = REP_but_crisis_has_divided_us
+        
+        x = 7
+        y = 9
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_rework_the_bill
+        icon = REP_rework_the_bill
+        cost = 12
+        cancelable = no
+		relative_position_id = REP_the_military_creation_act
+        
+        x = 0
+        y = 1
+		prerequisite = {
+		   focus = REP_the_military_creation_act
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_oppose_the_mca
+        icon = REP_oppose_the_mca
+        cost = 6
+        cancelable = no
+		relative_position_id = REP_rework_the_bill
+        
+        x = -2
+        y = 1
+		mutually_exclusive = {
+			focus = REP_support_the_mca
+		}
+		prerequisite = {
+		   focus = REP_rework_the_bill
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_age_old_alliance
+        icon = REP_age_old_alliance
+        cost = 12
+        cancelable = no
+		relative_position_id = REP_oppose_the_mca
+        
+        x = -1
+        y = 1
+		prerequisite = {
+		   focus = REP_oppose_the_mca
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_reach_across_the_aisle
+        icon = REP_reach_across_the_aisle
+        cost = 12
+        cancelable = no
+		relative_position_id = REP_oppose_the_mca
+        
+        x = 1
+        y = 1
+		prerequisite = {
+		   focus = REP_oppose_the_mca
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_the_counter_proposal
+        icon = REP_the_counter_proposal
+        cost = 12
+        cancelable = no
+		relative_position_id = REP_oppose_the_mca
+        
+        x = 0
+        y = 2
+		prerequisite = {
+		   focus = REP_reach_across_the_aisle
+        }
+		prerequisite = {
+		   focus = REP_age_old_alliance
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_support_the_mca
+        icon = REP_support_the_mca
+        cost = 6
+        cancelable = no
+		relative_position_id = REP_rework_the_bill
+        
+        x = 2
+        y = 1
+		mutually_exclusive = {
+			focus = REP_oppose_the_mca
+		}
+		prerequisite = {
+		   focus = REP_rework_the_bill
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_rally_the_idealogues
+        icon = REP_rally_the_idealogues
+        cost = 12
+        cancelable = no
+		relative_position_id = REP_support_the_mca
+        
+        x = -1
+        y = 1
+		prerequisite = {
+		   focus = REP_support_the_mca
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_necessary_concessions
+        icon = REP_necessary_concessions
+        cost = 12
+        cancelable = no
+		relative_position_id = REP_support_the_mca
+        
+        x = 1
+        y = 1
+		prerequisite = {
+		   focus = REP_support_the_mca
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_alter_the_terms
+        icon = REP_alter_the_terms
+        cost = 12
+        cancelable = no
+		relative_position_id = REP_support_the_mca
+        
+        x = 0
+        y = 2
+		prerequisite = {
+		   focus = REP_necessary_concessions
+        }
+		prerequisite = {
+		   focus = REP_rally_the_idealogues
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_the_vote
+        icon = REP_the_vote
+        cost = 18
+        cancelable = no
+		relative_position_id = REP_alter_the_terms
+        
+        x = -2
+        y = 1
+		prerequisite = {
+		   focus = REP_alter_the_terms
+		   focus = REP_the_counter_proposal
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_killed_in_the_cradle
+        icon = REP_killed_in_the_cradle
+        cost = 0.2
+        cancelable = no
+		relative_position_id = REP_the_vote
+        
+        x = -1
+        y = 1
+		mutually_exclusive = {
+			focus = REP_one_army_one_republic
+		}
+		prerequisite = {
+		   focus = REP_the_vote
+        }
+
+        completion_reward = {
+        }
+    }
+	focus = {
+        id = REP_one_army_one_republic
+        icon = REP_one_army_one_republic
+        cost = 6
+        cancelable = no
+		relative_position_id = REP_the_vote
+        
+        x = 1
+        y = 1
+		mutually_exclusive = {
+			focus = REP_killed_in_the_cradle
+		}
+		prerequisite = {
+		   focus = REP_the_vote
+        }
+
+        completion_reward = {
+        }
+    }
 }

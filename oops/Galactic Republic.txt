@@ -6,18 +6,18 @@
 focus_tree = {
 	id = REP_focus_tree
 
-	#country = {
-	#	factor = 0
-	#	modifier = {
-	#		add = 10
-	#		tag = REP
-	#	}
-	#}
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = REP
+		}
+	}
 
 	default = no
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 50 y = 2500 }
+	continuous_focus_position = { x = 0 y = 0 }
 
 
 	########### UNREST IN THE REPUBLIC TREE START ###########
@@ -51,7 +51,7 @@ focus_tree = {
 		y = 1
 
 		completion_reward = {
-			level_up_economy = 1
+			level_up_economy = yes
 		}
 	}
 
@@ -110,7 +110,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = REP_never_another_naboo
+		id = REP_never_another_naboo_main
 		icon = REP_never_another_naboo
 		cost = 10
 
@@ -217,7 +217,7 @@ focus_tree = {
 		cost = 10
 
 		prerequisite = {
-			focus = REP_never_another_naboo
+			focus = REP_never_another_naboo_main
 		}
 
 		prerequisite = {
@@ -1494,7 +1494,7 @@ focus_tree = {
 		relative_position_id = REP_the_might_of_balmora
 
 		completion_reward = {
-			level_up_economy = 1
+			level_up_economy = yes
 		}
 	}
 	##END OF CENTER PATH
