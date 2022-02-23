@@ -841,3 +841,16 @@ country_event = { #The State of the Galaxy
 		mark_focus_tree_layout_dirty = yes
 	}
 }
+country_event = { #The State of the Galaxy 
+	id = hidden_rep.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event hidden_rep.3"}
+	hidden = yes
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = rep_mca
+		mark_focus_tree_layout_dirty = yes
+	}
+}
