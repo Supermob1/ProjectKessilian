@@ -479,7 +479,20 @@ focus_tree = {
         }
         prerequisite = {
             focus = REP_the_blue_scare
-         }
+        }
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = rep_mca
+				}
+			}
+		}
+		select_effect = {
+			country_event = {
+				id = hidden_rep.3
+				days = 10
+			}
+		}
 
         x = 2
         y = 1
@@ -881,6 +894,19 @@ focus_tree = {
 		prerequisite = {
 		   focus = REP_beyond_the_core
         }
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = rep_mca
+				}
+			}
+		}
+		select_effect = {
+			country_event = {
+				id = hidden_rep.3
+				days = 10
+			}
+		}
 
         x = 0
         y = 6
