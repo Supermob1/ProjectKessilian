@@ -922,9 +922,9 @@ focus_tree = {
 		cost = 0.2
 		cancelable = no
 		# relative_position_id = REP_but_crisis_has_divided_us
-		# allow_branch = {
-			# has_country_flag = rep_mca
-		# }
+		allow_branch = {
+			has_country_flag = rep_mca
+		}
 		
 		x = 7
 		y = 9
@@ -958,7 +958,7 @@ focus_tree = {
     }
 	focus = {
 		id = REP_oppose_the_mca
-		icon = REP_oppose_the_mca
+		icon = REP_oppose_the_act
 		cost = 6
 		cancelable = no
 		relative_position_id = REP_rework_the_bill
@@ -990,7 +990,7 @@ focus_tree = {
     }
 	focus = {
 		id = REP_age_old_alliance
-		icon = REP_age_old_alliance
+		icon = REP_an_age_old_alliance
 		cost = 12
 		cancelable = no
 		relative_position_id = REP_oppose_the_mca
@@ -1035,7 +1035,7 @@ focus_tree = {
     }
 	focus = {
 		id = REP_the_counter_proposal
-		icon = REP_the_counter_proposal
+		icon = REP_the_republic_act
 		cost = 12
 		cancelable = no
 		relative_position_id = REP_oppose_the_mca
@@ -1057,7 +1057,7 @@ focus_tree = {
     }
 	focus = {
 		id = REP_support_the_mca
-		icon = REP_support_the_mca
+		icon = REP_support_the_act
 		cost = 6
 		cancelable = no
 		relative_position_id = REP_rework_the_bill
@@ -1089,7 +1089,7 @@ focus_tree = {
     }
 	focus = {
 		id = REP_rally_the_idealogues
-		icon = REP_rally_the_idealogues
+		icon = REP_rally_the_radicals
 		cost = 12
 		cancelable = no
 		relative_position_id = REP_support_the_mca
@@ -1116,7 +1116,7 @@ focus_tree = {
     }
 	focus = {
 		id = REP_necessary_concessions
-		icon = REP_necessary_concessions
+		icon = REP_corist_concessions
 		cost = 12
 		cancelable = no
 		relative_position_id = REP_support_the_mca
@@ -1232,7 +1232,7 @@ focus_tree = {
     }
 	focus = {
 		id = REP_one_army_one_republic
-		icon = REP_one_army_one_republic
+		icon = REP_birth_of_a_national_army
 		cost = 6
 		cancelable = no
 		relative_position_id = REP_the_vote
