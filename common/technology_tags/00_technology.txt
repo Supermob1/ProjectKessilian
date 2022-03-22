@@ -97,12 +97,6 @@ technology_categories = {
 technology_folders = {
 	infantry_folder = {
 		ledger = army
-		available = {
-			# NOT = {
-				# tag = CIS
-				# tag = REP
-			# }
-		}
 	}
 	support_folder = {
 		ledger = army
@@ -113,18 +107,12 @@ technology_folders = {
 			NOT = {
 				has_dlc = "No Step Back"
 			}
-			# NOT = {
-				# tag = CIS
-			# }
 		}
 	}
 	nsb_armour_folder = {
 		ledger = army
 		available = {
 			has_dlc = "No Step Back"
-			# NOT = {
-				# tag = CIS
-			# }
 		}
 	}
 	artillery_folder = {
@@ -133,9 +121,6 @@ technology_folders = {
 	artillery_folder = {
 		ledger = army
 		available = {
-			# NOT = {
-				# tag = CIS
-			# }
 		}
 	}
 	air_techs_folder = {
@@ -171,7 +156,6 @@ technology_folders = {
 	electronics_folder = {
 		ledger = civilian
 	}
-	#secret_weapons_folder
 }
 
  
