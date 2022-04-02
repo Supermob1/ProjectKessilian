@@ -1,6 +1,6 @@
-﻿capital = 
+﻿capital = 259
 
-oob = "garrison_generic"
+#oob = "garrison_generic"
 
 set_research_slots = 2
 
@@ -29,8 +29,8 @@ add_ideas = {
 	no_conscription
 }
 set_politics = {
-	ruling_party = 
-	last_election = "10.15.6"
+	ruling_party = corporate_consortium
+	last_election = "999.1.1"
 	election_frequency = 48
 	elections_allowed = no
 	}
@@ -40,7 +40,7 @@ create_country_leader = {
 	desc = ""
 	picture = ""
 	expire = "1965.1.1"
-	ideology = 
+	ideology = corporate_consortium_subtype
 	traits = {  }
 }
 
