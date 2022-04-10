@@ -7,6 +7,9 @@ set_stability = 0.1
 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = CHS_chiss_aristocra
+
 set_popularities = {
 		new_order = 0
 		dark_side = 0
@@ -29,12 +32,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Chiss Aristocra"
-	desc = "CHS_aristocra_desc"
-	picture = "gfx/leaders/CHS/Portrait_Aristocra.tga"
-	expire = "1965.1.1"
-	ideology = corist_subtype
-	traits = {}
-}

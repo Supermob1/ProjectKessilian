@@ -1,4 +1,4 @@
-﻿capital = 9
+﻿capital = 
 
 #oob = "garrison_generic"
 set_research_slots = 2
@@ -6,6 +6,24 @@ set_research_slots = 2
 set_stability = 0.1
 
 set_war_support = 0.02 
+
+######CHARACTERS######
+recruit_character = ZGY_miraj_scintel
+recruit_character = ZGY_atai_molec
+recruit_character = ZGY_raney
+recruit_character = ZGY_sono_molec
+recruit_character = ZGY_agruss
+recruit_character = ZGY_scroon
+recruit_character = ZGY_slego
+recruit_character = ZGY_rajim_armin
+recruit_character = ZGY_onyx
+recruit_character = ZGY_hordem_molec
+recruit_character = ZGY_mrch 
+recruit_character = ZGY_omus_krill
+
+##############
+set_technology = {
+}
 
 set_popularities = {
         new_order = 46
@@ -28,13 +46,4 @@ set_politics = {
 	last_election = "999.1.1"
 	election_frequency = 48
 	elections_allowed = no
-	}
-
-create_country_leader = {
-	name = "Queen Miraj Scintel"
-	desc = "CHS_aristocra_desc"
-	picture = "gfx/leaders/ZGY/portrait_miraj_scintel.tga"
-	expire = "1965.1.1"
-	ideology = new_order_subtype
-	traits = {}
 }
