@@ -79,7 +79,7 @@ characters={
 			legacy_id=-1
 		}
 	}
-	ZGY_sono_molec={
+	ZAN_sono_molec={
 		name="Sono Molec"
 		portraits={
 			army={
@@ -127,7 +127,7 @@ characters={
 			legacy_id=-1
 		}
 	}
-	ZGY_agruss={
+	ZAN_agruss={
 		name="Agruss"
 		portraits={
 			army={
@@ -147,8 +147,8 @@ characters={
 			legacy_id=-1
 		}
 	}
-	ZGY_scroon={
-		name="Scroon"
+	ZAN_jander={
+		name="Jander"
 		portraits={
 			army={
 				small=""
@@ -183,182 +183,6 @@ characters={
 			}
 			ai_will_do = {
 				factor = 1
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	ZGY_rajim_armin={
-		name="Rajim Armin"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZGY
-			}
-			visible = {
-				original_tag = ZGY
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	ZGY_slego={
-		name="Slego"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	ZGY_onyx={
-		name="Onyx"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	ZGY_hordem_molec={
-		name="Hordem Molec"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZAN
-			}
-			visible = {
-				original_tag = ZAN
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	ZGY_mrch={
-		name="Mrch"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	ZGY_omus_krill={
-		name="Omus Krill"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
 			}
 		}
 		corps_commander={

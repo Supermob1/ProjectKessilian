@@ -1,4 +1,4 @@
-﻿capital = 259
+﻿capital = 
 
 #oob = "garrison_generic"
 
@@ -7,6 +7,9 @@ set_research_slots = 2
 set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
+
+######CHARACTERS######
+recruit_character = BLS_xomit_grunseit
 
 set_technology = {
 	
@@ -34,16 +37,4 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Xomit Grunseit"
-	desc = ""
-	picture = ""
-	expire = "1965.1.1"
-	ideology = corporate_consortium_subtype
-	traits = {  }
-}
-
-
-###Field marshal####
 

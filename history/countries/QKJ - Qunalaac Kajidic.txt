@@ -7,6 +7,9 @@ set_stability = 0.1
 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = QKJ_marlo
+
 set_popularities = {
 		new_order = 2
 		dark_side = 0
@@ -36,12 +39,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Marlo"
-	desc = "CHS_aristocra_desc"
-	picture = "gfx/leaders/HTT/portrait_marlo.tga"
-	expire = "1965.1.1"
-	ideology = corporate_consortium_subtype
-	traits = {}
-}

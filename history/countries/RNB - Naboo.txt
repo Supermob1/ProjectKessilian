@@ -1,4 +1,4 @@
-﻿capital = 137
+﻿capital = 
 
 #oob = "garrison_generic"
 
@@ -7,6 +7,9 @@ set_research_slots = 2
 set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
+
+######CHARACTERS######
+recruit_character = RNB_queen_jamillia
 
 set_technology = {
 	
@@ -34,92 +37,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Queen Jamillia"
-	desc = ""
-	picture = ""
-	expire = "1965.1.1"
-	ideology = inclusivist_subtype
-	traits = {  }
-}
-
-
-###Field marshal####
-
-
-### General ###
-
-create_corps_commander = {
-	name = "Quarsh Panaka"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Kael"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-
-
-
-create_navy_commander = {
-	name = "Rhys Dallows"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_navy_commander = {
-	name = "Vana Sage"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_navy_commander = {
-	name = "Essara Till"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_navy_commander = {
-	name = "Ric Olie"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_navy_commander = {
-	name = "Gavyn Sykes"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}

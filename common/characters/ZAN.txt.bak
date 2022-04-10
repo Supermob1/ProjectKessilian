@@ -1,21 +1,21 @@
 characters={
-	SCC_iaco_stark={
-		name="Iaco Stark"
+	ZAN_tyber_zann={
+		name="Tyber Zann"
 		portraits={
 			civilian={
 				large=""
 			}
 		}
 		country_leader={
-			desc="SCC_stark_desc"
+			desc="ZAN_zann_desc"
 			ideology=_subtype
 			traits={  }
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	SCC_={
-		name=""
+	ZAN_urai_fen={
+		name="Urai Fen"
 		portraits={
 			army={
 				small=""
@@ -29,10 +29,10 @@ characters={
 			cost = 100
 			ledger = 
 			allowed = {
-				original_tag = SCC
+				original_tag = ZAN
 			}
 			visible = {
-				original_tag = SCC
+				original_tag = ZAN
 			}
 			available = {
 				NOT = { 
@@ -59,4 +59,23 @@ characters={
 			legacy_id=-1
 		}
 	}
-	
+	ZAN_jerid_sykes={
+		name="Jerid Sykes"
+		portraits={
+			army={
+				small=""
+			}
+			army={
+				large=""
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
