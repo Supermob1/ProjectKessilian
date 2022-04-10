@@ -1,4 +1,4 @@
-﻿capital = 161
+﻿capital = 
 
 #oob = "garrison_generic"
 
@@ -7,6 +7,9 @@ set_research_slots = 2
 set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
+
+######CHARACTERS######
+recruit_character = VNG_quoreal 
 
 set_technology = {
 	
@@ -33,17 +36,5 @@ set_politics = {
 	last_election = "999.1.1"
 	election_frequency = 48
 	elections_allowed = no
-	}
-
-create_country_leader = {
-	name = "Quoreal"
-	desc = ""
-	picture = ""
-	expire = "1965.1.1"
-	ideology = new_order_subtype
-	traits = {  }
 }
-
-
-###Field marshal####
 
