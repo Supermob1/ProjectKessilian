@@ -1,20 +1,20 @@
 characters={
-	ZGY_miraj_scintel={
-		name="Miraj Scintel"
+	ORC_cham_syndulla={
+		name="Cham Syndulla"
 		portraits={
 			civilian={
 				large=""
 			}
 		}
 		country_leader={
-			desc="ZGY_scintel_desc"
+			desc="ORC_syndulla_desc"
 			ideology=_subtype
 			traits={  }
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	ZGY_atai_molec={
+	ORC_atai_molec={
 		name="Atai Molec"
 		portraits={
 			army={
@@ -29,10 +29,10 @@ characters={
 			cost = 100
 			ledger = 
 			allowed = {
-				original_tag = ZGY
+				original_tag = ORC
 			}
 			visible = {
-				original_tag = ZGY
+				original_tag = ORC
 			}
 			available = {
 				NOT = { 
@@ -59,7 +59,7 @@ characters={
 			legacy_id=-1
 		}
 	}
-	ZGY_raney={
+	ORC_raney={
 		name="Raney"
 		portraits={
 			army={
@@ -79,7 +79,7 @@ characters={
 			legacy_id=-1
 		}
 	}
-	ZAN_sono_molec={
+	ORC_sono_molec={
 		name="Sono Molec"
 		portraits={
 			army={
@@ -96,10 +96,10 @@ characters={
 			cost = 100
 			ledger = 
 			allowed = {
-				original_tag = ZGY
+				original_tag = ORC
 			}
 			visible = {
-				original_tag = ZGY
+				original_tag = ORC
 			}
 			available = {
 				NOT = { 
@@ -127,72 +127,3 @@ characters={
 			legacy_id=-1
 		}
 	}
-	ZAN_agruss={
-		name="Agruss"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	ZAN_jander={
-		name="Jander"
-		portraits={
-			army={
-				small=""
-			}
-			army={
-				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZAN
-			}
-			visible = {
-				original_tag = ZAN
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		corps_commander={
-			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	
