@@ -8,6 +8,9 @@ set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = GNG_boss_nass
+
 set_technology = {
 	
 }
@@ -34,99 +37,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Boss Nass"
-	desc = ""
-	picture = ""
-	expire = "1965.1.1"
-	ideology = distributionist_subtype
-	traits = {  }
-}
-
-
-###Field marshal####
-
-create_field_marshal = {
-	name = "Jar Jar Binks" 
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-
-### General ###
-
-create_corps_commander = {
-	name = "Bolle"
-	picture = "" 
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Softa"
-	picture = "" 
-	traits = { }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Dunra"
-	picture = "" 
-	traits = { }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Gek"
-	picture = "" 
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Rokko"
-	picture = "" 
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Tarpals"
-	picture = "" 
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "Tobler Ceel"
-	picture = "" 
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}

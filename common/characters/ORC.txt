@@ -1,21 +1,21 @@
 characters={
-	ZAN_tyber_zann={
-		name="Tyber Zann"
+	ORC_cham_syndulla={
+		name="Cham Syndulla"
 		portraits={
 			civilian={
 				large=""
 			}
 		}
 		country_leader={
-			desc="ZAN_zann_desc"
+			desc="ORC_syndulla_desc"
 			ideology=_subtype
 			traits={  }
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	ZAN_urai_fen={
-		name="Urai Fen"
+	ORC_atai_molec={
+		name="Atai Molec"
 		portraits={
 			army={
 				small=""
@@ -29,10 +29,10 @@ characters={
 			cost = 100
 			ledger = 
 			allowed = {
-				original_tag = ZAN
+				original_tag = ORC
 			}
 			visible = {
-				original_tag = ZAN
+				original_tag = ORC
 			}
 			available = {
 				NOT = { 
@@ -59,8 +59,8 @@ characters={
 			legacy_id=-1
 		}
 	}
-	ZAN_jerid_sykes={
-		name="Jerid Sykes"
+	ORC_raney={
+		name="Raney"
 		portraits={
 			army={
 				small=""
@@ -70,6 +70,54 @@ characters={
 			}
 		}
 		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	ORC_sono_molec={
+		name="Sono Molec"
+		portraits={
+			army={
+				small=""
+			}
+			army={
+				large=""
+			}
+		}
+		advisor = {
+			slot = 
+			idea_token = 
+			name = 
+			cost = 100
+			ledger = 
+			allowed = {
+				original_tag = ORC
+			}
+			visible = {
+				original_tag = ORC
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = 
+						has_government = 
+						has_country_flag = 
+					}
+				}
+			}
+			traits = {
+
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal={
 			traits={  }
 			skill=3
 			attack_skill=3

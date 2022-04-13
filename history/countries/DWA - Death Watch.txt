@@ -9,6 +9,7 @@ set_convoys = 100
 set_war_support = 0.02 
 
 ######CHARACTERS######
+recruit_character = DWA_tor_vizsla
 recruit_character = DWA_montross
 
 set_technology = {
@@ -37,16 +38,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Tor Vizsla"
-	desc = ""
-	picture = ""
-	expire = "1965.1.1"
-	ideology = akaanadocrat_subtype
-	traits = {  }
-}
-
-
-###Field marshal####
-

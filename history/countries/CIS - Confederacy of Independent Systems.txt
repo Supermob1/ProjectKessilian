@@ -7,6 +7,9 @@ set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = CIS_count_dooku
+
 set_technology = {
 	droid_army = 1 #Hidden Tech
 	b1_battle_droid = 1
@@ -33,48 +36,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Count Dooku"
-	desc = "CIS_dooku_neutral_desc"
-	picture = "gfx/leaders/CIS/Portrait_Dooku_Neutral.dds"
-	expire = "1965.1.1"
-	ideology = trade_democrat_subtype
-	traits = { }
-}
-
-###Field marshal####
-
-create_field_marshal = {
-	name = "Grievous"
-	picture = "portrait_grievous.dds"
-	traits = { aggression_chip }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_field_marshal = {
-	name = "Sev'rance Tann"
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-
-#### Generals ###
-
-create_corps_commander = {
-	name = ""
-	picture = ""
-	traits = {  }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
