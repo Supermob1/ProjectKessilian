@@ -9,6 +9,9 @@ set_convoys = 100
 
 set_war_support = 0.02
 
+######CHARACTERS######
+recruit_character = ORC_cham_syndulla
+
 set_technology = {}
 
 set_popularities = {
@@ -33,12 +36,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Cham Syndulla"
-	desc = "REP_syndullah_desc"
-	picture = "gfx/leaders/ORC/Portrait_Cham_Syndulla.dds"
-	expire = "1965.1.1"
-	ideology = distributionist_subtype
-	traits = { }
-}

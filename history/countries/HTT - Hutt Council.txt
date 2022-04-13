@@ -7,6 +7,9 @@ set_stability = 0.1
 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = HTT_grand_hutt_council
+
 if = {
 	limit = {
 		has_dlc = "Together for Victory"
@@ -88,12 +91,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Grand Hutt Council"
-	desc = "HTT_council_desc"
-	picture = "gfx/leaders/HTT/portrait_hutt_council.tga"
-	expire = "1965.1.1"
-	ideology = corporate_consortium_subtype
-	traits = { }
-}
