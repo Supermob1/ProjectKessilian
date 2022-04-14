@@ -8,6 +8,10 @@ set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = OND_saw_gerrera
+
+
 set_technology = {
 	
 }
@@ -34,16 +38,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Saw Gerrera"
-	desc = ""
-	picture = ""
-	expire = "1965.1.1"
-	ideology = distributionist_subtype
-	traits = {  }
-}
-
-
-###Field marshal####
-

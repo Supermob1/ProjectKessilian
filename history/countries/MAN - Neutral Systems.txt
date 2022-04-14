@@ -7,6 +7,11 @@ set_stability = 0.1
 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = MAN_duchess_satine_kryze
+recruit_character = MAN_pre_vizsla
+recruit_character = MAN_the_mandalore_council 
+
 set_popularities = {
 		new_order = 0
 		dark_side = 0
@@ -29,29 +34,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Duchess Satine Kryze"
-	desc = "MAN_satine_kryze_desc"
-	picture = "gfx/leaders/MAN/Portrait_Satine_Kryze.dds"
-	expire = "1965.1.1"
-	ideology = inclusivist_subtype
-	traits = { }
-}
-
-create_country_leader = {
-	name = "Pre Viszla"
-	desc = "MAN_pre_vizsla_desc"
-	picture = "gfx/leaders/MAN/Portrait_Pre_Vizsla.dds"
-	expire = "1965.1.1"
-	ideology = akaanadocrat_subtype
-	traits = { }
-}
-create_country_leader = {
-	name = "The Mandalore Council"
-	desc = "MAN_council_desc"
-	picture = "gfx/leaders/MAN/Portraint_Council.dds"
-	expire = "1965.1.1"
-	ideology = corist_subtype
-	traits = { }
-}

@@ -8,6 +8,10 @@ set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = MNC_king_yos_kolina
+
+
 set_technology = {
 	
 }
@@ -34,16 +38,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "King Yos Kolina"
-	desc = ""
-	picture = ""
-	expire = "1965.1.1"
-	ideology = trade_democrat_subtype
-	traits = {  }
-}
-
-
-###Field marshal####
-
