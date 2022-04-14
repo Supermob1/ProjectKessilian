@@ -7,6 +7,9 @@ set_stability = 0.1
 
 set_war_support = 0.02 
 
+######CHARACTERS######
+recruit_character = NOB_her_majesty
+
 set_popularities = {
         new_order = 0
         dark_side = 0
@@ -29,12 +32,3 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-
-create_country_leader = {
-	name = "Her Majesty"
-	desc = "CHS_aristocra_desc"
-	picture = "gfx/leaders/NOB/portrait_her_majesty.tga"
-	expire = "1965.1.1"
-	ideology = corist_subtype
-	traits = {}
-}

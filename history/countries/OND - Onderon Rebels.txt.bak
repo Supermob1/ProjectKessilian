@@ -1,4 +1,4 @@
-﻿capital = 29
+﻿capital = 58
 
 #oob = "garrison_generic"
 
@@ -7,9 +7,6 @@ set_research_slots = 2
 set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
-
-######CHARACTERS######
-recruit_character = MND_mandalore
 
 set_technology = {
 	
@@ -32,8 +29,21 @@ add_ideas = {
 	no_conscription
 }
 set_politics = {
-	ruling_party = inclusivist
+	ruling_party = distributionist
 	last_election = "999.1.1"
 	election_frequency = 48
 	elections_allowed = no
 	}
+
+create_country_leader = {
+	name = "Saw Gerrera"
+	desc = ""
+	picture = ""
+	expire = "1965.1.1"
+	ideology = distributionist_subtype
+	traits = {  }
+}
+
+
+###Field marshal####
+
