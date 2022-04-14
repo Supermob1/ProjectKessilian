@@ -1,0 +1,62 @@
+characters={
+	MND_mandalore={
+		name="Mandalore"
+		portraits={
+			civilian={
+				large=""
+			}
+		}
+		country_leader={
+			desc="MND_mandalore_desc"
+			ideology=_subtype
+			traits={  }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MND_={
+		name=""
+		portraits={
+			army={
+				small=""
+				large=""
+			}
+		}
+		advisor = {
+			slot = 
+			idea_token = 
+			name = 
+			cost = 100
+			ledger = 
+			allowed = {
+				original_tag = MND
+			}
+			visible = {
+				original_tag = MND
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = 
+						has_government = 
+						has_country_flag = 
+					}
+				}
+			}
+			traits = {
+
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal={
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	
