@@ -1,0 +1,82 @@
+###################################
+Republic Hardliner Post-Geonosis 
+###################################
+
+country_event = { # But Not This Time 
+	id = rep_postgeo.51
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_postgeo.51"}
+	title = rep_postgeo.51.t 
+	desc = rep_postgeo.51.d 
+	picture = GFX_news_event_
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_postgeo.51.a 
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Our Judgement 
+	id = rep_postgeo.52
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_postgeo.52"}
+	title = rep_postgeo.52.t 
+	desc = rep_postgeo.52.d 
+	picture = GFX_news_event_
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_postgeo.52.a 
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Our Fall
+	id = rep_postgeo.53
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_postgeo.53"}
+	title = rep_postgeo.53.t 
+	desc = rep_postgeo.53.d 
+	picture = GFX_news_event_
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_postgeo.53.a 
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = rep_postgeo.53.a.2 
+		ai_chance = {
+			factor = 25
+		}
+	} 
+}
+country_event = { # To The Depths 
+	id = rep_postgeo.54
+	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_postgeo.54"}
+	title = rep_postgeo.54.t 
+	desc = rep_postgeo.54.d 
+	picture = GFX_news_event_
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = rep_postgeo.54.a 
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
