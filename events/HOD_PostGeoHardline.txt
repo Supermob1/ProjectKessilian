@@ -1,7 +1,7 @@
 ###################################
-Republic Hardliner Post-Geonosis 
+#Republic Hardliner Post-Geonosis 
 ###################################
-
+add_namespace = rep_postgeo
 country_event = { # But Not This Time 
 	id = rep_postgeo.51
 	immediate = {log = "[GetDateText]: [Root.GetName]: event rep_postgeo.51"}
@@ -17,6 +17,14 @@ country_event = { # But Not This Time
 		name = rep_postgeo.51.a 
 		ai_chance = { 
 			factor = 25	
+		}
+		add_country_leader_role = {
+			character = REP_sheev_palpatine
+			promote_leader = yes
+			country_leader = {
+				ideology = inclusivist_subtype
+				traits = { shrewd_chancellor }
+			}
 		}
 	}
 }

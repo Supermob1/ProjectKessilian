@@ -8,7 +8,7 @@ characters={
 		}
 		country_leader={
 			desc="ZGY_scintel_desc"
-			ideology=_subtype
+			ideology=new_order_subtype
 			traits={  }
 			expire="1965.1.1.1"
 			id=-1
@@ -20,34 +20,6 @@ characters={
 			army={
 				small=""
 				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZGY
-			}
-			visible = {
-				original_tag = ZGY
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
 			}
 		}
 		field_marshal={
@@ -87,34 +59,6 @@ characters={
 			}
 			army={
 				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZGY
-			}
-			visible = {
-				original_tag = ZGY
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
 			}
 		}
 		field_marshal={
@@ -157,34 +101,6 @@ characters={
 				large=""
 			}
 		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZAN
-			}
-			visible = {
-				original_tag = ZAN
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
 		corps_commander={
 			traits={  }
 			skill=3
@@ -203,34 +119,6 @@ characters={
 			}
 			army={
 				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZGY
-			}
-			visible = {
-				original_tag = ZGY
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
 			}
 		}
 		corps_commander={
@@ -293,34 +181,6 @@ characters={
 				large=""
 			}
 		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ZAN
-			}
-			visible = {
-				original_tag = ZAN
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
 		corps_commander={
 			traits={  }
 			skill=3
@@ -371,4 +231,5 @@ characters={
 			legacy_id=-1
 		}
 	}
+}
 	

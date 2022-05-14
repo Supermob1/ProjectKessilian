@@ -1,6 +1,6 @@
 characters={
 	REP_sheev_palpatine={
-		name="Sheev Palpatine"
+		name=REP_sheev_palpatine
 		portraits={
 			civilian={
 				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
@@ -10,21 +10,21 @@ characters={
 			desc="REP_palpatine_desc"
 			ideology=inclusivist_subtype
 			traits={ shrewd_chancellor }
-			expire="1965.1.1.1"
+			#expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
 			desc="REP_palpatine_desc"
 			ideology=new_order_subtype
 			traits={ shrewd_chancellor }
-			expire="1965.1.1.1"
+			#expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
 			desc="REP_palpatine_desc"
 			ideology=dark_side_subtype
 			traits={ shrewd_chancellor }
-			expire="1965.1.1.1"
+			#expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -42,7 +42,7 @@ characters={
 			desc="REP_tarkin_desc"
 			ideology=akaanadocrat_subtype
 			traits={ }
-			expire="1965.1.1.1"
+			#expire="1965.1.1.1"
 			id=-1
 		}
 		corps_commander={
@@ -183,6 +183,13 @@ characters={
 			planning_skill=5
 			logistics_skill=5
 			legacy_id=-1
+		}
+		country_leader={
+			desc="REP_mace_windu_desc"
+			ideology=light_side_subtype
+			traits={ hero_with_no_fear }
+			#expire="1965.1.1.1"
+			id=-1
 		}
 	}
 	REP_kit_fisto={

@@ -3,60 +3,16 @@ characters={
 		name="Chiss Aristocra"
 		portraits={
 			civilian={
-				large=""
+				large="gfx/leaders/CHS/Portrait_Aristocra.dds"
 			}
 		}
 		country_leader={
 			desc="CHS_aristocra_desc"
-			ideology=_subtype
+			ideology=corist_subtype
 			traits={  }
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	CHS_={
-		name=""
-		portraits={
-			army={
-				small=""
-				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = CHS
-			}
-			visible = {
-				original_tag = CHS
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		field_marshal={
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
+}
 	

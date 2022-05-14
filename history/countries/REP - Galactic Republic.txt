@@ -69,6 +69,7 @@ recruit_character = REP_tchooka_doon
 recruit_character = REP_riike_en
 recruit_character = REP_jor_drakas
 recruit_character = REP_malcor_brashin
+recruit_character = REP_sheev_palpatine
 ##############
 set_technology = {
 	clone_army = 1 #Hidden Tech
@@ -76,18 +77,18 @@ set_technology = {
 }
 
 set_popularities = {
-		new_order = 0
-		dark_side = 0
-		akaanadocrat = 1
-		unitist = 10
-		corist = 15
-		distributionist =  0
-		corporate_consortium = 4
-		trade_democrat = 13
-		ruusanist = 1
-		inclusivist = 39
-		light_side = 17
-	}
+	new_order = 0
+	dark_side = 0
+	akaanadocrat = 1
+	unitist = 10
+	corist = 15
+	distributionist =  0
+	corporate_consortium = 4
+	trade_democrat = 13
+	ruusanist = 1
+	inclusivist = 39
+	light_side = 17
+}
 add_ideas = {
 	no_conscription
 	legacy_of_ruusan

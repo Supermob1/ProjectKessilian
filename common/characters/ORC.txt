@@ -8,7 +8,7 @@ characters={
 		}
 		country_leader={
 			desc="ORC_syndulla_desc"
-			ideology=_subtype
+			ideology=distributionist_subtype
 			traits={  }
 			expire="1965.1.1.1"
 			id=-1
@@ -20,34 +20,6 @@ characters={
 			army={
 				small=""
 				large=""
-			}
-		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ORC
-			}
-			visible = {
-				original_tag = ORC
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
 			}
 		}
 		field_marshal={
@@ -89,34 +61,6 @@ characters={
 				large=""
 			}
 		}
-		advisor = {
-			slot = 
-			idea_token = 
-			name = 
-			cost = 100
-			ledger = 
-			allowed = {
-				original_tag = ORC
-			}
-			visible = {
-				original_tag = ORC
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = 
-						has_government = 
-						has_country_flag = 
-					}
-				}
-			}
-			traits = {
-
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
 		field_marshal={
 			traits={  }
 			skill=3
@@ -127,3 +71,4 @@ characters={
 			legacy_id=-1
 		}
 	}
+}
