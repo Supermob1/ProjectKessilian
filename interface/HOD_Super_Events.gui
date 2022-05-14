@@ -67,17 +67,39 @@ guiTypes = {
             position = { x = 45 y = 432 }
             quadTextureSprite ="GFX_event_option_entry"
             clicksound = click_scroll
-	 		buttonFont = "sfdistant12full"
-			buttonText = "[get_super_event_option_a]"
+	 		buttonFont = ""
+			buttonText = ""
         }
+		instantTextBoxType = {
+			name = "Super_Event_Option_A_text"
+			position = { x = 45 y = 443 }
+			font = "sfdistant12full"
+			borderSize = {x = 0 y = 0}
+			text = "[get_super_event_option_a]"
+			maxWidth = 300
+			maxHeight = 500
+			fixedsize = yes	
+			format = center
+		}
 		buttonType = {
             name = "Super_Event_Option_B"
             position = { x = 440 y = 432 }
             quadTextureSprite ="GFX_event_option_entry"
             clicksound = click_scroll
-	 		buttonFont = "sfdistant12full"
-			buttonText = "[get_super_event_option_b]"
+	 		buttonFont = ""
+			buttonText = ""
         }
+		instantTextBoxType = {
+			name = "Super_Event_Option_B_text"
+			position = { x = 440 y = 443 }
+			font = "sfdistant12full"
+			borderSize = {x = 0 y = 0}
+			text = "[get_super_event_option_b]"
+			maxWidth = 300
+			maxHeight = 500
+			fixedsize = yes	
+			format = center
+		}
 		buttonType = {
             name = "Super_Event_Exit"
             position = { x = 197 y = 432 }

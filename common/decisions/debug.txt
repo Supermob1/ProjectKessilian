@@ -11,11 +11,13 @@ generic_debug = {
 			#has_global_flag = 
 			#has_country_flag = 
 			hidden_trigger = {
-				always = no
+				# always = no
 			}
 		}
 		complete_effect = {
-			
+				set_global_flag = Super_Event_Visible
+				set_global_flag = Super_Event_Jango_VS_Mace
+				play_song = "mace windu super event"
 		}
 	}
 	debug_fleet = {

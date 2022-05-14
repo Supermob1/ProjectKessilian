@@ -28,8 +28,18 @@ scripted_gui = {
 						has_global_flag = Super_Event_Jango_VS_Mace
 					}
 					set_global_flag = Jango_Dead
+					set_global_flag = Super_Event_Dooku_Fight
+					set_global_flag = Super_Event_Visible
+					clr_global_flag = Super_Event_Jango_VS_Mace
+					play_song = "dooku fight"
 				}
-				clr_global_flag  = Super_Event_Jango_VS_Mace
+				else_if = {
+					limit = {
+						has_global_flag = Super_Event_Dooku_Fight
+					}
+					set_global_flag = Anakin_hand_lost
+					clr_global_flag = Super_Event_Dooku_Fight
+				}
 			}
 			Super_Event_Option_B_click = {
 				clr_global_flag = Super_Event_Visible
@@ -38,8 +48,18 @@ scripted_gui = {
 						has_global_flag = Super_Event_Jango_VS_Mace
 					}
 					set_global_flag = Jango_Alive
+					set_global_flag = Super_Event_Dooku_Fight
+					set_global_flag = Super_Event_Visible
+					clr_global_flag = Super_Event_Jango_VS_Mace
+					play_song = "dooku fight"
 				}
-				clr_global_flag  = Super_Event_Jango_VS_Mace
+				else_if = {
+					limit = {
+						has_global_flag = Super_Event_Dooku_Fight
+					}
+					set_global_flag = Injured_Obiwan
+					clr_global_flag  = Super_Event_Dooku_Fight
+				}
 			}
 			Super_Event_Exit_click = {
 				clr_global_flag = Super_Event_Visible
