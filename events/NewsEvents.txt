@@ -22,158 +22,158 @@ news_event = { #Padme boom boom
 
 }
 
-news_event = { #Padme boom boom
-	id = news.2
-	title = news.2.t
-	desc = { # She lives
-		text = news.2.d
-		trigger = {
-			#tba
-		}
-	}
-	desc = { # She dead yo :{
-		text = news.2.d.2
-		trigger = {
-			#tba
-		}
-	}
-	picture = GFX_news_event_seperatist_defeat
+# news_event = { #Padme boom boom
+	# id = news.2
+	# title = news.2.t
+	# desc = { # She lives
+		# text = news.2.d
+		# trigger = {
+			tba
+		# }
+	# }
+	# desc = { # She dead yo :{
+		# text = news.2.d.2
+		# trigger = {
+			tba
+		# }
+	# }
+	# picture = GFX_news_event_seperatist_defeat
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	major = yes
-	fire_only_once = yes
+	# major = yes
+	# fire_only_once = yes
 
-	option = {
-		trigger = {}
-		name = news.2.a #she lives
-	}
-	option = {
-		trigger = {}
-		name = news.2.a.2 #she dead
-	}
+	# option = {
+		# trigger = {}
+		# name = news.2.a #she lives
+	# }
+	# option = {
+		# trigger = {}
+		# name = news.2.a.2 #she dead
+	# }
 
-}
+# }
 
-news_event = {
-	id = news.65
-	title = news.65.t
-	desc = news.65.d
-	picture = GFX_news_event_unthinkable
+# news_event = {
+	# id = news.65
+	# title = news.65.t
+	# desc = news.65.d
+	# picture = GFX_news_event_unthinkable
 
-	fire_only_once = yes
+	# fire_only_once = yes
 
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	major = yes
+	# major = yes
 
-	option = {
-		name = news.65.a
-		trigger = {}
-	}
+	# option = {
+		# name = news.65.a
+		# trigger = {}
+	# }
 
-}
-news_event = {
-	id = news.66
-	title = news.66.t
-	desc = news.66.d
-	picture = GFX_news_event_order66
+# }
+# news_event = {
+	# id = news.66
+	# title = news.66.t
+	# desc = news.66.d
+	# picture = GFX_news_event_order66
 
-	is_triggered_only = yes
-	major = yes
-	fire_only_once = yes
-	option = {
-		name = news.66.a
-		trigger = { event = republic.3 }
-	}
+	# is_triggered_only = yes
+	# major = yes
+	# fire_only_once = yes
+	# option = {
+		# name = news.66.a
+		# trigger = { event = republic.3 }
+	# }
 
-}
+# }
 
-news_event = {
-	id = news.67
-	title = news.67.t
-	desc = news.67.d
-	picture = GFX_news_event_clonewars
+# news_event = {
+	# id = news.67
+	# title = news.67.t
+	# desc = news.67.d
+	# picture = GFX_news_event_clonewars
 
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	# trigger = { has_global_flag = geonosis_attacked_flag }
-	immediate = { 
-		set_global_flag = clone_wars_start_flag 
-		CIS = {
-			declare_war_on = {
-				target = REP
-				type = puppet_wargoal_focus
-			}
-		}
-		REP = {
-			declare_war_on = {
-				target = CIS
-				type = annex_everything
-			}
-		}
-	}
-	major = yes
-	fire_only_once = yes
+	trigger = { has_global_flag = geonosis_attacked_flag }
+	# immediate = { 
+		# set_global_flag = clone_wars_start_flag 
+		# CIS = {
+			# declare_war_on = {
+				# target = REP
+				# type = puppet_wargoal_focus
+			# }
+		# }
+		# REP = {
+			# declare_war_on = {
+				# target = CIS
+				# type = annex_everything
+			# }
+		# }
+	# }
+	# major = yes
+	# fire_only_once = yes
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 
-	option = {
-		name = news.67.a
-	}
+	# option = {
+		# name = news.67.a
+	# }
 
-}
+# }
 
-news_event = { #Clone wars has ended
-	id = news.68
-	title = news.68.t
-	desc = news.68.d
-	picture = GFX_news_event_clonewars_end
+# news_event = { #Clone wars has ended
+	# id = news.68
+	# title = news.68.t
+	# desc = news.68.d
+	# picture = GFX_news_event_clonewars_end
 
-	trigger = { 
-		has_global_flag = clone_wars_start_flag
-		AND = {
-			REP = {
-				NOT = {
-					has_war_with = CIS
-				}
-			}
-			CIS = {
-				NOT = {
-					has_war_with = REP
-				}
-			}
-		}
-	}
-	immediate = { 
-		set_global_flag = clone_wars_end_flag
-	}
-	major = yes
-	fire_only_once = yes
+	# trigger = { 
+		# has_global_flag = clone_wars_start_flag
+		# AND = {
+			# REP = {
+				# NOT = {
+					# has_war_with = CIS
+				# }
+			# }
+			# CIS = {
+				# NOT = {
+					# has_war_with = REP
+				# }
+			# }
+		# }
+	# }
+	# immediate = { 
+		# set_global_flag = clone_wars_end_flag
+	# }
+	# major = yes
+	# fire_only_once = yes
 
-	option = {
-		name = news.68.a
-	}
+	# option = {
+		# name = news.68.a
+	# }
 
-}
+# }
 
-news_event = { #The Seperatist Alliance Collapses
-	id = news.69
-	title = news.69.t
-	desc = news.69.d
-	picture = GFX_news_event_seperatist_defeat
+# news_event = { #The Seperatist Alliance Collapses
+	# id = news.69
+	# title = news.69.t
+	# desc = news.69.d
+	# picture = GFX_news_event_seperatist_defeat
 
-	trigger = { 
-		has_global_flag = clone_wars_republic_victory_flag
-	}
+	# trigger = { 
+		# has_global_flag = clone_wars_republic_victory_flag
+	# }
 
-	major = yes
-	fire_only_once = yes
+	# major = yes
+	# fire_only_once = yes
 
-	option = {
-		name = news.69.a
-	}
+	# option = {
+		# name = news.69.a
+	# }
 
-}
+# }
 

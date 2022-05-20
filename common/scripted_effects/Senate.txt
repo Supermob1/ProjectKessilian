@@ -727,7 +727,7 @@ pie_adjustment_effect = {
 	set_variable = { pie_var_total = 0}
 	every_owned_state = {
 		adjust_pie_state = yes
-		clamp_state_popularities = yes
+		# clamp_state_popularities = yes
 	}
 	add_to_variable = { pie_var_total = dark_side_pie_var }
 	add_to_variable = { pie_var_total = new_order_pie_var }
