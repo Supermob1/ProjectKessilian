@@ -8,25 +8,37 @@ categories =  {
 	unknown = {
 		color = { 255 0 0 }
 	}
-
 	ocean = {
-		color = { 40 83 176 }
-		movement_cost = 1.0
+		color = { 58 91 255 }
+		movement_cost = 10.0
+		ai_terrain_importance_factor = 10.0
+		sound_type = sea
+	}
+	themaw = {
+		naval_terrain = yes
+		color = { 58 91 255 }
+		movement_cost = 10.0
 		is_water = yes
 		sound_type = sea
 	}
-	
+	hyperspace = {
+		naval_terrain = yes
+		color = { 58 91 255 }
+		movement_cost = -2.0
+		is_water = yes
+		sound_type = sea
+	}
+	orbit = {
+		color = { 58 91 255 }
+		movement_cost = -10.0
+		is_water = yes
+		sound_type = sea
+	}
 	lakes = {
 		color = { 58 91 255 }
-		movement_cost = 100.0
-		ai_terrain_importance_factor = 0.0
+		movement_cost = 1.0
+		is_water = yes
 		sound_type = sea
-		is_water = no
-		naval_speed_factor = -9999.0
-		spotting_chance = -9999.0
-		units = {
-			movement = -20.0
-		}
 	}
 	
 	forest = {
@@ -74,11 +86,166 @@ categories =  {
 		enemy_army_bonus_air_superiority_factor = -0.10
 	}
 	
+	Umbara = {
+		color = { 255 129 66 }
+		movement_cost = 1.8
+		attrition = 0.5
+		ai_terrain_importance_factor = 0.1
+		sound_type = jungle
+	}
+
+	Dathomir = {
+		color = { 255 129 66 }
+		movement_cost = 1.8
+		attrition = 0.5
+		ai_terrain_importance_factor = 0.1
+		sound_type = jungle
+	}
+
+	Mustafar = {
+		color = { 255 129 66 }
+		movement_cost = 1.8
+		attrition = 0.5
+		ai_terrain_importance_factor = 0.1
+		sound_type = jungle
+	}
+
+	Sullust = {
+		color = { 255 129 66 }
+		movement_cost = 1.8
+		attrition = 0.5
+		ai_terrain_importance_factor = 0.1
+		sound_type = jungle
+	}
+
+	Cloudcity = {
+		color = { 255 129 66 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+	}
+
+	Mygeeto = {
+		color = { 255 129 66 }
+		movement_cost = 1.5
+		attrition = 0.5
+		combat_width = -0.66
+		ai_terrain_importance_factor = 0.1
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+	}
+
+	Felucia = {
+		color = { 255 129 66 }
+		movement_cost = 1.3
+		attrition = 0.2
+		ai_terrain_importance_factor = 0.1
+		sound_type = plains
+
+		units = {
+			attack = -0.1
+			#movement = -0.2
+		}
+	}
+
+	Kessel = {
+		color = { 255 129 66 }
+		movement_cost = 1.6
+		attrition = 0.3
+		ai_terrain_importance_factor = 0.1
+		sound_type = plains
+	}
+
+	geonosis = {
+		color = { 255 129 66 }
+		movement_cost = 1.05
+		attrition = 0.2
+		ai_terrain_importance_factor = 0.1
+		sound_type = desert
+		
+		sickness_chance = 3.0
+	}
+	
+	bespinsurface = {
+		color = { 255 129 66 }
+		movement_cost = 1.05
+		attrition = 0.2
+		ai_terrain_importance_factor = 0.1
+		sound_type = desert
+		
+		sickness_chance = 3.0
+	}
+	Nal_Hutta = {
+		color = { 255 129 66 }
+		movement_cost = 1.6
+		attrition = 0.2
+		ai_terrain_importance_factor = 0.1
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			movement = -0.2
+		}
+	}
+
+	Cato_Neimodia = {
+		color = { 255 129 66 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 0.1
+		sound_type = plains
+		combat_width = -0.40
+	}
+
+	Gungan = {
+		color = { 255 129 66 }
+		movement_cost = 1.8
+		ai_terrain_importance_factor = 0.1
+		sound_type = plains
+		units = {
+			attack = -0.3
+			movement = -0.2
+		}
+	}
+
+	Christophsis = {
+		color = { 255 129 66 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 0.1
+		sound_type = plains
+	}
+
 	plains = {
 		color = { 255 129 66 }
 		movement_cost = 1.0
 		ai_terrain_importance_factor = 0.1
 		sound_type = plains
+	}
+
+
+	oceanplanet = {
+		naval_terrain = yes
+		color = { 50 50 200 }
+		movement_cost = 6.0
+		ai_terrain_importance_factor = 0.1
+		sound_type = sea
+	}
+
+	snowmountain = {
+		color = { 200 200 200 }
+		movement_cost = 2.2
+		attrition = 0.4
+		combat_width = -0.66
+		ai_terrain_importance_factor = 0.1
+		sound_type = desert
 	}
 	
 	urban = {
@@ -138,88 +305,8 @@ categories =  {
 		
 		sickness_chance = 1.0
 	}
-	
-	wroshyr_forest = {
-		color = { 0 97 34 }
-		movement_cost = 1.5
-		combat_width = -0.20
-		ai_terrain_importance_factor = 5.0
-		sound_type = forest
-
-		units = {
-			attack = -0.2
-			#movement = -0.2
-		}
-
-		enemy_army_bonus_air_superiority_factor = -0.1
-	}
-	
-	ecumenpolis = {
-		color = { 0 86 6 }
-		movement_cost = 1.2
-		ai_terrain_importance_factor = 4.0
-		sound_type = plains
-
-		units = {
-			attack = -0.3
-			#movement = -0.2
-		}
-
-		enemy_army_bonus_air_superiority_factor = -0.50
-	}
-	
-	water_hyperlane = {
-		naval_terrain = yes
-		color = { 112 74 31 }
-		movement_cost = 0.5
-		is_water = yes
-		sound_type = sea
-
-		naval_speed_factor = 1.0
-		spotting_chance = -9999.0
-	}
-	water_planets = {
-		naval_terrain = yes
-		color = { 5 5 200 }
-		movement_cost = 1
-		is_water = yes
-		sound_type = sea
-	}
-	
-	volcano = {
-		color = { 206 169 99 }
-		movement_cost = 1.2
-		ai_terrain_importance_factor = 4.0
-		sound_type = plains
-
-	}
-	ice_world = {
-		color = { 6 200 11 }
-		movement_cost = 1.20
-		attrition = 0.4
-		combat_width = -0.2
-		ai_terrain_importance_factor = 1.0
-		sound_type = desert
-
-		units = {
-			attack = -0.9
-			#movement = -0.9
-		}
-	}
-	desert_world = {
-		color = { 255 0 24 }
-		movement_cost = 1.20
-		attrition = 0.4
-		combat_width = -0.2
-		ai_terrain_importance_factor = 1.0
-		sound_type = desert
-
-		units = {
-			attack = -0.9
-			#movement = -0.9
-		}
-	}
 }
+
 	
 
 
@@ -231,37 +318,35 @@ categories =  {
 
 terrain = {
 	terrain_0					= { type = plains			color = { 	0	 } texture = 1 }
-	ecumenopolis				= { type = ecumenpolis		color = { 	1	 } texture = 19 } 
-	water_hyperlane			= { type = water_hyperlane	color = { 	2	 } texture = 20 }
-	volcano						= { type = volcano			color = { 	3	 } texture = 18 }
+	terrain_1					= { type = forest			color = { 	1	 } texture = 4 } 
+	desert_mountain				= { type = hills			color = { 	2	 } texture = 3 }
+	desert						= { type = desert			color = { 	3	 } texture = 9 }
 		
-	ice_world					= { type = ice_world		color = { 	4	 } texture = 17 }
-	desert_world				= { type = desert_world		color = { 	5	 } texture = 15 }
-	terrain_6					= { type = mountain			color = { 	6	 } texture = 13 }
-	terrain_7					= { type = desert			color = { 	7	 } texture = 14 }
-	desert_hills				= { type = desert			color = { 	8	 } texture = 17 }
-	terrain_9					= { type = marsh			color = { 	9	 } texture = 7 }
-	terrain_10					= { type = mountain   		color = { 	10	 } texture = 16 }
+	terrain_4					= { type = forest			color = { 	4	 } texture = 5 }
+	terrain_5					= { type = plains	 		color = { 	5	 } texture = 0 }
+	terrain_6					= { type = mountain			color = { 	6	 } texture = 11 }
+	terrain_7					= { type = desert			color = { 	7	 } texture = 12 }
+	desert_hills				= { type = desert			color = { 	8	 } texture = 14 }
+	terrain_9					= { type = marsh			color = { 	9	 } texture = 6 }
+	terrain_10					= { type = mountain   		color = { 	10	 } texture = 13 }
 			
-	desert						= { type = mountain			color = { 	11	 } texture = 13 }
-	desert						= { type = desert			color = { 	12	 } texture = 9 }
+	desert						= { type = mountain			color = { 	11	 } texture = 11 }
+	desert						= { type = desert			color = { 	12	 } texture = 8 }
 		
-	forest_13					= { type = urban			color = { 	13	 } texture = 12 spawn_city = yes }
-	forest_14					= { type = lakes			color = { 	14	 } texture = 5 }
-	ocean_15					= { type = ocean			color = { 	15	 } texture = 13 } 
+	forest_13					= { type = urban			color = { 	13	 } texture = 10 spawn_city = yes }
+	forest_14					= { type = lakes			color = { 	14	 } texture = 255 }
+	ocean_15					= { type = ocean			color = { 	15	 } texture = 9 } 
 		
-	snow_16						= { type = mountain			color = { 	16	 } texture = 13  perm_snow = yes }
-	plains_17					= { type = plains			color = { 	19	 } texture = 0  perm_snow = yes }
+	snow_16						= { type = mountain			color = { 	16	 } texture = 11  perm_snow = no }
+	plains_17					= { type = plains			color = { 	19	 } texture = 0  perm_snow = no }
 	
 	hills_blend					= { type = hills			color = { 	17	 } texture = 2 }
-	mountain_variation_sand	 	= { type = mountain			color = { 	18	 } texture = 8 }
-	mountain_variation_grass 	= { type = mountain			color = { 	34	 } texture = 8 }
+	mountain_variation_sand	 	= { type = mountain			color = { 	18	 } texture = 7 }
+	mountain_variation_grass 	= { type = mountain			color = { 	20	 } texture = 7 }
 	jungle_18					= { type = jungle			color = { 	21	 } texture = 4 }
-	jungle_blend_18				= { type = jungle			color = { 	22	 } texture = 6 }
+	jungle_blend_18				= { type = jungle			color = { 	22	 } texture = 5 }
 	
-	jungle_blend_18				= { type = mountain			color = { 	27	 } texture = 8 }
-	desert_mountain_tops		= { type = mountain			color = { 	31	 } texture = 18 }
-	
-	wroshyr_forest				= { type = wroshyr_forest	color = { 	33	 } texture = 15 }
+	jungle_blend_18				= { type = mountain			color = { 	27	 } texture = 7 }
+	desert_mountain_tops		= { type = mountain			color = { 	31	 } texture = 15 }
 	
 }
