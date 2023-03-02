@@ -242,6 +242,11 @@ guiTypes = {
 			maxWidth = 250
 			maxHeight = 20	
 		}
+
+		positionType = {
+			name = "version_label_subscription_position"
+			position = { x = 35 y = 524 }
+		}
 		
 		
 		ButtonType = {
@@ -448,6 +453,22 @@ guiTypes = {
 			#clicksound = click_default
 			pdx_tooltip = "MENU_TWITTER"
 			web_link = "https://twitter.com/hoi_game"
+		}
+		ButtonType = {
+			name = "instagram_button"
+			position = { x=140 y=0 }
+			quadTextureSprite ="instagram"
+			#clicksound = click_default
+			pdx_tooltip = "MENU_TWITTER"
+			web_link = "https://www.instagram.com/hearts_of_iron_pdx"
+		}
+		ButtonType = {
+			name = "discord_button"
+			position = { x=180 y=0 }
+			quadTextureSprite ="discord"
+			#clicksound = click_default
+			pdx_tooltip = "MENU_TWITTER"
+			web_link = "https://discord.gg/hoi4"
 		}
 		ButtonType = {
 			name = "privacy_policy_button"

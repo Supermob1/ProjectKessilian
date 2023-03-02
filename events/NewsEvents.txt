@@ -28,13 +28,13 @@ news_event = { #Padme boom boom
 	# desc = { # She lives
 		# text = news.2.d
 		# trigger = {
-			tba
+			# tba
 		# }
 	# }
 	# desc = { # She dead yo :{
 		# text = news.2.d.2
 		# trigger = {
-			tba
+			# tba
 		# }
 	# }
 	# picture = GFX_news_event_seperatist_defeat
@@ -98,7 +98,7 @@ news_event = { #Padme boom boom
 	
 	# is_triggered_only = yes
 
-	trigger = { has_global_flag = geonosis_attacked_flag }
+	# trigger = { has_global_flag = geonosis_attacked_flag }
 	# immediate = { 
 		# set_global_flag = clone_wars_start_flag 
 		# CIS = {

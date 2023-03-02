@@ -15,77 +15,77 @@ defined_text = {
 	#### Alderensis
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 1 }
+			check_variable = { REP.HODmonth = 1 }
 		}
 		localization_key = "Alderensis"
 	}
 	#### Corellia
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 2 }
+			check_variable = { REP.HODmonth = 2 }
 		}
-		localization_key = "Corellia"
+		localization_key = "Corelliensis"
 	}
 	#### Coruscant
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 3 }
+			check_variable = { REP.HODmonth = 3 }
 		}
-		localization_key = "Coruscant"
+		localization_key = "Coruscensis"
 	}
 	#### Duro
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 4 }
+			check_variable = { REP.HODmonth = 4 }
 		}
-		localization_key = "Duro"
+		localization_key = "Durensis"
 	}
 	#### Chandrila
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 5 }
+			check_variable = { REP.HODmonth = 5 }
 		}
-		localization_key = "Chandrila"
+		localization_key = "Chandrilensis"
 	}
 	#### Bentaal
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 6 }
+			check_variable = { REP.HODmonth = 6 }
 		}
-		localization_key = "Bentaal"
+		localization_key = "Bentaensis"
 	}
 	#### Anaxes
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 7 }
+			check_variable = { REP.HODmonth = 7 }
 		}
-		localization_key = "Anaxes"
+		localization_key = "Anaxensis"
 	}
 	#### Kuat
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 8 }
+			check_variable = { REP.HODmonth = 8 }
 		}
-		localization_key = "Kuat"
+		localization_key = "Kuensis"
 	}
 	#### Anaxes
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 9 }
+			check_variable = { REP.HODmonth = 9 }
 		}
-		localization_key = "Anaxes"
+		localization_key = "Hosniensis"
 	}
 	#### Esseles
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 10 }
+			check_variable = { REP.HODmonth = 10 }
 		}
-		localization_key = "Esseles"
+		localization_key = "Esselensis"
 	}
 	#### Festivities
 	text = {
 		trigger = {
-			check_variable = { UTI.HODmonth = 11 }
+			check_variable = { REP.HODmonth = 11 }
 		}
 		localization_key = "Festivities"
 	}
@@ -95,14 +95,14 @@ defined_text = {
 	#### BBY
 	text = {
 		trigger = {
-			check_variable = { UTI.bby = 0 }
+			check_variable = { REP.bby = 0 }
 		}
 		localization_key = "BBY"
 	}
 	#### ABY
 	text = {
 		trigger = {
-			check_variable = { UTI.bby = 1 }
+			check_variable = { REP.bby = 1 }
 		}
 		localization_key = "ABY"
 	}
@@ -112,35 +112,35 @@ defined_text = {
 	#### Primeday
 	text = {
 		trigger = {
-			check_variable = { UTI.weekday = 1 }
+			check_variable = { REP.weekday = 1 }
 		}
 		localization_key = "Primeday"
 	}
 	#### Centaxday
 	text = {
 		trigger = {
-			check_variable = { UTI.weekday = 2 }
+			check_variable = { REP.weekday = 2 }
 		}
 		localization_key = "Centaxday"
 	}
 	#### Taungsday
 	text = {
 		trigger = {
-			check_variable = { UTI.weekday = 3 }
+			check_variable = { REP.weekday = 3 }
 		}
 		localization_key = "Taungsday"
 	}
 	#### Zhellday
 	text = {
 		trigger = {
-			check_variable = { UTI.weekday = 4 }
+			check_variable = { REP.weekday = 4 }
 		}
 		localization_key = "Zhellday"
 	}
 	#### Benduday
 	text = {
 		trigger = {
-			check_variable = { UTI.weekday = 5 }
+			check_variable = { REP.weekday = 5 }
 		}
 		localization_key = "Benduday"
 	}
@@ -153,16 +153,16 @@ defined_text = {
 	#### Republic Era
 	text = {
 		trigger = {
-			has_country_flag = Republic_Era
+			has_global_flag = Republic_Era
 		}
 		localization_key = "Republic Era"
 	}
 	#### Empire Era
 	text = {
 		trigger = {
-			has_country_flag = Empire_Era
+			has_global_flag = Empire_Era
 		}
-		localization_key = "Empire Era"
+		localization_key = "Imperial Era"
 	}
 }
 ############################################
@@ -173,15 +173,15 @@ defined_text = {
 	#### Republic Era
 	text = {
 		trigger = {
-			has_country_flag = Republic_Era
+			has_global_flag = Republic_Era
 		}
-		localization_key = "BLABLABLA"
+		localization_key = "The Republic Era, also known as the era of the Republic, the Age of Republic or the Great Peace, was a period in galactic history marked by the rise of the Galactic Republic."
 	}
 	#### Empire Era
 	text = {
 		trigger = {
-			has_country_flag = Empire_Era
+			has_global_flag = Empire_Era
 		}
-		localization_key = "BLABLABLA"
+		localization_key = "The Imperial Era—also known as the Age of the Empire or the Age of Rebellion, and sometimes regarded as the Dark Times—was the time period that covered the reign of the Galactic Empire, lasting from Galactic Emperor Sheev Palpatine's proclamation of the New Order after the Clone Wars."
 	}
 }

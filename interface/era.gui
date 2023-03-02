@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "era_main_window"
-		position = { x = 0 y = 0 }
+		position = { x = -210 y = 1 }
 		size = { width = 100% height = 300 }
 		
 		iconType ={
@@ -10,7 +10,8 @@ guiTypes = {
 			position = { x=-322 y=4 }
 			Orientation = "UPPER_RIGHT"
 			scale = 0.65
-			alwaystransparent = yes
+			alwaystransparent = no
+			pdx_tooltip = "ERA_TOOLTIP"
 		}
 		instantTextboxType = {
 			name = "date"
@@ -19,14 +20,13 @@ guiTypes = {
 			fixedsize = yes
 			#text = "[?global.date]"
 			#text = "[?global.BBY_Date] BBY [Era_name]"
-			text = "[?UTI.HODday], [Month_name] [?UTI.HODyear] [BBY_name]"
+			text = "[?REP.HODday], [Month_name] [?REP.HODyear] [BBY_name]"
 			maxWidth = 250
 			maxHeight = 18
 			Orientation = "UPPER_RIGHT"
 			format = center	
 			vertical_alignment = center
-			pdx_tooltip = "ERA_TOOLTIP"
-			alwaystransparent = no
+			alwaystransparent = yes
 		}
 		iconType ={
 			name ="credits_window"
