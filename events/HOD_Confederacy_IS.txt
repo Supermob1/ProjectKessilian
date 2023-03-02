@@ -3,6 +3,7 @@
 ###########################
 
 add_namespace = confederacy
+add_namespace = cis.debug
 
 
 country_event = { # The Raxus Address
@@ -49,3 +50,121 @@ country_event = { # The Raxus Address
 		}
 	}
 }
+
+
+country_event = { # general grevious
+	id = confederacy.2
+	title = confederacy.2.t
+	desc = confederacy.2.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.2.a
+	
+		ai_chance = { 
+			factor = 25	
+		}
+		
+
+			add_corps_commander_role = {
+
+				character = CIS_general_grievous
+					traits={ 
+						trait_reckless
+						skilled_staffer
+						adaptable
+						commando
+						trickster
+				
+				}
+					skill=5
+					attack_skill=6
+					defense_skill=4
+					planning_skill=1
+					logistics_skill=4
+					legacy_id=-1
+				
+			}
+		
+	}
+	
+	
+}
+
+country_event = { # a new birth of freedom
+	id = confederacy.3
+	title = confederacy.3.t
+	desc = confederacy.3.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.3.a
+	
+		ai_chance = { 
+			factor = 25	
+		}
+		
+
+		
+	}
+	
+	
+}
+
+country_event = { # opening of the congress
+	id = confederacy.4
+	title = confederacy.4.t
+	desc = confederacy.4.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.4.a
+	
+		ai_chance = { 
+			factor = 25	
+		}
+		
+
+		
+	}
+	
+	
+}
+
+country_event = { # opening of the congress
+	id = cis_debug.0
+	title = confederacy.4.t
+	desc = confederacy.4.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.4.a
+	
+		load_focus_tree = CIS_focus_tree
+		ai_chance = { 
+			factor = 25	
+		}
+		
+
+		
+	}
+	
+	
+}
+
