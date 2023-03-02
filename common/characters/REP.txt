@@ -28,29 +28,85 @@ characters={
 			id=-1
 		}
 	}
-	REP_Wilhuff_Tarkin={
-		name="Wilhuff Tarkin"
+	REP_anakin_skywalker={
+		name="Anakin Skywalker"
 		portraits={
-			civilian={
-				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
-			}
 			army={
-				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
+				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
+				large="gfx/leaders/REP/portrait_anakin_skywalker.dds"
 			}
 		}
-		country_leader={
-			desc="REP_tarkin_desc"
-			ideology=akaanadocrat_subtype
-			traits={ }
-			#expire="1965.1.1.1"
-			id=-1
+		advisor = {
+			slot = army_chief
+			idea_token = anakin_army_chief
+			name = anakin
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+				NOT = { has_idea = anakin_high }
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				hero_with_no_fear
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = anakin_high
+			name = anakin
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+				NOT = { has_idea = anakin_army_chief }
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				hero_with_no_fear
+			}
+			ai_will_do = {
+				factor = 1
+			}
 		}
 		corps_commander={
-			skill=5
+			traits={ jedi_knight }
+			visible = {
+				NOT = {
+					OR = {
+						has_idea = anakin_army_chief
+						has_idea = anakin_high
+					}
+				}
+			}
+			skill=3
 			attack_skill=3
-			defense_skill=1
-			planning_skill=4
-			logistics_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
 			legacy_id=-1
 		}
 	}
@@ -64,7 +120,7 @@ characters={
 		}
 		advisor = {
 			slot = army_chief
-			idea_token = obi_wan
+			idea_token = obi_wan_army_chief
 			name = obi_wan
 			cost = 100
 			ledger = army
@@ -73,6 +129,36 @@ characters={
 			}
 			visible = {
 				original_tag = REP
+				NOT = { has_idea = obi_wan_high }
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+						has_country_flag = obi-wan_missing_flag 
+					}
+				}
+			}
+			traits = {
+				tactician_chief_of_army
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = obi_wan_high
+			name = obi_wan
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+				NOT = { has_idea = obi_wan_army_chief }
 			}
 			available = {
 				NOT = { 
@@ -92,26 +178,15 @@ characters={
 		}
 		field_marshal={
 			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_kiadimundi={
-		name="Ki-Adi-Mundi"
-		portraits={
-			army={
-				small=""
+			visible = {
+				NOT = {
+					OR = {
+						has_idea = obi_wan_army_chief
+						has_idea = obi_wan_high
+						has_country_flag = obi-wan_missing_flag
+					}
+				}
 			}
-			army={
-				large="gfx/leaders/REP/portrait_ki_adi_mundi.dds"
-			}
-		}
-		field_marshal={
-			traits={ jedi_master }
 			skill=3
 			attack_skill=3
 			defense_skill=3
@@ -162,6 +237,26 @@ characters={
 			defense_skill=5
 			planning_skill=5
 			logistics_skill=5
+			legacy_id=-1
+		}
+	}
+	REP_kiadimundi={
+		name="Ki-Adi-Mundi"
+		portraits={
+			army={
+				small=""
+			}
+			army={
+				large="gfx/leaders/REP/portrait_ki_adi_mundi.dds"
+			}
+		}
+		field_marshal={
+			traits={ jedi_master }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
 			legacy_id=-1
 		}
 	}
@@ -441,80 +536,6 @@ characters={
 			}
 		}
 		field_marshal={
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_anakin_skywalker={
-		name="Anakin Skywalker"
-		portraits={
-			army={
-				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
-				large="gfx/leaders/REP/portrait_anakin_skywalker.dds"
-			}
-		}
-		advisor = {
-			slot = army_chief
-			idea_token = anakin
-			name = anakin
-			cost = 100
-			ledger = army
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-				NOT = { has_idea = anakin_high }
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
-			}
-			traits = {
-				hero_with_no_fear
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		advisor = {
-			slot = high_command
-			idea_token = anakin_high
-			name = anakin
-			cost = 100
-			ledger = army
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-				NOT = { has_idea = anakin }
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
-			}
-			traits = {
-				hero_with_no_fear
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
 			skill=3
 			attack_skill=3
 			defense_skill=3
@@ -1318,6 +1339,32 @@ characters={
 			defense_skill=3
 			planning_skill=3
 			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	REP_Wilhuff_Tarkin={
+		name="Wilhuff Tarkin"
+		portraits={
+			civilian={
+				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
+			}
+			army={
+				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
+			}
+		}
+		country_leader={
+			desc="REP_tarkin_desc"
+			ideology=akaanadocrat_subtype
+			traits={ }
+			#expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander={
+			skill=5
+			attack_skill=3
+			defense_skill=1
+			planning_skill=4
+			logistics_skill=2
 			legacy_id=-1
 		}
 	}

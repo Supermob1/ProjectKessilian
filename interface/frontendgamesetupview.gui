@@ -304,8 +304,9 @@ guiTypes = {
 			position = { x = -1 y = 126 }	
 			size = { width = 350 height = 415}
 			verticalScrollbar = "right_vertical_slider"
-			vertical_scroll_step = 5
-			
+			scroll_wheel_factor = 55
+			smooth_scrolling = yes
+
 			background = {
 				name = "Background"		
 				quadTextureSprite ="GFX_no_frame_special_bg"
@@ -711,9 +712,8 @@ guiTypes = {
 		iconType = {
 			name = "minor_country_leader"
 			quadTextureSprite ="GFX_leader_unknown"
-			position = { x = 289 y = 441 }
-			scale=0.696
-			rotation=-0.04
+			position = { x = 255 y = 441 }
+			scale=0.9
 		}
 		
 		iconType = {
@@ -1372,6 +1372,8 @@ guiTypes = {
 			size = { width = 100%% height = 484 }
 			margin = { top = 0 bottom = 0 right = 26 left = 15 }
 			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
 
 			background = {
 				name = "Background"
@@ -2025,6 +2027,7 @@ guiTypes = {
 					pdx_tooltip = "MAPMODE_DEFAULT"
 					pdx_tooltip_delayed = "MAPMODE_DEFAULT_DESCRIPTION"
 					frame = 1
+					centerPosition = yes
 				}
 				buttonType = {
 					name = "mapmode_button_1_s"
@@ -2033,7 +2036,8 @@ guiTypes = {
 					shortcut = "F1"
 					pdx_tooltip = "MAPMODE_DEFAULT"
 					pdx_tooltip_delayed = "MAPMODE_DEFAULT_DESCRIPTION"
-					frame = 1					
+					frame = 1
+					centerPosition = yes
 				}
 				
 				# 2st BUTTON (BIG)
@@ -2044,7 +2048,8 @@ guiTypes = {
 					clicksound = land_mapmode
 					shortcut = "F2"
 					pdx_tooltip = "MAPMODE_PLAYERS"
-					frame = 2					
+					frame = 2
+					centerPosition = yes
 				}
 				buttonType = {
 					name = "mapmode_button_2_s"
