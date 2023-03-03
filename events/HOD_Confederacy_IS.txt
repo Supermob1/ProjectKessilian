@@ -60,37 +60,28 @@ country_event = { # general grevious
 	
 	fire_only_once = no
 
-	option = { 
+	option = {
 		name = confederacy.2.a
-	
+		add_corps_commander_role = {
+		character = CIS_general_grievous
+			traits = {
+				trait_reckless
+				skilled_staffer
+				adaptable
+				commando
+				trickster
+			}
+			skill=5
+			attack_skill=6
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=4
+			legacy_id=-1
+		}
 		ai_chance = { 
 			factor = 25	
 		}
-		
-
-			add_corps_commander_role = {
-
-				character = CIS_general_grievous
-					traits={ 
-						trait_reckless
-						skilled_staffer
-						adaptable
-						commando
-						trickster
-				
-				}
-					skill=5
-					attack_skill=6
-					defense_skill=4
-					planning_skill=1
-					logistics_skill=4
-					legacy_id=-1
-				
-			}
-		
 	}
-	
-	
 }
 
 country_event = { # a new birth of freedom
@@ -109,12 +100,7 @@ country_event = { # a new birth of freedom
 		ai_chance = { 
 			factor = 25	
 		}
-		
-
-		
 	}
-	
-	
 }
 
 country_event = { # opening of the congress
@@ -129,7 +115,6 @@ country_event = { # opening of the congress
 
 	option = { 
 		name = confederacy.4.a
-	
 		ai_chance = { 
 			factor = 25	
 		}
@@ -153,14 +138,5 @@ country_event = { # price of liberty
 			factor = 25	
 		}
 		
-
-		
 	}
-	
-	
-<<<<<<< Updated upstream
 }
-=======
-}
-
->>>>>>> Stashed changes
