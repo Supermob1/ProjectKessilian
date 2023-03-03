@@ -648,10 +648,10 @@ category = infantry_weapons
 		available_if_capitulated = yes
 		prerequisite = { focus = TRA_the_floating_fortress }
 		completion_reward = {
-			add_equipment_to_stockpile= {
- type = fighter_equipment_0 
-amount = 100  
-}
+			# add_equipment_to_stockpile= {
+				# type = fighter_equipment_0 
+				# amount = 100  
+			# }
 		}
 	}
 

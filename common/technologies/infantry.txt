@@ -74,6 +74,20 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 10
+				tag = CHI
+				
+				OR = {
+					date > "1937.1.1"
+					JAP = { is_ai = no }
+				}
+			}
+			
+			modifier = {
+				factor = 10
+				date > "1936.1.3"
+			}
 		}
 	}	
 	
@@ -117,6 +131,19 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 			
+			modifier = {
+				factor = 5
+
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
 
 			modifier = {
 				factor = 5
@@ -161,7 +188,18 @@ technologies = {
 			modifier = {
 				num_of_military_factories < 50
 				factor = 0.5
-			}		
+			}
+			#modifier = {
+			#	factor = 0
+			#	tag = SOV
+			#	OR = {
+			#		date < "1944.1.1" # stock up on lots of rifles, we got the manpower
+			#		AND = {
+			#			date > "1943.1.1"
+			#			surrender_progress < 0.1 # if we arent losing badly its ok
+			#		}
+			#	}
+			#}
 		}
 	}
 	improved_infantry_weapons_2 = {
@@ -329,6 +367,10 @@ technologies = {
 			
 			
 			modifier = {
+				tag = GER
+				factor = 2.5
+			}
+			modifier = {
 				num_of_military_factories > 150
 				factor = 2.5
 			}
@@ -423,11 +465,26 @@ technologies = {
 		
 		categories = {
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
 			factor = 0.5
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 	
@@ -452,10 +509,26 @@ technologies = {
 		
 		categories = {
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
 			factor = 0.5
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 
@@ -475,11 +548,26 @@ technologies = {
 		
 		categories = {
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
 			factor = 0.5
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 	
@@ -515,10 +603,21 @@ technologies = {
 		
 		categories = {
 			marine_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
 			factor = 0.7
+			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}
 	
@@ -543,10 +642,21 @@ technologies = {
 		
 		categories = {
 			marine_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
 			factor = 0.7
+			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}
 	
@@ -565,10 +675,21 @@ technologies = {
 		
 		categories = {
 			marine_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
 			factor = 0.7
+			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}	
 	
@@ -605,6 +726,7 @@ technologies = {
 		categories = {
 			infantry_tech
 			mountaineers_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -634,6 +756,7 @@ technologies = {
 		categories = {
 			infantry_tech
 			mountaineers_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -656,6 +779,7 @@ technologies = {
 		categories = {
 			infantry_tech
 			mountaineers_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -698,6 +822,7 @@ technologies = {
 			mountaineers_tech
 			marine_tech
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -734,6 +859,7 @@ technologies = {
 			mountaineers_tech
 			marine_tech
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -765,6 +891,7 @@ technologies = {
 			mountaineers_tech
 			marine_tech
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -799,6 +926,7 @@ technologies = {
 			mountaineers_tech
 			marine_tech
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -832,6 +960,7 @@ technologies = {
 			mountaineers_tech
 			marine_tech
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -861,6 +990,7 @@ technologies = {
 			mountaineers_tech
 			marine_tech
 			para_tech
+			cat_special_forces_generic
 		}
 		
 		ai_will_do = {
@@ -897,6 +1027,29 @@ technologies = {
 		paratrooper = {
 			jungle = {
 				attack = 0.05
+				movement = 0.1
+			}
+		}
+
+	}
+
+	SWI_mountaineer_paratroopers_tech = { #Unlocked in Swiss Focus SWI_mountaneer_paratroopers
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+
+		paratrooper = {  # CHANGE TOOLTIP WHEN NEEDED
+			mountain = {
+				attack = 0.35
+				defence = 0.1
+				movement = 0.2
+			}
+			hills = {
+				attack = 0.2
+				defence = 0.05
 				movement = 0.1
 			}
 		}
@@ -1109,6 +1262,33 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
+				factor = 15
+
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "1937.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "1938.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "1939.1.1"
+			}
+			modifier = {
 				has_war = yes
 				factor = 2
 			}
@@ -1173,6 +1353,38 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
+			modifier = {
+				factor = 2
+				date > "1938.1.6"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "1939.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "1940.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "1941.1.1"
+			}
 			modifier = {
 				has_war = yes
 				factor = 2
@@ -1438,6 +1650,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 2
+				tag = SOV
+			}
 		}
 		
 		categories = {
@@ -1470,6 +1686,7 @@ technologies = {
 		categories = {
 			motorized_equipment
 			armor
+			cat_armored_cars
 		}
 		
 		ai_will_do = {
@@ -1517,6 +1734,7 @@ technologies = {
 		categories = {
 			motorized_equipment
 			armor
+			cat_armored_cars
 		}
 		
 		ai_will_do = {
@@ -1524,17 +1742,17 @@ technologies = {
 			
 			modifier = {
 				factor = 2
-				date > "1937.1.1"
+				date > "1940.1.1"
 			}
 			
 			modifier = {
 				factor = 2
-				date > "1938.1.1"
+				date > "1941.1.1"
 			}
 			
 			modifier = {
 				factor = 2
-				date > "1939.1.1"
+				date > "1942.1.1"
 			}
 			modifier = {
 				is_major = no
@@ -1559,6 +1777,7 @@ technologies = {
 		categories = {
 			motorized_equipment
 			armor
+			cat_armored_cars
 		}
 		
 		sub_technologies = {
@@ -1570,17 +1789,17 @@ technologies = {
 			
 			modifier = {
 				factor = 2
-				date > "1937.1.1"
+				date > "1942.1.1"
 			}
 			
 			modifier = {
 				factor = 2
-				date > "1938.1.1"
+				date > "1943.1.1"
 			}
 			
 			modifier = {
 				factor = 2
-				date > "1939.1.1"
+				date > "1944.1.1"
 			}
 			modifier = {
 				is_major = no
@@ -1602,6 +1821,7 @@ technologies = {
 		categories = {
 			motorized_equipment
 			armor
+			cat_armored_cars
 		}
 
 		ai_will_do = {
@@ -1609,17 +1829,17 @@ technologies = {
 			
 			modifier = {
 				factor = 2
-				date > "1937.1.1"
+				date > "1942.1.1"
 			}
 			
 			modifier = {
 				factor = 2
-				date > "1938.1.1"
+				date > "1943.1.1"
 			}
 			
 			modifier = {
 				factor = 2
-				date > "1939.1.1"
+				date > "1944.1.1"
 			}
 			modifier = {
 				is_major = no
@@ -1679,6 +1899,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				tag = USA
+				factor = 2
+			}
 		}
 	}
 
@@ -1717,6 +1941,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				tag = USA
+				factor = 2
+			}
 		}
 	}
 

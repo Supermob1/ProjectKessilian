@@ -22,6 +22,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 		
 		categories = {
@@ -54,6 +59,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 		
 		categories = {
@@ -85,6 +94,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 		
 		categories = {
@@ -111,7 +124,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
-
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 		
 		categories = {
@@ -148,6 +164,15 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -184,6 +209,15 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -219,6 +253,15 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -250,6 +293,15 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -661,7 +713,21 @@ technologies = {
 				factor = 0.5
 				NOT = { has_war = yes }
 			}
-
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 		
 		categories = {
@@ -680,6 +746,13 @@ technologies = {
 			leads_to_tech = tank_landing_craft 
 			research_cost_coeff = 1
 		}
+
+		enable_equipments = {
+			floating_harbor_equipment_1
+		}
+
+		force_use_small_tech_layout = yes
+		show_equipment_icon = yes
 		
 		research_cost = 2
 		start_year = 1940
@@ -697,6 +770,34 @@ technologies = {
 				NOT = { has_war = yes }
 			}
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
+			
+			modifier = {
+				factor = 5
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				has_war_with = GER
+			}
+
+			modifier = {
+				factor = 10
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				has_war_with = GER
+				GER = { has_war_with = SOV }
+			}
 		}
 		
 		categories = {
@@ -726,6 +827,20 @@ technologies = {
 				NOT = { has_war = yes }
 			}
 			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 		
 		categories = {
@@ -757,6 +872,15 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 5
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -787,6 +911,15 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 5
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -817,7 +950,16 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-
+			
+			modifier = {
+				factor = 5
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 5
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -844,6 +986,16 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			
+			modifier = {
+				factor = 5
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 5
+				tag = JAP
+			}
 		}
 		
 		categories = {
@@ -875,6 +1027,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+				tag = GER
+			}
 		}
 		
 		categories = {
@@ -905,6 +1061,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+				tag = GER
+			}
 		}
 		
 		categories = {
@@ -936,6 +1096,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+				tag = GER
+			}
 		}
 		
 		categories = {
@@ -962,6 +1126,10 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			
+			modifier = {
+				factor = 5
+				tag = GER
+			}
 		}
 		
 		categories = {

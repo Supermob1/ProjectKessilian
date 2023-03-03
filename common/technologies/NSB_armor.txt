@@ -2,9 +2,12 @@ technologies = {
 
 
 	@1918 = 0
-	@1936 = 2
-	@1938 = 4
-	@1939 = 6
+	@1934 = 2
+	@1935 = 3
+	@1936 = 4
+	@1937 = 5
+	@1938 = 5
+	@1939 = 7
 	@1940 = 7
 	@1941 = 8
 	@1942 = 9
@@ -58,6 +61,7 @@ technologies = {
 			extra_ammo_storage
 			wet_ammo_storage
 			smoke_launchers
+			expanded_fuel_tank
 		}
 		enable_subunits = {
 			light_armor
@@ -185,16 +189,11 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		path = {
-			leads_to_tech = amphibious_tank_chassis
-			research_cost_coeff = 1
-		}
-
 		research_cost = 2
 		start_year = 1934
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -4 y = 2 }
+			position = { x = -1 y = 2 }
 		}
 
 		ai_will_do = {
@@ -241,16 +240,65 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
+		path = {
+			leads_to_tech = amphibious_tank_chassis
+			research_cost_coeff = 1
+		}
+
 		research_cost = 2
 		start_year = 1936
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -4 y = 4 }
+			position = { x = -1 y = 4 }
 		}
 
 		ai_will_do = {
 			factor = 1
+
+			modifier = {
+				factor = 2
+				is_major = yes
+				not = {
+					tag = JAP
+					num_of_military_factories < 50
+				}
+			}
+			modifier = {
+				is_major = yes
+				not = { tag = JAP }
+				has_war = yes
+				factor = 10 #you are embarassing yourself
+			}
+			modifier = {
+				tag = SOV
+				factor = 3
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1937.1.1"
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1938.1.1"
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1939.1.1"
+			}
+		}
+
+		on_research_complete = {
+			if = { #Italian templates
+				limit = {
+					original_tag = ITA
+					#has_completed_focus = ITA_italian_tankettes
+				}
+				ITA_add_improved_light_tank_templates = yes
+			}
 		}
 
 		categories = {
@@ -285,12 +333,26 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -1 y = 5 }
+			position = { x = -4 y = 5 }
 		}
 
 		ai_will_do = {
 			factor = 0.5
 
+			modifier = {
+				factor = 2
+				is_major = yes
+				NOT = {
+					TAG = GER
+				}
+			}
+			modifier = {
+				OR = {
+					original_tag = USA
+					original_tag = JAP
+				}
+				factor = 2
+			}
 			modifier = {
 				not = {
 					any_controlled_state = {
@@ -334,7 +396,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -1 y = 8 }
+			position = { x = -4 y = 8 }
 		}
 
 		ai_will_do = {
@@ -343,6 +405,13 @@ technologies = {
 			modifier = {
 				factor = 2
 				is_major = yes
+			}
+			modifier = {
+				OR = {
+					original_tag = USA
+					original_tag = JAP
+				}
+				factor = 2
 			}
 			modifier = {
 				not = {
@@ -369,17 +438,12 @@ technologies = {
 			light_tank_aa_chassis_3
 		}
 
-		path = {
-			leads_to_tech = main_battle_tank_chassis
-			research_cost_coeff = 1
-		}
-
 		research_cost = 2
 		start_year = 1941
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -4 y = 8 }
+			position = { x = -1 y = 8 }
 		}
 
 		ai_will_do = {
@@ -455,21 +519,50 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		path = {
-			leads_to_tech = amphibious_tank_chassis
-			research_cost_coeff = 1
-		}
-
 		research_cost = 2
-		start_year = 1936
+		start_year = 1938
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @1936 }
+			position = { x = 2 y = @1937 }
 		}
 
 		ai_will_do = {
 			factor = 2
+
+			modifier = {
+				factor = 2
+				is_major = yes
+				not = {
+					tag = JAP
+					num_of_military_factories < 50
+				}
+				date > "1938.1.1"
+			}
+			modifier = {
+				tag = SOV
+				factor = 1.5
+			}
+			modifier = {
+				factor = 1.1
+				date > "1940.1.1"
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1941.1.1"
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1942.1.1"
+			}
+
+			modifier = {
+				factor = 15.0
+				tag = GER
+				has_opinion_modifier = sov_ger_treaty
+			}
 		}
 
 		categories = {
@@ -502,8 +595,58 @@ technologies = {
 			position = { x = 2 y = @1940 }
 		}
 
+		on_research_complete = {
+			if = { #Italian templates
+				limit = {
+					original_tag = ITA
+					OR = {
+						#has_completed_focus = ITA_end_fiat_ansaldo_duopoly
+						#has_completed_focus = ITA_modernize_ansaldo_facilities
+					}
+				}
+				ITA_add_improved_medium_tank_templates = yes
+			}
+		}
+
 		ai_will_do = {
 			factor = 3
+
+			modifier = {
+				factor = 2
+				is_major = yes
+				not = {
+					tag = JAP
+					num_of_military_factories < 50
+				}
+			}
+			modifier = {
+				date < "1941.1.1"
+				factor = 0.3
+			}
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+
+			modifier = {
+				factor = 2
+				tag = SOV
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1942.1.1"
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1943.1.1"
+			}
+
+			modifier = {
+				factor = 1.1
+				date > "1944.1.1"
+			}
 		}
 
 		categories = {
@@ -532,6 +675,16 @@ technologies = {
 		folder = {
 			name = nsb_armour_folder
 			position = { x = 2 y = @1943 }
+		}
+
+		on_research_complete = {
+			if = { #Italian templates
+				limit = {
+					original_tag = ITA
+					#has_completed_focus = ITA_ferrea_mole_ferreo_cuore
+				}
+				ITA_add_advanced_medium_tank_templates = yes
+			}
 		}
 
 		ai_will_do = {
@@ -674,6 +827,15 @@ technologies = {
 				factor = 1.2
 				date > "1939.1.1"
 			}
+			modifier = {
+				tag = FRA
+				factor = 3
+			}
+			modifier = {
+				tag = JAP
+				num_of_military_factories < 100
+				factor = 0
+			}
 		}
 
 		categories = {
@@ -709,8 +871,40 @@ technologies = {
 			position = { x = 5 y = @1940 }
 		}
 
+		on_research_complete = {
+			if = { #Italian templates
+				limit = {
+					original_tag = ITA
+					OR = {
+						#has_completed_focus = ITA_end_fiat_ansaldo_duopoly
+						#has_completed_focus = ITA_modernize_ansaldo_facilities
+					}
+				}
+				ITA_add_improved_heavy_tank_templates = yes
+			}
+		}
+
 		ai_will_do = {
 			factor = 0.8
+			modifier = {
+				tag = JAP
+				num_of_military_factories < 100
+				factor = 0
+			}
+			modifier = {
+				factor = 1.2
+				date > "1942.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1943.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "1944.1.1"
+			}
 		}
 
 		categories = {
@@ -740,6 +934,16 @@ technologies = {
 		folder = {
 			name = nsb_armour_folder
 			position = { x = 5 y = @1943 }
+		}
+
+		on_research_complete = {
+			if = { #Italian templates
+				limit = {
+					original_tag = ITA
+					#has_completed_focus = ITA_ferrea_mole_ferreo_cuore
+				}
+				ITA_add_advanced_heavy_tank_templates = yes
+			}
 		}
 
 		ai_will_do = {
@@ -791,6 +995,32 @@ technologies = {
 			position = { x = 8 y = @1943 }
 		}
 
+		on_research_complete = {
+			if = { #Italian templates
+				limit = {
+					original_tag = ITA
+				}
+				if = {
+					limit = {
+						#has_completed_focus = ITA_capo_supremo
+					}
+					ITA_add_il_duce_sh_tank_template_and_production = yes
+				}
+				else_if = {
+					limit = {
+						#has_completed_focus = ITA_modern_musculus
+					}
+					ITA_add_modern_musculus_sh_tank_template_and_production = yes
+				}
+				else_if = {
+					limit = {
+						#has_completed_focus = ITA_a_time_for_war
+					}
+					ITA_add_hand_of_god_sh_tank_template_and_production = yes
+				}
+			}
+		}
+
 		ai_will_do = {
 			factor = 0 # Hitler cries on the inside
 		}
@@ -817,10 +1047,10 @@ technologies = {
 		show_effect_as_desc = yes
 
 		research_cost = 1
-		start_year = 1934
+		start_year = 1936
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 3 y = @1936 }
+			position = { x = 3 y = @1935 }
 		}
 
 		ai_will_do = {
@@ -872,7 +1102,7 @@ technologies = {
 		show_effect_as_desc = yes
 
 		research_cost = 1
-		start_year = 1936
+		start_year = 1938
 		folder = {
 			name = nsb_armour_folder
 			position = { x = 3 y = @1938 }
@@ -1026,7 +1256,7 @@ technologies = {
 		start_year = 1934
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @1936 }
+			position = { x = 2 y = @1935 }
 		}
 
 		ai_will_do = {
@@ -1076,7 +1306,7 @@ technologies = {
 		show_effect_as_desc = yes
 
 		research_cost = 1
-		start_year = 1936
+		start_year = 1938
 		folder = {
 			name = nsb_armour_folder
 			position = { x = 2 y = @1938 }
