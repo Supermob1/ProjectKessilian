@@ -1,6 +1,23 @@
 ideas = {
 	country = {
-	
+
+		CIS_forging_an_army_idea = {
+			#picture = 
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				industrial_capacity_dockyard = 0.5
+			}
+	}
 		
 	}
 }
