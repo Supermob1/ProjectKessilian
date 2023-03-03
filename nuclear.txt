@@ -1,32 +1,32 @@
 
-	experimental_rockets = {
-
-		enable_building = {
-			building = rocket_site
-			level = 2
-		}
-		
-		path = {
-			leads_to_tech = rocket_engines 
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 1.5
-		start_year = 1007
-		
-		folder = {
-			name = electronics_folder
-			position = { x = 0 y = 0 }
-		}
-	
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			rocketry
-		}
-	}
+#	experimental_rockets = {
+#
+#		enable_building = {
+#			building = rocket_site
+#			level = 2
+#		}
+#		
+#		path = {
+#			leads_to_tech = rocket_engines 
+#			research_cost_coeff = 1
+#		}
+#		
+#		research_cost = 1.5
+#		start_year = 1007
+#		
+#		folder = {
+#			name = electronics_folder
+#			position = { x = 0 y = 0 }
+#		}
+#	
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		
+#		categories = {
+#			rocketry
+#		}
+#	}
 	
 	rocket_engines = {
 
