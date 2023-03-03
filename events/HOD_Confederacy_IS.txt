@@ -3,6 +3,11 @@
 ###########################
 
 add_namespace = confederacy
+<<<<<<< Updated upstream
+=======
+add_namespace = cis_debug
+
+>>>>>>> Stashed changes
 
 country_event = { # The Raxus Address
 	id = confederacy.1
@@ -135,3 +140,31 @@ country_event = { # opening of the congress
 		}
 	}
 }
+<<<<<<< Updated upstream
+=======
+
+country_event = { # price of liberty
+	id = confederacy.5
+	title = confederacy.5.t
+	desc = confederacy.5.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.5.a
+	
+		ai_chance = { 
+			factor = 25	
+		}
+		
+
+		
+	}
+	
+	
+}
+
+>>>>>>> Stashed changes
