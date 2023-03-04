@@ -4,41 +4,41 @@ on_actions = {
 	on_startup = {
 		effect = {
 			set_global_flag = Republic_Era
-			set_variable = { REP.HODday = 1 }
-			set_variable = { REP.HODmonth = 1 }
-			set_variable = { REP.HODyear = -24 }
-			set_variable = { REP.bby = 0 }
+			set_variable = { UTI.HODday = 1 }
+			set_variable = { UTI.HODmonth = 1 }
+			set_variable = { UTI.HODyear = -24 }
+			set_variable = { UTI.bby = 0 }
 		}
 	}
 	# this is executed on the 1st of every year FOR ONE RANDOM COUNTRY - use every_country inside
-	on_daily_REP = {
+	on_daily_UTI = {
 		effect = {
-			REP = {
-				add_to_variable = { REP.HODday = 1 }
+			UTI = {
+				add_to_variable = { UTI.HODday = 1 }
 				if = {
 					limit = {
 						AND = {
-							check_variable = { REP.HODday = 19 }
+							check_variable = { UTI.HODday = 19 }
 							check_variable = { REP.HODmonth = 11 }
 						}
 					}
-					set_variable = { REP.HODday = 1 }
-					set_variable = { REP.HODmonth = 1 }
-					add_to_variable = { REP.HODyear = 1 }
+					set_variable = { UTI.HODday = 1 }
+					set_variable = { UTI.HODmonth = 1 }
+					add_to_variable = { UTI.HODyear = 1 }
 				}
 				if = {
 					limit = {
-						check_variable = { REP.HODday = 36 }
+						check_variable = { UTI.HODday = 36 }
 					}
-					add_to_variable = { REP.HODmonth = 1 }
-					set_variable = { REP.HODday = 1 }
+					add_to_variable = { UTI.HODmonth = 1 }
+					set_variable = { UTI.HODday = 1 }
 				}
 				if = {
 					limit = {
-						check_variable = { REP.HODyear = 0 }
+						check_variable = { UTI.HODyear = 0 }
 					}
-					set_variable = { REP.bby = 1 }
-					add_to_variable = { REP.HODyear = 1 }
+					set_variable = { UTI.bby = 1 }
+					add_to_variable = { UTI.HODyear = 1 }
 				}
 			}
 		}
