@@ -4,10 +4,13 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_token = top_bar
 		window_name = "era_main_window"
+		dirty = era_refresh
 		visible = {
-			always = yes
 		}
 		properties = {
+			credits_window = {
+				frame = creditsamount_frames
+			}
 		}
 	}
 }
