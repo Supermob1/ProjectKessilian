@@ -15,22 +15,7 @@ categories =  {
 		is_water = yes
 		sound_type = sea
 	}
-	
-	water_hyperlane = {
-		naval_terrain = yes
-		color = { 58 91 255 }
-		movement_cost = 10.0
-		is_water = yes
-		sound_type = sea
-	}
-	water_planets = {
-		naval_terrain = yes
-		color = { 58 91 255 }
-		movement_cost = 0.8
-		is_water = yes
-		sound_type = sea
-	}
-	
+
 	lakes = {
 		color = { 58 91 255 }
 		movement_cost = 1.0
@@ -197,6 +182,21 @@ categories =  {
 		supply_flow_penalty_factor = 0.14
 		
 		truck_attrition_factor = 0.5
+	}
+	
+	water_hyperlane = {
+		naval_terrain = yes
+		color = { 58 91 255 }
+		movement_cost = 10.0
+		is_water = yes
+		sound_type = sea
+	}
+	water_planets = {
+		naval_terrain = yes
+		color = { 58 91 255 }
+		movement_cost = 0.8
+		is_water = yes
+		sound_type = sea
 	}
 	
 	water_fjords = {
