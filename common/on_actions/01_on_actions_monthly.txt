@@ -56,6 +56,18 @@ on_actions = {
 					}
 					if = {
 						limit = {
+							NOT = {
+								has_country_flag = closed_country
+							}
+						}
+						add_to_variable = { global.Doonium = resource@rubber }
+						add_to_variable = { global.Bacta = resource@tungsten }
+						add_to_variable = { global.Minerals = resource@aluminium }
+						add_to_variable = { global.Alloys = resource@steel }
+						add_to_variable = { global.Circuitry = resource@chromium }
+					}
+					if = {
+						limit = {
 							check_variable = { era_refresh = 0 }
 						}
 						set_variable = { era_refresh = 1 }
