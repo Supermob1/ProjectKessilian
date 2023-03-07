@@ -1,7 +1,4 @@
-﻿###########################
-# Death Watch Events
-###########################
-
+﻿
 add_namespace = confederacy
 
 country_event = { # The Raxus Address
@@ -76,7 +73,6 @@ country_event = { # general grevious
 			defense_skill=4
 			planning_skill=1
 			logistics_skill=4
-			legacy_id=-1
 		}
 		ai_chance = { 
 			factor = 25	
@@ -140,3 +136,71 @@ country_event = { # price of liberty
 		
 	}
 }
+
+country_event = { # trade federation
+	id = confederacy.6
+	title = confederacy.6.t
+	desc = confederacy.6.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.6.a
+		
+		CIS = {
+			annex_country = {
+				target = TDF
+				transfer_troops = yes
+			}
+		}
+		TDF = {
+			every_owned_state = {
+				add_core_of = CIS
+				
+			}
+		}
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+country_event = { # trade federation
+	id = confederacy.7
+	title = confederacy.7.t
+	desc = confederacy.7.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.7.a
+		CIS = {
+			annex_country = {
+				target = TCU
+				transfer_troops = yes
+			}
+		}
+		
+		TCU = {
+			every_owned_state = {
+				add_core_of = CIS
+				
+			}
+		}
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+
+

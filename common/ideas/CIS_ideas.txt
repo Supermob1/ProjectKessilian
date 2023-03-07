@@ -18,6 +18,78 @@ ideas = {
 				industrial_capacity_dockyard = 0.5
 			}
 	}
+
+	CIS_boost_quotas_idea_1 = {
+		#picture = 
+		allowed = {
+			always = no
+		}
+
+		allowed_civil_war = {
+			always = yes
+		}
+
+		removal_cost = -1
+
+		modifier = {
+			industrial_capacity_factory = 0.05
+		}
+}
+
+CIS_boost_quotas_idea_2 = {
+	#picture = 
+	allowed = {
+		always = no
+	}
+
+	allowed_civil_war = {
+		always = yes
+	}
+
+	removal_cost = -1
+
+	modifier = {
+		industrial_capacity_factory = 0.15
+		recruitable_population = -0.05
+		
+	}
+}
+CIS_boost_quotas_idea_3 = {
+	#picture = 
+	allowed = {
+		always = no
+	}
+
+	allowed_civil_war = {
+		always = yes
+	}
+
+	removal_cost = -1
+
+	modifier = {
+		industrial_capacity_factory = 0.2
+		recruitable_population = -0.05
+		stability_factor = -0.1
+	}
+}
+CIS_boost_quotas_idea_4 = {
+	#picture = 
+	allowed = {
+		always = no
+	}
+
+	allowed_civil_war = {
+		always = yes
+	}
+
+	removal_cost = -1
+
+	modifier = {
+		industrial_capacity_factory = 0.3
+		recruitable_population = -0.05
+		war_support_factor = 0.15
+	}
+}
 		
 	}
 }
