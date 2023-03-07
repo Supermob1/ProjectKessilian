@@ -253,12 +253,7 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.5
-			79 = {
-				add_resource = {
-					type = credits
-					amount = 1000
-				}
-			}
+			
 		}
 	}
 	focus = { 
@@ -436,6 +431,7 @@ focus_tree = {
 		y = 0
 		
 		completion_reward = {
+			add_political_power = 100
 		}
 	}
 	focus = { 
@@ -451,6 +447,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.6
 		}
 	}
 	focus = { 
@@ -586,6 +583,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			add_to_variable = {
+				creditsamount= 11111
+				tooltip = lose_credits_tt
+			}
 		}
 	}
 	focus = { 
@@ -646,6 +647,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.7
 		}
 	}
 	focus = { 
@@ -661,6 +663,27 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			79 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+			37 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			10 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = { 
@@ -676,6 +699,24 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 7
+				}
+			}
 		}
 	}
 	focus = { 
@@ -694,6 +735,9 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
 		}
 	}
 	focus = { 
@@ -739,6 +783,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			add_ideas = CIS_boost_quotas_idea_1
 		}
 	}
 	focus = { 
@@ -754,6 +799,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_boost_quotas_idea_1
+				add_idea = CIS_boost_quotas_idea_2
+			}
 		}
 	}
 	focus = { 
@@ -769,6 +818,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_boost_quotas_idea_2
+				add_idea = CIS_boost_quotas_idea_3
+			}
 		}
 	}
 	focus = { 
@@ -784,6 +837,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_boost_quotas_idea_3
+				add_idea = CIS_boost_quotas_idea_4
+			}
 		}
 	}
 	focus = { 
@@ -829,6 +886,27 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+
+			94 = {
+				add_resource = {
+					type = oil
+					amount = 50
+				}
+			}
+			78 = {
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+
+			63 = {
+				add_resource = {
+					type = oil
+					amount = 43
+				}
+			}
+
 		}
 	}
 	focus = { 
