@@ -1,5 +1,6 @@
 ﻿
 add_namespace = confederacy
+add_namespace = cis_diplo
 
 country_event = { # The Raxus Address
 	id = confederacy.1
@@ -129,6 +130,31 @@ country_event = { # price of liberty
 
 	option = { 
 		name = confederacy.5.a
+		CIS = {
+			annex_country = {
+				target = TCU
+				transfer_troops = yes
+			}
+		}
+		
+		TCU = {
+			every_owned_state = {
+				add_core_of = CIS
+				
+			}
+		}
+		CIS = {
+			annex_country = {
+				target = TDF
+				transfer_troops = yes
+			}
+		}
+		TDF = {
+			every_owned_state = {
+				add_core_of = CIS
+				
+			}
+		}
 	
 		ai_chance = { 
 			factor = 25	
@@ -150,18 +176,6 @@ country_event = { # trade federation
 	option = { 
 		name = confederacy.6.a
 		
-		CIS = {
-			annex_country = {
-				target = TDF
-				transfer_troops = yes
-			}
-		}
-		TDF = {
-			every_owned_state = {
-				add_core_of = CIS
-				
-			}
-		}
 	      
 		ai_chance = { 
 			factor = 25	
@@ -169,7 +183,7 @@ country_event = { # trade federation
 		
 	}
 }
-country_event = { # trade federation
+country_event = { # techno union
 	id = confederacy.7
 	title = confederacy.7.t
 	desc = confederacy.7.d
@@ -181,19 +195,7 @@ country_event = { # trade federation
 
 	option = { 
 		name = confederacy.7.a
-		CIS = {
-			annex_country = {
-				target = TCU
-				transfer_troops = yes
-			}
-		}
-		
-		TCU = {
-			every_owned_state = {
-				add_core_of = CIS
-				
-			}
-		}
+
 	      
 		ai_chance = { 
 			factor = 25	
@@ -201,6 +203,51 @@ country_event = { # trade federation
 		
 	}
 }
+
+country_event = { # an open hand
+	id = confederacy.8
+	title = confederacy.8.t
+	desc = confederacy.8.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.8.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+
+country_event = { # blade in dark
+	id = confederacy.9
+	title = confederacy.9.t
+	desc = confederacy.9.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.9.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+
 
 
 

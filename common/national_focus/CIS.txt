@@ -81,6 +81,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			add_war_support = 0.1
 		}
 	}
 	focus = { 
@@ -96,6 +97,9 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			set_country_flag = cis_diplo_active
+			country_event = confederacy.8
+			custom_effect_tooltip = cis_diplo_ttp
 		}
 	}
 	focus = { 
@@ -174,6 +178,9 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.9
+			set_country_flag = cis_spy_active
+			custom_effect_tooltip = cis_spy_ttp
 		}
 	}
 	focus = { 
@@ -584,8 +591,14 @@ focus_tree = {
 		
 		completion_reward = {
 			add_to_variable = {
-				creditsamount= 11111
+				creditsamount= -15
 				tooltip = lose_credits_tt
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = dockyard
+					level = 10
+				}
 			}
 		}
 	}
