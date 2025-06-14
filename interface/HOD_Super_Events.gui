@@ -1,0 +1,112 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "Super_Event_Window"
+		size = { width = 810 height = 485 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		moveable = yes
+		
+		background = {
+			name = "Background"	
+			spriteType ="GFX_HOD_Super_Event_Window"
+		}
+
+		iconType = {
+			name = "Super_Event_Icon"
+			position = { x = 15 y = 68 }
+			spriteType = ""
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "HOD_Super_Event_Transparent"
+			position = { x = 15 y = 308 }
+			spriteType = "GFX_HOD_Transparent"
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "HOD_Super_Event_Title_textbox"
+			position = { x = 180 y = 15 }
+			font = "sfdistant24full"
+			borderSize = {x = 0 y = 0}
+			text = "[get_super_event_title]"
+			maxWidth = 450
+			maxHeight = 20
+			fixedsize = yes	
+			format = center
+		}
+		instantTextBoxType = {
+			name = "HOD_Super_Event_subTitle_textbox"
+			position = { x = 100 y = 35 }
+			font = "sfdistant16full"
+			borderSize = {x = 0 y = 0}
+			text = "[get_super_event_subtitle]"
+			maxWidth = 600
+			maxHeight = 20
+			fixedsize = yes	
+			format = center
+		}
+		instantTextBoxType = {
+			name = "HOD_Super_Event_description"
+			position = { x = 20 y = 310 }
+			font = "franklingothicblue"
+			borderSize = {x = 0 y = 0}
+			text = "[get_super_event_desc]"
+			maxWidth = 600
+			maxHeight = 500
+			fixedsize = yes	
+			format = left
+		}
+
+
+		buttonType = {
+            name = "Super_Event_Option_A"
+            position = { x = 45 y = 432 }
+            quadTextureSprite ="GFX_event_option_entry"
+            clicksound = click_scroll
+	 		buttonFont = ""
+			buttonText = ""
+        }
+		instantTextBoxType = {
+			name = "Super_Event_Option_A_text"
+			position = { x = 45 y = 443 }
+			font = "sfdistant12full"
+			borderSize = {x = 0 y = 0}
+			text = "[get_super_event_option_a]"
+			maxWidth = 300
+			maxHeight = 500
+			fixedsize = yes	
+			format = center
+		}
+		buttonType = {
+            name = "Super_Event_Option_B"
+            position = { x = 440 y = 432 }
+            quadTextureSprite ="GFX_event_option_entry"
+            clicksound = click_scroll
+	 		buttonFont = ""
+			buttonText = ""
+        }
+		instantTextBoxType = {
+			name = "Super_Event_Option_B_text"
+			position = { x = 440 y = 443 }
+			font = "sfdistant12full"
+			borderSize = {x = 0 y = 0}
+			text = "[get_super_event_option_b]"
+			maxWidth = 300
+			maxHeight = 500
+			fixedsize = yes	
+			format = center
+		}
+		buttonType = {
+            name = "Super_Event_Exit"
+            position = { x = 197 y = 432 }
+            quadTextureSprite ="GFX_event_option_entry"
+            clicksound = click_scroll
+	 		buttonFont = "sfdistant16full"
+			buttonText = "[get_super_event_exit]"
+        }
+	}
+}
