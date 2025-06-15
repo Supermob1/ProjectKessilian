@@ -1,0 +1,831 @@
+division_template = {
+	name = "Clone Legion"
+	division_names_group = REP_Inf_01
+	is_locked = yes
+	template_counter = 0
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+###### Grand Army OOB ######
+units = {
+    # Coruscant Defense Force
+    division = {
+        name                    = "1st Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "2nd Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "3rd Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "4th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "5th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "6th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "7th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "8th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "9th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "10th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "11th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "12th Legion"
+        location                = 299
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Geonosis Sector
+    division = {
+        name                    = "13th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "14th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "15th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "16th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "17th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "18th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "19th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "20th Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "21st Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "22nd Legion"
+        location                = 4698
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Kashyyyk Expedition
+    division = {
+        name                    = "23rd Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "24th Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "25th Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "26th Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "27th Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "28th Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "29th Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "30th Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "31st Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "32nd Legion"
+        location                = 12018
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Umbara Campaign
+    division = {
+        name                    = "33rd Legion"
+        location                = 12291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "34th Legion"
+        location                = 12291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "35th Legion"
+        location                = 12291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "36th Legion"
+        location                = 12291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "37th Legion"
+        location                = 12291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "38th Legion"
+        location                = 12291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Outer Rim Garrison
+    division = {
+        name                    = "39th Legion"
+        location                = 9291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "40th Legion"
+        location                = 9291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "41st Legion"
+        location                = 9291
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "42nd Legion"
+        location                = 10335
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "43rd Legion"
+        location                = 10335
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "44th Legion"
+        location                = 10335
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "45th Legion"
+        location                = 10010
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "46th Legion"
+        location                = 10010
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "47th Legion"
+        location                = 10010
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "48th Legion"
+        location                = 10010
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "49th Legion"
+        location                = 3313
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "50th Legion"
+        location                = 3313
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "51st Legion"
+        location                = 3313
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "52nd Legion"
+        location                = 3313
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "53rd Legion"
+        location                = 3313
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "54th Legion"
+        location                = 9606
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "55th Legion"
+        location                = 9606
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "56th Legion"
+        location                = 9606
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "57th Legion"
+        location                = 9606
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "58th Legion"
+        location                = 9606
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "59th Legion"
+        location                = 9606
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "60th Legion"
+        location                = 9606
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "61st Legion"
+        location                = 16131
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "62nd Legion"
+        location                = 16131
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "63rd Legion"
+        location                = 16131
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "64th Legion"
+        location                = 16131
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "65th Legion"
+        location                = 16131
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "66th Legion"
+        location                = 16131
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "67th Legion"
+        location                = 16125
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "68th Legion"
+        location                = 16125
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "69th Legion"
+        location                = 16125
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "70th Legion"
+        location                = 16125
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "71st Legion"
+        location                = 16125
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "72nd Legion"
+        location                = 16125
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "73rd Legion"
+        location                = 17436
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "74th Legion"
+        location                = 17436
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "75th Legion"
+        location                = 17436
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "76th Legion"
+        location                = 17436
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "77th Legion"
+        location                = 17436
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "78th Legion"
+        location                = 17436
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Kamino Reserve
+    division = {
+        name                    = "79th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "80th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "81st Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "82nd Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "83rd Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "84th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "85th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "86th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "87th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "88th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "89th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "90th Legion"
+        location                = 2006
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Naval Infantry
+    division = {
+        name                    = "91st Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "92nd Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "93rd Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "94th Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "95th Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "96th Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "97th Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "98th Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "99th Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "100th Legion"
+        location                = 13907
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Fleet Marine Corps
+    division = {
+        name                    = "101st Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "102nd Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "103rd Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "104th Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "105th Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "106th Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "107th Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "108th Legion"
+        location                = 1669
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    # Coruscant Reserve
+    division = {
+        name                    = "109th Legion"
+        location                = 12333
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "110th Legion"
+        location                = 12333
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "111th Legion"
+        location                = 12333
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "112th Legion"
+        location                = 12333
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "113th Legion"
+        location                = 12333
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "114th Legion"
+        location                = 12333
+        division_template       = "Clone Legion"
+        start_experience_factor = 0.85
+        start_equipment_factor  = 1.0
+    }
+}
