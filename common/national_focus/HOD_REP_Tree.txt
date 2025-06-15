@@ -1200,10 +1200,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = dead_mca_REP_MCA
-			load_focus_tree = {
-				tree = REP_War_focus_tree
-				keep_completed = yes
-			}
 			add_popularity = {
 				ideology = inclusivist
 				popularity = 0.1
@@ -1242,10 +1238,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = natarmy_mca_REP_MCA
-			load_focus_tree = {
-				tree = REP_War_focus_tree
-				keep_completed = yes
-			}
 			add_popularity = {
 				ideology = unitist
 				popularity = 0.1
@@ -1552,26 +1544,41 @@ focus_tree = {
 		completion_reward = {
 		}
 	}
-
+	
+	focus = {
+		id = REP_orbital_defense_shield_contracts
+		icon = GFX_REP_orbital_defense_shield_contracts
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_heavy_walker_production
+		prerequisite = {
+			focus = REP_heavy_walker_production
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+	
 	focus = {
 		id = REP_fleet_assembly_priority
 		icon = GFX_REP_fleet_assembly_priority
 		cost = 5
 		cancelable = no
-		relative_position_id = REP_heavy_walker_production
+		relative_position_id = REP_orbital_defense_shield_contracts
 
 		prerequisite = {
 			focus = REP_streamline_naval_logistics
 		}
 		prerequisite = {
-			focus = REP_heavy_walker_production
+			focus = REP_orbital_defense_shield_contracts
 		}
 		prerequisite = {
 			focus = REP_legion_501_commissioned
 		}
 
-		x = 0
-		y = 2
+		x = -3
+		y = 1
 
 		completion_reward = {
 		}
@@ -1650,22 +1657,342 @@ focus_tree = {
 	}
 
 	focus = {
+		id = REP_planetary_garrison_program
+		icon = GFX_REP_planetary_garrison_program
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_fleet_assembly_priority
+		prerequisite = {
+			focus = REP_fleet_assembly_priority
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_rapid_fortification_doctrine
+		icon = GFX_REP_rapid_fortification_doctrine
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_planetary_garrison_program
+		prerequisite = {
+			focus = REP_planetary_garrison_program
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
 		id = REP_strike_force_prioritization
 		icon = GFX_REP_strike_force_prioritization
 		cost = 5
 		cancelable = no
-		relative_position_id = REP_rnd_clone_enhancements
+		relative_position_id = REP_orbital_defense_shield_contracts
 
+		prerequisite = {
+			focus = REP_orbital_defense_shield_contracts
+		}
+		prerequisite = {
+			focus = REP_legion_501_commissioned
+		}
+		prerequisite = {
+			focus = REP_streamline_naval_logistics
+		}
+
+		x = 3
+		y = 1
+
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = REP_integrated_fleet_army_commands
+		icon = GFX_REP_integrated_fleet_army_commands
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_strike_force_prioritization
+		prerequisite = {
+			focus = REP_strike_force_prioritization
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_republic_siege_tactics
+		icon = GFX_REP_republic_siege_tactics
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_strike_force_prioritization
+		prerequisite = {
+			focus = REP_strike_force_prioritization
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_heavy_assault_corps_established
+		icon = GFX_REP_heavy_assault_corps_established
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_republic_siege_tactics
+		prerequisite = {
+			focus = REP_republic_siege_tactics
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_fortify_outer_systems
+		icon = GFX_REP_fortify_outer_systems
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_integrated_fleet_army_commands
+		prerequisite = {
+			focus = REP_integrated_fleet_army_commands
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_unified_war_council
+		icon = GFX_REP_unified_war_council
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_strike_force_prioritization
+		prerequisite = {
+			focus = REP_strike_force_prioritization
+		}
+		x = -2
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_clone_officer_advancement_program
+		icon = GFX_REP_clone_officer_advancement_program
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_unified_war_council
+		prerequisite = {
+			focus = REP_unified_war_council
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_veteran_deployment_priority
+		icon = GFX_REP_veteran_deployment_priority
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_fortify_outer_systems
+		prerequisite = {
+			focus = REP_fortify_outer_systems
+		}
+		prerequisite = {
+			focus = REP_clone_officer_advancement_program
+		}
+		prerequisite = {
+			focus = REP_heavy_assault_corps_established
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_military_budget_overhaul
+		icon = GFX_REP_military_budget_overhaul
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_veteran_deployment_priority
+		prerequisite = {
+			focus = REP_veteran_deployment_priority
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_war_taxation_policies
+		icon = GFX_REP_war_taxation_policies
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_military_budget_overhaul
+		prerequisite = {
+			focus = REP_military_budget_overhaul
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_senate_war_committee_formed
+		icon = GFX_REP_senate_war_committee_formed
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_veteran_deployment_priority
+		prerequisite = {
+			focus = REP_veteran_deployment_priority
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_suppress_separatist_sympathizers
+		icon = GFX_REP_suppress_separatist_sympathizers
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_senate_war_committee_formed
+		prerequisite = {
+			focus = REP_senate_war_committee_formed
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_centralized_war_supply_bureaus
+		icon = GFX_REP_centralized_war_supply_bureaus
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_suppress_separatist_sympathizers
+		prerequisite = {
+			focus = REP_suppress_separatist_sympathizers
+		}
+		prerequisite = {
+			focus = REP_war_taxation_policies
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_industrial_droid_coordination
+		icon = GFX_REP_industrial_droid_coordination
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_rapid_fortification_doctrine
 		prerequisite = {
 			focus = REP_rnd_clone_enhancements
 		}
 		prerequisite = {
+			focus = REP_rapid_fortification_doctrine
+		}
+		prerequisite = {
 			focus = REP_refinery_management_ai
 		}
-
-		x = 2
+		x = 0
 		y = 1
+		completion_reward = {
+		}
+	}
 
+	focus = {
+		id = REP_armor_logistics_overdrive
+		icon = GFX_REP_armor_logistics_overdrive
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_industrial_droid_coordination
+		prerequisite = {
+			focus = REP_industrial_droid_coordination
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_resupply_lanes_secured
+		icon = GFX_REP_resupply_lanes_secured
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_armor_logistics_overdrive
+		prerequisite = {
+			focus = REP_armor_logistics_overdrive
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_conscript_reinforcements_core
+		icon = GFX_REP_conscript_reinforcements_core
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_industrial_droid_coordination
+		prerequisite = {
+			focus = REP_industrial_droid_coordination
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_planetary_shield_grid_upgrades
+		icon = GFX_REP_planetary_shield_grid_upgrades
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_conscript_reinforcements_core
+		prerequisite = {
+			focus = REP_conscript_reinforcements_core
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = REP_strategic_high_command_activated
+		icon = GFX_REP_strategic_high_command_activated
+		cost = 5
+		cancelable = no
+		relative_position_id = REP_resupply_lanes_secured
+		prerequisite = {
+			focus = REP_resupply_lanes_secured
+		}
+		prerequisite = {
+			focus = REP_planetary_shield_grid_upgrades
+		}
+		x = 1
+		y = 1
 		completion_reward = {
 		}
 	}
@@ -1675,19 +2002,16 @@ focus_tree = {
 		icon = GFX_REP_protect_coruscant
 		cost = 5
 		cancelable = no
-		relative_position_id = REP_strike_force_prioritization
-
+		relative_position_id = REP_strategic_high_command_activated
 		prerequisite = {
-			focus = REP_strike_force_prioritization
+			focus = REP_strategic_high_command_activated
 		}
-
-		x = 0
+		prerequisite = {
+			focus = REP_centralized_war_supply_bureaus
+		}
+		x = 3
 		y = 1
-
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.05
-			add_war_support = 0.1
 		}
 	}
 }
