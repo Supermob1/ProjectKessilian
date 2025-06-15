@@ -1,0 +1,2953 @@
+﻿## KEY ##
+# TREE = STARTING FOCUS
+# BRANCH = WHICH COMPONENT OF TREE
+# PATH = BRANCH WITHIN THE COMPONENT
+## KEY ##
+focus_tree = {
+	id = REP_Post_War_focus_tree
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 0
+			tag = REP
+		}
+	}
+
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 50 y = 2500 }
+
+	#########PALPATINE DEATH TREE START##############
+	focus = {
+		id = REP_the_unthinkable
+		icon = REP_theunthinkable
+		cost = 10
+
+		prerequisite = {
+			#no prereq, start of tree
+		}
+
+		x = 50
+		y = 0
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_close_the_banks
+		icon = REP_closethebanks
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_unthinkable
+		}
+		available = {
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_a_national_tragedy
+		icon = generic_nationaltragedy
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_unthinkable
+		}
+		available = {
+		}
+
+		x = -2
+		y = 1
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_maintain_the_war_effort
+		icon = generic_maintainwareffort
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_unthinkable
+		}
+		available = {
+		}
+
+		x = 2
+		y = 1
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_period_of_mourning
+		icon = REP_periodofmourning
+		cost = 10
+
+		prerequisite = {
+			focus = REP_a_national_tragedy
+		}
+		available = {
+		}
+
+		x = -3
+		y = 2
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_present_strength
+		icon = REP_presentstrength
+		cost = 10
+
+		prerequisite = {
+			focus = REP_a_national_tragedy
+			focus = REP_close_the_banks
+		}
+		available = {
+		}
+
+		x = -1
+		y = 2
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_temporary_jedi_command
+		icon = REP_temporaryjedicommand
+		cost = 10
+
+		prerequisite = {
+			focus = REP_maintain_the_war_effort
+			focus = REP_close_the_banks
+		}
+		available = {
+		}
+
+		x = 1
+		y = 2
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_investigate_hidden_files
+		icon = generic_sithknowledge
+		cost = 10
+
+		prerequisite = {
+			focus = REP_maintain_the_war_effort
+		}
+		available = {
+		}
+
+		x = 3
+		y = 2
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_emergency_election
+		icon = REP_emergencyelection
+		cost = 10
+
+		prerequisite = {
+			focus = REP_investigate_hidden_files
+			focus = REP_temporary_jedi_command
+			focus = REP_present_strength
+			focus = REP_period_of_mourning
+		}
+		available = {
+		}
+
+		x = 0
+		y = 3
+		relative_position_id = REP_the_unthinkable
+
+		completion_reward = {
+
+		}
+	}
+	#Organa Tree Start
+	focus = {
+		id = REP_chancellor_organa
+		icon = REP_chancellororgana
+		cost = 10
+
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+
+		x = -6
+		y = 1
+		relative_position_id = REP_emergency_election
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_tragic_but_righteous
+		icon = REP_tragicbutrighteous
+		cost = 10
+
+		prerequisite = {
+			focus = REP_chancellor_organa
+		}
+		available = {
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = REP_chancellor_organa
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_the_new_republic
+		icon = REP_thenewrepublic
+		cost = 10
+
+		prerequisite = {
+			focus = REP_chancellor_organa
+		}
+		available = {
+		}
+
+		x = 1
+		y = 1
+		relative_position_id = REP_chancellor_organa
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_a_discreet_purge
+		icon = REP_adiscreetpurge
+		cost = 10
+
+		prerequisite = {
+			focus = REP_tragic_but_righteous
+		}
+		available = {
+		}
+
+		x = -1
+		y = 2
+		relative_position_id = REP_chancellor_organa
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_accept_limitations
+		icon = REP_acceptlimitations
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_new_republic
+		}
+		available = {
+		}
+
+		x = 1
+		y = 2
+		relative_position_id = REP_chancellor_organa
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_playing_the_game
+		icon = REP_playingthegame
+		cost = 10
+
+		prerequisite = {
+			focus = REP_a_discreet_purge
+		}
+		available = {
+		}
+
+		x = -1
+		y = 3
+		relative_position_id = REP_chancellor_organa
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_reach_out_to_the_rim
+		icon = REP_reachouttotherim
+		cost = 10
+
+		prerequisite = {
+			focus = REP_accept_limitations
+		}
+		available = {
+		}
+
+		x = 1
+		y = 3
+		relative_position_id = REP_chancellor_organa
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_civility_and_stability
+		icon = REP_civilityandstability
+		cost = 10
+
+		prerequisite = {
+			focus = REP_playing_the_game
+			focus = REP_reach_out_to_the_rim
+		}
+		available = {
+		}
+
+		x = 0
+		y = 4
+		relative_position_id = REP_chancellor_organa
+
+		completion_reward = {
+
+		}
+	}
+	#Organa Tree End
+	#Amidala Tree Start
+	focus = {
+		id = REP_chancellor_amidala
+		icon = REP_chancelloramidala
+		cost = 10
+
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+
+		x = -2
+		y = 1
+		relative_position_id = REP_emergency_election
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_the_peace_committee
+		icon = REP_thepeacecommittee
+		cost = 10
+
+		prerequisite = {
+			focus = REP_chancellor_amidala
+		}
+		available = {
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = REP_chancellor_amidala
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_a_better_republic
+		icon = REP_abetterrepublic
+		cost = 10
+
+		prerequisite = {
+			focus = REP_chancellor_amidala
+		}
+		available = {
+		}
+
+		x = 1
+		y = 1
+		relative_position_id = REP_chancellor_amidala
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_reject_emergency_powers
+		icon = REP_rejectemergencypowers
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_peace_committee
+		}
+		available = {
+		}
+
+		x = -1
+		y = 2
+		relative_position_id = REP_chancellor_amidala
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_crusade_against_corruption
+		icon = REP_crusadeagainstcorruption
+		cost = 10
+
+		prerequisite = {
+			focus = REP_a_better_republic
+		}
+		available = {
+		}
+
+		x = 1
+		y = 2
+		relative_position_id = REP_chancellor_amidala
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_political_savant
+		icon = REP_politicalsavant
+		cost = 10
+
+		prerequisite = {
+			focus = REP_reject_emergency_powers
+		}
+		available = {
+		}
+
+		x = -1
+		y = 3
+		relative_position_id = REP_chancellor_amidala
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_zero_tolerance_for_intolerance
+		icon = REP_zerotoleranceforintolerance
+		cost = 10
+
+		prerequisite = {
+			focus = REP_crusade_against_corruption
+		}
+		available = {
+		}
+
+		x = 1
+		y = 3
+		relative_position_id = REP_chancellor_amidala
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_reform_and_repair
+		icon = REP_reformandrepair
+		cost = 10
+
+		prerequisite = {
+			focus = REP_political_savant
+			focus = REP_zero_tolerance_for_intolerance
+		}
+		available = {
+		}
+
+		x = 0
+		y = 4
+		relative_position_id = REP_chancellor_amidala
+
+		completion_reward = {
+
+		}
+	}
+	#Amidala Tree End
+	#Amedda Tree Start
+	focus = {
+		id = REP_chancellor_amedda
+		icon = REP_chancelloramedda
+		cost = 10
+
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+
+		x = 2
+		y = 1
+		relative_position_id = REP_emergency_election
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_reaching_out_to_old_friends
+		icon = REP_reachouttooldfriends
+		cost = 10
+
+		prerequisite = {
+			focus = REP_chancellor_amedda
+		}
+		available = {
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = REP_chancellor_amedda
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_voice_of_the_emperor
+		icon = REP_voiceoftheemperor
+		cost = 10
+
+		prerequisite = {
+			focus = REP_chancellor_amedda
+		}
+		available = {
+		}
+
+		x = 1
+		y = 1
+		relative_position_id = REP_chancellor_amedda
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_false_war
+		icon = REP_falsewar
+		cost = 10
+
+		prerequisite = {
+			focus = REP_reaching_out_to_old_friends
+		}
+		available = {
+		}
+
+		x = -1
+		y = 2
+		relative_position_id = REP_chancellor_amedda
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_man_behind_the_curtain
+		icon = REP_manbehindthecurtain
+		cost = 10
+
+		prerequisite = {
+			focus = REP_voice_of_the_emperor
+		}
+		available = {
+		}
+
+		x = 1
+		y = 2
+		relative_position_id = REP_chancellor_amedda
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_fostering_palpatines_legacy
+		icon = REP_fosteringpalpatineslegacy
+		cost = 10
+
+		prerequisite = {
+			focus = REP_false_war
+		}
+		available = {
+		}
+
+		x = -1
+		y = 3
+		relative_position_id = REP_chancellor_amedda
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_working_in_the_shadows
+		icon = REP_workingintheshadows
+		cost = 10
+
+		prerequisite = {
+			focus = REP_man_behind_the_curtain
+		}
+		available = {
+		}
+
+		x = 1
+		y = 3
+		relative_position_id = REP_chancellor_amedda
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_fear_and_guile
+		icon = REP_fearandguile
+		cost = 10
+
+		prerequisite = {
+			focus = REP_fostering_palpatines_legacy
+			focus = REP_working_in_the_shadows
+		}
+		available = {
+		}
+
+		x = 0
+		y = 4
+		relative_position_id = REP_chancellor_amedda
+
+		completion_reward = {
+
+		}
+	}
+	#Amedda Tree End
+	#Emergency Tree Start
+	focus = {
+		id = REP_emergency_government
+		icon = REP_emergencygovernment
+		cost = 10
+
+		prerequisite = {
+			focus = REP_emergency_election
+		}
+		available = {
+		}
+
+		x = 6
+		y = 1
+		relative_position_id = REP_emergency_election
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_dauntless_to_domination
+		icon = REP_dauntlesstodomination
+		cost = 10
+
+		prerequisite = {
+			focus = REP_emergency_government
+		}
+		available = {
+		}
+
+		x = -1
+		y = 1
+		relative_position_id = REP_emergency_government
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_a_stronger_order
+		icon = REP_astrongerorder
+		cost = 10
+
+		prerequisite = {
+			focus = REP_emergency_government
+		}
+		available = {
+		}
+
+		x = 1
+		y = 1
+		relative_position_id = REP_emergency_government
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_managing_the_populace
+		icon = REP_managingthepopulace
+		cost = 10
+
+		prerequisite = {
+			focus = REP_dauntless_to_domination
+		}
+		available = {
+		}
+
+		x = -1
+		y = 2
+		relative_position_id = REP_emergency_government
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_placate_rivalries
+		icon = REP_placaterivalries
+		cost = 10
+
+		prerequisite = {
+			focus = REP_a_stronger_order
+		}
+		available = {
+		}
+
+		x = 1
+		y = 2
+		relative_position_id = REP_emergency_government
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_foment_fanatacism
+		icon = REP_fomentfanatacism
+		cost = 10
+
+		prerequisite = {
+			focus = REP_managing_the_populace
+		}
+		available = {
+		}
+
+		x = -1
+		y = 3
+		relative_position_id = REP_emergency_government
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_one_state_one_galaxy
+		icon = REP_onestateonegalaxy
+		cost = 10
+
+		prerequisite = {
+			focus = REP_placate_rivalries
+		}
+		available = {
+		}
+
+		x = 1
+		y = 3
+		relative_position_id = REP_emergency_government
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_law_and_order
+		icon = REP_lawandorder
+		cost = 10
+
+		prerequisite = {
+			focus = REP_foment_fanatacism
+			focus = REP_one_state_one_galaxy
+		}
+		available = {
+		}
+
+		x = 0
+		y = 4
+		relative_position_id = REP_emergency_government
+
+		completion_reward = {
+
+		}
+	}
+	#Emergency Tree End
+	###PALPATINE DEATH TREE END###
+	#CLONE COUP TREE#
+	#Galactic republic defeat and palpatine is dead
+	focus = {
+		id = REP_hardline_clone_coup
+		icon = REP_hardline_clone_coup
+		cost = 10
+
+		prerequisite = {
+			#no prereq, start of tree
+		}
+
+		x = 24
+		y = 8
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_trials_of_the_senate
+		icon = REP_trials_of_the_senate
+		cost = 10
+
+		prerequisite = {
+			focus = REP_hardline_clone_coup
+		}
+
+		x = -2
+		y = 1
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_wartime_footing
+		icon = REP_wartime_footing
+		cost = 10
+
+		prerequisite = {
+			focus = REP_hardline_clone_coup
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_trials_of_the_jedi
+		icon = REP_trials_of_the_jedi
+		cost = 10
+
+		prerequisite = {
+			focus = REP_hardline_clone_coup
+		}
+
+		x = 2
+		y = 1
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_cleaning_house
+		icon = REP_cleaning_house
+		cost = 10
+
+		prerequisite = {
+			focus = REP_trials_of_the_senate
+		}
+
+		prerequisite = {
+			focus = REP_wartime_footing
+		}
+
+		prerequisite = {
+			focus = REP_trials_of_the_jedi
+		}
+
+		x = 0
+		y = 2
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	#LEFT BRANCH#
+	focus = {
+		id = REP_the_boys_in_white
+		icon = REP_the_boys_in_white
+		cost = 10
+
+		prerequisite = {
+			focus = REP_cleaning_house
+		}
+
+		mutually_exclusive = {
+			focus = REP_the_new_mandoade
+		}
+
+		x = -1
+		y = 3
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_erase_jedi_heroism
+		icon = REP_erase_jedi_heroism
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_boys_in_white
+		}
+
+		x = -3
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_the_last_ones_standing
+		icon = REP_the_last_ones_standing
+		cost = 10
+
+		prerequisite = {
+			focus = REP_erase_jedi_heroism
+		}
+
+		x = -3
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_democracys_unwavering_guard
+		icon = REP_democracys_unwavering_guard
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_boys_in_white
+		}
+
+		x = -1
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_clone_senators
+		icon = REP_clone_senators
+		cost = 10
+
+		prerequisite = {
+			focus = REP_democracys_unwavering_guard
+		}
+
+		x = -1
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_democracy_at_blasterpoint
+		icon = REP_democracy_at_blasterpoint
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_last_ones_standing
+		}
+
+		prerequisite = {
+			focus = REP_clone_senators
+		}
+
+		x = -2
+		y = 6
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+	#LEFT BRANCH END#
+	#RIGHT BRANCH#
+	focus = {
+		id = REP_the_new_mandoade
+		icon = REP_the_new_mandoade
+		cost = 10
+
+		prerequisite = {
+			focus = REP_cleaning_house
+		}
+		mutually_exclusive = {
+			focus = REP_the_boys_in_white
+		}
+
+		x = 1
+		y = 3
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_mass_initiation_ceremonies
+		icon = REP_mass_initiation_ceremonies
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_new_mandoade
+		}
+
+		x = 1
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_a_reason_to_be
+		icon = REP_a_reason_to_be
+		cost = 10
+
+		prerequisite = {
+			focus = REP_mass_initiation_ceremonies
+		}
+
+		x = 1
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_celebrate_clone_culture
+		icon = REP_celebrate_clone_culture
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_new_mandoade
+		}
+
+		x = 3
+		y = 4
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_untangle_doctrinal_contradictions
+		icon = REP_untangle_doctrinal_contradictions
+		cost = 10
+
+		prerequisite = {
+			focus = REP_celebrate_clone_culture
+		}
+
+		x = 3
+		y = 5
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_a_new_mandalore
+		icon = REP_a_new_mandalore
+		cost = 10
+
+		prerequisite = {
+			focus = REP_a_reason_to_be
+		}
+
+		prerequisite = {
+			focus = REP_untangle_doctrinal_contradictions
+		}
+
+		x = 2
+		y = 6
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+	#RIGHT BRANCH END#
+	focus = {
+		id = REP_picking_up_the_pieces
+		icon = REP_picking_up_the_pieces
+		cost = 10
+
+		prerequisite = {
+			focus = REP_cleaning_house
+		}
+
+		x = 0
+		y = 6
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_clone_economic_direction
+		icon = REP_clone_economic_direction
+		cost = 10
+
+		prerequisite = {
+			focus = REP_picking_up_the_pieces
+		}
+
+		x = -1
+		y = 7
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_appropriate_traitors_assets
+		icon = REP_appropriate_traitors_assets
+		cost = 10
+
+		prerequisite = {
+			focus = REP_picking_up_the_pieces
+		}
+
+		x = 1
+		y = 7
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_the_issue_of_clone_production
+		icon = REP_the_issue_of_clone_production
+		cost = 10
+
+		prerequisite = {
+			focus = REP_clone_economic_direction
+		}
+
+		x = -3
+		y = 8
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_shot-in-the-back_myth
+		icon = REP_shot-in-the-back_myth
+		cost = 10
+
+		prerequisite = {
+			focus = REP_clone_economic_direction
+		}
+
+		prerequisite = {
+			focus = REP_appropriate_traitors_assets
+		}
+
+		x = 0
+		y = 8
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_investigate_our_programming
+		icon = REP_investigate_our_programming
+		cost = 10
+
+		prerequisite = {
+			focus = REP_appropriate_traitors_assets
+		}
+
+		x = 3
+		y = 8
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_purge_the_navy
+		icon = REP_purge_the_navy
+		cost = 10
+
+		prerequisite = {
+			focus = REP_shot-in-the-back_myth
+		}
+
+		x = -1
+		y = 9
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_weapons_of_the_next_war
+		icon = REP_weapons_of_the_next_war
+		cost = 10
+
+		prerequisite = {
+			focus = REP_shot-in-the-back_myth
+		}
+
+		x = 1
+		y = 9
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_rip_up_peace_agreements
+		icon = REP_rip_up_peace_agreements
+		cost = 10
+
+		prerequisite = {
+			focus = REP_purge_the_navy
+		}
+
+		prerequisite = {
+			focus = REP_weapons_of_the_next_war
+		}
+
+		x = 0
+		y = 10
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = REP_give_em_hell
+		icon = REP_give_em_hell
+		cost = 10
+
+		prerequisite = {
+			focus = REP_rip_up_peace_agreements
+		}
+
+		x = 0
+		y = 11
+		relative_position_id = REP_hardline_clone_coup
+
+		completion_reward = {
+
+		}
+	}
+	#CLONE COUP END#
+	#PLO KOON START#
+	#can happen if Jedi Coup Authoritarian Path happens
+	focus = {
+		id = REP_clone_counter-coup
+		icon = REP_clone_counter-coup
+		cost = 10
+
+
+		x = 35
+		y = 8
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_acting_chancellor_plo_koon
+		icon = REP_acting_chancellor_plo_koon
+		cost = 10
+
+		prerequisite = {
+			focus = REP_clone_counter-coup
+		}
+
+		x = 0
+		y = 1
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_placate_the_senate
+		icon = REP_placate_the_senate
+		cost = 10
+
+		prerequisite = {
+			focus = REP_acting_chancellor_plo_koon
+		}
+
+		mutually_exclusive = {
+			focus = REP_ensure_the_senates_loyalty
+		}
+
+		x = -3
+		y = 2
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_promises_of_democracy
+		icon = REP_promises_of_democracy
+		cost = 10
+
+		prerequisite = {
+			focus = REP_placate_the_senate
+			focus = REP_ensure_the_senates_loyalty
+		}
+
+		x = -2
+		y = 3
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_meet_with_the_delegation_of_2000
+		icon = REP_meet_with_the_delegation_of_2000
+		cost = 10
+
+		prerequisite = {
+			focus = REP_placate_the_senate
+		}
+
+		prerequisite = {
+			focus = REP_promises_of_democracy
+		}
+
+		x = -3
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_ensure_the_senates_loyalty
+		icon = REP_ensure_the_senates_loyalty
+		cost = 10
+
+		prerequisite = {
+			focus = REP_acting_chancellor_plo_koon
+		}
+
+		mutually_exclusive = {
+			focus = REP_placate_the_senate
+		}
+
+		x = -1
+		y = 2
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_invoke_the_emergency_powers_act
+		icon = REP_invoke_the_emergency_powers_act
+		cost = 10
+
+		prerequisite = {
+			focus = REP_placate_the_senate
+		}
+
+		prerequisite = {
+			focus = REP_promises_of_democracy
+		}
+
+		x = -1
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_hunt_the_co-conspirators
+		icon = REP_hunt_the_co-conspirators
+		cost = 10
+
+		prerequisite = {
+			focus = REP_acting_chancellor_plo_koon
+		}
+
+		x = 3
+		y = 2
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_jedi_oversight_committee
+		icon = REP_jedi_oversight_committee
+		cost = 10
+
+		prerequisite = {
+			focus = REP_hunt_the_co-conspirators
+		}
+
+		mutually_exclusive = {
+			focus = REP_reform_the_jedi_order
+		}
+
+		x = 2
+		y = 3
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_appoint_the_clones_as_generals
+		icon = REP_appoint_the_clones_as_generals
+		cost = 10
+
+		prerequisite = {
+			focus = REP_jedi_oversight_committee
+		}
+
+
+		x = 1
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_jedi_by_choice
+		icon = REP_jedi_by_choice
+		cost = 10
+
+		prerequisite = {
+			focus = REP_jedi_oversight_committee
+			focus = REP_reform_the_jedi_order
+		}
+
+
+		x = 3
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_allegiance_to_the_republic
+		icon = REP_allegiance_to_the_republic
+		cost = 10
+
+		prerequisite = {
+			focus = REP_reform_the_jedi_order
+		}
+
+
+		x = 5
+		y = 4
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_reform_the_jedi_order
+		icon = REP_reform_the_jedi_order
+		cost = 10
+
+		prerequisite = {
+			focus = REP_hunt_the_co-conspirators
+		}
+
+		mutually_exclusive = {
+			focus = REP_jedi_oversight_committee
+		}
+
+		x = 4
+		y = 3
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_fight_congressional_corruption
+		icon = REP_fight_congressional_corruption
+		cost = 10
+
+		prerequisite = {
+			focus = REP_meet_with_the_delegation_of_2000
+			focus = REP_invoke_the_emergency_powers_act
+		}
+
+		x = -2
+		y = 5
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_liquidate_banking_clan_assets
+		icon = REP_liquidate_banking_clan_assets
+		cost = 10
+
+		prerequisite = {
+			focus = REP_fight_congressional_corruption
+		}
+
+		x = -2
+		y = 6
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_not_expendable_to_me
+		icon = REP_not_expendable_to_me
+		cost = 10
+
+		prerequisite = {
+			focus = REP_liquidate_banking_clan_assets
+		}
+
+		prerequisite = {
+			focus = REP_the_trials_of_treasonous_jedi
+		}
+
+		x = 0
+		y = 7
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_serving_at_the_pleasure
+		icon = REP_serving_at_the_pleasure
+		cost = 10
+
+		prerequisite = {
+			focus = REP_invoke_the_emergency_powers_act
+			focus = REP_appoint_the_clones_as_generals
+		}
+
+
+		x = 0
+		y = 6
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_the_jedi_non-interference_act
+		icon = REP_the_jedi_non-interference_act
+		cost = 10
+
+		prerequisite = {
+			focus = REP_appoint_the_clones_as_generals
+		}
+
+		prerequisite = {
+			focus = REP_jedi_by_choice
+		}
+
+		x = 2
+		y = 5
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_compassion_through_attachment
+		icon = REP_compassion_through_attachment
+		cost = 10
+
+		prerequisite = {
+			focus = REP_jedi_by_choice
+		}
+
+		prerequisite = {
+			focus = REP_allegiance_to_the_republic
+		}
+
+		x = 4
+		y = 5
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_the_trials_of_treasonous_jedi
+		icon = REP_the_trials_of_treasonous_jedi
+		cost = 10
+
+		prerequisite = {
+			focus = REP_the_jedi_non-interference_act
+			focus = REP_compassion_through_attachment
+		}
+
+		x = 3
+		y = 6
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_the_clone_citizenship_act
+		icon = REP_the_clone_citizenship_act
+		cost = 10
+
+		prerequisite = {
+			focus = REP_not_expendable_to_me
+		}
+
+		x = -2
+		y = 8
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_meritocratic_army_act
+		icon = REP_meritocratic_army_act
+		cost = 10
+
+		prerequisite = {
+			focus = REP_not_expendable_to_me
+		}
+
+		x = 0
+		y = 8
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = REP_end_of_genetic_slavery_act
+		icon = REP_end_of_genetic_slavery_act
+		cost = 10
+
+		prerequisite = {
+			focus = REP_not_expendable_to_me
+		}
+
+		x = 2
+		y = 8
+		relative_position_id = REP_clone_counter-coup
+
+		completion_reward = {
+
+		}
+	}
+	#END OF PLO KOON TREE#
+	#TODO These focuses are currently 'loose' they need to be 
+	#positioned in respect to each other for easier movement
+	#jedi kill palps
+	#Focus for The Greater Good
+	focus = {
+		id = REP_the_greater_good
+		icon = GFX_REP_the_greater_good
+		x = 100
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_in_the_name_of_the_galactic_senate_of_the_republic }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for In The Chosen One We Trust
+	#
+	focus = {
+		id = REP_in_the_chosen_one_we_trust
+		icon = REP_in_the_chosen_one_we_trust
+		x = 100
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_greater_good }
+		mutually_exclusive = {
+			focus = REP_we_are_the_senate
+		}
+		mutually_exclusive = {
+			focus = REP_the_helping_hand
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for In The Name Of The Galactic Senate Of The Republic
+	focus = {
+		id = REP_in_the_name_of_the_galactic_senate_of_the_republic
+		icon = GFX_REP_in_the_name
+		x = 100
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Expand The Service Corps
+	focus = {
+		id = REP_expand_the_service_corps
+		icon = REP_expand_the_service_corps
+		x = 91
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_from_war_dogs_to_watchdogs }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for No More Games
+	focus = {
+		id = REP_no_more_games
+		icon = REP_no_more_games
+		x = 97
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = REP_a_slave_born_to_lead
+			focus = REP_from_war_dogs_to_watchdogs
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Anti-Corruption Task Force
+	focus = {
+		id = REP_anticorruption_task_force
+		icon = REP_anticorruption_task_force
+		x = 97
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_no_more_games }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Force Incarnate
+	focus = {
+		id = REP_the_force_incarnate
+		icon = REP_the_force_incarnate
+		x = 100
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = REP_never_compromise
+		}
+		prerequisite = {
+			focus = REP_anticorruption_task_force
+		}
+		prerequisite = {
+			focus = REP_armed_vigilance
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Having The Final Say
+	focus = {
+		id = REP_having_the_final_say
+		icon = GFX_REP_the_final_say
+		x = 106
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_upper_house }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Never Compromise
+	focus = {
+		id = REP_never_compromise
+		icon = REP_never_compromise
+		x = 100
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_a_perfect_democracy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Guided By Light
+	focus = {
+		id = REP_guided_by_light
+		icon = GFX_REP_guided_by_light
+		x = 109
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_expand_the_order }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Master & Supreme Commander
+	focus = {
+		id = REP_master__supreme_commander
+		icon = GFX_REP_master_and_supreme_commander
+		x = 103
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = REP_a_slave_born_to_lead
+			focus = REP_dissolve_the_executive_branch
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for One Nation Within The Force
+	focus = {
+		id = REP_one_nation_within_the_force
+		icon = GFX_REP_one_nation_within_the_force
+		x = 106
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = REP_armed_vigilance
+		}
+		prerequisite = {
+			focus = REP_having_the_final_say
+		}
+		prerequisite = {
+			focus = REP_guided_by_light
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Vetting Senators
+	focus = {
+		id = REP_vetting_senators
+		icon = REP_vetting_senators
+		x = 94
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_a_higher_court }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Guiding Hand
+	focus = {
+		id = REP_the_helping_hand
+		icon = REP_the_helping_hand
+		x = 94
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_greater_good }
+		mutually_exclusive = {
+			focus = REP_in_the_chosen_one_we_trust
+		}
+		mutually_exclusive = {
+			focus = REP_we_are_the_senate
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for From War Dogs To Watchdogs
+	focus = {
+		id = REP_from_war_dogs_to_watchdogs
+		icon = REP_from_war_dogs_to_watchdogs
+		x = 94
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_helping_hand }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Higher Court
+	focus = {
+		id = REP_a_higher_court
+		icon = REP_a_higher_court
+		x = 94
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_from_war_dogs_to_watchdogs }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Upper House
+	focus = {
+		id = REP_the_upper_house
+		icon = GFX_REP_the_upper_house
+		x = 106
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_dissolve_the_executive_branch }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Perfect Democracy
+	focus = {
+		id = REP_a_perfect_democracy
+		icon = REP_a_perfect_democracy
+		x = 100
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_a_slave_born_to_lead }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for We ARE The Senate
+	focus = {
+		id = REP_we_are_the_senate
+		icon = GFX_REP_we_are_the_senate
+		x = 106
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_the_greater_good }
+		mutually_exclusive = {
+			focus = REP_in_the_chosen_one_we_trust
+		}
+		mutually_exclusive = {
+			focus = REP_the_helping_hand
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Slave Born To Lead
+	focus = {
+		id = REP_a_slave_born_to_lead
+		icon = REP_a_slave_born_to_lead
+		x = 100
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_in_the_chosen_one_we_trust }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dissolve The Executive Branch
+	focus = {
+		id = REP_dissolve_the_executive_branch
+		icon = GFX_REP_dissolve_the_executive_branch
+		x = 106
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_we_are_the_senate }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Expand The Order
+	focus = {
+		id = REP_expand_the_order
+		icon = GFX_REP_expand_the_order
+		x = 109
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_dissolve_the_executive_branch }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Armed Vigilance
+	focus = {
+		id = REP_armed_vigilance
+		icon = GFX_REP_armed_vigilance
+		x = 103
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_master__supreme_commander }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Jedi Autonomy
+	focus = {
+		id = REP_jedi_autonomy
+		icon = REP_jedi_autonomy
+		x = 91
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = REP_expand_the_service_corps }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Hand Over The Reins
+	focus = {
+		id = REP_hand_over_the_reins
+		icon = REP_hand_over_the_reins
+		x = 94
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = REP_vetting_senators
+		}
+		prerequisite = {
+			focus = REP_jedi_autonomy
+		}
+		prerequisite = {
+			focus = REP_anticorruption_task_force
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	} # Imperial Dawn
+    focus = {
+        id = REP_declaration_of_a_new_order
+        icon = REP_declaration_of_a_new_order
+        cost = 10
+
+       prerequisite = {
+           #No prereq - first focus
+        }
+
+        x = 100
+        y = 10
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_in_order_to_ensure_security
+        icon = REP_in_order_to_ensure_security
+        cost = 10
+
+       prerequisite = {
+           focus = REP_declaration_of_a_new_order
+        }
+
+        x = 100
+        y = 12
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_and_enduring_stability
+        icon = REP_and_enduring_stability
+        cost = 10
+
+       prerequisite = {
+           focus = REP_in_order_to_ensure_security
+        }
+
+        x = 100
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_republic_will_be_reorganised
+        icon = REP_the_republic_will_be_reorganised
+        cost = 10
+
+       prerequisite = {
+           focus = REP_and_enduring_stability
+        }
+
+        x = 100
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_into_the_first_galactic_empire
+        icon = REP_into_the_first_galactic_empire
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_republic_will_be_reorganised
+        }
+       prerequisite = {
+           focus = REP_collaborators_will_suffer_the_same_fate
+        }
+       prerequisite = {
+           focus = REP_republic_corruption_will_never_take_root
+        }
+
+        x = 100
+        y = 15
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_imperial_navy
+        icon = REP_the_imperial_navy
+        cost = 10
+
+       prerequisite = {
+           focus = REP_declaration_of_a_new_order
+        }
+
+        x = 95
+        y = 12
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_encourage_naval_buildup
+        icon = REP_encourage_naval_buildup
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_imperial_navy
+        }
+
+        x = 96
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_research_new_designs
+        icon = REP_research_new_designs
+        cost = 10
+
+       prerequisite = {
+           focus = REP_encourage_naval_buildup
+        }
+
+        x = 96
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_purge_suspected_dissidents
+        icon = REP_purge_suspected_dissidents
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_imperial_navy
+        }
+
+        x = 94
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_hero_worshipping_propaganda
+        icon = REP_hero_worshipping_propaganda
+        cost = 10
+
+       prerequisite = {
+           focus = REP_purge_suspected_dissidents
+        }
+
+        x = 94
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_mass_starship_production
+        icon = REP_mass_starship_production
+        cost = 10
+
+       prerequisite = {
+           focus = REP_hero_worshipping_propaganda
+        }
+       prerequisite = {
+           focus = REP_research_new_designs
+        }
+
+        x = 95
+        y = 15
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_imperial_stormtrooper_corps
+        icon = REP_the_imperial_stormtrooper_corps
+        cost = 10
+
+       prerequisite = {
+           focus = REP_declaration_of_a_new_order
+        }
+
+        x = 105
+        y = 12
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_loosen_their_restrictions
+        icon = REP_loosen_their_restrictions
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_imperial_stormtrooper_corps
+        }
+
+        x = 104
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_reputation_for_destruction
+        icon = REP_reputation_for_destruction
+        cost = 10
+
+       prerequisite = {
+           focus = REP_loosen_their_restrictions
+        }
+
+        x = 104
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_increase_spaarti_clone_numbers
+        icon = REP_increase_spaarti_clone_numbers
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_imperial_stormtrooper_corps
+        }
+
+        x = 106
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_total_indoctrination_for_the_emperor
+        icon = REP_total_indoctrination_for_the_emperor
+        cost = 10
+
+       prerequisite = {
+           focus = REP_increase_spaarti_clone_numbers
+        }
+
+        x = 106
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_form_the_inquisitorius
+        icon = REP_form_the_inquisitorius
+        cost = 10
+
+       prerequisite = {
+           focus = REP_total_indoctrination_for_the_emperor
+        }
+       prerequisite = {
+           focus = REP_reputation_for_destruction
+        }
+
+        x = 105
+        y = 15
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_imperialization
+        icon = REP_into_the_first_galactic_empire
+        cost = 10
+
+       prerequisite = {
+           focus = REP_into_the_first_galactic_empire
+        }
+
+        x = 98
+        y = 16
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_reorganise_the_senate
+        icon = REP_reorganise_the_senate
+        cost = 10
+
+       prerequisite = {
+           focus = REP_imperialization
+        }
+
+        x = 99
+        y = 17
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_nationalise_former_separatist_holdings
+        icon = REP_nationalise_former_separatist_holdings
+        cost = 10
+
+       prerequisite = {
+           focus = REP_reorganise_the_senate
+        }
+
+        x = 99
+        y = 18
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_supplant_republic_institutions
+        icon = REP_supplant_republic_institutions
+        cost = 10
+
+       prerequisite = {
+           focus = REP_imperialization
+        }
+
+        x = 97
+        y = 17
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_imperius_unitada_ober_totalis
+        icon = REP_imperius_unitada_ober_totalis
+        cost = 10
+
+       prerequisite = {
+           focus = REP_supplant_republic_institutions
+        }
+
+        x = 97
+        y = 18
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_form_the_corporate_sector
+        icon = REP_form_the_corporate_sector
+        cost = 10
+
+       prerequisite = {
+           focus = REP_nationalise_former_separatist_holdings
+        }
+        prerequisite = {
+           focus = REP_imperius_unitada_ober_totalis
+        }
+
+        x = 98
+        y = 19
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_consolidate_imperial_intelligence
+        icon = REP_consolidate_imperial_intelligence
+        cost = 10
+
+       prerequisite = {
+           focus = REP_imperius_unitada_ober_totalis
+        }
+
+        x = 96
+        y = 19
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_mandatory_compnor_membership
+        icon = REP_mandatory_compnor_membership
+        cost = 10
+
+       prerequisite = {
+           focus = REP_consolidate_imperial_intelligence
+        }
+
+        x = 95
+        y = 20
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_form_the_imperial_security_bureau
+        icon = REP_form_the_imperial_security_bureau
+        cost = 10
+
+       prerequisite = {
+           focus = REP_consolidate_imperial_intelligence
+        }
+       prerequisite = {
+           focus = REP_form_the_corporate_sector
+        }
+
+        x = 97
+        y = 20
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_reconquest_of_the_rim
+        icon = REP_form_the_imperial_security_bureau
+        cost = 10
+
+       prerequisite = {
+           focus = REP_into_the_first_galactic_empire
+        }
+
+        x = 102
+        y = 16
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_contact_separatist_warlords
+        icon = REP_contact_separatist_warlords
+        cost = 10
+
+       prerequisite = {
+           focus = REP_reconquest_of_the_rim
+        }
+
+       mutually_exclusive = {
+           focus = REP_annihilate_separatist_remnants
+        }
+        x = 103
+        y = 17
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_annihilate_separatist_remnants
+        icon = REP_annihilate_separatist_remnants
+        cost = 10
+
+       prerequisite = {
+           focus = REP_reconquest_of_the_rim
+        }
+
+       mutually_exclusive = {
+           focus = REP_contact_separatist_warlords
+        }
+        x = 101
+        y = 17
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_listehol_campaign
+        icon = REP_the_listehol_campaign
+        cost = 10
+
+       prerequisite = {
+           focus = REP_annihilate_separatist_remnants
+           focus = REP_contact_separatist_warlords
+        }
+
+        x = 101
+        y = 18
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_western_reaches_operation
+        icon = REP_the_western_reaches_operation
+        cost = 10
+
+       prerequisite = {
+           focus = REP_annihilate_separatist_remnants
+           focus = REP_contact_separatist_warlords
+        }
+
+        x = 103
+        y = 18
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_propagandise_the_campaigns
+        icon = REP_propagandise_the_campaigns
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_western_reaches_operation
+        }
+       prerequisite = {
+           focus = REP_the_listehol_campaign
+        }
+
+        x = 102
+        y = 19
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_reconcile_the_rim
+        icon = REP_reconcile_the_rim
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_western_reaches_operation
+        }
+
+        x = 104
+        y = 19
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_hutt_campaigns
+        icon = REP_the_hutt_campaigns
+        cost = 10
+
+       prerequisite = {
+           focus = REP_reconcile_the_rim
+        }
+
+       mutually_exclusive = {
+           focus = REP_negotiate_reduced_smuggling
+        }
+
+        x = 105
+        y = 20
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_negotiate_reduced_smuggling
+        icon = REP_negotiate_reduced_smuggling
+        cost = 10
+
+       prerequisite = {
+           focus = REP_reconcile_the_rim
+        }
+       prerequisite = {
+           focus = REP_propagandise_the_campaigns
+        }
+
+       mutually_exclusive = {
+           focus = REP_the_hutt_campaigns
+        }
+
+        x = 103
+        y = 20
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_tarkin_doctrine
+        icon = REP_the_tarkin_doctrine
+        cost = 10
+
+       prerequisite = {
+           focus = REP_into_the_first_galactic_empire
+        }
+
+
+
+        x = 100
+        y = 19
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_territorial_consolidation
+        icon = REP_territorial_consolidation
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_tarkin_doctrine
+        }
+
+
+
+        x = 99
+        y = 20
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_rapid_communication
+        icon = REP_rapid_communication
+        cost = 10
+
+       prerequisite = {
+           focus = REP_the_tarkin_doctrine
+        }
+
+
+
+        x = 101
+        y = 20
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_rule_of_fear
+        icon = REP_the_rule_of_fear
+        cost = 10
+
+       prerequisite = {
+           focus = REP_territorial_consolidation
+        }
+       prerequisite = {
+           focus = REP_rapid_communication
+        }
+
+
+
+        x = 100
+        y = 21
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_one_language_one_law_one_leader
+        icon = REP_one_language_one_law_one_leader
+        cost = 10
+
+       prerequisite = {
+           focus = REP_in_order_to_ensure_security
+        }
+
+        x = 98
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_the_remaining_jedi_will_be_hunted_down
+        icon = REP_the_remaining_jedi_will_be_hunted_down
+        cost = 10
+
+       prerequisite = {
+           focus = REP_in_order_to_ensure_security
+        }
+
+        x = 102
+        y = 13
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_republic_corruption_will_never_take_root
+        icon = REP_republic_corruption_will_never_take_root
+        cost = 10
+
+       prerequisite = {
+           focus = REP_one_language_one_law_one_leader
+           focus = REP_and_enduring_stability
+           focus = REP_the_remaining_jedi_will_be_hunted_down
+        }
+
+        x = 98
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+    focus = {
+        id = REP_collaborators_will_suffer_the_same_fate
+        icon = REP_collaborators_will_suffer_the_same_fate
+        cost = 10
+
+       prerequisite = {
+           focus = REP_one_language_one_law_one_leader
+           focus = REP_and_enduring_stability
+           focus = REP_the_remaining_jedi_will_be_hunted_down
+        }
+
+        x = 102
+        y = 14
+
+        completion_reward = {
+
+        }
+    }
+
+}
+
+# NOW YOU WILL EXPERIENCE THE FULL POWER OF THE DARK SIDE! #
