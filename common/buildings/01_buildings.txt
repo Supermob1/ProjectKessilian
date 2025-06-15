@@ -1,0 +1,49 @@
+buildings = {
+
+	# show_on_map:
+	#    if provincial = yes, then show_on_map = X is amount per each province
+	#    if provincial = no, then show_on_map = X is amount per state
+	minerals_refinery = {
+		show_on_map = 0
+		base_cost = 10000
+		icon_frame = 10
+		local_resources_oil = 1 # May use local_resources_ + any resource name
+		local_resources_tungsten = 1 # May use local_resources_ + any resource name
+		local_resources_steel = 1 # May use local_resources_ + any resource name
+		local_resources_chromium = 1 # May use local_resources_ + any resource name
+		local_resources_aluminium = -5 # May use local_resources_ + any resource name
+		refinery = yes
+
+		level_cap = {
+			shares_slots = yes
+			state_max = 3
+		}
+		value = 5
+		infrastructure_construction_effect = yes
+		allied_build = yes
+		show_modifier = yes
+	}
+	
+	credits_building = {
+		show_on_map = 0
+		base_cost = 10000
+		icon_frame = 10
+		local_resources_oil = 1 # May use local_resources_ + any resource name
+		local_resources_tungsten = 1 # May use local_resources_ + any resource name
+		local_resources_steel = 1 # May use local_resources_ + any resource name
+		local_resources_chromium = 1 # May use local_resources_ + any resource name
+		local_resources_aluminium = 1 # May use local_resources_ + any resource name
+		local_resources_credits = -5 # May use local_resources_ + any resource name
+		
+		refinery = yes
+		
+		level_cap = {
+			shares_slots = yes
+			state_max = 3
+		}
+		value = 5
+		infrastructure_construction_effect = yes
+		allied_build = yes
+		show_modifier = yes
+	}
+}

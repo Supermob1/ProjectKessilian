@@ -1,0 +1,188 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+REP_Inf_01 = {
+	name = "Clone Legions"
+
+	for_countries = { REP }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Legion"
+
+	ordered = {
+		1 = { "%dth Legion" }
+		2 = { "%dth Legion" }
+		3 = { "%dth Legion" }
+		4 = { "%dth Legion" }
+		5 = { "%dth Legion" }
+		6 = { "%dth Legion" }
+		7 = { "%dth Legion" }
+		8 = { "%dth Legion" }
+		9 = { "%dth Legion" }
+		10 = { "%dth Legion" }
+		11 = { "%dth Legion" }
+		12 = { "%dth Legion" }
+		13 = { "%dth Legion" }
+		14 = { "%dth Legion" }
+		15 = { "%dth Legion" }
+		16 = { "%dth Legion" }
+		17 = { "%dth Legion" }
+		18 = { "%dth Legion" }
+		19 = { "%dth Legion" }
+		20 = { "%dth Legion" }
+		21 = { "212th Attack Battalion" }
+		22 = { "327th Star Corps" }
+		23 = { "91st Reconnaissance Corps" }
+		24 = { "41st Elite Corps" }
+		25 = { "104th Wolfpack Battalion" }
+		26 = { "501st Legion" }
+		27 = { "332nd Company" }
+		28 = { "187th Legion" }
+		29 = { "13th Battalion" }
+		30 = { "7th Sky Corps" }
+		31 = { "2nd Airborne Company" }
+		32 = { "5th Fleet Security" }
+		33 = { "Clone Training Battalion" }
+		34 = { "Coruscant Guard" }
+		35 = { "21st Nova Corps" }
+		36 = { "Rancor Battalion" }
+		37 = { "Torrent Company" }
+		38 = { "Foxtrot Group" }
+		39 = { "Domino Squad" }
+		40 = { "Ghost Company" }
+		41 = { "Nexu Company" }
+		42 = { "Blizzard Force" }
+		43 = { "Hawkbat Battalion" }
+		44 = { "Ghost Battalion" }
+		45 = { "Doom Unit" }
+		46 = { "Boar-Wolf Company" }
+		47 = { "Trident Squad" }
+		48 = { "Lightning Squad" }
+		49 = { "Shinies Battalion" }
+		50 = { "ARC Trooper Task Force" }
+		51 = { "Omega Squad" }
+		52 = { "Delta Squad" }
+		53 = { "Alpha Squad" }
+		54 = { "Rogue Platoon" }
+		55 = { "Vanguard Unit" }
+		56 = { "Stealth Ops Team 7" }
+		57 = { "Republic Commando Squad 23" }
+		58 = { "Shadow Company" }
+		59 = { "Pathfinder Unit" }
+		60 = { "Iron Fist Legion" }
+		61 = { "Hawk Company" }
+		62 = { "Specter Battalion" }
+		63 = { "Bantha Squad" }
+		64 = { "Hammer Legion" }
+		65 = { "Sabre Company" }
+		66 = { "Star Corps Reserve" }
+		67 = { "Gundark Platoon" }
+		68 = { "Firebird Company" }
+		69 = { "Vornskr Battalion" }
+		70 = { "Reaper Squad" }
+		71 = { "Scythe Legion" }
+		72 = { "Ghost Battalion Reserve" }
+		73 = { "Nova Command" }
+		74 = { "Victory Battalion" }
+		75 = { "Redeye Patrol Unit" }
+	}
+}
+REP_MEC_01 = {
+	name = "Republic Mechanized Divisions"
+
+	for_countries = { REP }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth AT-TE Armored Column"
+
+	ordered = {
+		1 = { "1st AT-TE Assault Group" }
+		2 = { "2nd TX-130 Saber Squadron" }
+		3 = { "3rd Armored Spearhead" }
+		4 = { "4th Juggernaut Division" }
+		5 = { "5th Clone Armor Battalion" }
+		6 = { "6th Saber Tank Detachment" }
+		7 = { "7th Assault Walker Legion" }
+		8 = { "8th AT-RT Recon Group" }
+		9 = { "9th Heavy Armored Corps" }
+		10 = { "10th TX-130 Armor Division" }
+	}
+}
+
+REP_PAR_01 = {
+	name = "Republic Paratrooper Divisions"
+
+	for_countries = { REP }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Jet Trooper Unit"
+
+	ordered = {
+		1 = { "1st Jet Trooper Platoon" }
+		2 = { "2nd Airborne Company" }
+		3 = { "3rd Jetpack Recon Squad" }
+		4 = { "4th Drop Legion" }
+		5 = { "5th High Altitude Deployment Team" }
+	}
+}
+
+REP_MAR_01 = {
+	name = "Republic Marine Divisions"
+
+	for_countries = { REP }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Marine Battalion"
+
+	ordered = {
+		1 = { "1st Republic Marines" }
+		2 = { "2nd Fleet Assault Battalion" }
+		3 = { "3rd Aquatic Operations Unit" }
+		4 = { "4th Amphibious Corps" }
+		5 = { "5th Venator Deployment Force" }
+	}
+}
+
+

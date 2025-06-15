@@ -15,6 +15,13 @@ foreign_politics = {
 				creditsamount= -5
 				tooltip = lose_credits_tt
 			}
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Clone Legion\""
+					owner = REP
+					count = 3
+				}
+			}
 		}		
 	}
 }

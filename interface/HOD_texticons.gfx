@@ -1,0 +1,19 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_credits_texticon"
+		texturefile = "gfx/texticons/credits_texticon.dds"
+		legacy_lazy_load = no
+	}
+	
+	progressbartype = {
+		name = "Credits_progress_bar"
+		color = { 0.0 0.5 0.0 }
+		colortwo = { 1.0 0.0 0.0 }
+		textureFile1 = "gfx/interface/progressbar/progressbarfull.dds"
+		textureFile2 = "gfx/interface/progressbar/progressbarempty.dds"
+		size = { x = 250 y = 25 }
+		effectFile = "gfx/FX/progress.lua"
+		steps = 7000
+		horizontal = yes
+	}
+}

@@ -25,7 +25,15 @@ technologies = {
 		}
 		mines_planting_by_fleets_factor = 0.1
 		#####
-
+		on_research_complete = {
+			if = {
+				limit = { has_dlc = "Gotterdammerung"}
+				custom_effect_tooltip = {
+					localization_key = SP_UNLOCK_PROJECT
+					PROJECT = sp_naval_underway_replenishment	
+				}
+			}
+		}
 
 		xor = { trade_interdiction base_strike } 
 		
@@ -113,7 +121,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -167,7 +175,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -236,7 +244,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -396,7 +404,7 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -460,7 +468,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -517,7 +525,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -581,7 +589,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -653,7 +661,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 2
 			}
 			modifier = {
@@ -934,7 +942,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 3
 			}
 			modifier = {
@@ -992,7 +1000,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 3
 			}
 			modifier = {
@@ -1048,7 +1056,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 3
 			}
 			modifier = {
@@ -1114,7 +1122,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 3
 			}
 			modifier = {
@@ -1178,7 +1186,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 2
 			}
 			modifier = {
@@ -1253,7 +1261,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 2
 			}
 			modifier = {
@@ -1745,7 +1753,15 @@ technologies = {
 			leads_to_tech =  convoy_escorts_bs
 			research_cost_coeff = 1
 		}
-		
+		on_research_complete = {
+			if = {
+				limit = { has_dlc = "Gotterdammerung"}
+				custom_effect_tooltip = {
+					localization_key = SP_UNLOCK_PROJECT
+					PROJECT = sp_naval_underway_replenishment	
+				}
+			}
+		}		
 		xp_research_type = navy
 		xp_unlock_cost = 100
 		doctrine = yes	
@@ -1769,8 +1785,8 @@ technologies = {
 			}
 			modifier = {
 				OR = {
-					tag = USA
-					tag = JAP
+					#tag = USA
+					#tag = JAP
 				}
 				factor = 2.5
 			}
@@ -1830,8 +1846,8 @@ technologies = {
 			}
 			modifier = {
 				OR = {
-					tag = USA
-					tag = JAP
+					#tag = USA
+					#tag = JAP
 				}
 				factor = 2.5
 			}
@@ -1899,8 +1915,8 @@ technologies = {
 			}
 			modifier = {
 				OR = {
-					tag = USA
-					tag = JAP
+					#tag = USA
+					#tag = JAP
 				}
 				factor = 2.5
 			}
@@ -1969,8 +1985,8 @@ technologies = {
 			}
 			modifier = {
 				OR = {
-					tag = USA
-					tag = JAP
+					#tag = USA
+					#tag = JAP
 				}
 				factor = 2.5
 			}
@@ -2047,8 +2063,8 @@ technologies = {
 			}
 			modifier = {
 				OR = {
-					tag = USA
-					tag = JAP
+					#tag = USA
+					#tag = JAP
 				}
 				factor = 2.5
 			}
@@ -2115,8 +2131,8 @@ technologies = {
 			factor = 1
 			modifier = {
 				OR = {
-					tag = USA
-					tag = JAP
+					#tag = USA
+					#tag = JAP
 				}
 				factor = 4
 			}
@@ -2183,8 +2199,8 @@ technologies = {
 			}
 			modifier = {
 				OR = {
-					tag = USA
-					tag = JAP
+					#tag = USA
+					#tag = JAP
 				}
 				factor = 2.5
 			}
@@ -2255,7 +2271,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 2
 			}
 			modifier = {
@@ -2307,7 +2323,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 2
 			}
 			modifier = {
@@ -2369,7 +2385,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 2
 			}
 			modifier = {
@@ -2424,7 +2440,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 2
 			}
 			modifier = {
@@ -2486,7 +2502,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 2
 			}
 			modifier = {
@@ -2546,7 +2562,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 2
 			}
 			modifier = {
@@ -2609,7 +2625,7 @@ technologies = {
 				factor = 5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 2
 			}
 			modifier = {

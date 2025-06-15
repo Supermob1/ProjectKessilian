@@ -440,11 +440,11 @@ technologies = {
 				factor = 2
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 1.5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 0.5
 			}
 		}
@@ -497,11 +497,11 @@ technologies = {
 				factor = 2
 			}
 			modifier = {
-				tag = ENG
+				#tag = ENG
 				factor = 0.5
 			}
 			modifier = {
-				tag = USA
+				#tag = USA
 				factor = 1.5
 			}
 		}
@@ -775,10 +775,10 @@ technologies = {
 			
 			modifier = {
 				factor = 0
-				tag = USA
+				#tag = USA
 			}
 			modifier = {
-				tag = SOV
+				#tag = SOV
 				factor = 4
 			}
 			modifier = {
@@ -803,6 +803,7 @@ technologies = {
 		
 		# EFFECT ########
 		air_cas_efficiency = 0.20
+		ground_attack_factor = 0.10
 		###########
 		
 		path = {
@@ -837,7 +838,7 @@ technologies = {
 			}
 
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 0.5
 			}
 		}
@@ -891,7 +892,7 @@ technologies = {
 				factor = 2
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 0.5
 			}
 		}
@@ -945,7 +946,7 @@ technologies = {
 				factor = 2
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 0.5
 			}
 		}
@@ -998,7 +999,7 @@ technologies = {
 				factor = 2
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 0.5
 			}
 		}
@@ -1046,7 +1047,7 @@ technologies = {
 				factor = 2
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 0.5
 			}
 		}
@@ -1108,7 +1109,7 @@ technologies = {
 				factor = 2
 			}
 			modifier = {
-				tag = GER
+				#tag = GER
 				factor = 0.5
 			}
 		}
@@ -1415,7 +1416,7 @@ technologies = {
 			
 			modifier = {
 				factor = 0
-				tag = USA
+				#tag = USA
 			}
 			modifier = {
 				ai_land_doctrine_tier_1_trigger = yes
@@ -1686,8 +1687,8 @@ technologies = {
 		
 		categories = {
 			air_doctrine
-			battlefield_support_tree
-			cat_battlefield_support
+			operational_integrity_tree
+			cat_operational_integrity
 		}
 		
 		folder = {
