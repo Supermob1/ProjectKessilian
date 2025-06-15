@@ -120,6 +120,71 @@ REP_Inf_01 = {
 		75 = { "Redeye Patrol Unit" }
 	}
 }
+REP_GAR_01 = {
+    name = "Planetary Garrisons"
+
+    for_countries = { REP }
+
+    can_use = { always = yes }
+
+    division_types = { "infantry" }
+
+    fallback_name = "%dth Garrison"
+
+    ordered = {
+        1  = { "Coruscant Garrison" }
+        2  = { "Kamino Garrison" }
+        3  = { "Geonosis Garrison" }
+        4  = { "Kashyyyk Garrison" }
+        5  = { "Umbara Garrison" }
+        6  = { "Ryloth Garrison" }
+        7  = { "Tatooine Garrison" }
+        8  = { "Naboo Garrison" }
+        9  = { "Mandalore Garrison" }
+        10 = { "Corellia Garrison" }
+        11 = { "Utapau Garrison" }
+        12 = { "Felucia Garrison" }
+        13 = { "Saleucami Garrison" }
+        14 = { "Mygeeto Garrison" }
+        15 = { "Christophsis Garrison" }
+        16 = { "Mon Cala Garrison" }
+        17 = { "Dathomir Garrison" }
+        18 = { "Cato Neimoidia Garrison" }
+        19 = { "Scarif Garrison" }
+        20 = { "Jakku Garrison" }
+        21 = { "Ilum Garrison" }
+        22 = { "Sullust Garrison" }
+        23 = { "Mustafar Garrison" }
+        24 = { "Ryloth Reserve" }
+        25 = { "Onderon Garrison" }
+        26 = { "Hoth Garrison" }
+        27 = { "Ord Mantell Garrison" }
+        28 = { "Yavin Garrison" }
+        29 = { "Bespin Garrison" }
+        30 = { "Nal Hutta Garrison" }
+        31 = { "Korriban Garrison" }
+        32 = { "Zeffo Garrison" }
+        33 = { "Lothal Garrison" }
+        34 = { "Concord Dawn Garrison" }
+        35 = { "Rishi Garrison" }
+        36 = { "Dantooine Garrison" }
+        37 = { "Takodana Garrison" }
+        38 = { "Sorgan Garrison" }
+        39 = { "Ahch-To Garrison" }
+        40 = { "Mustafar Reserve" }
+        41 = { "Exegol Outpost" }
+        42 = { "Kessel Garrison" }
+        43 = { "Jakku Reserve" }
+        44 = { "Muunilinst Garrison" }
+        45 = { "Raxus Prime Garrison" }
+        46 = { "Ilum Reserve" }
+        47 = { "Mandalore Outpost" }
+        48 = { "Dac Garrison" }
+        49 = { "Csilla Garrison" }
+        50 = { "Jedha Garrison" }
+    }
+}
+
 REP_MEC_01 = {
 	name = "Republic Mechanized Divisions"
 
