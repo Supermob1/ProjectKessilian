@@ -1005,7 +1005,6 @@ country_event = { #The State of the Galaxy
 
 	immediate = {
 		set_country_flag = but_crisis_has_divided_us
-		mark_focus_tree_layout_dirty = yes
 	}
 }
 country_event = { #The State of the Galaxy 
@@ -1018,7 +1017,6 @@ country_event = { #The State of the Galaxy
 
 	immediate = {
 		set_country_flag = but_we_are_threatened_once_more_focus_tree
-		mark_focus_tree_layout_dirty = yes
 	}
 }
 country_event = { #The State of the Galaxy 
@@ -1031,6 +1029,6 @@ country_event = { #The State of the Galaxy
 
 	immediate = {
 		set_country_flag = rep_mca
-		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = REP_the_military_creation_act
 	}
 }
