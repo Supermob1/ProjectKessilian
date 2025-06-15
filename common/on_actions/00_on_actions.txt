@@ -18,8 +18,8 @@ on_actions = {
 				if = {
 					limit = {
 						AND = {
-							check_variable = { UTI.HODday = 19 }
-							check_variable = { REP.HODmonth = 11 }
+							check_variable = { UTI.HODday = 20 }
+							check_variable = { UTI.HODmonth = 11 }
 						}
 					}
 					set_variable = { UTI.HODday = 1 }
