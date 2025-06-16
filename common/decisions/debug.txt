@@ -20,24 +20,5 @@ generic_debug = {
 				play_song = "mace windu super event"
 		}
 	}
-	debug_fleet = {
-		icon = GFX_decision_generic_form_nation
-		
-		visible = {
-			is_debug = yes
-			is_ai = no
-			original_tag = REP
-		}	
 
-		available = {
-			original_tag = REP
-			hidden_trigger = {
-				always = yes
-			}
-		}
-		custom_cost_trigger = { always = yes } #no cost
-		complete_effect = {
-			load_oob = "republic_navy"
-		}
-	}
 }

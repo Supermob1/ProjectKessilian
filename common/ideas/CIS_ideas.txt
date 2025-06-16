@@ -1,7 +1,37 @@
 ideas = {
 	country = {
-
+		CIS_Great_Droid_Army = {
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				army_morale = -10
+				army_org = -10
+			}
+		}
 		CIS_forging_an_army_idea = {
+			#picture = 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				industrial_capacity_dockyard = 0.5
+			}
+		}
+
+		CIS_boost_quotas_idea_1 = {
 			#picture = 
 			allowed = {
 				always = no
@@ -14,82 +44,64 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				production_speed_arms_factory_factor = 0.25
-				industrial_capacity_dockyard = 0.5
+				industrial_capacity_factory = 0.05
 			}
-	}
-
-	CIS_boost_quotas_idea_1 = {
-		#picture = 
-		allowed = {
-			always = no
 		}
 
-		allowed_civil_war = {
-			always = yes
+		CIS_boost_quotas_idea_2 = {
+			#picture = 
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.15
+				recruitable_population = -0.05
+				
+			}
 		}
+		CIS_boost_quotas_idea_3 = {
+			#picture = 
+			allowed = {
+				always = no
+			}
 
-		removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
 
-		modifier = {
-			industrial_capacity_factory = 0.05
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.2
+				recruitable_population = -0.05
+				stability_factor = -0.1
+			}
 		}
-}
+		CIS_boost_quotas_idea_4 = {
+			#picture = 
+			allowed = {
+				always = no
+			}
 
-CIS_boost_quotas_idea_2 = {
-	#picture = 
-	allowed = {
-		always = no
-	}
+			allowed_civil_war = {
+				always = yes
+			}
 
-	allowed_civil_war = {
-		always = yes
-	}
+			removal_cost = -1
 
-	removal_cost = -1
-
-	modifier = {
-		industrial_capacity_factory = 0.15
-		recruitable_population = -0.05
-		
-	}
-}
-CIS_boost_quotas_idea_3 = {
-	#picture = 
-	allowed = {
-		always = no
-	}
-
-	allowed_civil_war = {
-		always = yes
-	}
-
-	removal_cost = -1
-
-	modifier = {
-		industrial_capacity_factory = 0.2
-		recruitable_population = -0.05
-		stability_factor = -0.1
-	}
-}
-CIS_boost_quotas_idea_4 = {
-	#picture = 
-	allowed = {
-		always = no
-	}
-
-	allowed_civil_war = {
-		always = yes
-	}
-
-	removal_cost = -1
-
-	modifier = {
-		industrial_capacity_factory = 0.3
-		recruitable_population = -0.05
-		war_support_factor = 0.15
-	}
-}
+			modifier = {
+				industrial_capacity_factory = 0.3
+				recruitable_population = -0.05
+				war_support_factor = 0.15
+			}
+		}
 		
 	}
 }

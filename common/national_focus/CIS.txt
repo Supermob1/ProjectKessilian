@@ -433,7 +433,13 @@ focus_tree = {
 		# allow_branch = {
 			# has_global_flag = The_Clone_Wars
 		# }
-		
+		available = {
+			has_completed_focus = CIS_The_Droid_Army_Realized
+			OR = {
+				has_completed_focus = CIS_Independence_now_Democracy_later
+				has_completed_focus = CIS_Freedom_for_all_sapient_life
+			}
+		}
 		x = 23
 		y = 0
 		
