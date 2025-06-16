@@ -1,0 +1,188 @@
+units = {
+
+    ##### CIS NAVAL FORCES #####
+
+    ### GEONOSIS ASSAULT FLEET ###
+    fleet = {
+        name       = "Geonosis Assault Fleet"
+        naval_base = 9026   # Geonosis Shipyards
+
+        # Battleship Divisions
+        task_force = {
+            name     = "Droid Battleship Division Alpha"
+            location = 9026
+            ship     = { name = "CSF Titan-01"       definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Colossus-02"    definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_2 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Juggernaut-03"  definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_3 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Leviathan-04"   definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_4 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Droid Battleship Division Beta"
+            location = 9026
+            ship     = { name = "CSF Behemoth-05"    definition = battleship    start_experience_factor = 0.9 equipment = { SH_battleship_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Monolith-06"    definition = battleship    start_experience_factor = 0.9 equipment = { SH_battleship_2 = { amount = 1 owner = CIS } } }
+        }
+
+        # Battlecruisers
+        task_force = {
+            name     = "Droid Battlecruiser Squadron"
+            location = 9026
+            ship     = { name = "CSF Hammerstrike"   definition = battle_cruiser start_experience_factor = 1.0 equipment = { ship_hull_super_heavy_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Ironbreaker"    definition = battle_cruiser start_experience_factor = 1.0 equipment = { ship_hull_heavy_4       = { amount = 1 owner = CIS } } }
+        }
+
+        # Carrier Wings
+        task_force = {
+            name     = "Droid Carrier Wing Alpha"
+            location = 9026
+            ship     = { name = "CSF Skyforge-1"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_1             = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Skyforge-2"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_2             = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Warforge-3"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_3             = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Droid Carrier Wing Beta"
+            location = 9026
+            ship     = { name = "CSF Ironwing-4"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Steamwing-5"    definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_conversion_ca = { amount = 1 owner = CIS } } }
+        }
+
+        # Heavy Cruiser Squadrons
+        task_force = {
+            name     = "Droid Heavy Cruiser Squadron One"
+            location = 9026
+            ship     = { name = "CSF Crusher-01"     definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Annihilator-02" definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Obliterator-03" definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_4 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Droid Heavy Cruiser Squadron Two"
+            location = 9026
+            ship     = { name = "CSF Ravager-04"     definition = heavy_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Marauder-05"    definition = heavy_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = CIS } } }
+        }
+
+        # Light Cruiser Squadrons
+        task_force = {
+            name     = "Droid Light Cruiser Squadron One"
+            location = 9026
+            ship     = { name = "CSF Scout-01"       definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Hunter-02"      definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Tracker-03"     definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Seeker-04"      definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Droid Light Cruiser Squadron Two"
+            location = 9026
+            ship     = { name = "CSF Phantom-05"     definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Shade-06"       definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+        }
+
+        # Destroyer Flotillas
+        task_force = {
+            name     = "Droid Destroyer Flotilla One"
+            location = 9026
+            ship     = { name = "CSF Stalker-1"      definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Stalker-2"      definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Hunter-3"       definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Hunter-4"       definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_4 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Droid Destroyer Flotilla Two"
+            location = 9026
+            ship     = { name = "CSF Raider-5"       definition = destroyer    start_experience_factor = 0.9 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Raider-6"       definition = destroyer    start_experience_factor = 0.9 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
+        }
+
+        # Torpedo Cruisers
+        # task_force = {
+        #     name     = "Droid Torpedo Cruiser Squadron"
+        #     location = 9026
+        #     ship     = { name = "CSF Spearhead-01"   definition = torpedo_cruiser start_experience_factor = 1.0 equipment = { ship_hull_torpedo_cruiser = { amount = 1 owner = CIS } } }
+        #     ship     = { name = "CSF Spearhead-02"   definition = torpedo_cruiser start_experience_factor = 1.0 equipment = { ship_hull_torpedo_cruiser = { amount = 1 owner = CIS } } }
+        # }
+
+        # Coastal Defense Ships
+        task_force = {
+            name     = "Droid Coastal Defense Squadron"
+            location = 9026
+            ship     = { name = "CSF Bulwark-01"     definition = heavy_cruiser     start_experience_factor = 1.0 equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = CIS } } }
+            ship     = { name = "CSF Bulwark-02"     definition = heavy_cruiser     start_experience_factor = 1.0 equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = CIS } } }
+        }
+    }
+
+    ### UMBARA SIEGE FLEET ###
+    fleet = {
+        name       = "Umbara Siege Fleet"
+        naval_base = 9026   # Umbara Starport
+
+        task_force = {
+            name     = "Siege Battleship Division"
+            location = 9026
+            ship     = { name = "USF Oblivion-01"   definition = battleship    start_experience_factor = 0.8 equipment = { ship_hull_heavy_3 = { amount = 1 owner = CIS } } }
+            ship     = { name = "USF Anarchy-02"    definition = battleship    start_experience_factor = 0.8 equipment = { ship_hull_heavy_4 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Siege Battlecruisers"
+            location = 9026
+            ship     = { name = "USF Doomhammer"    definition = battle_cruiser start_experience_factor = 0.8 equipment = { ship_hull_super_heavy_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "USF Nightbringer"  definition = battle_cruiser start_experience_factor = 0.8 equipment = { SH_battleship_1        = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Siege Destroyers"
+            location = 9026
+            ship     = { name = "USF Phantom-1"     definition = destroyer    start_experience_factor = 0.8 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
+            ship     = { name = "USF Phantom-2"     definition = destroyer    start_experience_factor = 0.8 equipment = { ship_hull_light_4 = { amount = 1 owner = CIS } } }
+        }
+    }
+
+    ### MUSTAFAR DEEP STRIKE FLEET ###
+    fleet = {
+        name       = "Mustafar Deep Strike Fleet"
+        naval_base = 9026   # Mustafar Dockyards
+
+        task_force = {
+            name     = "Strike Carrier Wing"
+            location = 9026
+            ship     = { name = "MSF Inferno-1"     definition = carrier      start_experience_factor = 0.85 equipment = { ship_hull_carrier_2 = { amount = 1 owner = CIS } } }
+            ship     = { name = "MSF Blaze-2"       definition = carrier      start_experience_factor = 0.85 equipment = { ship_hull_carrier_3 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Strike Cruisers"
+            location = 9026
+            ship     = { name = "MSF Marauder-1"    definition = heavy_cruiser start_experience_factor = 0.85 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = CIS } } }
+            ship     = { name = "MSF Marauder-2"    definition = heavy_cruiser start_experience_factor = 0.85 equipment = { ship_hull_cruiser_4 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Strike Destroyers"
+            location = 9026
+            ship     = { name = "MSF Razorclaw-1"   definition = destroyer    start_experience_factor = 0.85 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
+            ship     = { name = "MSF Razorclaw-2"   definition = destroyer    start_experience_factor = 0.85 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
+        }
+    }
+
+    ### OUTER RIM GARRISON FLEET ###
+    fleet = {
+        name       = "Outer Rim Garrison Fleet"
+        naval_base = 9026   # Ryloth Outpost
+
+        task_force = {
+            name     = "Garrison Battleships"
+            location = 9026
+            ship     = { name = "ORG Guardian-1"    definition = battleship    start_experience_factor = 0.7 equipment = { ship_hull_heavy_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "ORG Guardian-2"    definition = battleship    start_experience_factor = 0.7 equipment = { ship_hull_heavy_2 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Garrison Cruisers"
+            location = 9026
+            ship     = { name = "ORG Sentinel-1"    definition = light_cruiser start_experience_factor = 0.7 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "ORG Sentinel-2"    definition = light_cruiser start_experience_factor = 0.7 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+        }
+        task_force = {
+            name     = "Garrison Destroyers"
+            location = 9026
+            ship     = { name = "ORG Defender-1"    definition = destroyer    start_experience_factor = 0.7 equipment = { ship_hull_light_1 = { amount = 1 owner = CIS } } }
+            ship     = { name = "ORG Defender-2"    definition = destroyer    start_experience_factor = 0.7 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
+        }
+    }
+
+}

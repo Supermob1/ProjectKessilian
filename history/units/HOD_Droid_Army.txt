@@ -1,0 +1,1007 @@
+division_template = {
+    name = "CIS Droid Battalion"
+    division_names_group = CIS_INF_01
+    is_locked = yes
+    template_counter = 0
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+        infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+        infantry = { x = 3 y = 0 }
+        infantry = { x = 3 y = 1 }
+        infantry = { x = 3 y = 2 }
+        infantry = { x = 4 y = 0 }
+    }
+    support = {
+        artillery = { x = 0 y = 0 }
+    }
+}
+ ###### CIS Droid Army OOB ######
+units = {
+    # Supreme Command
+    division = {
+        name                    = "CIS Supreme HQ"
+        location                = 194
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Geonosis Sector
+    division = {
+        name                    = "1st Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "2nd Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "3rd Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "4th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "5th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "6th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "7th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "8th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "9th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "10th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "11th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "12th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "13th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "14th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "15th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "16th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "17th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "18th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "19th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "20th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "21st Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "22nd Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "23rd Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "24th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "25th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "26th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "27th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "28th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "29th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "30th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "31st Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "32nd Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "33rd Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "34th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "35th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "36th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "37th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "38th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "39th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "40th Battle Droid Battalion"
+        location                = 3419
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    # Umbara Campaign
+    division = {
+        name                    = "41st Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "42nd Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "43rd Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "44th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "45th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "46th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "47th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "48th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "49th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "50th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "51st Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "52nd Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "53rd Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "54th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "55th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "56th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "57th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "58th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "59th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "60th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "61st Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "62nd Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "63rd Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "64th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "65th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "66th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "67th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "68th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "69th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "70th Battle Droid Battalion"
+        location                = 2703
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    # Ithor Sector
+    division = {
+        name                    = "71st Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "72nd Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "73rd Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "74th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "75th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "76th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "77th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "78th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "79th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "80th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "81st Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "82nd Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "83rd Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "84th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "85th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "86th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "87th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "88th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "89th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "90th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "91st Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "92nd Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "93rd Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "94th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "95th Battle Droid Battalion"
+        location                = 9431
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    # Christophsis Sector
+    division = {
+        name                    = "96th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "97th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "98th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "99th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "100th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "101st Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "102nd Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "103rd Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "104th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "105th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "106th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "107th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "108th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "109th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "110th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "111th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "112th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "113th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "114th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "115th Battle Droid Battalion"
+        location                = 3948
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    # Cato Neimoidia Sector
+    division = {
+        name                    = "116th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "117th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "118th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "119th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "120th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "121st Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "122nd Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "123rd Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "124th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "125th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "126th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "127th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "128th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "129th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "130th Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "131st Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "132nd Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "133rd Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    # Raxus Prime Sector
+    division = {
+        name                    = "134th Battle Droid Battalion"
+        location                = 9026
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "135th Battle Droid Battalion"
+        location                = 9026
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "136th Battle Droid Battalion"
+        location                = 9026
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "137th Battle Droid Battalion"
+        location                = 9026
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "138th Battle Droid Battalion"
+        location                = 9026
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 0.7
+        start_equipment_factor  = 1.0
+    }
+}
