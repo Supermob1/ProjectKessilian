@@ -1,0 +1,215 @@
+units = {
+
+    ##### REPUBLIC NAVAL FORCES #####
+
+    ### CORUSCANT DEFENSE FLEET ###
+    fleet = {
+        name       = "Coruscant Defense Fleet"
+        naval_base = 12333   # Coruscant Shipyards
+
+        # Battleship Divisions
+        task_force = {
+            name     = "Battleship Division Alpha"
+            location = 12333
+            ship     = { name = "RSF Darksaber"    definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Starforge"    definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Suncrusher"   definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_3 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Nightfall"    definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_4 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Battleship Division Beta"
+            location = 12333
+            ship     = { name = "RSF Dawnbringer"  definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Twilight"     definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Ironclad"     definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_3 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Vanguard"     definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_4 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Battleship Division Gamma"
+            location = 12333
+            ship     = { name = "RSF Eclipse"      definition = battleship    start_experience_factor = 0.9 equipment = { ship_hull_heavy_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Halo"         definition = battleship    start_experience_factor = 0.9 equipment = { ship_hull_heavy_3 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Paladin"      definition = battleship    start_experience_factor = 0.9 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REP } } }
+        }
+
+        # Battlecruisers
+        task_force = {
+            name     = "Battlecruiser Squadron"
+            location = 12333
+            ship     = { name = "RSF Starfire"    definition = battle_cruiser start_experience_factor = 1.0 equipment = { ship_hull_super_heavy_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Sunspear"    definition = battle_cruiser start_experience_factor = 1.0 equipment = { SH_battleship_1        = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Moongazer"   definition = battle_cruiser start_experience_factor = 1.0 equipment = { SH_battleship_2        = { amount = 1 owner = REP } } }
+        }
+
+        # Carrier Wings
+        task_force = {
+            name     = "Carrier Wing Alpha"
+            location = 12333
+            ship     = { name = "RSF Celestial"   definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_1             = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Horizon"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_2             = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Astral"      definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_3             = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Carrier Wing Beta"
+            location = 12333
+            ship     = { name = "RSF Aurora"      definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Odyssey"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_conversion_ca = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Carrier Wing Gamma"
+            location = 12333
+            ship     = { name = "RSF Zenith"      definition = carrier      start_experience_factor = 0.9 equipment = { ship_hull_carrier_1             = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Dawnstar"    definition = carrier      start_experience_factor = 0.9 equipment = { ship_hull_carrier_2             = { amount = 1 owner = REP } } }
+        }
+
+        # Heavy Cruiser Squadrons
+        task_force = {
+            name     = "Heavy Cruiser Squadron One"
+            location = 12333
+            ship     = { name = "RSF Meridian"    definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Zenith"      definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Equinox"     definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_4 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Heavy Cruiser Squadron Two"
+            location = 12333
+            ship     = { name = "RSF Pinnacle"    definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Apex"        definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Guardian"    definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_4 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Heavy Cruiser Squadron Three"
+            location = 12333
+            ship     = { name = "RSF Horizon"     definition = heavy_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Summit"      definition = heavy_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = REP } } }
+        }
+
+        # Light Cruiser Squadrons
+        task_force = {
+            name     = "Light Cruiser Squadron One"
+            location = 12333
+            ship     = { name = "RSF Scout"       definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Voyager"     definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Pathfinder"  definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Explorer"    definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Light Cruiser Squadron Two"
+            location = 12333
+            ship     = { name = "RSF Pioneer"     definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Marauder"    definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Vanguard"    definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Light Cruiser Squadron Three"
+            location = 12333
+            ship     = { name = "RSF Sentinel"    definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Marauder"    definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+        }
+
+        # Destroyer Flotillas
+        task_force = {
+            name     = "Destroyer Flotilla One"
+            location = 12333
+            ship     = { name = "RSF Razor-1"     definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Razor-2"     definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Spear-1"     definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_3 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Spear-2"     definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_4 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Destroyer Flotilla Two"
+            location = 12333
+            ship     = { name = "RSF Vortex-1"    definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Vortex-2"    definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Arrow-1"     definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_3 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Arrow-2"     definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_4 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Destroyer Flotilla Three"
+            location = 12333
+            ship     = { name = "RSF Phantom-1"   definition = destroyer    start_experience_factor = 0.9 equipment = { ship_hull_light_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Phantom-2"   definition = destroyer    start_experience_factor = 0.9 equipment = { ship_hull_light_3 = { amount = 1 owner = REP } } }
+        }
+
+        # Torpedo Cruisers
+        # task_force = {
+        #     name     = "Torpedo Cruiser Squadron"
+        #     location = 12333
+        #     ship     = { name = "RSF Leviathan-1" definition = torpedo_cruiser start_experience_factor = 1.0 equipment = { ship_hull_torpedo_cruiser = { amount = 1 owner = REP } } }
+        #     ship     = { name = "RSF Leviathan-2" definition = torpedo_cruiser start_experience_factor = 1.0 equipment = { ship_hull_torpedo_cruiser = { amount = 1 owner = REP } } }
+        # }
+
+        # Coastal Defense Ships
+        task_force = {
+            name     = "Coastal Defense Squadron"
+            location = 12333
+            ship     = { name = "RSF Guardian-1"  definition = heavy_cruiser     start_experience_factor = 1.0 equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Sentinel-1"  definition = heavy_cruiser     start_experience_factor = 1.0 equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = REP } } }
+        }
+
+        # Pre-dreadnought Relics
+        task_force = {
+            name     = "Pre-Dreadnought Squadron"
+            location = 12333
+            ship     = { name = "RSF Vanguard-1"  definition = battleship        start_experience_factor = 0.8 equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = REP } } }
+            ship     = { name = "RSF Defiant-1"   definition = battleship        start_experience_factor = 0.8 equipment = { ship_hull_pre_dreadnought = { amount = 1 owner = REP } } }
+        }
+    }
+
+    ### OUTER RIM ARMADA ###
+    fleet = {
+        name       = "Outer Rim Armada"
+        naval_base = 12333   # Ryloth Outpost
+
+        task_force = {
+            name     = "Venator Detachment"
+            location = 12333
+            ship     = { name = "ORF Dreadnought-1" definition = battleship start_experience_factor = 0.9 equipment = { ship_hull_heavy_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "ORF Dreadnought-2" definition = battleship start_experience_factor = 0.9 equipment = { ship_hull_heavy_3 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Acclamator Wing"
+            location = 12333
+            ship     = { name = "ORF Protector-1"  definition = carrier    start_experience_factor = 0.9 equipment = { ship_hull_carrier_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "ORF Protector-2"  definition = carrier    start_experience_factor = 0.9 equipment = { ship_hull_carrier_2 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Cruiser Patrol"
+            location = 12333
+            ship     = { name = "ORF Scout-1"     definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "ORF Scout-2"     definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Destroyer Squadron"
+            location = 12333
+            ship     = { name = "ORF Phantom-1"   definition = destroyer start_experience_factor = 0.9 equipment = { ship_hull_light_2 = { amount = 1 owner = REP } } }
+            ship     = { name = "ORF Phantom-2"   definition = destroyer start_experience_factor = 0.9 equipment = { ship_hull_light_3 = { amount = 1 owner = REP } } }
+        }
+    }
+
+    ### KAMINO GUARD FLEET ###
+    fleet = {
+        name       = "Kamino Guard Fleet"
+        naval_base = 12333   # Kamino Dockyards
+
+        task_force = {
+            name     = "Acclamator Patrol"
+            location = 12333
+            ship     = { name = "KGF Sentinel-1" definition = carrier    start_experience_factor = 1.0 equipment = { ship_hull_carrier_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "KGF Sentinel-2" definition = carrier    start_experience_factor = 1.0 equipment = { ship_hull_carrier_2 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Arquitens Squadron"
+            location = 12333
+            ship     = { name = "KGF Scout-1"    definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "KGF Scout-2"    definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REP } } }
+        }
+        task_force = {
+            name     = "Destroyer Tender"
+            location = 12333
+            ship     = { name = "KGF Defender-1" definition = destroyer start_experience_factor = 1.0 equipment = { ship_hull_light_1 = { amount = 1 owner = REP } } }
+            ship     = { name = "KGF Defender-2" definition = destroyer start_experience_factor = 1.0 equipment = { ship_hull_light_2 = { amount = 1 owner = REP } } }
+        }
+    }
+
+}
