@@ -1,31 +1,29 @@
 state={
-	id=1
-	name="STATE_1"
+	id=126
+	name="STATE_126"
 	provinces={
-		3417 12562 1188 12535 3233 12516 12543 1116
+		1346 1900 2416 2921 3207 4265 12433 12482 12532 12537 12600 
 	}
-	
 	resources={
 		# credits #Credits
-		# chromium #Circuitry
+		# chromium = 5 #Circuitry
 		# steel #Alloys
 		# tungsten #Minerals
 		# rubber #Bacta
 		# aluminium #Doonium
 		# oil #Fuel
-		credits=20
+		# credits=25
 	}
 	history = {
-		victory_points = {
-			12543 50
-		}
-
-		victory_points = {
-			3417 25
-		}
-		victory_points = {
-			12535 25
-		}
+			victory_points = {
+				12537 25
+			}
+			victory_points = {
+				2921 10
+			}
+			victory_points = {
+				12482 10
+			}
 		buildings = {
 
 			# radar_station = #Tracking Station
@@ -53,7 +51,7 @@ state={
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 5477233
+	manpower = 1089112
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
