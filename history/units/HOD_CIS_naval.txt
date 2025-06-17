@@ -1,187 +1,2121 @@
 units = {
-
-    ##### CIS NAVAL FORCES #####
-
-    ### GEONOSIS ASSAULT FLEET ###
     fleet = {
-        name       = "Geonosis Assault Fleet"
-        naval_base = 9026   # Geonosis Shipyards
+        name = "1th Separatist Fleet"
+        naval_base = 9026 #12334
+        task_force = {
+            name = "1th Separatist Task Force"
+            location = 9026 #12334
 
-        # Battleship Divisions
-        task_force = {
-            name     = "Droid Battleship Division Alpha"
-            location = 9026
-            ship     = { name = "CSF Titan-01"       definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Colossus-02"    definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_2 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Juggernaut-03"  definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_3 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Leviathan-04"   definition = battleship    start_experience_factor = 1.0 equipment = { ship_hull_heavy_4 = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Droid Battleship Division Beta"
-            location = 9026
-            ship     = { name = "CSF Behemoth-05"    definition = battleship    start_experience_factor = 0.9 equipment = { SH_battleship_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Monolith-06"    definition = battleship    start_experience_factor = 0.9 equipment = { SH_battleship_2 = { amount = 1 owner = CIS } } }
-        }
+            ship = {
+                name = "Relentless Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
 
-        # Battlecruisers
-        task_force = {
-            name     = "Droid Battlecruiser Squadron"
-            location = 9026
-            ship     = { name = "CSF Hammerstrike"   definition = battle_cruiser start_experience_factor = 1.0 equipment = { ship_hull_super_heavy_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Ironbreaker"    definition = battle_cruiser start_experience_factor = 1.0 equipment = { ship_hull_heavy_4       = { amount = 1 owner = CIS } } }
-        }
+            ship = {
+                name = "Ironclad Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
 
-        # Carrier Wings
-        task_force = {
-            name     = "Droid Carrier Wing Alpha"
-            location = 9026
-            ship     = { name = "CSF Skyforge-1"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_1             = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Skyforge-2"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_2             = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Warforge-3"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_3             = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Droid Carrier Wing Beta"
-            location = 9026
-            ship     = { name = "CSF Ironwing-4"     definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Steamwing-5"    definition = carrier      start_experience_factor = 1.0 equipment = { ship_hull_carrier_conversion_ca = { amount = 1 owner = CIS } } }
-        }
+            ship = {
+                name = "Voracious Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
 
-        # Heavy Cruiser Squadrons
-        task_force = {
-            name     = "Droid Heavy Cruiser Squadron One"
-            location = 9026
-            ship     = { name = "CSF Crusher-01"     definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Annihilator-02" definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Obliterator-03" definition = heavy_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_4 = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Droid Heavy Cruiser Squadron Two"
-            location = 9026
-            ship     = { name = "CSF Ravager-04"     definition = heavy_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Marauder-05"    definition = heavy_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = CIS } } }
-        }
+            ship = {
+                name = "Dire Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
 
-        # Light Cruiser Squadrons
-        task_force = {
-            name     = "Droid Light Cruiser Squadron One"
-            location = 9026
-            ship     = { name = "CSF Scout-01"       definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Hunter-02"      definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Tracker-03"     definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Seeker-04"      definition = light_cruiser start_experience_factor = 1.0 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Droid Light Cruiser Squadron Two"
-            location = 9026
-            ship     = { name = "CSF Phantom-05"     definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Shade-06"       definition = light_cruiser start_experience_factor = 0.9 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
-        }
+            ship = {
+                name = "Relentless Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
 
-        # Destroyer Flotillas
-        task_force = {
-            name     = "Droid Destroyer Flotilla One"
-            location = 9026
-            ship     = { name = "CSF Stalker-1"      definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Stalker-2"      definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Hunter-3"       definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Hunter-4"       definition = destroyer    start_experience_factor = 1.0 equipment = { ship_hull_light_4 = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Droid Destroyer Flotilla Two"
-            location = 9026
-            ship     = { name = "CSF Raider-5"       definition = destroyer    start_experience_factor = 0.9 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Raider-6"       definition = destroyer    start_experience_factor = 0.9 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
-        }
+            ship = {
+                name = "Ebon Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
 
-        # Torpedo Cruisers
-        # task_force = {
-        #     name     = "Droid Torpedo Cruiser Squadron"
-        #     location = 9026
-        #     ship     = { name = "CSF Spearhead-01"   definition = torpedo_cruiser start_experience_factor = 1.0 equipment = { ship_hull_torpedo_cruiser = { amount = 1 owner = CIS } } }
-        #     ship     = { name = "CSF Spearhead-02"   definition = torpedo_cruiser start_experience_factor = 1.0 equipment = { ship_hull_torpedo_cruiser = { amount = 1 owner = CIS } } }
-        # }
+            ship = {
+                name = "Obsidian Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
 
-        # Coastal Defense Ships
-        task_force = {
-            name     = "Droid Coastal Defense Squadron"
-            location = 9026
-            ship     = { name = "CSF Bulwark-01"     definition = heavy_cruiser     start_experience_factor = 1.0 equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = CIS } } }
-            ship     = { name = "CSF Bulwark-02"     definition = heavy_cruiser     start_experience_factor = 1.0 equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = CIS } } }
+            ship = {
+                name = "Ruthless Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
         }
     }
 
-    ### UMBARA SIEGE FLEET ###
     fleet = {
-        name       = "Umbara Siege Fleet"
-        naval_base = 9026   # Umbara Starport
+        name = "2th Separatist Fleet"
+        naval_base = 9026 #12335
+        task_force = {
+            name = "2th Separatist Task Force"
+            location = 9026 #12335
 
-        task_force = {
-            name     = "Siege Battleship Division"
-            location = 9026
-            ship     = { name = "USF Oblivion-01"   definition = battleship    start_experience_factor = 0.8 equipment = { ship_hull_heavy_3 = { amount = 1 owner = CIS } } }
-            ship     = { name = "USF Anarchy-02"    definition = battleship    start_experience_factor = 0.8 equipment = { ship_hull_heavy_4 = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Siege Battlecruisers"
-            location = 9026
-            ship     = { name = "USF Doomhammer"    definition = battle_cruiser start_experience_factor = 0.8 equipment = { ship_hull_super_heavy_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "USF Nightbringer"  definition = battle_cruiser start_experience_factor = 0.8 equipment = { SH_battleship_1        = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Siege Destroyers"
-            location = 9026
-            ship     = { name = "USF Phantom-1"     definition = destroyer    start_experience_factor = 0.8 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
-            ship     = { name = "USF Phantom-2"     definition = destroyer    start_experience_factor = 0.8 equipment = { ship_hull_light_4 = { amount = 1 owner = CIS } } }
+            ship = {
+                name = "Sinister Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ironclad Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Phantom Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dire Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ironclad Legion"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Phantom Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
         }
     }
 
-    ### MUSTAFAR DEEP STRIKE FLEET ###
     fleet = {
-        name       = "Mustafar Deep Strike Fleet"
-        naval_base = 9026   # Mustafar Dockyards
+        name = "3th Separatist Fleet"
+        naval_base = 9026 #12336
+        task_force = {
+            name = "3th Separatist Task Force"
+            location = 9026 #12336
 
-        task_force = {
-            name     = "Strike Carrier Wing"
-            location = 9026
-            ship     = { name = "MSF Inferno-1"     definition = carrier      start_experience_factor = 0.85 equipment = { ship_hull_carrier_2 = { amount = 1 owner = CIS } } }
-            ship     = { name = "MSF Blaze-2"       definition = carrier      start_experience_factor = 0.85 equipment = { ship_hull_carrier_3 = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Strike Cruisers"
-            location = 9026
-            ship     = { name = "MSF Marauder-1"    definition = heavy_cruiser start_experience_factor = 0.85 equipment = { ship_hull_cruiser_3 = { amount = 1 owner = CIS } } }
-            ship     = { name = "MSF Marauder-2"    definition = heavy_cruiser start_experience_factor = 0.85 equipment = { ship_hull_cruiser_4 = { amount = 1 owner = CIS } } }
-        }
-        task_force = {
-            name     = "Strike Destroyers"
-            location = 9026
-            ship     = { name = "MSF Razorclaw-1"   definition = destroyer    start_experience_factor = 0.85 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
-            ship     = { name = "MSF Razorclaw-2"   definition = destroyer    start_experience_factor = 0.85 equipment = { ship_hull_light_3 = { amount = 1 owner = CIS } } }
+            ship = {
+                name = "Voracious Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ruthless Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Relentless Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Unforgiving Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
         }
     }
 
-    ### OUTER RIM GARRISON FLEET ###
     fleet = {
-        name       = "Outer Rim Garrison Fleet"
-        naval_base = 9026   # Ryloth Outpost
+        name = "4th Separatist Fleet"
+        naval_base = 9026 #12337
+        task_force = {
+            name = "4th Separatist Task Force"
+            location = 9026 #12337
 
-        task_force = {
-            name     = "Garrison Battleships"
-            location = 9026
-            ship     = { name = "ORG Guardian-1"    definition = battleship    start_experience_factor = 0.7 equipment = { ship_hull_heavy_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "ORG Guardian-2"    definition = battleship    start_experience_factor = 0.7 equipment = { ship_hull_heavy_2 = { amount = 1 owner = CIS } } }
+            ship = {
+                name = "Dominant Reaper"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Relentless Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ruthless Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Savage Conqueror"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Malevolent Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
         }
+    }
+
+    fleet = {
+        name = "5th Separatist Fleet"
+        naval_base = 9026 #12338
         task_force = {
-            name     = "Garrison Cruisers"
-            location = 9026
-            ship     = { name = "ORG Sentinel-1"    definition = light_cruiser start_experience_factor = 0.7 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "ORG Sentinel-2"    definition = light_cruiser start_experience_factor = 0.7 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = CIS } } }
+            name = "5th Separatist Task Force"
+            location = 9026 #12338
+
+            ship = {
+                name = "Unforgiving Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Unforgiving Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Voracious Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Merciless Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Crimson Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dominant Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
         }
+    }
+
+    fleet = {
+        name = "6th Separatist Fleet"
+        naval_base = 9026 #12339
         task_force = {
-            name     = "Garrison Destroyers"
-            location = 9026
-            ship     = { name = "ORG Defender-1"    definition = destroyer    start_experience_factor = 0.7 equipment = { ship_hull_light_1 = { amount = 1 owner = CIS } } }
-            ship     = { name = "ORG Defender-2"    definition = destroyer    start_experience_factor = 0.7 equipment = { ship_hull_light_2 = { amount = 1 owner = CIS } } }
+            name = "6th Separatist Task Force"
+            location = 9026 #12339
+
+            ship = {
+                name = "Relentless Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Calculating Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Merciless Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ironclad Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ebon Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Unforgiving Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Malevolent Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "7th Separatist Fleet"
+        naval_base = 9026 #12340
+        task_force = {
+            name = "7th Separatist Task Force"
+            location = 9026 #12340
+
+            ship = {
+                name = "Crimson Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ruthless Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Unforgiving Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Sinister Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ironclad Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ebon Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "8th Separatist Fleet"
+        naval_base = 9026 #12341
+        task_force = {
+            name = "8th Separatist Task Force"
+            location = 9026 #12341
+
+            ship = {
+                name = "Crimson Reaper"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Relentless Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Voracious Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dominant Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Malevolent Conqueror"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ironclad Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Phantom Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "9th Separatist Fleet"
+        naval_base = 9026 #12342
+        task_force = {
+            name = "9th Separatist Task Force"
+            location = 9026 #12342
+
+            ship = {
+                name = "Malevolent Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Sinister Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ironclad Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Malevolent Legion"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ruthless Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dire Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Savage Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "10th Separatist Fleet"
+        naval_base = 9026 #12343
+        task_force = {
+            name = "10th Separatist Task Force"
+            location = 9026 #12343
+
+            ship = {
+                name = "Voracious Reaper"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Obsidian Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Phantom Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Crimson Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Conqueror"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dire Conqueror"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ebon Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "11th Separatist Fleet"
+        naval_base = 9026 #12344
+        task_force = {
+            name = "11th Separatist Task Force"
+            location = 9026 #12344
+
+            ship = {
+                name = "Phantom Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Savage Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dominant Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Obsidian Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ebon Legion"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Malevolent Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Crimson Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "12th Separatist Fleet"
+        naval_base = 9026 #12345
+        task_force = {
+            name = "12th Separatist Task Force"
+            location = 9026 #12345
+
+            ship = {
+                name = "Merciless Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Relentless Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Calculating Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Unforgiving Legion"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Sinister Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Voracious Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Voracious Legion"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "13th Separatist Fleet"
+        naval_base = 9026 #12346
+        task_force = {
+            name = "13th Separatist Task Force"
+            location = 9026 #12346
+
+            ship = {
+                name = "Unforgiving Reaper"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Obsidian Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Savage Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Crimson Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Sinister Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Crimson Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "14th Separatist Fleet"
+        naval_base = 9026 #12347
+        task_force = {
+            name = "14th Separatist Task Force"
+            location = 9026 #12347
+
+            ship = {
+                name = "Savage Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Obsidian Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Obsidian Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Obsidian Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ruthless Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Legion"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dominant Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "15th Separatist Fleet"
+        naval_base = 9026 #12348
+        task_force = {
+            name = "15th Separatist Task Force"
+            location = 9026 #12348
+
+            ship = {
+                name = "Calculating Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Reaper"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dominant Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dominant Conqueror"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Blackened Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ebon Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ruthless Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "16th Separatist Fleet"
+        naval_base = 9026 #12349
+        task_force = {
+            name = "16th Separatist Task Force"
+            location = 9026 #12349
+
+            ship = {
+                name = "Ebon Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Merciless Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Calculating Wraith"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Crimson Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ebon Conqueror"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Merciless Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Unforgiving Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Savage Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "17th Separatist Fleet"
+        naval_base = 9026 #12350
+        task_force = {
+            name = "17th Separatist Task Force"
+            location = 9026 #12350
+
+            ship = {
+                name = "Sinister Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Savage Enforcer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ruthless Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Voracious Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dire Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Merciless Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "18th Separatist Fleet"
+        naval_base = 9026 #12351
+        task_force = {
+            name = "18th Separatist Task Force"
+            location = 9026 #12351
+
+            ship = {
+                name = "Relentless Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dire Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Calculating Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Phantom Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dominant Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Malevolent Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Savage Executioner"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Sinister Wraith"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "19th Separatist Fleet"
+        naval_base = 9026 #12352
+        task_force = {
+            name = "19th Separatist Task Force"
+            location = 9026 #12352
+
+            ship = {
+                name = "Obsidian Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Calculating Executioner"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dire Legion"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Calculating Reaper"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Calculating Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Sinister Conqueror"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Phantom Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Ironclad Enforcer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+        }
+    }
+
+    fleet = {
+        name = "20th Separatist Fleet"
+        naval_base = 9026 #12353
+        task_force = {
+            name = "20th Separatist Task Force"
+            location = 9026 #12353
+
+            ship = {
+                name = "Dire Horde"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Brutal Destroyer"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Phantom Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Merciless Conqueror"
+                definition = battleship
+                equipment = {
+                    ship_hull_heavy_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Providence Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Vengeful Horde"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Merciless Destroyer"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Dread Legion"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
+            ship = {
+                name = "Malevolent Reaper"
+                definition = carrier
+                equipment = {
+                    ship_hull_carrier_1 = {
+                        amount = 1
+                        owner = CIS
+                        version_name = "Recusant Class"
+                    }
+                }
+            }
+
         }
     }
 
