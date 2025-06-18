@@ -1,0 +1,53 @@
+state={
+	id=131
+	name="STATE_131"
+	provinces={
+		803 1420 12274 12296 12303 12332 12339 
+	}
+	resources={
+		# credits #Credits
+		# chromium = 5 #Circuitry
+		# steel = 10#Alloys
+		# tungsten = 10#Minerals
+		# rubber #Bacta
+		# aluminium = 15 #Doonium
+		# oil #Fuel
+		credits=25
+	}
+	history = {
+		buildings = {
+
+			# radar_station = #Tracking Station
+
+			# credits_building = 4#Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = 1#Tibanna Refinery
+
+			# anti_air_building = 1#Planetary Shields
+
+			industrial_complex = 3#Civilian Factories
+
+			# arms_factory = 5#Military Factories
+
+			# dockyard = #Shipyard
+
+			infrastructure = 3 #Infrastructure
+
+			# air_base = 1#Small Spaceports
+
+			1420= {
+				naval_base = 1
+			}
+
+		}
+		owner = HTT
+		add_core_of = HTT
+		add_core_of = REP
+	}
+	manpower = 142112
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
