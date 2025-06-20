@@ -2,19 +2,17 @@ state={
 	id=3
 	name="STATE_3"
 	resources={
-		credits=5 #Credits
-		chromium=5 #Circuitry
-		# steel #Alloys
-		# tungsten =10#Minerals
-		# rubber #Bacta
-		# aluminium #Doonium
-		oil =10#Fuel
-		# credits=20
+		credits=5.000
+		chromium=5.000
+		oil=10.000
 	}
 	provinces={
-		159 315 393 1317 1468 1542 2454 2494 3047 4699 4714 5358 12152 12172 12205 12222 12225 12241 12253 12254 12267 12276 12280 12304 12310 12311 12326 12342 12343 12367 12368 12375 12381 12389 12397 12398 12405 12413 12416 12427 12435 
+		4714 12326 12367 12368 12375 12381 12389 12397 12398 12405 12413 12416 12427 12435 
 	}
 	history = {
+		victory_points = {
+			12389 1
+		}
 		buildings = {
 
 			# radar_station = #Tracking Station
@@ -35,13 +33,13 @@ state={
 
 			infrastructure = 1#Infrastructure
 
-			# air_base = 1#Small Spaceports
+			air_base = 1#Small Spaceports
 		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 5207358
-	state_category = economic_sector
+	manpower=207358
 	buildings_max_level_factor=1.000
+	state_category=economic_sector
 	local_supplies=0.000
 }
