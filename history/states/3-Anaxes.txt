@@ -1,11 +1,18 @@
 state={
 	id=3
 	name="STATE_3"
-	provinces={
-		159 315 393 1088 1317 1468 1542 1544 2454 2459 2494 2982 3047 3427 4405 4699 4714 5358 5949 12134 12143 12152 12157 12165 12168 12172 12181 12185 12191 12205 12206 12219 12222 12225 12236 12241 12242 12253 12254 12267 12276 12277 12280 12304 12310 12311 12326 12334 12342 12343 12367 12368 12375 12381 12389 12397 12398 12405 12413 12416 12427 12435
-	}
 	resources={
-		credits=2
+		credits=5 #Credits
+		chromium=5 #Circuitry
+		# steel #Alloys
+		# tungsten =10#Minerals
+		# rubber #Bacta
+		# aluminium #Doonium
+		oil =10#Fuel
+		# credits=20
+	}
+	provinces={
+		159 315 393 1317 1468 1542 2454 2494 3047 4699 4714 5358 12152 12172 12205 12222 12225 12241 12253 12254 12267 12276 12280 12304 12310 12311 12326 12342 12343 12367 12368 12375 12381 12389 12397 12398 12405 12413 12416 12427 12435 
 	}
 	history = {
 		buildings = {
@@ -26,24 +33,15 @@ state={
 
 			# dockyard = #Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 1#Infrastructure
 
 			# air_base = 1#Small Spaceports
-
-
-
-			12143= {
-				naval_base = 3
-				 }
-				 12416= {
-					naval_base = 3
-					 }
 		}
 		owner = REP
 		add_core_of = REP
 	}
 	manpower = 5207358
-	state_category = large_planet
+	state_category = economic_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

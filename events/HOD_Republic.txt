@@ -1,0 +1,35 @@
+
+add_namespace = anaxes_catastrophe
+
+news_event = { #Anaxes go boom
+	id = anaxes_catastrophe.1
+	title = anaxes_catastrophe.1.t
+	desc = anaxes_catastrophe.1.d
+	picture = GFX_news_event_anaxes_destruction
+
+	trigger = {
+		owns_state = 3
+		date > 985.1.1
+	}
+	major = yes
+	fire_only_once = yes
+	immediate = {
+		set_global_flag = Anaxes_destroyed_flag
+		goto_province = 1088
+		launch_nuke = { province = 12277 }
+		launch_nuke = { province = 1088 }
+		launch_nuke = { province = 12334 }
+		launch_nuke = { province = 12191 }
+		launch_nuke = { province = 12191 }
+        hidden_effect = {
+          UTI = {
+			transfer_state = 3
+			transfer_state = 135
+			}
+        }
+	}
+	option = {
+		name = anaxes_catastrophe.1.a
+	}
+
+}
