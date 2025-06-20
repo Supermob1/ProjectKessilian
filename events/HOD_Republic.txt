@@ -16,11 +16,6 @@ news_event = { #Anaxes go boom
 	immediate = {
 		set_global_flag = Anaxes_destroyed_flag
 		goto_province = 1088
-		launch_nuke = { province = 12277 }
-		launch_nuke = { province = 1088 }
-		launch_nuke = { province = 12334 }
-		launch_nuke = { province = 12191 }
-		launch_nuke = { province = 12191 }
         hidden_effect = {
           UTI = {
 			transfer_state = 3
@@ -29,6 +24,45 @@ news_event = { #Anaxes go boom
 			transfer_state = 137
 			transfer_state = 138
 			}
+		set_victory_points = {
+			province = 12191
+			value = 0
+		}
+		set_victory_points = {
+			province = 1544
+			value = 0
+		}
+		set_victory_points = {
+			province = 12277
+			value = 0
+		}
+		set_victory_points = {
+			province = 4699
+			value = 0
+		}
+		set_victory_points = {
+			province = 12389
+			value = 0
+		}
+		set_victory_points = {
+			province = 12342
+			value = 0
+		}
+		3 = {
+			set_state_name = " "
+		}
+		135 = {
+			set_state_name = " "
+		}
+		136 = {
+			set_state_name = " "
+		}
+		137 = {
+			set_state_name = " "
+		}
+		138 = {
+			set_state_name = " "
+		}
         }
 	}
 	option = {
