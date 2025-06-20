@@ -17,12 +17,37 @@ news_event = { #Anaxes go boom
 		set_global_flag = Anaxes_destroyed_flag
 		goto_province = 1088
         hidden_effect = {
-          UTI = {
-			transfer_state = 3
-			transfer_state = 135
-			transfer_state = 136
-			transfer_state = 137
-			transfer_state = 138
+			launch_nuke = {
+				state = 3
+				use_nuke = no
+				nuke_type = thermonuclear_bomb 
+			}
+			launch_nuke = {
+				state = 135
+				use_nuke = no
+				nuke_type = thermonuclear_bomb 
+			}
+			launch_nuke = {
+				state = 136
+				use_nuke = no
+				nuke_type = thermonuclear_bomb 
+			}
+			launch_nuke = {
+				state = 137
+				use_nuke = no
+				nuke_type = thermonuclear_bomb 
+			}
+			launch_nuke = {
+				state = 138
+				use_nuke = no
+				nuke_type = thermonuclear_bomb 
+			}
+			UTI = {
+				transfer_state = 3
+				transfer_state = 135
+				transfer_state = 136
+				transfer_state = 137
+				transfer_state = 138
 			}
 		set_victory_points = {
 			province = 12191
