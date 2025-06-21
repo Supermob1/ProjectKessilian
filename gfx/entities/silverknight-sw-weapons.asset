@@ -1,0 +1,47 @@
+
+
+#####################################################################
+#####															#####
+#####						Default enities						#####
+#####															#####
+#####			Every other unit clones from this				#####
+#####															#####
+#####################################################################
+
+entity = {
+	name = "REP_infantry_weapon_rifle_right_entity"
+	pdxmesh = "infantry_weapon_dc15a_mesh"
+	scale = 1.0
+}
+
+entity = {
+	name = "REP_infantry_weapon_rifle_left_entity"
+	pdxmesh = "infantry_weapon_dc15a_mesh"
+	scale = 1.0
+	
+	get_state_from_parent = yes
+	default_state = "idle"
+	state = { name = "idle" }
+	state = { name = "move"	}
+	
+	state = { 
+	name = "attack"	animation = "attack" 
+	
+	}
+	
+	state = { 
+	name = "defend"
+	
+	}
+	
+	state = { 
+	name = "support_attack"	animation = "support_attack" 
+	
+	}
+}
+
+entity = {
+	name = "REP_infantry_weapon_rifle_long_idle_entity"
+	pdxmesh = "infantry_weapon_dc15a_mesh"
+	scale = 1.0
+}
