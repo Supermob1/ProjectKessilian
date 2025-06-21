@@ -2,15 +2,42 @@ state={
 	id=141
 	name="STATE_141"
 	resources={
-		rubber=5.000
-		tungsten=2.000
-		credits=1.000
+		# credits #Credits
+		# chromium #Circuitry
+		steel =5#Alloys
+		tungsten=5#Minerals
+		# rubber=10#Bacta
+		# aluminium #Doonium
+		# oil #Fuel
+		# credits=5
 	}
 	provinces={
 		1125 3377 4909 11974 11990 11999 12012 12028 12043 12058 12069 
 	}
 	history = {
+		victory_points = {
+			12012 1
+		}
 		buildings = {
+			# radar_station = #Tracking Station
+
+			# credits_building = 4#Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = 1#Planetary Shields
+
+			industrial_complex = 1#Civilian Factories
+
+			# arms_factory = 2#Military Factories
+
+			# dockyard = #Shipyard
+
+			infrastructure = 1 #Infrastructure
+
+			# air_base = 1#Small Spaceports
 		}
 		owner = CIS
 		add_core_of = CIS

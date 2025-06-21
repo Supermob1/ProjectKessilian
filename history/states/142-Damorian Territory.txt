@@ -5,12 +5,54 @@ state={
 		298 980 3399 4396 12048 12052 12070 12074 12083 12096 12097 12108 12115 12125 
 	}
 	resources={
-		rubber=5.000
-		tungsten=2.000
-		credits=1.000
+		# credits #Credits
+		chromium=15 #Circuitry
+		steel=15#Alloys
+		tungsten=15#Minerals
+		# rubber=10#Bacta
+		# aluminium #Doonium
+		# oil #Fuel
+		credits=5
 	}
 	history = {
+		victory_points = {
+			12097 1
+		}
+		victory_points = {
+			4396 1
+		}
+		victory_points = {
+			12048 1
+		}
+		victory_points = {
+			12125 1
+		}
 		buildings = {
+			# radar_station = #Tracking Station
+
+			# credits_building = 4#Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = 1#Planetary Shields
+
+			# industrial_complex = 3#Civilian Factories
+
+			arms_factory = 2#Military Factories
+
+			dockyard = 3#Shipyard
+
+			infrastructure = 2 #Infrastructure
+
+			air_base = 1#Small Spaceports
+			12097= {
+				naval_base = 1
+			}
+			12125= {
+				naval_base = 3
+			}
 		}
 		owner = CIS
 		add_core_of = CIS
