@@ -1,0 +1,49 @@
+state={
+	id=144
+	name="STATE_144"
+	provinces={
+		323 4938 5151 11646 11660 11675 11678 11688 11692 11693 
+	}
+	resources={
+		credits =10#Credits
+		chromium =5#Circuitry
+		# steel #Alloys
+		# tungsten #Minerals
+		# rubber #Bacta
+		# aluminium #Doonium
+		# oil #Fuel
+	}
+	history = {
+		buildings = {
+
+			# radar_station = #Tracking Station
+
+			# credits_building = #Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = #Planetary Shields
+
+			industrial_complex = 1#Civilian Factories
+
+			arms_factory = 1#Military Factories
+
+			# dockyard = #Shipyard
+
+			infrastructure = 1#Infrastructure
+
+			# air_base = 1#Small Spaceports
+			323= {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower=2220320
+	state_category=industrial_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
