@@ -5,12 +5,21 @@ state={
 		220 1122 1948 3886 4727 11805 11810 11822 11827 11843 11846 11863 11866 
 	}
 	resources={
-		tungsten=2#Bacta
-		aluminium=3#Minerals
-		chromium=3#Circuitry
-		credits=2
+		# credits #Credits
+		# chromium #Circuitry
+		# steel #Alloys
+		tungsten=100#Minerals
+		# rubber #Bacta
+		# aluminium #Doonium
+		# oil #Fuel
 	}
 	history = {
+		victory_points = {
+			1122 5
+		}
+		victory_points = {
+			11863 1
+		}
 		buildings = {
 
 			# radar_station = #Tracking Station
