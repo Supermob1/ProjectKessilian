@@ -28,26 +28,57 @@ characters={
 			id=-1
 		}
 	}
-	REP_anakin_skywalker={
-		name="Anakin Skywalker"
+	REP_mes_amedda={
+		name="Mes Amedda"
 		portraits={
-			army={
+			civilian={
+				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
 				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
-				large="gfx/leaders/REP/portrait_anakin_skywalker.dds"
 			}
 		}
 		advisor = {
-			slot = army_chief
-			idea_token = anakin_army_chief
-			name = anakin
+			slot = political_advisor
+			idea_token = mes_political_advisor
+			name = mes
 			cost = 100
-			ledger = army
+			ledger = political_advisor
 			allowed = {
 				original_tag = REP
 			}
 			visible = {
 				original_tag = REP
-				NOT = { has_idea = anakin_high }
+			}
+			available = {
+
+			}
+			traits = {
+				silent_workhorse
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+	REP_bail_organa={
+		name="Bail Organa"
+		portraits={
+			civilian={
+				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
+				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = bail_political_advisor
+			name = bail
+			cost = 100
+			ledger = political_advisor
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
 			}
 			available = {
 				NOT = { 
@@ -58,10 +89,128 @@ characters={
 				}
 			}
 			traits = {
-				hero_with_no_fear
+				compassionate_gentleman
 			}
 			ai_will_do = {
 				factor = 1
+			}
+		}
+
+	}
+	REP_padme_amidala={
+		name="Padmé Amidala"
+		portraits={
+			civilian={
+				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
+				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = padme_political_advisor
+			name = padme
+			cost = 100
+			ledger = political_advisor
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				social_reformer
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+	REP_mon_mothma={
+		name="Mon Mothma"
+		portraits={
+			civilian={
+				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
+				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = mon_political_advisor
+			name = mon
+			cost = 100
+			ledger = political_advisor
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				champion_of_peace
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+	REP_sly_moore={
+		name="Sly Moore"
+		portraits={
+			civilian={
+				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
+				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = sly_political_advisor
+			name = sly
+			cost = 100
+			ledger = political_advisor
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+
+			}
+			traits = {
+				palpatine_loyalist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+
+	REP_anakin_skywalker={
+		name="Anakin Skywalker"
+		portraits={
+			army={
+				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
+				large="gfx/leaders/REP/portrait_anakin_skywalker.dds"
 			}
 		}
 		advisor = {
@@ -75,7 +224,7 @@ characters={
 			}
 			visible = {
 				original_tag = REP
-				NOT = { has_idea = anakin_army_chief }
+				NOT = { has_idea = anakin_political_advisor }
 			}
 			available = {
 				NOT = { 
@@ -204,8 +353,36 @@ characters={
 			}
 		}
 		advisor = {
+			slot = political_advisor
+			idea_token = yoda_political_advisor
+			name = yoda
+			cost = 100
+			ledger = political_advisor
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				NOT = { has_idea = yoda_army_chief }
+				original_tag = REP
+			}
+			available = {
+				NOT = { 
+					OR = {
+						has_government = new_order
+						has_government = dark_side
+					}
+				}
+			}
+			traits = {
+				jedi_yoda
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}		
+		advisor = {
 			slot = army_chief
-			idea_token = yoda
+			idea_token = yoda_army_chief
 			name = yoda
 			cost = 100
 			ledger = army
@@ -213,6 +390,7 @@ characters={
 				original_tag = REP
 			}
 			visible = {
+				NOT = { has_idea = yoda_political_advisor }
 				original_tag = REP
 			}
 			available = {
@@ -1359,13 +1537,30 @@ characters={
 			#expire="1965.1.1.1"
 			id=-1
 		}
-		corps_commander={
-			skill=5
-			attack_skill=3
-			defense_skill=1
-			planning_skill=4
-			logistics_skill=2
-			legacy_id=-1
+		advisor = {
+			slot = navy_chief
+			idea_token = REP_tarkin_navy
+			ledger = navy
+			allowed = {
+				original_tag = REP
+			}
+			traits = {
+				navy_chief_decisive_battle_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			traits = {superior_tactician spotter ironside blue_water_expert}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			maneuvering_skill = 4
+			coordination_skill = 4
+			legacy_id = -1
+			}
 		}
 	}
 }
