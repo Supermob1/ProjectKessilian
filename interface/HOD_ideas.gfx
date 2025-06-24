@@ -23,4 +23,12 @@ spriteTypes = {
 		name = "GFX_idea_war_economy"
 		texturefile = "gfx/interface/ideas/idea_war_economy.dds"
 	}
+	corneredTileSpriteType = {
+		name = "GFX_tiled_background_empty"
+		size= { x=192 y=192 }
+		textureFile = "gfx//interface//tiles//tiled_background_empty.dds"
+		borderSize = { x=64 y=64 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}	
 }
