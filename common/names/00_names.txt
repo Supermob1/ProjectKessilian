@@ -19,3 +19,29 @@ default = {
 	callsigns = { "" } 
 }
 
+YIN = {
+    male = {
+        names = { "Vekurr" "Threll" "Zatrax" "Zur-Vek" "Korth" "Jharakk" "Velkosh" "Sarnath" "Drakk" "Hurok" }
+        surnames = { "Scaleheart" "Ironclaw" "Sandstrider" "Stormfang" }
+        callsigns = { "Sand Viper" "Dune Serpent" "Desert Fang" "Iron Tail" }
+    }
+    female = {
+        names = { "Isha" "Vaireh" "Raivesh" "Saelra" "Talvix" "Morika" "Luhre" "Kavesh" "Neriss" "Selthra" }
+        surnames = { "Moonshard" "Dunegazer" "Starfang" "Oasisbloom" }
+        callsigns = { "Oasis Rose" "Sirocco" "Dune Lily" "Dust Whisper" }
+    }
+    surnames = { "Scaleheart" "Ironclaw" "Sandstrider" "Stormfang" "Sunscale" "Moonshard" "Dunegazer" "Starfang" "Oasisbloom" "Windscale" }
+    callsigns = { "Sand Viper" "Dune Serpent" "Desert Fang" "Iron Tail" "Sun Scales" "Oasis Rose" "Sirocco" "Dust Whisper" "Dune Lily" "Sun Sister" }
+
+    # Operations - treat these as keys, not strings.
+    prefix = o_operation
+
+    operation = {
+        0 = { o_default_operation }
+    }
+
+    use_geographical_default_operation_names = yes
+    offensive_operation_suffix = o_strat_offensive_default
+    defensive_operation_suffix = o_strat_defensive_default
+    naval_operation_suffix = o_strat_naval_default
+}

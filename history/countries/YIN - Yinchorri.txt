@@ -1,6 +1,6 @@
 ﻿capital = 159
 
-#oob = "garrison_generic"
+oob = "HOD_YIN"
 
 set_research_slots = 2
 
@@ -9,33 +9,59 @@ set_convoys = 100
 set_war_support = 0.02 
 
 ######CHARACTERS######
-recruit_character = YIN_ruling_council
+recruit_character = YIN_archon_vekurr
+recruit_character = YIN_threll_fangmaster
+recruit_character = YIN_harniss_consul
+recruit_character = YIN_vux_speaker
+recruit_character = YIN_raivesh_countess
+recruit_character = YIN_zatrax_governor
+recruit_character = YIN_malrek_isha
+recruit_character = YIN_karesh_tradelord
+recruit_character = YIN_vaireh_senator
+recruit_character = YIN_shalar_master
+recruit_character = YIN_zurvek_foreman
 
 set_cosmetic_tag = YIN_OCG
 ##############
 set_technology = {
-infantry_weapons = 1
-gw_artillery = 1
-tech_trucks = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_trucks = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	superior_firepower = 1
+	base_strike = 1
+	motorised_infantry = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	marines = 1
+	basic_train = 1
+	engine_tech_1 = 1
 	
 }
 
 set_popularities = {
-		new_order = 0
-		dark_side = 0
-		akaanadocrat = 1
-		unitist = 10
-		corist = 15
-		distributionist =  0
-		corporate_consortium = 4
-		trade_democrat = 13
-		ruusanist = 1
-		inclusivist = 39
-		light_side = 17
-	}
-add_ideas = {
-	no_conscription
+	new_order = 0
+	dark_side = 0
+	akaanadocrat = 0
+	unitist = 0
+	corist = 0
+	distributionist =  20
+	corporate_consortium = 80
+	trade_democrat = 0
+	ruusanist = 0
+	inclusivist = 0
+	light_side = 0
 }
+add_ideas = {
+	limited_conscription
+	YIN_Protectorate_Established
+	YIN_Corporate_Monopolies
+}
+
 set_politics = {
 	ruling_party = corporate_consortium
 	last_election = "999.1.1"

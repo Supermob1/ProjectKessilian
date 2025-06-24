@@ -1,0 +1,39 @@
+ideas = {
+	country = {
+		YIN_Corporate_Monopolies = {
+			##picture = 
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				local_resources_factor = 0.25
+				stability_factor  = -0.05
+			}
+		}
+		YIN_Protectorate_Established = {
+			##picture = 
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				local_resources_factor = 0.15
+				required_garrison_factor = 0.2
+				resistance_decay_on_our_occupied_states = -0.5
+			}
+		}
+	}
+}
