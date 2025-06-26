@@ -1,0 +1,20 @@
+add_namespace = YIN_intro
+
+country_event = { # All-Species Week 
+	id = YIN_intro.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.1"}
+	title = YIN_intro.1.t
+	desc = YIN_intro.1.d
+	picture = GFX_news_event_unthinkable
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.1.a
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
