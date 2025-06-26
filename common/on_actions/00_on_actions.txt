@@ -3,6 +3,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			YIN = { country_event = YIN_intro.1 }
 			set_global_flag = Republic_Era
 			set_variable = { UTI.HODday = 1 }
 			set_variable = { UTI.HODmonth = 1 }
