@@ -5,7 +5,7 @@ state={
 		# credits= #Credits
 		# chromium= #Circuitry
 		# steel= #Alloys
-		# tungsten=#Minerals
+		tungsten=10#Minerals
 		# rubber=#Bacta
 		# aluminium= #Doonium
 		# oil= #Fuel
@@ -29,7 +29,7 @@ state={
 
 			# dockyard = #Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 1#Infrastructure
 
 			# air_base = 1#Small Spaceports
 		}
@@ -39,7 +39,8 @@ state={
 	provinces={
 		58 1747 5053 12400 12426 12430 12464 12465 12489 12496 12521 12524 12529 12549 12557 
 	}
-	manpower=0
+	manpower = 12020
+	state_category = mining_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

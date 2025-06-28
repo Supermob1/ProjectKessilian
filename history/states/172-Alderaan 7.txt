@@ -6,9 +6,9 @@ state={
 		# chromium= #Circuitry
 		# steel= #Alloys
 		# tungsten=#Minerals
-		# rubber=#Bacta
+		rubber=20#Bacta
 		# aluminium= #Doonium
-		# oil= #Fuel
+		oil= 50#Fuel
 	}
 	history = {
 		buildings = {
@@ -23,15 +23,15 @@ state={
 
 			# anti_air_building = #Planetary Shields
 
-			# industrial_complex = #Civilian Factories
+			industrial_complex = 3#Civilian Factories
 
 			# arms_factory = #Military Factories
 
 			# dockyard = #Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 5#Infrastructure
 
-			# air_base = 1#Small Spaceports
+			air_base = 1#Small Spaceports
 		}
 		owner = REP
 		add_core_of = REP
@@ -39,7 +39,8 @@ state={
 	provinces={
 		1467 1771 1980 3014 4053 4368 12728 12731 
 	}
-	manpower=0
+	manpower = 230020
+	state_category = mining_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }
