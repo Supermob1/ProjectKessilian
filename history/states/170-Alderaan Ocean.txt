@@ -36,10 +36,13 @@ state={
 		owner = REP
 		add_core_of = REP
 	}
+	impassable = yes
 	provinces={
 		645 1713 2457 2672 6067 12428 12429 12457 12460 12461 12488 12495 12520 12545 12667 12694 12708 12718 12745 12780 
 	}
-	manpower=0
+	manpower=1
+	state_category = wasteland_sector
+	impassable = yes
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

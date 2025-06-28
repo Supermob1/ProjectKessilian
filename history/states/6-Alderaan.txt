@@ -5,7 +5,7 @@ state={
 		1945 2816 5771 12462 12470 12508 12533 12538 12542 12556 12560 12567 12591 12598 
 	}
 	resources={
-		credits=3
+		credits=150
 	}
 	history = {
 		buildings = {
@@ -20,15 +20,15 @@ state={
 
 			# anti_air_building = #Planetary Shields
 
-			# industrial_complex = #Civilian Factories
+			industrial_complex =3 #Civilian Factories
 
-			# arms_factory = #Military Factories
+			arms_factory = 5#Military Factories
 
 			# dockyard = #Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 5#Infrastructure
 
-			# air_base = 1#Small Spaceports
+			air_base = 4#Small Spaceports
 
 
 
@@ -42,8 +42,8 @@ state={
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 1356043
-	state_category = large_planet
+	manpower = 1200020
+	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }
