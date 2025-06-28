@@ -1,12 +1,14 @@
 state={
-	id=7
-	name="STATE_7"
-	provinces={
-		944 3324 3623 4162 5878 12080 12084 12116 
-	}
+	id=167
+	name="STATE_167"
 	resources={
-		steel=1#Alloys
-		chromium=1#Circuitry
+		# credits= #Credits
+		# chromium= #Circuitry
+		# steel= #Alloys
+		# tungsten=#Minerals
+		# rubber=#Bacta
+		# aluminium= #Doonium
+		# oil= #Fuel
 	}
 	history = {
 		buildings = {
@@ -30,18 +32,14 @@ state={
 			# infrastructure = 1#Infrastructure
 
 			# air_base = 1#Small Spaceports
-
-
-
-			1081= {
-				naval_base = 3
-			}
 		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 1158902
-	state_category = large_planet
+	provinces={
+		610 683 2331 2617 2952 5131 12544 12554 12566 12572 12586 12601 12615 12640 12653 
+	}
+	manpower=0
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }
