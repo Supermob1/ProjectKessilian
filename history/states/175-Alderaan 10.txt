@@ -2,10 +2,10 @@ state={
 	id=175
 	name="STATE_175"
 	resources={
-		# credits= #Credits
+		credits= 25#Credits
 		# chromium= #Circuitry
 		# steel= #Alloys
-		# tungsten=#Minerals
+		tungsten=10#Minerals
 		# rubber=#Bacta
 		# aluminium= #Doonium
 		# oil= #Fuel
@@ -29,7 +29,7 @@ state={
 
 			# dockyard = #Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 1#Infrastructure
 
 			# air_base = 1#Small Spaceports
 		}
@@ -39,7 +39,8 @@ state={
 	provinces={
 		356 12622 12627 12637 12662 12668 12673 12695 12709 
 	}
-	manpower=0
+	manpower = 10020
+	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

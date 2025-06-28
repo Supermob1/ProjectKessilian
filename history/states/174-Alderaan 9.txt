@@ -2,12 +2,12 @@ state={
 	id=174
 	name="STATE_174"
 	resources={
-		# credits= #Credits
+		credits=20 #Credits
 		# chromium= #Circuitry
 		# steel= #Alloys
 		# tungsten=#Minerals
 		# rubber=#Bacta
-		# aluminium= #Doonium
+		aluminium=10 #Doonium
 		# oil= #Fuel
 	}
 	history = {
@@ -23,13 +23,13 @@ state={
 
 			# anti_air_building = #Planetary Shields
 
-			# industrial_complex = #Civilian Factories
+			industrial_complex =3 #Civilian Factories
 
 			# arms_factory = #Military Factories
 
-			# dockyard = #Shipyard
+			dockyard = 4#Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 3#Infrastructure
 
 			# air_base = 1#Small Spaceports
 		}
@@ -39,7 +39,8 @@ state={
 	provinces={
 		534 1662 1885 2000 2995 3185 4015 4252 4294 5412 5875 12294 12305 12319 12335 12344 12347 12352 12357 12363 12376 12399 12417 12436 12437 12444 12463 
 	}
-	manpower=0
+	manpower = 100020
+	state_category = economic_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

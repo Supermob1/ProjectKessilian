@@ -2,12 +2,12 @@ state={
 	id=171
 	name="STATE_171"
 	resources={
-		# credits= #Credits
+		credits= 50#Credits
 		# chromium= #Circuitry
-		# steel= #Alloys
+		steel= 10#Alloys
 		# tungsten=#Minerals
 		# rubber=#Bacta
-		# aluminium= #Doonium
+		aluminium= 20#Doonium
 		# oil= #Fuel
 	}
 	history = {
@@ -23,15 +23,15 @@ state={
 
 			# anti_air_building = #Planetary Shields
 
-			# industrial_complex = #Civilian Factories
+			industrial_complex = 3#Civilian Factories
 
 			# arms_factory = #Military Factories
 
 			# dockyard = #Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 3#Infrastructure
 
-			# air_base = 1#Small Spaceports
+			air_base = 1#Small Spaceports
 		}
 		owner = REP
 		add_core_of = REP
@@ -39,7 +39,8 @@ state={
 	provinces={
 		1641 1899 2822 3524 3900 5058 5134 5464 12789 12803 12814 12842 12854 12855 12869 
 	}
-	manpower=0
+	manpower = 356043
+	state_category = economic_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }

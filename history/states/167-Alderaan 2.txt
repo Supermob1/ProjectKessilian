@@ -2,9 +2,9 @@ state={
 	id=167
 	name="STATE_167"
 	resources={
-		# credits= #Credits
-		# chromium= #Circuitry
-		# steel= #Alloys
+		credits= 5#Credits
+		chromium= 15#Circuitry
+		steel= 20#Alloys
 		# tungsten=#Minerals
 		# rubber=#Bacta
 		# aluminium= #Doonium
@@ -25,11 +25,11 @@ state={
 
 			# industrial_complex = #Civilian Factories
 
-			# arms_factory = #Military Factories
+			arms_factory = 1#Military Factories
 
-			# dockyard = #Shipyard
+			dockyard = 3#Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 2#Infrastructure
 
 			# air_base = 1#Small Spaceports
 		}
@@ -39,7 +39,8 @@ state={
 	provinces={
 		610 683 2331 2617 2952 5131 12544 12554 12566 12572 12586 12601 12615 12640 12653 
 	}
-	manpower=0
+	manpower = 226043
+	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }
