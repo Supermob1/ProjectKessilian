@@ -1,0 +1,174 @@
+objectTypes = {
+####################################################### REPUBLIC ###########################################################
+
+##############################################
+##### REPUBLIC DEFAULT INFANTRY ######
+##############################################
+
+	# RIFLE INFANTRY #
+	pdxmesh = {
+		name = "REP_infantry_mesh"
+		file = "gfx/models/units/clonetrooper/REP_infantry.mesh"
+		
+        animation = { id = "idle"            type = "GER_infantry_mg_idle_animation" }
+        animation = { id = "attack"            type = "GER_infantry_mg_attack_animation" }
+        animation = { id = "support_attack"    type = "GER_infantry_mg_support_attack_animation" }
+        animation = { id = "charge_mg"        type = "GER_infantry_mg_charge_animation" }
+        animation = { id = "charge_mg_shoot"    type = "GER_infantry_mg_charge_shoot_animation" }
+        animation = { id = "move"            type = "GER_infantry_mg_moving_animation" }
+        animation = { id = "march_move"        type = "GER_infantry_mg_march_animation" }
+        animation = { id = "retreat"        type = "GER_infantry_mg_retreat_animation" }
+        animation = { id = "death"            type = "GER_infantry_mg_death_animation" }
+        animation = { id = "long_idle01"    type = "GER_infantry_mg_long_idle_01_animation" }
+        animation = { id = "long_idle02"    type = "GER_infantry_mg_long_idle_02_animation" }
+        animation = { id = "long_idle03"    type = "GER_infantry_mg_long_idle_03_animation" }
+        animation = { id = "long_idle04"    type = "GER_infantry_mg_long_idle_04_animation" }
+        animation = { id = "long_idle05"    type = "GER_infantry_mg_long_idle_05_animation" }
+        animation = { id = "cavalry_idle"    type = "GER_infantry_cavalry_rider_mg_idle_animation" }
+        animation = { id = "cavalry_move"    type = "GER_infantry_cavalry_rider_mg_moving_animation" }
+        animation = { id = "training"        type = "GER_infantry_idle_training_animation" }
+        animation = { id = "jumping_jacks"    type = "GER_infantry_jumping_jacks_animation" }
+        animation = { id = "pushup"            type = "GER_infantry_pushup_animation" }
+        animation = { id = "guard_rifle"    type = "GER_infantry_guard_rifle_animation" }
+        animation = { id = "aim_exercise"    type = "GER_infantry_aim_exercise_mg_animation" }
+	
+		variant = { weight = 0.5 pdxmesh = "REP_infantry_cor_mesh" }
+		variant = { weight = 0.5 pdxmesh = "REP_infantry_501_mesh" }
+		variant = { weight = 0.5 pdxmesh = "REP_infantry_212_mesh" }
+	}
+	pdxmesh = {
+		name = "REP_infantry_cor_mesh"
+		file = "gfx/models/units/clonetrooper/REP_infantry.mesh"
+
+        animation = { id = "idle"            type = "GER_infantry_mg_idle_animation" }
+        animation = { id = "attack"            type = "GER_infantry_mg_attack_animation" }
+        animation = { id = "support_attack"    type = "GER_infantry_mg_support_attack_animation" }
+        animation = { id = "charge_mg"        type = "GER_infantry_mg_charge_animation" }
+        animation = { id = "charge_mg_shoot"    type = "GER_infantry_mg_charge_shoot_animation" }
+        animation = { id = "move"            type = "GER_infantry_mg_moving_animation" }
+        animation = { id = "march_move"        type = "GER_infantry_mg_march_animation" }
+        animation = { id = "retreat"        type = "GER_infantry_mg_retreat_animation" }
+        animation = { id = "death"            type = "GER_infantry_mg_death_animation" }
+        animation = { id = "long_idle01"    type = "GER_infantry_mg_long_idle_01_animation" }
+        animation = { id = "long_idle02"    type = "GER_infantry_mg_long_idle_02_animation" }
+        animation = { id = "long_idle03"    type = "GER_infantry_mg_long_idle_03_animation" }
+        animation = { id = "long_idle04"    type = "GER_infantry_mg_long_idle_04_animation" }
+        animation = { id = "long_idle05"    type = "GER_infantry_mg_long_idle_05_animation" }
+        animation = { id = "cavalry_idle"    type = "GER_infantry_cavalry_rider_mg_idle_animation" }
+        animation = { id = "cavalry_move"    type = "GER_infantry_cavalry_rider_mg_moving_animation" }
+        animation = { id = "training"        type = "GER_infantry_idle_training_animation" }
+        animation = { id = "jumping_jacks"    type = "GER_infantry_jumping_jacks_animation" }
+        animation = { id = "pushup"            type = "GER_infantry_pushup_animation" }
+        animation = { id = "guard_rifle"    type = "GER_infantry_guard_rifle_animation" }
+        animation = { id = "aim_exercise"    type = "GER_infantry_aim_exercise_mg_animation" }
+
+		meshsettings = {
+			name = "M_body.003"
+			index = 0
+			texture_diffuse = "REP_armor_cor.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "M_body.003-001"
+			index = 0
+			texture_diffuse = "REP_infantry_undersuit.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "M_body.003-002"
+			index = 0
+			texture_diffuse = "REP_helmet_cor.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "REP_infantry_501_mesh"
+		file = "gfx/models/units/clonetrooper/REP_infantry.mesh"
+
+        animation = { id = "idle"            type = "GER_infantry_mg_idle_animation" }
+        animation = { id = "attack"            type = "GER_infantry_mg_attack_animation" }
+        animation = { id = "support_attack"    type = "GER_infantry_mg_support_attack_animation" }
+        animation = { id = "charge_mg"        type = "GER_infantry_mg_charge_animation" }
+        animation = { id = "charge_mg_shoot"    type = "GER_infantry_mg_charge_shoot_animation" }
+        animation = { id = "move"            type = "GER_infantry_mg_moving_animation" }
+        animation = { id = "march_move"        type = "GER_infantry_mg_march_animation" }
+        animation = { id = "retreat"        type = "GER_infantry_mg_retreat_animation" }
+        animation = { id = "death"            type = "GER_infantry_mg_death_animation" }
+        animation = { id = "long_idle01"    type = "GER_infantry_mg_long_idle_01_animation" }
+        animation = { id = "long_idle02"    type = "GER_infantry_mg_long_idle_02_animation" }
+        animation = { id = "long_idle03"    type = "GER_infantry_mg_long_idle_03_animation" }
+        animation = { id = "long_idle04"    type = "GER_infantry_mg_long_idle_04_animation" }
+        animation = { id = "long_idle05"    type = "GER_infantry_mg_long_idle_05_animation" }
+        animation = { id = "cavalry_idle"    type = "GER_infantry_cavalry_rider_mg_idle_animation" }
+        animation = { id = "cavalry_move"    type = "GER_infantry_cavalry_rider_mg_moving_animation" }
+        animation = { id = "training"        type = "GER_infantry_idle_training_animation" }
+        animation = { id = "jumping_jacks"    type = "GER_infantry_jumping_jacks_animation" }
+        animation = { id = "pushup"            type = "GER_infantry_pushup_animation" }
+        animation = { id = "guard_rifle"    type = "GER_infantry_guard_rifle_animation" }
+        animation = { id = "aim_exercise"    type = "GER_infantry_aim_exercise_mg_animation" }
+
+		meshsettings = {
+			name = "M_body.003"
+			index = 0
+			texture_diffuse = "REP_armor_501.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "M_body.003-001"
+			index = 0
+			texture_diffuse = "REP_infantry_undersuit.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "M_body.003-002"
+			index = 0
+			texture_diffuse = "REP_helmet_501.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "REP_infantry_212_mesh"
+		file = "gfx/models/units/clonetrooper/REP_infantry.mesh"
+
+        animation = { id = "idle"            type = "GER_infantry_mg_idle_animation" }
+        animation = { id = "attack"            type = "GER_infantry_mg_attack_animation" }
+        animation = { id = "support_attack"    type = "GER_infantry_mg_support_attack_animation" }
+        animation = { id = "charge_mg"        type = "GER_infantry_mg_charge_animation" }
+        animation = { id = "charge_mg_shoot"    type = "GER_infantry_mg_charge_shoot_animation" }
+        animation = { id = "move"            type = "GER_infantry_mg_moving_animation" }
+        animation = { id = "march_move"        type = "GER_infantry_mg_march_animation" }
+        animation = { id = "retreat"        type = "GER_infantry_mg_retreat_animation" }
+        animation = { id = "death"            type = "GER_infantry_mg_death_animation" }
+        animation = { id = "long_idle01"    type = "GER_infantry_mg_long_idle_01_animation" }
+        animation = { id = "long_idle02"    type = "GER_infantry_mg_long_idle_02_animation" }
+        animation = { id = "long_idle03"    type = "GER_infantry_mg_long_idle_03_animation" }
+        animation = { id = "long_idle04"    type = "GER_infantry_mg_long_idle_04_animation" }
+        animation = { id = "long_idle05"    type = "GER_infantry_mg_long_idle_05_animation" }
+        animation = { id = "cavalry_idle"    type = "GER_infantry_cavalry_rider_mg_idle_animation" }
+        animation = { id = "cavalry_move"    type = "GER_infantry_cavalry_rider_mg_moving_animation" }
+        animation = { id = "training"        type = "GER_infantry_idle_training_animation" }
+        animation = { id = "jumping_jacks"    type = "GER_infantry_jumping_jacks_animation" }
+        animation = { id = "pushup"            type = "GER_infantry_pushup_animation" }
+        animation = { id = "guard_rifle"    type = "GER_infantry_guard_rifle_animation" }
+        animation = { id = "aim_exercise"    type = "GER_infantry_aim_exercise_mg_animation" }
+		
+		meshsettings = {
+			name = "M_body.003"
+			index = 0
+			texture_diffuse = "REP_armor_212.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "M_body.003-001"
+			index = 0
+			texture_diffuse = "REP_infantry_undersuit.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "M_body.003-002"
+			index = 0
+			texture_diffuse = "REP_helmet_212.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+}
