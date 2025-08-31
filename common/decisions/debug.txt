@@ -20,5 +20,24 @@ generic_debug = {
 				play_song = "mace windu super event"
 		}
 	}
+	debug_clone_war = {
+		icon = GFX_decision_generic_form_nation
+		
+		visible = {
+			is_debug = yes
+			is_ai = no
+		}	
+
+		available = {
+			#has_global_flag = 
+			#has_country_flag = 
+			hidden_trigger = {
+				# always = no
+			}
+		}
+		complete_effect = {
+			Clone_wars_start = yes
+		}
+	}
 
 }
