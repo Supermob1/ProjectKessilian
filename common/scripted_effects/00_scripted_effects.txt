@@ -17,6 +17,18 @@
 #
 #Capped at war economy, gives stability and war support instead if reaches that point
 
+Clone_wars_start = {
+	CIS = { 
+		declare_war_on = { target = REP type = annex_everything }
+		load_oob = "HOD_Droid_Army"
+		REP = { load_oob = "HOD_Grande_Armee" }
+		add_ideas = CIS_Great_Droid_Army
+		# load_oob = "HOD_CIS_naval"
+	}
+	REP = { load_oob = "HOD_REP_naval" }
+}
+
+
 ITA_add_basic_light_flamethrower_template = {
 }
 play_warning_to_japan_effect = {
