@@ -84,173 +84,208 @@ focus_tree = {
 		cost = 7.00
 		relative_position_id = YIN_side_with_the_republic
 		
-		prerequisite = {
-		  focus = YIN_side_with_the_republic
-		}
+		prerequisite = { focus = YIN_side_with_the_republic }
+		mutually_exclusive = { focus = YIN_military_government_abolished }
 		
-		mutually_exclusive = {
-		  focus = YIN_military_government_abolished
-		}
-		
-		available = {
-			always = no
-		}
+		available = { always = no }
 		x = -4
 		y = 1
 		completion_reward = {
-			
+			add_stability = 0.03
+			add_war_support = 0.03
+			add_ideas = YIN_martial_law_active    # TODO idea: small WS+, Stab-, resistance_target_on_our_occupied_states -0.03
+			# Kick off the story chain
+			hidden_effect = {
+				country_event = { id = YIN_mlaw.1 days = 1 random_hours = 6 }
+			}
 		}
 	}
+
 	focus = {
 		id = YIN_emergency_measures_extended
 		icon = GFX_YIN_emergency_measures_extended
 		cost = 7.00
 		relative_position_id = YIN_maintain_martial_law
 		
-		prerequisite = {
-		  focus = YIN_maintain_martial_law
-		}
+		prerequisite = { focus = YIN_maintain_martial_law }
 		
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			add_political_power = -50
+			add_war_support = 0.02
+			add_ideas = YIN_emergency_measures_idea  # TODO idea: required_garrison_factor +0.1, stability_factor -0.02
+			# Slight immediate impact in hot states (tune state IDs if needed)
+			154 = { add_resistance = -5 }   # Ashen Dunes
+			160 = { add_resistance = -5 }   # Northern Thorn
 		}
 	}
+
 	focus = {
 		id = YIN_secure_republic_garrisons
 		icon = GFX_YIN_secure_republic_garrisons
 		cost = 7.00
 		relative_position_id = YIN_maintain_martial_law
 		
-		prerequisite = {
-		  focus = YIN_maintain_martial_law
-		}
+		prerequisite = { focus = YIN_maintain_martial_law }
 		
 		x = 2
 		y = 1
 		completion_reward = {
-			
+			add_army_experience = 15
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+			# One offmap arms factory to represent garrison logistics help
+			add_offsite_building = { type = arms_factory level = 1 }
 		}
 	}
+
 	focus = {
 		id = YIN_local_defense_forces_trained
 		icon = GFX_YIN_local_defense_forces_trained
 		cost = 7.00
 		relative_position_id = YIN_maintain_martial_law
 		
-		prerequisite = {
-		  focus = YIN_maintain_martial_law
-		}
+		prerequisite = { focus = YIN_maintain_martial_law }
 		
 		x = -2
 		y = 1
 		completion_reward = {
-			
+			add_manpower = 20000
+			add_army_experience = 10
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = support_tech }  # MP/garrison tools fit here
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1500 }
+			random_owned_controlled_state = {
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
 		}
 	}
+
 	focus = {
 		id = YIN_republic_loyalist_militia
 		icon = GFX_YIN_republic_loyalist_militia
 		cost = 7.00
 		relative_position_id = YIN_emergency_measures_extended
 		
-		prerequisite = {
-		  focus = YIN_secure_republic_garrisons
-		}
-		prerequisite = {
-		  focus = YIN_emergency_measures_extended
-		}
-		prerequisite = {
-		  focus = YIN_local_defense_forces_trained
-		}
+		prerequisite = { focus = YIN_secure_republic_garrisons }
+		prerequisite = { focus = YIN_emergency_measures_extended }
+		prerequisite = { focus = YIN_local_defense_forces_trained }
 		
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			add_stability = -0.01
+			add_war_support = 0.02
+			add_ideas = YIN_loyalist_militia_idea   # TODO idea: resistance_target_on_our_occupied_states -0.03; required_garrison_factor +0.05
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
 		}
 	}
+
 	focus = {
 		id = YIN_strengthen_governors_powers
 		icon = GFX_YIN_strengthen_governors_powers
 		cost = 7.00
 		relative_position_id = YIN_republic_loyalist_militia
 		
-		prerequisite = {
-		  focus = YIN_republic_loyalist_militia
-		}
+		prerequisite = { focus = YIN_republic_loyalist_militia }
 		
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			add_political_power = 50
+			add_stability = -0.02
+			add_ideas = YIN_governor_powers_idea     # TODO idea: daily_political_power_gain +0.10; stability_factor -0.02
 		}
 	}
+
 	focus = {
 		id = YIN_republic_security_bureau
 		icon = GFX_YIN_republic_security_bureau
 		cost = 7.00
 		relative_position_id = YIN_strengthen_governors_powers
 		
-		prerequisite = {
-		  focus = YIN_strengthen_governors_powers
-		}
+		prerequisite = { focus = YIN_strengthen_governors_powers }
 		
 		x = -1
 		y = 1
 		completion_reward = {
-			
+			add_political_power = -25
+			add_ideas = YIN_security_bureau_idea     # TODO idea: resistance_target_on_our_occupied_states -0.05; compliance_growth_on_our_occupied_states +0.01
+			# Small, targeted calm from better intel & casework
+			154 = { add_resistance = -3 add_compliance = 2 }
+			160 = { add_resistance = -3 add_compliance = 2 }
+			161 = { add_resistance = -3 add_compliance = 2 }
 		}
 	}
+
 	focus = {
 		id = YIN_suppress_dissenters
 		icon = GFX_YIN_suppress_dissenters
 		cost = 7.00
 		relative_position_id = YIN_republic_security_bureau
 		
-		prerequisite = {
-		  focus = YIN_republic_security_bureau
-		}
+		prerequisite = { focus = YIN_republic_security_bureau }
 		
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			add_stability = -0.03
+			add_war_support = 0.03
+			# Crackdown effect in restive regions
+			154 = { add_resistance = -10 add_compliance = -5 }
+			160 = { add_resistance = -10 add_compliance = -5 }
+			161 = { add_resistance = -10 add_compliance = -5 }
+			# Short timed buff idea if you want a windowed effect instead:
+			# add_timed_idea = { idea = YIN_crackdown_window days = 120 }
 		}
 	}
+
 	focus = {
 		id = YIN_economic_oversight_committee
 		icon = GFX_YIN_economic_oversight_committee
 		cost = 7.00
 		relative_position_id = YIN_strengthen_governors_powers
 		
-		prerequisite = {
-		  focus = YIN_strengthen_governors_powers
-		}
+		prerequisite = { focus = YIN_strengthen_governors_powers }
 		
 		x = 1
 		y = 1
 		completion_reward = {
-			
+			add_political_power = 25
+			add_stability = 0.01
+			add_ideas = YIN_econ_oversight_idea     # TODO idea: consumer_goods_factor -0.02; stability_factor +0.01
+			# A little admin investment
+			random_owned_controlled_state = {
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
 		}
 	}
+
 	focus = {
 		id = YIN_open_exploitation_to_the_shattered_vale
 		icon = GFX_open_exploitation_to_the_shattered_vale
 		cost = 7.00
 		relative_position_id = YIN_economic_oversight_committee
 		
-		prerequisite = {
-		  focus = YIN_economic_oversight_committee
-		}
+		prerequisite = { focus = YIN_economic_oversight_committee }
 		
 		x = 0
 		y = 1
 		completion_reward = {
-			
+			add_political_power = -25
+			add_stability = -0.01
+			# Push mining & logistics into the Vale (pick specific state if you have the ID)
+			random_owned_controlled_state = {
+				limit = { is_core_of = YIN }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				add_resource = { type = chromium amount = 2 }   # swap to your desired resource
+			}
+			add_ideas = YIN_vale_extraction_idea   # TODO idea: local_resources_factor +0.1; required_garrison_factor +0.05
 		}
 	}
+
 	focus = {
 		id = YIN_governor_general_of_yinchorr
 		icon = GFX_YIN_governor_general_of_yinchorr
@@ -267,7 +302,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
-			
+				country_event = {
+					id = YIN_mlaw.7
+					days = 1
+					random_hours = 6
+				}
 		}
 	}
 	# =========================
@@ -623,7 +662,7 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			add_political_power = 35
-			add_tech_bonus = { bonus = 0.5 uses = 1 category = excavation } # pushes Excavation techs
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = excavation_tech } # pushes Excavation techs
 			add_ideas = YIN_mining_modernisation_idea # +10% local_resources_factor; +10% refinery/steel build speed
 			country_event = YIN_econ.2
 		}

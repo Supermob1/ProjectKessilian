@@ -294,6 +294,52 @@
  YIN_soc.3.d:0 "Endowments can anchor long-term teaching. A doctrinal chair would codify lessons learned for the armed forces and constabularies, creating a stable pipeline of trained officers."
  YIN_soc.3.a:0 "Establish the Doctrine Chair"
 
+ # ==============================
+ # Under the Iron Sky — Martial Law Chain
+ # ==============================
+
+ # 1) Curfew at the Vale
+ YIN_mlaw.1.t:0 "Curfew at the Vale"
+ YIN_mlaw.1.d:0 "Floodlights wash the market street in hard white. Troopers move a cordon along the food queues, voices clipped, rifles angled toward the ground. A shove at the rear becomes a scuffle. A child cries and the sound carries across shuttered stalls. Master Sha'lar stands at the midpoint where fear is quickest to spread, feeling the night hold its breath. The order is simple; clear the avenue before the horn. The outcome is not."
+ YIN_mlaw.1.a:0 "Step between the lines"
+ YIN_mlaw.1.b:0 "Observe and record"
+
+ # 2) The Empty Square
+ YIN_mlaw.2.t:0 "The Empty Square"
+ YIN_mlaw.2.d:0 "At midday the square is quiet. Ration boards list tighter quotas in neat handwriting. A confiscated speeder sits chained to the steps as a lesson. Merchants who once argued beneath the banners are missing from their places. Master Sha'lar walks the perimeter with the watch captain, counting the silence. Order has been set, but it grinds. Relief might ease the strain; firmness might preserve control. Either way, the ledger will show the cost."
+ YIN_mlaw.2.a:0 "Petition relief on rations and curfew"
+ YIN_mlaw.2.b:0 "File a neutral report"
+
+ # 3) The Black Ledger
+ YIN_mlaw.3.t:0 "The Black Ledger"
+ YIN_mlaw.3.d:0 "A clerk's duplicate finds its way into careful hands. The intake roll for \"temporary holding\" lists names without release stamps, then strokes them out in red. Cells exist only as tallies. Master Sha'lar studies the pages in a room that smells of dust and oil. There are no screams here, only numbers. Access and reviews could free those who do not belong inside. Distance and secrecy could avoid a fight with the men who put them there."
+ YIN_mlaw.3.a:0 "Seek access and review releases"
+ YIN_mlaw.3.b:0 "Forward the ledger and step back"
+
+ # 4) Ashen Mothers
+ YIN_mlaw.4.t:0 "Ashen Mothers"
+ YIN_mlaw.4.d:0 "A procession threads across the dunes, veils dark against bright sand. Warning shots crack high above and the line falters. A mourner lifts a hand toward the troopers, another tightens a grip on a banner pole. The wind lays a sheet of dust over both sides as the moment balances. Master Sha'lar stands where the command channel and the grief of the crowd can both be heard."
+ YIN_mlaw.4.a:0 "Lower the weapons"
+ YIN_mlaw.4.b:0 "Keep protocol in place"
+
+ # 5) Cable from Coruscant
+ YIN_mlaw.5.t:0 "Cable from Coruscant"
+ YIN_mlaw.5.d:0 "The transmission arrives without ceremony, voice calm and precise. The Council speaks of duty and restraint, of service to peace rather than rule. Outside, the curfew horn sounds and boots answer it on the stairs. Master Sha'lar reads the guidance again, knowing it leaves room for judgment. A path lies open in the words, and a different path lies between the lines."
+ YIN_mlaw.5.a:0 "Follow the letter of the guidance"
+ YIN_mlaw.5.b:0 "Follow the spirit and keep distance"
+
+ # 6) Children of the Thorn
+ YIN_mlaw.6.t:0 "Children of the Thorn"
+ YIN_mlaw.6.d:0 "At a ridge post two teenagers sit on a crate with their wrists bound, a cargo manifest beside them stamped for \"work assignment\" under curfew statutes. A sergeant waits for confirmation, a caravan leader waits for mercy, and the sun waits for no one. Master Sha'lar takes in the scene with the gravel road falling away to the north, where clan banners snap in the wind."
+ YIN_mlaw.6.a:0 "Release minors and censure the post"
+ YIN_mlaw.6.b:0 "Let the order stand for review"
+
+ # 7) Audience with Zatrax — Finale (Force vs Council)
+ YIN_mlaw.7.t:0 "Audience with Zatrax"
+ YIN_mlaw.7.d:0 "The Prefect's office looks out over a city that no longer speaks at night. Files sit by the window; decrees, arrest tallies, a map shaded in quiet. Zatrax stands behind a tidy desk, hands clasped. Master Sha'lar sets the ledger down and meets his eyes. What follows will decide more than a policy. It will decide who holds the line, and how."
+ YIN_mlaw.7.a:0 "Compel Zatrax to stand down"
+ YIN_mlaw.7.b:0 "Heed the Council and depart"
+
 
  #Focus Tree
  # === REPUBLIC — ABOLITION / DEMOCRACY PATH ===
@@ -372,3 +418,73 @@
 
  YIN_Declare_Neutrality:0 "Declare Neutrality"
  YIN_Declare_Neutrality_desc:0 "Publish a formal pledge to stand apart. Embassies are heard equally, intelligence is guarded, and our army learns to live on its own rails."
+ 
+ # ==============================
+ # Core branch roots
+ # ==============================
+ YIN_yinchorr_at_the_crossroads:0 "Yinchorr at the Crossroads"
+ YIN_yinchorr_at_the_crossroads_desc:0 "The clans, the cities, and the Republic’s watchful eye all pull in different directions. Yinchorr must choose a path—one that will define its place in the war that draws near."
+
+ YIN_side_with_the_republic:0 "Side with the Republic"
+ YIN_side_with_the_republic_desc:0 "Invite advisors, accept garrisons, and bind Yinchorr’s fate to Coruscant. Stability, investment, and scrutiny will follow in equal measure."
+
+ # ==============================
+ # Martial Law Sub-tree
+ # ==============================
+ YIN_maintain_martial_law:0 "Maintain Martial Law"
+ YIN_maintain_martial_law_desc:0 "Keep emergency powers in place. Curfews, checkpoints, and swift decrees promise order—but they also deepen the mark of occupation."
+
+ YIN_emergency_measures_extended:0 "Extend Emergency Measures"
+ YIN_emergency_measures_extended_desc:0 "Renew the edicts: restricted movement, requisitioned supplies, and broadened arrest powers. The streets grow quiet; the ledgers grow heavier."
+
+ YIN_secure_republic_garrisons:0 "Secure Republic Garrisons"
+ YIN_secure_republic_garrisons_desc:0 "Formalize joint command with Republic detachments, stabilize supply lanes, and fortify key junctions against clan raids and saboteurs."
+
+ YIN_local_defense_forces_trained:0 "Train Local Defense Forces"
+ YIN_local_defense_forces_trained_desc:0 "Recruit auxiliaries and drill desert scouts, guides, and wardens. Local knowledge turns patrols into a net rather than a line."
+
+ YIN_republic_loyalist_militia:0 "Raise Loyalist Militia"
+ YIN_republic_loyalist_militia_desc:0 "Swear-in oathbound companies to hold depots and districts. Lightly equipped and numerous, they free regulars for the trouble spots."
+
+ YIN_strengthen_governors_powers:0 "Strengthen the Governor’s Powers"
+ YIN_strengthen_governors_powers_desc:0 "Expand decree authority, centralize budgets, and streamline approvals. Decisions move quickly—sometimes faster than consent."
+
+ YIN_republic_security_bureau:0 "Republic Security Bureau"
+ YIN_republic_security_bureau_desc:0 "Create a central office for informants, casework, and counter-sabotage. Patterns emerge in the reports—and so do enemies."
+
+ YIN_suppress_dissenters:0 "Suppress the Dissenters"
+ YIN_suppress_dissenters_desc:0 "Raids at dawn, cells rolled up by the dozen, safehouses emptied. The loudest voices fall silent; whispers remain."
+
+ YIN_economic_oversight_committee:0 "Economic Oversight Committee"
+ YIN_economic_oversight_committee_desc:0 "Audit concessions, scrutinize contracts, and direct procurement where it steadies the planet. Efficiency has a politics of its own."
+
+ YIN_open_exploitation_to_the_shattered_vale:0 "Open Exploitation of the Shattered Vale"
+ YIN_open_exploitation_to_the_shattered_vale_desc:0 "Survey shafts, extend railbeds, and license new pits across the Vale. Wealth lies under the sand—and controversy above it."
+
+ # ==============================
+ # Ideas (Martial Law suite)
+ # ==============================
+ YIN_martial_law_active:0 "Martial Law in Force"
+ YIN_martial_law_active_desc:0 "Emergency governance concentrates power and prioritizes order. The price is paid in public trust."
+
+ YIN_emergency_measures_idea:0 "Extended Emergency Measures"
+ YIN_emergency_measures_idea_desc:0 "Renewed curfews and requisitions keep unrest contained—by tightening the grip."
+
+ YIN_loyalist_militia_idea:0 "Loyalist Militia"
+ YIN_loyalist_militia_idea_desc:0 "Oathbound auxiliaries guard streets and depots, augmenting the security net with sheer presence."
+
+ YIN_governor_powers_idea:0 "Empowered Governorship"
+ YIN_governor_powers_idea_desc:0 "Expanded decree powers and centralized administration ensure swift decisions, for better or worse."
+
+ YIN_security_bureau_idea:0 "Republic Security Bureau"
+ YIN_security_bureau_idea_desc:0 "A dedicated bureau collates intelligence, pursues cells, and turns scattered reports into actionable cases."
+
+ YIN_econ_oversight_idea:0 "Economic Oversight Committee"
+ YIN_econ_oversight_idea_desc:0 "Procurement lanes and audits align resources with policy, smoothing the worst shocks to the civilian economy."
+
+ YIN_vale_extraction_idea:0 "Vale Extraction Mandate"
+ YIN_vale_extraction_idea_desc:0 "New concessions and stricter quotas expand output from the Shattered Vale—along with the security footprint needed to hold it."
+
+ # Optional timed buff/debuff if used
+ YIN_crackdown_window:0 "Systemwide Crackdown"
+ YIN_crackdown_window_desc:0 "A concentrated sweep of raids and checkpoints. Order sharpens in the short term; resentment lingers much longer."

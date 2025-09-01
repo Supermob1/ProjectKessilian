@@ -222,5 +222,105 @@ ideas = {
 				supply_consumption_factor = -0.05
 			}
 		}
+
+		YIN_martial_law_active = {
+		  # picture = GFX_idea_yin_martial_law
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			stability_factor = -0.03
+			war_support_factor = 0.03
+			resistance_target_on_our_occupied_states = -0.03
+		  }
+		}
+
+		YIN_emergency_measures_idea = {
+		  # picture = GFX_idea_yin_emergency_measures
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			required_garrison_factor = 0.10
+			stability_factor = -0.02
+		  }
+		}
+
+		YIN_loyalist_militia_idea = {
+		  # picture = GFX_idea_yin_loyalist_militia
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			resistance_target_on_our_occupied_states = -0.03
+			required_garrison_factor = 0.05
+		  }
+		}
+
+		YIN_governor_powers_idea = {
+		  # picture = GFX_idea_yin_governor_powers
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			political_power_gain = 0.10       # flat daily PP (vanilla-valid)
+			stability_factor      = -0.02
+		  }
+		}
+
+		YIN_security_bureau_idea = {
+		  # picture = GFX_idea_yin_security_bureau
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			resistance_target_on_our_occupied_states = -0.05
+			compliance_growth_on_our_occupied_states = 0.01
+		  }
+		}
+
+		YIN_econ_oversight_idea = {
+		  # picture = GFX_idea_yin_econ_oversight
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			consumer_goods_factor = -0.02
+			stability_factor      = 0.01
+		  }
+		}
+
+		YIN_vale_extraction_idea = {
+		  # picture = GFX_idea_yin_vale_extraction
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			local_resources_factor = 0.10
+			required_garrison_factor = 0.05
+		  }
+		}
+
+		# (Optional) A short crackdown burst if you use add_timed_idea
+		YIN_crackdown_window = {
+		  # picture = GFX_idea_yin_crackdown_window
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+
+		  modifier = {
+			war_support_factor = 0.03
+			stability_factor   = -0.03
+			resistance_target_on_our_occupied_states = -0.05
+			compliance_growth_on_our_occupied_states = -0.02
+		  }
+		}
 	}
 }
