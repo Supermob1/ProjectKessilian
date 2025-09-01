@@ -4,6 +4,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_archon_vekurr.dds"
+				small="gfx/characters/archon_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -13,6 +14,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_archon_vekurr
+			name = archon
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				prince_of_terror
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_threll_fangmaster={
@@ -20,6 +43,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_threll_fangmaster.dds"
+				small="gfx/characters/threll_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -29,6 +53,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_threll_fangmaster
+			name = threll
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				propaganda_expert
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_harniss_consul={
@@ -36,6 +82,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_harniss_consul.dds"
+				small="gfx/characters/harniss_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -45,6 +92,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_harniss_consul
+			name = harniss
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				backroom_backstabber
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_vux_speaker={
@@ -52,6 +121,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_vux_speaker.dds"
+				small="gfx/characters/vux_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -61,6 +131,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_vux_speaker
+			name = vux
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				popular_figurehead
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_raivesh_countess={
@@ -68,6 +160,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_raivesh_countess.dds"
+				small="gfx/characters/raivesh_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -77,6 +170,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_raivesh_countess
+			name = raivesh
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				compassionate_gentleman
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_zatrax_governor={
@@ -84,6 +199,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_zatrax_governor.dds"
+				small="gfx/characters/zatrax_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -93,6 +209,34 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_zatrax_governor
+			name = zatrax
+			cost = 100
+			ledger = civilian
+			allowed = {
+				OR = {
+					original_tag = YIN
+					original_tag = REP
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = YIN
+					original_tag = REP
+				}
+			}
+			available = {
+
+			}
+			traits = {
+				ideological_crusader
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_malrek_isha={
@@ -100,6 +244,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_malrek_isha.dds"
+				small="gfx/characters/marlek_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -109,6 +254,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_malrek_isha
+			name = marlek
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				silent_workhorse
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_karesh_tradelord={
@@ -116,6 +283,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_karesh_tradelord.dds"
+				small="gfx/characters/karesh_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -125,6 +293,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_karesh_tradelord
+			name = karesh
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				captain_of_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_vaireh_senator={
@@ -132,6 +322,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_vaireh_senator.dds"
+				small="gfx/characters/vaireh_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -141,6 +332,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_vaireh_senator
+			name = vaireh
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				editor
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_shalar_master={
@@ -148,6 +361,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_shalar_master.dds"
+				small="gfx/characters/shalar_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -157,6 +371,28 @@ characters={
 			expire="1000.1.1.1"
 			id=-1
 		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_shalar_master
+			name = shalar
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				jedi_master
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	YIN_zurvek_foreman={
@@ -164,6 +400,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/YIN/YIN_portrait_zurvek_foreman.dds"
+				small="gfx/characters/zurvek_political_advisor.png"
 			}
 		}
 		country_leader={
@@ -172,6 +409,28 @@ characters={
 			traits={ }
 			expire="1000.1.1.1"
 			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = YIN_zurvek_foreman
+			name = zurvek
+			cost = 100
+			ledger = civilian
+			allowed = {
+				original_tag = YIN
+			}
+			visible = {
+				original_tag = YIN
+			}
+			available = {
+
+			}
+			traits = {
+				ambitious_union_boss
+			}
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
