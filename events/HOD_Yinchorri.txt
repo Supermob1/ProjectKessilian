@@ -1,11 +1,11 @@
 add_namespace = YIN_intro
 
-country_event = { # All-Species Week 
+country_event = { # Yinchorr at the Crossroads
 	id = YIN_intro.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.1"}
 	title = YIN_intro.1.t
 	desc = YIN_intro.1.d
-	picture = GFX_news_event_unthinkable
+	picture = GFX_country_event_yinchorr_planet
 	
 	is_triggered_only = yes
 	
@@ -13,6 +13,473 @@ country_event = { # All-Species Week
 
 	option = { #
 		name = YIN_intro.1.a
+		country_event = {
+			id = YIN_intro.2
+			days = 35
+			random_hours = 12
+		}
+		hidden_effect = {
+			158 = {
+				add_compliance = -60
+				add_resistance = 60
+			}
+		}
+		complete_national_focus = YIN_yinchorr_at_the_crossroads
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+
+country_event = { # Footprints at Dusk
+	id = YIN_intro.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.2"}
+	title = YIN_intro.2.t
+	desc = YIN_intro.2.d
+	picture = GFX_country_event_yinchorr_shattered_vale
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.2.a
+		complete_national_focus = YIN_side_with_the_republic
+		country_event = {
+			id = YIN_intro.3
+			days = 35
+			random_hours = 12
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = YIN_intro.2.b
+		complete_national_focus = YIN_side_with_the_separatists
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # After the Raid
+	id = YIN_intro.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.3"}
+	title = YIN_intro.3.t
+	desc = YIN_intro.3.d
+	picture = GFX_country_event_yinchorr_governor_choice
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.3.a
+		complete_national_focus = YIN_maintain_martial_law
+		add_stability = 0.2
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = YIN_intro.3.b
+		complete_national_focus = YIN_military_government_abolished
+		REP = { 
+			country_event = {
+				id = YIN_intro.4
+				days = 5
+				random_hours = 12
+			}
+		}
+			
+		set_nationality = {
+			target_country = REP
+			character = YIN_zatrax_governor
+		}
+		set_politics = {
+			ruling_party = light_side
+			elections_allowed = no
+		}
+		swap_ideas = {
+			remove_idea = YIN_Protectorate_Established
+			add_idea = YIN_Civilian_Government
+		}
+		hidden_effect = {
+			add_country_leader_role = {
+				character = YIN_karesh_tradelord
+				promote_leader = yes
+				country_leader = {
+					ideology = corporate_consortium_subtype
+					expire = "2000.1.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = corporate_consortium
+				long_name = YIN_trade_democrat_party_long
+				name = YIN_trade_democrat_party
+			}
+			set_popularities = {
+				new_order = 10
+				dark_side = 5
+				akaanadocrat = 15
+				corist = 15
+				corporate_consortium = 5
+				trade_democrat = 5
+				ruusanist = 15
+				inclusivist = 15
+				light_side = 10
+				distributionist = 5
+			}
+			country_event = {
+				id = YIN_intro.5
+				days = 20
+				random_hours = 12
+			}
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # After the Raid
+	id = YIN_intro.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.4"}
+	title = YIN_intro.4.t
+	desc = YIN_intro.4.d
+	picture = GFX_country_event_republic_the_governor
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.4.a
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Control Lost over the Ashen Dunes
+	id = YIN_intro.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.5"}
+	title = YIN_intro.5.t
+	desc = YIN_intro.5.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.5.a
+		154 = {
+			set_demilitarized_zone = yes
+			add_compliance = -30
+			add_resistance = 30
+			set_state_name = "Ashen Clans"
+		}
+		hidden_effect = {
+			country_event = {
+				id = YIN_intro.52
+				days = 100
+				random_hours = 12
+			}
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Control Lost over the Kador Clans
+	id = YIN_intro.52
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.52"}
+	title = YIN_intro.52.t
+	desc = YIN_intro.52.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.52.a
+		161 = {
+			set_demilitarized_zone = yes
+			add_compliance = -30
+			add_resistance = 30
+			set_state_name = "Kador Clans"
+		}
+		hidden_effect = {
+			country_event = {
+				id = YIN_intro.53
+				days = 100
+				random_hours = 12
+			}
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Control Lost over the Thorn Clan
+	id = YIN_intro.53
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.53"}
+	title = YIN_intro.53.t
+	desc = YIN_intro.53.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.53.a
+		160 = {
+			set_demilitarized_zone = yes
+			add_compliance = -30
+			add_resistance = 30
+			set_state_name = "Northern Thorn Clan"
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # The Ballot is Called
+	id = YIN_intro.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.6"}
+	title = YIN_intro.6.t
+	desc = YIN_intro.6.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.6.a
+		add_to_variable = {
+			conservative = 1
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = YIN_intro.6.b
+		add_to_variable = {
+			reformist = 1
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	after = {
+		country_event = {
+			id = YIN_intro.7
+			days = 20
+			random_hours = 6
+		}
+	}
+}
+country_event = { # Heat Pay at the Vale
+	id = YIN_intro.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.7"}
+	title = YIN_intro.7.t
+	desc = YIN_intro.7.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.7.a
+		add_to_variable = {
+			conservative = 1
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = YIN_intro.7.b
+		add_to_variable = {
+			reformist = 1
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	after = {
+		country_event = {
+			id = YIN_intro.8
+			days = 20
+			random_hours = 6
+		}
+	}
+}
+country_event = { # Debate at the City of Spires
+	id = YIN_intro.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.8"}
+	title = YIN_intro.8.t
+	desc = YIN_intro.8.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.8.a
+		add_to_variable = {
+			conservative = 1
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = YIN_intro.8.b
+		add_to_variable = {
+			reformist = 1
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				check_variable = { conservative > reformist }
+			}
+			country_event = {
+				id = YIN_intro.9
+				days = 20
+				random_hours = 6
+			}
+		}
+		else = {
+			country_event = {
+				id = YIN_intro.11
+				days = 20
+				random_hours = 6
+			}
+		}
+	}
+}
+country_event = { # Conservatism Carries the Assembly
+	id = YIN_intro.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.9"}
+	title = YIN_intro.9.t
+	desc = YIN_intro.9.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.9.a
+		complete_national_focus = YIN_conservatives_victory
+		country_event = {
+			id = YIN_intro.10
+			days = 5
+			random_hours = 6
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Choosing the Conservative Standard-Bearer
+	id = YIN_intro.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.10"}
+	title = YIN_intro.10.t
+	desc = YIN_intro.10.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.10.a
+		set_politics = {
+			ruling_party = inclusivist
+			elections_allowed = no
+		}
+		complete_national_focus = YIN_Senator_Vaireh
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = YIN_intro.10.b
+		set_politics = {
+			ruling_party = corist
+			elections_allowed = no
+		}
+		complete_national_focus = YIN_Countess_Raivesh
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Reform Takes the Assembly
+	id = YIN_intro.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.11"}
+	title = YIN_intro.11.t
+	desc = YIN_intro.11.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.11.a
+		complete_national_focus = YIN_reformists_victory
+		country_event = {
+			id = YIN_intro.12
+			days = 5
+			random_hours = 6
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+}
+country_event = { # Choosing the Reformist Standard-Bearer
+	id = YIN_intro.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.12"}
+	title = YIN_intro.12.t
+	desc = YIN_intro.12.d
+	picture = GFX_country_event_yinchorr_planet
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { #
+		name = YIN_intro.12.a
+		set_politics = {
+			ruling_party = ruusanist
+			elections_allowed = no
+		}
+		complete_national_focus = YIN_Doctor_Isha_Malrek
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { #
+		name = YIN_intro.12.b
+		set_politics = {
+			ruling_party = akaanadocrat
+			elections_allowed = no
+		}
+		complete_national_focus = YIN_Consul_Harniss
 		ai_chance = { 
 			factor = 25	
 		}

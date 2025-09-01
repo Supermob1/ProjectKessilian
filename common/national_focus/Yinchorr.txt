@@ -1,0 +1,1490 @@
+focus_tree = {
+	id = Yinchorr_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = YIN
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+	continuous_focus_position = { x = -5500 y = 1000 }
+	focus = {
+		id = YIN_yinchorr_at_the_crossroads
+		icon = GFX_YIN_yinchorr_at_the_crossroads
+		cost = 7.00
+		
+		prerequisite = {
+		  # no prereq, start of tree
+		}
+		available = {
+			always = no
+		}
+		
+		x = 10
+		y = 0
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_side_with_the_republic
+		icon = GFX_YIN_side_with_the_republic
+		cost = 7.00
+		relative_position_id = YIN_yinchorr_at_the_crossroads
+		
+		prerequisite = {
+		  focus = YIN_yinchorr_at_the_crossroads
+		}
+
+		mutually_exclusive = {
+		  focus = YIN_side_with_the_separatists
+		}
+		available = {
+			always = no
+		}
+		
+		x = -7
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_side_with_the_separatists
+		icon = GFX_YIN_side_with_the_separatists
+		cost = 7.00
+		relative_position_id = YIN_yinchorr_at_the_crossroads
+		
+		prerequisite = {
+		  focus = YIN_yinchorr_at_the_crossroads
+		}
+
+		mutually_exclusive = {
+		  focus = YIN_side_with_the_republic
+		}
+		available = {
+			always = no
+		}
+		
+		x = 9
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	# === REPUBLIC PATH ===
+	# === REPUBLIC — MARTIAL LAW PATH (9 focuses) ===
+	focus = {
+		id = YIN_maintain_martial_law
+		icon = GFX_YIN_maintain_martial_law
+		cost = 7.00
+		relative_position_id = YIN_side_with_the_republic
+		
+		prerequisite = {
+		  focus = YIN_side_with_the_republic
+		}
+		
+		mutually_exclusive = {
+		  focus = YIN_military_government_abolished
+		}
+		
+		available = {
+			always = no
+		}
+		x = -4
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_emergency_measures_extended
+		icon = GFX_YIN_emergency_measures_extended
+		cost = 7.00
+		relative_position_id = YIN_maintain_martial_law
+		
+		prerequisite = {
+		  focus = YIN_maintain_martial_law
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_secure_republic_garrisons
+		icon = GFX_YIN_secure_republic_garrisons
+		cost = 7.00
+		relative_position_id = YIN_maintain_martial_law
+		
+		prerequisite = {
+		  focus = YIN_maintain_martial_law
+		}
+		
+		x = 2
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_local_defense_forces_trained
+		icon = GFX_YIN_local_defense_forces_trained
+		cost = 7.00
+		relative_position_id = YIN_maintain_martial_law
+		
+		prerequisite = {
+		  focus = YIN_maintain_martial_law
+		}
+		
+		x = -2
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_republic_loyalist_militia
+		icon = GFX_YIN_republic_loyalist_militia
+		cost = 7.00
+		relative_position_id = YIN_emergency_measures_extended
+		
+		prerequisite = {
+		  focus = YIN_secure_republic_garrisons
+		}
+		prerequisite = {
+		  focus = YIN_emergency_measures_extended
+		}
+		prerequisite = {
+		  focus = YIN_local_defense_forces_trained
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_strengthen_governors_powers
+		icon = GFX_YIN_strengthen_governors_powers
+		cost = 7.00
+		relative_position_id = YIN_republic_loyalist_militia
+		
+		prerequisite = {
+		  focus = YIN_republic_loyalist_militia
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_republic_security_bureau
+		icon = GFX_YIN_republic_security_bureau
+		cost = 7.00
+		relative_position_id = YIN_strengthen_governors_powers
+		
+		prerequisite = {
+		  focus = YIN_strengthen_governors_powers
+		}
+		
+		x = -1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_suppress_dissenters
+		icon = GFX_YIN_suppress_dissenters
+		cost = 7.00
+		relative_position_id = YIN_republic_security_bureau
+		
+		prerequisite = {
+		  focus = YIN_republic_security_bureau
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_economic_oversight_committee
+		icon = GFX_YIN_economic_oversight_committee
+		cost = 7.00
+		relative_position_id = YIN_strengthen_governors_powers
+		
+		prerequisite = {
+		  focus = YIN_strengthen_governors_powers
+		}
+		
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_open_exploitation_to_the_shattered_vale
+		icon = GFX_open_exploitation_to_the_shattered_vale
+		cost = 7.00
+		relative_position_id = YIN_economic_oversight_committee
+		
+		prerequisite = {
+		  focus = YIN_economic_oversight_committee
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_governor_general_of_yinchorr
+		icon = GFX_YIN_governor_general_of_yinchorr
+		cost = 7.00
+		relative_position_id = YIN_suppress_dissenters
+		
+		prerequisite = {
+		  focus = YIN_open_exploitation_to_the_shattered_vale
+		}
+		prerequisite = {
+		  focus = YIN_suppress_dissenters
+		}
+		
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	# =========================
+	# Fork created by the event
+	# =========================
+
+	# Path A — Lightfang takes control (AUTOCOMPLETED by event)
+	focus = {
+		id = YIN_lightfang_take_control
+		icon = GFX_YIN_lightfang_take_control
+		cost = 7.00
+		relative_position_id = YIN_governor_general_of_yinchorr
+
+		prerequisite = { focus = YIN_governor_general_of_yinchorr }
+		mutually_exclusive = { focus = YIN_zatrax_retains_control }
+
+		# Gate visibility so it only shows if that outcome was chosen
+		available = { has_country_flag = YIN_lightfang_takeover }
+
+		x = -1
+		y = 1
+
+		# Will be instantly completed by the event (no rewards here yet)
+		completion_reward = { }
+	}
+
+	# Path B — Zatrax retains control (AUTOCOMPLETED by event)
+	focus = {
+		id = YIN_zatrax_retains_control
+		icon = GFX_YIN_zatrax_retains_control
+		cost = 7.00
+		relative_position_id = YIN_governor_general_of_yinchorr
+
+		prerequisite = { focus = YIN_governor_general_of_yinchorr }
+		mutually_exclusive = { focus = YIN_lightfang_take_control }
+
+		available = { has_country_flag = YIN_governor_loyal }
+
+		x = 1
+		y = 1
+
+		completion_reward = { }
+	}
+
+	# =========================
+	# Lightfang follow-up (3 clickable)
+	# =========================
+
+	focus = {
+		id = YIN_provisional_yinchorr_jedi_council
+		icon = GFX_YIN_provisional_yinchorr_jedi_council
+		cost = 7.00
+		relative_position_id = YIN_lightfang_take_control
+
+		prerequisite = { focus = YIN_lightfang_take_control }
+
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+	focus = {
+		id = YIN_rewrite_protectorate_charter
+		icon = GFX_YIN_rewrite_protectorate_charter
+		cost = 7.00
+		relative_position_id = YIN_provisional_yinchorr_jedi_council
+
+		prerequisite = { focus = YIN_provisional_yinchorr_jedi_council }
+
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+	focus = {
+		id = YIN_lightfang_civic_guard
+		icon = GFX_YIN_lightfang_civic_guard
+		cost = 7.00
+		relative_position_id = YIN_provisional_yinchorr_jedi_council
+
+		prerequisite = { focus = YIN_provisional_yinchorr_jedi_council }
+
+		x = -2
+		y = 1
+
+		completion_reward = { }
+	}
+
+	# =========================
+	# Governor/Republic follow-up (3 clickable)
+	# =========================
+
+	focus = {
+		id = YIN_codify_governor_general_powers
+		icon = GFX_YIN_codify_governor_general_powers
+		cost = 7.00
+		relative_position_id = YIN_zatrax_retains_control
+
+		prerequisite = { focus = YIN_zatrax_retains_control }
+
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+	focus = {
+		id = YIN_concessionary_mining_cartel
+		icon = GFX_YIN_concessionary_mining_cartel
+		cost = 7.00
+		relative_position_id = YIN_codify_governor_general_powers
+
+		prerequisite = { focus = YIN_codify_governor_general_powers }
+
+		x = 0
+		y = 1
+
+		completion_reward = { }
+	}
+	focus = {
+		id = YIN_request_republic_garrison
+		icon = GFX_YIN_request_republic_garrison
+		cost = 7.00
+		relative_position_id = YIN_codify_governor_general_powers
+
+		prerequisite = { focus = YIN_codify_governor_general_powers }
+
+		x = 2
+		y = 1
+
+		completion_reward = { }
+	}
+	# === REPUBLIC — ABOLITION / DEMOCRACY PATH (9 focuses) ===
+	focus = {
+		id = YIN_military_government_abolished
+		icon = GFX_YIN_military_government_abolished
+		cost = 7.00
+		relative_position_id = YIN_side_with_the_republic
+		
+		prerequisite = {
+		  focus = YIN_side_with_the_republic
+		}
+		mutually_exclusive = {
+		  focus = YIN_maintain_martial_law
+		}
+		
+		available = {
+			always = no
+		}
+		
+		x = 3
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_elections_organized
+		icon = GFX_YIN_elections_organized
+		cost = 14.0
+		relative_position_id = YIN_military_government_abolished
+		
+		prerequisite = {
+		  focus = YIN_military_government_abolished
+		}
+		cancelable = no
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 100
+		}
+		select_effect = {
+			country_event = {
+				id = YIN_intro.6
+				days = 1
+				random_hours = 6
+			}
+		}
+	}
+	focus = {
+		id = YIN_conservatives_victory
+		icon = GFX_YIN_conservatives_victory
+		cost = 7.00
+		relative_position_id = YIN_elections_organized
+		
+		prerequisite = {
+		  focus = YIN_elections_organized
+		}
+		
+		mutually_exclusive = {
+		  focus = YIN_reformists_victory
+		}
+		available = {
+			always = no
+		}
+		
+		x = -1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_Senator_Vaireh
+		icon = GFX_YIN_Senator_Vaireh
+		cost = 7.00
+		relative_position_id = YIN_conservatives_victory
+		
+		prerequisite = {
+		  focus = YIN_conservatives_victory
+		}
+		
+		mutually_exclusive = {
+		  focus = YIN_Countess_Raivesh
+		}
+		available = {
+			always = no
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_Countess_Raivesh
+		icon = GFX_YIN_Countess_Raivesh
+		cost = 7.00
+		relative_position_id = YIN_conservatives_victory
+		
+		prerequisite = {
+		  focus = YIN_conservatives_victory
+		}
+		
+		mutually_exclusive = {
+		  focus = YIN_Senator_Vaireh
+		}
+		available = {
+			always = no
+		}
+		
+		x = -3
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_reformists_victory
+		icon = GFX_YIN_reformists_victory
+		cost = 7.00
+		relative_position_id = YIN_elections_organized
+		
+		prerequisite = {
+		  focus = YIN_elections_organized
+		}
+		
+		mutually_exclusive = {
+		  focus = YIN_conservatives_victory
+		}
+		available = {
+			always = no
+		}
+		
+		
+		x = 1
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_Consul_Harniss
+		icon = GFX_YIN_Consul_Harniss
+		cost = 7.00
+		relative_position_id = YIN_reformists_victory
+		
+		prerequisite = {
+		  focus = YIN_reformists_victory
+		}
+		
+		mutually_exclusive = {
+		  focus = YIN_Doctor_Isha_Malrek
+		}
+		available = {
+			always = no
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = YIN_Doctor_Isha_Malrek
+		icon = GFX_YIN_Doctor_Isha_Malrek
+		cost = 7.00
+		relative_position_id = YIN_reformists_victory
+		
+		prerequisite = {
+		  focus = YIN_reformists_victory
+		}
+		
+		mutually_exclusive = {
+		  focus = YIN_Consul_Harniss
+		}
+		available = {
+			always = no
+		}
+		
+		x = 3
+		y = 1
+		completion_reward = {
+			
+		}
+	}
+
+	# === ECONOMIC BRANCH ===
+	focus = {
+		id = YIN_economic_development_plan
+		icon = GFX_YIN_economic_development_plan
+		cost = 7.00
+		relative_position_id = YIN_Consul_Harniss
+		
+		prerequisite = {
+		  focus = YIN_Doctor_Isha_Malrek
+		  focus = YIN_Consul_Harniss
+		  focus = YIN_Senator_Vaireh
+		  focus = YIN_Countess_Raivesh
+		}
+		
+		x = -1
+		y = 1
+		completion_reward = {
+			add_stability = 0.02
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = industry } # flexible boost
+			add_ideas = YIN_econ_plan_idea # -2% consumer goods; +5% civ/mil build speed
+		}
+	}
+	focus = {
+		id = YIN_mining_modernisation
+		icon = GFX_YIN_mining_modernisation
+		cost = 7.00
+		relative_position_id = YIN_economic_development_plan
+		
+		prerequisite = {
+		  focus = YIN_economic_development_plan
+		}
+		
+		x = -2
+		y = 1
+		completion_reward = {
+			add_political_power = 35
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = excavation } # pushes Excavation techs
+			add_ideas = YIN_mining_modernisation_idea # +10% local_resources_factor; +10% refinery/steel build speed
+		}
+	}
+	focus = {
+		id = YIN_infrastructure_expansion
+		icon = GFX_YIN_infrastructure_expansion
+		cost = 7.00
+		relative_position_id = YIN_mining_modernisation
+		
+		prerequisite = {
+		  focus = YIN_mining_modernisation
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = YIN_infrastructure_push_idea # +20% infrastructure build speed; -5% supply_consumption
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = construction_tech } # Construction techs
+		}
+	}
+	focus = {
+		id = YIN_desert_agriculture_initiative
+		icon = GFX_YIN_desert_agriculture_initiative
+		cost = 7.00
+		relative_position_id = YIN_economic_development_plan
+		
+		prerequisite = {
+		  focus = YIN_economic_development_plan
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = YIN_oasis_agriculture_idea # +2% recruitable_population_factor; +5% civ build speed in cores
+		}
+	}
+	focus = {
+		id = YIN_desert_jewel_of_the_republic
+		icon = GFX_YIN_desert_jewel_of_the_republic
+		cost = 7.00
+		relative_position_id = YIN_desert_agriculture_initiative
+		
+		prerequisite = {
+		  focus = YIN_desert_agriculture_initiative
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.03
+			add_ideas = YIN_desert_jewel_idea # capstone: -2% consumer goods; +5% industry output; +5% research_speed_factor
+		}
+	}
+	focus = {
+		id = YIN_encourage_republic_investment
+		icon = GFX_YIN_encourage_republic_investment
+		cost = 7.00
+		relative_position_id = YIN_economic_development_plan
+		
+		prerequisite = {
+		  focus = YIN_economic_development_plan
+		}
+		
+		x = 2
+		y = 1
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_ideas = YIN_core_investors_idea # +5% production efficiency cap; +5% trade deal opinion factor
+		}
+	}
+	focus = {
+		id = YIN_regional_trade_hubs
+		icon = GFX_YIN_regional_trade_hubs
+		cost = 7.00
+		relative_position_id = YIN_encourage_republic_investment
+		
+		prerequisite = {
+		  focus = YIN_encourage_republic_investment
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 25
+			add_ideas = YIN_trade_hubs_idea # +10% convoy_prod; +10% dockyard output; +10% infrastructure build speed
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = synth_resources } # or electronics if you prefer
+		}
+	}
+
+	# === CULTURAL BRANCH ===
+	focus = {
+		id = YIN_honor_yinchorri_traditions
+		icon = GFX_YIN_honor_yinchorri_traditions
+		cost = 7.00
+		relative_position_id = YIN_Countess_Raivesh
+		
+		prerequisite = {
+		  focus = YIN_Doctor_Isha_Malrek
+		  focus = YIN_Consul_Harniss
+		  focus = YIN_Senator_Vaireh
+		  focus = YIN_Countess_Raivesh
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = YIN_traditions_idea # -10% heat_attrition; +5% division_org_on_core; +5% compliance_growth_on_our_occupied_states
+		}
+	}
+	focus = {
+		id = YIN_rebuild_tribal_councils
+		icon = GFX_YIN_rebuild_tribal_councils
+		cost = 7.00
+		relative_position_id = YIN_honor_yinchorri_traditions
+		
+		prerequisite = {
+		  focus = YIN_honor_yinchorri_traditions
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = YIN_council_network_idea # +0.10 daily_political_power; +5% stability_factor; -5% resistance_target_on_our_occupied_states
+		}
+	}
+	focus = {
+		id = YIN_cultural_exchange_programs
+		icon = GFX_YIN_cultural_exchange_programs
+		cost = 7.00
+		relative_position_id = YIN_rebuild_tribal_councils
+		
+		prerequisite = {
+		  focus = YIN_rebuild_tribal_councils
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.02
+			add_opinion_modifier = { target = REP modifier = offered_support }
+		}
+	}
+
+	# === EDUCATION/HEALTH BRANCH ===
+	focus = {
+		id = YIN_republic_education_programs
+		icon = GFX_YIN_republic_education_programs
+		cost = 7.00
+		relative_position_id = YIN_Doctor_Isha_Malrek
+		
+		prerequisite = {
+		  focus = YIN_Doctor_Isha_Malrek
+		  focus = YIN_Consul_Harniss
+		  focus = YIN_Senator_Vaireh
+		  focus = YIN_Countess_Raivesh
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = YIN_education_push_idea # +2% research_speed; +5% electronics/industry_research_speed_factor
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = electronics }
+		}
+	}
+	focus = {
+		id = YIN_desert_health_initiative
+		icon = GFX_YIN_desert_health_initiative
+		cost = 7.00
+		relative_position_id = YIN_republic_education_programs
+		
+		prerequisite = {
+		  focus = YIN_republic_education_programs
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = YIN_health_initiative_idea # +2% recruitable_population_factor; -5% attrition; +5% stability_factor
+		}
+	}
+	focus = {
+		id = YIN_expand_university_of_yinchorr
+		icon = GFX_YIN_expand_university_of_yinchorr
+		cost = 7.00
+		relative_position_id = YIN_desert_health_initiative
+		
+		prerequisite = {
+		  focus = YIN_desert_health_initiative
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	# === FINAL REPUBLIC PATH ===
+
+	focus = {
+		id = YIN_integrate_the_republic
+		icon = GFX_YIN_integrate_the_republic
+		cost = 7.00
+		relative_position_id = YIN_cultural_exchange_programs
+		
+		prerequisite = {
+		  focus = YIN_cultural_exchange_programs
+		 }
+		prerequisite = {
+		  focus = YIN_infrastructure_expansion
+		 }
+		prerequisite = {
+		  focus = YIN_desert_jewel_of_the_republic
+		 }
+		prerequisite = {
+		  focus = YIN_regional_trade_hubs
+		 }
+		prerequisite = {
+		  focus = YIN_expand_university_of_yinchorr
+		}
+		available = {
+			OR = {
+				has_completed_focus = YIN_Countess_Raivesh
+				has_completed_focus = YIN_Consul_Harniss
+				has_completed_focus = YIN_Doctor_Isha_Malrek
+			}
+		}
+		mutually_exclusive = {
+		  focus = YIN_Remains_Autonomous
+		}
+		mutually_exclusive = {
+		  focus = YIN_Declare_Neutrality
+		}
+		x = 1
+		y = 1
+		completion_reward = {
+			REP = { 
+				change_tag_from = ROOT
+				annex_country = {
+					target = YIN
+					transfer_troops = no
+				}
+			}
+		}
+	}
+	focus = {
+		id = YIN_Remains_Autonomous
+		icon = GFX_YIN_Remains_Autonomous
+		cost = 7.00
+		relative_position_id = YIN_desert_jewel_of_the_republic
+		
+		prerequisite = {
+		  focus = YIN_cultural_exchange_programs
+		}
+		prerequisite = {
+		  focus = YIN_infrastructure_expansion
+		}
+		prerequisite = {
+		  focus = YIN_desert_jewel_of_the_republic
+		}
+		prerequisite = {
+		  focus = YIN_regional_trade_hubs
+		}
+		prerequisite = {
+		  focus = YIN_expand_university_of_yinchorr
+		}
+		available = {
+			OR = {
+				has_completed_focus = YIN_Countess_Raivesh
+				has_completed_focus = YIN_Doctor_Isha_Malrek
+			}
+		}
+		mutually_exclusive = {
+		  focus = YIN_integrate_the_republic
+		}
+		mutually_exclusive = {
+		  focus = YIN_Declare_Neutrality
+		}
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 75
+			drop_cosmetic_tag = yes
+		}
+	}
+	focus = {
+		id = YIN_Declare_Neutrality
+		icon = GFX_YIN_Declare_Neutrality
+		cost = 7.00
+		relative_position_id = YIN_expand_university_of_yinchorr
+		
+		prerequisite = {
+		  focus = YIN_cultural_exchange_programs
+		}
+		prerequisite = {
+		  focus = YIN_infrastructure_expansion
+		}
+		prerequisite = {
+		  focus = YIN_desert_jewel_of_the_republic
+		}
+		prerequisite = {
+		  focus = YIN_regional_trade_hubs
+		}
+		prerequisite = {
+		  focus = YIN_expand_university_of_yinchorr
+		}
+		available = {
+			OR = {
+				has_completed_focus = YIN_Senator_Vaireh
+				has_completed_focus = YIN_Doctor_Isha_Malrek
+			}
+		}
+		mutually_exclusive = {
+		  focus = YIN_integrate_the_republic
+		}
+		mutually_exclusive = {
+		  focus = YIN_Remains_Autonomous
+		}
+		x = -1
+		y = 1
+		completion_reward = {
+			REP = { end_puppet = YIN }
+			drop_cosmetic_tag = yes
+			add_stability = 0.15
+		}
+	}
+	# ─────────────────────────────────────────────────────────────────────────────
+	# SEPARATIST BRANCH 
+	# ─────────────────────────────────────────────────────────────────────────────
+
+	# --- Uprising preparation ---
+
+	focus = {
+		id = YIN_rally_the_shadowfang
+		icon = GFX_YIN_rally_the_shadowfang
+		cost = 7.00
+		relative_position_id = YIN_side_with_the_separatists
+
+		prerequisite = { focus = YIN_side_with_the_separatists }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	# --- AUTO branch gate: Shadowfang Uprising outcome ---
+
+	focus = {
+		id = YIN_shadowfang_uprising_succeeds
+		icon = GFX_YIN_shadowfang_uprising_succeeds
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_rally_the_shadowfang
+
+		prerequisite = { focus = YIN_rally_the_shadowfang }
+
+		mutually_exclusive = { focus = YIN_shadowfang_uprising_fails }
+		
+		available = {
+			always = no
+		}
+		x = -4
+		y = 1
+		completion_reward = { } # completed by event
+	}
+
+	focus = {
+		id = YIN_shadowfang_uprising_fails
+		icon = GFX_YIN_shadowfang_uprising_fails
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_rally_the_shadowfang
+
+		prerequisite = { focus = YIN_rally_the_shadowfang }
+
+		mutually_exclusive = { focus = YIN_shadowfang_uprising_succeeds }
+
+		available = {
+			always = no
+		}
+		
+		x = 5
+		y = 1
+		completion_reward = { } # completed by event
+	}
+
+	# =========================
+	# PATH A — Uprising Succeeds → Karesh vs Threll
+	# =========================
+
+	# --- After success: choose between Karesh or Threll (AUTO nodes driven by events) ---
+
+	focus = {
+		id = YIN_karesh_eliminates_the_shadowfang
+		icon = GFX_YIN_karesh_eliminates_the_shadowfang
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_shadowfang_uprising_succeeds
+
+		prerequisite = { focus = YIN_shadowfang_uprising_succeeds }
+
+		mutually_exclusive = { focus = YIN_threll_eliminates_karesh }
+
+		available = {
+			always = no
+		}
+		
+		x = -2
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	focus = {
+		id = YIN_threll_eliminates_karesh
+		icon = GFX_YIN_threll_eliminates_karesh
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_shadowfang_uprising_succeeds
+
+		prerequisite = { focus = YIN_shadowfang_uprising_succeeds }
+
+		mutually_exclusive = { focus = YIN_karesh_eliminates_the_shadowfang }
+
+		available = {
+			always = no
+		}
+		
+		x = 2
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	# --- A1: Trade Lord Karesh route ---
+
+	focus = {
+		id = YIN_civic_market_coalition
+		icon = GFX_YIN_civic_market_coalition
+		cost = 7.00
+		relative_position_id = YIN_karesh_eliminates_the_shadowfang
+
+		prerequisite = { focus = YIN_karesh_eliminates_the_shadowfang }
+
+		x = -1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_privatize_the_mines
+		icon = GFX_YIN_privatize_the_mines
+		cost = 7.00
+		relative_position_id = YIN_karesh_eliminates_the_shadowfang
+
+		prerequisite = { focus = YIN_karesh_eliminates_the_shadowfang }
+
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_corporate_security_forces
+		icon = GFX_YIN_corporate_security_forces
+		cost = 7.00
+		relative_position_id = YIN_privatize_the_mines
+
+		prerequisite = { focus = YIN_civic_market_coalition }
+		prerequisite = { focus = YIN_privatize_the_mines }
+
+		x = -1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_trade_lord_karesh
+		icon = GFX_YIN_trade_lord_karesh
+		cost = 7.00
+		relative_position_id = YIN_corporate_security_forces
+
+		prerequisite = { focus = YIN_corporate_security_forces }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	# --- A2: High Fangmaster Threll route ---
+
+	focus = {
+		id = YIN_circle_of_the_shadowfang
+		icon = GFX_YIN_circle_of_the_shadowfang
+		cost = 7.00
+		relative_position_id = YIN_threll_eliminates_karesh
+
+		prerequisite = { focus = YIN_threll_eliminates_karesh }
+
+		x = -1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_clan_warriors_mustered
+		icon = GFX_YIN_clan_warriors_mustered
+		cost = 7.00
+		relative_position_id = YIN_threll_eliminates_karesh
+
+		prerequisite = { focus = YIN_threll_eliminates_karesh }
+
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_bind_oaths_to_the_circle
+		icon = GFX_YIN_bind_oaths_to_the_circle
+		cost = 7.00
+		relative_position_id = YIN_clan_warriors_mustered
+
+		prerequisite = { focus = YIN_clan_warriors_mustered }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_cis_alignment_pact
+		icon = GFX_YIN_cis_alignment_pact
+		cost = 7.00
+		relative_position_id = YIN_circle_of_the_shadowfang
+
+		prerequisite = { focus = YIN_circle_of_the_shadowfang }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_high_fangmaster_threll
+		icon = GFX_YIN_high_fangmaster_threll
+		cost = 7.00
+		relative_position_id = YIN_cis_alignment_pact
+
+		prerequisite = { focus = YIN_bind_oaths_to_the_circle }
+		prerequisite = { focus = YIN_cis_alignment_pact }
+
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+
+	# =========================
+	# PATH B — Uprising Fails → Vux OR Sha’Lar Called
+	# =========================
+
+	# --- After failure: split to Vux independence or Sha’Lar intervention (AUTO) ---
+
+	focus = {
+		id = YIN_vux_secures_independence
+		icon = GFX_YIN_vux_secures_independence
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_shadowfang_uprising_fails
+
+		prerequisite = { focus = YIN_shadowfang_uprising_fails }
+
+		mutually_exclusive = { focus = YIN_master_shalar_called }
+
+		available = {
+			always = no
+		}
+		
+		x = -3
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	focus = {
+		id = YIN_master_shalar_called
+		icon = GFX_YIN_master_shalar_called
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_shadowfang_uprising_fails
+
+		prerequisite = { focus = YIN_shadowfang_uprising_fails }
+
+		mutually_exclusive = { focus = YIN_vux_secures_independence }
+		
+		available = {
+			always = no
+		}
+
+		x = 3
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	# --- B1: Elder Speaker Vux route (clickables) ---
+
+	focus = {
+		id = YIN_convene_great_clans
+		icon = GFX_YIN_convene_great_clans
+		cost = 7.00
+		relative_position_id = YIN_vux_secures_independence
+
+		prerequisite = { focus = YIN_vux_secures_independence }
+
+		x = -1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_clan_rights_charter
+		icon = GFX_YIN_clan_rights_charter
+		cost = 7.00
+		relative_position_id = YIN_convene_great_clans
+
+		prerequisite = { focus = YIN_neutral_paths_between_giants }
+		prerequisite = { focus = YIN_convene_great_clans }
+
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_neutral_paths_between_giants
+		icon = GFX_YIN_neutral_paths_between_giants
+		cost = 7.00
+		relative_position_id = YIN_vux_secures_independence
+
+		prerequisite = { focus = YIN_vux_secures_independence }
+
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_elder_speaker_vux
+		icon = GFX_YIN_elder_speaker_vux
+		cost = 7.00
+		relative_position_id = YIN_clan_rights_charter
+
+		prerequisite = { focus = YIN_clan_rights_charter }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	# --- B2: Master Sha’Lar intervention chain (AUTO forks first) ---
+
+	focus = {
+		id = YIN_shalar_pacifies_the_planet
+		icon = GFX_YIN_shalar_pacifies_the_planet
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_master_shalar_called
+
+		prerequisite = { focus = YIN_master_shalar_called }
+
+		mutually_exclusive = { focus = YIN_shalar_assassinated }
+		
+		available = {
+			always = no
+		}
+		
+		x = -2
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	focus = {
+		id = YIN_shalar_assassinated
+		icon = GFX_YIN_shalar_assassinated
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_master_shalar_called
+
+		prerequisite = { focus = YIN_master_shalar_called }
+
+		mutually_exclusive = { focus = YIN_shalar_pacifies_the_planet }
+		
+		available = {
+			always = no
+		}
+		
+		x = 2
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	# --- B2a: If Sha’Lar succeeds (clickables leading to his stewardship) ---
+
+	focus = {
+		id = YIN_lightfang_reforms
+		icon = GFX_YIN_lightfang_reforms
+		cost = 7.00
+		relative_position_id = YIN_shalar_pacifies_the_planet
+
+		prerequisite = { focus = YIN_shalar_pacifies_the_planet }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_paths_of_moderation
+		icon = GFX_YIN_paths_of_moderation
+		cost = 7.00
+		relative_position_id = YIN_shalar_pacifies_the_planet
+
+		prerequisite = { focus = YIN_shalar_pacifies_the_planet }
+
+		x = -2
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_master_shalar_lightfang_sect
+		icon = GFX_YIN_master_shalar_lightfang_sect
+		cost = 7.00
+		relative_position_id = YIN_paths_of_moderation
+
+		prerequisite = { focus = YIN_lightfang_reforms }
+		prerequisite = { focus = YIN_paths_of_moderation }
+
+		x = 1
+		y = 1
+		completion_reward = { }
+	}
+
+	# --- B2b: If Sha’Lar is assassinated → Workers’ path (AUTO nodes then clickables) ---
+
+	focus = {
+		id = YIN_workers_uprising_hijacked_by_vekurr
+		icon = GFX_YIN_workers_uprising_hijacked_by_vekurr
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_shalar_assassinated
+
+		prerequisite = { focus = YIN_shalar_assassinated }
+
+		mutually_exclusive = { focus = YIN_archon_vekurr_dies_in_riots }
+		
+		available = {
+			always = no
+		}
+		
+		x = 0
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	focus = {
+		id = YIN_archon_vekurr_dies_in_riots
+		icon = GFX_YIN_archon_vekurr_dies_in_riots
+		cost = 0.00 # AUTO
+		relative_position_id = YIN_shalar_assassinated
+
+		prerequisite = { focus = YIN_shalar_assassinated }
+		
+		mutually_exclusive = { focus = YIN_workers_uprising_hijacked_by_vekurr }
+		
+		available = {
+			always = no
+		}
+
+		x = 2
+		y = 1
+		completion_reward = { } # event completes
+	}
+
+	focus = {
+		id = YIN_workers_guild_councils
+		icon = GFX_YIN_workers_guild_councils
+		cost = 7.00
+		relative_position_id = YIN_archon_vekurr_dies_in_riots
+
+		prerequisite = { focus = YIN_archon_vekurr_dies_in_riots }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_industrial_democracy
+		icon = GFX_YIN_industrial_democracy
+		cost = 7.00
+		relative_position_id = YIN_archon_vekurr_dies_in_riots
+
+		prerequisite = { focus = YIN_archon_vekurr_dies_in_riots }
+
+		x = 2
+		y = 1
+		completion_reward = { }
+	}
+
+	focus = {
+		id = YIN_foreman_zurvek
+		icon = GFX_YIN_foreman_zurvek
+		cost = 7.00
+		relative_position_id = YIN_workers_guild_councils
+
+		prerequisite = { focus = YIN_industrial_democracy }
+		prerequisite = { focus = YIN_workers_guild_councils }
+
+		x = 0
+		y = 1
+		completion_reward = { }
+	}
+	
+	focus = {
+		id = YIN_golden_scale_enforcers
+		icon = GFX_YIN_golden_scale_enforcers
+		cost = 5.00
+		relative_position_id = YIN_workers_uprising_hijacked_by_vekurr
+
+		prerequisite = { focus = YIN_workers_uprising_hijacked_by_vekurr }
+
+		x = 0
+		y = 1
+		completion_reward = {
+			# (empty for now)
+		}
+	}
+
+	focus = {
+		id = YIN_coopt_strike_committees
+		icon = GFX_YIN_coopt_strike_committees
+		cost = 5.00
+		relative_position_id = YIN_workers_uprising_hijacked_by_vekurr
+
+		prerequisite = { focus = YIN_workers_uprising_hijacked_by_vekurr }
+
+		x = -2
+		y = 1
+		completion_reward = {
+			# (empty for now)
+		}
+	}
+
+	focus = {
+		id = YIN_proclaim_the_archonate
+		icon = GFX_YIN_proclaim_the_archonate
+		cost = 5.00
+		relative_position_id = YIN_golden_scale_enforcers
+
+		prerequisite = { focus = YIN_coopt_strike_committees }
+		prerequisite = { focus = YIN_golden_scale_enforcers }
+
+		x = 0
+		y = 1
+		completion_reward = {
+			# (empty for now)
+		}
+	}
+
+}

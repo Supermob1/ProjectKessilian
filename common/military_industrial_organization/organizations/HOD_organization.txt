@@ -1,0 +1,331 @@
+###############################################
+# Star Wars MIOs — corrected equipment_type groups
+# Allowed for all; available only if NOT has_country_flag = <TAG>_banned
+# REP-leaning MIOs grant REP 1 offmap arms factory while assigned (remove on end)
+# CIS-leaning MIOs grant CIS 1 offmap arms factory while assigned (remove on end)
+# Corporate influence goes to USING country (FROM)
+###############################################
+
+###############################################
+# REPUBLIC-LEANING ORGANIZATIONS
+###############################################
+
+MIO_KDY = {
+	name = MIO_KDY
+	icon = GFX_MIO_KDY
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = KDY_banned } } }
+
+	# Capital ships (carriers included by the capital_ship group)
+	equipment_type = { capital_ship }
+	research_categories = { naval }
+	research_bonus = 0.15
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = {
+		# if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } }
+		# FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } }
+	# }
+	#on_industrial_manufacturer_unassigned = {
+		# if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } }
+	# }
+	on_design_team_assigned_to_tech = {
+		if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } }
+		FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } }
+	}
+	on_tech_research_completed = {
+		if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } }
+	}
+	on_tech_research_cancelled = {
+		if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } }
+	}
+}
+
+MIO_RSD = {
+	name = MIO_RSD
+	icon = GFX_MIO_RSD
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = RSD_banned } } }
+
+	# Cruisers can fall under capital or screen depending on type; cover both
+	equipment_type = { capital_ship screen_ship }
+	research_categories = { naval }
+	research_bonus = 0.15
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_CEC = {
+	name = MIO_CEC
+	icon = GFX_MIO_CEC
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = CEC_banned } } }
+
+	# Light ships/logistics screens
+	equipment_type = { screen_ship }
+	research_categories = { naval }
+	research_bonus = 0.1
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_INCO = {
+	name = MIO_INCO
+	icon = GFX_MIO_INCO
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = INCO_banned } } }
+
+	# Small & medium plane families (fighters/multirole)
+	equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane }
+	research_categories = { light_air }
+	research_bonus = 0.15
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_SFS = {
+	name = MIO_SFS
+	icon = GFX_MIO_SFS
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = SFS_banned } } }
+
+	# Starfighters — small plane family
+	equipment_type = { mio_cat_eq_all_small_plane }
+	research_categories = { light_air }
+	research_bonus = 0.12
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_BTI = {
+	name = MIO_BTI
+	icon = GFX_MIO_BTI
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = BTI_banned } } }
+
+	# Small arms / infantry
+	equipment_type = { infantry_equipment support_equipment }
+	research_categories = { infantry_weapons }
+	research_bonus = 0.12
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_MSMI = {
+	name = MIO_MSMI
+	icon = GFX_MIO_MSMI
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = MSMI_banned } } }
+
+	# Tube arty / AA / AT
+	equipment_type = { artillery_equipment anti_air_equipment anti_tank_equipment }
+	research_categories = { artillery }
+	research_bonus = 0.12
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_SORO = {
+	name = MIO_SORO
+	icon = GFX_MIO_SORO
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = SORO_banned } } }
+
+	# Electronics / comms / support
+	equipment_type = { support_equipment }
+	research_categories = { electronics }
+	research_bonus = 0.1
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = REP_corporate_influence value = 1 tooltip = REP_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = REP } REP = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+###############################################
+# SEPARATIST-LEANING ORGANIZATIONS
+###############################################
+
+MIO_BAW = {
+	name = MIO_BAW
+	icon = GFX_MIO_BAW
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = BAW_banned } } }
+
+	# Armor family (light/medium/heavy via trait limits later)
+	equipment_type = { armor }
+	research_categories = { armor }
+	research_bonus = 0.15
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_TECH = {
+	name = MIO_TECH
+	icon = GFX_MIO_TECH
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = TECH_banned } } }
+
+	# Industry/electronics touching support & small arms
+	equipment_type = { support_equipment infantry_equipment }
+	research_categories = { electronics industry }
+	research_bonus = 0.12
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_ARKY = {
+	name = MIO_ARKY
+	icon = GFX_MIO_ARKY
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = ARKY_banned } } }
+
+	# Rockets & rocket arty
+	equipment_type = { rocket_artillery_equipment artillery_equipment }
+	research_categories = { rocketry artillery }
+	research_bonus = 0.12
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_HKD = {
+	name = MIO_HKD
+	icon = GFX_MIO_HKD
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = HKD_banned } } }
+
+	# Cruiser yards span both classes
+	equipment_type = { capital_ship screen_ship }
+	research_categories = { naval }
+	research_bonus = 0.12
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_HCE = {
+	name = MIO_HCE
+	icon = GFX_MIO_HCE
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = HCE_banned } } }
+
+	# Droid starfighters & bombers → small+medium families
+	equipment_type = { mio_cat_eq_all_small_plane mio_cat_eq_all_medium_plane }
+	research_categories = { light_air }
+	research_bonus = 0.12
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_CGO = {
+	name = MIO_CGO
+	icon = GFX_MIO_CGO
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = CGO_banned } } }
+
+	# Commerce Guild rails & guns
+	equipment_type = { train_equipment railway_gun_equipment artillery_equipment support_equipment }
+	research_categories = { artillery industry }
+	research_bonus = 0.1
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_UBRK = {
+	name = MIO_UBRK
+	icon = GFX_MIO_UBRK
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = UBRK_banned } } }
+
+	# Transports & light armor cars
+	equipment_type = { motorized_equipment armored_car_equipment }
+	research_categories = { motorization }
+	research_bonus = 0.1
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}
+
+MIO_CZER = {
+	name = MIO_CZER
+	icon = GFX_MIO_CZER
+	allowed = { always = yes }
+	available = { FROM = { NOT = { has_country_flag = CZER_banned } } }
+
+	# Czerka → consumer arms, security gear
+	equipment_type = { infantry_equipment support_equipment }
+	research_categories = { infantry_weapons electronics }
+	research_bonus = 0.1
+	task_capacity = 3
+
+	#on_industrial_manufacturer_assigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	#on_industrial_manufacturer_unassigned = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_design_team_assigned_to_tech = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = 1 } } } FROM = { add_to_variable = { name = CIS_corporate_influence value = 1 tooltip = CIS_corporate_influence_tt } } }
+	on_tech_research_completed = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+	on_tech_research_cancelled = { if = { limit = { country_exists = CIS } CIS = { add_offsite_building = { type = arms_factory level = -1 } } } }
+}

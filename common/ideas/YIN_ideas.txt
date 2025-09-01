@@ -35,5 +35,192 @@ ideas = {
 				resistance_decay_on_our_occupied_states = -0.5
 			}
 		}
+		YIN_Civilian_Government = {
+			##picture = 
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				local_resources_factor = 0.15
+				required_garrison_factor = 0.1
+				resistance_decay_on_our_occupied_states = -0.5
+			}
+		}
+
+		YIN_econ_plan_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.02
+				industrial_capacity_factory        = 0.05
+				industrial_capacity_dockyard       = 0.05
+			}
+		}
+
+		YIN_mining_modernisation_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor                 = 0.10
+				production_speed_synthetic_refinery_factor = 0.10
+			}
+		}
+
+		YIN_infrastructure_push_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.20
+				supply_consumption_factor              = -0.05
+			}
+		}
+
+		YIN_oasis_agriculture_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				recruitable_population_factor                 = 0.02
+				production_speed_industrial_complex_factor    = 0.05
+			}
+		}
+
+		YIN_desert_jewel_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.02
+				research_speed_factor = 0.05
+				industrial_capacity_factory        = 0.05
+			}
+		}
+
+		YIN_core_investors_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				trade_opinion_factor             = 0.10
+			}
+		}
+
+		YIN_trade_hubs_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard                          = 0.10
+				production_speed_infrastructure_factor   = 0.10
+			}
+		}
+
+		YIN_traditions_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				# If your mod has this custom climate modifier, keep it.
+				# Otherwise remove or replace with general attrition.
+				heat_attrition                                         = -0.10
+				army_org_factor                                        = 0.05
+				compliance_growth_on_our_occupied_states               = 0.05
+			}
+		}
+
+		YIN_council_network_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain                          = 0.10
+				stability_factor                              = 0.05
+				resistance_target_on_our_occupied_states      = -0.05
+			}
+		}
+
+		YIN_exchange_programs_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				drift_defence_factor  = 0.10
+			}
+		}
+
+		YIN_education_push_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor             = 0.02
+			}
+		}
+
+		YIN_health_initiative_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				recruitable_population_factor = 0.02
+				attrition                     = -0.05
+				stability_factor              = 0.05
+			}
+		}
+
+		YIN_university_expansion_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.02
+				land_doctrine_cost_factor      = -0.05
+			}
+		}
+
+		YIN_integrated_member_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor                 = -0.02
+				research_sharing_per_country_bonus    = 0.10
+				industrial_capacity_factory                        = 0.10
+			}
+		}
+
+		YIN_autonomy_statute_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor    = 0.10
+				stability_factor        = 0.05
+				industrial_capacity_factory          = 0.05
+			}
+		}
+
+		YIN_neutrality_doctrine_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time   = -0.10
+				decryption_power        = 0.10
+				supply_consumption_factor = -0.05
+			}
+		}
 	}
 }
