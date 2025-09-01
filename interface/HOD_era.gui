@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "era_main_window"
-		position = { x = -210 y = 1 }
+		position = { x = -360 y = 1 }
 		size = { width = 100% height = 300 }
 		
 		iconType ={
@@ -26,28 +26,6 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 			format = center	
 			vertical_alignment = center
-			alwaystransparent = yes
-		}
-		iconType ={
-			name ="credits_window"
-			spriteType = "Credits_progress_bar"
-			position = { x=-620 y=5 }
-			Orientation = "UPPER_RIGHT"
-			scale = 1
-			pdx_tooltip = "CREDITS_TOOLTIP"
-			pdx_tooltip_delayed = "CREDITS_TOOLTIP_DESC"
-		}
-		instantTextboxType = {
-			name = "credits_name"
-			position = { x = -570 y = 10 }
-			font = "sfdistant12full"
-			fixedsize = yes
-			text = "CREDITS_NAME"
-			maxWidth = 150
-			maxHeight = 18
-			Orientation = "UPPER_RIGHT"
-			format = center	
-			vertical_alignment = center	
 			alwaystransparent = yes
 		}
 	}

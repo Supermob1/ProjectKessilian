@@ -1,5 +1,8 @@
 add_namespace = YIN_intro
-
+add_namespace = YIN_econ
+add_namespace = YIN_soc
+add_namespace = YIN_corp
+add_namespace = YIN_news
 country_event = { # Yinchorr at the Crossroads
 	id = YIN_intro.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.1"}
@@ -411,6 +414,7 @@ country_event = { # Choosing the Conservative Standard-Bearer
 			elections_allowed = no
 		}
 		complete_national_focus = YIN_Senator_Vaireh
+		hidden_effect = { country_event = { id = YIN_vai.1 days = 10 random_hours = 6 } }
 		ai_chance = { 
 			factor = 25	
 		}
@@ -422,6 +426,7 @@ country_event = { # Choosing the Conservative Standard-Bearer
 			elections_allowed = no
 		}
 		complete_national_focus = YIN_Countess_Raivesh
+		hidden_effect = { country_event = { id = YIN_rai.1 days = 10 random_hours = 6 } }
 		ai_chance = { 
 			factor = 25	
 		}
@@ -469,6 +474,8 @@ country_event = { # Choosing the Reformist Standard-Bearer
 			elections_allowed = no
 		}
 		complete_national_focus = YIN_Doctor_Isha_Malrek
+		hidden_effect = { country_event = { id = YIN_mal.1 days = 10 random_hours = 6 } }
+		
 		ai_chance = { 
 			factor = 25	
 		}
@@ -480,8 +487,571 @@ country_event = { # Choosing the Reformist Standard-Bearer
 			elections_allowed = no
 		}
 		complete_national_focus = YIN_Consul_Harniss
+		hidden_effect = { country_event = { id = YIN_har.1 days = 10 random_hours = 6 } }
 		ai_chance = { 
 			factor = 25	
 		}
+	}
+}
+
+# --------------------------------------------------
+
+# FOCUS-DRIVEN LIGHT EVENTS (hook with select_effect)
+
+# --------------------------------------------------
+
+country_event = { # The Plan’s Spine
+	id = YIN_econ.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_econ.1" }
+	title = YIN_econ.1.t
+	desc = YIN_econ.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = YIN_econ.1.a # Mines First
+		add_political_power = 50
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 34 }
+	}
+	option = { 
+		name = YIN_econ.1.b # Oases & Fields
+		add_stability = 0.1
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 33 }
+	}
+	option = { 
+		name = YIN_econ.1.c # Caravans & Hubs
+		add_stability = 0.05
+		add_political_power = 25
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 33 }
+	}
+}
+
+country_event = { # Pick the Pits
+	id = YIN_econ.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_econ.2" }
+	title = YIN_econ.2.t
+	desc = YIN_econ.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = YIN_econ.2.a # Focus Spireborn mines
+		add_war_support = 0.05
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_econ.2.b # Focus Vale pits
+		add_stability = 0.05
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = synthetic_refinery
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Rails & Roadbeds
+	id = YIN_econ.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_econ.3" }
+	title = YIN_econ.3.t
+	desc = YIN_econ.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+
+	option = { 
+		name = YIN_econ.3.a # Northern route
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_econ.3.b # Vale route
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Irrigation Lines
+	id = YIN_soc.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_soc.1" }
+	title = YIN_soc.1.t
+	desc = YIN_soc.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+
+	option = { 
+		name = YIN_soc.1.a # South oases
+		156 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_soc.1.b # North oases
+		160 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Republic Capital at the Gate
+	id = YIN_corp.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_corp.1" }
+	title = YIN_corp.1.t
+	desc = YIN_corp.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+
+	option = { 
+		name = YIN_corp.1.a # Corellian Engineering
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_stability = -0.01
+		ai_chance = { factor = 34 }
+	}
+	option = { 
+		name = YIN_corp.1.b # SoroSuub
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+		}
+		add_stability = -0.2
+		ai_chance = { factor = 33 }
+	}
+	option = { 
+		name = YIN_corp.1.c # Rendili/KDY
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		add_stability = -0.4
+		ai_chance = { factor = 33 }
+	}
+}
+
+country_event = { # Students to the Core (news-y)
+	id = YIN_news.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_news.1" }
+	title = YIN_news.1.t
+	desc = YIN_news.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { name = OK
+		add_political_power = 100
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { # Curriculum Track
+	id = YIN_soc.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_soc.2" }
+	title = YIN_soc.2.t
+	desc = YIN_soc.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_soc.2.a
+		ai_chance = { factor = 34 }
+	}
+}
+
+country_event = { # Endow the Chairs
+	id = YIN_soc.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_soc.3" }
+	title = YIN_soc.3.t
+	desc = YIN_soc.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_soc.3.a # Doctrine Chair
+		ai_chance = { factor = 34 }
+	}
+}
+
+
+# --------------------------------------------------
+
+# LEADER MINI-CHAINS
+
+# --------------------------------------------------
+
+# -- Senator V’aireh
+
+country_event = { # Unity Cabinet Charter
+	id = YIN_vai.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vai.1" }
+	title = YIN_vai.1.t
+	desc = YIN_vai.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { 
+		name = YIN_vai.1.a # Big Tent
+		hidden_effect = { country_event = { id = YIN_vai.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = { 
+		name = YIN_vai.1.b # Technocrat Core
+		hidden_effect = { country_event = { id = YIN_vai.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # City-of-Spires Accord
+	id = YIN_vai.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vai.2" }
+	title = YIN_vai.2.t
+	desc = YIN_vai.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_vai.2.a # Guild quotas
+		hidden_effect = { country_event = { id = YIN_vai.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_vai.2.b # Clan rotations
+		hidden_effect = { country_event = { id = YIN_vai.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Market Reassurance Tour
+	id = YIN_vai.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vai.3" }
+	title = YIN_vai.3.t
+	desc = YIN_vai.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_vai.3.a # Local bonds
+		hidden_effect = { country_event = { id = YIN_vai.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_vai.3.b # Lower tariff class
+		hidden_effect = { country_event = { id = YIN_vai.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Charter of Balance Signed (finale)
+	id = YIN_vai.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vai.4" }
+	title = YIN_vai.4.t
+	desc = YIN_vai.4.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_vai.4.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+# -- Countess Rai’Vesh
+
+country_event = { # Guard Edicts
+	id = YIN_rai.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_rai.1" }
+	title = YIN_rai.1.t
+	desc = YIN_rai.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_rai.1.a # Checkpoints & curfews
+		hidden_effect = { country_event = { id = YIN_rai.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = { 
+		name = YIN_rai.1.b # Limited patrols + ombuds
+		hidden_effect = { country_event = { id = YIN_rai.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # Concession Talks
+	id = YIN_rai.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_rai.2" }
+	title = YIN_rai.2.t
+	desc = YIN_rai.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_rai.2.a # Hard-line charters
+		hidden_effect = { country_event = { id = YIN_rai.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = { 
+		name = YIN_rai.2.b # Performance contracts
+		hidden_effect = { country_event = { id = YIN_rai.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # Strike Contingency
+	id = YIN_rai.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_rai.3" }
+	title = YIN_rai.3.t
+	desc = YIN_rai.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_rai.3.a # Break illegal pickets
+		hidden_effect = { country_event = { id = YIN_rai.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = { 
+		name = YIN_rai.3.b # Mediation courts
+		hidden_effect = { country_event = { id = YIN_rai.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # Peace Through Charter (finale)
+	id = YIN_rai.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_rai.4" }
+	title = YIN_rai.4.t
+	desc = YIN_rai.4.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_rai.4.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+# -- Consul Har’Niss
+
+country_event = { # League Caucus Whip
+	id = YIN_har.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_har.1" }
+	title = YIN_har.1.t
+	desc = YIN_har.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_har.1.a # Trade favors for votes
+		hidden_effect = { country_event = { id = YIN_har.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = { 
+		name = YIN_har.1.b # Publish the slate
+		hidden_effect = { country_event = { id = YIN_har.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # Clan Outreach
+	id = YIN_har.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_har.2" }
+	title = YIN_har.2.t
+	desc = YIN_har.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_har.2.a # Clan guarantees
+		hidden_effect = { country_event = { id = YIN_har.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_har.2.b # City guarantees
+		hidden_effect = { country_event = { id = YIN_har.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Emergency Courts Act
+	id = YIN_har.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_har.3" }
+	title = YIN_har.3.t
+	desc = YIN_har.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_har.3.a # Fast-track civil cases
+		hidden_effect = { country_event = { id = YIN_har.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_har.3.b # Property arbitration boards
+		hidden_effect = { country_event = { id = YIN_har.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # League and Clans Aligned (finale)
+	id = YIN_har.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_har.4" }
+	title = YIN_har.4.t
+	desc = YIN_har.4.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_har.4.a
+		add_ideas = YIN_city_league_compact_idea # define in ideas
+		ai_chance = { factor = 100 }
+	}
+}
+
+# -- Dr. Isha Malrek
+
+country_event = { # Concession Audit
+	id = YIN_mal.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_mal.1" }
+	title = YIN_mal.1.t
+	desc = YIN_mal.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { 
+		name = YIN_mal.1.a # Deep audit
+		hidden_effect = { country_event = { id = YIN_mal.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_mal.1.b # Gradual programme
+		hidden_effect = { country_event = { id = YIN_mal.2 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Restore the Courts
+	id = YIN_mal.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_mal.2" }
+	title = YIN_mal.2.t
+	desc = YIN_mal.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_mal.2.a # Civil bench first
+		hidden_effect = { country_event = { id = YIN_mal.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_mal.2.b # Commercial bench first
+		hidden_effect = { country_event = { id = YIN_mal.3 days = 14 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # University Commission
+	id = YIN_mal.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_mal.3" }
+	title = YIN_mal.3.t
+	desc = YIN_mal.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_mal.3.a # Applied sciences grants
+		hidden_effect = { country_event = { id = YIN_mal.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = { 
+		name = YIN_mal.3.b # Governance faculty
+		hidden_effect = { country_event = { id = YIN_mal.4 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Technocratic Mandate (finale)
+	id = YIN_mal.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_mal.4" }
+	title = YIN_mal.4.t
+	desc = YIN_mal.4.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = YIN_mal.4.a
+		ai_chance = { factor = 100 }
 	}
 }

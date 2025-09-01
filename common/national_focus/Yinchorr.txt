@@ -606,6 +606,7 @@ focus_tree = {
 			add_stability = 0.02
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = industry } # flexible boost
 			add_ideas = YIN_econ_plan_idea # -2% consumer goods; +5% civ/mil build speed
+			country_event = YIN_econ.1
 		}
 	}
 	focus = {
@@ -624,6 +625,7 @@ focus_tree = {
 			add_political_power = 35
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = excavation } # pushes Excavation techs
 			add_ideas = YIN_mining_modernisation_idea # +10% local_resources_factor; +10% refinery/steel build speed
+			country_event = YIN_econ.2
 		}
 	}
 	focus = {
@@ -641,6 +643,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = YIN_infrastructure_push_idea # +20% infrastructure build speed; -5% supply_consumption
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = construction_tech } # Construction techs
+			country_event = YIN_econ.3
 		}
 	}
 	focus = {
@@ -658,6 +661,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.03
 			add_ideas = YIN_oasis_agriculture_idea # +2% recruitable_population_factor; +5% civ build speed in cores
+			country_event = YIN_soc.1
 		}
 	}
 	focus = {
@@ -693,6 +697,7 @@ focus_tree = {
 		completion_reward = {
 			add_offsite_building = { type = arms_factory level = 2 }
 			add_ideas = YIN_core_investors_idea # +5% production efficiency cap; +5% trade deal opinion factor
+			country_event = YIN_corp.1
 		}
 	}
 	focus = {
@@ -733,6 +738,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.03
 			add_ideas = YIN_traditions_idea # -10% heat_attrition; +5% division_org_on_core; +5% compliance_growth_on_our_occupied_states
+			country_event = YIN_econ.2
 		}
 	}
 	focus = {
@@ -767,6 +773,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.02
 			add_opinion_modifier = { target = REP modifier = offered_support }
+			country_event = YIN_news.1
 		}
 	}
 
@@ -789,6 +796,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = YIN_education_push_idea # +2% research_speed; +5% electronics/industry_research_speed_factor
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = electronics }
+			country_event = YIN_soc.2
 		}
 	}
 	focus = {
@@ -822,6 +830,7 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			add_research_slot = 1
+			country_event = YIN_soc.3
 		}
 	}
 
@@ -911,6 +920,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1
 			add_political_power = 75
+			REP = { end_puppet = YIN }
 			drop_cosmetic_tag = yes
 		}
 	}
@@ -952,6 +962,7 @@ focus_tree = {
 		completion_reward = {
 			REP = { end_puppet = YIN }
 			drop_cosmetic_tag = yes
+			leave_faction = yes
 			add_stability = 0.15
 		}
 	}
