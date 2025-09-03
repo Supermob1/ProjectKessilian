@@ -12,7 +12,18 @@ country_event = { # The Raxus Address
 	is_triggered_only = yes
 	
 	fire_only_once = no
-
+	after = {
+		if = {
+			limit = {
+				original_tag = CIS
+			}
+			119 = { transfer_state_to = CIS }
+			76 = { transfer_state_to = CIS }
+			75 = { transfer_state_to = CIS }
+			94 = { transfer_state_to = CIS }
+			46 = { transfer_state_to = CIS }
+		}
+	}
 	option = { # For freedom, for the future!
 		name = confederacy.1.a
 		trigger = {
@@ -130,14 +141,19 @@ country_event = { # price of liberty
 
 	option = { 
 		name = confederacy.5.a
+		TCU = {
+			every_owned_state = {
+				add_core_of = CIS
+				
+			}
+		}
 		CIS = {
 			annex_country = {
 				target = TCU
 				transfer_troops = yes
 			}
 		}
-		
-		TCU = {
+		TDF = {
 			every_owned_state = {
 				add_core_of = CIS
 				
@@ -149,10 +165,28 @@ country_event = { # price of liberty
 				transfer_troops = yes
 			}
 		}
-		TDF = {
+		CMG = {
 			every_owned_state = {
 				add_core_of = CIS
 				
+			}
+		}
+		CIS = {
+			annex_country = {
+				target = CMG
+				transfer_troops = yes
+			}
+		}
+		IBC = {
+			every_owned_state = {
+				add_core_of = CIS
+				
+			}
+		}
+		CIS = {
+			annex_country = {
+				target = IBC
+				transfer_troops = yes
 			}
 		}
 	

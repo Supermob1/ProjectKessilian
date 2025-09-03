@@ -1,0 +1,40 @@
+﻿capital = 80
+
+#oob = "garrison_generic"
+set_research_slots = 2
+
+set_stability = 0.1
+
+set_war_support = 0.02 
+
+set_popularities = {
+		new_order = 2
+		dark_side = 10
+		akaanadocrat = 0
+		unitist = 0
+		corist = 0
+		distributionist =  0
+		corporate_consortium = 83
+		trade_democrat = 5
+		ruusanist = 0
+		inclusivist = 0
+		light_side = 0
+	}
+add_ideas = {
+	no_conscription
+}
+set_politics = {
+	ruling_party = corporate_consortium
+	last_election = "999.1.1"
+	election_frequency = 48
+	elections_allowed = no
+	}
+
+create_country_leader = {
+	name = "Shu Mai"
+	desc = "CMG_Shu_Mai_desc"
+	picture = "gfx/leaders/CMG/Portrait_Shu_Mai.dds"
+	expire = "1965.1.1"
+	ideology = corporate_consortium_subtype
+	traits = { }
+}

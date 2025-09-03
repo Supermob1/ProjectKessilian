@@ -132,7 +132,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		completion_reward = {
-			add_army_experience = 15
+			army_experience = 15
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = land_doctrine }
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
 			add_equipment_to_stockpile = { type = support_equipment amount = 300 }
@@ -153,7 +153,7 @@ focus_tree = {
 		y = 1
 		completion_reward = {
 			add_manpower = 20000
-			add_army_experience = 10
+			army_experience = 10
 			add_tech_bonus = { bonus = 0.5 uses = 1 category = support_tech }  # MP/garrison tools fit here
 			add_equipment_to_stockpile = { type = infantry_equipment amount = 1500 }
 			random_owned_controlled_state = {
@@ -302,11 +302,12 @@ focus_tree = {
 		x = 1
 		y = 1
 		completion_reward = {
-				country_event = {
-					id = YIN_mlaw.7
-					days = 1
-					random_hours = 6
-				}
+			country_event = {
+				id = YIN_mlaw.7
+				days = 1
+				random_hours = 6
+			}	
+			REP = { end_puppet = YIN }
 		}
 	}
 	# =========================
@@ -324,7 +325,7 @@ focus_tree = {
 		mutually_exclusive = { focus = YIN_zatrax_retains_control }
 
 		# Gate visibility so it only shows if that outcome was chosen
-		available = { has_country_flag = YIN_lightfang_takeover }
+		available = { always = no }
 
 		x = -1
 		y = 1
@@ -343,7 +344,7 @@ focus_tree = {
 		prerequisite = { focus = YIN_governor_general_of_yinchorr }
 		mutually_exclusive = { focus = YIN_lightfang_take_control }
 
-		available = { has_country_flag = YIN_governor_loyal }
+		available = { always = no }
 
 		x = 1
 		y = 1
@@ -352,7 +353,7 @@ focus_tree = {
 	}
 
 	# =========================
-	# Lightfang follow-up (3 clickable)
+	# Lightfang follow-up (3)
 	# =========================
 
 	focus = {
@@ -360,43 +361,63 @@ focus_tree = {
 		icon = GFX_YIN_provisional_yinchorr_jedi_council
 		cost = 7.00
 		relative_position_id = YIN_lightfang_take_control
-
 		prerequisite = { focus = YIN_lightfang_take_control }
-
 		x = 0
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			add_stability = 0.02
+			add_political_power = -25
+			add_ideas = YIN_lightfang_council_idea   # new idea below
+			# modest academic push
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = electronics }
+		}
 	}
+
 	focus = {
 		id = YIN_rewrite_protectorate_charter
 		icon = GFX_YIN_rewrite_protectorate_charter
 		cost = 7.00
 		relative_position_id = YIN_provisional_yinchorr_jedi_council
-
 		prerequisite = { focus = YIN_provisional_yinchorr_jedi_council }
-
 		x = 0
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			# Sunset harsh emergency edicts if they exist
+			if = { limit = { has_idea = YIN_martial_law_active } remove_ideas = YIN_martial_law_active }
+			if = { limit = { has_idea = YIN_emergency_measures_idea } remove_ideas = YIN_emergency_measures_idea }
+			if = { limit = { has_idea = YIN_governor_powers_idea } remove_ideas = YIN_governor_powers_idea }
+
+			add_stability = 0.03
+			add_ideas = YIN_rewritten_charter_idea   # new idea below
+
+			# Calm in core hotspots (swap state IDs if needed)
+			154 = { add_resistance = -5 add_compliance = 5 }
+			160 = { add_resistance = -5 add_compliance = 5 }
+		}
 	}
+
 	focus = {
 		id = YIN_lightfang_civic_guard
 		icon = GFX_YIN_lightfang_civic_guard
 		cost = 7.00
 		relative_position_id = YIN_provisional_yinchorr_jedi_council
-
 		prerequisite = { focus = YIN_provisional_yinchorr_jedi_council }
-
 		x = -2
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			add_manpower = 15000
+			army_experience = 10
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = support_equipment  amount = 300  }
+			add_ideas = YIN_civic_guard_idea       # new idea below
+		}
 	}
 
 	# =========================
-	# Governor/Republic follow-up (3 clickable)
+	# Governor/Republic follow-up (3)
 	# =========================
 
 	focus = {
@@ -404,40 +425,60 @@ focus_tree = {
 		icon = GFX_YIN_codify_governor_general_powers
 		cost = 7.00
 		relative_position_id = YIN_zatrax_retains_control
-
 		prerequisite = { focus = YIN_zatrax_retains_control }
-
 		x = 0
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			# Upgrade earlier governor powers to a codified regime
+			if = { limit = { has_idea = YIN_governor_powers_idea } remove_ideas = YIN_governor_powers_idea }
+			add_ideas = YIN_codified_governor_powers_idea   # new idea below
+			add_political_power = 50
+			add_stability = -0.01
+		}
 	}
+
 	focus = {
 		id = YIN_concessionary_mining_cartel
 		icon = GFX_YIN_concessionary_mining_cartel
 		cost = 7.00
 		relative_position_id = YIN_codify_governor_general_powers
-
 		prerequisite = { focus = YIN_codify_governor_general_powers }
-
 		x = 0
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = -25
+			add_stability = -0.01
+			add_ideas = YIN_concession_cartel_idea            # new idea below
+			# Concrete expansion (random core state)
+			random_owned_controlled_state = {
+				limit = { is_core_of = YIN }
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+				add_building_construction = { type = infrastructure     level = 1 instant_build = yes }
+				add_resource = { type = chromium amount = 2 }          # swap resource to taste
+			}
+		}
 	}
+
 	focus = {
 		id = YIN_request_republic_garrison
 		icon = GFX_YIN_request_republic_garrison
 		cost = 7.00
 		relative_position_id = YIN_codify_governor_general_powers
-
 		prerequisite = { focus = YIN_codify_governor_general_powers }
-
 		x = 2
 		y = 1
 
-		completion_reward = { }
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1500 }
+			add_equipment_to_stockpile = { type = support_equipment  amount = 200  }
+			add_ideas = YIN_republic_garrison_aid_idea         # new idea below
+			add_opinion_modifier = { target = REP modifier = offered_support }
+		}
 	}
+
 	# === REPUBLIC — ABOLITION / DEMOCRACY PATH (9 focuses) ===
 	focus = {
 		id = YIN_military_government_abolished
@@ -1014,97 +1055,81 @@ focus_tree = {
 	focus = {
 		id = YIN_rally_the_shadowfang
 		icon = GFX_YIN_rally_the_shadowfang
-		cost = 7.00
+		cost = 14.00
 		relative_position_id = YIN_side_with_the_separatists
-
 		prerequisite = { focus = YIN_side_with_the_separatists }
-
 		x = 0
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 15
+			add_stability = -0.03
+			add_ideas = YIN_shadowfang_cells_idea
+
+			country_event = { id = YIN_sfupr.1 days = 1 random_hours = 6 }
+		}
 	}
 
 	# --- AUTO branch gate: Shadowfang Uprising outcome ---
+	# (Leave rewards to the event that autocompletes these)
 
 	focus = {
 		id = YIN_shadowfang_uprising_succeeds
 		icon = GFX_YIN_shadowfang_uprising_succeeds
-		cost = 0.00 # AUTO
+		cost = 0.00
 		relative_position_id = YIN_rally_the_shadowfang
-
 		prerequisite = { focus = YIN_rally_the_shadowfang }
-
 		mutually_exclusive = { focus = YIN_shadowfang_uprising_fails }
-		
-		available = {
-			always = no
-		}
+		available = { always = no }
 		x = -4
 		y = 1
-		completion_reward = { } # completed by event
+		completion_reward = { }
 	}
 
 	focus = {
 		id = YIN_shadowfang_uprising_fails
 		icon = GFX_YIN_shadowfang_uprising_fails
-		cost = 0.00 # AUTO
+		cost = 0.00
 		relative_position_id = YIN_rally_the_shadowfang
-
 		prerequisite = { focus = YIN_rally_the_shadowfang }
-
 		mutually_exclusive = { focus = YIN_shadowfang_uprising_succeeds }
-
-		available = {
-			always = no
-		}
-		
+		available = { always = no }
 		x = 5
 		y = 1
-		completion_reward = { } # completed by event
+		completion_reward = { }
 	}
 
 	# =========================
 	# PATH A — Uprising Succeeds → Karesh vs Threll
 	# =========================
 
-	# --- After success: choose between Karesh or Threll (AUTO nodes driven by events) ---
+	# --- After success: AUTO choice nodes (by event) ---
 
 	focus = {
 		id = YIN_karesh_eliminates_the_shadowfang
 		icon = GFX_YIN_karesh_eliminates_the_shadowfang
-		cost = 0.00 # AUTO
+		cost = 0.00
 		relative_position_id = YIN_shadowfang_uprising_succeeds
-
 		prerequisite = { focus = YIN_shadowfang_uprising_succeeds }
-
 		mutually_exclusive = { focus = YIN_threll_eliminates_karesh }
-
-		available = {
-			always = no
-		}
-		
+		available = { always = no }
 		x = -2
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { }
 	}
 
 	focus = {
 		id = YIN_threll_eliminates_karesh
 		icon = GFX_YIN_threll_eliminates_karesh
-		cost = 0.00 # AUTO
+		cost = 0.00
 		relative_position_id = YIN_shadowfang_uprising_succeeds
-
 		prerequisite = { focus = YIN_shadowfang_uprising_succeeds }
-
 		mutually_exclusive = { focus = YIN_karesh_eliminates_the_shadowfang }
-
-		available = {
-			always = no
-		}
-		
+		available = { always = no }
 		x = 2
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { }
 	}
 
 	# --- A1: Trade Lord Karesh route ---
@@ -1114,12 +1139,15 @@ focus_tree = {
 		icon = GFX_YIN_civic_market_coalition
 		cost = 7.00
 		relative_position_id = YIN_karesh_eliminates_the_shadowfang
-
 		prerequisite = { focus = YIN_karesh_eliminates_the_shadowfang }
-
 		x = -1
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+			add_ideas = YIN_market_coalition_idea
+		}
 	}
 
 	focus = {
@@ -1127,12 +1155,17 @@ focus_tree = {
 		icon = GFX_YIN_privatize_the_mines
 		cost = 7.00
 		relative_position_id = YIN_karesh_eliminates_the_shadowfang
-
 		prerequisite = { focus = YIN_karesh_eliminates_the_shadowfang }
-
 		x = 1
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_stability = -0.02
+			add_ideas = YIN_privatized_mines_idea
+			random_owned_controlled_state = {
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+		}
 	}
 
 	focus = {
@@ -1140,13 +1173,18 @@ focus_tree = {
 		icon = GFX_YIN_corporate_security_forces
 		cost = 7.00
 		relative_position_id = YIN_privatize_the_mines
-
 		prerequisite = { focus = YIN_civic_market_coalition }
 		prerequisite = { focus = YIN_privatize_the_mines }
-
 		x = -1
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_manpower = 20000
+			army_experience = 10
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2500 }
+			add_equipment_to_stockpile = { type = support_equipment  amount = 300 }
+			add_ideas = YIN_corporate_security_idea
+		}
 	}
 
 	focus = {
@@ -1154,12 +1192,15 @@ focus_tree = {
 		icon = GFX_YIN_trade_lord_karesh
 		cost = 7.00
 		relative_position_id = YIN_corporate_security_forces
-
 		prerequisite = { focus = YIN_corporate_security_forces }
-
 		x = 0
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.02
+			add_ideas = YIN_trade_lord_karesh_idea
+		}
 	}
 
 	# --- A2: High Fangmaster Threll route ---
@@ -1169,12 +1210,15 @@ focus_tree = {
 		icon = GFX_YIN_circle_of_the_shadowfang
 		cost = 7.00
 		relative_position_id = YIN_threll_eliminates_karesh
-
 		prerequisite = { focus = YIN_threll_eliminates_karesh }
-
 		x = -1
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_war_support = 0.03
+			add_stability = -0.01
+			add_ideas = YIN_shadow_circle_idea
+		}
 	}
 
 	focus = {
@@ -1182,12 +1226,15 @@ focus_tree = {
 		icon = GFX_YIN_clan_warriors_mustered
 		cost = 7.00
 		relative_position_id = YIN_threll_eliminates_karesh
-
 		prerequisite = { focus = YIN_threll_eliminates_karesh }
-
 		x = 1
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_manpower = 25000
+			army_experience = 15
+			add_ideas = YIN_clan_muster_idea
+		}
 	}
 
 	focus = {
@@ -1195,12 +1242,15 @@ focus_tree = {
 		icon = GFX_YIN_bind_oaths_to_the_circle
 		cost = 7.00
 		relative_position_id = YIN_clan_warriors_mustered
-
 		prerequisite = { focus = YIN_clan_warriors_mustered }
-
 		x = 0
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_stability = 0.02
+			add_war_support = 0.02
+			add_ideas = YIN_oathbound_idea
+		}
 	}
 
 	focus = {
@@ -1208,12 +1258,14 @@ focus_tree = {
 		icon = GFX_YIN_cis_alignment_pact
 		cost = 7.00
 		relative_position_id = YIN_circle_of_the_shadowfang
-
 		prerequisite = { focus = YIN_circle_of_the_shadowfang }
-
 		x = 0
 		y = 1
-		completion_reward = { }
+
+		completion_reward = {
+			add_opinion_modifier = { target = CIS modifier = offered_support }
+			add_ideas = YIN_cis_alignment_idea
+		}
 	}
 
 	focus = {
@@ -1221,15 +1273,17 @@ focus_tree = {
 		icon = GFX_YIN_high_fangmaster_threll
 		cost = 7.00
 		relative_position_id = YIN_cis_alignment_pact
-
 		prerequisite = { focus = YIN_bind_oaths_to_the_circle }
 		prerequisite = { focus = YIN_cis_alignment_pact }
-
 		x = 1
 		y = 1
-		completion_reward = { }
-	}
 
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.03
+			add_ideas = YIN_high_fangmaster_idea
+		}
+	}
 	# =========================
 	# PATH B — Uprising Fails → Vux OR Sha’Lar Called
 	# =========================
@@ -1243,16 +1297,12 @@ focus_tree = {
 		relative_position_id = YIN_shadowfang_uprising_fails
 
 		prerequisite = { focus = YIN_shadowfang_uprising_fails }
-
 		mutually_exclusive = { focus = YIN_master_shalar_called }
 
-		available = {
-			always = no
-		}
-		
+		available = { always = no }
 		x = -3
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { } # completed by event chain
 	}
 
 	focus = {
@@ -1262,16 +1312,12 @@ focus_tree = {
 		relative_position_id = YIN_shadowfang_uprising_fails
 
 		prerequisite = { focus = YIN_shadowfang_uprising_fails }
-
 		mutually_exclusive = { focus = YIN_vux_secures_independence }
-		
-		available = {
-			always = no
-		}
 
+		available = { always = no }
 		x = 3
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { } # completed by event chain
 	}
 
 	# --- B1: Elder Speaker Vux route (clickables) ---
@@ -1286,7 +1332,42 @@ focus_tree = {
 
 		x = -1
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = { id = YIN_vux.1 days = 1 random_hours = 6 }
+		}
+	}
+
+	focus = {
+		id = YIN_neutral_paths_between_giants
+		icon = GFX_YIN_neutral_paths_between_giants
+		cost = 7.00
+		relative_position_id = YIN_vux_secures_independence
+
+		prerequisite = { focus = YIN_vux_secures_independence }
+
+		x = 1
+		y = 1
+		completion_reward = {
+			add_stability = 0.03
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = electronics }
+			country_event = { id = YIN_vux.2 days = 1 random_hours = 6 }
+		}
 	}
 
 	focus = {
@@ -1300,20 +1381,18 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		completion_reward = { }
-	}
-
-	focus = {
-		id = YIN_neutral_paths_between_giants
-		icon = GFX_YIN_neutral_paths_between_giants
-		cost = 7.00
-		relative_position_id = YIN_vux_secures_independence
-
-		prerequisite = { focus = YIN_vux_secures_independence }
-
-		x = 1
-		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.03
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = { id = YIN_vux.3 days = 1 random_hours = 6 }
+		}
 	}
 
 	focus = {
@@ -1326,7 +1405,12 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 75
+			add_war_support = 0.02
+			add_army_experience = 10
+			country_event = { id = YIN_vux.4 days = 1 random_hours = 6 }
+		}
 	}
 
 	# --- B2: Master Sha’Lar intervention chain (AUTO forks first) ---
@@ -1338,16 +1422,12 @@ focus_tree = {
 		relative_position_id = YIN_master_shalar_called
 
 		prerequisite = { focus = YIN_master_shalar_called }
-
 		mutually_exclusive = { focus = YIN_shalar_assassinated }
-		
-		available = {
-			always = no
-		}
-		
+
+		available = { always = no }
 		x = -2
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { } # completed by event chain
 	}
 
 	focus = {
@@ -1357,19 +1437,15 @@ focus_tree = {
 		relative_position_id = YIN_master_shalar_called
 
 		prerequisite = { focus = YIN_master_shalar_called }
-
 		mutually_exclusive = { focus = YIN_shalar_pacifies_the_planet }
-		
-		available = {
-			always = no
-		}
-		
+
+		available = { always = no }
 		x = 2
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { } # completed by event chain
 	}
 
-	# --- B2a: If Sha’Lar succeeds (clickables leading to his stewardship) ---
+	# --- B2a: If Sha’Lar succeeds (clickables) ---
 
 	focus = {
 		id = YIN_lightfang_reforms
@@ -1381,7 +1457,12 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 25
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = industry }
+			country_event = { id = YIN_shl.4 days = 1 random_hours = 6 }
+		}
 	}
 
 	focus = {
@@ -1394,7 +1475,17 @@ focus_tree = {
 
 		x = -2
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_stability = 0.04
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = { id = YIN_shl.5 days = 1 random_hours = 6 }
+		}
 	}
 
 	focus = {
@@ -1408,10 +1499,15 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_army_experience = 10
+			add_war_support = 0.03
+			add_offsite_building = { type = arms_factory level = 1 }
+			country_event = { id = YIN_shl.6 days = 1 random_hours = 6 }
+		}
 	}
 
-	# --- B2b: If Sha’Lar is assassinated → Workers’ path (AUTO nodes then clickables) ---
+	# --- B2b: If Sha’Lar is assassinated → Workers’ path ---
 
 	focus = {
 		id = YIN_workers_uprising_hijacked_by_vekurr
@@ -1420,16 +1516,12 @@ focus_tree = {
 		relative_position_id = YIN_shalar_assassinated
 
 		prerequisite = { focus = YIN_shalar_assassinated }
-
 		mutually_exclusive = { focus = YIN_archon_vekurr_dies_in_riots }
-		
-		available = {
-			always = no
-		}
-		
+
+		available = { always = no }
 		x = 0
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { } # completed by event chain
 	}
 
 	focus = {
@@ -1439,16 +1531,12 @@ focus_tree = {
 		relative_position_id = YIN_shalar_assassinated
 
 		prerequisite = { focus = YIN_shalar_assassinated }
-		
 		mutually_exclusive = { focus = YIN_workers_uprising_hijacked_by_vekurr }
-		
-		available = {
-			always = no
-		}
 
+		available = { always = no }
 		x = 2
 		y = 1
-		completion_reward = { } # event completes
+		completion_reward = { } # completed by event chain
 	}
 
 	focus = {
@@ -1461,7 +1549,18 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = { id = YIN_wkr.1 days = 1 random_hours = 6 }
+		}
 	}
 
 	focus = {
@@ -1474,7 +1573,12 @@ focus_tree = {
 
 		x = 2
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 50
+			add_tech_bonus = { bonus = 0.5 uses = 1 category = industry }
+			country_event = { id = YIN_wkr.2 days = 1 random_hours = 6 }
+		}
 	}
 
 	focus = {
@@ -1488,9 +1592,14 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 75
+			add_war_support = 0.03
+			add_army_experience = 10
+			country_event = { id = YIN_wkr.3 days = 1 random_hours = 6 }
+		}
 	}
-	
+
 	focus = {
 		id = YIN_golden_scale_enforcers
 		icon = GFX_YIN_golden_scale_enforcers
@@ -1502,7 +1611,16 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
-			# (empty for now)
+			add_stability = -0.02
+			add_war_support = 0.04
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = { id = YIN_vek.3 days = 1 random_hours = 6 }
 		}
 	}
 
@@ -1517,7 +1635,16 @@ focus_tree = {
 		x = -2
 		y = 1
 		completion_reward = {
-			# (empty for now)
+			add_political_power = 50
+			add_stability = 0.01
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = { id = YIN_vek.2 days = 1 random_hours = 6 }
 		}
 	}
 
@@ -1533,8 +1660,23 @@ focus_tree = {
 		x = 0
 		y = 1
 		completion_reward = {
-			# (empty for now)
+			add_political_power = 75
+			add_stability = 0.02
+			add_war_support = 0.02
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = arms_factory level = 1 }
+			country_event = { id = YIN_vek.4 days = 1 random_hours = 6 }
 		}
 	}
-
+###########################################################
+###########################################################
+###########PLAN FOR WHEN THE TREE IS FINISHED##############
+###########################################################
+###########################################################
+###########################################################
+###########################################################
+###########################################################
+#Great purge of Yinchorr, the advisors you chose will be the factions, all the others will be killed
+#one tree for still living leader (so 4 trees) 
+#so 4 small trees for around 4 years
 }

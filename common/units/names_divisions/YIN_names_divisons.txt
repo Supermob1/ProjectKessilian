@@ -1,0 +1,110 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+YIN_Gar_01 = {
+	name = "Yinchorr Garrisons"
+
+	for_countries = { YIN }
+
+	can_use = { always = yes }
+
+	division_types = { "garrison" }
+
+	fallback_name = "%dth Garrison"
+
+	ordered = {
+		1  = { "1st Spire Watch" }
+		2  = { "2nd Vale Sentinels" }
+		3  = { "3rd Ashen Gatekeepers" }
+		4  = { "4th Dune Wardens" }
+		5  = { "5th Thorn Watch" }
+		6  = { "6th Oasis Guard" }
+		7  = { "7th Sandstrider Patrol" }
+		8  = { "8th Stormfang Watch" }
+		9  = { "9th Ironclaw Guard" }
+		10 = { "10th Windscale Patrol" }
+		11 = { "11th Sunscale Garrison" }
+		12 = { "12th Moonshard Wardens" }
+		13 = { "13th Starfang Sentinels" }
+		14 = { "14th Kador Gatewatch" }
+		15 = { "15th Shattered Vale Watch" }
+		16 = { "16th City-of-Spires Garrison" }
+		17 = { "17th Lightfang Custodians" }
+		18 = { "18th Bazaar Guard" }
+		19 = { "19th Caravan Escort" }
+		20 = { "20th Rift Pass Watch" }
+		21 = { "21st Quarry Security" }
+		22 = { "22nd Refinery Guard" }
+		23 = { "23rd Railhead Watch" }
+		24 = { "24th Spaceport Wardens" }
+	}
+}
+
+
+YIN_Inf_01 = {
+	name = "Yinchorr Infantry Divisions"
+
+	for_countries = { YIN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Yinchorr Line"
+
+	ordered = {
+		1  = { "1st Ashen Guard" }
+		2  = { "2nd Thorn Cohort" }
+		3  = { "3rd Spireborn Line" }
+		4  = { "4th Vale Wardens" }
+		5  = { "5th Sandstrider Rifles" }
+		6  = { "6th Stormfang Legion" }
+		7  = { "7th Ironclaw Infantry" }
+		8  = { "8th Windscale Regiment" }
+		9  = { "9th Sunscale Guard" }
+		10 = { "10th Moonshard Rifles" }
+		11 = { "11th Starfang Cohort" }
+		12 = { "12th Oasisbloom Battalion" }
+		13 = { "13th Dune Serpent Infantry" }
+		14 = { "14th Dust Whisper Rifles" }
+		15 = { "15th Sirocco Line" }
+		16 = { "16th Mirage Phalanx" }
+		17 = { "17th Kador Rangers" }
+		18 = { "18th Ashen Dune Rifles" }
+		19 = { "19th Shattered Vale Infantry" }
+		20 = { "20th City-of-Spires Line" }
+		21 = { "21st Lightfang Watch" }
+		22 = { "22nd Golden Scale Brigade" }
+		23 = { "23rd Shardshield Infantry" }
+		24 = { "24th Desert Fang Rifles" }
+	}
+}

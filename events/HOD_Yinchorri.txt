@@ -8,6 +8,13 @@ add_namespace = YIN_rai
 add_namespace = YIN_har
 add_namespace = YIN_mal
 add_namespace = YIN_mlaw
+add_namespace = YIN_sfupr
+add_namespace = YIN_kthr
+add_namespace = YIN_vux
+add_namespace = YIN_shl
+add_namespace = YIN_vek
+add_namespace = YIN_wkr
+add_namespace = YIN_b2
 country_event = { # Yinchorr at the Crossroads
 	id = YIN_intro.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event YIN_intro.1"}
@@ -85,6 +92,7 @@ country_event = { # After the Raid
 		name = YIN_intro.3.a
 		complete_national_focus = YIN_maintain_martial_law
 		add_stability = 0.2
+		158 = { set_demilitarized_zone = no }
 		ai_chance = { 
 			factor = 25	
 		}
@@ -1230,6 +1238,28 @@ country_event = { # Audience with Zatrax (Finale — Force vs Council)
 			check_variable = { yin_mlaw > -1 }
 		}
 		complete_national_focus = YIN_lightfang_take_control
+		drop_cosmetic_tag = yes
+		leave_faction = yes
+		REP = { 
+			country_event = {
+				id = YIN_intro.4
+				days = 5
+				random_hours = 12
+			}
+		}
+		set_nationality = {
+			target_country = REP
+			character = YIN_zatrax_governor
+		}
+		set_politics = {
+			ruling_party = light_side
+			elections_allowed = no
+		}
+		set_political_party = {
+			ideology = light_side
+			popularity = 50
+		}
+		remove_ideas = YIN_Protectorate_Established
 		ai_chance = { factor = 50 }
 	}
 
@@ -1239,7 +1269,631 @@ country_event = { # Audience with Zatrax (Finale — Force vs Council)
 			check_variable = { yin_mlaw < 0 }
 		}
 		complete_national_focus = YIN_zatrax_retains_control
+		set_character_name = {
+			character = YIN_zatrax_governor
+			name = "Governor Zatrax"
+		}
 		ai_chance = { factor = 50 }
 	}
 }
 
+# ================================
+# Yinchorr — Separatist Uprising
+# ================================
+
+country_event = { # Signals in the Dunes
+	id = YIN_sfupr.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_sfupr.1" }
+	title = YIN_sfupr.1.t
+	desc	= YIN_sfupr.1.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_sfupr.1.a # Light the cells
+		add_political_power = -25
+		hidden_effect = { country_event = { id = YIN_sfupr.2 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 60 }
+	}
+	option = {
+		name = YIN_sfupr.1.b # Wait for better cover
+		add_stability = 0.01
+		hidden_effect = { country_event = { id = YIN_sfupr.2 days = 10 random_hours = 6 } }
+		ai_chance = { factor = 40 }
+	}
+}
+
+country_event = { # Blades in the Courtyard (Assassination)
+	id = YIN_sfupr.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_sfupr.2" }
+	title = YIN_sfupr.2.t
+	desc	= YIN_sfupr.2.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_sfupr.2.a # Strike now
+		add_war_support = 0.02
+		hidden_effect = { country_event = { id = YIN_sfupr.3 days = 5 random_hours = 6 } }
+		ai_chance = { factor = 60 }
+	}
+	option = {
+		name = YIN_sfupr.2.b # Keep it deniable
+		add_stability = -0.01
+		add_political_power = 15
+		hidden_effect = { country_event = { id = YIN_sfupr.3 days = 5 random_hours = 6 } }
+		ai_chance = { factor = 40 }
+	}
+}
+
+country_event = { # Garrisons React
+	id = YIN_sfupr.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_sfupr.3" }
+	title = YIN_sfupr.3.t
+	desc	= YIN_sfupr.3.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_sfupr.3.a # Ambush relief columns
+		army_experience = 10
+		hidden_effect = { country_event = { id = YIN_sfupr.4 days = 6 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = {
+		name = YIN_sfupr.3.b # Cut comms and power
+		add_political_power = 25
+		hidden_effect = { country_event = { id = YIN_sfupr.4 days = 6 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # Armories and Safehouses
+	id = YIN_sfupr.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_sfupr.4" }
+	title = YIN_sfupr.4.t
+	desc	= YIN_sfupr.4.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_sfupr.4.a # Seize armories
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+		hidden_effect = { country_event = { id = YIN_sfupr.5 days = 6 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = {
+		name = YIN_sfupr.4.b # Expand safehouse network
+		add_stability = 0.02
+		hidden_effect = { country_event = { id = YIN_sfupr.5 days = 6 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # Push for the Capital?
+	id = YIN_sfupr.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_sfupr.5" }
+	title = YIN_sfupr.5.t
+	desc	= YIN_sfupr.5.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_sfupr.5.a # Strike while they reel
+		add_war_support = 0.03
+		hidden_effect = { country_event = { id = YIN_sfupr.6 days = 5 random_hours = 6 } }
+		ai_chance = { factor = 60 }
+	}
+	option = {
+		name = YIN_sfupr.5.b # Consolidate districts
+		add_stability = 0.02
+		hidden_effect = { country_event = { id = YIN_sfupr.6 days = 5 random_hours = 6 } }
+		ai_chance = { factor = 40 }
+	}
+}
+
+country_event = { # Uprising Outcome
+	id = YIN_sfupr.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_sfupr.6" }
+	title = YIN_sfupr.6.t
+	desc	= YIN_sfupr.6.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	after = {
+	retire_character = YIN_zatrax_governor
+	drop_cosmetic_tag = yes
+	leave_faction = yes
+	REP = { end_puppet = YIN }
+	add_country_leader_role = {
+		character = YIN_karesh_tradelord
+		promote_leader = yes
+		country_leader = {
+			ideology = corporate_consortium_subtype
+			expire = "2000.1.1.1"
+			traits = { }
+		}
+	}
+	set_party_name = {
+		ideology = corporate_consortium
+		long_name = YIN_trade_democrat_party_long
+		name = YIN_trade_democrat_party
+	}
+	set_popularities = {
+		new_order = 10
+		dark_side = 5
+		akaanadocrat = 15
+		corist = 15
+		corporate_consortium = 5
+		trade_democrat = 5
+		ruusanist = 15
+		inclusivist = 15
+		light_side = 10
+		distributionist = 5
+	}
+	}
+	option = { # Succeeds
+		name = YIN_sfupr.6.a
+		set_variable = { YIN_var_uprising = 1 }
+		add_stability = -0.03
+		add_war_support = 0.04
+		complete_national_focus = YIN_shadowfang_uprising_succeeds
+		hidden_effect = { country_event = { id = YIN_kthr.1 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = { # Fails
+		name = YIN_sfupr.6.b
+		set_variable = { YIN_var_uprising = 0 }
+		add_stability = -0.02
+		add_war_support = -0.03
+		remove_ideas = YIN_shadowfang_cells_idea
+		complete_national_focus = YIN_shadowfang_uprising_fails
+		# Clamp-down aftermath (optional small penalties)
+		add_political_power = -50
+		hidden_effect = { country_event = { id = YIN_b2.1 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+# ================================
+# Post-Success: Karesh vs Threll
+# ================================
+
+country_event = { # Competing Claims
+	id = YIN_kthr.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_kthr.1" }
+	title = YIN_kthr.1.t
+	desc	= YIN_kthr.1.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_kthr.1.a # Back Trade Lord Karesh
+		add_political_power = -25
+		add_stability = 0.01
+		add_war_support = -0.01
+		add_to_variable = { YIN_var_kv = 1 }
+		hidden_effect = { country_event = { id = YIN_kthr.2 days = 10 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = YIN_kthr.1.b # Let the Circle set terms (Threll)
+		add_political_power = 10
+		add_war_support = 0.02
+		add_to_variable = { YIN_var_kv = -1 }
+		hidden_effect = { country_event = { id = YIN_kthr.2 days = 10 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = { # Hired Knives and Quiet Credits
+	id = YIN_kthr.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_kthr.2" }
+	title = YIN_kthr.2.t
+	desc	= YIN_kthr.2.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_kthr.2.a # Contract Mandalorian & Trandoshan teams (Karesh)
+		add_political_power = -35
+		army_experience = 10
+		add_to_variable = { YIN_var_kv = 1 }
+		hidden_effect = { country_event = { id = YIN_kthr.3 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 55 }
+	}
+	option = {
+		name = YIN_kthr.2.b # Rally war-bands under the Circle (Threll)
+		add_manpower = 10000
+		add_to_variable = { YIN_var_kv = -1 }
+		hidden_effect = { country_event = { id = YIN_kthr.3 days = 7 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+country_event = { # Night of Settlements (Decision)
+	id = YIN_kthr.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_kthr.3" }
+	title = YIN_kthr.3.t
+	desc	= YIN_kthr.3.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { # Karesh prevails
+		name = YIN_kthr.3.a
+		trigger = { check_variable = { YIN_var_kv > 0 } }
+		complete_national_focus = YIN_karesh_eliminates_the_shadowfang
+	retire_character = YIN_threll_fangmaster
+		add_ideas = YIN_trade_lord_karesh_idea
+		# Optional: set politics if your mod uses these ideologies
+		set_politics = { ruling_party = trade_democrat elections_allowed = no }
+		ai_chance = { factor = 100 }
+	}
+	option = { # Threll prevails
+		name = YIN_kthr.3.b
+		trigger = { NOT = { check_variable = { YIN_var_kv > 0 } } }
+		complete_national_focus = YIN_threll_eliminates_karesh
+	retire_character = YIN_karesh_tradelord
+		add_ideas = YIN_high_fangmaster_idea
+		set_politics = { ruling_party = dark_side elections_allowed = no }
+		ai_chance = { factor = 100 }
+	}
+}
+# ==========================================================
+# Yinchorr — PATH B : Uprising Fails → Vux OR Sha’Lar
+# ==========================================================
+
+# Hook this from the FAILURE option in YIN_sfupr.6 (or call after the fail chain).
+country_event = { # Aftermath: Which way forward? 
+	id = YIN_b2.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_b2.1" }
+	title = YIN_b2.1.t
+	desc	= YIN_b2.1.d
+	picture = GFX_country_event_yinchorr_planet
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_b2.1.a # Appeal to the clans (Vux)
+		add_stability = 0.02
+		add_political_power = 25
+		complete_national_focus = YIN_vux_secures_independence
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = YIN_b2.1.b # Summon Master Sha’Lar
+		add_war_support = 0.02
+		add_political_power = -25
+		complete_national_focus = YIN_master_shalar_called
+		set_politics = {
+			ruling_party = light_side
+			elections_allowed = no
+		}
+		set_political_party = {
+			ideology = light_side
+			popularity = 50
+		}
+		hidden_effect = { country_event = { id = YIN_shl.1 days = 5 random_hours = 6 } }
+		ai_chance = { factor = 50 }
+	}
+}
+
+# =========================
+# B1 — Elder Speaker Vux line (CLICKABLES)
+# =========================
+# Add select_effect in focus:
+# YIN_convene_great_clans -> { country_event = { id = YIN_vux.1 days = 1 } } 
+country_event = {
+	id = YIN_vux.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vux.1" }
+	title = YIN_vux.1.t
+	desc	= YIN_vux.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_vux.1.a # Hold in the Vale
+		add_political_power = 25
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = YIN_vux.1.b # Hold in the Spires
+		add_stability = 0.01
+		ai_chance = { factor = 50 }
+	}
+}
+
+# YIN_neutral_paths_between_giants -> { country_event = { id = YIN_vux.2 days = 1 } }
+country_event = {
+	id = YIN_vux.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vux.2" }
+	title = YIN_vux.2.t
+	desc	= YIN_vux.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_vux.2.a # Sign corridor guarantees
+		add_stability = 0.02
+		ai_chance = { factor = 55 }
+	}
+	option = {
+		name = YIN_vux.2.b # Keep flexible language
+		add_political_power = 25
+		ai_chance = { factor = 45 }
+	}
+}
+
+# YIN_clan_rights_charter -> { country_event = { id = YIN_vux.3 days = 1 } }
+country_event = {
+	id = YIN_vux.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vux.3" }
+	title = YIN_vux.3.t
+	desc	= YIN_vux.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_vux.3.a # Codify clan courts and quotas
+		add_stability = 0.02
+		ai_chance = { factor = 55 }
+	}
+	option = {
+		name = YIN_vux.3.b # Charter with ombuds and audits
+		add_political_power = 35
+		ai_chance = { factor = 45 }
+	}
+}
+
+# YIN_elder_speaker_vux -> { country_event = { id = YIN_vux.4 days = 1 } }
+country_event = {
+	id = YIN_vux.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vux.4" }
+	title = YIN_vux.4.t
+	desc	= YIN_vux.4.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_vux.4.a
+		add_stability = 0.03
+		add_political_power = 50
+		ai_chance = { factor = 100 }
+	}
+}
+
+# =========================
+# B2 — Master Sha’Lar intervention (AUTO forks first)
+# =========================
+
+# Fires automatically from YIN_b2.1, OR hook from focus YIN_master_shalar_called if you prefer.
+country_event = { # The Recall
+	id = YIN_shl.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_shl.1" }
+	title = YIN_shl.1.t
+	desc	= YIN_shl.1.d
+	picture = GFX_country_event_yinchorr_shattered_vale
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_shl.1.a # Mediate with the clans first
+		add_stability = 0.02
+		complete_national_focus = YIN_shalar_pacifies_the_planet
+		ai_chance = { factor = 55 }
+	}
+	option = {
+		name = YIN_shl.1.b # Land and disarm the militias
+		add_war_support = 0.03
+		complete_national_focus = YIN_shalar_assassinated
+		retire_character = YIN_shalar_master
+		set_politics = {
+			ruling_party = new_order
+			elections_allowed = no
+		}
+		set_political_party = {
+			ideology = new_order
+			popularity = 50
+		}
+		hidden_effect = { country_event = { id = YIN_vek.1 days = 10 random_hours = 6 } }
+		ai_chance = { factor = 45 }
+	}
+}
+
+# ===== B2a — If Sha’Lar pacifies (CLICKABLES) =====
+# YIN_lightfang_reforms -> { country_event = { id = YIN_shl.4 days = 1 } }
+country_event = {
+	id = YIN_shl.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_shl.4" }
+	title = YIN_shl.4.t
+	desc	= YIN_shl.4.d
+	picture = GFX_country_event_yinchorr_shattered_vale
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = YIN_shl.4.a add_political_power = 35 ai_chance = { factor = 100 } }
+}
+
+# YIN_paths_of_moderation -> { country_event = { id = YIN_shl.5 days = 1 } }
+country_event = {
+	id = YIN_shl.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_shl.5" }
+	title = YIN_shl.5.t
+	desc	= YIN_shl.5.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_shl.5.a # Civic tribunals
+		add_stability = 0.02
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = YIN_shl.5.b # Clan mediation boards
+		add_political_power = 25
+		ai_chance = { factor = 50 }
+	}
+}
+
+# YIN_master_shalar_lightfang_sect -> { country_event = { id = YIN_shl.6 days = 1 } }
+country_event = {
+	id = YIN_shl.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_shl.6" }
+	title = YIN_shl.6.t
+	desc	= YIN_shl.6.d
+	picture = GFX_country_event_yinchorr_shattered_vale
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = YIN_shl.6.a add_stability = 0.03 ai_chance = { factor = 100 } }
+}
+
+# ===== B2b — If Sha’Lar is assassinated → workers split (AUTO then CLICKABLES) =====
+# Auto split choice event (fires from YIN_shl.1 option b) 
+country_event = {
+	id = YIN_vek.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vek.1" }
+	title = YIN_vek.1.t
+	desc	= YIN_vek.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_vek.1.a # Vekurr hijacks the committees
+		add_political_power = -25
+		add_war_support = 0.02
+		complete_national_focus = YIN_workers_uprising_hijacked_by_vekurr
+		ai_chance = { factor = 60 }
+	}
+	option = {
+		name = YIN_vek.1.b # Vekurr torn down by the crowd
+		add_stability = -0.01
+		add_political_power = 15
+		complete_national_focus = YIN_archon_vekurr_dies_in_riots
+		retire_character = YIN_archon_vekurr
+		set_politics = {
+			ruling_party = distributionist
+			elections_allowed = no
+		}
+		set_political_party = {
+			ideology = distributionist
+			popularity = 50
+		}
+		ai_chance = { factor = 40 }
+	}
+}
+
+# ---- Vekurr path (CLICKABLES) ----
+# YIN_coopt_strike_committees -> { country_event = { id = YIN_vek.2 days = 1 } }
+country_event = {
+	id = YIN_vek.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vek.2" }
+	title = YIN_vek.2.t
+	desc	= YIN_vek.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = YIN_vek.2.a add_political_power = 25 ai_chance = { factor = 100 } }
+}
+
+# YIN_golden_scale_enforcers -> { country_event = { id = YIN_vek.3 days = 1 } }
+country_event = {
+	id = YIN_vek.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vek.3" }
+	title = YIN_vek.3.t
+	desc	= YIN_vek.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = YIN_vek.3.a add_war_support = 0.03 ai_chance = { factor = 100 } }
+}
+
+# YIN_proclaim_the_archonate -> { country_event = { id = YIN_vek.4 days = 1 } }
+country_event = {
+	id = YIN_vek.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_vek.4" }
+	title = YIN_vek.4.t
+	desc	= YIN_vek.4.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = YIN_vek.4.a add_stability = 0.02 add_political_power = 35 ai_chance = { factor = 100 } }
+}
+
+# ---- Workers’ democracy path (CLICKABLES) ----
+# YIN_workers_guild_councils -> { country_event = { id = YIN_wkr.1 days = 1 } } 
+country_event = {
+	id = YIN_wkr.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_wkr.1" }
+	title = YIN_wkr.1.t
+	desc	= YIN_wkr.1.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = YIN_wkr.1.a add_political_power = 25 ai_chance = { factor = 100 } }
+}
+
+# YIN_industrial_democracy -> { country_event = { id = YIN_wkr.2 days = 1 } }
+country_event = {
+	id = YIN_wkr.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_wkr.2" }
+	title = YIN_wkr.2.t
+	desc	= YIN_wkr.2.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = YIN_wkr.2.a # Assembly primacy
+		add_stability = 0.02
+		ai_chance = { factor = 50 }
+	}
+	option = {
+		name = YIN_wkr.2.b # Shop-floor authority
+		add_political_power = 25
+		ai_chance = { factor = 50 }
+	}
+}
+
+# YIN_foreman_zurvek -> { country_event = { id = YIN_wkr.3 days = 1 } }
+country_event = {
+	id = YIN_wkr.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event YIN_wkr.3" }
+	title = YIN_wkr.3.t
+	desc	= YIN_wkr.3.d
+	picture = GFX_country_event_yinchorr_planet
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { name = YIN_wkr.3.a add_stability = 0.02 add_political_power = 35 ai_chance = { factor = 100 } }
+}

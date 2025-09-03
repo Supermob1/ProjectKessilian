@@ -322,5 +322,184 @@ ideas = {
 			compliance_growth_on_our_occupied_states = -0.02
 		  }
 		}
+		# Lightfang route
+		YIN_lightfang_council_idea = {
+		  # picture = GFX_idea_yin_lightfang_council
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			stability_factor = 0.02
+			political_power_gain = -0.05
+			compliance_growth_on_our_occupied_states = 0.01
+		  }
+		}
+
+		YIN_rewritten_charter_idea = {
+		  # picture = GFX_idea_yin_rewritten_charter
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			stability_factor = 0.02
+			resistance_target_on_our_occupied_states = -0.02
+			compliance_growth_on_our_occupied_states = 0.02
+			consumer_goods_factor = -0.01
+		  }
+		}
+
+		YIN_civic_guard_idea = {
+		  # picture = GFX_idea_yin_civic_guard
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			resistance_target_on_our_occupied_states = -0.02
+			required_garrison_factor = -0.03
+			war_support_factor = 0.01
+		  }
+		}
+
+		# Governor/Republic route
+		YIN_codified_governor_powers_idea = {
+		  # picture = GFX_idea_yin_codified_governor_powers
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			political_power_gain = 0.15
+			stability_factor = -0.01
+		  }
+		}
+
+		YIN_concession_cartel_idea = {
+		  # picture = GFX_idea_yin_concession_cartel
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			consumer_goods_factor = -0.01
+			local_resources_factor = 0.10
+			resistance_target_on_our_occupied_states = 0.02
+		  }
+		}
+
+		YIN_republic_garrison_aid_idea = {
+		  # picture = GFX_idea_yin_republic_garrison_aid
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			required_garrison_factor = -0.05
+			war_support_factor = 0.02
+			stability_factor = -0.01
+		  }
+		}
+		YIN_shadowfang_cells_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			stability_factor = -0.02
+			resistance_target_on_our_occupied_states = -0.03
+			political_power_gain = -0.05
+		  }
+		}
+
+		# Karesh route
+		YIN_market_coalition_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			stability_factor = 0.02
+			consumer_goods_factor = -0.01
+		  }
+		}
+
+		YIN_privatized_mines_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			local_resources_factor = 0.10
+			stability_factor = -0.01
+		  }
+		}
+
+		YIN_corporate_security_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			required_garrison_factor = -0.05
+			resistance_target_on_our_occupied_states = -0.03
+			war_support_factor = 0.02
+		  }
+		}
+
+		YIN_trade_lord_karesh_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			political_power_gain = 0.10
+			consumer_goods_factor = -0.01
+			stability_factor = 0.01
+		  }
+		}
+
+		# Threll route
+		YIN_shadow_circle_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			war_support_factor = 0.03
+			stability_factor = -0.01
+			army_experience_gain_factor = 0.10
+		  }
+		}
+
+		YIN_clan_muster_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			recruitable_population_factor = 0.03
+			training_time_army_factor = -0.05
+		  }
+		}
+
+		YIN_oathbound_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			stability_factor = 0.02
+			compliance_growth_on_our_occupied_states = 0.01
+		  }
+		}
+
+		YIN_cis_alignment_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			research_speed_factor = 0.01
+			war_support_factor = 0.01
+		  }
+		}
+
+		YIN_high_fangmaster_idea = {
+		  allowed = { always = no }
+		  allowed_civil_war = { always = no }
+		  removal_cost = -1
+		  modifier = {
+			war_support_factor = 0.03
+			political_power_gain = -0.05
+			recruitable_population_factor = 0.03
+		  }
+		}
 	}
 }
