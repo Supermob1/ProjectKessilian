@@ -30,7 +30,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "HOD_Super_Event_Title_textbox"
 			position = { x = 180 y = 15 }
-			font = "sfdistant24full"
+			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
 			text = "[get_super_event_title]"
 			maxWidth = 450
@@ -41,7 +41,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "HOD_Super_Event_subTitle_textbox"
 			position = { x = 100 y = 35 }
-			font = "sfdistant16full"
+			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
 			text = "[get_super_event_subtitle]"
 			maxWidth = 600
@@ -52,7 +52,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "HOD_Super_Event_description"
 			position = { x = 20 y = 310 }
-			font = "franklingothicblue"
+			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
 			text = "[get_super_event_desc]"
 			maxWidth = 600
@@ -73,7 +73,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "Super_Event_Option_A_text"
 			position = { x = 45 y = 443 }
-			font = "sfdistant12full"
+			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
 			text = "[get_super_event_option_a]"
 			maxWidth = 300
@@ -92,7 +92,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "Super_Event_Option_B_text"
 			position = { x = 440 y = 443 }
-			font = "sfdistant12full"
+			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
 			text = "[get_super_event_option_b]"
 			maxWidth = 300
@@ -105,7 +105,7 @@ guiTypes = {
             position = { x = 197 y = 432 }
             quadTextureSprite ="GFX_event_option_entry"
             clicksound = click_scroll
-	 		buttonFont = "sfdistant16full"
+	 		buttonFont = "hoi_20b"
 			buttonText = "[get_super_event_exit]"
         }
 	}
