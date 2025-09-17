@@ -1,4 +1,5 @@
 characters={
+####POLITICS####
 	REP_sheev_palpatine={
 		name=REP_sheev_palpatine
 		portraits={
@@ -205,6 +206,7 @@ characters={
 	}
 
 
+####MILITARY####
 	REP_anakin_skywalker={
 		name="Anakin Skywalker"
 		portraits={
@@ -231,7 +233,7 @@ characters={
 			available = {
 			}
 			traits = {
-				hero_with_no_fear army_armored_1
+				hero_with_no_fear army_commando_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -377,7 +379,7 @@ characters={
 		country_leader={
 			desc="REP_mace_windu_desc"
 			ideology=light_side_subtype
-			traits={ hero_with_no_fear }
+			traits={ jedi_master }
 			#expire="1965.1.1.1"
 			id=-1
 		}
@@ -385,31 +387,33 @@ characters={
 	REP_kiadimundi={
 		name="Ki-Adi-Mundi"
 		portraits={
-			army={
-				#small=""
+			civilian={
+				small="gfx/characters/REP/ki_adi_mundi_political_advisor.png"
+				large="gfx/leaders/REP/portrait_ki_adi_mundi.dds"
 			}
 			army={
 				large="gfx/leaders/REP/portrait_ki_adi_mundi.dds"
 			}
 		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_kit_fisto={
-		name="Kit Fisto"
-		portraits={
-			army={
-				#small=""
+		advisor = {
+			slot = high_command
+			idea_token = ki_adi_mundi_high
+			name = ki_adi_mundi
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
 			}
-			army={
-				large="gfx/leaders/REP/portrait_kit_fisto.dds"
+			visible = {
+				original_tag = REP
+			}
+			available = {
+			}
+			traits = {
+				jedi_master army_infantry_1
+			}
+			ai_will_do = {
+				factor = 1
 			}
 		}
 		field_marshal={
@@ -425,11 +429,96 @@ characters={
 	REP_plo_koon={
 		name="Plo Koon"
 		portraits={
+			civilian={
+				small="gfx/characters/REP/plo_koon_political_advisor.png"
+				large="gfx/leaders/REP/portrait_plo_koon.dds"
+			}
+			army={
+				large="gfx/leaders/REP/portrait_plo_koon.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = plo_koon_high
+			name = plo_koon
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+			}
+			traits = {
+				jedi_master army_regrouping_1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal={
+			traits={ jedi_master }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	REP_luminara_unduli={
+		name="Luminara Unduli"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/luminara_unduli_political_advisor.png"
+				large="gfx/leaders/REP/portrait_luminara_unduli.png"
+			}
+			army={
+				large="gfx/leaders/REP/portrait_luminara_unduli.png"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = luminara_unduli_high
+			name = luminara_unduli
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+			}
+			traits = {
+				jedi_master army_logistics_1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			traits={ jedi_master }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+####FIELD####
+	REP_kit_fisto={
+		name="Kit Fisto"
+		portraits={
 			army={
 				#small=""
 			}
 			army={
-				large="gfx/leaders/REP/portrait_plo_koon.dds"
+				large="gfx/leaders/REP/portrait_kit_fisto.dds"
 			}
 		}
 		field_marshal={
@@ -758,26 +847,7 @@ characters={
 			legacy_id=-1
 		}
 	}
-	REP_luminara_unduli={
-		name="Luminara Unduli"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
+
 	REP_bultar_swan={
 		name="Bultar Swan"
 		portraits={
@@ -1499,4 +1569,4 @@ characters={
 			legacy_id = -1
 			}
 		}
-	}
+}
