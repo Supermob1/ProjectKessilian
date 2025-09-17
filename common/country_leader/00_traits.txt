@@ -415,11 +415,8 @@ leader_traits = {
 	}
 	
 	hero_with_no_fear = { 
-		sprite = 7
+		sprite = 19
 		#Aggressive, Reckless, and a Hero, Takes the fight to the enemy.
-		army_org_factor = 0.04
-		army_attack_factor = 0.15
-		army_defence_factor = -0.05
 		
 		ai_will_do = {
 			factor = 3
@@ -459,18 +456,14 @@ leader_traits = {
 	}
 	jedi_yoda = {
 		random = no
-		production_speed_arms_factory_factor = 0.1
-		consumer_goods_factor = -0.1
+		sprite = 20
 		ai_will_do = {
 			factor = 3
 		} 
 	}
 	jedi_master = {
 		random = no
-		sprite = 13
-		stability_factor = 0.1
-		resistance_target_on_our_occupied_states = 0.05
-		compliance_growth_on_our_occupied_states = -0.05
+		sprite = 20
 		ai_will_do = {
 			factor = 3
 		} 
