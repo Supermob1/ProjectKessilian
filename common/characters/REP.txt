@@ -208,8 +208,11 @@ characters={
 	REP_anakin_skywalker={
 		name="Anakin Skywalker"
 		portraits={
+			civilian={
+				small="gfx/characters/REP/anakin_skywalker_political_advisor.png"
+				large="gfx/leaders/REP/portrait_anakin_skywalker.dds"
+			}
 			army={
-				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
 				large="gfx/leaders/REP/portrait_anakin_skywalker.dds"
 			}
 		}
@@ -224,18 +227,11 @@ characters={
 			}
 			visible = {
 				original_tag = REP
-				NOT = { has_idea = anakin_political_advisor }
 			}
 			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
 			}
 			traits = {
-				hero_with_no_fear
+				hero_with_no_fear army_armored_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -243,14 +239,6 @@ characters={
 		}
 		corps_commander={
 			traits={ jedi_knight }
-			visible = {
-				NOT = {
-					OR = {
-						has_idea = anakin_army_chief
-						has_idea = anakin_high
-					}
-				}
-			}
 			skill=3
 			attack_skill=3
 			defense_skill=3
@@ -262,38 +250,12 @@ characters={
 	REP_obiwan_kenobi={
 		name="Obi-Wan Kenobi"
 		portraits={
-			army={
-				small="gfx/interface/ideas/REP_obiwan_kenobi.tga"
+			civilian={
+				small="gfx/characters/REP/obiwan_kenobi_political_advisor.png"
 				large="gfx/leaders/REP/portrait_obi_wan.dds"
 			}
-		}
-		advisor = {
-			slot = army_chief
-			idea_token = obi_wan_army_chief
-			name = obi_wan
-			cost = 100
-			ledger = army
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-				NOT = { has_idea = obi_wan_high }
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-						has_country_flag = obi-wan_missing_flag 
-					}
-				}
-			}
-			traits = {
-				tactician_chief_of_army
-			}
-			ai_will_do = {
-				factor = 1
+			army={
+				large="gfx/leaders/REP/portrait_obi_wan.dds"
 			}
 		}
 		advisor = {
@@ -307,19 +269,11 @@ characters={
 			}
 			visible = {
 				original_tag = REP
-				NOT = { has_idea = obi_wan_army_chief }
 			}
 			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-						has_country_flag = obi-wan_missing_flag 
-					}
-				}
 			}
 			traits = {
-				tactician_chief_of_army
+				jedi_master army_CombinedArms_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -328,13 +282,6 @@ characters={
 		field_marshal={
 			traits={ jedi_master }
 			visible = {
-				NOT = {
-					OR = {
-						has_idea = obi_wan_army_chief
-						has_idea = obi_wan_high
-						has_country_flag = obi-wan_missing_flag
-					}
-				}
 			}
 			skill=3
 			attack_skill=3
@@ -347,39 +294,14 @@ characters={
 	REP_yoda={
 		name="Yoda"
 		portraits={
+			civilian={
+				small="gfx/characters/REP/yoda_political_advisor.png"
+				large="gfx/leaders/REP/portrait_yoda.dds"
+			}
 			army={
-				small="gfx/interface/ideas/REP_yoda.tga"
 				large="gfx/leaders/REP/portrait_yoda.dds"
 			}
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = yoda_political_advisor
-			name = yoda
-			cost = 100
-			ledger = civilian
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				NOT = { has_idea = yoda_army_chief }
-				original_tag = REP
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
-			}
-			traits = {
-				jedi_yoda
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}		
 		advisor = {
 			slot = army_chief
 			idea_token = yoda_army_chief
@@ -390,19 +312,12 @@ characters={
 				original_tag = REP
 			}
 			visible = {
-				NOT = { has_idea = yoda_political_advisor }
 				original_tag = REP
 			}
 			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
 			}
 			traits = {
-				strategist_chief_of_army
+				jedi_yoda army_chief_defensive_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -416,6 +331,55 @@ characters={
 			planning_skill=5
 			logistics_skill=5
 			legacy_id=-1
+		}
+	}
+	REP_mace_windu={
+		name="Mace Windu"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/mace_windu_political_advisor.png"
+				large="gfx/leaders/REP/portrait_mace_windu.dds"
+			}
+			army={
+				large="gfx/leaders/REP/portrait_mace_windu.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = mace_windu_army_chief
+			name = mace_windu
+			cost = 100
+			ledger = army
+			allowed = {
+				original_tag = REP
+			}
+			visible = {
+				original_tag = REP
+			}
+			available = {
+			}
+			traits = {
+				jedi_master army_chief_offensive_1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal={
+			traits={ jedi_master }
+			skill=5
+			attack_skill=5
+			defense_skill=5
+			planning_skill=5
+			logistics_skill=5
+			legacy_id=-1
+		}
+		country_leader={
+			desc="REP_mace_windu_desc"
+			ideology=light_side_subtype
+			traits={ hero_with_no_fear }
+			#expire="1965.1.1.1"
+			id=-1
 		}
 	}
 	REP_kiadimundi={
@@ -436,33 +400,6 @@ characters={
 			planning_skill=3
 			logistics_skill=3
 			legacy_id=-1
-		}
-	}
-	REP_mace_windu={
-		name="Mace Windu"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				large="gfx/leaders/REP/portrait_mace_windu.dds"
-			}
-		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=5
-			attack_skill=5
-			defense_skill=5
-			planning_skill=5
-			logistics_skill=5
-			legacy_id=-1
-		}
-		country_leader={
-			desc="REP_mace_windu_desc"
-			ideology=light_side_subtype
-			traits={ hero_with_no_fear }
-			#expire="1965.1.1.1"
-			id=-1
 		}
 	}
 	REP_kit_fisto={
