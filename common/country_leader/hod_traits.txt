@@ -1,0 +1,431 @@
+
+leader_traits = {
+	### Republic ideas ###
+	shrewd_chancellor = {
+		random = no
+		political_power_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		} 
+	}
+
+	galactic_emperor = {
+		random = no
+		political_power_factor = 0.25
+		political_advisor_cost_factor = -0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	hero_with_no_fear = { 
+		sprite = 19
+		#Aggressive, Reckless, and a Hero, Takes the fight to the enemy.
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	strategist_chief_of_army = { 
+		sprite = 7
+		#Calm, collected
+		experience_gain_army = 0.1		
+		planning_speed = 0.05
+		army_org_factor = 0.12
+		army_defence_factor = 0.10
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	tactician_chief_of_army = {
+		sprite = 7
+		#Tactician
+		planning_speed = 0.15
+		army_org_factor = 0.12
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	palpatine_loyalist = {
+		random = no
+		political_power_factor = -0.15
+		war_support_factor = 0.15
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	jedi_yoda = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	jedi_master_obi_wan = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	jedi_master_windu = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	jedi_master_ki_adi_mundi = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+
+	jedi_master_plo_koon = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	jedi_master_luminara = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	jedi_master_kit_fisto = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	jedi_master_oppo_rancisis = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+
+	jedi_master_keven_piell = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+
+	jedi_master_aayla_secura = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+
+	jedi_master_adi_gallia = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_saesee_ttin = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_shaak_ti = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_rahm_kota = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_quinlan_vos = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_kkruhk = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_nejaa_halcyon = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_bultar_swan = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_roan_shryne = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_daakman_barrek = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_roron_corobb = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_stass_allie = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_agen_kolar = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	jedi_master_dass_jennir = {
+		random = no
+		sprite = 20
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	
+	tarkin_role = {
+		random = no
+		sprite = 19
+		ai_will_do = {
+			factor = 3
+		} 
+	}
+	architect_of_order = {
+		random = no
+		sprite = 21
+		ai_will_do = { factor = 3 }
+	}
+	whisper_in_the_dark = {
+		random = no
+		sprite = 21
+		ai_will_do = { factor = 3 }
+	}
+	doctrine_of_fear = {
+		random = no
+		sprite = 21
+		ai_will_do = { factor = 3 }
+	}
+	grand_chessmaster = {
+		random = no
+		sprite = 22
+		ai_will_do = { factor = 3 }
+	}
+	palace_fixeur = {
+		random = no
+		sprite = 22
+		ai_will_do = { factor = 3 }
+	}
+	covert_razor = {
+		random = no
+		sprite = 22
+		ai_will_do = { factor = 3 }
+	}
+	anaxes_tradition = {
+		random = no
+		sprite = 23
+		ai_will_do = { factor = 3 }
+	}
+	palace_guardian = {
+		random = no
+		sprite = 23
+		ai_will_do = { factor = 3 }
+	}
+	jungle_hardliner = {
+		random = no
+		sprite = 23
+		ai_will_do = { factor = 3 }
+	}
+	voice_of_alderaan = {
+		random = no
+		sprite = 24
+		ai_will_do = { factor = 3 }
+	}
+	fearless_diplomat = {
+		random = no
+		sprite = 24
+		ai_will_do = { factor = 3 }
+	}
+	weary_moderate = {
+		random = no
+		sprite = 24
+		ai_will_do = { factor = 3 }
+	}
+	patrician_reformer = {
+		random = no
+		sprite = 25
+		ai_will_do = { factor = 3 }
+	}
+	core_world_elite = {
+		random = no
+		sprite = 25
+		ai_will_do = { factor = 3 }
+	}
+	opulent_patriarch = {
+		random = no
+		sprite = 25
+		ai_will_do = { factor = 3 }
+	}
+	advocate_for_the_voiceless = {
+		random = no
+		sprite = 26
+		ai_will_do = { factor = 3 }
+	}
+	reform_from_below = {
+		random = no
+		sprite = 26
+		ai_will_do = { factor = 3 }
+	}
+	corellian_populist = {
+		random = no
+		sprite = 26
+		ai_will_do = { factor = 3 }
+	}
+	symbiotic_statesman = {
+		random = no
+		sprite = 27
+		ai_will_do = { factor = 3 }
+	}
+	cooperative_steward = {
+		random = no
+		sprite = 27
+		ai_will_do = { factor = 3 }
+	}
+	pact_of_many = {
+		random = no
+		sprite = 27
+		ai_will_do = { factor = 3 }
+	}
+	velvet_lobbyist = {
+		random = no
+		sprite = 28
+		ai_will_do = { factor = 3 }
+	}
+	boardroom_broker = {
+		random = no
+		sprite = 28
+		ai_will_do = { factor = 3 }
+	}
+	market_supremacist = {
+		random = no
+		sprite = 29
+		ai_will_do = { factor = 3 }
+	}
+	fair_trade_advocate = {
+		random = no
+		sprite = 29
+		ai_will_do = { factor = 3 }
+	}
+	senate_liberal = {
+		random = no
+		sprite = 29
+		ai_will_do = { factor = 3 }
+	}
+	old_republic_loyalist = {
+		random = no
+		sprite = 30
+		ai_will_do = { factor = 3 }
+	}
+	senate_hawk_ruusan = {
+		random = no
+		sprite = 30
+		ai_will_do = { factor = 3 }
+	}
+	committee_conservative = {
+		random = no
+		sprite = 30
+		ai_will_do = { factor = 3 }
+	}
+	champion_of_all = {
+		random = no
+		sprite = 31
+		ai_will_do = { factor = 3 }
+	}
+	voice_of_conscience = {
+		random = no
+		sprite = 31
+		ai_will_do = { factor = 3 }
+	}
+	bridge_between_worlds = {
+		random = no
+		sprite = 31
+		ai_will_do = { factor = 3 }
+	}
+	luminous_sage = {
+		random = no
+		sprite = 32
+		ai_will_do = { factor = 3 }
+	}
+	council_enforcer = {
+		random = no
+		sprite = 32
+		ai_will_do = { factor = 3 }
+	}
+	the_negotiator = {
+		random = no
+		sprite = 32
+		ai_will_do = { factor = 3 }
+	}
+}
