@@ -1,7 +1,8 @@
 characters={
-####POLITICS####
+####POLITICS ADVISORS####
 	REP_sheev_palpatine={
 		name=REP_sheev_palpatine
+		gender = male
 		portraits={
 			civilian={
 				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
@@ -29,186 +30,309 @@ characters={
 			id=-1
 		}
 	}
-	REP_mes_amedda={
-		name="Mes Amedda"
-		portraits={
-			civilian={
-				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
-				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
-			}
+	REP_mas_amedda={
+		name="Mas Amedda"
+		portraits={ civilian={ small="gfx/characters/REP/mas_amedda_political_advisor.png" large="gfx/leaders/REP/portrait_mas_amedda.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=mas_amedda_pol
+			name=mas_amedda
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ architect_of_order autocratic_imperialist }
+			ai_will_do={ factor=1 }
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = mes_political_advisor
-			name = mes
-			cost = 100
-			ledger = civilian
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-			}
-			available = {
-
-			}
-			traits = {
-				silent_workhorse
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-	}
-	REP_bail_organa={
-		name="Bail Organa"
-		portraits={
-			civilian={
-				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
-				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = bail_political_advisor
-			name = bail
-			cost = 100
-			ledger = civilian
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
-			}
-			traits = {
-				compassionate_gentleman
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-	}
-	REP_padme_amidala={
-		name="Padmé Amidala"
-		portraits={
-			civilian={
-				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
-				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = padme_political_advisor
-			name = padme
-			cost = 100
-			ledger = civilian
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
-			}
-			traits = {
-				social_reformer
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-	}
-	REP_mon_mothma={
-		name="Mon Mothma"
-		portraits={
-			civilian={
-				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
-				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
-			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = mon_political_advisor
-			name = mon
-			cost = 100
-			ledger = civilian
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-			}
-			available = {
-				NOT = { 
-					OR = {
-						has_government = new_order
-						has_government = dark_side
-					}
-				}
-			}
-			traits = {
-				champion_of_peace
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
 	}
 	REP_sly_moore={
 		name="Sly Moore"
-		portraits={
-			civilian={
-				large="gfx/leaders/REP/Portrait_Sheev_Palpatine.dds"
-				small="gfx/interface/ideas/REP_anakin_skywalker.tga"
-			}
+		portraits={ civilian={ small="gfx/characters/REP/sly_moore_political_advisor.png" large="gfx/leaders/REP/portrait_sly_moore.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=sly_moore_pol
+			name=sly_moore
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ whisper_in_the_dark political_manipulator }
+			ai_will_do={ factor=1 }
 		}
-		advisor = {
-			slot = political_advisor
-			idea_token = sly_political_advisor
-			name = sly
-			cost = 100
-			ledger = civilian
-			allowed = {
-				original_tag = REP
-			}
-			visible = {
-				original_tag = REP
-			}
-			available = {
+	}
+	REP_sate_pestage={
+		name="Sate Pestage"
+		portraits={ civilian={ small="gfx/characters/REP/sate_pestage_political_advisor.png" large="gfx/leaders/REP/portrait_sate_pestage.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=sate_pestage_pol
+			name=sate_pestage
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ palace_fixeur smooth_talking_charmer }
+			ai_will_do={ factor=1 }
+		}
+	}
 
-			}
-			traits = {
-				palpatine_loyalist
-			}
-			ai_will_do = {
-				factor = 1
-			}
+	REP_kinman_doriana={
+		name="Kinman Doriana"
+		portraits={ civilian={ small="gfx/characters/REP/kinman_doriana_political_advisor.png" large="gfx/leaders/REP/portrait_kinman_doriana.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=kinman_doriana_pol
+			name=kinman_doriana
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ covert_razor technocrat }
+			ai_will_do={ factor=1 }
+		}
+	}
+	REP_wullf_yularen={
+		name="Wullf Yularen"
+		portraits={ civilian={ small="gfx/characters/REP/wullf_yularen_political_advisor.png" large="gfx/leaders/REP/portrait_wullf_yularen.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=wullf_yularen_pol
+			name=wullf_yularen
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ anaxes_tradition retired_officer }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	REP_quarsh_panaka={
+		name="Quarsh Panaka"
+		portraits={ civilian={ small="gfx/characters/REP/quarsh_panaka_political_advisor.png" large="gfx/leaders/REP/portrait_quarsh_panaka.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=quarsh_panaka_pol
+			name=quarsh_panaka
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ palace_guardian hawk }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	REP_bail_organa={
+		name="Bail Organa"
+		gender = male
+		portraits={ civilian={ small="gfx/characters/REP/bail_organa_political_advisor.png" large="gfx/leaders/REP/portrait_bail_organa.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=bail_organa_pol
+			name=bail_organa
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ voice_of_alderaan tenacious_negotiator }
+			ai_will_do={ factor=1 }
+		}
+	}
+	REP_padme_amidala={
+		name="Padmé Amidala"
+		gender = female
+		portraits={ civilian={ small="gfx/characters/REP/padme_amidala_political_advisor.png" large="gfx/leaders/REP/portrait_padme.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=padme_amidala_pol
+			name=padme_amidala
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ fearless_diplomat popular_figurehead2 }
+			ai_will_do={ factor=1 }
 		}
 
 	}
+	REP_onaconda_farr={
+		name="Onaconda Farr"
+		portraits={ civilian={ small="gfx/characters/REP/onaconda_farr_political_advisor.png" large="gfx/leaders/REP/portrait_onaconda_farr.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=onaconda_farr_pol
+			name=onaconda_farr
+			cost=75
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ weary_moderate appeaser }
+			ai_will_do={ factor=1 }
+		}
+	}
+	REP_mon_mothma={
+		name="Mon Mothma"
+		gender = female
+		portraits={ civilian={ small="gfx/characters/REP/mon_mothma_political_advisor.png" large="gfx/leaders/REP/portrait_mon_mothma.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=mon_mothma_pol
+			name=mon_mothma
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ patrician_reformer conservative_grandee }
+			ai_will_do={ factor=1 }
+		}
 
+	}
+	REP_ask_aak={
+		name="Ask Aak"
+		portraits={ civilian={ small="gfx/characters/REP/ask_aak_political_advisor.png" large="gfx/leaders/REP/portrait_ask_aak.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=ask_aak_pol
+			name=ask_aak
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ core_world_elite the_banker }
+			ai_will_do={ factor=1 }
+		}
+	}
 
-####MILITARY####
+	REP_orn_free_taa={
+		name="Orn Free Taa"
+		portraits={ civilian={ small="gfx/characters/REP/orn_free_taa_political_advisor.png" large="gfx/leaders/REP/portrait_orn_free_taa.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=orn_free_taa_pol
+			name=orn_free_taa
+			cost=75
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ opulent_patriarch gifted_shipping_magnate }
+			ai_will_do={ factor=1 }
+		}
+	}
+	
+	REP_riyo_chuchi={
+		name="Riyo Chuchi"
+		portraits={ civilian={ small="gfx/characters/REP/riyo_chuchi_political_advisor.png" large="gfx/leaders/REP/portrait_riyo_chuchi.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=riyo_chuchi_pol
+			name=riyo_chuchi
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ advocate_for_the_voiceless womens_rights_activist }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	REP_nee_alavar={
+		name="Nee Alavar"
+		portraits={ civilian={ small="gfx/characters/REP/nee_alavar_political_advisor.png" large="gfx/leaders/REP/portrait_nee_alavar.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=nee_alavar_pol
+			name=nee_alavar
+			cost=75
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ reform_from_below marxist_academic }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	REP_garm_bel_iblis={
+		name="Garm Bel Iblis"
+		portraits={ civilian={ small="gfx/characters/REP/garm_bel_iblis_political_advisor.png" large="gfx/leaders/REP/portrait_garm_bel_iblis.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=garm_bel_iblis_pol
+			name=garm_bel_iblis
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ corellian_populist tenacious_negotiator }
+			ai_will_do={ factor=1 }
+		}
+	}
+	REP_jar_jar_binks={
+		name="Jar Jar Binks"
+		portraits={ civilian={ small="gfx/characters/REP/jar_jar_binks_political_advisor.png" large="gfx/leaders/REP/portrait_jar_jar.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=jar_jar_binks_pol
+			name=jar_jar_binks
+			cost=50
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ symbiotic_statesman popular_figurehead3 }
+			ai_will_do={ factor=1 }
+		}
+	}
+	REP_lott_dod={
+		name="Lott Dod"
+		portraits={ civilian={ small="gfx/characters/REP/lott_dod_political_advisor.png" large="gfx/leaders/REP/portrait_lott_dod.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=lott_dod_pol
+			name=lott_dod
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ velvet_lobbyist dealbroker }
+			ai_will_do={ factor=1 }
+		}
+	}
+	
+	REP_bana_breemu={
+		name="Bana Breemu"
+		portraits={ civilian={ small="gfx/characters/REP/bana_breemu_political_advisor.png" large="gfx/leaders/REP/portrait_bana_breemu.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=bana_breemu_pol
+			name=bana_breemu
+			cost=75
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ senate_liberal industry_reformer }
+			ai_will_do={ factor=1 }
+		}
+	}
+	
+	REP_terr_taneel={
+		name="Terr Taneel"
+		portraits={ civilian={ small="gfx/characters/REP/terr_taneel_political_advisor.png" large="gfx/leaders/REP/portrait_terr_taneel.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=terr_taneel_pol
+			name=terr_taneel
+			cost=75
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ committee_conservative staunch_constitutionalist }
+			ai_will_do={ factor=1 }
+		}
+	}
+####MILITARY ADVISORS####
 	REP_anakin_skywalker={
 		name="Anakin Skywalker"
+		gender = male
 		portraits={
 			civilian={
 				small="gfx/characters/REP/anakin_skywalker_political_advisor.png"
@@ -251,6 +375,7 @@ characters={
 	}
 	REP_obiwan_kenobi={
 		name="Obi-Wan Kenobi"
+		gender = male
 		portraits={
 			civilian={
 				small="gfx/characters/REP/obiwan_kenobi_political_advisor.png"
@@ -259,6 +384,17 @@ characters={
 			army={
 				large="gfx/leaders/REP/portrait_obi_wan.dds"
 			}
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=obi_wan_pol
+			name=obi_wan
+			cost=100
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ the_negotiator political_dancer }
+			ai_will_do={ factor=1 }
 		}
 		advisor = {
 			slot = high_command
@@ -275,13 +411,13 @@ characters={
 			available = {
 			}
 			traits = {
-				jedi_master army_CombinedArms_1
+				jedi_master_obi_wan army_CombinedArms_1
 			}
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		field_marshal={
+		corps_commander={
 			traits={ jedi_master }
 			visible = {
 			}
@@ -295,6 +431,7 @@ characters={
 	}
 	REP_yoda={
 		name="Yoda"
+		gender = male
 		portraits={
 			civilian={
 				small="gfx/characters/REP/yoda_political_advisor.png"
@@ -303,6 +440,17 @@ characters={
 			army={
 				large="gfx/leaders/REP/portrait_yoda.dds"
 			}
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=yoda_pol
+			name=yoda
+			cost=150
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ luminous_sage gentle_scholar }
+			ai_will_do={ factor=1 }
 		}
 		advisor = {
 			slot = army_chief
@@ -337,6 +485,7 @@ characters={
 	}
 	REP_mace_windu={
 		name="Mace Windu"
+		gender = male
 		portraits={
 			civilian={
 				small="gfx/characters/REP/mace_windu_political_advisor.png"
@@ -345,6 +494,17 @@ characters={
 			army={
 				large="gfx/leaders/REP/portrait_mace_windu.dds"
 			}
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=mace_windu_pol
+			name=mace_windu
+			cost=150
+			ledger=politics
+			allowed={ original_tag=REP }
+			visible={ original_tag=REP }
+			traits={ council_enforcer indomitable_perseverance }
+			ai_will_do={ factor=1 }
 		}
 		advisor = {
 			slot = army_chief
@@ -361,7 +521,7 @@ characters={
 			available = {
 			}
 			traits = {
-				jedi_master army_chief_offensive_1
+				jedi_master_windu army_chief_offensive_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -386,6 +546,7 @@ characters={
 	}
 	REP_kiadimundi={
 		name="Ki-Adi-Mundi"
+		gender = male
 		portraits={
 			civilian={
 				small="gfx/characters/REP/ki_adi_mundi_political_advisor.png"
@@ -410,7 +571,7 @@ characters={
 			available = {
 			}
 			traits = {
-				jedi_master army_infantry_1
+				jedi_master_ki_adi_mundi army_infantry_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -428,6 +589,7 @@ characters={
 	}
 	REP_plo_koon={
 		name="Plo Koon"
+		gender = male
 		portraits={
 			civilian={
 				small="gfx/characters/REP/plo_koon_political_advisor.png"
@@ -452,13 +614,13 @@ characters={
 			available = {
 			}
 			traits = {
-				jedi_master army_regrouping_1
+				jedi_master_plo_koon army_regrouping_1
 			}
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		field_marshal={
+		corps_commander={
 			traits={ jedi_master }
 			skill=3
 			attack_skill=3
@@ -470,6 +632,7 @@ characters={
 	}
 	REP_luminara_unduli={
 		name="Luminara Unduli"
+		gender = female
 		portraits={
 			civilian={
 				small="gfx/characters/REP/luminara_unduli_political_advisor.png"
@@ -494,7 +657,7 @@ characters={
 			available = {
 			}
 			traits = {
-				jedi_master army_logistics_1
+				jedi_master_luminara army_logistics_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -510,353 +673,298 @@ characters={
 			legacy_id=-1
 		}
 	}
-####FIELD####
+####NAVY ADVISORS####
 	REP_kit_fisto={
 		name="Kit Fisto"
+		gender = male
 		portraits={
-			army={
-				#small=""
-			}
-			army={
+			civilian={
+				small="gfx/characters/REP/kit_fisto_political_advisor.png"
 				large="gfx/leaders/REP/portrait_kit_fisto.dds"
 			}
+			army={ large="gfx/leaders/REP/portrait_kit_fisto.dds" }
 		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_saesee_tiin={
-		name="Saesee Tiin"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				large="gfx/leaders/REP/portrait_saesee_tiin.dds"
-			}
-		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+		advisor = {
+			slot = navy_chief
+			idea_token = kit_fisto_navy_chief
+			name = kit_fisto
+			cost = 100
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_kit_fisto navy_chief_maneuver_1 } # +naval speed, lvl1
+			ai_will_do = { factor = 1 }
 		}
 	}
-	REP_eeth_koth={
-		name="Eeth Koth"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				large="gfx/leaders/REP/portrait_eeth_koth.dds"
-			}
-		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_shaak_ti={
-		name="Shaak Ti"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				large="gfx/leaders/REP/portrait_shaak_ti.dds"
-			}
-		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_adi_gallia={
-		name="Adi Gallia"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				large="gfx/leaders/REP/portrait_adi_gallia.dds"
-			}
-		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_even_piell={
-		name="Even Piell"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				large="gfx/leaders/REP/portrait_even_piell.dds"
-			}
-		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
+
 	REP_oppo_rancisis={
 		name="Oppo Rancisis"
+		gender = male
 		portraits={
-			army={
-				#small=""
+			civilian={
+				small="gfx/characters/REP/oppo_rancisis_political_advisor.png"
+				large="gfx/leaders/REP/portrait_oppo_rancisis.dds"
 			}
-			army={
-				large="gfx/leaders/REP/portrait_Oppo_Rancisis.dds"
-			}
+			army={ large="gfx/leaders/REP/portrait_oppo_rancisis.dds" }
 		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+		advisor = {
+			slot = navy_chief
+			idea_token = oppo_rancisis_navy_chief
+			name = oppo_rancisis
+			cost = 100
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_oppo_rancisis navy_chief_decisive_battle_1 } # +capital/screen atk/def, lvl1
+			ai_will_do = { factor = 1 }
 		}
 	}
-	REP_stass_allie={
-		name="Stass Allie"
+
+	REP_even_piell={
+		name="Even Piell"
+		gender = male
 		portraits={
-			army={
-				#small=""
+			civilian={
+				small="gfx/characters/REP/even_piell_political_advisor.png"
+				large="gfx/leaders/REP/portrait_even_piell.dds"
 			}
-			army={
-				large="gfx/leaders/REP/portrait_Stass_Allie.dds"
-			}
+			army={ large="gfx/leaders/REP/portrait_even_piell.dds" }
 		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+		advisor = {
+			slot = navy_chief
+			idea_token = even_piell_navy_chief
+			name = even_piell
+			cost = 100
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_keven_piell navy_chief_reform_1 } # +navy XP gain factor, lvl1
+			ai_will_do = { factor = 1 }
 		}
 	}
-	REP_depa_billaba={
-		name="Depa Billaba"
+####AIR ADVISORS####
+	REP_saesee_tiin={
+		name="Saesee Tiin"
+		gender = male
 		portraits={
-			army={
-				#small=""
+			civilian={
+				small="gfx/characters/REP/saesee_tiin_political_advisor.png"
+				large="gfx/leaders/REP/portrait_saesee_tiin.dds"
 			}
-			army={
-				large="gfx/leaders/REP/portrait_Depa_Billaba.dds"
-			}
+			army={ large="gfx/leaders/REP/portrait_saesee_tiin.dds" }
 		}
-		field_marshal={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_agen_kolar={
-		name="Agen Kolar"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		field_marshal={
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_coleman_trebor={
-		name="Coleman Trebor"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		field_marshal={
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_coleman_kcaj={
-		name="Coleman Kcaj"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		field_marshal={
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_halsey={
-		name="Halsey"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_kento_marek={
-		name="Kento Marek"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_arligan_zey={
-		name="Arligan Zey"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
+		advisor = {
+			slot = air_chief
+			idea_token = saesee_tiin_air_chief
+			name = saesee_tiin
+			cost = 100
+			ledger = air
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_saesee_ttin air_chief_reform_1 } # +air XP gain, lvl1
+			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
 			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_quinlan_vos={
-		name="Quinlan Vos"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_nahdar_vebb={
-		name="Nahdar Vebb"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
 		}
 	}
 
+	REP_adi_gallia={
+		name="Adi Gallia"
+		gender = male
+		portraits={
+			civilian={
+				small="gfx/characters/REP/adi_gallia_political_advisor.png"
+				large="gfx/leaders/REP/portrait_adi_gallia.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_adi_gallia.dds" }
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = adi_gallia_air_chief
+			name = adi_gallia
+			cost = 100
+			ledger = air
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_adi_gallia air_chief_ground_support_1 } # +army bonus from air sup, lvl1
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={
+			traits={ jedi_master }
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	REP_aayla_secura={
+		name="Aayla Secura"
+		gender = female
+		portraits={
+			civilian={
+				small="gfx/characters/REP/aayla_secura_political_advisor.png"
+				large="gfx/leaders/REP/portrait_aayla_secura.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_aayla_secura.dds" }
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = aayla_secura_air_chief
+			name = aayla_secura
+			cost = 100
+			ledger = air
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_aayla_secura air_chief_all_weather_1 } # -bad weather penalties, lvl1
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={
+			traits={ jedi_master }
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
+			legacy_id=-1
+		}
+	}
+####THEORISTS####
+	REP_shaak_ti={
+		name="Shaak Ti"
+		gender = female
+		portraits={
+			civilian={
+				small="gfx/characters/REP/shaak_ti_political_advisor.png"
+				large="gfx/leaders/REP/portrait_shaak_ti.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_shaak_ti.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = shaak_ti_theorist
+			name = shaak_ti
+			cost = 150
+			ledger = army
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_shaak_ti military_theorist } # -land doctrine cost
+			ai_will_do = { factor = 1 }
+		}
+		field_marshal={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+	}
+
+	REP_rahm_kota={
+		name="Rahm Kota"
+		gender = male
+		portraits={
+			civilian={
+				small="gfx/characters/REP/rahm_kota_political_advisor.png"
+				large="gfx/leaders/REP/portrait_rahm_kota.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_rahm_kota.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = rahm_kota_theorist
+			name = rahm_kota
+			cost = 150
+			ledger = army
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_rahm_kota mobile_warfare_expert } # fits aggressive style
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+	}
+
+	REP_quinlan_vos={
+		name="Quinlan Vos"
+		gender = male
+		portraits={
+			civilian={
+				small="gfx/characters/REP/quinlan_vos_political_advisor.png"
+				large="gfx/leaders/REP/portrait_quinlan_vos.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_quinlan_vos.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = quinlan_vos_theorist
+			name = quinlan_vos
+			cost = 150
+			ledger = army
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_quinlan_vos superior_firepower_expert } # unorthodox, precision strikes
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+	}
+
+	REP_kkruhk={
+		name="K'Kruhk"
+		gender = male
+		portraits={
+			civilian={
+				small="gfx/characters/REP/k_kruhk_political_advisor.png"
+				large="gfx/leaders/REP/portrait_k_kruhk.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_k_kruhk.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = k_kruhk_theorist
+			name = k_kruhk
+			cost = 150
+			ledger = army
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_kkruhk grand_battle_plan_expert } # patient, resilient campaigns
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+	}
+
+	REP_nejaa_halcyon={
+		name="Nejaa Halcyon"
+		gender = male
+		portraits={
+			civilian={
+				small="gfx/characters/REP/nejaa_halcyon_political_advisor.png"
+				large="gfx/leaders/REP/portrait_nejaa_halcyon.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_nejaa_halcyon.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = nejaa_halcyon_theorist
+			name = nejaa_halcyon
+			cost = 150
+			ledger = army
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_nejaa_halcyon mass_assault_expert } # protective, defensive, infantry-focused
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+	}
 	REP_bultar_swan={
 		name="Bultar Swan"
 		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
+			civilian={
+				small="gfx/characters/REP/bultar_swan_political_advisor.png"
+				large="gfx/leaders/REP/portrait_bultar_swan.dds"
 			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
+			army={ large="gfx/leaders/REP/portrait_bultar_swan.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = bultar_swan_air_warfare_theorist
+			name = bultar_swan
+			cost = 150
+			ledger = air
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_bultar_swan air_warfare_theorist } # -10% air doctrine cost
+			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
 			traits={ jedi_knight }
@@ -868,674 +976,37 @@ characters={
 			legacy_id=-1
 		}
 	}
-	REP_tyr={
-		name="Tyr"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_tyffix={
-		name="Tyffix"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_etain_tur_mukan={
-		name="Etain Tur Mukan"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_sev={
-		name="Sev"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_roan_shryne={
-		name="Roan Shryne"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_echuu_shen_jon={
-		name="Echuu Shen Jon"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_aayla_secura={
-		name="Aayla Secura"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_bolla_ropal={
-		name="Bolla Ropal"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_shon_kon_ray={
-		name="Shon Kon Ray"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_phton={
-		name="Ph'ton"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_pablojill={
-		name="Pablo-Jill"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_kazdan_paratus={
-		name="Kazdan Paratus"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_barriss_offee={
-		name="Barriss Offee"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_foul_moudama={
-		name="Foul Moudama"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_leska={
-		name="Leska"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_voolvif_monn={
-		name="Voolvif Monn"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_kkruhk={
-		name="K'Kruhk"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_rahm_kota={
-		name="Rahm Kota"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_kai_justiss={
-		name="Kai Justiss"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_dass_jennir={
-		name="Dass Jennir"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_a_sharad_hett={
-		name="A Sharad Hett"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_nejaa_halcyon={
-		name="Nejaa Halcyon"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_ausar_auset={
-		name="Ausar Auset"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_daakman_barrek={
-		name="Daakman Barrek"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_soon_bayts={
-		name="Soon Bayts"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_tsui_choi={
-		name="Tsui Choi"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_roron_corobb={
-		name="Roron Corobb"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_roblio_darter={
-		name="Roblio Darter"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_ima_gun_di={
-		name="Ima Gun Di"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_tchooka_doon={
-		name="T'chooka D'oon"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_master }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_riike_en={
-		name="Rii'ke En"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_jor_drakas={
-		name="Jor Drakas"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			traits={ jedi_knight }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_malcor_brashin={
-		name="Malcor Brashin"
-		portraits={
-			army={
-				small="GFX_Portrait_Europe_Generic_land_1_small"
-			}
-			army={
-				large="GFX_Portrait_Europe_Generic_land_1"
-			}
-		}
-		corps_commander={
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
-		}
-	}
-	REP_Wilhuff_Tarkin={
+	REP_wilhuff_tarkin={
 		name="Wilhuff Tarkin"
+		gender = male
 		portraits={
 			civilian={
+				small="gfx/characters/REP/wilhuff_tarkin_political_advisor.png"
 				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
 			}
-			army={
-				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
-			}
+			army={ large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = wilhuff_tarkin_naval_theorist
+			name = wilhuff_tarkin
+			cost = 150
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { tarkin_role naval_theorist } # -10% naval doctrine cost
+			ai_will_do = { factor = 1 }
+		}
+		advisor = {
+			slot=political_advisor
+			idea_token=wilhuff_tarkin_pol
+			name=wilhuff_tarkin
+			cost=100
+			ledger=politics
+			allowed={ original_tag = REP }
+			visible={ original_tag = REP }
+			traits={ tarkin_role warmonger }
+			ai_will_do={ factor=1 }
 		}
 		country_leader={
 			desc="REP_tarkin_desc"
@@ -1543,21 +1014,6 @@ characters={
 			traits={ }
 			#expire="1965.1.1.1"
 			id=-1
-		}
-		advisor = {
-			slot = navy_chief
-			idea_token = REP_tarkin_navy
-			ledger = navy
-			allowed = {
-				original_tag = REP
-			}
-			traits = {
-				navy_chief_decisive_battle_3
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1
-			}
 		}
 		navy_leader = {
 			traits = {superior_tactician spotter ironside blue_water_expert}
@@ -1567,6 +1023,162 @@ characters={
 			maneuvering_skill = 4
 			coordination_skill = 4
 			legacy_id = -1
-			}
 		}
+	}
+####OTHERS####
+	REP_roan_shryne={
+		name="Roan Shryne"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/roan_shryne_political_advisor.png"
+				large="gfx/leaders/REP/portrait_roan_shryne.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_roan_shryne.dds" }
+		}
+		advisor = {
+			slot = high_command
+			idea_token = roan_shryne_high
+			name = roan_shryne
+			cost = 100
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_roan_shryne navy_screen_1 }
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={
+			traits={ jedi_master }
+			skill=3
+			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	REP_daakman_barrek={
+		name="Daakman Barrek"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/daakman_barrek_political_advisor.png"
+				large="gfx/leaders/REP/portrait_daakman_barrek.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_daakman_barrek.dds" }
+		}
+		advisor = {
+			slot = high_command
+			idea_token = daakman_barrek_high
+			name = daakman_barrek
+			cost = 100
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_daakman_barrek navy_anti_submarine_1 }
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={
+			traits={ jedi_master }
+			skill=3
+			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	REP_roron_corobb={
+		name="Roron Corobb"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/roron_corobb_political_advisor.png"
+				large="gfx/leaders/REP/portrait_roron_corobb.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_roron_corobb.dds" }
+		}
+		advisor = {
+			slot = high_command
+			idea_token = roron_corobb_high
+			name = roron_corobb
+			cost = 100
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_roron_corobb navy_capital_ship_1 }
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={
+			traits={ jedi_master }
+			skill=3
+			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
+			legacy_id=-1
+		}
+	}
+
+	REP_stass_allie={
+		name="Stass Allie"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/stass_allie_political_advisor.png"
+				large="gfx/leaders/REP/portrait_stass_allie.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_stass_allie.dds" }
+		}
+		advisor = {
+			slot = high_command
+			idea_token = stass_allie_high
+			name = stass_allie
+			cost = 100
+			ledger = air
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_stass_allie air_bomber_interception_1 }
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={
+			traits={ jedi_master }
+			skill=3
+			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	REP_agen_kolar={
+		name="Agen Kolar"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/agen_kolar_political_advisor.png"
+				large="gfx/leaders/REP/portrait_agen_kolar.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_agen_kolar.dds" }
+		}
+		advisor = {
+			slot = high_command
+			idea_token = agen_kolar_high
+			name = agen_kolar
+			cost = 100
+			ledger = air
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_agen_kolar air_close_air_support_1 }
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+	}
+
+	REP_dass_jennir={
+		name="Dass Jennir"
+		portraits={
+			civilian={
+				small="gfx/characters/REP/dass_jennir_political_advisor.png"
+				large="gfx/leaders/REP/portrait_dass_jennir.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_dass_jennir.dds" }
+		}
+		advisor = {
+			slot = high_command
+			idea_token = dass_jennir_high
+			name = dass_jennir
+			cost = 100
+			ledger = air
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { jedi_master_dass_jennir air_strategic_bombing_1 }
+			ai_will_do = { factor = 1 }
+		}
+		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+	}
 }
