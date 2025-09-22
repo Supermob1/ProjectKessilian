@@ -50,6 +50,8 @@ create_faction = "Galactic Republic"
 
 ######CHARACTERS######
 recruit_character = REP_sheev_palpatine
+recruit_character = REP_finis_valorum
+recruit_character = REP_giddean_danu
 recruit_character = REP_mas_amedda
 recruit_character = REP_sly_moore
 recruit_character = REP_sate_pestage
@@ -196,17 +198,15 @@ if = {
 }
 
 set_popularities = {
-	new_order = 0
-	dark_side = 0
-	akaanadocrat = 1
-	unitist = 10
-	corist = 15
+	akaanadocrat = 0
+	unitist = 19
+	corist = 32
 	distributionist =  0
-	corporate_consortium = 4
-	trade_democrat = 13
-	ruusanist = 1
-	inclusivist = 39
-	light_side = 17
+	corporate_consortium = 0
+	trade_democrat = 24
+	ruusanist = 20
+	inclusivist = 5
+	force_magocracy = 0
 }
 add_ideas = {
 	no_conscription
@@ -215,7 +215,7 @@ add_ideas = {
 	widespread_race_war
 }
 set_politics = {
-	ruling_party = inclusivist
+	ruling_party = corist
 	last_election = "999.1.1"
 	election_frequency = 48
 	elections_allowed = no
