@@ -106,7 +106,55 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 	}
-
+	REP_wilhuff_tarkin={
+		name="Wilhuff Tarkin"
+		gender = male
+		portraits={
+			civilian={
+				small="gfx/characters/REP/wilhuff_tarkin_political_advisor.png"
+				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
+			}
+			army={ large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds" }
+		}
+		advisor = {
+			slot = theorist
+			idea_token = wilhuff_tarkin_naval_theorist
+			name = wilhuff_tarkin
+			cost = 150
+			ledger = navy
+			allowed = { original_tag = REP }
+			visible = { original_tag = REP }
+			traits = { tarkin_role naval_theorist } # -10% naval doctrine cost
+			ai_will_do = { factor = 1 }
+		}
+		advisor = {
+			slot=political_advisor
+			idea_token=wilhuff_tarkin_pol
+			name=wilhuff_tarkin
+			cost=100
+			ledger=politics
+			allowed={ original_tag = REP }
+			visible={ original_tag = REP }
+			traits={ tarkin_role_2 warmonger }
+			ai_will_do={ factor=1 }
+		}
+		country_leader={
+			desc="REP_tarkin_desc"
+			ideology=akaanadocrat_subtype
+			traits={ }
+			#expire="1965.1.1.1"
+			id=-1
+		}
+		navy_leader = {
+			traits = {superior_tactician spotter ironside blue_water_expert}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			maneuvering_skill = 4
+			coordination_skill = 4
+			legacy_id = -1
+		}
+	}
 	REP_quarsh_panaka={
 		name="Quarsh Panaka"
 		portraits={ civilian={ small="gfx/characters/REP/quarsh_panaka_political_advisor.png" large="gfx/leaders/REP/portrait_quarsh_panaka.dds" } }
@@ -974,55 +1022,6 @@ characters={
 			planning_skill=3
 			logistics_skill=3
 			legacy_id=-1
-		}
-	}
-	REP_wilhuff_tarkin={
-		name="Wilhuff Tarkin"
-		gender = male
-		portraits={
-			civilian={
-				small="gfx/characters/REP/wilhuff_tarkin_political_advisor.png"
-				large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds"
-			}
-			army={ large="gfx/leaders/REP/portrait_Wilhuff_Tarkin.dds" }
-		}
-		advisor = {
-			slot = theorist
-			idea_token = wilhuff_tarkin_naval_theorist
-			name = wilhuff_tarkin
-			cost = 150
-			ledger = navy
-			allowed = { original_tag = REP }
-			visible = { original_tag = REP }
-			traits = { tarkin_role naval_theorist } # -10% naval doctrine cost
-			ai_will_do = { factor = 1 }
-		}
-		advisor = {
-			slot=political_advisor
-			idea_token=wilhuff_tarkin_pol
-			name=wilhuff_tarkin
-			cost=100
-			ledger=politics
-			allowed={ original_tag = REP }
-			visible={ original_tag = REP }
-			traits={ tarkin_role warmonger }
-			ai_will_do={ factor=1 }
-		}
-		country_leader={
-			desc="REP_tarkin_desc"
-			ideology=akaanadocrat_subtype
-			traits={ }
-			#expire="1965.1.1.1"
-			id=-1
-		}
-		navy_leader = {
-			traits = {superior_tactician spotter ironside blue_water_expert}
-			skill = 5
-			attack_skill = 4
-			defense_skill = 5
-			maneuvering_skill = 4
-			coordination_skill = 4
-			legacy_id = -1
 		}
 	}
 ####OTHERS####
