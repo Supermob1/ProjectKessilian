@@ -1,9 +1,10 @@
 #LuxLoser: We are utilizing the same AI principle as Kaiserreich and Fuhrerreich, i.e. all AIs are set to Neutral in order to make them easier for direction by event and focus rather than pursuing autonomous goals like random wars and so on.
 
 ideologies = {
-	light_side = {
+	force_magocracy = {
 		types = {
-		light_side_subtype = {}
+			light_side_subtype = { color = { 100 159 193 } }
+			dark_side_subtype = { color = { 255 0 25 } }
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_LIGHT_SIDE_1"
@@ -54,36 +55,10 @@ ideologies = {
 		ai_neutral = yes	
 		can_be_boosted = no
 	}
-	symbiotist = {
-		types = {
-			symbiotist_subtype = {}
-		}
-		dynamic_faction_names = {
-			"FACTION_NAME_NEW_ORDER_1"
-			"FACTION_NAME_NEW_ORDER_2"
-			"FACTION_NAME_NEW_ORDER_3"
-			"FACTION_NAME_NEW_ORDER_4"
-			"FACTION_NAME_NEW_ORDER_5"
-			"FACTION_NAME_NEW_ORDER_6"
-		}
-		color = { 14 135 89 }
-		rules = {
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			join_faction_tension = 0.80
-			generate_wargoal_tension = 0.25
-			production_speed_buildings_factor = 0.05
-			conscription = 0.005
-		}
-		ai_neutral = yes			
-	}
 	distributionist = {
 		types = {
 		distributionist_subtype = {}
+		symbiotist_subtype = { color = { 14 135 89 } }
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_DISTRIBUTIONIST_1"
@@ -249,6 +224,7 @@ ideologies = {
 	unitist = {
 		types = {
 		unitist_subtype = {}
+		new_order_subtype = {color = { 136 2 13 }}
 		}
 		dynamic_faction_names = {
 			"FACTION_NAME_UNITIST_1"
@@ -273,59 +249,6 @@ ideologies = {
 		ai_neutral = yes	
 		can_be_boosted = no
 
-	}
-	new_order = {
-		types = {
-		new_order_subtype = {}
-		}
-		dynamic_faction_names = {
-			"FACTION_NAME_NEW_ORDER_1"
-			"FACTION_NAME_NEW_ORDER_2"
-			"FACTION_NAME_NEW_ORDER_3"
-			"FACTION_NAME_NEW_ORDER_4"
-			"FACTION_NAME_NEW_ORDER_5"
-			"FACTION_NAME_NEW_ORDER_6"
-		}
-		color = { 136 2 13 }
-		rules = {
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			join_faction_tension = 0.80
-			generate_wargoal_tension = 0.25
-			production_speed_buildings_factor = 0.05
-			conscription = 0.005
-		}
-		ai_neutral = yes			
-	}
-	dark_side = {
-		types = {
-		dark_side_subtype = {}
-		}
-		dynamic_faction_names = {
-			"FACTION_NAME_DARK_SIDE_1"
-			"FACTION_NAME_DARK_SIDE_2"
-			"FACTION_NAME_DARK_SIDE_3"
-			"FACTION_NAME_DARK_SIDE_4"
-			"FACTION_NAME_DARK_SIDE_5"
-			"FACTION_NAME_DARK_SIDE_6"
-		}
-		color = { 255 0 25 }
-		rules = {
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			join_faction_tension = 0.80
-			generate_wargoal_tension = 0.25
-			conscription = 0.005
-		}
-		ai_neutral = yes			
 	}
 }
 

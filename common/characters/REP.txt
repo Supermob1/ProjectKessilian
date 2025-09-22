@@ -10,24 +10,48 @@ characters={
 		}
 		country_leader={
 			desc="REP_palpatine_desc"
-			ideology=inclusivist_subtype
+			ideology=corist_subtype
 			traits={ shrewd_chancellor }
 			#expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
-			desc="REP_palpatine_desc"
-			ideology=new_order_subtype
-			traits={ shrewd_chancellor }
-			#expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
+			name = "Darth Sidious"
 			desc="REP_palpatine_desc"
 			ideology=dark_side_subtype
 			traits={ shrewd_chancellor }
 			#expire="1965.1.1.1"
 			id=-1
+		}
+	}
+	REP_finis_valorum={
+		name="Finis Valorum"
+		gender = male
+		portraits={
+			civilian={
+				large="gfx/leaders/REP/portrait_finis_valorum.dds"
+			}
+		}
+		country_leader={
+			desc="REP_valorum_desc"
+			ideology=ruusanist_subtype
+			traits={ }
+			#expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	REP_giddean_danu={
+		name="Giddean Danu"
+		gender = male
+		portraits={
+			civilian={
+				large="gfx/leaders/REP/portrait_giddean_danu.dds"
+			}
+		}
+		country_leader={
+			desc="REP_gidean_danu_desc"
+			ideology=trade_democrat_subtype
+			traits={ }
 		}
 	}
 	REP_mas_amedda={
@@ -43,6 +67,13 @@ characters={
 			visible={ original_tag=REP }
 			traits={ architect_of_order autocratic_imperialist }
 			ai_will_do={ factor=1 }
+		}
+		country_leader={
+			desc="REP_mas_amedda_desc"
+			ideology=unitist_subtype
+			traits={ }
+			#expire="1965.1.1.1"
+			id=-1
 		}
 	}
 	REP_sly_moore={
@@ -202,6 +233,13 @@ characters={
 			traits={ fearless_diplomat popular_figurehead2 }
 			ai_will_do={ factor=1 }
 		}
+		country_leader={
+			desc="REP_padme_desc"
+			ideology=inclusivist_subtype
+			traits={ }
+			#expire="1965.1.1.1"
+			id=-1
+		}
 
 	}
 	REP_onaconda_farr={
@@ -314,6 +352,11 @@ characters={
 			traits={ corellian_populist tenacious_negotiator }
 			ai_will_do={ factor=1 }
 		}
+		country_leader={
+			desc="REP_garm_bel_iblis_desc"
+			ideology=distributionist_subtype
+			traits={ }
+		}
 	}
 	REP_jar_jar_binks={
 		name="Jar Jar Binks"
@@ -343,6 +386,11 @@ characters={
 			visible={ original_tag=REP }
 			traits={ velvet_lobbyist dealbroker }
 			ai_will_do={ factor=1 }
+		}
+		country_leader={
+			desc="REP_lott_dod_desc"
+			ideology=corporate_consortium_subtype
+			traits={ }
 		}
 	}
 	
@@ -583,13 +631,6 @@ characters={
 			planning_skill=5
 			logistics_skill=5
 			legacy_id=-1
-		}
-		country_leader={
-			desc="REP_mace_windu_desc"
-			ideology=light_side_subtype
-			traits={ jedi_master }
-			#expire="1965.1.1.1"
-			id=-1
 		}
 	}
 	REP_kiadimundi={

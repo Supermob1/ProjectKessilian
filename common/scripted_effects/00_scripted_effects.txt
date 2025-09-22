@@ -21,7 +21,27 @@ Clone_wars_start = {
 	CIS = { 
 		declare_war_on = { target = REP type = annex_everything }
 		load_oob = "HOD_Droid_Army"
-		REP = { load_oob = "HOD_Grande_Armee" }
+		REP = { 
+			load_oob = "HOD_Grande_Armee"
+			set_politics = {
+				ruling_party = unitist
+				elections_allowed = no
+			}
+			hidden_effect = {
+				add_timed_idea = {
+					idea = Unitism_drift
+					days = 180
+				}
+			}
+			add_country_leader_role = {
+				character = REP_sheev_palpatine
+				promote_leader = yes
+				country_leader = {
+					ideology = unitist_subtype
+					traits = { shrewd_chancellor }
+				}
+			}
+		}
 		add_ideas = CIS_Great_Droid_Army
 		# load_oob = "HOD_CIS_naval"
 	}

@@ -166,8 +166,8 @@ ideas = {
 			available = {
 				has_war_support > 0.5
 				OR = {
-					has_government = new_order
-					has_government = dark_side
+					has_government = unitist
+					has_government = force_magocracy
 					custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
 					AND = {
 						has_war = yes
@@ -417,8 +417,8 @@ ideas = {
 			available = {
 				has_war = yes
 				OR = {
-					has_government = dark_side
-					has_government = new_order
+					has_government = force_magocracy
+					has_government = unitist
 				}
 				OR = {
 					has_idea = war_economy

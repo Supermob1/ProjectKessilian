@@ -113,7 +113,7 @@ country_event = { # After the Raid
 			character = YIN_zatrax_governor
 		}
 		set_politics = {
-			ruling_party = light_side
+			ruling_party = force_magocracy
 			elections_allowed = no
 		}
 		swap_ideas = {
@@ -136,15 +136,14 @@ country_event = { # After the Raid
 				name = YIN_trade_democrat_party
 			}
 			set_popularities = {
-				new_order = 10
-				dark_side = 5
+				unitist = 10
 				akaanadocrat = 15
 				corist = 15
 				corporate_consortium = 5
 				trade_democrat = 5
 				ruusanist = 15
 				inclusivist = 15
-				light_side = 10
+				force_magocracy = 15
 				distributionist = 5
 			}
 			country_event = {
@@ -1252,11 +1251,11 @@ country_event = { # Audience with Zatrax (Finale — Force vs Council)
 			character = YIN_zatrax_governor
 		}
 		set_politics = {
-			ruling_party = light_side
+			ruling_party = force_magocracy
 			elections_allowed = no
 		}
 		set_political_party = {
-			ideology = light_side
+			ideology = force_magocracy
 			popularity = 50
 		}
 		remove_ideas = YIN_Protectorate_Established
@@ -1432,15 +1431,14 @@ country_event = { # Uprising Outcome
 		name = YIN_trade_democrat_party
 	}
 	set_popularities = {
-		new_order = 10
-		dark_side = 5
+		unitist = 10
 		akaanadocrat = 15
 		corist = 15
 		corporate_consortium = 5
 		trade_democrat = 5
 		ruusanist = 15
 		inclusivist = 15
-		light_side = 10
+		force_magocracy = 15
 		distributionist = 5
 	}
 	}
@@ -1553,7 +1551,7 @@ country_event = { # Night of Settlements (Decision)
 		complete_national_focus = YIN_threll_eliminates_karesh
 	retire_character = YIN_karesh_tradelord
 		add_ideas = YIN_high_fangmaster_idea
-		set_politics = { ruling_party = dark_side elections_allowed = no }
+		set_politics = { ruling_party = force_magocracy elections_allowed = no }
 		ai_chance = { factor = 100 }
 	}
 }
@@ -1585,11 +1583,11 @@ country_event = { # Aftermath: Which way forward?
 		add_political_power = -25
 		complete_national_focus = YIN_master_shalar_called
 		set_politics = {
-			ruling_party = light_side
+			ruling_party = force_magocracy
 			elections_allowed = no
 		}
 		set_political_party = {
-			ideology = light_side
+			ideology = force_magocracy
 			popularity = 50
 		}
 		hidden_effect = { country_event = { id = YIN_shl.1 days = 5 random_hours = 6 } }
@@ -1712,11 +1710,11 @@ country_event = { # The Recall
 		complete_national_focus = YIN_shalar_assassinated
 		retire_character = YIN_shalar_master
 		set_politics = {
-			ruling_party = new_order
+			ruling_party = unitist
 			elections_allowed = no
 		}
 		set_political_party = {
-			ideology = new_order
+			ideology = unitist
 			popularity = 50
 		}
 		hidden_effect = { country_event = { id = YIN_vek.1 days = 10 random_hours = 6 } }
