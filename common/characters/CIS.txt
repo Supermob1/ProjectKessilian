@@ -10,6 +10,13 @@ characters={
 			expire="1965.1.1.1"
 			id=-1
 		}
+		country_leader={
+			desc="CIS_dooku_desc"
+			ideology=dark_side_subtype
+			traits={  }
+			expire="1965.1.1.1"
+			id=-1
+		}
 		advisor={
 			slot = theorist
 			idea_token = count_dooku_theorist
@@ -19,6 +26,16 @@ characters={
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits = { grand_chessmaster mobile_warfare_expert }
 			ai_will_do={ factor=1 }
+		}
+	}
+	CIS_voe_attrell={
+		name="Voe Attrell"
+		portraits={ civilian={ small="gfx/characters/CIS/voe_attrell_political_advisor.png" large="gfx/leaders/CIS/portrait_voe_attrell.dds" } }
+
+		country_leader={
+			desc="CIS_voe_attrell_desc"
+			ideology=trade_democrat_subtype
+			traits={  }
 		}
 	}
 	# --- Trade Democrats ---
@@ -84,6 +101,17 @@ characters={
 	CIS_mina_bonteri={
 		name="Mina Bonteri"
 		portraits={ civilian={ small="gfx/characters/CIS/mina_bonteri_political_advisor.png" large="gfx/leaders/CIS/portrait_mina_bonteri.dds" } }
+
+		country_leader={
+			desc="CIS_mina_bonteri_desc"
+			ideology=inclusivist_subtype
+			traits={  }
+		}
+		country_leader={
+			desc="CIS_mina_bonteri_desc"
+			ideology=ruusanist_subtype
+			traits={  }
+		}
 		advisor={
 			slot=political_advisor
 			idea_token=mina_bonteri_pol
@@ -98,6 +126,12 @@ characters={
 	CIS_kerch_kushi={
 		name="Kerch Kushi"
 		portraits={ civilian={ small="gfx/characters/CIS/kerch_kushi_political_advisor.png" large="gfx/leaders/CIS/portrait_kerch_kushi.dds" } }
+
+		country_leader={
+			desc="CIS_kerch_kushi_desc"
+			ideology=distributionist_subtype
+			traits={  }
+		}
 		advisor={
 			slot=political_advisor
 			idea_token=kerch_kushi_pol
@@ -114,6 +148,12 @@ characters={
 	CIS_nute_gunray={
 		name="Nute Gunray"
 		portraits={ civilian={ small="gfx/characters/CIS/nute_gunray_political_advisor.png" large="gfx/leaders/CIS/portrait_nute_gunray.dds" } }
+		
+		country_leader={
+			desc="CIS_nute_gunray_desc"
+			ideology=corporate_consortium_subtype
+			traits={  }
+		}
 		advisor={
 			slot=political_advisor
 			idea_token=nute_gunray_pol
@@ -295,6 +335,16 @@ characters={
 		portraits={
 			civilian={ small="gfx/characters/CIS/grievous_political_advisor.png" large="gfx/leaders/CIS/portrait_grievous.dds" }
 			army={ large="gfx/leaders/CIS/portrait_grievous.dds" }
+		}
+		country_leader={
+			desc="CIS_grievous_chief_desc"
+			ideology=akaanadocrat_subtype
+			traits={  }
+		}
+		country_leader={
+			desc="CIS_grievous_chief_desc"
+			ideology=unitist_subtype
+			traits={  }
 		}
 		advisor={
 			slot = army_chief
