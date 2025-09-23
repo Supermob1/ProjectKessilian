@@ -1,11 +1,8 @@
 characters={
 	CIS_count_dooku={
 		name="Count Dooku"
-		portraits={
-			civilian={
-				large="gfx/leaders/CIS/Portrait_Dooku_Neutral.dds"
-			}
-		}
+		portraits={ civilian={ small="gfx/characters/CIS/count_dooku_political_advisor.png" large="gfx/leaders/CIS/Portrait_Dooku_Neutral.dds" } }
+
 		country_leader={
 			desc="CIS_dooku_desc"
 			ideology=trade_democrat_subtype
@@ -13,22 +10,369 @@ characters={
 			expire="1965.1.1.1"
 			id=-1
 		}
+		advisor={
+			slot = theorist
+			idea_token = count_dooku_theorist
+			name = count_dooku
+			cost = 150
+			ledger = army
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { grand_chessmaster mobile_warfare_expert }
+			ai_will_do={ factor=1 }
+		}
 	}
-}
-characters={
-	CIS_general_grievous={
+	# --- Trade Democrats ---
+
+	CIS_bec_lawise={
+		name="Bec Lawise"
+		portraits={ civilian={ small="gfx/characters/CIS/bec_lawise_political_advisor.png" large="gfx/leaders/CIS/portrait_bec_lawise.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=bec_lawise_pol
+			name=bec_lawise
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ profit_legislator the_banker }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_by_bluss={
+		name="By Bluss"
+		portraits={ civilian={ small="gfx/characters/CIS/by_bluss_political_advisor.png" large="gfx/leaders/CIS/portrait_by_bluss.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=by_bluss_pol
+			name=by_bluss
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ market_tactician industry_reformer }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_avi_singh={
+		name="Avi Singh"
+		portraits={ civilian={ small="gfx/characters/CIS/avi_singh_political_advisor.png" large="gfx/leaders/CIS/portrait_avi_singh.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=avi_singh_pol
+			name=avi_singh
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ free_trade_evangelist tenacious_negotiator }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_ansibella_delu={
+		name="Ansibella Delu"
+		portraits={ civilian={ small="gfx/characters/CIS/ansibella_delu_political_advisor.png" large="gfx/leaders/CIS/portrait_ansibella_delu.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=ansibella_delu_pol
+			name=ansibella_delu
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ silver_tongue_ansibella propaganda_expert }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	# --- Inclusivists ---
+
+	CIS_mina_bonteri={
+		name="Mina Bonteri"
+		portraits={ civilian={ small="gfx/characters/CIS/mina_bonteri_political_advisor.png" large="gfx/leaders/CIS/portrait_mina_bonteri.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=mina_bonteri_pol
+			name=mina_bonteri
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ bridge_for_peace womens_rights_activist }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_kerch_kushi={
+		name="Kerch Kushi"
+		portraits={ civilian={ small="gfx/characters/CIS/kerch_kushi_political_advisor.png" large="gfx/leaders/CIS/portrait_kerch_kushi.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=kerch_kushi_pol
+			name=kerch_kushi
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ cultural_relativist social_reformer }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	# --- Corporate Consortium ---
+
+	CIS_nute_gunray={
+		name="Nute Gunray"
+		portraits={ civilian={ small="gfx/characters/CIS/nute_gunray_political_advisor.png" large="gfx/leaders/CIS/portrait_nute_gunray.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=nute_gunray_pol
+			name=nute_gunray
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ trade_blockade_master dealbroker }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_wat_tambor={
+		name="Wat Tambor"
+		portraits={ civilian={ small="gfx/characters/CIS/wat_tambor_political_advisor.png" large="gfx/leaders/CIS/portrait_wat_tambor.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=wat_tambor_pol
+			name=wat_tambor
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ techno_unionist gifted_shipping_magnate }
+			ai_will_do={ factor=1 }
+		}
+		advisor={
+			slot = high_command
+			idea_token = wat_tambor_high
+			name = wat_tambor
+			cost = 100 ledger = air
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { techno_unionist air_strategic_bombing_1 }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_shu_mai={
+		name="Shu Mai"
+		portraits={ civilian={ small="gfx/characters/CIS/shu_mai_political_advisor.png" large="gfx/leaders/CIS/portrait_shu_mai.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=shu_mai_pol
+			name=shu_mai
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ commerce_matron industry_reformer }
+			ai_will_do={ factor=1 }
+		}
+		advisor={
+			slot = high_command
+			idea_token = shu_mai_high
+			name = shu_mai
+			cost = 100 ledger = air
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { commerce_matron air_close_air_support_1 }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_passel_argente={
+		name="Passel Argente"
+		portraits={ civilian={ small="gfx/characters/CIS/passel_argente_political_advisor.png" large="gfx/leaders/CIS/portrait_passel_argente.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=passel_argente_pol
+			name=passel_argente
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ corporate_lawyer backroom_backstabber }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	# --- Akaan’adocrats ---
+
+	CIS_grievous={
+		name="General Grievous"
+		portraits={ civilian={ small="gfx/characters/CIS/grievous_political_advisor.png" large="gfx/leaders/CIS/portrait_grievous.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=grievous_pol
+			name=grievous
+			cost=150 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ cybernetic_warlord warmonger }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_whorm_loathsom={
+		name="Whorm Loathsom"
+		portraits={ civilian={ small="gfx/characters/CIS/whorm_loathsom_political_advisor.png" large="gfx/leaders/CIS/portrait_whorm_loathsom.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=whorm_loathsom_pol
+			name=whorm_loathsom
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ siege_master retired_officer }
+			ai_will_do={ factor=1 }
+		}
+		advisor={
+			slot = high_command
+			idea_token = whorm_loathsom_high
+			name = whorm_loathsom
+			cost = 100 ledger = army
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { siege_master army_infantry_1 }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	# --- Magocrats (Dark Side-aligned) ---
+
+	CIS_asajj_ventress={
+		name="Asajj Ventress"
+		portraits={ civilian={ small="gfx/characters/CIS/asajj_ventress_political_advisor.png" large="gfx/leaders/CIS/portrait_asajj_ventress.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=asajj_ventress_pol
+			name=asajj_ventress
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ shadow_assassin silent_workhorse }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_sevrance_tann={
+		name="Sev'rance Tann"
+		portraits={ civilian={ small="gfx/characters/CIS/sevrance_tann_political_advisor.png" large="gfx/leaders/CIS/portrait_sevrance_tann.dds" } }
+		advisor={
+			slot=political_advisor
+			idea_token=sevrance_tann_pol
+			name=sevrance_tann
+			cost=100 ledger=politics
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits={ chiss_tactician war_industrialist }
+			ai_will_do={ factor=1 }
+		}
+		advisor={
+			slot = air_chief
+			idea_token = sevrance_tann_air_chief
+			name = sevrance_tann
+			cost = 150
+			ledger = air
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { chiss_tactician air_chief_safety_1 }
+			ai_will_do={ factor=1 }
+		}
+		corps_commander={
+			traits={ skilled_tactician }
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=4 logistics_skill=2 legacy_id=-1
+		}
+	}
+	# Military #
+	CIS_trench={
+		name="Admiral Trench"
+		portraits={
+			civilian={ small="gfx/characters/CIS/trench_political_advisor.png" large="gfx/leaders/CIS/portrait_trench.dds" }
+			army={ large="gfx/leaders/CIS/portrait_trench.dds" }
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = trench_navy_chief
+			name = trench
+			cost = 150
+			ledger = navy
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { web_tactician navy_chief_decisive_battle_1 }
+			ai_will_do={ factor=1 }
+		}
+		corps_commander={
+			traits={ naval_strategist }
+			skill=3 attack_skill=3 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
+		}
+	}
+
+	CIS_grievous_chief={
 		name="General Grievous"
 		portraits={
-			civilian={
-				large="gfx/leaders/CIS/portrait_grievous.dds"
-			}
-			army={
-				large="gfx/leaders/CIS/portrait_grievous.dds"
-			}
+			civilian={ small="gfx/characters/CIS/grievous_political_advisor.png" large="gfx/leaders/CIS/portrait_grievous.dds" }
+			army={ large="gfx/leaders/CIS/portrait_grievous.dds" }
 		}
-		
-
-	
+		advisor={
+			slot = army_chief
+			idea_token = grievous_army_chief
+			name = grievous
+			cost = 150
+			ledger = army
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { cybernetic_warlord army_chief_offensive_1 }
+			ai_will_do={ factor=1 }
+		}
+		field_marshal={
+			traits={ offensive_doctrine }
+			skill=4 attack_skill=5 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
+		}
 	}
+	CIS_poggle_the_lesser={
+		name="Poggle the Lesser"
+		portraits={ civilian={ small="gfx/characters/CIS/poggle_political_advisor.png" large="gfx/leaders/CIS/portrait_poggle.dds" } }
+		advisor={
+			slot = theorist
+			idea_token = poggle_theorist
+			name = poggle
+			cost = 100
+			ledger = army
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { hive_overlord superior_firepower_expert }
+			ai_will_do={ factor=1 }
+		}
+	}
+	CIS_mar_tuuk={
+		name="Mar Tuuk"
+		portraits={ civilian={ small="gfx/characters/CIS/mar_tuuk_political_advisor.png" large="gfx/leaders/CIS/portrait_mar_tuuk.dds" } }
+		advisor={
+			slot = high_command
+			idea_token = mar_tuuk_high
+			name = mar_tuuk
+			cost = 100 ledger = navy
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { cunning_blockader navy_capital_ship_1 }
+			ai_will_do={ factor=1 }
+		}
+	}
+
+	CIS_kalani={
+		name="Kalani"
+		portraits={ civilian={ small="gfx/characters/CIS/kalani_political_advisor.png" large="gfx/leaders/CIS/portrait_kalani.dds" } }
+		advisor={
+			slot = high_command
+			idea_token = kalani_high
+			name = kalani
+			cost = 100 ledger = army
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { tactical_droid army_regrouping_1 }
+			ai_will_do={ factor=1 }
+		}
+	}
+	CIS_general_kleeve={
+		name="General Kleeve"
+		portraits={
+			civilian={ small="gfx/characters/CIS/general_kleeve_political_advisor.png" large="gfx/leaders/CIS/portrait_general_kleeve.dds" }
+			army={ large="gfx/leaders/CIS/portrait_general_kleeve.dds" }
+		}
+		advisor={
+			slot = high_command
+			idea_token = general_kleeve_high
+			name = general_kleeve
+			cost = 100
+			ledger = army
+			allowed={ original_tag=CIS } visible={ original_tag=CIS }
+			traits = { devanorian_warlord army_commando_1 }
+			ai_will_do={ factor=1 }
+		}
+		corps_commander={
+			traits={ skilled_tactician }
+			skill=3 attack_skill=4 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
+		}
+	}
+
 }
 	
