@@ -26,7 +26,7 @@ focus_tree = {
 		  #no prereq, start of tree
 		}
 		
-		x = 7
+		x = 10
 		y = 0
 		
 		completion_reward = {
@@ -70,14 +70,14 @@ focus_tree = {
 	}
 	focus = { 
 		id = CIS_War_of_Words
-		icon = CIS_War_of_Words
+		icon = GFX_CIS_War_of_Words
 		cost = 7
 		relative_position_id = CIS_Opening_of_the_congress
 		prerequisite = {
 		  focus = CIS_Opening_of_the_congress
 		}
 		
-		x = -2
+		x = -5
 		y = 1
 		
 		completion_reward = {
@@ -121,12 +121,12 @@ focus_tree = {
 		id = CIS_Brushfire_Rebellions
 		icon = CIS_Brushfire_Rebellions
 		cost = 7
-		relative_position_id = CIS_Only_the_movement_Brings_Democracy
+		relative_position_id = CIS_An_Open_Hand
 		prerequisite = {
-		  focus = CIS_Only_the_movement_Brings_Democracy
+		  focus = CIS_An_Open_Hand
 		}
 		
-		x = 0
+		x = -2
 		y = 1
 		
 		completion_reward = {
@@ -136,7 +136,10 @@ focus_tree = {
 		id = CIS_Against_Blackest_Injustice
 		icon = CIS_Against_Blackest_Injustice
 		cost = 7
-		relative_position_id = CIS_Brushfire_Rebellions
+		relative_position_id = CIS_Only_the_movement_Brings_Democracy
+		prerequisite = {
+		  focus = CIS_Only_the_movement_Brings_Democracy
+		}
 		prerequisite = {
 		  focus = CIS_Brushfire_Rebellions
 		}
@@ -202,12 +205,12 @@ focus_tree = {
 		id = CIS_A_Kind_Word_and_a_Blaster
 		icon = CIS_A_Kind_Word_and_a_Blaster
 		cost = 7
-		relative_position_id = CIS_Special_Interest_Groups
+		relative_position_id = CIS_A_Blade_in_the_Dark
 		prerequisite = {
-		  focus = CIS_Special_Interest_Groups
+		  focus = CIS_A_Blade_in_the_Dark
 		}
 		
-		x = 0
+		x = 2
 		y = 1
 		
 		completion_reward = {
@@ -217,7 +220,10 @@ focus_tree = {
 		id = CIS_Against_the_Tyrant_Majorities
 		icon = CIS_Against_the_Tyrant_Majorities
 		cost = 7
-		relative_position_id = CIS_A_Kind_Word_and_a_Blaster
+		relative_position_id = CIS_Special_Interest_Groups
+		prerequisite = {
+		  focus = CIS_Special_Interest_Groups
+		}
 		prerequisite = {
 		  focus = CIS_A_Kind_Word_and_a_Blaster
 		}
@@ -255,7 +261,7 @@ focus_tree = {
 		  focus = CIS_Opening_of_the_congress
 		}
 		
-		x = 3
+		x = 5
 		y = 1
 		
 		completion_reward = {
@@ -272,7 +278,7 @@ focus_tree = {
 		  focus = CIS_The_Price_of_Liberty
 		}
 		
-		x = -2
+		x = -3
 		y = 1
 		
 		completion_reward = {
@@ -291,7 +297,7 @@ focus_tree = {
 		  focus = CIS_To_forge_An_Army
 		}
 		
-		x = 0
+		x = -2
 		y = 1
 		
 		completion_reward = {
@@ -312,9 +318,9 @@ focus_tree = {
 		id = CIS_The_Clans_Monster
 		icon = CIS_The_Clans_Monster
 		cost = 7
-		relative_position_id = CIS_Hidden_Foundries
+		relative_position_id = CIS_To_forge_An_Army
 		prerequisite = {
-		  focus = CIS_Hidden_Foundries
+		  focus = CIS_To_forge_An_Army
 		}
 		
 		x = 0
@@ -328,16 +334,37 @@ focus_tree = {
 		id = CIS_Flesh_Out_the_Admiralty
 		icon = CIS_Flesh_Out_the_Admiralty
 		cost = 7
-		relative_position_id = CIS_The_Clans_Monster
+		relative_position_id = CIS_To_forge_An_Army
 		prerequisite = {
-		  focus = CIS_The_Clans_Monster
+		  focus = CIS_To_forge_An_Army
 		}
 		
-		x = 0
+		x = 2
 		y = 1
 		
 		completion_reward = {
 			
+		}
+	}
+	focus = { 
+		id = CIS_The_Droid_Army_Realized
+		icon = CIS_The_Droid_Army_Realized
+		cost = 7
+		relative_position_id = CIS_Flesh_Out_the_Admiralty
+		prerequisite = {
+		  focus = CIS_Flesh_Out_the_Admiralty
+		}
+		prerequisite = {
+		  focus = CIS_Hidden_Foundries
+		}
+		prerequisite = {
+		  focus = CIS_The_Clans_Monster
+		}
+		
+		x = -2
+		y = 1
+		
+		completion_reward = {
 		}
 	}
 	focus = { 
@@ -398,24 +425,6 @@ focus_tree = {
 		}
 		
 		x = 1
-		y = 2
-		
-		completion_reward = {
-		}
-	}
-	focus = { 
-		id = CIS_The_Droid_Army_Realized
-		icon = CIS_The_Droid_Army_Realized
-		cost = 7
-		relative_position_id = CIS_Flesh_Out_the_Admiralty
-		prerequisite = {
-		  focus = CIS_Flesh_Out_the_Admiralty
-		}
-		prerequisite = {
-		  focus = CIS_For_Liberty_and_Prosperity
-		}
-		
-		x = 2
 		y = 1
 		
 		completion_reward = {
@@ -440,7 +449,7 @@ focus_tree = {
 				has_completed_focus = CIS_Freedom_for_all_sapient_life
 			}
 		}
-		x = 23
+		x = 30
 		y = 0
 		
 		completion_reward = {
