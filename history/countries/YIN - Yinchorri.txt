@@ -8,20 +8,6 @@ set_stability = 0.1
 set_convoys = 100 
 set_war_support = 0.02 
 
-######CHARACTERS######
-recruit_character = YIN_archon_vekurr
-recruit_character = YIN_threll_fangmaster
-recruit_character = YIN_harniss_consul
-recruit_character = YIN_vux_speaker
-recruit_character = YIN_raivesh_countess
-recruit_character = YIN_zatrax_governor
-recruit_character = YIN_malrek_isha
-recruit_character = YIN_karesh_tradelord
-recruit_character = YIN_vaireh_senator
-recruit_character = YIN_shalar_master
-recruit_character = YIN_zurvek_foreman
-
-set_cosmetic_tag = YIN_OCG
 ##############
 set_technology = {
 	infantry_weapons = 1
@@ -56,13 +42,7 @@ set_popularities = {
 }
 add_ideas = {
 	limited_conscription
-	YIN_Protectorate_Established
-	YIN_Corporate_Monopolies
 }
-give_resource_rights = { receiver = REP state = 157 }
-give_resource_rights = { receiver = REP state = 161 }
-give_resource_rights = { receiver = REP state = 154 }
-give_resource_rights = { receiver = REP state = 156 }
 set_politics = {
 	ruling_party = corporate_consortium
 	last_election = "999.1.1"
