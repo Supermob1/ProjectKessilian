@@ -514,7 +514,7 @@ guiTypes = {
 		iconType ={
 			name ="politics_bottom"
 			spriteType = "GFX_main_screens_bottom"
-			position = { x = -2 y = 533 }
+			position = { x = 20 y = 533 }
 			Orientation = "UPPER_LEFT"
 			scale = 1.02
 		}
@@ -527,7 +527,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "manage_occupied_button"
-			position = { x = 10 y = 540 }
+			position = { x = 30 y = 545 }
 			quadTextureSprite = "GFX_government_button"
 			buttonFont = "hoi_16mbs"
 			Orientation = "UPPER_LEFT"
@@ -535,7 +535,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "manage_occupied_button_text"
-			position = { x = 48 y = 548 }
+			position = { x = 68 y = 553 }
 			font = "hoi_16mbs"
 			text = "MANAGE_OCCUPIED_TERRITORIES"
 			maxWidth = 150
@@ -544,7 +544,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "subjects_button_container"
-			position = { x = 367 y = 540 }
+			position = { x = 387 y = 545 }
 
 			buttonType = {
 				name = "show_subjects_button"
@@ -575,7 +575,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "show_exiles_collaborations_button"
-			position = { x = 190 y = 540 }
+			position = { x = 210 y = 545 }
 			quadTextureSprite = "GFX_government_button"
 			buttonFont = "hoi_16mbs"
 			Orientation = "UPPER_LEFT"
@@ -584,7 +584,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "manage_exiled_collaborations_governments"
-			position = { x = 223 y = 548 }
+			position = { x = 243 y = 553 }
 			font = "hoi_16mbs"
 			maxWidth = 130
 			maxHeight = 20
@@ -597,13 +597,13 @@ guiTypes = {
 		iconType = {
 			name = "icon_exiled_collaborations_governments"
 			spriteType = "GFX_icon_exiled_governments"
-			position = { x = 192 y = 541 }
+			position = { x = 212 y = 546 }
 		}
 
 		iconType = {
 			name = "icon_occupied_territories"
 			spriteType = "GFX_icon_occupied_territories"
-			position = { x = 12 y = 541 }
+			position = { x = 32 y = 546 }
 		}
 	}
 	
