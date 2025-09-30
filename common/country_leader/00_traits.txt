@@ -90,35 +90,6 @@ leader_traits = {
 	imperial_sanction = {
 		random = no
 
-		targeted_modifier = {
-			tag = CHI
-			generate_wargoal_tension_against = 0.75
-		}
-		targeted_modifier = {
-			tag = PRC
-			generate_wargoal_tension_against = 0.75
-		}
-		targeted_modifier = {
-			tag = SHX
-			generate_wargoal_tension_against = 0.75
-		}
-		targeted_modifier = {
-			tag = GXC
-			generate_wargoal_tension_against = 0.75
-		}
-		targeted_modifier = {
-			tag = YUN
-			generate_wargoal_tension_against = 0.75
-		}
-		targeted_modifier = {
-			tag = XSM
-			generate_wargoal_tension_against = 0.75
-		}
-		targeted_modifier = {
-			tag = SIK
-			generate_wargoal_tension_against = 0.75
-		}
-
 		ai_will_do = {
 			factor = 1
 		}
@@ -443,11 +414,6 @@ leader_traits = {
 
 	dislikes_germany = {
 		random = no
-		ai_strategy = {
-			type = antagonize
-			id = "GER"
-			value = 200
-		}
 
 		ai_will_do = {
 			factor = 1
@@ -456,11 +422,6 @@ leader_traits = {
 
 	dislikes_soviet = {
 		random = no
-		ai_strategy = {
-			type = antagonize
-			id = "SOV"
-			value = 200
-		}
 
 		ai_will_do = {
 			factor = 1
@@ -469,11 +430,6 @@ leader_traits = {
 
 	likes_germany = {
 		random = no
-		ai_strategy = {
-			type = alliance
-			id = "GER"
-			value = 300
-		}
 
 		ai_will_do = {
 			factor = 1
@@ -482,11 +438,6 @@ leader_traits = {
 
 	likes_mexico = {
 		random = no
-		ai_strategy = {
-			type = alliance
-			id = "MEX"
-			value = 300
-		}
 
 		ai_will_do = {
 			factor = 1
@@ -495,23 +446,6 @@ leader_traits = {
 
 	likes_allies = {
 		random = no
-		ai_strategy = {
-			type = alliance
-			id = "ENG"
-			value = 300
-		}
-
-		ai_strategy = {
-			type = alliance
-			id = "FRA"
-			value = 300
-		}
-
-		ai_strategy = {
-			type = alliance
-			id = "USA"
-			value = 300
-		}
 
 		ai_will_do = {
 			factor = 1
@@ -1321,11 +1255,6 @@ leader_traits = {
 	militant_socialist = {
 		random = no
 		war_support_factor = 0.05
-		targeted_modifier = {
-			tag = SOU
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
 	}
 
 	constitutional_monarch_minor = { #Dom Duarte Nuno, King of Portugal
@@ -5111,11 +5040,6 @@ leader_traits = {
 
 		war_support_factor = 0.1
 		#fascism_acceptance = 30
-
-		targeted_modifier = { # TODO: why doesn't this seem to work? 
-			tag = ENG
-			attack_bonus_against = 0.1
-		}
 	}
 
 	IRQ_kurdish_politician = {
@@ -6029,11 +5953,6 @@ leader_traits = {
 		random = no
 		army_morale_factor = 0.05
 		compliance_growth = 0.05
-		targeted_modifier = {
-			tag = JAP
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
 	}
 
 	supreme_representative_of_god_on_earth = {
@@ -6477,11 +6396,6 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				tag = USA
-				NOT = { has_completed_focus = USA_america_first }
-				factor = 0
-			}
 		}
 	}
 	staunch_monarchist = {
@@ -6492,11 +6406,6 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				tag = HUN
-				NOT = { has_completed_focus = HUN_invite_the_habsburg_prince }
-				factor = 0
-			}
 		}
 	}
 
@@ -7444,11 +7353,6 @@ leader_traits = {
 		sprite = 13
 		#fascism_drift = -0.05
 		#fascism_acceptance = -40
-		targeted_modifier = {
-			tag = GER
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
 	}
 
 	subservient_democrat = {
@@ -10399,11 +10303,6 @@ leader_traits = {
 
 	AUS_elizabeth = {
 		random = no #this is Johann Hiedler
-
-		targeted_modifier = {
-			tag = ENG
-			compliance_growth = 0.01
-		}
 	}
 
 	AUS_fascist_propaganda_artist = {
