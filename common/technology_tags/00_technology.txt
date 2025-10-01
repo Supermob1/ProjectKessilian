@@ -138,12 +138,18 @@ technology_categories = {
 
 technology_folders = {
 	infantry_folder = {
+		available = {
+			NOT = { tag = REP }
+		}
 		ledger = army
 	}
 	support_folder = {
 		ledger = army
 	}
 	armour_folder = {
+		available = {
+			always = no
+		}
 		ledger = army
 	}
 	nsb_armour_folder = {
@@ -153,6 +159,9 @@ technology_folders = {
 		}
 	}
 	artillery_folder = {
+		available = {
+			always = no
+		}
 		ledger = army
 	}
 	air_techs_folder = {
@@ -200,6 +209,12 @@ technology_folders = {
 		}
 		ledger = hidden #For now
 		doctrine = yes
+	}
+	republic_folder = {
+		available = {
+			tag = REP
+		}
+		ledger = army #For now
 	}
 	electronics_folder = {
 		ledger = civilian
