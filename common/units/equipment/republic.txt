@@ -1,0 +1,150 @@
+equipments = {
+	old_republic_equipments = {
+		year = 976
+	
+		archetype = infantry_equipment
+		priority = 10
+		visual_level = 1
+		
+		#Defensive Abilities
+		defense = 34
+		breakthrough = 5
+
+		#Offensive Abilities
+		soft_attack = 12
+		hard_attack = 2
+		ap_attack = 10
+		air_attack = 0
+		
+		reliability = 0.8
+		build_cost_ic = 0.69
+		resources = {
+			steel = 4
+		}
+	}
+
+	# Regular infantry  1936
+	phase_I_equipments = {
+		year = 978
+	
+		archetype = infantry_equipment
+		parent = old_republic_equipments
+		priority = 10
+		visual_level = 2
+
+		#Defensive Abilities
+		defense = 40
+		breakthrough = 7
+
+		#Offensive Abilities
+		soft_attack = 18
+		hard_attack = 4
+		ap_attack = 15
+		air_attack = 0
+
+		reliability = 0.9
+		build_cost_ic = 0.8
+	}
+	# Regular infantry  1936
+	phase_II_equipments = {
+		year = 980
+	
+		archetype = infantry_equipment
+		parent = phase_I_equipments
+		priority = 10
+		visual_level = 3
+
+		#Defensive Abilities
+		defense = 45
+		breakthrough = 10
+
+		#Offensive Abilities
+		soft_attack = 20
+		hard_attack = 6
+		ap_attack = 20
+		air_attack = 0
+
+		reliability = 1
+		build_cost_ic = 1
+	}
+	# Regular infantry  1936
+	Imperial_equipments = {
+		year = 982
+	
+		archetype = infantry_equipment
+		parent = phase_II_equipments
+		priority = 10
+		visual_level = 3
+
+		#Defensive Abilities
+		defense = 50
+		breakthrough = 15
+
+		#Offensive Abilities
+		soft_attack = 25
+		hard_attack = 10
+		ap_attack = 25
+		air_attack = 0
+
+		reliability = 1
+		build_cost_ic = 1.2
+	}
+
+	laat_equipments = {
+		year = 980
+
+		archetype = helicopter_equipment
+		priority = 15	
+		#Defensive Abilities
+		defense = 50
+		breakthrough = 15
+
+		#Offensive Abilities
+		#Offensive Abilities
+		ap_attack = 30
+		air_attack = 2
+		soft_attack = 30
+		hard_attack = 20
+		
+		build_cost_ic = 2
+		
+		fuel_consumption = 0
+	}
+
+	maat_equipments = {
+		year = 980
+
+		archetype = helicopter_equipment
+		parent = laat_equipments
+		priority = 15	
+		#Defensive Abilities
+		defense = 55
+		breakthrough = 20
+
+		#Offensive Abilities
+		#Offensive Abilities
+		ap_attack = 40
+		air_attack = 5
+		soft_attack = 35
+		hard_attack = 25
+		
+		build_cost_ic = 4
+		
+		fuel_consumption = 0
+	}
+	arc_commandos_equipments = {
+		year = 980
+
+		archetype = mechanized_equipment
+		priority = 40
+		visual_level = 0
+	}
+	imperial_commandos_equipments = {
+		year = 980
+
+		archetype = mechanized_equipment
+		parent = arc_commandos_equipments
+		priority = 40
+		visual_level = 0
+	}
+}
