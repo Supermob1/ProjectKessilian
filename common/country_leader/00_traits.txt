@@ -1346,19 +1346,6 @@ leader_traits = {
 		justify_war_goal_time = -0.15
 	}
 
-	likes_turkey = {
-		random = no
-		ai_strategy = {
-			type = befriend
-			id = "TUR"
-			value = 50
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	archon_basileus = {
 		random = no
 		political_power_gain = 0.15
@@ -4385,17 +4372,6 @@ leader_traits = {
 		foreign_subversive_activites = 0.3
 	}
 
-	trusty = {
-		trade_opinion_factor = 0.2
-		opinion_gain_monthly = 0.25
-		operation_coup_government_outcome = 0.25
-		operation_infiltrate_outcome = 0.25
-		operation_boost_resistance_outcome = 0.35
-		operation_targeted_sabotage_industry_outcome = 0.35
-		operation_targeted_sabotage_resources_outcome = 0.35
-		operation_targeted_sabotage_infrastructure_outcome = 0.35
-	}
-
 	##############
 	### ICEMAN ###
 	##############
@@ -6370,10 +6346,6 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				not = { has_completed_focus = USA_suspend_the_presecution }
-				factor = 0
-			}
 		}
 	}
 
