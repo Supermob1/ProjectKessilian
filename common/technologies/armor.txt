@@ -347,25 +347,6 @@ technologies = {
 			base = 1
 
 			modifier = {
-				factor = 2
-				is_major = yes
-				not = {
-					#tag = JAP
-					num_of_military_factories < 50
-				}
-			}
-			modifier = {
-				is_major = yes
-				not = { #tag = JAP }
-				has_war = yes
-				factor = 10 #you are embarassing yourself
-			}
-			modifier = {
-				#tag = SOV
-				factor = 3
-			}
-
-			modifier = {
 				factor = 1.1
 				date > "977.1.1"
 			}
