@@ -1,0 +1,26 @@
+faction_hutt_cartel = {
+	name = hutt_cartel_name
+	manifest = faction_manifest_regional_expansionism
+	can_leader_join_other_factions = no
+	icon = GFX_faction_logo_generic_15
+	visible = {
+		always = no 
+	}
+	
+	goals = {
+		# Short term
+		# faction_goal_growing_the_faction
+
+		# Medium term
+		faction_goal_air_superiority
+
+		# Long term
+		faction_goal_defeating_our_enemies
+	}
+
+	default_rules = {
+		joining_rule_same_continent_only
+		generate_wargoal_threat_reduction_20
+	}
+
+}
