@@ -663,39 +663,6 @@ technologies = {
 			base = 0.5
 
 			modifier = {
-				factor = 5
-				#tag = GER
-			}
-
-			modifier = {
-				factor = 10
-				#tag = GER
-
-				POL = { has_capitulated = yes }
-				GER = { has_war = yes }
-			}
-
-			modifier = {
-				factor = 5
-				#tag = JAP
-			}
-
-			modifier = {
-				factor = 2
-				#tag = ITA
-			}
-
-			modifier = {
-				factor = 2
-				#tag = ENG
-			}
-
-			modifier = {
-				factor = 2
-				#tag = USA
-			}
-
-			modifier = {
 				factor = 2
 				has_war = yes
 			}
@@ -1400,10 +1367,6 @@ technologies = {
 				date > "982.1.1"
 			}
 
-			modifier = {
-				factor = 2
-				#tag = GER
-			}
 		}
 	}
 
@@ -1786,14 +1749,6 @@ technologies = {
 				is_major = yes
 				factor = 1
 			}
-
-			modifier = {
-				OR = {
-					TAG = GER
-					#tag = SOV
-				}
-				factor = 1.5
-			}
 		}
 	}
 
@@ -1868,10 +1823,6 @@ technologies = {
 			modifier = {
 				has_war = yes
 				factor = 20
-			}
-			modifier = {
-				#tag = GER
-				factor = 5
 			}
 			modifier = {
 				factor = 1.2
