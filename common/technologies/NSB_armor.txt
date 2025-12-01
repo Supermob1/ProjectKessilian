@@ -1355,25 +1355,6 @@ technologies = {
 
 		ai_will_do = {
 			base = 0
-			modifier = {
-				add = 1
-				date > 983.9.1
-				NOT = { has_government = democratic }
-				num_of_military_factories > 150
-			}
-			modifier = {
-				add = 2
-				#original_tag = GER
-				date > 984.5.1
-				surrender_progress < 0.1
-				has_government = fascism
-				has_war_with = SOV
-			}
-			modifier = {
-				factor = 10
-				#tag = GER
-				is_historical_focus_on = yes 
-			}
 		}
 
 		categories = {
