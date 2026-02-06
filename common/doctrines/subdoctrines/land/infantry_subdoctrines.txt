@@ -14,10 +14,6 @@ mobile_infantry = {
     ai_will_do = { 
         base = 1
         modifier = {
-            factor = 95
-            original_tag = GER
-        }
-        modifier = {
             factor = 0.5
             is_major = no
         }
@@ -83,17 +79,6 @@ defensive_postures = {
 
     ai_will_do = {
         base = 1
-        modifier = {
-            factor = 95
-            OR = {
-            original_tag = ENG
-            original_tag = AST
-            original_tag = NZL
-            original_tag = CAN
-            original_tag = SAF
-            original_tag = ITA
-            }
-        }
     }
 
     #OTHER BASE REWARDS
@@ -146,14 +131,6 @@ large_unit_tactics = {
 
     ai_will_do = {
         base = 1
-        modifier = {
-            factor = 95
-            OR = {
-                original_tag = SOV
-                original_tag = CHI
-                original_tag = JAP
-            }
-        }
         modifier = {
             factor = 0.5
             is_major = no
@@ -230,10 +207,6 @@ assault_infantry = {
     ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 95
-            original_tag = USA
-        }
         modifier = {
             factor = 0.5
             is_major = no
@@ -638,7 +611,7 @@ peoples_war = {
     xp_type = army
 
     available = {
-        has_government = communism
+		has_dlc = "No Compromise, No Surrender"
     }
     visible = {
         has_dlc = "No Compromise, No Surrender"
@@ -646,10 +619,6 @@ peoples_war = {
     ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 95
-            original_tag = PRC
-        }
 
         modifier = {
             factor = 2
@@ -727,10 +696,6 @@ great_war_infantry = {
 
     ai_will_do = {
         base = 1
-        modifier = {
-            factor = 95
-            original_tag = FRA
-        }
     }
      # EFFECTS
     #OTHER BASE REWARDS
