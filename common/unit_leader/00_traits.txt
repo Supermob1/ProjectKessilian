@@ -3171,46 +3171,46 @@ leader_traits = {
 # operative traits
 ##################################
 
-	operative_commando = {
-		type = operative
-		trait_type = basic_trait
+	# operative_commando = {
+		# type = operative
+		# trait_type = basic_trait
 
-		new_commander_weight = {
-			base = 1
-			modifier = {
-				set_temp_variable = {
-					trait_chance = FROM.modifier@commando_trait_chance_factor
-				}
-				add_to_temp_variable = {
-					var = trait_chance
-					value = 1
-				}
-				factor = trait_chance
-			}
+		# new_commander_weight = {
+			# base = 1
+			# modifier = {
+				# set_temp_variable = {
+					# trait_chance = FROM.modifier@commando_trait_chance_factor
+				# }
+				# add_to_temp_variable = {
+					# var = trait_chance
+					# value = 1
+				# }
+				# factor = trait_chance
+			# }
 
-			modifier = {
-				factor = 0.2
-				FROM = {
-					NOT = { has_done_agency_upgrade = upgrade_commando_training }
-				}
-			}
-		}
+			# modifier = {
+				# factor = 0.2
+				# FROM = {
+					# NOT = { has_done_agency_upgrade = upgrade_commando_training }
+				# }
+			# }
+		# }
 
-		cost = 600
-		gain_xp_leader = {
-			ROOT = {
-				has_done_agency_upgrade = upgrade_commando_training
-			}
-		}
+		# cost = 600
+		# gain_xp_leader = {
+			# ROOT = {
+				# has_done_agency_upgrade = upgrade_commando_training
+			# }
+		# }
 
-		modifier = {
+		# modifier = {
 			# own_operative_detection_chance_factor = -0.1
 			# target_sabotage_factor = 0.25
 			# target_sabotage_risk = -0.25
 			# operation_capture_cipher_outcome = 0.25
 			# operation_capture_cipher_risk = -0.25
-		}
-	}
+		# }
+	# }
 
 	operative_seducer = {
 		type = operative
