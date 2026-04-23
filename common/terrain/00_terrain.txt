@@ -1,4 +1,4 @@
-
+	
 ##################################################################
 ### Terrain Categories
 ###
@@ -9,6 +9,25 @@ categories =  {
 		color = { 255 0 0 }
 	}
 
+	water_hyperlane = {
+		naval_terrain = yes
+		color = { 58 91 255 }
+		movement_cost = 10
+		is_water = yes
+		sound_type = sea
+		naval_speed_factor = 1000.0
+		spotting_chance = -9000
+		minimum_seazone_dominance = 128.79
+	}
+	water_planets = {
+		naval_terrain = yes
+		color = { 58 91 255 }
+		movement_cost = 0.5
+		is_water = yes
+		sound_type = sea
+		minimum_seazone_dominance = 128.79
+	}
+	
 	ocean = {
 		naval_terrain = yes
 		color = { 40 83 176 }
@@ -217,25 +236,6 @@ categories =  {
 		supply_flow_penalty_factor = 0.14
 		
 		truck_attrition_factor = 0.5
-	}
-
-	water_hyperlane = {
-		naval_terrain = yes
-		color = { 58 91 255 }
-		movement_cost = 10
-		is_water = yes
-		sound_type = sea
-		naval_speed_factor = 1000.0
-		spotting_chance = -9000
-		minimum_seazone_dominance = 128.79
-	}
-	water_planets = {
-		naval_terrain = yes
-		color = { 58 91 255 }
-		movement_cost = 0.5
-		is_water = yes
-		sound_type = sea
-		minimum_seazone_dominance = 128.79
 	}
 	
 	water_fjords = {
