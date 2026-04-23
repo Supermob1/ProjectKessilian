@@ -14,6 +14,10 @@ mobile_infantry = {
     ai_will_do = { 
         base = 1
         modifier = {
+            factor = 95
+            original_tag = GER
+        }
+        modifier = {
             factor = 0.5
             is_major = no
         }
@@ -79,6 +83,18 @@ defensive_postures = {
 
     ai_will_do = {
         base = 1
+        modifier = {
+            factor = 95
+            OR = {
+                original_tag = ENG
+                original_tag = AST
+                original_tag = NZL
+                original_tag = CAN
+                original_tag = SAF
+                original_tag = ITA
+                original_tag = FIN
+            }
+        }
     }
 
     #OTHER BASE REWARDS
@@ -132,6 +148,14 @@ large_unit_tactics = {
     ai_will_do = {
         base = 1
         modifier = {
+            factor = 95
+            OR = {
+                original_tag = SOV
+                original_tag = CHI
+                original_tag = JAP
+            }
+        }
+        modifier = {
             factor = 0.5
             is_major = no
         }
@@ -173,7 +197,7 @@ large_unit_tactics = {
                 max_organisation = 10
                 soft_attack = 0.1
             }
-            army_morale = 0.2
+            army_morale = 0.1
             
         }
         motorization_initiative = {
@@ -207,6 +231,10 @@ assault_infantry = {
     ai_will_do = {
 
         base = 1
+        modifier = {
+            factor = 95
+            original_tag = USA
+        }
         modifier = {
             factor = 0.5
             is_major = no
@@ -431,8 +459,13 @@ commandos = {
 
     ai_will_do = { base = 0 }
     enable_tactic = tactic_infantry_charge
-    category_light_infantry = {
-        max_strength = 0.15
+    
+    logistics_company = {
+        battalion_mult = {
+            category = category_light_infantry
+            max_strength = 5
+            add = yes
+        }
     }
 
     # EFFECTS
@@ -462,6 +495,13 @@ commandos = {
                     defense = 0.1
                 }
             }
+            logistics_company = {
+                battalion_mult = {
+                 category = category_vehicle_infantry
+                 max_strength = 5
+                 add = yes
+                }
+            }
             category_vehicle_infantry = {
                 reliability = 0.05
                 breakthrough = 0.1
@@ -470,6 +510,18 @@ commandos = {
         }
         rigorous_training_regimen = {
             recon = {
+                battalion_mult = {
+                    category = category_all_infantry
+                    soft_attack = 0.1
+                }
+            }
+            mot_recon = {
+                battalion_mult = {
+                    category = category_all_infantry
+                    soft_attack = 0.1
+                }
+            }
+            light_tank_recon = {
                 battalion_mult = {
                     category = category_all_infantry
                     soft_attack = 0.1
@@ -611,7 +663,7 @@ peoples_war = {
     xp_type = army
 
     available = {
-		has_dlc = "No Compromise, No Surrender"
+        has_government = communism
     }
     visible = {
         has_dlc = "No Compromise, No Surrender"
@@ -619,6 +671,10 @@ peoples_war = {
     ai_will_do = {
 
         base = 1
+        modifier = {
+            factor = 95
+            original_tag = PRC
+        }
 
         modifier = {
             factor = 2
@@ -652,7 +708,7 @@ peoples_war = {
         #2
             mastery = 50
             category_light_infantry = {
-                default_morale = 0.2
+                default_morale = 0.1
             }
             militia = {
                 equipment_capture_factor = 0.01
@@ -661,7 +717,7 @@ peoples_war = {
         quick_decision_offensive_warfare = {
         #3
             militia = {
-               initiative = 0.2
+               initiative = 0.01
                max_organisation = 10
                breakthrough = 0.2
             }
@@ -696,6 +752,10 @@ great_war_infantry = {
 
     ai_will_do = {
         base = 1
+        modifier = {
+            factor = 95
+            original_tag = FRA
+        }
     }
      # EFFECTS
     #OTHER BASE REWARDS

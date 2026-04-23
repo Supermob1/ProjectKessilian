@@ -1,6 +1,6 @@
 ﻿capital = 31
 
-#oob = "garrison_generic"
+oob = "HOD_generic"
 set_research_slots = 2
 
 set_stability = 0.1
@@ -59,12 +59,6 @@ if = {
 	}
 }
 
-create_faction_from_template = faction_hutt_cartel
-
-add_to_faction = DKJ
-add_to_faction = BKJ
-add_to_faction = GKJ
-add_to_faction = QKJ
 
 set_popularities = {
 		akaanadocrat = 1
