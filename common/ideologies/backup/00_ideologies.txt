@@ -1,0 +1,122 @@
+#LuxLoser: We are utilizing the same AI principle as Kaiserreich and Fuhrerreich, i.e. all AIs are set to Neutral in order to make them easier for direction by event and focus rather than pursuing autonomous goals like random wars and so on.
+
+ideologies = {
+	constitutionalist = {
+		types = {
+			inclusivist_subtype = { color = { 38 44 224 } }
+			corist_subtype = { color = { 208 176 3 } }
+			ruusanist_subtype = { color = { 250 114 4 } }
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_INCLUSIVIST_1"
+			"FACTION_NAME_INCLUSIVIST_2"
+			"FACTION_NAME_INCLUSIVIST_3"
+			"FACTION_NAME_INCLUSIVIST_4"
+			"FACTION_NAME_INCLUSIVIST_5"
+			"FACTION_NAME_INCLUSIVIST_6"
+		}
+		color = { 38 44 224 } #142 57 0 is original
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.75
+		}
+		ai_neutral = yes	
+		can_be_boosted = no
+	}
+	reformist = {
+		types = {
+			distributionist_subtype = { color = { 23 225 149 } }
+			trade_democrat_subtype = { color = { 217 215 218 } }
+			symbiotist_subtype = { color = { 14 135 89 } }
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_DISTRIBUTIONIST_1"
+			"FACTION_NAME_DISTRIBUTIONIST_2"
+			"FACTION_NAME_DISTRIBUTIONIST_3"
+			"FACTION_NAME_DISTRIBUTIONIST_4"
+			"FACTION_NAME_DISTRIBUTIONIST_5"
+			"FACTION_NAME_DISTRIBUTIONIST_6"
+		}
+		color = { 217 215 218 }
+		rules = {
+			can_force_government = yes
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			industrial_capacity_factory = 0.05
+			conscription = 0.005
+		}
+		ai_neutral = yes	
+		can_be_boosted = no
+	}
+	secessionist = {
+		types = {
+			corporate_consortium_subtype = { color = { 18 229 21 } }
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_CORPORATE_CONSORTIUM_1"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_2"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_3"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_4"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_5"
+			"FACTION_NAME_CORPORATE_CONSORTIUM_6"
+		}
+		rules = {
+			can_force_government = no
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		color = { 18 229 21 }
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			industrial_capacity_factory = 0.05
+			production_speed_buildings_factor = 0.1
+		}
+		ai_neutral = yes		
+		can_be_boosted = no
+	}
+	militarist = {
+		types = {
+			akaanadocrat_subtype = {color = { 13 99 2 }}
+			unitist_subtype = {color = { 153 10 105 }}
+			new_order_subtype = {color = { 136 2 13 }}
+			light_side_subtype = { color = { 100 159 193 } }
+			dark_side_subtype = { color = { 255 0 25 } }
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_AKAANADOCRAT_1"
+			"FACTION_NAME_AKAANADOCRAT_2"
+			"FACTION_NAME_AKAANADOCRAT_3"
+			"FACTION_NAME_AKAANADOCRAT_4"
+			"FACTION_NAME_AKAANADOCRAT_5"
+			"FACTION_NAME_AKAANADOCRAT_6"
+		}
+		color = { 13 99 2 } 
+		rules = {
+			can_force_government = yes
+			can_puppet = yes
+			can_join_factions = no
+			can_send_volunteers = yes
+		}
+		modifiers = {
+			join_faction_tension = 0.80
+			generate_wargoal_tension = 0.25
+			conscription = 0.01
+		}
+		ai_neutral = yes		
+
+	}
+}
+
