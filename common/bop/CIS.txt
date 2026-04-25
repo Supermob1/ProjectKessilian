@@ -1,0 +1,41 @@
+
+Sidious_Dooku_Relationship = {
+	initial_value = 1
+	left_side = Dooku_side
+	right_side = Palpy_side
+#	decision_category = GER_mefo_bills_category
+	side = {
+		id = Dooku_side
+		icon = GFX_idea_generic_agrarian_society
+		range = {
+			id = SOV_Palpy_Dooku_Fight
+			min = -1
+			max = -0.99
+			modifier = {
+			}
+			on_activate = {
+				country_event = dooku_palpy_fight
+				remove_power_balance = {
+					id = Sidious_Dooku_Relationship
+				}
+			}
+			on_deactivate = {
+			
+			}
+		}
+
+	}
+	side = {
+		id = Palpy_side
+		icon = GFX_idea_generic_degauss_ship_hulls
+
+		range = {
+			id = CIS_Palpy_Timer
+			min = -0.99
+			max = 1
+			on_activate = {
+			}
+		}
+	}
+}
+
