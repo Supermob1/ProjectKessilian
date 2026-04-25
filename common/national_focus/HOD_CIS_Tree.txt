@@ -141,6 +141,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			add_popularity = {
+				ideology = inclusivist
+				popularity = 0.05
+			}
 			swap_ideas = {
 				remove_idea = CIS_Popular_Support
 				add_idea = CIS_Popular_Support_2
@@ -162,59 +166,63 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.10
+			add_popularity = {
+				ideology = distributionist
+				popularity = 0.05
+			}
 			random_owned_controlled_state = {
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 			}
 			random_owned_controlled_state = {
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
-					owner = CIS
-				}
-			}
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
-					owner = CIS
-				}
-				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
-					owner = CIS
-				}
-				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 			}
 			random_owned_controlled_state = {
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 				create_unit = {
-					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"CIS Droid Battalion\" start_experience_factor = 0.5"
 					owner = CIS
 				}
 			}
@@ -238,6 +246,14 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			add_popularity = {
+				ideology = inclusivist
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = distributionist
+				popularity = 0.05
+			}
 			swap_ideas = {
 				remove_idea = CIS_Popular_Support_2
 				add_idea = CIS_Popular_Support_3
@@ -262,6 +278,10 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.11
+			add_popularity = {
+				ideology = inclusivist
+				popularity = 0.10
+			}
 			swap_ideas = {
 				remove_idea = CIS_Popular_Support_2
 				add_idea = CIS_Freedom_for_All_Sapient_Life
@@ -301,6 +321,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			add_popularity = {
+				ideology = corporate_consortium
+				popularity = 0.05
+			}
 			swap_ideas = {
 				remove_idea = CIS_Elites_Support
 				add_idea = CIS_Elites_Support_2
@@ -322,6 +346,14 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.12
+			add_popularity = {
+				ideology = corporate_consortium
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = corist
+				popularity = 0.05
+			}
 			random_owned_controlled_state = {
 				add_resource = {
 					type = coal
@@ -365,6 +397,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			add_popularity = {
+				ideology = corporate_consortium
+				popularity = 0.05
+			}
 			swap_ideas = {
 				remove_idea = CIS_Elites_Support_2
 				add_idea = CIS_Elites_Support_3
@@ -389,6 +425,18 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.13
+			add_popularity = {
+				ideology = corporate_consortium
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = corist
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = unitist
+				popularity = 0.05
+			}
 			swap_ideas = {
 				remove_idea = CIS_Elites_Support_3
 				add_idea = CIS_Independence_Now_Democracy_Later_idea
@@ -449,6 +497,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.16
 			random_owned_controlled_state = {
                 add_building_construction = {
 					type = arms_factory
@@ -553,9 +602,6 @@ focus_tree = {
 					is_coastal = yes
 				}
                 add_building_construction = {
-				limit = {
-					is_coastal = yes
-				}
 					type = dockyard
 					level = 2
 					instant_build = yes
@@ -613,6 +659,7 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.17
 			swap_ideas = {
 				remove_idea = CIS_United_Separatist_forces
 				add_idea = CIS_Great_Droid_Army
@@ -633,6 +680,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_Corporate_Dependency
+				add_idea = CIS_Corporate_Dependency_2
+			}
 		}
 	}
 	focus = { 
@@ -649,6 +700,36 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
 		}
 	}
 	focus = { 
@@ -665,6 +746,11 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.14
+			swap_ideas = {
+				remove_idea = CIS_Corporate_Dependency_2
+				add_idea = CIS_Corporate_Dependency_3
+			}
 		}
 	}
 	focus = { 
@@ -684,6 +770,11 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.15
+			swap_ideas = {
+				remove_idea = CIS_Corporate_Dependency_3
+				add_idea = CIS_Liberty_and_Prosperity
+			}
 		}
 	}
 	##########################################################
@@ -700,11 +791,7 @@ focus_tree = {
 			# has_global_flag = The_Clone_Wars
 		# }
 		available = {
-			has_completed_focus = CIS_The_Droid_Army_Realized
-			OR = {
-				has_completed_focus = CIS_Independence_now_Democracy_later
-				has_completed_focus = CIS_Freedom_for_all_sapient_life
-			}
+			has_cosmetic_tag = CIS_Confderation_of_Independent_Systems
 		}
 		x = 30
 		y = 0

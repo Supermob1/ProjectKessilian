@@ -38,10 +38,14 @@ recruit_character = CIS_horn_ambigene
 recruit_character = CIS_calli_trilm
 
 set_technology = {
+	infantry_weapons = 1
+	support_weapons = 1
+	tech_support = 1
+	tech_trucks = 1
 }
 
 add_ideas = {
-	no_conscription
+	volunteer_only
 	CIS_Fragmented_Separatism
 	CIS_Corporate_Dependency
 	CIS_Private_Security_Forces
@@ -62,4 +66,28 @@ set_politics = {
 	last_election = "999.1.1"
 	election_frequency = 48
 	elections_allowed = no
-	}
+}
+
+set_power_balance = {
+	id = Sidious_Dooku_Relationship
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 10000
+	producer = CIS
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 50000
+	producer = TDF
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 10000
+	producer = CMG
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 10000
+	producer = TCU
+}

@@ -1,105 +1,105 @@
-MAN_referendum_category = {
-	MAN_prowar_speech = {
+# MAN_referendum_category = {
+	# MAN_prowar_speech = {
 
-		cost = 50
-		fire_only_once = no
+		# cost = 50
+		# fire_only_once = no
 
-		complete_effect = {
-			add_to_variable = {
-				var = MAN_prowar_variable
-				value = 1
-			}
-			add_war_support = 0.025
-		}
-	}
+		# complete_effect = {
+			# add_to_variable = {
+				# var = MAN_prowar_variable
+				# value = 1
+			# }
+			# add_war_support = 0.025
+		# }
+	# }
 
-	MAN_invite_support = {
-
-
-		cost = 50
-		fire_only_once = no
-
-		complete_effect = {
-			add_to_variable = {
-				var = MAN_prowar_variable
-				value = 1
-			}
-			add_war_support = 0.025
-		}
-	}
-
-	MAN_antiwar_rally = {
-
-		cost = 50
-		fire_only_once = no
-
-		complete_effect = {
-			add_to_variable = {
-				var = MAN_proneutral_variable
-				value = 1
-			}
-			add_stability = 0.025
-		}
-	}
-
-	MAN_rep_represent = {
-
-		cost = 50
-		fire_only_once = no
-
-		complete_effect = {
-			add_to_variable = {
-				var = MAN_proneutral_variable
-				value = 1
-			}
-			add_stability = 0.025
-		}
-	}
-
-	MAN_the_referendum = {
-
-		days_mission_timeout = 100
-		is_good = yes
-		selectable_mission = no
-		fire_only_once = yes
-
-		available = {
-			always = no
-		}
-		activation = {
-			has_completed_focus = MAN_morning_affair
-		}
-
-		timeout_effect = {
-			if = {
-				limit = {
-					check_variable = {
-				    var = MAN_prowar_variable
-				    value = MAN_proneutral_variable
-				    compare = equals
-					}
-				}
-				add_stability = -0.1 #THE PEOPLE HAVE VOTED BUT NEITHER SIDE IS GREATER THAN THE OTHER. REGARDLES OF THE OUTCOME, PEOPLE WILL NOT BE HAPPY!
-				set_country_flag = MAN_indecisive_govt
-				#country_event = neutralsystems.2
-			}
-			if = {
-				limit = {
-					check_variable = {
-				    var = MAN_prowar_variable
-				    value = MAN_proneutral_variable
-				    compare = greater_than
-					}
-				}
-				set_country_flag = MAN_prowar_flag
-				news_event = neutralsystems.4
-			}
-			else = {
-				set_country_flag = MAN_proneutral_flag
-				news_event = neutralsystems.3
-			}
-		}
-	}
+	# MAN_invite_support = {
 
 
-}
+		# cost = 50
+		# fire_only_once = no
+
+		# complete_effect = {
+			# add_to_variable = {
+				# var = MAN_prowar_variable
+				# value = 1
+			# }
+			# add_war_support = 0.025
+		# }
+	# }
+
+	# MAN_antiwar_rally = {
+
+		# cost = 50
+		# fire_only_once = no
+
+		# complete_effect = {
+			# add_to_variable = {
+				# var = MAN_proneutral_variable
+				# value = 1
+			# }
+			# add_stability = 0.025
+		# }
+	# }
+
+	# MAN_rep_represent = {
+
+		# cost = 50
+		# fire_only_once = no
+
+		# complete_effect = {
+			# add_to_variable = {
+				# var = MAN_proneutral_variable
+				# value = 1
+			# }
+			# add_stability = 0.025
+		# }
+	# }
+
+	# MAN_the_referendum = {
+
+		# days_mission_timeout = 100
+		# is_good = yes
+		# selectable_mission = no
+		# fire_only_once = yes
+
+		# available = {
+			# always = no
+		# }
+		# activation = {
+			# has_completed_focus = MAN_morning_affair
+		# }
+
+		# timeout_effect = {
+			# if = {
+				# limit = {
+					# check_variable = {
+				    # var = MAN_prowar_variable
+				    # value = MAN_proneutral_variable
+				    # compare = equals
+					# }
+				# }
+				# add_stability = -0.1 #THE PEOPLE HAVE VOTED BUT NEITHER SIDE IS GREATER THAN THE OTHER. REGARDLES OF THE OUTCOME, PEOPLE WILL NOT BE HAPPY!
+				# set_country_flag = MAN_indecisive_govt
+				# country_event = neutralsystems.2
+			# }
+			# if = {
+				# limit = {
+					# check_variable = {
+				    # var = MAN_prowar_variable
+				    # value = MAN_proneutral_variable
+				    # compare = greater_than
+					# }
+				# }
+				# set_country_flag = MAN_prowar_flag
+				# news_event = neutralsystems.4
+			# }
+			# else = {
+				# set_country_flag = MAN_proneutral_flag
+				# news_event = neutralsystems.3
+			# }
+		# }
+	# }
+
+
+# }

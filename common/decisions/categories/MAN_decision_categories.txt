@@ -1,16 +1,16 @@
-MAN_referendum_category = {
-     icon = neutral_systems_referendum
+# MAN_referendum_category = {
+     # icon = neutral_systems_referendum
 
-    visible = {
-      has_completed_focus = MAN_morning_affair
-      NOT = {
-        OR = {
-          has_country_flag = MAN_prowar_flag
-          has_country_flag = MAN_proneutral_flag
-          has_country_flag = MAN_indecisive_govt
-        }
-      }
-    }
+    # visible = {
+      # has_completed_focus = MAN_morning_affair
+      # NOT = {
+        # OR = {
+          # has_country_flag = MAN_prowar_flag
+          # has_country_flag = MAN_proneutral_flag
+          # has_country_flag = MAN_indecisive_govt
+        # }
+      # }
+    # }
 	
 
-}
+# }

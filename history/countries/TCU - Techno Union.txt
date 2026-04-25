@@ -7,17 +7,26 @@ set_stability = 0.1
 
 set_war_support = 0.02 
 
+create_production_license = {
+    target = CIS
+    equipment = {
+        type = infantry_equipment_0
+        version = 0
+    }
+    cost_factor = 0
+}
+
 set_popularities = {
-		akaanadocrat = 0
-		unitist = 2
-		corist = 0
-		distributionist =  0
-		corporate_consortium = 83
-		trade_democrat = 5
-		ruusanist = 0
-		inclusivist = 0
-		force_magocracy = 10
-	}
+	akaanadocrat = 0
+	unitist = 2
+	corist = 0
+	distributionist =  0
+	corporate_consortium = 83
+	trade_democrat = 5
+	ruusanist = 0
+	inclusivist = 0
+	force_magocracy = 10
+}
 add_ideas = {
 	no_conscription
 }
@@ -26,7 +35,14 @@ set_politics = {
 	last_election = "999.1.1"
 	election_frequency = 48
 	elections_allowed = no
-	}
+}
+
+set_technology = {
+	infantry_weapons = 1
+	support_weapons = 1
+	tech_support = 1
+	tech_trucks = 1
+}
 
 create_country_leader = {
 	name = "Emir Wat Tambor"

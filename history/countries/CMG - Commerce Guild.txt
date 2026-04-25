@@ -7,6 +7,15 @@ set_stability = 0.1
 
 set_war_support = 0.02 
 
+create_production_license = {
+    target = CIS
+    equipment = {
+        type = infantry_equipment_0
+        version = 0
+    }
+    cost_factor = 0
+}
+
 set_popularities = {
 		akaanadocrat = 0
 		unitist = 2
@@ -21,6 +30,14 @@ set_popularities = {
 add_ideas = {
 	no_conscription
 }
+
+set_technology = {
+	infantry_weapons = 1
+	support_weapons = 1
+	tech_support = 1
+	tech_trucks = 1
+}
+
 set_politics = {
 	ruling_party = corporate_consortium
 	last_election = "999.1.1"
