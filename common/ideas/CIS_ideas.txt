@@ -15,7 +15,7 @@ ideas = {
 				drift_defence_factor = -0.5
 			}
 		}
-		CIS_The_Raxus_Address = {
+		CIS_The_Raxus_Address_idea = {
 			allowed = {
 				always = no
 			}
@@ -45,7 +45,7 @@ ideas = {
 				drift_defence_factor = -0.4
 			}
 		}
-		CIS_Opening_of_the_congress = {
+		CIS_Opening_of_the_congress_idea = {
 			allowed = {
 				always = no
 			}
@@ -60,7 +60,7 @@ ideas = {
 				drift_defence_factor = -0.4
 			}
 		}
-		CIS_War_of_Words_idea = {
+		CIS_Popular_Support = {
 			allowed = {
 				always = no
 			}
@@ -69,10 +69,113 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				political_power_factor = -0.3
-				stability_factor = -0.3
-				war_support_factor = -0.3
-				drift_defence_factor = -0.4
+				political_power_factor = -0.15
+				stability_factor = -0.15
+				war_support_factor = -0.05
+				drift_defence_factor = -0.2
+			}
+		}
+		CIS_Popular_Support_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = -0.1
+				war_support_factor = 0
+				drift_defence_factor = -0.1
+			}
+		}
+		CIS_Popular_Support_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0
+				stability_factor = 0
+				war_support_factor = 0.1
+			}
+		}
+		CIS_Freedom_for_All_Sapient_Life = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.2
+			}
+		}
+		CIS_Elites_Support = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.15
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				drift_defence_factor = -0.2
+			}
+		}
+		CIS_Elites_Support_2 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				drift_defence_factor = -0.1
+			}
+		}
+		CIS_Elites_Support_3 = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				drift_defence_factor = 0.05
+			}
+		}
+		CIS_Independence_Now_Democracy_Later_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.25
+				stability_factor = 0.25
+				war_support_factor = 0.25
+				drift_defence_factor = 0.20
 			}
 		}
 		CIS_Corporate_Dependency = {
@@ -105,6 +208,36 @@ ideas = {
 				experience_gain_army_factor  = -0.5
 			}
 		}
+		CIS_unified_military_high_command = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = 0.1
+				army_morale_factor = -0.1
+				experience_gain_army_factor  = -0.25
+			}
+		}
+		CIS_United_Separatist_forces = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				army_morale_factor = 0.1
+				experience_gain_army_factor  = -0.25
+			}
+		}
 		CIS_Great_Droid_Army = {
 			#picture = 
 			allowed = {
@@ -115,10 +248,9 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				army_attack_factor = -0.1
-				army_defence_factor = -0.1
-				army_morale = -10
-				army_org = -10
+				army_attack_factor = 0.2
+				army_defence_factor = 0.2
+				army_morale_factor = 0.2
 			}
 		}
 		CIS_forging_an_army_idea = {
