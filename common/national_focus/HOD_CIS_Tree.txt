@@ -11,6 +11,11 @@ focus_tree = {
 			tag = CIS
 		}
 	}
+	
+	initial_show_position = {
+		x = 10
+		y = 0
+	}
   
 	default = no
 	reset_on_civilwar = no
@@ -35,7 +40,7 @@ focus_tree = {
 			add_political_power = 150
 			swap_ideas = {
 				remove_idea = CIS_Fragmented_Separatism
-				add_idea = CIS_The_Raxus_Address
+				add_idea = CIS_The_Raxus_Address_idea
 			}
 		}
 	}
@@ -55,7 +60,7 @@ focus_tree = {
 		completion_reward = {
 			country_event = confederacy.3
 			swap_ideas = {
-				remove_idea = CIS_The_Raxus_Address
+				remove_idea = CIS_The_Raxus_Address_idea
 				add_idea = CIS_A_New_Birth_of_Freedom_idea
 			}
 		}
@@ -78,7 +83,7 @@ focus_tree = {
 			country_event = confederacy.4
 			swap_ideas = {
 				remove_idea = CIS_A_New_Birth_of_Freedom_idea
-				add_idea = CIS_Opening_of_the_congress
+				add_idea = CIS_Opening_of_the_congress_idea
 			}
 		}
 	}
@@ -97,9 +102,10 @@ focus_tree = {
 		
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = CIS_Opening_of_the_congress
-				add_idea = CIS_War_of_Words_idea
+				remove_idea = CIS_Opening_of_the_congress_idea
+				add_idea = CIS_Popular_Support
 			}
+			add_ideas = CIS_Elites_Support
 		}
 	}
 	focus = { 
@@ -135,6 +141,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_Popular_Support
+				add_idea = CIS_Popular_Support_2
+			}
 		}
 	}
 	focus = { 
@@ -151,6 +161,64 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.10
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+				create_unit = {
+					division = "name = \"Freedom Fighter\" division_template = \"Local Planetary Garrison\" start_experience_factor = 0.5"
+					owner = CIS
+				}
+			}
+			
 		}
 	}
 	focus = { 
@@ -170,6 +238,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_Popular_Support_2
+				add_idea = CIS_Popular_Support_3
+			}
 		}
 	}
 	focus = { 
@@ -189,6 +261,11 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.11
+			swap_ideas = {
+				remove_idea = CIS_Popular_Support_2
+				add_idea = CIS_Freedom_for_All_Sapient_Life
+			}
 		}
 	}
 	focus = { 
@@ -224,6 +301,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_Elites_Support
+				add_idea = CIS_Elites_Support_2
+			}
 		}
 	}
 	focus = { 
@@ -240,6 +321,31 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.12
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = coal
+					amount = 10
+				}
+			}
 		}
 	}
 	focus = { 
@@ -259,6 +365,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_Elites_Support_2
+				add_idea = CIS_Elites_Support_3
+			}
 		}
 	}
 	focus = { 
@@ -278,6 +388,11 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			country_event = confederacy.13
+			swap_ideas = {
+				remove_idea = CIS_Elites_Support_3
+				add_idea = CIS_Independence_Now_Democracy_Later_idea
+			}
 		}
 	}
 	focus = { 
@@ -294,7 +409,9 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			set_country_flag = cis_council_decision
 			country_event = confederacy.5
+			unlock_decision_category_tooltip = CIS_separatist_council_category
 			
 		}
 	}
@@ -312,9 +429,9 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			add_timed_idea = {
-				idea = CIS_forging_an_army_idea
-				days = 800
+			swap_ideas = {
+				remove_idea = CIS_Private_Security_Forces
+				add_idea = CIS_unified_military_high_command
 			}
 		}
 	}
@@ -332,16 +449,47 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			78 = {
+			random_owned_controlled_state = {
                 add_building_construction = {
-					type = dockyard
-					level = 10
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
-				add_building_construction = {
-					type = naval_base
-					level = 4
+			}
+			random_owned_controlled_state = {
+                add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 15
+			}
+			random_owned_controlled_state = {
+                add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+                add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+                add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+                add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
 			}
 		}
 	}
@@ -360,6 +508,10 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.2
+			swap_ideas = {
+				remove_idea = CIS_unified_military_high_command
+				add_idea = CIS_United_Separatist_forces
+			}
 		}
 	}
 	focus = { 
@@ -376,7 +528,69 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+                add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+                add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+                add_building_construction = {
+				limit = {
+					is_coastal = yes
+				}
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+                add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+                add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+                add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = { 
@@ -399,6 +613,10 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = CIS_United_Separatist_forces
+				add_idea = CIS_Great_Droid_Army
+			}
 		}
 	}
 	focus = { 

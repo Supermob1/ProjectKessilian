@@ -23,7 +23,6 @@ country_event = { # The Raxus Address
 			add_to_faction = TDF
 			add_to_faction = TCU
 			add_to_faction = ZGY
-			add_to_faction = CIH
 			
 
 		}
@@ -145,54 +144,54 @@ country_event = { # price of liberty
 
 	option = { 
 		name = confederacy.5.a
-		TCU = {
-			every_owned_state = {
-				add_core_of = CIS
+		# TCU = {
+			# every_owned_state = {
+				# add_core_of = CIS
 				
-			}
-		}
-		CIS = {
-			annex_country = {
-				target = TCU
-				transfer_troops = yes
-			}
-		}
-		TDF = {
-			every_owned_state = {
-				add_core_of = CIS
+			# }
+		# }
+		# CIS = {
+			# annex_country = {
+				# target = TCU
+				# transfer_troops = yes
+			# }
+		# }
+		# TDF = {
+			# every_owned_state = {
+				# add_core_of = CIS
 				
-			}
-		}
-		CIS = {
-			annex_country = {
-				target = TDF
-				transfer_troops = yes
-			}
-		}
-		CMG = {
-			every_owned_state = {
-				add_core_of = CIS
+			# }
+		# }
+		# CIS = {
+			# annex_country = {
+				# target = TDF
+				# transfer_troops = yes
+			# }
+		# }
+		# CMG = {
+			# every_owned_state = {
+				# add_core_of = CIS
 				
-			}
-		}
-		CIS = {
-			annex_country = {
-				target = CMG
-				transfer_troops = yes
-			}
-		}
-		IBC = {
-			every_owned_state = {
-				add_core_of = CIS
+			# }
+		# }
+		# CIS = {
+			# annex_country = {
+				# target = CMG
+				# transfer_troops = yes
+			# }
+		# }
+		# IBC = {
+			# every_owned_state = {
+				# add_core_of = CIS
 				
-			}
-		}
-		CIS = {
-			annex_country = {
-				target = IBC
-				transfer_troops = yes
-			}
-		}
+			# }
+		# }
+		# CIS = {
+			# annex_country = {
+				# target = IBC
+				# transfer_troops = yes
+			# }
+		# }
 	
 		ai_chance = { 
 			factor = 25	
@@ -276,6 +275,67 @@ country_event = { # blade in dark
 
 	option = { 
 		name = confederacy.9.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+country_event = { # brushfire rebellions
+	id = confederacy.10
+	title = confederacy.10.t
+	desc = confederacy.10.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.10.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+country_event = { # Freedom for all sapient life
+	id = confederacy.11
+	title = confederacy.11.t
+	desc = confederacy.11.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.11.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+country_event = { # A Kind Word and a Blaster
+	id = confederacy.12
+	title = confederacy.12.t
+	desc = confederacy.12.d
+	picture = GFX_news_event_dooku_speech
+	major = yes
+	is_triggered_only = yes
+	
+	fire_only_once = no
+
+	option = { 
+		name = confederacy.12.a
 
 	      
 		ai_chance = { 
