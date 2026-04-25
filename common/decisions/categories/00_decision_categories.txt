@@ -3,8 +3,14 @@ foreign_politics = {
 }
 CIS_diplomacy_category = {
 	icon = generic_political_actions
+	visible = {
+		has_country_flag = cis_diplo_active
+	}
 }
 
 CIS_espionage_category = {
 	icon = generic_political_actions
+	visible = {
+		has_country_flag = cis_spy_active
+	}
 }

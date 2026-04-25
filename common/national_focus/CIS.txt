@@ -22,6 +22,7 @@ focus_tree = {
 		icon = GFX_CIS_the_raxus_address
 		cost = 7
 		
+		
 		prerequisite = {
 		  #no prereq, start of tree
 		}
@@ -32,12 +33,17 @@ focus_tree = {
 		completion_reward = {
 			country_event = confederacy.1
 			add_political_power = 150
+			swap_ideas = {
+				remove_idea = CIS_Fragmented_Separatism
+				add_idea = CIS_The_Raxus_Address
+			}
 		}
 	}
 	focus = { 
 		id = CIS_A_New_Birth_of_Freedom
 		icon = GFX_CIS_A_New_Birth_of_Freedom
 		cost = 7
+		
 		relative_position_id = CIS_The_Raxus_Address
 		prerequisite = {
 		  focus = CIS_The_Raxus_Address
@@ -47,15 +53,20 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			add_stability = 0.1
 			country_event = confederacy.3
+			swap_ideas = {
+				remove_idea = CIS_The_Raxus_Address
+				add_idea = CIS_A_New_Birth_of_Freedom_idea
+			}
 		}
 	}
 	focus = { 
 		id = CIS_Opening_of_the_congress
 		icon = GFX_CIS_Opening_of_the_congress
 		cost = 7
+		
 		relative_position_id = CIS_A_New_Birth_of_Freedom
+
 		prerequisite = {
 		  focus = CIS_A_New_Birth_of_Freedom
 		}
@@ -65,13 +76,17 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.4
-			add_political_power = 150
+			swap_ideas = {
+				remove_idea = CIS_A_New_Birth_of_Freedom_idea
+				add_idea = CIS_Opening_of_the_congress
+			}
 		}
 	}
 	focus = { 
 		id = CIS_War_of_Words
 		icon = GFX_CIS_War_of_Words
 		cost = 7
+		
 		relative_position_id = CIS_Opening_of_the_congress
 		prerequisite = {
 		  focus = CIS_Opening_of_the_congress
@@ -81,13 +96,17 @@ focus_tree = {
 		y = 1
 		
 		completion_reward = {
-			add_war_support = 0.1
+			swap_ideas = {
+				remove_idea = CIS_Opening_of_the_congress
+				add_idea = CIS_War_of_Words_idea
+			}
 		}
 	}
 	focus = { 
 		id = CIS_An_Open_Hand
 		icon = CIS_An_Open_Hand
 		cost = 7
+		
 		relative_position_id = CIS_War_of_Words
 		prerequisite = {
 		  focus = CIS_War_of_Words
@@ -99,13 +118,14 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = cis_diplo_active
 			country_event = confederacy.8
-			custom_effect_tooltip = cis_diplo_ttp
+			unlock_decision_category_tooltip = CIS_diplomacy_category
 		}
 	}
 	focus = { 
 		id = CIS_Only_the_movement_Brings_Democracy
 		icon = CIS_Only_the_movement_Brings_Democracy
 		cost = 7
+		
 		relative_position_id = CIS_An_Open_Hand
 		prerequisite = {
 		  focus = CIS_An_Open_Hand
@@ -121,6 +141,7 @@ focus_tree = {
 		id = CIS_Brushfire_Rebellions
 		icon = CIS_Brushfire_Rebellions
 		cost = 7
+		
 		relative_position_id = CIS_An_Open_Hand
 		prerequisite = {
 		  focus = CIS_An_Open_Hand
@@ -136,6 +157,7 @@ focus_tree = {
 		id = CIS_Against_Blackest_Injustice
 		icon = CIS_Against_Blackest_Injustice
 		cost = 7
+		
 		relative_position_id = CIS_Only_the_movement_Brings_Democracy
 		prerequisite = {
 		  focus = CIS_Only_the_movement_Brings_Democracy
@@ -154,6 +176,7 @@ focus_tree = {
 		id = CIS_Freedom_for_all_sapient_life
 		icon = CIS_Freedom_for_all_sapient_life
 		cost = 7
+		
 		relative_position_id = CIS_Against_Blackest_Injustice
 		prerequisite = {
 		  focus = CIS_Against_Blackest_Injustice
@@ -172,6 +195,7 @@ focus_tree = {
 		id = CIS_A_Blade_in_the_Dark
 		icon = CIS_A_Blade_in_the_Dark
 		cost = 7
+		
 		relative_position_id = CIS_War_of_Words
 		prerequisite = {
 		  focus = CIS_War_of_Words
@@ -183,13 +207,14 @@ focus_tree = {
 		completion_reward = {
 			country_event = confederacy.9
 			set_country_flag = cis_spy_active
-			custom_effect_tooltip = cis_spy_ttp
+			unlock_decision_category_tooltip = CIS_espionage_category
 		}
 	}
 	focus = { 
 		id = CIS_Special_Interest_Groups
 		icon = CIS_Special_Interest_Groups
 		cost = 7
+		
 		relative_position_id = CIS_A_Blade_in_the_Dark
 		prerequisite = {
 		  focus = CIS_A_Blade_in_the_Dark
@@ -205,6 +230,7 @@ focus_tree = {
 		id = CIS_A_Kind_Word_and_a_Blaster
 		icon = CIS_A_Kind_Word_and_a_Blaster
 		cost = 7
+		
 		relative_position_id = CIS_A_Blade_in_the_Dark
 		prerequisite = {
 		  focus = CIS_A_Blade_in_the_Dark
@@ -220,6 +246,7 @@ focus_tree = {
 		id = CIS_Against_the_Tyrant_Majorities
 		icon = CIS_Against_the_Tyrant_Majorities
 		cost = 7
+		
 		relative_position_id = CIS_Special_Interest_Groups
 		prerequisite = {
 		  focus = CIS_Special_Interest_Groups
@@ -238,6 +265,7 @@ focus_tree = {
 		id = CIS_Independence_now_Democracy_later
 		icon = CIS_Independence_now_Democracy_later
 		cost = 7
+		
 		relative_position_id = CIS_Against_the_Tyrant_Majorities
 		prerequisite = {
 		  focus = CIS_Against_the_Tyrant_Majorities
@@ -256,6 +284,7 @@ focus_tree = {
 		id = CIS_The_Price_of_Liberty
 		icon = CIS_The_Price_of_Liberty
 		cost = 7
+		
 		relative_position_id = CIS_Opening_of_the_congress
 		prerequisite = {
 		  focus = CIS_Opening_of_the_congress
@@ -273,6 +302,7 @@ focus_tree = {
 		id = CIS_To_forge_An_Army
 		icon = CIS_To_forge_An_Army
 		cost = 7
+		
 		relative_position_id = CIS_The_Price_of_Liberty
 		prerequisite = {
 		  focus = CIS_The_Price_of_Liberty
@@ -292,6 +322,7 @@ focus_tree = {
 		id = CIS_Hidden_Foundries
 		icon = CIS_Hidden_Foundries
 		cost = 7
+		
 		relative_position_id = CIS_To_forge_An_Army
 		prerequisite = {
 		  focus = CIS_To_forge_An_Army
@@ -318,6 +349,7 @@ focus_tree = {
 		id = CIS_The_Clans_Monster
 		icon = CIS_The_Clans_Monster
 		cost = 7
+		
 		relative_position_id = CIS_To_forge_An_Army
 		prerequisite = {
 		  focus = CIS_To_forge_An_Army
@@ -334,6 +366,7 @@ focus_tree = {
 		id = CIS_Flesh_Out_the_Admiralty
 		icon = CIS_Flesh_Out_the_Admiralty
 		cost = 7
+		
 		relative_position_id = CIS_To_forge_An_Army
 		prerequisite = {
 		  focus = CIS_To_forge_An_Army
@@ -350,6 +383,7 @@ focus_tree = {
 		id = CIS_The_Droid_Army_Realized
 		icon = CIS_The_Droid_Army_Realized
 		cost = 7
+		
 		relative_position_id = CIS_Flesh_Out_the_Admiralty
 		prerequisite = {
 		  focus = CIS_Flesh_Out_the_Admiralty
@@ -371,6 +405,7 @@ focus_tree = {
 		id = CIS_The_Almighty_Credit
 		icon = CIS_The_Almighty_Credit
 		cost = 7
+		
 		relative_position_id = CIS_The_Price_of_Liberty
 		prerequisite = {
 		  focus = CIS_The_Price_of_Liberty
@@ -386,6 +421,7 @@ focus_tree = {
 		id = CIS_Avoice_for_the_money_beings
 		icon = CIS_Avoice_for_the_money_beings
 		cost = 7
+		
 		relative_position_id = CIS_The_Almighty_Credit
 		prerequisite = {
 		  focus = CIS_The_Almighty_Credit
@@ -401,6 +437,7 @@ focus_tree = {
 		id = CIS_Reassure_the_Congress
 		icon = CIS_Reassure_the_Congress
 		cost = 7
+		
 		relative_position_id = CIS_The_Almighty_Credit
 		prerequisite = {
 		  focus = CIS_The_Almighty_Credit
@@ -416,6 +453,7 @@ focus_tree = {
 		id = CIS_For_Liberty_and_Prosperity
 		icon = CIS_For_Liberty_and_Prosperity
 		cost = 7
+		
 		relative_position_id = CIS_Avoice_for_the_money_beings
 		prerequisite = {
 		  focus = CIS_Avoice_for_the_money_beings
@@ -437,6 +475,7 @@ focus_tree = {
 		id = CIS_The_Buisness_of_Revolution
 		icon = CIS_The_Buisness_of_Revolution
 		cost = 7
+		
 		prerequisite = {
 		}
 		# allow_branch = {
@@ -460,6 +499,7 @@ focus_tree = {
 		id = CIS_The_Trade_Federation
 		icon = CIS_The_Trade_Federation
 		cost = 7
+		
 		relative_position_id = CIS_The_Buisness_of_Revolution
 		prerequisite = {
 			focus = CIS_The_Buisness_of_Revolution
@@ -476,6 +516,7 @@ focus_tree = {
 		id = CIS_Lifeblood_of_the_Confederacy
 		icon = CIS_Lifeblood_of_the_Confederacy
 		cost = 7
+		
 		relative_position_id = CIS_The_Trade_Federation
 		prerequisite = {
 			focus = CIS_The_Trade_Federation
@@ -491,6 +532,7 @@ focus_tree = {
 		id = CIS_Free_trade_Propaganda
 		icon = CIS_Free_trade_Propaganda
 		cost = 7
+		
 		relative_position_id = CIS_Lifeblood_of_the_Confederacy
 		prerequisite = {
 			focus = CIS_Lifeblood_of_the_Confederacy
@@ -506,6 +548,7 @@ focus_tree = {
 		id = CIS_Letters_of_marque
 		icon = CIS_Letters_of_marque
 		cost = 7
+		
 		relative_position_id = CIS_Free_trade_Propaganda
 		prerequisite = {
 			focus = CIS_Free_trade_Propaganda
@@ -521,6 +564,7 @@ focus_tree = {
 		id = CIS_If_youre_armed_were_merchants
 		icon = CIS_If_youre_armed_were_merchants
 		cost = 7
+		
 		relative_position_id = CIS_Letters_of_marque
 		prerequisite = {
 			focus = CIS_Letters_of_marque
@@ -536,6 +580,7 @@ focus_tree = {
 		id = CIS_Masters_of_the_Spacelanes
 		icon = CIS_Masters_of_the_Spacelanes
 		cost = 7
+		
 		relative_position_id = CIS_If_youre_armed_were_merchants
 		prerequisite = {
 			focus = CIS_If_youre_armed_were_merchants
@@ -551,6 +596,7 @@ focus_tree = {
 		id = CIS_Sit_at_the_Cartels_Table
 		icon = CIS_Sit_at_the_Cartels_Table
 		cost = 7
+		
 		relative_position_id = CIS_Free_trade_Propaganda
 		prerequisite = {
 			focus = CIS_Free_trade_Propaganda
@@ -566,6 +612,7 @@ focus_tree = {
 		id = CIS_Shadow_Syndicates
 		icon = CIS_Shadow_Syndicates
 		cost = 7
+		
 		relative_position_id = CIS_Sit_at_the_Cartels_Table
 		prerequisite = {
 			focus = CIS_Sit_at_the_Cartels_Table
@@ -581,6 +628,7 @@ focus_tree = {
 		id = CIS_There_is_nothing_you_cant_buy
 		icon = CIS_There_is_nothing_you_cant_buy
 		cost = 7
+		
 		relative_position_id = CIS_Shadow_Syndicates
 		prerequisite = {
 			focus = CIS_Shadow_Syndicates
@@ -596,6 +644,7 @@ focus_tree = {
 		id = CIS_Subsidize_new_spaceports
 		icon = CIS_Subsidize_new_spaceports
 		cost = 7
+		
 		relative_position_id = CIS_The_Trade_Federation
 		prerequisite = {
 			focus = CIS_The_Trade_Federation
@@ -621,6 +670,7 @@ focus_tree = {
 		id = CIS_A_New_Generation_of_Mappers
 		icon = CIS_A_New_Generation_of_Mappers
 		cost = 7
+		
 		relative_position_id = CIS_Subsidize_new_spaceports
 		prerequisite = {
 			focus = CIS_Subsidize_new_spaceports
@@ -636,6 +686,7 @@ focus_tree = {
 		id = CIS_Carve_Out_New_Hyperlanes
 		icon = CIS_Carve_Out_New_Hyperlanes
 		cost = 7
+		
 		relative_position_id = CIS_A_New_Generation_of_Mappers
 		prerequisite = {
 			focus = CIS_A_New_Generation_of_Mappers
@@ -651,6 +702,7 @@ focus_tree = {
 		id = CIS_Everything_to_Everywhere
 		icon = CIS_Everything_to_Everywhere
 		cost = 7
+		
 		relative_position_id = CIS_Carve_Out_New_Hyperlanes
 		prerequisite = {
 			focus = CIS_Carve_Out_New_Hyperlanes
@@ -666,6 +718,7 @@ focus_tree = {
 		id = CIS_The_Techno_Union
 		icon = CIS_The_Techno_Union
 		cost = 7
+		
 		relative_position_id = CIS_The_Buisness_of_Revolution
 		prerequisite = {
 			focus = CIS_The_Buisness_of_Revolution
@@ -682,6 +735,7 @@ focus_tree = {
 		id = CIS_Freedoms_Forges
 		icon = CIS_Freedoms_Forges
 		cost = 7
+		
 		relative_position_id = CIS_The_Techno_Union
 		prerequisite = {
 			focus = CIS_The_Techno_Union
@@ -718,6 +772,7 @@ focus_tree = {
 		id = CIS_Industry_is_All
 		icon = CIS_Industry_is_All
 		cost = 7
+		
 		relative_position_id = CIS_The_Techno_Union
 		prerequisite = {
 			focus = CIS_The_Techno_Union
@@ -751,6 +806,7 @@ focus_tree = {
 		id = CIS_No_World_Left_Behind
 		icon = CIS_No_World_Left_Behind
 		cost = 7
+		
 		relative_position_id = CIS_Freedoms_Forges
 		prerequisite = {
 			focus = CIS_Freedoms_Forges
@@ -772,6 +828,7 @@ focus_tree = {
 		id = CIS_Colonies_for_the_Producers
 		icon = CIS_Colonies_for_the_Producers
 		cost = 7
+		
 		relative_position_id = CIS_No_World_Left_Behind
 		prerequisite = {
 			focus = CIS_No_World_Left_Behind
@@ -787,6 +844,7 @@ focus_tree = {
 		id = CIS_Live_For_the_Union_Live_For_Liberty
 		icon = CIS_Live_For_the_Union_Live_For_Liberty
 		cost = 7
+		
 		relative_position_id = CIS_Colonies_for_the_Producers
 		prerequisite = {
 			focus = CIS_Colonies_for_the_Producers
@@ -802,6 +860,7 @@ focus_tree = {
 		id = CIS_Boost_Production_Quotas
 		icon = CIS_Boost_Production_Quotas
 		cost = 7
+		
 		relative_position_id = CIS_The_Techno_Union
 		prerequisite = {
 			focus = CIS_The_Techno_Union
@@ -818,6 +877,7 @@ focus_tree = {
 		id = CIS_Your_Fight_Is_In_The_Factory
 		icon = CIS_Your_Fight_Is_In_The_Factory
 		cost = 7
+		
 		relative_position_id = CIS_Boost_Production_Quotas
 		prerequisite = {
 			focus = CIS_Boost_Production_Quotas
@@ -837,6 +897,7 @@ focus_tree = {
 		id = CIS_And_Shirking_Is_Treason
 		icon = CIS_And_Shirking_Is_Treason
 		cost = 7
+		
 		relative_position_id = CIS_Your_Fight_Is_In_The_Factory
 		prerequisite = {
 			focus = CIS_Your_Fight_Is_In_The_Factory
@@ -856,6 +917,7 @@ focus_tree = {
 		id = CIS_Our_Work_Will_Set_Us_Free
 		icon = CIS_Our_Work_Will_Set_Us_Free
 		cost = 7
+		
 		relative_position_id = CIS_And_Shirking_Is_Treason
 		prerequisite = {
 			focus = CIS_And_Shirking_Is_Treason
@@ -875,6 +937,7 @@ focus_tree = {
 		id = CIS_All_Our_Corporate_Partners
 		icon = CIS_All_Our_Corporate_Partners
 		cost = 7
+		
 		relative_position_id = CIS_The_Buisness_of_Revolution
 		prerequisite = {
 			focus = CIS_The_Buisness_of_Revolution
@@ -890,6 +953,7 @@ focus_tree = {
 		id = CIS_Harvests_From_The_Guild
 		icon = CIS_Harvests_From_The_Guild
 		cost = 7
+		
 		relative_position_id = CIS_All_Our_Corporate_Partners
 		prerequisite = {
 			focus = CIS_All_Our_Corporate_Partners
@@ -905,6 +969,7 @@ focus_tree = {
 		id = CIS_Fuel_For_The_Forges
 		icon = CIS_Fuel_For_The_Forges
 		cost = 7
+		
 		relative_position_id = CIS_Harvests_From_The_Guild
 		prerequisite = {
 			focus = CIS_Harvests_From_The_Guild
@@ -941,6 +1006,7 @@ focus_tree = {
 		id = CIS_Questions_Of_Labor
 		icon = CIS_Questions_Of_Labor
 		cost = 7
+		
 		relative_position_id = CIS_Fuel_For_The_Forges
 		prerequisite = {
 			focus = CIS_Fuel_For_The_Forges
@@ -956,6 +1022,7 @@ focus_tree = {
 		id = CIS_The_Cartel_is_Our_Voice
 		icon = CIS_The_Cartel_is_Our_Voice
 		cost = 7
+		
 		relative_position_id = CIS_All_Our_Corporate_Partners
 		prerequisite = {
 			focus = CIS_All_Our_Corporate_Partners
@@ -971,6 +1038,7 @@ focus_tree = {
 		id = CIS_The_Shadowfeed_Race
 		icon = CIS_The_Shadowfeed_Race
 		cost = 7
+		
 		relative_position_id = CIS_The_Cartel_is_Our_Voice
 		prerequisite = {
 			focus = CIS_The_Cartel_is_Our_Voice
@@ -986,6 +1054,7 @@ focus_tree = {
 		id = CIS_Infiltrating_HNN
 		icon = CIS_Infiltrating_HNN
 		cost = 7
+		
 		relative_position_id = CIS_The_Shadowfeed_Race
 		prerequisite = {
 			focus = CIS_The_Shadowfeed_Race
@@ -1001,6 +1070,7 @@ focus_tree = {
 		id = CIS_Open_Their_Eyes
 		icon = CIS_Open_Their_Eyes
 		cost = 7
+		
 		relative_position_id = CIS_Infiltrating_HNN
 		prerequisite = {
 			focus = CIS_Infiltrating_HNN
@@ -1016,6 +1086,7 @@ focus_tree = {
 		id = CIS_The_First_Casualty
 		icon = CIS_The_First_Casualty
 		cost = 7
+		
 		relative_position_id = CIS_Open_Their_Eyes
 		prerequisite = {
 			focus = CIS_Open_Their_Eyes
@@ -1031,6 +1102,7 @@ focus_tree = {
 		id = CIS_The_Clans_Generosity
 		icon = CIS_The_Clans_Generosity
 		cost = 7
+		
 		relative_position_id = CIS_All_Our_Corporate_Partners
 		prerequisite = {
 			focus = CIS_All_Our_Corporate_Partners
@@ -1046,6 +1118,7 @@ focus_tree = {
 		id = CIS_The_Alliances_Largesse
 		icon = CIS_The_Alliances_Largesse
 		cost = 7
+		
 		relative_position_id = CIS_The_Clans_Generosity
 		prerequisite = {
 			focus = CIS_The_Clans_Generosity
@@ -1061,6 +1134,7 @@ focus_tree = {
 		id = CIS_The_Caucus_Friendship
 		icon = CIS_The_Caucus_Friendship
 		cost = 7
+		
 		relative_position_id = CIS_The_Alliances_Largesse
 		prerequisite = {
 			focus = CIS_The_Alliances_Largesse
