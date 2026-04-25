@@ -142,7 +142,7 @@ technology_categories = {
 technology_folders = {
 	infantry_folder = {
 		available = {
-			NOT = { tag = REP }
+			# NOT = { tag = REP }
 		}
 		ledger = army
 	}
@@ -215,7 +215,8 @@ technology_folders = {
 	}
 	republic_folder = {
 		available = {
-			tag = REP
+			# tag = REP
+			always = no
 		}
 		ledger = army #For now
 	}

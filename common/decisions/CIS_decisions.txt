@@ -190,6 +190,30 @@ CIS_espionage_category = {
 	}
 }
 CIS_separatist_council_category = {
+
+	CIS_Prepare_the_Separatists = {
+		activation = {
+			original_tag = CIS
+		}
+		available = {
+			num_divisions > 138
+		}
+		cancel_trigger = {
+			has_war = yes
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		war_with_on_timeout = REP
+		days_mission_timeout = 900
+		selectable_mission = no
+		complete_effect = {
+			add_political_power = 100
+		}
+		timeout_effect = {
+			add_political_power = 100
+		}
+	}
+
 	CIS_Integrate_The_Trade_Federation = {
 
 		cost = 50

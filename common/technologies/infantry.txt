@@ -80,15 +80,6 @@ technologies = {
 				is_major = yes
 			}
 
-			modifier = {
-				factor = 10
-				##tag = CHI
-
-				OR = {
-					date > 977.1.1
-					JAP = { is_ai = no }
-				}
-			}
 
 			modifier = {
 				factor = 10
@@ -498,28 +489,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 0.5
-
-			modifier = {
-				factor = 20
-				##tag = USA
-				date > 983.1.1
-			}
-
-			modifier = {
-				factor = 2
-				##tag = GER
-			}
-
-			modifier = {
-				factor = 5
-				##tag = ENG
-			}
-
-			modifier = {
-				factor = 5
-				##tag = GER
-				#TODO_Danne Add Fallschirmsjäger focus here!
-			}
 		}
 	}
 
@@ -872,26 +841,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
-			
-			modifier = {
-				factor = 2
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 5
-				tag = JAP
-			}
-
-			modifier = {
-				factor = 5
-				tag = BRA
-			}
-			
-			modifier = {
-				factor = 2
-				tag = ENG
-			}
+		
 		}
 	}
 
