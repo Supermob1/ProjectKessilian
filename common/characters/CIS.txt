@@ -27,6 +27,10 @@ characters={
 			traits = { grand_chessmaster mobile_warfare_expert }
 			ai_will_do={ factor=1 }
 		}
+		field_marshal={
+			traits={ brilliant_strategist inspirational_leader media_personality }
+			skill=4 attack_skill=2 defense_skill=2 planning_skill=5 logistics_skill=2 legacy_id=-1
+		}
 	}
 	CIS_voe_attrell={
 		name="Voe Attrell"
@@ -249,6 +253,10 @@ characters={
 			traits = { siege_master army_infantry_1 }
 			ai_will_do={ factor=1 }
 		}
+		corps_commander={
+			traits={ urban_assault_specialist }
+			skill=1 attack_skill=1 defense_skill=2 planning_skill=1 logistics_skill=1 legacy_id=-1
+		}
 	}
 
 	# --- Magocrats (Dark Side-aligned) ---
@@ -397,6 +405,10 @@ characters={
 			traits = { tactical_droid army_regrouping_1 }
 			ai_will_do={ factor=1 }
 		}
+		corps_commander={
+			traits={ organizer }
+			skill=2 attack_skill=3 defense_skill=2 planning_skill=3 logistics_skill=3 legacy_id=-1
+		}
 	}
 	CIS_general_kleeve={
 		name="General Kleeve"
@@ -428,6 +440,61 @@ characters={
 		corps_commander={
 			traits={ skilled_tactician }
 			skill=3 attack_skill=4 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
+		}
+	}
+	CIS_kendu_ultho={
+		name="Kendu Ultho"
+		portraits={
+			civilian={ small="gfx/characters/CIS/atticus_farstar_political_advisor.png" large="gfx/leaders/CIS/portrait_kendu_ultho.png" }
+			army={ large="gfx/leaders/CIS/portrait_kendu_ultho.png" }
+		}
+		corps_commander={
+			traits={  }
+			skill=1 attack_skill=1 defense_skill=2 planning_skill=2 logistics_skill=2 legacy_id=-1
+		}
+	}
+	CIS_oro_dassyne={
+		name="Oro Dassyne"
+		portraits={
+			civilian={ small="gfx/characters/CIS/atticus_farstar_political_advisor.png" large="gfx/leaders/CIS/portrait_oro_dassyne.png" }
+			army={ large="gfx/leaders/CIS/portrait_oro_dassyne.png" }
+		}
+		corps_commander={
+			traits={ }
+			skill=2 attack_skill=3 defense_skill=1 planning_skill=1 logistics_skill=2 legacy_id=-1
+		}
+	}
+	CIS_lok_durd={
+		name="Lok Durd"
+		portraits={
+			civilian={ small="gfx/characters/CIS/atticus_farstar_political_advisor.png" large="gfx/leaders/CIS/portrait_lok_durd.png" }
+			army={ large="gfx/leaders/CIS/portrait_lok_durd.png" }
+		}
+		corps_commander={
+			traits={ }
+			skill=1 attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
+		}
+	}
+	CIS_horn_ambigene={
+		name="Horn Ambigene"
+		portraits={
+			civilian={ small="gfx/characters/CIS/atticus_farstar_political_advisor.png" large="gfx/leaders/CIS/portrait_horn_ambigene.png" }
+			army={ large="gfx/leaders/CIS/portrait_horn_ambigene.png" }
+		}
+		corps_commander={
+			traits={ }
+			skill=3s attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
+		}
+	}
+	CIS_calli_trilm={
+		name="Calli Trilm"
+		portraits={
+			civilian={ small="gfx/characters/CIS/atticus_farstar_political_advisor.png" large="gfx/leaders/CIS/portrait_calli_trilm.png" }
+			army={ large="gfx/leaders/CIS/portrait_calli_trilm.png" }
+		}
+		corps_commander={
+			traits={ }
+			skill=3s attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
 		}
 	}
 
