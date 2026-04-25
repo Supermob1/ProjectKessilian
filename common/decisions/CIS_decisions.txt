@@ -1,30 +1,238 @@
 CIS_diplomacy_category = {
-	CIS_diplo_1 = {
+	CIS_Slavery_on_Kashyyk = {
 
 		cost = 50
-		fire_only_once = no
-
+		fire_only_once = yes
+		available = {
+			NOT = { has_country_flag = CIS_Trandosha_Lured }
+			NOT = { has_country_flag = diplo_or_spy_decision_taken }
+		}
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = CIS_Trandosha_Lured 
+					has_country_flag = CIS_Kashyyk_Freed 
+				}
+			}
+		}
 		complete_effect = {
-			add_to_variable = {
-				var = MAN_prowar_variable
+			annex_country = {
+				target = KAS
+				transfer_troops = yes
+			}
+			set_country_flag = {
+				flag = diplo_or_spy_decision_taken
+				days = 35
 				value = 1
 			}
-			add_war_support = 0.025
+			set_country_flag = CIS_Kashyyk_Freed
+		}
+	}
+	CIS_Rodia_Famine = {
+
+		cost = 50
+		fire_only_once = yes
+
+		available = {
+			NOT = { has_country_flag = CIS_Ciutric_Hegemony }
+			NOT = { has_country_flag = diplo_or_spy_decision_taken }
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = CIS_Ciutric_Hegemony 
+					has_country_flag = CIS_Rodia_Famine_Allievatied 
+				}
+			}
+		}
+		
+		complete_effect = {
+			annex_country = {
+				target = ROD
+				transfer_troops = yes
+			}
+			set_country_flag = {
+				flag = diplo_or_spy_decision_taken
+				days = 35
+				value = 1
+			}
+			set_country_flag = CIS_Rodia_Famine_Allievatied
+		}
+	}
+	CIS_Tibrin_Dictatorship = {
+
+		cost = 50
+		fire_only_once = yes
+
+		available = {
+			NOT = { has_country_flag = CIS_Quarren_Coup }
+			NOT = { has_country_flag = diplo_or_spy_decision_taken }
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = CIS_Quarren_Coup 
+					has_country_flag = CIS_Tibrin_Dictatorship_Destroyed 
+				}
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = TBR
+				transfer_troops = yes
+			}
+			set_country_flag = {
+				flag = diplo_or_spy_decision_taken
+				days = 35
+				value = 1
+			}
+			set_country_flag = CIS_Tibrin_Dictatorship_Destroyed
 		}
 	}
 }
 CIS_espionage_category = {
-	CIS_ESP_1 = {
+	CIS_Lure_the_Trandoshan = {
 
 		cost = 50
-		fire_only_once = no
+		fire_only_once = yes
 
+		available = {
+			NOT = { has_country_flag = CIS_Kashyyk_Freed }
+			NOT = { has_country_flag = diplo_or_spy_decision_taken }
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = CIS_Kashyyk_Freed 
+					has_country_flag = CIS_Trandosha_Lured 
+				}
+			}
+		}
+		
 		complete_effect = {
-			add_to_variable = {
-				var = MAN_prowar_variable
+			annex_country = {
+				target = HSS
+				transfer_troops = yes
+			}
+			set_country_flag = {
+				flag = diplo_or_spy_decision_taken
+				days = 35
 				value = 1
 			}
-			add_war_support = 0.025
+			set_country_flag = CIS_Trandosha_Lured
+		}
+	}
+	CIS_Buy_the_Ciutric_Hegemony = {
+
+		cost = 50
+		fire_only_once = yes
+
+		available = {
+			NOT = { has_country_flag = CIS_Rodia_Famine_Allievatied }
+			NOT = { has_country_flag = diplo_or_spy_decision_taken }
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = CIS_Rodia_Famine_Allievatied 
+					has_country_flag = CIS_Ciutric_Hegemony 
+				}
+			}
+		}
+		complete_effect = {
+			annex_country = {
+				target = CIH
+				transfer_troops = yes
+			}
+			set_country_flag = {
+				flag = diplo_or_spy_decision_taken
+				days = 35
+				value = 1
+			}
+			set_country_flag = CIS_Ciutric_Hegemony
+		}
+	}
+	CIS_Trigger_the_Quarren_Coup = {
+
+		cost = 50
+		fire_only_once = yes
+
+		available = {
+			NOT = { has_country_flag = CIS_Tibrin_Dictatorship_Destroyed }
+			NOT = { has_country_flag = diplo_or_spy_decision_taken }
+		}
+		
+		visible = {
+			NOT = {
+				OR = {
+					has_country_flag = CIS_Tibrin_Dictatorship_Destroyed 
+					has_country_flag = CIS_Quarren_Coup 
+				}
+			}
+		}
+		
+		complete_effect = {
+			annex_country = {
+				target = MNC
+				transfer_troops = yes
+			}
+			set_country_flag = {
+				flag = diplo_or_spy_decision_taken
+				days = 35
+				value = 1
+			}
+			set_country_flag = CIS_Quarren_Coup
+		}
+	}
+}
+CIS_separatist_council_category = {
+	CIS_Integrate_The_Trade_Federation = {
+
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			annex_country = {
+				target = TDF
+				transfer_troops = yes
+			}
+		}
+	}
+	CIS_Integrate_The_Techno_Union = {
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			annex_country = {
+				target = TCU
+				transfer_troops = yes
+			}
+		}
+	}
+	CIS_Integrate_Commerce_Guild = {
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			annex_country = {
+				target = CMG
+				transfer_troops = yes
+			}
+		}
+	}
+	CIS_Integrate_The_Banking_Clan = {
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			annex_country = {
+				target = IBC
+				transfer_troops = yes
+			}
 		}
 	}
 }
