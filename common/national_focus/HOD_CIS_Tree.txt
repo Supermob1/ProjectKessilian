@@ -278,6 +278,11 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.11
+			add_power_balance_value = {
+				id = Sidious_Dooku_Relationship
+				value = -0.1
+				tooltip_side = Dooku_side
+			}
 			add_popularity = {
 				ideology = inclusivist
 				popularity = 0.10
@@ -425,6 +430,11 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = confederacy.13
+			add_power_balance_value = {
+				id = Sidious_Dooku_Relationship
+				value = 0.1
+				tooltip_side = Palpy_side
+			}
 			add_popularity = {
 				ideology = corporate_consortium
 				popularity = 0.05
