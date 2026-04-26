@@ -1,0 +1,180 @@
+division_template = {
+	name = "Local Planetary Garrison"
+	division_names_group = CIS_GAR_01
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+    name = "CIS Droid Battalion"
+    division_names_group = CIS_INF_01
+    template_counter = 1
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+        infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+        infantry = { x = 3 y = 0 }
+        infantry = { x = 3 y = 1 }
+        infantry = { x = 3 y = 2 }
+        infantry = { x = 4 y = 0 }
+    }
+    support = {
+    }
+}
+units = {
+    # Felucia
+    division = {
+        name                    = "1st Commerce Guild Battle Droid Battalion"
+        location                = 124
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "2nd Commerce Guild Battle Droid Battalion"
+        location                = 124
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "3rd Commerce Guild Battle Droid Battalion"
+        location                = 124
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "4th Commerce Guild Battle Droid Battalion"
+        location                = 124
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "6th Commerce Guild Battle Droid Battalion"
+        location                = 124
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "7th Commerce Guild Battle Droid Battalion"
+        location                = 124
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Sullust
+    division = {
+        name                    = "8th Commerce Guild Battle Droid Battalion"
+        location                = 17855
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "9th Commerce Guild Battle Droid Battalion"
+        location                = 17855
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "10th Commerce Guild Battle Droid Battalion"
+        location                = 17855
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "11th Commerce Guild Battle Droid Battalion"
+        location                = 17855
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "12th Commerce Guild Battle Droid Battalion"
+        location                = 17855
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "13th Commerce Guild Battle Droid Battalion"
+        location                = 17855
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Korriban
+    division = {
+        name                    = "14th Commerce Guild Battle Droid Battalion"
+        location                = 1533
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "15th Commerce Guild Battle Droid Battalion"
+        location                = 1533
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "16th Commerce Guild Battle Droid Battalion"
+        location                = 1533
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Dromund Kaas
+    division = {
+        name                    = "17th Commerce Guild Battle Droid Battalion"
+        location                = 7759
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "18th Commerce Guild Battle Droid Battalion"
+        location                = 7759
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "19th Commerce Guild Battle Droid Battalion"
+        location                = 7759
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+}
+	
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = CMG
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 50
+		# industrial_manufacturer = mio:GER_mauser_organization
+	}
+
+}

@@ -16,6 +16,12 @@ CIS_diplomacy_category = {
 			}
 		}
 		complete_effect = {
+			KAS = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
 			annex_country = {
 				target = KAS
 				transfer_troops = yes
@@ -48,6 +54,12 @@ CIS_diplomacy_category = {
 		}
 		
 		complete_effect = {
+			ROD = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
 			annex_country = {
 				target = ROD
 				transfer_troops = yes
@@ -79,6 +91,12 @@ CIS_diplomacy_category = {
 			}
 		}
 		complete_effect = {
+			TBR = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
 			annex_country = {
 				target = TBR
 				transfer_troops = yes
@@ -113,6 +131,12 @@ CIS_espionage_category = {
 		}
 		
 		complete_effect = {
+			HSS = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
 			annex_country = {
 				target = HSS
 				transfer_troops = yes
@@ -144,6 +168,12 @@ CIS_espionage_category = {
 			}
 		}
 		complete_effect = {
+			CIH = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
 			annex_country = {
 				target = CIH
 				transfer_troops = yes
@@ -176,6 +206,12 @@ CIS_espionage_category = {
 		}
 		
 		complete_effect = {
+			MNC = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
 			annex_country = {
 				target = MNC
 				transfer_troops = yes
@@ -190,6 +226,78 @@ CIS_espionage_category = {
 	}
 }
 CIS_separatist_council_category = {
+
+	CIS_Integrate_The_Trade_Federation = {
+
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			TBF = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
+			annex_country = {
+				target = TDF
+				transfer_troops = yes
+			}
+		}
+	}
+	CIS_Integrate_The_Techno_Union = {
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			TCU = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
+			annex_country = {
+				target = TCU
+				transfer_troops = yes
+			}
+		}
+	}
+	CIS_Integrate_Commerce_Guild = {
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			CMG = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
+			annex_country = {
+				target = CMG
+				transfer_troops = yes
+			}
+		}
+	}
+	CIS_Integrate_The_Banking_Clan = {
+		cost = 50
+		fire_only_once = yes
+		
+		complete_effect = {
+			IBC = {
+				every_owned_state = {
+					add_core_of = CIS
+					
+				}
+			}
+			annex_country = {
+				target = IBC
+				transfer_troops = yes
+			}
+		}
+	}
+}
+CIS_Sidious_Suspicions = {
 
 	CIS_Prepare_the_Separatists = {
 		activation = {
@@ -207,55 +315,17 @@ CIS_separatist_council_category = {
 		days_mission_timeout = 900
 		selectable_mission = no
 		complete_effect = {
-			add_political_power = 100
+			add_power_balance_value = {
+				id = Sidious_Dooku_Relationship
+				value = 0.1
+				tooltip_side = Palpy_side
+			}
 		}
 		timeout_effect = {
-			add_political_power = 100
-		}
-	}
-
-	CIS_Integrate_The_Trade_Federation = {
-
-		cost = 50
-		fire_only_once = yes
-		
-		complete_effect = {
-			annex_country = {
-				target = TDF
-				transfer_troops = yes
-			}
-		}
-	}
-	CIS_Integrate_The_Techno_Union = {
-		cost = 50
-		fire_only_once = yes
-		
-		complete_effect = {
-			annex_country = {
-				target = TCU
-				transfer_troops = yes
-			}
-		}
-	}
-	CIS_Integrate_Commerce_Guild = {
-		cost = 50
-		fire_only_once = yes
-		
-		complete_effect = {
-			annex_country = {
-				target = CMG
-				transfer_troops = yes
-			}
-		}
-	}
-	CIS_Integrate_The_Banking_Clan = {
-		cost = 50
-		fire_only_once = yes
-		
-		complete_effect = {
-			annex_country = {
-				target = IBC
-				transfer_troops = yes
+			add_power_balance_value = {
+				id = Sidious_Dooku_Relationship
+				value = -0.1
+				tooltip_side = Dooku_side
 			}
 		}
 	}

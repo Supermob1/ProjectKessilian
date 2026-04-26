@@ -8,6 +8,13 @@ on_actions = {
 			set_variable = { UTI.HODmonth = 1 }
 			set_variable = { UTI.HODyear = -24 }
 			set_variable = { UTI.bby = 0 }
+			CIS = {
+				add_power_balance_value = {
+					id = Sidious_Dooku_Relationship
+					value = 1
+					tooltip_side = Palpy_side
+				}
+			}
 		}
 	}
 	# this is executed on the 1st of every year FOR ONE RANDOM COUNTRY - use every_country inside
