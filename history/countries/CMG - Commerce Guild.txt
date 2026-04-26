@@ -36,6 +36,7 @@ set_technology = {
 	support_weapons = 1
 	tech_support = 1
 	tech_trucks = 1
+	basic_train = 1
 }
 
 set_politics = {
@@ -52,4 +53,13 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = corporate_consortium_subtype
 	traits = { }
+}
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 1000
+}
+add_equipment_to_stockpile = {
+	type = convoy
+	amount = 10000
+	producer = TCU
 }

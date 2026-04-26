@@ -1,0 +1,166 @@
+Clone_Wars_Area_Priority_REP = {
+	allowed = { 
+		original_tag = REP
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 200
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = CIS
+		value = 100
+	}
+	ai_strategy = {
+		type = area_priority
+		id = northern_area
+		value = 110 #more focus here
+	}
+	ai_strategy = {
+		type = area_priority
+		id = eastern_area
+		value = 110 #more focus here
+	}
+	ai_strategy = {
+		type = area_priority
+		id = southern_area
+		value = 110 #more focus here
+	}
+}
+Clone_Wars_Area_Priority_CIS = {
+	allowed = { 
+		original_tag = CIS
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = 200
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = REP
+		value = 100
+	}
+	ai_strategy = {
+		type = area_priority
+		id = northern_area
+		value = 110 #more focus here
+	}
+	ai_strategy = {
+		type = area_priority
+		id = eastern_area
+		value = 110 #more focus here
+	}
+	ai_strategy = {
+		type = area_priority
+		id = southern_area
+		value = 110 #more focus here
+	}
+}
+Clone_Wars_Front_Control_REP = {
+	allowed = {
+		original_tag = REP
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		area = eastern_area
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+	ai_strategy = {
+		type = front_control
+
+		area = southern_area
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+	ai_strategy = {
+		type = front_control
+
+		area = northern_area
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+}
+Clone_Wars_Front_Control_CIS = {
+	allowed = {
+		original_tag = CIS
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+
+		area = eastern_area
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+	ai_strategy = {
+		type = front_control
+
+		area = southern_area
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+	ai_strategy = {
+		type = front_control
+
+		area = northern_area
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+}

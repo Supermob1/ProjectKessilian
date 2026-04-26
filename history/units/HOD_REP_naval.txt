@@ -1,0 +1,99 @@
+units = {
+
+	##### GALACTIC REPUBLIC NAVAL OOB #####
+
+	############################
+	# CORE WORLDS FLEET
+	############################
+	fleet = {
+		name = "Grand Republic Navy - Core Worlds Fleet"
+		naval_base = 12333 # Coruscant
+
+		task_force = {
+			name = "Coruscant Capital Fleet"
+			location = 12333 # Coruscant
+
+			ship = { name = "RSF Resolute" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Guardian" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Justice" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Valor" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+
+			ship = { name = "RSF Unity" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Peacekeeper" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+
+			ship = { name = "RSF Shield I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+		}
+	}
+
+	############################
+	# OUTER RIM DEFENSE FLEET
+	############################
+	fleet = {
+		name = "Outer Rim Defense Fleet"
+		naval_base = 12333 # Ryloth Sector
+
+		task_force = {
+			name = "Ryloth Sector Group"
+			location = 12333
+
+			ship = { name = "RSF Hammer of Ryloth" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Liberty's Spear" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Outer Vigil" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+
+			ship = { name = "RSF Rimwarden I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+
+			ship = { name = "RSF Horizon" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+		}
+	}
+
+	############################
+	# EXPEDITIONARY STRIKE FLEET
+	############################
+	fleet = {
+		name = "Republic Expeditionary Strike Fleet"
+		naval_base = 12333 # Kamino Orbit
+
+		task_force = {
+			name = "Kamino Training Fleet"
+			location = 12333
+
+			ship = { name = "RSF Dawn of Order" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Spearhead" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+
+			ship = { name = "RSF Rapid Response I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+
+			ship = { name = "RSF Wayfarer" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Pathfinder" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+		}
+	}
+
+	############################
+	# DEEP SPACE SPECIAL OPERATIONS
+	############################
+	fleet = {
+		name = "Republic Deep Space Flotilla"
+		naval_base = 12333 # Unknown Regions Forward Base
+
+		task_force = {
+			name = "Ghost Operations Group"
+			location = 12333
+
+			ship = { name = "RSF Silent Resolve" definition = submarine equipment = { submarine_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Silent Judgment" definition = submarine equipment = { submarine_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Silent Dawn" definition = submarine equipment = { submarine_1 = { amount = 1 owner = REP } } }
+
+			ship = { name = "RSF Veilbreaker" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Echo Sentinel" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+		}
+	}
+
+}

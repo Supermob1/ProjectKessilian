@@ -1,6 +1,7 @@
 ﻿capital = 79
 
 oob = "HOD_CIS"
+set_naval_oob = "HOD_CIS_naval"
 
 set_research_slots = 4
 
@@ -42,6 +43,20 @@ set_technology = {
 	support_weapons = 1
 	tech_support = 1
 	tech_trucks = 1
+	basic_train = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_battlecruiser = 1
+	early_battleship = 1
+	early_carrier = 1
+	early_submarine = 1
+	transport = 1
+	landing_craft = 1
+	tank_landing_craft = 1
+	early_fighter = 1
+	early_bomber = 1
+	strategic_bomber1 = 1
 }
 
 add_ideas = {
@@ -88,6 +103,15 @@ add_equipment_to_stockpile = {
 }
 add_equipment_to_stockpile = {
 	type = infantry_equipment
+	amount = 10000
+	producer = TCU
+}
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 1000
+}
+add_equipment_to_stockpile = {
+	type = convoy
 	amount = 10000
 	producer = TCU
 }
