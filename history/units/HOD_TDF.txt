@@ -1,0 +1,182 @@
+division_template = {
+	name = "Local Planetary Garrison"
+	division_names_group = CIS_GAR_01
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+    name = "CIS Droid Battalion"
+    division_names_group = CIS_INF_01
+    template_counter = 1
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+        infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+        infantry = { x = 3 y = 0 }
+        infantry = { x = 3 y = 1 }
+        infantry = { x = 3 y = 2 }
+        infantry = { x = 4 y = 0 }
+    }
+    support = {
+    }
+}
+units = {
+    # Ord Cestus
+    division = {
+        name                    = "1st Trade Federation Battle Droid Battalion"
+        location                = 21572
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "2nd Trade Federation Battle Droid Battalion"
+        location                = 21572
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "3rd Trade Federation Battle Droid Battalion"
+        location                = 21572
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+	# Nyriaan
+    division = {
+        name                    = "4th Trade Federation Battle Droid Battalion"
+        location                = 3531
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "6th Trade Federation Battle Droid Battalion"
+        location                = 3531
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "7th Trade Federation Battle Droid Battalion"
+        location                = 3531
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Colla IV
+    division = {
+        name                    = "8th Trade Federation Battle Droid Battalion"
+        location                = 1525
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "9th Trade Federation Battle Droid Battalion"
+        location                = 1525
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "10th Trade Federation Battle Droid Battalion"
+        location                = 1525
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+	# Neimodia
+    division = {
+        name                    = "11th Trade Federation Battle Droid Battalion"
+        location                = 13185
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "12th Trade Federation Battle Droid Battalion"
+        location                = 13185
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "13th Trade Federation Battle Droid Battalion"
+        location                = 13185
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Manaan
+    division = {
+        name                    = "14th Trade Federation Battle Droid Battalion"
+        location                = 3668
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "15th Trade Federation Battle Droid Battalion"
+        location                = 3668
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "16th Trade Federation Battle Droid Battalion"
+        location                = 3668
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Cato Neimodia
+    division = {
+        name                    = "17th Trade Federation Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "18th Trade Federation Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "19th Trade Federation Battle Droid Battalion"
+        location                = 15
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+}
+	
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = TDF
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 50
+		# industrial_manufacturer = mio:GER_mauser_organization
+	}
+
+}

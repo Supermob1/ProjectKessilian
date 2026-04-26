@@ -3,7 +3,7 @@ Sidious_Dooku_Relationship = {
 	initial_value = 1
 	left_side = Dooku_side
 	right_side = Palpy_side
-#	decision_category = GER_mefo_bills_category
+	decision_category = CIS_Sidious_Suspicions
 	side = {
 		id = Dooku_side
 		icon = GFX_idea_generic_agrarian_society
@@ -14,7 +14,7 @@ Sidious_Dooku_Relationship = {
 			modifier = {
 			}
 			on_activate = {
-				country_event = dooku_palpy_fight
+				country_event = dooku_palpy_fight.1
 				remove_power_balance = {
 					id = Sidious_Dooku_Relationship
 				}

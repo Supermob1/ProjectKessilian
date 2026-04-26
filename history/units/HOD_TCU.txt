@@ -1,0 +1,182 @@
+division_template = {
+	name = "Local Planetary Garrison"
+	division_names_group = CIS_GAR_01
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+    name = "CIS Droid Battalion"
+    division_names_group = CIS_INF_01
+    template_counter = 1
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+        infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+        infantry = { x = 3 y = 0 }
+        infantry = { x = 3 y = 1 }
+        infantry = { x = 3 y = 2 }
+        infantry = { x = 4 y = 0 }
+    }
+    support = {
+    }
+}
+units = {
+    # Balmorra
+    division = {
+        name                    = "1st Techno Union Battle Droid Battalion"
+        location                = 12837
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "2nd Techno Union Battle Droid Battalion"
+        location                = 12837
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "3rd Techno Union Battle Droid Battalion"
+        location                = 12837
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+	#Foerost
+    division = {
+        name                    = "4th Techno Union Battle Droid Battalion"
+        location                = 13052
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "6th Techno Union Battle Droid Battalion"
+        location                = 13052
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "7th Techno Union Battle Droid Battalion"
+        location                = 13052
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Mechis
+    division = {
+        name                    = "8th Techno Union Battle Droid Battalion"
+        location                = 15929
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "9th Techno Union Battle Droid Battalion"
+        location                = 15929
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "10th Techno Union Battle Droid Battalion"
+        location                = 15929
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+	# Queyta
+    division = {
+        name                    = "11th Techno Union Battle Droid Battalion"
+        location                = 4853
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "12th Techno Union Battle Droid Battalion"
+        location                = 4853
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "13th Techno Union Battle Droid Battalion"
+        location                = 4853
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Mustafar
+    division = {
+        name                    = "14th Techno Union Battle Droid Battalion"
+        location                = 517
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "15th Techno Union Battle Droid Battalion"
+        location                = 517
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "16th Techno Union Battle Droid Battalion"
+        location                = 517
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    # Saleucami
+    division = {
+        name                    = "17th Techno Union Battle Droid Battalion"
+        location                = 11013
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "18th Techno Union Battle Droid Battalion"
+        location                = 11013
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+    division = {
+        name                    = "19th Techno Union Battle Droid Battalion"
+        location                = 11013
+        division_template       = "CIS Droid Battalion"
+        start_experience_factor = 1.0
+        start_equipment_factor  = 1.0
+    }
+}
+	
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = TCU
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 50
+		# industrial_manufacturer = mio:GER_mauser_organization
+	}
+
+}
