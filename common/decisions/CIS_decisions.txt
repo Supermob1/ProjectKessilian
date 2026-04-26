@@ -81,6 +81,9 @@ CIS_diplomacy_category = {
 			NOT = { has_country_flag = CIS_Quarren_Coup }
 			NOT = { has_country_flag = diplo_or_spy_decision_taken }
 		}
+		ai_will_do = {
+			factor = 10000
+		}
 		
 		visible = {
 			NOT = {
@@ -120,6 +123,9 @@ CIS_espionage_category = {
 			NOT = { has_country_flag = CIS_Kashyyk_Freed }
 			NOT = { has_country_flag = diplo_or_spy_decision_taken }
 		}
+		ai_will_do = {
+			factor = 10000
+		}
 		
 		visible = {
 			NOT = {
@@ -157,6 +163,9 @@ CIS_espionage_category = {
 		available = {
 			NOT = { has_country_flag = CIS_Rodia_Famine_Allievatied }
 			NOT = { has_country_flag = diplo_or_spy_decision_taken }
+		}
+		ai_will_do = {
+			factor = 10000
 		}
 		
 		visible = {
@@ -231,6 +240,9 @@ CIS_separatist_council_category = {
 
 		cost = 50
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
 		
 		complete_effect = {
 			TDF = {
@@ -248,6 +260,9 @@ CIS_separatist_council_category = {
 	CIS_Integrate_The_Techno_Union = {
 		cost = 50
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
 		
 		complete_effect = {
 			TCU = {
@@ -265,6 +280,9 @@ CIS_separatist_council_category = {
 	CIS_Integrate_Commerce_Guild = {
 		cost = 50
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
 		
 		complete_effect = {
 			CMG = {
@@ -282,6 +300,9 @@ CIS_separatist_council_category = {
 	CIS_Integrate_The_Banking_Clan = {
 		cost = 50
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 10000
+		}
 		
 		complete_effect = {
 			IBC = {

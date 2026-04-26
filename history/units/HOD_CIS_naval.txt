@@ -1,0 +1,110 @@
+units = {
+
+	##### CONFEDERACY OF INDEPENDENT SYSTEMS NAVAL OOB #####
+
+	############################
+	# CORPORATE CORE FLEET
+	############################
+	fleet = {
+		name = "Confederacy Corporate Core Fleet"
+		naval_base = 9026 # Raxus Prime
+
+		task_force = {
+			name = "Raxus Command Group"
+			location = 9026 # Raxus Prime
+
+			ship = { name = "Invisible Hand" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Trade Federation Command Ship Alpha" definition = battleship equipment = { battleship_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Banking Clan Enforcer I" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Banking Clan Enforcer II" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Banking Clan Enforcer III" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Corporate Escort A1" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Corporate Escort A2" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Security Droid Screen 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+		}
+	}
+
+	############################
+	# SEPARATIST SWARM FLEET
+	############################
+	fleet = {
+		name = "Separatist Outer Rim Swarm Fleet"
+		naval_base = 9026 # Geonosis Orbit
+
+		task_force = {
+			name = "Geonosis Swarm Command"
+			location = 9026
+
+			ship = { name = "Hive Control Ship Omega" definition = battleship equipment = { battleship_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Swarm Carrier A" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Swarm Carrier B" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Recusant Strike Group I" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Recusant Strike Group II" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Recusant Strike Group III" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Drone Escort Wing 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+		}
+	}
+
+	############################
+	# CORPORATE SECURITY FLEET
+	############################
+	fleet = {
+		name = "Corporate Sector Security Armada"
+		naval_base = 9026 # Sluis Van
+
+		task_force = {
+			name = "Corporate Enforcement Division"
+			location = 9026
+
+			ship = { name = "Sluis Van Command Hulk" definition = battleship equipment = { battleship_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Banking Enforcement Vessel Prime" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Trade Security Frigate 1" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Trade Security Frigate 2" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Enforcer Droid Destroyer 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Enforcer Droid Destroyer 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Enforcer Droid Destroyer 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Enforcer Droid Destroyer 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+		}
+	}
+
+	############################
+	# DEEP SPACE RAID FLEET
+	############################
+	fleet = {
+		name = "Separatist Deep Space Raiding Fleet"
+		naval_base = 9026 # Unknown Regions Forward Base
+
+		task_force = {
+			name = "Shadow Droid Task Force"
+			location = 9026
+
+			ship = { name = "Silent Profit Carrier" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Spectre Command Cruiser" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Spectre Command Cruiser II" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Raider Droid Swarm 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+
+			ship = { name = "Submersible Raider Unit A" definition = submarine equipment = { submarine_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Submersible Raider Unit B" definition = submarine equipment = { submarine_1 = { amount = 1 owner = CIS } } }
+		}
+	}
+
+}
