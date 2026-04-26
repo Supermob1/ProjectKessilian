@@ -14,10 +14,6 @@ mobile_infantry = {
     ai_will_do = { 
         base = 1
         modifier = {
-            factor = 95
-            original_tag = GER
-        }
-        modifier = {
             factor = 0.5
             is_major = no
         }
@@ -83,18 +79,6 @@ defensive_postures = {
 
     ai_will_do = {
         base = 1
-        modifier = {
-            factor = 95
-            OR = {
-                original_tag = ENG
-                original_tag = AST
-                original_tag = NZL
-                original_tag = CAN
-                original_tag = SAF
-                original_tag = ITA
-                original_tag = FIN
-            }
-        }
     }
 
     #OTHER BASE REWARDS
@@ -147,14 +131,6 @@ large_unit_tactics = {
 
     ai_will_do = {
         base = 1
-        modifier = {
-            factor = 95
-            OR = {
-                original_tag = SOV
-                original_tag = CHI
-                original_tag = JAP
-            }
-        }
         modifier = {
             factor = 0.5
             is_major = no
@@ -233,7 +209,7 @@ assault_infantry = {
         base = 1
         modifier = {
             factor = 95
-            original_tag = USA
+            original_tag = UTI
         }
         modifier = {
             factor = 0.5

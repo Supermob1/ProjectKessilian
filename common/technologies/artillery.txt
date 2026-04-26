@@ -148,7 +148,7 @@ technologies = {
 			# It is imperative to prepare military tech for the war with China
 			modifier = {
 				factor = 5
-				#original_tag = JAP
+				#original_tag = UTI
 			}
 		}
 	}
@@ -752,19 +752,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				OR = {
-					#tag = JAP
-					#tag = ENG
-					#tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
-			}
 		}
 
 		categories = {
@@ -813,19 +800,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 2
-			modifier = {
-				OR = {
-					#tag = JAP
-					#tag = ENG
-					#tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
-			}
 		}
 
 		categories = {
@@ -872,19 +846,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				OR = {
-					#tag = JAP
-					#tag = ENG
-					#tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
-			}
 		}
 
 		categories = {
@@ -928,19 +889,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				OR = {
-					#tag = JAP
-					#tag = ENG
-					#tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
-			}
 		}
 
 		categories = {
@@ -980,19 +928,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				OR = {
-					#tag = JAP
-					#tag = ENG
-					#tag = USA
-				}
-				OR = {
-					has_war_with = JAP
-					has_war_with = USA
-					has_war_with = ENG
-				}
-				factor = 5
-			}
 		}
 
 		categories = {
@@ -1034,30 +969,6 @@ technologies = {
 
 		ai_will_do = {
 			base = 1
-
-			modifier = {
-				factor = 0.2
-
-				OR = {
-					#tag = CHI
-					#tag = PRC
-					#tag = XSM
-					#tag = SIK
-					#tag = GXC
-					#tag = SHX
-					#tag = YUN
-				}
-			}
-			modifier = {
-				#tag = JAP
-				not = {
-					OR = {
-						has_war_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
 			modifier = { #This is needed for a lot of tank designs
 				factor = 4.0
 				is_major = yes
@@ -1081,7 +992,7 @@ technologies = {
 				any_enemy_country = {
 					ROOT = {
 						estimated_intel_max_armor = {
-							#tag = PREV
+							tag = PREV
 							value > 30
 						}
 					}
@@ -1142,21 +1053,11 @@ technologies = {
 				any_enemy_country = {
 					ROOT = {
 						estimated_intel_max_armor = {
-							#tag = PREV
+							tag = PREV
 							value > 30
 						}
 					}
 				}
-			}
-			modifier = {
-				#tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
 			}
 			modifier = {
 				factor = 2
@@ -1215,23 +1116,8 @@ technologies = {
 				date > "979.1.9"
 			}
 			modifier = {
-				#tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
 				factor = 2
 				date > "980.1.1"
-			}
-			modifier = {
-				#tag = USA
-				has_War = no
-				factor = 0.5 #this tank nonsense will never catch on
 			}
 			modifier = {
 				factor = 5
@@ -1242,7 +1128,7 @@ technologies = {
 				any_enemy_country = {
 					ROOT = {
 						estimated_intel_max_armor = {
-							#tag = PREV
+							tag = PREV
 							value > 32
 						}
 					}
@@ -1309,16 +1195,6 @@ technologies = {
 				date > "981.1.6"
 			}
 			modifier = {
-				#tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
 				factor = 2
 				date > "982.1.1"
 			}
@@ -1332,7 +1208,7 @@ technologies = {
 				any_enemy_country = {
 					ROOT = {
 						estimated_intel_max_armor = {
-							#tag = PREV
+							tag = PREV
 							value > 32
 						}
 					}
@@ -1384,16 +1260,6 @@ technologies = {
 				date > "982.1.6"
 			}
 			modifier = {
-				#tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
 				factor = 5
 				date > "983.1.1"
 			}
@@ -1402,7 +1268,7 @@ technologies = {
 				any_enemy_country = {
 					ROOT = {
 						estimated_intel_max_armor = {
-							#tag = PREV
+							tag = PREV
 							value > 35
 						}
 					}
@@ -1450,16 +1316,6 @@ technologies = {
 				date > "982.1.9"
 			}
 			modifier = {
-				#tag = JAP
-				not = {
-					OR = {
-						has_War_with = SOV
-						has_war_with = USA
-					}
-				}
-				factor = 0.5
-			}
-			modifier = {
 				factor = 2
 				date > "983.1.1"
 			}
@@ -1473,7 +1329,7 @@ technologies = {
 				any_enemy_country = {
 					ROOT = {
 						estimated_intel_max_armor = {
-							#tag = PREV
+							tag = PREV
 							value > 35
 						}
 					}
