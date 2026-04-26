@@ -60,7 +60,7 @@ air_subdoctrine_escort_fighter = {
         base = 1
         modifier = {
             factor = 95
-            original_tag = USA 
+            original_tag = UTI
         }
         modifier = {
             factor = 0.5
@@ -153,10 +153,6 @@ track = fighter_aircraft
 
         base = 1
         modifier = {
-            factor = 95
-            original_tag = GER  
-        }
-        modifier = {
             factor = 0.5
             is_major = no 
         }
@@ -205,15 +201,6 @@ track = fighter_aircraft
     ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 95
-            OR = {
-            	original_tag = ENG 
-            	original_tag = FRA 
-            	original_tag = SOV 
-            	original_tag = ITA 
-            }
-        }
     }
 
     # EFFECTS
@@ -260,7 +247,7 @@ track = fighter_aircraft
         base = 1
         modifier = {
             factor = 95
-            original_tag = JAP 
+            original_tag = UTI 
         }
         modifier = {
             factor = 0

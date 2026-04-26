@@ -11,7 +11,7 @@ carrier_battlegroups = {
         base = 1
         modifier = {
             factor = 50
-            original_tag = USA
+            original_tag = UTI
         }
     }
 
@@ -64,13 +64,6 @@ floating_airfields = {
 
     ai_will_do = { 
         base = 1
-        modifier = {
-            factor = 25
-            OR = {
-                original_tag = ENG
-                original_tag = FRA
-            }
-        }
         modifier = {
             factor = 2
             is_major = yes 
@@ -250,7 +243,7 @@ massed_carrier_fleet = {
         base = 1
         modifier = {
             factor = 50
-            original_tag = JAP
+            original_tag = UTI
         }
     }
     available = {
@@ -301,18 +294,6 @@ light_task_forces = {
 
     ai_will_do = { 
         base = 1
-        modifier = {
-            factor = 25
-            original_tag = GER
-        }
-        modifier = {
-            factor = 25
-            original_tag = ITA
-        }
-        modifier = {
-            factor = 25
-            original_tag = SOV
-        }
     }
     mastery = { 
         multiplier = 2 

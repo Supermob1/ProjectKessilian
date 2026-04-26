@@ -18,10 +18,6 @@ armored_spearhead = {
 
         base = 1
         modifier = {
-            factor = 25
-            original_tag = GER
-        }
-        modifier = {
             factor = 0.5
             is_major = no
         }
@@ -98,10 +94,6 @@ armored_spearhead_no_lar = {
 
         base = 1
         modifier = {
-            factor = 25
-            original_tag = GER
-        }
-        modifier = {
             factor = 0.5
             is_major = no
         }
@@ -167,13 +159,6 @@ armored_infantry_support = {
     ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 25
-            OR = {
-               original_tag = ENG
-               original_tag = FRA
-            }
-        }
         modifier = {
             factor = 0.5
             is_major = no
@@ -258,14 +243,6 @@ streamlined_deployment = {
         ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 25
-            OR = {
-                original_tag = SOV 
-                original_tag = CHI 
-                original_tag = PRC 
-            }
-        }
 
     }
 
@@ -349,7 +326,7 @@ mobile_defense = {
         modifier = {
             factor = 25
             OR = {
-                original_tag = USA
+                original_tag = UTI
                 original_tag = FIN
             }
         }
@@ -447,8 +424,8 @@ armored_cavalry = {
         modifier = {
             factor = 25
             OR = {
-                original_tag = ITA 
-                original_tag = JAP 
+                original_tag = UTI 
+                original_tag = UTI 
             }
         }
 
@@ -560,8 +537,8 @@ armored_cavalry_no_lar = {
         modifier = {
             factor = 25
             OR = {
-                original_tag = ITA 
-                original_tag = JAP 
+                original_tag = UTI 
+                original_tag = UTI 
             }
         }
 

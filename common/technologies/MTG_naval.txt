@@ -314,10 +314,7 @@ technologies = {
 		ai_will_do = {
 			factor = 4
 
-			modifier = {
-				factor = 2
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -362,10 +359,7 @@ technologies = {
 		ai_will_do = {
 			factor = 4
 
-			modifier = {
-				factor = 2
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -409,10 +403,7 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 
-			modifier = {
-				factor = 4
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -453,10 +444,7 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 
-			modifier = {
-				factor = 4
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -496,10 +484,7 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 
-			modifier = {
-				factor = 4
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -540,10 +525,7 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 
-			modifier = {
-				factor = 4
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -584,10 +566,7 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 
-			modifier = {
-				factor = 4
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -624,10 +603,7 @@ technologies = {
 		ai_will_do = {
 			factor = 2
 
-			modifier = {
-				factor = 4
-				has_war_with = GER
-			}
+
 			modifier = {
 				factor = 2
 				anti_submarine_strategy_required_trigger = yes
@@ -1763,21 +1739,6 @@ early_ship_hull_carrier = {
 
 		ai_will_do = {
 			factor = 1
-
-			modifier = {
-				factor = 7
-				OR = {
-					#tag = GER
-					#tag = HOL
-				}
-			}
-			modifier = {
-				not = {
-					has_war_with = ENG
-					has_War_with = USA
-				}
-				factor = 0.5
-			}
 		}
 
 		categories = {

@@ -14,18 +14,6 @@ fire_concentration = {
     ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 75
-            original_tag = SOV
-        }
-        modifier = {
-            factor = 75
-            original_tag = ENG
-        }
-        modifier = {
-            factor = 75
-            original_tag = FRA
-        }   
     }
 
      # EFFECTS
@@ -354,14 +342,6 @@ mobile_recon_and_assault = {
 
         base = 1
         modifier = {
-            factor = 75
-            original_tag = GER
-        }
-        modifier = {
-            factor = 75
-            original_tag = USA
-        }
-        modifier = {
             factor = 0
             is_major = no
         }
@@ -452,14 +432,6 @@ mobile_recon_and_assault_no_lar = {
     ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 75
-            original_tag = GER
-        }
-        modifier = {
-            factor = 75
-            original_tag = USA
-        }
         modifier = {
             factor = 0
             is_major = no
@@ -779,8 +751,8 @@ field_engineering = {
         modifier = {
             factor = 75
             OR = {
-                original_tag = ITA
-                original_tag = JAP
+                original_tag = UTI
+                original_tag = UTI
                 original_tag = FIN
             }            
         }
