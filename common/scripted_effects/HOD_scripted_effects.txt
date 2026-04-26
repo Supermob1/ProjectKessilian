@@ -1,9 +1,10 @@
 Clone_wars_start = {
 	CIS = { 
 		declare_war_on = { target = REP type = annex_everything }
-		load_oob = "HOD_Droid_Army"
+		set_cosmetic_tag = CIS_Confderation_of_Independent_Systems
+		# load_oob = "HOD_Droid_Army"
 		REP = { 
-			load_oob = "HOD_Grande_Armee"
+			# load_oob = "HOD_Grande_Armee"
 			set_politics = {
 				ruling_party = unitist
 				elections_allowed = no
@@ -23,8 +24,8 @@ Clone_wars_start = {
 				}
 			}
 		}
-		add_ideas = CIS_Great_Droid_Army
+		# add_ideas = CIS_Great_Droid_Army
 		# load_oob = "HOD_CIS_naval"
 	}
-	REP = { load_oob = "HOD_REP_naval" }
+	# REP = { load_oob = "HOD_REP_naval" }
 }
