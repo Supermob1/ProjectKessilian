@@ -1,8 +1,8 @@
 REP_the_Grand_Army = {
 	REP_Prepare_the_army = {
-        cost = 25
+        cost = modifier@Kamino_delivery_price
 		fire_only_once = no
-		days_re_enable = 50
+		days_remove = 25
 		available = {
 			has_army_size = {
 				size < 190
@@ -13,42 +13,45 @@ REP_the_Grand_Army = {
 		ai_will_do = {
 			factor = 10000
 		}
-        complete_effect = {
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "division_template = \"Clone Legion\""
-					owner = REP
-					count = 2
+		remove_effect = {
+			set_temp_variable = { max_units = modifier@Kamino_delivery_capacity }
+			set_temp_variable = { exp_val = modifier@Kamino_delivery_experience }
+			set_temp_variable = { eqp_val = modifier@Kamino_delivery_equipment }
+			custom_effect_tooltip = REP_prepare_army_tooltip
+			for_loop_effect = {
+				start = 1
+				end = max_units
+				compare = less_than_or_equals
+				add = 1
+				value = iteration_count 
+				
+				random_owned_controlled_state = {
+					limit = { is_core_of = REP }
+					
+					# The Meta Effect builds the string dynamically
+					meta_effect = {
+						text = {
+							create_unit = {
+								division = "division_template = \"Clone Legion\" start_manpower_factor = 1 start_experience_factor = [EXP_TOKEN] start_equipment_factor = [EQP_TOKEN]"
+								owner = REP
+							}
+						}
+						# This replaces EXP_TOKEN with the value of exp_val (e.g. 0.25)
+						# |.2 ensures it keeps two decimal places for the percentage
+						EXP_TOKEN = "[?exp_val|.2]" 
+						EQP_TOKEN = "[?eqp_val|.2]" 
+						# debug = yes
+					}
 				}
 			}
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "division_template = \"Clone Legion\""
-					owner = REP
-					count = 2
-				}
+
+			add_power_balance_value = {
+				id = REP_Secret_Remilitarization
+				value = -0.15
+				tooltip_side = REP_Kamino_overcapacity
 			}
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "division_template = \"Clone Legion\""
-					owner = REP
-					count = 2
-				}
-			}
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "division_template = \"Clone Legion\""
-					owner = REP
-					count = 2
-				}
-			}
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "division_template = \"Clone Legion\""
-					owner = REP
-					count = 2
-				}
-			}
-		}		
+		}
 	}
 }
+
+

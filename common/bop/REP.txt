@@ -1,0 +1,146 @@
+
+REP_Secret_Remilitarization = {
+	initial_value = 1
+	left_side = REP_Kamino_shortage
+	right_side = REP_Kamino_overcapacity
+	decision_category = REP_the_Grand_Army
+	side = {
+		id = REP_Kamino_shortage
+		icon = GFX_idea_generic_agrarian_society
+
+		range = {
+			id = REP_Kamino_complete_shortage
+			min = -1
+			max = -0.8
+			modifier = {
+				Kamino_delivery_price = 160
+				Kamino_delivery_capacity = 1
+				Kamino_delivery_experience = 0
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			
+			}
+		}
+		range = {
+			id = REP_Kamino_heavy_shortage
+			min = -0.8
+			max = -0.6
+			modifier = {
+				Kamino_delivery_price = 140
+				Kamino_delivery_capacity = 1
+				Kamino_delivery_experience = 0
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			
+			}
+		}
+		range = {
+			id = REP_Kamino_mild_shortage
+			min = -0.6
+			max = -0.4
+			modifier = {
+				Kamino_delivery_price = 120
+				Kamino_delivery_capacity = 2
+				Kamino_delivery_experience = 0
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			
+			}
+		}
+		range = {
+			id = REP_Kamino_light_shortage
+			min = -0.4
+			max = -0.2
+			modifier = {
+				Kamino_delivery_price = 110
+				Kamino_delivery_capacity = 3
+				Kamino_delivery_experience = 0
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			
+			}
+		}
+		range = {
+			id = REP_Kamino_normal_supply
+			min = -0.2
+			max = 0.2
+			modifier = {
+				Kamino_delivery_price = 90
+				Kamino_delivery_capacity = 4
+				Kamino_delivery_experience = 0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			
+			}
+		}
+
+	}
+	side = {
+		id = REP_Kamino_overcapacity
+		icon = GFX_idea_generic_degauss_ship_hulls
+
+		range = {
+			id = REP_Kamino_light_overcapacity
+			min = 0.2
+			max = 0.4
+			modifier = { 
+				Kamino_delivery_price = 70
+				Kamino_delivery_capacity = 5
+				Kamino_delivery_experience = 0.2
+				Kamino_delivery_equipment = 0.1
+			}
+			on_activate = {
+			}
+		}
+		range = {
+			id = REP_Kamino_mild_overcapacity
+			min = 0.4
+			max = 0.6
+			modifier = { 
+				Kamino_delivery_price = 50
+				Kamino_delivery_capacity = 6
+				Kamino_delivery_experience = 0.4
+				Kamino_delivery_equipment = 0.2
+			}
+			on_activate = {
+			}
+		}
+		range = {
+			id = REP_Kamino_heavy_overcapacity
+			min = 0.6
+			max = 0.8
+			modifier = { 
+				Kamino_delivery_price = 30
+				Kamino_delivery_capacity = 7
+				Kamino_delivery_experience = 0.6
+				Kamino_delivery_equipment = 0.3
+			}
+			on_activate = {
+			}
+		}
+		range = {
+			id = REP_Kamino_complete_overcapacity
+			min = 0.8
+			max = 1
+			modifier = { 
+				Kamino_delivery_price = 10
+				Kamino_delivery_capacity = 8
+				Kamino_delivery_experience = 0.8
+				Kamino_delivery_equipment = 0.4
+			}
+			on_activate = {
+			}
+		}
+	}
+}
+
