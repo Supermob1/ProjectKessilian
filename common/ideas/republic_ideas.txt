@@ -10,9 +10,49 @@ ideas = {
 				unitist_drift = 0.05
 			}
 		}
+
 	}
 	country = {
 
+		REP_Victory_Kamino = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+			cancel = {
+				controls_state = 32
+			}
+			removal_cost = -1
+
+			picture = Republic_Militias
+			
+			modifier = {
+				war_support_factor = 0.05
+				Kamino_delivery_experience = 0.1
+			}
+		}
+		REP_Defeat_Kamino = {
+			
+			allowed = {
+				original_tag = REP
+				always = no
+			}
+
+			cancel = {
+				controls_state = 32
+			}
+			removal_cost = -1
+
+			picture = Republic_Militias
+			
+			modifier = {
+				war_support_factor = -0.05
+				Kamino_delivery_capacity = -2
+				Kamino_delivery_price = 30
+			}
+		}
 		Republic_Militias = {
 			
 			allowed = {
