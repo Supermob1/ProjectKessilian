@@ -5,13 +5,20 @@ REP_the_Grand_Army = {
 		days_remove = 25
 		available = {
 			has_army_size = {
-				size < 190
+				size < 260
 				type = infantry
 			}
 		}
         icon = generic_industry
 		ai_will_do = {
-			factor = 100
+			base = 100
+			modifier = {
+				factor = 10
+				has_army_size = {
+					size < 260
+					type = infantry
+				}
+			}
 		}
 		modifier = { power_balance_daily = -0.006 }
 		remove_effect = {
@@ -27,7 +34,10 @@ REP_the_Grand_Army = {
 				value = iteration_count 
 				
 				random_owned_controlled_state = {
-					limit = { is_core_of = REP }
+					limit = { 
+						is_core_of = REP
+						impassable = no
+					}
 					
 					meta_effect = {
 						text = {
@@ -51,9 +61,23 @@ REP_the_Grand_Army = {
 		}
         icon = generic_industry
 		ai_will_do = {
-			factor = 100
+			base = 100
+			modifier = {
+				factor = 100
+				power_balance_value = {
+					id = REP_Secret_Remilitarization
+					value < 0.6
+				}
+			}
+			modifier = {
+				factor = 500
+				power_balance_value = {
+					id = REP_Secret_Remilitarization
+					value < 0.3
+				}
+			}
 		}
-		modifier = { power_balance_daily = 0.005 }
+		modifier = { power_balance_daily = 0.01 }
 	}
 	REP_diversify_clone_training = {
         cost = 300
@@ -86,6 +110,35 @@ REP_the_Grand_Army = {
 		modifier = { 
 			Kamino_delivery_capacity = 2
 			Kamino_delivery_experience = -0.2
+		}
+	}
+	REP_Defense_of_Kamino = {
+		activation = {
+			original_tag = REP
+			has_global_flag = CIS_launched_kamino_attack
+		}
+		available = {
+			has_global_flag = {
+				flag = CIS_launched_kamino_attack
+				days > 210
+			}
+		}
+		cancel_trigger = {
+			NOT = { 
+				controls_state = 32
+			}
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 210
+		selectable_mission = no
+		timeout_effect = {
+			set_global_flag = The_Defense_of_Kamino
+			add_ideas = REP_Defeat_Kamino
+		}
+		complete_effect = {
+			set_global_flag = REP_Victory_at_Kamino
+			add_ideas = REP_Victory_Kamino
 		}
 	}
 	# REP_rollout_phase_II = {

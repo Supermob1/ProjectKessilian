@@ -335,6 +335,7 @@ CIS_Sidious_Suspicions = {
 		war_with_on_timeout = REP
 		days_mission_timeout = 900
 		selectable_mission = no
+		fire_only_once = yes
 		complete_effect = {
 			add_power_balance_value = {
 				id = Sidious_Dooku_Relationship
@@ -343,6 +344,48 @@ CIS_Sidious_Suspicions = {
 			}
 		}
 		timeout_effect = {
+			add_power_balance_value = {
+				id = Sidious_Dooku_Relationship
+				value = -0.1
+				tooltip_side = Dooku_side
+			}
+		}
+	}
+	CIS_Launch_invasion_of_Kamino = {
+		activation = {
+			original_tag = CIS
+			has_war_with = REP
+		}
+		fire_only_once = yes
+		available = {
+			REP = { controls_state = 32 }
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 210
+		complete_effect = {
+			set_global_flag = CIS_launched_kamino_attack
+		}
+	}
+	CIS_Attack_on_Kamino = {
+		activation = {
+			original_tag = CIS
+			has_global_flag = CIS_launched_kamino_attack
+		}
+		fire_only_once = yes
+		available = {
+			controls_state = 32
+		}
+		icon = mission_icon     # For GFX_decision_mission_icon
+		is_good = no
+		days_mission_timeout = 210
+		selectable_mission = no
+		timeout_effect = {
+			set_global_flag = The_Defense_of_Kamino
+			add_war_support = -0.05
+		}
+		complete_effect = {
+			set_global_flag = CIS_Victory_at_Kamino
 			add_power_balance_value = {
 				id = Sidious_Dooku_Relationship
 				value = -0.1
