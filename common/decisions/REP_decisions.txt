@@ -43,38 +43,80 @@ REP_the_Grand_Army = {
 			}
 		}
 	}
-	REP_rollout_phase_II = {
-        cost = modifier@Kamino_delivery_price
+	REP_divert_funds_to_kamino = {
+        cost = 150
 		fire_only_once = no
+		days_remove = 35
 		available = {
 		}
         icon = generic_industry
 		ai_will_do = {
 			factor = 100
 		}
-		complete_effect = {
-			set_cosmetic_tag = REP_PHASE_II
-		}
+		modifier = { power_balance_daily = 0.005 }
 	}
-	REP_become_empire = {
-        cost = modifier@Kamino_delivery_price
+	REP_diversify_clone_training = {
+        cost = 300
 		fire_only_once = no
+		days_remove = -1
 		available = {
 		}
+		cancel_trigger = { has_decision = REP_lower_cloning_standards }
         icon = generic_industry
 		ai_will_do = {
-			factor = 100
+			factor = 10
 		}
-		complete_effect = {
-			set_cosmetic_tag = REP_GLE
+		modifier = { 
+			Kamino_delivery_capacity = -1
+			Kamino_delivery_experience = 0.1
 		}
 	}
-	# REP_divert_funds_to_kamino #increase capacity
-	# REP_diversify_clone_training #decrease capacity but allow specialized units
+	REP_lower_cloning_standards = {
+        cost = 300
+		fire_only_once = no
+		days_remove = -1
+		available = {
+			
+		}
+		cancel_trigger = { has_decision = REP_diversify_clone_training }
+        icon = generic_industry
+		ai_will_do = {
+			factor = 10
+		}
+		modifier = { 
+			Kamino_delivery_capacity = 2
+			Kamino_delivery_experience = -0.2
+		}
+	}
+	# REP_rollout_phase_II = {
+        # cost = modifier@Kamino_delivery_price
+		# fire_only_once = no
+		# available = {
+		# }
+        # icon = generic_industry
+		# ai_will_do = {
+			# factor = 100
+		# }
+		# complete_effect = {
+			# set_cosmetic_tag = REP_PHASE_II
+		# }
+	# }
+	# REP_become_empire = {
+        # cost = modifier@Kamino_delivery_price
+		# fire_only_once = no
+		# available = {
+		# }
+        # icon = generic_industry
+		# ai_will_do = {
+			# factor = 100
+		# }
+		# complete_effect = {
+			# set_cosmetic_tag = REP_GLE
+		# }
+	# }
 	# REP_rollout_phase_two_units #change the template to use both the new phase 2 clone troopers
 	# REP_protect_kamino #build forts on kamino main cities
 	# REP_i_dont_know #increase capacity
-	# REP_idk2 #permanently increase capacity by one in exchange of decision cost increase
 	# REP_idk3 #permanently increase overall exp in exchange of higher power balance costa
 }
 
