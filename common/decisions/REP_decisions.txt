@@ -56,6 +56,19 @@ REP_the_Grand_Army = {
 			set_cosmetic_tag = REP_PHASE_II
 		}
 	}
+	REP_become_empire = {
+        cost = modifier@Kamino_delivery_price
+		fire_only_once = no
+		available = {
+		}
+        icon = generic_industry
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			set_cosmetic_tag = REP_GLE
+		}
+	}
 	# REP_divert_funds_to_kamino #increase capacity
 	# REP_diversify_clone_training #decrease capacity but allow specialized units
 	# REP_rollout_phase_two_units #change the template to use both the new phase 2 clone troopers
