@@ -1,0 +1,52 @@
+sound =
+{
+	name = "blaster_sound1"
+	file = "blasters/blaster_sound1.wav"
+	always_load = no
+}
+
+sound =
+{
+	name = "blaster_sound2"
+	file = "blasters/blaster_sound2.wav"
+	always_load = no
+}
+
+sound =
+{
+	name = "blaster_sound3"
+	file = "blasters/blaster_sound3.wav"
+	always_load = no
+}
+
+sound =
+{
+	name = "blaster_sound4"
+	file = "blasters/blaster_sound4.wav"
+	always_load = no
+}
+
+sound =
+{
+	name = "blaster_sound5"
+	file = "blasters/blaster_sound5.wav"
+	always_load = no
+}
+
+soundeffect = {
+	name = infantry_blaster_attack
+	falloff = "falloff_100"
+	sounds = {
+		sound = blaster_sound1
+		sound = blaster_sound2
+		sound = blaster_sound3
+		sound = blaster_sound4
+		sound = blaster_sound5
+	}
+	max_audible = 4
+	delay_random_offset = { 0.0 0.3 }
+	max_audible_behaviour = fail
+	is3d = yes
+	volume = 0.2
+	volume_random_offset = { -0.1 0.1 }
+}
