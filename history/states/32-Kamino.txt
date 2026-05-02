@@ -2,11 +2,44 @@ state={
 	id=32
 	name="STATE_32"
 	resources={
-		tungsten=2#Bacta
-		chromium=2#Circuitry
+		tungsten=5#Bacta
+		chromium=5#Circuitry
 		coal=15
 	}
 	history = {
+		victory_points = {
+			6230 25 #Tipoca
+		}
+		victory_points = {
+			15386 15 #Timira
+		}
+		victory_points = {
+			14901 15 #Aiwha
+		}
+		victory_points = {
+			15172 5 #Nurok
+		}
+		victory_points = {
+			15530 5 #Talora
+		}
+		victory_points = {
+			15594 5 #Nemiros
+		}
+		victory_points = {
+			2840 5 #Torvain
+		}
+		victory_points = {
+			871 1 #Velkan
+		}
+		victory_points = {
+			4062 1 #Velkan
+		}
+		victory_points = {
+			5643 1 #Kamur
+		}
+		victory_points = {
+			15052 1 #Orunis
+		}
 		buildings = {
 
 			# radar_station = #Tracking Station
@@ -19,17 +52,26 @@ state={
 
 			# anti_air_building = #Planetary Shields
 
-			# industrial_complex = #Civilian Factories
+			industrial_complex = 3#Civilian Factories
 
-			# arms_factory = #Military Factories
+			arms_factory = 7#Military Factories
 
-			# dockyard = #Shipyard
+			dockyard = 5#Shipyard
 
 			infrastructure = 1#Infrastructure
 
-			# air_base = 1#Small Spaceports
+			air_base = 1#Small Spaceports
 
 
+			2668 = {
+				naval_base = 3
+			}
+			2840 = {
+				naval_base = 3
+			}
+			14868 = {
+				naval_base = 1
+			}
 		}
 		owner = REP
 		add_core_of = REP
@@ -39,6 +81,6 @@ state={
 	}
 	manpower=3711096
 	buildings_max_level_factor=1
-	state_category=large_planet
+	state_category=industrial_sector
 	local_supplies=0
 }
