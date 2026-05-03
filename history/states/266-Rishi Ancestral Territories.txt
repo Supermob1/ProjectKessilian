@@ -1,26 +1,22 @@
 state={
-	id=33
-	name="STATE_33"
-	resources={
-		oil=4
-		aluminium=3
+	id=266
+	name="STATE_266"
+	provinces={
+		2233 2595 3118 4010 4463 4779 5431 15870 15890 15923 15938 15948 15949 15960 
 	}
 	resources={
 		# #credits #Credits
-		# chromium =10#Circuitry
+		# chromium #Circuitry
 		# steel #Alloys
 		# tungsten =2#Minerals
-		# rubber =10#Bacta
+		# rubber =1#Bacta
 		# aluminium=1 #Doonium
-		# oil=30 #Fuel
-		# coal=20
+		# oil=5 #Fuel
+		coal=5
 	}
 	history = {
 		victory_points = {
-			259 1
-		}
-		victory_points = {
-			15885 1
+			4010 10
 		}
 
 		buildings = {
@@ -35,7 +31,7 @@ state={
 
 			# anti_air_building = 1#Planetary Shields
 
-			# industrial_complex = 2#Civilian Factories
+			# industrial_complex = 3#Civilian Factories
 
 			# arms_factory = 2#Military Factories
 
@@ -52,12 +48,8 @@ state={
 		owner = REP
 		add_core_of = REP
 	}
-	state_category=wasteland_sector
-	provinces={
-		259 501 792 3219 4233 4712 4899 5112 15761 15774 15826 15831 15842 15855 15862 15881 15885 15909 
-	}
-	manpower=350725
+	state_category=agricultural_sector
+	manpower=15332
 	buildings_max_level_factor=1
-	state_category=large_planet
 	local_supplies=0
 }

@@ -1,0 +1,36 @@
+REP_dominance_fleet_1 = {
+	required_taskforces = {
+		REP_StrikeForce_1 = 2
+		REP_PatrolDominanceForce_1 = 2
+		REP_PatrolReconForce_1 = 6
+		REP_NavalInvasionSupport_1 = 1
+	}	
+	optional_taskforces = {
+		REP_PatrolDominanceForce_1 = 1
+		REP_PatrolReconForce_1 = 2		
+	}
+}
+
+REP_raiding_fleet_1 = {
+	required_taskforces = {
+		REP_ConvoyRaiding_1 = 5
+	}	
+	optional_taskforces = {
+		REP_ConvoyRaiding_1 = 3
+	}
+}
+
+REP_escort_fleet_1 = {
+	required_taskforces = {
+		REP_ConvoyEscort_1 = 4
+	}
+	optional_taskforces = {
+		REP_ConvoyEscort_1 = 6
+	}
+}
+
+REP_minelaying_fleet_4 = {
+	optional_taskforces = {
+		REP_MineLaying_1 = 1
+	}
+}

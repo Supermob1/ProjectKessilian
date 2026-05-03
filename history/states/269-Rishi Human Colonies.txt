@@ -1,14 +1,13 @@
 state={
-	id=33
-	name="STATE_33"
-	resources={
-		oil=4
-		aluminium=3
+	id=269
+	name="STATE_269"
+	provinces={
+		126 1807 4198 4913 5324 6043 15756 15762 15765 15775 15778 15785 15791 15803 15810 15815 15819 15830 15832 15851 15856 15872 15878 
 	}
 	resources={
 		# #credits #Credits
 		# chromium =10#Circuitry
-		# steel #Alloys
+		steel =10 #Alloys
 		# tungsten =2#Minerals
 		# rubber =10#Bacta
 		# aluminium=1 #Doonium
@@ -17,10 +16,10 @@ state={
 	}
 	history = {
 		victory_points = {
-			259 1
+			6043 5
 		}
 		victory_points = {
-			15885 1
+			15815 5
 		}
 
 		buildings = {
@@ -35,9 +34,9 @@ state={
 
 			# anti_air_building = 1#Planetary Shields
 
-			# industrial_complex = 2#Civilian Factories
+			industrial_complex = 2#Civilian Factories
 
-			# arms_factory = 2#Military Factories
+			arms_factory = 2#Military Factories
 
 			# dockyard = #Shipyard
 
@@ -45,19 +44,15 @@ state={
 
 			air_base = 1#Small Spaceports
 			
-			# 15800 = {
-				# naval_base = 3
-			# }
+			6043 = {
+				naval_base = 3
+			}
 		}
 		owner = REP
 		add_core_of = REP
 	}
-	state_category=wasteland_sector
-	provinces={
-		259 501 792 3219 4233 4712 4899 5112 15761 15774 15826 15831 15842 15855 15862 15881 15885 15909 
-	}
-	manpower=350725
+	state_category=industrial_sector
+	manpower=133111
 	buildings_max_level_factor=1
-	state_category=large_planet
 	local_supplies=0
 }

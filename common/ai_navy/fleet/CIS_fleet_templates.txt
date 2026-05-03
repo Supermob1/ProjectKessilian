@@ -1,0 +1,36 @@
+CIS_dominance_fleet_1 = {
+	required_taskforces = {
+		CIS_StrikeForce_1 = 2
+		CIS_PatrolDominanceForce_1 = 2
+		CIS_PatrolReconForce_1 = 6
+		CIS_NavalInvasionSupport_1 = 1
+	}	
+	optional_taskforces = {
+		CIS_PatrolDominanceForce_1 = 1
+		CIS_PatrolReconForce_1 = 2		
+	}
+}
+
+CIS_raiding_fleet_1 = {
+	required_taskforces = {
+		CIS_ConvoyRaiding_1 = 5
+	}	
+	optional_taskforces = {
+		CIS_ConvoyRaiding_1 = 3
+	}
+}
+
+CIS_escort_fleet_1 = {
+	required_taskforces = {
+		CIS_ConvoyEscort_1 = 4
+	}
+	optional_taskforces = {
+		CIS_ConvoyEscort_1 = 6
+	}
+}
+
+CIS_minelaying_fleet_4 = {
+	optional_taskforces = {
+		CIS_MineLaying_1 = 1
+	}
+}

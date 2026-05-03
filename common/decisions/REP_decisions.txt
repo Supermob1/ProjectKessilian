@@ -115,8 +115,10 @@ REP_the_Grand_Army = {
 	REP_Defense_of_Kamino = {
 		activation = {
 			original_tag = REP
-			has_global_flag = CIS_launched_kamino_attack
+			has_war_with = CIS
+			NOT = { has_global_flag = The_Defense_of_Kamino }
 		}
+		fire_only_once = yes
 		available = {
 			has_global_flag = {
 				flag = CIS_launched_kamino_attack
@@ -133,7 +135,6 @@ REP_the_Grand_Army = {
 		days_mission_timeout = 210
 		selectable_mission = no
 		timeout_effect = {
-			set_global_flag = The_Defense_of_Kamino
 			add_ideas = REP_Defeat_Kamino
 		}
 		complete_effect = {
