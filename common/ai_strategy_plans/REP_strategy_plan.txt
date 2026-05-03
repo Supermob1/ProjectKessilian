@@ -1,0 +1,80 @@
+REP_historical_plan = {
+	name = "Republic Historical Plan"
+	desc = "Historical behavior for the Republic"
+
+	allowed = {
+		original_tag = REP
+	}
+
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes 
+				has_game_rule = {
+					rule = REP_AI_BEHAVIOR
+					option = DEFAULT
+				}
+			}
+			has_country_flag = REP_AI_RANDOM_HISTORICAL
+			has_game_rule = {
+				rule = REP_ai_behavior
+				option = HISTORICAL
+			}
+		}
+	}
+	ai_national_focuses = {
+		#Intro
+		REP_we_are_all_the_republic
+		REP_and_we_have_survived_millennia
+		REP_but_we_are_threatened_once_more
+		REP_and_we_shall_not_stand_idle
+		REP_and_we_shall_give_up_no_ground
+		REP_the_weakness_of_ruusan
+		REP_anti_separatist_propaganda
+		REP_fight_confederate_terrorism
+		REP_encourage_local_militarisation
+		REP_the_war_on_pacifism
+		REP_embargoes_in_all_but_name
+		REP_mobilise_the_jedi
+		REP_in_the_wider_galaxy
+		REP_or_at_home
+		REP_the_loyal_of_the_rim
+		REP_the_loyal_of_the_core
+		REP_the_brewing_race_war
+		REP_the_shield_against_corporations
+		REP_the_blue_scare
+		REP_and_we_shall_last_another_thousand
+		
+		#MCA
+		REP_the_military_creation_act
+		REP_rework_the_bill
+		REP_support_the_mca
+		REP_rally_the_idealogues
+		REP_necessary_concessions
+		REP_alter_the_terms
+		REP_the_vote
+	}
+
+	#Focuses never to take
+	focus_factors = {
+
+	}			
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

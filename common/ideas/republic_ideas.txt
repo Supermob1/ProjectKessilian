@@ -14,15 +14,35 @@ ideas = {
 	}
 	country = {
 
-		REP_Victory_Kamino = {
+		REP_unexpected_attack = {
 			
 			allowed = {
-				original_tag = REP
 				always = no
 			}
 
 			cancel = {
-				controls_state = 32
+				NOT = { controls_state = 32 }
+			}
+			removal_cost = -1
+
+			picture = Republic_Militias
+			
+			modifier = {
+				army_attack_factor = -0.5
+				army_defence_factor = -0.5
+				army_strength_factor = -0.5
+				army_morale_factor = -0.5
+				army_org_factor = -0.5
+			}
+		}
+		REP_Victory_Kamino = {
+			
+			allowed = {
+				always = no
+			}
+
+			cancel = {
+				NOT = { controls_state = 32 }
 			}
 			removal_cost = -1
 
@@ -36,7 +56,6 @@ ideas = {
 		REP_Defeat_Kamino = {
 			
 			allowed = {
-				original_tag = REP
 				always = no
 			}
 
@@ -56,7 +75,6 @@ ideas = {
 		Republic_Militias = {
 			
 			allowed = {
-				original_tag = REP
 				always = no
 			}
 
@@ -72,7 +90,6 @@ ideas = {
 		Republic_Militias_improved = {
 			
 			allowed = {
-				original_tag = REP
 				always = no
 			}
 
@@ -88,7 +105,6 @@ ideas = {
 		defence_militias = {
 			
 			allowed = {
-				original_tag = REP
 				always = no
 			}
 
@@ -105,7 +121,6 @@ ideas = {
 		defence_militias_buff = {
 			
 			allowed = {
-				original_tag = REP
 				always = no
 			}
 
@@ -122,7 +137,7 @@ ideas = {
 		legacy_of_ruusan = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -140,7 +155,7 @@ ideas = {
 		legacy_of_ruusan_improved = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -158,7 +173,7 @@ ideas = {
 		legacy_of_ruusan_improved_again = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -176,7 +191,7 @@ ideas = {
 		legacy_of_ruusan_improved_again_again = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -194,7 +209,7 @@ ideas = {
 		legacy_of_ruusan_jedi = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -212,7 +227,7 @@ ideas = {
 		legacy_of_ruusan_worsened = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -230,7 +245,7 @@ ideas = {
 		republic_of_thousands = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -248,7 +263,7 @@ ideas = {
 		widespread_race_war = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -266,7 +281,7 @@ ideas = {
 		widespread_race_war_no_ground = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -284,7 +299,7 @@ ideas = {
 		widespread_race_war_brewing = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -302,7 +317,7 @@ ideas = {
 		widespread_race_war_brewing_wider_galaxy = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -320,7 +335,7 @@ ideas = {
 		widespread_race_war_wider_galaxy = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -338,7 +353,7 @@ ideas = {
 		widespread_race_war_wider_galaxy_brewing = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -356,7 +371,7 @@ ideas = {
 		widespread_race_war_threat_1 = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -374,7 +389,7 @@ ideas = {
 		widespread_race_war_reduced = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -392,7 +407,7 @@ ideas = {
 		widespread_race_war_reduced_more = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -410,7 +425,7 @@ ideas = {
 		High_Racial_Tensions = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 
@@ -428,7 +443,7 @@ ideas = {
 		High_Racial_Tensions_reduced = {
 			
 			allowed = {
-				original_tag = REP
+
 				always = no
 			}
 

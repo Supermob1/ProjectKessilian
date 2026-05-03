@@ -20,3 +20,67 @@ entity = {
 	}
 }
 
+entity = {
+	clone = "infantry_rifle_entity"
+	name = "TCU_infantry_entity"
+	pdxmesh = "CIS_infantry_mesh"
+
+	attach = { 	name = "rifle1"	Right_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle2"	Left_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle4"	Root_node_2 = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle3"	mid_back_node = "CIS_infantry_weapon_E5_entity" }
+
+	state = {
+	name = "death"	animation = "death"
+	event = { time = 0 node="head" particle = "blood_particle"  keep_particle = yes }
+	}
+}
+
+entity = {
+	clone = "infantry_rifle_entity"
+	name = "TDF_infantry_entity"
+	pdxmesh = "CIS_infantry_mesh"
+
+	attach = { 	name = "rifle1"	Right_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle2"	Left_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle4"	Root_node_2 = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle3"	mid_back_node = "CIS_infantry_weapon_E5_entity" }
+
+	state = {
+	name = "death"	animation = "death"
+	event = { time = 0 node="head" particle = "blood_particle"  keep_particle = yes }
+	}
+}
+
+entity = {
+	clone = "infantry_rifle_entity"
+	name = "IBC_infantry_entity"
+	pdxmesh = "CIS_infantry_mesh"
+
+	attach = { 	name = "rifle1"	Right_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle2"	Left_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle4"	Root_node_2 = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle3"	mid_back_node = "CIS_infantry_weapon_E5_entity" }
+
+	state = {
+	name = "death"	animation = "death"
+	event = { time = 0 node="head" particle = "blood_particle"  keep_particle = yes }
+	}
+}
+
+entity = {
+	clone = "infantry_rifle_entity"
+	name = "CMG_infantry_entity"
+	pdxmesh = "CIS_infantry_mesh"
+
+	attach = { 	name = "rifle1"	Right_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle2"	Left_Hand_node = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle4"	Root_node_2 = "CIS_infantry_weapon_E5_entity" }	
+	attach = { 	name = "rifle3"	mid_back_node = "CIS_infantry_weapon_E5_entity" }
+
+	state = {
+	name = "death"	animation = "death"
+	event = { time = 0 node="head" particle = "blood_particle"  keep_particle = yes }
+	}
+}
+
