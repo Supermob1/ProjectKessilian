@@ -1,0 +1,65 @@
+state_categories = {
+	agricultural_sector = {
+		local_building_slots = 2
+		color = { 34 139 34 }
+		local_manpower = 0.15
+		recruitable_population_factor = 0.10
+		local_supplies = 0.20
+		compliance_growth = 0.05
+		state_production_speed_infrastructure_factor = 0.10 #
+	}
+
+	capital_sector = {
+		local_building_slots = 20
+		color = { 255 215 0 }
+		starting_compliance = 0.20
+		mobilization_speed = 0.15
+		enemy_operative_detection_chance_over_occupied_tag = 2.0
+		local_org_regain = 0.10
+		enemy_intel_network_gain_factor_over_occupied_tag = -0.20
+	}
+
+	economic_sector = {
+		local_building_slots = 8
+		color = { 30 144 255 }
+		local_building_slots_factor = 0.20
+		local_factories = 0.10
+		local_resource_gain_efficiency_per_infrastructure = 0.15
+		state_production_speed_buildings_factor = 0.10
+		compliance_gain = 0.01
+	}
+
+	industrial_sector = {
+		local_building_slots = 16
+		color = { 169 169 169 }
+
+		state_production_speed_industrial_complex_factor = 0.25 #
+		state_production_speed_arms_factory_factor = 0.15 #
+		local_factory_energy_consumption = -0.10
+		state_repair_speed_arms_factory_factor = 0.20
+		local_factory_sabotage = 0.15
+		max_fuel_building = 1000
+	}
+
+	mining_sector = {
+		local_building_slots = 4
+		color = { 139 69 19 }
+
+		state_resources_factor = 0.40
+		local_resource_gain_efficiency_per_infrastructure = 0.20
+		state_bunker_max_level_terrain_limit = 2 #[cite: 1]
+		army_speed_factor_for_controller = -0.10
+		attrition_for_controller = 0.05
+	}
+
+	wasteland_sector = {
+		local_building_slots = 3
+		color = { 0 0 0 }
+		enemy_attrition = 0.50
+		enemy_army_speed_factor = -0.40
+		disable_strategic_redeployment = 1
+		enemy_truck_attrition_factor = 0.40
+		resistance_target = 0.20
+		local_supplies = -0.50
+	}
+}

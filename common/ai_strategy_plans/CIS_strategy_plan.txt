@@ -1,0 +1,61 @@
+CIS_historical_plan = {
+	name = "Separatists Historical Plan"
+	desc = "Historical behavior for the Separatists"
+
+	allowed = {
+		original_tag = CIS
+	}
+
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes 
+				has_game_rule = {
+					rule = CIS_AI_BEHAVIOR
+					option = DEFAULT
+				}
+			}
+			has_country_flag = CIS_AI_RANDOM_HISTORICAL
+			has_game_rule = {
+				rule = CIS_ai_behavior
+				option = HISTORICAL
+			}
+		}
+	}
+	ai_national_focuses = {
+		#Intro
+		CIS_The_Raxus_Address
+		CIS_A_New_Birth_of_Freedom
+		CIS_Opening_of_the_congress
+		CIS_War_of_Words
+		CIS_The_Price_of_Liberty
+		CIS_An_Open_Hand
+		CIS_A_Blade_in_the_Dark
+		CIS_Only_the_movement_Brings_Democracy
+		CIS_Brushfire_Rebellions
+		CIS_Against_Blackest_Injustice
+		CIS_Special_Interest_Groups
+		CIS_A_Kind_Word_and_a_Blaster
+		CIS_Against_the_Tyrant_Majorities
+		CIS_To_forge_An_Army
+		CIS_The_Almighty_Credit
+		CIS_The_Clans_Monster
+		CIS_Avoice_for_the_money_beings
+		CIS_Hidden_Foundries
+		CIS_Flesh_Out_the_Admiralty
+		CIS_Reassure_the_Congress
+		CIS_The_Droid_Army_Realized
+		CIS_For_Liberty_and_Prosperity
+		CIS_Independence_now_Democracy_later
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
