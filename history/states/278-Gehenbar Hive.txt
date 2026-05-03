@@ -1,18 +1,21 @@
 state={
-	id=35
-	name="STATE_35"
+	id=278
+	name="STATE_278"
+	provinces={
+		95 877 1238 1464 1824 2163 2734 3257 5047 5422 5519 16878 16888 16899 16914 16916 16918 16927 16928 16946 16950 16953 16972 16976 16993 17022 17039 17040 17063 17067 17077 17088 17124 17181 17214 
+	}
 	resources={
-		chromium = 20 #Circuitry
-		steel = 5 #Alloys
-		tungsten = 5 #Minerals
+		# chromium = 10 #Circuitry
+		# steel = 5 #Alloys
+		# tungsten = 2 #Minerals
 		# rubber = 10 #Bacta
-		aluminium = 10 #Doonium
+		# aluminium = 1 #Doonium
 		# oil = 30 #Fuel
 		# coal = 30 #Credits
 	}
 	history = {
 		victory_points = {
-			1578 1
+			16972 10
 		}
 
 		buildings = {
@@ -27,9 +30,9 @@ state={
 
 			# anti_air_building = 1#Planetary Shields
 
-			# industrial_complex = 3#Civilian Factories
+			industrial_complex = 3#Civilian Factories
 
-			# arms_factory = 2#Military Factories
+			arms_factory = 2#Military Factories
 
 			dockyard = 5#Shipyard
 
@@ -37,19 +40,15 @@ state={
 
 			air_base = 1#Small Spaceports
 			
-			1578 = {
-				naval_base = 3
-			}
+			# 15763 = {
+				# naval_base = 3
+			# }
 		}
 		owner = GEO
 		add_core_of = GEO
 	}
-	state_category=mining_sector
-	provinces={
-		502 1000 1578 2476 4905 4911 5828 17132 17171 17191 17289 
-	}
-	manpower=400703
+	state_category=industrial_sector
+	manpower=416664
 	buildings_max_level_factor=1
-	state_category=large_planet
 	local_supplies=0
 }

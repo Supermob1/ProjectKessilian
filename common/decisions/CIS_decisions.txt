@@ -245,16 +245,17 @@ CIS_separatist_council_category = {
 		}
 		
 		complete_effect = {
-			TDF = {
-				every_owned_state = {
-					add_core_of = CIS
+			# TDF = {
+				# every_owned_state = {
+					# add_core_of = CIS
 					
-				}
-			}
-			annex_country = {
-				target = TDF
-				transfer_troops = yes
-			}
+				# }
+			# }
+			# annex_country = {
+				# target = TDF
+				# transfer_troops = yes
+			# }
+			puppet = TDF
 		}
 	}
 	CIS_Integrate_The_Techno_Union = {
@@ -265,16 +266,17 @@ CIS_separatist_council_category = {
 		}
 		
 		complete_effect = {
-			TCU = {
-				every_owned_state = {
-					add_core_of = CIS
+			# TCU = {
+				# every_owned_state = {
+					# add_core_of = CIS
 					
-				}
-			}
-			annex_country = {
-				target = TCU
-				transfer_troops = yes
-			}
+				# }
+			# }
+			# annex_country = {
+				# target = TCU
+				# transfer_troops = yes
+			# }
+			puppet = TCU
 		}
 	}
 	CIS_Integrate_Commerce_Guild = {
@@ -285,16 +287,17 @@ CIS_separatist_council_category = {
 		}
 		
 		complete_effect = {
-			CMG = {
-				every_owned_state = {
-					add_core_of = CIS
+			# CMG = {
+				# every_owned_state = {
+					# add_core_of = CIS
 					
-				}
-			}
-			annex_country = {
-				target = CMG
-				transfer_troops = yes
-			}
+				# }
+			# }
+			# annex_country = {
+				# target = CMG
+				# transfer_troops = yes
+			# }
+			puppet = CMG
 		}
 	}
 	CIS_Integrate_The_Banking_Clan = {
@@ -305,16 +308,17 @@ CIS_separatist_council_category = {
 		}
 		
 		complete_effect = {
-			IBC = {
-				every_owned_state = {
-					add_core_of = CIS
+			# IBC = {
+				# every_owned_state = {
+					# add_core_of = CIS
 					
-				}
-			}
-			annex_country = {
-				target = IBC
-				transfer_troops = yes
-			}
+				# }
+			# }
+			# annex_country = {
+				# target = IBC
+				# transfer_troops = yes
+			# }
+			puppet = IBC
 		}
 	}
 }

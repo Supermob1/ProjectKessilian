@@ -464,11 +464,6 @@ technologies = {
 			}
 		}
 		on_research_complete = {
-			hidden_effect = {
-				load_oob = "unlock_paratroopers"
-			}
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-
 			IF = {
 				limit = { has_dlc = "Gotterdammerung" }
 				custom_effect_tooltip = {
@@ -586,18 +581,6 @@ technologies = {
 			marine
 		}
 
-		on_research_complete_limit = {
-			NOT = {
-				has_template_containing_unit = marine
-			}
-		}
-		on_research_complete = {
-			hidden_effect = {
-				load_oob = "unlock_marines"
-			}
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
-
 		path = {
 			leads_to_tech = marines2
 			research_cost_coeff = 1
@@ -711,19 +694,6 @@ technologies = {
 		enable_subunits = {
 			mountaineers
 		}
-
-		on_research_complete_limit = {
-			NOT = {
-				has_template_containing_unit = mountaineers
-			}
-		}
-		on_research_complete = {
-			hidden_effect = {
-				load_oob = "unlock_mountineers"
-			}
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
-
 		path = {
 			leads_to_tech = tech_mountaineers2
 			research_cost_coeff = 1
@@ -809,18 +779,6 @@ technologies = {
 			ranger_battalion
 		}
 		
-		on_research_complete_limit = {
-			NOT = {
-				has_template_containing_unit = ranger_battalion
-			}
-		}
-		on_research_complete = {
-			hidden_effect = {
-				load_oob = "unlock_rangers"
-			}			
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
-
 		path = {
 			leads_to_tech = rangers_tech2
 			research_cost_coeff = 1
@@ -1829,17 +1787,17 @@ technologies = {
 		#	tank_wheeled_suspension
 		#}
 
-		on_research_complete_limit = {
-			NOT = {
-				has_template_containing_unit = motorized
-			}
-		}
-		on_research_complete = {
-			hidden_effect = {
-				load_oob = "unlock_motorized"
-			}
-			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-		}
+		# on_research_complete_limit = {
+			# NOT = {
+				# has_template_containing_unit = motorized
+			# }
+		# }
+		# on_research_complete = {
+			# hidden_effect = {
+				# load_oob = "unlock_motorized"
+			# }
+			# custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		# }
 
 		path = {
 			leads_to_tech = mechanised_infantry

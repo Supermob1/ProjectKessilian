@@ -3,6 +3,17 @@ Clone_wars_start = {
 		declare_war_on = { target = REP type = annex_everything }
 		set_cosmetic_tag = CIS_Confderation_of_Independent_Systems
 		# load_oob = "HOD_Droid_Army"
+
+		GEO = {
+			every_owned_state = {
+				add_core_of = CIS
+					
+			}
+		}
+		annex_country = {
+			target = GEO
+			transfer_troops = yes
+		}
 		REP = { 
 			# load_oob = "HOD_Grande_Armee"
 			set_politics = {
