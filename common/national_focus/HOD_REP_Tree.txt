@@ -1165,7 +1165,9 @@ focus_tree = {
 		   focus = REP_alter_the_terms
 		   focus = REP_the_counter_proposal
 		}
-
+		select_effect = {
+			country_event = { id = SW.1 days = 75 } #Assassination attempt
+		}
 		completion_reward = {
 			country_event = rep_fakeout.49
 			country_event = rep_fakeout.50

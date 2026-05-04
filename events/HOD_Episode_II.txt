@@ -1,0 +1,246 @@
+﻿
+add_namespace = SW
+
+# 1. MCA Vote / Assassination Attempt
+country_event = {
+	id = SW.1
+	title = SW.1.t
+	desc = SW.1.d
+	picture = GFX_report_event_amidala
+	is_triggered_only = yes
+	
+	option = { # The attempt happens
+		name = SW.1.a
+		REP = { country_event = { id = SW.2 days = 1 } } # Failed Assassination
+		CIS = { country_event = { id = SW.3 days = 1 } } # Separatist Gathering
+	}
+}
+
+# 2. REP Side - Obi-Wan to Kamino
+country_event = {
+	id = SW.2
+	title = SW.2.t
+	desc = SW.2.d
+	is_triggered_only = yes
+	
+	option = { 
+		name = SW.2.a # Obi-Wan goes to Kamino
+		REP = { country_event = { id = SW.4 days = 5 } }
+	}
+}
+
+# 3. CIS Side - Separatist Gathering
+country_event = {
+	id = SW.3
+	title = SW.3.t
+	desc = SW.3.d
+	is_triggered_only = yes
+	
+	option = {
+		name = SW.3.a
+		# Wait for Obi-Wan's capture
+	}
+}
+
+# 4. Obi-Wan Captured
+country_event = {
+	id = SW.4
+	title = SW.4.t
+	desc = SW.4.d
+	is_triggered_only = yes
+	
+	option = {
+		name = SW.4.a
+		CIS = { country_event = { id = SW.5 days = 2 } } # Dooku meets Obi-Wan
+	}
+}
+
+# 5. SUPER EVENT: Dooku and Obi-Wan
+country_event = {
+	id = SW.5
+	title = SW.5.t
+	desc = SW.5.d
+	is_triggered_only = yes
+	
+	option = { # Seeds of Doubt
+		name = SW.5.a
+		ai_chance = { factor = 50 }
+		set_country_flag = SW_obi_wan_doubts
+		REP = { country_event = { id = SW.6 days = 3 } } # Rescue Attempt
+	}
+	option = { # Categorical Refusal
+		name = SW.5.b
+		ai_chance = { factor = 50 }
+		REP = { country_event = { id = SW.6 days = 3 } }
+	}
+}
+
+# 6. Battle of Geonosis Start
+country_event = {
+	id = SW.6
+	title = SW.6.t
+	desc = SW.6.d
+	is_triggered_only = yes
+	
+	option = {
+		name = SW.6.a
+		random_list = {
+			50 = { REP = { country_event = { id = SW.7 days = 1 } } } 
+			50 = { CIS = { country_event = { id = SW.7 days = 1 } } }
+		}
+	}
+}
+
+# 7. SUPER EVENT: Mace Windu vs Jango Fett
+country_event = {
+	id = SW.7
+	title = SW.7.t
+	desc = SW.7.d
+	is_triggered_only = yes
+	
+	option = { # Windu kills Jango
+		name = SW.7.a
+		ai_chance = { factor = 70 }
+		random_list = {
+			50 = { REP = { country_event = { id = SW.8 } } } 
+			50 = { CIS = { country_event = { id = SW.8 } } }
+		}
+	}
+	option = { # Jango Escapes
+		name = SW.7.b
+		ai_chance = { factor = 30 }
+		set_country_flag = SW_jango_escaped
+		random_list = {
+			50 = { REP = { country_event = { id = SW.8 } } } 
+			50 = { CIS = { country_event = { id = SW.8 } } }
+		}
+	}
+}
+
+# 8. SUPER EVENT: The Duel with Dooku
+country_event = {
+	id = SW.8
+	title = SW.8.t
+	desc = SW.8.d
+	is_triggered_only = yes
+	
+	# Outcome 1: Anakin loses hand, Dooku kills Obi-Wan
+	option = {
+		name = SW.8.a
+		ai_chance = { factor = 25 }
+		REP = { country_event = { id = SW.101 } } # Burial/New Master chain
+		CIS = { country_event = { id = SW.201 } } # Dooku gets hand/Palpatine meet
+	}
+	
+	# Outcome 2: Anakin hand cut, Obi-Wan injured (Canon)
+	option = {
+		name = SW.8.b
+		ai_chance = { factor = 25 }
+		REP = { country_event = { id = SW.102 } } # Wedding/Sith Leader mystery
+		CIS = { country_event = { id = SW.202 } } # Death Star plans
+	}
+	
+	# Outcome 3: Dooku wins but lets them live
+	option = {
+		name = SW.8.c
+		ai_chance = { factor = 25 }
+		CIS = { country_event = { id = SW.203 } } # Dooku meets Sidious
+		REP = { country_event = { id = SW.103 } } # Obi-wan asks why?
+	}
+	
+	# Outcome 4: Obi-Wan dies, Dooku feels remorse
+	option = {
+		name = SW.8.d
+		ai_chance = { factor = 25 }
+		CIS = { country_event = { id = SW.204 } } # Dooku Remorse / Qui-Gon Ghost
+		REP = { country_event = { id = SW.104 } } # Anakin Revenge / Leaves Order
+	}
+}
+
+# SW.101: Obi-Wan Burial
+country_event = {
+	id = SW.101
+	title = SW.101.t
+	desc = SW.101.d
+	is_triggered_only = yes
+	option = {
+		name = SW.101.a # Anakin becomes a master himself
+		ai_chance = { factor = 50 }
+	}
+}
+
+# SW.102: The Canon Path
+country_event = {
+	id = SW.102
+	title = SW.102.t
+	desc = SW.102.d
+	is_triggered_only = yes
+	option = {
+		name = SW.102.a # The Wedding and the Sith Mystery
+	}
+}
+
+# SW.103: The Question
+country_event = {
+	id = SW.103
+	title = SW.103.t
+	desc = SW.103.d
+	is_triggered_only = yes
+	option = {
+		name = SW.103.a # Why did Dooku let us live?
+	}
+}
+
+# SW.104: The Path of Revenge
+country_event = {
+	id = SW.104
+	title = SW.104.t
+	desc = SW.104.d
+	is_triggered_only = yes
+	option = {
+		name = SW.104.a # Leave the Jedi Order
+	}
+}
+# SW.201: Dooku's Ascension
+country_event = {
+	id = SW.201
+	title = SW.201.t
+	desc = SW.201.d
+	is_triggered_only = yes
+	option = {
+		name = SW.201.a # Meet with Palpatine
+	}
+}
+
+# SW.202: The Grand Design
+country_event = {
+	id = SW.202
+	title = SW.202.t
+	desc = SW.202.d
+	is_triggered_only = yes
+	option = {
+		name = SW.202.a # Hand over the Death Star plans
+	}
+}
+
+# SW.203: Success
+country_event = {
+	id = SW.203
+	title = SW.203.t
+	desc = SW.203.d
+	is_triggered_only = yes
+	option = {
+		name = SW.203.a # Everything is going according to plan
+	}
+}
+
+# SW.204: Ghost of the Past
+country_event = {
+	id = SW.204
+	title = SW.204.t
+	desc = SW.204.d
+	is_triggered_only = yes
+	option = {
+		name = SW.204.a # Qui-Gon? Is that you?
+	}
+}
