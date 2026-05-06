@@ -331,7 +331,7 @@ Clone_Wars_Global_CIS = {
 		value = 200
 	}
 }
-Clone_Wars_Southern_Offensive_CIS = {
+Clone_Wars_First_Offensive_CIS = {
 	allowed = { original_tag = CIS }
 	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
 	abort_when_not_enabled = yes
@@ -339,24 +339,24 @@ Clone_Wars_Southern_Offensive_CIS = {
 	# HARD focus south
 	ai_strategy = {
 		type = area_priority
-		id = southern_area
+		id = Raxus_Sector
 		value = 300
 	}
 	ai_strategy = {
 		type = area_priority
-		id = northern_area
-		value = -100
+		id = Geonosis_Sector
+		value = 300
 	}
 	ai_strategy = {
 		type = area_priority
-		id = eastern_area
-		value = -100
+		id = Kamino_Sector
+		value = 300
 	}
 
 	# Concentrate army
 	ai_strategy = {
 		type = front_control
-		area = southern_area
+		area = Raxus_Sector
 		ratio = 1.0
 		priority = 200
 		ordertype = front
@@ -396,7 +396,7 @@ Clone_Wars_Southern_Offensive_REP = {
 	# DEFEND south heavily
 	ai_strategy = {
 		type = area_priority
-		id = southern_area
+		id = Kamino_Sector
 		value = 300
 	}
 
@@ -411,7 +411,7 @@ Clone_Wars_Southern_Offensive_REP = {
 	# Defensive front behavior
 	ai_strategy = {
 		type = front_control
-		area = southern_area
+		area = Kamino_Sector
 		ratio = 1.0
 		priority = 200
 		ordertype = front
@@ -454,48 +454,7 @@ Clone_Wars_Assault_Kamino_REP = {
 
 	ai_strategy = {
 		type = area_priority
-		id = southern_area
+		id = Kamino_Sector
 		value = 400
-	}
-}
-Clone_Wars_Post_Kamino_CIS = {
-	allowed = { original_tag = CIS }
-	enable = { has_global_flag = The_Defense_of_Kamino }
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = naval_invasion_focus
-		value = 200
-	}
-
-	ai_strategy = {
-		type = area_priority
-		id = northern_area
-		value = 150
-	}
-	ai_strategy = {
-		type = area_priority
-		id = eastern_area
-		value = 150
-	}
-}
-Clone_Wars_Post_Kamino_REP = {
-	allowed = { original_tag = REP }
-	enable = { has_global_flag = The_Defense_of_Kamino }
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = area_priority
-		id = northern_area
-		value = 200
-	}
-
-	ai_strategy = {
-		type = front_control
-		area = northern_area
-		ratio = 1.0
-		priority = 200
-		ordertype = front
-		execution_type = careful
 	}
 }

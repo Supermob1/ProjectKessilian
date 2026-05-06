@@ -1,13 +1,13 @@
 state={
-	id=194
-	name="STATE_194"
+	id=284
+	name="STATE_284"
 	provinces={
-		21325 21345 21364 21374 21384 21385 21396 21402 21403 21410 21415 21418 
+		21292 21294 21315 21322 
 	}
 	resources={
 		# chromium = 10 #Circuitry
-		steel = 5 #Alloys
-		tungsten = 2 #Minerals
+		# steel = 5 #Alloys
+		# tungsten = 2 #Minerals
 		# rubber = 10 #Bacta
 		# aluminium = 1 #Doonium
 		# oil = 30 #Fuel
@@ -15,7 +15,7 @@ state={
 	}
 	history = {
 		victory_points = {
-			21385 1
+			21315 1
 		}
 
 		buildings = {
@@ -40,18 +40,15 @@ state={
 
 			# air_base = 1#Small Spaceports
 			
-			21385 = {
-				naval_base = 3
-			}
-			21418 = {
-				naval_base = 3
-			}
+			# 15763 = {
+				# naval_base = 3
+			# }
 		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	state_category=agricultural_sector
-	manpower=40033
+	state_category=wasteland_sector
+	manpower=1553
 	buildings_max_level_factor=1
 	local_supplies=0
 }

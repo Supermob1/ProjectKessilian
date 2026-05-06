@@ -1,23 +1,22 @@
 state={
-	id=194
-	name="STATE_194"
+	id=287
+	name="STATE_287"
 	provinces={
-		21325 21345 21364 21374 21384 21385 21396 21402 21403 21410 21415 21418 
+		21258 21259 21260 21261 21262 21264 21267 21269 21273 21275 21277 21282 
 	}
 	resources={
-		# chromium = 10 #Circuitry
-		steel = 5 #Alloys
-		tungsten = 2 #Minerals
-		# rubber = 10 #Bacta
-		# aluminium = 1 #Doonium
+		# chromium = 5 #Circuitry
+		# steel = 5 #Alloys
+		# tungsten = 8 #Minerals
+		rubber = 10 #Bacta
+		# aluminium = 10 #Doonium
 		# oil = 30 #Fuel
 		# coal = 30 #Credits
 	}
 	history = {
 		victory_points = {
-			21385 1
+			21273 1
 		}
-
 		buildings = {
 
 			# radar_station = #Tracking Station
@@ -38,20 +37,17 @@ state={
 
 			infrastructure = 2 #Infrastructure
 
-			# air_base = 1#Small Spaceports
+			air_base = 1#Small Spaceports
 			
-			21385 = {
-				naval_base = 3
-			}
-			21418 = {
-				naval_base = 3
-			}
+			# 21291 = {
+				# naval_base = 3
+			# }
 		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	state_category=agricultural_sector
-	manpower=40033
+	state_category=wasteland_sector
+	manpower=41221
 	buildings_max_level_factor=1
 	local_supplies=0
 }

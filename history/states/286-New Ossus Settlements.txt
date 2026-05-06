@@ -1,21 +1,27 @@
 state={
-	id=194
-	name="STATE_194"
+	id=286
+	name="STATE_286"
 	provinces={
-		21325 21345 21364 21374 21384 21385 21396 21402 21403 21410 21415 21418 
+		21291 21297 21302 21314 21329 21342 21343 21352 21372 21376 21383 21389 21399 21414 
 	}
 	resources={
-		# chromium = 10 #Circuitry
+		chromium = 5 #Circuitry
 		steel = 5 #Alloys
-		tungsten = 2 #Minerals
+		tungsten = 8 #Minerals
 		# rubber = 10 #Bacta
-		# aluminium = 1 #Doonium
+		aluminium = 10 #Doonium
 		# oil = 30 #Fuel
 		# coal = 30 #Credits
 	}
 	history = {
 		victory_points = {
-			21385 1
+			21291 1
+		}
+		victory_points = {
+			21302 1
+		}
+		victory_points = {
+			21376 5
 		}
 
 		buildings = {
@@ -38,20 +44,17 @@ state={
 
 			infrastructure = 2 #Infrastructure
 
-			# air_base = 1#Small Spaceports
+			air_base = 1#Small Spaceports
 			
-			21385 = {
-				naval_base = 3
-			}
-			21418 = {
+			21291 = {
 				naval_base = 3
 			}
 		}
-		owner = CIS
-		add_core_of = CIS
+		owner = REP
+		add_core_of = REP
 	}
 	state_category=agricultural_sector
-	manpower=40033
+	manpower=231014
 	buildings_max_level_factor=1
 	local_supplies=0
 }
