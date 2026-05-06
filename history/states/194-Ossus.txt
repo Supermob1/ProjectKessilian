@@ -2,44 +2,56 @@ state={
 	id=194
 	name="STATE_194"
 	provinces={
-		21258 21259 21260 21261 21262 21264 21265 21267 21269 21271 21272 21273 21275 21276 21277 21279 21282 21283 21284 21288 21291 21292 21294 21297 21298 21299 21302 21303 21304 21312 21314 21315 21322 21324 21325 21329 21331 21338 21342 21343 21344 21345 21352 21355 21363 21364 21372 21373 21374 21376 21377 21383 21384 21385 21389 21396 21399 21402 21403 21410 21414 21415 21418 
+		21325 21345 21364 21374 21384 21385 21396 21402 21403 21410 21415 21418 
 	}
 	resources={
-		oil=2#Fuel
-		rubber=10#Doonium
-		tungsten=1#Bacta
-		steel=5#Alloys
-		chromium=6#Circuitry
-		#credits=5
+		# chromium = 10 #Circuitry
+		steel = 5 #Alloys
+		tungsten = 2 #Minerals
+		# rubber = 10 #Bacta
+		# aluminium = 1 #Doonium
+		# oil = 30 #Fuel
+		# coal = 30 #Credits
 	}
 	history = {
+		victory_points = {
+			21385 1
+		}
+
 		buildings = {
 
 			# radar_station = #Tracking Station
 
-			# #credits_building = #Trading Hubs
+			# #credits_building = 4#Trading Hubs
 
 			# minerals_refinery = #Mineral Refinery
 
 			# synthetic_refinery = #Tibanna Refinery
 
-			# anti_air_building = #Planetary Shields
+			# anti_air_building = 1#Planetary Shields
 
-			# industrial_complex = #Civilian Factories
+			# industrial_complex = 3#Civilian Factories
 
-			# arms_factory = #Military Factories
+			# arms_factory = 2#Military Factories
 
 			# dockyard = #Shipyard
 
-			# infrastructure = 1#Infrastructure
+			infrastructure = 2 #Infrastructure
 
 			# air_base = 1#Small Spaceports
+			
+			21385 = {
+				naval_base = 3
+			}
+			21418 = {
+				naval_base = 3
+			}
 		}
-		owner = REP
-		add_core_of = REP
+		owner = CIS
+		add_core_of = CIS
 	}
-	manpower = 40033
-	state_category = large_planet
-	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	state_category=agricultural_sector
+	manpower=40033
+	buildings_max_level_factor=1
+	local_supplies=0
 }
