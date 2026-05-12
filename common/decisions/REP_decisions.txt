@@ -33,12 +33,7 @@ REP_the_Grand_Army = {
 				add = 1
 				value = iteration_count 
 				
-				random_owned_controlled_state = {
-					limit = { 
-						is_core_of = REP
-						impassable = no
-					}
-					
+				32 = {
 					meta_effect = {
 						text = {
 							create_unit = {

@@ -15,6 +15,7 @@ division_template = {
 	division_names_group = REP_Inf_01
 	is_locked = yes
 	template_counter = 0
+	override_model = REP_infantry_entity
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -27,5 +28,24 @@ division_template = {
 		infantry = { x = 2 y = 2 }
 	}
 	support = {
+	}
+}
+division_template = {
+	name = "Clone Commando"
+	division_names_group = REP_Inf_01
+	is_locked = yes
+	template_counter = 0
+	override_model = REP_marine_entity
+	force_allow_recruiting = yes
+	regiments = {
+		marine = { x = 0 y = 0 }
+		marine = { x = 0 y = 1 }
+		marine = { x = 0 y = 2 }
+		marine = { x = 1 y = 0 }
+		marine = { x = 1 y = 1 }
+		marine = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
 	}
 }
