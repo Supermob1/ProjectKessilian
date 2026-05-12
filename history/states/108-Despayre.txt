@@ -1,49 +1,24 @@
-
 state={
 	id=108
 	name="STATE_108"
 	provinces={
-		27 168 518 523 780 997 1432 1746 1940 2015 2095 2135 2365 3098 3407 3607 3701 3768 3987 5209 5360 5385 5836 7540 7541 7550 7565 7579 7593 7596 7607 7613 7627 7634 7637 7645 7653 7662 7663 7669 7670 7680 7695 7696 7699 7703 7704 7732 7733 7739 7740 7743 7757 7764 7768 7769 7770 7788 7789 7794 7811 7812 7829 7841 
+		997 1940 3701 7739 7757 7768 7769
 	}
 	resources={
 		aluminium=3#Minerals
 		steel=2#Alloys
-		#credits=1
 	}
 	history = {
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = #Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = #Planetary Shields
-
-			# industrial_complex = #Civilian Factories
-
-			# arms_factory = #Military Factories
-
-			# dockyard = #Shipyard
-
-			# infrastructure = 1#Infrastructure
-
-			# air_base = 1#Small Spaceports
-
-
-
-			3701= {
+			3701 = {
 				naval_base = 3
-				 }
+			}
 		}
 		owner = IBC
 		add_core_of = IBC
 	}
-	manpower = 1818217
-	state_category = large_planet
+	manpower = 198867
+	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
 }
