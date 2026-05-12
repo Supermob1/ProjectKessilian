@@ -1,86 +1,25 @@
 state={
 	id=32
 	name="STATE_32"
+	provinces={
+		2840 15258 15300 15328 15355 15371
+	}
 	resources={
 		tungsten=5#Bacta
 		chromium=5#Circuitry
 		coal=15
 	}
 	history = {
-		victory_points = {
-			6230 25 #Tipoca
-		}
-		victory_points = {
-			15386 15 #Timira
-		}
-		victory_points = {
-			14901 15 #Aiwha
-		}
-		victory_points = {
-			15172 5 #Nurok
-		}
-		victory_points = {
-			15530 5 #Talora
-		}
-		victory_points = {
-			15594 5 #Nemiros
-		}
-		victory_points = {
-			2840 5 #Torvain
-		}
-		victory_points = {
-			871 1 #Velkan
-		}
-		victory_points = {
-			4062 1 #Velkan
-		}
-		victory_points = {
-			5643 1 #Kamur
-		}
-		victory_points = {
-			15052 1 #Orunis
-		}
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = #Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = #Planetary Shields
-
-			industrial_complex = 3#Civilian Factories
-
-			arms_factory = 7#Military Factories
-
-			dockyard = 5#Shipyard
-
-			infrastructure = 1#Infrastructure
-
-			air_base = 1#Small Spaceports
-
-
-			2668 = {
-				naval_base = 3
-			}
 			2840 = {
 				naval_base = 3
-			}
-			14868 = {
-				naval_base = 1
 			}
 		}
 		owner = REP
 		add_core_of = REP
 	}
-	provinces={
-		233 871 2035 2668 2738 2840 4062 4180 4546 5643 6095 6230 6256 14855 14862 14868 14901 14935 14943 14955 14962 14968 15052 15072 15106 15114 15124 15171 15172 15210 15246 15258 15271 15281 15282 15300 15324 15328 15355 15365 15371 15386 15427 15472 15508 15530 15540 15552 15553 15565 15571 15594 
-	}
-	manpower=3711096
-	buildings_max_level_factor=1
-	state_category=industrial_sector
-	local_supplies=0
+	manpower = 428203
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
 }
