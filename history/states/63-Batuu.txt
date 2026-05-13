@@ -5,11 +5,29 @@ state={
 		184 1260 1442 2563 2848 16307 16314 16322 16327 16331 16337 16344 16351 16371 16375 16395 16396 16401 16410 16425
 		16428 16434
 	}
+	resources={
+		tungsten=2
+		steel=1
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			16396 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			arms_factory = 3
+			air_base = 3
+			dockyard = 2
+			16331 = {
+				naval_base = 4
+			}
+		}
 		owner = HTT
 		add_core_of = HTT
 	}
-	manpower = 167162
+	manpower = 1928472
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

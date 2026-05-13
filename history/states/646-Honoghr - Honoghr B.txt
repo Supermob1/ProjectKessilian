@@ -5,11 +5,24 @@ state={
 		93 920 2300 2722 2774 12180 12193 12211 12218 12228 12246 12257 12262 12266 12273 12286 12292 12301 12302 12328 12361
 		12372 12387
 	}
+	resources={
+		oil=3
+	}
 	history = {
+		victory_points = {
+			2300 2
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			12211 = {
+				naval_base = 1
+			}
+		}
 		owner = DKJ
 		add_core_of = DKJ
 	}
-	manpower = 104033
+	manpower = 126429
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

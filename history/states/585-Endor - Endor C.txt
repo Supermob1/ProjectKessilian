@@ -5,8 +5,18 @@ state={
 		1422 1963 2063 2309 2487 2945 3155 3614 3935 4575 4865 5380 5434 5734 5884 6082 16940 16941 16943 16945 16948 16963
 		16964 16966 16997 17002 17003 17016 17027 17028 17055 17061 17065 17098 17104
 	}
+	resources={
+		rubber=4
+	}
 	history = {
+		victory_points = {
+			1422 3
+		}
 		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
 			6082 = {
 				naval_base = 3
 			}
@@ -14,7 +24,7 @@ state={
 		owner = COR
 		add_core_of = COR
 	}
-	manpower = 371303
+	manpower = 382624
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

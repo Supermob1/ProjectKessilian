@@ -5,11 +5,26 @@ state={
 		487 949 1378 1732 2192 2217 2554 3022 3523 9437 9440 9465 9484 9498 9520 9525 9531 9546 9555 9556 9562 9573 9574 9586
 		9596 9597 9611 9612 9624 9629 9630 9633 9663 9664
 	}
+	resources={
+		rubber=3
+	}
 	history = {
+		victory_points = {
+			3523 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 2
+			air_base = 1
+			9633 = {
+				naval_base = 1
+			}
+		}
 		owner = DHT
 		add_core_of = DHT
 	}
-	manpower = 11068
+	manpower = 481881
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

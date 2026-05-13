@@ -5,11 +5,24 @@ state={
 		1085 2638 3618 3679 4830 5685 5797 5902 7391 7412 7420 7421 7436 7440 7450 7498 7499 7533 7534 7539 7555 7562 7578
 		7586 7621 7643 7656 7675 7684
 	}
+	resources={
+		oil=1
+	}
 	history = {
+		victory_points = {
+			7621 2
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			7675 = {
+				naval_base = 1
+			}
+		}
 		owner = IBC
 		add_core_of = IBC
 	}
-	manpower = 313295
+	manpower = 165553
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

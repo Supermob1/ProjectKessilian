@@ -5,11 +5,30 @@ state={
 		117 678 1630 1857 2159 4083 4343 4478 16656 16677 16678 16684 16698 16703 16709 16723 16724 16726 16729 16740 16743
 		16760 16761 16766 16772 16773 16793 16804 16805 16808 16815 16816 16819 16824 16831 16843 16844 16849
 	}
+	resources={
+		oil=1
+	}
 	history = {
+		victory_points = {
+			1630 5
+		}
+		victory_points = {
+			16805 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 7
+			arms_factory = 5
+			air_base = 3
+			dockyard = 1
+			16808 = {
+				naval_base = 4
+			}
+		}
 		owner = TBR
 		add_core_of = TBR
 	}
-	manpower = 156417
+	manpower = 2109460
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

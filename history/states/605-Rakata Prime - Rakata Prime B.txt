@@ -5,11 +5,27 @@ state={
 		287 555 1170 1214 1569 1676 1775 2431 3061 3736 5837 5865 13840 13862 13875 13895 13897 13915 13920 13937 13962 13967
 		14001 14009 14010 14016
 	}
+	resources={
+		rubber=4
+		oil=1
+	}
 	history = {
+		victory_points = {
+			287 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 2
+			dockyard = 1
+			3736 = {
+				naval_base = 1
+			}
+		}
 		owner = CHS
 		add_core_of = CHS
 	}
-	manpower = 103919
+	manpower = 503673
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

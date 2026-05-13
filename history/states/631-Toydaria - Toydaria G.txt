@@ -4,11 +4,24 @@ state={
 	provinces={
 		869 3835 6226 13675 13683 13690 13711 13719 13746 13753 13784 13798 13830
 	}
+	resources={
+		oil=2
+	}
 	history = {
+		victory_points = {
+			6226 2
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			13746 = {
+				naval_base = 1
+			}
+		}
 		owner = TOY
 		add_core_of = TOY
 	}
-	manpower = 58489
+	manpower = 85289
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

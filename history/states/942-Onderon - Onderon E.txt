@@ -4,11 +4,24 @@ state={
 	provinces={
 		1991 2394 2514 3951 4009 4715 11819 11839 11857 11862 11869 11886 11914
 	}
+	resources={
+		oil=3
+	}
 	history = {
+		victory_points = {
+			11869 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			4715 = {
+				naval_base = 1
+			}
+		}
 		owner = OND
 		add_core_of = OND
 	}
-	manpower = 1063496
+	manpower = 62479
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

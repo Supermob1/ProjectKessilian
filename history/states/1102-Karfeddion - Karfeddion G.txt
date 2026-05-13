@@ -4,11 +4,24 @@ state={
 	provinces={
 		19446 19461 19462 19467 19482 19484 19485 19486 19498 19506 19509 19516 19517 19529 19539
 	}
+	resources={
+		coal=3
+	}
 	history = {
+		victory_points = {
+			19446 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			19517 = {
+				naval_base = 1
+			}
+		}
 		owner = SJX
 		add_core_of = SJX
 	}
-	manpower = 9400
+	manpower = 403583
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

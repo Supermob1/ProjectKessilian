@@ -2,48 +2,21 @@ state={
 	id=34
 	name="STATE_34"
 	provinces={
-		192 1304 2591 4643 5970 16514 16520 16525 16529 16532 16535 16536 16542 16547 16552 16553 16567 16573 16581 
+		192 1304 2591 4643 5970 16514 16520 16525 16529 16532 16535 16536 16542 16547 16552 16553 16567 16573 16581
 	}
 	resources={
-		# #credits #Credits
-		# chromium #Circuitry
-		# steel #Alloys
-		# tungsten #Minerals
-		# rubber #Bacta
-		# aluminium #Doonium
-		oil=1 #Fuel
-		#credits=20
+		oil=1#Fuel
 	}
 	history = {
 		victory_points = {
 			5970 5
 		}
-
 		victory_points = {
 			16520 5
 		}
-
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = 4#Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = 1#Planetary Shields
-
-			# industrial_complex = 3#Civilian Factories
-
-			# arms_factory = 2#Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 2 #Infrastructure
-
-			air_base = 1#Small Spaceports
+			infrastructure = 2
+			air_base = 1
 			5970 = {
 				naval_base = 3
 			}
@@ -54,8 +27,8 @@ state={
 		owner = TCU
 		add_core_of = TCU
 	}
-	manpower=10
-	buildings_max_level_factor=1
-	state_category=wasteland_sector
-	local_supplies=0
+	manpower = 88347
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
 }

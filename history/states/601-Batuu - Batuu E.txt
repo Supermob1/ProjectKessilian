@@ -5,11 +5,26 @@ state={
 		837 1642 2187 2259 2957 4078 4917 5090 16445 16446 16457 16460 16462 16464 16466 16472 16473 16477 16485 16488 16493
 		16498 16504 16505 16506 16507 16508 16512 16516 16518 16521 16522 16523 16524 16527 16530
 	}
+	resources={
+		tungsten=2
+		steel=1
+	}
 	history = {
+		victory_points = {
+			837 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			16523 = {
+				naval_base = 1
+			}
+		}
 		owner = HTT
 		add_core_of = HTT
 	}
-	manpower = 273538
+	manpower = 95817
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

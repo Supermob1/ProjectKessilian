@@ -66,11 +66,11 @@ country_event = { # general grevious
 	id = confederacy.2
 	title = confederacy.2.t
 	desc = confederacy.2.d
-	picture = GFX_news_event_dooku_speech
-	major = yes
+	picture = GFX_country_event_general_grievous
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = {
 		name = confederacy.2.a
@@ -100,10 +100,10 @@ country_event = { # a new birth of freedom
 	title = confederacy.3.t
 	desc = confederacy.3.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.3.a
@@ -119,10 +119,10 @@ country_event = { # opening of the congress
 	title = confederacy.4.t
 	desc = confederacy.4.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.4.a
@@ -136,11 +136,11 @@ country_event = { # price of liberty
 	id = confederacy.5
 	title = confederacy.5.t
 	desc = confederacy.5.d
-	picture = GFX_news_event_dooku_speech
-	major = yes
+	picture = GFX_country_event_the_price_of_liberty
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.5.a
@@ -205,10 +205,10 @@ country_event = { # trade federation
 	title = confederacy.6.t
 	desc = confederacy.6.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.6.a
@@ -225,10 +225,10 @@ country_event = { # techno union
 	title = confederacy.7.t
 	desc = confederacy.7.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.7.a
@@ -246,10 +246,10 @@ country_event = { # an open hand
 	title = confederacy.8.t
 	desc = confederacy.8.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.8.a
@@ -268,10 +268,10 @@ country_event = { # blade in dark
 	title = confederacy.9.t
 	desc = confederacy.9.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.9.a
@@ -287,11 +287,11 @@ country_event = { # brushfire rebellions
 	id = confederacy.10
 	title = confederacy.10.t
 	desc = confederacy.10.d
-	picture = GFX_news_event_dooku_speech
-	major = yes
+	picture = GFX_country_event_brushfire_rebellions
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.10.a
@@ -308,10 +308,10 @@ country_event = { # Freedom for all sapient life
 	title = confederacy.11.t
 	desc = confederacy.11.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.11.a
@@ -329,13 +329,120 @@ country_event = { # A Kind Word and a Blaster
 	title = confederacy.12.t
 	desc = confederacy.12.d
 	picture = GFX_news_event_dooku_speech
-	major = yes
+	
 	is_triggered_only = yes
 	
-	fire_only_once = no
+	fire_only_once = yes
 
 	option = { 
 		name = confederacy.12.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+country_event = { # Independence now Democracy later
+	id = confederacy.13
+	title = confederacy.13.t
+	desc = confederacy.13.d
+	picture = GFX_news_event_dooku_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = confederacy.13.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+country_event = { # Reassure the Congress
+	id = confederacy.14
+	title = confederacy.14.t
+	desc = confederacy.14.d
+	picture = GFX_news_event_dooku_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = confederacy.14.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+
+
+country_event = { # For Liberty and Prosperity
+	id = confederacy.15
+	title = confederacy.15.t
+	desc = confederacy.15.d
+	picture = GFX_news_event_dooku_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = confederacy.15.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+
+country_event = { # The Droid Foundries
+	id = confederacy.16
+	title = confederacy.16.t
+	desc = confederacy.16.d
+	picture = GFX_news_event_dooku_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = confederacy.16.a
+
+	      
+		ai_chance = { 
+			factor = 25	
+		}
+		
+	}
+}
+
+country_event = { # The Droid Army Realized
+	id = confederacy.17
+	title = confederacy.17.t
+	desc = confederacy.17.d
+	picture = GFX_news_event_dooku_speech
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = { 
+		name = confederacy.17.a
 
 	      
 		ai_chance = { 

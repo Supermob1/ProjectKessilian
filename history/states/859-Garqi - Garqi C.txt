@@ -5,8 +5,20 @@ state={
 		329 1635 1745 1844 2499 2787 3708 3807 6138 9159 9172 9180 9183 9191 9201 9211 9231 9232 9241 9259 9260 9261 9265
 		9270 9284
 	}
+	resources={
+		coal=1
+		oil=1
+	}
 	history = {
+		victory_points = {
+			329 3
+		}
 		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 2
+			air_base = 1
+			dockyard = 1
 			2499 = {
 				naval_base = 3
 			}
@@ -14,7 +26,7 @@ state={
 		owner = IBC
 		add_core_of = IBC
 	}
-	manpower = 91809
+	manpower = 439044
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

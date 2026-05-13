@@ -4,11 +4,24 @@ state={
 	provinces={
 		18468 18471 18472 18479 18482 18484 18486
 	}
+	resources={
+		oil=4
+		aluminium=2
+	}
 	history = {
+		victory_points = {
+			18479 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+		}
 		owner = DKJ
 		add_core_of = DKJ
 	}
-	manpower = 59314
+	manpower = 32125
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

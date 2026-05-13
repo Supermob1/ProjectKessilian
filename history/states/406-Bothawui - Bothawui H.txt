@@ -5,11 +5,25 @@ state={
 		174 1659 2084 2619 2761 3644 4757 5585 5942 14867 14878 14883 14894 14897 14900 14907 14913 14922 14928 14942 14965
 		14979 14981 14983 15004 15011 15038 15051 15059 15104
 	}
+	resources={
+		rubber=3
+	}
 	history = {
+		victory_points = {
+			174 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			air_base = 1
+			14907 = {
+				naval_base = 2
+			}
+		}
 		owner = BHO
 		add_core_of = BHO
 	}
-	manpower = 519595
+	manpower = 343616
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

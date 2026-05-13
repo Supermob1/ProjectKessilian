@@ -5,8 +5,17 @@ state={
 		588 1566 2171 3595 3601 3866 4118 5377 5679 11311 11326 11340 11357 11360 11388 11407 11414 11415 11423 11435 11436
 		11447 11468 11469 11487 11488 11523
 	}
+	resources={
+		oil=1
+	}
 	history = {
+		victory_points = {
+			4118 2
+		}
 		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			air_base = 1
 			4118 = {
 				naval_base = 3
 			}
@@ -14,7 +23,7 @@ state={
 		owner = TDF
 		add_core_of = TDF
 	}
-	manpower = 188899
+	manpower = 139378
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

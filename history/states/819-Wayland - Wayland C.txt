@@ -4,11 +4,24 @@ state={
 	provinces={
 		1647 1658 1786 2584 4541 10604 10615 10620 10637 10647 10653 10662 10672 10710 10729 10743
 	}
+	resources={
+		rubber=2
+	}
 	history = {
+		victory_points = {
+			2584 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			10647 = {
+				naval_base = 2
+			}
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 166489
+	manpower = 445391
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

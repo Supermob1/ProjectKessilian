@@ -5,11 +5,26 @@ state={
 		324 720 1314 3137 3754 4029 4837 4959 12365 12385 12409 12410 12438 12441 12466 12467 12478 12490 12491 12497 12501
 		12525 12526 12546 12550
 	}
+	resources={
+		coal=1
+	}
 	history = {
+		victory_points = {
+			3137 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 2
+			air_base = 1
+			12478 = {
+				naval_base = 2
+			}
+		}
 		owner = GKJ
 		add_core_of = GKJ
 	}
-	manpower = 82053
+	manpower = 479076
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

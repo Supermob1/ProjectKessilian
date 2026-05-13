@@ -4,11 +4,27 @@ state={
 	provinces={
 		532 917 3915 4101 5718 17497 17538 17560 17568 17589 17618 17624 17649
 	}
+	resources={
+		tungsten=2
+		coal=2
+	}
 	history = {
+		victory_points = {
+			17560 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+			17568 = {
+				naval_base = 2
+			}
+		}
 		owner = RNB
 		add_core_of = RNB
 	}
-	manpower = 441375
+	manpower = 483952
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

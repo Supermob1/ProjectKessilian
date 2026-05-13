@@ -5,8 +5,17 @@ state={
 		813 899 967 1133 1424 1616 2120 3545 3876 4100 5900 12942 12950 12958 12965 12968 12974 12977 12982 12987 12993 13001
 		13003 13007 13023 13036 13037 13050 13057 13058
 	}
+	resources={
+		tungsten=2
+		steel=2
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			967 2
+		}
 		buildings = {
+			infrastructure = 2
 			3545 = {
 				naval_base = 3
 			}
@@ -14,7 +23,7 @@ state={
 		owner = QKJ
 		add_core_of = QKJ
 	}
-	manpower = 295909
+	manpower = 188622
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

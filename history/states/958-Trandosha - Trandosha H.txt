@@ -4,8 +4,17 @@ state={
 	provinces={
 		112 1207 2381 4619 4692 5701 11203 11223 11243 11248 11261 11262 11275 11278 11287 11322 11335 11362 11370
 	}
+	resources={
+		rubber=3
+	}
 	history = {
+		victory_points = {
+			1207 3
+		}
 		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			dockyard = 1
 			11203 = {
 				naval_base = 3
 			}
@@ -13,7 +22,7 @@ state={
 		owner = HSS
 		add_core_of = HSS
 	}
-	manpower = 126728
+	manpower = 503570
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

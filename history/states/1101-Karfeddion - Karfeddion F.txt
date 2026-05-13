@@ -5,11 +5,28 @@ state={
 		19326 19332 19341 19344 19347 19352 19357 19363 19364 19374 19375 19376 19382 19384 19386 19387 19390 19396 19401
 		19407 19410 19412 19417 19423 19424 19428 19440 19441 19445 19452 19460
 	}
+	resources={
+		coal=1
+		oil=2
+	}
 	history = {
+		victory_points = {
+			19326 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+			19364 = {
+				naval_base = 2
+			}
+		}
 		owner = SJX
 		add_core_of = SJX
 	}
-	manpower = 19426
+	manpower = 340114
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

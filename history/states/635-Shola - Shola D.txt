@@ -6,11 +6,26 @@ state={
 		15005 15033 15042 15043 15074 15085 15086 15090 15119 15120 15142 15163 15166 15188 15206 15207 15211 15212 15247
 		15266 15292 15293 15294
 	}
+	resources={
+		tungsten=4
+		steel=2
+		aluminium=2
+	}
 	history = {
+		victory_points = {
+			73 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			15266 = {
+				naval_base = 1
+			}
+		}
 		owner = BKJ
 		add_core_of = BKJ
 	}
-	manpower = 242092
+	manpower = 151050
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

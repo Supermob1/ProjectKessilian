@@ -4,11 +4,31 @@ state={
 	provinces={
 		286 2020 2358 5338 6003 15929 15943 15953 15992 16004 16019
 	}
+	resources={
+		chromium=3
+		coal=3
+	}
 	history = {
+		victory_points = {
+			2020 5
+		}
+		victory_points = {
+			5338 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 5
+			air_base = 3
+			dockyard = 1
+			15992 = {
+				naval_base = 3
+			}
+		}
 		owner = TCU
 		add_core_of = TCU
 	}
-	manpower = 385282
+	manpower = 2083888
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

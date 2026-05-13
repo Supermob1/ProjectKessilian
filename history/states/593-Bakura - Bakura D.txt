@@ -5,11 +5,25 @@ state={
 		1455 2683 3410 3452 4339 5029 17184 17185 17225 17239 17252 17258 17274 17296 17297 17319 17326 17340 17357 17363
 		17379 17396 17397 17400
 	}
+	resources={
+		tungsten=5
+		steel=3
+	}
 	history = {
+		victory_points = {
+			1455 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			17396 = {
+				naval_base = 1
+			}
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 72043
+	manpower = 153181
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

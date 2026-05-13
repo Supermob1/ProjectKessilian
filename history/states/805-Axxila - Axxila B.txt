@@ -4,8 +4,23 @@ state={
 	provinces={
 		193 1742 1935 3083 4597 4805 5032 5243 5746 8806 8824 8839 8876 8896 8897 8904 8923 8938 8971 9005
 	}
+	resources={
+		chromium=4
+		coal=2
+	}
 	history = {
+		victory_points = {
+			193 5
+		}
+		victory_points = {
+			1742 3
+		}
 		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 5
+			air_base = 3
+			dockyard = 1
 			8839 = {
 				naval_base = 3
 			}
@@ -13,7 +28,7 @@ state={
 		owner = CIH
 		add_core_of = CIH
 	}
-	manpower = 72481
+	manpower = 1915038
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

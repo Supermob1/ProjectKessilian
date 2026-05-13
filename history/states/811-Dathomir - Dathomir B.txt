@@ -4,11 +4,26 @@ state={
 	provinces={
 		509 777 2695 6200 9121 9133 9148 9160 9175 9176 9185 9199
 	}
+	resources={
+		rubber=1
+	}
 	history = {
+		victory_points = {
+			509 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 2
+			air_base = 1
+			9133 = {
+				naval_base = 1
+			}
+		}
 		owner = DHT
 		add_core_of = DHT
 	}
-	manpower = 3907
+	manpower = 569707
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

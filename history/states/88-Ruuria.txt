@@ -5,8 +5,22 @@ state={
 		19 542 956 1043 1406 1536 1928 2019 2240 2923 3122 3362 3942 4177 4430 4435 4908 6153 6702 6733 6755 6761 6769 6798
 		6846 6847 6903 6919 6939 6965 6970 6998 7004 7019 7044 7053 7086 7088 7089 7132 7154 7210
 	}
+	resources={
+		coal=1
+	}
 	history = {
+		victory_points = {
+			19 5
+		}
+		victory_points = {
+			6761 3
+		}
 		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 3
+			air_base = 2
+			dockyard = 2
 			3122 = {
 				naval_base = 3
 			}
@@ -14,7 +28,7 @@ state={
 		owner = CSA
 		add_core_of = CSA
 	}
-	manpower = 112249
+	manpower = 1645518
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

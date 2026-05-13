@@ -6,11 +6,26 @@ state={
 		17631 17639 17653 17667 17692 17697 17700 17707 17711 17719 17725 17729 17730 17744 17751 17762 17777 17779 17780
 		17795 17796 17820
 	}
+	resources={
+		rubber=3
+	}
 	history = {
+		victory_points = {
+			17622 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			air_base = 1
+			dockyard = 1
+			17730 = {
+				naval_base = 1
+			}
+		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 244431
+	manpower = 593059
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

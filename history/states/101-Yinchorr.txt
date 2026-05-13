@@ -1,46 +1,30 @@
 state={
 	id=101
 	name="STATE_101"
-	resources={
-		# #credits #Credits
-		# chromium #Circuitry
-		# steel #Alloys
-		# tungsten=5#Minerals
-		# rubber=10#Bacta
-		# aluminium #Doonium
-		# oil #Fuel
-		# #credits=5
-	}
 	provinces={
-		106 807 853 911 1371 1481 1516 2509 2725 2843 2871 3389 3495 4127 4268 4488 4552 4729 4796 5317 5364 5523 5855 5945 11268 11277 11296 11297 11307 11339 11346 11349 11359 11375 11397 11398 11410 11420 11431 11441 11445 11464 11465 11471 11478 11507 11517 11531 11535 11546 11547 11560 11564 11584 11588 11589 11598 11601 
+		106 807 853 911 1371 1481 1516 2509 2725 2843 2871 3389 3495 4127 4268 4488 4552 4729 4796 5317 5364 5523 5855 5945
+		11268 11277 11296 11297 11307 11339 11346 11349 11359 11375 11397 11398 11410 11420 11431 11441 11445 11464 11465
+		11471 11478 11507 11517 11531 11535 11546 11547 11560 11564 11584 11588 11589 11598 11601
+	}
+	resources={
+		oil=3
+		aluminium=1
 	}
 	history = {
+		victory_points = {
+			2843 2
+		}
 		buildings = {
-			# radar_station = #Tracking Station
-
-			# #credits_building = 4#Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = 1#Planetary Shields
-
-			# industrial_complex = 3#Civilian Factories
-
-			# arms_factory = 2#Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 1 #Infrastructure
-
-			# air_base = 1#Small Spaceports
+			infrastructure = 1
+			11297 = {
+				naval_base = 1
+			}
 		}
 		owner = REP
 		add_core_of = YIN
 	}
-	manpower=23774
+	manpower = 143137
+	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
-	state_category=wasteland_sector
 	local_supplies=0.000
 }

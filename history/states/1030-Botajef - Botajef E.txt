@@ -6,11 +6,27 @@ state={
 		21406 21408 21409 21413 21417 21423 21424 21425 21430 21431 21433 21434 21439 21441 21442 21443 21447 21448 21453
 		21457 21460 21461 21470 21476 21486
 	}
+	resources={
+		coal=1
+		oil=2
+	}
 	history = {
+		victory_points = {
+			21317 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+			21328 = {
+				naval_base = 2
+			}
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 28795
+	manpower = 561723
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

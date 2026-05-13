@@ -5,11 +5,30 @@ state={
 		848 2049 2285 3059 3363 3659 3801 4144 5007 5460 7427 7439 7441 7449 7455 7460 7462 7467 7470 7478 7490 7491 7492
 		7495 7502 7514 7515 7518 7525 7530 7531 7543 7554 7559 7566 7580 7584 7585 7589
 	}
+	resources={
+		oil=1
+	}
 	history = {
+		victory_points = {
+			3659 5
+		}
+		victory_points = {
+			7478 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 3
+			air_base = 2
+			dockyard = 2
+			7455 = {
+				naval_base = 4
+			}
+		}
 		owner = ZGY
 		add_core_of = ZGY
 	}
-	manpower = 232985
+	manpower = 1817876
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

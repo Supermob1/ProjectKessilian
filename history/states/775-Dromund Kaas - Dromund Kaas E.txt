@@ -5,11 +5,24 @@ state={
 		458 1887 2243 3572 3589 3594 3600 3740 3744 4473 4618 5144 5362 5793 7686 7697 7709 7717 7725 7737 7744 7771 7772
 		7779 7792 7807 7830 7831 7852 7859 7860 7877 7899 7900 7923 7931 7943
 	}
+	resources={
+		oil=3
+	}
 	history = {
+		victory_points = {
+			3594 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			7877 = {
+				naval_base = 1
+			}
+		}
 		owner = CMG
 		add_core_of = CMG
 	}
-	manpower = 268664
+	manpower = 164620
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -5,8 +5,17 @@ state={
 		2130 2646 3093 5213 17419 17420 17425 17430 17461 17466 17467 17475 17489 17508 17509 17515 17523 17548 17564 17581
 		17629
 	}
+	resources={
+		oil=3
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			2130 2
+		}
 		buildings = {
+			infrastructure = 2
+			air_base = 1
 			17430 = {
 				naval_base = 3
 			}
@@ -14,7 +23,7 @@ state={
 		owner = RYL
 		add_core_of = RYL
 	}
-	manpower = 455619
+	manpower = 183121
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -4,8 +4,16 @@ state={
 	provinces={
 		4863 7135 7182 7191 7221 7232
 	}
+	resources={
+		oil=3
+	}
 	history = {
+		victory_points = {
+			7135 2
+		}
 		buildings = {
+			infrastructure = 2
+			air_base = 1
 			7135 = {
 				naval_base = 3
 			}
@@ -13,7 +21,7 @@ state={
 		owner = CSA
 		add_core_of = CSA
 	}
-	manpower = 169042
+	manpower = 84586
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

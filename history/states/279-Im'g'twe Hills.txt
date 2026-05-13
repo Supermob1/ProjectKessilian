@@ -2,53 +2,28 @@ state={
 	id=279
 	name="STATE_279"
 	provinces={
-		1589 2597 4135 4310 16801 16838 16847 16868 16892 16900 16919 16938 
+		1589 2597 4135 4310 16801 16838 16847 16868 16892 16900 16919 16938
 	}
 	resources={
-		# chromium = 10 #Circuitry
-		# steel = 5 #Alloys
-		# tungsten = 2 #Minerals
-		# rubber = 10 #Bacta
-		# aluminium = 1 #Doonium
-		# oil = 30 #Fuel
-		# coal = 30 #Credits
+		oil=2
+		aluminium=2
 	}
 	history = {
-		# victory_points = {
-			# 15763 10
-		# }
-
+		victory_points = {
+			1589 2
+		}
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = 4#Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = 1#Planetary Shields
-
-			# industrial_complex = 3#Civilian Factories
-
-			# arms_factory = 2#Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 2 #Infrastructure
-
-			air_base = 1#Small Spaceports
-			
-			# 15763 = {
-				# naval_base = 3
-			# }
+			infrastructure = 2
+			air_base = 1
+			15763 = {
+				naval_base = 3
+			}
 		}
 		owner = GEO
 		add_core_of = GEO
 	}
-	state_category=wasteland_sector
-	manpower=15510
-	buildings_max_level_factor=1
-	local_supplies=0
+	manpower = 182578
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
 }

@@ -6,8 +6,22 @@ state={
 		8382 8386 8414 8415 8416 8422 8441 8443 8449 8452 8466 8472 8475 8480 8492 8495 8496 8499 8521 8529 8539 8544 8549
 		8550 8559 8562 8572 8583 8599 8612 8619 8622 8637 8638 8654
 	}
+	resources={
+		oil=3
+	}
 	history = {
+		victory_points = {
+			1008 5
+		}
+		victory_points = {
+			8441 3
+		}
 		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 5
+			air_base = 3
+			dockyard = 1
 			1533 = {
 				naval_base = 3
 			}
@@ -15,7 +29,7 @@ state={
 		owner = CMG
 		add_core_of = CMG
 	}
-	manpower = 282703
+	manpower = 1975092
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

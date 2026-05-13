@@ -2,14 +2,26 @@ state={
 	id=212
 	name="STATE_212"
 	provinces={
-		19044 
+		19044
+	}
+	resources={
+		chromium=4
+		coal=1
 	}
 	history = {
+		victory_points = {
+			19044 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 1
-	impassable =  yes
+	manpower = 78644
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

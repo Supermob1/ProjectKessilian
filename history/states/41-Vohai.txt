@@ -5,11 +5,31 @@ state={
 		366 1564 1646 3602 3779 4665 17974 17983 17988 18000 18009 18028 18037 18054 18067 18075 18103 18116 18127 18128
 		18154 18157 18196
 	}
+	resources={
+		chromium=3
+		coal=2
+	}
 	history = {
+		victory_points = {
+			366 5
+		}
+		victory_points = {
+			1564 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 4
+			air_base = 3
+			dockyard = 2
+			18028 = {
+				naval_base = 4
+			}
+		}
 		owner = GKJ
 		add_core_of = GKJ
 	}
-	manpower = 280405
+	manpower = 2319637
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

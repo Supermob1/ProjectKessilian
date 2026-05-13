@@ -4,11 +4,25 @@ state={
 	provinces={
 		20470 20471 20475 20476 20480 20482 20487 20490 20491 20503 20505
 	}
+	resources={
+		coal=3
+		oil=1
+	}
 	history = {
+		victory_points = {
+			20470 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			20476 = {
+				naval_base = 2
+			}
+		}
 		owner = CHS
 		add_core_of = CHS
 	}
-	manpower = 2864548
+	manpower = 576514
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

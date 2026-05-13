@@ -4,8 +4,18 @@ state={
 	provinces={
 		88 768 3468 3567 3995 5565 6376 6386 6389 6390 6404 6406 6417 6420 6421 6427 6430 6439 6441 6444 6459 6481 6504
 	}
+	resources={
+		oil=3
+	}
 	history = {
+		victory_points = {
+			88 2
+		}
 		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
 			88 = {
 				naval_base = 3
 			}
@@ -13,7 +23,7 @@ state={
 		owner = IBC
 		add_core_of = IBC
 	}
-	manpower = 150872
+	manpower = 152635
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

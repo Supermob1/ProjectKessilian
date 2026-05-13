@@ -4,11 +4,26 @@ state={
 	provinces={
 		1419 3071 5366 6196 7093 7130 7157 7177 7178 7202 7226 7249 7289 7295
 	}
+	resources={
+		coal=2
+	}
 	history = {
+		victory_points = {
+			1419 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+			7178 = {
+				naval_base = 1
+			}
+		}
 		owner = IBC
 		add_core_of = IBC
 	}
-	manpower = 38439
+	manpower = 388581
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

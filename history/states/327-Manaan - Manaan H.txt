@@ -4,11 +4,25 @@ state={
 	provinces={
 		2526 13589 13625 13636 13653
 	}
+	resources={
+		oil=3
+	}
 	history = {
+		victory_points = {
+			2526 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			13625 = {
+				naval_base = 1
+			}
+		}
 		owner = TDF
 		add_core_of = TDF
 	}
-	manpower = 82852
+	manpower = 34545
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

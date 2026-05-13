@@ -4,8 +4,22 @@ state={
 	provinces={
 		1280 3008 3338 3352 3358 3903 4091 4114 4565 5896 12112 12146 12154 12188 12208 12220 12243 12244 12315 12321
 	}
+	resources={
+		oil=1
+	}
 	history = {
+		victory_points = {
+			3358 5
+		}
+		victory_points = {
+			12112 3
+		}
 		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 3
+			air_base = 3
+			dockyard = 2
 			4114 = {
 				naval_base = 3
 			}
@@ -13,7 +27,7 @@ state={
 		owner = GKJ
 		add_core_of = GKJ
 	}
-	manpower = 65642
+	manpower = 2218661
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

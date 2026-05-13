@@ -5,11 +5,26 @@ state={
 		20225 20226 20229 20231 20232 20233 20234 20240 20242 20245 20246 20247 20249 20251 20254 20255 20256 20257 20259
 		20260 20264 20265 20268 20271 20272 20275 20276 20280
 	}
+	resources={
+		coal=2
+	}
 	history = {
+		victory_points = {
+			20225 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 2
+			dockyard = 1
+			20240 = {
+				naval_base = 2
+			}
+		}
 		owner = PYK
 		add_core_of = PYK
 	}
-	manpower = 20971
+	manpower = 387480
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

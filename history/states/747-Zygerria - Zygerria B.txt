@@ -5,11 +5,27 @@ state={
 		2099 2886 3034 3065 5076 5472 7205 7230 7282 7290 7305 7323 7324 7325 7331 7352 7368 7369 7384 7398 7401 7402 7407
 		7410 7416 7423 7432
 	}
+	resources={
+		coal=2
+		oil=2
+	}
 	history = {
+		victory_points = {
+			7324 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 2
+			dockyard = 1
+			7290 = {
+				naval_base = 1
+			}
+		}
 		owner = ZGY
 		add_core_of = ZGY
 	}
-	manpower = 161297
+	manpower = 334093
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

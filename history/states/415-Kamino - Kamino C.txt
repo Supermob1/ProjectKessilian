@@ -4,8 +4,16 @@ state={
 	provinces={
 		871 2668 15472 15508 15540 15552 15553 15594
 	}
+	resources={
+		oil=2
+	}
 	history = {
+		victory_points = {
+			871 2
+		}
 		buildings = {
+			infrastructure = 1
+			air_base = 1
 			2668 = {
 				naval_base = 3
 			}
@@ -13,7 +21,7 @@ state={
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 570938
+	manpower = 67330
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

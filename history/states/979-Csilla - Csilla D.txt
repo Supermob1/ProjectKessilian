@@ -5,11 +5,26 @@ state={
 		20614 20615 20616 20619 20620 20623 20624 20628 20630 20632 20633 20636 20637 20643 20644 20648 20650 20653 20658
 		20661
 	}
+	resources={
+		coal=2
+		oil=2
+	}
 	history = {
+		victory_points = {
+			20614 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			air_base = 1
+			20616 = {
+				naval_base = 2
+			}
+		}
 		owner = CHS
 		add_core_of = CHS
 	}
-	manpower = 937313
+	manpower = 348212
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -4,11 +4,31 @@ state={
 	provinces={
 		191 865 3044 6162 13431 13467 13506 13564
 	}
+	resources={
+		chromium=2
+		coal=2
+	}
 	history = {
+		victory_points = {
+			191 5
+		}
+		victory_points = {
+			865 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 3
+			air_base = 2
+			dockyard = 1
+			191 = {
+				naval_base = 4
+			}
+		}
 		owner = HTT
 		add_core_of = HTT
 	}
-	manpower = 268993
+	manpower = 1247432
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

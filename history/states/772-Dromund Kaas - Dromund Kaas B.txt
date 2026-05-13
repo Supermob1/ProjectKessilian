@@ -4,11 +4,26 @@ state={
 	provinces={
 		675 7447 7459 7466 7473 7481 7482 7508
 	}
+	resources={
+		rubber=3
+	}
 	history = {
+		victory_points = {
+			7447 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+			7466 = {
+				naval_base = 1
+			}
+		}
 		owner = CMG
 		add_core_of = CMG
 	}
-	manpower = 58089
+	manpower = 594061
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
