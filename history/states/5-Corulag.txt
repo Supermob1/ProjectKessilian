@@ -2,45 +2,26 @@ state={
 	id=5
 	name="STATE_5"
 	provinces={
-		35 418 1503 1977 2423 4130 5658 11751 11764 11777 11784 11798 
+		35 418 1503 1977 2423 4130 5658 11751 11764 11777 11784 11798
 	}
 	resources={
-		# #credits #Credits
-		# chromium #Circuitry
-		# steel #Alloys
-		# tungsten #Minerals
-		# rubber #Bacta
-		# aluminium #Doonium
-		# oil #Fuel
+		coal=3
 	}
 	history = {
+		victory_points = {
+			35 3
+		}
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = #Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = #Planetary Shields
-
-			# industrial_complex = #Civilian Factories
-
-			# arms_factory = #Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 1#Infrastructure
-
-			# air_base = 1#Small Spaceports
+			infrastructure = 1
+			5658 = {
+				naval_base = 2
+			}
 		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower=420320
+	manpower = 420320
+	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
-	state_category=agricultural_sector
 	local_supplies=0.000
 }

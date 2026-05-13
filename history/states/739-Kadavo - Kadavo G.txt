@@ -5,11 +5,26 @@ state={
 		352 1416 1465 2746 2789 4008 5004 5330 5807 6007 7802 7843 7845 7868 7869 7880 7884 7927 7937 7965 7973 8001 8012
 		8031 8039 8043 8050 8070 8071 8081 8082 8107 8114 8115 8159
 	}
+	resources={
+		oil=1
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			1416 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			air_base = 1
+			8050 = {
+				naval_base = 1
+			}
+		}
 		owner = ZGY
 		add_core_of = ZGY
 	}
-	manpower = 94710
+	manpower = 119669
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

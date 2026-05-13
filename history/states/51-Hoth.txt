@@ -5,11 +5,30 @@ state={
 		30 825 1522 1813 2954 3449 4496 4671 6193 18288 18295 18296 18300 18306 18315 18316 18321 18325 18331 18333 18347
 		18354 18359 18363 18365 18370 18380 18390
 	}
+	resources={
+		oil=4
+	}
 	history = {
+		victory_points = {
+			1813 5
+		}
+		victory_points = {
+			18315 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 7
+			arms_factory = 4
+			air_base = 2
+			dockyard = 2
+			18347 = {
+				naval_base = 4
+			}
+		}
 		owner = NOB
 		add_core_of = NOB
 	}
-	manpower = 14081
+	manpower = 1941918
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

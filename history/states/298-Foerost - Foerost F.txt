@@ -4,11 +4,27 @@ state={
 	provinces={
 		2716 2874 3230 12967 12979 12989 13002 13004 13012
 	}
+	resources={
+		coal=2
+	}
 	history = {
+		victory_points = {
+			2716 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 2
+			air_base = 1
+			dockyard = 1
+			12967 = {
+				naval_base = 2
+			}
+		}
 		owner = TCU
 		add_core_of = TCU
 	}
-	manpower = 260716
+	manpower = 356363
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

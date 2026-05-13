@@ -2,45 +2,19 @@ state={
 	id=254
 	name="STATE_254"
 	provinces={
-		775 849 919 2202 2415 2444 3587 3785 3867 3893 4109 4315 4399 5511 16714 16731 16732 16742 16756 16765 16785 16791 16850 16873 16874 16896 16907 16915 16921 16925 16930 16935 
+		775 849 919 2202 2415 2444 3587 3785 3867 3893 4109 4315 4399 5511 16714 16731 16732 16742 16756 16765 16785 16791
+		16850 16873 16874 16896 16907 16915 16921 16925 16930 16935
 	}
 	resources={
-		# #credits #Credits
-		# chromium #Circuitry
-		# steel #Alloys
-		# tungsten #Minerals
-		# rubber #Bacta
-		# aluminium #Doonium
-		# oil=1 #Fuel
-		#credits=20
+		oil=3
 	}
 	history = {
-
 		victory_points = {
 			4399 5
 		}
-
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = 4#Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = 1#Planetary Shields
-
-			# industrial_complex = 3#Civilian Factories
-
-			# arms_factory = 2#Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 2 #Infrastructure
-
-			air_base = 1#Small Spaceports
+			infrastructure = 2
+			air_base = 1
 			4399 = {
 				naval_base = 3
 			}
@@ -48,8 +22,8 @@ state={
 		owner = TDF
 		add_core_of = TDF
 	}
-	manpower=1
-	buildings_max_level_factor=1
-	local_supplies=0
-	state_category=wasteland_sector
+	manpower = 162888
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
 }

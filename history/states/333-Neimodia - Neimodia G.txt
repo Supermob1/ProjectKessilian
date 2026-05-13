@@ -4,11 +4,27 @@ state={
 	provinces={
 		1054 1720 4176 4622 13178 13197 13212 13229 13249 13273
 	}
+	resources={
+		coal=3
+		oil=1
+	}
 	history = {
+		victory_points = {
+			1720 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 2
+			air_base = 1
+			13178 = {
+				naval_base = 2
+			}
+		}
 		owner = TDF
 		add_core_of = TDF
 	}
-	manpower = 744260
+	manpower = 339452
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

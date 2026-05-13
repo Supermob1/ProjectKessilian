@@ -4,11 +4,25 @@ state={
 	provinces={
 		3236 3430 3657 5600 6100 15363 15378 15404 15412 15426 15449 15480 15490 15500 15506 15507 15534 15545 15551 15574
 	}
+	resources={
+		rubber=1
+	}
 	history = {
+		victory_points = {
+			15426 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			air_base = 1
+			15507 = {
+				naval_base = 2
+			}
+		}
 		owner = BHO
 		add_core_of = BHO
 	}
-	manpower = 346397
+	manpower = 585473
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

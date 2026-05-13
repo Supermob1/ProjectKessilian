@@ -5,11 +5,26 @@ state={
 		199 327 460 1015 2382 2427 3881 4034 4423 4501 5174 5232 13194 13203 13213 13215 13216 13230 13231 13234 13236 13237
 		13245 13258 13259 13260 13266 13267 13290 13291 13296 13302 13303 13310 13321 13328 13337
 	}
+	resources={
+		rubber=4
+		oil=1
+	}
 	history = {
+		victory_points = {
+			1015 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 2
+			13203 = {
+				naval_base = 2
+			}
+		}
 		owner = TOY
 		add_core_of = TOY
 	}
-	manpower = 166468
+	manpower = 488570
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

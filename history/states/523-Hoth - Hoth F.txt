@@ -5,11 +5,27 @@ state={
 		139 2221 2535 2649 4273 5228 5681 6034 18292 18299 18302 18312 18314 18317 18319 18320 18327 18329 18336 18337 18339
 		18340 18350 18351
 	}
+	resources={
+		oil=4
+		aluminium=2
+	}
 	history = {
+		victory_points = {
+			139 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			18327 = {
+				naval_base = 1
+			}
+		}
 		owner = NOB
 		add_core_of = NOB
 	}
-	manpower = 12070
+	manpower = 57631
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

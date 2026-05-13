@@ -4,8 +4,19 @@ state={
 	provinces={
 		2531 15990 15998 16022
 	}
+	resources={
+		tungsten=2
+		steel=2
+		aluminium=2
+	}
 	history = {
+		victory_points = {
+			2531 2
+		}
 		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
 			2531 = {
 				naval_base = 3
 			}
@@ -13,7 +24,7 @@ state={
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 10258
+	manpower = 62027
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

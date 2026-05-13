@@ -5,11 +5,27 @@ state={
 		167 373 1247 1521 2425 2474 2882 3774 4689 5014 5290 5459 5549 5720 6480 6490 6503 6529 6531 6537 6545 6550 6559 6574
 		6584 6592 6618 6636 6647 6658
 	}
+	resources={
+		rubber=4
+		oil=1
+	}
 	history = {
+		victory_points = {
+			3774 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
+			6480 = {
+				naval_base = 1
+			}
+		}
 		owner = CSA
 		add_core_of = CSA
 	}
-	manpower = 201700
+	manpower = 409815
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

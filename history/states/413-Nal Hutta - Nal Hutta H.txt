@@ -5,11 +5,26 @@ state={
 		312 1245 1802 2161 3042 3497 5122 5510 14253 14254 14268 14273 14285 14286 14300 14303 14307 14325 14326 14333 14338
 		14353 14359 14369 14388 14410
 	}
+	resources={
+		rubber=3
+	}
 	history = {
+		victory_points = {
+			1245 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 2
+			air_base = 1
+			14326 = {
+				naval_base = 1
+			}
+		}
 		owner = HTT
 		add_core_of = HTT
 	}
-	manpower = 252112
+	manpower = 558408
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

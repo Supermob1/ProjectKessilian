@@ -5,11 +5,27 @@ state={
 		107 488 543 750 1060 1797 1949 3031 3328 3718 4695 5136 5287 5904 6188 11109 11110 11111 11133 11142 11149 11157
 		11158 11164 11178 11182 11183 11192 11199 11208 11228 11232
 	}
+	resources={
+		rubber=4
+		oil=1
+	}
 	history = {
+		victory_points = {
+			3328 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
+			11157 = {
+				naval_base = 2
+			}
+		}
 		owner = HSS
 		add_core_of = HSS
 	}
-	manpower = 213436
+	manpower = 304153
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -5,11 +5,31 @@ state={
 		62 978 1173 1194 2186 4578 8504 8505 8509 8511 8517 8518 8522 8528 8533 8537 8538 8542 8554 8555 8557 8569 8570 8577
 		8586 8593
 	}
+	resources={
+		chromium=2
+		coal=1
+	}
 	history = {
+		victory_points = {
+			62 5
+		}
+		victory_points = {
+			978 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 3
+			dockyard = 2
+			8509 = {
+				naval_base = 3
+			}
+		}
 		owner = CIH
 		add_core_of = CIH
 	}
-	manpower = 94226
+	manpower = 1302245
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

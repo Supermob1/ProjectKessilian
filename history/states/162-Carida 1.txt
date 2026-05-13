@@ -1,45 +1,26 @@
 state={
 	id=162
 	name="STATE_162"
+	provinces={
+		3302 3837 4264 5941 12103 12120 12122 12135 12144 12147 12166 12177 12192 12194 12200
+	}
 	resources={
-		# #credits= #Credits
-		# chromium= #Circuitry
-		# steel= #Alloys
-		# tungsten=#Minerals
-		# rubber=#Bacta
-		# aluminium= #Doonium
-		# oil= #Fuel
+		oil=3
 	}
 	history = {
+		victory_points = {
+			4264 2
+		}
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = #Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = #Planetary Shields
-
-			# industrial_complex = #Civilian Factories
-
-			# arms_factory = #Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 1#Infrastructure
-
-			# air_base = 1#Small Spaceports
+			infrastructure = 1
+			12166 = {
+				naval_base = 1
+			}
 		}
 		owner = REP
 		add_core_of = REP
 	}
-	provinces={
-		3302 3837 4264 5941 12103 12120 12122 12135 12144 12147 12166 12177 12192 12194 12200 
-	}
-	manpower = 10000
+	manpower = 170969
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -4,11 +4,26 @@ state={
 	provinces={
 		1623 18227 18228 18238 18240
 	}
+	resources={
+		rubber=2
+	}
 	history = {
+		victory_points = {
+			1623 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			18228 = {
+				naval_base = 2
+			}
+		}
 		owner = GSW
 		add_core_of = GSW
 	}
-	manpower = 75293
+	manpower = 228210
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

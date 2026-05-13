@@ -5,11 +5,31 @@ state={
 		479 600 1382 1398 1588 2412 2804 3573 3946 4082 6959 6997 7005 7078 7083 7108 7113 7118 7128 7155 7164 7170 7184 7213
 		7216 7233 7239 7267 7278 7286 7298 7327 7346
 	}
+	resources={
+		coal=2
+		oil=1
+	}
 	history = {
+		victory_points = {
+			2412 5
+		}
+		victory_points = {
+			7113 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 4
+			air_base = 3
+			dockyard = 2
+			7184 = {
+				naval_base = 3
+			}
+		}
 		owner = IBC
 		add_core_of = IBC
 	}
-	manpower = 229416
+	manpower = 2054588
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

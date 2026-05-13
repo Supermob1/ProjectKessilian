@@ -5,8 +5,22 @@ state={
 		450 2330 2401 2463 2844 3348 3506 4139 4571 4891 5824 10248 10288 10312 10313 10327 10337 10349 10367 10378 10385
 		10406 10415 10446 10458 10463 10492 10498 10527 10528 10569 10584
 	}
+	resources={
+		rubber=3
+	}
 	history = {
+		victory_points = {
+			2844 5
+		}
+		victory_points = {
+			10337 3
+		}
 		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 5
+			air_base = 3
+			dockyard = 2
 			10446 = {
 				naval_base = 3
 			}
@@ -14,7 +28,7 @@ state={
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 332978
+	manpower = 2283559
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

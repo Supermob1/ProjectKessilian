@@ -4,8 +4,16 @@ state={
 	provinces={
 		400 1364 4662 11251 11252 11284 11298 11304 11320 11361 11365 11384
 	}
+	resources={
+		oil=2
+	}
 	history = {
+		victory_points = {
+			400 2
+		}
 		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
 			11320 = {
 				naval_base = 3
 			}
@@ -13,7 +21,7 @@ state={
 		owner = HSS
 		add_core_of = HSS
 	}
-	manpower = 80039
+	manpower = 70768
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

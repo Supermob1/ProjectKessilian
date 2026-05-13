@@ -4,11 +4,27 @@ state={
 	provinces={
 		1302 3742 4230 16755 16776 16787 16799
 	}
+	resources={
+		rubber=2
+		oil=1
+	}
 	history = {
+		victory_points = {
+			4230 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+			16787 = {
+				naval_base = 2
+			}
+		}
 		owner = ROD
 		add_core_of = ROD
 	}
-	manpower = 188638
+	manpower = 280328
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

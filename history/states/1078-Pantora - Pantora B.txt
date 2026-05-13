@@ -6,11 +6,28 @@ state={
 		19097 19101 19102 19106 19108 19109 19112 19113 19114 19116 19119 19123 19124 19125 19126 19130 19137 19140 19142
 		19150
 	}
+	resources={
+		coal=2
+		oil=2
+	}
 	history = {
+		victory_points = {
+			19119 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+			19071 = {
+				naval_base = 1
+			}
+		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 151501
+	manpower = 509012
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

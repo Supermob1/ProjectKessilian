@@ -5,11 +5,30 @@ state={
 		1352 1733 2742 4259 4738 4797 12881 12903 12910 12913 12927 12938 12939 12948 12960 12972 12973 12984 12995 12996
 		13009 13013 13026
 	}
+	resources={
+		oil=1
+	}
 	history = {
+		victory_points = {
+			12881 5
+		}
+		victory_points = {
+			12938 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 3
+			dockyard = 2
+			12948 = {
+				naval_base = 4
+			}
+		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 127293
+	manpower = 2229583
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

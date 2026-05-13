@@ -2,36 +2,26 @@ state={
 	id=218
 	name="STATE_218"
 	provinces={
-		627 3294 5374 5680 5982 13622 13670 13704 13708 13762 
+		627 3294 5374 5680 5982 13622 13670 13704 13708 13762
+	}
+	resources={
+		chromium=2
+		coal=2
 	}
 	history = {
+		victory_points = {
+			627 3
+		}
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = #Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = #Planetary Shields
-
-			# industrial_complex = #Civilian Factories
-
-			# arms_factory = #Military Factories
-
-			# dockyard = #Shipyard
-
-			# infrastructure = 1#Infrastructure
-
-			# air_base = 1#Small Spaceports
-
+			infrastructure = 2
+			industrial_complex = 5
+			arms_factory = 2
+			air_base = 2
 		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower=95001
+	manpower = 1181264
 	state_category = large_planet
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

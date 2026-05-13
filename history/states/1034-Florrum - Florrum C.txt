@@ -4,11 +4,28 @@ state={
 	provinces={
 		21822 21824 21828
 	}
+	resources={
+		coal=2
+		oil=1
+	}
 	history = {
+		victory_points = {
+			21822 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+			21824 = {
+				naval_base = 1
+			}
+		}
 		owner = OHN
 		add_core_of = OHN
 	}
-	manpower = 4291
+	manpower = 184741
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

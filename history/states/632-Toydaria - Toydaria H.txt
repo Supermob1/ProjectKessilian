@@ -5,11 +5,25 @@ state={
 		959 1204 1273 1897 3105 3663 3957 4117 4594 5256 6107 13227 13238 13278 13279 13305 13313 13314 13342 13351 13357
 		13386 13418 13422 13429 13430 13448 13477 13478 13494 13541 13559 13590 13633
 	}
+	resources={
+		oil=2
+	}
 	history = {
+		victory_points = {
+			1897 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			13238 = {
+				naval_base = 1
+			}
+		}
 		owner = TOY
 		add_core_of = TOY
 	}
-	manpower = 152971
+	manpower = 182842
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -5,11 +5,27 @@ state={
 		2107 2635 3304 3421 3830 4329 5114 5575 18360 18364 18366 18376 18377 18381 18386 18387 18389 18392 18395 18396 18397
 		18402 18403 18404 18407
 	}
+	resources={
+		tungsten=2
+		coal=1
+	}
 	history = {
+		victory_points = {
+			2635 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+			18402 = {
+				naval_base = 1
+			}
+		}
 		owner = NOB
 		add_core_of = NOB
 	}
-	manpower = 12573
+	manpower = 497526
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
