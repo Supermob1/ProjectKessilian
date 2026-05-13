@@ -4,11 +4,31 @@ state={
 	provinces={
 		28 2153 4012 5130 5686 8846 8934 8953 8967 8987 8991 9006 9018 9024 9032 9037 9047 9052 9059 9072 9080 9095 9126
 	}
+	resources={
+		oil=4
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			28 5
+		}
+		victory_points = {
+			9006 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 2
+			dockyard = 2
+			9037 = {
+				naval_base = 3
+			}
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 276314
+	manpower = 1697585
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

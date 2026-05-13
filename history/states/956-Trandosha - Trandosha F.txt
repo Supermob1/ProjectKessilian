@@ -6,11 +6,25 @@ state={
 		10968 10974 10982 10988 10997 11001 11008 11014 11015 11017 11018 11025 11026 11029 11032 11033 11037 11038 11048
 		11049 11052 11058 11069 11074 11079 11088 11089 11092 11093 11106
 	}
+	resources={
+		oil=2
+	}
 	history = {
+		victory_points = {
+			2200 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			10988 = {
+				naval_base = 1
+			}
+		}
 		owner = HSS
 		add_core_of = HSS
 	}
-	manpower = 353504
+	manpower = 108436
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

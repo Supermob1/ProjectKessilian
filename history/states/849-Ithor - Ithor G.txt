@@ -4,11 +4,25 @@ state={
 	provinces={
 		816 819 4469 4939 6164 10018 10043 10058 10068 10086 10095 10105 10109 10136 10139 10140 10160 10178 10185
 	}
+	resources={
+		coal=3
+		oil=2
+	}
 	history = {
+		victory_points = {
+			10018 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			10109 = {
+				naval_base = 2
+			}
+		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 101053
+	manpower = 566959
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

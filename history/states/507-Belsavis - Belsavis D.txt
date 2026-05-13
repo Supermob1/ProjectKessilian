@@ -5,8 +5,17 @@ state={
 		374 381 1143 1217 2061 2198 3340 4024 5170 5709 17892 17894 17895 17898 17901 17902 17904 17906 17907 17908 17921
 		17939 17950
 	}
+	resources={
+		oil=1
+		aluminium=2
+	}
 	history = {
+		victory_points = {
+			374 2
+		}
 		buildings = {
+			infrastructure = 1
+			arms_factory = 1
 			374 = {
 				naval_base = 3
 			}
@@ -14,7 +23,7 @@ state={
 		owner = SJX
 		add_core_of = SJX
 	}
-	manpower = 200556
+	manpower = 145090
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

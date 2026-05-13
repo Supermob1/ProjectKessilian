@@ -2,19 +2,29 @@ state={
 	id=207
 	name="STATE_207"
 	provinces={
-		893 3529 4223 13160 13164 13173 13177 13179 13187 13190 13207 
+		893 3529 4223 13160 13164 13173 13177 13179 13187 13190 13207
+	}
+	resources={
+		coal=1
+		oil=1
 	}
 	history = {
-	
-		owner = REP
-		add_core_of = REP
+		victory_points = {
+			3529 3
+		}
 		buildings = {
-			13160= {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 2
+			air_base = 1
+			13160 = {
 				naval_base = 3
 			}
 		}
+		owner = REP
+		add_core_of = REP
 	}
-	manpower=133315
+	manpower = 1365934
 	state_category = large_planet
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

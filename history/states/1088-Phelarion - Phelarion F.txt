@@ -4,11 +4,27 @@ state={
 	provinces={
 		19288 19291 19292 19293 19297 19298 19299 19301 19302 19304 19305 19306 19307 19308
 	}
+	resources={
+		tungsten=2
+		steel=2
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			19291 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 2
+			19305 = {
+				naval_base = 1
+			}
+		}
 		owner = GSW
 		add_core_of = GSW
 	}
-	manpower = 20031
+	manpower = 341201
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

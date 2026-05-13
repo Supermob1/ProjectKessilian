@@ -2,53 +2,32 @@ state={
 	id=278
 	name="STATE_278"
 	provinces={
-		95 877 1238 1464 1824 2163 2734 3257 5047 5422 5519 16878 16888 16899 16914 16916 16918 16927 16928 16946 16950 16953 16972 16976 16993 17022 17039 17040 17063 17067 17077 17088 17124 17181 17214 
+		95 877 1238 1464 1824 2163 2734 3257 5047 5422 5519 16878 16888 16899 16914 16916 16918 16927 16928 16946 16950 16953
+		16972 16976 16993 17022 17039 17040 17063 17067 17077 17088 17124 17181 17214
 	}
 	resources={
-		# chromium = 10 #Circuitry
-		# steel = 5 #Alloys
-		# tungsten = 2 #Minerals
-		# rubber = 10 #Bacta
-		# aluminium = 1 #Doonium
-		# oil = 30 #Fuel
-		# coal = 30 #Credits
+		oil=3
+		aluminium=1
 	}
 	history = {
 		victory_points = {
 			16972 10
 		}
-
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = 4#Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = 1#Planetary Shields
-
-			industrial_complex = 3#Civilian Factories
-
-			arms_factory = 2#Military Factories
-
-			dockyard = 5#Shipyard
-
-			infrastructure = 2 #Infrastructure
-
-			air_base = 1#Small Spaceports
-			
-			# 15763 = {
-				# naval_base = 3
-			# }
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+			dockyard = 5
+			15763 = {
+				naval_base = 3
+			}
 		}
 		owner = GEO
 		add_core_of = GEO
 	}
-	state_category=industrial_sector
-	manpower=416664
-	buildings_max_level_factor=1
-	local_supplies=0
+	manpower = 416664
+	state_category = industrial_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
 }

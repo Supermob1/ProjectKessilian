@@ -4,11 +4,24 @@ state={
 	provinces={
 		999 1645 3327 8297 8330 8352 8399 8439
 	}
+	resources={
+		oil=4
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			999 2
+		}
+		buildings = {
+			infrastructure = 1
+			8330 = {
+				naval_base = 1
+			}
+		}
 		owner = CMG
 		add_core_of = CMG
 	}
-	manpower = 38994
+	manpower = 193517
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

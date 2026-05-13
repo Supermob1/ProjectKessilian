@@ -4,8 +4,23 @@ state={
 	provinces={
 		1487 2040 11823 11849 11867
 	}
+	resources={
+		chromium=4
+		coal=3
+	}
 	history = {
+		victory_points = {
+			1487 5
+		}
+		victory_points = {
+			2040 3
+		}
 		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			arms_factory = 5
+			air_base = 2
+			dockyard = 1
 			11823 = {
 				naval_base = 3
 			}
@@ -13,7 +28,7 @@ state={
 		owner = OND
 		add_core_of = OND
 	}
-	manpower = 409037
+	manpower = 807298
 	state_category = capital_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

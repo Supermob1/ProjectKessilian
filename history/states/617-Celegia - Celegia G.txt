@@ -5,11 +5,25 @@ state={
 		625 1970 2091 3613 5326 5605 12696 12732 12738 12757 12776 12799 12806 12822 12827 12832 12838 12860 12893 12901
 		12907 12908 12918
 	}
+	resources={
+		oil=4
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			3613 2
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			12757 = {
+				naval_base = 1
+			}
+		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 127293
+	manpower = 182150
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

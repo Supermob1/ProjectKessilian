@@ -2,40 +2,17 @@ state={
 	id=7
 	name="STATE_7"
 	provinces={
-		944 3324 3623 4162 5878 12080 12084 12116 
+		944 3324 3623 4162 5878 12080 12084 12116
 	}
 	resources={
-		# #credits= #Credits
-		# chromium= #Circuitry
-		# steel= #Alloys
-		# tungsten=#Minerals
-		# rubber=#Bacta
-		# aluminium= #Doonium
-		# oil= #Fuel
+		rubber=4
 	}
 	history = {
+		victory_points = {
+			3324 3
+		}
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = #Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = #Planetary Shields
-
-			# industrial_complex = #Civilian Factories
-
-			# arms_factory = #Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 1#Infrastructure
-
-			# air_base = 1#Small Spaceports
-
+			infrastructure = 1
 		}
 		owner = REP
 		add_core_of = REP

@@ -5,11 +5,24 @@ state={
 		194 653 789 1335 1538 1722 2074 2797 3454 4184 4421 4847 5454 5524 8620 8623 8642 8643 8646 8649 8652 8657 8668 8672
 		8690 8694 8707 8710 8711 8718 8719 8730 8734 8735 8742 8762 8787 8788
 	}
+	resources={
+		coal=1
+		oil=2
+	}
 	history = {
+		victory_points = {
+			194 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 2
+			air_base = 1
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 1247409
+	manpower = 440419
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

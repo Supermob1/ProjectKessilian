@@ -2,13 +2,30 @@ state={
 	id=209
 	name="STATE_209"
 	provinces={
-		1308 3371 3749 4004 4744 13123 13143 13157 13170 
+		1308 3371 3749 4004 4744 13123 13143 13157 13170
+	}
+	resources={
+		coal=2
+		oil=1
 	}
 	history = {
+		victory_points = {
+			13123 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 4
+			arms_factory = 2
+			air_base = 2
+			dockyard = 1
+			3749 = {
+				naval_base = 1
+			}
+		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower=66331
+	manpower = 899789
 	state_category = large_planet
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

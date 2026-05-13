@@ -4,11 +4,27 @@ state={
 	provinces={
 		2173 2332 2353 4681 13372 13389 13396 13426 13434 13460 13469 13499 13532 13536 13553 13584
 	}
+	resources={
+		coal=2
+		oil=1
+	}
 	history = {
+		victory_points = {
+			2353 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 2
+			dockyard = 1
+			13499 = {
+				naval_base = 1
+			}
+		}
 		owner = REN
 		add_core_of = REN
 	}
-	manpower = 472491
+	manpower = 469997
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

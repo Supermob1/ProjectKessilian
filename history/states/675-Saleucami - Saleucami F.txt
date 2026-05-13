@@ -6,11 +6,24 @@ state={
 		11101 11113 11114 11117 11123 11126 11127 11135 11136 11143 11145 11161 11166 11167 11173 11180 11184 11193 11205
 		11213 11237
 	}
+	resources={
+		tungsten=5
+		steel=2
+		aluminium=2
+	}
 	history = {
+		victory_points = {
+			59 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			air_base = 1
+		}
 		owner = TCU
 		add_core_of = TCU
 	}
-	manpower = 233168
+	manpower = 52926
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

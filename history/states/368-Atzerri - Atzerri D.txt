@@ -5,11 +5,24 @@ state={
 		679 1778 1904 2005 2191 2234 2576 2662 3152 4761 4859 5246 5691 5863 14978 14989 15019 15035 15060 15061 15067 15081
 		15082 15101 15102 15108 15109 15130 15140 15156 15157 15174 15175 15184 15185 15195 15201 15208 15217 15263
 	}
+	resources={
+		oil=2
+	}
 	history = {
+		victory_points = {
+			1904 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			5246 = {
+				naval_base = 1
+			}
+		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 449830
+	manpower = 90385
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

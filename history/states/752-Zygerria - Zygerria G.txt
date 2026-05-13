@@ -4,11 +4,26 @@ state={
 	provinces={
 		979 982 2900 3035 4317 4352 4807 4864 6121 7238 7266 7277 7306 7326 7357 7371 7373 7374 7387 7388 7399 7408 7424 7428
 	}
+	resources={
+		coal=2
+		oil=1
+	}
 	history = {
+		victory_points = {
+			6121 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			air_base = 1
+			7306 = {
+				naval_base = 2
+			}
+		}
 		owner = ZGY
 		add_core_of = ZGY
 	}
-	manpower = 143375
+	manpower = 301501
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

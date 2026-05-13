@@ -6,11 +6,26 @@ state={
 		9341 9353 9361 9370 9381 9386 9399 9403 9410 9415 9419 9433 9434 9452 9453 9454 9459 9460 9468 9486 9492 9500 9504
 		9512
 	}
+	resources={
+		oil=1
+	}
 	history = {
+		victory_points = {
+			1105 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			9303 = {
+				naval_base = 1
+			}
+		}
 		owner = CIS
 		add_core_of = CIS
 	}
-	manpower = 290619
+	manpower = 167685
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -2,36 +2,23 @@ state={
 	id=150
 	name="STATE_150"
 	provinces={
-		250 2630 11838 11844 11861 11875 11882 11885 11898 
+		250 2630 11838 11844 11861 11875 11882 11885 11898
+	}
+	resources={
+		tungsten=1
+		coal=1
 	}
 	history = {
+		victory_points = {
+			11838 2
+		}
 		buildings = {
-
-			# radar_station = #Tracking Station
-
-			# #credits_building = #Trading Hubs
-
-			# minerals_refinery = #Mineral Refinery
-
-			# synthetic_refinery = #Tibanna Refinery
-
-			# anti_air_building = #Planetary Shields
-
-			# industrial_complex = #Civilian Factories
-
-			# arms_factory = #Military Factories
-
-			# dockyard = #Shipyard
-
-			infrastructure = 1#Infrastructure
-
-			# air_base = 1#Small Spaceports
-
+			infrastructure = 1
 		}
 		owner = REP
 		add_core_of = REP
 	}
-	manpower = 20000
+	manpower = 133078
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

@@ -5,11 +5,27 @@ state={
 		386 1711 3270 3669 4150 4500 4861 5920 6068 14040 14051 14052 14075 14078 14082 14093 14107 14111 14120 14127 14137
 		14138 14142 14158 14164 14167 14171 14173 14190 14195 14199 14216 14227 14232
 	}
+	resources={
+		rubber=4
+	}
 	history = {
+		victory_points = {
+			14120 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+			14190 = {
+				naval_base = 1
+			}
+		}
 		owner = DKJ
 		add_core_of = DKJ
 	}
-	manpower = 182994
+	manpower = 326640
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

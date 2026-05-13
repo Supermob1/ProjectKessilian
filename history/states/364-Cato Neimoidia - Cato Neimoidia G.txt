@@ -5,11 +5,24 @@ state={
 		15 293 339 1343 3087 3426 3772 4123 4342 4963 5438 6066 14589 14592 14596 14598 14599 14608 14614 14615 14621 14628
 		14630 14634 14637 14638 14643 14646 14652 14653 14661 14664 14668 14669 14672 14679 14682 14684 14698
 	}
+	resources={
+		coal=3
+	}
 	history = {
+		victory_points = {
+			3772 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			14592 = {
+				naval_base = 1
+			}
+		}
 		owner = TDF
 		add_core_of = TDF
 	}
-	manpower = 951796
+	manpower = 370993
 	state_category = agricultural_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

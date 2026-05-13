@@ -4,11 +4,25 @@ state={
 	provinces={
 		3223 5073 18558 18559 18561 18564 18569 18573 18575 18581 18587 18589
 	}
+	resources={
+		oil=1
+		aluminium=1
+	}
 	history = {
+		victory_points = {
+			5073 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			18581 = {
+				naval_base = 1
+			}
+		}
 		owner = TCU
 		add_core_of = TCU
 	}
-	manpower = 42134
+	manpower = 113156
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
