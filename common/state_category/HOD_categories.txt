@@ -1,6 +1,6 @@
 state_categories = {
 	agricultural_sector = {
-		local_building_slots = 2
+		local_building_slots = 25
 		color = { 34 139 34 }
 		local_manpower = 0.15
 		recruitable_population_factor = 0.10
@@ -10,7 +10,7 @@ state_categories = {
 	}
 
 	capital_sector = {
-		local_building_slots = 20
+		local_building_slots = 25
 		color = { 255 215 0 }
 		starting_compliance = 0.20
 		mobilization_speed = 0.15
@@ -20,7 +20,7 @@ state_categories = {
 	}
 
 	economic_sector = {
-		local_building_slots = 8
+		local_building_slots = 25
 		color = { 30 144 255 }
 		local_building_slots_factor = 0.20
 		local_factories = 0.10
@@ -30,7 +30,7 @@ state_categories = {
 	}
 
 	industrial_sector = {
-		local_building_slots = 16
+		local_building_slots = 25
 		color = { 169 169 169 }
 
 		state_production_speed_industrial_complex_factor = 0.25 #
@@ -42,7 +42,7 @@ state_categories = {
 	}
 
 	mining_sector = {
-		local_building_slots = 4
+		local_building_slots = 25
 		color = { 139 69 19 }
 
 		state_resources_factor = 0.40
@@ -53,7 +53,7 @@ state_categories = {
 	}
 
 	wasteland_sector = {
-		local_building_slots = 3
+		local_building_slots = 25
 		color = { 0 0 0 }
 		enemy_attrition = 0.50
 		enemy_army_speed_factor = -0.40
