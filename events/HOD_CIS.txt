@@ -75,20 +75,31 @@ country_event = { # general grevious
 
 	option = {
 		name = confederacy.2.a
-		add_corps_commander_role = {
-		character = CIS_general_grievous
-			traits = {
-				trait_reckless
-				skilled_staffer
-				adaptable
-				commando
-				trickster
+		CIS_grievous = {
+			add_advisor_role = {
+				advisor = {
+					slot = army_chief
+					cost = 50
+					idea_token = grievous_army_chief
+					traits = { cybernetic_warlord army_chief_offensive_1 }
+				}
 			}
-			skill=5
-			attack_skill=6
-			defense_skill=4
-			planning_skill=1
-			logistics_skill=4
+			add_advisor_role = {
+				advisor = {
+					slot=political_advisor
+					idea_token=grievous_pol
+					cost=150
+					traits={ cybernetic_warlord warmonger }
+				}
+			}
+			add_field_marshal_role = {
+			  	traits = { offensive_doctrine }
+				skill = 4 
+				attack_skill=5
+				defense_skill=2
+				planning_skill=3
+				logistics_skill=2
+			}
 		}
 		ai_chance = { 
 			factor = 25	
@@ -299,6 +310,16 @@ country_event = { # blade in dark
 	option = { 
 		name = confederacy.9.a
 
+		CIS_asajj_ventress = {
+			add_advisor_role = {
+				advisor = {
+					slot=political_advisor
+					idea_token=asajj_ventress_pol
+					cost=100
+					traits={ shadow_assassin silent_workhorse }
+				}
+			}
+		}
 	      
 		ai_chance = { 
 			factor = 25	

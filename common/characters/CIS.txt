@@ -264,15 +264,6 @@ characters={
 	CIS_asajj_ventress={
 		name="Asajj Ventress"
 		portraits={ civilian={ small="gfx/characters/CIS/asajj_ventress_political_advisor.png" large="gfx/leaders/CIS/portrait_Asajj_Ventress.dds" } }
-		advisor={
-			slot=political_advisor
-			idea_token=asajj_ventress_pol
-			name=asajj_ventress
-			cost=100 #ledger=politics
-			allowed={ original_tag=CIS } visible={ original_tag=CIS }
-			traits={ shadow_assassin silent_workhorse }
-			ai_will_do={ factor=1 }
-		}
 	}
 
 	CIS_sevrance_tann={
@@ -340,29 +331,6 @@ characters={
 			desc="CIS_grievous_chief_desc"
 			ideology=unitist_subtype
 			traits={  }
-		}
-		advisor={
-			slot=political_advisor
-			idea_token=grievous_pol
-			name=grievous
-			cost=150 #ledger=politics
-			allowed={ original_tag=CIS } visible={ original_tag=CIS }
-			traits={ cybernetic_warlord warmonger }
-			ai_will_do={ factor=1 }
-		}
-		advisor={
-			slot = army_chief
-			idea_token = grievous_army_chief
-			name = grievous
-			cost = 150
-			ledger = army
-			allowed={ original_tag=CIS } visible={ original_tag=CIS }
-			traits = { cybernetic_warlord army_chief_offensive_1 }
-			ai_will_do={ factor=1 }
-		}
-		field_marshal={
-			traits={ offensive_doctrine }
-			skill=4 attack_skill=5 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
 		}
 	}
 	CIS_poggle_the_lesser={
