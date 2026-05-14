@@ -3867,6 +3867,196 @@ guiTypes = {
 		}
 
 		containerWindowType = {
+			name = "droid_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+			scroll_wheel_factor = 40
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 1400 height = 1680
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="droid_techtree_bg"
+					spriteType = "GFX_infantry_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+
+				# Era column headers (x = 140 + y_tech * 70)
+				instantTextBoxType = {
+					name = "droid_era_postruusan"
+					position = { x = 140 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Post-Ruusan"
+					maxWidth = 170
+					maxHeight = 32
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_era_highrepublic"
+					position = { x = 420 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "High Republic"
+					maxWidth = 170
+					maxHeight = 32
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_era_laterepublic"
+					position = { x = 700 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Late Republic"
+					maxWidth = 170
+					maxHeight = 32
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_era_clonewars"
+					position = { x = 980 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Clone Wars"
+					maxWidth = 170
+					maxHeight = 32
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_era_latecw"
+					position = { x = 1260 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Late Clone Wars"
+					maxWidth = 170
+					maxHeight = 32
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_era_imperial"
+					position = { x = 1540 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Imperial Era"
+					maxWidth = 170
+					maxHeight = 32
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+
+				# Row labels (y = 140 + x_tech * 70)
+				instantTextBoxType = {
+					name = "droid_row_commando"
+					position = { x = 30 y = 130 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Commando Droids"
+					maxWidth = 250
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_row_infantry"
+					position = { x = 30 y = 260 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Infantry Droids"
+					maxWidth = 250
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_row_destroyer"
+					position = { x = 30 y = 390 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Droideka"
+					maxWidth = 250
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_row_magnaguard"
+					position = { x = 30 y = 550 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "MagnaGuard"
+					maxWidth = 250
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_row_heavy"
+					position = { x = 30 y = 680 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Heavy Droids"
+					maxWidth = 250
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_row_spider"
+					position = { x = 30 y = 810 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Spider Droids"
+					maxWidth = 250
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+
+			}
+
+			gridboxtype = {
+				name = "early_droid_infantry_tree"
+				position = { x = 140 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+
+		}
+
+		containerWindowType = {
 			name = "folder_tabs"
 			position = { x=0 y=7 }
 			size = { width = 100%% height = 30 }
@@ -3966,6 +4156,13 @@ guiTypes = {
 				quadTextureSprite = "GFX_techtree_engineering_tab"
 				frame = 1
 				clicksound = ui_research_tab_engineering
+			}
+			buttonType = {
+				position = { x = 200 y = 0 }
+				name = "droid_folder_tab"
+				quadTextureSprite = "GFX_infantry_folder_tab"
+				frame = 1
+				clicksound = ui_research_tab_infantry
 			}
 
 			iconType = {
@@ -5910,6 +6107,114 @@ guiTypes = {
 		iconType = {
 			name = "can_assign_design_team_icon"
 			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_droid_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "bg"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		gridboxtype = {
+			name = "special_project_specialization_list"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=3 y=3 }
+			spriteType = "GFX_technology_medium"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=-1 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = -1 y = -21 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_droid_folder_item"
+		position = { x=-56 y=-7 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		gridboxtype = {
+			name = "special_project_specialization_list"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=91 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -3 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 160
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=111 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 111 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
 			spriteType = "GFX_design_team_icon"
 		}
 	}

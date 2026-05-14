@@ -1,0 +1,573 @@
+technologies = {
+	# Year-to-position variable map (matches existing tech files)
+	# NOTE: In HOI4's format="LEFT" gridboxtype, Y is the horizontal axis (time/era)
+	# and X is the vertical axis (unit type row). Variables map years to Y positions.
+	
+	###Y values###
+	@Post_Ruu = 0
+	@High_Rep = 4
+	@Late_Rep = 8
+	@Early_CW = 12
+	@Late_CW = 16
+	@Imperial = 20
+	##############
+	###X values###
+	@Commando = 0
+	@Infantry = 2
+	@Droideka = 4
+	@Special_Early_Droid = 5
+	@Magnaguard = 6
+	@HeavyInfantry = 8
+	@Spider = 10
+	##############
+	# ──────────────────────────────────────────────────────────────────────────
+	# ROOT NODE — Post-Ruusan era (1000 BBY)
+	# x = 7  (vertically centered between infantry row x=4 and heavy row x=10)
+	# y = 0  (leftmost era column)
+	# ──────────────────────────────────────────────────────────────────────────
+	early_droid_infantry = {
+		enable_equipments = {
+			cis_early_droid_equipment
+		}
+		path = {
+			leads_to_tech = high_republic_infantry_droids
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = high_republic_heavy_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 960
+		folder = {
+			name = droid_folder
+			position = { x = @Special_Early_Droid y = @Post_Ruu }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	# ──────────────────────────────────────────────────────────────────────────
+	# HIGH REPUBLIC ERA (700 BBY)  —  y = 2
+	# ──────────────────────────────────────────────────────────────────────────
+	high_republic_infantry_droids = {
+		enable_equipments = {
+			cis_hr_infantry_droid_equipment
+		}
+		path = {
+			leads_to_tech = late_republic_infantry_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 964
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @High_Rep }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	high_republic_heavy_droids = {
+		enable_equipments = {
+			cis_hr_heavy_droid_equipment
+		}
+		path = {
+			leads_to_tech = late_republic_heavy_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 964
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @High_Rep }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+	# ──────────────────────────────────────────────────────────────────────────
+	# LATE REPUBLIC ERA (200 BBY)  —  y = 4
+	# ──────────────────────────────────────────────────────────────────────────
+	late_republic_infantry_droids = {
+		enable_equipments = {
+			cis_lr_b1_early_equipment
+		}
+		path = {
+			leads_to_tech = cw_infantry_droids
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = droideka_early
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 976
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @Late_Rep }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "976.1.1"
+			}
+		}
+	}
+	late_republic_heavy_droids = {
+		enable_equipments = {
+			cis_lr_b2_early_equipment
+		}
+		path = {
+			leads_to_tech = early_cw_heavy_droids
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = early_magnaguard
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = early_spider_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 976
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @Late_Rep }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "976.1.1"
+			}
+		}
+	}
+	# ──────────────────────────────────────────────────────────────────────────
+	# EARLY CLONE WARS ERA (22 BBY)  —  y = 6
+	# ──────────────────────────────────────────────────────────────────────────
+	cw_infantry_droids = {
+		enable_equipments = {
+			cis_cw_b1_adv_equipment
+		}
+		path = {
+			leads_to_tech = late_cw_infantry_droids
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = hkb3_commando_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 977
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+		}
+	}
+	early_cw_heavy_droids = {
+		enable_equipments = {
+			cis_cw_b2_adv_equipment
+		}
+		path = {
+			leads_to_tech = late_cw_heavy_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 977
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+		}
+	}
+	hkb3_commando_droid = {
+		enable_equipments = {
+			cis_hkb3_commando_equipment
+		}
+		path = {
+			leads_to_tech = bx_battle_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 977
+		folder = {
+			name = droid_folder
+			position = { x = @Commando y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+		}
+	}
+	droideka_early = {
+		enable_equipments = {
+			cis_droideka_early_equipment
+		}
+		path = {
+			leads_to_tech = droideka_adv
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 977
+		folder = {
+			name = droid_folder
+			position = { x = @Droideka y = @Late_Rep }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+		}
+	}
+	early_magnaguard = {
+		enable_equipments = {
+			cis_magnaguard_early_equipment
+		}
+		path = {
+			leads_to_tech = adv_magnaguard
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 977
+		folder = {
+			name = droid_folder
+			position = { x = @Magnaguard y = @Late_Rep }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+		}
+	}
+	early_spider_droid = {
+		enable_equipments = {
+			cis_early_spider_equipment
+		}
+		path = {
+			leads_to_tech = cw_spider_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 977
+		folder = {
+			name = droid_folder
+			position = { x = @Spider y = @Late_Rep }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+		}
+	}
+	# ──────────────────────────────────────────────────────────────────────────
+	# LATE CLONE WARS ERA (20 BBY)  —  y = 8
+	# ──────────────────────────────────────────────────────────────────────────
+	late_cw_infantry_droids = {
+		enable_equipments = {
+			cis_late_cw_infantry_equipment
+		}
+		path = {
+			leads_to_tech = imperial_infantry_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @Late_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+	late_cw_heavy_droids = {
+		enable_equipments = {
+			cis_late_cw_b3_equipment
+		}
+		path = {
+			leads_to_tech = imperial_heavy_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @Late_CW }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+	bx_battle_droid = {
+		enable_equipments = {
+			cis_bx_battle_droid_equipment
+		}
+		path = {
+			leads_to_tech = hk77_assassin_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Commando y = @Late_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+	droideka_adv = {
+		enable_equipments = {
+			cis_droideka_adv_equipment
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Droideka y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+	adv_magnaguard = {
+		enable_equipments = {
+			cis_magnaguard_adv_equipment
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Magnaguard y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+	cw_spider_droid = {
+		enable_equipments = {
+			cis_cw_spider_equipment
+		}
+		path = {
+			leads_to_tech = late_spider_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Spider y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+	# ──────────────────────────────────────────────────────────────────────────
+	# EARLY EMPIRE ERA (18 BBY)  —  y = 10
+	# ──────────────────────────────────────────────────────────────────────────
+	imperial_infantry_droids = {
+		enable_equipments = {
+			cis_imperial_infantry_droid_equipment
+		}
+		research_cost = 1.5
+		start_year = 982
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @Imperial }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
+	imperial_heavy_droids = {
+		enable_equipments = {
+			cis_imperial_heavy_droid_equipment
+		}
+		research_cost = 2.0
+		start_year = 982
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @Imperial }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
+	hk77_assassin_droid = {
+		enable_equipments = {
+			cis_hk77_equipment
+		}
+		research_cost = 2.5
+		start_year = 982
+		folder = {
+			name = droid_folder
+			position = { x = @Commando y = @Imperial }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
+	late_spider_droid = {
+		enable_equipments = {
+			cis_late_spider_equipment
+		}
+		research_cost = 2.0
+		start_year = 982
+		folder = {
+			name = droid_folder
+			position = { x = @Spider y = @Late_CW }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
+}
