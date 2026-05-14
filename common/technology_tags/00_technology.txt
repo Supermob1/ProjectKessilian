@@ -143,7 +143,12 @@ technology_categories = {
 technology_folders = {
 	infantry_folder = {
 		available = {
-			# NOT = { tag = REP }
+			NOT = { 
+				OR = { 
+					tag = CIS 
+					tag = REP
+				}
+			}
 		}
 		ledger = army
 	}
@@ -158,38 +163,29 @@ technology_folders = {
 	}
 	nsb_armour_folder = {
 		ledger = army
-		available = {
-			always = no
-		}
 	}
 	artillery_folder = {
-		available = {
-			always = no
-		}
 		ledger = army
 	}
 	air_techs_folder = {
+		available = {
+			always = no
+		}
 		ledger = air
 	}
 	bba_air_techs_folder = {
-		available = {
-			always = no
-		}
 		ledger = air
 	}
 	naval_folder = {
+		available = {
+			always = no
+		}
 		ledger = navy
 	}
 	mtgnavalfolder = {
-		available = {
-			always = no
-		}
 		ledger = navy
 	}
 	mtgnavalsupportfolder = {
-		available = {
-			always = no
-		}
 		ledger = navy
 	}
 	industry_folder = {
@@ -216,8 +212,7 @@ technology_folders = {
 	}
 	republic_folder = {
 		available = {
-			# tag = REP
-			always = no
+			tag = REP
 		}
 		ledger = army #For now
 	}
@@ -225,6 +220,9 @@ technology_folders = {
 		ledger = civilian
 	}
 	droid_folder = {
+		available = {
+			tag = CIS
+		}
 		ledger = army
 	}
 }
