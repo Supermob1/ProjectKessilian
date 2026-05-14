@@ -118,7 +118,7 @@ country_event = { # opening of the congress
 	id = confederacy.4
 	title = confederacy.4.t
 	desc = confederacy.4.d
-	picture = GFX_news_event_dooku_speech
+	picture = GFX_country_event_opening_of_the_congress
 	
 	is_triggered_only = yes
 	
@@ -126,6 +126,28 @@ country_event = { # opening of the congress
 
 	option = { 
 		name = confederacy.4.a
+		add_popularity = {
+			ideology = inclusivist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = distributionist
+			popularity = 0.05
+		}
+		ai_chance = { 
+			factor = 25	
+		}
+	}
+	option = { 
+		name = confederacy.4.b
+		add_popularity = {
+			ideology = corporate_consortium
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = akaanadocrat
+			popularity = 0.05
+		}
 		ai_chance = { 
 			factor = 25	
 		}
@@ -369,7 +391,7 @@ country_event = { # Reassure the Congress
 	id = confederacy.14
 	title = confederacy.14.t
 	desc = confederacy.14.d
-	picture = GFX_news_event_dooku_speech
+	picture = GFX_country_event_reassure_the_congress
 	
 	is_triggered_only = yes
 	
@@ -377,7 +399,6 @@ country_event = { # Reassure the Congress
 
 	option = { 
 		name = confederacy.14.a
-
 	      
 		ai_chance = { 
 			factor = 25	

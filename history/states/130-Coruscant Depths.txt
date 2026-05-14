@@ -9,15 +9,8 @@ state={
 		coal=3
 	}
 	history = {
-		victory_points = {
-			19043 2
-		}
 		buildings = {
 			infrastructure = 2
-			air_base = 1
-			19043 = {
-				naval_base = 1
-			}
 		}
 		owner = REP
 		add_core_of = REP
@@ -26,4 +19,5 @@ state={
 	state_category = wasteland_sector
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
+	impassable = yes
 }
