@@ -27,7 +27,7 @@ technologies = {
 	# ──────────────────────────────────────────────────────────────────────────
 	early_droid_infantry = {
 		enable_equipments = {
-			cis_early_droid_equipment
+			cis_infantry_droid_equipment_1
 		}
 		path = {
 			leads_to_tech = high_republic_infantry_droids
@@ -56,7 +56,7 @@ technologies = {
 	# ──────────────────────────────────────────────────────────────────────────
 	high_republic_infantry_droids = {
 		enable_equipments = {
-			cis_hr_infantry_droid_equipment
+			cis_infantry_droid_equipment_2
 		}
 		path = {
 			leads_to_tech = late_republic_infantry_droids
@@ -78,7 +78,7 @@ technologies = {
 	}
 	high_republic_heavy_droids = {
 		enable_equipments = {
-			cis_hr_heavy_droid_equipment
+			cis_heavy_droid_equipment_1
 		}
 		path = {
 			leads_to_tech = late_republic_heavy_droids
@@ -103,7 +103,7 @@ technologies = {
 	# ──────────────────────────────────────────────────────────────────────────
 	late_republic_infantry_droids = {
 		enable_equipments = {
-			cis_lr_b1_early_equipment
+			cis_infantry_droid_equipment_3
 		}
 		path = {
 			leads_to_tech = cw_infantry_droids
@@ -133,7 +133,7 @@ technologies = {
 	}
 	late_republic_heavy_droids = {
 		enable_equipments = {
-			cis_lr_b2_early_equipment
+			cis_heavy_droid_equipment_2
 		}
 		path = {
 			leads_to_tech = early_cw_heavy_droids
@@ -170,7 +170,7 @@ technologies = {
 	# ──────────────────────────────────────────────────────────────────────────
 	cw_infantry_droids = {
 		enable_equipments = {
-			cis_cw_b1_adv_equipment
+			cis_infantry_droid_equipment_4
 		}
 		path = {
 			leads_to_tech = late_cw_infantry_droids
@@ -200,7 +200,7 @@ technologies = {
 	}
 	early_cw_heavy_droids = {
 		enable_equipments = {
-			cis_cw_b2_adv_equipment
+			cis_heavy_droid_equipment_3
 		}
 		path = {
 			leads_to_tech = late_cw_heavy_droids
@@ -226,7 +226,7 @@ technologies = {
 	}
 	hkb3_commando_droid = {
 		enable_equipments = {
-			cis_hkb3_commando_equipment
+			cis_commando_droid_equipment_1
 		}
 		path = {
 			leads_to_tech = bx_battle_droid
@@ -252,7 +252,7 @@ technologies = {
 	}
 	droideka_early = {
 		enable_equipments = {
-			cis_droideka_early_equipment
+			cis_droideka_droid_equipment_2
 		}
 		path = {
 			leads_to_tech = droideka_adv
@@ -278,7 +278,7 @@ technologies = {
 	}
 	early_magnaguard = {
 		enable_equipments = {
-			cis_magnaguard_early_equipment
+			cis_magnaguard_droid_equipment_1
 		}
 		path = {
 			leads_to_tech = adv_magnaguard
@@ -304,7 +304,7 @@ technologies = {
 	}
 	early_spider_droid = {
 		enable_equipments = {
-			cis_early_spider_equipment
+			cis_spider_droid_equipment_1
 		}
 		path = {
 			leads_to_tech = cw_spider_droid
@@ -333,7 +333,7 @@ technologies = {
 	# ──────────────────────────────────────────────────────────────────────────
 	late_cw_infantry_droids = {
 		enable_equipments = {
-			cis_late_cw_infantry_equipment
+			cis_infantry_droid_equipment_5
 		}
 		path = {
 			leads_to_tech = imperial_infantry_droids
@@ -359,7 +359,7 @@ technologies = {
 	}
 	late_cw_heavy_droids = {
 		enable_equipments = {
-			cis_late_cw_b3_equipment
+			cis_heavy_droid_equipment_4
 		}
 		path = {
 			leads_to_tech = imperial_heavy_droids
@@ -385,7 +385,7 @@ technologies = {
 	}
 	bx_battle_droid = {
 		enable_equipments = {
-			cis_bx_battle_droid_equipment
+			cis_commando_droid_equipment_2
 		}
 		path = {
 			leads_to_tech = hk77_assassin_droid
@@ -411,7 +411,7 @@ technologies = {
 	}
 	droideka_adv = {
 		enable_equipments = {
-			cis_droideka_adv_equipment
+			cis_droideka_droid_equipment_2
 		}
 		research_cost = 2.0
 		start_year = 979
@@ -433,7 +433,7 @@ technologies = {
 	}
 	adv_magnaguard = {
 		enable_equipments = {
-			cis_magnaguard_adv_equipment
+			cis_magnaguard_droid_equipment_2
 		}
 		research_cost = 2.0
 		start_year = 979
@@ -455,7 +455,7 @@ technologies = {
 	}
 	cw_spider_droid = {
 		enable_equipments = {
-			cis_cw_spider_equipment
+			cis_spider_droid_equipment_2
 		}
 		path = {
 			leads_to_tech = late_spider_droid
@@ -484,7 +484,7 @@ technologies = {
 	# ──────────────────────────────────────────────────────────────────────────
 	imperial_infantry_droids = {
 		enable_equipments = {
-			cis_imperial_infantry_droid_equipment
+			cis_infantry_droid_equipment_6
 		}
 		research_cost = 1.5
 		start_year = 982
@@ -506,7 +506,7 @@ technologies = {
 	}
 	imperial_heavy_droids = {
 		enable_equipments = {
-			cis_imperial_heavy_droid_equipment
+			cis_heavy_droid_equipment_5
 		}
 		research_cost = 2.0
 		start_year = 982
@@ -528,7 +528,7 @@ technologies = {
 	}
 	hk77_assassin_droid = {
 		enable_equipments = {
-			cis_hk77_equipment
+			cis_commando_droid_equipment_3
 		}
 		research_cost = 2.5
 		start_year = 982
@@ -550,7 +550,7 @@ technologies = {
 	}
 	late_spider_droid = {
 		enable_equipments = {
-			cis_late_spider_equipment
+			cis_spider_droid_equipment_3
 		}
 		research_cost = 2.0
 		start_year = 982

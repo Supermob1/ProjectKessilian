@@ -143,6 +143,13 @@ script_enum_equipment_category = {
 	amphibious
 	anti_air
 	artillery
+	droid
+	cis_infantry_droid_equipment
+	cis_heavy_droid_equipment
+	cis_commando_droid_equipment
+	cis_spider_droid_equipment  
+	cis_droideka_droid_equipment
+	cis_magnaguard_droid_equipment  
 	anti_tank
 	rocket
 	flame
@@ -194,6 +201,7 @@ script_enum_equipment_bonus_type = {
 	amphibious
 	anti_air
 	artillery
+	Droid
 	anti_tank
 	rocket
 	flame
@@ -220,6 +228,12 @@ script_enum_equipment_bonus_type = {
 	destroyer
 	infantry_equipment
 	artillery_equipment
+	cis_infantry_droid_equipment
+	cis_heavy_droid_equipment
+	cis_commando_droid_equipment
+	cis_spider_droid_equipment
+	cis_droideka_droid_equipment
+	cis_magnaguard_droid_equipment
 	anti_tank_equipment
 	amphibious_mechanized_equipment
 	amphibious_mechanized_equipment_1
@@ -239,6 +253,27 @@ script_enum_equipment_bonus_type = {
 	artillery_equipment_1
 	artillery_equipment_2
 	artillery_equipment_3
+	cis_infantry_droid_equipment_1
+	cis_infantry_droid_equipment_2
+	cis_infantry_droid_equipment_3
+	cis_infantry_droid_equipment_4
+	cis_infantry_droid_equipment_5
+	cis_infantry_droid_equipment_6
+	cis_heavy_droid_equipment_1
+	cis_heavy_droid_equipment_2
+	cis_heavy_droid_equipment_3
+	cis_heavy_droid_equipment_4
+	cis_heavy_droid_equipment_5
+	cis_commando_droid_equipment_1
+	cis_commando_droid_equipment_2
+	cis_commando_droid_equipment_3
+	cis_spider_droid_equipment_1
+	cis_spider_droid_equipment_2
+	cis_spider_droid_equipment_3
+	cis_droideka_droid_equipment_1
+	cis_droideka_droid_equipment_2
+	cis_magnaguard_droid_equipment_1
+	cis_magnaguard_droid_equipment_2
 	rocket_artillery_equipment
 	rocket_artillery_equipment_1
 	rocket_artillery_equipment_2
@@ -658,15 +693,4 @@ script_enum_equipment_bonus_type = {
 	amphibious_tank_equipment_1
 	amphibious_tank_equipment_2
 	supersonic_fighter_equipment_1
-	
-	
-	#HOD
-	old_republic_equipments
-	phase_I_equipments
-	phase_II_equipments
-	Imperial_equipments
-	laat_equipments
-	maat_equipments
-	arc_commandos_equipments
-	imperial_commandos_equipments
 }
