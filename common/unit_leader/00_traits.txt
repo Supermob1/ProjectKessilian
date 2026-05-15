@@ -26,7 +26,7 @@
 #   }
 #   any_parent = { XXX YYY ZZZ } # shorthand for parent when num_parents_needed are defaulted to 1
 #   all_parents = { XXX YYY ZZZ } # shorthand for parent when num_parents_needed are the same as the number of parents
-#	gui_row = 0 # integer, starts at 0, unset or -1 means the trait does not appear in unlockable trait tree.
+#	#gui_row = 0 # integer, starts at 0, unset or -1 means the trait does not appear in unlockable trait tree.
 #	gui_column = 0 # integer, starts at 0, unset or -1 means auto
 #	allowed = trigger # scope is a unit leader
 #	prerequisites = trigger # scope is an unit leader
@@ -60,14 +60,14 @@ leader_traits = {
 ##################################
 # Common Traits
 ##################################
-	old_guard = { 
+	old_republic_veteran = {
 		type = land
 		trait_type = personality_trait
-		
+
 		modifier = {
 			max_dig_in = 1
 		}
-		
+
 		non_shared_modifier = {
 			experience_gain_factor = -0.25
 		}
@@ -76,7 +76,7 @@ leader_traits = {
 			factor = 1
 
 		}
-		
+
 	}
 	
 	
@@ -263,19 +263,7 @@ leader_traits = {
 		logistics_skill_factor = 1
 	}
 
-	bearer_of_artillery = { # Reserved for Wojtek  
-		type = corps_commander
-		
-		trait_type = personality_trait
-		
-		modifier = {
-			army_artillery_attack_factor = 0.15
-		}
-		
-		new_commander_weight = {
-			factor = 0
-		}
-	}
+	# bearer_of_artillery removed — WWII-specific (Wojtek), no SW equivalent
 	
 	infantry_officer = { 
 		type = land
@@ -311,75 +299,34 @@ leader_traits = {
 		planning_skill_factor = 1
 	}
 	
-	cavalry_officer = { 
+	speeder_recon_officer = {
 		type = land
 		trait_type = personality_trait
-		unit_type = {
-			type = cavalry
-			type = camelry
-			type = motorized
-			type = mechanized
-		}
-		
-		unit_trigger = {
-			OR = {
-				division_has_majority_template = cavalry
-				division_has_majority_template = camelry
-				division_has_majority_template = motorized
-				division_has_majority_template = mechanized
-			}
-		}
-		
+
 		trait_xp_factor = {
-			cavalry_leader = 1     #+100%
+			cavalry_leader = 1
 		}
 
 		new_commander_weight = {
 			factor = 1
-			
-
-			
-			modifier = {
-				FROM = { 
-					has_dlc = "By Blood Alone"
-				}
-				factor = 0
-			}
-			
 		}
-		
+
 		attack_skill_factor = 1
 		logistics_skill_factor = 1
 	}
 	
-	armor_officer = { 
+	walker_assault_officer = {
 		type = land
 		trait_type = personality_trait
-		
+
 		trait_xp_factor = {
-			panzer_leader = 1     #+100%
+			panzer_leader = 1
 		}
-		
-		unit_trigger = {
-			OR = {
-				division_has_majority_template = light_armor
-				division_has_majority_template = medium_armor
-				division_has_majority_template = heavy_armor
-				division_has_majority_template = super_heavy_armor
-			}
-		}
-		
+
 		new_commander_weight = {
 			factor = 1
-			
-			modifier = {
-				FROM = { 
-					has_dlc = "By Blood Alone"
-				}
-				factor = 0
-			}
-			
 		}
+
 		attack_skill_factor = 1
 		planning_skill_factor = 1
 	}
@@ -414,36 +361,12 @@ leader_traits = {
 		planning_skill_factor = 1
 	}
 
-	irregulars_officer = { 
+	insurgent_commander = {
 		type = corps_commander
-
 		trait_type = personality_trait
 
-		allowed = {
-		}
-
-		unit_type = {
-			type = cavalry
-			type = camelry
-			type = irregular_infantry
-		}
-
-		unit_trigger = {
-			OR = {
-				division_has_majority_template = cavalry
-				division_has_majority_template = camelry
-				division_has_majority_template = irregular_infantry
-			}
-		}
-		
 		modifier = {
-			modifier_army_sub_unit_irregular_infantry_attack_factor = 0.05
-			modifier_army_sub_unit_cavalry_speed_factor = 0.05
-			modifier_army_sub_unit_camelry_speed_factor = 0.05
 			out_of_supply_factor = -0.1
-			desert = {
-				movement = 0.1
-			}
 		}
 
 		new_commander_weight = {
@@ -454,59 +377,15 @@ leader_traits = {
 		planning_skill_factor = 1
 	}
 
-	ascari_officer = { 
-		type = corps_commander
+	# ascari_officer removed — Italian colonial specific, no SW equivalent
 
+	planetary_militia_officer = {
+		type = corps_commander
 		trait_type = personality_trait
 
-		allowed = {
-		}
-
-		unit_type = {
-			type = infantry
-		}
-
-		unit_trigger = {
-			division_has_majority_template = infantry
-		}
-		
 		modifier = {
-			modifier_army_sub_unit_infantry_defence_factor = 0.05
-			modifier_army_sub_unit_cavalry_defence_factor = 0.05
-			modifier_army_sub_unit_camelry_defence_factor = 0.05
-			desert = {
-				defence = 0.05
-			}
-		}
-
-		new_commander_weight = {
-			base = 0
-		}
-
-		defense_skill_factor = 1
-		logistics_skill_factor = 1
-	}
-
-	militias_officer = { 
-		type = corps_commander
-
-		trait_type = personality_trait
-
-		allowed = {
-		}
-
-		unit_type = {
-			type = militia
-		}
-
-		unit_trigger = {
-			division_has_majority_template = militia
-		}
-		
-		modifier = {
-			modifier_army_sub_unit_militia_defence_factor = 0.05
-			modifier_army_sub_unit_militia_speed_factor = 0.05
-			modifier_army_sub_unit_militia_max_org_factor = 0.05
+			army_defence_factor = 0.03
+			land_reinforce_rate = 0.03
 		}
 
 		new_commander_weight = {
@@ -517,35 +396,7 @@ leader_traits = {
 		planning_skill_factor = 1
 	}
 
-	jaeger = { 
-		type = land
-		trait_type = personality_trait 
-
-		allowed = {
-		}
-				
-		trait_xp_factor = {
-			trickster = 1     #+100%
-			winter_specialist = 1     #+100%
-			commando = 1     #+100%
-			swamp_fox = 1     #+100%
-			ranger = 1     #+100%
-			hill_fighter = 1     #+100%
-			urban_assault_specialist = 1     #+100%
-			naval_invader = 1     #+100%
-		}
-
-		modifier = {
-			equipment_capture = 0.03
-		}
-		
-		new_commander_weight = {
-			factor = 0			
-		}
-
-		attack_skill_factor = 1
-		logistics_skill_factor = 1
-	}
+	# jaeger removed — Finnish light infantry specific, no SW equivalent
 
 	
 ##################################
@@ -566,7 +417,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 0
+		#gui_row = 0
 		trait_type = assignable_trait
 		any_parent = {organizer}
 	}
@@ -593,7 +444,7 @@ leader_traits = {
 		}
 		trait_type = assignable_trait
 		mutually_exclusive = defensive_doctrine
-		gui_row = 5
+		#gui_row = 5
 
 	}
 
@@ -615,7 +466,7 @@ leader_traits = {
 		}
 		trait_type = assignable_trait
 		mutually_exclusive = offensive_doctrine
-		gui_row = 6
+		#gui_row = 6
 	}
 	
 	fast_planner = { 
@@ -636,7 +487,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 1
+		#gui_row = 1
 		any_parent = { organizer }
 		mutually_exclusive = thorough_planner
 		trait_type = assignable_trait
@@ -661,7 +512,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 2
+		#gui_row = 2
 		any_parent = { organizer }
 		mutually_exclusive = fast_planner
 		trait_type = assignable_trait
@@ -692,7 +543,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 3
+		#gui_row = 3
 		trait_type = assignable_trait
 		mutually_exclusive = aggressive_assaulter
 
@@ -721,7 +572,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 4
+		#gui_row = 4
 		trait_type = assignable_trait
 		mutually_exclusive = unyielding_defender
 
@@ -747,7 +598,7 @@ leader_traits = {
 		}
 		trait_type = assignable_trait
 
-		gui_row = 7
+		#gui_row = 7
 	}
 
 	inspirational_leader = { 
@@ -769,7 +620,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = assignable_trait
-		gui_row = 8
+		#gui_row = 8
 	}
 
 	expert_delegator = { 
@@ -793,7 +644,7 @@ leader_traits = {
 		}
 		trait_type = assignable_trait
 		any_parent = { skilled_staffer }
-		gui_row = 15
+		#gui_row = 15
 	}
 
 
@@ -822,39 +673,10 @@ leader_traits = {
 			factor = 1
 		}
 		
-		gui_row = 0
+		#gui_row = 0
 	}
 	
-	cavalry_leader = { 
-		type = corps_commander
-		gain_xp = {
-			set_temp_variable = { temp = num_units }
-			multiply_temp_variable = { temp = 0.4 }
-			set_temp_variable = { cmm = num_cavalry }
-			add_to_temp_variable = { cmm = num_motorized }
-			add_to_temp_variable = { cmm = num_mechanized }
-			check_variable = { cmm > temp }
-		}
-		custom_gain_xp_trigger_tooltip = cavalary_ratio_over_40
-		
-		cost = 1000
-		modifier = {
-			cavalry_attack_factor = 0.12
-			motorized_attack_factor = 0.12
-			mechanized_attack_factor = 0.12
-		}
-		
-		slot = high_command
-		specialist_advisor_trait = army_cavalry_1
-		expert_advisor_trait = army_cavalry_2
-		genius_advisor_trait = army_cavalry_3
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		gui_row = 3
-	}
+	# cavalry_leader removed — no cavalry in Star Wars
 	
 	infantry_leader = { 
 		type = corps_commander
@@ -879,7 +701,7 @@ leader_traits = {
 			factor = 1
 		}
 		
-		gui_row = 6
+		#gui_row = 6
 	}
 	skilled_staffer = { 
 		type = corps_commander
@@ -905,7 +727,7 @@ leader_traits = {
 		}
 		logistics_skill_factor = 2
 		
-		gui_row = 15
+		#gui_row = 15
 		
 		slot = high_command
 		specialist_advisor_trait = army_logistics_1
@@ -931,7 +753,7 @@ leader_traits = {
 			factor = 1
 		}
 		
-		gui_row = 13
+		#gui_row = 13
 	}
 
 
@@ -950,7 +772,7 @@ leader_traits = {
 		}
 		
 		trait_type = basic_terrain_trait
-		gui_row = 7
+		#gui_row = 7
 	}
 
 	adaptable = { 
@@ -970,7 +792,7 @@ leader_traits = {
 		}
 		
 		trait_type = assignable_terrain_trait
-		gui_row = 3
+		#gui_row = 3
 				
 		parent = {
 			traits = {
@@ -1005,7 +827,7 @@ leader_traits = {
 		any_parent = { winter_specialist }
 
 		trait_type = assignable_terrain_trait
-		gui_row = 7
+		#gui_row = 7
 	}
 
 	
@@ -1036,12 +858,12 @@ leader_traits = {
 			factor = 1
 		}
 		
-		gui_row = 4
+		#gui_row = 4
 	}
 
 
-	panzer_leader = {
- 		type = corps_commander
+	walker_tactics_leader = {
+		type = corps_commander
 		gain_xp = {
 			set_temp_variable = { temp = num_units }
 			multiply_temp_variable = { temp = 0.4 }
@@ -1050,17 +872,17 @@ leader_traits = {
 		custom_gain_xp_trigger_tooltip = armored_ratio_over_40
 		cost = 700
 		modifier = {
-			army_armor_speed_factor = 0.05 
-			army_armor_attack_factor = 0.16 
+			army_armor_speed_factor = 0.05
+			army_armor_attack_factor = 0.16
 		}
 		ai_will_do = {
 			factor = 1
 		}
-		
+
 		attack_skill_factor = 2
-		
-		gui_row = 1
-		
+
+		#gui_row = 1
+
 		slot = high_command
 		specialist_advisor_trait = army_armored_1
 		expert_advisor_trait = army_armored_2
@@ -1085,7 +907,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 10
+		#gui_row = 10
 		
 		slot = high_command
 		specialist_advisor_trait = army_commando_1
@@ -1114,7 +936,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = basic_terrain_trait
-		gui_row = 0
+		#gui_row = 0
 	}
 
 	swamp_fox = { 
@@ -1135,7 +957,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = basic_terrain_trait
-		gui_row = 1
+		#gui_row = 1
 	}
 
 	trait_mountaineer = { 
@@ -1156,7 +978,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = basic_terrain_trait
-		gui_row = 3
+		#gui_row = 3
 	}
 
 	hill_fighter = { 
@@ -1177,7 +999,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = basic_terrain_trait
-		gui_row = 2
+		#gui_row = 2
 	}
 
 	jungle_rat = { 
@@ -1198,7 +1020,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = basic_terrain_trait
-		gui_row = 6
+		#gui_row = 6
 	}
 
 	ranger = { 
@@ -1219,7 +1041,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = basic_terrain_trait
-		gui_row = 5
+		#gui_row = 5
 	}
 
 	urban_assault_specialist = { 
@@ -1240,7 +1062,7 @@ leader_traits = {
 			factor = 1
 		}
 		trait_type = basic_terrain_trait
-		gui_row = 4
+		#gui_row = 4
 	}
 
 	
@@ -1264,7 +1086,7 @@ leader_traits = {
 			factor = 1
 		}
 		
-		gui_row = 8
+		#gui_row = 8
 	}
 	
 ##################################
@@ -1272,32 +1094,31 @@ leader_traits = {
 ##################################
 
 
-	panzer_expert = { 
+	walker_assault_expert = {
 		type = corps_commander
 		gain_xp = {
 			always = no # not gainable
 		}
 		cost = 1000
 		modifier = {
-			army_armor_defence_factor = 0.10 
+			army_armor_defence_factor = 0.10
 		}
-		
+
 		custom_effect_tooltip = INCREASED_BLITZ_AND_ENCIRCLEMENT_CHANCE
-		
+
 		ai_will_do = {
 			factor = 1
 		}
-		
+
 		trait_type = assignable_trait
-		any_parent = { panzer_leader }
-		
+		any_parent = { walker_tactics_leader }
+
 		mutually_exclusive = combined_arms_expert
-		mutually_exclusive = cavalry_expert
-		
-		gui_row = 1
+
+		#gui_row = 1
 	}
-	
-	combined_arms_expert = { 
+
+	combined_arms_expert = {
 		type = corps_commander
 		gain_xp = {
 			always = no # not gainable
@@ -1307,51 +1128,27 @@ leader_traits = {
 			motorized_defence_factor = 0.15
 			mechanized_defence_factor = 0.15
 		}
-		
+
 		custom_effect_tooltip = INCREASED_BLITZ_AND_ENCIRCLEMENT_CHANCE
-		
+
 		slot = high_command
 		specialist_advisor_trait = army_CombinedArms_1
 		expert_advisor_trait = army_CombinedArms_2
 		genius_advisor_trait = army_CombinedArms_3
-		
+
 		ai_will_do = {
 			factor = 1
 		}
-		
+
 		trait_type = assignable_trait
-		any_parent = { cavalry_leader panzer_leader }
-		
-		mutually_exclusive = panzer_expert
-		mutually_exclusive = cavalry_expert
-		
-		
-		gui_row = 2
+		any_parent = { walker_tactics_leader organizer }
+
+		mutually_exclusive = walker_assault_expert
+
+		#gui_row = 2
 	}
-	
-	cavalry_expert = { 
-		type = corps_commander
-		gain_xp = {
-			always = no # not gainable
-		}
-		cost = 500
-		modifier = {
-			#cavalry_attack_factor = 0.10
-			cavalry_defence_factor = 0.10
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		trait_type = assignable_trait
-		any_parent = { cavalry_leader }
-		
-		mutually_exclusive = panzer_expert
-		mutually_exclusive = combined_arms_expert
-		
-		gui_row = 3
-	}
+
+	# cavalry_expert removed — no cavalry in Star Wars
 	
 	fortress_buster = {
 		type = corps_commander
@@ -1378,7 +1175,7 @@ leader_traits = {
 			factor = 1
 		}
 		
-		gui_row = 4
+		#gui_row = 4
 		
 		trait_type = assignable_trait
 		any_parent = { trait_engineer }
@@ -1401,7 +1198,7 @@ leader_traits = {
 		
 		trait_type = assignable_trait
 		
-		gui_row = 5
+		#gui_row = 5
 		any_parent = { trait_engineer }
 		mutually_exclusive = fortress_buster
 	}
@@ -1424,7 +1221,7 @@ leader_traits = {
 		
 		trait_type = assignable_trait
 		any_parent = { infantry_leader }
-		gui_row = 6
+		#gui_row = 6
 	}
 	
 	ambusher = { 
@@ -1447,7 +1244,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { infantry_leader }
 		
-		gui_row = 7
+		#gui_row = 7
 	}
 	invader_ii = { 
 		type = corps_commander
@@ -1468,7 +1265,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { naval_invader }
 		
-		gui_row = 8
+		#gui_row = 8
 	}
 	naval_liason = { 
 		type = corps_commander
@@ -1487,7 +1284,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { naval_invader }
 		
-		gui_row = 9
+		#gui_row = 9
 	}
 	
 	skirmisher = { 
@@ -1508,7 +1305,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { commando }
 		
-		gui_row = 10
+		#gui_row = 10
 	}
 	
 	paratrooper = { 
@@ -1530,7 +1327,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { commando }
 		
-		gui_row = 11
+		#gui_row = 11
 	}
 	
 	
@@ -1557,7 +1354,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { commando }
 		
-		gui_row = 12
+		#gui_row = 12
 	}
 	
 	expert_improviser = { 
@@ -1608,7 +1405,7 @@ leader_traits = {
 		}
 		custom_prerequisite_tooltip = needs_at_least_one_terrain
 		
-		gui_row = 13
+		#gui_row = 13
 	}
 	
 	guerilla_fighter = { 
@@ -1628,7 +1425,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { trickster }
 		
-		gui_row = 14
+		#gui_row = 14
 	}
 	
 	
@@ -1654,7 +1451,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 0
+		#gui_row = 0
 		gui_column = 0
 	}
 
@@ -1677,7 +1474,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 2
+		#gui_row = 2
 		gui_column = 0
 	}
 
@@ -1696,7 +1493,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 4
+		#gui_row = 4
 		gui_column = 0
 	}
 
@@ -1720,7 +1517,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 5
+		#gui_row = 5
 		gui_column = 0
 	}
 
@@ -1743,7 +1540,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 6
+		#gui_row = 6
 		gui_column = 0
 	}
 
@@ -1764,7 +1561,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 8
+		#gui_row = 8
 		gui_column = 0
 	}
 
@@ -1787,7 +1584,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}	
-		gui_row = 10
+		#gui_row = 10
 		gui_column = 0
 	}
 
@@ -1815,7 +1612,7 @@ leader_traits = {
 			blockade_runner
 		}
 		mutually_exclusive = lone_wolf
-		gui_row = 0
+		#gui_row = 0
 		gui_column = 1
 	}
 
@@ -1832,7 +1629,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { blockade_runner }
 		mutually_exclusive = concealment_expert
-		gui_row = 1
+		#gui_row = 1
 		gui_column = 1
 	}
 
@@ -1849,7 +1646,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { seawolf }
 		mutually_exclusive = lancer
-		gui_row = 2
+		#gui_row = 2
 		gui_column = 1
 	}
 
@@ -1867,7 +1664,7 @@ leader_traits = {
 		any_parent = { seawolf spotter fleet_protector superior_tactician } 
 		mutually_exclusive = silent_hunter
 		
-		gui_row = 3
+		#gui_row = 3
 		gui_column = 1
 	}
 
@@ -1884,7 +1681,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { spotter fleet_protector }
 		
-		gui_row = 4
+		#gui_row = 4
 		gui_column = 1
 	}
 
@@ -1912,7 +1709,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { fleet_protector superior_tactician }
 		
-		gui_row = 5
+		#gui_row = 5
 		gui_column = 1
 	}
 
@@ -1938,7 +1735,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { fleet_protector superior_tactician }
 		
-		gui_row = 6
+		#gui_row = 6
 		gui_column = 1
 	}
 
@@ -1957,7 +1754,7 @@ leader_traits = {
 		
 		trait_type = assignable_trait
 		any_parent = { superior_tactician }
-		gui_row = 7
+		#gui_row = 7
 		gui_column = 1
 	}
 
@@ -1980,7 +1777,7 @@ leader_traits = {
 		
 		any_parent = { air_controller }
 		
-		gui_row = 8
+		#gui_row = 8
 		gui_column = 1
 	}
 
@@ -1997,7 +1794,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { ironside }
 		
-		gui_row = 9
+		#gui_row = 9
 		gui_column = 1
 	}
 
@@ -2019,7 +1816,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { ironside }
 		
-		gui_row = 10
+		#gui_row = 10
 		gui_column = 1
 	}
 
@@ -2041,7 +1838,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { ironside }
 		
-		gui_row = 11
+		#gui_row = 11
 		gui_column = 1
 	}
 
@@ -2060,7 +1857,7 @@ leader_traits = {
 		 	lone_wolf
 			concealment_expert
 		}
-		gui_row = 0
+		#gui_row = 0
 		gui_column = 2
 	}
 
@@ -2081,7 +1878,7 @@ leader_traits = {
 
 		trait_type = assignable_trait
 		any_parent = { silent_hunter lancer }
-		gui_row = 2
+		#gui_row = 2
 		gui_column = 2
 	}
 
@@ -2101,7 +1898,7 @@ leader_traits = {
 			lancer
 		}
 		
-		gui_row = 3
+		#gui_row = 3
 		gui_column = 2
 	}
 
@@ -2119,7 +1916,7 @@ leader_traits = {
 		trait_type = assignable_trait
 		any_parent = { search_pattern_expert destroyer_leader }
 		
-		gui_row = 5
+		#gui_row = 5
 		gui_column = 2
 	}
 
@@ -2140,7 +1937,7 @@ leader_traits = {
 		ai_will_do = {
 			factor = 1
 		}
-		gui_row = 6
+		#gui_row = 6
 		gui_column = 2
 	}
 
@@ -2159,7 +1956,7 @@ leader_traits = {
 		mutually_exclusive = torpedo_bomber
 		any_parent = { flight_deck_manager }
 		
-		gui_row = 7
+		#gui_row = 7
 		gui_column = 2
 	}
 
@@ -2185,7 +1982,7 @@ leader_traits = {
 		mutually_exclusive = torpedo_bomber
 		any_parent = { flight_deck_manager }
 		
-		gui_row = 8
+		#gui_row = 8
 		gui_column = 2
 	}
 
@@ -2213,7 +2010,7 @@ leader_traits = {
 		mutually_exclusive = dive_bomber
 		any_parent = { flight_deck_manager }
 		
-		gui_row = 9
+		#gui_row = 9
 		gui_column = 2
 	}
 
@@ -2236,7 +2033,7 @@ leader_traits = {
 		mutually_exclusive = crisis_magician
 		any_parent = { big_guns_expert }
 		
-		gui_row = 10
+		#gui_row = 10
 		gui_column = 2
 	}
 
@@ -2254,7 +2051,7 @@ leader_traits = {
 		mutually_exclusive = marksman
 		any_parent = { safety_first }
 		
-		gui_row = 11
+		#gui_row = 11
 		gui_column = 2
 	}
 
@@ -2278,7 +2075,7 @@ leader_traits = {
 		}
 
 		trait_type = basic_terrain_trait
-		gui_row = 0
+		#gui_row = 0
 	}
 
 	inshore_fighter = {
@@ -2301,7 +2098,7 @@ leader_traits = {
 		}
 
 		trait_type = basic_terrain_trait
-		gui_row = 1
+		#gui_row = 1
 	}
 
 	blue_water_expert = {
@@ -2329,7 +2126,7 @@ leader_traits = {
 		}
 
 		trait_type = basic_terrain_trait
-		gui_row = 2
+		#gui_row = 2
 	}
 
 	green_water_expert = {
@@ -2352,7 +2149,7 @@ leader_traits = {
 		}
 
 		trait_type = basic_terrain_trait
-		gui_row = 3
+		#gui_row = 3
 	}
 
 

@@ -459,7 +459,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ jedi_knight }
+			traits={ jedi_padawan_rank }
 			skill=3
 			attack_skill=3
 			defense_skill=3
@@ -513,7 +513,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_veteran_rank }
 			visible = {
 			}
 			skill=3
@@ -569,7 +569,7 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ jedi_master }
+			traits={ jedi_master_rank }
 			skill=5
 			attack_skill=5
 			defense_skill=5
@@ -630,7 +630,7 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ jedi_master }
+			traits={ jedi_master_rank }
 			skill=5
 			attack_skill=5
 			defense_skill=5
@@ -673,7 +673,7 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ jedi_master }
+			traits={ jedi_master_rank }
 			skill=3
 			attack_skill=3
 			defense_skill=3
@@ -716,7 +716,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3
 			attack_skill=3
 			defense_skill=3
@@ -759,7 +759,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3
 			attack_skill=3
 			defense_skill=3
@@ -860,7 +860,7 @@ characters={
 			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
 		}
@@ -888,7 +888,7 @@ characters={
 			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
 		}
@@ -916,7 +916,7 @@ characters={
 			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
 		}
@@ -943,7 +943,7 @@ characters={
 			traits = { jedi_master_shaak_ti military_theorist } # -land doctrine cost
 			ai_will_do = { factor = 1 }
 		}
-		field_marshal={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+		field_marshal={ traits={ jedi_master_rank } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
 	}
 
 	REP_rahm_kota={
@@ -967,7 +967,7 @@ characters={
 			traits = { jedi_master_rahm_kota mobile_warfare_expert } # fits aggressive style
 			ai_will_do = { factor = 1 }
 		}
-		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+		corps_commander={ traits={ jedi_knight_rank } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
 	}
 
 	REP_quinlan_vos={
@@ -991,7 +991,7 @@ characters={
 			traits = { jedi_master_quinlan_vos superior_firepower_expert } # unorthodox, precision strikes
 			ai_will_do = { factor = 1 }
 		}
-		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+		corps_commander={ traits={ jedi_knight_rank } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
 	}
 
 	REP_kkruhk={
@@ -1015,7 +1015,7 @@ characters={
 			traits = { jedi_master_kkruhk grand_battle_plan_expert } # patient, resilient campaigns
 			ai_will_do = { factor = 1 }
 		}
-		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+		corps_commander={ traits={ jedi_knight_rank } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
 	}
 
 	REP_nejaa_halcyon={
@@ -1039,7 +1039,7 @@ characters={
 			traits = { jedi_master_nejaa_halcyon mass_assault_expert } # protective, defensive, infantry-focused
 			ai_will_do = { factor = 1 }
 		}
-		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+		corps_commander={ traits={ jedi_knight_rank } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
 	}
 	REP_bultar_swan={
 		name="Bultar Swan"
@@ -1093,7 +1093,7 @@ characters={
 			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3
 			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
@@ -1121,7 +1121,7 @@ characters={
 			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3
 			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
@@ -1148,7 +1148,7 @@ characters={
 			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3
 			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
@@ -1176,7 +1176,7 @@ characters={
 			ai_will_do = { factor = 1 }
 		}
 		corps_commander={
-			traits={ jedi_master }
+			traits={ jedi_knight_rank }
 			skill=3
 			attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3
 			legacy_id=-1
@@ -1202,7 +1202,7 @@ characters={
 			traits = { jedi_master_agen_kolar air_close_air_support_1 }
 			ai_will_do = { factor = 1 }
 		}
-		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+		corps_commander={ traits={ jedi_knight_rank } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
 	}
 
 	REP_dass_jennir={
@@ -1225,6 +1225,6 @@ characters={
 			traits = { jedi_master_dass_jennir air_strategic_bombing_1 }
 			ai_will_do = { factor = 1 }
 		}
-		corps_commander={ traits={ jedi_master } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
+		corps_commander={ traits={ jedi_knight_rank } skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1 }
 	}
 }
