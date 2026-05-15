@@ -572,9 +572,197 @@ leader_traits = {
 	}
 
 ##################################
+# Force Power Traits
+##################################
+
+	# ── Jedi (light side) Force powers ──────────────────────────────────────
+
+	force_push = {
+		type = corps_commander
+		cost = 900
+		gui_row = 0
+		gui_column = 3
+		prerequisites = {
+			OR = {
+				has_trait = jedi_padawan_rank
+				has_trait = jedi_knight_rank
+				has_trait = jedi_veteran_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		modifier = {
+			army_attack_factor = 0.04
+			breakthrough_factor = 0.06
+			planning_speed = 0.05
+		}
+		attack_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	force_speed = {
+		type = corps_commander
+		cost = 900
+		gui_row = 11
+		gui_column = 0
+		prerequisites = {
+			OR = {
+				has_trait = jedi_padawan_rank
+				has_trait = jedi_knight_rank
+				has_trait = jedi_veteran_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		modifier = {
+			planning_speed = 0.10
+			army_speed_factor = 0.05
+		}
+		planning_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	force_barrier = {
+		type = corps_commander
+		cost = 900
+		gui_row = 11
+		gui_column = 1
+		prerequisites = {
+			OR = {
+				has_trait = jedi_padawan_rank
+				has_trait = jedi_knight_rank
+				has_trait = jedi_veteran_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		modifier = {
+			army_defence_factor = 0.05
+			wounded_chance_factor = -0.15
+		}
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	force_prescience = {
+		type = corps_commander
+		cost = 900
+		gui_row = 12
+		gui_column = 0
+		prerequisites = {
+			OR = {
+				has_trait = jedi_padawan_rank
+				has_trait = jedi_knight_rank
+				has_trait = jedi_veteran_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		modifier = {
+			max_planning = 0.03
+			army_org_factor = 0.05
+		}
+		planning_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	force_healing = {
+		type = corps_commander
+		cost = 900
+		gui_row = 12
+		gui_column = 1
+		prerequisites = {
+			OR = {
+				has_trait = jedi_padawan_rank
+				has_trait = jedi_knight_rank
+				has_trait = jedi_veteran_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		modifier = {
+			land_reinforce_rate = 0.06
+			wounded_chance_factor = -0.10
+		}
+		defense_skill_factor = 0.5
+		logistics_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# Battle Meditation — field marshal only, requires jedi_master_rank
+	battle_meditation = {
+		type = corps_commander
+		cost = 1000
+		gui_row = 13
+		gui_column = 0
+		prerequisites = {
+			has_trait = jedi_master_rank
+		}
+		field_marshal_modifier = {
+			army_morale_factor = 0.10
+			max_planning = 0.02
+		}
+		coordination_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+	# ── Dark side Force powers — gated by dark_side trait ───────────────────
+
+	force_lightning = {
+		type = corps_commander
+		cost = 1100
+		gui_row = 14
+		gui_column = 0
+		allowed = { has_trait = dark_side_user }
+		prerequisites = {
+			OR = {
+				has_trait = jedi_padawan_rank
+				has_trait = jedi_knight_rank
+				has_trait = jedi_veteran_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		modifier = {
+			army_attack_factor = 0.08
+			army_morale_factor = 0.05
+			wounded_chance_factor = 0.10
+		}
+		attack_skill_factor = 1
+		ai_will_do = { factor = 1 }
+	}
+
+	force_choke = {
+		type = corps_commander
+		cost = 1100
+		gui_row = 14
+		gui_column = 1
+		allowed = { has_trait = dark_side_user }
+		prerequisites = {
+			OR = {
+				has_trait = jedi_padawan_rank
+				has_trait = jedi_knight_rank
+				has_trait = jedi_veteran_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		modifier = {
+			army_attack_factor = 0.05
+			army_org_factor = 0.05
+			breakthrough_factor = 0.05
+			wounded_chance_factor = 0.10
+		}
+		attack_skill_factor = 0.5
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+##################################
 # Jedi Knight / Jedi Master (advisor/command traits, kept for existing references)
 ##################################
 
+	dark_side_user = {
+		type = all 
+		
+		cost = -1
+	
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	force_sensitive = {
 		type = all 
 		

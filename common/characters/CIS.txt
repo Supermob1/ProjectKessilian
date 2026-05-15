@@ -28,7 +28,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		field_marshal={
-			traits={ brilliant_strategist inspirational_leader media_personality }
+			traits={ force_sensitive dark_side_user brilliant_strategist inspirational_leader media_personality }
 			skill=4 attack_skill=2 defense_skill=2 planning_skill=5 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -264,6 +264,10 @@ characters={
 	CIS_asajj_ventress={
 		name="Asajj Ventress"
 		portraits={ civilian={ small="gfx/characters/CIS/asajj_ventress_political_advisor.png" large="gfx/leaders/CIS/portrait_Asajj_Ventress.dds" } }
+		corps_commander={
+			traits={ force_sensitive dark_side_user }
+			skill=3 attack_skill=4 defense_skill=3 planning_skill=2 logistics_skill=2 legacy_id=-1
+		}
 	}
 
 	CIS_sevrance_tann={
@@ -289,7 +293,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		corps_commander={
-			traits={ skilled_tactician }
+			traits={ force_sensitive dark_side_user skilled_tactician }
 			skill=3 attack_skill=3 defense_skill=3 planning_skill=4 logistics_skill=2 legacy_id=-1
 		}
 	}
