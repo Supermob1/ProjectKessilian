@@ -1,0 +1,186 @@
+# HOD Duel Scripted Localisation
+# Evaluated in unit_leader scope — THIS = the character whose outcome event fired
+# First matching text block wins; order matters (most specific first)
+# Referenced in loc strings as [GetDuelVictoryFlavor], [GetDuelDefeatFlavor], [GetDuelStalemateFlavor]
+
+###############################################################
+# GetDuelVictoryFlavor
+# Called in hod_duel.10 (REP win) and hod_duel.20 (CIS win)
+# Describes HOW this character won, keyed on their combat style
+###############################################################
+
+defined_text = {
+	name = GetDuelVictoryFlavor
+
+	# ── Rare / gated forms first ──────────────────────────────────────────────
+	text = {
+		trigger = { has_trait = form_juyo_vaapad }
+		localization_key = hod_duel_vic_vaapad
+	}
+
+	# ── Lightsaber form masteries ─────────────────────────────────────────────
+	text = {
+		trigger = { has_trait = form_soresu_mastery }
+		localization_key = hod_duel_vic_soresu
+	}
+	text = {
+		trigger = { has_trait = form_makashi_mastery }
+		localization_key = hod_duel_vic_makashi
+	}
+	text = {
+		trigger = { has_trait = form_ataru_mastery }
+		localization_key = hod_duel_vic_ataru
+	}
+	text = {
+		trigger = { has_trait = form_djem_so_mastery }
+		localization_key = hod_duel_vic_djem_so
+	}
+	text = {
+		trigger = { has_trait = form_shien_mastery }
+		localization_key = hod_duel_vic_shien
+	}
+	text = {
+		trigger = { has_trait = form_jar_kai_mastery }
+		localization_key = hod_duel_vic_jar_kai
+	}
+	text = {
+		trigger = { has_trait = form_niman_mastery }
+		localization_key = hod_duel_vic_niman
+	}
+
+	# ── Non-Force combat style masteries ─────────────────────────────────────
+	text = {
+		trigger = { has_trait = droid_tactical_mastery }
+		localization_key = hod_duel_vic_droid
+	}
+	text = {
+		trigger = { has_trait = mandalorian_combat_mastery }
+		localization_key = hod_duel_vic_mando
+	}
+	text = {
+		trigger = { has_trait = blaster_duelist_mastery }
+		localization_key = hod_duel_vic_blaster
+	}
+	text = {
+		trigger = { has_trait = dirty_fighter_mastery }
+		localization_key = hod_duel_vic_dirty
+	}
+	text = {
+		trigger = { has_trait = vibroblade_fighter_mastery }
+		localization_key = hod_duel_vic_vibroblade
+	}
+
+	# ── Base trait fallbacks (no mastery yet) ────────────────────────────────
+	text = {
+		trigger = { has_trait = combat_cyborg }
+		localization_key = hod_duel_vic_cyborg
+	}
+	text = {
+		trigger = { has_trait = dark_side_user }
+		localization_key = hod_duel_vic_dark_side
+	}
+	text = {
+		trigger = { has_trait = jedi_padawan_rank }
+		localization_key = hod_duel_vic_padawan
+	}
+	text = {
+		trigger = { has_trait = force_sensitive }
+		localization_key = hod_duel_vic_force_generic
+	}
+	text = {
+		localization_key = hod_duel_vic_warrior
+	}
+}
+
+###############################################################
+# GetDuelDefeatFlavor
+# Called in hod_duel.11 (REP loss) and hod_duel.21 (CIS loss)
+# Describes how this character experiences losing
+###############################################################
+
+defined_text = {
+	name = GetDuelDefeatFlavor
+
+	# ── Rank-specific defeat reactions ───────────────────────────────────────
+	text = {
+		trigger = { has_trait = jedi_padawan_rank }
+		localization_key = hod_duel_def_padawan
+	}
+	text = {
+		trigger = { has_trait = dark_acolyte_rank }
+		localization_key = hod_duel_def_acolyte
+	}
+	text = {
+		trigger = { has_trait = dark_champion_rank }
+		localization_key = hod_duel_def_champion
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_trait = sith_lord_rank
+				has_trait = jedi_master_rank
+			}
+		}
+		localization_key = hod_duel_def_master
+	}
+
+	# ── Combat type reactions ────────────────────────────────────────────────
+	text = {
+		trigger = { has_trait = combat_cyborg }
+		localization_key = hod_duel_def_cyborg
+	}
+	text = {
+		trigger = { has_trait = mandalorian_combat }
+		localization_key = hod_duel_def_mando
+	}
+	text = {
+		trigger = { has_trait = force_sensitive }
+		localization_key = hod_duel_def_force_generic
+	}
+	text = {
+		localization_key = hod_duel_def_warrior
+	}
+}
+
+###############################################################
+# GetDuelStalemateFlavor
+# Called in hod_duel.12 (REP stalemate) and hod_duel.22 (CIS stalemate)
+# Describes why neither side could close it out
+###############################################################
+
+defined_text = {
+	name = GetDuelStalemateFlavor
+
+	# ── Specific style reasons for stalemate ─────────────────────────────────
+	text = {
+		trigger = { has_trait = form_soresu_mastery }
+		localization_key = hod_duel_stale_soresu
+	}
+	text = {
+		trigger = { has_trait = mandalorian_combat_mastery }
+		localization_key = hod_duel_stale_mando
+	}
+	text = {
+		trigger = { has_trait = vibroblade_fighter_mastery }
+		localization_key = hod_duel_stale_vibroblade
+	}
+	text = {
+		trigger = { has_trait = blaster_duelist }
+		localization_key = hod_duel_stale_blaster
+	}
+	text = {
+		trigger = { has_trait = jedi_master_rank }
+		localization_key = hod_duel_stale_master
+	}
+	text = {
+		trigger = { has_trait = dark_side_user }
+		localization_key = hod_duel_stale_dark_side
+	}
+	text = {
+		trigger = { has_trait = force_sensitive }
+		localization_key = hod_duel_stale_force_generic
+	}
+	text = {
+		localization_key = hod_duel_stale_warrior
+	}
+}

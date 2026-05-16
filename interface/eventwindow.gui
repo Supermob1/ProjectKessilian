@@ -359,8 +359,8 @@ guiTypes = {
 		
 			instantTextBoxType = {
 				name = "Title"
-				position = { x = 14 y = 70 }
-				font = "hoi4_typewriter22"
+				position = { x = 14 y = 20 }
+				font = "star_wars_40"
 				borderSize = {x = 0 y = 0}
 				text = "Title text here!"	
 				maxWidth = 551
@@ -370,7 +370,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "btn_minimize"
-				position = {x=10 y=45}
+				position = {x=0 y=0}
 				spriteType = "GFX_event_button_minimize"
 				clicksound = click_default
 			}
@@ -413,7 +413,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "Description"
 				position = { x = 198 y = 0 }
-				font = "hoi4_typewriter16"
+				font = "star_wars_16"
 				borderSize = {x = 0 y = 0}
 				text = "Long text here!"	
 				maxWidth = 350

@@ -1,0 +1,226 @@
+# HOD duel XP scripted effects — called in unit_leader scope
+# Variables are stored on the character (persist between events)
+#
+# Rank XP thresholds:
+#   jedi_padawan_rank → jedi_knight_rank : 500
+#   jedi_knight_rank  → jedi_veteran_rank : 1000
+# Form / Force power mastery threshold: 1000
+# -----------------------------------------------------------------
+
+HOD_add_duel_xp_winner = {
+	add_to_variable = { var = jedi_rank_xp value = 300 }
+
+	# Lightsaber forms — advance whichever ones are unlocked but not yet mastered
+	if = { limit = { has_trait = form_shii_cho	NOT = { has_trait = form_shii_cho_mastery  } } add_to_variable = { var = form_shii_cho_xp   value = 200 } }
+	if = { limit = { has_trait = form_makashi	NOT = { has_trait = form_makashi_mastery   } } add_to_variable = { var = form_makashi_xp    value = 200 } }
+	if = { limit = { has_trait = form_soresu	NOT = { has_trait = form_soresu_mastery    } } add_to_variable = { var = form_soresu_xp     value = 200 } }
+	if = { limit = { has_trait = form_ataru		NOT = { has_trait = form_ataru_mastery     } } add_to_variable = { var = form_ataru_xp      value = 200 } }
+	if = { limit = { has_trait = form_niman		NOT = { has_trait = form_niman_mastery     } } add_to_variable = { var = form_niman_xp      value = 200 } }
+	if = { limit = { has_trait = form_djem_so	NOT = { has_trait = form_djem_so_mastery   } } add_to_variable = { var = form_djem_so_xp    value = 200 } }
+	if = { limit = { has_trait = form_shien		NOT = { has_trait = form_shien_mastery     } } add_to_variable = { var = form_shien_xp      value = 200 } }
+	if = { limit = { has_trait = form_jar_kai	NOT = { has_trait = form_jar_kai_mastery   } } add_to_variable = { var = form_jar_kai_xp    value = 200 } }
+
+	# Force powers
+	if = { limit = { has_trait = force_push			 } add_to_variable = { var = force_push_xp        value = 200 } }
+	if = { limit = { has_trait = force_speed		 } add_to_variable = { var = force_speed_xp       value = 200 } }
+	if = { limit = { has_trait = force_barrier		 } add_to_variable = { var = force_barrier_xp     value = 200 } }
+	if = { limit = { has_trait = force_prescience	 } add_to_variable = { var = force_prescience_xp  value = 200 } }
+	if = { limit = { has_trait = force_healing		 } add_to_variable = { var = force_healing_xp     value = 200 } }
+	if = { limit = { has_trait = battle_meditation	 } add_to_variable = { var = battle_meditation_xp value = 200 } }
+	if = { limit = { has_trait = force_lightning	 } add_to_variable = { var = force_lightning_xp   value = 200 } }
+	if = { limit = { has_trait = force_choke		 } add_to_variable = { var = force_choke_xp       value = 200 } }
+
+	# Non-Force combat styles — advance whichever ones are unlocked but not yet mastered
+	if = { limit = { has_trait = blaster_duelist		NOT = { has_trait = blaster_duelist_mastery      } } add_to_variable = { var = blaster_duelist_xp       value = 200 } }
+	if = { limit = { has_trait = vibroblade_fighter	NOT = { has_trait = vibroblade_fighter_mastery   } } add_to_variable = { var = vibroblade_fighter_xp    value = 200 } }
+	if = { limit = { has_trait = dirty_fighter		NOT = { has_trait = dirty_fighter_mastery        } } add_to_variable = { var = dirty_fighter_xp         value = 200 } }
+	if = { limit = { has_trait = mandalorian_combat	NOT = { has_trait = mandalorian_combat_mastery   } } add_to_variable = { var = mandalorian_combat_xp    value = 200 } }
+	if = { limit = { has_trait = droid_tactical_analysis NOT = { has_trait = droid_tactical_mastery  } } add_to_variable = { var = droid_tactical_xp        value = 200 } }
+
+	# Rank promotion checks
+	HOD_check_rank_promotion = yes
+
+	# Mastery unlock checks
+	HOD_check_mastery_unlocks = yes
+}
+
+HOD_add_duel_xp_loser = {
+	add_to_variable = { var = jedi_rank_xp value = 50 }
+
+	# Rank promotion check (unlikely to trigger but correct to check)
+	HOD_check_rank_promotion = yes
+}
+
+HOD_add_duel_xp_stalemate = {
+	add_to_variable = { var = jedi_rank_xp value = 150 }
+
+	if = { limit = { has_trait = form_shii_cho	NOT = { has_trait = form_shii_cho_mastery  } } add_to_variable = { var = form_shii_cho_xp   value = 100 } }
+	if = { limit = { has_trait = form_makashi	NOT = { has_trait = form_makashi_mastery   } } add_to_variable = { var = form_makashi_xp    value = 100 } }
+	if = { limit = { has_trait = form_soresu	NOT = { has_trait = form_soresu_mastery    } } add_to_variable = { var = form_soresu_xp     value = 100 } }
+	if = { limit = { has_trait = form_ataru		NOT = { has_trait = form_ataru_mastery     } } add_to_variable = { var = form_ataru_xp      value = 100 } }
+	if = { limit = { has_trait = form_niman		NOT = { has_trait = form_niman_mastery     } } add_to_variable = { var = form_niman_xp      value = 100 } }
+	if = { limit = { has_trait = form_djem_so	NOT = { has_trait = form_djem_so_mastery   } } add_to_variable = { var = form_djem_so_xp    value = 100 } }
+	if = { limit = { has_trait = form_shien		NOT = { has_trait = form_shien_mastery     } } add_to_variable = { var = form_shien_xp      value = 100 } }
+	if = { limit = { has_trait = form_jar_kai	NOT = { has_trait = form_jar_kai_mastery   } } add_to_variable = { var = form_jar_kai_xp    value = 100 } }
+
+	if = { limit = { has_trait = force_push			 } add_to_variable = { var = force_push_xp        value = 100 } }
+	if = { limit = { has_trait = force_speed		 } add_to_variable = { var = force_speed_xp       value = 100 } }
+	if = { limit = { has_trait = force_barrier		 } add_to_variable = { var = force_barrier_xp     value = 100 } }
+	if = { limit = { has_trait = force_prescience	 } add_to_variable = { var = force_prescience_xp  value = 100 } }
+	if = { limit = { has_trait = force_healing		 } add_to_variable = { var = force_healing_xp     value = 100 } }
+	if = { limit = { has_trait = battle_meditation	 } add_to_variable = { var = battle_meditation_xp value = 100 } }
+	if = { limit = { has_trait = force_lightning	 } add_to_variable = { var = force_lightning_xp   value = 100 } }
+	if = { limit = { has_trait = force_choke		 } add_to_variable = { var = force_choke_xp       value = 100 } }
+
+	# Non-Force combat styles
+	if = { limit = { has_trait = blaster_duelist		NOT = { has_trait = blaster_duelist_mastery      } } add_to_variable = { var = blaster_duelist_xp       value = 100 } }
+	if = { limit = { has_trait = vibroblade_fighter	NOT = { has_trait = vibroblade_fighter_mastery   } } add_to_variable = { var = vibroblade_fighter_xp    value = 100 } }
+	if = { limit = { has_trait = dirty_fighter		NOT = { has_trait = dirty_fighter_mastery        } } add_to_variable = { var = dirty_fighter_xp         value = 100 } }
+	if = { limit = { has_trait = mandalorian_combat	NOT = { has_trait = mandalorian_combat_mastery   } } add_to_variable = { var = mandalorian_combat_xp    value = 100 } }
+	if = { limit = { has_trait = droid_tactical_analysis NOT = { has_trait = droid_tactical_mastery  } } add_to_variable = { var = droid_tactical_xp        value = 100 } }
+
+	HOD_check_rank_promotion = yes
+	HOD_check_mastery_unlocks = yes
+}
+
+# Rank promotion — called in unit_leader scope after XP is added
+HOD_check_rank_promotion = {
+	# Light side promotions
+	if = {
+		limit = {
+			has_trait = jedi_padawan_rank
+			check_variable = { jedi_rank_xp > 499 }
+		}
+		add_unit_leader_trait = jedi_knight_rank
+		set_variable = { jedi_rank_xp = 0 }
+	}
+	else_if = {
+		limit = {
+			has_trait = jedi_knight_rank
+			check_variable = { jedi_rank_xp > 999 }
+		}
+		add_unit_leader_trait = jedi_veteran_rank
+		set_variable = { jedi_rank_xp = 0 }
+	}
+	# Dark side promotions
+	else_if = {
+		limit = {
+			has_trait = dark_acolyte_rank
+			check_variable = { jedi_rank_xp > 499 }
+		}
+		add_unit_leader_trait = dark_champion_rank
+		set_variable = { jedi_rank_xp = 0 }
+	}
+}
+
+# Style-flag stamping — called in unit_leader scope BEFORE clearing duel flags
+# Sets exactly ONE hod_duel_style_* flag used by outcome event desc blocks.
+# else_if chain guarantees only one flag is set even when a character has
+# multiple masteries (priority: rarest / highest mastery first).
+
+# Style-flag stamping — called in unit_leader scope BEFORE clearing duel flags.
+# desc trigger blocks in unit_leader_events evaluate in COUNTRY scope, not
+# character scope — so we set country flags on the character's owner country.
+# The else_if chain guarantees exactly one flag is set.
+
+HOD_stamp_duel_victory_style = {
+	if      = { limit = { has_trait = form_juyo_vaapad          } owner = { set_country_flag = hod_duel_style_vaapad    } }
+	else_if = { limit = { has_trait = form_soresu_mastery        } owner = { set_country_flag = hod_duel_style_soresu    } }
+	else_if = { limit = { has_trait = form_makashi_mastery       } owner = { set_country_flag = hod_duel_style_makashi   } }
+	else_if = { limit = { has_trait = form_ataru_mastery         } owner = { set_country_flag = hod_duel_style_ataru     } }
+	else_if = { limit = { has_trait = form_djem_so_mastery       } owner = { set_country_flag = hod_duel_style_djem_so  } }
+	else_if = { limit = { has_trait = form_shien_mastery         } owner = { set_country_flag = hod_duel_style_shien    } }
+	else_if = { limit = { has_trait = form_jar_kai_mastery       } owner = { set_country_flag = hod_duel_style_jar_kai  } }
+	else_if = { limit = { has_trait = form_niman_mastery         } owner = { set_country_flag = hod_duel_style_niman    } }
+	else_if = { limit = { has_trait = droid_tactical_mastery     } owner = { set_country_flag = hod_duel_style_droid    } }
+	else_if = { limit = { has_trait = mandalorian_combat_mastery } owner = { set_country_flag = hod_duel_style_mando    } }
+	else_if = { limit = { has_trait = blaster_duelist_mastery    } owner = { set_country_flag = hod_duel_style_blaster  } }
+	else_if = { limit = { has_trait = dirty_fighter_mastery      } owner = { set_country_flag = hod_duel_style_dirty    } }
+	else_if = { limit = { has_trait = vibroblade_fighter_mastery } owner = { set_country_flag = hod_duel_style_vibroblade } }
+	else_if = { limit = { has_trait = combat_cyborg              } owner = { set_country_flag = hod_duel_style_cyborg   } }
+	else_if = { limit = { has_trait = dark_side_user             } owner = { set_country_flag = hod_duel_style_dark     } }
+	else_if = { limit = { has_trait = jedi_padawan_rank          } owner = { set_country_flag = hod_duel_style_padawan  } }
+	else_if = { limit = { has_trait = force_sensitive            } owner = { set_country_flag = hod_duel_style_force    } }
+	else                                                           = { owner = { set_country_flag = hod_duel_style_warrior } }
+}
+
+HOD_stamp_duel_defeat_style = {
+	if      = { limit = { has_trait = jedi_padawan_rank                                    } owner = { set_country_flag = hod_duel_style_padawan  } }
+	else_if = { limit = { has_trait = dark_acolyte_rank                                    } owner = { set_country_flag = hod_duel_style_acolyte  } }
+	else_if = { limit = { has_trait = dark_champion_rank                                   } owner = { set_country_flag = hod_duel_style_champion } }
+	else_if = { limit = { OR = { has_trait = sith_lord_rank has_trait = jedi_master_rank } } owner = { set_country_flag = hod_duel_style_master   } }
+	else_if = { limit = { has_trait = combat_cyborg                                        } owner = { set_country_flag = hod_duel_style_cyborg   } }
+	else_if = { limit = { has_trait = mandalorian_combat                                   } owner = { set_country_flag = hod_duel_style_mando    } }
+	else_if = { limit = { has_trait = force_sensitive                                      } owner = { set_country_flag = hod_duel_style_force    } }
+	else                                                                                     = { owner = { set_country_flag = hod_duel_style_warrior } }
+}
+
+HOD_stamp_duel_stale_style = {
+	if      = { limit = { has_trait = form_soresu_mastery        } owner = { set_country_flag = hod_duel_style_soresu    } }
+	else_if = { limit = { has_trait = mandalorian_combat_mastery } owner = { set_country_flag = hod_duel_style_mando     } }
+	else_if = { limit = { has_trait = vibroblade_fighter_mastery } owner = { set_country_flag = hod_duel_style_vibroblade } }
+	else_if = { limit = { has_trait = blaster_duelist            } owner = { set_country_flag = hod_duel_style_blaster  } }
+	else_if = { limit = { has_trait = jedi_master_rank           } owner = { set_country_flag = hod_duel_style_master   } }
+	else_if = { limit = { has_trait = dark_side_user             } owner = { set_country_flag = hod_duel_style_dark     } }
+	else_if = { limit = { has_trait = force_sensitive            } owner = { set_country_flag = hod_duel_style_force    } }
+	else                                                           = { owner = { set_country_flag = hod_duel_style_warrior } }
+}
+
+# Clears every possible outcome style flag — called in outcome event option effects.
+# unit_leader_event options evaluate in COUNTRY scope, so clr_country_flag works directly.
+HOD_clr_duel_style_flags = {
+	clr_country_flag = hod_duel_style_vaapad
+	clr_country_flag = hod_duel_style_soresu
+	clr_country_flag = hod_duel_style_makashi
+	clr_country_flag = hod_duel_style_ataru
+	clr_country_flag = hod_duel_style_djem_so
+	clr_country_flag = hod_duel_style_shien
+	clr_country_flag = hod_duel_style_jar_kai
+	clr_country_flag = hod_duel_style_niman
+	clr_country_flag = hod_duel_style_droid
+	clr_country_flag = hod_duel_style_mando
+	clr_country_flag = hod_duel_style_blaster
+	clr_country_flag = hod_duel_style_dirty
+	clr_country_flag = hod_duel_style_vibroblade
+	clr_country_flag = hod_duel_style_cyborg
+	clr_country_flag = hod_duel_style_dark
+	clr_country_flag = hod_duel_style_padawan
+	clr_country_flag = hod_duel_style_force
+	clr_country_flag = hod_duel_style_warrior
+	clr_country_flag = hod_duel_style_acolyte
+	clr_country_flag = hod_duel_style_champion
+	clr_country_flag = hod_duel_style_master
+}
+
+# Clears the tactic-choice desc flags — called in hod_duel.2 and hod_duel.3 option effects.
+# unit_leader_event options evaluate in COUNTRY scope, so clr_country_flag works directly.
+HOD_clr_duel_tactic_flags = {
+	clr_country_flag = hod_duel_tactic_mando
+	clr_country_flag = hod_duel_tactic_gunfighter
+	clr_country_flag = hod_duel_tactic_dirty
+	clr_country_flag = hod_duel_tactic_warrior
+	clr_country_flag = hod_duel_tactic_soresu
+	clr_country_flag = hod_duel_tactic_aggressive
+	clr_country_flag = hod_duel_tactic_force
+	clr_country_flag = hod_duel_tactic_cyborg
+	clr_country_flag = hod_duel_tactic_dark
+}
+
+# Mastery unlocks — called in unit_leader scope after XP is added
+HOD_check_mastery_unlocks = {
+	# Lightsaber forms
+	if = { limit = { has_trait = form_shii_cho	NOT = { has_trait = form_shii_cho_mastery  } check_variable = { form_shii_cho_xp   > 999 } } add_unit_leader_trait = form_shii_cho_mastery   }
+	if = { limit = { has_trait = form_makashi	NOT = { has_trait = form_makashi_mastery   } check_variable = { form_makashi_xp    > 999 } } add_unit_leader_trait = form_makashi_mastery   }
+	if = { limit = { has_trait = form_soresu	NOT = { has_trait = form_soresu_mastery    } check_variable = { form_soresu_xp     > 999 } } add_unit_leader_trait = form_soresu_mastery    }
+	if = { limit = { has_trait = form_ataru		NOT = { has_trait = form_ataru_mastery     } check_variable = { form_ataru_xp      > 999 } } add_unit_leader_trait = form_ataru_mastery     }
+	if = { limit = { has_trait = form_niman		NOT = { has_trait = form_niman_mastery     } check_variable = { form_niman_xp      > 999 } } add_unit_leader_trait = form_niman_mastery     }
+	if = { limit = { has_trait = form_djem_so	NOT = { has_trait = form_djem_so_mastery   } check_variable = { form_djem_so_xp    > 999 } } add_unit_leader_trait = form_djem_so_mastery   }
+	if = { limit = { has_trait = form_shien		NOT = { has_trait = form_shien_mastery     } check_variable = { form_shien_xp      > 999 } } add_unit_leader_trait = form_shien_mastery     }
+	if = { limit = { has_trait = form_jar_kai	NOT = { has_trait = form_jar_kai_mastery   } check_variable = { form_jar_kai_xp    > 999 } } add_unit_leader_trait = form_jar_kai_mastery   }
+	# Non-Force combat styles
+	if = { limit = { has_trait = blaster_duelist		NOT = { has_trait = blaster_duelist_mastery      } check_variable = { blaster_duelist_xp       > 999 } } add_unit_leader_trait = blaster_duelist_mastery      }
+	if = { limit = { has_trait = vibroblade_fighter	NOT = { has_trait = vibroblade_fighter_mastery   } check_variable = { vibroblade_fighter_xp    > 999 } } add_unit_leader_trait = vibroblade_fighter_mastery   }
+	if = { limit = { has_trait = dirty_fighter		NOT = { has_trait = dirty_fighter_mastery        } check_variable = { dirty_fighter_xp         > 999 } } add_unit_leader_trait = dirty_fighter_mastery        }
+	if = { limit = { has_trait = mandalorian_combat	NOT = { has_trait = mandalorian_combat_mastery   } check_variable = { mandalorian_combat_xp    > 999 } } add_unit_leader_trait = mandalorian_combat_mastery   }
+	if = { limit = { has_trait = droid_tactical_analysis NOT = { has_trait = droid_tactical_mastery  } check_variable = { droid_tactical_xp        > 999 } } add_unit_leader_trait = droid_tactical_mastery       }
+}
