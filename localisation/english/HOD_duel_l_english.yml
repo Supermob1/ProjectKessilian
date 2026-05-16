@@ -59,32 +59,32 @@
  ###############################################################
 
  # hod_duel.10 — Initiator's fighter: VICTORY (ROOT = own fighter, opponent = hod_duel_enemy_char)
- hod_duel.10.t:0 "Victory — [hod_duel_enemy_char.GetName] Falls"
+ hod_duel.10.t:0 "[hod_duel_enemy_char.GetName] Falls"
  hod_duel.10.d:0 "The duel is over. [ROOT.GetName] stands. [hod_duel_enemy_char.GetName] does not."
  hod_duel.10.a:0 "Well fought."
 
  # hod_duel.11 — Initiator's fighter: DEFEAT
- hod_duel.11.t:0 "Defeat — Driven Back by [hod_duel_enemy_char.GetName]"
+ hod_duel.11.t:0 "Driven Back by [hod_duel_enemy_char.GetName]"
  hod_duel.11.d:0 "The duel is over. [hod_duel_enemy_char.GetName] proved the better fighter today."
  hod_duel.11.a:0 "I will not fail again."
 
  # hod_duel.12 — Initiator's fighter: STALEMATE
- hod_duel.12.t:0 "Stalemate — Neither Falls"
+ hod_duel.12.t:0 "Neither Falls"
  hod_duel.12.d:0 "Neither [ROOT.GetName] nor [hod_duel_enemy_char.GetName] could close it out. The duel ends without resolution."
  hod_duel.12.a:0 "This isn't over."
 
  # hod_duel.20 — Enemy fighter: VICTORY (ROOT = enemy fighter, opponent = hod_duel_own_char)
- hod_duel.20.t:0 "Victory — [hod_duel_own_char.GetName] Falls Back"
+ hod_duel.20.t:0 "[hod_duel_own_char.GetName] Falls Back"
  hod_duel.20.d:0 "The duel is over. [ROOT.GetName] stands. [hod_duel_own_char.GetName] does not."
  hod_duel.20.a:0 "As it should be."
 
  # hod_duel.21 — Enemy fighter: DEFEAT
- hod_duel.21.t:0 "Defeat — Driven Back by [hod_duel_own_char.GetName]"
+ hod_duel.21.t:0 "Driven Back by [hod_duel_own_char.GetName]"
  hod_duel.21.d:0 "The duel is over. [hod_duel_own_char.GetName] proved the better fighter today."
  hod_duel.21.a:0 "This changes nothing."
 
  # hod_duel.22 — Enemy fighter: STALEMATE
- hod_duel.22.t:0 "Stalemate — An Even Match"
+ hod_duel.22.t:0 "An Even Match"
  hod_duel.22.d:0 "Neither [ROOT.GetName] nor [hod_duel_own_char.GetName] could close it out. The duel ends without resolution."
  hod_duel.22.a:0 "We will meet again."
 
