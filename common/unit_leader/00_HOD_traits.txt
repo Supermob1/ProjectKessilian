@@ -30,9 +30,9 @@
 #	gain_xp_leader = trigger # scope is a unit leader. ROOT is country you are from and FROM is any target nationality for agents
 #	gain_xp_on_spotting = 0 # integer
 #	modifier = { } # list of modifiers
-#	non_shared_modifier = {} #
-#	corps_commander_modifier = {} #
-#	field_marshal_modifier = {} #
+#	non_shared_modifier = {}
+#	corps_commander_modifier = {}
+#	field_marshal_modifier = {}
 #	sub_unit_modifiers = { # list of sub unit def
 #		# e.g.
 #		submarine {
@@ -52,7 +52,7 @@
 #}
 leader_traits = {
 
-	
+
 ##################################
 # Custom Traits
 ##################################
@@ -63,22 +63,20 @@ leader_traits = {
 
 	jedi_padawan_rank = {
 		type = corps_commander
-		#trait_type = assignable_trait
-		gain_xp = { 
-			always = no
-		}
-		prerequisites = {
-			has_trait = force_sensitive
+		allowed = {
+			has_trait = light_side_user
 		}
 		on_add = {
-			remove_trait = {
-				trait = jedi_knight_rank
-			}
-			remove_trait = {
-				trait = jedi_veteran_rank
-			}
-			remove_trait = {
-				trait = jedi_master_rank
+			THIS = {
+				remove_trait = {
+					trait = jedi_knight_rank
+				}
+				remove_trait = {
+					trait = jedi_veteran_rank
+				}
+				remove_trait = {
+					trait = jedi_master_rank
+				}
 			}
 		}
 		modifier = {
@@ -91,18 +89,13 @@ leader_traits = {
 			experience_gain_factor = 0.15
 		}
 		gui_row = 0
-		# mutually_exclusive = { jedi_knight_rank jedi_veteran_rank jedi_master_rank }
 		new_commander_weight = { factor = 0 }
 	}
 
 	jedi_knight_rank = {
 		type = corps_commander
-		#trait_type = assignable_trait
-		gain_xp = {
-			always = no
-		}
-		prerequisites = {
-			has_trait = force_sensitive
+		allowed = {
+			has_trait = light_side_user
 		}
 		on_add = {
 			remove_trait = {
@@ -120,19 +113,14 @@ leader_traits = {
 			land_reinforce_rate = 0.05
 			max_planning = 0.01
 		}
-		# mutually_exclusive = { jedi_padawan_rank jedi_veteran_rank jedi_master_rank }
 		gui_row = 1
 		new_commander_weight = { factor = 0 }
 	}
 
 	jedi_veteran_rank = {
 		type = corps_commander
-		#trait_type = assignable_trait
-		gain_xp = { 
-			always = no
-		}
-		prerequisites = {
-			has_trait = force_sensitive
+		allowed = {
+			has_trait = light_side_user
 		}
 		on_add = {
 			remove_trait = {
@@ -154,7 +142,6 @@ leader_traits = {
 		non_shared_modifier = {
 			experience_gain_factor = -0.05
 		}
-		# mutually_exclusive = { jedi_knight_rank jedi_padawan_rank jedi_master_rank }
 		gui_row = 0
 		gui_column = 1
 		new_commander_weight = { factor = 0 }
@@ -162,12 +149,8 @@ leader_traits = {
 
 	jedi_master_rank = {
 		type = corps_commander
-		#trait_type = assignable_trait
-		gain_xp = { 
-			always = no
-		}
-		prerequisites = {
-			has_trait = force_sensitive
+		allowed = {
+			has_trait = light_side_user
 		}
 		on_add = {
 			remove_trait = {
@@ -190,7 +173,89 @@ leader_traits = {
 		non_shared_modifier = {
 			experience_gain_factor = -0.05
 		}
-		# mutually_exclusive = { jedi_knight_rank jedi_padawan_rank jedi_veteran_rank }
+		gui_row = 1
+		gui_column = 1
+		new_commander_weight = { factor = 0 }
+	}
+
+##################################
+# Dark Side Rank Traits
+##################################
+
+	dark_acolyte_rank = {
+		type = corps_commander
+		allowed = {
+			has_trait = dark_side_user
+		}
+		on_add = {
+			remove_trait = {
+				trait = dark_champion_rank
+			}
+			remove_trait = {
+				trait = sith_lord_rank
+			}
+		}
+		modifier = {
+			army_attack_factor = 0.05
+			army_org_factor = -0.08
+			max_planning = -0.02
+			army_morale_factor = 0.08
+		}
+		non_shared_modifier = {
+			experience_gain_factor = 0.10
+		}
+		gui_row = 0
+		new_commander_weight = { factor = 0 }
+	}
+
+	dark_champion_rank = {
+		type = corps_commander
+		allowed = {
+			has_trait = dark_side_user
+		}
+		on_add = {
+			remove_trait = {
+				trait = dark_acolyte_rank
+			}
+			remove_trait = {
+				trait = sith_lord_rank
+			}
+		}
+		modifier = {
+			army_attack_factor = 0.08
+			army_morale_factor = 0.12
+			land_reinforce_rate = 0.03
+			wounded_chance_factor = 0.10
+		}
+		gui_row = 1
+		new_commander_weight = { factor = 0 }
+	}
+
+	sith_lord_rank = {
+		type = corps_commander
+		allowed = {
+			has_trait = dark_side_user
+		}
+		on_add = {
+			remove_trait = {
+				trait = dark_acolyte_rank
+			}
+			remove_trait = {
+				trait = dark_champion_rank
+			}
+		}
+		modifier = {
+			army_attack_factor = 0.12
+			army_morale_factor = 0.18
+			wounded_chance_factor = 0.15
+		}
+		field_marshal_modifier = {
+			max_army_group_size = 1
+			max_planning = 0.03
+		}
+		non_shared_modifier = {
+			experience_gain_factor = -0.05
+		}
 		gui_row = 1
 		gui_column = 1
 		new_commander_weight = { factor = 0 }
@@ -202,20 +267,10 @@ leader_traits = {
 
 	form_shii_cho = {
 		type = corps_commander
-		#trait_type = assignable_terrain_trait
 		cost = 600
 		gui_row = 2
 		gui_column = 0
-
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
-		#any_parent = { jedi_padawan_rank }
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			army_morale_factor = 0.05
 			max_planning = 0.01
@@ -226,9 +281,11 @@ leader_traits = {
 	form_shii_cho_mastery = {
 		type = corps_commander
 		trait_type = assignable_trait
+		gain_xp = { always = no }
 		cost = 1000
 		gui_row = 2
 		gui_column = 1
+		allowed = { has_trait = force_sensitive }
 		any_parent = { form_shii_cho }
 		modifier = {
 			army_morale_factor = 0.07
@@ -236,160 +293,13 @@ leader_traits = {
 		}
 		ai_will_do = { factor = 1 }
 	}
-	
-	form_soresu = {
-		type = corps_commander
-		#trait_type = assignable_terrain_trait
-		cost = 800
-		gui_row = 4
-		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
-		#any_parent = { form_shii_cho }
-		modifier = {
-			army_org_factor = 0.08
-			army_defence_factor = 0.05
-			attrition = -0.10
-			max_planning = 0.02
-		}
-		ai_will_do = { factor = 1 }
-	}
-	
-	form_soresu_mastery = {
-		type = corps_commander
-		trait_type = assignable_trait
-		cost = 1000
-		gui_row = 4
-		gui_column = 1
-		any_parent = { form_soresu }
-		modifier = {
-			army_org_factor = 0.06
-			army_defence_factor = 0.05
-			attrition = -0.10
-			wounded_chance_factor = -0.30
-		}
-		defense_skill_factor = 0.5
-		ai_will_do = { factor = 1 }
-	}
 
-	form_ataru = {
-		type = corps_commander
-		#trait_type = assignable_terrain_trait
-		cost = 800
-		gui_row = 5
-		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
-		#any_parent = { form_shii_cho }
-		modifier = {
-			army_attack_factor = 0.05
-			planning_speed = 0.10
-			army_morale_factor = 0.05
-		}
-		attack_skill_factor = 0.5
-		ai_will_do = { factor = 1 }
-	}
-
-	form_ataru_mastery = {
-		type = corps_commander
-		trait_type = assignable_trait
-		cost = 1000
-		gui_row = 5
-		gui_column = 1
-		any_parent = { form_ataru }
-		modifier = {
-			army_attack_factor = 0.05
-			planning_speed = 0.10
-		}
-		attack_skill_factor = 0.5
-		planning_skill_factor = 0.5
-		ai_will_do = { factor = 1 }
-	}
-	
-	form_niman = {
-		type = corps_commander
-		#trait_type = assignable_terrain_trait
-		cost = 800
-		gui_row = 6
-		gui_column = 0
-		#any_parent = { form_shii_cho }
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
-		modifier = {
-			supply_consumption_factor = -0.08
-			army_org_factor = 0.05
-		}
-		logistics_skill_factor = 0.5
-		coordination_skill_factor = 0.5
-		ai_will_do = { factor = 1 }
-	}
-
-	form_niman_mastery = {
-		type = corps_commander
-		trait_type = assignable_trait
-		cost = 1000
-		gui_row = 6
-		gui_column = 1
-		any_parent = { form_niman }
-		modifier = {
-			supply_consumption_factor = -0.08
-			army_org_factor = 0.05
-		}
-		logistics_skill_factor = 0.5
-		coordination_skill_factor = 0.5
-		ai_will_do = { factor = 1 }
-	}
-
-	form_juyo_vaapad = {
-		type = corps_commander
-		#trait_type = assignable_terrain_trait
-		cost = 1200
-		gui_row = 7
-		gui_column = 0
-		#any_parent = { form_ataru }
-		allowed = {
-			has_trait = jedi_master_windu
-		}
-		modifier = {
-			army_attack_factor = 0.10
-			wounded_chance_factor = 0.25
-			army_morale_factor = 0.10
-		}
-		attack_skill_factor = 1
-		defense_skill_factor = -0.5
-		ai_will_do = { factor = 1 }
-	}
 	form_makashi = {
 		type = corps_commander
 		cost = 800
 		gui_row = 3
 		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			army_attack_factor = 0.04
 			army_org_factor = 0.04
@@ -403,9 +313,11 @@ leader_traits = {
 	form_makashi_mastery = {
 		type = corps_commander
 		trait_type = assignable_trait
+		gain_xp = { always = no }
 		cost = 1000
 		gui_row = 3
 		gui_column = 1
+		allowed = { has_trait = force_sensitive }
 		any_parent = { form_makashi }
 		modifier = {
 			army_attack_factor = 0.06
@@ -417,19 +329,132 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 
+	form_soresu = {
+		type = corps_commander
+		cost = 800
+		gui_row = 4
+		gui_column = 0
+		allowed = { has_trait = force_sensitive }
+		modifier = {
+			army_org_factor = 0.08
+			army_defence_factor = 0.05
+			attrition = -0.10
+			max_planning = 0.02
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	form_soresu_mastery = {
+		type = corps_commander
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 1000
+		gui_row = 4
+		gui_column = 1
+		allowed = { has_trait = force_sensitive }
+		any_parent = { form_soresu }
+		modifier = {
+			army_org_factor = 0.06
+			army_defence_factor = 0.05
+			attrition = -0.10
+			wounded_chance_factor = -0.30
+		}
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	form_ataru = {
+		type = corps_commander
+		cost = 800
+		gui_row = 5
+		gui_column = 0
+		allowed = { has_trait = force_sensitive }
+		modifier = {
+			army_attack_factor = 0.05
+			planning_speed = 0.10
+			army_morale_factor = 0.05
+		}
+		attack_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	form_ataru_mastery = {
+		type = corps_commander
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 1000
+		gui_row = 5
+		gui_column = 1
+		allowed = { has_trait = force_sensitive }
+		any_parent = { form_ataru }
+		modifier = {
+			army_attack_factor = 0.05
+			planning_speed = 0.10
+		}
+		attack_skill_factor = 0.5
+		planning_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	form_niman = {
+		type = corps_commander
+		cost = 800
+		gui_row = 6
+		gui_column = 0
+		allowed = { has_trait = force_sensitive }
+		modifier = {
+			supply_consumption_factor = -0.08
+			army_org_factor = 0.05
+		}
+		logistics_skill_factor = 0.5
+		coordination_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	form_niman_mastery = {
+		type = corps_commander
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 1000
+		gui_row = 6
+		gui_column = 1
+		any_parent = { form_niman }
+		allowed = { has_trait = force_sensitive }
+		modifier = {
+			supply_consumption_factor = -0.08
+			army_org_factor = 0.05
+		}
+		logistics_skill_factor = 0.5
+		coordination_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	form_juyo_vaapad = {
+		type = corps_commander
+		cost = 1200
+		gui_row = 7
+		gui_column = 0
+		# any_parent = { form_ataru }
+		allowed = { has_trait = force_sensitive }
+		prerequisites = {
+			has_trait = jedi_master_windu
+		}
+		modifier = {
+			army_attack_factor = 0.10
+			wounded_chance_factor = 0.25
+			army_morale_factor = 0.10
+		}
+		attack_skill_factor = 1
+		defense_skill_factor = -0.5
+		ai_will_do = { factor = 1 }
+	}
+
 	form_djem_so = {
 		type = corps_commander
 		cost = 900
 		gui_row = 8
 		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			army_attack_factor = 0.08
 			breakthrough_factor = 0.06
@@ -443,9 +468,11 @@ leader_traits = {
 	form_djem_so_mastery = {
 		type = corps_commander
 		trait_type = assignable_trait
+		gain_xp = { always = no }
 		cost = 1200
 		gui_row = 8
 		gui_column = 1
+		allowed = { has_trait = force_sensitive }
 		any_parent = { form_djem_so }
 		modifier = {
 			army_attack_factor = 0.10
@@ -463,14 +490,7 @@ leader_traits = {
 		cost = 850
 		gui_row = 9
 		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			army_defence_factor = 0.06
 			breakthrough_factor = 0.05
@@ -484,9 +504,11 @@ leader_traits = {
 	form_shien_mastery = {
 		type = corps_commander
 		trait_type = assignable_trait
+		gain_xp = { always = no }
 		cost = 1100
 		gui_row = 9
 		gui_column = 1
+		allowed = { has_trait = force_sensitive }
 		any_parent = { form_shien }
 		modifier = {
 			army_defence_factor = 0.08
@@ -504,14 +526,7 @@ leader_traits = {
 		cost = 1000
 		gui_row = 10
 		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			army_attack_factor = 0.06
 			army_defence_factor = 0.06
@@ -526,7 +541,9 @@ leader_traits = {
 	form_jar_kai_mastery = {
 		type = corps_commander
 		trait_type = assignable_trait
+		gain_xp = { always = no }
 		cost = 1400
+		allowed = { has_trait = force_sensitive }
 		gui_row = 10
 		gui_column = 1
 		any_parent = { form_jar_kai }
@@ -543,34 +560,6 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 
-	jedi_high_command = {
-		type = field_marshal
-		#trait_type = assignable_trait
-		cost = 800
-		#gui_row = 0
-		#gui_column = 2
-		#any_parent = { form_shii_cho }
-		field_marshal_modifier = {
-			max_army_group_size = 1
-			max_planning = 0.01
-		}
-		ai_will_do = { factor = 1 }
-	}
-
-	jedi_strategic_mastery = {
-		type = field_marshal
-		#trait_type = assignable_trait
-		cost = 1000
-		#gui_row = 0
-		#gui_column = 3
-		#any_parent = { jedi_high_command }
-		field_marshal_modifier = {
-			max_army_group_size = 2
-			max_planning = 0.02
-		}
-		ai_will_do = { factor = 1 }
-	}
-
 ##################################
 # Force Power Traits
 ##################################
@@ -582,14 +571,7 @@ leader_traits = {
 		cost = 900
 		gui_row = 0
 		gui_column = 3
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			army_attack_factor = 0.04
 			breakthrough_factor = 0.06
@@ -598,20 +580,13 @@ leader_traits = {
 		attack_skill_factor = 0.5
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	force_speed = {
 		type = corps_commander
 		cost = 900
 		gui_row = 11
 		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			planning_speed = 0.10
 			army_speed_factor = 0.05
@@ -619,20 +594,13 @@ leader_traits = {
 		planning_skill_factor = 0.5
 		ai_will_do = { factor = 1 }
 	}
-
+	
 	force_barrier = {
 		type = corps_commander
 		cost = 900
 		gui_row = 11
 		gui_column = 1
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			army_defence_factor = 0.05
 			wounded_chance_factor = -0.15
@@ -646,14 +614,7 @@ leader_traits = {
 		cost = 900
 		gui_row = 12
 		gui_column = 0
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			max_planning = 0.03
 			army_org_factor = 0.05
@@ -667,14 +628,7 @@ leader_traits = {
 		cost = 900
 		gui_row = 12
 		gui_column = 1
-		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
-		}
+		allowed = { has_trait = force_sensitive }
 		modifier = {
 			land_reinforce_rate = 0.06
 			wounded_chance_factor = -0.10
@@ -690,8 +644,12 @@ leader_traits = {
 		cost = 1000
 		gui_row = 13
 		gui_column = 0
+		allowed = { has_trait = force_sensitive }
 		prerequisites = {
-			has_trait = jedi_master_rank
+			OR = {
+				has_trait = jedi_master_rank
+				has_trait = sith_lord_rank
+			}
 		}
 		field_marshal_modifier = {
 			army_morale_factor = 0.10
@@ -700,7 +658,8 @@ leader_traits = {
 		coordination_skill_factor = 0.5
 		ai_will_do = { factor = 1 }
 	}
-	# ── Dark side Force powers — gated by dark_side trait ───────────────────
+
+	# ── Dark side Force powers — gated by dark_side_user trait ───────────────────
 
 	force_lightning = {
 		type = corps_commander
@@ -709,12 +668,7 @@ leader_traits = {
 		gui_column = 0
 		allowed = { has_trait = dark_side_user }
 		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
+			has_trait = dark_side_user
 		}
 		modifier = {
 			army_attack_factor = 0.08
@@ -725,6 +679,22 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 
+	force_lightning_mastery = {
+		type = corps_commander
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		allowed = { has_trait = dark_side_user }
+		any_parent = { force_lightning }
+		modifier = {
+			army_attack_factor = 0.12
+			army_morale_factor = 0.08
+			wounded_chance_factor = 0.15
+		}
+		attack_skill_factor = 1
+		new_commander_weight = { factor = 0 }
+		ai_will_do = { factor = 0 }
+	}
+
 	force_choke = {
 		type = corps_commander
 		cost = 1100
@@ -732,12 +702,7 @@ leader_traits = {
 		gui_column = 1
 		allowed = { has_trait = dark_side_user }
 		prerequisites = {
-			OR = {
-				has_trait = jedi_padawan_rank
-				has_trait = jedi_knight_rank
-				has_trait = jedi_veteran_rank
-				has_trait = jedi_master_rank
-			}
+			has_trait = dark_side_user
 		}
 		modifier = {
 			army_attack_factor = 0.05
@@ -750,39 +715,56 @@ leader_traits = {
 		ai_will_do = { factor = 1 }
 	}
 
+	force_choke_mastery = {
+		type = corps_commander
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		allowed = { has_trait = dark_side_user }
+		any_parent = { force_choke }
+		modifier = {
+			army_attack_factor = 0.08
+			army_org_factor = 0.08
+			breakthrough_factor = 0.08
+			wounded_chance_factor = 0.15
+		}
+		attack_skill_factor = 0.5
+		defense_skill_factor = 0.5
+		new_commander_weight = { factor = 0 }
+		ai_will_do = { factor = 0 }
+	}
+
 ##################################
 # Jedi Knight / Jedi Master (advisor/command traits, kept for existing references)
 ##################################
 
 	dark_side_user = {
-		type = all 
-		
+		type = all
 		cost = -1
-	
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
+
+	light_side_user = {
+		type = all
+		cost = -1
+		ai_will_do = { factor = 1 }
+	}
+
 	force_sensitive = {
-		type = all 
-		
+		type = all
 		cost = -1
-	
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
-	
+
 	jedi_knight = {
 		type = corps_commander
-		
+
 		gain_xp = {
 			set_temp_variable = { temp = num_units }
 			multiply_temp_variable = { temp = 0.8 }
 			check_variable = { num_infantry > temp }
 		}
-		
-		custom_gain_xp_trigger_tooltip = infantry_ratio_over_80	
+
+		custom_gain_xp_trigger_tooltip = infantry_ratio_over_80
 		cost = 700
 		modifier = {
 		land_reinforce_rate = 0.1
@@ -790,13 +772,13 @@ leader_traits = {
 		max_planning = 0.02
 		offence = 0.02
 		}
-	
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	jedi_master = { 
+	jedi_master = {
 		type = field_marshal
 		gain_xp = {
 			always = no # not gainable
@@ -806,19 +788,19 @@ leader_traits = {
 		non_shared_modifier = {
 			experience_gain_factor = -0.05
 		}
-		
+
 		field_marshal_modifier = {
 			max_planning = 0.04
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
-		
+
 
 	}
-	
-	aggression_chip = { 
+
+	aggression_chip = {
 		type = field_marshal
 		gain_xp = {
 			always = no # not gainable
@@ -826,9 +808,9 @@ leader_traits = {
 		cost = 1000
 
 		non_shared_modifier = {
-		
+
 		}
-		
+
 		field_marshal_modifier = {
 			planning_speed = 0.1
 			wounded_chance_factor = 0.75
@@ -839,12 +821,369 @@ leader_traits = {
 
 		attack_skill_factor = 0.3
 		defense_skill_factor = -0.2
-		
+
 		ai_will_do = {
 			factor = 1
 		}
-		
+	}
 
+##################################
+# Non-Force Duelist Traits
+##################################
+
+	# skilled_duelist — marks a character as a formidable close-combat fighter
+	# even without Force sensitivity. Gate trait: gives a small duel advantage.
+	skilled_duelist = {
+		type = all
+		cost = -1    # assigned manually in character definitions; not gainable in-game
+		gain_xp = { always = no }
+		modifier = {
+			army_attack_factor = 0.03
+			wounded_chance_factor = -0.10
+		}
+		attack_skill_factor = 0.3
+		ai_will_do = { factor = 1 }
+	}
+
+	# combat_cyborg — cybernetically enhanced warrior.
+	# Reduces Force-user advantage while granting raw power at the cost of
+	# strategic flexibility.
+	combat_cyborg = {
+		type = all
+		cost = -1
+		gain_xp = { always = no }
+		modifier = {
+			army_attack_factor = 0.05
+			wounded_chance_factor = 0.20
+			land_reinforce_rate = -0.05
+		}
+		attack_skill_factor = 0.5
+		defense_skill_factor = -0.3
+		ai_will_do = { factor = 1 }
+	}
+
+##################################
+# Non-Force Combat Styles
+# (parallel to lightsaber forms — masteries unlockable via duel XP)
+# allowed = NOT force_sensitive keeps these off Force-user skill trees
+##################################
+
+	# ── Blaster Duelist ───────────────────────────────────────────────────────
+	blaster_duelist = {
+		type = all
+		cost = 700
+		gui_row = 0
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.05
+			planning_speed = 0.08
+			army_org_factor = 0.03
+		}
+		attack_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	blaster_duelist_mastery = {
+		type = all
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 1000
+		gui_row = 0
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		any_parent = { blaster_duelist }
+		modifier = {
+			army_attack_factor = 0.08
+			planning_speed = 0.12
+		}
+		attack_skill_factor = 1.0
+		planning_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# ── Vibroblade Fighter ────────────────────────────────────────────────────
+	vibroblade_fighter = {
+		type = all
+		cost = 700
+		gui_row = 1
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.04
+			army_defence_factor = 0.04
+			breakthrough_factor = 0.06
+		}
+		attack_skill_factor = 0.5
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	vibroblade_fighter_mastery = {
+		type = all
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 1000
+		gui_row = 1
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		any_parent = { vibroblade_fighter }
+		modifier = {
+			army_attack_factor = 0.07
+			army_defence_factor = 0.06
+			breakthrough_factor = 0.08
+			wounded_chance_factor = -0.15
+		}
+		attack_skill_factor = 0.5
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# ── Dirty Fighter ─────────────────────────────────────────────────────────
+	# No-rules pragmatic brawler — favors aggression over discipline
+	dirty_fighter = {
+		type = all
+		cost = 600
+		gui_row = 2
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.07
+			wounded_chance_factor = 0.20
+			army_org_factor = -0.05
+		}
+		attack_skill_factor = 1.0
+		ai_will_do = { factor = 1 }
+	}
+
+	dirty_fighter_mastery = {
+		type = all
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 900
+		gui_row = 2
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		any_parent = { dirty_fighter }
+		modifier = {
+			army_attack_factor = 0.10
+			wounded_chance_factor = 0.25
+			army_org_factor = -0.05
+		}
+		attack_skill_factor = 1.0
+		planning_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# ── Mandalorian Combat ────────────────────────────────────────────────────
+	# Full Mandalorian warrior tradition: beskar, jetpack, combined arms
+	mandalorian_combat = {
+		type = all
+		cost = 900
+		gui_row = 3
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			land_reinforce_rate = 0.05
+			army_morale_factor = 0.08
+			wounded_chance_factor = -0.15
+		}
+		attack_skill_factor = 0.5
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	mandalorian_combat_mastery = {
+		type = all
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 1200
+		gui_row = 3
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		any_parent = { mandalorian_combat }
+		modifier = {
+			army_attack_factor = 0.08
+			army_defence_factor = 0.08
+			land_reinforce_rate = 0.08
+			army_morale_factor = 0.12
+			wounded_chance_factor = -0.20
+		}
+		attack_skill_factor = 0.5
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# ── Droid Tactical Analysis ───────────────────────────────────────────────
+	# For cybernetic/droid commanders: pure computational combat optimization
+	droid_tactical_analysis = {
+		type = all
+		cost = 800
+		gui_row = 4
+		gui_column = 0
+		allowed = { has_trait = combat_cyborg }
+		modifier = {
+			max_planning = 0.04
+			army_org_factor = 0.05
+			planning_speed = 0.10
+		}
+		planning_skill_factor = 1.0
+		ai_will_do = { factor = 1 }
+	}
+
+	droid_tactical_mastery = {
+		type = all
+		trait_type = assignable_trait
+		gain_xp = { always = no }
+		cost = 1100
+		gui_row = 4
+		gui_column = 1
+		allowed = { has_trait = combat_cyborg }
+		any_parent = { droid_tactical_analysis }
+		modifier = {
+			max_planning = 0.06
+			army_org_factor = 0.08
+			planning_speed = 0.15
+		}
+		planning_skill_factor = 1.0
+		coordination_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+##################################
+# Non-Force Combat Equipment Traits
+# (parallel to Force powers — no masteries, flat bonuses)
+# allowed = NOT force_sensitive keeps these off Force-user skill trees
+##################################
+
+	# Enhanced targeting reticle / cybernetic aim assist
+	targeting_computer = {
+		type = all
+		cost = 900
+		gui_row = 5
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.06
+			breakthrough_factor = 0.04
+		}
+		attack_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# Personal energy shield or beskar plating
+	energy_shield = {
+		type = all
+		cost = 900
+		gui_row = 5
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_defence_factor = 0.05
+			wounded_chance_factor = -0.20
+		}
+		defense_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# Jetpack-assisted assault maneuvers
+	jetpack_assault = {
+		type = all
+		cost = 850
+		gui_row = 6
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_speed_factor = 0.05
+			planning_speed = 0.08
+			army_attack_factor = 0.04
+		}
+		planning_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# Thermal detonators and area-denial explosives
+	thermal_detonators = {
+		type = all
+		cost = 900
+		gui_row = 6
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.05
+			breakthrough_factor = 0.08
+			wounded_chance_factor = 0.10
+		}
+		attack_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# Combat stims — boosted reflexes at cost to endurance
+	combat_stimulants = {
+		type = all
+		cost = 900
+		gui_row = 7
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.08
+			army_org_factor = -0.08
+			wounded_chance_factor = 0.20
+		}
+		attack_skill_factor = 1.0
+		ai_will_do = { factor = 1 }
+	}
+
+	# Feints, misdirection, psychological pressure
+	deceptive_combat = {
+		type = all
+		cost = 850
+		gui_row = 7
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_defence_factor = 0.04
+			max_planning = 0.02
+			army_org_factor = 0.04
+		}
+		defense_skill_factor = 0.5
+		coordination_skill_factor = 0.5
+		ai_will_do = { factor = 1 }
+	}
+
+	# Heavy armor plating — survivability at the cost of mobility
+	heavy_armor_plating = {
+		type = all
+		cost = 900
+		gui_row = 8
+		gui_column = 0
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			wounded_chance_factor = -0.25
+			army_defence_factor = 0.05
+			land_reinforce_rate = 0.05
+			army_speed_factor = -0.03
+		}
+		defense_skill_factor = 1.0
+		ai_will_do = { factor = 1 }
+	}
+
+	# Overwhelming suppressive firepower
+	rapid_fire_barrage = {
+		type = all
+		cost = 950
+		gui_row = 8
+		gui_column = 1
+		allowed = { NOT = { has_trait = force_sensitive } }
+		modifier = {
+			army_attack_factor = 0.07
+			breakthrough_factor = 0.05
+			supply_consumption_factor = 0.05
+		}
+		attack_skill_factor = 1.0
+		ai_will_do = { factor = 1 }
 	}
 
 }
