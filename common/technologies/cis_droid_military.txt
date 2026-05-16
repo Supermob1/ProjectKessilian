@@ -47,6 +47,11 @@ technologies = {
 			droid_tech
 			infantry_weapons
 		}
+
+		enable_subunits = {
+			infantry_droid
+		}
+
 		ai_will_do = {
 			base = 1
 		}
@@ -94,6 +99,11 @@ technologies = {
 			droid_tech
 			armor
 		}
+
+		enable_subunits = {
+			heavy_droid
+		}
+
 		ai_will_do = {
 			base = 1
 		}
@@ -242,6 +252,11 @@ technologies = {
 			droid_tech
 			infantry_weapons
 		}
+
+		enable_subunits = {
+			commando_droid
+		}
+
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -252,7 +267,7 @@ technologies = {
 	}
 	droideka_early = {
 		enable_equipments = {
-			cis_droideka_droid_equipment_2
+			cis_droideka_droid_equipment_1
 		}
 		path = {
 			leads_to_tech = droideka_adv
@@ -268,6 +283,11 @@ technologies = {
 			droid_tech
 			armor
 		}
+
+		enable_subunits = {
+			droideka_droid
+		}
+
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -294,6 +314,11 @@ technologies = {
 			droid_tech
 			infantry_weapons
 		}
+
+		enable_subunits = {
+			magnaguard_droid
+		}
+
 		ai_will_do = {
 			base = 1
 			modifier = {
@@ -320,6 +345,11 @@ technologies = {
 			droid_tech
 			armor
 		}
+
+		enable_subunits = {
+			spider_droid
+		}
+
 		ai_will_do = {
 			base = 1
 			modifier = {
