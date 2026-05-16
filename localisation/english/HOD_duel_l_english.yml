@@ -1,0 +1,173 @@
+﻿l_english:
+ # Decision category
+ HOD_debug_category:0 "HOD Debug"
+ HOD_debug_category_desc:0 "Developer tools for testing Hearts of Durasteel mechanics."
+ HOD_debug_duel_random:0 "[DEBUG] Trigger Random Duel"
+ HOD_debug_duel_random_desc:0 "Immediately selects a random assigned commander on each warring side and forces a duel between them. Prefers Force-sensitives, then skilled duelists, then any assigned commander."
+
+ ###############################################################
+ # DYNAMIC REFERENCES USED IN THIS FILE
+ #   [hod_duel_own_char.GetName]     — initiator's fighter
+ #   [hod_duel_enemy_char.GetName]   — enemy's fighter
+ #   [hod_duel_initiator_country_ref.GetName]      — initiator country
+ #   [hod_duel_initiator_country_ref.GetAdjective] — initiator country adjective
+ #   [hod_duel_enemy_country_ref.GetName]          — enemy country
+ #   [hod_duel_enemy_country_ref.GetAdjective]     — enemy country adjective
+ #   [ROOT.GetName]                  — in unit_leader_event: the character firing the event
+ ###############################################################
+
+ # hod_duel.1 — Duel opportunity (country event, fired for initiator)
+ hod_duel.1.t:0 "A Duel Across the Lines"
+ hod_duel.1.d_force_vs_force:0 "Across the front, [hod_duel_enemy_char.GetName] of the [hod_duel_enemy_country_ref.GetAdjective] forces presses against our advance — and we feel them in the Force as clearly as they feel us. [hod_duel_own_char.GetName] has already drawn their lightsaber. The Force hums with anticipation. A duel is inevitable."
+ hod_duel.1.d_force_vs_warrior:0 "[hod_duel_enemy_char.GetName] leads the [hod_duel_enemy_country_ref.GetAdjective] vanguard — no Force-user, but a fighter of terrifying skill. [hod_duel_own_char.GetName] has marked them across the battle lines. This will not be a contest of mysticism, but of blade against blade."
+ hod_duel.1.d_warrior_vs_force:0 "A dark side presence has manifested at the [hod_duel_enemy_country_ref.GetAdjective] front — [hod_duel_enemy_char.GetName] themselves. [hod_duel_own_char.GetName] is no Jedi, but they have volunteered to face this enemy regardless. They understand the risk. They do not appear to care."
+ hod_duel.1.d:0 "[hod_duel_enemy_char.GetName] commands the [hod_duel_enemy_country_ref.GetAdjective] forces opposing our advance — a dangerous fighter by every account. [hod_duel_own_char.GetName] has stepped forward, blade in hand, ready to settle this personally. No Force to tip the scales. A duel of warriors."
+ hod_duel.1.a:0 "Let [hod_duel_own_char.GetName] face them."
+ hod_duel.1.b:0 "Stand them down. This is not the time."
+
+ # hod_duel.2 — Initiator's fighter tactic choice (unit_leader_event, ROOT = own fighter)
+ hod_duel.2.t:0 "Enter the Fight"
+ hod_duel.2.d_mandalorian:0 "The Mandalorian creed has prepared [ROOT.GetName] for exactly this moment. A fast assessment: range, cover, angles, the weight of [hod_duel_enemy_char.GetName]'s stance. Jetpack primed, weapon hot, beskar secure against whatever is coming. No fear. [ROOT.GetName] has trained for this their entire life — because Mandalorians always have."
+ hod_duel.2.d_gunfighter:0 "[ROOT.GetName] has won faster draws than this. Their targeting reticle is already tracking before the word 'duel' has finished echoing across the battlefield. Speed. Precision. Let [hod_duel_enemy_char.GetName] raise their blade — there will be a bolt through the hand holding it before it clears the hilt."
+ hod_duel.2.d_dirty_fighter:0 "Forget honor. Forget rules. [hod_duel_enemy_char.GetName] wants a duel — [ROOT.GetName] is already three moves ahead, each one uglier than the last. They trained for an even fight. [ROOT.GetName] never intended to give them one, and has already identified the first thing in this environment that [hod_duel_enemy_char.GetName] has not noticed."
+ hod_duel.2.d_warrior:0 "[ROOT.GetName] is no Jedi — but no ordinary soldier either. [hod_duel_enemy_char.GetName] has stepped forward, and so has [ROOT.GetName]. Studying their stance. No Force to guide — only instinct, training, and the discipline to wait for a real opening rather than reach for a false one."
+ hod_duel.2.d_soresu:0 "[ROOT.GetName] centers themselves, breathing slow. The chaos of the battlefield falls away. Form III fills them like water filling a vessel — patient, immovable, complete. [hod_duel_enemy_char.GetName] must come to them. They will exhaust themselves against [ROOT.GetName]'s guard, and the opening will appear in the gap between one frustrated strike and the next."
+ hod_duel.2.d_aggressive:0 "[ROOT.GetName]'s pulse quickens as [hod_duel_enemy_char.GetName] advances. Every muscle is already moving before thought catches up — Form IV, Form V, the aggressive disciplines in their full expression. Strike first. Strike hard. Do not give them a single breath in which to settle into their guard."
+ hod_duel.2.d:0 "The moment arrives. Across the battlefield, [hod_duel_enemy_char.GetName] has stepped forward to meet [ROOT.GetName]. The Force whispers — anticipation, readiness, a clarity [ROOT.GetName] has come to rely on. It does not tell them how this ends. It tells them to begin."
+ hod_duel.2.a:0 "Press the attack — strike first and hard."
+ hod_duel.2.b:0 "Read their movements — let them come to us."
+ hod_duel.2.c:0 "Trust your instincts. React to what the moment demands."
+
+ # hod_duel.3 — Enemy fighter tactic choice (unit_leader_event, ROOT = enemy fighter)
+ hod_duel.3.t:0 "Face Your Opponent"
+ hod_duel.3.d_cyborg:0 "[ROOT.GetName]'s photoreceptors lock onto [hod_duel_own_char.GetName] with machine precision. Thousands of recorded combat sequences cross-reference against their stance and weapon grip. Eleven probable outcomes calculated. Three end quickly. [ROOT.GetName] selects the path most likely to reach one of those three. They call this a duel. [ROOT.GetName] calls it a problem with a solution."
+ hod_duel.3.d_mandalorian:0 "Mandalore does not produce survivors by accident. [ROOT.GetName] has fought Jedi, soldiers, bounty hunters, and things with no name on worlds that had no names either — and is still standing. [hod_duel_own_char.GetName] is nothing new. [ROOT.GetName] adjusts grip, ignites jetpack for positioning, and settles into the old familiar clarity that comes when the fight is finally, mercifully, simple."
+ hod_duel.3.d_dirty_fighter:0 "Let [hod_duel_own_char.GetName] come with their code and their composure. [ROOT.GetName] gave up on fair fights the day they realized fair fights were invented by people who expected to lose them. Already identified three things in this environment that [hod_duel_own_char.GetName] has not noticed. Already deciding which one to use first, and which to save."
+ hod_duel.3.d_gunfighter:0 "Blaster up, sight picture perfect. [ROOT.GetName] has been in enough firefights to know that range wins them — and intends to control the distance from first step to last. Whatever technique [hod_duel_own_char.GetName] has — elegant, trained, practiced over years — a well-placed bolt ends it. The gap between the living and the dead is one trigger pull wide."
+ hod_duel.3.d_warrior:0 "No mystical nonsense. No Force, no sermons about the will of the galaxy. Just [ROOT.GetName], a weapon, and [hod_duel_own_char.GetName] advancing with whatever confidence their training has given them. [ROOT.GetName] has faced opponents like this before. The approach is the same. Adapt. Overwhelm. Win."
+ hod_duel.3.d_dark_side:0 "The dark side surges at the sight of [hod_duel_own_char.GetName]. [ROOT.GetName] feels their resolve — and beneath it, the flicker of doubt they are laboring to suppress. Good. Feed on it. The dark side does not counsel patience, and [ROOT.GetName] has none left to spare for someone standing between them and what they want."
+ hod_duel.3.d:0 "[hod_duel_own_char.GetName] has accepted the challenge. [ROOT.GetName] feels the moment sharpen — that particular compression of time that comes before a fight that matters. The Force hums with tension as the confrontation takes shape. [ROOT.GetName] has already begun choosing."
+ hod_duel.3.a:0 "Unleash your fury. Overwhelm them before they can settle."
+ hod_duel.3.b:0 "Hold your ground. Make them tire themselves against you."
+ hod_duel.3.c:0 "Hold back. Let the moment show you the opening."
+
+ ###############################################################
+ # OUTCOME EVENTS
+ # Desc blocks in the event file check hod_duel_style_* country flags
+ # set in hod_duel.4 before duel fighter flags are cleared.
+ # The .d keys below are safety fallbacks — should never normally display.
+ ###############################################################
+
+ # hod_duel.10 — Initiator's fighter: VICTORY (ROOT = own fighter, opponent = hod_duel_enemy_char)
+ hod_duel.10.t:0 "Victory — [hod_duel_enemy_char.GetName] Falls"
+ hod_duel.10.d:0 "The duel is over. [ROOT.GetName] stands. [hod_duel_enemy_char.GetName] does not."
+ hod_duel.10.a:0 "Well fought."
+
+ # hod_duel.11 — Initiator's fighter: DEFEAT
+ hod_duel.11.t:0 "Defeat — Driven Back by [hod_duel_enemy_char.GetName]"
+ hod_duel.11.d:0 "The duel is over. [hod_duel_enemy_char.GetName] proved the better fighter today."
+ hod_duel.11.a:0 "I will not fail again."
+
+ # hod_duel.12 — Initiator's fighter: STALEMATE
+ hod_duel.12.t:0 "Stalemate — Neither Falls"
+ hod_duel.12.d:0 "Neither [ROOT.GetName] nor [hod_duel_enemy_char.GetName] could close it out. The duel ends without resolution."
+ hod_duel.12.a:0 "This isn't over."
+
+ # hod_duel.20 — Enemy fighter: VICTORY (ROOT = enemy fighter, opponent = hod_duel_own_char)
+ hod_duel.20.t:0 "Victory — [hod_duel_own_char.GetName] Falls Back"
+ hod_duel.20.d:0 "The duel is over. [ROOT.GetName] stands. [hod_duel_own_char.GetName] does not."
+ hod_duel.20.a:0 "As it should be."
+
+ # hod_duel.21 — Enemy fighter: DEFEAT
+ hod_duel.21.t:0 "Defeat — Driven Back by [hod_duel_own_char.GetName]"
+ hod_duel.21.d:0 "The duel is over. [hod_duel_own_char.GetName] proved the better fighter today."
+ hod_duel.21.a:0 "This changes nothing."
+
+ # hod_duel.22 — Enemy fighter: STALEMATE
+ hod_duel.22.t:0 "Stalemate — An Even Match"
+ hod_duel.22.d:0 "Neither [ROOT.GetName] nor [hod_duel_own_char.GetName] could close it out. The duel ends without resolution."
+ hod_duel.22.a:0 "We will meet again."
+
+ ###############################################################
+ # OUTCOME NARRATIVE VARIANT STRINGS
+ # Referenced by desc blocks in hod_duel.10-22 via hod_duel_style_* country flags.
+ # In hod_duel.10/11/12: ROOT = the initiator's fighter, opponent = [hod_duel_enemy_char]
+ # In hod_duel.20/21/22: ROOT = the enemy's fighter,    opponent = [hod_duel_own_char]
+ # We use generic "their opponent" inside the flavor text so the same string
+ # works in both halves of the duel. Names appear in titles, .d fallbacks, and
+ # the moment-of-engagement events (hod_duel.1/2/3).
+ ###############################################################
+
+ # ── Victory variants ──────────────────────────────────────────
+
+ hod_duel_vic_vaapad:0 "There is nothing controlled about Vaapad — that is precisely the point. [ROOT.GetName] opened the gate between themselves and the dark side's current, and it poured through the fight like a river through a broken dam. Their opponent's aggression became fuel; their strikes became momentum; their fury became [ROOT.GetName]'s, amplified and redirected. To face Vaapad is to face your own attack returned at you with interest. They had no answer for that. No one does."
+
+ hod_duel_vic_soresu:0 "[ROOT.GetName] gave them nothing. Every strike was met, redirected, negated with less movement than they used to throw it. Their opponent came faster, harder, more desperate — and every escalation cost them more than it cost [ROOT.GetName]. Form III does not defeat the enemy. It waits, with complete patience, until the enemy defeats themselves. Today they cooperated fully with that arrangement."
+
+ hod_duel_vic_makashi:0 "The opening existed for exactly as long as it took to exploit it. Makashi builds understanding before it builds pressure — by the time [ROOT.GetName] applied the decisive touch, the full architecture of their opponent's defense was already mapped, and the one place they could not cover in time identified. They fought well. They fought someone who had already seen how it ended."
+
+ hod_duel_vic_ataru:0 "[ROOT.GetName] did not give them time to think. Form IV at full expression is overwhelming precisely because it never stops — each strike already transitioning into the next before the previous one resolves. Their opponent was reacting to what had already happened. By the time they found their footing, the fight was over, and they were the last to realize it."
+
+ hod_duel_vic_djem_so:0 "Every time they hit [ROOT.GetName], they paid for it. Djem So does not merely endure — it converts. Their aggression fed [ROOT.GetName]'s counter-strikes, their power became [ROOT.GetName]'s doubled and returned. The harder they pushed, the harder they fell. At some point they understood this and stopped pushing. By then it was too late to try something else."
+
+ hod_duel_vic_shien:0 "[ROOT.GetName] did not fight them. They let their opponent fight them, and turned every strike into a setup. Shien is built for exactly this — channeling aggressive opponents into positions of their own construction. They pressed forward; [ROOT.GetName] redirected. They attacked; [ROOT.GetName] answered with their own momentum behind the blade. The ending was built into their opening move. They just did not read it there."
+
+ hod_duel_vic_jar_kai:0 "Two weapons, two conversations, and [ROOT.GetName] was the only one who could follow both simultaneously. Every time their opponent found an answer to one line of attack, the other found them. Every time they defended one angle, the second pressed. The geometry of this fight belonged entirely to [ROOT.GetName], and they spent the duel trying to navigate a map they could never fully read."
+
+ hod_duel_vic_niman:0 "There was no dramatic turning point — just a long, accumulating ledger of correct decisions. Niman synthesizes and wastes nothing. They were good, and they could not keep pace with a fighter who was also good in every form they tried to fall back on. The margin of [ROOT.GetName]'s advantage was small. It was also completely consistent from the first exchange to the last."
+
+ hod_duel_vic_droid:0 "The calculation was complete before the first strike landed. [ROOT.GetName] cross-referenced their opponent's stance, weapon grip, and movement patterns against thousands of documented combat sequences and derived the probable outcome set within the first three exchanges. What appeared to their opponent as instinctive mastery was the execution of a plan that had already determined the result. The duel was decided before it began. The remainder was confirmation."
+
+ hod_duel_vic_mando:0 "They trained for a duel between two opponents who would face each other honestly. [ROOT.GetName] arrived with a jetpack, a blaster, a blade, and three thousand years of Mandalorian warrior culture applied simultaneously. They had no doctrine prepared for all of that at once — and that is precisely why it works. Mandalore has always won by refusing to fight the fight the enemy prepared for."
+
+ hod_duel_vic_blaster:0 "Distance is a weapon when you know how to control it, and [ROOT.GetName] did not let them close. The winning shot was not a dramatic moment — it was the inevitable consequence of superior positioning, patience, and the willingness to wait for the exact opening the geometry produced. They had more courage than they had reach. In the end, reach was the variable that mattered."
+
+ hod_duel_vic_dirty:0 "They expected a duel. They trained for a duel. What they got was something that had the shape of a duel and none of the courtesy. The specific thing that finished it is the kind of thing that does not get taught — [ROOT.GetName] earned it through fights exactly like this one. It worked. That is the only criterion that has ever mattered."
+
+ hod_duel_vic_vibroblade:0 "Vibroblade technique at this level is not aggressive — it is absolute. [ROOT.GetName] gave them nothing to exploit, nothing to react to except relentless technical pressure applied without ego or haste. At some point they stopped responding and started hoping. Hope does not block. It never has."
+
+ hod_duel_vic_cyborg:0 "By the time they had identified the attack pattern, it had already resolved and the next was in progress. The gap between a biological response time and an optimized mechanical one is not large — but applied consistently across the full duration of a fight, it compounds. [ROOT.GetName]'s advantage was structural. The outcome was not seriously in question."
+
+ hod_duel_vic_dark_side:0 "The dark side does not calculate. It does not hedge. [ROOT.GetName] opened themselves to it entirely and let it direct every strike, every counter, every breath of the fight. Their opponent may have had technique. They may have had training. Neither is sufficient when what stands across from them is not a person deciding how to fight, but a force of nature given a blade and pointed at them."
+
+ hod_duel_vic_padawan:0 "It should not have gone [ROOT.GetName]'s way — experience favored them, conditioning favored them, years of refinement favored them. What [ROOT.GetName] had was the recklessness of a fighter who had nothing to prove yet and nothing to lose, and that made them unpredictable in ways no amount of preparation answers. [ROOT.GetName] won. Process what that means later. For now: [ROOT.GetName] won."
+
+ hod_duel_vic_force_generic:0 "The Force moved through the fight in ways that bypass conscious decision. [ROOT.GetName] was not thinking about what to do next — they were already doing it, each action arriving before the thought that would have summoned it. The connection held when it needed to. The opening appeared, [ROOT.GetName] was already moving to answer it, and then it was over."
+
+ hod_duel_vic_warrior:0 "No single moment decided it. [ROOT.GetName] gave ground where giving ground cost nothing and held where holding mattered, and kept that discipline longer than they did. The fight was won in the small details — every guard, every step, every wasted motion of theirs that [ROOT.GetName] did not waste. It accumulated. In the end, that was enough."
+
+ # ── Defeat variants ────────────────────────────────────────────
+
+ hod_duel_def_padawan:0 "[ROOT.GetName] was not ready, and the fight confirmed it without mercy. There were moments they nearly had them — one extension slightly too wide, one counter almost in time — but nearly is a distance wider than a lightsaber blade. The defeat belongs to [ROOT.GetName] entirely. So does the lesson inside it. Find the lesson. That is the only part of this that is useful."
+
+ hod_duel_def_acolyte:0 "Overconfidence was the wound that opened before the first blow landed. The dark side rewards aggression, but it does not protect you from the consequences of aggression badly timed and worse positioned. [ROOT.GetName] hit harder than they expected and still lost, which means power was never the problem here. Judgment was. Fix it."
+
+ hod_duel_def_champion:0 "The dark side does not accept this quietly, and neither should [ROOT.GetName]. Let the burn of it sharpen into something useful — an edge they did not have before the fight, purchased at a price they did not plan to pay. Take what was paid for. Make it count. The next time [ROOT.GetName] stands across from someone who outmatched them today, it will not be the same fight."
+
+ hod_duel_def_master:0 "Rare. Genuinely rare. [ROOT.GetName] is not accustomed to this — the disengagement that was not a choice, the retreat that means something. Something today exceeded their preparation, and that demands honest accounting rather than rationalization. The how of it will take time to fully understand. Begin now."
+
+ hod_duel_def_cyborg:0 "The simulation failed. A variable was miscalculated — opponent deviation from predicted behavior, an environmental factor outside normal parameters, a reaction-time assumption that proved incorrect. [ROOT.GetName]'s systems are intact. The engagement data has been recorded and integrated. The failure mode is now documented. It will not recur in the same form."
+
+ hod_duel_def_mando:0 "Mandalorian warriors do not process defeat through shame. They process it through study. [ROOT.GetName] was beaten by something that worked. Understand exactly what it was and exactly why it worked. Do not allow it to work again. That is the whole of what this defeat requires."
+
+ hod_duel_def_force_generic:0 "The Force offered what it could, and it was not enough today. Either the connection was absent when it should have been present, or it was present and the opponent's advantage outweighed it regardless. The question is not whether [ROOT.GetName] failed — the question is what the failure reveals. Start there."
+
+ hod_duel_def_warrior:0 "[ROOT.GetName] fought as well as they had, and it was not enough. That is the full account. No technique failed catastrophically, no single decision swung it irreversibly — they were outmatched today by a margin that is uncomfortable to acknowledge. Let the discomfort do its work. The next engagement is already being prepared for. That is what soldiers do."
+
+ # ── Stalemate variants ────────────────────────────────────────
+
+ hod_duel_stale_soresu:0 "They could not find a way through. Nothing they attempted found a gap in [ROOT.GetName]'s defense — but a perfect defense does not win a fight, and after the full duration of that exchange both sides arrived at the same calculation simultaneously. [ROOT.GetName] remains unbeaten in the truest sense. The enemy simply did not lose badly enough to justify the cost of continuing."
+
+ hod_duel_stale_mando:0 "Mandalorian discipline includes knowing when an engagement has run past its useful point. [ROOT.GetName] made that call. The fight was even, no clean resolution was available without unacceptable risk, and [ROOT.GetName] disengaged without sacrificing the initiative. Retreat that is chosen is not defeat. [ROOT.GetName] chose this. There is a difference."
+
+ hod_duel_stale_vibroblade:0 "Mutual defense at this level becomes a conversation with no resolution built into its grammar. Every attack was answered, every answer anticipated, every manufactured opening closed before it could be exploited. [ROOT.GetName] and their opponent are well-matched — more closely than either of them expected. That information is worth more than a narrow victory would have been."
+
+ hod_duel_stale_blaster:0 "Neither could establish the distance the fight needed. Every time [ROOT.GetName] found the range that worked, they adjusted. Every time they pushed to close, [ROOT.GetName] widened it again. The fight ground along an unresolvable middle ground until neither side had the margin to break the standoff, and continuing served nothing. [ROOT.GetName] was never in real danger. Neither were they."
+
+ hod_duel_stale_master:0 "Wisdom sometimes looks like indecision from the outside. [ROOT.GetName] read the engagement clearly enough to know that forcing a resolution would cost more than victory was worth today. The Force does not demand victory at any price. It demanded the longer calculation. [ROOT.GetName] made it. The result is inconclusive. That is not the same as a loss."
+
+ hod_duel_stale_dark_side:0 "The fury was present. The power was there. The opportunity simply never opened into something that could be closed cleanly, and the dark side does not reward force spent on nothing. [ROOT.GetName] broke off before frustration became the kind of mistake that matters. The account remains open. There is a certain satisfaction in that — the fight is not finished. It is merely postponed."
+
+ hod_duel_stale_force_generic:0 "The Force offered clarity on what the fight was, not on how it needed to end. Both of [ROOT.GetName] and their opponent were too capable for a cheap resolution, and neither was willing to take the risk that a forced conclusion would have required. [ROOT.GetName] disengaged. The question of who is better remains genuinely open — and that, after everything, is its own kind of answer."
+
+ hod_duel_stale_warrior:0 "Neither [ROOT.GetName] nor their opponent could end it, and both of them knew it. There is something maddening about a truly even match — the knowledge that the person across from you is exactly as capable of winning as you are. They parted. The question remains open. It will be answered eventually, and both of them are already thinking about when."
