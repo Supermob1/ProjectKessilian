@@ -1,186 +1,398 @@
-# HOD Duel Scripted Localisation
-# Evaluated in unit_leader scope — THIS = the character whose outcome event fired
-# First matching text block wins; order matters (most specific first)
-# Referenced in loc strings as [GetDuelVictoryFlavor], [GetDuelDefeatFlavor], [GetDuelStalemateFlavor]
+###############################################################
+# HOD Duel — Scripted Localization
+# ─────────────────────────────────────────────────────────────
+# The 5-paragraph narrative arc:
+#   Para 1 — atmosphere (the meeting)
+#   Para 2 — first exchange (round 1 — fills after round 1 resolves)
+#   Para 3 — second exchange (round 2 — fills after round 2 resolves)
+#   Para 4 — finale (round 3 — fills after round 3 resolves; names winner)
+#   Para 5 — consequences (wounds, aftermath; fills after round 3)
+#
+# Display timing (hod_duel.2 / hod_duel.201 fire each round + once
+# for summary):
+#   Round 1 view (hod_duel_round=0): Para 1 only
+#   Round 2 view (hod_duel_round=1): Para 1 + 2
+#   Round 3 view (hod_duel_round=2): Para 1 + 2 + 3
+#   Summary view (hod_duel_round=3): Para 1 + 2 + 3 + 4 + 5
+###############################################################
+
 
 ###############################################################
-# GetDuelVictoryFlavor
-# Called in hod_duel.10 (REP win) and hod_duel.20 (CIS win)
-# Describes HOW this character won, keyed on their combat style
+# DuelParagraph1 — atmosphere
 ###############################################################
-
 defined_text = {
-	name = GetDuelVictoryFlavor
-
-	# ── Rare / gated forms first ──────────────────────────────────────────────
+	name = DuelParagraph1
 	text = {
-		trigger = { has_trait = form_juyo_vaapad }
-		localization_key = hod_duel_vic_vaapad
-	}
-
-	# ── Lightsaber form masteries ─────────────────────────────────────────────
-	text = {
-		trigger = { has_trait = form_soresu_mastery }
-		localization_key = hod_duel_vic_soresu
-	}
-	text = {
-		trigger = { has_trait = form_makashi_mastery }
-		localization_key = hod_duel_vic_makashi
-	}
-	text = {
-		trigger = { has_trait = form_ataru_mastery }
-		localization_key = hod_duel_vic_ataru
-	}
-	text = {
-		trigger = { has_trait = form_djem_so_mastery }
-		localization_key = hod_duel_vic_djem_so
-	}
-	text = {
-		trigger = { has_trait = form_shien_mastery }
-		localization_key = hod_duel_vic_shien
-	}
-	text = {
-		trigger = { has_trait = form_jar_kai_mastery }
-		localization_key = hod_duel_vic_jar_kai
-	}
-	text = {
-		trigger = { has_trait = form_niman_mastery }
-		localization_key = hod_duel_vic_niman
-	}
-
-	# ── Non-Force combat style masteries ─────────────────────────────────────
-	text = {
-		trigger = { has_trait = droid_tactical_mastery }
-		localization_key = hod_duel_vic_droid
-	}
-	text = {
-		trigger = { has_trait = mandalorian_combat_mastery }
-		localization_key = hod_duel_vic_mando
-	}
-	text = {
-		trigger = { has_trait = blaster_duelist_mastery }
-		localization_key = hod_duel_vic_blaster
-	}
-	text = {
-		trigger = { has_trait = dirty_fighter_mastery }
-		localization_key = hod_duel_vic_dirty
-	}
-	text = {
-		trigger = { has_trait = vibroblade_fighter_mastery }
-		localization_key = hod_duel_vic_vibroblade
-	}
-
-	# ── Base trait fallbacks (no mastery yet) ────────────────────────────────
-	text = {
-		trigger = { has_trait = combat_cyborg }
-		localization_key = hod_duel_vic_cyborg
-	}
-	text = {
-		trigger = { has_trait = dark_side_user }
-		localization_key = hod_duel_vic_dark_side
-	}
-	text = {
-		trigger = { has_trait = jedi_padawan_rank }
-		localization_key = hod_duel_vic_padawan
-	}
-	text = {
-		trigger = { has_trait = force_sensitive }
-		localization_key = hod_duel_vic_force_generic
-	}
-	text = {
-		localization_key = hod_duel_vic_warrior
-	}
-}
-
-###############################################################
-# GetDuelDefeatFlavor
-# Called in hod_duel.11 (REP loss) and hod_duel.21 (CIS loss)
-# Describes how this character experiences losing
-###############################################################
-
-defined_text = {
-	name = GetDuelDefeatFlavor
-
-	# ── Rank-specific defeat reactions ───────────────────────────────────────
-	text = {
-		trigger = { has_trait = jedi_padawan_rank }
-		localization_key = hod_duel_def_padawan
-	}
-	text = {
-		trigger = { has_trait = dark_acolyte_rank }
-		localization_key = hod_duel_def_acolyte
-	}
-	text = {
-		trigger = { has_trait = dark_champion_rank }
-		localization_key = hod_duel_def_champion
+		trigger = {
+			event_target:duel_char1_token = { has_trait = force_sensitive }
+			event_target:duel_char2_token = { has_trait = force_sensitive }
+		}
+		localization_key = hod_duel.2.d_force_vs_force
 	}
 	text = {
 		trigger = {
-			OR = {
-				has_trait = sith_lord_rank
-				has_trait = jedi_master_rank
-			}
+			event_target:duel_char1_token = { has_trait = force_sensitive }
+			event_target:duel_char2_token = { NOT = { has_trait = force_sensitive } }
 		}
-		localization_key = hod_duel_def_master
-	}
-
-	# ── Combat type reactions ────────────────────────────────────────────────
-	text = {
-		trigger = { has_trait = combat_cyborg }
-		localization_key = hod_duel_def_cyborg
+		localization_key = hod_duel.2.d_force_vs_warrior
 	}
 	text = {
-		trigger = { has_trait = mandalorian_combat }
-		localization_key = hod_duel_def_mando
+		trigger = {
+			event_target:duel_char1_token = { NOT = { has_trait = force_sensitive } }
+			event_target:duel_char2_token = { has_trait = force_sensitive }
+		}
+		localization_key = hod_duel.2.d_warrior_vs_force
 	}
 	text = {
-		trigger = { has_trait = force_sensitive }
-		localization_key = hod_duel_def_force_generic
-	}
-	text = {
-		localization_key = hod_duel_def_warrior
+		trigger = {
+			event_target:duel_char1_token = { NOT = { has_trait = force_sensitive } }
+			event_target:duel_char2_token = { NOT = { has_trait = force_sensitive } }
+		}
+		localization_key = hod_duel.2.d_warrior_vs_warrior
 	}
 }
 
-###############################################################
-# GetDuelStalemateFlavor
-# Called in hod_duel.12 (REP stalemate) and hod_duel.22 (CIS stalemate)
-# Describes why neither side could close it out
-###############################################################
 
+###############################################################
+# DuelParagraph2 — first exchange (round 1 recap)
+# Empty until round 1 has resolved (hod_duel_round >= 1).
+###############################################################
+defined_text = {
+	name = DuelParagraph2
+
+	# Round 1 hasn't resolved yet
+	text = {
+		trigger = { check_variable = { event_target:duel_char1_token.hod_duel_round < 1 } }
+		localization_key = hod_duel_p_empty
+	}
+
+	# Tied opening
+	text = {
+		trigger = { check_variable = { round1_winner = 0 } }
+		localization_key = hod_duel_p2_tied
+	}
+	# char1 wins round 1, decisive
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 1 }
+			check_variable = { round1_decisive = 1 }
+		}
+		localization_key = hod_duel_p2_char1_decisive
+	}
+	# char1 wins round 1 by move type
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 1 }
+			check_variable = { round1_char1_move = 1 }
+		}
+		localization_key = hod_duel_p2_char1_attack
+	}
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 1 }
+			check_variable = { round1_char1_move = 2 }
+		}
+		localization_key = hod_duel_p2_char1_defend
+	}
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 1 }
+			check_variable = { round1_char1_move = 3 }
+		}
+		localization_key = hod_duel_p2_char1_counter
+	}
+	# char2 wins round 1, decisive
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 2 }
+			check_variable = { round1_decisive = 1 }
+		}
+		localization_key = hod_duel_p2_char2_decisive
+	}
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 2 }
+			check_variable = { round1_char2_move = 1 }
+		}
+		localization_key = hod_duel_p2_char2_attack
+	}
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 2 }
+			check_variable = { round1_char2_move = 2 }
+		}
+		localization_key = hod_duel_p2_char2_defend
+	}
+	text = {
+		trigger = {
+			check_variable = { round1_winner = 2 }
+			check_variable = { round1_char2_move = 3 }
+		}
+		localization_key = hod_duel_p2_char2_counter
+	}
+}
+
+
+###############################################################
+# DuelParagraph3 — second exchange (round 2 recap)
+# Empty until round 2 has resolved (hod_duel_round >= 2).
+###############################################################
+defined_text = {
+	name = DuelParagraph3
+
+	text = {
+		trigger = { check_variable = { event_target:duel_char1_token.hod_duel_round < 2 } }
+		localization_key = hod_duel_p_empty
+	}
+
+	text = {
+		trigger = { check_variable = { round2_winner = 0 } }
+		localization_key = hod_duel_p3_tied
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 1 }
+			check_variable = { round2_decisive = 1 }
+		}
+		localization_key = hod_duel_p3_char1_decisive
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 1 }
+			check_variable = { round2_char1_move = 1 }
+		}
+		localization_key = hod_duel_p3_char1_attack
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 1 }
+			check_variable = { round2_char1_move = 2 }
+		}
+		localization_key = hod_duel_p3_char1_defend
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 1 }
+			check_variable = { round2_char1_move = 3 }
+		}
+		localization_key = hod_duel_p3_char1_counter
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 2 }
+			check_variable = { round2_decisive = 1 }
+		}
+		localization_key = hod_duel_p3_char2_decisive
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 2 }
+			check_variable = { round2_char2_move = 1 }
+		}
+		localization_key = hod_duel_p3_char2_attack
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 2 }
+			check_variable = { round2_char2_move = 2 }
+		}
+		localization_key = hod_duel_p3_char2_defend
+	}
+	text = {
+		trigger = {
+			check_variable = { round2_winner = 2 }
+			check_variable = { round2_char2_move = 3 }
+		}
+		localization_key = hod_duel_p3_char2_counter
+	}
+}
+
+
+###############################################################
+# DuelParagraph4 — finale (round 3 outcome)
+# Empty until round 3 has resolved (hod_duel_round >= 3).
+# This paragraph reveals the duel winner.
+###############################################################
+defined_text = {
+	name = DuelParagraph4
+
+	text = {
+		trigger = { check_variable = { event_target:duel_char1_token.hod_duel_round < 3 } }
+		localization_key = hod_duel_p_empty
+	}
+
+	# Overall duel winner = duel_outcome (1/2/3)
+	# Round 3 outcome adds drama (round3_winner)
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 1 }
+			check_variable = { round3_decisive = 1 }
+		}
+		localization_key = hod_duel_p4_char1_finale_decisive
+	}
+	text = {
+		trigger = { check_variable = { duel_outcome = 1 } }
+		localization_key = hod_duel_p4_char1_finale
+	}
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 2 }
+			check_variable = { round3_decisive = 1 }
+		}
+		localization_key = hod_duel_p4_char2_finale_decisive
+	}
+	text = {
+		trigger = { check_variable = { duel_outcome = 2 } }
+		localization_key = hod_duel_p4_char2_finale
+	}
+	text = {
+		trigger = { check_variable = { duel_outcome = 3 } }
+		localization_key = hod_duel_p4_stalemate
+	}
+}
+
+
+###############################################################
+# DuelParagraph5 — consequences (post-duel state)
+# Empty until round 3 has resolved.
+# Describes wound state of both fighters.
+###############################################################
+defined_text = {
+	name = DuelParagraph5
+
+	text = {
+		trigger = { check_variable = { event_target:duel_char1_token.hod_duel_round < 3 } }
+		localization_key = hod_duel_p_empty
+	}
+
+	# Stalemate, both wounded
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 3 }
+			check_variable = { event_target:duel_char1_token.wounds > 0 }
+			check_variable = { event_target:duel_char2_token.wounds > 0 }
+		}
+		localization_key = hod_duel_p5_stale_both_hurt
+	}
+	# Stalemate, clean
+	text = {
+		trigger = { check_variable = { duel_outcome = 3 } }
+		localization_key = hod_duel_p5_stale_clean
+	}
+	# char1 wins, char1 also wounded — pyrrhic
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 1 }
+			check_variable = { event_target:duel_char1_token.wounds > 1 }
+		}
+		localization_key = hod_duel_p5_char1_pyrrhic
+	}
+	# char1 wins, char2 severely wounded
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 1 }
+			check_variable = { event_target:duel_char2_token.wounds > 2 }
+		}
+		localization_key = hod_duel_p5_char1_wins_severe
+	}
+	# char1 wins, char2 wounded
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 1 }
+			check_variable = { event_target:duel_char2_token.wounds > 0 }
+		}
+		localization_key = hod_duel_p5_char1_wins_wounded
+	}
+	# char1 wins, clean
+	text = {
+		trigger = { check_variable = { duel_outcome = 1 } }
+		localization_key = hod_duel_p5_char1_wins_clean
+	}
+	# char2 wins, char2 also wounded — pyrrhic
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 2 }
+			check_variable = { event_target:duel_char2_token.wounds > 1 }
+		}
+		localization_key = hod_duel_p5_char2_pyrrhic
+	}
+	# char2 wins, char1 severely wounded
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 2 }
+			check_variable = { event_target:duel_char1_token.wounds > 2 }
+		}
+		localization_key = hod_duel_p5_char2_wins_severe
+	}
+	# char2 wins, char1 wounded
+	text = {
+		trigger = {
+			check_variable = { duel_outcome = 2 }
+			check_variable = { event_target:duel_char1_token.wounds > 0 }
+		}
+		localization_key = hod_duel_p5_char2_wins_wounded
+	}
+	# char2 wins, clean
+	text = {
+		trigger = { check_variable = { duel_outcome = 2 } }
+		localization_key = hod_duel_p5_char2_wins_clean
+	}
+}
+
+
+###############################################################
+# GetDuelVictoryFlavor — used by hod_duel.10 / hod_duel.20
+###############################################################
+defined_text = {
+	name = GetDuelVictoryFlavor
+	text = { trigger = { has_trait = form_juyo_vaapad }          localization_key = hod_duel_vic_vaapad }
+	text = { trigger = { has_trait = form_soresu_mastery }       localization_key = hod_duel_vic_soresu }
+	text = { trigger = { has_trait = form_makashi_mastery }      localization_key = hod_duel_vic_makashi }
+	text = { trigger = { has_trait = form_ataru_mastery }        localization_key = hod_duel_vic_ataru }
+	text = { trigger = { has_trait = form_djem_so_mastery }      localization_key = hod_duel_vic_djem_so }
+	text = { trigger = { has_trait = form_shien_mastery }        localization_key = hod_duel_vic_shien }
+	text = { trigger = { has_trait = form_jar_kai_mastery }      localization_key = hod_duel_vic_jar_kai }
+	text = { trigger = { has_trait = form_niman_mastery }        localization_key = hod_duel_vic_niman }
+	text = { trigger = { has_trait = droid_tactical_mastery }    localization_key = hod_duel_vic_droid }
+	text = { trigger = { has_trait = mandalorian_combat_mastery } localization_key = hod_duel_vic_mando }
+	text = { trigger = { has_trait = blaster_duelist_mastery }   localization_key = hod_duel_vic_blaster }
+	text = { trigger = { has_trait = dirty_fighter_mastery }     localization_key = hod_duel_vic_dirty }
+	text = { trigger = { has_trait = vibroblade_fighter_mastery } localization_key = hod_duel_vic_vibroblade }
+	text = { trigger = { has_trait = combat_cyborg }             localization_key = hod_duel_vic_cyborg }
+	text = { trigger = { has_trait = dark_side_user }            localization_key = hod_duel_vic_dark_side }
+	text = { trigger = { has_trait = jedi_padawan_rank }         localization_key = hod_duel_vic_padawan }
+	text = { trigger = { has_trait = force_sensitive }           localization_key = hod_duel_vic_force_generic }
+	text = { localization_key = hod_duel_vic_warrior }
+}
+
+
+###############################################################
+# GetDuelDefeatFlavor — used by hod_duel.11 / hod_duel.21
+###############################################################
+defined_text = {
+	name = GetDuelDefeatFlavor
+	text = { trigger = { has_trait = jedi_padawan_rank }   localization_key = hod_duel_def_padawan }
+	text = { trigger = { has_trait = dark_acolyte_rank }   localization_key = hod_duel_def_acolyte }
+	text = { trigger = { has_trait = dark_champion_rank }  localization_key = hod_duel_def_champion }
+	text = { trigger = { OR = { has_trait = sith_lord_rank has_trait = jedi_master_rank } } localization_key = hod_duel_def_master }
+	text = { trigger = { has_trait = combat_cyborg }       localization_key = hod_duel_def_cyborg }
+	text = { trigger = { has_trait = mandalorian_combat }  localization_key = hod_duel_def_mando }
+	text = { trigger = { has_trait = force_sensitive }     localization_key = hod_duel_def_force_generic }
+	text = { localization_key = hod_duel_def_warrior }
+}
+
+
+###############################################################
+# GetDuelStalemateFlavor — used by hod_duel.12 / hod_duel.22
+###############################################################
 defined_text = {
 	name = GetDuelStalemateFlavor
-
-	# ── Specific style reasons for stalemate ─────────────────────────────────
-	text = {
-		trigger = { has_trait = form_soresu_mastery }
-		localization_key = hod_duel_stale_soresu
-	}
-	text = {
-		trigger = { has_trait = mandalorian_combat_mastery }
-		localization_key = hod_duel_stale_mando
-	}
-	text = {
-		trigger = { has_trait = vibroblade_fighter_mastery }
-		localization_key = hod_duel_stale_vibroblade
-	}
-	text = {
-		trigger = { has_trait = blaster_duelist }
-		localization_key = hod_duel_stale_blaster
-	}
-	text = {
-		trigger = { has_trait = jedi_master_rank }
-		localization_key = hod_duel_stale_master
-	}
-	text = {
-		trigger = { has_trait = dark_side_user }
-		localization_key = hod_duel_stale_dark_side
-	}
-	text = {
-		trigger = { has_trait = force_sensitive }
-		localization_key = hod_duel_stale_force_generic
-	}
-	text = {
-		localization_key = hod_duel_stale_warrior
-	}
+	text = { trigger = { has_trait = form_soresu_mastery }       localization_key = hod_duel_stale_soresu }
+	text = { trigger = { has_trait = mandalorian_combat_mastery } localization_key = hod_duel_stale_mando }
+	text = { trigger = { has_trait = vibroblade_fighter_mastery } localization_key = hod_duel_stale_vibroblade }
+	text = { trigger = { has_trait = blaster_duelist }           localization_key = hod_duel_stale_blaster }
+	text = { trigger = { has_trait = jedi_master_rank }          localization_key = hod_duel_stale_master }
+	text = { trigger = { has_trait = dark_side_user }            localization_key = hod_duel_stale_dark_side }
+	text = { trigger = { has_trait = force_sensitive }           localization_key = hod_duel_stale_force_generic }
+	text = { localization_key = hod_duel_stale_warrior }
 }

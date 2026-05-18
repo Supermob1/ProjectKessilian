@@ -28,7 +28,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		field_marshal={
-			traits={ force_sensitive dark_side_user sith_lord_rank brilliant_strategist inspirational_leader media_personality }
+			traits={ force_sensitive dark_side_user sith_lord_rank form_shii_cho form_makashi form_makashi_mastery force_lightning brilliant_strategist inspirational_leader media_personality }
 			skill=4 attack_skill=2 defense_skill=2 planning_skill=5 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -254,7 +254,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		corps_commander={
-			traits={ urban_assault_specialist }
+			traits={ urban_assault_specialist heavy_armor_plating }
 			skill=1 attack_skill=1 defense_skill=2 planning_skill=1 logistics_skill=1 legacy_id=-1
 		}
 	}
@@ -265,7 +265,7 @@ characters={
 		name="Asajj Ventress"
 		portraits={ civilian={ small="gfx/characters/CIS/asajj_ventress_political_advisor.png" large="gfx/leaders/CIS/portrait_Asajj_Ventress.dds" } }
 		corps_commander={
-			traits={ force_sensitive dark_side_user dark_champion_rank }
+			traits={ force_sensitive dark_side_user dark_champion_rank form_shii_cho form_jar_kai form_ataru force_choke }
 			skill=3 attack_skill=4 defense_skill=3 planning_skill=2 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -293,7 +293,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		corps_commander={
-			traits={ force_sensitive dark_side_user dark_champion_rank skilled_tactician }
+			traits={ force_sensitive dark_side_user dark_champion_rank skilled_tactician form_shii_cho form_makashi force_prescience }
 			skill=3 attack_skill=3 defense_skill=3 planning_skill=4 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -315,7 +315,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		corps_commander={
-			traits={ naval_strategist }
+			traits={ naval_strategist skilled_tactician deceptive_combat }
 			skill=3 attack_skill=3 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -378,7 +378,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		corps_commander={
-			traits={ organizer }
+			traits={ organizer combat_cyborg droid_tactical_analysis }
 			skill=2 attack_skill=3 defense_skill=2 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
@@ -399,7 +399,7 @@ characters={
 			ai_will_do={ factor=1 }
 		}
 		corps_commander={
-			traits={ skilled_tactician }
+			traits={ skilled_tactician mandalorian_combat heavy_armor_plating }
 			skill=3 attack_skill=4 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -410,7 +410,7 @@ characters={
 			army={ large="gfx/leaders/CIS/portrait_atticus_farstar.png" }
 		}
 		corps_commander={
-			traits={ skilled_tactician }
+			traits={ skilled_tactician dirty_fighter blaster_duelist }
 			skill=3 attack_skill=4 defense_skill=2 planning_skill=3 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -421,7 +421,7 @@ characters={
 			army={ large="gfx/leaders/CIS/portrait_kendu_ultho.png" }
 		}
 		corps_commander={
-			traits={  }
+			traits={ blaster_duelist }
 			skill=1 attack_skill=1 defense_skill=2 planning_skill=2 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -432,7 +432,7 @@ characters={
 			army={ large="gfx/leaders/CIS/portrait_oro_dassyne.png" }
 		}
 		corps_commander={
-			traits={ }
+			traits={ combat_cyborg dirty_fighter }
 			skill=2 attack_skill=3 defense_skill=1 planning_skill=1 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -443,7 +443,7 @@ characters={
 			army={ large="gfx/leaders/CIS/portrait_lok_durd.png" }
 		}
 		corps_commander={
-			traits={ }
+			traits={ thermal_detonators heavy_armor_plating }
 			skill=1 attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
 		}
 	}
@@ -454,8 +454,8 @@ characters={
 			army={ large="gfx/leaders/CIS/portrait_horn_ambigene.png" }
 		}
 		corps_commander={
-			traits={ }
-			skill=3s attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
+			traits={ combat_cyborg targeting_computer }
+			skill=3 attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
 		}
 	}
 	CIS_calli_trilm={
@@ -465,8 +465,8 @@ characters={
 			army={ large="gfx/leaders/CIS/portrait_calli_trilm.png" }
 		}
 		corps_commander={
-			traits={ }
-			skill=3s attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
+			traits={ blaster_duelist deceptive_combat }
+			skill=3 attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
 		}
 	}
 

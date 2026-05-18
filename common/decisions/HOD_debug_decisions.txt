@@ -1,9 +1,7 @@
 generic_debug = {
 
-	# Manually trigger a duel between random assigned commanders on each side.
-	# Priority: Force-sensitives > skilled_duelists > any assigned character.
-	# Uses the flag-only architecture (no event targets) — works for any two warring countries.
-	# fire_only_once = no so it can be re-tested.
+	# Manually start a duel between random assigned commanders on each side.
+	# Selection priority: Force-sensitives > skilled_duelists > any assigned commander.
 	HOD_debug_duel_random = {
 		cost = 0
 		fire_only_once = no
@@ -11,102 +9,16 @@ generic_debug = {
 			has_war = yes
 		}
 		available = {
-			has_war = yes
-			NOT = { has_global_flag = hod_duel_active }
-			any_character = { is_assigned = yes }
-			any_enemy_country = { any_character = { is_assigned = yes } }
+			any_army_leader = { is_assigned = yes }
+			any_enemy_country = {
+				any_army_leader = { 
+					is_assigned = yes 
+				}
+			}
 		}
 		icon = generic_spy
 		complete_effect = {
-			# Serialize duels — only one active globally.
-			set_global_flag = hod_duel_active
-
-			# Defensive cleanup — wipe ALL prior duel state.
-			every_country = {
-				clr_country_flag = hod_duel_initiator_country
-				clr_country_flag = hod_duel_is_enemy_country
-				clr_country_flag = hod_duel_in_progress
-				clr_country_flag = hod_duel_tactic_mando
-				clr_country_flag = hod_duel_tactic_gunfighter
-				clr_country_flag = hod_duel_tactic_dirty
-				clr_country_flag = hod_duel_tactic_warrior
-				clr_country_flag = hod_duel_tactic_soresu
-				clr_country_flag = hod_duel_tactic_aggressive
-				clr_country_flag = hod_duel_tactic_force
-				clr_country_flag = hod_duel_tactic_cyborg
-				clr_country_flag = hod_duel_tactic_dark
-				every_character = {
-					clr_character_flag = hod_duel_own_fighter
-					clr_character_flag = hod_duel_own_offensive
-					clr_character_flag = hod_duel_own_defensive
-					clr_character_flag = hod_duel_enemy_fighter
-					clr_character_flag = hod_duel_enemy_offensive
-					clr_character_flag = hod_duel_enemy_defensive
-				}
-			}
-
-			# Mark initiator (current scope = the country firing the decision).
-			set_country_flag = hod_duel_in_progress
-			set_country_flag = hod_duel_initiator_country
-			save_global_event_target_as = hod_duel_initiator_country_ref
-
-			# Own fighter — prefer Force-sensitive, then skilled_duelist, then anyone
-			if = {
-				limit = { any_character = { is_assigned = yes has_trait = force_sensitive } }
-				random_character = {
-					limit = { is_assigned = yes has_trait = force_sensitive }
-					set_character_flag = hod_duel_own_fighter
-					save_global_event_target_as = hod_duel_own_char
-					unit_leader_event = { id = hod_duel.2 }
-				}
-			}
-			else_if = {
-				limit = { any_character = { is_assigned = yes has_trait = skilled_duelist } }
-				random_character = {
-					limit = { is_assigned = yes has_trait = skilled_duelist }
-					set_character_flag = hod_duel_own_fighter
-					save_global_event_target_as = hod_duel_own_char
-					unit_leader_event = { id = hod_duel.2 }
-				}
-			}
-			else = {
-				random_character = {
-					limit = { is_assigned = yes }
-					set_character_flag = hod_duel_own_fighter
-					save_global_event_target_as = hod_duel_own_char
-					unit_leader_event = { id = hod_duel.2 }
-				}
-			}
-
-			# Enemy fighter — same priority order
-			random_enemy_country = {
-				limit = { any_character = { is_assigned = yes } }
-				set_country_flag = hod_duel_is_enemy_country
-				save_global_event_target_as = hod_duel_enemy_country_ref
-				if = {
-					limit = { any_character = { is_assigned = yes has_trait = force_sensitive } }
-					random_character = {
-						limit = { is_assigned = yes has_trait = force_sensitive }
-						set_character_flag = hod_duel_enemy_fighter
-						save_global_event_target_as = hod_duel_enemy_char
-					}
-				}
-				else_if = {
-					limit = { any_character = { is_assigned = yes has_trait = skilled_duelist } }
-					random_character = {
-						limit = { is_assigned = yes has_trait = skilled_duelist }
-						set_character_flag = hod_duel_enemy_fighter
-						save_global_event_target_as = hod_duel_enemy_char
-					}
-				}
-				else = {
-					random_character = {
-						limit = { is_assigned = yes }
-						set_character_flag = hod_duel_enemy_fighter
-						save_global_event_target_as = hod_duel_enemy_char
-					}
-				}
-			}
+			country_event = { id = hod_duel.1 days = 1 }
 		}
 	}
 }
