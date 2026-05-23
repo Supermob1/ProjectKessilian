@@ -1,0 +1,39 @@
+capital = 120
+
+set_research_slots = 3
+
+set_technology = {
+    infantry_weapons = 1
+    tech_support = 1
+    tech_engineers = 1
+    tech_recon = 1
+    gw_artillery = 1
+    interwar_antiair = 1
+    fuel_silos = 1
+    synth_oil_experiments = 1
+    early_fighter = 1
+    early_bomber = 1
+    naval_bomber1 = 1
+}
+
+set_politics = {
+    ruling_party = trade_democrat
+    last_election = "976.1.1"
+    election_frequency = 48
+    elections_allowed = no
+}
+
+set_popularities = {
+    trade_democrat = 100
+}
+
+create_country_leader = {
+    name = "Leader Name"
+    picture = "gfx/leaders/UMB/UMB_leader.dds"
+    expire = "1965.1.1"
+    ideology = trade_democrat
+    traits = {
+    }
+}
+
+# No OOB generated
