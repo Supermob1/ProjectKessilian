@@ -1,18 +1,128 @@
 characters={
 	DKJ_jabba={
-		name="Jabba"
+		name="Jabba Desilijic Tiure"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/DKJ/portrait_jabba.dds"
 			}
 		}
 		country_leader={
 			desc="DKJ_jabba_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ jabba_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	DKJ_grappa={
+		name="Grappa the Hutt"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_grappa.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_grappa_desc"
+			ideology=trade_democrat_subtype
+			traits={ grappa_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	DKJ_jiliac={
+		name="Jiliac Desilijic Tiron"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_jiliac.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_jiliac_desc"
+			ideology=corist_subtype
+			traits={ jiliac_cl veteran_administrator }
+			id=-1
+		}
+	}
+	DKJ_ziro={
+		name="Ziro Desilijic Tiure"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_ziro.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_ziro_desc"
+			ideology=akaanadocrat_subtype
+			traits={ ziro_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	DKJ_desilijic_council={
+		name="Desilijic High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_desilijic_council.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_desilijic_council_desc"
+			ideology=unitist_subtype
+			traits={ desilijic_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	DKJ_gorga={
+		name="Gorga Desilijic Aarrpo"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_gorga.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_gorga_desc"
+			ideology=inclusivist_subtype
+			traits={ gorga_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	DKJ_rotta={
+		name="Rotta the Huttlet"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_rotta.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_rotta_desc"
+			ideology=distributionist_subtype
+			traits={ rotta_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	DKJ_tusa={
+		name="Tusa Desilijic Tiron"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_tusa.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_tusa_desc"
+			ideology=ruusanist_subtype
+			traits={ tusa_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	DKJ_naaga_desilijic={
+		name="Naaga Desilijic"
+		portraits={
+			civilian={
+				large="gfx/leaders/DKJ/portrait_naaga_desilijic.dds"
+			}
+		}
+		country_leader={
+			desc="DKJ_naaga_desilijic_desc"
+			ideology=dark_side_subtype
+			traits={ naaga_desilijic_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

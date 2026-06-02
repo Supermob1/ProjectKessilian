@@ -3,16 +3,126 @@ characters={
 		name="King Yos Kolina"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/MNC/portrait_king_yos_kolina.dds"
 			}
 		}
 		country_leader={
-			desc="MNC_yos_kolina_desc"
+			desc="MNC_king_yos_kolina_desc"
 			ideology=trade_democrat_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ king_yos_kolina_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	MNC_admiral_ackbar={
+		name="Admiral Gial Ackbar"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_admiral_ackbar.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_admiral_ackbar_desc"
+			ideology=corist_subtype
+			traits={ admiral_ackbar_cl veteran_administrator }
+			id=-1
+		}
+	}
+	MNC_lee_char={
+		name="Prince Lee-Char"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_lee_char.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_lee_char_desc"
+			ideology=unitist_subtype
+			traits={ lee_char_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	MNC_meena_tills={
+		name="Meena Tills"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_meena_tills.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_meena_tills_desc"
+			ideology=inclusivist_subtype
+			traits={ meena_tills_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	MNC_commandant_monnk={
+		name="Commandant Monnk"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_commandant_monnk.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_commandant_monnk_desc"
+			ideology=akaanadocrat_subtype
+			traits={ commandant_monnk_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	MNC_shipyard_director={
+		name="Mon Cala Shipyard Director"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_shipyard_director.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_shipyard_director_desc"
+			ideology=corporate_consortium_subtype
+			traits={ shipyard_director_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	MNC_mon_cal_reformer={
+		name="Senator Teli Naru"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_mon_cal_reformer.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_mon_cal_reformer_desc"
+			ideology=distributionist_subtype
+			traits={ mon_cal_reformer_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	MNC_elder_council={
+		name="Elder Council of Mon Cala"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_elder_council.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_elder_council_desc"
+			ideology=ruusanist_subtype
+			traits={ elder_council_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	MNC_nahdar_vebb={
+		name="Nahdar Vebb"
+		portraits={
+			civilian={
+				large="gfx/leaders/MNC/portrait_nahdar_vebb.dds"
+			}
+		}
+		country_leader={
+			desc="MNC_nahdar_vebb_desc"
+			ideology=light_side_subtype
+			traits={ nahdar_vebb_cl stability_anchor }
 			id=-1
 		}
 	}
 }
-	

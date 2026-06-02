@@ -3,16 +3,126 @@ characters={
 		name="Hondo Ohnaka"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/OHN/portrait_hondo_ohnaka.dds"
 			}
 		}
 		country_leader={
-			desc="OHN_ohnaka_desc"
+			desc="OHN_hondo_ohnaka_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ hondo_ohnaka_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	OHN_turk_falso={
+		name="Turk Falso"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_turk_falso.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_turk_falso_desc"
+			ideology=trade_democrat_subtype
+			traits={ turk_falso_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	OHN_gwarm={
+		name="Gwarm"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_gwarm.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_gwarm_desc"
+			ideology=corist_subtype
+			traits={ gwarm_cl veteran_administrator }
+			id=-1
+		}
+	}
+	OHN_florrum_pirate_council={
+		name="Florrum Pirate Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_florrum_pirate_council.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_florrum_pirate_council_desc"
+			ideology=unitist_subtype
+			traits={ florrum_pirate_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	OHN_weequay_warlord={
+		name="Weequay Warlord Hozerk"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_weequay_warlord.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_weequay_warlord_desc"
+			ideology=akaanadocrat_subtype
+			traits={ weequay_warlord_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	OHN_parsel={
+		name="Parsel the Dealer"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_parsel.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_parsel_desc"
+			ideology=inclusivist_subtype
+			traits={ parsel_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	OHN_pirate_reformist={
+		name="Reformist Pirate Lana"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_pirate_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_pirate_reformist_desc"
+			ideology=distributionist_subtype
+			traits={ pirate_reformist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	OHN_elder_weequay={
+		name="Elder Weequay Shazor"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_elder_weequay.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_elder_weequay_desc"
+			ideology=ruusanist_subtype
+			traits={ elder_weequay_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	OHN_gang_dark_ally={
+		name="Dark Ally Kolzar"
+		portraits={
+			civilian={
+				large="gfx/leaders/OHN/portrait_gang_dark_ally.dds"
+			}
+		}
+		country_leader={
+			desc="OHN_gang_dark_ally_desc"
+			ideology=dark_side_subtype
+			traits={ gang_dark_ally_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

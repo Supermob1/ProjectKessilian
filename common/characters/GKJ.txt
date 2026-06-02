@@ -3,16 +3,126 @@ characters={
 		name="Oruba"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/GKJ/portrait_oruba.dds"
 			}
 		}
 		country_leader={
 			desc="GKJ_oruba_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ oruba_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	GKJ_gorensla_arbiter={
+		name="Arbiter Gorensla"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_arbiter.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_arbiter_desc"
+			ideology=trade_democrat_subtype
+			traits={ gorensla_arbiter_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	GKJ_gorensla_elder={
+		name="Elder Gorensla"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_elder.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_elder_desc"
+			ideology=corist_subtype
+			traits={ gorensla_elder_cl veteran_administrator }
+			id=-1
+		}
+	}
+	GKJ_gorensla_warlord={
+		name="Warlord Tormaa"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_warlord.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_warlord_desc"
+			ideology=akaanadocrat_subtype
+			traits={ gorensla_warlord_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	GKJ_gorensla_high_council={
+		name="Gorensla High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_high_council.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_high_council_desc"
+			ideology=unitist_subtype
+			traits={ gorensla_high_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	GKJ_gorensla_diplomat={
+		name="Diplomat Skeelo"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_diplomat.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_diplomat_desc"
+			ideology=inclusivist_subtype
+			traits={ gorensla_diplomat_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	GKJ_gorensla_reformist={
+		name="Reformist Lorda"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_reformist_desc"
+			ideology=distributionist_subtype
+			traits={ gorensla_reformist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	GKJ_gorensla_patriarch={
+		name="Patriarch Hurdo"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_patriarch.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_patriarch_desc"
+			ideology=ruusanist_subtype
+			traits={ gorensla_patriarch_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	GKJ_gorensla_shadow={
+		name="Shadow Patron Vrak"
+		portraits={
+			civilian={
+				large="gfx/leaders/GKJ/portrait_gorensla_shadow.dds"
+			}
+		}
+		country_leader={
+			desc="GKJ_gorensla_shadow_desc"
+			ideology=dark_side_subtype
+			traits={ gorensla_shadow_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

@@ -1,0 +1,128 @@
+characters={
+	GMG_yushyn={
+		name="Yushyn"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_yushyn.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_yushyn_desc"
+			ideology=corporate_consortium_subtype
+			traits={ yushyn_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	GMG_gmg_trade_director={
+		name="Trade Director Orsk"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_trade_director.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_trade_director_desc"
+			ideology=trade_democrat_subtype
+			traits={ gmg_trade_director_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	GMG_gmg_conservative_board={
+		name="Conservative Board Director"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_conservative_board.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_conservative_board_desc"
+			ideology=corist_subtype
+			traits={ gmg_conservative_board_cl veteran_administrator }
+			id=-1
+		}
+	}
+	GMG_gmg_high_board={
+		name="Mining Guild High Board"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_high_board.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_high_board_desc"
+			ideology=unitist_subtype
+			traits={ gmg_high_board_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	GMG_gmg_security_chief={
+		name="Security Chief Moran"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_security_chief.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_security_chief_desc"
+			ideology=akaanadocrat_subtype
+			traits={ gmg_security_chief_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	GMG_gmg_reformist={
+		name="Reformist Director Lael"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ gmg_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	GMG_gmg_workers_rep={
+		name="Workers' Representative Taav"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_workers_rep.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_workers_rep_desc"
+			ideology=distributionist_subtype
+			traits={ gmg_workers_rep_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	GMG_gmg_elder_foreman={
+		name="Elder Chief Foreman Druun"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_elder_foreman.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_elder_foreman_desc"
+			ideology=ruusanist_subtype
+			traits={ gmg_elder_foreman_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	GMG_gmg_dark_patron={
+		name="Dark Patron Vreel Sorn"
+		portraits={
+			civilian={
+				large="gfx/leaders/GMG/portrait_gmg_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="GMG_gmg_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ gmg_dark_patron_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
+}

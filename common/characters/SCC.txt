@@ -3,16 +3,126 @@ characters={
 		name="Iaco Stark"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/SCC/portrait_iaco_stark.dds"
 			}
 		}
 		country_leader={
-			desc="SCC_stark_desc"
+			desc="SCC_iaco_stark_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ iaco_stark_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	SCC_forma={
+		name="Forma"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_forma.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_forma_desc"
+			ideology=trade_democrat_subtype
+			traits={ forma_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	SCC_combine_board={
+		name="Combine Board of Directors"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_combine_board.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_combine_board_desc"
+			ideology=unitist_subtype
+			traits={ combine_board_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	SCC_combine_conservative={
+		name="Viceprex Tarrus"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_combine_conservative.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_combine_conservative_desc"
+			ideology=corist_subtype
+			traits={ combine_conservative_cl veteran_administrator }
+			id=-1
+		}
+	}
+	SCC_combine_warlord={
+		name="Commander Bren Derlin-Vaas"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_combine_warlord.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_combine_warlord_desc"
+			ideology=akaanadocrat_subtype
+			traits={ combine_warlord_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	SCC_combine_diplomat={
+		name="Diplomat Saara Vael"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_combine_diplomat.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_combine_diplomat_desc"
+			ideology=inclusivist_subtype
+			traits={ combine_diplomat_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	SCC_workers_rep={
+		name="Workers' Representative Olac"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_workers_rep.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_workers_rep_desc"
+			ideology=distributionist_subtype
+			traits={ workers_rep_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	SCC_old_guild_master={
+		name="Old Guild Master Treen"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_old_guild_master.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_old_guild_master_desc"
+			ideology=ruusanist_subtype
+			traits={ old_guild_master_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	SCC_combine_sith_patron={
+		name="Sith Patron Kressh II"
+		portraits={
+			civilian={
+				large="gfx/leaders/SCC/portrait_combine_sith_patron.dds"
+			}
+		}
+		country_leader={
+			desc="SCC_combine_sith_patron_desc"
+			ideology=dark_side_subtype
+			traits={ combine_sith_patron_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

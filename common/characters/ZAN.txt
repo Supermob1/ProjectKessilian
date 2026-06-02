@@ -3,113 +3,158 @@ characters={
 		name="Tyber Zann"
 		portraits={
 			civilian={
-				##large=""
+				large="gfx/leaders/ZAN/portrait_tyber_zann.dds"
 			}
 		}
 		country_leader={
-			desc="ZAN_zann_desc"
+			desc="ZAN_tyber_zann_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ tyber_zann_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	ZAN_zann_trade_lord={
+		name="Trade Lord Morrec"
+		portraits={
+			civilian={
+				large="gfx/leaders/ZAN/portrait_zann_trade_lord.dds"
+			}
+		}
+		country_leader={
+			desc="ZAN_zann_trade_lord_desc"
+			ideology=trade_democrat_subtype
+			traits={ zann_trade_lord_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	ZAN_zann_conservative={
+		name="Conservative Capo Dreen"
+		portraits={
+			civilian={
+				large="gfx/leaders/ZAN/portrait_zann_conservative.dds"
+			}
+		}
+		country_leader={
+			desc="ZAN_zann_conservative_desc"
+			ideology=corist_subtype
+			traits={ zann_conservative_cl veteran_administrator }
+			id=-1
+		}
+	}
+	ZAN_zann_high_command={
+		name="Consortium High Command"
+		portraits={
+			civilian={
+				large="gfx/leaders/ZAN/portrait_zann_high_command.dds"
+			}
+		}
+		country_leader={
+			desc="ZAN_zann_high_command_desc"
+			ideology=unitist_subtype
+			traits={ zann_high_command_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	ZAN_zann_warlord={
+		name="Warlord Kalex"
+		portraits={
+			civilian={
+				large="gfx/leaders/ZAN/portrait_zann_warlord.dds"
+			}
+		}
+		country_leader={
+			desc="ZAN_zann_warlord_desc"
+			ideology=akaanadocrat_subtype
+			traits={ zann_warlord_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	ZAN_zann_outreach={
+		name="Outreach Liaison Fenn"
+		portraits={
+			civilian={
+				large="gfx/leaders/ZAN/portrait_zann_outreach.dds"
+			}
+		}
+		country_leader={
+			desc="ZAN_zann_outreach_desc"
+			ideology=inclusivist_subtype
+			traits={ zann_outreach_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	ZAN_zann_reformist={
+		name="Reformist Officer Kira"
+		portraits={
+			civilian={
+				large="gfx/leaders/ZAN/portrait_zann_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="ZAN_zann_reformist_desc"
+			ideology=distributionist_subtype
+			traits={ zann_reformist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	ZAN_zann_old_guard={
+		name="Old Guard Boss Torlo"
+		portraits={
+			civilian={
+				large="gfx/leaders/ZAN/portrait_zann_old_guard.dds"
+			}
+		}
+		country_leader={
+			desc="ZAN_zann_old_guard_desc"
+			ideology=ruusanist_subtype
+			traits={ zann_old_guard_cl traditionalist_ruler }
 			id=-1
 		}
 	}
 	ZAN_urai_fen={
 		name="Urai Fen"
-		portraits={
-			army={
-				##small=""
-				##large=""
-			}
-		}
+		portraits={ army={ large="" } }
 		field_marshal={
 			traits={ skilled_duelist vibroblade_fighter vibroblade_fighter_mastery deceptive_combat }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 	ZAN_jerid_sykes={
 		name="Jerid Sykes"
-		portraits={
-			army={
-				##small=""
-			}
-			army={
-				##large=""
-			}
-		}
-		navy_leader ={
+		portraits={ army={ large="" } }
+		navy_leader={
 			traits={  }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 	ZAN_silri={
 		name="Silri"
-		portraits={
-			army={
-				##small=""
-			}
-			army={
-				##large=""
-			}
+		portraits={ army={ large="" } }
+		country_leader={
+			desc="ZAN_silri_desc"
+			ideology=dark_side_subtype
+			traits={ silri_dark_side_cl shadow_manipulator_cl }
+			id=-1
 		}
 		field_marshal={
 			traits={ force_sensitive dark_side_user dark_acolyte_rank form_shii_cho force_choke }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 	ZAN_venlana_sipal={
 		name="Venlana Sipal"
-		portraits={
-			army={
-				##small=""
-			}
-			army={
-				##large=""
-			}
-		}
+		portraits={ army={ large="" } }
 		corps_commander={
 			traits={ dirty_fighter blaster_duelist }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 	ZAN_jander={
 		name="Jander"
-		portraits={
-			army={
-				##small=""
-			}
-			army={
-				##large=""
-			}
-		}
+		portraits={ army={ large="" } }
 		corps_commander={
 			traits={ blaster_duelist targeting_computer }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 }

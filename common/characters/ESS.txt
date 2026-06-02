@@ -1,0 +1,128 @@
+characters={
+	ESS_captain_zar={
+		name="Captain Zar"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_captain_zar.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_captain_zar_desc"
+			ideology=corist_subtype
+			traits={ captain_zar_cl veteran_administrator }
+			id=-1
+		}
+	}
+	ESS_esseles_trade_council={
+		name="Esseles Trade Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_trade_council.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_trade_council_desc"
+			ideology=trade_democrat_subtype
+			traits={ esseles_trade_council_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	ESS_esseles_assembly={
+		name="Esseles Grand Assembly"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_assembly.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_assembly_desc"
+			ideology=unitist_subtype
+			traits={ esseles_assembly_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	ESS_esseles_garrison_general={
+		name="Garrison General Drev"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_garrison_general.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_garrison_general_desc"
+			ideology=akaanadocrat_subtype
+			traits={ esseles_garrison_general_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	ESS_esseles_reformist={
+		name="Reformist Senator Mira"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ esseles_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	ESS_esseles_populist={
+		name="Populist Speaker Arran"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_populist.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_populist_desc"
+			ideology=distributionist_subtype
+			traits={ esseles_populist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	ESS_esseles_merchants={
+		name="Esseles Merchants' Consortium"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_merchants.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_merchants_desc"
+			ideology=corporate_consortium_subtype
+			traits={ esseles_merchants_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	ESS_esseles_elder_senator={
+		name="Elder Senator Vorn"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_elder_senator.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_elder_senator_desc"
+			ideology=ruusanist_subtype
+			traits={ esseles_elder_senator_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	ESS_esseles_dark_patron={
+		name="Dark Patron Vreel Ordan"
+		portraits={
+			civilian={
+				large="gfx/leaders/ESS/portrait_esseles_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="ESS_esseles_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ esseles_dark_patron_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
+}

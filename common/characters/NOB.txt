@@ -3,16 +3,126 @@ characters={
 		name="Her Majesty"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/NOB/portrait_her_majesty.dds"
 			}
 		}
 		country_leader={
 			desc="NOB_her_majesty_desc"
 			ideology=corist_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ her_majesty_cl veteran_administrator }
+			id=-1
+		}
+	}
+	NOB_lord_chamberlain={
+		name="Lord High Chamberlain"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_lord_chamberlain.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_lord_chamberlain_desc"
+			ideology=unitist_subtype
+			traits={ lord_chamberlain_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	NOB_noble_trade_minister={
+		name="Trade Minister Vassal"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_noble_trade_minister.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_noble_trade_minister_desc"
+			ideology=trade_democrat_subtype
+			traits={ noble_trade_minister_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	NOB_noble_warlord={
+		name="Lord Marshal Edric"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_noble_warlord.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_noble_warlord_desc"
+			ideology=akaanadocrat_subtype
+			traits={ noble_warlord_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	NOB_noble_reformist={
+		name="Reformist Lady Aelia"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_noble_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_noble_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ noble_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	NOB_noble_populist={
+		name="Populist Count Darro"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_noble_populist.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_noble_populist_desc"
+			ideology=distributionist_subtype
+			traits={ noble_populist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	NOB_noble_guild_master={
+		name="Guild Master Varen"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_noble_guild_master.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_noble_guild_master_desc"
+			ideology=corporate_consortium_subtype
+			traits={ noble_guild_master_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	NOB_noble_elder_house={
+		name="Elder Lord Ormund"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_noble_elder_house.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_noble_elder_house_desc"
+			ideology=ruusanist_subtype
+			traits={ noble_elder_house_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	NOB_noble_dark_patron={
+		name="Dark Patron Syrris"
+		portraits={
+			civilian={
+				large="gfx/leaders/NOB/portrait_noble_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="NOB_noble_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ noble_dark_patron_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

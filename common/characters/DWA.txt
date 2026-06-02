@@ -3,14 +3,27 @@ characters={
 		name="Tor Vizsla"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/DWA/portrait_tor_vizsla.dds"
 			}
 		}
 		country_leader={
-			desc="DWA_vizsla_desc"
+			desc="DWA_tor_vizsla_desc"
 			ideology=akaanadocrat_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ tor_vizsla_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	DWA_pre_vizsla={
+		name="Pre Vizsla"
+		portraits={
+			civilian={
+				large="gfx/leaders/DWA/portrait_pre_vizsla.dds"
+			}
+		}
+		country_leader={
+			desc="DWA_pre_vizsla_desc"
+			ideology=dark_side_subtype
+			traits={ pre_vizsla_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
@@ -18,9 +31,98 @@ characters={
 		name="Montross"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/DWA/portrait_montross.dds"
 			}
+		}
+		country_leader={
+			desc="DWA_montross_desc"
+			ideology=ruusanist_subtype
+			traits={ montross_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	DWA_hondo_kar={
+		name="Hondo Kar"
+		portraits={
+			civilian={
+				large="gfx/leaders/DWA/portrait_hondo_kar.dds"
+			}
+		}
+		country_leader={
+			desc="DWA_hondo_kar_desc"
+			ideology=corist_subtype
+			traits={ hondo_kar_cl veteran_administrator }
+			id=-1
+		}
+	}
+	DWA_deatwatch_arms_lord={
+		name="Arms Lord Kryze-Jast"
+		portraits={
+			civilian={
+				large="gfx/leaders/DWA/portrait_deatwatch_arms_lord.dds"
+			}
+		}
+		country_leader={
+			desc="DWA_deatwatch_arms_lord_desc"
+			ideology=trade_democrat_subtype
+			traits={ deatwatch_arms_lord_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	DWA_death_watch_council={
+		name="Death Watch High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/DWA/portrait_death_watch_council.dds"
+			}
+		}
+		country_leader={
+			desc="DWA_death_watch_council_desc"
+			ideology=unitist_subtype
+			traits={ death_watch_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	DWA_nite_owl_captain={
+		name="Nite Owl Captain Elzia"
+		portraits={
+			civilian={
+				large="gfx/leaders/DWA/portrait_nite_owl_captain.dds"
+			}
+		}
+		country_leader={
+			desc="DWA_nite_owl_captain_desc"
+			ideology=inclusivist_subtype
+			traits={ nite_owl_captain_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	DWA_dw_reformist={
+		name="Clan Reformist Ygdris"
+		portraits={
+			civilian={
+				large="gfx/leaders/DWA/portrait_dw_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="DWA_dw_reformist_desc"
+			ideology=distributionist_subtype
+			traits={ dw_reformist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	DWA_concordian_arms_lord={
+		name="Concordian Arms Guild Director"
+		portraits={
+			civilian={
+				large="gfx/leaders/DWA/portrait_concordian_arms_lord.dds"
+			}
+		}
+		country_leader={
+			desc="DWA_concordian_arms_lord_desc"
+			ideology=corporate_consortium_subtype
+			traits={ concordian_arms_lord_cl corporate_magnate_cl }
+			id=-1
 		}
 	}
 }
-	

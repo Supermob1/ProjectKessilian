@@ -3,16 +3,126 @@ characters={
 		name="Maul"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/SHA/portrait_maul.dds"
 			}
 		}
 		country_leader={
 			desc="SHA_maul_desc"
 			ideology=dark_side_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ maul_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
+	SHA_savage_opress={
+		name="Savage Opress"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_savage_opress.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_savage_opress_desc"
+			ideology=akaanadocrat_subtype
+			traits={ savage_opress_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	SHA_pre_vizsla_sha={
+		name="Pre Vizsla"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_pre_vizsla_sha.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_pre_vizsla_sha_desc"
+			ideology=corist_subtype
+			traits={ pre_vizsla_sha_cl veteran_administrator }
+			id=-1
+		}
+	}
+	SHA_lom_pyke={
+		name="Lom Pyke"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_lom_pyke.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_lom_pyke_desc"
+			ideology=trade_democrat_subtype
+			traits={ lom_pyke_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	SHA_shadow_collective_council={
+		name="Shadow Collective High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_shadow_collective_council.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_shadow_collective_council_desc"
+			ideology=unitist_subtype
+			traits={ shadow_collective_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	SHA_ziton_moj_sha={
+		name="Ziton Moj"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_ziton_moj_sha.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_ziton_moj_sha_desc"
+			ideology=inclusivist_subtype
+			traits={ ziton_moj_sha_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	SHA_crime_reform_faction={
+		name="Crime Reform Faction Leader"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_crime_reform_faction.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_crime_reform_faction_desc"
+			ideology=distributionist_subtype
+			traits={ crime_reform_faction_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	SHA_black_sun_vigos={
+		name="Black Sun Vigos"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_black_sun_vigos.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_black_sun_vigos_desc"
+			ideology=corporate_consortium_subtype
+			traits={ black_sun_vigos_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	SHA_trad_death_watch_elder={
+		name="Death Watch Elder Ordo"
+		portraits={
+			civilian={
+				large="gfx/leaders/SHA/portrait_trad_death_watch_elder.dds"
+			}
+		}
+		country_leader={
+			desc="SHA_trad_death_watch_elder_desc"
+			ideology=ruusanist_subtype
+			traits={ trad_death_watch_elder_cl traditionalist_ruler }
 			id=-1
 		}
 	}
 }
-	

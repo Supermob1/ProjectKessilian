@@ -9,7 +9,7 @@ characters={
 		country_leader={
 			desc="MAN_satine_kryze_desc"
 			ideology=inclusivist_subtype
-			traits={  }
+			traits={ duchess_satine_kryze_cl popular_figurehead_cl }
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -18,17 +18,112 @@ characters={
 		name="Pre Vizsla"
 		portraits={
 			civilian={
-				# large="gfx/leaders/MAN/Portrait_Satine_Kryze.dds"
+				large="gfx/leaders/MAN/portrait_pre_vizsla.dds"
 			}
 		}
+		country_leader={
+			desc="MAN_pre_vizsla_desc"
+			ideology=akaanadocrat_subtype
+			traits={ pre_vizsla_cl iron_fist_ruler }
+			id=-1
+		}
 	}
-	MAN_the_mandalore_council ={
+	MAN_the_mandalore_council={
 		name="The Mandalore Council"
 		portraits={
 			civilian={
-				# large="gfx/leaders/MAN/Portrait_Satine_Kryze.dds"
+				large="gfx/leaders/MAN/portrait_the_mandalore_council.dds"
 			}
+		}
+		country_leader={
+			desc="MAN_the_mandalore_council_desc"
+			ideology=unitist_subtype
+			traits={ the_mandalore_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	MAN_almec={
+		name="Prime Minister Almec"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAN/portrait_almec.dds"
+			}
+		}
+		country_leader={
+			desc="MAN_almec_desc"
+			ideology=corist_subtype
+			traits={ almec_cl veteran_administrator }
+			id=-1
+		}
+	}
+	MAN_kin_robb={
+		name="Senator Kin Robb"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAN/portrait_kin_robb.dds"
+			}
+		}
+		country_leader={
+			desc="MAN_kin_robb_desc"
+			ideology=trade_democrat_subtype
+			traits={ kin_robb_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	MAN_bo_katan_kryze={
+		name="Bo-Katan Kryze"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAN/portrait_bo_katan_kryze.dds"
+			}
+		}
+		country_leader={
+			desc="MAN_bo_katan_kryze_desc"
+			ideology=distributionist_subtype
+			traits={ bo_katan_kryze_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	MAN_concordian_arms_director={
+		name="Concordian Arms Director"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAN/portrait_concordian_arms_director.dds"
+			}
+		}
+		country_leader={
+			desc="MAN_concordian_arms_director_desc"
+			ideology=corporate_consortium_subtype
+			traits={ concordian_arms_director_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	MAN_jaster_mereel={
+		name="Jaster Mereel"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAN/portrait_jaster_mereel.dds"
+			}
+		}
+		country_leader={
+			desc="MAN_jaster_mereel_desc"
+			ideology=ruusanist_subtype
+			traits={ jaster_mereel_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	MAN_tarre_vizsla={
+		name="Tarre Vizsla"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAN/portrait_tarre_vizsla.dds"
+			}
+		}
+		country_leader={
+			desc="MAN_tarre_vizsla_desc"
+			ideology=dark_side_subtype
+			traits={ tarre_vizsla_cl shadow_manipulator_cl }
+			id=-1
 		}
 	}
 }
-	

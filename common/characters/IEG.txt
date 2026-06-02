@@ -1,0 +1,128 @@
+characters={
+	IEG_iego_diathim_council={
+		name="Diathim High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_diathim_council.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_diathim_council_desc"
+			ideology=light_side_subtype
+			traits={ iego_diathim_council_cl stability_anchor }
+			id=-1
+		}
+	}
+	IEG_iego_elder_pilgrim={
+		name="Elder Pilgrim Monastery"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_elder_pilgrim.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_elder_pilgrim_desc"
+			ideology=corist_subtype
+			traits={ iego_elder_pilgrim_cl veteran_administrator }
+			id=-1
+		}
+	}
+	IEG_iego_trade_envoy={
+		name="Trade Envoy Voss"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_trade_envoy.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_trade_envoy_desc"
+			ideology=trade_democrat_subtype
+			traits={ iego_trade_envoy_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	IEG_iego_settlement_council={
+		name="Iego Settlement Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_settlement_council.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_settlement_council_desc"
+			ideology=unitist_subtype
+			traits={ iego_settlement_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	IEG_iego_defense_warden={
+		name="Defense Warden Kaal"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_defense_warden.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_defense_warden_desc"
+			ideology=akaanadocrat_subtype
+			traits={ iego_defense_warden_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	IEG_iego_reformist={
+		name="Reformist Speaker Mira"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ iego_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	IEG_iego_populist={
+		name="Populist Elder Soral"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_populist.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_populist_desc"
+			ideology=distributionist_subtype
+			traits={ iego_populist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	IEG_iego_merchants={
+		name="Iego Merchants' Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_merchants.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_merchants_desc"
+			ideology=corporate_consortium_subtype
+			traits={ iego_merchants_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	IEG_iego_ancient_guardian={
+		name="Ancient Guardian Vorath"
+		portraits={
+			civilian={
+				large="gfx/leaders/IEG/portrait_iego_ancient_guardian.dds"
+			}
+		}
+		country_leader={
+			desc="IEG_iego_ancient_guardian_desc"
+			ideology=ruusanist_subtype
+			traits={ iego_ancient_guardian_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+}

@@ -3,16 +3,126 @@ characters={
 		name="Xomit Grunseit"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/BLS/portrait_xomit_grunseit.dds"
 			}
 		}
 		country_leader={
-			desc="BLS_grunseit_desc"
+			desc="BLS_xomit_grunseit_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ xomit_grunseit_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	BLS_prince_xizor={
+		name="Prince Xizor"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_prince_xizor.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_prince_xizor_desc"
+			ideology=trade_democrat_subtype
+			traits={ prince_xizor_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	BLS_alexi_garyn={
+		name="Alexi Garyn"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_alexi_garyn.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_alexi_garyn_desc"
+			ideology=corist_subtype
+			traits={ alexi_garyn_cl veteran_administrator }
+			id=-1
+		}
+	}
+	BLS_ziton_moj={
+		name="Ziton Moj"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_ziton_moj.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_ziton_moj_desc"
+			ideology=akaanadocrat_subtype
+			traits={ ziton_moj_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	BLS_black_sun_vigo_council={
+		name="Black Sun Vigo Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_black_sun_vigo_council.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_black_sun_vigo_council_desc"
+			ideology=unitist_subtype
+			traits={ black_sun_vigo_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	BLS_xora={
+		name="Xora"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_xora.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_xora_desc"
+			ideology=inclusivist_subtype
+			traits={ xora_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	BLS_underlord_reformist={
+		name="The Underlord"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_underlord_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_underlord_reformist_desc"
+			ideology=distributionist_subtype
+			traits={ underlord_reformist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	BLS_senior_vigo_traan={
+		name="Senior Vigo Traan"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_senior_vigo_traan.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_senior_vigo_traan_desc"
+			ideology=ruusanist_subtype
+			traits={ senior_vigo_traan_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	BLS_maul_bls={
+		name="Maul"
+		portraits={
+			civilian={
+				large="gfx/leaders/BLS/portrait_maul_bls.dds"
+			}
+		}
+		country_leader={
+			desc="BLS_maul_bls_desc"
+			ideology=dark_side_subtype
+			traits={ maul_bls_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

@@ -3,32 +3,134 @@ characters={
 		name="Queen Jamillia"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/RNB/portrait_queen_jamillia.dds"
 			}
 		}
 		country_leader={
-			desc="RNB_jamillia_desc"
+			desc="RNB_queen_jamillia_desc"
 			ideology=inclusivist_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ queen_jamillia_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	RNB_sio_bibble={
+		name="Governor Sio Bibble"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_sio_bibble.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_sio_bibble_desc"
+			ideology=corist_subtype
+			traits={ sio_bibble_cl veteran_administrator }
+			id=-1
+		}
+	}
+	RNB_queen_apailana={
+		name="Queen Apailana"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_queen_apailana.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_queen_apailana_desc"
+			ideology=trade_democrat_subtype
+			traits={ queen_apailana_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	RNB_naboo_royal_council={
+		name="Royal Advisory Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_naboo_royal_council.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_naboo_royal_council_desc"
+			ideology=unitist_subtype
+			traits={ naboo_royal_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	RNB_captain_typho={
+		name="Captain Gregar Typho"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_captain_typho.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_captain_typho_desc"
+			ideology=akaanadocrat_subtype
+			traits={ captain_typho_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	RNB_naboo_liberal_reformer={
+		name="Senator Dorra Nass"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_naboo_liberal_reformer.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_naboo_liberal_reformer_desc"
+			ideology=distributionist_subtype
+			traits={ naboo_liberal_reformer_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	RNB_naboo_trading_consortium={
+		name="Naboo Trading Consortium"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_naboo_trading_consortium.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_naboo_trading_consortium_desc"
+			ideology=corporate_consortium_subtype
+			traits={ naboo_trading_consortium_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	RNB_elder_statesman_panaka={
+		name="Elder Statesman Panaka"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_elder_statesman_panaka.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_elder_statesman_panaka_desc"
+			ideology=ruusanist_subtype
+			traits={ elder_statesman_panaka_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	RNB_ric_olie={
+		name="Ric Olié"
+		portraits={
+			civilian={
+				large="gfx/leaders/RNB/portrait_ric_olie.dds"
+			}
+		}
+		country_leader={
+			desc="RNB_ric_olie_desc"
+			ideology=light_side_subtype
+			traits={ ric_olie_cl stability_anchor }
 			id=-1
 		}
 	}
 	RNB_quarsh_panaka={
 		name="Quarsh Panaka"
-		portraits={
-			civilian={
-				#large=""
-			}
-		}
+		portraits={ civilian={ #large="" } }
 		corps_commander={
 			traits={ skilled_duelist blaster_duelist energy_shield }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 }

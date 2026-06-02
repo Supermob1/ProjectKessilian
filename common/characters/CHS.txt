@@ -9,10 +9,121 @@ characters={
 		country_leader={
 			desc="CHS_aristocra_desc"
 			ideology=corist_subtype
-			traits={  }
+			traits={ chiss_aristocra_cl veteran_administrator }
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
+	CHS_aristocra_formbi={
+		name="Aristocra Chaf'orm'bintrano"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_aristocra_formbi.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_aristocra_formbi_desc"
+			ideology=trade_democrat_subtype
+			traits={ aristocra_formbi_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	CHS_thrawn={
+		name="Mitth'raw'nuruodo"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_thrawn.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_thrawn_desc"
+			ideology=akaanadocrat_subtype
+			traits={ thrawn_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	CHS_thurfian={
+		name="Syndic Mitth'urf'ianico"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_thurfian.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_thurfian_desc"
+			ideology=corporate_consortium_subtype
+			traits={ thurfian_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	CHS_supreme_syndic={
+		name="Supreme Syndic of the Ruling Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_supreme_syndic.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_supreme_syndic_desc"
+			ideology=unitist_subtype
+			traits={ supreme_syndic_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	CHS_stent={
+		name="Kres'ten'tarthi"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_stent.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_stent_desc"
+			ideology=inclusivist_subtype
+			traits={ stent_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	CHS_ar_alani={
+		name="Admiral Ar'alani"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_ar_alani.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_ar_alani_desc"
+			ideology=ruusanist_subtype
+			traits={ ar_alani_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	CHS_re_quan_lia={
+		name="Syndic Re'quan'lia"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_re_quan_lia.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_re_quan_lia_desc"
+			ideology=distributionist_subtype
+			traits={ re_quan_lia_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	CHS_mitth_ali_astov={
+		name="Mitth'ali'astov"
+		portraits={
+			civilian={
+				large="gfx/leaders/CHS/portrait_mitth_ali_astov.dds"
+			}
+		}
+		country_leader={
+			desc="CHS_mitth_ali_astov_desc"
+			ideology=light_side_subtype
+			traits={ mitth_ali_astov_cl stability_anchor }
+			id=-1
+		}
+	}
 }
-	

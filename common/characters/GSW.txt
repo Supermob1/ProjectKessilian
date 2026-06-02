@@ -1,0 +1,128 @@
+characters={
+	GSW_sector_governor={
+		name="Sector Governor Tarkin"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_sector_governor.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_sector_governor_desc"
+			ideology=corist_subtype
+			traits={ sector_governor_cl veteran_administrator }
+			id=-1
+		}
+	}
+	GSW_seswenna_trade_council={
+		name="Seswenna Trade Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_trade_council.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_trade_council_desc"
+			ideology=trade_democrat_subtype
+			traits={ seswenna_trade_council_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	GSW_seswenna_assembly={
+		name="Seswenna Sector Assembly"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_assembly.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_assembly_desc"
+			ideology=unitist_subtype
+			traits={ seswenna_assembly_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	GSW_seswenna_militia_general={
+		name="Militia General Draven"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_militia_general.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_militia_general_desc"
+			ideology=akaanadocrat_subtype
+			traits={ seswenna_militia_general_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	GSW_seswenna_reformist={
+		name="Reformist Governor Liana"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ seswenna_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	GSW_seswenna_populist={
+		name="Populist Senator Arran"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_populist.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_populist_desc"
+			ideology=distributionist_subtype
+			traits={ seswenna_populist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	GSW_seswenna_merchants={
+		name="Greater Seswenna Merchants' Guild"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_merchants.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_merchants_desc"
+			ideology=corporate_consortium_subtype
+			traits={ seswenna_merchants_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	GSW_seswenna_elder_lord={
+		name="Elder Lord Eriadu"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_elder_lord.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_elder_lord_desc"
+			ideology=ruusanist_subtype
+			traits={ seswenna_elder_lord_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	GSW_seswenna_dark_patron={
+		name="Dark Patron Morlish Veed"
+		portraits={
+			civilian={
+				large="gfx/leaders/GSW/portrait_seswenna_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="GSW_seswenna_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ seswenna_dark_patron_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
+}
