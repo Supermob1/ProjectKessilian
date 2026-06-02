@@ -3,16 +3,126 @@ characters={
 		name="King Grakchawwaa"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/KAS/portrait_king_grakchawwaa.dds"
 			}
 		}
 		country_leader={
-			desc="KAS_grakchawwaa_desc"
+			desc="KAS_king_grakchawwaa_desc"
 			ideology=corist_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ king_grakchawwaa_cl veteran_administrator }
+			id=-1
+		}
+	}
+	KAS_tarfful={
+		name="Tarfful"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_tarfful.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_tarfful_desc"
+			ideology=trade_democrat_subtype
+			traits={ tarfful_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	KAS_attichitcuk={
+		name="Attichitcuk"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_attichitcuk.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_attichitcuk_desc"
+			ideology=distributionist_subtype
+			traits={ attichitcuk_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	KAS_chewbacca={
+		name="Chewbacca"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_chewbacca.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_chewbacca_desc"
+			ideology=inclusivist_subtype
+			traits={ chewbacca_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	KAS_wookiee_war_council={
+		name="Wookiee War Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_wookiee_war_council.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_wookiee_war_council_desc"
+			ideology=akaanadocrat_subtype
+			traits={ wookiee_war_council_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	KAS_rwookrrorro_council={
+		name="Rwookrrorro Leadership Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_rwookrrorro_council.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_rwookrrorro_council_desc"
+			ideology=unitist_subtype
+			traits={ rwookrrorro_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	KAS_wookiee_timber_guild={
+		name="Wookiee Timber Guild"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_wookiee_timber_guild.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_wookiee_timber_guild_desc"
+			ideology=corporate_consortium_subtype
+			traits={ wookiee_timber_guild_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	KAS_krakrukuk={
+		name="Elder Krakrukuk"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_krakrukuk.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_krakrukuk_desc"
+			ideology=ruusanist_subtype
+			traits={ krakrukuk_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	KAS_kashyyyk_spirit_walker={
+		name="Spirit Walker Orbacha"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAS/portrait_kashyyyk_spirit_walker.dds"
+			}
+		}
+		country_leader={
+			desc="KAS_kashyyyk_spirit_walker_desc"
+			ideology=light_side_subtype
+			traits={ kashyyyk_spirit_walker_cl stability_anchor }
 			id=-1
 		}
 	}
 }
-	

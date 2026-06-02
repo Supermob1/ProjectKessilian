@@ -3,16 +3,126 @@ characters={
 		name="Quoreal"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/VNG/portrait_quoreal.dds"
 			}
 		}
 		country_leader={
 			desc="VNG_quoreal_desc"
 			ideology=new_order_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ quoreal_cl war_hawk_bonus }
+			id=-1
+		}
+	}
+	VNG_shimrra_jamaane={
+		name="Supreme Overlord Shimrra"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_shimrra_jamaane.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_shimrra_jamaane_desc"
+			ideology=corist_subtype
+			traits={ shimrra_jamaane_cl veteran_administrator }
+			id=-1
+		}
+	}
+	VNG_tsavong_lah={
+		name="Warmaster Tsavong Lah"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_tsavong_lah.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_tsavong_lah_desc"
+			ideology=akaanadocrat_subtype
+			traits={ tsavong_lah_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	VNG_nas_choka={
+		name="Warmaster Nas Choka"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_nas_choka.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_nas_choka_desc"
+			ideology=unitist_subtype
+			traits={ nas_choka_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	VNG_intendant_caste_rep={
+		name="High Prefect Drathul"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_intendant_caste_rep.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_intendant_caste_rep_desc"
+			ideology=trade_democrat_subtype
+			traits={ intendant_caste_rep_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	VNG_shaper_magister={
+		name="Shaper Magister Nen Yim"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_shaper_magister.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_shaper_magister_desc"
+			ideology=inclusivist_subtype
+			traits={ shaper_magister_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	VNG_shamed_ones_prophet={
+		name="Prophet of the Shamed Ones"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_shamed_ones_prophet.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_shamed_ones_prophet_desc"
+			ideology=distributionist_subtype
+			traits={ shamed_ones_prophet_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	VNG_merchant_caste_lord={
+		name="Merchant Caste Lord Bhurru"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_merchant_caste_lord.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_merchant_caste_lord_desc"
+			ideology=corporate_consortium_subtype
+			traits={ merchant_caste_lord_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	VNG_high_priest_yun={
+		name="High Priest of Yun-Yuuzhan"
+		portraits={
+			civilian={
+				large="gfx/leaders/VNG/portrait_high_priest_yun.dds"
+			}
+		}
+		country_leader={
+			desc="VNG_high_priest_yun_desc"
+			ideology=ruusanist_subtype
+			traits={ high_priest_yun_cl traditionalist_ruler }
 			id=-1
 		}
 	}
 }
-	

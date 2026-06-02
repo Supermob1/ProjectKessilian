@@ -3,73 +3,150 @@ characters={
 		name="Cham Syndulla"
 		portraits={
 			civilian={
-				##large=""
+				large="gfx/leaders/ORC/portrait_cham_syndulla.dds"
 			}
 		}
 		country_leader={
-			desc="ORC_syndulla_desc"
+			desc="ORC_cham_syndulla_desc"
 			ideology=distributionist_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ cham_syndulla_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	ORC_gobi_glie={
+		name="Gobi Glie"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_gobi_glie.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_gobi_glie_desc"
+			ideology=corist_subtype
+			traits={ gobi_glie_cl veteran_administrator }
+			id=-1
+		}
+	}
+	ORC_rim_trade_senator={
+		name="Trade Senator Orev Daan"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_rim_trade_senator.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_rim_trade_senator_desc"
+			ideology=trade_democrat_subtype
+			traits={ rim_trade_senator_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	ORC_orc_high_council={
+		name="Outer Rim High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_orc_high_council.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_orc_high_council_desc"
+			ideology=unitist_subtype
+			traits={ orc_high_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	ORC_rim_war_council={
+		name="Rim War Council General"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_rim_war_council.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_rim_war_council_desc"
+			ideology=akaanadocrat_subtype
+			traits={ rim_war_council_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	ORC_isval={
+		name="Isval"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_isval.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_isval_desc"
+			ideology=inclusivist_subtype
+			traits={ isval_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	ORC_orc_trade_guild={
+		name="Outer Rim Trade Guild"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_orc_trade_guild.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_orc_trade_guild_desc"
+			ideology=corporate_consortium_subtype
+			traits={ orc_trade_guild_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	ORC_rim_elder_statesman={
+		name="Elder Statesman Ordel"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_rim_elder_statesman.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_rim_elder_statesman_desc"
+			ideology=ruusanist_subtype
+			traits={ rim_elder_statesman_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	ORC_orc_jedi_exile={
+		name="Jedi Exile Daakman"
+		portraits={
+			civilian={
+				large="gfx/leaders/ORC/portrait_orc_jedi_exile.dds"
+			}
+		}
+		country_leader={
+			desc="ORC_orc_jedi_exile_desc"
+			ideology=light_side_subtype
+			traits={ orc_jedi_exile_cl stability_anchor }
 			id=-1
 		}
 	}
 	ORC_atai_molec={
 		name="Atai Molec"
-		portraits={
-			army={
-				#small=""
-				##large=""
-			}
-		}
+		portraits={ army={ ##large="" } }
 		field_marshal={
 			traits={ skilled_duelist deceptive_combat }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 	ORC_raney={
 		name="Raney"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				##large=""
-			}
-		}
+		portraits={ army={ ##large="" } }
 		corps_commander={
 			traits={ blaster_duelist dirty_fighter }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 	ORC_sono_molec={
 		name="Sono Molec"
-		portraits={
-			army={
-				#small=""
-			}
-			army={
-				##large=""
-			}
-		}
+		portraits={ army={ ##large="" } }
 		field_marshal={
 			traits={ skilled_duelist vibroblade_fighter }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=-1
+			skill=3 attack_skill=3 defense_skill=3 planning_skill=3 logistics_skill=3 legacy_id=-1
 		}
 	}
 }

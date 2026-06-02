@@ -1,0 +1,128 @@
+characters={
+	FON_fon_chairman={
+		name="Chairman of the Association"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_chairman.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_chairman_desc"
+			ideology=trade_democrat_subtype
+			traits={ fon_chairman_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	FON_fon_conservative_bloc={
+		name="Conservative Bloc Leader"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_conservative_bloc.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_conservative_bloc_desc"
+			ideology=corist_subtype
+			traits={ fon_conservative_bloc_cl veteran_administrator }
+			id=-1
+		}
+	}
+	FON_fon_assembly={
+		name="Free Trade Assembly"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_assembly.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_assembly_desc"
+			ideology=unitist_subtype
+			traits={ fon_assembly_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	FON_fon_defense_council={
+		name="Defense Council General"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_defense_council.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_defense_council_desc"
+			ideology=akaanadocrat_subtype
+			traits={ fon_defense_council_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	FON_fon_reformist={
+		name="Reformist Delegate Mira Vael"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ fon_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	FON_fon_workers_bloc={
+		name="Workers' Bloc Representative"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_workers_bloc.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_workers_bloc_desc"
+			ideology=distributionist_subtype
+			traits={ fon_workers_bloc_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	FON_fon_merchants_syndicate={
+		name="Merchants' Syndicate Director"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_merchants_syndicate.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_merchants_syndicate_desc"
+			ideology=corporate_consortium_subtype
+			traits={ fon_merchants_syndicate_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	FON_fon_elder_delegate={
+		name="Elder Delegate of the Founding Worlds"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_elder_delegate.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_elder_delegate_desc"
+			ideology=ruusanist_subtype
+			traits={ fon_elder_delegate_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	FON_fon_dark_patron={
+		name="Dark Patron Vreel Kaas"
+		portraits={
+			civilian={
+				large="gfx/leaders/FON/portrait_fon_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="FON_fon_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ fon_dark_patron_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
+}

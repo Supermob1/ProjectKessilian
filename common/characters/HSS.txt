@@ -1,0 +1,128 @@
+characters={
+	HSS_hsskor_overlord={
+		name="Overlord of Hsskor"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_overlord.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_overlord_desc"
+			ideology=corist_subtype
+			traits={ hsskor_overlord_cl veteran_administrator }
+			id=-1
+		}
+	}
+	HSS_hsskor_trade_minister={
+		name="Trade Minister Vaskaan"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_trade_minister.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_trade_minister_desc"
+			ideology=trade_democrat_subtype
+			traits={ hsskor_trade_minister_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	HSS_hsskor_grand_council={
+		name="Hsskor Grand Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_grand_council.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_grand_council_desc"
+			ideology=unitist_subtype
+			traits={ hsskor_grand_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	HSS_hsskor_warlord={
+		name="Warlord Drathek"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_warlord.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_warlord_desc"
+			ideology=akaanadocrat_subtype
+			traits={ hsskor_warlord_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	HSS_hsskor_reformist={
+		name="Reformist Syndic Mira"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ hsskor_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	HSS_hsskor_popular_front={
+		name="Popular Front Leader Oskan"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_popular_front.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_popular_front_desc"
+			ideology=distributionist_subtype
+			traits={ hsskor_popular_front_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	HSS_hsskor_trade_guild={
+		name="Hsskor Trade Guild Director"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_trade_guild.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_trade_guild_desc"
+			ideology=corporate_consortium_subtype
+			traits={ hsskor_trade_guild_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	HSS_hsskor_elder={
+		name="Elder Patriarch Vorkan"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_elder.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_elder_desc"
+			ideology=ruusanist_subtype
+			traits={ hsskor_elder_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	HSS_hsskor_dark_lord={
+		name="Dark Lord Thessar"
+		portraits={
+			civilian={
+				large="gfx/leaders/HSS/portrait_hsskor_dark_lord.dds"
+			}
+		}
+		country_leader={
+			desc="HSS_hsskor_dark_lord_desc"
+			ideology=dark_side_subtype
+			traits={ hsskor_dark_lord_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
+}

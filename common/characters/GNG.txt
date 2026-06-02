@@ -3,16 +3,126 @@ characters={
 		name="Boss Nass"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/GNG/portrait_boss_nass.dds"
 			}
 		}
 		country_leader={
-			desc="GNG_nass_desc"
+			desc="GNG_boss_nass_desc"
 			ideology=distributionist_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ boss_nass_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	GNG_jar_jar_binks={
+		name="Jar Jar Binks"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_jar_jar_binks.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_jar_jar_binks_desc"
+			ideology=inclusivist_subtype
+			traits={ jar_jar_binks_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	GNG_rep_been={
+		name="Rep Been"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_rep_been.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_rep_been_desc"
+			ideology=corist_subtype
+			traits={ rep_been_cl veteran_administrator }
+			id=-1
+		}
+	}
+	GNG_captain_tarpals={
+		name="Captain Roos Tarpals"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_captain_tarpals.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_captain_tarpals_desc"
+			ideology=akaanadocrat_subtype
+			traits={ captain_tarpals_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	GNG_gungan_grand_army_general={
+		name="Gungan Grand Army General"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_gungan_grand_army_general.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_gungan_grand_army_general_desc"
+			ideology=unitist_subtype
+			traits={ gungan_grand_army_general_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	GNG_gungan_trade_guild={
+		name="Gungan Trade Guild Master"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_gungan_trade_guild.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_gungan_trade_guild_desc"
+			ideology=trade_democrat_subtype
+			traits={ gungan_trade_guild_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	GNG_boles_roor={
+		name="Boles Roor"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_boles_roor.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_boles_roor_desc"
+			ideology=corporate_consortium_subtype
+			traits={ boles_roor_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	GNG_gungan_elder_otoh={
+		name="Elder of Otoh Gunga"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_gungan_elder_otoh.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_gungan_elder_otoh_desc"
+			ideology=ruusanist_subtype
+			traits={ gungan_elder_otoh_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	GNG_darth_jar_jar={
+		name="Darth Jar Jar"
+		portraits={
+			civilian={
+				large="gfx/leaders/GNG/portrait_darth_jar_jar.dds"
+			}
+		}
+		country_leader={
+			desc="GNG_darth_jar_jar_desc"
+			ideology=dark_side_subtype
+			traits={ darth_jar_jar_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

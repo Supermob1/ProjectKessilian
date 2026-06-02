@@ -1,0 +1,128 @@
+characters={
+	TAR_saul_moegantz={
+		name="Governor Saul Moegantz"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_saul_moegantz.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_saul_moegantz_desc"
+			ideology=corist_subtype
+			traits={ saul_moegantz_cl veteran_administrator }
+			id=-1
+		}
+	}
+	TAR_taris_urban_authority={
+		name="Taris Urban Authority"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_taris_urban_authority.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_taris_urban_authority_desc"
+			ideology=unitist_subtype
+			traits={ taris_urban_authority_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	TAR_taris_trade_council={
+		name="Taris Trade Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_taris_trade_council.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_taris_trade_council_desc"
+			ideology=trade_democrat_subtype
+			traits={ taris_trade_council_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	TAR_brejik={
+		name="Brejik"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_brejik.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_brejik_desc"
+			ideology=akaanadocrat_subtype
+			traits={ brejik_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	TAR_taris_reformist={
+		name="Reformist Councillor Lara"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_taris_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_taris_reformist_desc"
+			ideology=inclusivist_subtype
+			traits={ taris_reformist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	TAR_taris_populist={
+		name="Populist Leader Oran"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_taris_populist.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_taris_populist_desc"
+			ideology=distributionist_subtype
+			traits={ taris_populist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	TAR_taris_merchants={
+		name="Taris Merchants' Syndicate"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_taris_merchants.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_taris_merchants_desc"
+			ideology=corporate_consortium_subtype
+			traits={ taris_merchants_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	TAR_taris_elder_senator={
+		name="Elder Senator Darro"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_taris_elder_senator.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_taris_elder_senator_desc"
+			ideology=ruusanist_subtype
+			traits={ taris_elder_senator_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	TAR_taris_dark_patron={
+		name="Dark Patron Vrek"
+		portraits={
+			civilian={
+				large="gfx/leaders/TAR/portrait_taris_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="TAR_taris_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ taris_dark_patron_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
+}

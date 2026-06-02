@@ -3,16 +3,126 @@ characters={
 		name="Nym"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/LKR/portrait_nym.dds"
 			}
 		}
 		country_leader={
 			desc="LKR_nym_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ nym_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	LKR_sol_sixxa={
+		name="Sol Sixxa"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_sol_sixxa.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_sol_sixxa_desc"
+			ideology=trade_democrat_subtype
+			traits={ sol_sixxa_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	LKR_vana_sage={
+		name="Vana Sage"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_vana_sage.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_vana_sage_desc"
+			ideology=corist_subtype
+			traits={ vana_sage_cl veteran_administrator }
+			id=-1
+		}
+	}
+	LKR_rhys_dallows={
+		name="Rhys Dallows"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_rhys_dallows.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_rhys_dallows_desc"
+			ideology=inclusivist_subtype
+			traits={ rhys_dallows_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	LKR_jinkins={
+		name="Jinkins"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_jinkins.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_jinkins_desc"
+			ideology=akaanadocrat_subtype
+			traits={ jinkins_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	LKR_revenant_high_council={
+		name="Revenant High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_revenant_high_council.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_revenant_high_council_desc"
+			ideology=unitist_subtype
+			traits={ revenant_high_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	LKR_kole={
+		name="Kole the Pirate"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_kole.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_kole_desc"
+			ideology=ruusanist_subtype
+			traits={ kole_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	LKR_revenant_reformist={
+		name="Reformist Captain Laara"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_revenant_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_revenant_reformist_desc"
+			ideology=distributionist_subtype
+			traits={ revenant_reformist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	LKR_lok_dark_patron={
+		name="Dark Patron of Lok"
+		portraits={
+			civilian={
+				large="gfx/leaders/LKR/portrait_lok_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="LKR_lok_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ lok_dark_patron_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	
