@@ -3,16 +3,126 @@ characters={
 		name="Marlo"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/QKJ/portrait_marlo.dds"
 			}
 		}
 		country_leader={
 			desc="QKJ_marlo_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ marlo_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_arbiter={
+		name="Arbiter Qunalaac"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_arbiter.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_arbiter_desc"
+			ideology=trade_democrat_subtype
+			traits={ qunalaac_arbiter_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_elder={
+		name="Elder Qunalaac"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_elder.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_elder_desc"
+			ideology=corist_subtype
+			traits={ qunalaac_elder_cl veteran_administrator }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_warlord={
+		name="Warlord Drazz"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_warlord.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_warlord_desc"
+			ideology=akaanadocrat_subtype
+			traits={ qunalaac_warlord_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_council={
+		name="Qunalaac High Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_council.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_council_desc"
+			ideology=unitist_subtype
+			traits={ qunalaac_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_diplomat={
+		name="Diplomat Borra"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_diplomat.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_diplomat_desc"
+			ideology=inclusivist_subtype
+			traits={ qunalaac_diplomat_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_reformist={
+		name="Reformist Urgo"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_reformist.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_reformist_desc"
+			ideology=distributionist_subtype
+			traits={ qunalaac_reformist_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_patriarch={
+		name="Patriarch Shraak"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_patriarch.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_patriarch_desc"
+			ideology=ruusanist_subtype
+			traits={ qunalaac_patriarch_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	QKJ_qunalaac_shadow={
+		name="Shadow Lord Vrenn"
+		portraits={
+			civilian={
+				large="gfx/leaders/QKJ/portrait_qunalaac_shadow.dds"
+			}
+		}
+		country_leader={
+			desc="QKJ_qunalaac_shadow_desc"
+			ideology=dark_side_subtype
+			traits={ qunalaac_shadow_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

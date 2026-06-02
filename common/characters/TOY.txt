@@ -3,24 +3,126 @@ characters={
 		name="King Katuunko"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/TOY/portrait_king_katuunko.dds"
 			}
 		}
 		country_leader={
-			desc="TOY_katuunko_desc"
+			desc="TOY_king_katuunko_desc"
 			ideology=corist_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ king_katuunko_cl veteran_administrator }
 			id=-1
 		}
 	}
-	TOY_ministry_council ={
+	TOY_ministry_council={
 		name="Ministry Council"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/TOY/portrait_ministry_council.dds"
 			}
+		}
+		country_leader={
+			desc="TOY_ministry_council_desc"
+			ideology=trade_democrat_subtype
+			traits={ ministry_council_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	TOY_toydarian_privy_council={
+		name="Toydarian Privy Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/TOY/portrait_toydarian_privy_council.dds"
+			}
+		}
+		country_leader={
+			desc="TOY_toydarian_privy_council_desc"
+			ideology=unitist_subtype
+			traits={ toydarian_privy_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	TOY_general_dray={
+		name="General Dray"
+		portraits={
+			civilian={
+				large="gfx/leaders/TOY/portrait_general_dray.dds"
+			}
+		}
+		country_leader={
+			desc="TOY_general_dray_desc"
+			ideology=akaanadocrat_subtype
+			traits={ general_dray_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	TOY_ambassador_toyble={
+		name="Ambassador Toyble"
+		portraits={
+			civilian={
+				large="gfx/leaders/TOY/portrait_ambassador_toyble.dds"
+			}
+		}
+		country_leader={
+			desc="TOY_ambassador_toyble_desc"
+			ideology=inclusivist_subtype
+			traits={ ambassador_toyble_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	TOY_toydarian_reformer={
+		name="Reformist Minister Faldo"
+		portraits={
+			civilian={
+				large="gfx/leaders/TOY/portrait_toydarian_reformer.dds"
+			}
+		}
+		country_leader={
+			desc="TOY_toydarian_reformer_desc"
+			ideology=distributionist_subtype
+			traits={ toydarian_reformer_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	TOY_toydarian_merchants_guild={
+		name="Toydarian Merchants' Guild"
+		portraits={
+			civilian={
+				large="gfx/leaders/TOY/portrait_toydarian_merchants_guild.dds"
+			}
+		}
+		country_leader={
+			desc="TOY_toydarian_merchants_guild_desc"
+			ideology=corporate_consortium_subtype
+			traits={ toydarian_merchants_guild_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	TOY_elder_toydarian={
+		name="Elder Toydarian Wunn"
+		portraits={
+			civilian={
+				large="gfx/leaders/TOY/portrait_elder_toydarian.dds"
+			}
+		}
+		country_leader={
+			desc="TOY_elder_toydarian_desc"
+			ideology=ruusanist_subtype
+			traits={ elder_toydarian_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	TOY_toydarian_dark_patron={
+		name="Dark Patron Margo"
+		portraits={
+			civilian={
+				large="gfx/leaders/TOY/portrait_toydarian_dark_patron.dds"
+			}
+		}
+		country_leader={
+			desc="TOY_toydarian_dark_patron_desc"
+			ideology=dark_side_subtype
+			traits={ toydarian_dark_patron_cl shadow_manipulator_cl }
+			id=-1
 		}
 	}
 }
-	

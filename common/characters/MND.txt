@@ -3,16 +3,126 @@ characters={
 		name="Mandalore"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/MND/portrait_mandalore.dds"
 			}
 		}
 		country_leader={
 			desc="MND_mandalore_desc"
 			ideology=inclusivist_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ mandalore_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	MND_jango_fett={
+		name="Jango Fett"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_jango_fett.dds"
+			}
+		}
+		country_leader={
+			desc="MND_jango_fett_desc"
+			ideology=akaanadocrat_subtype
+			traits={ jango_fett_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	MND_fenn_shysa={
+		name="Fenn Shysa"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_fenn_shysa.dds"
+			}
+		}
+		country_leader={
+			desc="MND_fenn_shysa_desc"
+			ideology=corist_subtype
+			traits={ fenn_shysa_cl veteran_administrator }
+			id=-1
+		}
+	}
+	MND_kal_skirata={
+		name="Kal Skirata"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_kal_skirata.dds"
+			}
+		}
+		country_leader={
+			desc="MND_kal_skirata_desc"
+			ideology=ruusanist_subtype
+			traits={ kal_skirata_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	MND_mandalore_council={
+		name="Mandalore Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_mandalore_council.dds"
+			}
+		}
+		country_leader={
+			desc="MND_mandalore_council_desc"
+			ideology=unitist_subtype
+			traits={ mandalore_council_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	MND_mandalMotors_ceo={
+		name="MandalMotors Director"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_mandalMotors_ceo.dds"
+			}
+		}
+		country_leader={
+			desc="MND_mandalMotors_ceo_desc"
+			ideology=corporate_consortium_subtype
+			traits={ mandalMotors_ceo_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	MND_mand_trade_envoy={
+		name="Trade Envoy Vhonte Tervho"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_mand_trade_envoy.dds"
+			}
+		}
+		country_leader={
+			desc="MND_mand_trade_envoy_desc"
+			ideology=trade_democrat_subtype
+			traits={ mand_trade_envoy_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	MND_sabine_wren={
+		name="Sabine Wren"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_sabine_wren.dds"
+			}
+		}
+		country_leader={
+			desc="MND_sabine_wren_desc"
+			ideology=distributionist_subtype
+			traits={ sabine_wren_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	MND_mandalore_the_ultimate={
+		name="Mandalore the Ultimate"
+		portraits={
+			civilian={
+				large="gfx/leaders/MND/portrait_mandalore_the_ultimate.dds"
+			}
+		}
+		country_leader={
+			desc="MND_mandalore_the_ultimate_desc"
+			ideology=dark_side_subtype
+			traits={ mandalore_the_ultimate_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

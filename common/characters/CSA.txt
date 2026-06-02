@@ -3,16 +3,126 @@ characters={
 		name="Exec"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/CSA/portrait_exec.dds"
 			}
 		}
 		country_leader={
 			desc="CSA_exec_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ exec_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	CSA_hirken={
+		name="Viceprex Mirkovig Hirken"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_hirken.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_hirken_desc"
+			ideology=trade_democrat_subtype
+			traits={ hirken_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	CSA_odumin={
+		name="Chief Administrator Odumin"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_odumin.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_odumin_desc"
+			ideology=corist_subtype
+			traits={ odumin_cl veteran_administrator }
+			id=-1
+		}
+	}
+	CSA_csa_board={
+		name="The Board of Directors"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_csa_board.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_csa_board_desc"
+			ideology=unitist_subtype
+			traits={ csa_board_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	CSA_security_commander_zarn={
+		name="Security Commander Zarn"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_security_commander_zarn.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_security_commander_zarn_desc"
+			ideology=akaanadocrat_subtype
+			traits={ security_commander_zarn_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	CSA_reform_viceprex={
+		name="Reform Viceprex Liana Merian"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_reform_viceprex.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_reform_viceprex_desc"
+			ideology=inclusivist_subtype
+			traits={ reform_viceprex_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	CSA_labor_rep_faa={
+		name="Labor Representative Faa"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_labor_rep_faa.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_labor_rep_faa_desc"
+			ideology=distributionist_subtype
+			traits={ labor_rep_faa_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	CSA_old_viceprex_granpren={
+		name="Viceprex Granpren"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_old_viceprex_granpren.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_old_viceprex_granpren_desc"
+			ideology=ruusanist_subtype
+			traits={ old_viceprex_granpren_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	CSA_csa_sith_director={
+		name="Director Vel Ordan"
+		portraits={
+			civilian={
+				large="gfx/leaders/CSA/portrait_csa_sith_director.dds"
+			}
+		}
+		country_leader={
+			desc="CSA_csa_sith_director_desc"
+			ideology=dark_side_subtype
+			traits={ csa_sith_director_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

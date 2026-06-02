@@ -9,10 +9,121 @@ characters={
 		country_leader={
 			desc="TDF_gunray_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
+			traits={ nute_gunray_cl corporate_magnate_cl }
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
+	TDF_lott_dod={
+		name="Lott Dod"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_lott_dod.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_lott_dod_desc"
+			ideology=trade_democrat_subtype
+			traits={ lott_dod_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	TDF_rune_haako={
+		name="Rune Haako"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_rune_haako.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_rune_haako_desc"
+			ideology=corist_subtype
+			traits={ rune_haako_cl veteran_administrator }
+			id=-1
+		}
+	}
+	TDF_sentepeth_findos={
+		name="Sentepeth Findos"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_sentepeth_findos.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_sentepeth_findos_desc"
+			ideology=unitist_subtype
+			traits={ sentepeth_findos_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	TDF_daultay_dofine={
+		name="Daultay Dofine"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_daultay_dofine.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_daultay_dofine_desc"
+			ideology=akaanadocrat_subtype
+			traits={ daultay_dofine_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	TDF_hath_monchar={
+		name="Hath Monchar"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_hath_monchar.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_hath_monchar_desc"
+			ideology=inclusivist_subtype
+			traits={ hath_monchar_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	TDF_tey_how={
+		name="Tey How"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_tey_how.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_tey_how_desc"
+			ideology=distributionist_subtype
+			traits={ tey_how_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	TDF_guild_master_ruuc={
+		name="Guild Master Ruuc Wuwu"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_guild_master_ruuc.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_guild_master_ruuc_desc"
+			ideology=ruusanist_subtype
+			traits={ guild_master_ruuc_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	TDF_darth_sidious={
+		name="Darth Sidious"
+		portraits={
+			civilian={
+				large="gfx/leaders/TDF/portrait_darth_sidious.dds"
+			}
+		}
+		country_leader={
+			desc="TDF_darth_sidious_desc"
+			ideology=dark_side_subtype
+			traits={ darth_sidious_cl shadow_manipulator_cl }
+			id=-1
+		}
+	}
 }
-	

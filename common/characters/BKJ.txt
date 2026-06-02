@@ -3,16 +3,126 @@ characters={
 		name="Arok"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/BKJ/portrait_arok.dds"
 			}
 		}
 		country_leader={
 			desc="BKJ_arok_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ arok_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	BKJ_durga_besadii={
+		name="Durga Besadii Tai"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_durga_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_durga_besadii_desc"
+			ideology=trade_democrat_subtype
+			traits={ durga_besadii_cl merchant_prince_cl }
+			id=-1
+		}
+	}
+	BKJ_aruk_besadii={
+		name="Aruk Besadii Aora"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_aruk_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_aruk_besadii_desc"
+			ideology=corist_subtype
+			traits={ aruk_besadii_cl veteran_administrator }
+			id=-1
+		}
+	}
+	BKJ_gardulla_besadii={
+		name="Gardulla Besadii the Elder"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_gardulla_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_gardulla_besadii_desc"
+			ideology=unitist_subtype
+			traits={ gardulla_besadii_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	BKJ_borvo_besadii={
+		name="Borvo the Hutt"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_borvo_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_borvo_besadii_desc"
+			ideology=akaanadocrat_subtype
+			traits={ borvo_besadii_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	BKJ_rotta_besadii={
+		name="Rotta Besadii"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_rotta_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_rotta_besadii_desc"
+			ideology=inclusivist_subtype
+			traits={ rotta_besadii_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	BKJ_aarrba_besadii={
+		name="Aarrba the Hutt"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_aarrba_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_aarrba_besadii_desc"
+			ideology=distributionist_subtype
+			traits={ aarrba_besadii_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	BKJ_savar_besadii={
+		name="Savar Besadii"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_savar_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_savar_besadii_desc"
+			ideology=ruusanist_subtype
+			traits={ savar_besadii_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	BKJ_alkhara_besadii={
+		name="Alkhara the Elder"
+		portraits={
+			civilian={
+				large="gfx/leaders/BKJ/portrait_alkhara_besadii.dds"
+			}
+		}
+		country_leader={
+			desc="BKJ_alkhara_besadii_desc"
+			ideology=dark_side_subtype
+			traits={ alkhara_besadii_cl shadow_manipulator_cl }
 			id=-1
 		}
 	}
 }
-	

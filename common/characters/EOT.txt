@@ -3,16 +3,126 @@ characters={
 		name="Thrawn"
 		portraits={
 			civilian={
-				#large=""
+				large="gfx/leaders/EOT/portrait_thrawn.dds"
 			}
 		}
 		country_leader={
 			desc="EOT_thrawn_desc"
 			ideology=new_order_subtype
-			traits={  }
-			expire="1965.1.1.1"
+			traits={ thrawn_cl war_hawk_bonus }
+			id=-1
+		}
+	}
+	EOT_voss_parck={
+		name="Admiral Voss Parck"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_voss_parck.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_voss_parck_desc"
+			ideology=corist_subtype
+			traits={ voss_parck_cl veteran_administrator }
+			id=-1
+		}
+	}
+	EOT_niriz={
+		name="Admiral Niriz"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_niriz.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_niriz_desc"
+			ideology=ruusanist_subtype
+			traits={ niriz_cl traditionalist_ruler }
+			id=-1
+		}
+	}
+	EOT_hand_high_command={
+		name="Hand High Command"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_hand_high_command.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_hand_high_command_desc"
+			ideology=unitist_subtype
+			traits={ hand_high_command_cl iron_disciplinarian }
+			id=-1
+		}
+	}
+	EOT_tierce={
+		name="Major Grodin Tierce"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_tierce.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_tierce_desc"
+			ideology=akaanadocrat_subtype
+			traits={ tierce_cl iron_fist_ruler }
+			id=-1
+		}
+	}
+	EOT_hand_xenologist={
+		name="Xenologist Director Iara"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_hand_xenologist.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_hand_xenologist_desc"
+			ideology=inclusivist_subtype
+			traits={ hand_xenologist_cl popular_figurehead_cl }
+			id=-1
+		}
+	}
+	EOT_hand_reform_general={
+		name="General Pell Cahmasi"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_hand_reform_general.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_hand_reform_general_desc"
+			ideology=distributionist_subtype
+			traits={ hand_reform_general_cl peoples_voice_cl }
+			id=-1
+		}
+	}
+	EOT_brask_oto_director={
+		name="Director of Brask Oto Command"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_brask_oto_director.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_brask_oto_director_desc"
+			ideology=corporate_consortium_subtype
+			traits={ brask_oto_director_cl corporate_magnate_cl }
+			id=-1
+		}
+	}
+	EOT_hand_colonel_ruuk={
+		name="Colonel Ruuk Vaaran"
+		portraits={
+			civilian={
+				large="gfx/leaders/EOT/portrait_hand_colonel_ruuk.dds"
+			}
+		}
+		country_leader={
+			desc="EOT_hand_colonel_ruuk_desc"
+			ideology=trade_democrat_subtype
+			traits={ hand_colonel_ruuk_cl merchant_prince_cl }
 			id=-1
 		}
 	}
 }
-	

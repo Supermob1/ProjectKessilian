@@ -6,14 +6,14 @@ characters={
 		country_leader={
 			desc="CIS_dooku_desc"
 			ideology=trade_democrat_subtype
-			traits={  }
+			traits={ grand_chessmaster galactic_visionary_cl }
 			expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
 			desc="CIS_dooku_desc"
 			ideology=dark_side_subtype
-			traits={  }
+			traits={ grand_chessmaster shadow_manipulator_cl }
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -39,7 +39,7 @@ characters={
 		country_leader={
 			desc="CIS_voe_attrell_desc"
 			ideology=corporate_consortium_subtype
-			traits={  }
+			traits={ trade_blockade_master merchant_prince_cl }
 		}
 	}
 	# --- Trade Democrats ---
@@ -51,8 +51,7 @@ characters={
 			slot=political_advisor
 			idea_token=bec_lawise_pol
 			name=bec_lawise
-			cost=100 
-			#ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ profit_legislator the_banker }
 			ai_will_do={ factor=1 }
@@ -66,8 +65,7 @@ characters={
 			slot=political_advisor
 			idea_token=by_bluss_pol
 			name=by_bluss
-			cost=100 
-			#ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ market_tactician industry_reformer }
 			ai_will_do={ factor=1 }
@@ -81,7 +79,7 @@ characters={
 			slot=political_advisor
 			idea_token=avi_singh_pol
 			name=avi_singh
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ free_trade_evangelist tenacious_negotiator }
 			ai_will_do={ factor=1 }
@@ -95,7 +93,7 @@ characters={
 			slot=political_advisor
 			idea_token=ansibella_delu_pol
 			name=ansibella_delu
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ silver_tongue_ansibella propaganda_expert }
 			ai_will_do={ factor=1 }
@@ -111,18 +109,18 @@ characters={
 		country_leader={
 			desc="CIS_mina_bonteri_desc"
 			ideology=inclusivist_subtype
-			traits={  }
+			traits={ bridge_for_peace popular_figurehead_cl }
 		}
 		country_leader={
 			desc="CIS_mina_bonteri_desc"
 			ideology=ruusanist_subtype
-			traits={  }
+			traits={ bridge_for_peace traditionalist_ruler }
 		}
 		advisor={
 			slot=political_advisor
 			idea_token=mina_bonteri_pol
 			name=mina_bonteri
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ bridge_for_peace womens_rights_activist }
 			ai_will_do={ factor=1 }
@@ -136,13 +134,13 @@ characters={
 		country_leader={
 			desc="CIS_kerch_kushi_desc"
 			ideology=distributionist_subtype
-			traits={  }
+			traits={ cultural_relativist peoples_voice_cl }
 		}
 		advisor={
 			slot=political_advisor
 			idea_token=kerch_kushi_pol
 			name=kerch_kushi
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ cultural_relativist social_reformer }
 			ai_will_do={ factor=1 }
@@ -154,17 +152,17 @@ characters={
 	CIS_nute_gunray={
 		name="Nute Gunray"
 		portraits={ civilian={ small="gfx/characters/CIS/nute_gunray_political_advisor.png" large="gfx/leaders/CIS/portrait_nute_gunray.png" } }
-		
+
 		country_leader={
 			desc="CIS_nute_gunray_desc"
 			ideology=corist_subtype
-			traits={  }
+			traits={ trade_blockade_master corporate_magnate_cl }
 		}
 		advisor={
 			slot=political_advisor
 			idea_token=nute_gunray_pol
 			name=nute_gunray
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ trade_blockade_master dealbroker }
 			ai_will_do={ factor=1 }
@@ -178,7 +176,7 @@ characters={
 			slot=political_advisor
 			idea_token=wat_tambor_pol
 			name=wat_tambor
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ techno_unionist gifted_shipping_magnate }
 			ai_will_do={ factor=1 }
@@ -201,7 +199,7 @@ characters={
 			slot=political_advisor
 			idea_token=shu_mai_pol
 			name=shu_mai
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ commerce_matron industry_reformer }
 			ai_will_do={ factor=1 }
@@ -224,14 +222,14 @@ characters={
 			slot=political_advisor
 			idea_token=passel_argente_pol
 			name=passel_argente
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ corporate_lawyer backroom_backstabber }
 			ai_will_do={ factor=1 }
 		}
 	}
 
-	# --- Akaan’adocrats ---
+	# --- Akaan'adocrats ---
 	CIS_whorm_loathsom={
 		name="Whorm Loathsom"
 		portraits={ civilian={ small="gfx/characters/CIS/whorm_loathsom_political_advisor.png" large="gfx/leaders/CIS/portrait_whorm_loathsom.png" } }
@@ -239,7 +237,7 @@ characters={
 			slot=political_advisor
 			idea_token=whorm_loathsom_pol
 			name=whorm_loathsom
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ siege_master retired_officer }
 			ai_will_do={ factor=1 }
@@ -277,7 +275,7 @@ characters={
 			slot=political_advisor
 			idea_token=sevrance_tann_pol
 			name=sevrance_tann
-			cost=100 #ledger=politics
+			cost=100
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits={ chiss_tactician war_industrialist }
 			ai_will_do={ factor=1 }
@@ -286,8 +284,7 @@ characters={
 			slot = air_chief
 			idea_token = sevrance_tann_air_chief
 			name = sevrance_tann
-			cost = 150
-			ledger = air
+			cost = 150 ledger = air
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits = { chiss_tactician air_chief_safety_1 }
 			ai_will_do={ factor=1 }
@@ -297,7 +294,8 @@ characters={
 			skill=3 attack_skill=3 defense_skill=3 planning_skill=4 logistics_skill=2 legacy_id=-1
 		}
 	}
-	# Military #
+
+	# Military
 	CIS_trench={
 		name="Admiral Trench"
 		portraits={
@@ -308,8 +306,7 @@ characters={
 			slot = navy_chief
 			idea_token = trench_navy_chief
 			name = trench
-			cost = 150
-			ledger = navy
+			cost = 150 ledger = navy
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits = { web_tactician navy_chief_decisive_battle_1 }
 			ai_will_do={ factor=1 }
@@ -329,12 +326,12 @@ characters={
 		country_leader={
 			desc="CIS_grievous_chief_desc"
 			ideology=akaanadocrat_subtype
-			traits={  }
+			traits={ cybernetic_warlord iron_fist_ruler }
 		}
 		country_leader={
 			desc="CIS_grievous_chief_desc"
 			ideology=unitist_subtype
-			traits={  }
+			traits={ cybernetic_warlord iron_disciplinarian }
 		}
 	}
 	CIS_poggle_the_lesser={
@@ -344,8 +341,7 @@ characters={
 			slot = theorist
 			idea_token = poggle_theorist
 			name = poggle
-			cost = 100
-			ledger = army
+			cost = 100 ledger = army
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits = { hive_overlord superior_firepower_expert }
 			ai_will_do={ factor=1 }
@@ -392,8 +388,7 @@ characters={
 			slot = high_command
 			idea_token = general_kleeve_high
 			name = general_kleeve
-			cost = 100
-			ledger = army
+			cost = 100 ledger = army
 			allowed={ original_tag=CIS } visible={ original_tag=CIS }
 			traits = { devanorian_warlord army_commando_1 }
 			ai_will_do={ factor=1 }
@@ -469,6 +464,4 @@ characters={
 			skill=3 attack_skill=2 defense_skill=3 planning_skill=1 logistics_skill=2 legacy_id=-1
 		}
 	}
-
 }
-	
