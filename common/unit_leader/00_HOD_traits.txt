@@ -67,10 +67,13 @@ leader_traits = {
 			has_trait = light_side_user
 		}
 		on_add = {
-			THIS = {
-				remove_unit_leader_trait = jedi_knight_rank
-				remove_unit_leader_trait = jedi_veteran_rank
-				remove_unit_leader_trait = jedi_master_rank
+			owner = {
+				every_army_leader = {
+					limit = { has_trait = jedi_padawan_rank }
+					remove_unit_leader_trait = jedi_knight_rank
+					remove_unit_leader_trait = jedi_veteran_rank
+					remove_unit_leader_trait = jedi_master_rank
+				}
 			}
 		}
 		modifier = {
@@ -92,9 +95,14 @@ leader_traits = {
 			has_trait = light_side_user
 		}
 		on_add = {
-			remove_unit_leader_trait = jedi_padawan_rank
-			remove_unit_leader_trait = jedi_veteran_rank
-			remove_unit_leader_trait = jedi_master_rank
+			owner = {
+				every_army_leader = {
+					limit = { has_trait = jedi_knight_rank }
+					remove_unit_leader_trait = jedi_padawan_rank
+					remove_unit_leader_trait = jedi_veteran_rank
+					remove_unit_leader_trait = jedi_master_rank
+				}
+			}
 		}
 		modifier = {
 			army_morale_factor = 0.15
@@ -111,9 +119,14 @@ leader_traits = {
 			has_trait = light_side_user
 		}
 		on_add = {
-			remove_unit_leader_trait = jedi_padawan_rank
-			remove_unit_leader_trait = jedi_knight_rank
-			remove_unit_leader_trait = jedi_master_rank
+			owner = {
+				every_army_leader = {
+					limit = { has_trait = jedi_veteran_rank }
+					remove_unit_leader_trait = jedi_padawan_rank
+					remove_unit_leader_trait = jedi_knight_rank
+					remove_unit_leader_trait = jedi_master_rank
+				}
+			}
 		}
 		modifier = {
 			army_morale_factor = 0.15
@@ -135,9 +148,14 @@ leader_traits = {
 			has_trait = light_side_user
 		}
 		on_add = {
-			remove_unit_leader_trait = jedi_padawan_rank
-			remove_unit_leader_trait = jedi_knight_rank
-			remove_unit_leader_trait = jedi_veteran_rank
+			owner = {
+				every_army_leader = {
+					limit = { has_trait = jedi_master_rank }
+					remove_unit_leader_trait = jedi_padawan_rank
+					remove_unit_leader_trait = jedi_knight_rank
+					remove_unit_leader_trait = jedi_veteran_rank
+				}
+			}
 		}
 		modifier = {
 			army_morale_factor = 0.20
@@ -164,8 +182,13 @@ leader_traits = {
 			has_trait = dark_side_user
 		}
 		on_add = {
-			remove_unit_leader_trait = dark_champion_rank
-			remove_unit_leader_trait = sith_lord_rank
+			owner = {
+				every_army_leader = {
+					limit = { has_trait = dark_acolyte_rank }
+					remove_unit_leader_trait = dark_champion_rank
+					remove_unit_leader_trait = sith_lord_rank
+				}
+			}
 		}
 		modifier = {
 			army_attack_factor = 0.05
@@ -186,8 +209,13 @@ leader_traits = {
 			has_trait = dark_side_user
 		}
 		on_add = {
-			remove_unit_leader_trait = dark_acolyte_rank
-			remove_unit_leader_trait = sith_lord_rank
+			owner = {
+				every_army_leader = {
+					limit = { has_trait = dark_champion_rank }
+					remove_unit_leader_trait = dark_acolyte_rank
+					remove_unit_leader_trait = sith_lord_rank
+				}
+			}
 		}
 		modifier = {
 			army_attack_factor = 0.08
@@ -205,8 +233,13 @@ leader_traits = {
 			has_trait = dark_side_user
 		}
 		on_add = {
-			remove_unit_leader_trait = dark_acolyte_rank
-			remove_unit_leader_trait = dark_champion_rank
+			owner = {
+				every_army_leader = {
+					limit = { has_trait = sith_lord_rank }
+					remove_unit_leader_trait = dark_acolyte_rank
+					remove_unit_leader_trait = dark_champion_rank
+				}
+			}
 		}
 		modifier = {
 			army_attack_factor = 0.12
