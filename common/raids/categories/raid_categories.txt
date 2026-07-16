@@ -3,12 +3,14 @@ categories = {
 	air_raids = {
 	    visible = { has_dlc = "Gotterdammerung" }
 	    intel_source = air
+	    faction_influence_score_on_success = 200
 	}
-	
+
 
 	paratrooper_raids = {
 	    intel_source = air
 	    visible = { has_dlc = "Gotterdammerung" }
+	    faction_influence_score_on_success = 100
 		available = {
 		    has_tech = paratroopers
 		}
@@ -17,10 +19,35 @@ categories = {
 	nuclear_raids = {
 	    intel_source = air
 	    free_targeting = yes
-
+	    faction_influence_score_on_success = -100
 	    available = {
-	        is_special_project_completed = sp:sp_nuclear_bomb
+			OR = {
+				is_special_project_completed = sp:sp_nuclear_bomb
+				num_of_nukes > 0	#To fix the nuke from the project option "we can use this against or enemies", not actually being usable
+			}
 	    }
 	}
 
+	land_infiltration_raids = {
+	    intel_source = army
+	    faction_influence_score_on_success = 50
+	    visible = {
+			has_dlc = "Thunder at Our Gates"
+	    }
+		available = {
+
+		}
+	}
+
+	# 1.19 mechanic kept for future use; vanilla naval commando raids were INS/AST country content and are overridden empty
+	naval_commando_raids = {
+		intel_source = naval
+		faction_influence_score_on_success = 50
+		visible = {
+			always = no
+		}
+		available = {
+
+		}
+	}
 }
