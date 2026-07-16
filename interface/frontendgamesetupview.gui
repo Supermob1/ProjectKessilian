@@ -225,8 +225,6 @@ guiTypes = {
 		}
 	}
 
-
-	### LOAD GAME
 	### country filter
 	containerWindowType = {
 		name = "country_filter"
@@ -243,6 +241,7 @@ guiTypes = {
 		}
 	}
 
+	### LOAD GAME
 	containerWindowType = {
 		name ="gamesetup_load"
 		position = { x = -350 y = -150 }
@@ -720,6 +719,7 @@ guiTypes = {
 				size = { width = 100% height = 100% }
 				slotsize = { width = 150 height = 0 }
 				add_horizontal = yes
+				max_slots_horizontal = 8
 				max_slots_vertical = 1
 				format = "UPPER_LEFT"
 			}
@@ -729,6 +729,7 @@ guiTypes = {
 			name ="countries_mini"
 			position = { x = 11 y = 360 }
 			size = { width = -15 height = 80}
+			
 
 			gridboxType = {
 				name ="countries_grid"
@@ -947,7 +948,7 @@ guiTypes = {
 			format = left
 		}
 
-		containerWindowType = {
+		dropDownBoxType = {
 			name = "more_countries"
 			position = { x = 10 y = 412 }
 
@@ -965,7 +966,7 @@ guiTypes = {
 				show_animation_type = decelerated
 				hide_animation_type = accelerated
 				animation_time = 300
-				size = { width=1205 height=58 }
+				size = { width=1205 height=58 }	# dynamically resized in code using countries_mini_expanded's slot size
 				verticalScrollbar = "right_vertical_slider"
 				scroll_wheel_factor = 50
 				smooth_scrolling = yes
