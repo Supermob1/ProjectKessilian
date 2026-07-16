@@ -6,7 +6,7 @@ tags={
 	"Gameplay"
 }
 picture="thumbnail.png"
-supported_version="1.18.*"
+supported_version="1.19.*"
 replace_path="history/states"
 replace_path="history/countries"
 replace_path="history/units"
