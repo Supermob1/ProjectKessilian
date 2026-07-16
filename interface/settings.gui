@@ -370,6 +370,29 @@ guiTypes = {
 					
 				}			
 				
+				checkboxType = {
+					name = "event_sounds_checkbox"
+					position = { x = 21 y = 225 }
+					quadTextureSprite ="GFX_generic_checkbox"
+					Orientation = "UPPER_LEFT"
+					clicksound = click_checkbox
+				}
+
+				instantTextBoxType = {
+					name = "event_sounds_label"
+					position = { x = 65 y = 229 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y =0}
+					text = "SM_EVENT_SOUNDS"
+					maxWidth = 160
+					maxHeight = 20
+					fixedsize = yes
+					format = left
+					vertical_alignment = center
+					pdx_tooltip = SM_EVENT_SOUNDS_DESC
+				}
+
 				instantTextBoxType={
 					position = {x = 30 y = 170 }
 					name = "voicevolume_label"
@@ -1164,7 +1187,7 @@ guiTypes = {
 			}
 			
 			instantTextBoxType={
-				position = {x = 118 y = 17 }
+				position = {x = 105 y = 25 }
 				name = "settings_label"
 				font = "hoi_36header"
 				borderSize = {x = 0 y = 0}
@@ -1178,14 +1201,14 @@ guiTypes = {
 			iconType = {
 				name = "tabs_bg"
 				quadTextureSprite ="GFX_diplo_popup_bottom"
-				position = { x = 5 y = 58 }
+				position = { x = -7 y = 53 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
 			}			
 			
 			buttonType = {
 				name = "settings_tab_1"
-				position = { x = 25 y = 64 }
+				position = { x = 25 y = 68 }
 				quadTextureSprite ="GFX_button_94x31"	
 				font = "hoi_18mbs"
 				text = "SM_GAME"				
@@ -1195,7 +1218,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "settings_tab_2"
-				position = { x = 135 y = 64 }
+				position = { x = 135 y = 68 }
 				quadTextureSprite ="GFX_button_94x31"	
 				font = "hoi_18mbs"
 				text =	 "SM_VIDEO"					
@@ -1205,7 +1228,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "settings_tab_3"
-				position = { x = 245 y = 64 }
+				position = { x = 245 y = 68 }
 				quadTextureSprite ="GFX_button_94x31"	
 				font = "hoi_18mbs"
 				text = "SM_AUDIO"					
@@ -1215,7 +1238,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "settings_tab_4"
-				position = { x = 355 y = 64 }
+				position = { x = 355 y = 68 }
 				quadTextureSprite ="GFX_button_94x31"	
 				font = "hoi_16mbs"
 				text = "SETTINGS_ACCESSIBILITY"	
@@ -1587,6 +1610,29 @@ guiTypes = {
 					}
 				}
 				
+				checkboxType = {
+					name = "event_sounds_checkbox"
+					position = { x = 21 y = 246 }
+					quadTextureSprite ="GFX_generic_checkbox"
+					Orientation = "UPPER_LEFT"
+					clicksound = click_checkbox
+				}
+
+				instantTextBoxType = {
+					name = "event_sounds_label"
+					position = { x = 65 y = 250 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y =0}
+					text = "SM_EVENT_SOUNDS"
+					maxWidth = 258
+					maxHeight = 20
+					fixedsize = yes
+					format = left
+					vertical_alignment = center
+					pdx_tooltip = SM_EVENT_SOUNDS_DESC
+				}
+
 				buttonType = {
 					name = "RadioButton"
 					position = { x = 100 y = 280 }
