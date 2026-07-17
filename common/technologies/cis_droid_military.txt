@@ -1,8 +1,7 @@
 technologies = {
-	# Year-to-position variable map (matches existing tech files)
 	# NOTE: In HOI4's format="LEFT" gridboxtype, Y is the horizontal axis (time/era)
 	# and X is the vertical axis (unit type row). Variables map years to Y positions.
-	
+
 	###Y values###
 	@Post_Ruu = 0
 	@High_Rep = 4
@@ -20,11 +19,14 @@ technologies = {
 	@HeavyInfantry = 8
 	@Spider = 10
 	##############
-	# ──────────────────────────────────────────────────────────────────────────
-	# ROOT NODE — Post-Ruusan era (1000 BBY)
-	# x = 7  (vertically centered between infantry row x=4 and heavy row x=10)
-	# y = 0  (leftmost era column)
-	# ──────────────────────────────────────────────────────────────────────────
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# INFANTRY DROID ROW
+	# Pattern: unlock (960) → bonus (964) → unlock (976) → bonus (977)
+	#          → unlock (979) → bonus (982)
+	# ══════════════════════════════════════════════════════════════════════════
+
+	# ROOT NODE — Post-Ruusan era — UNLOCK: Mark One Sentinel
 	early_droid_infantry = {
 		enable_equipments = {
 			cis_infantry_droid_equipment_1
@@ -56,12 +58,12 @@ technologies = {
 			base = 1
 		}
 	}
-	# ──────────────────────────────────────────────────────────────────────────
-	# HIGH REPUBLIC ERA (700 BBY)  —  y = 2
-	# ──────────────────────────────────────────────────────────────────────────
+
+	# High Republic era — BONUS: improved combat protocols
 	high_republic_infantry_droids = {
-		enable_equipments = {
-			cis_infantry_droid_equipment_2
+		infantry_droid = {
+			soft_attack = 0.05
+			defense = 0.05
 		}
 		path = {
 			leads_to_tech = late_republic_infantry_droids
@@ -81,39 +83,11 @@ technologies = {
 			base = 1
 		}
 	}
-	high_republic_heavy_droids = {
-		enable_equipments = {
-			cis_heavy_droid_equipment_1
-		}
-		path = {
-			leads_to_tech = late_republic_heavy_droids
-			research_cost_coeff = 1
-		}
-		research_cost = 1.5
-		start_year = 964
-		folder = {
-			name = droid_folder
-			position = { x = @HeavyInfantry y = @High_Rep }
-		}
-		categories = {
-			droid_tech
-			armor
-		}
 
-		enable_subunits = {
-			heavy_droid
-		}
-
-		ai_will_do = {
-			base = 1
-		}
-	}
-	# ──────────────────────────────────────────────────────────────────────────
-	# LATE REPUBLIC ERA (200 BBY)  —  y = 4
-	# ──────────────────────────────────────────────────────────────────────────
+	# Late Republic era — UNLOCK: B1 Battle Droid
 	late_republic_infantry_droids = {
 		enable_equipments = {
-			cis_infantry_droid_equipment_3
+			cis_infantry_droid_equipment_2
 		}
 		path = {
 			leads_to_tech = cw_infantry_droids
@@ -141,9 +115,136 @@ technologies = {
 			}
 		}
 	}
-	late_republic_heavy_droids = {
+
+	# Early Clone Wars era — BONUS: centralized command uplinks
+	cw_infantry_droids = {
+		infantry_droid = {
+			soft_attack = 0.08
+			defense = 0.08
+			breakthrough = 0.05
+		}
+		path = {
+			leads_to_tech = late_cw_infantry_droids
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = hkb3_commando_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 977
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+		}
+	}
+
+	# Late Clone Wars era — UNLOCK: upgraded B1
+	late_cw_infantry_droids = {
 		enable_equipments = {
-			cis_heavy_droid_equipment_2
+			cis_infantry_droid_equipment_3
+		}
+		path = {
+			leads_to_tech = imperial_infantry_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @Late_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	# Early Empire era — BONUS: retrofit programs
+	imperial_infantry_droids = {
+		infantry_droid = {
+			soft_attack = 0.1
+			defense = 0.1
+			breakthrough = 0.05
+		}
+		research_cost = 1.5
+		start_year = 982
+		folder = {
+			name = droid_folder
+			position = { x = @Infantry y = @Imperial }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# HEAVY DROID ROW
+	# Pattern: unlock (964) → bonus (976) → unlock (977) → bonus (979)
+	#          → unlock (982)
+	# ══════════════════════════════════════════════════════════════════════════
+
+	# High Republic era — UNLOCK: Heavy War Droid
+	high_republic_heavy_droids = {
+		enable_equipments = {
+			cis_heavy_droid_equipment_1
+		}
+		path = {
+			leads_to_tech = late_republic_heavy_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 964
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @High_Rep }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+
+		enable_subunits = {
+			heavy_droid
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	# Late Republic era — BONUS: reinforced chassis design
+	late_republic_heavy_droids = {
+		heavy_droid = {
+			defense = 0.05
+			breakthrough = 0.05
+			hard_attack = 0.05
 		}
 		path = {
 			leads_to_tech = early_cw_heavy_droids
@@ -175,42 +276,11 @@ technologies = {
 			}
 		}
 	}
-	# ──────────────────────────────────────────────────────────────────────────
-	# EARLY CLONE WARS ERA (22 BBY)  —  y = 6
-	# ──────────────────────────────────────────────────────────────────────────
-	cw_infantry_droids = {
-		enable_equipments = {
-			cis_infantry_droid_equipment_4
-		}
-		path = {
-			leads_to_tech = late_cw_infantry_droids
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = hkb3_commando_droid
-			research_cost_coeff = 1
-		}
-		research_cost = 1.5
-		start_year = 977
-		folder = {
-			name = droid_folder
-			position = { x = @Infantry y = @Early_CW }
-		}
-		categories = {
-			droid_tech
-			infantry_weapons
-		}
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 2
-				date > "977.1.1"
-			}
-		}
-	}
+
+	# Early Clone Wars era — UNLOCK: B2 Super Battle Droid
 	early_cw_heavy_droids = {
 		enable_equipments = {
-			cis_heavy_droid_equipment_3
+			cis_heavy_droid_equipment_2
 		}
 		path = {
 			leads_to_tech = late_cw_heavy_droids
@@ -234,6 +304,67 @@ technologies = {
 			}
 		}
 	}
+
+	# Late Clone Wars era — BONUS: heavy plating improvements
+	late_cw_heavy_droids = {
+		heavy_droid = {
+			defense = 0.08
+			soft_attack = 0.05
+			hard_attack = 0.08
+		}
+		path = {
+			leads_to_tech = imperial_heavy_droids
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @Late_CW }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	# Early Empire era — UNLOCK: B2-HA
+	imperial_heavy_droids = {
+		enable_equipments = {
+			cis_heavy_droid_equipment_3
+		}
+		research_cost = 2.0
+		start_year = 982
+		folder = {
+			name = droid_folder
+			position = { x = @HeavyInfantry y = @Imperial }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# COMMANDO DROID COLUMN
+	# Pattern: unlock (977) → bonus (979) → bonus (982)
+	# ══════════════════════════════════════════════════════════════════════════
+
+	# Early Clone Wars era — UNLOCK: HKB-3 Commando Droid
 	hkb3_commando_droid = {
 		enable_equipments = {
 			cis_commando_droid_equipment_1
@@ -265,6 +396,69 @@ technologies = {
 			}
 		}
 	}
+
+	# Late Clone Wars era — BONUS: BX-series refit
+	bx_battle_droid = {
+		commando_droid = {
+			soft_attack = 0.1
+			defense = 0.1
+			breakthrough = 0.05
+		}
+		path = {
+			leads_to_tech = hk77_assassin_droid
+			research_cost_coeff = 1
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Commando y = @Late_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	# Early Empire era — BONUS: HK-77 assassination protocols
+	hk77_assassin_droid = {
+		commando_droid = {
+			soft_attack = 0.1
+			hard_attack = 0.1
+			breakthrough = 0.05
+		}
+		research_cost = 2.5
+		start_year = 982
+		folder = {
+			name = droid_folder
+			position = { x = @Commando y = @Imperial }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# DROIDEKA COLUMN
+	# Pattern: unlock (977) → bonus (979)
+	# ══════════════════════════════════════════════════════════════════════════
+
+	# UNLOCK: P-Series Droideka
 	droideka_early = {
 		enable_equipments = {
 			cis_droideka_droid_equipment_1
@@ -296,6 +490,39 @@ technologies = {
 			}
 		}
 	}
+
+	# BONUS: improved deflector shields
+	droideka_adv = {
+		droideka_droid = {
+			defense = 0.1
+			soft_attack = 0.08
+			hard_attack = 0.08
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Droideka y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			armor
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# MAGNAGUARD COLUMN
+	# Pattern: unlock (977) → bonus (979)
+	# ══════════════════════════════════════════════════════════════════════════
+
+	# UNLOCK: IG-100 MagnaGuard
 	early_magnaguard = {
 		enable_equipments = {
 			cis_magnaguard_droid_equipment_1
@@ -327,6 +554,39 @@ technologies = {
 			}
 		}
 	}
+
+	# BONUS: advanced combat heuristics
+	adv_magnaguard = {
+		magnaguard_droid = {
+			defense = 0.1
+			soft_attack = 0.08
+			breakthrough = 0.05
+		}
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = droid_folder
+			position = { x = @Magnaguard y = @Early_CW }
+		}
+		categories = {
+			droid_tech
+			infantry_weapons
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# SPIDER DROID COLUMN
+	# Pattern: unlock (977) → bonus (979) → bonus (982)
+	# ══════════════════════════════════════════════════════════════════════════
+
+	# UNLOCK: DSD1 Dwarf Spider Droid
 	early_spider_droid = {
 		enable_equipments = {
 			cis_spider_droid_equipment_1
@@ -358,134 +618,13 @@ technologies = {
 			}
 		}
 	}
-	# ──────────────────────────────────────────────────────────────────────────
-	# LATE CLONE WARS ERA (20 BBY)  —  y = 8
-	# ──────────────────────────────────────────────────────────────────────────
-	late_cw_infantry_droids = {
-		enable_equipments = {
-			cis_infantry_droid_equipment_5
-		}
-		path = {
-			leads_to_tech = imperial_infantry_droids
-			research_cost_coeff = 1
-		}
-		research_cost = 1.5
-		start_year = 979
-		folder = {
-			name = droid_folder
-			position = { x = @Infantry y = @Late_CW }
-		}
-		categories = {
-			droid_tech
-			infantry_weapons
-		}
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 2
-				date > "979.1.1"
-			}
-		}
-	}
-	late_cw_heavy_droids = {
-		enable_equipments = {
-			cis_heavy_droid_equipment_4
-		}
-		path = {
-			leads_to_tech = imperial_heavy_droids
-			research_cost_coeff = 1
-		}
-		research_cost = 2.0
-		start_year = 979
-		folder = {
-			name = droid_folder
-			position = { x = @HeavyInfantry y = @Late_CW }
-		}
-		categories = {
-			droid_tech
-			armor
-		}
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 2
-				date > "979.1.1"
-			}
-		}
-	}
-	bx_battle_droid = {
-		enable_equipments = {
-			cis_commando_droid_equipment_2
-		}
-		path = {
-			leads_to_tech = hk77_assassin_droid
-			research_cost_coeff = 1
-		}
-		research_cost = 2.0
-		start_year = 979
-		folder = {
-			name = droid_folder
-			position = { x = @Commando y = @Late_CW }
-		}
-		categories = {
-			droid_tech
-			infantry_weapons
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				date > "979.1.1"
-			}
-		}
-	}
-	droideka_adv = {
-		enable_equipments = {
-			cis_droideka_droid_equipment_2
-		}
-		research_cost = 2.0
-		start_year = 979
-		folder = {
-			name = droid_folder
-			position = { x = @Droideka y = @Early_CW }
-		}
-		categories = {
-			droid_tech
-			armor
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				date > "979.1.1"
-			}
-		}
-	}
-	adv_magnaguard = {
-		enable_equipments = {
-			cis_magnaguard_droid_equipment_2
-		}
-		research_cost = 2.0
-		start_year = 979
-		folder = {
-			name = droid_folder
-			position = { x = @Magnaguard y = @Early_CW }
-		}
-		categories = {
-			droid_tech
-			infantry_weapons
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				date > "979.1.1"
-			}
-		}
-	}
+
+	# BONUS: OG-9 targeting systems
 	cw_spider_droid = {
-		enable_equipments = {
-			cis_spider_droid_equipment_2
+		spider_droid = {
+			soft_attack = 0.08
+			hard_attack = 0.08
+			breakthrough = 0.05
 		}
 		path = {
 			leads_to_tech = late_spider_droid
@@ -509,78 +648,13 @@ technologies = {
 			}
 		}
 	}
-	# ──────────────────────────────────────────────────────────────────────────
-	# EARLY EMPIRE ERA (18 BBY)  —  y = 10
-	# ──────────────────────────────────────────────────────────────────────────
-	imperial_infantry_droids = {
-		enable_equipments = {
-			cis_infantry_droid_equipment_6
-		}
-		research_cost = 1.5
-		start_year = 982
-		folder = {
-			name = droid_folder
-			position = { x = @Infantry y = @Imperial }
-		}
-		categories = {
-			droid_tech
-			infantry_weapons
-		}
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 2
-				date > "982.1.1"
-			}
-		}
-	}
-	imperial_heavy_droids = {
-		enable_equipments = {
-			cis_heavy_droid_equipment_5
-		}
-		research_cost = 2.0
-		start_year = 982
-		folder = {
-			name = droid_folder
-			position = { x = @HeavyInfantry y = @Imperial }
-		}
-		categories = {
-			droid_tech
-			armor
-		}
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 2
-				date > "982.1.1"
-			}
-		}
-	}
-	hk77_assassin_droid = {
-		enable_equipments = {
-			cis_commando_droid_equipment_3
-		}
-		research_cost = 2.5
-		start_year = 982
-		folder = {
-			name = droid_folder
-			position = { x = @Commando y = @Imperial }
-		}
-		categories = {
-			droid_tech
-			infantry_weapons
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				date > "982.1.1"
-			}
-		}
-	}
+
+	# BONUS: enhanced reactor output
 	late_spider_droid = {
-		enable_equipments = {
-			cis_spider_droid_equipment_3
+		spider_droid = {
+			soft_attack = 0.08
+			hard_attack = 0.08
+			defense = 0.08
 		}
 		research_cost = 2.0
 		start_year = 982

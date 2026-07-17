@@ -12,7 +12,12 @@ technologies = {
 	@983 = 16
 	@984 = 18
 	@985 = 20
-	
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# MAIN CLONE EQUIPMENT LINE (x = 0)
+	# Pattern: unlock → bonus → unlock → bonus → unlock → bonus → unlock
+	# ══════════════════════════════════════════════════════════════════════════
+
 	old_republic_equipment = {
 
 		enable_equipments = {
@@ -44,6 +49,7 @@ technologies = {
 		}
 	}
 
+	# BONUS
 	kamino_standardization = {
 
 		path = {
@@ -62,7 +68,7 @@ technologies = {
 			defense = 0.05
 			breakthrough = 0.05
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
@@ -71,7 +77,7 @@ technologies = {
 			factor = 1
 		}
 	}
-	
+
 	phase_I_equipment = {
 
 		path = {
@@ -86,28 +92,42 @@ technologies = {
 			leads_to_tech = laat_infantry
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = ion_disruptors
+			research_cost_coeff = 1
+		}
 
 		enable_equipments = {
 			phase_I_equipments
 		}
-		
+
 		research_cost = 1.5
-		start_year = 970
+		start_year = 977
 		folder = {
 			name = republic_folder
 			position = { x = 0 y = 7 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
 		}
 	}
-	
+
+	# BONUS
 	equipment_refinements = {
+
+		infantry = {
+			soft_attack = 0.05
+			defense = 0.05
+		}
 
 		path = {
 			leads_to_tech = phase_II_equipment
@@ -115,21 +135,25 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 970
+		start_year = 978
 		folder = {
 			name = republic_folder
 			position = { x = 0 y = 11 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "978.1.1"
+			}
 		}
 	}
-	
+
 	phase_II_equipment = {
 
 		path = {
@@ -139,24 +163,34 @@ technologies = {
 		enable_equipments = {
 			phase_II_equipments
 		}
-		
+
 		research_cost = 1.5
-		start_year = 970
+		start_year = 979
 		folder = {
 			name = republic_folder
 			position = { x = 0 y = 14 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
 		}
 	}
-	
+
+	# BONUS
 	enhanced_armor_systems = {
+
+		infantry = {
+			defense = 0.08
+			breakthrough = 0.05
+		}
 
 		path = {
 			leads_to_tech = Imperial_equipment
@@ -164,44 +198,56 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 970
+		start_year = 980
 		folder = {
 			name = republic_folder
 			position = { x = 0 y = 18 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "980.1.1"
+			}
 		}
 	}
-	
+
 	Imperial_equipment = {
 
 		enable_equipments = {
 			Imperial_equipments
 		}
-		
+
 		research_cost = 1.5
-		start_year = 970
+		start_year = 982
 		folder = {
 			name = republic_folder
 			position = { x = 0 y = 21 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
 		}
 	}
-	
-	
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# ARC COMMANDO LINE (x = 2)
+	# unlock (978) → bonus (979) → bonus (980) → unlock (982)
+	# ══════════════════════════════════════════════════════════════════════════
+
 	arc_commandos = {
 
 		path = {
@@ -209,25 +255,41 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		enable_equipments = {
-			arc_commandos_equipments
+			rep_arc_trooper_equipment_1
 		}
-		
-		research_cost = 1.5
-		start_year = 970
+
+		enable_subunits = {
+			arc_trooper
+		}
+
+		research_cost = 2.0
+		start_year = 978
 		folder = {
 			name = republic_folder
 			position = { x = 2 y = 11 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "978.1.1"
+			}
 		}
 	}
+
+	# BONUS
 	advanced_training_programs = {
+
+		arc_trooper = {
+			max_organisation = 5
+			soft_attack = 0.08
+			breakthrough = 0.05
+		}
 
 		path = {
 			leads_to_tech = kaminoan_genetic_conditioning
@@ -235,21 +297,35 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 970
+		start_year = 979
 		folder = {
 			name = republic_folder
 			position = { x = 2 y = 15 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
 		}
 	}
+
+	# BONUS
 	kaminoan_genetic_conditioning = {
+
+		arc_trooper = {
+			soft_attack = 0.08
+			defense = 0.08
+		}
+		infantry = {
+			max_organisation = 2
+		}
 
 		path = {
 			leads_to_tech = imperial_commandos
@@ -257,44 +333,56 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 970
+		start_year = 980
 		folder = {
 			name = republic_folder
 			position = { x = 2 y = 18 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "980.1.1"
+			}
 		}
 	}
-	
+
 	imperial_commandos = {
 
 		enable_equipments = {
-			imperial_commandos_equipments
+			rep_arc_trooper_equipment_2
 		}
-		
-		research_cost = 1.5
-		start_year = 970
+
+		research_cost = 2.0
+		start_year = 982
 		folder = {
 			name = republic_folder
 			position = { x = 2 y = 21 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
 		}
 	}
-	
-	
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# LAAT AIR CAVALRY LINE (x = 4)
+	# unlock (979) → bonus (980) → bonus (981) → unlock (982)
+	# ══════════════════════════════════════════════════════════════════════════
+
 	laat_infantry = {
 
 		path = {
@@ -304,23 +392,34 @@ technologies = {
 		enable_equipments = {
 			laat_equipments
 		}
-		
+
 		research_cost = 1.5
-		start_year = 970
+		start_year = 979
 		folder = {
 			name = republic_folder
 			position = { x = 4 y = 11 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
 		}
 	}
+
+	# BONUS
 	air_cavalry_doctrine = {
+
+		helicopter_brigade = {
+			soft_attack = 0.08
+			breakthrough = 0.05
+		}
 
 		path = {
 			leads_to_tech = improved_dropship_loadouts
@@ -328,21 +427,32 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 970
+		start_year = 980
 		folder = {
 			name = republic_folder
 			position = { x = 4 y = 15 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "980.1.1"
+			}
 		}
 	}
+
+	# BONUS
 	improved_dropship_loadouts = {
+
+		helicopter_brigade = {
+			soft_attack = 0.05
+			hard_attack = 0.08
+		}
 
 		path = {
 			leads_to_tech = maat_infantry
@@ -350,41 +460,158 @@ technologies = {
 		}
 
 		research_cost = 1.5
-		start_year = 970
+		start_year = 981
 		folder = {
 			name = republic_folder
 			position = { x = 4 y = 18 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "981.1.1"
+			}
 		}
 	}
-	
+
 	maat_infantry = {
 
 		enable_equipments = {
 			maat_equipments
 		}
-		
+
 		research_cost = 1.5
-		start_year = 970
+		start_year = 982
 		folder = {
 			name = republic_folder
 			position = { x = 4 y = 21 }
 		}
-		
+
 		categories = {
 			infantry_weapons
 		}
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
 		}
 	}
-	
+
+	# ══════════════════════════════════════════════════════════════════════════
+	# ION DISRUPTOR LINE (x = 6) — anti-droid weapons
+	# bonus (977) → bonus (979) → bonus (982)
+	# Counters CIS droid hardness/armor with hard attack and piercing
+	# ══════════════════════════════════════════════════════════════════════════
+
+	# BONUS
+	ion_disruptors = {
+
+		infantry = {
+			hard_attack = 0.25
+			ap_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = ion_disruptors_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 977
+		folder = {
+			name = republic_folder
+			position = { x = 6 y = 11 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "977.1.1"
+				has_war_with = CIS
+			}
+		}
+	}
+
+	# BONUS
+	ion_disruptors_2 = {
+
+		infantry = {
+			hard_attack = 0.25
+			ap_attack = 0.25
+		}
+		arc_trooper = {
+			hard_attack = 0.25
+			ap_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = ion_disruptors_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.0
+		start_year = 979
+		folder = {
+			name = republic_folder
+			position = { x = 6 y = 15 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				date > "979.1.1"
+				has_war_with = CIS
+			}
+		}
+	}
+
+	# BONUS
+	ion_disruptors_3 = {
+
+		infantry = {
+			hard_attack = 0.3
+			ap_attack = 0.3
+		}
+		arc_trooper = {
+			hard_attack = 0.25
+			ap_attack = 0.25
+		}
+
+		research_cost = 2.5
+		start_year = 982
+		folder = {
+			name = republic_folder
+			position = { x = 6 y = 19 }
+		}
+
+		categories = {
+			infantry_weapons
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				date > "982.1.1"
+			}
+		}
+	}
 }
