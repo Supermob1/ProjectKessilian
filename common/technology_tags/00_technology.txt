@@ -141,6 +141,21 @@ technology_categories = {
 }
 
 technology_folders = {
+	# Country-specific folders first: the game selects the first AVAILABLE
+	# folder in this list as the default tab, so CIS opens on the droid tree
+	# and REP on the republic tree (mirroring vanilla's infantry_folder).
+	droid_folder = {
+		available = {
+			tag = CIS
+		}
+		ledger = army
+	}
+	republic_folder = {
+		available = {
+			tag = REP
+		}
+		ledger = army #For now
+	}
 	infantry_folder = {
 		available = {
 			NOT = { 
@@ -210,20 +225,8 @@ technology_folders = {
 		ledger = hidden #For now
 		doctrine = yes
 	}
-	republic_folder = {
-		available = {
-			tag = REP
-		}
-		ledger = army #For now
-	}
 	electronics_folder = {
 		ledger = civilian
-	}
-	droid_folder = {
-		available = {
-			tag = CIS
-		}
-		ledger = army
 	}
 }
 
