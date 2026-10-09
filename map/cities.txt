@@ -1,0 +1,283 @@
+# HOD: written by WIPGFX/plans & scripts/coruscant_buildings.py wire. map/cities.bmp (planet_terrain_gen.py)
+# picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages.
+types_source = "map/cities.bmp"
+pixel_step_x = 2
+pixel_step_y = 2
+city_group = {
+	color_index = 15
+	density = 0.35
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_cor_cluster_11_entity"
+			"hod_cor_cluster_12_entity"
+			"hod_cor_cluster_13_entity"
+			"hod_cor_cluster_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_cor_cluster_21_entity"
+			"hod_cor_cluster_22_entity"
+			"hod_cor_cluster_23_entity"
+			"hod_cor_cluster_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_cor_cluster_31_entity"
+			"hod_cor_cluster_32_entity"
+			"hod_cor_cluster_33_entity"
+			"hod_cor_cluster_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_cor_cluster_41_entity"
+			"hod_cor_cluster_42_entity"
+			"hod_cor_cluster_43_entity"
+			"hod_cor_cluster_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 0
+	density = 0.00001
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_cor_cluster_11_entity"
+			"hod_cor_cluster_12_entity"
+			"hod_cor_cluster_13_entity"
+			"hod_cor_cluster_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_cor_cluster_21_entity"
+			"hod_cor_cluster_22_entity"
+			"hod_cor_cluster_23_entity"
+			"hod_cor_cluster_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_cor_cluster_31_entity"
+			"hod_cor_cluster_32_entity"
+			"hod_cor_cluster_33_entity"
+			"hod_cor_cluster_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_cor_cluster_41_entity"
+			"hod_cor_cluster_42_entity"
+			"hod_cor_cluster_43_entity"
+			"hod_cor_cluster_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 1
+	density = 0.35
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_cor_cluster_11_entity"
+			"hod_cor_cluster_12_entity"
+			"hod_cor_cluster_13_entity"
+			"hod_cor_cluster_14_entity"
+			"hod_cor_cluster_11_entity"
+			"hod_cor_cluster_12_entity"
+			"hod_cor_cluster_13_entity"
+			"hod_cor_cluster_14_entity"
+			"hod_chr_cluster_11_entity"
+			"hod_chr_cluster_12_entity"
+			"hod_chr_cluster_13_entity"
+			"hod_chr_cluster_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_cor_cluster_21_entity"
+			"hod_cor_cluster_22_entity"
+			"hod_cor_cluster_23_entity"
+			"hod_cor_cluster_24_entity"
+			"hod_cor_cluster_21_entity"
+			"hod_cor_cluster_22_entity"
+			"hod_cor_cluster_23_entity"
+			"hod_cor_cluster_24_entity"
+			"hod_chr_cluster_21_entity"
+			"hod_chr_cluster_22_entity"
+			"hod_chr_cluster_23_entity"
+			"hod_chr_cluster_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_cor_cluster_31_entity"
+			"hod_cor_cluster_32_entity"
+			"hod_cor_cluster_33_entity"
+			"hod_cor_cluster_34_entity"
+			"hod_cor_cluster_31_entity"
+			"hod_cor_cluster_32_entity"
+			"hod_cor_cluster_33_entity"
+			"hod_cor_cluster_34_entity"
+			"hod_chr_cluster_31_entity"
+			"hod_chr_cluster_32_entity"
+			"hod_chr_cluster_33_entity"
+			"hod_chr_cluster_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_cor_cluster_41_entity"
+			"hod_cor_cluster_42_entity"
+			"hod_cor_cluster_43_entity"
+			"hod_cor_cluster_44_entity"
+			"hod_cor_cluster_41_entity"
+			"hod_cor_cluster_42_entity"
+			"hod_cor_cluster_43_entity"
+			"hod_cor_cluster_44_entity"
+			"hod_chr_cluster_41_entity"
+			"hod_chr_cluster_42_entity"
+			"hod_chr_cluster_43_entity"
+			"hod_chr_cluster_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 2
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_town_11_entity"
+			"hod_town_12_entity"
+			"hod_town_13_entity"
+			"hod_town_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_town_21_entity"
+			"hod_town_22_entity"
+			"hod_town_23_entity"
+			"hod_town_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_town_31_entity"
+			"hod_town_32_entity"
+			"hod_town_33_entity"
+			"hod_town_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_town_41_entity"
+			"hod_town_42_entity"
+			"hod_town_43_entity"
+			"hod_town_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 3
+	density = 0.35
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_chr_cluster_11_entity"
+			"hod_chr_cluster_12_entity"
+			"hod_chr_cluster_13_entity"
+			"hod_chr_cluster_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_chr_cluster_21_entity"
+			"hod_chr_cluster_22_entity"
+			"hod_chr_cluster_23_entity"
+			"hod_chr_cluster_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_chr_cluster_31_entity"
+			"hod_chr_cluster_32_entity"
+			"hod_chr_cluster_33_entity"
+			"hod_chr_cluster_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_chr_cluster_41_entity"
+			"hod_chr_cluster_42_entity"
+			"hod_chr_cluster_43_entity"
+			"hod_chr_cluster_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 4
+	density = 0.15
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+			"hod_bld_jasperio_entity"
+		}
+	}
+}

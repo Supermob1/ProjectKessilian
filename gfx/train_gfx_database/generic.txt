@@ -1,0 +1,161 @@
+# HOD: supply trains are speeder convoys (WIPGFX/plans & scripts/sketchfab_props.py wire).
+# rotation/shift/length as vanilla's wagon_data; speeders hover a little higher than rail cars.
+
+wagon_data = {
+	entity = hod_train_xj6_a_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 2.0
+}
+
+wagon_data = {
+	entity = hod_train_xj6_b_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 2.0
+}
+
+wagon_data = {
+	entity = hod_train_xj6_c_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 2.0
+}
+
+wagon_data = {
+	entity = hod_train_xj6_d_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 2.0
+}
+
+wagon_data = {
+	entity = hod_train_xj6_e_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 2.0
+}
+
+wagon_data = {
+	entity = hod_train_xj6_f_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 2.0
+}
+
+wagon_data = {
+	entity = hod_train_x34_a_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 1.5
+}
+
+wagon_data = {
+	entity = hod_train_x34_b_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 1.5
+}
+
+wagon_data = {
+	entity = hod_train_x34_c_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 1.5
+}
+
+wagon_data = {
+	entity = hod_train_x34_d_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 1.5
+}
+
+wagon_data = {
+	entity = hod_train_x34_e_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 1.5
+}
+
+wagon_data = {
+	entity = hod_train_x34_f_entity
+	scale = 1
+	rotation = 90
+	shift = { 0.0 0.9 0.0 }
+	length = 1.5
+}
+
+default = {
+	train_equipment_1 = {
+		wagon_0 = hod_train_xj6_a_entity
+		wagon_1 = hod_train_x34_b_entity
+		wagon_2 = hod_train_x34_d_entity
+		wagon_last = hod_train_x34_f_entity
+		wagons = {
+			hod_train_x34_a_entity
+			hod_train_x34_b_entity
+			hod_train_x34_c_entity
+			hod_train_x34_d_entity
+			hod_train_x34_e_entity
+			hod_train_x34_f_entity
+			hod_train_xj6_a_entity
+			hod_train_xj6_b_entity
+			hod_train_xj6_c_entity
+			hod_train_xj6_d_entity
+			hod_train_xj6_e_entity
+			hod_train_xj6_f_entity
+		}
+	}
+	train_equipment_2 = {
+		wagon_0 = hod_train_xj6_b_entity
+		wagon_1 = hod_train_x34_c_entity
+		wagon_2 = hod_train_x34_e_entity
+		wagon_last = hod_train_x34_a_entity
+		wagons = {
+			hod_train_x34_a_entity
+			hod_train_x34_b_entity
+			hod_train_x34_c_entity
+			hod_train_x34_d_entity
+			hod_train_x34_e_entity
+			hod_train_x34_f_entity
+			hod_train_xj6_a_entity
+			hod_train_xj6_b_entity
+			hod_train_xj6_c_entity
+			hod_train_xj6_d_entity
+			hod_train_xj6_e_entity
+			hod_train_xj6_f_entity
+		}
+	}
+	train_equipment_3 = {
+		wagon_0 = hod_train_xj6_c_entity
+		wagon_1 = hod_train_x34_d_entity
+		wagon_2 = hod_train_x34_f_entity
+		wagon_last = hod_train_x34_b_entity
+		wagons = {
+			hod_train_x34_a_entity
+			hod_train_x34_b_entity
+			hod_train_x34_c_entity
+			hod_train_x34_d_entity
+			hod_train_x34_e_entity
+			hod_train_x34_f_entity
+			hod_train_xj6_a_entity
+			hod_train_xj6_b_entity
+			hod_train_xj6_c_entity
+			hod_train_xj6_d_entity
+			hod_train_xj6_e_entity
+			hod_train_xj6_f_entity
+		}
+	}
+}
