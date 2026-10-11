@@ -1,0 +1,20 @@
+ideas = {
+	country = {
+		# warbands that know every cave and fungal grove: hard to find, hard to starve, impossible to reason with
+		HOD_felucian_tribes = {
+			picture = HOD_felucian_tribes
+			allowed = { original_tag = FLT }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.2
+				army_org_factor = 0.15
+				attrition = -0.5
+				supply_consumption_factor = -0.6
+				no_supply_grace = 240
+				conscription = 0.1
+				research_speed_factor = -0.5
+				production_speed_buildings_factor = -0.5
+			}
+		}
+	}
+}

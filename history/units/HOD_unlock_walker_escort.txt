@@ -1,0 +1,28 @@
+﻿# HOD: template handed out by rep_walker_ataa (faction_templates.py)
+division_template = {
+	name = "Walker Escort Battalion"
+	division_names_group = REP_MEC_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		walkers_light = { x = 2 y = 0 }
+		walkers_light = { x = 2 y = 1 }
+		walkers_light = { x = 2 y = 2 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		walkers_light_support_destroyer = { x = 1 y = 0 }
+		walkers_light_support_aa = { x = 2 y = 0 }
+	}
+	support = {
+		walkers_light_recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		maintenance_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		signal_company = { x = 0 y = 4 }
+	}
+}

@@ -7,6 +7,11 @@ technologies = {
 
 		enable_equipments = {
 			artillery_equipment_1
+
+		}
+
+		enable_subunits = {
+			field_guns
 		}
 
 		armored_car = {
@@ -94,7 +99,9 @@ technologies = {
 		category_self_propelled_artillery = {
 			soft_attack = 0.15
 		}
-
+		field_guns = {
+			soft_attack = 0.05
+		}
 		enable_equipment_modules = {
 			tank_small_cannon_2
 			tank_close_support_gun
@@ -235,6 +242,9 @@ technologies = {
 		category_self_propelled_artillery = {
 			soft_attack = 0.1
 		}
+		field_guns = {
+			soft_attack = 0.05
+		}
 
 		path = {
 			leads_to_tech = artillery3
@@ -294,6 +304,9 @@ technologies = {
 			soft_attack = 0.1
 		}
 		category_self_propelled_artillery = {
+			soft_attack = 0.05
+		}
+		field_guns = {
 			soft_attack = 0.05
 		}
 
@@ -405,7 +418,9 @@ technologies = {
 		category_self_propelled_artillery = {
 			soft_attack = 0.05
 		}
-
+		field_guns = {
+			soft_attack = 0.05
+		}
 		enable_equipment_modules = {
 			auto_loader
 			tank_heavy_howitzer
@@ -477,9 +492,10 @@ technologies = {
 			rocket_artillery_equipment_1
 		}
 
-#		enable_subunits = {
+		enable_subunits = {
+			rocket_battery
 #			rocket_artillery_brigade
-#		}
+		}
 
 		enable_equipment_modules = {
 			tank_rocket_launcher
@@ -519,17 +535,12 @@ technologies = {
 
 	rocket_artillery2 = {
 
-		rocket_artillery = {
+		category_rocket_artillery = {
 			soft_attack = 0.15
 		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.15
+
+		rocket_battery = {
+			soft_attack = 0.1
 		}
 
 		path = {
@@ -564,17 +575,11 @@ technologies = {
 
 	rocket_artillery3 = {
 
-		rocket_artillery = {
+		category_rocket_artillery = {
 			soft_attack = 0.15
 		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.15
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.15
+		rocket_battery = {
+			soft_attack = 0.1
 		}
 
 		path = {
@@ -666,6 +671,10 @@ technologies = {
 			level = 5
 		}
 
+		enable_subunits = {
+			anti_air_battery
+		}
+
 		path = {
 			leads_to_tech = antiair1
 			research_cost_coeff = 1
@@ -722,7 +731,7 @@ technologies = {
 
 	antiair1 = {
 
-		anti_air = {
+		category_anti_air = { #THIS CATEGORY NOW INCLUDES FOLLOWING COMMENTED OUT UNITS
 			air_attack = 0.1
 		}
 		anti_air_brigade = {
@@ -733,6 +742,9 @@ technologies = {
 		}
 		category_self_propelled_anti_air = {
 			air_attack = 0.15
+		}
+		category_self_propelled_anti_air_regimental_support = {
+			air_attack = 0.05
 		}
 		tech_air_damage_factor = -0.02
 
@@ -812,7 +824,7 @@ technologies = {
 
 	antiair3 = {
 
-		anti_air = {
+		category_anti_air = {	#THIS CATEGORY NOW INCLUDES FOLLOWING COMMENTED OUT UNITS
 			air_attack = 0.1
 		}
 		anti_air_brigade = {
@@ -823,6 +835,9 @@ technologies = {
 		}
 		category_self_propelled_anti_air = {
 			air_attack = 0.1
+		}
+		category_self_propelled_anti_air_regimental_support = {
+			air_attack = 0.05
 		}
 		enable_equipment_modules = {
 			tank_heavy_cannon_2
@@ -858,7 +873,7 @@ technologies = {
 
 	antiair4 = {
 
-		anti_air = {
+		category_anti_air = { #THIS CATEGORY NOW INCLUDES FOLLOWING COMMENTED OUT UNITS
 			air_attack = 0.1
 		}
 		anti_air_brigade = {
@@ -868,6 +883,9 @@ technologies = {
 			air_attack = 0.1
 		}
 		category_self_propelled_anti_air = {
+			air_attack = 0.05
+		}
+		category_self_propelled_anti_air_regimental_support = {
 			air_attack = 0.05
 		}
 
@@ -953,6 +971,24 @@ technologies = {
 			lc_high_velocity_cannon_turret #Module for Land Cruiser
 		}
 
+		enable_subunits = {
+			anti_tank_battery
+		}
+
+		#Pfot
+		on_research_complete = {
+			if = {
+				limit = {
+					has_dlc = "Peace For Our Time"
+				}
+				custom_effect_tooltip = {
+					localization_key = SP_UNLOCK_PROJECT
+					PROJECT = sp_land_large_caliber_kinetic_energy_sabot
+				}
+			}
+		}
+		#End Pfot
+
 		path = {
 			leads_to_tech = antitank1
 			research_cost_coeff = 1
@@ -1010,12 +1046,7 @@ technologies = {
 
 	antitank1 = {
 
-		category_tank_destroyers = {
-			hard_attack = 0.15
-			ap_attack = 0.2
-		}
-
-		anti_tank = {
+		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.2
 		}
@@ -1023,9 +1054,9 @@ technologies = {
 			hard_attack = 0.1
 			ap_attack = 0.2
 		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.2
+		category_tank_destroyer_regimental_support = {
+			hard_attack = 0.05
+			ap_attack = 0.05
 		}
 
 		enable_equipment_modules = {
@@ -1148,7 +1179,8 @@ technologies = {
 		enable_equipment_modules = {
 			tank_medium_cannon_2
 		}
-		anti_tank = {
+		
+		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
@@ -1164,9 +1196,18 @@ technologies = {
 			hard_attack = 0.1
 			ap_attack = 0.05
 		}
+		category_tank_destroyer_regimental_support = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
 
 		path = {
 			leads_to_tech = antitank4
+			research_cost_coeff = 1
+		}
+
+		path = { #Pfot
+			leads_to_tech = sp_advance_sabot_shells
 			research_cost_coeff = 1
 		}
 
@@ -1221,7 +1262,8 @@ technologies = {
 		enable_equipment_modules = {
 			tank_high_velocity_cannon_2
 		}
-		anti_tank = {
+		
+		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
@@ -1234,6 +1276,11 @@ technologies = {
 			ap_attack = 0.1
 		}
 		category_tank_destroyers = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+
+		category_tank_destroyer_regimental_support = {
 			hard_attack = 0.05
 			ap_attack = 0.05
 		}
@@ -1354,7 +1401,7 @@ technologies = {
 			always = no
 		}
 
-		anti_tank = {
+		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
@@ -1362,8 +1409,8 @@ technologies = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
+		category_tank_destroyer_regimental_support = {
+			hard_attack = 0.05
 			ap_attack = 0.1
 		}
 		light_tank_destroyer_brigade = {
@@ -1564,6 +1611,9 @@ technologies = {
 		category_self_propelled_artillery = {
 			soft_attack = 0.1
 		}
+		field_guns = {
+			soft_attack = 0.05
+		}
 
 		force_use_small_tech_layout = yes
 		research_cost = 1.5
@@ -1584,4 +1634,164 @@ technologies = {
 		special_project_specialization = { specialization_land specialization_air }
 	}
 
+	# HOD vanilla_sync: added from vanilla
+	the_thunder_at_our_gates_artillery = {
+
+		artillery_brigade = {
+			combat_width = -0.1
+		}
+
+	}
+	sp_land_large_caliber_kinetic_energy_sabot_gd_tech = {
+		#HIDDEN EFFECT FOR THE LARGE CALIBER KINETIC ENERGY PENETRATOR 
+		
+		research_cost = 1
+		start_year = 976
+
+		#fortification_damage = 0.15 #Doesn't work in this context
+		sp_land_multi_charge_large_caliber_gun_speed_factor = 0.10
+		experience_gain_artillery_combat_factor = 0.10
+
+		artillery_brigade = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		artillery = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		mot_artillery_brigade = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		category_self_propelled_artillery = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		super_heavy_artillery = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		self_propelled_super_heavy_artillery = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		field_guns = {
+			ap_attack = 0.1
+		}
+		
+		allow = {
+			always = no
+		}
+	}
+	sp_land_large_caliber_kinetic_energy_sabot_no_gd_tech = {
+		#HIDDEN EFFECT FOR THE LARGE CALIBER KINETIC ENERGY PENETRATOR
+		
+		research_cost = 1
+		start_year = 976
+
+		#fortification_damage = 0.15 #Doesn't work in this context
+		experience_gain_artillery_combat_factor = 0.10
+
+		artillery_brigade = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		artillery = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		mot_artillery_brigade = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		category_self_propelled_artillery = {
+			ap_attack = 0.15
+			fort = {
+				attack = 0.15
+			}
+		}
+		field_guns = {
+			ap_attack = 0.1
+		}
+		
+		allow = {
+			always = no
+		}
+	}
+	sp_advance_sabot_shells = { 
+		allow_branch = {
+			has_dlc = "Peace For Our Time"
+		}
+
+		allow = {
+	 		ROOT = {
+				is_special_project_completed = sp:sp_land_large_caliber_kinetic_energy_sabot
+			}
+		}
+
+		static_anti_air_hit_chance_factor = 0.15
+
+		anti_tank = {
+			ap_attack = 0.15
+		}
+		anti_tank_brigade = {
+			ap_attack = 0.15
+		}
+		mot_anti_tank_brigade = {
+			ap_attack = 0.15
+		}
+		anti_tank_battery = {
+			ap_attack = 0.15
+		}
+		category_tank_destroyers = {
+			ap_attack = 0.05
+		}
+		category_tank_destroyer_regimental_support = {
+			ap_attack = 0.05
+		}
+
+		force_use_small_tech_layout = yes
+		research_cost = 1.5
+		start_year = 982
+		is_special_project_tech = yes
+			
+		folder = {
+			name = artillery_folder
+			position = { x = 5 y = 10 }
+		}
+
+		categories = {
+			artillery
+			cat_anti_tank
+			mio_cat_all_artillery_equipment
+		}
+
+		special_project_specialization = { specialization_land }
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+		}
+	}
 }

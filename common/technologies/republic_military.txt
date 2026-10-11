@@ -1,17 +1,18 @@
 technologies = {
-
+	# HOD: columns (y) are the shared HoD year grid (faction_armour.py)
 	@960 = 0
-	@964 = 1
-	@976 = 2
-	@977 = 4
-	@978 = 6
-	@979 = 8
-	@980 = 10
-	@981 = 12
-	@982 = 14
-	@983 = 16
-	@984 = 18
-	@985 = 20
+	@964 = 3
+	@970 = 6
+	@974 = 9
+	@976 = 12
+	@977 = 15
+	@978 = 18
+	@979 = 21
+	@980 = 24
+	@981 = 27
+	@982 = 30
+	@983 = 33
+	@985 = 36
 
 	# ══════════════════════════════════════════════════════════════════════════
 	# MAIN CLONE EQUIPMENT LINE (x = 0)
@@ -37,7 +38,7 @@ technologies = {
 		start_year = 960
 		folder = {
 			name = republic_folder
-			position = { x = 0 y = 0 }
+			position = { x = 0 y = @960 }
 		}
 
 		categories = {
@@ -51,6 +52,12 @@ technologies = {
 
 	# BONUS
 	kamino_standardization = {
+		path = {
+			leads_to_tech = arc_commandos
+			research_cost_coeff = 1
+		}
+		# HOD: country-wide effect
+		training_time_army_factor = -0.1
 
 		path = {
 			leads_to_tech = phase_I_equipment
@@ -61,7 +68,7 @@ technologies = {
 		start_year = 970
 		folder = {
 			name = republic_folder
-			position = { x = 0 y = 4 }
+			position = { x = 0 y = @970 }
 		}
 
 		category_infantry_and_bicycle = {
@@ -79,13 +86,14 @@ technologies = {
 	}
 
 	phase_I_equipment = {
+		# HOD: free Clone Legion template (faction_templates.py)
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_clone_legion" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 
 		path = {
 			leads_to_tech = equipment_refinements
-			research_cost_coeff = 1
-		}
-		path = {
-			leads_to_tech = arc_commandos
 			research_cost_coeff = 1
 		}
 		path = {
@@ -105,7 +113,7 @@ technologies = {
 		start_year = 977
 		folder = {
 			name = republic_folder
-			position = { x = 0 y = 7 }
+			position = { x = 0 y = @977 }
 		}
 
 		categories = {
@@ -123,6 +131,8 @@ technologies = {
 
 	# BONUS
 	equipment_refinements = {
+		# HOD: country-wide effect
+		experience_gain_army_factor = 0.05
 
 		infantry = {
 			soft_attack = 0.05
@@ -138,7 +148,7 @@ technologies = {
 		start_year = 978
 		folder = {
 			name = republic_folder
-			position = { x = 0 y = 11 }
+			position = { x = 0 y = @978 }
 		}
 
 		categories = {
@@ -168,7 +178,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = republic_folder
-			position = { x = 0 y = 14 }
+			position = { x = 0 y = @979 }
 		}
 
 		categories = {
@@ -201,7 +211,7 @@ technologies = {
 		start_year = 980
 		folder = {
 			name = republic_folder
-			position = { x = 0 y = 18 }
+			position = { x = 0 y = @980 }
 		}
 
 		categories = {
@@ -227,7 +237,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = republic_folder
-			position = { x = 0 y = 21 }
+			position = { x = 0 y = @982 }
 		}
 
 		categories = {
@@ -249,6 +259,14 @@ technologies = {
 	# ══════════════════════════════════════════════════════════════════════════
 
 	arc_commandos = {
+		# HOD: hand the country a ready-made template for the new unit
+		on_research_complete_limit = {
+			NOT = { has_template_containing_unit = arc_trooper }
+		}
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_arc" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 
 		path = {
 			leads_to_tech = advanced_training_programs
@@ -263,10 +281,10 @@ technologies = {
 		}
 
 		research_cost = 2.0
-		start_year = 978
+		start_year = 976
 		folder = {
 			name = republic_folder
-			position = { x = 2 y = 11 }
+			position = { x = 2 y = @976 }
 		}
 
 		categories = {
@@ -284,6 +302,8 @@ technologies = {
 
 	# BONUS
 	advanced_training_programs = {
+		# HOD: country-wide effect
+		special_forces_training_time_factor = -0.15
 
 		arc_trooper = {
 			max_organisation = 5
@@ -300,7 +320,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = republic_folder
-			position = { x = 2 y = 15 }
+			position = { x = 2 y = @979 }
 		}
 
 		categories = {
@@ -318,6 +338,9 @@ technologies = {
 
 	# BONUS
 	kaminoan_genetic_conditioning = {
+		# HOD: country-wide effect
+		training_time_army_factor = -0.1
+		land_reinforce_rate = 0.02
 
 		arc_trooper = {
 			soft_attack = 0.08
@@ -336,7 +359,7 @@ technologies = {
 		start_year = 980
 		folder = {
 			name = republic_folder
-			position = { x = 2 y = 18 }
+			position = { x = 2 y = @980 }
 		}
 
 		categories = {
@@ -362,7 +385,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = republic_folder
-			position = { x = 2 y = 21 }
+			position = { x = 2 y = @982 }
 		}
 
 		categories = {
@@ -384,6 +407,13 @@ technologies = {
 	# ══════════════════════════════════════════════════════════════════════════
 
 	laat_infantry = {
+		enable_subunits = { helicopter_brigade }
+		# HOD: free Clone Air Cavalry Legion template (faction_templates.py)
+		on_research_complete_limit = { NOT = { has_template_containing_unit = helicopter_brigade } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_laat" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 
 		path = {
 			leads_to_tech = air_cavalry_doctrine
@@ -397,7 +427,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = republic_folder
-			position = { x = 4 y = 11 }
+			position = { x = 4 y = @979 }
 		}
 
 		categories = {
@@ -430,7 +460,7 @@ technologies = {
 		start_year = 980
 		folder = {
 			name = republic_folder
-			position = { x = 4 y = 15 }
+			position = { x = 4 y = @980 }
 		}
 
 		categories = {
@@ -463,7 +493,7 @@ technologies = {
 		start_year = 981
 		folder = {
 			name = republic_folder
-			position = { x = 4 y = 18 }
+			position = { x = 4 y = @981 }
 		}
 
 		categories = {
@@ -489,7 +519,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = republic_folder
-			position = { x = 4 y = 21 }
+			position = { x = 4 y = @982 }
 		}
 
 		categories = {
@@ -528,7 +558,7 @@ technologies = {
 		start_year = 977
 		folder = {
 			name = republic_folder
-			position = { x = 6 y = 11 }
+			position = { x = 6 y = @978 }
 		}
 
 		categories = {
@@ -566,7 +596,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = republic_folder
-			position = { x = 6 y = 15 }
+			position = { x = 6 y = @979 }
 		}
 
 		categories = {
@@ -599,7 +629,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = republic_folder
-			position = { x = 6 y = 19 }
+			position = { x = 6 y = @982 }
 		}
 
 		categories = {

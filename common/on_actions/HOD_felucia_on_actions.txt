@@ -1,0 +1,19 @@
+# HOD: the Felucian jungle war (felucia_tribes.py)
+on_actions = {
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = { OR = { state = 80 state = 713 state = 714 state = 715 state = 716 state = 717 state = 718 state = 719 state = 1123 state = 1124 state = 1125 state = 1126 state = 1127 state = 1128 state = 1129 } }
+				add_dynamic_modifier = { modifier = HOD_felucian_jungle_war }
+			}
+			if = {
+				limit = { country_exists = FLT }
+				every_country = {
+					limit = { NOT = { tag = FLT } }
+					add_opinion_modifier = { target = FLT modifier = HOD_felucian_hostility }
+					reverse_add_opinion_modifier = { target = FLT modifier = HOD_felucian_hostility }
+				}
+			}
+		}
+	}
+}

@@ -56,86 +56,120 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = {
-					width = 1400 height = 1275
+					width = 2610 height = 840
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
 
 				iconType = {
-					name ="infantry_techtree_bg"
+					name ="republic_folder_bg"
 					spriteType = "GFX_infantry_techtree_bg"
 					position = { x=0 y=0 }
 					alwaystransparent = yes
 				}
+				# HOD: faction_armour.py
+				instantTextBoxType = {
+					name = "republic_folder_era0"
+					position = { x = 515 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Old Republic"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "republic_folder_era1"
+					position = { x = 1250 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Battle of Geonosis"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "republic_folder_era2"
+					position = { x = 1880 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Late War"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "republic_folder_era3"
+					position = { x = 2300 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Imperial Era"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
 
 				instantTextBoxType = {
-					name = "republic_subtitle_weapons"
-					position = { x = 30 y = 100 }
+					name = "republic_folder_row0"
+					position = { x = 20 y = 152 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
-					text = "INFANTRY_TITLE_WEAPONS"
-					maxWidth = 600
+					text = "Clone Equipment"
+					maxWidth = 260
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "infantry_year2"
-					position = { x = 100 y = 50 }
+					name = "republic_folder_row1"
+					position = { x = 20 y = 292 }
 					textureFile = ""
-					font = "hoi_36header"
+					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
-					text = "Old Republic"
-					maxWidth = 170
-					maxHeight = 32
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
-
-				instantTextBoxType = {
-					name = "infantry_year5"
-					position = { x = 580 y = 50 }
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "Battle of Geonosis"
-					maxWidth = 180
-					maxHeight = 32
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
-
-
-				instantTextBoxType = {
-					name = "infantry_year9"
-					position = { x = 1070 y = 50 }
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "Late War"
-					maxWidth = 170
-					maxHeight = 32
-					format = center
+					text = "ARC Troopers"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "infantry_year13"
-					position = { x = 1560 y = 50 }
-					font = "hoi_36header"
+					name = "republic_folder_row2"
+					position = { x = 20 y = 432 }
+					textureFile = ""
+					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
-					text = "Imperial Era"
-					maxWidth = 170
-					maxHeight = 32
-					format = center
+					text = "LAAT Air Cavalry"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
 					Orientation = "UPPER_LEFT"
 				}
-
+				instantTextBoxType = {
+					name = "republic_folder_row3"
+					position = { x = 20 y = 572 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Ion Weapons"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
 			}
-
 
 			gridboxtype = {
 				name = "old_republic_equipment_tree"
-				position = { x = 140 y = 210 }
-				#size = { width = 420 height = 500 }
+				position = { x = 300 y = 140 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
@@ -1257,6 +1291,478 @@ guiTypes = {
 				size = { width = 80% height = 80% }
 				slotsize = { width = 70 height = 70 }
 				format = "UPPER_LEFT"
+			}
+		}
+		containerWindowType = {
+			name = "hod_cis_armour_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+			scroll_wheel_factor = 40
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2820 height = 1540
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="hod_cis_armour_folder_bg"
+					spriteType = "GFX_infantry_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+				# HOD: faction_armour.py
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_era0"
+					position = { x = 515 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Old Republic"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_era1"
+					position = { x = 1250 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Battle of Geonosis"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_era2"
+					position = { x = 1880 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Late War"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_era3"
+					position = { x = 2405 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Imperial Era"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row0"
+					position = { x = 20 y = 152 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Light Droid Tanks"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row1"
+					position = { x = 20 y = 292 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Dwarf Spider Droids"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row2"
+					position = { x = 20 y = 432 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Assault Tanks"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row3"
+					position = { x = 20 y = 572 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Heavy Tanks"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row4"
+					position = { x = 20 y = 712 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Hailfire Artillery"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row5"
+					position = { x = 20 y = 852 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Artillery Upgrades"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row6"
+					position = { x = 20 y = 992 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Anti-Tank"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row7"
+					position = { x = 20 y = 1132 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Repulsorlift Engines"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_cis_armour_folder_row8"
+					position = { x = 20 y = 1272 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Foundry Automation"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			gridboxtype = {
+				name = "cis_aat_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "cis_hailfire_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "cis_repulsor_1_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "cis_foundry_1_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+		}
+		containerWindowType = {
+			name = "hod_rep_armour_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+			scroll_wheel_factor = 40
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2820 height = 2520
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="hod_rep_armour_folder_bg"
+					spriteType = "GFX_infantry_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+				# HOD: faction_armour.py
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_era0"
+					position = { x = 515 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Old Republic"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_era1"
+					position = { x = 1250 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Battle of Geonosis"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_era2"
+					position = { x = 1880 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Late War"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_era3"
+					position = { x = 2405 y = 50 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = { x = 0 y = 0}
+					text = "Imperial Era"
+					maxWidth = 300
+					maxHeight = 62
+					format = center
+					Orientation = "UPPER_LEFT"
+				}
+
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row0"
+					position = { x = 20 y = 152 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Light Walkers"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row1"
+					position = { x = 20 y = 292 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "AT-RT Refits"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row2"
+					position = { x = 20 y = 572 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Assault Walkers"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row3"
+					position = { x = 20 y = 712 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "AT-TE Refits"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row4"
+					position = { x = 20 y = 1132 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Heavy Walkers"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row5"
+					position = { x = 20 y = 1272 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "AT-AP Configurations"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row6"
+					position = { x = 20 y = 1552 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Armoured Walkers"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row7"
+					position = { x = 20 y = 1692 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Self-Propelled Guns"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row8"
+					position = { x = 20 y = 1832 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Anti-Armour & AA"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row9"
+					position = { x = 20 y = 1972 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Repulsor Tanks"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row10"
+					position = { x = 20 y = 2112 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Gyro-Stabilisers"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "hod_rep_armour_folder_row11"
+					position = { x = 20 y = 2252 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "Durasteel Armour"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+			}
+
+			gridboxtype = {
+				name = "rep_walker_atpt_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "rep_spg_av7_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "rep_tx130_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "rep_gyro_1_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "rep_durasteel_1_tree"
+				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
 			}
 		}
 
@@ -3885,175 +4391,147 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = {
-					width = 1400 height = 1680
+					width = 2610 height = 1120
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
 
 				iconType = {
-					name ="droid_techtree_bg"
+					name ="droid_folder_bg"
 					spriteType = "GFX_infantry_techtree_bg"
 					position = { x=0 y=0 }
 					alwaystransparent = yes
 				}
-
-				# Era column headers (x = 140 + y_tech * 70)
+				# HOD: faction_armour.py
 				instantTextBoxType = {
-					name = "droid_era_postruusan"
-					position = { x = 140 y = 50 }
+					name = "droid_folder_era0"
+					position = { x = 515 y = 50 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "Post-Ruusan"
-					maxWidth = 170
-					maxHeight = 32
+					text = "Old Republic"
+					maxWidth = 300
+					maxHeight = 62
 					format = center
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_era_highrepublic"
-					position = { x = 420 y = 50 }
+					name = "droid_folder_era1"
+					position = { x = 1250 y = 50 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "High Republic"
-					maxWidth = 170
-					maxHeight = 32
+					text = "Battle of Geonosis"
+					maxWidth = 300
+					maxHeight = 62
 					format = center
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_era_laterepublic"
-					position = { x = 700 y = 50 }
+					name = "droid_folder_era2"
+					position = { x = 1880 y = 50 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
-					text = "Late Republic"
-					maxWidth = 170
-					maxHeight = 32
+					text = "Late War"
+					maxWidth = 300
+					maxHeight = 62
 					format = center
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_era_clonewars"
-					position = { x = 980 y = 50 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "Clone Wars"
-					maxWidth = 170
-					maxHeight = 32
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "droid_era_latecw"
-					position = { x = 1260 y = 50 }
-					textureFile = ""
-					font = "hoi_36header"
-					borderSize = { x = 0 y = 0}
-					text = "Late Clone Wars"
-					maxWidth = 170
-					maxHeight = 32
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
-				instantTextBoxType = {
-					name = "droid_era_imperial"
-					position = { x = 1540 y = 50 }
+					name = "droid_folder_era3"
+					position = { x = 2300 y = 50 }
 					textureFile = ""
 					font = "hoi_36header"
 					borderSize = { x = 0 y = 0}
 					text = "Imperial Era"
-					maxWidth = 170
-					maxHeight = 32
+					maxWidth = 300
+					maxHeight = 62
 					format = center
 					Orientation = "UPPER_LEFT"
 				}
 
-				# Row labels (y = 140 + x_tech * 70)
 				instantTextBoxType = {
-					name = "droid_row_commando"
-					position = { x = 30 y = 130 }
+					name = "droid_folder_row0"
+					position = { x = 20 y = 152 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "Commando Droids"
-					maxWidth = 250
+					maxWidth = 260
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_row_infantry"
-					position = { x = 30 y = 260 }
+					name = "droid_folder_row1"
+					position = { x = 20 y = 292 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "Infantry Droids"
-					maxWidth = 250
+					maxWidth = 260
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_row_destroyer"
-					position = { x = 30 y = 390 }
+					name = "droid_folder_row2"
+					position = { x = 20 y = 432 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "Droideka"
-					maxWidth = 250
+					maxWidth = 260
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_row_magnaguard"
-					position = { x = 30 y = 550 }
+					name = "droid_folder_row3"
+					position = { x = 20 y = 572 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "MagnaGuard"
-					maxWidth = 250
+					maxWidth = 260
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_row_heavy"
-					position = { x = 30 y = 680 }
+					name = "droid_folder_row4"
+					position = { x = 20 y = 712 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "Heavy Droids"
-					maxWidth = 250
+					maxWidth = 260
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
 				instantTextBoxType = {
-					name = "droid_row_spider"
-					position = { x = 30 y = 810 }
+					name = "droid_folder_row5"
+					position = { x = 20 y = 852 }
 					textureFile = ""
 					font = "hoi_33"
 					borderSize = { x = 0 y = 0}
 					text = "Spider Droids"
-					maxWidth = 250
+					maxWidth = 260
 					maxHeight = 62
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
-
 			}
 
 			gridboxtype = {
 				name = "early_droid_infantry_tree"
-				position = { x = 140 y = 140 }
+				position = { x = 300 y = 140 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
-
 		}
 
 		containerWindowType = {
@@ -4101,6 +4579,20 @@ guiTypes = {
 
 			buttonType = {
 				name = "nsb_armour_folder_tab"
+				position = { x = 200 y = 0 }
+				quadTextureSprite = "GFX_armour_folder_tab"
+				frame = 1
+				clicksound = ui_research_tab_armor
+			}
+			buttonType = {
+				name = "hod_cis_armour_folder_tab"
+				position = { x = 200 y = 0 }
+				quadTextureSprite = "GFX_armour_folder_tab"
+				frame = 1
+				clicksound = ui_research_tab_armor
+			}
+			buttonType = {
+				name = "hod_rep_armour_folder_tab"
 				position = { x = 200 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
@@ -5192,9 +5684,335 @@ guiTypes = {
 			spriteType = "GFX_design_team_icon"
 		}
 	}
+	containerWindowType = {
+		name = "techtree_hod_cis_armour_folder_item"
+		position = { x=-55 y=0 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+		
+		gridboxtype = {
+			# contains special_project_specialization
+			name = "special_project_specialization_list"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=74 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 6 y = -1 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 176
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=111 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 111 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=1 y=2 }
+				spriteType = "GFX_subtech_td"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=141 y=28 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=1 y=2 }
+				spriteType = "GFX_subtech_art"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=1 y=2 }
+				spriteType = "GFX_subtech_aa"
+				alwaystransparent = yes
+			}
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+	containerWindowType = {
+		name = "techtree_hod_rep_armour_folder_item"
+		position = { x=-55 y=0 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+		
+		gridboxtype = {
+			# contains special_project_specialization
+			name = "special_project_specialization_list"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=74 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 6 y = -1 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "Happy-Go-Lucky-Tank"
+			maxWidth = 176
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=111 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 111 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=141 y=1 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=1 y=2 }
+				spriteType = "GFX_subtech_td"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_1"
+			position = { x=141 y=28 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=1 y=2 }
+				spriteType = "GFX_subtech_art"
+				alwaystransparent = yes
+			}
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_2"
+			position = { x=141 y=55 }
+			size = { width = 35 height = 26 }
+			clipping = no
+
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtechnology_unavailable_item_bg"
+			}
+
+			iconType = {
+				name = "picture"
+				position = { x=1 y=2 }
+				spriteType = "GFX_subtech_aa"
+				alwaystransparent = yes
+			}
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=5 y=55 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
 
 	containerWindowType = {
 		name = "techtree_nsb_armour_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+		
+		gridboxtype = {
+			# contains special_project_specialization
+			name = "special_project_specialization_list"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=3 y=3 }
+			spriteType = "GFX_technology_medium"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+	containerWindowType = {
+		name = "techtree_hod_cis_armour_folder_small_item"
+		position = { x=0 y=0 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+		
+		gridboxtype = {
+			# contains special_project_specialization
+			name = "special_project_specialization_list"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=3 y=3 }
+			spriteType = "GFX_technology_medium"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		iconType = {
+			name = "can_assign_design_team_icon"
+			position = { x=0 y=42 }
+			spriteType = "GFX_design_team_icon"
+		}
+	}
+	containerWindowType = {
+		name = "techtree_hod_rep_armour_folder_small_item"
 		position = { x=0 y=0 }
 		size = { width = 72 height = 72 }
 		clipping = no
@@ -6595,6 +7413,44 @@ guiTypes = {
 			size = { width = 400 height = 400 }
 			slotsize = { width = 224 height = 30 }
 			max_slots_horizontal = 2
+			format = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "leader_bonuses_header"
+			font = "hoi4_typewriter16"
+			position = { x = 35 y = 65 } # Y set in code
+			maxWidth = 500
+			maxHeight = 25
+			fixedsize = yes
+			format = left
+		}
+
+		gridboxtype = {
+			name = "leader_bonuses_grid"
+			position = { x = 90 y = 70 } # Y set in code
+			size = { width = 400 height = 400 }
+			slotsize = { width = 224 height = 30 }
+			max_slots_horizontal = 1
+			format = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "support_category_multipliers_header"
+			font = "hoi4_typewriter16"
+			position = { x = 35 y = 65 } # Y set in code
+			maxWidth = 500
+			maxHeight = 25
+			fixedsize = yes
+			format = left
+		}
+
+		gridboxtype = {
+			name = "support_category_multipliers_grid"
+			position = { x = 90 y = 70 } # Y set in code
+			size = { width = 400 height = 400 }
+			slotsize = { width = 224 height = 30 }
+			max_slots_horizontal = 1
 			format = "UPPER_LEFT"
 		}
 

@@ -161,4 +161,25 @@ CIS_GAR_01 = {
     }
 }
 
+CIS_ARM_01 = {
+	name = "Droid Armour Divisions"
 
+	for_countries = { CIS TDF TCU CMG IBC }
+
+	can_use = { always = yes }
+
+	division_types = { "armor" }
+
+	fallback_name = "%dth Droid Armour Division"
+
+	ordered = {
+		1 = { "1st Trade Federation Armoured Column" }
+		2 = { "2nd Techno Union Assault Group" }
+		3 = { "3rd Baktoid Armour Division" }
+		4 = { "4th Hypori Tank Group" }
+		5 = { "5th Geonosis Armoured Division" }
+		6 = { "6th Commerce Guild Armour Corps" }
+		7 = { "7th Mygeeto Armoured Division" }
+		8 = { "8th Felucia Tank Group" }
+	}
+}

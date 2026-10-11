@@ -1,0 +1,22 @@
+﻿# HOD: template handed out by arc_commandos (faction_templates.py)
+division_template = {
+	name = "ARC Trooper Company"
+	division_names_group = REP_Inf_01
+	override_model = REP_marine_entity
+	regiments = {
+		arc_trooper = { x = 0 y = 0 }
+		arc_trooper = { x = 0 y = 1 }
+		arc_trooper = { x = 0 y = 2 }
+		arc_trooper = { x = 1 y = 0 }
+		arc_trooper = { x = 1 y = 1 }
+		arc_trooper = { x = 1 y = 2 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+	}
+}

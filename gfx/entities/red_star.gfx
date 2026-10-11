@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "red_star_mesh"
+		file = "gfx/models/units/walkers/red_star.mesh"
+
+		animation = { id = "attack"			type = "red_star_attack_animation" }
+		animation = { id = "idle"			type = "red_star_idle_animation" }
+		animation = { id = "move"			type = "red_star_move_animation" }
+		animation = { id = "death"			type = "red_star_death_animation" }
+		scale = 0.47
+	}
+}

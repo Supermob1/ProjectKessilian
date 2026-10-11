@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "leviathan_mesh"
+		file = "gfx/models/units/walkers/leviathan.mesh"
+
+		animation = { id = "attack"			type = "leviathan_attack_animation" }
+		animation = { id = "idle"			type = "leviathan_idle_animation" }
+		animation = { id = "move"			type = "leviathan_move_animation" }
+		animation = { id = "death"			type = "leviathan_death_animation" }
+		scale = 0.47
+	}
+}

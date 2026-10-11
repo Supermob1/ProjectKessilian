@@ -371,5 +371,11 @@ terrain = {
 	
 	jungle_blend_18				= { type = mountain			color = { 	27	 } texture = 7 }
 	desert_mountain_tops		= { type = mountain			color = { 	31	 } texture = 15 }
+	# HOD: red rock for red worlds (planet_terrain_gen.py RED_TERRAIN)
+	red_rock_24					= { type = mountain			color = { 	24	 } texture = 17 }
+	# HOD: urban look without spawn_city, painted under landmarks (military_buildings.py landmarks)
+	urban_plaza_25				= { type = urban			color = { 	25	 } texture = 10 }
+	# HOD: farmland ground that still spawns city models: native towns and farm villages (Felucia), not cities
+	farmland_town_26			= { type = plains			color = { 	26	 } texture = 0 spawn_city = yes }
 	
 }

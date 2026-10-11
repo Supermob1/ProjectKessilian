@@ -1,21 +1,21 @@
 division_template = {
 	name = "Local Planetary Garrison"
 	division_names_group = REP_GAR_01
-    is_locked = yes
+	is_locked = yes
+	override_model = REP_old_trooper_entity
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
 	}
 	support = {
+		military_police = { x = 0 y = 0 }
 	}
 }
 
 division_template = {
-	name = "Clone Legion"
-	division_names_group = REP_Inf_01
-	is_locked = yes
-	template_counter = 0
-	override_model = REP_infantry_entity
+	name = "Republic Army Division"
+	division_names_group = REP_ARMY_01
+	override_model = REP_old_trooper_entity
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -27,25 +27,226 @@ division_template = {
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
 	}
-	support = {
-	}
-}
-division_template = {
-	name = "Clone Commando"
-	division_names_group = REP_Inf_01
-	is_locked = yes
-	template_counter = 0
-	override_model = REP_marine_entity
-	force_allow_recruiting = yes
-	regiments = {
-		marine = { x = 0 y = 0 }
-		marine = { x = 0 y = 1 }
-		marine = { x = 0 y = 2 }
-		marine = { x = 1 y = 0 }
-		marine = { x = 1 y = 1 }
-		marine = { x = 1 y = 2 }
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		anti_tank_battery = { x = 1 y = 0 }
+		anti_air_battery = { x = 2 y = 0 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		field_hospital = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Republic Artillery Division"
+	division_names_group = REP_ARMY_01
+	override_model = REP_old_trooper_entity
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	regimental_support = {
+		field_guns = { x = 0 y = 0 }
+		field_guns = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		field_hospital = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Lance Walker Company"
+	division_names_group = REP_WLK_01
+	override_model = REP_old_trooper_entity
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		walkers_light = { x = 2 y = 0 }
+		walkers_light = { x = 2 y = 1 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		anti_tank_battery = { x = 1 y = 0 }
+	}
+	support = {
+		walkers_light_recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		maintenance_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		signal_company = { x = 0 y = 4 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 12384
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 12312
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 5602
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 12543
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 12758
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 1063
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 12333
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 12537
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 4836
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Artillery Division"
+		location = 12384
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Lance Walker Company"
+		location = 12312
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Lance Walker Company"
+		location = 5602
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 14169
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 14129
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 2506
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Lance Walker Company"
+		location = 14406
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 20808
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 20670
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Lance Walker Company"
+		location = 20961
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 13090
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 13117
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 1638
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 1241
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 1090
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 2340
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 1754
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 2824
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 14407
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 2741
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 11833
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Republic Army Division"
+		location = 11901
+		start_experience_factor = 0.2
 	}
 }

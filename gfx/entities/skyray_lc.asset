@@ -1,0 +1,218 @@
+# Two animated parts preserve the original geometry and all bone curves.
+entity = {
+	name = "skyray_lc_part_entity"
+	pdxmesh = "skyray_lc_part_mesh"
+	state = {
+		name = "idle"
+		animation = "idle"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "move"
+		animation = "move"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "move_snow"
+		animation = "move"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "move_mud"
+		animation = "move"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "retreat"
+		animation = "move"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "attack"
+		animation = "attack"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "defend"
+		animation = "attack"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "support_attack"
+		animation = "attack"
+		animation_blend_time = 0.3
+	}
+	state = {
+		name = "training"
+		animation = "idle"
+		animation_blend_time = 0.3
+		animation_speed = 1.0
+	}
+	state = {
+		name = "death"
+		animation = "death"
+		animation_blend_time = 0.3
+		animation_speed = 1.0
+	}
+	scale = 1.0
+}
+entity = {
+	name = "skyray_lc_entity"
+	pdxmesh = "skyray_lc_mesh"
+	state = {
+		name = "idle"
+		animation = "idle"
+		animation_blend_time = 0.3
+		propagate_state = {
+			skyray_part = "idle"
+		}
+	}
+	state = {
+		name = "move"
+		animation = "move"
+		animation_blend_time = 0.3
+		event = {
+			trigger_once = yes
+			sound = {
+				soundeffect = "tank_engine_medium_move"
+			}
+		}
+		propagate_state = {
+			skyray_part = "move"
+		}
+	}
+	state = {
+		name = "move_snow"
+		animation = "move"
+		animation_blend_time = 0.3
+		event = {
+			trigger_once = yes
+			sound = {
+				soundeffect = "tank_engine_medium_move"
+			}
+		}
+		propagate_state = {
+			skyray_part = "move_snow"
+		}
+	}
+	state = {
+		name = "move_mud"
+		animation = "move"
+		animation_blend_time = 0.3
+		event = {
+			trigger_once = yes
+			sound = {
+				soundeffect = "tank_engine_medium_move"
+			}
+		}
+		propagate_state = {
+			skyray_part = "move_mud"
+		}
+	}
+	state = {
+		name = "retreat"
+		animation = "move"
+		animation_blend_time = 0.3
+		event = {
+			trigger_once = yes
+			sound = {
+				soundeffect = "tank_engine_medium_move"
+			}
+		}
+		propagate_state = {
+			skyray_part = "retreat"
+		}
+	}
+	state = {
+		name = "attack"
+		animation = "attack"
+		animation_blend_time = 0.3
+		event = {
+			time = 0
+			node = "barrel"
+			particle = "heavy_tank_attack_barrel_particle"
+			keep_particle = yes
+			sound = {
+				soundeffect = heavy_armour_fire
+			}
+		}
+		event = {
+			time = 0
+			node = "barrel"
+			particle = "heavy_tank_attack_barrel_smoke_particle"
+			keep_particle = yes
+		}
+		propagate_state = {
+			skyray_part = "attack"
+		}
+	}
+	state = {
+		name = "defend"
+		animation = "attack"
+		animation_blend_time = 0.3
+		event = {
+			time = 0
+			node = "barrel"
+			particle = "heavy_tank_attack_barrel_particle"
+			keep_particle = yes
+			sound = {
+				soundeffect = heavy_armour_fire
+			}
+		}
+		event = {
+			time = 0
+			node = "barrel"
+			particle = "heavy_tank_attack_barrel_smoke_particle"
+			keep_particle = yes
+		}
+		propagate_state = {
+			skyray_part = "defend"
+		}
+	}
+	state = {
+		name = "support_attack"
+		animation = "attack"
+		animation_blend_time = 0.3
+		event = {
+			time = 0
+			node = "barrel"
+			particle = "heavy_tank_attack_barrel_particle"
+			keep_particle = yes
+			sound = {
+				soundeffect = heavy_armour_fire
+			}
+		}
+		event = {
+			time = 0
+			node = "barrel"
+			particle = "heavy_tank_attack_barrel_smoke_particle"
+			keep_particle = yes
+		}
+		propagate_state = {
+			skyray_part = "support_attack"
+		}
+	}
+	state = {
+		name = "training"
+		animation = "idle"
+		animation_blend_time = 0.3
+		animation_speed = 1.0
+		propagate_state = {
+			skyray_part = "training"
+		}
+	}
+	state = {
+		name = "death"
+		animation = "death"
+		animation_blend_time = 0.3
+		animation_speed = 1.0
+		propagate_state = {
+			skyray_part = "death"
+		}
+	}
+	attach = {
+		name = "skyray_part"
+		skyray_part_origin = "skyray_lc_part_entity"
+	}
+	scale = 0.35
+}

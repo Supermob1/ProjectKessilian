@@ -62,6 +62,25 @@
 #}
 
 
+# HOD: from vanilla (missing_garrison_law is now required; without it the game logs an error and uses the default law)
+missing_garrison_scaled_effect = {
+	icon = 1
+	missing_garrison_law = yes
+	sound_effect = "Martial_Law_Interface_No_Garrison"
+	visible = {
+		always = no
+	}
+
+	state_modifier = {
+		resistance_target = 0.1
+		compliance_gain = -0.045
+	}
+
+	ai_will_do = {
+		base = 0
+	}
+}
+
 no_garrison = {
 	icon = 1
 	default_law = yes

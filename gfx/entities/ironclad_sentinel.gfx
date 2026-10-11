@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "ironclad_sentinel_mesh"
+		file = "gfx/models/units/walkers/ironclad_sentinel.mesh"
+
+		animation = { id = "attack"			type = "ironclad_sentinel_attack_animation" }
+		animation = { id = "idle"			type = "ironclad_sentinel_idle_animation" }
+		animation = { id = "move"			type = "ironclad_sentinel_move_animation" }
+		animation = { id = "death"			type = "ironclad_sentinel_death_animation" }
+		scale = 0.61
+	}
+}

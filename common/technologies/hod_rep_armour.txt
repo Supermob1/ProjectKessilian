@@ -1,0 +1,567 @@
+technologies = {
+	# HOD: Republic Armour Corps (faction_armour.py). Rows (x) are lines, columns (y) the shared HoD year grid
+	@960 = 0
+	@964 = 3
+	@970 = 6
+	@974 = 9
+	@976 = 12
+	@977 = 15
+	@978 = 18
+	@979 = 21
+	@980 = 24
+	@981 = 27
+	@982 = 30
+	@983 = 33
+	@985 = 36
+
+	rep_walker_atpt = {
+		category_walker_all = { hills = { attack = 0.05 movement = 0.10 } mountain = { attack = 0.05 movement = 0.10 } forest = { attack = 0.05 movement = 0.10 } jungle = { attack = 0.05 movement = 0.10 } urban = { attack = 0.05 movement = 0.10 } }
+		enable_equipments = {
+			walker_chassis_0
+			walker_aa_chassis_0
+			walker_artillery_chassis_0
+			walker_destroyer_chassis_0
+			walker_flame_chassis_0
+			walker_sponson_chassis_0
+		}
+		enable_subunits = {
+			walkers_light
+			walkers_light_recon
+			walkers_flame
+		}
+		enable_equipment_modules = {
+			tank_torsion_bar_suspension
+			tank_riveted_armor
+			tank_gasoline_engine
+			tank_diesel_engine
+			tank_petrol_electric_engine
+			tank_cast_armor
+			tank_christie_suspension
+			tank_bogie_suspension
+			tank_interleaved_suspension
+			tank_light_one_man_tank_turret
+			tank_light_two_man_tank_turret
+			tank_light_three_man_tank_turret
+			tank_light_fixed_superstructure_turret
+			tank_medium_one_man_tank_turret
+			tank_medium_two_man_tank_turret
+			tank_medium_three_man_tank_turret
+			tank_medium_fixed_superstructure_turret
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_heavy_fixed_superstructure_turret
+			tank_super_heavy_four_man_tank_turret
+			tank_super_heavy_three_man_tank_turret
+			tank_modern_tank_turret
+			sloped_armor
+			extra_ammo_storage
+			wet_ammo_storage
+			smoke_launchers
+			expanded_fuel_tank
+			walker_pneumatic_damper
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = walkers_light } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_walkers" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = rep_walker_atrt research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_walker_atte research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_walker_atar research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 974
+		folder = { name = hod_rep_armour_folder position = { x = 0 y = @974 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "974.1.1" } }
+	}
+	rep_walker_atrt = {
+		enable_equipments = {
+			walker_chassis_1
+			walker_aa_chassis_1
+			walker_artillery_chassis_1
+			walker_destroyer_chassis_1
+			walker_flame_chassis_1
+			walker_sponson_chassis_1
+		}
+		enable_equipment_modules = {
+			walker_fixed_sponson_turret
+		}
+		path = { leads_to_tech = rep_atrt_recon research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_atrt_assault research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_walker_atrt_501 research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_rep_armour_folder position = { x = 0 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	rep_atrt_recon = {
+		walkers_light_recon = { max_organisation = 5 maximum_speed = 0.15 }
+		walkers_light = { maximum_speed = 0.10 }
+		XOR = { rep_atrt_assault }
+		research_cost = 1.5
+		start_year = 978
+		folder = { name = hod_rep_armour_folder position = { x = 2 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	rep_atrt_assault = {
+		walkers_light = { soft_attack = 0.10 breakthrough = 0.10 }
+		XOR = { rep_atrt_recon }
+		research_cost = 1.5
+		start_year = 978
+		folder = { name = hod_rep_armour_folder position = { x = 4 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	rep_walker_atrt_501 = {
+		enable_equipments = {
+			walker_chassis_2
+			walker_aa_chassis_2
+			walker_artillery_chassis_2
+			walker_destroyer_chassis_2
+			walker_flame_chassis_2
+			walker_sponson_chassis_2
+		}
+		path = { leads_to_tech = rep_walker_atst research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 0 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_walker_atst = {
+		walkers_light = { soft_attack = 0.10 breakthrough = 0.10 }
+		research_cost = 2
+		start_year = 983
+		folder = { name = hod_rep_armour_folder position = { x = 0 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	rep_walker_atte = {
+		category_walker_all = { max_organisation = 5 }
+		enable_equipments = {
+			walker_chassis_medium_0
+			walker_medium_aa_chassis_0
+			walker_medium_artillery_chassis_0
+			walker_medium_destroyer_chassis_0
+			walker_medium_flame_chassis_0
+		}
+		enable_subunits = {
+			walkers_medium
+			walkers_medium_flame
+		}
+		enable_equipment_modules = {
+			walker_hydropneumatic_recuperator
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = walkers_medium } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_atte" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = rep_walker_atte_elite research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_walker_atap research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_rep_armour_folder position = { x = 6 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	rep_walker_atte_elite = {
+		enable_equipments = {
+			walker_chassis_medium_1
+			walker_medium_aa_chassis_1
+			walker_medium_artillery_chassis_1
+			walker_medium_destroyer_chassis_1
+			walker_medium_flame_chassis_1
+		}
+		enable_equipment_modules = {
+			walker_oscillating_autoloader
+		}
+		path = { leads_to_tech = rep_atte_assault research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_atte_transport research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_atte_spotter research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_walker_atte_sieges research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 979
+		folder = { name = hod_rep_armour_folder position = { x = 6 y = @979 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "979.1.1" } }
+	}
+	rep_atte_assault = {
+		walkers_medium = { breakthrough = 0.15 soft_attack = 0.05 }
+		XOR = { rep_atte_transport }
+		research_cost = 1.5
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 8 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_atte_transport = {
+		walkers_medium = { max_organisation = 10 defense = 0.10 }
+		XOR = { rep_atte_assault }
+		research_cost = 1.5
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 10 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_atte_spotter = {
+		category_walker_artillery = { soft_attack = 0.10 }
+		walkers_medium = { soft_attack = 0.03 }
+		research_cost = 1.5
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 12 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_walker_atte_sieges = {
+		category_walker_all = { armor_value = 0.05 defense = 0.05 }
+		enable_equipments = {
+			walker_chassis_medium_2
+			walker_medium_aa_chassis_2
+			walker_medium_artillery_chassis_2
+			walker_medium_destroyer_chassis_2
+			walker_medium_flame_chassis_2
+		}
+		research_cost = 1.5
+		start_year = 981
+		folder = { name = hod_rep_armour_folder position = { x = 6 y = @981 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "981.1.1" } }
+	}
+	rep_walker_atap = {
+		category_walker_artillery = { soft_attack = 0.05 }
+		enable_equipments = {
+			walker_chassis_heavy_0
+			walker_heavy_aa_chassis_0
+			walker_heavy_artillery_chassis_0
+			walker_heavy_destroyer_chassis_0
+			walker_heavy_flame_chassis_0
+		}
+		enable_subunits = {
+			walkers_heavy
+			walkers_heavy_flame
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = walkers_heavy } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_atap" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = rep_atap_siege research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_atap_antiarmour research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_walker_atot research_cost_coeff = 1 }
+		path = { leads_to_tech = rep_walker_atat_kuat research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 978
+		folder = { name = hod_rep_armour_folder position = { x = 14 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	rep_atap_siege = {
+		walkers_heavy = { soft_attack = 0.10 fort = { attack = 0.15 } }
+		XOR = { rep_atap_antiarmour }
+		research_cost = 1.5
+		start_year = 979
+		folder = { name = hod_rep_armour_folder position = { x = 16 y = @979 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "979.1.1" } }
+	}
+	rep_atap_antiarmour = {
+		walkers_heavy = { hard_attack = 0.15 ap_attack = 0.10 }
+		XOR = { rep_atap_siege }
+		research_cost = 1.5
+		start_year = 979
+		folder = { name = hod_rep_armour_folder position = { x = 18 y = @979 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "979.1.1" } }
+	}
+	rep_walker_atot = {
+		enable_equipments = {
+			walker_chassis_heavy_1
+			walker_heavy_aa_chassis_1
+			walker_heavy_artillery_chassis_1
+			walker_heavy_destroyer_chassis_1
+			walker_heavy_flame_chassis_1
+		}
+		path = { leads_to_tech = rep_walker_utat research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 14 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_walker_utat = {
+		enable_equipments = {
+			walker_chassis_heavy_2
+			walker_heavy_aa_chassis_2
+			walker_heavy_artillery_chassis_2
+			walker_heavy_destroyer_chassis_2
+			walker_heavy_flame_chassis_2
+		}
+		research_cost = 2
+		start_year = 982
+		folder = { name = hod_rep_armour_folder position = { x = 14 y = @982 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "982.1.1" } }
+	}
+	rep_walker_atat_kuat = {
+		category_walker_main = { breakthrough = 0.10 armor_value = 0.05 }
+		enable_equipments = {
+			walker_chassis_modern_0
+			walker_modern_aa_chassis_0
+			walker_modern_artillery_chassis_0
+			walker_modern_destroyer_chassis_0
+			walker_modern_flame_chassis_0
+		}
+		enable_subunits = {
+			walkers_modern
+			walkers_modern_flame
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = walkers_modern } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_atat" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = rep_walker_atat_elite research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 981
+		folder = { name = hod_rep_armour_folder position = { x = 20 y = @981 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "981.1.1" } }
+	}
+	rep_walker_atat_elite = {
+		enable_equipments = {
+			walker_chassis_super_heavy_0
+			walker_super_heavy_aa_chassis_0
+			walker_super_heavy_artillery_chassis_0
+			walker_super_heavy_destroyer_chassis_0
+			walker_super_heavy_flame_chassis_0
+			walker_chassis_land_cruiser_1
+		}
+		enable_subunits = {
+			walkers_super_heavy
+			walkers_super_heavy_flame
+			walker_land_cruiser
+		}
+		enable_equipment_modules = {
+			tank_super_heavy_cannon
+			walker_lc_load_frame
+			walker_lc_800mm_bombard
+		}
+		research_cost = 2
+		start_year = 983
+		folder = { name = hod_rep_armour_folder position = { x = 20 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	rep_spg_av7 = {
+		walkers_light_artillery = { soft_attack = 0.05 }
+		enable_subunits = {
+			walkers_light_artillery
+		}
+		path = { leads_to_tech = rep_spg_spham research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 976
+		folder = { name = hod_rep_armour_folder position = { x = 22 y = @976 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "976.1.1" } }
+	}
+	rep_spg_spham = {
+		enable_subunits = {
+			walkers_medium_artillery
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = walkers_medium_artillery } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_spha" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = rep_spg_sphat research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 978
+		folder = { name = hod_rep_armour_folder position = { x = 22 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	rep_spg_sphat = {
+		enable_subunits = {
+			walkers_heavy_artillery
+			walkers_modern_artillery
+		}
+		path = { leads_to_tech = rep_spg_turbo research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 22 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_spg_turbo = {
+		category_walker_artillery = { soft_attack = 0.10 }
+		enable_subunits = {
+			walkers_super_heavy_artillery
+		}
+		research_cost = 2
+		start_year = 983
+		folder = { name = hod_rep_armour_folder position = { x = 22 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	rep_walker_atar = {
+		enable_subunits = {
+			walkers_light_destroyer
+			walkers_light_support_destroyer
+			walkers_medium_destroyer
+			walkers_medium_support_destroyer
+			walkers_heavy_destroyer
+			walkers_heavy_support_destroyer
+			walkers_modern_destroyer
+			walkers_modern_support_destroyer
+			walkers_super_heavy_destroyer
+		}
+		path = { leads_to_tech = rep_walker_ataa research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_rep_armour_folder position = { x = 24 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	rep_walker_ataa = {
+		enable_subunits = {
+			walkers_light_aa
+			walkers_light_support_aa
+			walkers_medium_aa
+			walkers_medium_support_aa
+			walkers_heavy_aa
+			walkers_heavy_support_aa
+			walkers_modern_aa
+			walkers_modern_support_aa
+			walkers_super_heavy_aa
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = walkers_light_support_aa } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_walker_escort" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 24 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_tx130 = {
+		enable_equipments = {
+			repulsor_tank_equipment_1
+		}
+		enable_subunits = {
+			repulsor_tank_company
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = repulsor_tank_company } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_tx130" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = rep_tx130t research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_rep_armour_folder position = { x = 26 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	rep_tx130t = {
+		enable_equipments = {
+			repulsor_tank_equipment_2
+		}
+		path = { leads_to_tech = rep_tx225 research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 26 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_tx225 = {
+		enable_equipments = {
+			repulsor_tank_equipment_3
+		}
+		research_cost = 2
+		start_year = 983
+		folder = { name = hod_rep_armour_folder position = { x = 26 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	rep_gyro_1 = {
+		category_walker_all = { marsh = { movement = 0.05 } river = { movement = 0.05 } forest = { movement = 0.05 } }
+		path = { leads_to_tech = rep_gyro_2 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 976
+		folder = { name = hod_rep_armour_folder position = { x = 28 y = @976 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "976.1.1" } }
+	}
+	rep_durasteel_1 = {
+		category_walker_all = { armor_value = 0.03 }
+		enable_equipment_modules = {
+			tank_welded_armor
+		}
+		path = { leads_to_tech = rep_durasteel_2 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 976
+		folder = { name = hod_rep_armour_folder position = { x = 30 y = @976 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "976.1.1" } }
+	}
+	rep_gyro_2 = {
+		category_walker_all = { marsh = { movement = 0.05 } river = { movement = 0.05 } forest = { movement = 0.05 } }
+		path = { leads_to_tech = rep_gyro_3 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 978
+		folder = { name = hod_rep_armour_folder position = { x = 28 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	rep_durasteel_2 = {
+		category_walker_all = { armor_value = 0.03 }
+		path = { leads_to_tech = rep_durasteel_3 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 978
+		folder = { name = hod_rep_armour_folder position = { x = 30 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	rep_gyro_3 = {
+		category_walker_all = { marsh = { movement = 0.05 } river = { movement = 0.05 } forest = { movement = 0.05 } }
+		path = { leads_to_tech = rep_gyro_4 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 28 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_durasteel_3 = {
+		category_walker_all = { armor_value = 0.03 }
+		enable_equipment_modules = {
+			lc_armored_skirts
+		}
+		path = { leads_to_tech = rep_durasteel_4 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 980
+		folder = { name = hod_rep_armour_folder position = { x = 30 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	rep_gyro_4 = {
+		category_walker_all = { marsh = { movement = 0.05 } river = { movement = 0.05 } forest = { movement = 0.05 } }
+		research_cost = 1.5
+		start_year = 983
+		folder = { name = hod_rep_armour_folder position = { x = 28 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	rep_durasteel_4 = {
+		category_walker_all = { armor_value = 0.03 }
+		research_cost = 1.5
+		start_year = 983
+		folder = { name = hod_rep_armour_folder position = { x = 30 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+}

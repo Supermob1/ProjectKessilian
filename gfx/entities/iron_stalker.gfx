@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "iron_stalker_mesh"
+		file = "gfx/models/units/walkers/iron_stalker.mesh"
+
+		animation = { id = "attack"			type = "iron_stalker_attack_animation" }
+		animation = { id = "idle"			type = "iron_stalker_idle_animation" }
+		animation = { id = "move"			type = "iron_stalker_move_animation" }
+		animation = { id = "death"			type = "iron_stalker_death_animation" }
+		scale = 0.82
+	}
+}

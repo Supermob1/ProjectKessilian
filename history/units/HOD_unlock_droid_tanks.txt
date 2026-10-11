@@ -1,0 +1,14 @@
+﻿# HOD: template added by the Armoured Assault Tank tech (hod_cis_armour.txt)
+division_template = {
+	name = "AAT Armoured Division"
+	division_names_group = CIS_INF_01
+
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+	}
+}

@@ -1,560 +1,131 @@
 add_namespace = hod_duel
 
+# HOD duels — reports for automatic battlefield duels (common/scripted_effects/HOD_duel_scripted_effects.txt).
+# Event targets: hod_duel_winner / hod_duel_loser (or duel_char1_token / duel_char2_token on a stalemate).
+# The texts follow the fighter's style flag, stamped on its owner by HOD_stamp_duel_*_style.
+
 ########################################
-# hod_duel.1 — Challenge
+# hod_duel.9 — hidden, winner's owner: capture a decisively beaten loser, then send both reports
+# (capture_by needs the captor country as ROOT)
 ########################################
 country_event = {
+	id = hod_duel.9
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:hod_duel_loser = {
+			if = {
+				limit = { has_unit_leader_flag = hod_duel_decisive }
+				if = {
+					limit = { can_be_captured = yes }
+					capture_by = ROOT
+				}
+				else = {
+					add_timed_unit_leader_trait = { trait = wounded days = 120 }
+				}
+			}
+		}
+		event_target:hod_duel_winner = { unit_leader_event = { id = hod_duel.1 } }
+		event_target:hod_duel_loser = { unit_leader_event = { id = hod_duel.2 days = 1 } }
+	}
+}
+
+########################################
+# hod_duel.1 — victory (ROOT = winner)
+########################################
+unit_leader_event = {
 	id = hod_duel.1
 	title = hod_duel.1.t
 	picture = GFX_report_event_jedi_duel
-
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { has_trait = force_sensitive }
-			event_target:duel_char2_token = { has_trait = force_sensitive }
-		}
-		text = hod_duel.1.d_force_vs_force
-	}
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { has_trait = force_sensitive }
-			event_target:duel_char2_token = { NOT = { has_trait = force_sensitive } }
-		}
-		text = hod_duel.1.d_force_vs_warrior
-	}
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { NOT = { has_trait = force_sensitive } }
-			event_target:duel_char2_token = { has_trait = force_sensitive }
-		}
-		text = hod_duel.1.d_warrior_vs_force
-	}
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { NOT = { has_trait = force_sensitive } }
-			event_target:duel_char2_token = { NOT = { has_trait = force_sensitive } }
-		}
-		text = hod_duel.1.d
-	}
-
-	trigger = {
-		has_war = yes
-		NOT = { has_global_flag = hod_duel_active }
-		any_army_leader = { is_assigned = yes }
-		any_enemy_country = {
-			any_army_leader = { 
-				is_assigned = yes 
-			}
-		}
-	}
-
-	mean_time_to_happen = { days = 60 }
-
-	immediate = { HOD_duel_setup = yes }
-
-	option = {
-		name = hod_duel.1.a  # engage
-		country_event = { id = hod_duel.2 days = 1 }
-		event_target:duel_char2_token.owner = { country_event = { id = hod_duel.101 } } #Inform opposing side of the duel
-		custom_effect_tooltip = show_current_variables
-		ai_chance = { factor = 80 }
-	}
-	option = {
-		name = hod_duel.1.b  # stand down
-		HOD_duel_cleanup = yes
-		ai_chance = { factor = 20 }
-	}
-}
-
-country_event = {
-	id = hod_duel.101
-	title = hod_duel.101.t
-	picture = GFX_report_event_jedi_duel
-
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { has_trait = force_sensitive }
-			event_target:duel_char2_token = { has_trait = force_sensitive }
-		}
-		text = hod_duel.101.d_force_vs_force
-	}
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { has_trait = force_sensitive }
-			event_target:duel_char2_token = { NOT = { has_trait = force_sensitive } }
-		}
-		text = hod_duel.101.d_force_vs_warrior
-	}
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { NOT = { has_trait = force_sensitive } }
-			event_target:duel_char2_token = { has_trait = force_sensitive }
-		}
-		text = hod_duel.101.d_warrior_vs_force
-	}
-	desc = {
-		trigger = {
-			event_target:duel_char1_token = { NOT = { has_trait = force_sensitive } }
-			event_target:duel_char2_token = { NOT = { has_trait = force_sensitive } }
-		}
-		text = hod_duel.101.d
-	}
 	is_triggered_only = yes
+
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_vaapad     } } text = hod_duel_vic_vaapad        }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_soresu     } } text = hod_duel_vic_soresu        }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_makashi    } } text = hod_duel_vic_makashi       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_ataru      } } text = hod_duel_vic_ataru         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_djem_so    } } text = hod_duel_vic_djem_so       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_shien      } } text = hod_duel_vic_shien         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_jar_kai    } } text = hod_duel_vic_jar_kai       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_niman      } } text = hod_duel_vic_niman         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_droid      } } text = hod_duel_vic_droid         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_mando      } } text = hod_duel_vic_mando         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_blaster    } } text = hod_duel_vic_blaster       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_dirty      } } text = hod_duel_vic_dirty         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_vibroblade } } text = hod_duel_vic_vibroblade    }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_cyborg     } } text = hod_duel_vic_cyborg        }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_dark       } } text = hod_duel_vic_dark_side     }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_padawan    } } text = hod_duel_vic_padawan       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_force      } } text = hod_duel_vic_force_generic }
+	desc = hod_duel_vic_warrior
+
 	option = {
-		name = hod_duel.101.a  # Interesting
-		custom_effect_tooltip = show_current_variables
-		ai_chance = { factor = 80 }
+		name = hod_duel.1.a
+		trigger = { event_target:hod_duel_loser = { is_general_captured = yes } }
+		custom_effect_tooltip = hod_duel.1.captured_tt
+		owner = { HOD_clr_duel_style_flags = yes }
+	}
+	option = {
+		name = hod_duel.1.b
+		trigger = { event_target:hod_duel_loser = { is_general_captured = no } }
+		custom_effect_tooltip = hod_duel.1.wounded_tt
+		owner = { HOD_clr_duel_style_flags = yes }
 	}
 }
 
 ########################################
-# hod_duel.2 — char1's turn / final summary view
-# While duel_outcome == 0: options A/B/C visible, player picks move.
-# When duel_outcome > 0: only option D ("Acknowledge") shows;
-#                       paragraphs 4 & 5 (finale + consequences) fill in.
+# hod_duel.2 — defeat (ROOT = loser)
 ########################################
-country_event = {
+unit_leader_event = {
 	id = hod_duel.2
 	title = hod_duel.2.t
 	picture = GFX_report_event_jedi_duel
-
-	desc = hod_duel.2.d
-
 	is_triggered_only = yes
 
-	# NO `after` block. The old `after = { if duel_outcome = 0: fire .201 }`
-	# misfired after option D's cleanup zeroed duel_outcome, causing the
-	# .2 → .201 → .3 loop. Next-event firing is now inline in options A/B/C.
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_padawan  } } text = hod_duel_def_padawan       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_acolyte  } } text = hod_duel_def_acolyte       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_champion } } text = hod_duel_def_champion      }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_master   } } text = hod_duel_def_master        }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_cyborg   } } text = hod_duel_def_cyborg        }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_mando    } } text = hod_duel_def_mando         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_force    } } text = hod_duel_def_force_generic }
+	desc = hod_duel_def_warrior
 
-	# ── Round move options (only while duel ongoing) ─────────
 	option = {
-		name = hod_duel.2.a  # Attack
-		trigger = { check_variable = { duel_outcome = 0 } }
-		event_target:duel_char1_token = { HOD_duel_set_move_attack = yes }
-		event_target:duel_char2_token.owner = { country_event = { id = hod_duel.201 } }
-		custom_effect_tooltip = show_current_variables
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 1.5
-				event_target:duel_char1_token = {
-					OR = {
-						has_trait = form_juyo_vaapad
-						has_trait = form_ataru
-						has_trait = form_ataru_mastery
-						has_trait = form_djem_so_mastery
-						has_trait = mandalorian_combat
-						has_trait = dirty_fighter
-					}
-				}
-			}
-		}
+		name = hod_duel.2.a
+		trigger = { event_target:hod_duel_loser = { is_general_captured = yes } }   # the event target scopes the character
+		custom_effect_tooltip = hod_duel.2.captured_tt
+		owner = { HOD_clr_duel_style_flags = yes }
 	}
 	option = {
-		name = hod_duel.2.b  # Defend
-		trigger = { check_variable = { duel_outcome = 0 } }
-		event_target:duel_char1_token = { HOD_duel_set_move_defend = yes }
-		event_target:duel_char2_token.owner = { country_event = { id = hod_duel.201 } }
-		custom_effect_tooltip = show_current_variables
-		ai_chance = {
-			factor = 30
-			modifier = {
-				factor = 1.5
-				event_target:duel_char1_token = {
-					OR = {
-						has_trait = form_soresu
-						has_trait = form_soresu_mastery
-						has_trait = form_niman
-						has_trait = force_barrier
-						has_trait = heavy_armor_plating
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = hod_duel.2.c  # Counter
-		trigger = { check_variable = { duel_outcome = 0 } }
-		event_target:duel_char1_token = { HOD_duel_set_move_counter = yes }
-		event_target:duel_char2_token.owner = { country_event = { id = hod_duel.201 } }
-		custom_effect_tooltip = show_current_variables
-		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 1.5
-				event_target:duel_char1_token = {
-					OR = {
-						has_trait = form_djem_so
-						has_trait = form_djem_so_mastery
-						has_trait = form_makashi
-						has_trait = form_makashi_mastery
-						has_trait = form_shien
-						has_trait = force_prescience
-						has_trait = deceptive_combat
-					}
-				}
-			}
-		}
-	}
-
-	# ── Acknowledge (summary view only) ──────────────────────
-	option = {
-		name = hod_duel.2.d_ack
-		trigger = { check_variable = { duel_outcome > 0 } }
-		HOD_duel_finalize_outcome = yes
-		ai_chance = { factor = 1 }
+		name = hod_duel.2.b
+		trigger = { event_target:hod_duel_loser = { is_general_captured = no } }
+		custom_effect_tooltip = hod_duel.2.wounded_tt
+		owner = { HOD_clr_duel_style_flags = yes }
 	}
 }
 
 ########################################
-# hod_duel.201 — char2's turn / final summary view (mirror)
+# hod_duel.3 — stalemate (ROOT = either fighter)
 ########################################
-country_event = {
-	id = hod_duel.201
-	title = hod_duel.2.t
-	picture = GFX_report_event_jedi_duel
-
-	desc = hod_duel.2.d
-
-	is_triggered_only = yes
-
-	# NO `after` block — see hod_duel.2 comment. Next-event firing inline.
-
-	option = {
-		name = hod_duel.2.a  # Attack
-		trigger = { check_variable = { duel_outcome = 0 } }
-		event_target:duel_char2_token = { HOD_duel_set_move_attack = yes }
-		event_target:duel_char1_token.owner = { country_event = { id = hod_duel.3 } }
-		custom_effect_tooltip = show_current_variables
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 1.5
-				event_target:duel_char2_token = {
-					OR = {
-						has_trait = form_juyo_vaapad
-						has_trait = form_ataru
-						has_trait = form_ataru_mastery
-						has_trait = form_djem_so_mastery
-						has_trait = mandalorian_combat
-						has_trait = dirty_fighter
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = hod_duel.2.b  # Defend
-		trigger = { check_variable = { duel_outcome = 0 } }
-		event_target:duel_char2_token = { HOD_duel_set_move_defend = yes }
-		event_target:duel_char1_token.owner = { country_event = { id = hod_duel.3 } }
-		custom_effect_tooltip = show_current_variables
-		ai_chance = {
-			factor = 30
-			modifier = {
-				factor = 1.5
-				event_target:duel_char2_token = {
-					OR = {
-						has_trait = form_soresu
-						has_trait = form_soresu_mastery
-						has_trait = form_niman
-						has_trait = force_barrier
-						has_trait = heavy_armor_plating
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = hod_duel.2.c  # Counter
-		trigger = { check_variable = { duel_outcome = 0 } }
-		event_target:duel_char2_token = { HOD_duel_set_move_counter = yes }
-		event_target:duel_char1_token.owner = { country_event = { id = hod_duel.3 } }
-		custom_effect_tooltip = show_current_variables
-		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 1.5
-				event_target:duel_char2_token = {
-					OR = {
-						has_trait = form_djem_so
-						has_trait = form_djem_so_mastery
-						has_trait = form_makashi
-						has_trait = form_makashi_mastery
-						has_trait = form_shien
-						has_trait = force_prescience
-						has_trait = deceptive_combat
-					}
-				}
-			}
-		}
-	}
-
-	# Acknowledge — char2's side of the summary
-	option = {
-		name = hod_duel.2.d_ack
-		trigger = { check_variable = { duel_outcome > 0 } }
-		# Finalization runs from char1's side; char2 just acknowledges
-		ai_chance = { factor = 1 }
-	}
-}
-
-########################################
-# hod_duel.3 — resolver (hidden)
-# Both moves recorded. Computes outcome, then either fires next round
-# or routes to victory/defeat/stalemate.
-########################################
-country_event = {
+unit_leader_event = {
 	id = hod_duel.3
-	hidden = yes
+	title = hod_duel.3.t
+	picture = GFX_report_event_jedi_duel
 	is_triggered_only = yes
 
-	immediate = {
-		HOD_duel_resolve_round = yes
-	}
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_soresu     } } text = hod_duel_stale_soresu        }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_mando      } } text = hod_duel_stale_mando         }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_vibroblade } } text = hod_duel_stale_vibroblade    }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_blaster    } } text = hod_duel_stale_blaster       }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_master     } } text = hod_duel_stale_master        }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_dark       } } text = hod_duel_stale_dark_side     }
+	desc = { trigger = { owner = { has_country_flag = hod_duel_style_force      } } text = hod_duel_stale_force_generic }
+	desc = hod_duel_stale_warrior
+
 	option = {
 		name = hod_duel.3.a
-		HOD_duel_route_next = yes
-	}
-}
-
-########################################
-# hod_duel.4 — Resolution (hidden)
-#   Reads edge, picks outcome. Both fighters get the appropriate
-#   outcome event with style flavor based on traits, plus a wound
-#   modifier if their risk built too high.
-########################################
-country_event = {
-	id = hod_duel.4
-	hidden = yes
-	is_triggered_only = yes
-
-	immediate = {
-		# Own wins
-		if = {
-			limit = { check_variable = { hod_duel_edge > 1 } }
-			# Wound the winner if they overextended
-			if = {
-				limit = { check_variable = { hod_duel_risk_own > 4 } }
-				event_target:hod_duel_own_country = { set_country_flag = hod_duel_winner_wounded }
-			}
-			# Stamp styles & XP, fire outcome events
-			event_target:hod_duel_own_char = {
-				HOD_stamp_duel_victory_style = yes
-				HOD_add_duel_xp_winner = yes
-				unit_leader_event = { id = hod_duel.10 days = 1 }
-			}
-			event_target:hod_duel_enemy_char = {
-				HOD_stamp_duel_defeat_style = yes
-				HOD_add_duel_xp_loser = yes
-				unit_leader_event = { id = hod_duel.21 days = 1 }
-			}
-		}
-		# Enemy wins
-		else_if = {
-			limit = { check_variable = { hod_duel_edge < -1 } }
-			if = {
-				limit = { check_variable = { hod_duel_risk_enemy > 4 } }
-				event_target:hod_duel_enemy_country = { set_country_flag = hod_duel_winner_wounded }
-			}
-			event_target:hod_duel_own_char = {
-				HOD_stamp_duel_defeat_style = yes
-				HOD_add_duel_xp_loser = yes
-				unit_leader_event = { id = hod_duel.11 days = 1 }
-			}
-			event_target:hod_duel_enemy_char = {
-				HOD_stamp_duel_victory_style = yes
-				HOD_add_duel_xp_winner = yes
-				unit_leader_event = { id = hod_duel.20 days = 1 }
-			}
-		}
-		# Stalemate
-		else = {
-			event_target:hod_duel_own_char = {
-				HOD_stamp_duel_stale_style = yes
-				HOD_add_duel_xp_stalemate = yes
-				unit_leader_event = { id = hod_duel.12 days = 1 }
-			}
-			event_target:hod_duel_enemy_char = {
-				HOD_stamp_duel_stale_style = yes
-				HOD_add_duel_xp_stalemate = yes
-				unit_leader_event = { id = hod_duel.22 days = 1 }
-			}
-		}
-
-		HOD_duel_cleanup = yes
-	}
-
-	option = { name = hod_duel.4.a }
-}
-
-
-########################################
-# Outcome events — own fighter
-########################################
-unit_leader_event = {
-	id = hod_duel.10
-	title = hod_duel.10.t
-	picture = GFX_report_event_jedi_duel
-	is_triggered_only = yes
-
-	# Wounded-victory variant takes priority over style descs
-	desc = {
-		trigger = { has_country_flag = hod_duel_winner_wounded }
-		text = hod_duel.10.d_wounded
-	}
-	desc = { trigger = { has_country_flag = hod_duel_style_vaapad     } text = hod_duel_vic_vaapad        }
-	desc = { trigger = { has_country_flag = hod_duel_style_soresu     } text = hod_duel_vic_soresu        }
-	desc = { trigger = { has_country_flag = hod_duel_style_makashi    } text = hod_duel_vic_makashi       }
-	desc = { trigger = { has_country_flag = hod_duel_style_ataru      } text = hod_duel_vic_ataru         }
-	desc = { trigger = { has_country_flag = hod_duel_style_djem_so    } text = hod_duel_vic_djem_so       }
-	desc = { trigger = { has_country_flag = hod_duel_style_shien      } text = hod_duel_vic_shien         }
-	desc = { trigger = { has_country_flag = hod_duel_style_jar_kai    } text = hod_duel_vic_jar_kai       }
-	desc = { trigger = { has_country_flag = hod_duel_style_niman      } text = hod_duel_vic_niman         }
-	desc = { trigger = { has_country_flag = hod_duel_style_droid      } text = hod_duel_vic_droid         }
-	desc = { trigger = { has_country_flag = hod_duel_style_mando      } text = hod_duel_vic_mando         }
-	desc = { trigger = { has_country_flag = hod_duel_style_blaster    } text = hod_duel_vic_blaster       }
-	desc = { trigger = { has_country_flag = hod_duel_style_dirty      } text = hod_duel_vic_dirty         }
-	desc = { trigger = { has_country_flag = hod_duel_style_vibroblade } text = hod_duel_vic_vibroblade    }
-	desc = { trigger = { has_country_flag = hod_duel_style_cyborg     } text = hod_duel_vic_cyborg        }
-	desc = { trigger = { has_country_flag = hod_duel_style_dark       } text = hod_duel_vic_dark_side     }
-	desc = { trigger = { has_country_flag = hod_duel_style_padawan    } text = hod_duel_vic_padawan       }
-	desc = { trigger = { has_country_flag = hod_duel_style_force      } text = hod_duel_vic_force_generic }
-	desc = { trigger = { has_country_flag = hod_duel_style_warrior    } text = hod_duel_vic_warrior       }
-	desc = hod_duel.10.d
-
-	option = {
-		name = hod_duel.10.a
-		HOD_clr_duel_style_flags = yes
-		clr_country_flag = hod_duel_winner_wounded
-	}
-}
-
-unit_leader_event = {
-	id = hod_duel.11
-	title = hod_duel.11.t
-	picture = GFX_report_event_jedi_duel
-	is_triggered_only = yes
-
-	desc = { trigger = { has_country_flag = hod_duel_style_padawan   } text = hod_duel_def_padawan       }
-	desc = { trigger = { has_country_flag = hod_duel_style_acolyte   } text = hod_duel_def_acolyte       }
-	desc = { trigger = { has_country_flag = hod_duel_style_champion  } text = hod_duel_def_champion      }
-	desc = { trigger = { has_country_flag = hod_duel_style_master    } text = hod_duel_def_master        }
-	desc = { trigger = { has_country_flag = hod_duel_style_cyborg    } text = hod_duel_def_cyborg        }
-	desc = { trigger = { has_country_flag = hod_duel_style_mando     } text = hod_duel_def_mando         }
-	desc = { trigger = { has_country_flag = hod_duel_style_force     } text = hod_duel_def_force_generic }
-	desc = { trigger = { has_country_flag = hod_duel_style_warrior   } text = hod_duel_def_warrior       }
-	desc = hod_duel.11.d
-
-	option = {
-		name = hod_duel.11.a
-		HOD_clr_duel_style_flags = yes
-	}
-}
-
-unit_leader_event = {
-	id = hod_duel.12
-	title = hod_duel.12.t
-	picture = GFX_report_event_jedi_duel
-	is_triggered_only = yes
-
-	desc = { trigger = { has_country_flag = hod_duel_style_soresu     } text = hod_duel_stale_soresu      }
-	desc = { trigger = { has_country_flag = hod_duel_style_mando      } text = hod_duel_stale_mando       }
-	desc = { trigger = { has_country_flag = hod_duel_style_vibroblade } text = hod_duel_stale_vibroblade  }
-	desc = { trigger = { has_country_flag = hod_duel_style_blaster    } text = hod_duel_stale_blaster     }
-	desc = { trigger = { has_country_flag = hod_duel_style_master     } text = hod_duel_stale_master      }
-	desc = { trigger = { has_country_flag = hod_duel_style_dark       } text = hod_duel_stale_dark_side   }
-	desc = { trigger = { has_country_flag = hod_duel_style_force      } text = hod_duel_stale_force_generic }
-	desc = { trigger = { has_country_flag = hod_duel_style_warrior    } text = hod_duel_stale_warrior     }
-	desc = hod_duel.12.d
-
-	option = {
-		name = hod_duel.12.a
-		HOD_clr_duel_style_flags = yes
-	}
-}
-
-
-########################################
-# Outcome events — enemy fighter
-########################################
-unit_leader_event = {
-	id = hod_duel.20
-	title = hod_duel.20.t
-	picture = GFX_report_event_jedi_duel
-	is_triggered_only = yes
-
-	desc = {
-		trigger = { has_country_flag = hod_duel_winner_wounded }
-		text = hod_duel.20.d_wounded
-	}
-	desc = { trigger = { has_country_flag = hod_duel_style_vaapad     } text = hod_duel_vic_vaapad        }
-	desc = { trigger = { has_country_flag = hod_duel_style_soresu     } text = hod_duel_vic_soresu        }
-	desc = { trigger = { has_country_flag = hod_duel_style_makashi    } text = hod_duel_vic_makashi       }
-	desc = { trigger = { has_country_flag = hod_duel_style_ataru      } text = hod_duel_vic_ataru         }
-	desc = { trigger = { has_country_flag = hod_duel_style_djem_so    } text = hod_duel_vic_djem_so       }
-	desc = { trigger = { has_country_flag = hod_duel_style_shien      } text = hod_duel_vic_shien         }
-	desc = { trigger = { has_country_flag = hod_duel_style_jar_kai    } text = hod_duel_vic_jar_kai       }
-	desc = { trigger = { has_country_flag = hod_duel_style_niman      } text = hod_duel_vic_niman         }
-	desc = { trigger = { has_country_flag = hod_duel_style_droid      } text = hod_duel_vic_droid         }
-	desc = { trigger = { has_country_flag = hod_duel_style_mando      } text = hod_duel_vic_mando         }
-	desc = { trigger = { has_country_flag = hod_duel_style_blaster    } text = hod_duel_vic_blaster       }
-	desc = { trigger = { has_country_flag = hod_duel_style_dirty      } text = hod_duel_vic_dirty         }
-	desc = { trigger = { has_country_flag = hod_duel_style_vibroblade } text = hod_duel_vic_vibroblade    }
-	desc = { trigger = { has_country_flag = hod_duel_style_cyborg     } text = hod_duel_vic_cyborg        }
-	desc = { trigger = { has_country_flag = hod_duel_style_dark       } text = hod_duel_vic_dark_side     }
-	desc = { trigger = { has_country_flag = hod_duel_style_padawan    } text = hod_duel_vic_padawan       }
-	desc = { trigger = { has_country_flag = hod_duel_style_force      } text = hod_duel_vic_force_generic }
-	desc = { trigger = { has_country_flag = hod_duel_style_warrior    } text = hod_duel_vic_warrior       }
-	desc = hod_duel.20.d
-
-	option = {
-		name = hod_duel.20.a
-		HOD_clr_duel_style_flags = yes
-		clr_country_flag = hod_duel_winner_wounded
-	}
-}
-
-unit_leader_event = {
-	id = hod_duel.21
-	title = hod_duel.21.t
-	picture = GFX_report_event_jedi_duel
-	is_triggered_only = yes
-
-	desc = { trigger = { has_country_flag = hod_duel_style_padawan   } text = hod_duel_def_padawan       }
-	desc = { trigger = { has_country_flag = hod_duel_style_acolyte   } text = hod_duel_def_acolyte       }
-	desc = { trigger = { has_country_flag = hod_duel_style_champion  } text = hod_duel_def_champion      }
-	desc = { trigger = { has_country_flag = hod_duel_style_master    } text = hod_duel_def_master        }
-	desc = { trigger = { has_country_flag = hod_duel_style_cyborg    } text = hod_duel_def_cyborg        }
-	desc = { trigger = { has_country_flag = hod_duel_style_mando     } text = hod_duel_def_mando         }
-	desc = { trigger = { has_country_flag = hod_duel_style_force     } text = hod_duel_def_force_generic }
-	desc = { trigger = { has_country_flag = hod_duel_style_warrior   } text = hod_duel_def_warrior       }
-	desc = hod_duel.21.d
-
-	option = {
-		name = hod_duel.21.a
-		HOD_clr_duel_style_flags = yes
-	}
-}
-
-unit_leader_event = {
-	id = hod_duel.22
-	title = hod_duel.22.t
-	picture = GFX_report_event_jedi_duel
-	is_triggered_only = yes
-
-	desc = { trigger = { has_country_flag = hod_duel_style_soresu     } text = hod_duel_stale_soresu      }
-	desc = { trigger = { has_country_flag = hod_duel_style_mando      } text = hod_duel_stale_mando       }
-	desc = { trigger = { has_country_flag = hod_duel_style_vibroblade } text = hod_duel_stale_vibroblade  }
-	desc = { trigger = { has_country_flag = hod_duel_style_blaster    } text = hod_duel_stale_blaster     }
-	desc = { trigger = { has_country_flag = hod_duel_style_master     } text = hod_duel_stale_master      }
-	desc = { trigger = { has_country_flag = hod_duel_style_dark       } text = hod_duel_stale_dark_side   }
-	desc = { trigger = { has_country_flag = hod_duel_style_force      } text = hod_duel_stale_force_generic }
-	desc = { trigger = { has_country_flag = hod_duel_style_warrior    } text = hod_duel_stale_warrior     }
-	desc = hod_duel.22.d
-
-	option = {
-		name = hod_duel.22.a
-		HOD_clr_duel_style_flags = yes
+		custom_effect_tooltip = hod_duel.3.tt
+		owner = { HOD_clr_duel_style_flags = yes }
 	}
 }

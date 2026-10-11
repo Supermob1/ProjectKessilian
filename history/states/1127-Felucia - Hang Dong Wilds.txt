@@ -1,0 +1,24 @@
+state={
+	id=1127
+	name="STATE_1127"
+	# HOD: Felucia, white zone (felucia_tribes.py)
+	impassable = yes
+	force_link_ownership_to = 80
+	provinces={
+		9003 9008 9014 9015 9016 9020
+	}
+	resources={
+	}
+	history = {
+		buildings = {
+			infrastructure = 0
+		}
+		owner = CMG
+		add_core_of = FLT
+		add_core_of = CMG
+	}
+	manpower = 6000
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

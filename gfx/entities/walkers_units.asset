@@ -1,0 +1,206 @@
+entity = {
+	name = "walkers_entity"
+	pdxmesh = "generic_walker_mesh"
+	
+	state = { name = "idle"				animation = "idle"   animation_blend_time = 0.0 }
+	state = { name = "move"				animation = "move"   animation_blend_time = 0.0 
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+	}
+	state = { name = "retreat"				animation = "move"   animation_blend_time = 0.0 
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+	}
+	state = { name = "attack"			animation = "attack" animation_blend_time = 0.0 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "defend"			animation = "attack" animation_blend_time = 0.0 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "support_attack"	animation = "attack" animation_blend_time = 0.0  
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "training"				animation = "idle" 			animation_blend_time = 0.0 animation_speed = 1.0
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes }
+	}
+	
+	scale = 1.0
+}
+entity = {
+	name = "GER_walkers_entity"
+	pdxmesh = "GER_walker_mesh"
+	
+	state = { name = "idle"				animation = "idle"   animation_blend_time = 0.0 }
+	state = { name = "move"				animation = "move"   animation_blend_time = 0.0 
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+	}
+	state = { name = "retreat"				animation = "move"   animation_blend_time = 0.0 
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+	}
+	state = { name = "attack"			animation = "attack" animation_blend_time = 0.0 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "defend"			animation = "attack" animation_blend_time = 0.0 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "support_attack"	animation = "attack" animation_blend_time = 0.0  
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "training"				animation = "idle" 			animation_blend_time = 0.0 animation_speed = 1.0
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes }
+	}
+	
+	scale = 1.0
+}
+entity = {
+	name = "SOV_walker_light_entity"
+	pdxmesh = "SOV_walker_mesh"
+	clone = "walkers_entity"
+	scale = 1.0
+}
+entity = {
+	name = "SOV_walkers_entity"
+	pdxmesh = "SOV_walker_mesh"
+	
+	state = { name = "idle"				animation = "idle"   animation_blend_time = 0.0 }
+	state = { name = "move"				animation = "move"   animation_blend_time = 0.0 
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+	}
+	state = { name = "retreat"				animation = "move"   animation_blend_time = 0.0 
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes } 
+		event = { trigger_once = yes sound = { soundeffect = "tank_engine_medium_move" } }
+	}
+	state = { name = "attack"			animation = "attack" animation_blend_time = 0.0 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "defend"			animation = "attack" animation_blend_time = 0.0 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "support_attack"	animation = "attack" animation_blend_time = 0.0  
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+		event = { time = 0 node="barrel" particle = "light_tank_attack_barrel_smoke_particle"  keep_particle = yes sound = { soundeffect = medium_armour_fire } } 
+	}
+	state = { name = "training"				animation = "idle" 			animation_blend_time = 0.0 animation_speed = 1.0
+		event = { time = 0 node="smoke" particle = "tank_exhaust_particle"  keep_particle = no trigger_once = yes }
+	}
+	
+	scale = 1.0
+}
+entity = {
+	name = "walker_sturmlaufer_entity"
+	clone = "ironclad_mbt_entity"
+}
+entity = {
+	name = "GER_walker_sturmlaufer_entity"
+	clone = "sturmlaeufer_entity"
+}
+entity = {
+	name = "walker_remeshed_entity"
+	clone = "remeshed_entity"
+}
+entity = {
+	name = "walker_mech211_entity"
+	clone = "strider_tank_entity"
+}
+entity = {
+	name = "GER_walker_mech211_entity"
+	clone = "mech211_entity"
+}
+entity = {
+	name = "walker_iron_strider_entity"
+	clone = "iron_strider_entity"
+}
+entity = {
+	name = "GER_walker_iron_strider_entity"
+	clone = "remeshed_entity"
+}
+entity = {
+	name = "walker_light_entity"
+	pdxmesh = "generic_walker_mesh"
+	clone = "walkers_entity"
+	scale = 1.0
+}
+entity = {
+	name = "GER_walker_light_entity"
+	clone = "spider_walker_entity"
+}
+entity = {
+	name = "walker_skyray_lc_entity"
+	clone = "iron_nest_entity"
+}
+entity = {
+	name = "walker_iron_nest_lc_entity"
+	clone = "iron_nest_entity"
+}
+entity = {
+	name = "GER_walker_skyray_lc_entity"
+	clone = "skyray_lc_entity"
+}
+
+entity = {
+	name = "walker_super_heavy_entity"
+	clone = "ironclad_sh_entity"
+}
+entity = {
+	name = "GER_walker_super_heavy_entity"
+	clone = "leviathan_entity"
+}
+entity = {
+	name = "GER_walker_leviathan_entity"
+	clone = "leviathan_entity"
+}
+entity = {
+	name = "SOV_walker_skyray_lc_entity"
+	clone = "ironclad_sentinel_entity"
+}
+entity = {
+	name = "SOV_walker_ironclad_strider_entity"
+	clone = "ironclad_sentinel_entity"
+}
+entity = {
+	name = "SOV_walker_ironclad_sentinel_entity"
+	clone = "ironclad_sentinel_entity"
+}
+entity = {
+	name = "SOV_walker_iron_strider_entity"
+	clone = "iron_stalker_entity"
+}
+entity = {
+	name = "SOV_walker_mech211_entity"
+	clone = "soviet_heavy_walker_entity"
+}
+entity = {
+	name = "SOV_walker_sturmlaufer_entity"
+	clone = "sov_modern_entity"
+}
+entity = {
+	name = "SOV_walker_super_heavy_entity"
+	clone = "red_star_entity"
+}
+entity = {
+	name = "FRA_walker_skyray_lc_entity"
+	clone = "ironclad_strider_entity"
+}
+entity = {
+	name = "ENG_walker_skyray_lc_entity"
+	clone = "ironclad_strider_entity"
+}
+entity = {
+	name = "FRA_walker_ironclad_strider_entity"
+	clone = "ironclad_strider_entity"
+}
+entity = {
+	name = "ENG_walker_ironclad_strider_entity"
+	clone = "ironclad_strider_entity"
+}

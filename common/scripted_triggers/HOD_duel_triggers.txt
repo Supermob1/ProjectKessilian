@@ -1,0 +1,29 @@
+# HOD duels (common/scripted_effects/HOD_duel_scripted_effects.txt)
+
+# Unit leader who can duel right now: a Force user or a champion fighter, not wounded, not a prisoner,
+# not still recovering from a recent duel
+HOD_is_duelist = {
+	OR = {
+		has_trait = force_sensitive
+		has_trait = light_side_user
+		has_trait = dark_side_user
+		has_trait = skilled_duelist
+		has_trait = combat_cyborg
+		has_trait = blaster_duelist
+		has_trait = vibroblade_fighter
+		has_trait = dirty_fighter
+		has_trait = mandalorian_combat
+		has_trait = droid_tactical_analysis
+	}
+	NOT = { has_trait = wounded }
+	NOT = { has_unit_leader_flag = hod_duel_cooldown }
+	is_general_captured = no
+}
+
+# Unit leader whose HQ stands in a state flagged hod_duel_here (is_in_state only works for deployed generals)
+HOD_duel_hq_in_flagged_state = {
+	any_state = {
+		has_state_flag = hod_duel_here
+		PREV = { is_in_state = PREV }
+	}
+}

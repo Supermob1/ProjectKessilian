@@ -1,179 +1,154 @@
 division_template = {
 	name = "Local Planetary Garrison"
 	division_names_group = CIS_GAR_01
-    is_locked = yes
+	is_locked = yes
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
 	}
 	support = {
+		military_police = { x = 0 y = 0 }
 	}
 }
 
 division_template = {
-    name = "CIS Droid Battalion"
-    division_names_group = CIS_INF_01
-	is_locked = yes
-	force_allow_recruiting = yes
-    template_counter = 1
-    regiments = {
-        infantry = { x = 0 y = 0 }
-        infantry = { x = 0 y = 1 }
-        infantry = { x = 0 y = 2 }
-        infantry = { x = 1 y = 0 }
-        infantry = { x = 1 y = 1 }
-        infantry = { x = 1 y = 2 }
-        infantry = { x = 2 y = 0 }
-        infantry = { x = 2 y = 1 }
-        infantry = { x = 2 y = 2 }
-        infantry = { x = 3 y = 0 }
-        infantry = { x = 3 y = 1 }
-        infantry = { x = 3 y = 2 }
-        infantry = { x = 4 y = 0 }
-    }
-    support = {
-    }
+	name = "CIS Droid Battalion"
+	division_names_group = CIS_INF_01
+	regiments = {
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+		infantry_droid = { x = 2 y = 0 }
+		infantry_droid = { x = 2 y = 1 }
+		infantry_droid = { x = 2 y = 2 }
+		heavy_droid = { x = 3 y = 0 }
+		heavy_droid = { x = 3 y = 1 }
+		heavy_droid = { x = 3 y = 2 }
+		infantry_droid = { x = 4 y = 0 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		fire_support = { x = 1 y = 0 }
+		anti_tank_battery = { x = 2 y = 0 }
+		anti_air_battery = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
 }
+
+division_template = {
+	name = "AAT Armoured Division"
+	division_names_group = CIS_ARM_01
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 1 y = 0 }
+		medium_armor = { x = 1 y = 1 }
+		infantry_droid = { x = 2 y = 0 }
+		infantry_droid = { x = 2 y = 1 }
+		infantry_droid = { x = 2 y = 2 }
+		infantry_droid = { x = 3 y = 0 }
+		infantry_droid = { x = 3 y = 1 }
+		infantry_droid = { x = 3 y = 2 }
+	}
+	regimental_support = {
+		light_sp_anti_air_support = { x = 0 y = 0 }
+		light_sp_anti_air_support = { x = 1 y = 0 }
+		anti_tank_battery = { x = 2 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Octuptarra Strike Group"
+	division_names_group = CIS_ARM_01
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+	}
+	regimental_support = {
+		light_sp_anti_air_support = { x = 0 y = 0 }
+		fire_support = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		maintenance_company = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Hailfire Artillery Group"
+	division_names_group = CIS_INF_01
+	regiments = {
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+		light_sp_artillery_brigade = { x = 2 y = 0 }
+		light_sp_artillery_brigade = { x = 2 y = 1 }
+	}
+	regimental_support = {
+		anti_air_battery = { x = 0 y = 0 }
+		anti_tank_battery = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
+}
+
 units = {
-    # Balmorra
-    division = {
-        name                    = "1st Techno Union Battle Droid Battalion"
-        location                = 12837
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "2nd Techno Union Battle Droid Battalion"
-        location                = 12837
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "3rd Techno Union Battle Droid Battalion"
-        location                = 12837
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-	#Foerost
-    division = {
-        name                    = "4th Techno Union Battle Droid Battalion"
-        location                = 13052
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "6th Techno Union Battle Droid Battalion"
-        location                = 13052
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "7th Techno Union Battle Droid Battalion"
-        location                = 13052
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Mechis
-    division = {
-        name                    = "8th Techno Union Battle Droid Battalion"
-        location                = 15929
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "9th Techno Union Battle Droid Battalion"
-        location                = 15929
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "10th Techno Union Battle Droid Battalion"
-        location                = 15929
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-	# Queyta
-    division = {
-        name                    = "11th Techno Union Battle Droid Battalion"
-        location                = 4853
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "12th Techno Union Battle Droid Battalion"
-        location                = 4853
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "13th Techno Union Battle Droid Battalion"
-        location                = 4853
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Mustafar
-    division = {
-        name                    = "14th Techno Union Battle Droid Battalion"
-        location                = 517
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "15th Techno Union Battle Droid Battalion"
-        location                = 517
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "16th Techno Union Battle Droid Battalion"
-        location                = 517
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Saleucami
-    division = {
-        name                    = "17th Techno Union Battle Droid Battalion"
-        location                = 11013
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "18th Techno Union Battle Droid Battalion"
-        location                = 11013
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "19th Techno Union Battle Droid Battalion"
-        location                = 11013
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 1886
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Octuptarra Strike Group"
+		location = 13145
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 12719
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 2020
+		start_experience_factor = 0.2
+	}
 }
 	
 instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_0
+			type = cis_infantry_droid_equipment_2
 			creator = TCU
 		}
 		requested_factories = 3

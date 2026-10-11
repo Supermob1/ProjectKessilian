@@ -1,0 +1,29 @@
+objectTypes = {
+	pdxmesh = {
+		name = "generic_walker_mesh"
+		file = "gfx/models/units/walkers/generic_walker.mesh"
+
+		animation = { id = "attack"			type = "generic_walker_attack_animation" }
+		animation = { id = "idle"			type = "generic_walker_idle_animation" }
+		animation = { id = "move"			type = "generic_walker_move_animation" }
+		scale = 0.7
+	}
+	pdxmesh = {
+		name = "GER_walker_mesh"
+		file = "gfx/models/units/walkers/GER_walker.mesh"
+
+		animation = { id = "attack"			type = "generic_walker_attack_animation" }
+		animation = { id = "idle"			type = "generic_walker_idle_animation" }
+		animation = { id = "move"			type = "generic_walker_move_animation" }
+		scale = 0.7
+	}
+	pdxmesh = {
+		name = "SOV_walker_mesh"
+		file = "gfx/models/units/walkers/SOV_walker.mesh"
+
+		animation = { id = "attack"			type = "generic_walker_attack_animation" }
+		animation = { id = "idle"			type = "generic_walker_idle_animation" }
+		animation = { id = "move"			type = "generic_walker_move_animation" }
+		scale = 0.7
+	}
+}

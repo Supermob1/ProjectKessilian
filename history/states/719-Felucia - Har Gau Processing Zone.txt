@@ -1,0 +1,32 @@
+state={
+	id=719
+	name="STATE_719"
+	# HOD: Felucia, red zone (felucia_tribes.py)
+	provinces={
+		9154 9155 9156 9157 9166 9167 9171 9278
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			9157 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+					9157 = {
+				naval_base = 2
+			}
+		}
+		owner = CMG
+		add_core_of = FLT
+		add_core_of = CMG
+	}
+	manpower = 122276
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

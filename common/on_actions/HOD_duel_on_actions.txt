@@ -1,0 +1,56 @@
+# HOD duels and captured generals
+on_actions = {
+	# THIS = army leader whose battle just ended, FROM = owner country.
+	# A duelist's battle can turn into a duel with an enemy duelist whose HQ stands nearby (HOD_duel_on_battle);
+	# the side that won the battle fights with momentum.
+	on_army_leader_won_combat = {
+		effect = {
+			set_temp_variable = { hod_duel_momentum = 1 }
+			HOD_duel_on_battle = yes
+		}
+	}
+	on_army_leader_lost_combat = {
+		effect = {
+			set_temp_variable = { hod_duel_momentum = -1 }
+			HOD_duel_on_battle = yes
+		}
+	}
+
+	# THIS = general whose deployed HQ division was defeated, FROM = the country that beat it.
+	# Vanilla's version lives in common/on_actions/00_on_actions.txt, which this mod replaces, so without this
+	# deployed generals were never captured. Force users fight their way out half of the time (wounded instead).
+	on_deployed_leader_defeated = {
+		effect = {
+			if = {
+				limit = { can_be_captured = yes }
+				if = {
+					limit = {
+						OR = {
+							has_trait = force_sensitive
+							has_trait = light_side_user
+							has_trait = dark_side_user
+						}
+					}
+					random_list = {
+						50 = { capture_by = FROM }
+						50 = {
+							if = {
+								limit = { NOT = { has_trait = wounded } }
+								add_timed_unit_leader_trait = { trait = wounded days = 60 }
+							}
+						}
+					}
+				}
+				else = {
+					capture_by = FROM
+				}
+			}
+			else = {
+				if = {
+					limit = { NOT = { has_trait = wounded } }
+					add_timed_unit_leader_trait = { trait = wounded days = 90 }
+				}
+			}
+		}
+	}
+}

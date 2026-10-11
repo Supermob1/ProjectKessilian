@@ -1,0 +1,7030 @@
+# Walker AI: specialist designs require a matching division template; richer fits require radio and ammo protection.
+generic_light_walkers_land_light_tank = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_light_tank
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 25
+		}
+	}
+	basic_light_walker = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_0
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_high_velocity_cannon
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				turret_type_slot = tank_light_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				suspension_type_slot = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_auto_cannon
+			tank_auto_cannon_2
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_heavy_machine_gun
+			tank_high_velocity_cannon
+			tank_light_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+			has_tech = rep_walker_atpt
+		}
+	}
+	improved_light_walker = {
+		priority = {
+			factor = 2000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_1
+			modules = {
+				turret_type_slot = tank_light_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_small_cannon_2
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_auto_cannon_2
+			tank_light_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+			has_tech = rep_walker_atrt
+		}
+	}
+	advanced_light_walker = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_2
+			modules = {
+				turret_type_slot = tank_light_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_small_cannon_2
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_auto_cannon_2
+			tank_light_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+			has_tech = rep_walker_atrt_501
+		}
+	}
+	duet_light_walker = {
+		priority = {
+			factor = 1100
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_0
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+			has_tech = rep_walker_atpt
+			num_of_military_factories > 34
+		}
+	}
+	duet_advanced_light_walker = {
+		priority = {
+			factor = 3100
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_2
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+			has_tech = rep_walker_atrt_501
+			num_of_military_factories > 34
+		}
+	}
+	duet_improved_light_walker = {
+		priority = {
+			factor = 2100
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_1
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+			has_tech = rep_walker_atrt
+			num_of_military_factories > 34
+		}
+	}
+	basic_light_walker_standard_fit = {
+		priority = {
+			factor = 1010
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_0
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_high_velocity_cannon
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				turret_type_slot = tank_light_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+			has_tech = rep_walker_atpt
+			num_of_military_factories > 44
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_auto_cannon
+			tank_auto_cannon_2
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_heavy_machine_gun
+			tank_high_velocity_cannon
+			tank_light_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+		}
+	}
+	basic_light_walker_premium_fit = {
+		priority = {
+			factor = 1020
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_0
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_high_velocity_cannon
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				turret_type_slot = tank_light_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+			has_tech = rep_walker_atpt
+			num_of_military_factories > 79
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_auto_cannon
+			tank_auto_cannon_2
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_heavy_machine_gun
+			tank_high_velocity_cannon
+			tank_light_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+		}
+	}
+	improved_light_walker_standard_fit = {
+		priority = {
+			factor = 2010
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_1
+			modules = {
+				turret_type_slot = tank_light_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+			has_tech = rep_walker_atrt
+			num_of_military_factories > 44
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_small_cannon_2
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_auto_cannon_2
+			tank_light_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	improved_light_walker_premium_fit = {
+		priority = {
+			factor = 2020
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_1
+			modules = {
+				turret_type_slot = tank_light_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+			has_tech = rep_walker_atrt
+			num_of_military_factories > 79
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_small_cannon_2
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_auto_cannon_2
+			tank_light_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	advanced_light_walker_standard_fit = {
+		priority = {
+			factor = 3010
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_2
+			modules = {
+				turret_type_slot = tank_light_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+			has_tech = rep_walker_atrt_501
+			num_of_military_factories > 44
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_small_cannon_2
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_auto_cannon_2
+			tank_light_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	advanced_light_walker_premium_fit = {
+		priority = {
+			factor = 3020
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_2
+			modules = {
+				turret_type_slot = tank_light_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_auto_cannon_2
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+			has_tech = rep_walker_atrt_501
+			num_of_military_factories > 79
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_small_cannon_2
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_auto_cannon_2
+			tank_light_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	duet_light_walker_standard_fit = {
+		priority = {
+			factor = 1110
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_0
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+			has_tech = rep_walker_atpt
+			num_of_military_factories > 34
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+	}
+	duet_light_walker_premium_fit = {
+		priority = {
+			factor = 1120
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_0
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+			has_tech = rep_walker_atpt
+			num_of_military_factories > 34
+			num_of_military_factories > 99
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+	}
+	duet_advanced_light_walker_standard_fit = {
+		priority = {
+			factor = 3110
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_2
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+			has_tech = rep_walker_atrt_501
+			num_of_military_factories > 34
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+	}
+	duet_advanced_light_walker_premium_fit = {
+		priority = {
+			factor = 3120
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_2
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+			has_tech = rep_walker_atrt_501
+			num_of_military_factories > 34
+			num_of_military_factories > 99
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+	}
+	duet_improved_light_walker_standard_fit = {
+		priority = {
+			factor = 2110
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_1
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+			has_tech = rep_walker_atrt
+			num_of_military_factories > 34
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+	}
+	duet_improved_light_walker_premium_fit = {
+		priority = {
+			factor = 2120
+		}
+		target_variant = {
+			match_value = 3500
+			type = walker_sponson_chassis_1
+			modules = {
+				turret_type_slot = walker_fixed_sponson_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_small_cannon_2
+						tank_close_support_gun
+						tank_small_cannon
+						tank_high_velocity_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+			has_tech = rep_walker_atrt
+			num_of_military_factories > 34
+			num_of_military_factories > 99
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_small_cannon
+			tank_small_cannon_2
+			tank_close_support_gun
+			tank_auto_cannon
+			tank_heavy_machine_gun
+			walker_fixed_sponson_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+		}
+	}
+}
+generic_medium_walkers_land_medium_tank = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_medium_tank
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 35
+		}
+	}
+	basic_medium_walker = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_medium_0
+			modules = {
+				turret_type_slot = tank_medium_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon
+						tank_medium_cannon_2
+						tank_medium_howitzer
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_medium_cannon
+			tank_medium_cannon_2
+			tank_medium_howitzer
+			tank_small_cannon_2
+			tank_medium_two_man_tank_turret
+			tank_medium_three_man_tank_turret
+			tank_riveted_armor
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			has_tech = rep_walker_atte
+		}
+	}
+	improved_medium_walker = {
+		priority = {
+			factor = 2000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_medium_1
+			modules = {
+				turret_type_slot = tank_medium_three_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_medium_cannon
+						tank_medium_howitzer
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_medium_howitzer
+			tank_medium_three_man_tank_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_elite
+			}
+			has_tech = rep_walker_atte_elite
+		}
+	}
+	advanced_medium_walker = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_medium_2
+			modules = {
+				turret_type_slot = tank_medium_three_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_medium_cannon
+						tank_medium_howitzer
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_medium_howitzer
+			tank_medium_three_man_tank_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_sieges
+				has_tech = rep_walker_atte_sieges
+			}
+			has_tech = rep_walker_atte_sieges
+		}
+	}
+	basic_medium_walker_standard_fit = {
+		priority = {
+			factor = 1010
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_medium_0
+			modules = {
+				turret_type_slot = tank_medium_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon
+						tank_medium_cannon_2
+						tank_medium_howitzer
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			has_tech = rep_walker_atte
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_medium_cannon
+			tank_medium_cannon_2
+			tank_medium_howitzer
+			tank_small_cannon_2
+			tank_medium_two_man_tank_turret
+			tank_medium_three_man_tank_turret
+			tank_riveted_armor
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	basic_medium_walker_premium_fit = {
+		priority = {
+			factor = 1020
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_medium_0
+			modules = {
+				turret_type_slot = tank_medium_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						walker_oscillating_autoloader
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon
+						tank_medium_cannon_2
+						tank_medium_howitzer
+						tank_small_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			has_tech = rep_walker_atte
+			num_of_military_factories > 99
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_medium_cannon
+			tank_medium_cannon_2
+			tank_medium_howitzer
+			tank_small_cannon_2
+			tank_medium_two_man_tank_turret
+			tank_medium_three_man_tank_turret
+			tank_riveted_armor
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	improved_medium_walker_standard_fit = {
+		priority = {
+			factor = 2010
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_medium_1
+			modules = {
+				turret_type_slot = tank_medium_three_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_medium_cannon
+						tank_medium_howitzer
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_elite
+			}
+			has_tech = rep_walker_atte_elite
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_medium_howitzer
+			tank_medium_three_man_tank_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	improved_medium_walker_premium_fit = {
+		priority = {
+			factor = 2020
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_medium_1
+			modules = {
+				turret_type_slot = tank_medium_three_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						walker_oscillating_autoloader
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_medium_cannon
+						tank_medium_howitzer
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_elite
+			}
+			has_tech = rep_walker_atte_elite
+			num_of_military_factories > 99
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_medium_howitzer
+			tank_medium_three_man_tank_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	advanced_medium_walker_standard_fit = {
+		priority = {
+			factor = 3010
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_medium_2
+			modules = {
+				turret_type_slot = tank_medium_three_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_medium_cannon
+						tank_medium_howitzer
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_sieges
+				has_tech = rep_walker_atte_sieges
+			}
+			has_tech = rep_walker_atte_sieges
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_medium_howitzer
+			tank_medium_three_man_tank_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+	advanced_medium_walker_premium_fit = {
+		priority = {
+			factor = 3020
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_chassis_medium_2
+			modules = {
+				turret_type_slot = tank_medium_three_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						walker_oscillating_autoloader
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_medium_cannon
+						tank_medium_howitzer
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = {
+					base = 3
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_sieges
+				has_tech = rep_walker_atte_sieges
+			}
+			has_tech = rep_walker_atte_sieges
+			num_of_military_factories > 99
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_medium_cannon_2
+			tank_medium_cannon
+			tank_medium_howitzer
+			tank_medium_three_man_tank_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+	}
+}
+generic_heavy_walkers_land_heavy_tank = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_heavy_tank
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 60
+		}
+	}
+	basic_heavy_walker = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_0
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			has_tech = rep_walker_atap
+		}
+	}
+	advanced_heavy_walker = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_2
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_utat
+				has_tech = rep_walker_utat
+			}
+			has_tech = rep_walker_utat
+		}
+	}
+	improved_heavy_walker = {
+		priority = {
+			factor = 2000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_1
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_atot
+			}
+			has_tech = rep_walker_atot
+		}
+	}
+	basic_heavy_walker_standard_fit = {
+		priority = {
+			factor = 1010
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_0
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			has_tech = rep_walker_atap
+			num_of_military_factories > 89
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+	basic_heavy_walker_premium_fit = {
+		priority = {
+			factor = 1020
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_0
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			has_tech = rep_walker_atap
+			num_of_military_factories > 149
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+	advanced_heavy_walker_standard_fit = {
+		priority = {
+			factor = 3010
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_2
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_utat
+				has_tech = rep_walker_utat
+			}
+			has_tech = rep_walker_utat
+			num_of_military_factories > 89
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+	advanced_heavy_walker_premium_fit = {
+		priority = {
+			factor = 3020
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_2
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_utat
+				has_tech = rep_walker_utat
+			}
+			has_tech = rep_walker_utat
+			num_of_military_factories > 149
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+	improved_heavy_walker_standard_fit = {
+		priority = {
+			factor = 2010
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_1
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_atot
+			}
+			has_tech = rep_walker_atot
+			num_of_military_factories > 89
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+	improved_heavy_walker_premium_fit = {
+		priority = {
+			factor = 2020
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_chassis_heavy_1
+			modules = {
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 2
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_atot
+			}
+			has_tech = rep_walker_atot
+			num_of_military_factories > 149
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+}
+generic_modern_walkers_land_modern_tank = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_modern_tank
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 75
+		}
+	}
+	basic_modern_walker = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_chassis_modern_0
+			modules = {
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_medium_cannon_2
+						tank_heavy_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_heavy_cannon_2
+			tank_medium_cannon_2
+			tank_heavy_cannon
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_small_cannon
+			tank_auto_cannon
+			tank_heavy_machine_gun
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			has_tech = rep_walker_atat_kuat
+		}
+	}
+	basic_modern_walker_standard_fit = {
+		priority = {
+			factor = 1010
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_chassis_modern_0
+			modules = {
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_medium_cannon_2
+						tank_heavy_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			has_tech = rep_walker_atat_kuat
+			num_of_military_factories > 119
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_heavy_cannon_2
+			tank_medium_cannon_2
+			tank_heavy_cannon
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+	basic_modern_walker_premium_fit = {
+		priority = {
+			factor = 1020
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_chassis_modern_0
+			modules = {
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						walker_oscillating_autoloader
+						auto_loader
+					}
+				}
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_medium_cannon_2
+						tank_heavy_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_small_cannon
+						tank_auto_cannon
+						tank_heavy_machine_gun
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			has_tech = rep_walker_atat_kuat
+			num_of_military_factories > 179
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_heavy_cannon_2
+			tank_medium_cannon_2
+			tank_heavy_cannon
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+}
+generic_super_heavy_walkers_land_super_heavy_tank = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_super_heavy_tank
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 120
+		}
+	}
+	basic_super_heavy_walker = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2500
+			type = walker_chassis_super_heavy_0
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_super_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = tank_super_heavy_four_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = empty
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_super_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_super_heavy_four_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+				has_tech = rep_walker_atat_elite
+			}
+			has_tech = rep_walker_atat_elite
+		}
+	}
+	basic_super_heavy_walker_standard_fit = {
+		priority = {
+			factor = 1010
+		}
+		target_variant = {
+			match_value = 2500
+			type = walker_chassis_super_heavy_0
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_super_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = tank_super_heavy_four_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+				has_tech = rep_walker_atat_elite
+			}
+			has_tech = rep_walker_atat_elite
+			num_of_military_factories > 179
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			tank_super_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_super_heavy_four_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+	basic_super_heavy_walker_premium_fit = {
+		priority = {
+			factor = 1020
+		}
+		target_variant = {
+			match_value = 2500
+			type = walker_chassis_super_heavy_0
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_super_heavy_cannon
+						tank_heavy_cannon_2
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = tank_super_heavy_four_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				special_type_slot_3 = {
+					any_of = {
+						auto_loader
+					}
+				}
+				special_type_slot_1 = {
+					any_of = {
+						tank_small_cannon_2
+						tank_small_cannon
+						tank_auto_cannon_2
+						tank_auto_cannon
+						tank_high_velocity_cannon
+						tank_close_support_gun
+						tank_heavy_machine_gun
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = {
+					base = 4
+					modifier = {
+						add = 1
+						has_war = yes
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+				has_tech = rep_walker_atat_elite
+			}
+			has_tech = rep_walker_atat_elite
+			num_of_military_factories > 249
+			OR = {
+				has_tech = artillery5
+				has_tech = antiair5
+				has_tech = antitank5
+			}
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			sloped_armor
+			armor_skirts
+			smoke_launchers
+			stabilizer
+			tank_super_heavy_cannon
+			tank_heavy_cannon_2
+			tank_heavy_howitzer
+			tank_super_heavy_four_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_auto_cannon_2
+			tank_auto_cannon
+			tank_high_velocity_cannon
+			tank_close_support_gun
+			tank_heavy_machine_gun
+		}
+	}
+}
+generic_walker_destroyers_land_light_tank_destroyer = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_light_tank_destroyer
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 25
+		}
+	}
+	light_walker_destroyer = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_high_velocity_cannon
+						tank_small_cannon_2
+						tank_small_cannon
+					}
+				}
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_high_velocity_cannon
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_light_fixed_superstructure_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			OR = {
+				has_template_containing_unit = walkers_light_destroyer
+				has_template_containing_unit = walkers_light_support_destroyer
+			}
+		}
+	}
+	light_walker_destroyer_radio_fit = {
+		priority = {
+			factor = 1005
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_high_velocity_cannon
+						tank_small_cannon_2
+						tank_small_cannon
+					}
+				}
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			num_of_military_factories > 44
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_light_destroyer
+				has_template_containing_unit = walkers_light_support_destroyer
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_high_velocity_cannon
+			tank_small_cannon_2
+			tank_small_cannon
+			tank_light_fixed_superstructure_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			auto_loader
+		}
+	}
+}
+generic_walker_destroyers_land_medium_tank_destroyer = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_medium_tank_destroyer
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 35
+		}
+	}
+	medium_walker_destroyer = {
+		priority = {
+			factor = 2000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_medium_cannon
+					}
+				}
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_medium_cannon_2
+			tank_high_velocity_cannon
+			tank_medium_cannon
+			tank_medium_fixed_superstructure_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_destroyer
+				has_template_containing_unit = walkers_medium_support_destroyer
+			}
+		}
+	}
+	medium_walker_destroyer_radio_fit = {
+		priority = {
+			factor = 2005
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_cannon_2
+						tank_high_velocity_cannon
+						tank_medium_cannon
+					}
+				}
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_destroyer
+				has_template_containing_unit = walkers_medium_support_destroyer
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_medium_cannon_2
+			tank_high_velocity_cannon
+			tank_medium_cannon
+			tank_medium_fixed_superstructure_turret
+			tank_welded_armor
+			tank_gasoline_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			auto_loader
+		}
+	}
+}
+generic_walker_destroyers_land_heavy_tank_destroyer = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_heavy_tank_destroyer
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 60
+		}
+	}
+	heavy_walker_destroyer = {
+		priority = {
+			factor = 2500
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_heavy_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_heavy_cannon
+						tank_high_velocity_cannon_2
+					}
+				}
+				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_heavy_cannon_2
+			tank_heavy_cannon
+			tank_high_velocity_cannon_2
+			tank_heavy_fixed_superstructure_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_destroyer
+				has_template_containing_unit = walkers_heavy_support_destroyer
+			}
+		}
+	}
+	heavy_walker_destroyer_radio_fit = {
+		priority = {
+			factor = 2505
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_heavy_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_heavy_cannon
+						tank_high_velocity_cannon_2
+					}
+				}
+				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			num_of_military_factories > 89
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_destroyer
+				has_template_containing_unit = walkers_heavy_support_destroyer
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_heavy_cannon_2
+			tank_heavy_cannon
+			tank_high_velocity_cannon_2
+			tank_heavy_fixed_superstructure_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			auto_loader
+		}
+	}
+}
+generic_walker_destroyers_land_modern_tank_destroyer = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_modern_tank_destroyer
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 75
+		}
+	}
+	modern_walker_destroyer = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_high_velocity_cannon_2
+						tank_heavy_cannon
+					}
+				}
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			tank_heavy_cannon_2
+			tank_high_velocity_cannon_2
+			tank_heavy_cannon
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_destroyer
+				has_template_containing_unit = walkers_modern_support_destroyer
+			}
+		}
+	}
+	modern_walker_destroyer_radio_fit = {
+		priority = {
+			factor = 3005
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_destroyer_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_high_velocity_cannon_2
+						tank_heavy_cannon
+					}
+				}
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			num_of_military_factories > 119
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_destroyer
+				has_template_containing_unit = walkers_modern_support_destroyer
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_heavy_cannon_2
+			tank_high_velocity_cannon_2
+			tank_heavy_cannon
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			auto_loader
+		}
+	}
+}
+generic_walker_artillery_land_light_tank_artillery = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_light_tank_artillery
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 25
+		}
+	}
+	light_walker_artillery = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_artillery_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_close_support_gun
+						tank_medium_howitzer
+						tank_small_cannon
+					}
+				}
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+		}
+		allowed_modules = {
+			tank_close_support_gun
+			tank_medium_howitzer
+			tank_small_cannon
+			tank_light_fixed_superstructure_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			OR = {
+				has_template_containing_unit = walkers_light_artillery
+			}
+		}
+	}
+	light_walker_artillery_radio_fit = {
+		priority = {
+			factor = 1005
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_artillery_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_close_support_gun
+						tank_medium_howitzer
+						tank_small_cannon
+					}
+				}
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			num_of_military_factories > 44
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_light_artillery
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_close_support_gun
+			tank_medium_howitzer
+			tank_small_cannon
+			tank_light_fixed_superstructure_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+generic_walker_artillery_land_medium_tank_artillery = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_medium_tank_artillery
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 35
+		}
+	}
+	medium_walker_artillery = {
+		priority = {
+			factor = 2000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_artillery_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer
+						tank_close_support_gun
+					}
+				}
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+		}
+		allowed_modules = {
+			tank_medium_howitzer
+			tank_close_support_gun
+			tank_medium_fixed_superstructure_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_artillery
+			}
+		}
+	}
+	medium_walker_artillery_radio_fit = {
+		priority = {
+			factor = 2005
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_artillery_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer
+						tank_close_support_gun
+					}
+				}
+				turret_type_slot = tank_medium_fixed_superstructure_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_artillery
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_medium_howitzer
+			tank_close_support_gun
+			tank_medium_fixed_superstructure_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+generic_walker_artillery_land_modern_tank_artillery = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_modern_tank_artillery
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 75
+		}
+	}
+	modern_walker_artillery = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_artillery_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer_2
+						tank_medium_howitzer
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+		}
+		allowed_modules = {
+			tank_medium_howitzer_2
+			tank_medium_howitzer
+			tank_heavy_howitzer
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_artillery
+			}
+		}
+	}
+	modern_walker_artillery_radio_fit = {
+		priority = {
+			factor = 3005
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_artillery_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer_2
+						tank_medium_howitzer
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			num_of_military_factories > 119
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_artillery
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_medium_howitzer_2
+			tank_medium_howitzer
+			tank_heavy_howitzer
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+generic_walker_anti_air_land_light_tank_anti_air = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_light_tank_anti_air
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 25
+		}
+	}
+	light_walker_aa = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+						tank_auto_cannon_2
+					}
+				}
+				turret_type_slot = tank_light_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+		}
+		allowed_modules = {
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_auto_cannon_2
+			tank_light_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			OR = {
+				has_template_containing_unit = walkers_light_aa
+				has_template_containing_unit = walkers_light_support_aa
+			}
+		}
+	}
+	light_walker_aa_radio_fit = {
+		priority = {
+			factor = 1005
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+						tank_auto_cannon_2
+					}
+				}
+				turret_type_slot = tank_light_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			num_of_military_factories > 44
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_light_aa
+				has_template_containing_unit = walkers_light_support_aa
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_auto_cannon_2
+			tank_light_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+generic_walker_anti_air_land_medium_tank_anti_air = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_medium_tank_anti_air
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 35
+		}
+	}
+	medium_walker_aa = {
+		priority = {
+			factor = 2000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_3
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+					}
+				}
+				turret_type_slot = tank_medium_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+		}
+		allowed_modules = {
+			tank_anti_air_cannon_3
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_medium_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_aa
+				has_template_containing_unit = walkers_medium_support_aa
+			}
+		}
+	}
+	medium_walker_aa_radio_fit = {
+		priority = {
+			factor = 2005
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_3
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+					}
+				}
+				turret_type_slot = tank_medium_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_aa
+				has_template_containing_unit = walkers_medium_support_aa
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_anti_air_cannon_3
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_medium_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+generic_walker_anti_air_land_heavy_tank_anti_air = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_heavy_tank_anti_air
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 60
+		}
+	}
+	heavy_walker_aa = {
+		priority = {
+			factor = 2500
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_heavy_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_3
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+					}
+				}
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+		}
+		allowed_modules = {
+			tank_anti_air_cannon_3
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_heavy_two_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_aa
+				has_template_containing_unit = walkers_heavy_support_aa
+			}
+		}
+	}
+	heavy_walker_aa_radio_fit = {
+		priority = {
+			factor = 2505
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_heavy_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_3
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+					}
+				}
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			num_of_military_factories > 89
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_aa
+				has_template_containing_unit = walkers_heavy_support_aa
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_anti_air_cannon_3
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_heavy_two_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+generic_walker_anti_air_land_modern_tank_anti_air = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_modern_tank_anti_air
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 75
+		}
+	}
+	modern_walker_aa = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_3
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+					}
+				}
+				turret_type_slot = tank_medium_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+		}
+		allowed_modules = {
+			tank_anti_air_cannon_3
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_medium_two_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_aa
+				has_template_containing_unit = walkers_modern_support_aa
+			}
+		}
+	}
+	modern_walker_aa_radio_fit = {
+		priority = {
+			factor = 3005
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_aa_chassis
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_anti_air_cannon_3
+						tank_anti_air_cannon_2
+						tank_anti_air_cannon
+					}
+				}
+				turret_type_slot = tank_medium_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			num_of_military_factories > 119
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_aa
+				has_template_containing_unit = walkers_modern_support_aa
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_anti_air_cannon_3
+			tank_anti_air_cannon_2
+			tank_anti_air_cannon
+			tank_medium_two_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+generic_walker_flame_land_light_tank_flame = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_light_tank_flame
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 25
+		}
+	}
+	light_walker_flame = {
+		priority = {
+			factor = 1000
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_light_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+		}
+		allowed_modules = {
+			flamethrower
+			tank_light_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			OR = {
+				has_template_containing_unit = walkers_flame
+			}
+		}
+	}
+	light_walker_flame_radio_fit = {
+		priority = {
+			factor = 1005
+		}
+		target_variant = {
+			match_value = 2000
+			type = walker_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_light_one_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt_501
+			}
+			num_of_military_factories > 44
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_flame
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			flamethrower
+			tank_light_one_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+		}
+	}
+}
+generic_walker_flame_land_medium_tank_flame = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_medium_tank_flame
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 35
+		}
+	}
+	medium_walker_flame = {
+		priority = {
+			factor = 2000
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_medium_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+		}
+		allowed_modules = {
+			flamethrower
+			tank_medium_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_flame
+			}
+		}
+	}
+	medium_walker_flame_radio_fit = {
+		priority = {
+			factor = 2005
+		}
+		target_variant = {
+			match_value = 3000
+			type = walker_medium_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_medium_two_man_tank_turret
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_sieges
+			}
+			num_of_military_factories > 59
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_medium_flame
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			flamethrower
+			tank_medium_two_man_tank_turret
+			tank_riveted_armor
+			tank_gasoline_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+		}
+	}
+}
+generic_walker_flame_land_heavy_tank_flame = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_heavy_tank_flame
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 60
+		}
+	}
+	heavy_walker_flame = {
+		priority = {
+			factor = 1500
+		}
+		target_variant = {
+			match_value = 2500
+			type = walker_heavy_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+		}
+		allowed_modules = {
+			flamethrower
+			tank_heavy_two_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_flame
+			}
+		}
+	}
+	heavy_walker_flame_radio_fit = {
+		priority = {
+			factor = 1505
+		}
+		target_variant = {
+			match_value = 2500
+			type = walker_heavy_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_heavy_two_man_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			num_of_military_factories > 89
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_flame
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			flamethrower
+			tank_heavy_two_man_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+		}
+	}
+}
+generic_walker_flame_land_modern_tank_flame = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_modern_tank_flame
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 75
+		}
+	}
+	modern_walker_flame = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+		}
+		allowed_modules = {
+			flamethrower
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_flame
+			}
+		}
+	}
+	modern_walker_flame_radio_fit = {
+		priority = {
+			factor = 3005
+		}
+		target_variant = {
+			match_value = 4000
+			type = walker_modern_flame_chassis
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_modern_tank_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+			OR = {
+				has_tech = rep_walker_atat_kuat
+			}
+			num_of_military_factories > 119
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_modern_flame
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			flamethrower
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+		}
+	}
+}
+generic_walker_land_cruiser_land_mega_heavy_breakthrough_tank = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_mega_heavy_breakthrough_tank
+	}
+	priority = {
+		factor = 180
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atat_elite
+			}
+		}
+		modifier = {
+			num_of_factories < 100
+			factor = 0
+		}
+	}
+	basic_walker_land_cruiser = {
+		priority = {
+			factor = 10
+		}
+		target_variant = {
+			match_value = 1000
+			type = walker_chassis_land_cruiser_1
+			modules = {
+				lc_main_armament_slot = lc_heavy_naval_guns
+				lc_secondary_armament_slot = lc_medium_naval_guns
+				lc_special_features_slot_1 = lc_radio_1
+				lc_special_features_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				lc_additional_armament_slot_1 = lc_assault_gun
+				lc_additional_armament_slot_2 = empty
+				lc_additional_armament_slot_3 = empty
+				lc_additional_armament_slot_4 = empty
+				lc_special_features_slot_3 = walker_lc_load_frame
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 12
+				tank_nsb_armor_upgrade = {
+					base = 10
+					modifier = {
+						add = 5
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			lc_heavy_naval_guns
+			lc_super_heavy_railway_gun
+			lc_high_impact_obliterator_cannon
+			lc_heavy_anti_air_platform
+			lc_medium_naval_guns
+			lc_hull_mounted_railway_gun
+			lc_super_heavy_howitzer
+			lc_heavy_high_velocity_cannons
+			lc_heavy_anti_air_battery
+			lc_medium_cannon_turret
+			lc_assault_gun
+			lc_high_velocity_cannon_turret
+			lc_light_anti_air_battery
+			lc_flamethrower_turret
+			lc_rocket_launcher
+			lc_radio_1
+			lc_radio_2
+			lc_radio_3
+			lc_command_center
+			lc_radar
+			lc_aircraft_catapult
+			lc_helipad
+			lc_armored_skirts
+			lc_bunker_emplacement
+			lc_obstacle_clearance_gear
+			lc_internal_fuel_tanks
+			lc_internal_ammunition_compartments
+			lc_wet_ammunition_storage
+			lc_smoke_generators
+			lc_stabilizers
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			walker_lc_load_frame
+			walker_lc_800mm_bombard
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			has_tech = rep_walker_atat_elite
+			NOT = {
+				has_tech = railway_gun
+			}
+			has_tech = rep_walker_atat_elite
+			OR = {
+				has_template_containing_unit = walker_land_cruiser
+			}
+		}
+	}
+	basic_walker_land_cruiser_nest = {
+		priority = {
+			factor = 15
+		}
+		target_variant = {
+			match_value = 1200
+			type = walker_chassis_land_cruiser_1
+			modules = {
+				lc_main_armament_slot = walker_lc_800mm_bombard
+				lc_secondary_armament_slot = walker_lc_800mm_bombard
+				lc_special_features_slot_1 = lc_radio_1
+				lc_special_features_slot_2 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				lc_additional_armament_slot_1 = lc_assault_gun
+				lc_additional_armament_slot_2 = lc_light_anti_air_battery
+				lc_additional_armament_slot_3 = walker_lc_load_frame
+				lc_additional_armament_slot_4 = empty
+				lc_special_features_slot_3 = walker_lc_load_frame
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 12
+				tank_nsb_armor_upgrade = {
+					base = 10
+					modifier = {
+						add = 5
+						has_war = yes
+					}
+				}
+			}
+		}
+		allowed_modules = {
+			walker_lc_800mm_bombard
+			lc_heavy_naval_guns
+			lc_super_heavy_railway_gun
+			lc_high_impact_obliterator_cannon
+			lc_heavy_anti_air_platform
+			lc_medium_naval_guns
+			lc_hull_mounted_railway_gun
+			lc_super_heavy_howitzer
+			lc_heavy_high_velocity_cannons
+			lc_heavy_anti_air_battery
+			lc_medium_cannon_turret
+			lc_assault_gun
+			lc_high_velocity_cannon_turret
+			lc_light_anti_air_battery
+			lc_flamethrower_turret
+			lc_rocket_launcher
+			lc_radio_1
+			lc_radio_2
+			lc_radio_3
+			lc_command_center
+			lc_radar
+			lc_aircraft_catapult
+			lc_helipad
+			lc_armored_skirts
+			lc_bunker_emplacement
+			lc_obstacle_clearance_gear
+			lc_internal_fuel_tanks
+			lc_internal_ammunition_compartments
+			lc_wet_ammunition_storage
+			lc_smoke_generators
+			lc_stabilizers
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			walker_lc_load_frame
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			has_tech = rep_walker_atat_elite
+			has_tech = rep_walker_atte
+			has_tech = railway_gun
+			has_tech = rep_walker_atat_elite
+			OR = {
+				has_template_containing_unit = walker_land_cruiser
+			}
+		}
+	}
+}
+wsp_heavy_artillery_designs = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_heavy_tank_artillery
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 60
+		}
+	}
+	wsp_heavy_artillery = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 4000
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer_2
+						tank_medium_howitzer
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = {
+					any_of = {
+						tank_heavy_fixed_superstructure_turret
+						tank_heavy_two_man_tank_turret
+					}
+				}
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+			type = walker_heavy_artillery_chassis
+		}
+		allowed_modules = {
+			tank_medium_howitzer_2
+			tank_medium_howitzer
+			tank_heavy_howitzer
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_artillery
+			}
+		}
+	}
+	wsp_heavy_artillery_radio_fit = {
+		priority = {
+			factor = 3005
+		}
+		target_variant = {
+			match_value = 4000
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer_2
+						tank_medium_howitzer
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = {
+					any_of = {
+						tank_heavy_fixed_superstructure_turret
+						tank_heavy_two_man_tank_turret
+					}
+				}
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			type = walker_heavy_artillery_chassis
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_utat
+			}
+			num_of_military_factories > 89
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_heavy_artillery
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_medium_howitzer_2
+			tank_medium_howitzer
+			tank_heavy_howitzer
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+wsp_super_heavy_artillery_designs = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_super_heavy_tank_artillery
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 120
+		}
+	}
+	wsp_super_heavy_artillery = {
+		priority = {
+			factor = 3000
+		}
+		target_variant = {
+			match_value = 4000
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer_2
+						tank_medium_howitzer
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = {
+					any_of = {
+						tank_heavy_fixed_superstructure_turret
+						tank_heavy_two_man_tank_turret
+					}
+				}
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+			}
+			type = walker_super_heavy_artillery_chassis
+		}
+		allowed_modules = {
+			tank_medium_howitzer_2
+			tank_medium_howitzer
+			tank_heavy_howitzer
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+			}
+			OR = {
+				has_template_containing_unit = walkers_super_heavy_artillery
+			}
+		}
+	}
+	wsp_super_heavy_artillery_radio_fit = {
+		priority = {
+			factor = 3005
+		}
+		target_variant = {
+			match_value = 4000
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_medium_howitzer_2
+						tank_medium_howitzer
+						tank_heavy_howitzer
+					}
+				}
+				turret_type_slot = {
+					any_of = {
+						tank_heavy_fixed_superstructure_turret
+						tank_heavy_two_man_tank_turret
+					}
+				}
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			type = walker_super_heavy_artillery_chassis
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+			}
+			num_of_military_factories > 179
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_super_heavy_artillery
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_medium_howitzer_2
+			tank_medium_howitzer
+			tank_heavy_howitzer
+			tank_modern_tank_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_hydropneumatic_recuperator
+			walker_pneumatic_damper
+			auto_loader
+		}
+	}
+}
+wsp_super_heavy_destroyer_designs = {
+	category = land
+	blocked_for = {
+
+	}
+	available_for = {
+
+	}
+	roles = {
+		land_super_heavy_tank_destroyer
+	}
+	priority = {
+		factor = 10000
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = rep_walker_atpt
+			}
+		}
+		modifier = {
+			factor = 0
+			num_of_military_factories < 120
+		}
+	}
+	wsp_super_heavy_destroyer = {
+		priority = {
+			factor = 2500
+		}
+		target_variant = {
+			match_value = 3000
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_heavy_cannon
+						tank_high_velocity_cannon_2
+					}
+				}
+				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+			}
+			type = walker_super_heavy_destroyer_chassis
+		}
+		allowed_modules = {
+			tank_heavy_cannon_2
+			tank_heavy_cannon
+			tank_high_velocity_cannon_2
+			tank_heavy_fixed_superstructure_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			auto_loader
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+			}
+			OR = {
+				has_template_containing_unit = walkers_super_heavy_destroyer
+			}
+		}
+	}
+	wsp_super_heavy_destroyer_radio_fit = {
+		priority = {
+			factor = 2505
+		}
+		target_variant = {
+			match_value = 3000
+			modules = {
+				main_armament_slot = {
+					any_of = {
+						tank_heavy_cannon_2
+						tank_heavy_cannon
+						tank_high_velocity_cannon_2
+					}
+				}
+				turret_type_slot = tank_heavy_fixed_superstructure_turret
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = {
+					any_of = {
+						walker_hydropneumatic_recuperator
+						walker_pneumatic_damper
+					}
+				}
+				suspension_type_slot = {
+					any_of = {
+						tank_radio_3
+						tank_radio_2
+						tank_radio_1
+					}
+				}
+				special_type_slot_4 = {
+					any_of = {
+						easy_maintenance
+						wet_ammo_storage
+					}
+				}
+			}
+			type = walker_super_heavy_destroyer_chassis
+		}
+		enable = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+			}
+			num_of_military_factories > 179
+			OR = {
+				always = yes
+				always = yes
+				always = yes
+			}
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = tech_maintenance_company2
+			}
+			OR = {
+				has_template_containing_unit = walkers_super_heavy_destroyer
+			}
+		}
+		allowed_modules = {
+			tank_radio_3
+			tank_radio_2
+			tank_radio_1
+			easy_maintenance
+			wet_ammo_storage
+			tank_heavy_cannon_2
+			tank_heavy_cannon
+			tank_high_velocity_cannon_2
+			tank_heavy_fixed_superstructure_turret
+			tank_welded_armor
+			tank_diesel_engine
+			walker_pneumatic_damper
+			walker_hydropneumatic_recuperator
+			auto_loader
+		}
+	}
+}

@@ -1,0 +1,36 @@
+﻿# HOD: Alderaan (faction_templates.py)
+
+ALD_GAR_01 = {
+	name = "Alderaanian Planetary Guard"
+
+	for_countries = { ALD }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Planetary Guard"
+
+	ordered = {
+		1 = { "1st Aldera Guard" }
+		2 = { "2nd Apalis Coast Guard" }
+		3 = { "3rd Castle Lands Guard" }
+	}
+}
+
+ALD_INF_01 = {
+	name = "Royal Alderaanian Army"
+
+	for_countries = { ALD }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Royal Regiment"
+
+	ordered = {
+		1 = { "1st House Organa Regiment" }
+		2 = { "2nd House Antilles Regiment" }
+	}
+}

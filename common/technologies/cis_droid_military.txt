@@ -1,16 +1,23 @@
 technologies = {
+	# HOD: columns (y) are the shared HoD year grid (faction_armour.py)
+	@960 = 0
+	@964 = 3
+	@970 = 6
+	@974 = 9
+	@976 = 12
+	@977 = 15
+	@978 = 18
+	@979 = 21
+	@980 = 24
+	@981 = 27
+	@982 = 30
+	@983 = 33
+	@985 = 36
+
 	# NOTE: In HOI4's format="LEFT" gridboxtype, Y is the horizontal axis (time/era)
 	# and X is the vertical axis (unit type row). Variables map years to Y positions.
 
-	###Y values###
-	@Post_Ruu = 0
-	@High_Rep = 4
-	@Late_Rep = 8
-	@Early_CW = 12
-	@Late_CW = 16
-	@Imperial = 20
-	##############
-	###X values###
+	###X values (rows)###
 	@Commando = 0
 	@Infantry = 2
 	@Droideka = 4
@@ -43,7 +50,7 @@ technologies = {
 		start_year = 960
 		folder = {
 			name = droid_folder
-			position = { x = @Special_Early_Droid y = @Post_Ruu }
+			position = { x = @Special_Early_Droid y = @960 }
 		}
 		categories = {
 			droid_tech
@@ -61,6 +68,8 @@ technologies = {
 
 	# High Republic era — BONUS: improved combat protocols
 	high_republic_infantry_droids = {
+		# HOD: country-wide effect
+		production_factory_efficiency_gain_factor = 0.05
 		infantry_droid = {
 			soft_attack = 0.05
 			defense = 0.05
@@ -73,7 +82,7 @@ technologies = {
 		start_year = 964
 		folder = {
 			name = droid_folder
-			position = { x = @Infantry y = @High_Rep }
+			position = { x = @Infantry y = @964 }
 		}
 		categories = {
 			droid_tech
@@ -86,6 +95,10 @@ technologies = {
 
 	# Late Republic era — UNLOCK: B1 Battle Droid
 	late_republic_infantry_droids = {
+		path = {
+			leads_to_tech = hkb3_commando_droid
+			research_cost_coeff = 1
+		}
 		enable_equipments = {
 			cis_infantry_droid_equipment_2
 		}
@@ -101,7 +114,7 @@ technologies = {
 		start_year = 976
 		folder = {
 			name = droid_folder
-			position = { x = @Infantry y = @Late_Rep }
+			position = { x = @Infantry y = @976 }
 		}
 		categories = {
 			droid_tech
@@ -118,6 +131,8 @@ technologies = {
 
 	# Early Clone Wars era — BONUS: centralized command uplinks
 	cw_infantry_droids = {
+		# HOD: country-wide effect
+		production_factory_max_efficiency_factor = 0.03
 		infantry_droid = {
 			soft_attack = 0.08
 			defense = 0.08
@@ -127,15 +142,11 @@ technologies = {
 			leads_to_tech = late_cw_infantry_droids
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = hkb3_commando_droid
-			research_cost_coeff = 1
-		}
 		research_cost = 1.5
 		start_year = 977
 		folder = {
 			name = droid_folder
-			position = { x = @Infantry y = @Early_CW }
+			position = { x = @Infantry y = @977 }
 		}
 		categories = {
 			droid_tech
@@ -163,7 +174,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = droid_folder
-			position = { x = @Infantry y = @Late_CW }
+			position = { x = @Infantry y = @979 }
 		}
 		categories = {
 			droid_tech
@@ -189,7 +200,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = droid_folder
-			position = { x = @Infantry y = @Imperial }
+			position = { x = @Infantry y = @982 }
 		}
 		categories = {
 			droid_tech
@@ -223,7 +234,7 @@ technologies = {
 		start_year = 964
 		folder = {
 			name = droid_folder
-			position = { x = @HeavyInfantry y = @High_Rep }
+			position = { x = @HeavyInfantry y = @964 }
 		}
 		categories = {
 			droid_tech
@@ -241,6 +252,8 @@ technologies = {
 
 	# Late Republic era — BONUS: reinforced chassis design
 	late_republic_heavy_droids = {
+		# HOD: country-wide effect
+		line_change_production_efficiency_factor = 0.1
 		heavy_droid = {
 			defense = 0.05
 			breakthrough = 0.05
@@ -262,7 +275,7 @@ technologies = {
 		start_year = 976
 		folder = {
 			name = droid_folder
-			position = { x = @HeavyInfantry y = @Late_Rep }
+			position = { x = @HeavyInfantry y = @976 }
 		}
 		categories = {
 			droid_tech
@@ -290,7 +303,7 @@ technologies = {
 		start_year = 977
 		folder = {
 			name = droid_folder
-			position = { x = @HeavyInfantry y = @Early_CW }
+			position = { x = @HeavyInfantry y = @977 }
 		}
 		categories = {
 			droid_tech
@@ -320,7 +333,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = droid_folder
-			position = { x = @HeavyInfantry y = @Late_CW }
+			position = { x = @HeavyInfantry y = @979 }
 		}
 		categories = {
 			droid_tech
@@ -344,7 +357,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = droid_folder
-			position = { x = @HeavyInfantry y = @Imperial }
+			position = { x = @HeavyInfantry y = @982 }
 		}
 		categories = {
 			droid_tech
@@ -366,6 +379,14 @@ technologies = {
 
 	# Early Clone Wars era — UNLOCK: HKB-3 Commando Droid
 	hkb3_commando_droid = {
+		# HOD: hand the country a ready-made template for the new unit
+		on_research_complete_limit = {
+			NOT = { has_template_containing_unit = commando_droid }
+		}
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_droid_commandos" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 		enable_equipments = {
 			cis_commando_droid_equipment_1
 		}
@@ -374,10 +395,10 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 2.0
-		start_year = 977
+		start_year = 976
 		folder = {
 			name = droid_folder
-			position = { x = @Commando y = @Early_CW }
+			position = { x = @Commando y = @977 }
 		}
 		categories = {
 			droid_tech
@@ -412,7 +433,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = droid_folder
-			position = { x = @Commando y = @Late_CW }
+			position = { x = @Commando y = @979 }
 		}
 		categories = {
 			droid_tech
@@ -438,7 +459,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = droid_folder
-			position = { x = @Commando y = @Imperial }
+			position = { x = @Commando y = @982 }
 		}
 		categories = {
 			droid_tech
@@ -460,6 +481,14 @@ technologies = {
 
 	# UNLOCK: P-Series Droideka
 	droideka_early = {
+		# HOD: hand the country a ready-made template for the new unit
+		on_research_complete_limit = {
+			NOT = { has_template_containing_unit = droideka_droid }
+		}
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_droidekas" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 		enable_equipments = {
 			cis_droideka_droid_equipment_1
 		}
@@ -471,7 +500,7 @@ technologies = {
 		start_year = 977
 		folder = {
 			name = droid_folder
-			position = { x = @Droideka y = @Late_Rep }
+			position = { x = @Droideka y = @977 }
 		}
 		categories = {
 			droid_tech
@@ -502,7 +531,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = droid_folder
-			position = { x = @Droideka y = @Early_CW }
+			position = { x = @Droideka y = @979 }
 		}
 		categories = {
 			droid_tech
@@ -524,6 +553,14 @@ technologies = {
 
 	# UNLOCK: IG-100 MagnaGuard
 	early_magnaguard = {
+		# HOD: hand the country a ready-made template for the new unit
+		on_research_complete_limit = {
+			NOT = { has_template_containing_unit = magnaguard_droid }
+		}
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_magnaguards" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 		enable_equipments = {
 			cis_magnaguard_droid_equipment_1
 		}
@@ -535,7 +572,7 @@ technologies = {
 		start_year = 977
 		folder = {
 			name = droid_folder
-			position = { x = @Magnaguard y = @Late_Rep }
+			position = { x = @Magnaguard y = @977 }
 		}
 		categories = {
 			droid_tech
@@ -566,7 +603,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = droid_folder
-			position = { x = @Magnaguard y = @Early_CW }
+			position = { x = @Magnaguard y = @979 }
 		}
 		categories = {
 			droid_tech
@@ -588,6 +625,14 @@ technologies = {
 
 	# UNLOCK: DSD1 Dwarf Spider Droid
 	early_spider_droid = {
+		# HOD: hand the country a ready-made template for the new unit
+		on_research_complete_limit = {
+			NOT = { has_template_containing_unit = spider_droid }
+		}
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_spider_droids" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 		enable_equipments = {
 			cis_spider_droid_equipment_1
 		}
@@ -599,7 +644,7 @@ technologies = {
 		start_year = 977
 		folder = {
 			name = droid_folder
-			position = { x = @Spider y = @Late_Rep }
+			position = { x = @Spider y = @977 }
 		}
 		categories = {
 			droid_tech
@@ -634,7 +679,7 @@ technologies = {
 		start_year = 979
 		folder = {
 			name = droid_folder
-			position = { x = @Spider y = @Early_CW }
+			position = { x = @Spider y = @979 }
 		}
 		categories = {
 			droid_tech
@@ -660,7 +705,7 @@ technologies = {
 		start_year = 982
 		folder = {
 			name = droid_folder
-			position = { x = @Spider y = @Late_CW }
+			position = { x = @Spider y = @982 }
 		}
 		categories = {
 			droid_tech

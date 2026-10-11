@@ -1,5 +1,6 @@
 # HOD: written by WIPGFX/plans & scripts/coruscant_buildings.py wire. map/cities.bmp (planet_terrain_gen.py)
-# picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages.
+# picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages,
+# 5 ocean-world stilt domes, 6 Mandalore domes, 7 Geonosis hives, 8 Naboo, 9 Felucian villages, 10 Guild outposts.
 types_source = "map/cities.bmp"
 pixel_step_x = 2
 pixel_step_y = 2
@@ -278,6 +279,252 @@ city_group = {
 			"hod_bld_jasperio_entity"
 			"hod_bld_jasperio_entity"
 			"hod_bld_jasperio_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 5
+	density = 0.2
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_kam_city_11_entity"
+			"hod_kam_city_12_entity"
+			"hod_kam_city_13_entity"
+			"hod_kam_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_kam_city_21_entity"
+			"hod_kam_city_22_entity"
+			"hod_kam_city_23_entity"
+			"hod_kam_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_kam_city_31_entity"
+			"hod_kam_city_32_entity"
+			"hod_kam_city_33_entity"
+			"hod_kam_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_kam_city_41_entity"
+			"hod_kam_city_42_entity"
+			"hod_kam_city_43_entity"
+			"hod_kam_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 6
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_man_city_11_entity"
+			"hod_man_city_12_entity"
+			"hod_man_city_13_entity"
+			"hod_man_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_man_city_21_entity"
+			"hod_man_city_22_entity"
+			"hod_man_city_23_entity"
+			"hod_man_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_man_city_31_entity"
+			"hod_man_city_32_entity"
+			"hod_man_city_33_entity"
+			"hod_man_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_man_city_41_entity"
+			"hod_man_city_42_entity"
+			"hod_man_city_43_entity"
+			"hod_man_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 7
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_geo_city_11_entity"
+			"hod_geo_city_12_entity"
+			"hod_geo_city_13_entity"
+			"hod_geo_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_geo_city_21_entity"
+			"hod_geo_city_22_entity"
+			"hod_geo_city_23_entity"
+			"hod_geo_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_geo_city_31_entity"
+			"hod_geo_city_32_entity"
+			"hod_geo_city_33_entity"
+			"hod_geo_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_geo_city_41_entity"
+			"hod_geo_city_42_entity"
+			"hod_geo_city_43_entity"
+			"hod_geo_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 8
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_nab_city_11_entity"
+			"hod_nab_city_12_entity"
+			"hod_nab_city_13_entity"
+			"hod_nab_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_nab_city_21_entity"
+			"hod_nab_city_22_entity"
+			"hod_nab_city_23_entity"
+			"hod_nab_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_nab_city_31_entity"
+			"hod_nab_city_32_entity"
+			"hod_nab_city_33_entity"
+			"hod_nab_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_nab_city_41_entity"
+			"hod_nab_city_42_entity"
+			"hod_nab_city_43_entity"
+			"hod_nab_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 9
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_fel_city_11_entity"
+			"hod_fel_city_12_entity"
+			"hod_fel_city_13_entity"
+			"hod_fel_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_fel_city_21_entity"
+			"hod_fel_city_22_entity"
+			"hod_fel_city_23_entity"
+			"hod_fel_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_fel_city_31_entity"
+			"hod_fel_city_32_entity"
+			"hod_fel_city_33_entity"
+			"hod_fel_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_fel_city_41_entity"
+			"hod_fel_city_42_entity"
+			"hod_fel_city_43_entity"
+			"hod_fel_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 10
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_cmg_outpost_11_entity"
+			"hod_cmg_outpost_12_entity"
+			"hod_cmg_outpost_13_entity"
+			"hod_cmg_outpost_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_cmg_outpost_21_entity"
+			"hod_cmg_outpost_22_entity"
+			"hod_cmg_outpost_23_entity"
+			"hod_cmg_outpost_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_cmg_outpost_31_entity"
+			"hod_cmg_outpost_32_entity"
+			"hod_cmg_outpost_33_entity"
+			"hod_cmg_outpost_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_cmg_outpost_41_entity"
+			"hod_cmg_outpost_42_entity"
+			"hod_cmg_outpost_43_entity"
+			"hod_cmg_outpost_44_entity"
 		}
 	}
 }

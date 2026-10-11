@@ -250,4 +250,50 @@ REP_MAR_01 = {
 	}
 }
 
+REP_ARMY_01 = {
+	name = "Republic Army Divisions"
 
+	for_countries = { REP }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Republic Army Division"
+
+	ordered = {
+		1 = { "1st Coruscant Security Division" }
+		2 = { "2nd Coruscant Guard Division" }
+		3 = { "3rd Senate District Division" }
+		4 = { "4th Byss Defence Division" }
+		5 = { "5th Chandrila Division" }
+		6 = { "6th Tython Division" }
+		7 = { "7th Core Worlds Division" }
+		8 = { "8th Abregado Division" }
+		9 = { "9th Duros Division" }
+		10 = { "10th Commenor Division" }
+		11 = { "11th Loronar Division" }
+		12 = { "12th Arkanian Division" }
+		13 = { "13th Byss Artillery Division" }
+		14 = { "14th Coruscant Artillery Division" }
+	}
+}
+
+REP_WLK_01 = {
+	name = "Republic Lance Walker Companies"
+
+	for_countries = { REP }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Lance Walker Company"
+
+	ordered = {
+		1 = { "1st Coruscant Lance Walker Company" }
+		2 = { "2nd Senate Lance Walker Company" }
+		3 = { "3rd Byss Lance Walker Company" }
+		4 = { "4th Chandrila Lance Walker Company" }
+	}
+}

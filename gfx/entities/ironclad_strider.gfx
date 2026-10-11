@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "ironclad_strider_mesh"
+		file = "gfx/models/units/walkers/ironclad_strider.mesh"
+
+		animation = { id = "attack"			type = "ironclad_strider_attack_animation" }
+		animation = { id = "idle"			type = "ironclad_strider_idle_animation" }
+		animation = { id = "move"			type = "ironclad_strider_move_animation" }
+		animation = { id = "death"			type = "ironclad_strider_death_animation" }
+		scale = 0.35
+	}
+}
