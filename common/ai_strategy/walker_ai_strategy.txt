@@ -1,0 +1,268 @@
+# Use the total-conversion/native armor role so existing division demand also creates walkers.
+# Shift armored production to walkers only after the first project and sufficient industry.
+walker_ai_armor_shift = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 24
+        OR = {
+            has_tech = rep_walker_atpt
+            has_tech = rep_walker_atpt
+            has_tech = rep_walker_atte
+            has_tech = rep_walker_atte
+            has_tech = rep_walker_atap
+            has_tech = rep_walker_atap
+        }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = role_ratio id = armor value = 12 }
+    ai_strategy = { type = land_xp_spend_priority id = unlock_doctrine value = 40 }
+    ai_strategy = { type = land_xp_spend_priority id = division_template value = 100 }
+    ai_strategy = { type = land_xp_spend_priority id = equipment_variant value = 100 }
+    ai_strategy = { type = equipment_production_min_factories_archetype id = walker_chassis value = 1 }
+}
+
+walker_ai_medium_production = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 34
+        OR = {
+            has_tech = rep_walker_atte
+            has_tech = rep_walker_atte
+        }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = equipment_production_min_factories_archetype id = walker_chassis_medium value = 2 }
+}
+
+walker_ai_heavy_armor = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 59
+        OR = {
+            has_tech = rep_walker_atap
+            has_tech = rep_walker_atap
+        }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = role_ratio id = armor value = 2 }
+    ai_strategy = { type = equipment_production_min_factories_archetype id = walker_chassis_heavy value = 1 }
+}
+# Rich countries that commit to walkers should eventually research their super-heavy chassis.
+walker_ai_super_heavy_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 119
+        date > 1940.1.1
+        NOT = { has_tech = rep_walker_atat_elite }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_tech id = rep_walker_atat_elite value = 75 }
+}
+
+walker_ai_super_heavy = {
+	enable = {
+		is_ai = yes
+		has_tech = rep_walker_atpt
+		num_of_military_factories > 119
+		OR = {
+			has_tech = rep_walker_atat_elite
+			has_tech = rep_walker_atat_elite
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = role_ratio
+		value = 1
+		id = armor
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = walker_chassis_super_heavy
+		value = 1
+	}
+}
+
+# The second walker project requires railway guns and assembly-line production.
+# Start preferring their prerequisites only once the country has committed to walkers.
+walker_ai_railway_gun_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        NOT = { has_tech = rep_walker_atte }
+        num_of_military_factories > 34
+        date > 1938.1.1
+        NOT = { has_tech = railway_gun }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_tech id = railway_gun value = 100 }
+}
+
+walker_ai_assembly_line_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        NOT = { has_tech = rep_walker_atte }
+        num_of_military_factories > 34
+        date > 1940.1.1
+        NOT = { always = yes }
+    }
+    abort_when_not_enabled = yes
+}
+
+# Acquire tank chassis for the walker project and keep the main walker line current.
+walker_ai_tank_foundation_research = {
+    enable = {
+        is_ai = yes
+        num_of_military_factories > 24
+        date > 1936.1.1
+        NOT = { has_tech = rep_walker_atpt }
+        has_tech = rep_walker_atpt
+        NOT = {
+            OR = {
+                has_tech = rep_walker_atpt
+                has_tech = rep_walker_atte
+                has_tech = rep_walker_atap
+            }
+        }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_tech id = rep_walker_atte value = 100 }
+}
+
+walker_ai_medium_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 34
+        NOT = { has_tech = rep_walker_atte }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_tech id = rep_walker_atte value = 100 }
+}
+
+walker_ai_improved_medium_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 34
+        date > 1938.1.1
+        has_tech = rep_walker_atte
+        NOT = { has_tech = rep_walker_atte_elite }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_tech id = rep_walker_atte_elite value = 100 }
+}
+
+walker_ai_advanced_medium_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 49
+        date > 1941.1.1
+        has_tech = rep_walker_atte_elite
+        NOT = { has_tech = rep_walker_atte_sieges }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_tech id = rep_walker_atte_sieges value = 100 }
+}
+
+walker_ai_modern_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 74
+        date > 1943.1.1
+        has_tech = rep_walker_atte_sieges
+        NOT = { has_tech = rep_walker_atat_kuat }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_tech id = rep_walker_atat_kuat value = 100 }
+}
+
+# Other armor branches are useful, but should not crowd out the medium line.
+walker_ai_light_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 24
+        date > 1938.1.1
+        has_tech = rep_walker_atpt
+        NOT = { has_tech = rep_walker_atrt }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_weight_factor id = rep_walker_atrt value = 75 }
+}
+
+walker_ai_advanced_light_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 34
+        date > 1941.1.1
+        has_tech = rep_walker_atrt
+        NOT = { has_tech = rep_walker_atrt_501 }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_weight_factor id = rep_walker_atrt_501 value = 75 }
+}
+
+walker_ai_basic_heavy_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 59
+        date > 1939.1.1
+        NOT = { has_tech = rep_walker_atap }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_weight_factor id = rep_walker_atap value = 75 }
+}
+
+walker_ai_heavy_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 59
+        date > 1939.1.1
+        has_tech = rep_walker_atap
+        NOT = { has_tech = rep_walker_atot }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_weight_factor id = rep_walker_atot value = 75 }
+}
+
+walker_ai_advanced_heavy_chassis_research = {
+    enable = {
+        is_ai = yes
+        has_tech = rep_walker_atpt
+        num_of_military_factories > 74
+        date > 1942.1.1
+        has_tech = rep_walker_atot
+        NOT = { has_tech = rep_walker_utat }
+    }
+    abort_when_not_enabled = yes
+    ai_strategy = { type = research_weight_factor id = rep_walker_utat value = 75 }
+}
+
+# Optional walker land-cruiser support, only after its actual unlock; no extra cruiser research demand.
+wsp_ai_land_cruiser_support = {
+	enable = {
+		is_ai = yes
+		has_tech = rep_walker_atpt
+		num_of_military_factories > 149
+		OR = {
+			has_tech = rep_walker_atat_elite
+		}
+		has_tech = motorised_infantry
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = role_ratio
+		id = mega_heavy_breakthrough_role
+		value = 1
+	}
+}

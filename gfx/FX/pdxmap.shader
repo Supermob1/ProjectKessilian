@@ -364,11 +364,12 @@ PixelShader =
 			static const float PLANET_DAY = 1.3f;            // light at the sub-solar point
 			static const float PLANET_LIMB = 0.3f;           // darkening towards the edge (0 = none)
 			static const float PLANET_SPECULAR = 0.18f;      // sun glint
+			static const float PLANET_OWNER_TINT = 0.55f;    // how much of the owner's map colour tints the globes
 			static const float CITY_TILE_SLOT = 10.0f;       // atlas slot of the city texture (00_terrain.txt)
 			float3 vPlanetPaint = TerrainColor.rgb;
 			float vPlanetR = TerrainColor.a;
 			float vPaintLum = dot( vPlanetPaint, vec3( 1.0f / 3.0f ) );
-			TerrainColor.rgb = lerp( vec3( 0.5f ), saturate( 0.4f + 0.1f * vPlanetPaint / max( vPaintLum, 0.05f ) ), saturate( vPaintLum * 10.0f ) );
+			TerrainColor.rgb = lerp( vec3( 0.5f ), saturate( 0.5f + 0.3f * ( vPlanetPaint / max( vPaintLum, 0.05f ) - 1.0f ) ), saturate( vPaintLum * 10.0f ) );   // planet hue up close (0.3: purple worlds read purple)
 			float vPlanetFade = smoothstep( PLANET_PAINT_NEAR, PLANET_PAINT_FAR, vCamPos.y );
 			// (no branch: texture reads inside a dynamic branch are not allowed to take gradients)
 			float3 vGlobe = vPlanetPaint;
@@ -387,12 +388,20 @@ PixelShader =
 				float vRadius = 4.0f / max( length( vGrad ), 0.0001f );
 				float vArc = asin( saturate( vPlanetR ) ) / 1.5707963f;
 				float2 vWrapUV = Input.uv2 + float2( vRim.x / MAP_SIZE_X, vRim.y / MAP_SIZE_Y ) * ( vArc - vPlanetR ) * vRadius;
-				float3 vWrapped = tex2D( TerrainColorTint, vWrapUV ).rgb;
+				float3 vWrapped = tex2D( MudDiffuseGloss, vWrapUV ).rgb;   // sharp 2x globe texture baked into the mud slot (planet_terrain_gen.py globe_texture)
 				float3 vL = normalize( PLANET_SUN_DIR );
 				float vLambert = saturate( dot( vSphereN, vL ) );
 				float vGlobeLight = lerp( PLANET_AMBIENT, PLANET_DAY, pow( vLambert, 0.8f ) ) * ( 1.0f - PLANET_LIMB * ( 1.0f - vMu ) );
 				float vGlint = pow( saturate( dot( reflect( -vL, vSphereN ), float3( 0.0f, 1.0f, 0.0f ) ) ), 24.0f ) * PLANET_SPECULAR;
 				vGlobe = vWrapped * vGlobeLight + vGlint;
+				// owner colour on the zoomed-out globes: the gradient border texture holds the map mode colours (top half,
+				// as gradient_border_apply reads it); keep the globe's light and shade, swap in the owner's colour
+				float vGBHalfPix = 0.5f / GB_TextureHeight;
+				float2 vGBUV = float2( Input.uv2.x, Input.uv2.y * ( 0.5f - vGBHalfPix ) );
+				float3 vOwnerCol = tex2D( GradientBorderChannel1, vGBUV ).rgb;
+				float vOwned = tex2D( GradientBorderChannel2, vGBUV ).g;
+				float vGlobeLum = dot( vGlobe, vec3( 1.0f / 3.0f ) );
+				vGlobe = lerp( vGlobe, vOwnerCol * ( 0.35f + 1.3f * vGlobeLum ), saturate( vOwned ) * PLANET_OWNER_TINT );
 			}
 
 		#ifndef LOW_END_GFX
@@ -406,7 +415,7 @@ PixelShader =
 
 			float4 vMudSnow = GetMudSnowColor( Input.prepos, SnowMudData );	
 			diffuse.rgb = ApplySnow( diffuse.rgb, Input.prepos, normal, vMudSnow, SnowTexture, CityLightsAndSnowNoise, vGlossiness, vSnowAlpha );
-			diffuse.rgb = GetMudColor( diffuse.rgb, vMudSnow, Input.prepos, normal, vGlossiness, vSpec, MudDiffuseGloss, MudNormalSpec, TerrainColor.rgb, CityLightsAndSnowNoise );
+			// HOD: no mud: the mud slot holds the globe texture
 							
 			// Gradient Borders
 			float vBloomAlpha = 0.0f;

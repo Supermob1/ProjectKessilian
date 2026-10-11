@@ -1,0 +1,9 @@
+# HOD: the best Foundry Automation level researched sets the droid foundry spirit (faction_armour.py)
+HOD_set_droid_foundries = {
+	if = { limit = { has_idea = HOD_droid_foundries_1 } remove_ideas = HOD_droid_foundries_1 }
+	if = { limit = { has_idea = HOD_droid_foundries_2 } remove_ideas = HOD_droid_foundries_2 }
+	if = { limit = { has_idea = HOD_droid_foundries_3 } remove_ideas = HOD_droid_foundries_3 }
+	if = { limit = { has_tech = cis_foundry_3 } add_ideas = HOD_droid_foundries_3 }
+	else_if = { limit = { has_tech = cis_foundry_2 } add_ideas = HOD_droid_foundries_2 }
+	else_if = { limit = { has_tech = cis_foundry_1 } add_ideas = HOD_droid_foundries_1 }
+}

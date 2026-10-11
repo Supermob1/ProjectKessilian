@@ -1,0 +1,26 @@
+ideas = {
+	country = {
+		# HOD: Droid Armour tab, Foundry Automation (faction_armour.py)
+		HOD_droid_foundries_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			equipment_bonus = {
+				armor = { build_cost_ic = -0.1 instant = yes }
+			}
+		}
+		HOD_droid_foundries_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			equipment_bonus = {
+				armor = { build_cost_ic = -0.2 instant = yes }
+			}
+		}
+		HOD_droid_foundries_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			equipment_bonus = {
+				armor = { build_cost_ic = -0.3 instant = yes }
+			}
+		}
+	}
+}

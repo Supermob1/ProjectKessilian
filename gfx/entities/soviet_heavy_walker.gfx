@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "soviet_heavy_walker_mesh"
+		file = "gfx/models/units/walkers/soviet_heavy_walker.mesh"
+
+		animation = { id = "attack"			type = "soviet_heavy_walker_attack_animation" }
+		animation = { id = "idle"			type = "soviet_heavy_walker_idle_animation" }
+		animation = { id = "move"			type = "soviet_heavy_walker_move_animation" }
+		animation = { id = "death"			type = "soviet_heavy_walker_death_animation" }
+		scale = 0.47
+	}
+}

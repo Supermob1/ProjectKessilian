@@ -1,0 +1,31 @@
+objectTypes = {
+	# HOD: Star Wars walker / tank unit models (unit_models.py)
+	pdxmesh = {
+		name = "hod_atte_mesh"
+		file = "gfx/models/units/hod_walkers/hod_atte.mesh"
+		animation = { id = "idle" type = "hod_atte_idle_animation" }
+		animation = { id = "move" type = "hod_atte_move_animation" }
+		animation = { id = "attack" type = "hod_atte_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_aat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_aat.mesh"
+		animation = { id = "idle" type = "hod_aat_idle_animation" }
+		animation = { id = "move" type = "hod_aat_move_animation" }
+		animation = { id = "attack" type = "hod_aat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_atrt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_atrt.mesh"
+		animation = { id = "idle" type = "hod_atrt_idle_animation" }
+		animation = { id = "move" type = "hod_atrt_move_animation" }
+		animation = { id = "attack" type = "hod_atrt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_lance_walker_mesh"
+		file = "gfx/models/units/hod_walkers/hod_lance_walker.mesh"
+		animation = { id = "idle" type = "hod_lance_walker_idle_animation" }
+		animation = { id = "move" type = "hod_lance_walker_move_animation" }
+		animation = { id = "attack" type = "hod_lance_walker_attack_animation" }
+	}
+}

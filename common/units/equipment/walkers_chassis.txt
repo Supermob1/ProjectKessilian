@@ -1,0 +1,1718 @@
+equipments = {
+	walker_chassis = {
+		year = 1922
+		is_archetype = yes
+		is_buildable = no
+		can_be_produced = {
+			has_dlc = "No Step Back"
+			has_dlc = "Gotterdammerung"
+		}
+		picture = archetype_walker_equipment
+		type = armor
+		group_by = archetype
+		interface_category = interface_category_armor
+		priority = 2000
+		module_slots = {
+			turret_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_light_turret_type
+				}
+			}
+			main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			suspension_type_slot = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			armor_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_armor_type
+				}
+			}
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_engine_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+		}
+		module_count_limit = {
+			category = tank_radio_module
+			count < 2
+		}
+		module_count_limit = {
+			category = walker_dampener_module
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_secondary_turret
+			count < 2
+		}
+		module_count_limit = {
+			module = auto_loader
+			count < 2
+		}
+		module_count_limit = {
+			module = walker_oscillating_autoloader
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_autoloader_module
+			count < 2
+		}
+		module_count_limit = {
+			module = sloped_armor
+			count < 2
+		}
+		module_count_limit = {
+			module = wet_ammo_storage
+			count < 2
+		}
+		module_count_limit = {
+			module = easy_maintenance
+			count < 2
+		}
+		module_count_limit = {
+			module = additional_machine_guns
+			count < 2
+		}
+		module_count_limit = {
+			module = armor_skirts
+			count < 2
+		}
+		module_count_limit = {
+			module = smoke_launchers
+			count < 2
+		}
+		module_count_limit = {
+			module = stabilizer
+			count < 2
+		}
+		module_count_limit = {
+			module = stabilizer_2
+			count < 2
+		}
+		module_count_limit = {
+			module = squeezebore_adaptor
+			count < 2
+		}
+		module_count_limit = {
+			module = dozer_blade
+			count < 2
+		}
+		module_count_limit = {
+			module = extra_ammo_storage
+			count < 2
+		}
+		module_count_limit = {
+			module = expanded_fuel_tank
+			count < 2
+		}
+		default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = empty
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		fuel_consumption = 0
+		maximum_speed = 5.0
+		build_cost_ic = 2.25
+		reliability = 0.85
+		hardness = 0.85
+		armor_value = 10
+		resources = {
+			steel = 1
+		}
+		lend_lease_cost = 10
+		manpower = 2
+	}
+	walker_chassis_0 = {
+		abbreviation = "wl0"
+		visual_level = 0
+		year = 1936
+		archetype = walker_chassis
+		priority = 2000
+		module_slots = inherit
+		reliability = 0.80
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_1 = {
+		abbreviation = "wl1"
+		visual_level = 1
+		year = 1938
+		archetype = walker_chassis
+		parent = walker_chassis_0
+		priority = 2001
+		module_slots = inherit
+		maximum_speed = 4.0
+		defense = 2
+		build_cost_ic = 2.70
+		reliability = 0.75
+		armor_value = 15
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_2 = {
+		abbreviation = "wl2"
+		visual_level = 2
+		year = 1940
+		archetype = walker_chassis
+		parent = walker_chassis_1
+		priority = 2002
+		module_slots = inherit
+		maximum_speed = 5.0
+		defense = 3
+		build_cost_ic = 3.10
+		reliability = 0.80
+		armor_value = 20
+		resources = {
+			steel = 2
+		}
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_medium = {
+	year = 1930
+	is_archetype = yes
+	is_buildable = no
+	can_be_produced = {
+		has_dlc = "No Step Back"
+		has_dlc = "Gotterdammerung"
+	}
+	picture = archetype_walker_equipment
+	type = armor
+	group_by = archetype
+	interface_category = interface_category_armor
+	priority = 2005
+	module_slots = {
+		turret_type_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_medium_turret_type
+				tank_light_turret_type
+			}
+		}
+		main_armament_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_medium_main_armament
+				tank_small_main_armament
+				tank_flamethrower
+			}
+		}
+		suspension_type_slot = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+			}
+		}
+		armor_type_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_armor_type
+			}
+		}
+		engine_type_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_engine_type
+			}
+		}
+		special_type_slot_1 = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+		special_type_slot_2 = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+		special_type_slot_3 = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+		special_type_slot_4 = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+	}
+	module_count_limit = {
+		category = tank_radio_module
+		count < 2
+	}
+	module_count_limit = {
+		category = walker_dampener_module
+		count < 2
+	}
+	module_count_limit = {
+		category = tank_secondary_turret
+		count < 2
+	}
+	module_count_limit = {
+		module = auto_loader
+		count < 2
+	}
+	module_count_limit = {
+		category = tank_autoloader_module
+		category = walker_oscillating_module
+		count < 2
+	}
+	module_count_limit = {
+		module = walker_oscillating_autoloader
+		module = tank_light_fixed_superstructure_turret
+		module = tank_medium_fixed_superstructure_turret
+		module = tank_heavy_fixed_superstructure_turret
+		count < 2
+	}
+	module_count_limit = {
+		module = sloped_armor
+		count < 2
+	}
+	module_count_limit = {
+		module = wet_ammo_storage
+		count < 2
+	}
+	module_count_limit = {
+		module = easy_maintenance
+		count < 2
+	}
+	module_count_limit = {
+		module = additional_machine_guns
+		count < 2
+	}
+	module_count_limit = {
+		module = armor_skirts
+		count < 2
+	}
+	module_count_limit = {
+		module = smoke_launchers
+		count < 2
+	}
+	module_count_limit = {
+		module = stabilizer
+		count < 2
+	}
+	module_count_limit = {
+		module = stabilizer_2
+		count < 2
+	}
+	module_count_limit = {
+		module = squeezebore_adaptor
+		count < 2
+	}
+	module_count_limit = {
+		module = dozer_blade
+		count < 2
+	}
+	module_count_limit = {
+		module = extra_ammo_storage
+		count < 2
+	}
+	module_count_limit = {
+		module = expanded_fuel_tank
+		count < 2
+	}
+	default_modules = {
+		main_armament_slot = empty
+		turret_type_slot = tank_medium_two_man_tank_turret
+		suspension_type_slot = empty
+		armor_type_slot = tank_welded_armor
+		engine_type_slot = tank_gasoline_engine
+	}
+	fuel_consumption = 0
+	maximum_speed = 3.5
+	defense = 4
+	build_cost_ic = 4.20
+	reliability = 0.75
+	hardness = 0.90
+	armor_value = 40
+	resources = {
+		steel = 2
+	}
+	lend_lease_cost = 20
+	manpower = 3
+}
+	walker_chassis_medium_0 = {
+		abbreviation = "wm0"
+		visual_level = 0
+		year = 1938
+		archetype = walker_chassis_medium
+		priority = 2005
+		module_slots = inherit
+		reliability = 0.80
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte
+				has_tech = rep_walker_atte
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_medium_1 = {
+		abbreviation = "wm1"
+		visual_level = 1
+		year = 1940
+		archetype = walker_chassis_medium
+		parent = walker_chassis_medium_0
+		priority = 2006
+		module_slots = inherit
+		maximum_speed = 4.5
+		defense = 5
+		build_cost_ic = 4.70
+		reliability = 0.80
+		armor_value = 50
+		resources = {
+			steel = 3
+		}
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_elite
+				has_tech = rep_walker_atte_elite
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_medium_2 = {
+		abbreviation = "wm2"
+		visual_level = 2
+		year = 1941
+		archetype = walker_chassis_medium
+		parent = walker_chassis_medium_1
+		priority = 2007
+		module_slots = inherit
+		maximum_speed = 5.5
+		defense = 6
+		build_cost_ic = 5.20
+		reliability = 0.85
+		armor_value = 60
+		resources = {
+			steel = 3
+		}
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atte_sieges
+				has_tech = rep_walker_atte_sieges
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_heavy = {
+		year = 1934
+		is_archetype = yes
+		is_buildable = no
+		can_be_produced = {
+			has_dlc = "No Step Back"
+			has_dlc = "Gotterdammerung"
+		}
+		picture = archetype_walker_equipment
+		type = armor
+		group_by = archetype
+		interface_category = interface_category_armor
+		priority = 2010
+		module_slots = {
+			turret_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_heavy_turret_type
+					tank_medium_turret_type
+				}
+			}
+			main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_heavy_main_armament
+					tank_medium_main_armament
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			suspension_type_slot = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			armor_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_armor_type
+				}
+			}
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_engine_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+		}
+		module_count_limit = {
+			category = tank_radio_module
+			count < 2
+		}
+		module_count_limit = {
+			category = walker_dampener_module
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_secondary_turret
+			count < 2
+		}
+		module_count_limit = {
+			module = auto_loader
+			count < 2
+		}
+		module_count_limit = {
+			module = walker_oscillating_autoloader
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_autoloader_module
+			count < 2
+		}
+		module_count_limit = {
+			module = sloped_armor
+			count < 2
+		}
+		module_count_limit = {
+			module = wet_ammo_storage
+			count < 2
+		}
+		module_count_limit = {
+			module = easy_maintenance
+			count < 2
+		}
+		module_count_limit = {
+			module = additional_machine_guns
+			count < 2
+		}
+		module_count_limit = {
+			module = armor_skirts
+			count < 2
+		}
+		module_count_limit = {
+			module = smoke_launchers
+			count < 2
+		}
+		module_count_limit = {
+			module = stabilizer
+			count < 2
+		}
+		module_count_limit = {
+			module = stabilizer_2
+			count < 2
+		}
+		module_count_limit = {
+			module = squeezebore_adaptor
+			count < 2
+		}
+		module_count_limit = {
+			module = dozer_blade
+			count < 2
+		}
+		module_count_limit = {
+			module = extra_ammo_storage
+			count < 2
+		}
+		module_count_limit = {
+			module = expanded_fuel_tank
+			count < 2
+		}
+		default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = empty
+			armor_type_slot = tank_welded_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		fuel_consumption = 0
+		maximum_speed = 3.5
+		defense = 6
+		build_cost_ic = 6.20
+		reliability = 0.70
+		hardness = 0.95
+		armor_value = 70
+		resources = {
+			steel = 3
+			chromium = 1
+		}
+		lend_lease_cost = 30
+		manpower = 4
+	}
+	walker_chassis_heavy_0 = {
+		abbreviation = "wh0"
+		visual_level = 0
+		year = 1938
+		archetype = walker_chassis_heavy
+		priority = 2010
+		module_slots = inherit
+		reliability = 0.75
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atap
+				has_tech = rep_walker_atap
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_heavy_1 = {
+		abbreviation = "wh1"
+		visual_level = 1
+		year = 1940
+		archetype = walker_chassis_heavy
+		parent = walker_chassis_heavy_0
+		priority = 2011
+		module_slots = inherit
+		maximum_speed = 4.0
+		defense = 7
+		build_cost_ic = 6.70
+		reliability = 0.75
+		armor_value = 80
+		resources = {
+			steel = 4
+			chromium = 1
+		}
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atot
+				has_tech = rep_walker_atot
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_heavy_2 = {
+		abbreviation = "wh2"
+		visual_level = 2
+		year = 1942
+		archetype = walker_chassis_heavy
+		parent = walker_chassis_heavy_1
+		priority = 2012
+		module_slots = inherit
+		maximum_speed = 4.5
+		defense = 8
+		build_cost_ic = 7.20
+		reliability = 0.80
+		armor_value = 90
+		resources = {
+			steel = 4
+			chromium = 1
+		}
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_utat
+				has_tech = rep_walker_utat
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_modern = {
+	year = 1943
+	is_archetype = yes
+	is_buildable = no
+	can_be_produced = {
+		has_dlc = "No Step Back"
+		has_dlc = "Gotterdammerung"
+	}
+	picture = archetype_walker_equipment
+	type = armor
+	group_by = archetype
+	interface_category = interface_category_armor
+	priority = 2015
+	module_slots = {
+		turret_type_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_modern_turret_type
+				tank_heavy_turret_type
+				tank_medium_turret_type
+			}
+		}
+		main_armament_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_heavy_main_armament
+				tank_medium_main_armament
+				tank_small_main_armament
+				tank_flamethrower
+			}
+		}
+		suspension_type_slot = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+			}
+		}
+		armor_type_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_armor_type
+			}
+		}
+		engine_type_slot = {
+			required = yes
+			allowed_module_categories = {
+				tank_engine_type
+			}
+		}
+		special_type_slot_1 = {
+			required = no
+			allowed_module_categories = {
+				tank_small_main_armament
+				tank_flamethrower
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+		special_type_slot_2 = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+		special_type_slot_3 = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+		special_type_slot_4 = {
+			required = no
+			allowed_module_categories = {
+				tank_special_module
+				tank_autoloader_module
+				walker_oscillating_module
+				tank_radio_module
+				tank_secondary_turret
+				walker_dampener_module
+			}
+		}
+	}
+	module_count_limit = {
+		category = tank_radio_module
+		count < 2
+	}
+	module_count_limit = {
+		category = walker_dampener_module
+		count < 2
+	}
+	module_count_limit = {
+		category = tank_secondary_turret
+		count < 2
+	}
+	module_count_limit = {
+		module = auto_loader
+		count < 2
+	}
+	module_count_limit = {
+		category = tank_autoloader_module
+		category = walker_oscillating_module
+		count < 2
+	}
+	module_count_limit = {
+		module = walker_oscillating_autoloader
+		module = tank_light_fixed_superstructure_turret
+		module = tank_medium_fixed_superstructure_turret
+		module = tank_heavy_fixed_superstructure_turret
+		count < 2
+	}
+	module_count_limit = {
+		module = sloped_armor
+		count < 2
+	}
+	module_count_limit = {
+		module = wet_ammo_storage
+		count < 2
+	}
+	module_count_limit = {
+		module = easy_maintenance
+		count < 2
+	}
+	module_count_limit = {
+		module = additional_machine_guns
+		count < 2
+	}
+	module_count_limit = {
+		module = armor_skirts
+		count < 2
+	}
+	module_count_limit = {
+		module = smoke_launchers
+		count < 2
+	}
+	module_count_limit = {
+		module = stabilizer
+		count < 2
+	}
+	module_count_limit = {
+		module = stabilizer_2
+		count < 2
+	}
+	module_count_limit = {
+		module = squeezebore_adaptor
+		count < 2
+	}
+	module_count_limit = {
+		module = dozer_blade
+		count < 2
+	}
+	module_count_limit = {
+		module = extra_ammo_storage
+		count < 2
+	}
+	module_count_limit = {
+		module = expanded_fuel_tank
+		count < 2
+	}
+	default_modules = {
+		main_armament_slot = empty
+		turret_type_slot = tank_modern_tank_turret
+		suspension_type_slot = empty
+		armor_type_slot = tank_welded_armor
+		engine_type_slot = tank_diesel_engine
+	}
+	fuel_consumption = 0
+	maximum_speed = 7.5
+	build_cost_ic = 6.20
+	reliability = 0.95
+	hardness = 0.90
+	armor_value = 85
+	resources = {
+		steel = 3
+		chromium = 1
+	}
+	lend_lease_cost = 40
+	manpower = 3
+}
+	walker_chassis_modern_0 = {
+		abbreviation = "wmb0"
+		visual_level = 0
+		year = 1943
+		archetype = walker_chassis_modern
+		priority = 2015
+		module_slots = inherit
+		reliability = 1.20
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_kuat
+				has_tech = rep_walker_atat_kuat
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_chassis_super_heavy = {
+		year = 1943
+		is_archetype = yes
+		is_buildable = no
+		can_be_produced = {
+			has_dlc = "No Step Back"
+			has_dlc = "Gotterdammerung"
+		}
+		picture = archetype_walker_equipment
+		type = armor
+		group_by = archetype
+		interface_category = interface_category_armor
+		priority = 2020
+		module_slots = {
+			turret_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_super_heavy_turret_type
+					tank_heavy_turret_type
+				}
+			}
+			main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_super_heavy_main_armament
+					tank_heavy_main_armament
+					tank_medium_main_armament
+					tank_flamethrower
+				}
+			}
+			suspension_type_slot = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			armor_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_armor_type
+				}
+			}
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_engine_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+		}
+		module_count_limit = {
+			category = tank_radio_module
+			count < 2
+		}
+		module_count_limit = {
+			category = walker_dampener_module
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_secondary_turret
+			count < 2
+		}
+		module_count_limit = {
+			module = auto_loader
+			count < 2
+		}
+		module_count_limit = {
+			module = walker_oscillating_autoloader
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_autoloader_module
+			count < 2
+		}
+		module_count_limit = {
+			module = sloped_armor
+			count < 2
+		}
+		module_count_limit = {
+			module = wet_ammo_storage
+			count < 2
+		}
+		module_count_limit = {
+			module = easy_maintenance
+			count < 2
+		}
+		module_count_limit = {
+			module = additional_machine_guns
+			count < 2
+		}
+		module_count_limit = {
+			module = armor_skirts
+			count < 2
+		}
+		module_count_limit = {
+			module = smoke_launchers
+			count < 2
+		}
+		module_count_limit = {
+			module = stabilizer
+			count < 2
+		}
+		module_count_limit = {
+			module = stabilizer_2
+			count < 2
+		}
+		module_count_limit = {
+			module = squeezebore_adaptor
+			count < 2
+		}
+		module_count_limit = {
+			module = dozer_blade
+			count < 2
+		}
+		module_count_limit = {
+			module = extra_ammo_storage
+			count < 2
+		}
+		module_count_limit = {
+			module = expanded_fuel_tank
+			count < 2
+		}
+		default_modules = {
+			main_armament_slot = empty
+			turret_type_slot = tank_super_heavy_four_man_tank_turret
+			suspension_type_slot = empty
+			armor_type_slot = tank_welded_armor
+			engine_type_slot = tank_diesel_engine
+		}
+		fuel_consumption = 0
+		maximum_speed = 3.0
+		defense = 12
+		build_cost_ic = 22.0
+		reliability = 0.70
+		hardness = 0.95
+		armor_value = 140
+		resources = {
+			steel = 6
+			chromium = 3
+		}
+		lend_lease_cost = 50
+		manpower = 4
+	}
+	walker_chassis_super_heavy_0 = {
+		abbreviation = "wsh0"
+		visual_level = 0
+		year = 1943
+		archetype = walker_chassis_super_heavy
+		priority = 2030
+		module_slots = inherit
+		reliability = 1.00
+		can_be_produced = {
+			has_tech = rep_walker_atpt
+			OR = {
+				has_tech = rep_walker_atat_elite
+				has_tech = rep_walker_atat_elite
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_sponson_chassis_0 = {
+		abbreviation = "ws0"
+		visual_level = 0
+		year = 1936
+		picture = archetype_walker_equipment
+		archetype = walker_chassis
+		priority = 2500
+		module_slots = {
+			turret_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					walker_sponson_turret_category
+				}
+			}
+			main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			suspension_type_slot = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			armor_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_armor_type
+				}
+			}
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_engine_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+		}
+		module_count_limit = {
+			category = tank_radio_module
+			count < 2
+		}
+		module_count_limit = {
+			category = walker_dampener_module
+			count < 2
+		}
+		module_count_limit = {
+			category = tank_small_main_armament
+			count < 3
+		}
+		module_count_limit = {
+			category = walker_sponson_turret_category
+			count < 2
+		}
+		default_modules = {
+			turret_type_slot = walker_fixed_sponson_turret
+			main_armament_slot = empty
+			special_type_slot_1 = empty
+			suspension_type_slot = empty
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		reliability = 0.80
+		can_be_produced = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atpt
+				has_tech = rep_walker_atpt
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+	walker_sponson_chassis_1 = {
+		abbreviation = "ws1"
+		visual_level = 1
+		year = 1938
+		picture = archetype_walker_equipment
+		archetype = walker_chassis
+		parent = walker_sponson_chassis_0
+		priority = 2501
+		maximum_speed = 4.0
+		defense = 2
+		build_cost_ic = 2.70
+		reliability = 0.75
+		armor_value = 15
+		can_be_produced = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt
+				has_tech = rep_walker_atrt
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+		module_slots = {
+			turret_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					walker_sponson_turret_category
+				}
+			}
+			main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			suspension_type_slot = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			armor_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_armor_type
+				}
+			}
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_engine_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+		}
+	}
+	walker_sponson_chassis_2 = {
+		abbreviation = "ws2"
+		visual_level = 2
+		year = 1940
+		picture = archetype_walker_equipment
+		archetype = walker_chassis
+		parent = walker_sponson_chassis_1
+		priority = 2502
+		maximum_speed = 5.0
+		defense = 3
+		build_cost_ic = 3.10
+		reliability = 0.80
+		armor_value = 20
+		resources = {
+			steel = 2
+		}
+		can_be_produced = {
+			has_tech = rep_walker_atte
+			OR = {
+				has_tech = rep_walker_atrt_501
+				has_tech = rep_walker_atrt_501
+			}
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+		module_slots = {
+			turret_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					walker_sponson_turret_category
+				}
+			}
+			main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			suspension_type_slot = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+			armor_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_armor_type
+				}
+			}
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					tank_engine_type
+				}
+			}
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					tank_small_main_armament
+					tank_flamethrower
+				}
+			}
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_autoloader_module
+					tank_radio_module
+					tank_secondary_turret
+					walker_dampener_module
+				}
+			}
+		}
+	}
+	walker_chassis_land_cruiser = {
+		year = 1945
+		is_archetype = yes
+		is_buildable = no
+		can_be_produced = {
+			has_dlc = "No Step Back"
+			has_dlc = "Gotterdammerung"
+		}
+		picture = archetype_walker_equipment
+		type = armor
+		group_by = archetype
+		interface_category = interface_category_armor
+		priority = 2040
+		max_military_factories = 5
+		module_slots = {
+			lc_main_armament_slot = {
+				required = yes
+				allowed_module_categories = {
+					lc_main_armament
+				}
+			}
+			lc_secondary_armament_slot = {
+				required = no
+				allowed_module_categories = {
+					lc_secondary_armament
+					lc_main_armament
+				}
+			}
+			lc_special_features_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					lc_radio_module
+					lc_aerial_deployment
+					lc_external_features
+					lc_structural_features
+					walker_dampener_module
+					walker_lc_frame_module
+				}
+			}
+			lc_special_features_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					lc_radio_module
+					lc_aerial_deployment
+					lc_external_features
+					lc_structural_features
+					walker_dampener_module
+					walker_lc_frame_module
+				}
+			}
+			lc_special_features_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					lc_radio_module
+					lc_aerial_deployment
+					lc_external_features
+					lc_structural_features
+					walker_dampener_module
+					walker_lc_frame_module
+				}
+			}
+			lc_additional_armament_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					lc_additional_armament
+				}
+			}
+			lc_additional_armament_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					lc_additional_armament
+				}
+			}
+			lc_additional_armament_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					lc_radio_module
+					lc_aerial_deployment
+					lc_external_features
+					lc_structural_features
+					walker_dampener_module
+					walker_lc_frame_module
+				}
+			}
+			lc_additional_armament_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					lc_radio_module
+					lc_aerial_deployment
+					lc_external_features
+					lc_structural_features
+					walker_dampener_module
+					walker_lc_frame_module
+				}
+			}
+		}
+		module_count_limit = {
+			category = lc_main_armament
+			count < 3
+		}
+		module_count_limit = {
+			module = lc_assault_gun
+			count < 2
+		}
+		module_count_limit = {
+			module = lc_high_velocity_cannon_turret
+			count < 3
+		}
+		module_count_limit = {
+			module = lc_flamethrower_turret
+			count < 3
+		}
+		module_count_limit = {
+			module = lc_rocket_launcher
+			count < 3
+		}
+		module_count_limit = {
+			category = lc_radio_module
+			count < 2
+		}
+		module_count_limit = {
+			module = lc_radar
+			count < 2
+		}
+		module_count_limit = {
+			category = lc_aerial_deployment
+			count < 2
+		}
+		module_count_limit = {
+			module = lc_armored_skirts
+			count < 2
+		}
+		module_count_limit = {
+			module = lc_obstacle_clearance_gear
+			count < 2
+		}
+		module_count_limit = {
+			module = lc_wet_ammunition_storage
+			count < 2
+		}
+		module_count_limit = {
+			module = lc_smoke_generators
+			count < 2
+		}
+		module_count_limit = {
+			module = lc_stabilizers
+			count < 2
+		}
+		module_count_limit = {
+			category = walker_dampener_module
+			count < 2
+		}
+		module_count_limit = {
+			category = walker_lc_frame_module
+			count < 2
+		}
+		default_modules = {
+
+		}
+		fuel_consumption = 12
+		maximum_speed = 6.0
+		build_cost_ic = 340
+		reliability = 0.90
+		armor_value = 140
+		defense = 12
+		hardness = 0
+		resources = {
+			steel = 8
+			chromium = 4
+		}
+		lend_lease_cost = 80
+		manpower = 30
+	}
+	walker_chassis_land_cruiser_1 = {
+		abbreviation = "WLC"
+		visual_level = 0
+		year = 1945
+		archetype = walker_chassis_land_cruiser
+		priority = 2040
+		module_slots = inherit
+		can_be_produced = {
+			has_dlc = "No Step Back"
+			has_dlc = "Gotterdammerung"
+			has_tech = rep_walker_atpt
+			has_tech = rep_walker_atat_elite
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade
+			tank_nsb_armor_upgrade
+		}
+	}
+}

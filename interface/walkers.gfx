@@ -1,0 +1,1046 @@
+spriteTypes = {
+
+	SpriteType = {
+
+		name = "GFX_archetype_walker_equipment_medium"
+
+		texturefile = "gfx/interface/archetypes/archetype_walker_equipment.dds"
+
+	}
+
+	SpriteType = {
+
+		name = "GFX_archetype_walker_chassis_medium_medium"
+
+		texturefile = "gfx/interface/archetypes/archetype_walker_equipment.dds"
+
+	}
+
+	SpriteType = {
+
+		name = "GFX_archetype_walker_chassis_heavy_medium"
+
+		texturefile = "gfx/interface/archetypes/archetype_walker_equipment.dds"
+
+	}
+
+	SpriteType = {
+
+		name = "GFX_archetype_walker_chassis_modern_medium"
+
+		texturefile = "gfx/interface/archetypes/archetype_walker_equipment.dds"
+
+	}
+
+	SpriteType = {
+
+		name = "GFX_archetype_walker_chassis_super_heavy_medium"
+
+		texturefile = "gfx/interface/archetypes/archetype_walker_equipment.dds"
+
+	}
+
+	SpriteType = {
+
+		name = "GFX_archetype_walker_chassis_land_cruiser_medium"
+
+		texturefile = "gfx/interface/technologies/SPR_walker_chassis_land_cruiser.dds"
+
+	}
+
+
+
+	spriteType = {
+
+		name = "GFX_sp_land_walkers"
+
+		texturefile = "gfx/interface/special_project/project_icons/sp_land_walkers.dds"
+
+	}
+
+
+
+	# =========================================================================
+
+	# DIVISION COUNTER ICONS (LARGE & SMALL)
+
+	# =========================================================================
+
+	# Base Light Walker
+
+	spriteType = { name = "GFX_unit_walkers_light_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_icon_small" texturefile = "gfx/interface/texticons/unit_walkers_light_icon_small.dds" legacy_lazy_load = no noOfFrames = 2 }
+
+	spriteType = { name = "GFX_nato_unit_walkers_light_icon_small" texturefile = "gfx/interface/texticons/nato_unit_walkers_light_icon_small.dds" legacy_lazy_load = no }
+
+
+
+	# Light Walker Recon
+
+	spriteType = { name = "GFX_unit_walkers_light_recon_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_recon_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_recon_icon_medium" textureFile = "gfx/interface/counters/divisions_large/support_unit_walkers_recon_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_recon_icon_small" texturefile = "gfx/interface/texticons/unit_walkers_light_icon_small.dds" legacy_lazy_load = no noOfFrames = 2 }
+
+	spriteType = { name = "GFX_nato_unit_walkers_light_recon_icon_small" texturefile = "gfx/interface/texticons/nato_unit_walkers_light_icon_small.dds" legacy_lazy_load = no }
+
+
+
+	# Base Medium Walker
+
+	spriteType = { name = "GFX_unit_walkers_medium_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_medium_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_medium_icon.dds" noOfFrames = 2 }
+
+
+
+	# Base Heavy Walker
+
+	spriteType = { name = "GFX_unit_walkers_heavy_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_heavy_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+
+
+	# Base Modern Walker
+
+	spriteType = { name = "GFX_unit_walkers_modern_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_modern_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_modern_icon.dds" noOfFrames = 2 }
+
+
+
+	# Base Super Heavy Walker
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+
+
+	# AA Walkers (Light, Medium, Heavy, Modern, Super Heavy)
+
+	spriteType = { name = "GFX_unit_walkers_light_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_medium_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_medium_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_heavy_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_heavy_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_modern_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_modern_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+
+
+	# AR (Artillery) Walkers
+
+	spriteType = { name = "GFX_unit_walkers_light_artillery_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_ar_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_artillery_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_ar_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_artillery_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_ar_walkers_medium_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_artillery_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_ar_walkers_medium_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_heavy_artillery_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_ar_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_heavy_artillery_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_ar_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_modern_artillery_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_ar_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_modern_artillery_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_ar_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_artillery_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_ar_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_artillery_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_ar_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+
+
+	# AT (Tank Destroyer) Walkers
+
+	spriteType = { name = "GFX_unit_walkers_light_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_light_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_medium_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_medium_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_heavy_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_heavy_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_modern_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_modern_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_super_heavy_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_super_heavy_icon.dds" noOfFrames = 2 }
+
+
+
+	# Flame Walkers Support Company
+
+	spriteType = { name = "GFX_unit_walkers_flame_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_flame_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_flame_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_flame_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_medium_flame_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_flame_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_medium_flame_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_flame_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_heavy_flame_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_flame_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_heavy_flame_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_flame_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_modern_flame_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_flame_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_modern_flame_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_flame_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_super_heavy_flame_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_walkers_flame_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_super_heavy_flame_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_walkers_flame_icon.dds" noOfFrames = 2 }
+
+	# Support AA / AT reuse the matching line battalion icons
+	spriteType = { name = "GFX_unit_walkers_light_support_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_light_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_light_support_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_light_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_medium_support_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_medium_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_medium_support_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_medium_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_heavy_support_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_heavy_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_heavy_support_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_heavy_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_modern_support_aa_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_aa_walkers_modern_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_modern_support_aa_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_aa_walkers_modern_icon.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_walkers_light_support_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_light_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_light_support_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_light_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_medium_support_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_medium_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_medium_support_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_medium_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_heavy_support_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_heavy_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_heavy_support_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_heavy_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_modern_support_destroyer_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_at_walkers_modern_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_walkers_modern_support_destroyer_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_at_walkers_modern_icon.dds" noOfFrames = 2 }
+
+
+
+	# Designer View Overlay
+
+	spriteType = {
+
+		name = "GFX_TC_generic_walker"
+
+		textureFile = "gfx/interface/equipmentdesigner/tanks/generic/generic_walker.dds"
+
+		legacy_lazy_load = no
+
+	}
+
+
+
+	# =========================================================================
+
+	# TECHNOLOGY / CHASSIS ICONS (BASE CHASSIS TIERS)
+
+	# =========================================================================
+
+	# Generic Base Chassis
+
+	SpriteType = { name = "GFX_walker_chassis_0_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_1_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_2_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+
+
+
+	SpriteType = { name = "GFX_walker_chassis_medium_0_medium" texturefile = "gfx/interface/technologies/walker_medium.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_1_medium" texturefile = "gfx/interface/technologies/walker_medium.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_2_medium" texturefile = "gfx/interface/technologies/walker_medium.dds" }
+
+
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_0_medium" texturefile = "gfx/interface/technologies/walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_1_medium" texturefile = "gfx/interface/technologies/walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_2_medium" texturefile = "gfx/interface/technologies/walker_heavy.dds" }
+
+
+
+	SpriteType = { name = "GFX_walker_chassis_modern_0_medium" texturefile = "gfx/interface/technologies/walker_modern.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_super_heavy_0_medium" texturefile = "gfx/interface/technologies/walker_super_heavy.dds" }
+
+
+
+	# German Base Chassis
+
+	SpriteType = { name = "GFX_GER_walker_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+
+
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_0_medium" texturefile = "gfx/interface/technologies/GER_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_1_medium" texturefile = "gfx/interface/technologies/GER_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_2_medium" texturefile = "gfx/interface/technologies/GER_walker_medium.dds" }
+
+
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_0_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_1_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_2_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy.dds" }
+
+
+
+	SpriteType = { name = "GFX_GER_walker_chassis_modern_0_medium" texturefile = "gfx/interface/technologies/GER_walker_modern.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_super_heavy_0_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy.dds" }
+
+
+
+	# Soviet Base Chassis
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+
+
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium.dds" }
+
+
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2.dds" }
+
+
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_modern_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_super_heavy_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy.dds" }
+
+
+
+	# =========================================================================
+
+	# EQUIPMENT DESIGNER ROLE SPRITES (DUPLICATE ARCHETYPES LOOKUP)
+
+	# =========================================================================
+
+	# Generic Light Roles
+
+	SpriteType = { name = "GFX_walker_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_walker_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_0_aa_medium" texturefile = "gfx/interface/technologies/walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_0_artillery_medium" texturefile = "gfx/interface/technologies/walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_0_destroyer_medium" texturefile = "gfx/interface/technologies/walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_0_flame_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_walker_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_1_aa_medium" texturefile = "gfx/interface/technologies/walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_1_artillery_medium" texturefile = "gfx/interface/technologies/walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_1_destroyer_medium" texturefile = "gfx/interface/technologies/walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_1_flame_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_walker_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_2_aa_medium" texturefile = "gfx/interface/technologies/walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_2_artillery_medium" texturefile = "gfx/interface/technologies/walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_2_destroyer_medium" texturefile = "gfx/interface/technologies/walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_2_flame_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	SpriteType = { name = "GFX_walker_aa_chassis_3_medium" texturefile = "gfx/interface/technologies/walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_artillery_chassis_3_medium" texturefile = "gfx/interface/technologies/walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_destroyer_chassis_3_medium" texturefile = "gfx/interface/technologies/walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_walker_flame_chassis_3_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+
+
+
+
+	SpriteType = { name = "GFX_walker_medium_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_medium.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_0_aa_medium" texturefile = "gfx/interface/technologies/walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_0_artillery_medium" texturefile = "gfx/interface/technologies/walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_0_destroyer_medium" texturefile = "gfx/interface/technologies/walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_medium.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_1_aa_medium" texturefile = "gfx/interface/technologies/walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_1_artillery_medium" texturefile = "gfx/interface/technologies/walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_1_destroyer_medium" texturefile = "gfx/interface/technologies/walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_walker_medium_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_medium.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_2_aa_medium" texturefile = "gfx/interface/technologies/walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_2_artillery_medium" texturefile = "gfx/interface/technologies/walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_medium_2_destroyer_medium" texturefile = "gfx/interface/technologies/walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_0_aa_medium" texturefile = "gfx/interface/technologies/walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_0_artillery_medium" texturefile = "gfx/interface/technologies/walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_0_destroyer_medium" texturefile = "gfx/interface/technologies/walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_1_aa_medium" texturefile = "gfx/interface/technologies/walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_1_artillery_medium" texturefile = "gfx/interface/technologies/walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_1_destroyer_medium" texturefile = "gfx/interface/technologies/walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_walker_heavy_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_2_aa_medium" texturefile = "gfx/interface/technologies/walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_2_artillery_medium" texturefile = "gfx/interface/technologies/walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_heavy_2_destroyer_medium" texturefile = "gfx/interface/technologies/walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_walker_modern_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_modern_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_modern_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_modern_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_modern_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_modern_at.dds" }
+
+	SpriteType = { name = "GFX_walker_modern_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_modern.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_modern_0_aa_medium" texturefile = "gfx/interface/technologies/walker_modern_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_modern_0_artillery_medium" texturefile = "gfx/interface/technologies/walker_modern_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_modern_0_destroyer_medium" texturefile = "gfx/interface/technologies/walker_modern_at.dds" }
+
+	SpriteType = { name = "GFX_walker_super_heavy_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_super_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_super_heavy_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_super_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_super_heavy_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_super_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_walker_super_heavy_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/walker_super_heavy.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_super_heavy_0_aa_medium" texturefile = "gfx/interface/technologies/walker_super_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_super_heavy_0_artillery_medium" texturefile = "gfx/interface/technologies/walker_super_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_walker_chassis_super_heavy_0_destroyer_medium" texturefile = "gfx/interface/technologies/walker_super_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_0_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_0_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_0_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_1_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_1_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_1_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_2_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_2_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_2_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_aa_chassis_3_medium" texturefile = "gfx/interface/technologies/GER_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_artillery_chassis_3_medium" texturefile = "gfx/interface/technologies/GER_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_destroyer_chassis_3_medium" texturefile = "gfx/interface/technologies/GER_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_flame_chassis_3_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+
+
+
+	SpriteType = { name = "GFX_GER_walker_medium_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_0_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_0_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_0_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_1_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_1_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_1_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_medium_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_2_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_2_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_medium_2_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_0_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_0_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_0_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_1_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_1_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_1_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_heavy_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_2_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_2_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_heavy_2_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_modern_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_modern_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_modern_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_modern_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_modern_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_modern_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_modern_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_modern.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_modern_0_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_modern_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_modern_0_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_modern_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_modern_0_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_modern_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_super_heavy_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_super_heavy_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_super_heavy_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_super_heavy_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_super_heavy_0_aa_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_super_heavy_0_artillery_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_GER_walker_chassis_super_heavy_0_destroyer_medium" texturefile = "gfx/interface/technologies/GER_walker_super_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_0_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_0_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_0_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_1_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_1_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_1_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_2_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_2_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_2_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_aa_chassis_3_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_artillery_chassis_3_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_destroyer_chassis_3_medium" texturefile = "gfx/interface/technologies/SOV_walker_light_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_flame_chassis_3_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+
+
+
+	SpriteType = { name = "GFX_SOV_walker_medium_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_0_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_0_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_0_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_1_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_1_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_1_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_medium_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_2_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_2_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_medium_2_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_medium_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_0_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_0_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_0_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_aa_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_artillery_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_destroyer_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_flame_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_1_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_1_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_1_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_aa_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_artillery_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_destroyer_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_heavy_flame_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_2_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_2_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_2_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_modern_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_modern_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_modern_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_modern_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_modern_0_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_modern_0_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_modern_0_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_modern_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_super_heavy_aa_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_super_heavy_artillery_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_super_heavy_destroyer_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_super_heavy_flame_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_super_heavy_0_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_aa.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_super_heavy_0_artillery_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_ar.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_super_heavy_0_destroyer_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_at.dds" }
+
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_ar_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy_at_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy2_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_aa.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy2_ar_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_ar.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_heavy2_at_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy2_at.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_super_heavy_aa_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_aa.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_super_heavy_ar_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_ar.dds" }
+	SpriteType = { name = "GFX_SOV_walker_chassis_super_heavy_at_medium" texturefile = "gfx/interface/technologies/SOV_walker_heavy_at.dds" }
+
+
+
+
+
+	spriteType = {
+
+		name = "GFX_unit_walker_land_cruiser_icon_medium"
+
+		textureFile = "gfx/interface/counters/divisions_large/unit_walker_land_cruiser_icon.dds"
+
+		noOfFrames = 2
+
+	}
+
+	spriteType = {
+
+		name = "GFX_unit_walker_land_cruiser_icon_medium_white"
+
+		textureFile = "gfx/interface/counters/divisions_small/onmap_walker_land_cruiser_icon.dds"
+
+		noOfFrames = 2
+
+	}
+
+	SpriteType = {
+		name = "GFX_walker_chassis_land_cruiser_1_medium"
+		texturefile = "gfx/interface/technologies/SPR_walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_GER_walker_chassis_land_cruiser_1_medium"
+		texturefile = "gfx/interface/technologies/GER_walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_land_cruiser_walker_chassis_medium"
+		texturefile = "gfx/interface/technologies/SPR_walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_SOV_walker_chassis_land_cruiser_1_medium"
+		texturefile = "gfx/interface/technologies/SOV_walker_super_heavy.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_SOV_land_cruiser_walker_chassis_medium"
+		texturefile = "gfx/interface/technologies/SOV_walker_super_heavy.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_walker_chassis_land_cruiser_1_medium"
+		texturefile = "gfx/interface/technologies/walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_ENG_walker_chassis_land_cruiser_1_medium"
+		texturefile = "gfx/interface/technologies/walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_FRA_land_cruiser_walker_chassis_medium"
+		texturefile = "gfx/interface/technologies/walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_ENG_land_cruiser_walker_chassis_medium"
+		texturefile = "gfx/interface/technologies/walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_GER_land_cruiser_walker_chassis_medium"
+		texturefile = "gfx/interface/technologies/GER_walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_SPR_walker_chassis_land_cruiser_1_medium"
+		texturefile = "gfx/interface/technologies/SPR_walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_SPA_walker_chassis_land_cruiser_1_medium"
+		texturefile = "gfx/interface/technologies/SPR_walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_SPR_land_cruiser_walker_chassis_medium"
+		texturefile = "gfx/interface/technologies/SPR_walker_chassis_land_cruiser.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_SPA_land_cruiser_walker_chassis_medium"
+		texturefile = "gfx/interface/technologies/SPR_walker_chassis_land_cruiser.dds"
+	}
+
+	# NEW SPONSON & WALKER MODULE ADDITIONS
+	spriteType = { name = "GFX_walker_fixed_sponson_turret" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkers_sponson.dds" }
+	spriteType = { name = "GFX_EMI_walker_fixed_sponson_turret" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkers_sponson.dds" }
+	spriteType = { name = "GFX_sp_walker_modules" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkers_sponson.dds" }
+	spriteType = { name = "GFX_walker_sponson_turret_category" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkers_sponson.dds" }
+	spriteType = { name = "GFX_EMI_walker_sponson_turret_category" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkers_sponson.dds" }
+
+	spriteType = { name = "GFX_walker_pneumatic_damper" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkermodul1.dds" }
+	spriteType = { name = "GFX_EMI_walker_pneumatic_damper" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkermodul1.dds" }
+	spriteType = { name = "GFX_walker_hydropneumatic_recuperator" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkermodul2.dds" }
+	spriteType = { name = "GFX_EMI_walker_hydropneumatic_recuperator" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkermodul2.dds" }
+	spriteType = { name = "GFX_walker_oscillating_autoloader" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_oscillating_autoloader.dds" }
+	spriteType = { name = "GFX_EMI_walker_oscillating_autoloader" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_oscillating_autoloader.dds" }
+	spriteType = { name = "GFX_walker_oscillating_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_oscillating_autoloader.dds" }
+	spriteType = { name = "GFX_EMI_walker_oscillating_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_oscillating_autoloader.dds" }
+	spriteType = { name = "GFX_tank_autoloader_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_autoloader.dds" }
+	spriteType = { name = "GFX_EMI_tank_autoloader_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/EMI_tank_special_module.dds" }
+	spriteType = { name = "GFX_walker_dampener_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkermodul1.dds" }
+	spriteType = { name = "GFX_walker_lc_load_frame" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_lc_load_frame.dds" }
+	spriteType = { name = "GFX_EMI_walker_lc_load_frame" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_lc_load_frame.dds" }
+	spriteType = { name = "GFX_walker_lc_frame_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_lc_load_frame.dds" }
+	spriteType = { name = "GFX_EMI_walker_lc_frame_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_lc_load_frame.dds" }
+	spriteType = { name = "GFX_walker_lc_800mm_bombard" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_lc_800mm_bombard.dds" }
+	spriteType = { name = "GFX_EMI_walker_lc_800mm_bombard" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walker_lc_800mm_bombard.dds" }
+	spriteType = { name = "GFX_lc_main_armament" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/lc_heavy_naval_guns.dds" }
+	spriteType = { name = "GFX_EMI_lc_main_armament" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/lc_heavy_naval_guns.dds" }
+	spriteType = { name = "GFX_lc_secondary_armament" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/lc_medium_naval_guns.dds" }
+	spriteType = { name = "GFX_EMI_lc_secondary_armament" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/lc_medium_naval_guns.dds" }
+	spriteType = { name = "GFX_lc_additional_armament" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/lc_assault_gun.dds" }
+	spriteType = { name = "GFX_EMI_lc_additional_armament" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/lc_assault_gun.dds" }
+	spriteType = { name = "GFX_EMI_walker_dampener_module" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/walkermodul1.dds" }
+
+	spriteType = { name = "GFX_EMI_walker_sponson_small_cannon_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_small_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_small_cannon_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_small_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sponson_small_cannon_2" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_small_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_small_cannon_2" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_small_cannon.dds" }
+
+	spriteType = { name = "GFX_EMI_walker_sponson_auto_cannon_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_auto_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_auto_cannon_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_auto_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sponson_auto_cannon_2" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_auto_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_auto_cannon_2" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_auto_cannon.dds" }
+
+	spriteType = { name = "GFX_EMI_walker_sponson_anti_air_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_anti_air_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_anti_air_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_anti_air_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sponson_anti_air_2" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_anti_air_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_anti_air_2" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_anti_air_cannon.dds" }
+
+	spriteType = { name = "GFX_EMI_walker_sponson_anti_tank_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_anti_tank_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_anti_tank_1" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_anti_tank_cannon.dds" }
+
+	spriteType = { name = "GFX_EMI_walker_sponson_close_support" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_close_support_gun.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_close_support" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_close_support_gun.dds" }
+
+	spriteType = { name = "GFX_EMI_walker_sponson_flamethrower" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_flamethrower.dds" }
+	spriteType = { name = "GFX_EMI_walker_sec_flamethrower" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_flamethrower.dds" }
+
+
+	spriteType = { name = "GFX_walker_secondary_light_gun" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_small_cannon.dds" }
+	spriteType = { name = "GFX_EMI_walker_secondary_light_gun" textureFile = "gfx/interface/equipmentdesigner/tanks/modules/tank_module_small_cannon.dds" }
+
+
+	# Sponson Light Walker Default Medium Icons (for Special Project Rewards & Equipment Views)
+	spriteType = { name = "GFX_walker_sponson_chassis_0_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+	spriteType = { name = "GFX_walker_sponson_chassis_1_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+	spriteType = { name = "GFX_walker_sponson_chassis_2_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+	spriteType = { name = "GFX_walker_sponson_chassis_4_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+	spriteType = { name = "GFX_walker_sponson_chassis_5_medium" texturefile = "gfx/interface/technologies/walker.dds" }
+
+	spriteType = { name = "GFX_GER_walker_sponson_chassis_0_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+	spriteType = { name = "GFX_GER_walker_sponson_chassis_1_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+	spriteType = { name = "GFX_GER_walker_sponson_chassis_2_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+	spriteType = { name = "GFX_GER_walker_sponson_chassis_4_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+	spriteType = { name = "GFX_GER_walker_sponson_chassis_5_medium" texturefile = "gfx/interface/technologies/GER_walker_light.dds" }
+
+	spriteType = { name = "GFX_SOV_walker_sponson_chassis_0_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+	spriteType = { name = "GFX_SOV_walker_sponson_chassis_1_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+	spriteType = { name = "GFX_SOV_walker_sponson_chassis_2_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+	spriteType = { name = "GFX_SOV_walker_sponson_chassis_4_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+	spriteType = { name = "GFX_SOV_walker_sponson_chassis_5_medium" texturefile = "gfx/interface/technologies/SOV_walker_light.dds" }
+
+}

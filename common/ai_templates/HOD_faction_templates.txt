@@ -1,0 +1,283 @@
+# HOD: AI division templates for the Republic and the Separatists (faction_templates.py)
+
+hod_rep_infantry = {
+	available_for = { REP }
+	role = infantry
+	upgrade_prio = { base = 3 }
+	hod_rep_army_division = {
+		upgrade_prio = { base = 1 }
+		target_template = {
+			support = {
+				engineer = 1
+				recon = 1
+				signal_company = 1
+				logistics_company = 1
+				field_hospital = 1
+			}
+			regimental_support = {
+				fire_support = 1
+				anti_tank_battery = 1
+				anti_air_battery = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+		target_min_match = 0.6
+	}
+	hod_rep_clone_legion = {
+		upgrade_prio = { base = 1 }
+		can_upgrade_in_field = { has_tech = phase_I_equipment }
+		target_template = {
+			support = {
+				engineer = 1
+				recon = 1
+				signal_company = 1
+				logistics_company = 1
+				field_hospital = 1
+			}
+			regimental_support = {
+				fire_support = 1
+				anti_tank_battery = 1
+				anti_air_battery = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+		target_min_match = 0.6
+	}
+	hod_rep_clone_armoured_legion = {
+		upgrade_prio = { base = 1 }
+		can_upgrade_in_field = { has_tech = rep_tx130 }
+		target_template = {
+			support = {
+				repulsor_tank_company = 1
+				engineer = 1
+				recon = 1
+				logistics_company = 1
+				field_hospital = 1
+			}
+			regimental_support = {
+				fire_support = 1
+				anti_tank_battery = 1
+				anti_air_battery = 1
+			}
+			regiments = {
+				infantry = 9
+			}
+		}
+		target_min_match = 0.6
+	}
+	hod_rep_air_cavalry = {
+		upgrade_prio = { base = 1 }
+		can_upgrade_in_field = { has_tech = laat_infantry }
+		target_template = {
+			support = {
+				helicopter_brigade = 1
+				engineer = 1
+				recon = 1
+				signal_company = 1
+				field_hospital = 1
+			}
+			regimental_support = {
+				fire_support = 1
+				anti_tank_battery = 1
+			}
+			regiments = {
+				infantry = 6
+			}
+		}
+		target_min_match = 0.6
+	}
+}
+
+hod_rep_walkers = {
+	available_for = { REP }
+	role = armor
+	upgrade_prio = { base = 2 }
+	hod_rep_lance_company = {
+		upgrade_prio = { base = 1 }
+		target_template = {
+			support = {
+				walkers_light_recon = 1
+				engineer = 1
+				maintenance_company = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+			regimental_support = {
+				fire_support = 1
+				anti_tank_battery = 1
+			}
+			regiments = {
+				infantry = 6
+				walkers_light = 2
+			}
+		}
+		target_min_match = 0.6
+	}
+	hod_rep_atte_division = {
+		upgrade_prio = { base = 1 }
+		can_upgrade_in_field = { has_tech = rep_walker_atte }
+		target_template = {
+			support = {
+				walkers_light_recon = 1
+				engineer = 1
+				maintenance_company = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+			regimental_support = {
+				anti_tank_battery = 1
+				fire_support = 1
+				anti_air_battery = 1
+			}
+			regiments = {
+				walkers_medium = 3
+				infantry = 6
+			}
+		}
+		target_min_match = 0.6
+	}
+	hod_rep_atat_division = {
+		upgrade_prio = { base = 1 }
+		can_upgrade_in_field = { has_tech = rep_walker_atat_kuat }
+		target_template = {
+			support = {
+				walkers_light_recon = 1
+				engineer = 1
+				maintenance_company = 1
+				logistics_company = 1
+				signal_company = 1
+			}
+			regimental_support = {
+				anti_air_battery = 1
+				fire_support = 1
+				anti_tank_battery = 1
+			}
+			regiments = {
+				walkers_modern = 3
+				walkers_medium = 2
+				infantry = 6
+			}
+		}
+		target_min_match = 0.6
+	}
+}
+
+hod_rep_garrison = {
+	available_for = { REP }
+	role = garrison
+	upgrade_prio = { base = 1 }
+	hod_rep_garrison = {
+		upgrade_prio = { base = 1 }
+		target_template = {
+			support = {
+				military_police = 1
+			}
+			regiments = {
+				infantry = 2
+			}
+		}
+		target_min_match = 0.6
+	}
+}
+
+hod_cis_infantry = {
+	available_for = { CIS TDF TCU CMG IBC }
+	role = infantry
+	upgrade_prio = { base = 3 }
+	hod_cis_droid_battalion = {
+		upgrade_prio = { base = 1 }
+		target_template = {
+			support = {
+				engineer = 1
+				recon = 1
+				signal_company = 1
+				logistics_company = 1
+				maintenance_company = 1
+			}
+			regimental_support = {
+				fire_support = 2
+				anti_tank_battery = 1
+				anti_air_battery = 1
+			}
+			regiments = {
+				infantry_droid = 10
+				heavy_droid = 3
+			}
+		}
+		target_min_match = 0.6
+	}
+}
+
+hod_cis_armour = {
+	available_for = { CIS TDF TCU CMG IBC }
+	role = armor
+	upgrade_prio = { base = 3 }
+	hod_cis_aat_division = {
+		upgrade_prio = { base = 1 }
+		target_template = {
+			support = {
+				engineer = 1
+				recon = 1
+				signal_company = 1
+				logistics_company = 1
+				maintenance_company = 1
+			}
+			regimental_support = {
+				light_sp_anti_air_support = 2
+				anti_tank_battery = 1
+			}
+			regiments = {
+				medium_armor = 4
+				infantry_droid = 6
+			}
+		}
+		target_min_match = 0.6
+	}
+	hod_cis_heavy_division = {
+		upgrade_prio = { base = 1 }
+		can_upgrade_in_field = { has_tech = cis_haat }
+		target_template = {
+			support = {
+				engineer = 1
+				recon = 1
+				signal_company = 1
+				logistics_company = 1
+				maintenance_company = 1
+			}
+			regimental_support = {
+				light_sp_anti_air_support = 2
+				anti_tank_battery = 1
+				fire_support = 1
+			}
+			regiments = {
+				heavy_armor = 2
+				medium_armor = 2
+				infantry_droid = 3
+				heavy_droid = 3
+			}
+		}
+		target_min_match = 0.6
+	}
+}
+
+hod_cis_garrison = {
+	available_for = { CIS TDF TCU CMG IBC }
+	role = garrison
+	upgrade_prio = { base = 1 }
+	hod_cis_garrison = {
+		upgrade_prio = { base = 1 }
+		target_template = {
+			support = {
+				military_police = 1
+			}
+			regiments = {
+				infantry_droid = 2
+			}
+		}
+		target_min_match = 0.6
+	}
+}

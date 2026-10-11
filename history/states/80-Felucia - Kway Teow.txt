@@ -1,0 +1,34 @@
+state={
+	id=80
+	name="STATE_80"
+	# HOD: Felucia, red zone (felucia_tribes.py)
+	provinces={
+		8813 8817 8818 8819 8822 8826 8830 9195 9212 9224 9227 9247 9248
+	}
+	resources={
+		oil=2#Fuel
+		tungsten=3#Bacta
+	}
+	history = {
+		victory_points = {
+			8826 5
+		}
+		victory_points = {
+			8817 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			arms_factory = 5
+			air_base = 3
+			dockyard = 2
+		}
+		owner = CMG
+		add_core_of = FLT
+		add_core_of = CMG
+	}
+	manpower = 2498814
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

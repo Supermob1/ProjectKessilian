@@ -9,11 +9,11 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_REP_amphibious_mechanized_infantry_2_medium"
-		texturefile = "gfx/interface/technologies/Republic Equipment/REP_amphibious_mechanized_infantry_2_medium.dds"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_maat_gunship_medium.dds"
 	}
 	spriteType = {
 		name = "GFX_REP_amphibious_mechanized_infantry_medium"
-		texturefile = "gfx/interface/technologies/Republic Equipment/REP_amphibious_mechanized_infantry_medium.dds"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_laat_gunship_medium.dds"
 	}
 	spriteType = {
 		name = "GFX_REP_armored_car1_medium"
@@ -210,5 +210,123 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Imperial_equipment_medium"
 		texturefile = "gfx/interface/technologies/Imperial_equipment_medium.dds"
+	}
+
+	# HOD: placeholder icons for the clone and droid techs (shared textures until dedicated art exists)
+	spriteType = {
+		name = "GFX_arc_commandos_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_support_weapons2_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_advanced_training_programs_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_night_vision_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_kaminoan_genetic_conditioning_medium"
+		texturefile = "gfx/interface/technologies/kamino_standardization_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_imperial_commandos_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_support_weapons4_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_laat_infantry_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_laat_gunship_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_air_cavalry_doctrine_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_laat_gunship_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_improved_dropship_loadouts_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_infantry_at2_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_maat_infantry_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_maat_gunship_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_ion_disruptors_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_infantry_at_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_ion_disruptors_2_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_improved_infantry_weapons_2_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_ion_disruptors_3_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_advanced_infantry_weapons2_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_cw_infantry_droids_medium"
+		texturefile = "gfx/interface/technologies/late_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_late_cw_infantry_droids_medium"
+		texturefile = "gfx/interface/technologies/late_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_imperial_infantry_droids_medium"
+		texturefile = "gfx/interface/technologies/late_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_high_republic_heavy_droids_medium"
+		texturefile = "gfx/interface/technologies/high_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_late_republic_heavy_droids_medium"
+		texturefile = "gfx/interface/technologies/high_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_early_cw_heavy_droids_medium"
+		texturefile = "gfx/interface/technologies/high_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_late_cw_heavy_droids_medium"
+		texturefile = "gfx/interface/technologies/high_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_imperial_heavy_droids_medium"
+		texturefile = "gfx/interface/technologies/high_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_hkb3_commando_droid_medium"
+		texturefile = "gfx/interface/technologies/early_droid_infantry_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_bx_battle_droid_medium"
+		texturefile = "gfx/interface/technologies/early_droid_infantry_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_hk77_assassin_droid_medium"
+		texturefile = "gfx/interface/technologies/early_droid_infantry_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_droideka_early_medium"
+		texturefile = "gfx/interface/technologies/early_droid_infantry_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_droideka_adv_medium"
+		texturefile = "gfx/interface/technologies/early_droid_infantry_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_early_magnaguard_medium"
+		texturefile = "gfx/interface/technologies/high_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_adv_magnaguard_medium"
+		texturefile = "gfx/interface/technologies/high_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_early_spider_droid_medium"
+		texturefile = "gfx/interface/technologies/late_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_cw_spider_droid_medium"
+		texturefile = "gfx/interface/technologies/late_republic_infantry_droids_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_late_spider_droid_medium"
+		texturefile = "gfx/interface/technologies/late_republic_infantry_droids_medium.dds"
 	}
 }

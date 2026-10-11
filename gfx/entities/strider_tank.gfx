@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "strider_tank_mesh"
+		file = "gfx/models/units/walkers/strider_tank.mesh"
+
+		animation = { id = "attack"			type = "strider_tank_attack_animation" }
+		animation = { id = "idle"			type = "strider_tank_idle_animation" }
+		animation = { id = "move"			type = "strider_tank_move_animation" }
+		animation = { id = "death"			type = "strider_tank_death_animation" }
+		scale = 0.47
+	}
+}

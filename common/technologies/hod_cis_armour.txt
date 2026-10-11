@@ -1,0 +1,483 @@
+technologies = {
+	# HOD: Droid Armour (faction_armour.py). Rows (x) are lines, columns (y) the shared HoD year grid
+	@960 = 0
+	@964 = 3
+	@970 = 6
+	@974 = 9
+	@976 = 12
+	@977 = 15
+	@978 = 18
+	@979 = 21
+	@980 = 24
+	@981 = 27
+	@982 = 30
+	@983 = 33
+	@985 = 36
+
+	cis_aat = {
+		category_all_armor = { maximum_speed = 0.10 reliability = -0.05 plains = { attack = 0.05 } desert = { attack = 0.05 } }
+		enable_equipments = {
+			medium_tank_chassis_0
+			medium_tank_destroyer_chassis_0
+			medium_tank_artillery_chassis_0
+			medium_tank_aa_chassis_0
+			medium_tank_chassis_1
+			medium_tank_destroyer_chassis_1
+			medium_tank_artillery_chassis_1
+			medium_tank_aa_chassis_1
+		}
+		enable_subunits = {
+			medium_armor
+		}
+		enable_equipment_modules = {
+			tank_torsion_bar_suspension
+			tank_riveted_armor
+			tank_gasoline_engine
+			tank_diesel_engine
+			tank_petrol_electric_engine
+			tank_cast_armor
+			tank_christie_suspension
+			tank_bogie_suspension
+			tank_interleaved_suspension
+			tank_light_one_man_tank_turret
+			tank_light_two_man_tank_turret
+			tank_light_three_man_tank_turret
+			tank_light_fixed_superstructure_turret
+			tank_medium_one_man_tank_turret
+			tank_medium_two_man_tank_turret
+			tank_medium_three_man_tank_turret
+			tank_medium_fixed_superstructure_turret
+			tank_heavy_two_man_tank_turret
+			tank_heavy_three_man_tank_turret
+			tank_heavy_fixed_superstructure_turret
+			tank_super_heavy_four_man_tank_turret
+			tank_super_heavy_three_man_tank_turret
+			tank_modern_tank_turret
+			sloped_armor
+			extra_ammo_storage
+			wet_ammo_storage
+			smoke_launchers
+			expanded_fuel_tank
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = medium_armor } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_droid_tanks" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = cis_octuptarra research_cost_coeff = 1 }
+		path = { leads_to_tech = cis_gat research_cost_coeff = 1 }
+		path = { leads_to_tech = cis_haat research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 970
+		folder = { name = hod_cis_armour_folder position = { x = 4 y = @970 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "970.1.1" } }
+	}
+	cis_octuptarra = {
+		enable_equipments = {
+			light_tank_chassis_0
+			light_tank_destroyer_chassis_0
+			light_tank_artillery_chassis_0
+			light_tank_aa_chassis_0
+			light_tank_chassis_1
+			light_tank_destroyer_chassis_1
+			light_tank_artillery_chassis_1
+			light_tank_aa_chassis_1
+		}
+		enable_subunits = {
+			light_armor
+			light_sp_anti_air_brigade
+			light_sp_anti_air_support
+		}
+		path = { leads_to_tech = cis_crab research_cost_coeff = 1 }
+		path = { leads_to_tech = cis_dsd1 research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 976
+		folder = { name = hod_cis_armour_folder position = { x = 0 y = @976 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "976.1.1" } }
+	}
+	cis_crab = {
+		light_armor = { soft_attack = 0.05 marsh = { attack = 0.10 movement = 0.20 } river = { attack = 0.10 } }
+		enable_equipments = {
+			light_tank_chassis_2
+			light_tank_destroyer_chassis_2
+			light_tank_artillery_chassis_2
+			light_tank_aa_chassis_2
+		}
+		path = { leads_to_tech = cis_octuptarra_2 research_cost_coeff = 1 }
+		XOR = { cis_dsd1 }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_cis_armour_folder position = { x = 0 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	cis_octuptarra_2 = {
+		enable_equipments = {
+			light_tank_chassis_3
+			light_tank_destroyer_chassis_3
+			light_tank_artillery_chassis_3
+			light_tank_aa_chassis_3
+		}
+		enable_subunits = {
+			medium_sp_anti_air_brigade
+			medium_sp_anti_air_support
+		}
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_cis_armour_folder position = { x = 0 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	cis_dsd1 = {
+		light_armor = { breakthrough = 0.05 hills = { attack = 0.10 } mountain = { attack = 0.10 movement = 0.10 } }
+		enable_equipments = {
+			light_tank_chassis_2
+			light_tank_destroyer_chassis_2
+			light_tank_artillery_chassis_2
+			light_tank_aa_chassis_2
+		}
+		path = { leads_to_tech = cis_dsd2 research_cost_coeff = 1 }
+		XOR = { cis_crab }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_cis_armour_folder position = { x = 2 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	cis_dsd2 = {
+		enable_equipments = {
+			medium_tank_chassis_3
+			medium_tank_destroyer_chassis_3
+			medium_tank_artillery_chassis_3
+			medium_tank_aa_chassis_3
+		}
+		path = { leads_to_tech = cis_adsd research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_cis_armour_folder position = { x = 2 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	cis_adsd = {
+		enable_equipments = {
+			modern_tank_chassis_1
+			modern_tank_destroyer_chassis_1
+			modern_tank_artillery_chassis_1
+			modern_tank_aa_chassis_1
+		}
+		enable_subunits = {
+			modern_armor
+		}
+		research_cost = 2
+		start_year = 982
+		folder = { name = hod_cis_armour_folder position = { x = 2 y = @982 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "982.1.1" } }
+	}
+	cis_gat = {
+		medium_armor = { maximum_speed = 0.10 breakthrough = 0.05 }
+		enable_equipments = {
+			medium_tank_chassis_2
+			medium_tank_destroyer_chassis_2
+			medium_tank_artillery_chassis_2
+			medium_tank_aa_chassis_2
+		}
+		enable_equipment_modules = {
+			tank_welded_armor
+		}
+		path = { leads_to_tech = cis_dsd2 research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_cis_armour_folder position = { x = 4 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	cis_haat = {
+		enable_equipments = {
+			heavy_tank_chassis_0
+			heavy_tank_destroyer_chassis_0
+			heavy_tank_artillery_chassis_0
+			heavy_tank_aa_chassis_0
+			heavy_tank_chassis_1
+			heavy_tank_destroyer_chassis_1
+			heavy_tank_artillery_chassis_1
+			heavy_tank_aa_chassis_1
+		}
+		enable_subunits = {
+			heavy_armor
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = heavy_armor } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_haat" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = cis_persuader research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 977
+		folder = { name = hod_cis_armour_folder position = { x = 6 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	cis_persuader = {
+		enable_equipments = {
+			heavy_tank_chassis_2
+			heavy_tank_destroyer_chassis_2
+			heavy_tank_artillery_chassis_2
+			heavy_tank_aa_chassis_2
+		}
+		enable_equipment_modules = {
+			lc_armored_skirts
+		}
+		path = { leads_to_tech = cis_magna research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_cis_armour_folder position = { x = 6 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	cis_magna = {
+		enable_equipments = {
+			heavy_tank_chassis_3
+			heavy_tank_destroyer_chassis_3
+			heavy_tank_artillery_chassis_3
+			heavy_tank_aa_chassis_3
+			super_heavy_tank_chassis_1
+			super_heavy_tank_destroyer_chassis_1
+			super_heavy_tank_artillery_chassis_1
+			super_heavy_tank_aa_chassis_1
+		}
+		enable_subunits = {
+			super_heavy_armor
+			heavy_sp_anti_air_brigade
+			heavy_sp_anti_air_support
+			super_heavy_sp_anti_air_brigade
+			modern_sp_anti_air_brigade
+			modern_sp_anti_air_support
+		}
+		enable_equipment_modules = {
+			tank_super_heavy_cannon
+		}
+		research_cost = 2
+		start_year = 983
+		folder = { name = hod_cis_armour_folder position = { x = 6 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	cis_hailfire = {
+		light_sp_artillery_brigade = { soft_attack = 0.05 }
+		enable_subunits = {
+			light_sp_artillery_brigade
+		}
+		path = { leads_to_tech = cis_payloads research_cost_coeff = 1 }
+		path = { leads_to_tech = cis_redeploy research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 976
+		folder = { name = hod_cis_armour_folder position = { x = 8 y = @976 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "976.1.1" } }
+	}
+	cis_payloads = {
+		category_self_propelled_artillery = { soft_attack = 0.10 }
+		path = { leads_to_tech = cis_hailfire_heavy research_cost_coeff = 1 }
+		XOR = { cis_redeploy }
+		research_cost = 1.5
+		start_year = 977
+		folder = { name = hod_cis_armour_folder position = { x = 8 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	cis_redeploy = {
+		category_self_propelled_artillery = { max_organisation = 5 breakthrough = 0.10 }
+		path = { leads_to_tech = cis_hailfire_heavy research_cost_coeff = 1 }
+		XOR = { cis_payloads }
+		research_cost = 1.5
+		start_year = 977
+		folder = { name = hod_cis_armour_folder position = { x = 10 y = @977 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "977.1.1" } }
+	}
+	cis_hailfire_heavy = {
+		enable_subunits = {
+			medium_sp_artillery_brigade
+			heavy_sp_artillery_brigade
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = medium_sp_artillery_brigade } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_heavy_hailfire" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = cis_og9 research_cost_coeff = 1 }
+		path = { leads_to_tech = cis_targeting research_cost_coeff = 1 }
+		path = { leads_to_tech = cis_production research_cost_coeff = 1 }
+		path = { leads_to_tech = cis_hag research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 978
+		folder = { name = hod_cis_armour_folder position = { x = 8 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	cis_og9 = {
+		enable_equipments = {
+			motorized_rocket_equipment_1
+		}
+		enable_subunits = {
+			motorized_rocket_brigade
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = motorized_rocket_brigade } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_og9" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = cis_og9_targeting research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_cis_armour_folder position = { x = 8 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	cis_og9_targeting = {
+		motorized_rocket_brigade = { soft_attack = 0.10 hard_attack = 0.10 }
+		research_cost = 2
+		start_year = 982
+		folder = { name = hod_cis_armour_folder position = { x = 8 y = @982 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "982.1.1" } }
+	}
+	cis_targeting = {
+		category_self_propelled_artillery = { soft_attack = 0.05 }
+		path = { leads_to_tech = cis_protodeka research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_cis_armour_folder position = { x = 10 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	cis_production = {
+		production_factory_efficiency_gain_factor = 0.05
+		path = { leads_to_tech = cis_protodeka research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 981
+		folder = { name = hod_cis_armour_folder position = { x = 10 y = @981 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "981.1.1" } }
+	}
+	cis_protodeka = {
+		enable_subunits = {
+			super_heavy_sp_artillery_brigade
+			modern_sp_artillery_brigade
+		}
+		dependencies = { cis_targeting = 1 cis_production = 1 }
+		research_cost = 2
+		start_year = 983
+		folder = { name = hod_cis_armour_folder position = { x = 10 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	cis_hag = {
+		enable_subunits = {
+			light_tank_destroyer_brigade
+			medium_tank_destroyer_brigade
+			heavy_tank_destroyer_brigade
+			super_heavy_tank_destroyer_brigade
+			modern_tank_destroyer_brigade
+			light_tank_destroyer_support
+			medium_tank_destroyer_support
+			heavy_tank_destroyer_support
+			modern_tank_destroyer_support
+		}
+		on_research_complete_limit = { NOT = { has_template_containing_unit = medium_tank_destroyer_support } }
+		on_research_complete = {
+			hidden_effect = { load_oob = "HOD_unlock_hag" }
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+		path = { leads_to_tech = cis_long_range research_cost_coeff = 1 }
+		research_cost = 2
+		start_year = 980
+		folder = { name = hod_cis_armour_folder position = { x = 12 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	cis_long_range = {
+		category_tank_destroyers = { hard_attack = 0.10 ap_attack = 0.10 }
+		research_cost = 2
+		start_year = 982
+		folder = { name = hod_cis_armour_folder position = { x = 12 y = @982 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "982.1.1" } }
+	}
+	cis_repulsor_1 = {
+		category_all_armor = { maximum_speed = 0.05 }
+		path = { leads_to_tech = cis_repulsor_2 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 976
+		folder = { name = hod_cis_armour_folder position = { x = 14 y = @976 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "976.1.1" } }
+	}
+	cis_repulsor_2 = {
+		category_all_armor = { maximum_speed = 0.05 }
+		path = { leads_to_tech = cis_repulsor_3 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 978
+		folder = { name = hod_cis_armour_folder position = { x = 14 y = @978 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "978.1.1" } }
+	}
+	cis_repulsor_3 = {
+		category_all_armor = { maximum_speed = 0.05 }
+		path = { leads_to_tech = cis_repulsor_4 research_cost_coeff = 1 }
+		research_cost = 1.5
+		start_year = 980
+		folder = { name = hod_cis_armour_folder position = { x = 14 y = @980 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "980.1.1" } }
+	}
+	cis_repulsor_4 = {
+		category_all_armor = { maximum_speed = 0.05 }
+		research_cost = 1.5
+		start_year = 983
+		folder = { name = hod_cis_armour_folder position = { x = 14 y = @983 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "983.1.1" } }
+	}
+	cis_foundry_1 = {
+		line_change_production_efficiency_factor = 0.05
+		path = { leads_to_tech = cis_foundry_2 research_cost_coeff = 1 }
+		on_research_complete = {
+			HOD_set_droid_foundries = yes
+			custom_effect_tooltip = HOD_droid_foundries_1_tt
+		}
+		research_cost = 1.5
+		start_year = 976
+		folder = { name = hod_cis_armour_folder position = { x = 16 y = @976 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "976.1.1" } }
+	}
+	cis_foundry_2 = {
+		line_change_production_efficiency_factor = 0.05
+		path = { leads_to_tech = cis_foundry_3 research_cost_coeff = 1 }
+		on_research_complete = {
+			HOD_set_droid_foundries = yes
+			custom_effect_tooltip = HOD_droid_foundries_2_tt
+		}
+		research_cost = 1.5
+		start_year = 979
+		folder = { name = hod_cis_armour_folder position = { x = 16 y = @979 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "979.1.1" } }
+	}
+	cis_foundry_3 = {
+		line_change_production_efficiency_factor = 0.05
+		on_research_complete = {
+			HOD_set_droid_foundries = yes
+			custom_effect_tooltip = HOD_droid_foundries_3_tt
+		}
+		research_cost = 1.5
+		start_year = 982
+		folder = { name = hod_cis_armour_folder position = { x = 16 y = @982 } }
+		categories = { armor }
+		ai_will_do = { factor = 1 modifier = { factor = 2 date > "982.1.1" } }
+	}
+}

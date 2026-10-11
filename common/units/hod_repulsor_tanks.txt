@@ -1,0 +1,69 @@
+# HOD: repulsor tank company, a support company like the LAAT gunships (based on vanilla's light tank recon company)
+sub_units = {
+	repulsor_tank_company = {
+		abbreviation = "RPT"
+		sprite = light_armor
+		map_icon_category = armored
+		priority = 0
+		ai_priority = 0
+		active = no
+
+		type = {
+			armor
+			support
+		}
+
+		group = support
+
+		categories = {
+			category_support_battalions
+			category_divisional_support_battalions
+			category_army
+			category_all_armor
+		}
+
+		regimental = no
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 150
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.06
+		can_be_parachuted = no
+
+		# Support nerfs to combat abilities
+		defense = -0.5
+		breakthrough = -0.5
+		soft_attack = -0.5
+		hard_attack = -0.5
+
+		essential = {
+			repulsor_tank_equipment
+		}
+
+		need = {
+			repulsor_tank_equipment = 12
+		}
+
+		plains = {
+			attack = 0.05
+			movement = 0.1
+		}
+		desert = {
+			attack = 0.05
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.15
+		}
+		river = {
+			movement = 0.15
+		}
+	}
+}

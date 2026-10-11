@@ -1,0 +1,22 @@
+﻿# HOD: Felucian tribes (faction_templates.py)
+
+FLT_INF_01 = {
+	name = "Felucian Warbands"
+
+	for_countries = { FLT }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Warband"
+
+	ordered = {
+		1 = { "1st Nui Da Voi Warband" }
+		2 = { "2nd Ancient Abyss Rancor Riders" }
+		3 = { "3rd Ban Nam Stalkers" }
+		4 = { "4th Rung Tham Hunters" }
+		5 = { "5th Suong Mu Shadow Band" }
+		6 = { "6th Thach Lam Warband" }
+	}
+}

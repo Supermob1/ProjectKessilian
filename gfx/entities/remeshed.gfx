@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "remeshed_mesh"
+		file = "gfx/models/units/walkers/remeshed.mesh"
+
+		animation = { id = "attack"			type = "remeshed_attack_animation" }
+		animation = { id = "idle"			type = "remeshed_idle_animation" }
+		animation = { id = "move"			type = "remeshed_move_animation" }
+		animation = { id = "death"			type = "remeshed_death_animation" }
+		scale = 0.47
+	}
+}

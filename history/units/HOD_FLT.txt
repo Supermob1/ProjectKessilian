@@ -1,0 +1,65 @@
+﻿# HOD: FLT (faction_templates.py)
+
+division_template = {
+	name = "Felucian Warband"
+	division_names_group = FLT_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Karst Ambushers"
+	division_names_group = FLT_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Felucian Warband"
+		location = 8892
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Felucian Warband"
+		location = 9001
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Felucian Warband"
+		location = 8892
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Felucian Warband"
+		location = 9001
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Karst Ambushers"
+		location = 8892
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Karst Ambushers"
+		location = 9001
+		start_experience_factor = 0.2
+	}
+}

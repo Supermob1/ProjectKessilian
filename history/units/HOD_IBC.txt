@@ -1,223 +1,154 @@
 division_template = {
 	name = "Local Planetary Garrison"
 	division_names_group = CIS_GAR_01
-    is_locked = yes
+	is_locked = yes
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
 	}
 	support = {
+		military_police = { x = 0 y = 0 }
 	}
 }
 
 division_template = {
-    name = "CIS Droid Battalion"
-    division_names_group = CIS_INF_01
-	is_locked = yes
-	force_allow_recruiting = yes
-    template_counter = 1
-    regiments = {
-        infantry = { x = 0 y = 0 }
-        infantry = { x = 0 y = 1 }
-        infantry = { x = 0 y = 2 }
-        infantry = { x = 1 y = 0 }
-        infantry = { x = 1 y = 1 }
-        infantry = { x = 1 y = 2 }
-        infantry = { x = 2 y = 0 }
-        infantry = { x = 2 y = 1 }
-        infantry = { x = 2 y = 2 }
-        infantry = { x = 3 y = 0 }
-        infantry = { x = 3 y = 1 }
-        infantry = { x = 3 y = 2 }
-        infantry = { x = 4 y = 0 }
-    }
-    support = {
-    }
+	name = "CIS Droid Battalion"
+	division_names_group = CIS_INF_01
+	regiments = {
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+		infantry_droid = { x = 2 y = 0 }
+		infantry_droid = { x = 2 y = 1 }
+		infantry_droid = { x = 2 y = 2 }
+		heavy_droid = { x = 3 y = 0 }
+		heavy_droid = { x = 3 y = 1 }
+		heavy_droid = { x = 3 y = 2 }
+		infantry_droid = { x = 4 y = 0 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		fire_support = { x = 1 y = 0 }
+		anti_tank_battery = { x = 2 y = 0 }
+		anti_air_battery = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
 }
+
+division_template = {
+	name = "AAT Armoured Division"
+	division_names_group = CIS_ARM_01
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 1 y = 0 }
+		medium_armor = { x = 1 y = 1 }
+		infantry_droid = { x = 2 y = 0 }
+		infantry_droid = { x = 2 y = 1 }
+		infantry_droid = { x = 2 y = 2 }
+		infantry_droid = { x = 3 y = 0 }
+		infantry_droid = { x = 3 y = 1 }
+		infantry_droid = { x = 3 y = 2 }
+	}
+	regimental_support = {
+		light_sp_anti_air_support = { x = 0 y = 0 }
+		light_sp_anti_air_support = { x = 1 y = 0 }
+		anti_tank_battery = { x = 2 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Octuptarra Strike Group"
+	division_names_group = CIS_ARM_01
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+	}
+	regimental_support = {
+		light_sp_anti_air_support = { x = 0 y = 0 }
+		fire_support = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		maintenance_company = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Hailfire Artillery Group"
+	division_names_group = CIS_INF_01
+	regiments = {
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+		light_sp_artillery_brigade = { x = 2 y = 0 }
+		light_sp_artillery_brigade = { x = 2 y = 1 }
+	}
+	regimental_support = {
+		anti_air_battery = { x = 0 y = 0 }
+		anti_tank_battery = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
+}
+
 units = {
-    # Bastion
-    division = {
-        name                    = "1st Banking Clan Battle Droid Battalion"
-        location                = 6366
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "2nd Banking Clan Battle Droid Battalion"
-        location                = 6366
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "3rd Banking Clan Battle Droid Battalion"
-        location                = 6366
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-	# Kalee
-    division = {
-        name                    = "4th Banking Clan Battle Droid Battalion"
-        location                = 7109
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "6th Banking Clan Battle Droid Battalion"
-        location                = 7109
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "7th Banking Clan Battle Droid Battalion"
-        location                = 7109
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Dubrillion
-    division = {
-        name                    = "8th Banking Clan Battle Droid Battalion"
-        location                = 3723
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "9th Banking Clan Battle Droid Battalion"
-        location                = 3723
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "10th Banking Clan Battle Droid Battalion"
-        location                = 3723
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-	# Muunilist
-    division = {
-        name                    = "11th Banking Clan Battle Droid Battalion"
-        location                = 7476
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "12th Banking Clan Battle Droid Battalion"
-        location                = 7476
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "13th Banking Clan Battle Droid Battalion"
-        location                = 7476
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Mygeeto
-    division = {
-        name                    = "14th Banking Clan Battle Droid Battalion"
-        location                = 2380
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "15th Banking Clan Battle Droid Battalion"
-        location                = 2380
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "16th Banking Clan Battle Droid Battalion"
-        location                = 2380
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Dantooine
-    division = {
-        name                    = "17th Banking Clan Battle Droid Battalion"
-        location                = 7024
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "18th Banking Clan Battle Droid Battalion"
-        location                = 7024
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "19th Banking Clan Battle Droid Battalion"
-        location                = 7024
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Despayre
-    division = {
-        name                    = "20th Banking Clan Battle Droid Battalion"
-        location                = 7637
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "21th Banking Clan Battle Droid Battalion"
-        location                = 7637
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "22th Banking Clan Battle Droid Battalion"
-        location                = 7637
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Garqi
-    division = {
-        name                    = "23th Banking Clan Battle Droid Battalion"
-        location                = 9436
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "24th Banking Clan Battle Droid Battalion"
-        location                = 9436
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "25th Banking Clan Battle Droid Battalion"
-        location                = 9436
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
+	division = {
+		division_template = "Local Planetary Garrison"
+		location = 2793
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 7678
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 2356
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 2412
+		start_experience_factor = 0.2
+	}
 }
 	
 instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_0
+			type = cis_infantry_droid_equipment_2
 			creator = IBC
 		}
 		requested_factories = 3

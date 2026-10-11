@@ -1,0 +1,124 @@
+# HOD: Felucian jungle mist (felucia_mist.py): low fog banks + rising wisps, very low alpha
+particle={
+	name="hod_felucia_mist_file"
+	subsystem={
+		name="fog_bank"
+		max_amount=14
+		slave_particles=0
+		sort="depth"
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=no
+		billboard=yes
+		texture={
+			file="gfx/particles/cloud_6.dds"
+			x=1
+			y=1
+			shader="ParticleAlphaBlend"
+		}
+		color={
+			x=255.000
+			y=255.000
+			z=255.000
+			alpha=55.000,mist_fade
+		}
+		position={
+			x=0.000
+			y=0.000
+			z=0.000
+		}
+		start=0.000
+		duration=-1.000
+		emitter_yaw={ 0.000 180.000 }
+		emitter_pitch={ 0.000 0.000 }
+		velocity_pitch={ 0.000 2.000 }
+		velocity_yaw={ 0.000 180.000 }
+		velocity=0.040
+		life=24.000
+		emission=0.550
+		size=9.000,mist_grow
+		rotation=180.000
+		force=mist_wind
+	}
+	subsystem={
+		name="wisps"
+		max_amount=10
+		slave_particles=0
+		sort="depth"
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=no
+		billboard=yes
+		texture={
+			file="gfx/particles/cloud_6.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=38.000
+			y=40.000
+			z=38.000
+			alpha=120.000,mist_fade
+		}
+		position={
+			x=0.000
+			y=0.000
+			z=0.000
+		}
+		start=0.000
+		duration=-1.000
+		emitter_yaw={ 0.000 180.000 }
+		emitter_pitch={ 0.000 0.000 }
+		velocity_pitch={ 4.000 4.000 }
+		velocity_yaw={ 0.000 180.000 }
+		velocity=0.050
+		life=16.000
+		emission=0.600
+		size=5.000,mist_grow
+		rotation=180.000
+		force=mist_wind
+	}
+	animation={
+		name="mist_fade"
+		start=0.000
+		duration=1.000
+		repeat=no
+		minValue=0.000
+		maxValue=1.000
+		curve={
+			0.000 0.000 0.250 1.000 0.700 1.000 1.000 0.000
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="mist_grow"
+		start=0.000
+		duration=1.000
+		repeat=no
+		minValue=0.000
+		maxValue=1.000
+		curve={
+			0.000 0.600 1.000 1.400
+		}
+		op="MUL"
+		time="life"
+	}
+	force={
+		type="planar"
+		name="mist_wind"
+		position={
+			0.000 0.000 0.000
+		}
+		direction={
+			0.100 0.020 0.040
+		}
+		local_force=no
+		yaw=0.000
+		division=16
+		amount=0.020
+	}
+}

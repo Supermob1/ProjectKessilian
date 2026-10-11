@@ -1,4 +1,5 @@
 armor_generic = {
+	blocked_for = { REP CIS TDF TCU CMG IBC }   # HOD: faction templates in HOD_faction_templates.txt
 
 	role = armor
 	
@@ -163,6 +164,7 @@ armor_generic = {
 }
 
 garrison_generic = {
+	blocked_for = { REP CIS TDF TCU CMG IBC }   # HOD: faction templates in HOD_faction_templates.txt
 	
 	role = garrison
 	
@@ -235,6 +237,7 @@ suppression_generic = {
 }
 
 infantry_generic = {
+	blocked_for = { REP CIS TDF TCU CMG IBC }   # HOD: faction templates in HOD_faction_templates.txt
 
 	role = infantry
 	

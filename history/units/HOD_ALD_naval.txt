@@ -1,0 +1,16 @@
+﻿units = {
+	##### ALDERAAN NAVAL OOB #####
+	fleet = {
+		name = "Alderaanian Royal Fleet"
+		naval_base = 12670
+		task_force = {
+			name = "Royal Diplomatic Squadron"
+			location = 12670
+			ship = { name = "Tantive" pride_of_the_fleet = yes definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Alderaan's Grace" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Aldera Sentinel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Juran Sentinel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Apalis Sentinel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ALD } } }
+		}
+	}
+}

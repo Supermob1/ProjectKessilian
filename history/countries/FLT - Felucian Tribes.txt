@@ -1,0 +1,52 @@
+capital = 714
+
+oob = "HOD_FLT"
+
+set_research_slots = 1
+set_stability = 0.8
+set_war_support = 1.0
+
+recruit_character = FLT_shaman_council
+recruit_character = FLT_rancor_rider
+
+set_technology = {
+	infantry_weapons = 1
+	tech_recon = 1
+	tech_engineers = 1
+}
+
+set_popularities = {
+	akaanadocrat = 0
+	unitist = 0
+	corist = 0
+	distributionist = 85
+	corporate_consortium = 0
+	trade_democrat = 0
+	ruusanist = 0
+	inclusivist = 0
+	force_magocracy = 15
+}
+set_politics = {
+	ruling_party = distributionist
+	last_election = "999.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+add_ideas = {
+	HOD_felucian_tribes
+}
+# HOD: the tribes deal with no one from beyond the sky (felucia_tribes.py)
+set_rule = {
+	desc = HOD_felucian_tribes_rule
+	can_create_factions = no
+	can_join_factions = no
+	can_send_volunteers = no
+	can_puppet = no
+	can_guarantee_other_ideologies = no
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 6000
+	producer = FLT
+}

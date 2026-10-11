@@ -455,12 +455,6 @@ PixelShader =
 			float4 vDiffuse = tex2D( DiffuseMap, vUV0 );
 		#endif	
 
-		#ifdef HOD_ZOOM_FADE
-			// HOD: 3D planet globes only show when zoomed out; up close the flat planet terrain takes over.
-			// Dithered between the two heights so the swap isn't a hard pop.
-			float vHodDither = frac( sin( dot( floor( In.vPos_Height.xz * 4.0f ), float2( 12.9898f, 78.233f ) ) ) * 43758.5453f );
-			clip( vCamPos.y - lerp( 600.0f, 850.0f, vHodDither ) );
-		#endif
 		#ifdef ALPHA_TEST
 			clip(vDiffuse.a - 1.0);
 		#endif
@@ -996,19 +990,4 @@ Effect PdxMeshTrainSkinnedShadow
 	VertexShader = "VertexPdxMeshStandardSkinnedShadow"
 	PixelShader = "PixelPdxMeshStandardShadow"
 	Defines = { "TRAIN" }
-}
-
-# HOD: 3D planet globe (gfx/models/planets), PdxMeshAdvanced look, hidden when the camera is low, casts no shadow
-Effect HodPlanetGlobe
-{
-	VertexShader = "VertexPdxMeshStandard"
-	PixelShader = "PixelPdxMeshStandard"
-	DepthStencilState = "DepthStencilStateDisableTransparencyPassthrough"
-	Defines = { "EMISSIVE" "PDX_IMPROVED_BLINN_PHONG" "RIM_LIGHT" "HOD_ZOOM_FADE" }
-}
-
-Effect HodPlanetGlobeShadow
-{
-	VertexShader = "VertexPdxMeshStandardShadow"
-	PixelShader = "PixelPdxMeshNoShadow"
 }

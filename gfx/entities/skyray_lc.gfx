@@ -1,0 +1,44 @@
+objectTypes = {
+	pdxmesh = {
+		name = "skyray_lc_mesh"
+		file = "gfx/models/units/walkers/skyray_lc.mesh"
+		animation = {
+			id = "attack"
+			type = "skyray_lc_attack_animation"
+		}
+		animation = {
+			id = "idle"
+			type = "skyray_lc_idle_animation"
+		}
+		animation = {
+			id = "move"
+			type = "skyray_lc_move_animation"
+		}
+		animation = {
+			id = "death"
+			type = "skyray_lc_death_animation"
+		}
+		scale = 1.0
+	}
+	pdxmesh = {
+		animation = {
+			id = "attack"
+			type = "skyray_lc_part_attack_animation"
+		}
+		animation = {
+			id = "idle"
+			type = "skyray_lc_part_idle_animation"
+		}
+		animation = {
+			id = "move"
+			type = "skyray_lc_part_move_animation"
+		}
+		animation = {
+			id = "death"
+			type = "skyray_lc_part_death_animation"
+		}
+		scale = 1.0
+		name = "skyray_lc_part_mesh"
+		file = "gfx/models/units/walkers/skyray_lc_part.mesh"
+	}
+}

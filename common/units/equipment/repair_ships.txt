@@ -3,21 +3,21 @@ equipments = {
 	repair_ship_hull = {
 		year = 1936
 
-		can_be_produced = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				NOT = {
-					has_idea = BUL_army_restrictions_aat
-				}
-			}
-			else = {
-				NOT = {
-					has_idea = BUL_army_restrictions
-				}
-			}
-		}
+#		can_be_produced = {
+#			if = {
+#				limit = {
+#					has_dlc = "Arms Against Tyranny"
+#				}
+#				NOT = {
+#					has_idea = BUL_army_restrictions_aat
+#				}
+#			}
+#			else = {
+#				NOT = {
+#					has_idea = BUL_army_restrictions
+#				}
+#			}
+#		}
 
 		is_archetype = yes
 		is_buildable = no
@@ -46,9 +46,9 @@ equipments = {
 		naval_speed = 32
 		reliability = 0.80
 		
-		naval_range = 3000
+		naval_range = 3500
 		
-		max_strength = 25
+		max_strength = 30
 		
 
 		fuel_consumption = 0
@@ -95,7 +95,7 @@ equipments = {
 		
 		module_slots = inherit
 		max_strength = 40
-		naval_range = 4000
+		naval_range = 5000
 		build_cost_ic = 650
 		manpower = 350
 		naval_dominance_factor = 0

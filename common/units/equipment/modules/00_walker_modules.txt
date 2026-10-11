@@ -1,0 +1,115 @@
+# Unique Walker Equipment Modules
+equipment_modules = {
+
+	walker_pneumatic_damper = {
+		abbreviation = "wpd"
+		category = walker_dampener_module
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = 0.10
+			maximum_speed = 2.0
+			build_cost_ic = 0.5
+		}
+		xp_cost = 1
+	}
+
+	walker_hydropneumatic_recuperator = {
+		abbreviation = "whr"
+		category = walker_dampener_module
+		sfx = sfx_ui_sd_module_turret
+		parent = walker_pneumatic_damper
+		add_stats = {
+			reliability = 0.25
+			maximum_speed = 4.0
+			build_cost_ic = 1.2
+		}
+		build_cost_resources = {
+			tungsten = 1
+		}
+		xp_cost = 2
+	}
+
+	# Casemate 'Duet' — light walker turret. Second gun uses the same light armament category as the main gun.
+	walker_fixed_sponson_turret = {
+		abbreviation = "wfs"
+		category = walker_sponson_turret_category
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			breakthrough = 14
+			defense = 12
+			maximum_speed = -2.0
+			reliability = -0.15
+			build_cost_ic = 1.5
+		}
+		build_cost_resources = {
+			steel = 1
+		}
+		xp_cost = 2
+	}
+
+	# Medium and modern walkers only. Own category so it does not appear on light/heavy.
+	# Count limit on those chassis still blocks stacking with auto_loader.
+	walker_oscillating_autoloader = {
+		abbreviation = "woa"
+		category = walker_oscillating_module
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			breakthrough = 5
+			defense = 3
+			reliability = -0.05
+			build_cost_ic = 2.0
+		}
+		xp_cost = 2
+	}
+
+	# Vanilla stats. Same category as oscillating — count < 2 blocks stacking. Icon via GFX_tank_autoloader_module.
+	# HOD: auto_loader stays vanilla's (00_tank_modules.txt): walker chassis take tank_special_module
+
+	# Land-cruiser walker only. Spine that carries the citadel across the legs — no guns.
+	walker_lc_load_frame = {
+		abbreviation = "wlf"
+		category = walker_lc_frame_module
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			reliability = 0.15
+			armor_value = 10
+			defense = 5
+			maximum_speed = -2.0
+			build_cost_ic = 12
+			fuel_consumption = 1
+		}
+		build_cost_resources = {
+			steel = 2
+		}
+		xp_cost = 2
+	}
+
+	# 800mm citadel mortar — railway-gun bore on a walking citadel. Two may be mounted if the secondary slot takes a main gun.
+	walker_lc_800mm_bombard = {
+		abbreviation = "w8b"
+		category = lc_main_armament
+		sfx = sfx_ui_sd_module_turret
+		add_stats = {
+			breakthrough = 38
+			soft_attack = 100
+			hard_attack = 12
+			ap_attack = 75
+			additional_collateral_damage = 900
+			build_cost_ic = 22
+			maximum_speed = -0.55
+			reliability = -0.18
+			fuel_consumption = 2
+		}
+		dismantle_cost_ic = 1
+		xp_cost = 2
+		can_convert_from = {
+			module_category = lc_main_armament
+			convert_cost_ic = 18
+		}
+		build_cost_resources = {
+			tungsten = 6
+			chromium = 3
+			steel = 8
+		}
+	}
+}

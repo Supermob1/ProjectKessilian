@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "ironclad_sh_mesh"
+		file = "gfx/models/units/walkers/ironclad_sh.mesh"
+
+		animation = { id = "attack"			type = "ironclad_sh_attack_animation" }
+		animation = { id = "idle"			type = "ironclad_sh_idle_animation" }
+		animation = { id = "move"			type = "ironclad_sh_move_animation" }
+		animation = { id = "death"			type = "ironclad_sh_death_animation" }
+		scale = 0.54
+	}
+}
