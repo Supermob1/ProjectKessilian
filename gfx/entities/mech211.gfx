@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "mech211_mesh"
+		file = "gfx/models/units/walkers/mech211.mesh"
+
+		animation = { id = "attack"			type = "mech211_attack_animation" }
+		animation = { id = "idle"			type = "mech211_idle_animation" }
+		animation = { id = "move"			type = "mech211_move_animation" }
+		animation = { id = "death"			type = "mech211_death_animation" }
+		scale = 0.47
+	}
+}

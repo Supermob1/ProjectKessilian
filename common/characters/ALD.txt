@@ -1,0 +1,63 @@
+characters={
+	ALD_bail_organa={
+		name="Bail Organa"
+		gender = male
+		portraits={ civilian={ large="gfx/leaders/REP/portrait_bail_organa.dds" } }
+		country_leader={
+			desc="ALD_bail_organa_desc"
+			ideology=corist_subtype
+			traits={ voice_of_alderaan }
+			id=-1
+		}
+	}
+	ALD_breha_organa={
+		name="Breha Organa"
+		gender = female
+		advisor={
+			slot=political_advisor
+			idea_token=ALD_breha_organa_pol
+			cost=150
+			allowed={ original_tag=ALD }
+			traits={ popular_figurehead }
+			ai_will_do={ factor=1 }
+		}
+	}
+	ALD_bail_antilles={
+		name="Bail Antilles"
+		gender = male
+		advisor={
+			slot=political_advisor
+			idea_token=ALD_bail_antilles_pol
+			cost=150
+			allowed={ original_tag=ALD }
+			traits={ silent_workhorse }
+			ai_will_do={ factor=1 }
+		}
+	}
+	ALD_raymus_antilles={
+		name="Raymus Antilles"
+		gender = male
+		navy_leader={
+			traits={ spotter }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=3
+			legacy_id=-1
+		}
+	}
+	ALD_royal_guard_commander={
+		name="Commander of the Royal Guard"
+		gender = male
+		corps_commander={
+			traits={ }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+}

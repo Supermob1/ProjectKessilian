@@ -14,6 +14,22 @@ Converted to map props / supply-train cars (decimated, textures re-baked).
 - "Star Wars Shield Generator" by floris05janssen - https://sketchfab.com/floris05janssen
 - "Star Wars: X-34 Landspeeder" by fccooper - https://sketchfab.com/3d-models/star-wars-x-34-landspeeder-62a5e02fd927422db7246d47433bbefd
 
+### Unit models (CC BY 4.0), re-rigged, decimated and retextured for walker battalions
+- "AT-TE Walker (Animated)" by R3negadeAidan - https://sketchfab.com/3d-models/at-te-walker-animated-81ef81cf6c554055b741b43a1a08d69f
+- "-Star Wars- AAT" by ARKON-83 - https://sketchfab.com/3d-models/star-wars-aat-9ed126f4616a482fabee52b0e0d46e52
+- "AT-RT" by Just Ryk - https://sketchfab.com/3d-models/at-rt-6796698b4d564377838c06319ec96f90
+
+### Old Republic unit models (Star Wars Battlefront II community assets), converted from .msh
+- "Old Republic Lance Walker" (orp_walk_lance.msh) - author: TODO, not recorded in the download
+- "SWTOR-era Republic Trooper" (rep_inf_tor_trooper.msh) - author: TODO, not recorded in the download
+
+### Felucian tribes
+- "Felucian warrior" by abdyla (SketchUp 3D Warehouse), converted and rigged to the infantry skeleton (license: check the 3D Warehouse terms before release)
+
+## Walker mechanics
+Walker chassis, units, modules, doctrine, mech models and icons from "Walkers Special Project plus"
+(Steam Workshop 3770877230), integrated into the armour tech tree.
+
 ## Models and textures (CC0, no attribution required)
 Poly Haven (https://polyhaven.com): quiver trees, searsia, othonna, fern, dead tree trunk, moon rocks,
 namaqualand boulder, mossy rocks, boulder, island tree leaves and bark.

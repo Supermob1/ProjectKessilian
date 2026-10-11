@@ -28,7 +28,7 @@ PAINT = {"a": 0, "b": 200, "c": 120, "d": None, "e": 330, "f": 45}
 # name: source folder, kind (prop = trees.bmp object / train = supply-train car), trees.bmp index or None,
 #       triangle budget, largest extent in map units, yaw (deg, Blender Z) so the nose points to -Y
 SPECS = {
-    "sandcrawler": dict(src="star_wars_sandcrawler_exterior", kind="prop", index=53, budget=1500, size=3.0, remesh=7),
+    # sandcrawler (prop 53) is procedural now: military_buildings.py models -> hod_flora_53_sandcrawler
     "vaporators": dict(src="star_wars_moisture_vaporator", kind="prop", index=54, budget=300, size=1.1, copies=3),
     "wreck_harrower": dict(src="harrower_sith_ship", kind="prop", index=56, budget=1500, size=5.0, wreck=True, remesh=7),
     "wreck_foray": dict(src="star_wars_foray-class_blockade_runner", kind="prop", index=57, budget=1500, size=4.5,
@@ -46,7 +46,8 @@ SPECS = {
 # Christophsis towers cut out of the battleground level by christophsis_extract.py (picked from its contact sheet)
 for _k in (0, 1, 2, 3, 4, 7):
     SPECS[f"chr_{_k:02d}"] = dict(path=f"WIPGFX/3d/sketchfab/christophsis_buildings/site_{_k:02d}.glb", kind="building",
-                                  budget=1500, size=1.8, double=_k in (0, 2, 3))   # single-sided panel towers
+                                  budget=1500, size=1.8, double=_k in (0, 2, 3),   # single-sided panel towers
+                                  lift=(110, (175, 215, 222)))   # level is lit at night: daylight crystal-teal glass
 BUILDING_OUT = "gfx/models/buildings/hod_sw"
 
 
@@ -298,12 +299,15 @@ def textures():
             im = burnt(im)
         if s.get("ao"):
             im = im.mean(-1, keepdims=True) / 255 * np.array(s["ao"], np.float32)
+        emi_src = im
+        if s.get("lift"):
+            im = lift(im, *s["lift"])
         save_dxt5_mips(np.dstack([im, full(255)]), f"{OUT_}/{stem}_diffuse.dds")
         if s["kind"] == "train":
             for v, hue in PAINT.items():
                 save_dxt5_mips(np.dstack([repaint(im, hue), full(255)]), f"{OUT_}/{stem}_{v}_diffuse.dds")
         if s["kind"] != "prop":      # Advanced layout (normal G/A = xy, B = night emission; props G spec, B metal, A gloss)
-            emi = windows(im) if s["kind"] == "building" else full(0)
+            emi = windows(emi_src) if s["kind"] == "building" else full(0)
             save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{OUT_}/{stem}_normal.dds")
             save_dxt5_mips(np.dstack([full(0), full(70), full(0), full(90)]), f"{OUT_}/{stem}_properties.dds")
         else:
@@ -320,6 +324,16 @@ def textures():
             mat.set("spec", [f"{stem}_properties.dds" if s["kind"] != "prop" else "hod_flora_spec.dds"])
         write_meshfile(mesh, root)
         print("textures", stem)
+
+
+def lift(im, target, tint):
+    """Brighten a dark bake toward mean luminance `target` (soft-clipped so lit windows don't blow out), tinted by `tint`."""
+    import numpy as np
+    lum = im.mean(-1)
+    ref = max(lum[lum > 4].mean() if (lum > 4).any() else 1.0, 1.0)     # skip the black padding between UV islands
+    x = 1 - np.exp(-im / ref * target / 255 * 1.6)
+    shade = x.mean(-1, keepdims=True)
+    return np.clip(x * 255 * 0.7 + np.array(tint, np.float32) * shade * 0.3 * 1.6, 0, 255)
 
 
 def windows(im):

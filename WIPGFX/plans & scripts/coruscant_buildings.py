@@ -384,13 +384,22 @@ def towns():
 
 # cities.bmp palette index (painted by planet_terrain_gen.py) -> (spawn density, [mesh families mixed in])
 # family: prefix -> folder; every family has <prefix>_<band><variant> meshes, except single meshes (SINGLE)
-FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW}
+LM = "gfx/models/buildings/hod_landmarks"     # procedural families from military_buildings.py models
+FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
+            "hod_kam_city": LM, "hod_man_city": LM, "hod_geo_city": LM, "hod_nab_city": LM, "hod_fel_city": LM,
+            "hod_cmg_outpost": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]),
                1: (0.35, ["hod_cor_cluster", "hod_cor_cluster", "hod_chr_cluster"]),  # megacities: ~1/3 Christophsis
                2: (0.3, ["hod_town"]),                                                  # every other world: towns
                3: (0.35, ["hod_chr_cluster"]),                                          # Christophsis
-               4: (0.15, ["hod_bld_jasperio"])}                                         # tree worlds: treehouse villages
+               4: (0.15, ["hod_bld_jasperio"]),                                         # tree worlds: treehouse villages
+               5: (0.2, ["hod_kam_city"]),                                              # ocean worlds: stilt domes
+               6: (0.3, ["hod_man_city"]),                                              # Mandalore: domed cities
+               7: (0.3, ["hod_geo_city"]),                                              # Geonosis: hive spires
+               8: (0.3, ["hod_nab_city"]),                                              # Naboo: Theed-style domes
+               9: (0.3, ["hod_fel_city"]),                                              # Felucia: mushroom villages
+               10: (0.3, ["hod_cmg_outpost"])}                                          # Felucia: Guild outposts
 
 
 def wire():
@@ -408,7 +417,8 @@ def wire():
             f.write(f'\nentity = {{\n\tname = "{n}_entity"\n\tpdxmesh = "{n}_mesh"\n\tscale = 1\n}}\n')
     with open("map/cities.txt", "w", encoding="utf-8", newline="\n") as f:
         f.write("# HOD: written by WIPGFX/plans & scripts/coruscant_buildings.py wire. map/cities.bmp (planet_terrain_gen.py)\n"
-                "# picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages.\n"
+                "# picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages,\n"
+                "# 5 ocean-world stilt domes, 6 Mandalore domes, 7 Geonosis hives, 8 Naboo, 9 Felucian villages, 10 Guild outposts.\n"
                 'types_source = "map/cities.bmp"\npixel_step_x = 2\npixel_step_y = 2\n')
         for idx, (dens, fams) in CITY_GROUPS.items():
             f.write(f"city_group = {{\n\tcolor_index = {idx}\n\tdensity = {format(dens, '.5f').rstrip('0')}\n"

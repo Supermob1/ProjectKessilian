@@ -343,7 +343,7 @@ PixelShader =
 		
 			// HOD: the colormap holds painted planet globes; tint trees with their hue only (as pdxmap.shader does)
 			float vPaintLum = dot( vSeasonColorMap, vec3( 1.0f / 3.0f ) );
-			vSeasonColorMap = lerp( vec3( 0.5f ), saturate( 0.4f + 0.1f * vSeasonColorMap / max( vPaintLum, 0.05f ) ), saturate( vPaintLum * 10.0f ) );
+			vSeasonColorMap = lerp( vec3( 0.5f ), saturate( 0.5f + 0.3f * ( vSeasonColorMap / max( vPaintLum, 0.05f ) - 1.0f ) ), saturate( vPaintLum * 10.0f ) );
 			vColor = GetOverlay( vColor, vSeasonColorMap, 0.25f );
 			
 			float vSeasonTreeFade = saturate( saturate( (In.vPos.z/MAP_SIZE_Y) - TREE_SEASON_MIN )*TREE_SEASON_FADE_TWEAK );

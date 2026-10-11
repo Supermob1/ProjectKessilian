@@ -119,7 +119,7 @@ equipments = {
 		
 		max_strength = 350
 
-		fuel_consumption = 67
+		fuel_consumption = 60
 		
 		build_cost_ic = 3500
 		resources = {
@@ -181,16 +181,16 @@ equipments = {
 			mid_1_custom_slot = empty
 			rear_1_custom_slot = empty
 		}
-		naval_range = 2250
+		naval_range = 2500
 		naval_dominance_factor = 240
 		max_strength = 300
 		naval_speed = 18
-		fuel_consumption = 67
+		fuel_consumption = 60
 		reliability = 0.65
 		build_cost_ic = 2600
 		resources = {
-			steel = 1
-			chromium = 1
+			steel = 2
+			#chromium = 1
 		}
 
 		manpower = 3200
@@ -283,8 +283,10 @@ equipments = {
 		naval_dominance_factor = 300
 		max_strength = 350
 		reliability = 0.80
-		fuel_consumption = 67
-		
+		fuel_consumption = 60
+		resources = {
+			chromium = 1
+		}
 		build_cost_ic = 2800
 	}
 
@@ -342,7 +344,7 @@ equipments = {
 		naval_dominance_factor = 350
 		max_strength = 370
 		reliability = 0.85
-		fuel_consumption = 67
+		fuel_consumption = 60
 		naval_speed = 24
 		build_cost_ic = 3000
 		resources = {
@@ -351,7 +353,7 @@ equipments = {
 			chromium = 1
 		}
 
-		manpower = 5200
+		manpower = 4300
 	}
 
 	ship_hull_heavy_3 = {
@@ -408,7 +410,7 @@ equipments = {
 		naval_speed = 25
 		max_strength = 400
 		reliability = 0.9
-		fuel_consumption = 67
+		fuel_consumption = 60
 		naval_dominance_factor = 375
 		build_cost_ic = 3200
 		resources = {
@@ -417,7 +419,7 @@ equipments = {
 			chromium = 1
 		}
 
-		manpower = 6000
+		manpower = 4650
 	}
 
 	ship_hull_heavy_4 = {
@@ -475,7 +477,7 @@ equipments = {
 		naval_dominance_factor = 400
 		max_strength = 450
 		naval_speed = 26
-		fuel_consumption = 67
+		fuel_consumption = 60
 		reliability = 0.95
 		build_cost_ic = 3400
 		resources = {
@@ -484,7 +486,7 @@ equipments = {
 			chromium = 1
 		}
 
-		manpower = 6000
+		manpower = 5000
 	}
 	ship_hull_heavy_modern = {
 		abbreviation = "hcf"
@@ -547,7 +549,7 @@ equipments = {
 		naval_dominance_factor = 450
 		max_strength = 500
 		naval_speed = 30
-		fuel_consumption = 80
+		fuel_consumption = 72
 		reliability = 0.95
 		build_cost_ic = 4000
 		resources = {
@@ -556,7 +558,7 @@ equipments = {
 			chromium = 3
 		}
 
-		manpower = 6000
+		manpower = 5000
 	}
 
 	ship_hull_super_heavy_1 = {
@@ -646,7 +648,7 @@ equipments = {
 		naval_range = 4500
 		naval_speed = 24
 		max_strength = 700
-		fuel_consumption = 75
+		fuel_consumption = 68
 		reliability = 0.80
 		build_cost_ic = 5500
 		naval_dominance_factor = 400

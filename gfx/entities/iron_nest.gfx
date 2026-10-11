@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "iron_nest_mesh"
+		file = "gfx/models/units/walkers/iron_nest.mesh"
+
+		animation = { id = "attack"			type = "iron_nest_attack_animation" }
+		animation = { id = "idle"			type = "iron_nest_idle_animation" }
+		animation = { id = "move"			type = "iron_nest_move_animation" }
+		animation = { id = "death"			type = "iron_nest_death_animation" }
+		scale = 0.40
+	}
+}

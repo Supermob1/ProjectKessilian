@@ -1,0 +1,166 @@
+# This file defines duplicate_archetypes for walker chassis roles (AA, Artillery, Tank Destroyer, Flame)
+# Evaluated after walkers_chassis.txt to duplicate walker chassis types for specialized roles.
+
+duplicate_archetypes = {
+
+	# =========================================================================
+	# LIGHT WALKER ROLES
+	# =========================================================================
+	walker_aa_chassis = {
+		archetype = walker_chassis
+		type = { armor anti_air }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_artillery_chassis = {
+		archetype = walker_chassis
+		type = { armor artillery }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_destroyer_chassis = {
+		archetype = walker_chassis
+		type = { armor anti_tank }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_flame_chassis = {
+		archetype = walker_chassis
+		type = { armor flame }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+
+	# =========================================================================
+	# MEDIUM WALKER ROLES
+	# =========================================================================
+	walker_medium_aa_chassis = {
+		archetype = walker_chassis_medium
+		type = { armor anti_air }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_medium_artillery_chassis = {
+		archetype = walker_chassis_medium
+		type = { armor artillery }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_medium_destroyer_chassis = {
+		archetype = walker_chassis_medium
+		type = { armor anti_tank }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_medium_flame_chassis = {
+		archetype = walker_chassis_medium
+		type = { armor flame }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+
+	# =========================================================================
+	# HEAVY WALKER ROLES
+	# =========================================================================
+	walker_heavy_aa_chassis = {
+		archetype = walker_chassis_heavy
+		type = { armor anti_air }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_heavy_artillery_chassis = {
+		archetype = walker_chassis_heavy
+		type = { armor artillery }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_heavy_destroyer_chassis = {
+		archetype = walker_chassis_heavy
+		type = { armor anti_tank }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_heavy_flame_chassis = {
+		archetype = walker_chassis_heavy
+		type = { armor flame }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+
+	# =========================================================================
+	# MODERN WALKER ROLES
+	# =========================================================================
+	walker_modern_aa_chassis = {
+		archetype = walker_chassis_modern
+		type = { armor anti_air }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_modern_artillery_chassis = {
+		archetype = walker_chassis_modern
+		type = { armor artillery }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_modern_destroyer_chassis = {
+		archetype = walker_chassis_modern
+		type = { armor anti_tank }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_modern_flame_chassis = {
+		archetype = walker_chassis_modern
+		type = { armor flame }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+
+	# =========================================================================
+	# SUPER HEAVY WALKER ROLES
+	# =========================================================================
+	walker_super_heavy_aa_chassis = {
+		archetype = walker_chassis_super_heavy
+		type = { armor anti_air }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_super_heavy_artillery_chassis = {
+		archetype = walker_chassis_super_heavy
+		type = { armor artillery }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_super_heavy_destroyer_chassis = {
+		archetype = walker_chassis_super_heavy
+		type = { armor anti_tank }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+	walker_super_heavy_flame_chassis = {
+		archetype = walker_chassis_super_heavy
+		type = { armor flame }
+		for_each = {
+			variant_name = { find_and_replace = { "chassis" "equipment" } }
+		}
+	}
+
+}

@@ -1,0 +1,21 @@
+﻿# HOD: template handed out by hkb3_commando_droid (faction_templates.py)
+division_template = {
+	name = "BX Commando Squad"
+	division_names_group = CIS_INF_01
+	regiments = {
+		commando_droid = { x = 0 y = 0 }
+		commando_droid = { x = 0 y = 1 }
+		commando_droid = { x = 0 y = 2 }
+		commando_droid = { x = 1 y = 0 }
+		commando_droid = { x = 1 y = 1 }
+		commando_droid = { x = 1 y = 2 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+	}
+}

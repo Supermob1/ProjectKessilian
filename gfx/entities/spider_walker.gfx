@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "spider_walker_mesh"
+		file = "gfx/models/units/walkers/spider_walker.mesh"
+
+		animation = { id = "attack"			type = "spider_walker_attack_animation" }
+		animation = { id = "idle"			type = "spider_walker_idle_animation" }
+		animation = { id = "move"			type = "spider_walker_move_animation" }
+		animation = { id = "death"			type = "spider_walker_death_animation" }
+		scale = 0.47
+	}
+}

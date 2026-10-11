@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "war_machine_mesh"
+		file = "gfx/models/units/walkers/war_machine.mesh"
+
+		animation = { id = "attack"			type = "war_machine_attack_animation" }
+		animation = { id = "idle"			type = "war_machine_idle_animation" }
+		animation = { id = "move"			type = "war_machine_move_animation" }
+		animation = { id = "death"			type = "war_machine_death_animation" }
+		scale = 0.47
+	}
+}

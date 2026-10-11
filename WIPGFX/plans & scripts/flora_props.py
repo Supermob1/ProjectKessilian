@@ -37,9 +37,17 @@ PROCEDURAL = {
     40: "wroshyr",        # Kashyyyk giant: tall straight trunk, buttress roots, layered canopy platforms
     41: "jungle_giant",   # umbrella canopy on a short thick trunk
     55: "homestead",      # desert homestead: adobe domes + a small vaporator
+    # Felucia: a fungal jungle in saturated colours (Star Wars Databank: "immense primitive plants", "enormous pitcher
+    # plants and leafy growths", "colour-saturated"; Wookieepedia: giant purple mushrooms form the upper canopy, many
+    # life-forms are translucent and colour the sunlight). Bigger than any tree: they tower over the jungle
+    58: "fel_mushroom",   # giant purple mushroom: tall pale stalk, broad violet cap, small ones at its foot
+    59: "fel_bulbs",      # translucent orange / yellow stalks with bulbous heads (Revenge of the Sith)
+    60: "fel_pitcher",    # giant teal pitcher plant with a magenta lip
+    61: "fel_fronds",     # giant curling crimson fronds
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
-             55: ["hod_adobe"]}
+             55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
+             61: ["hod_fel_frond"]}
 # Sketchfab models converted by sketchfab_props.py (meshes land in OUT as hod_flora_<index>_<name>.mesh)
 EXTERNAL = {53: "sandcrawler", 54: "vaporators", 56: "wreck_harrower", 57: "wreck_foray"}
 LEAF_SRC = "island_tree_01"  # Poly Haven leaf sheet the foliage clumps are composed from
@@ -171,6 +179,44 @@ def textures():
              np.dstack([nrm * 127.5 + 127.5, np.full((S, S), 255, np.float32)]))
 
     surface("hod_adobe", (176, 156, 122), 0, 0.08)
+
+    def organic(stem, stops, spots=None, veins=0.0):
+        """Felucian flora: colour by the texture's v (bottom-up = along the lathe profile), soft mottling, optional
+        pale spots and vertical veins. stops: [(v, (r, g, b))]"""
+        v = 1 - yy / (S - 1)                       # image row 0 = top = Blender v 1
+        vs, cs = zip(*stops)
+        base = np.stack([np.interp(v, vs, [c[i] for c in cs]) for i in range(3)], -1)
+        mott = ndi.gaussian_filter(rng.random((S, S)), 5)
+        mott = (mott - mott.min()) / np.ptp(mott)
+        base = base * (0.8 + 0.35 * mott[..., None])
+        if veins:
+            vein = ndi.gaussian_filter(rng.random((S, S)), (30, 1.2))
+            vein = (vein - vein.min()) / np.ptp(vein)
+            base = base * (1 - veins * (vein[..., None] > 0.72))
+        if spots:
+            col, n, r = spots
+            for _ in range(n):
+                cy, cx, rr = rng.integers(0, S), rng.integers(0, S), rng.uniform(0.4, 1.0) * r
+                d = np.hypot(np.minimum(abs(yy - cy), S - abs(yy - cy)), np.minimum(abs(xx - cx), S - abs(xx - cx)))
+                m = np.clip((rr - d) / 2, 0, 1)[..., None] * (v[..., None] > 0.45)
+                base = base * (1 - m) + np.array(col, np.float32) * m
+        lum = ndi.gaussian_filter(base.mean(-1) / 255, 1.5)
+        gx, gy = ndi.sobel(lum, 1) * 1.5, ndi.sobel(lum, 0) * 1.5
+        nrm = np.stack([-gx, -gy, np.ones_like(gx)], -1)
+        nrm /= np.linalg.norm(nrm, axis=-1, keepdims=True)
+        save(stem, np.dstack([np.clip(base, 0, 255), np.full((S, S), 255, np.float32)]),
+             np.dstack([nrm * 127.5 + 127.5, np.full((S, S), 255, np.float32)]))
+
+    # stalk: pale cream foot -> lilac top; cap profile runs underside (gills) -> rim -> crown
+    organic("hod_fel_stalk", [(0, (150, 135, 120)), (0.6, (205, 190, 200)), (1, (185, 150, 210))], veins=0.15)
+    organic("hod_fel_cap", [(0, (95, 45, 95)), (0.3, (150, 80, 150)), (0.42, (235, 190, 240)), (0.55, (150, 55, 190)),
+                            (1, (95, 30, 150))], spots=((240, 215, 120), 26, 14))
+    organic("hod_fel_bulb", [(0, (120, 60, 30)), (0.35, (235, 120, 25)), (0.8, (255, 205, 60)), (1, (255, 240, 150))], veins=0.2)
+    organic("hod_fel_pitcher", [(0, (25, 70, 65)), (0.55, (40, 165, 160)), (0.82, (90, 210, 200)), (0.9, (225, 45, 140)),
+                                (1, (250, 110, 190))], veins=0.25)
+    organic("hod_fel_frond", [(0, (70, 15, 30)), (0.5, (200, 30, 60)), (1, (255, 120, 70))], veins=0.3)
+    for stem in ("hod_fel_stalk", "hod_fel_cap", "hod_fel_bulb", "hod_fel_pitcher", "hod_fel_frond"):
+        leaf[stem] = False
     # one atlas per multi-material model: the tree renderer draws only a mesh's first material (vanilla trees
     # all have one), so trunk + leaves share one texture, one vertical slot each (bottom-up = Blender's v)
     atlas = {idx: [f"hod_{m[0]}" for m in materials(pid)] for idx, (pid, *_r) in ASSETS.items()}
@@ -492,6 +538,77 @@ def procedural():
             if w.is_valid:
                 w.co += Vector(centre)
 
+    def lathe(bm, uv, base, profile, sides, mat, lean=(0, 0)):
+        """Surface of revolution: profile [(z, r)] from bottom to top, leaning by (dx, dy) per unit height."""
+        tube(bm, uv, [(Vector((base[0] + lean[0] * z, base[1] + lean[1] * z, z)), max(r, 0.01)) for z, r in profile], sides, mat)
+
+    def mushroom(bm, uv, x, y, h, cap):
+        lean = (rng.uniform(-.04, .04), rng.uniform(-.04, .04))
+        s = cap * 0.16
+        lathe(bm, uv, (x, y), [(0, s * 1.6), (0.15 * h, s * 1.1), (0.6 * h, s), (h, s * 0.9)], 9, 0, lean)
+        top = (x + lean[0] * h, y + lean[1] * h)
+        # cap: underside from the stalk out to the rim, then over the crown (texture v follows the profile)
+        lathe(bm, uv, top, [(h - 0.02, s * 0.9), (h + 0.05 * cap, cap * 0.6), (h + 0.02 * cap, cap * 0.97),
+                            (h + 0.12 * cap, cap), (h + 0.3 * cap, cap * 0.8), (h + 0.42 * cap, cap * 0.45),
+                            (h + 0.47 * cap, 0.02)], 14, 1)
+
+    def bulb_stalk(bm, uv, x, y, h, r):
+        lean = (rng.uniform(-.08, .08), rng.uniform(-.08, .08))
+        lathe(bm, uv, (x, y), [(0, r * 0.9), (0.1 * h, r * 0.55), (0.55 * h, r * 0.45), (0.72 * h, r * 1.4),
+                               (0.84 * h, r * 1.9), (0.95 * h, r * 1.1), (h, 0.02)], 8, 0, lean)
+
+    def frond(bm, uv, a, length, width, curl):
+        """Ribbon rising from the ground, arching outward and curling at the tip; built twice with opposite winding
+        so both sides render (the map renderer culls back faces)."""
+        for back in (False, True):
+            ribbon(bm, uv, a, length, width, curl, back)
+
+    def ribbon(bm, uv, a, length, width, curl, back):
+        out = Vector((math.cos(a), math.sin(a), 0))
+        side = Vector((-math.sin(a), math.cos(a), 0))
+        segs = 10
+        bend = lambda t: (0.15 + curl * t ** 1.6) * math.pi       # 0 = straight up, 1 = curled right over
+        c, prev = Vector((0, 0, 0)), None
+        for k in range(segs + 1):
+            t = k / segs
+            if k:
+                aj = bend((k - 1) / segs)
+                c = c + (out * math.sin(aj) + Vector((0, 0, math.cos(aj)))) * length / segs
+            w = width * (1 - 0.85 * t) * (0.6 + 0.4 * math.sin(math.pi * min(t * 1.3, 1)))
+            row = [bm.verts.new(c - side * w), bm.verts.new(c + side * w)]
+            if back:
+                row.reverse()
+            if prev:
+                f = bm.faces.new((prev[0], prev[1], row[1], row[0]))
+                f.material_index = 0
+                for loop, q in zip(f.loops, ((0, (k - 1) / segs), (1, (k - 1) / segs), (1, t), (0, t))):
+                    loop[uv].uv = q
+            prev = row
+
+    def felucia(bm, uv, kind):
+        if kind == "fel_mushroom":
+            # ~1.7x a vanilla tree: giant, but units (about 2 tall) must stay visible between them
+            mushroom(bm, uv, 0, 0, 3.4, 1.6)
+            for _ in range(3):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.9, 1.4)
+                mushroom(bm, uv, math.cos(a) * d, math.sin(a) * d, rng.uniform(0.8, 1.4), rng.uniform(0.35, 0.6))
+        elif kind == "fel_bulbs":
+            for i in range(7):
+                a, d = rng.uniform(0, 6.283), (0 if i == 0 else rng.uniform(0.35, 1.0))
+                bulb_stalk(bm, uv, math.cos(a) * d, math.sin(a) * d, rng.uniform(1.8, 3.4) * (1.2 if i == 0 else 1),
+                           rng.uniform(0.12, 0.2))
+        elif kind == "fel_pitcher":
+            # outside up to the lip, then down the inner wall to the liquid: an open lathe shows nothing from above
+            k = 0.6
+            lathe(bm, uv, (0, 0), [(z * k, r * k) for z, r in ((0, 0.35), (0.4, 0.9), (1.4, 1.25), (2.4, 0.8), (3.1, 0.55),
+                                   (3.6, 0.9), (3.75, 1.25), (3.62, 1.12), (3.4, 0.8), (3.15, 0.5), (3.05, 0.01))], 14, 0)
+            for i in range(5):                              # leaves around the foot
+                frond(bm, uv, 2 * math.pi * i / 5, 1.0, 0.22, 0.35)
+        else:
+            for i in range(9):
+                frond(bm, uv, 2 * math.pi * (i + rng.uniform(-.3, .3)) / 9, rng.uniform(2.6, 3.6), rng.uniform(0.3, 0.45),
+                      rng.uniform(0.35, 0.6))
+
     def homestead(bm, uv):
         dome(bm, uv, (0, 0, -0.05), 0.45)              # main dome
         dome(bm, uv, (0.75, 0.2, -0.03), 0.22)         # entrance
@@ -514,6 +631,9 @@ def procedural():
         elif kind == "jungle_giant":
             giant(bm, uv, 2.8, 0.30, 6, [(3.2, 5, 1.5, 1.2), (3.7, 3, 0.8, 1.1)], 4.0, 650)
             mats = PROC_MATS[idx]
+        elif kind.startswith("fel_"):
+            felucia(bm, uv, kind)
+            mats = PROC_MATS[idx]
         else:
             homestead(bm, uv)
             mats = PROC_MATS[idx]
@@ -523,7 +643,7 @@ def procedural():
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant"):      # hard-surface props: let Blender unwrap them
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith("fel_"):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)

@@ -267,48 +267,66 @@ PixelShader =
 			return x < 0.0f ? ( y >= 0.0f ? 3.14159265f - a : -3.14159265f - a ) : a;
 		}
 
-		// Star Wars galaxy chart, procedural, in map units. Layout fitted to the canonical coordinate galaxy map
-		// (Deep Core next to Coruscant, region bands bulging east/south, Unknown Regions to the west).
+		// Star Wars galaxy chart, procedural, in map units. Regions traced from the canon starwars.com galaxy map (DK 2025):
+		// nested ellipses pushed against the Unknown Regions in the west, bulging east/south, plus Hutt Space.
 		// Numpy twin for previews: keep in sync with WIPGFX/plans & scripts/swgalaxy_sim.py
 		static const float2 GALAXY_CORE = float2( 880.0f, 1700.0f );
-		static const float2 GALAXY_SHIFT = float2( 0.11f, -0.06f );       // region centres drift east/south as they grow
-		static const float2 GALAXY_GRID_CELL = float2( 191.3f, 187.5f );   // chart grid squares
-		static const float2 GALAXY_GRID_ORIGIN = float2( -847.0f, 3499.0f );
+		static const float GALAXY_CELL = 215.0f;                           // map units per canon chart square
+		static const float2 GALAXY_GRID_CELL = float2( 215.0f, 215.0f );   // chart grid squares
+		static const float2 GALAXY_GRID_ORIGIN = float2( 860.6f, 1778.0f );
 		static const float GALAXY_GRID_STRENGTH = 0.10f;
 
-		// region boundaries (map units): Deep Core, Core, Colonies, Inner Rim, Expansion, Mid Rim, Outer Rim
-		float RegionFill( float r )
+		// normalised elliptical radius (1 on the boundary); vC and vRad in chart cells (+x east, +y north) from the Deep Core
+		float RegionE( float2 vPos, float2 vC, float2 vRad, float vWob )
 		{
-			if ( r < 185.0f ) return lerp( 1.00f, 0.62f, r / 185.0f );
-			if ( r < 320.0f ) return lerp( 0.62f, 0.44f, ( r - 185.0f ) / 135.0f );
-			if ( r < 460.0f ) return lerp( 0.44f, 0.34f, ( r - 320.0f ) / 140.0f );
-			if ( r < 640.0f ) return lerp( 0.34f, 0.27f, ( r - 460.0f ) / 180.0f );
-			if ( r < 850.0f ) return lerp( 0.27f, 0.19f, ( r - 640.0f ) / 210.0f );
-			if ( r < 1200.0f ) return lerp( 0.19f, 0.12f, ( r - 850.0f ) / 350.0f );
-			if ( r < 1600.0f ) return lerp( 0.12f, 0.05f, ( r - 1200.0f ) / 400.0f );
-			return max( 0.05f - ( r - 1600.0f ) / 8000.0f, 0.0f );
+			return length( ( vPos - GALAXY_CORE - vC * GALAXY_CELL ) / ( vRad * GALAXY_CELL ) ) * vWob;
 		}
-		float RingLine( float r, float e )
+		// thin outline at a region boundary, vMinRad in cells
+		float RegionLine( float e, float vMinRad )
 		{
-			return 1.0f - saturate( abs( r - e ) / 3.5f );
+			return 1.0f - saturate( abs( e - 1.0f ) * vMinRad * GALAXY_CELL / 3.5f );
+		}
+		// fill inside a band: from fOut at its outer boundary to fIn at the next boundary inwards
+		float RegionBand( float eOut, float eIn, float fOut, float fIn, float vCur )
+		{
+			float u = saturate( ( 1.0f - eOut ) / max( ( 1.0f - eOut ) + ( eIn - 1.0f ), 1e-4f ) );
+			return eOut < 1.0f ? lerp( fOut, fIn, u ) : vCur;
 		}
 
 		float3 GalaxyColor( float2 vPos, out float vArmMask )
 		{
 			float2 d = vPos - GALAXY_CORE;
 			float d0 = length( d );
-			float2 c = GALAXY_CORE + GALAXY_SHIFT * d0;
-			float r = length( vPos - c ) * ( 1.0f + ( SpaceFbm( vPos * 0.002f ) - 0.5f ) * 0.18f );
+			float vWob = 1.0f + ( SpaceFbm( vPos * 0.002f ) - 0.5f ) * 0.18f;
+			float vRag = vWob + ( SpaceFbm( vPos * 0.006f + 11.0f ) - 0.5f ) * 0.22f;   // ragged Outer Rim / Hutt edge
 
-			float vFill = RegionFill( r );
-			float vLine = max( max( max( RingLine( r, 320.0f ), RingLine( r, 460.0f ) ), max( RingLine( r, 640.0f ), RingLine( r, 850.0f ) ) ),
-			                   max( RingLine( r, 1200.0f ), RingLine( r, 1600.0f ) ) ) * saturate( 1.3f - r / 1600.0f );
+			float eDeep  = RegionE( vPos, float2( 0.00f,  0.00f ), float2( 1.25f, 1.25f ), vWob );
+			float eCore  = RegionE( vPos, float2( 0.16f, -0.04f ), float2( 2.31f, 2.15f ), vWob );
+			float eCol   = RegionE( vPos, float2( 0.18f,  0.00f ), float2( 2.90f, 2.73f ), vWob );
+			float eInner = RegionE( vPos, float2( 0.39f, -0.12f ), float2( 3.56f, 3.82f ), vWob );
+			float eExp   = RegionE( vPos, float2( 0.70f, -0.37f ), float2( 4.23f, 4.45f ), vWob );
+			float eMid   = RegionE( vPos, float2( 1.53f, -0.92f ), float2( 5.49f, 5.85f ), vWob );
+			float eOuter = RegionE( vPos, float2( 2.59f, -0.14f ), float2( 7.08f, 9.89f ), vRag );
+			float eHutt  = RegionE( vPos, float2( 7.48f, -0.18f ), float2( 1.32f, 2.55f ), vRag );
+
+			float vFill = max( 0.05f - ( eOuter - 1.0f ) * 0.3f, 0.0f );
+			vFill = RegionBand( eOuter, eMid, 0.05f, 0.12f, vFill );
+			vFill = RegionBand( eMid, eExp, 0.12f, 0.19f, vFill );
+			vFill = RegionBand( eExp, eInner, 0.19f, 0.27f, vFill );
+			vFill = RegionBand( eInner, eCol, 0.27f, 0.34f, vFill );
+			vFill = RegionBand( eCol, eCore, 0.34f, 0.44f, vFill );
+			vFill = RegionBand( eCore, eDeep, 0.44f, 0.62f, vFill );
+			vFill = eDeep < 1.0f ? lerp( 0.62f, 1.0f, 1.0f - eDeep ) : vFill;
+
+			float vLine = max( max( max( RegionLine( eCore, 2.15f ), RegionLine( eCol, 2.73f ) ), max( RegionLine( eInner, 3.56f ), RegionLine( eExp, 4.23f ) ) ),
+			                   max( max( RegionLine( eMid, 5.49f ), RegionLine( eOuter, 7.08f ) * 0.45f ), RegionLine( eHutt, 1.32f ) * 0.7f ) );
 
 			// faint outer spiral arms, tightly wound so they read as arcs around the regions
 			float theta = SpaceAtan2( d.y, d.x );
 			float rn = d0 / 1700.0f;
 			float phi = theta - log( max( rn, 0.05f ) ) / 0.28f + 0.4f + ( SpaceFbm( vPos * 0.0018f ) - 0.5f ) * 0.9f;
 			float vArm = pow( saturate( 0.5f + 0.5f * cos( 2.0f * phi ) ), 4.0f ) * saturate( ( rn - 0.3f ) * 3.0f ) * saturate( 1.7f - rn );
+			vArm *= 0.3f + 0.7f * saturate( ( eMid - 0.95f ) * 5.0f );   // canon chart: arms swirl outside the Mid Rim, not through known space
 			float vGrain = SpaceFbm( vPos * 0.03f + 3.0f );
 			float vHaze = exp( -rn / 0.45f ) * ( 0.6f + 0.5f * SpaceFbm( vPos * 0.006f + 40.0f ) );
 			vArmMask = saturate( vArm * 2.0f + vFill );

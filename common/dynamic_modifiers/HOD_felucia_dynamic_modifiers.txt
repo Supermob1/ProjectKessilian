@@ -1,0 +1,13 @@
+# HOD: Felucia's endless jungle war (felucia_tribes.py)
+HOD_felucian_jungle_war = {
+	icon = GFX_idea_HOD_felucian_tribes
+	enable = { always = yes }
+	resistance_target = 0.35
+	resistance_growth = 0.5
+	resistance_damage_to_garrison = 0.5
+	compliance_gain = -0.03
+	local_supplies = -0.4
+	army_speed_factor_for_controller = -0.25
+	recruitable_population_factor = -0.4
+	state_production_speed_buildings_factor = -0.4
+}

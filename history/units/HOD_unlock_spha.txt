@@ -1,0 +1,26 @@
+﻿# HOD: template handed out by rep_spg_spham (faction_templates.py)
+division_template = {
+	name = "SPHA Artillery Legion"
+	division_names_group = REP_Inf_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		walkers_medium_artillery = { x = 2 y = 0 }
+		walkers_medium_artillery = { x = 2 y = 1 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		anti_air_battery = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		field_hospital = { x = 0 y = 4 }
+	}
+}

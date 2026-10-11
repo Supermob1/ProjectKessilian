@@ -1,7 +1,6 @@
 generic_debug = {
 
-	# Manually start a duel between random assigned commanders on each side.
-	# Selection priority: Force-sensitives > skilled_duelists > any assigned commander.
+	# Debug: start a duel now between a random duelist of ours and an enemy one (HOD_duel_fight), anywhere on the map.
 	HOD_debug_duel_random = {
 		cost = 0
 		fire_only_once = no
@@ -9,16 +8,26 @@ generic_debug = {
 			has_war = yes
 		}
 		available = {
-			any_army_leader = { is_assigned = yes }
-			any_enemy_country = {
-				any_army_leader = { 
-					is_assigned = yes 
-				}
-			}
+			any_army_leader = { HOD_is_duelist = yes }
+			any_enemy_country = { any_army_leader = { HOD_is_duelist = yes } }
 		}
 		icon = generic_spy
 		complete_effect = {
-			country_event = { id = hod_duel.1 days = 1 }
+			# debug: a duel between one of our duelists and an enemy one, wherever they are
+			random_army_leader = {
+				limit = { HOD_is_duelist = yes }
+				save_event_target_as = duel_char1_token
+			}
+			random_enemy_country = {
+				random_army_leader = {
+					limit = { HOD_is_duelist = yes }
+					save_event_target_as = duel_char2_token
+				}
+			}
+			if = {
+				limit = { has_event_target = duel_char1_token has_event_target = duel_char2_token }
+				HOD_duel_fight = yes
+			}
 		}
 	}
 }

@@ -9,6 +9,10 @@ Outputs (all derived, safe to re-run any time):
   map/trees.bmp          trees from the painted biomes
   map/terrain/colormap_rgb_cityemissivemask_a.dds   painted planet globes (shader: hue up close, globe zoomed out) + city lights
   map/terrain/colormap_water_{0,1,2}.dds            per-planet atmosphere glow on black (galaxy is in the water shader)
+  map/terrain/mud_diffuse_rgb_gloss_a_{0,1,2}.dds   sharp zoomed-out globe texture (4096 square): the painted planet
+                                                     colours with the real terrain tiles' detail baked in. The game
+                                                     only accepts a half-res colormap, so pdxmap.shader reads the
+                                                     globe from the mud slot (mud is switched off)
   map/buildings.txt, map/unitstacks.txt              y column re-snapped to the heightmap (height = pixel / 10)
 
 Inputs: map/provinces.bmp + definition.csv (shapes, gameplay terrain), history/states (planet names),
@@ -18,6 +22,14 @@ Usage (from the mod root):
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --preview OUTDIR
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --write
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --reheight   only re-snap buildings/unitstacks to heightmap.bmp
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --city-styles   only reapply the per-world city styles (cities.bmp)
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --round-coasts  only make planet coastlines round (heightmap.bmp)
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --globe-texture  only rebake the globe texture (after any
+                                                         colormap / terrain.bmp / atlas change)
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --felucia      only repaint Felucia (giant flora, alien ground, amber
+                                                         haze); run after --write / --world-tweaks, then --globe-texture
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --world-tweaks  only apply city districts, red worlds, dense
+                                                         forests (terrain/cities/trees.bmp + colormap); run once
 """
 import argparse, collections, csv, glob, io, os, re
 import numpy as np
@@ -273,10 +285,10 @@ def noise(shape, cell, rng, octaves=4, gain=0.5):
 
 
 def paint_tint(rgb):
-    """Close-up colormap tint from the painted globe, as gfx/FX/pdxmap.shader computes it: hue only at 20%
-    around neutral 0.5 (the shading baked into the painting is brightness, so it drops out)."""
+    """Close-up colormap tint from the painted globe, as gfx/FX/pdxmap.shader and tree.shader compute it: the
+    planet's hue at 0.3 around neutral 0.5 (the shading baked into the painting is brightness, so it drops out)."""
     lum = rgb.mean(-1, keepdims=True)
-    return 0.5 + (np.clip(0.4 + 0.1 * rgb / np.maximum(lum, 0.05), 0, 1) - 0.5) * np.clip(lum * 10, 0, 1)
+    return 0.5 + (np.clip(0.5 + 0.3 * (rgb / np.maximum(lum, 0.05) - 1), 0, 1) - 0.5) * np.clip(lum * 10, 0, 1)
 
 
 def rank(v):
@@ -413,12 +425,428 @@ def reheight(h):
         print("re-snapped", fn)
 
 
+# per-world city styles (map/cities.txt groups, coruscant_buildings.py wire)
+WATER_CITY_WORLDS = {"Kamino Oceans", "Manaan", "Mon Calamari", "Celegia", "Bestine IV", "Fresia", "Tibrin"}
+STYLE_WORLDS = {5: WATER_CITY_WORLDS, 6: {"Mandalore"}, 7: {"Gehenbar Hive"},     # Gehenbar Hive = Geonosis' land body
+                8: {"Naboo"}}
+# hand-picked world tweaks (applied on --write, or alone with --world-tweaks)
+CITY_DISTRICTS = {194: 12, 8479: 8}       # province -> radius px of urban terrain + megacity buildings (Raxus, Serenno)
+RED_WORLDS = {"Korriban"}
+RED_TERRAIN = {6: 24, 10: 24, 11: 24, 7: 31}   # grey rock / sand -> red rock (index 24 = atlas slot 17), red-brown sand
+RED_TINT = (1.5, 0.72, 0.58)                   # colormap paint (globe zoomed out, hue up close) pulled toward this
+DENSE_TREE_WORLDS = {"Kashyyyk": 0.7}          # chance to fill each empty land tree cell; half of them wroshyr giants
+
+
+def world_tweaks(t, cmap, trees, cm, labels, names, pid, rng):
+    """City districts round chosen provinces, red Korriban (terrain + colormap tint), denser forests on tree worlds.
+    cm is the half-res colormap (0..1 RGBA). Re-running pulls the red tint a bit further."""
+    t, cmap, trees, cm = t.copy(), cmap.copy(), trees.copy(), cm.copy()
+    H, W = labels.shape
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    yy, xx = np.mgrid[0:H, 0:W]
+    for prov, rad in CITY_DISTRICTS.items():
+        ys, xs = np.nonzero(pid == prov)
+        zone = (np.hypot(yy - ys.mean(), xx - xs.mean()) <= rad) & (labels == labels[ys[0], xs[0]])
+        t[zone], cmap[zone] = URBAN, 1
+    cmap = carve_city_borders(cmap, pid)
+    red = np.isin(planet, list(RED_WORLDS))
+    for a, b in RED_TERRAIN.items():
+        t[red & (t == a)] = b
+    rh = red[::2, ::2][:cm.shape[0], :cm.shape[1]]
+    lum = cm[..., :3].mean(-1, keepdims=True)
+    cm[..., :3] = np.where(rh[..., None], cm[..., :3] * 0.35 + np.clip(lum * np.array(RED_TINT), 0, 1) * 0.65, cm[..., :3])
+    TH, TW = trees.shape
+    gi = np.ix_(np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1),
+                np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1))
+    tland = (labels[gi] > 0) & (t[gi] != URBAN)
+    for world, fill in DENSE_TREE_WORLDS.items():
+        sel = (planet[gi] == world) & tland & (trees == 0) & (rng.random((TH, TW)) < fill)
+        pick = rng.random((TH, TW))
+        trees[sel] = np.where(pick < 0.5, 40, np.where(pick < 0.75, 6, 29))[sel]
+    return t, cmap, trees, cm
+
+
+# Felucia: a fungal jungle "teeming with immense primitive plants" in "colour-saturated" hues under hazy canopies
+# (Star Wars Databank); giant purple mushrooms form the upper canopy, enormous pitcher plants and leafy growths below,
+# translucent life-forms colour the sunlight (Wookieepedia); bright plants against a dim, hazy sky (Revenge of the
+# Sith). The ground goes to dark violet loam and teal moss, the jungle is replaced by Felucian giants
+# (flora_props.py 58-61) and the sky glows amber.
+FELUCIA = "Felucia"
+FELUCIA_FLORA = [(58, 0.34), (59, 0.26), (60, 0.14), (61, 0.26)]   # giant mushroom, bulb stalks, pitcher, fronds
+FELUCIA_FILL = 0.6                                                 # chance to give each free land tree cell a giant
+FELUCIA_UNDERGROWTH = [(60, 0.3), (61, 0.7)]                      # lower pitchers / fronds in the cells left over
+FELUCIA_UNDER_FILL = 0.5
+FELUCIA_UNIT_CLEAR = 2      # map px around each province's standing unit position kept free of flora (provinces are ~8 px)
+FELUCIA_TOWN_R = 5          # map px radius of the farm-village clearing around each state's victory point
+FELUCIA_CITY_STYLE = 9      # map/cities.txt group: Felucian mushroom villages (coruscant_buildings.py)
+OUTPOST_CITY_STYLE = 10     # ... and the Commerce Guild's prefab outposts on the lowlands
+TOWN = 26                   # terrain.bmp farmland_town_26: farmland look that still spawns city models
+FELUCIA_GROUND = [(0.0, (0.16, 0.07, 0.22)), (0.35, (0.36, 0.16, 0.42)), (0.6, (0.14, 0.46, 0.42)),
+                  (0.85, (0.55, 0.66, 0.30)), (1.0, (0.85, 0.70, 0.40))]   # by brightness: violet loam -> teal moss -> ochre
+FELUCIA_ATMO = (1.0, 0.72, 0.30)                                   # hazy amber
+
+
+# Felucia's relief, by zone (felucia_map.py: 1 red lowland, 2 blue native jungle, 3 passage, 4 impassable jungle):
+# the natives' jungles are great karst massifs, the impassable jungle a high karst plateau, the passages narrow canyon
+# floors between them and the lowlands flat valleys. Heightmap steps: 10 = 1 map unit; the ground is at 97.
+FELUCIA_ZONES = "WIPGFX/Assets/felucia_zones.png"
+FELUCIA_BASE, FELUCIA_BASE_AT = "WIPGFX/Assets/felucia_heightmap_base.png", (590, 2270)
+MASSIF = np.array([0, 0, 92, 0, 62], np.float32)     # broad lift per zone, reached ~12 px from the lowlands
+MASSIF_RISE = 12.0                                   # px over which the slopes climb from the valleys
+KARST_TOWERS = 520                                   # limestone towers on the massifs (the planet is ~120 px across)
+KARST_HEIGHT = (18, 46)
+RIDGES = 22                                          # ridged-noise relief on the massifs
+ZONE_FLORA = np.array([0, 0.35, 1.65, 0.0, 1.65], np.float32)
+PASSAGE = GRASSHILL          # terrain.bmp on the passages: a cleared track through the jungle
+
+
+def felucia_relief(h, t, fel, town, units, rng, zone=None):
+    """Massifs rising from the lowlands and passages, ridges and karst towers on top, ramped down to the coast; towers
+    kept off unit positions and villages (plateaus there). Built on the saved pre-karst heightmap: re-runnable.
+    Returns (new heightmap, relief above the base)."""
+    H, W = h.shape
+    ys, xs = np.nonzero(fel)
+    y0, y1, x0, x1 = ys.min() - 2, ys.max() + 3, xs.min() - 2, xs.max() + 3
+    sub = fel[y0:y1, x0:x1]
+    shp = sub.shape
+    z = zone[y0:y1, x0:x1] if zone is not None else np.where(sub, 4, 0)
+    yy, xx = np.mgrid[0:shp[0], 0:shp[1]].astype(np.float32)
+    low = sub & np.isin(z, (1, 3))
+    dlow = ndi.distance_transform_edt(~low) if low.any() else np.full(shp, 99.0)
+    rim = smoothstep(np.clip((ndi.distance_transform_edt(sub) - 3) / 12, 0, 1))          # down to the coast
+    rise = smoothstep(np.clip(dlow / MASSIF_RISE, 0, 1))                                 # valley walls
+    lift = ndi.gaussian_filter(MASSIF[z], 4) * rise
+    ridge = (1 - np.abs(2 * noise(shp, 9, rng, 3) - 1)) ** 2 * RIDGES * rise
+    mtn = sub & np.isin(z, (2, 4))
+    towers = np.zeros(shp, np.float32)
+    cand = np.argwhere(mtn & (dlow > 2))
+    for cy, cx in cand[rng.permutation(len(cand))[:KARST_TOWERS]]:
+        r, a = rng.uniform(1.8, 4.5), rng.uniform(*KARST_HEIGHT) * rise[cy, cx]
+        sl = np.s_[max(int(cy - r - 1), 0):int(cy + r + 2), max(int(cx - r - 1), 0):int(cx + r + 2)]
+        d = np.hypot(yy[sl] - cy, xx[sl] - cx)
+        towers[sl] = np.maximum(towers[sl], a * np.clip(1 - d / r, 0, 1) ** 0.45)      # steep sides, rounded top
+    keep = np.ones(shp, np.float32)
+    for uy, ux in units:
+        uy, ux = uy - y0, ux - x0
+        sl = np.s_[max(uy - 4, 0):uy + 5, max(ux - 4, 0):ux + 5]
+        keep[sl] = np.minimum(keep[sl], np.clip(np.hypot(yy[sl] - uy, xx[sl] - ux) / 3.5, 0.0, 1))
+    tw = town[y0:y1, x0:x1]
+    keep = np.where(ndi.binary_dilation(tw, iterations=2), 0.0, keep)
+    rel = lift + ridge * keep + towers * keep
+    if tw.any():                                                                         # villages on a level plateau
+        lab, n = ndi.label(ndi.binary_dilation(tw, iterations=1))
+        for i in range(1, n + 1):
+            m = lab == i
+            rel[m] = (lift * m).sum() / m.sum()
+    rel = ndi.gaussian_filter(rel, 0.6) * rim * sub
+    full = np.zeros((H, W), np.float32)
+    full[y0:y1, x0:x1] = rel
+    base = h.copy()
+    if os.path.exists(FELUCIA_BASE):
+        b = np.asarray(Image.open(FELUCIA_BASE).convert("L")).astype(np.float32)
+        by, bx = FELUCIA_BASE_AT
+        base[by:by + b.shape[0], bx:bx + b.shape[1]] = b
+    flat = np.minimum(base, GROUND + 3)                    # the old relief goes: the zones decide where the land rises
+    return np.where(fel, np.clip(flat + full, 0, 252), h), full
+
+
+def felucia_points(pid, fel):
+    """Felucia's standing unit positions (map/unitstacks.txt type 0) and its victory point provinces."""
+    H = pid.shape[0]
+    provs = set(np.unique(pid[fel]).tolist())
+    units = []
+    for line in open(f"{MAP}/unitstacks.txt", encoding="utf-8-sig"):
+        q = line.strip().split(";")
+        if len(q) >= 5 and q[0].isdigit() and int(q[0]) in provs and q[1] == "0":
+            units.append((H - 1 - int(round(float(q[4]))), int(round(float(q[2])))))
+    vps = []
+    for f in glob.glob("history/states/*.txt"):
+        st = re.sub(r"#[^\n]*", "", open(f, encoding="utf-8-sig", errors="replace").read())
+        own = [int(x) for x in re.search(r"provinces\s*=\s*\{([^}]*)\}", st).group(1).split()]
+        if not provs.intersection(own) or re.search(r"impassable\s*=\s*yes", st):
+            continue
+        # a settlement at every victory point: Guild outposts and native strongholds (felucia_tribes.py)
+        owner = re.search(r"owner\s*=\s*(\w+)", st).group(1)
+        vps += [(int(pr), owner) for pr, _v in re.findall(r"victory_points\s*=\s*\{\s*(\d+)\s+(\d+)", st) if int(pr) in own]
+    return units, vps
+
+
+def felucia(t, trees, cm, water, city, h, labels, names, pid, rng):
+    """Repaint Felucia only: giant flora (thinned, and cleared where units stand), farm-village clearings with
+    Felucian village models at each state's victory point, its colormap (hue up close + globe) and its atmosphere
+    glow. Brightness is kept and colour is a function of it, so re-running gives the same result."""
+    t, trees, cm, city = t.copy(), trees.copy(), cm.copy(), city.copy()
+    H, W = labels.shape
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    fel = planet == FELUCIA
+    units, vps = felucia_points(pid, fel)
+    # villages: farmland that spawns city models, only in the clearing; no city models anywhere else on Felucia
+    yy, xx = np.mgrid[0:H, 0:W]
+    town = np.zeros((H, W), bool)
+    native = np.zeros((H, W), bool)
+    for prov, owner in vps:
+        ys, xs = np.nonzero(pid == prov)
+        k = np.argmin(np.hypot(ys - ys.mean(), xs - xs.mean()))          # a pixel of the province near its middle
+        y0, x0 = ys[k], xs[k]
+        sl = np.s_[max(y0 - FELUCIA_TOWN_R, 0):y0 + FELUCIA_TOWN_R + 1, max(x0 - FELUCIA_TOWN_R, 0):x0 + FELUCIA_TOWN_R + 1]
+        disc = np.hypot(yy[sl] - y0, xx[sl] - x0) <= FELUCIA_TOWN_R
+        town[sl] |= disc
+        if owner == "FLT":
+            native[sl] |= disc
+    town &= fel
+    zone = np.asarray(Image.open(FELUCIA_ZONES)) if os.path.exists(FELUCIA_ZONES) else np.where(fel, 4, 0).astype(np.uint8)
+    t[fel & np.isin(t, (TOWN, GREENMTN, ROCK, PASSAGE)) & ~town] = JUNGLE     # repainted below
+    t[town] = TOWN
+    h, kar = felucia_relief(h, t, fel, town, units, np.random.default_rng(SEED + 59), zone)
+    gy, gx = np.gradient(h)
+    slope = np.hypot(gx, gy)
+    t[fel & ~town & (kar > 15) & (slope > 2.5)] = GREENMTN         # jungle-clad massifs and karst flanks
+    t[fel & ~town & (kar > 40) & (slope > 11)] = ROCK             # bare limestone cliffs
+    t[fel & ~town & (zone == 3)] = PASSAGE
+    city[fel] = 0
+    city[town] = OUTPOST_CITY_STYLE
+    city[town & native] = FELUCIA_CITY_STYLE
+    # flora: thinner jungle, nothing on the village clearings or where units stand
+    TH, TW = trees.shape
+    rows = np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1)
+    cols = np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1)
+    gi = np.ix_(rows, cols)
+    clear = town.copy()
+    for y0, x0 in units:
+        if zone[y0, x0] == 4:                                      # nobody stands in the impassable jungle
+            continue
+        sl = np.s_[max(y0 - FELUCIA_UNIT_CLEAR, 0):y0 + FELUCIA_UNIT_CLEAR + 1, max(x0 - FELUCIA_UNIT_CLEAR, 0):x0 + FELUCIA_UNIT_CLEAR + 1]
+        clear[sl] |= np.hypot(yy[sl] - y0, xx[sl] - x0) <= FELUCIA_UNIT_CLEAR
+    trees[fel[gi]] = 0
+    clear |= ndi.binary_dilation(zone == 3, iterations=2)          # passages stay open
+    dens = ZONE_FLORA[zone[gi]]
+    cells = fel[gi] & (t[gi] != URBAN) & ~clear[gi] & (rng.random((TH, TW)) < FELUCIA_FILL * dens)
+    idx, share = zip(*FELUCIA_FLORA)
+    trees[cells] = rng.choice(idx, size=int(cells.sum()), p=np.array(share) / sum(share))
+    under = fel[gi] & (t[gi] != URBAN) & ~clear[gi] & (trees == 0) & (rng.random((TH, TW)) < FELUCIA_UNDER_FILL * np.minimum(dens, 1))
+    uidx, ushare = zip(*FELUCIA_UNDERGROWTH)
+    trees[under] = rng.choice(uidx, size=int(under.sum()), p=np.array(ushare) / sum(ushare))
+    cells |= under
+    fh = fel[::2, ::2][:cm.shape[0], :cm.shape[1]]
+    lum = cm[..., :3].mean(-1)
+    stops, cols = zip(*FELUCIA_GROUND)
+    lo, hi = np.percentile(lum[fh], (2, 98)) if fh.any() else (0, 1)
+    k = np.clip((ndi.gaussian_filter(lum, 2.5) - lo) / max(hi - lo, 1e-3), 0, 1)   # smooth: the colormap is half-res
+    pal = np.stack([np.interp(k, stops, [c[i] for c in cols]) for i in range(3)], -1)
+    pal *= (lum / np.maximum(pal.mean(-1), 1e-3))[..., None]
+    cm[..., :3] = np.where(fh[..., None], np.clip(pal, 0, 1), cm[..., :3])
+    # glow: the space pixels nearest to Felucia take its haze colour at their own intensity
+    for lvl, w in enumerate(water):
+        wh, ww = w.shape[:2]
+        sy, sx = H / wh, W / ww
+        lab = labels[(np.arange(wh) * sy).astype(int)[:, None], (np.arange(ww) * sx).astype(int)[None, :]]
+        _, (iy, ix) = ndi.distance_transform_edt(lab == 0, return_indices=True)
+        own = fel[(iy * sy).astype(int), (ix * sx).astype(int)] & (lab == 0)
+        amt = w[..., :3].max(-1, keepdims=True)
+        w[..., :3] = np.where(own[..., None], amt * np.array(FELUCIA_ATMO), w[..., :3])
+    print(f"Felucia: {int(cells.sum())} flora cells,", {int(i): int((trees[cells] == i).sum()) for i in idx},
+          f"{len(vps)} villages ({int(town.sum())} px), {len(units)} unit positions kept clear")
+    return t, trees, cm, water, city, h, kar
+
+
+def world_styles(cmap, labels, names):
+    """Ocean worlds, Mandalore and Geonosis get their own city style wherever the map has buildings (0 stays 0)."""
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    for style, worlds in STYLE_WORLDS.items():
+        cmap = np.where(np.isin(planet, list(worlds)) & (cmap > 0), style, cmap)
+    return cmap.astype(np.uint8)
+
+
+GLOBE_SIZE = 4096             # globe texture is GLOBE_SIZE square: the engine refuses textures over MAX_TEXTURE_SIZE
+                              # (6144 failed, error.log); the shader samples it by map uv, so it needn't match the map shape
+TILE_PERIOD = 3328 / 228.0    # map px per terrain tile repeat (pdxmap.shader: uv2 * TERRAIN_TILE_FREQ, x scaled by W/H)
+GLOBE_DETAIL = 0.6            # how much of the terrain tiles' light/dark pattern goes onto the painted colours
+
+
+def save_dxt1_mips(rgb, path):
+    """DXT1 DDS with a full mip chain (as flora_props.save_dxt5_mips, without alpha: half the size)."""
+    import struct
+    levels, im = [], Image.fromarray(np.asarray(rgb, np.uint8), "RGB")
+    while True:
+        buf = io.BytesIO()
+        im.save(buf, format="DDS", pixel_format="DXT1")
+        levels.append(buf.getvalue())
+        if im.size == (1, 1):
+            break
+        im = im.resize((max(1, im.size[0] // 2), max(1, im.size[1] // 2)), Image.BOX)
+    hdr = bytearray(levels[0][:128])
+    struct.pack_into("<I", hdr, 8, struct.unpack_from("<I", hdr, 8)[0] | 0x20000)
+    struct.pack_into("<I", hdr, 28, len(levels))
+    struct.pack_into("<I", hdr, 108, struct.unpack_from("<I", hdr, 108)[0] | 0x400008)
+    with open(path, "wb") as f:
+        f.write(bytes(hdr) + b"".join(l[128:] for l in levels))
+
+
+def globe_texture():
+    """map/terrain/mud_diffuse_rgb_gloss_a_{0,1,2}.dds: painted planet colours (written colormap, Lanczos upscaled)
+    times the luminance pattern of the terrain tile under each pixel, at the scale the close-up terrain uses."""
+    cmap = np.array(load(f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds").convert("RGB"))
+    terr = np.array(load(f"{MAP}/terrain.bmp"))
+    H, W = terr.shape
+    GH = GW = GLOBE_SIZE
+    slot_of = {int(m.group(1)): int(m.group(2)) for m in re.finditer(
+        r"color\s*=\s*\{\s*(\d+)\s*\}\s*texture\s*=\s*(\d+)",
+        open("common/terrain/00_terrain.txt", encoding="utf-8").read().split("\nterrain = {", 1)[1])}
+    atlas = np.array(load(f"{MAP}/terrain/atlas0.dds").convert("RGB")).astype(np.float32)
+    T = atlas.shape[0] // 5
+    PX, PY = int(round(TILE_PERIOD * GW / W)), int(round(TILE_PERIOD * GH / H))   # tile repeat in globe px per axis
+    detail = np.ones((25, PY, PX), np.float32)
+    for slot in range(25):                         # each tile's light/dark pattern at its on-map size, mean 1
+        r, c = divmod(slot, 5)
+        tile = Image.fromarray(atlas[r * T:(r + 1) * T, c * T:(c + 1) * T].mean(-1).astype(np.uint8)).resize((PX, PY), Image.LANCZOS)
+        d = np.asarray(tile, np.float32)
+        detail[slot] = np.clip(d / max(d.mean(), 1.0), 0.5, 1.6)
+    slot_lut = np.zeros(256, np.int32)
+    for idx, sl in slot_of.items():
+        slot_lut[idx] = sl
+    paint = Image.fromarray(cmap).resize((GW, GH), Image.LANCZOS)
+    out = np.empty((GH, GW, 3), np.uint8)
+    for y0 in range(0, GH, 512):                   # strips: the full float image would not fit comfortably
+        y1 = min(GH, y0 + 512)
+        rgb = np.asarray(paint.crop((0, y0, GW, y1)), np.float32)
+        yy, xx = np.mgrid[y0:y1, 0:GW]
+        slot = slot_lut[terr[yy * H // GH, xx * W // GW]]
+        d = detail[slot, yy % PY, xx % PX]
+        out[y0:y1] = np.clip(rgb * (1 + GLOBE_DETAIL * (d[..., None] - 1)), 0, 255).astype(np.uint8)
+    for lvl in range(3):                           # every quality level gets the full texture
+        save_dxt1_mips(out, f"{MAP}/terrain/mud_diffuse_rgb_gloss_a_{lvl}.dds")
+    print(f"globe texture {GW}x{GH} written to the mud slot")
+
+
+SEA_H, COAST_H, LAND_H = 85, 95, 97   # heightmap: space floor, water level (9.5), rim land
+COAST_SLOPE = 6.0                     # heightmap steps per px across the rim: the water line lands at sub-pixel precision
+
+
+def round_coasts(h, land, labels):
+    """Circular, anti-aliased coastline for every round land body: the province map coast is a 1 px staircase
+    (97 -> 85), and the water line at 95 follows it, so zoomed-out planets look pixelated. A steep ramp centred on
+    the body's true circle (radius from its area) puts the water line on the circle. Idempotent."""
+    h = h.astype(np.float32).copy()
+    H, W = h.shape
+    for lab, sl in enumerate(ndi.find_objects(labels), 1):
+        if sl is None:
+            continue
+        m = labels[sl] == lab
+        ys, xs = np.nonzero(m)
+        cy, cx = ys.mean() + sl[0].start, xs.mean() + sl[1].start
+        R = np.sqrt(m.sum() / np.pi)
+        if m.sum() < 200 or m.sum() < 0.8 * np.pi * np.hypot(ys - ys.mean(), xs - xs.mean()).max() ** 2:
+            continue                                                   # not a round planet: leave it
+        y0, y1 = max(0, int(cy - R - 4)), min(H, int(cy + R + 5))
+        x0, x1 = max(0, int(cx - R - 4)), min(W, int(cx + R + 5))
+        yy, xx = np.mgrid[y0:y1, x0:x1]
+        ramp = COAST_H + (R - np.hypot(yy + 0.5 - (cy + 0.5), xx + 0.5 - (cx + 0.5))) * COAST_SLOPE
+        sub, own = h[y0:y1, x0:x1], (labels[y0:y1, x0:x1] == lab)
+        near = ramp > SEA_H - COAST_SLOPE                                # only the rim band and the inside
+        sea = ~land[y0:y1, x0:x1] & near
+        sub[own] = np.minimum(sub[own], np.maximum(ramp[own], SEA_H))   # land past the circle sinks below water
+        sub[sea] = np.clip(ramp[sea], SEA_H, LAND_H)                    # space inside the circle rises above it
+    return h
+
+
+CITY_BORDER_GAP = 0   # extra map px cleared past the 2 px border street; megacity provinces are only ~7x7 px
+
+
+def carve_city_borders(cmap, pid):
+    """Style 0 (no buildings, map/cities.txt) on both pixels of every province border, so borders stay readable in
+    planet-wide cities. Buildings next to the street become the low outskirts ones (cities.txt sorts by urban edge)."""
+    edge = np.zeros(pid.shape, bool)
+    d = pid[:, 1:] != pid[:, :-1]
+    edge[:, 1:] |= d
+    edge[:, :-1] |= d
+    d = pid[1:, :] != pid[:-1, :]
+    edge[1:, :] |= d
+    edge[:-1, :] |= d
+    if CITY_BORDER_GAP:
+        edge = ndi.binary_dilation(edge, iterations=CITY_BORDER_GAP)
+    return np.where(edge, 0, cmap).astype(np.uint8)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--preview", help="write preview PNGs to this dir")
     ap.add_argument("--write", action="store_true", help="overwrite the map files listed in the docstring")
     ap.add_argument("--reheight", action="store_true", help="only re-snap buildings.txt/unitstacks.txt to heightmap.bmp")
+    ap.add_argument("--carve-cities", action="store_true", help="only clear map/cities.bmp along province borders")
+    ap.add_argument("--city-styles", action="store_true", help="only reapply per-world city styles (cities.bmp)")
+    ap.add_argument("--globe-texture", action="store_true", help="only rebake the sharp globe texture (mud slot)")
+    ap.add_argument("--round-coasts", action="store_true", help="only round the planet coastlines in heightmap.bmp")
+    ap.add_argument("--world-tweaks", action="store_true", help="only apply CITY_DISTRICTS, RED_WORLDS, DENSE_TREE_WORLDS")
+    ap.add_argument("--felucia", action="store_true", help="only repaint Felucia (flora, ground, atmosphere); then --globe-texture")
     a = ap.parse_args()
+    if a.felucia:
+        land, _, pid = load_provinces()
+        labels, n = ndi.label(land, np.ones((3, 3)))
+        names = planet_names(labels, n, pid)
+        tr, terr, cty = load(f"{MAP}/trees.bmp"), load(f"{MAP}/terrain.bmp"), load(f"{MAP}/cities.bmp")
+        cmp = f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds"
+        cm = np.array(load(cmp).convert("RGBA")).astype(np.float32) / 255
+        wps = [f"{MAP}/terrain/colormap_water_{lvl}.dds" for lvl in range(3)]
+        water = [np.array(load(w).convert("RGBA")).astype(np.float32) / 255 for w in wps]
+        h0 = np.asarray(load(f"{MAP}/heightmap.bmp").convert("L")).astype(np.float32)
+        t, trees, cm, water, city, h, kar = felucia(np.array(terr), np.array(tr), cm, water, np.array(cty), h0, labels,
+                                                    names, pid, np.random.default_rng(SEED + 58))
+        fel = np.isin(labels, [l for l in range(1, n + 1) if names[l].split(" - ")[0] == FELUCIA])
+        # gameplay terrain (definition.csv) now comes from the zones: felucia_map.py
+        Image.fromarray(np.rint(h).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
+        # world_normal.bmp (half res) redone around Felucia only: elsewhere it stays as --write made it
+        gy, gx = np.gradient(ndi.gaussian_filter(h, 1.0)[::2, ::2])
+        nv = np.stack([-NORMAL_K * gx, NORMAL_K * gy, np.ones_like(gx)], -1)
+        nv /= np.linalg.norm(nv, axis=-1, keepdims=True)
+        wn = np.array(load(f"{MAP}/world_normal.bmp").convert("RGB"))
+        ys, xs = np.nonzero(fel[::2, ::2][:wn.shape[0], :wn.shape[1]])
+        sl = np.s_[max(ys.min() - 4, 0):ys.max() + 5, max(xs.min() - 4, 0):xs.max() + 5]
+        wn[sl] = np.clip(np.rint(nv[sl] * 127.5 + 127.5), 0, 255).astype(np.uint8)
+        Image.fromarray(wn, "RGB").save(f"{MAP}/world_normal.bmp")
+        reheight(np.rint(h))
+        for arr, img, path in ((t, terr, "terrain.bmp"), (trees, tr, "trees.bmp"), (city, cty, "cities.bmp")):
+            out = Image.fromarray(arr.astype(np.uint8), "P")
+            out.putpalette(img.getpalette())
+            out.save(f"{MAP}/{path}")
+        for w, path in zip(water, wps):
+            save_bgra_dds(path, np.rint(np.clip(w, 0, 1) * 255).astype(np.uint8), path)
+        return save_bgra_dds(cmp, np.rint(np.clip(cm, 0, 1) * 255).astype(np.uint8), cmp)
+    if a.globe_texture:
+        return globe_texture()
+    if a.round_coasts:
+        land, _, pid = load_provinces()
+        labels, n = ndi.label(land, np.ones((3, 3)))
+        hm = round_coasts(np.asarray(load(f"{MAP}/heightmap.bmp").convert("L")), land, labels)
+        Image.fromarray(np.rint(hm).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
+        return reheight(np.rint(hm))
+    if a.world_tweaks:
+        land, _, pid = load_provinces()
+        labels, n = ndi.label(land, np.ones((3, 3)))
+        names = planet_names(labels, n, pid)
+        terr, city, tr = load(f"{MAP}/terrain.bmp"), load(f"{MAP}/cities.bmp"), load(f"{MAP}/trees.bmp")
+        cmp = f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds"
+        cm = np.array(load(cmp).convert("RGBA")).astype(np.float32) / 255
+        t, cmap, trees, cm = world_tweaks(np.array(terr), np.array(city), np.array(tr), cm, labels, names, pid,
+                                          np.random.default_rng(SEED))
+        for arr, img, path in ((t, terr, "terrain.bmp"), (cmap, city, "cities.bmp"), (trees, tr, "trees.bmp")):
+            out = Image.fromarray(arr.astype(np.uint8), "P")
+            out.putpalette(img.getpalette())
+            out.save(f"{MAP}/{path}")
+        return save_bgra_dds(cmp, np.rint(np.clip(cm, 0, 1) * 255).astype(np.uint8), cmp)
+    if a.city_styles:
+        land, _, pid = load_provinces()
+        labels, n = ndi.label(land, np.ones((3, 3)))
+        names = planet_names(labels, n, pid)
+        city = load(f"{MAP}/cities.bmp")
+        cb = Image.fromarray(world_styles(np.array(city), labels, names), "P")
+        cb.putpalette(city.getpalette())
+        cb.save(f"{MAP}/cities.bmp")
+        return
+    if a.carve_cities:
+        city = load(f"{MAP}/cities.bmp")
+        cb = Image.fromarray(carve_city_borders(np.array(city), load_provinces()[2]), "P")
+        cb.putpalette(city.getpalette())
+        return cb.save(f"{MAP}/cities.bmp")
     if a.reheight:
         return reheight(np.asarray(load(f"{MAP}/heightmap.bmp").convert("L"), float))
     rng = np.random.default_rng(SEED)
@@ -697,6 +1125,8 @@ def main():
     thick = np.zeros(n + 1, np.float32)
     for lab in range(1, n + 1):
         base_c, th = ARCH[arch[lab]]["atmo"]
+        if names[lab].split(" - ")[0] == FELUCIA:
+            base_c, th = FELUCIA_ATMO, th * 1.3
         col[lab] = np.array(base_c) * 0.8 + planet_rgb[lab] / max(planet_rgb[lab].max(), 1e-3) * 0.2
         thick[lab] = th * np.clip(radius[lab] / 45, 0.35, 1.2)
     d = dist_h / np.clip(radius[owner] / 120, 0.5, 1.4)
@@ -747,17 +1177,20 @@ def main():
         print("previews written to", a.preview)
 
     if a.write:
-        out_t = Image.fromarray(t, "P"); out_t.putpalette(palette); out_t.save(f"{MAP}/terrain.bmp")
-        Image.fromarray(np.rint(h).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
-        Image.fromarray(nrm, "RGB").save(f"{MAP}/world_normal.bmp")
-        # city style (map/cities.txt, coruscant_buildings.py wire): 1 megacity clusters in city zones, 2 towns,
-        # 3 Christophsis towers (whole planet), 4 treehouse villages on tree worlds
         city = load(f"{MAP}/cities.bmp")
         planet = lambda l: names[l].split(" - ")[0]
         style = np.array([2] + [3 if planet(l) == "Christophsis" else
                                 4 if planet(l) in TREE_VILLAGE_WORLDS or arch[l] in ("forest", "jungle") else 2
                                 for l in range(1, n + 1)], np.uint8)
         cmap = np.where(is_["city"] & (style[labels] != 3), 1, style[labels])
+        cmap = carve_city_borders(world_styles(cmap, labels, names), pid)
+        t, cmap, trees, cm = world_tweaks(t, cmap, trees, cm, labels, names, pid, rng)
+        out_t = Image.fromarray(t, "P"); out_t.putpalette(palette); out_t.save(f"{MAP}/terrain.bmp")
+        h = round_coasts(h, land, labels)
+        Image.fromarray(np.rint(h).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
+        Image.fromarray(nrm, "RGB").save(f"{MAP}/world_normal.bmp")
+        # city style (map/cities.txt, coruscant_buildings.py wire): 1 megacity clusters in city zones, 2 towns,
+        # 3 Christophsis towers (whole planet), 4 treehouse villages on tree worlds, 5-8 per world (STYLE_WORLDS)
         cb = Image.fromarray(cmap.astype(np.uint8), "P")
         cb.putpalette(city.getpalette())
         cb.save(f"{MAP}/cities.bmp")
@@ -768,6 +1201,7 @@ def main():
         for lvl in range(3):
             save_bgra_dds(f"{BASE}/colormap_water_{lvl}.dds", water_out[lvl], f"{MAP}/terrain/colormap_water_{lvl}.dds")
         reheight(np.rint(h))
+        globe_texture()
         print("map files written")
 
 

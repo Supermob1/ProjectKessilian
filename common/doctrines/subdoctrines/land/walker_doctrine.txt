@@ -1,0 +1,122 @@
+walker_terrain_warfare = {
+    track = armor
+    name = SUBDOCTRINE_WALKER_TERRAIN_WARFARE
+    description = SUBDOCTRINE_WALKER_TERRAIN_WARFARE_DESC
+    icon = GFX_doctrine_walker_terrain_warfare_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    # The special project unlocks the walker battalions and this alternative armor doctrine.
+    available = { has_tech = rep_walker_atpt }
+    visible = { always = yes }
+    ai_will_do = {
+        base = 1
+        modifier = {
+            factor = 10
+            has_tech = rep_walker_atpt
+            num_of_military_factories > 24
+        }
+    }
+
+    enable_tactic = tactic_breakthrough
+    category_walker_all = { reliability = 0.05 }
+
+    rewards = {
+        walker_column_drills = {
+            walkers_light = { max_organisation = 4 }
+            walkers_medium = { max_organisation = 2 }
+            walkers_heavy = { max_organisation = 2 }
+            walkers_modern = { max_organisation = 2 }
+            walkers_super_heavy = { max_organisation = 2 }
+            walker_land_cruiser = { max_organisation = 10 }
+        
+            motorized = { max_organisation = 3 }
+            mechanized = { max_organisation = 3 }
+        }
+        terrain_breakthrough = {
+            walkers_light = { breakthrough = 0.15 }
+            walkers_medium = { breakthrough = 0.10 }
+            walkers_heavy = { breakthrough = 0.05 }
+            walkers_modern = { breakthrough = 0.05 }
+            walkers_super_heavy = { breakthrough = 0.05 }
+        }
+        coordinated_walker_fire = {
+            category_walker_main = {
+                soft_attack = 0.10
+                hard_attack = 0.05
+            }
+            category_walker_artillery = { soft_attack = 0.15 }
+            category_walker_destroyer = {
+                hard_attack = 0.15
+                ap_attack = 0.10
+            }
+            category_walker_aa = { air_attack = 0.15 }
+            category_walker_recon = { recon = 0.5 }
+            category_walker_flame = { soft_attack = 0.05 }
+            category_walker_cruiser = {
+                soft_attack = 0.10
+                hard_attack = 0.05
+            }
+        
+            motorized = { soft_attack = 0.05 }
+            mechanized = { soft_attack = 0.05 }
+        }
+        terrain_adaptation = {
+            walkers_light = {
+                forest = { attack = 0.15 }
+                marsh = { attack = 0.15 }
+            }
+            walkers_medium = {
+                forest = { attack = 0.15 }
+                marsh = { attack = 0.15 }
+            }
+            walkers_heavy = {
+                urban = { attack = 0.10 }
+                fort = { attack = 0.10 }
+            }
+            walkers_modern = {
+                forest = { attack = 0.10 }
+                marsh = { attack = 0.10 }
+                urban = { attack = 0.10 }
+            }
+            walkers_super_heavy = {
+                urban = { attack = 0.05 }
+                fort = { attack = 0.05 }
+            }
+            walker_land_cruiser = {
+                urban = { attack = 0.05 }
+                fort = { attack = 0.05 }
+            }
+        }
+        sustained_walker_operations = {
+            category_walker_main = { default_morale = 0.05 }
+            walkers_light = {
+                breakthrough = 0.05
+                supply_consumption = -0.04
+            }
+            walkers_medium = {
+                breakthrough = 0.05
+                supply_consumption = -0.06
+            }
+            walkers_heavy = {
+                breakthrough = 0.05
+                supply_consumption = -0.09
+            }
+            walkers_modern = {
+                breakthrough = 0.05
+                supply_consumption = -0.07
+            }
+            walkers_super_heavy = { supply_consumption = -0.12 }
+            walker_land_cruiser = { supply_consumption = -0.09 }
+            category_walker_artillery = { supply_consumption = -0.03 }
+            category_walker_destroyer = { supply_consumption = -0.03 }
+            category_walker_aa = { supply_consumption = -0.03 }
+            category_walker_flame = { supply_consumption = -0.03 }
+            category_walker_recon = { supply_consumption = -0.02 }
+        
+            motorized = { default_morale = 0.05 supply_consumption = -0.03 }
+            mechanized = { default_morale = 0.05 supply_consumption = -0.03 }
+        }
+    }
+}

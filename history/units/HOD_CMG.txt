@@ -1,177 +1,149 @@
 division_template = {
 	name = "Local Planetary Garrison"
 	division_names_group = CIS_GAR_01
-    is_locked = yes
+	is_locked = yes
 	regiments = {
-		motorized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
 	}
 	support = {
+		military_police = { x = 0 y = 0 }
 	}
 }
 
 division_template = {
-    name = "CIS Droid Battalion"
-    division_names_group = CIS_INF_01
-    template_counter = 1
-	is_locked = yes
-	force_allow_recruiting = yes
-    regiments = {
-        infantry = { x = 0 y = 0 }
-        infantry = { x = 0 y = 1 }
-        infantry = { x = 0 y = 2 }
-        infantry = { x = 1 y = 0 }
-        infantry = { x = 1 y = 1 }
-        infantry = { x = 1 y = 2 }
-        infantry = { x = 2 y = 0 }
-        infantry = { x = 2 y = 1 }
-        infantry = { x = 2 y = 2 }
-        infantry = { x = 3 y = 0 }
-        infantry = { x = 3 y = 1 }
-        infantry = { x = 3 y = 2 }
-        infantry = { x = 4 y = 0 }
-    }
-    support = {
-    }
+	name = "CIS Droid Battalion"
+	division_names_group = CIS_INF_01
+	regiments = {
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+		infantry_droid = { x = 2 y = 0 }
+		infantry_droid = { x = 2 y = 1 }
+		infantry_droid = { x = 2 y = 2 }
+		heavy_droid = { x = 3 y = 0 }
+		heavy_droid = { x = 3 y = 1 }
+		heavy_droid = { x = 3 y = 2 }
+		infantry_droid = { x = 4 y = 0 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		fire_support = { x = 1 y = 0 }
+		anti_tank_battery = { x = 2 y = 0 }
+		anti_air_battery = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
 }
+
+division_template = {
+	name = "AAT Armoured Division"
+	division_names_group = CIS_ARM_01
+	regiments = {
+		medium_armor = { x = 0 y = 0 }
+		medium_armor = { x = 0 y = 1 }
+		medium_armor = { x = 1 y = 0 }
+		medium_armor = { x = 1 y = 1 }
+		infantry_droid = { x = 2 y = 0 }
+		infantry_droid = { x = 2 y = 1 }
+		infantry_droid = { x = 2 y = 2 }
+		infantry_droid = { x = 3 y = 0 }
+		infantry_droid = { x = 3 y = 1 }
+		infantry_droid = { x = 3 y = 2 }
+	}
+	regimental_support = {
+		light_sp_anti_air_support = { x = 0 y = 0 }
+		light_sp_anti_air_support = { x = 1 y = 0 }
+		anti_tank_battery = { x = 2 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
+}
+
+division_template = {
+	name = "Octuptarra Strike Group"
+	division_names_group = CIS_ARM_01
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+	}
+	regimental_support = {
+		light_sp_anti_air_support = { x = 0 y = 0 }
+		fire_support = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		maintenance_company = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Hailfire Artillery Group"
+	division_names_group = CIS_INF_01
+	regiments = {
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+		light_sp_artillery_brigade = { x = 2 y = 0 }
+		light_sp_artillery_brigade = { x = 2 y = 1 }
+	}
+	regimental_support = {
+		anti_air_battery = { x = 0 y = 0 }
+		anti_tank_battery = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
+}
+
 units = {
-    # Felucia
-    division = {
-        name                    = "1st Commerce Guild Battle Droid Battalion"
-        location                = 124
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "2nd Commerce Guild Battle Droid Battalion"
-        location                = 124
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "3rd Commerce Guild Battle Droid Battalion"
-        location                = 124
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "4th Commerce Guild Battle Droid Battalion"
-        location                = 124
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "6th Commerce Guild Battle Droid Battalion"
-        location                = 124
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "7th Commerce Guild Battle Droid Battalion"
-        location                = 124
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Sullust
-    division = {
-        name                    = "8th Commerce Guild Battle Droid Battalion"
-        location                = 17855
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "9th Commerce Guild Battle Droid Battalion"
-        location                = 17855
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "10th Commerce Guild Battle Droid Battalion"
-        location                = 17855
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "11th Commerce Guild Battle Droid Battalion"
-        location                = 17855
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "12th Commerce Guild Battle Droid Battalion"
-        location                = 17855
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "13th Commerce Guild Battle Droid Battalion"
-        location                = 17855
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Korriban
-    division = {
-        name                    = "14th Commerce Guild Battle Droid Battalion"
-        location                = 1533
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "15th Commerce Guild Battle Droid Battalion"
-        location                = 1533
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "16th Commerce Guild Battle Droid Battalion"
-        location                = 1533
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    # Dromund Kaas
-    division = {
-        name                    = "17th Commerce Guild Battle Droid Battalion"
-        location                = 7759
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "18th Commerce Guild Battle Droid Battalion"
-        location                = 7759
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
-    division = {
-        name                    = "19th Commerce Guild Battle Droid Battalion"
-        location                = 7759
-        division_template       = "CIS Droid Battalion"
-        start_experience_factor = 1.0
-        start_equipment_factor  = 1.0
-    }
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 8826
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 4249
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "CIS Droid Battalion"
+		location = 932
+		start_experience_factor = 0.2
+	}
 }
 	
 instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_0
+			type = cis_infantry_droid_equipment_2
 			creator = CMG
 		}
 		requested_factories = 3

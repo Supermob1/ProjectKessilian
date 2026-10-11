@@ -28,33 +28,48 @@ def fbm(x, y):
 
 
 CORE = np.array([880.0, 1700.0])
-# region outer radii (map units) from the canonical chart, fitted onto this map
-RINGS = [185.0, 320.0, 460.0, 640.0, 850.0, 1200.0, 1600.0]   # deep core, core, colonies, inner, expansion, mid, outer
-SHIFT = np.array([0.22, -0.12])                                  # outer regions bulge east and south
-GRID_CELL = np.array([191.3, 187.5]); GRID_ORIGIN = np.array([-847.0, 3499.0])
+CELL = 215.0   # map units per canon chart square (starwars.com galaxy map, DK 2025), sized so the Outer Rim covers the planets
+# canon regions as ellipses (cells, +x east, +z north): centre offset from the Deep Core, radius x, radius z, line strength
+REGIONS = [  # deep core, core, colonies, inner rim, expansion, mid rim, outer rim
+    ((0.00, 0.00), 1.25, 1.25, 0.0), ((0.16, -0.04), 2.31, 2.15, 1.0), ((0.18, 0.00), 2.90, 2.73, 1.0),
+    ((0.39, -0.12), 3.56, 3.82, 1.0), ((0.70, -0.37), 4.23, 4.45, 1.0), ((1.53, -0.92), 5.49, 5.85, 1.0),
+    ((2.59, -0.14), 7.08, 9.89, 0.45)]
+FILLS = [1.0, .62, .44, .34, .27, .19, .12, .05]   # brightness at each boundary, centre outwards
+HUTT = ((7.48, -0.18), 1.32, 2.55)                  # Hutt Space sector, outline only
+GRID_CELL = np.array([CELL, CELL]); GRID_ORIGIN = np.array([860.6, 1778.0])   # deep core sits at canon grid L/M-11
+
+
+def ellipse_e(X, Z, c, rx, rz, wob):
+    """normalised elliptical radius (1 on the boundary) and an approximate distance to the boundary in map units"""
+    e = np.hypot((X - CORE[0] - c[0] * CELL) / (rx * CELL), (Z - CORE[1] - c[1] * CELL) / (rz * CELL)) * wob
+    return e, np.abs(e - 1) * min(rx, rz) * CELL
 
 
 def galaxy(X, Z):
     P = np.stack([X, Z], -1)
-    wob = (fbm(X * .002, Z * .002) - .5)
-    # distance to the core in "region units": rings are circles whose centres drift east/south as they grow
+    wob = 1 + (fbm(X * .002, Z * .002) - .5) * 0.18
+    rag = wob + (fbm(X * .006 + 11, Z * .006 + 11) - .5) * 0.22    # ragged Outer Rim / Hutt edge
+    es = []
+    line = np.zeros_like(X)
+    for i, (c, rx, rz, ls) in enumerate(REGIONS):
+        e, dist = ellipse_e(X, Z, c, rx, rz, rag if i == 6 else wob)
+        es.append(e)
+        line = np.maximum(line, (1 - sat(dist / 3.5)) * ls)
+    e, dist = ellipse_e(X, Z, HUTT[0], HUTT[1], HUTT[2], rag)
+    line = np.maximum(line, (1 - sat(dist / 3.5)) * .7)
+    # fill: outside the Outer Rim fades out, each band blends from its outer to its inner boundary value
+    fill = np.maximum(FILLS[7] - (es[6] - 1) * .3, 0)
+    for i in range(6, 0, -1):
+        u = sat((1 - es[i]) / np.maximum((1 - es[i]) + (es[i - 1] - 1), 1e-4))
+        fill = np.where(es[i] < 1, FILLS[i + 1] + (FILLS[i] - FILLS[i + 1]) * u, fill)
+    fill = np.where(es[0] < 1, FILLS[1] + (FILLS[0] - FILLS[1]) * (1 - es[0]), fill)
     d0 = np.hypot(X - CORE[0], Z - CORE[1])
-    c = CORE + SHIFT * d0[..., None] * 0.5
-    r = np.hypot(X - c[..., 0], Z - c[..., 1]) * (1 + wob * 0.18)
-    # region index (fractional) and fills
-    edges = np.array(RINGS)
-    idx = np.interp(r, np.concatenate([[0], edges]), np.arange(len(edges) + 1))
-    fill = np.interp(idx, [0, 1, 2, 3, 4, 5, 6, 7, 8], [1.0, .62, .44, .34, .27, .19, .12, .05, 0])
-    # thin outlines at each boundary
-    line = np.zeros_like(r)
-    for e in edges[1:]:
-        line = np.maximum(line, 1 - sat(np.abs(r - e) / 3.5))
-    line *= sat(1.3 - r / edges[-1])
     # galactic disk haze + faint outer spiral arms
     th = np.arctan2(Z - CORE[1], X - CORE[0])
     rn = d0 / 1700
     phi = th - np.log(np.maximum(rn, .05)) / .28 + .4 + (fbm(X * .0018, Z * .0018) - .5) * 0.9
     arm = sat(.5 + .5 * np.cos(2 * phi)) ** 4 * sat((rn - .3) * 3) * sat(1.7 - rn)
+    arm *= .3 + .7 * sat((es[5] - .95) * 5)   # canon chart: arms swirl outside the Mid Rim, not through known space
     grain = fbm(X * .03 + 3, Z * .03 + 3)
     haze = np.exp(-rn / .45) * (.6 + .5 * fbm(X * .006 + 40, Z * .006 + 40))
     col = np.zeros(X.shape + (3,))

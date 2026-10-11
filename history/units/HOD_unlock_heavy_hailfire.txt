@@ -1,0 +1,26 @@
+﻿# HOD: template handed out by cis_hailfire_heavy (faction_templates.py)
+division_template = {
+	name = "Heavy Hailfire Group"
+	division_names_group = CIS_INF_01
+	regiments = {
+		heavy_droid = { x = 0 y = 0 }
+		heavy_droid = { x = 0 y = 1 }
+		heavy_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+		medium_sp_artillery_brigade = { x = 2 y = 0 }
+		medium_sp_artillery_brigade = { x = 2 y = 1 }
+	}
+	regimental_support = {
+		fire_support = { x = 0 y = 0 }
+		anti_air_battery = { x = 1 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+	}
+}

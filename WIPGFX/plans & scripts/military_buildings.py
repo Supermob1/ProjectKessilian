@@ -1,14 +1,24 @@
 """Star Wars replacements for vanilla building models.
   air base   -> launch pad complex: pillars with circular landing pads, control tower (procedural)
+  anti-air   -> ion cannon emplacement: dome turret + barrel in a walled pad (procedural)
+  naval base -> space dock: shore hangar + tower, pier to a landing pad between two ship gantries (procedural)
+  landmarks  -> Jedi Temple, Senate Rotunda, Tipoca City, Petranaki Arena, Great Temple of the Massassi, Jabba's
+                palace, Sundari dome (shapes and colours from Wookieepedia stills), placed by `landmarks`
 
   python "WIPGFX/plans & scripts/military_buildings.py" textures
   blender -b --factory-startup --python "WIPGFX/plans & scripts/military_buildings.py" -- launchpad
+  python "WIPGFX/plans & scripts/military_buildings.py" atlas         hod_landmarks textures
+  python "WIPGFX/plans & scripts/military_buildings.py" felucia_atlas hod_felucia_city textures (Felucian villages)
+  blender -b --factory-startup --python "WIPGFX/plans & scripts/military_buildings.py" -- models   temple, senate, dock
+  python "WIPGFX/plans & scripts/military_buildings.py" landmarks     map/ambient_object.txt
   python "WIPGFX/plans & scripts/military_buildings.py" wire     gfx/entities/buildings.asset (vanilla copy, 2 entities
                                                                  swapped) + gfx/entities/hod_buildings.gfx
 """
-import math, os, re, sys
+import math, os, re, shutil, sys
 
 OUT = "gfx/models/buildings/hod_launchpad"
+LM_OUT = "gfx/models/buildings/hod_landmarks"
+FLORA_OUT = "gfx/models/mapitems/hod_flora"
 VANILLA_ASSET = r"F:/SteamLibrary/steamapps/common/Hearts of Iron IV/gfx/entities/buildings.asset"
 S = 512
 
@@ -126,6 +136,707 @@ def launchpad():
     print(f"launchpad: {len(me.polygons)} tris")
 
 
+# hod_landmarks atlas: 4 x 4 cells (u0, v0, u1, v1), v = 1 is the top image row. Top row: walls with lit window rows
+# (night emission); second row: the same materials plain; then bronze, deck plating, Geonosis rock, dark panelling.
+_cell = lambda col, row: (col * 0.25, 1 - (row + 1) * 0.25, (col + 1) * 0.25, 1 - row * 0.25)
+SAND_WIN, METAL_WIN, MOSS_WIN, RUST_WIN = (_cell(i, 0) for i in range(4))
+SAND, METAL, MOSS, RUST = (_cell(i, 1) for i in range(4))
+BRONZE, DECK, ROCK, DARK = (_cell(i, 2) for i in range(4))
+DARK_WIN, LEAF, VERDI, REDROCK = (_cell(i, 3) for i in range(4))
+# plain (no windows) materials of the last row: RGB, spec, metalness
+LM_PLAIN = {"LEAF": ((62, 90, 46), 20, 0),          # Kachirho canopy
+            "VERDI": ((96, 140, 118), 90, 120),     # Theed palace domes: green copper
+            "REDROCK": ((132, 66, 50), 30, 0)}      # Korriban: dark red rock
+LM_S = 1024
+# Felucian villages (city style 9): their own 2 x 2 atlas, same layout as hod_landmarks (normal B = night emission).
+# Felucians live among the giant fungi: huts and glowing pods on platforms around mushroom stalks
+_fcell = lambda col, row: (col * 0.5, 1 - (row + 1) * 0.5, (col + 1) * 0.5, 1 - row * 0.5)
+FCAP, FSTALK, FPOD, FHUT = _fcell(0, 0), _fcell(1, 0), _fcell(0, 1), _fcell(1, 1)
+# material: (base RGB, window RGB, spec, metalness); colours from the reference stills (Wookieepedia)
+LM_MATS = {
+    "SAND": ((214, 196, 160), (70, 58, 44), 60, 0),        # Jedi Temple sandstone
+    "METAL": ((186, 194, 204), (34, 46, 62), 60, 60),      # Senate / dock / Tipoca pale blue-grey
+    "MOSS": ((108, 116, 96), (60, 52, 34), 40, 0),         # Massassi temple: weathered grey-green stone
+    "RUST": ((158, 116, 82), (52, 38, 28), 50, 20),        # Jabba's palace: sand-blasted rust-tan
+    "DARK": ((92, 97, 106), (30, 36, 44), 80, 120),        # Sundari dome: dark grey panelling
+}
+
+
+def atlas():
+    """Shared atlas for every procedural landmark (temple, senate, dock, ion cannon, Tipoca, arena, Massassi temple,
+    Jabba's palace, Sundari). Advanced layout like the launch pad: normal B = night emission."""
+    import numpy as np
+    from scipy import ndimage as ndi
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from flora_props import save_dxt5_mips
+    os.makedirs(LM_OUT, exist_ok=True)
+    N = LM_S
+    rng = np.random.default_rng(7)
+    yy, xx = np.mgrid[0:N, 0:N].astype(np.float32)
+    grime = ndi.gaussian_filter(rng.random((N, N)), 2)
+    grime = ((grime - grime.min()) / np.ptp(grime))[..., None]
+    blotch = ndi.gaussian_filter(rng.random((N, N)), 12)
+    blotch = ((blotch - blotch.min()) / np.ptp(blotch))[..., None]
+    col = np.zeros((N, N, 3), np.float32)
+    emi = np.zeros((N, N), np.float32)
+    spec = np.full((N, N), 60, np.float32)
+    metal = np.zeros((N, N), np.float32)
+
+    def px(rect):   # image slice of a uv rect
+        u0, v0, u1, v1 = rect
+        return slice(int(round((1 - v1) * N)), int(round((1 - v0) * N))), slice(int(round(u0 * N)), int(round(u1 * N)))
+
+    win = ((xx % 16) > 5) & ((xx % 16) < 11) & ((yy % 32) > 12) & ((yy % 32) < 24)
+    lit = win & (ndi.uniform_filter(rng.random((N, N)), 6) > 0.47)            # some windows dark at night
+    courses = ((yy % 32) < 2)[..., None]
+    panels = (((xx % 64) < 2) | ((yy % 40) < 2))[..., None]
+    for name, (base, wcol, sp, me) in LM_MATS.items():
+        tone = np.array(base, np.float32) * (0.88 + 0.2 * grime)
+        if name in ("SAND", "MOSS"):
+            tone *= 1 - 0.12 * courses                                          # masonry courses
+        else:
+            tone *= 1 - 0.18 * panels                                           # panel seams
+        if name == "MOSS":
+            tone = tone * (1 - 0.35 * blotch) + np.array([70, 92, 52], np.float32) * 0.35 * blotch   # moss patches
+        if name == "RUST":
+            tone *= 0.85 + 0.3 * ndi.gaussian_filter(rng.random((N, N)), (8, 1))[..., None]          # streaks
+        for rect, windows in ((globals()[name + "_WIN"] if name + "_WIN" in globals() else None, True),
+                              (globals()[name], False)):
+            if rect is None:
+                continue
+            r, c = px(rect)
+            col[r, c] = np.where(win[r, c][..., None], wcol, tone[r, c]) if windows else tone[r, c]
+            emi[r, c] = np.where(lit[r, c], 230, 0) if windows else 0
+            spec[r, c], metal[r, c] = sp, me
+    for name, (base, sp, me) in LM_PLAIN.items():
+        r, c = px(globals()[name])
+        col[r, c] = np.array(base, np.float32) * (0.75 + 0.35 * grime[r, c]) * (0.85 + 0.3 * blotch[r, c])
+        spec[r, c], metal[r, c] = sp, me
+    r, c = px(BRONZE)
+    col[r, c] = np.array([184, 142, 74], np.float32) * (0.8 + 0.3 * grime[r, c])
+    spec[r, c], metal[r, c] = 140, 200
+    r, c = px(ROCK)                                                            # Geonosis: ochre rock, vertical flutes
+    flutes = 0.8 + 0.25 * np.sin(xx[r, c] * 0.35 + 3 * grime[r, c, 0])
+    col[r, c] = np.array([176, 108, 66], np.float32) * (0.75 + 0.35 * grime[r, c]) * flutes[..., None]
+    spec[r, c] = 30
+    r, c = px(DECK)
+    ly, lx = yy[r, c] - yy[r, c].min(), xx[r, c] - xx[r, c].min()
+    h, w = ly.max() + 1, lx.max() + 1
+    edge = np.minimum(np.minimum(ly, h - 1 - ly), np.minimum(lx, w - 1 - lx))
+    deck = np.array([96, 99, 104], np.float32) * (0.85 + 0.25 * grime[r, c])
+    deck = np.where(((edge < 14) & (((lx + ly) % 24) < 12))[..., None], [205, 165, 40], deck)   # hazard stripes
+    deck = np.where(((edge > 20) & (edge < 24))[..., None], [220, 220, 215], deck)
+    col[r, c] = deck
+    emi[r, c] = np.where((edge < 4) & ((lx + ly) % 32 < 4), 255, 0)                              # edge beacons
+    full = lambda v: np.full((N, N), v, np.float32)
+    save_dxt5_mips(np.dstack([np.clip(col, 0, 255), full(255)]), f"{LM_OUT}/hod_landmarks_diffuse.dds")
+    save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{LM_OUT}/hod_landmarks_normal.dds")
+    save_dxt5_mips(np.dstack([full(0), spec, metal, full(110)]), f"{LM_OUT}/hod_landmarks_properties.dds")
+    for kind in ("normal", "properties"):                  # the sandcrawler map prop uses the same atlas...
+        shutil.copy2(f"{LM_OUT}/hod_landmarks_{kind}.dds", f"{FLORA_OUT}/hod_flora_53_sandcrawler_{kind}.dds")
+    bright = np.dstack([np.clip(col * 1.7 + 12, 0, 255), full(255)])   # ...brightened: props are lit darker in game
+    save_dxt5_mips(bright, f"{FLORA_OUT}/hod_flora_53_sandcrawler_diffuse.dds")
+    print("atlas written to", LM_OUT)
+
+
+def felucia_atlas():
+    """hod_felucia_city: violet spotted cap, pale ribbed stalk, orange pods and woven huts with lit openings."""
+    import numpy as np
+    from scipy import ndimage as ndi
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from flora_props import save_dxt5_mips
+    N = 512
+    rng = np.random.default_rng(9)
+    yy, xx = np.mgrid[0:N, 0:N].astype(np.float32)
+    mott = ndi.gaussian_filter(rng.random((N, N)), 4)
+    mott = ((mott - mott.min()) / np.ptp(mott))[..., None]
+    col = np.zeros((N, N, 3), np.float32)
+    emi = np.zeros((N, N), np.float32)
+    h = N // 2
+    cells = {FCAP: (150, 60, 190), FSTALK: (215, 200, 205), FPOD: (240, 130, 35), FHUT: (150, 112, 70)}
+    for rect, base in cells.items():
+        u0, v0, u1, v1 = rect
+        r, c = slice(int(round((1 - v1) * N)), int(round((1 - v0) * N))), slice(int(round(u0 * N)), int(round(u1 * N)))
+        ly, lx = yy[r, c] - yy[r, c].min(), xx[r, c] - xx[r, c].min()
+        tone = np.array(base, np.float32) * (0.75 + 0.4 * mott[r, c])
+        if rect == FCAP:                                    # pale spots
+            for _ in range(30):
+                cy, cx, rr = rng.uniform(0, h), rng.uniform(0, h), rng.uniform(6, 14)
+                m = np.clip((rr - np.hypot(ly - cy, lx - cx)) / 2, 0, 1)[..., None]
+                tone = tone * (1 - m) + np.array([240, 215, 120], np.float32) * m
+        if rect == FSTALK:                                  # vertical ribs
+            tone *= (0.85 + 0.15 * np.sin(lx * 0.4))[..., None]
+        if rect == FHUT:                                    # woven bands
+            tone *= (0.8 + 0.2 * ((ly % 12) < 6) * ((lx % 12) < 6) + 0.1 * ((ly % 12) >= 6))[..., None]
+        if rect in (FPOD, FHUT):                            # openings in a row along the lower third, lit at night
+            win = ((lx % 48) > 18) & ((lx % 48) < 30) & (ly > h * 0.55) & (ly < h * 0.8)
+            tone = np.where(win[..., None], [60, 30, 20], tone)
+            emi[r, c] = np.where(win, 220, 0)
+        col[r, c] = tone
+    full = lambda v: np.full((N, N), v, np.float32)
+    save_dxt5_mips(np.dstack([np.clip(col, 0, 255), full(255)]), f"{LM_OUT}/hod_felucia_city_diffuse.dds")
+    save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{LM_OUT}/hod_felucia_city_normal.dds")
+    save_dxt5_mips(np.dstack([full(0), full(40), full(0), full(90)]), f"{LM_OUT}/hod_felucia_city_properties.dds")
+    print("felucia atlas written to", LM_OUT)
+
+
+def models():
+    """Blender: build hod_jedi_temple, hod_senate and hod_spacedock (z up, origin on the ground) and export .mesh."""
+    import bmesh  # type: ignore
+    import bpy  # type: ignore
+    sys.path.insert(0, os.path.join(os.path.dirname(bpy.app.binary_path), "4.2", "scripts", "addons"))
+    import io_pdx_mesh  # noqa: F401
+    from io_pdx_mesh.library import PDX_SHADER
+    from io_pdx_mesh.pdx_blender import blender_import_export as bie
+
+    class Mat:
+        def __init__(self, shader="PdxMeshAdvancedSnow", tex="hod_landmarks"):
+            self.shader = [shader]
+            self.diff, self.n, self.spec = [f"{tex}_diffuse.dds"], [f"{tex}_normal.dds"], [f"{tex}_properties.dds"]
+
+    class Kit:
+        def __init__(self, bm, uv):
+            self.bm, self.uv = bm, uv
+
+        def put(self, f, uvs, rect):
+            u0, v0, u1, v1 = rect
+            for loop, (a, b) in zip(f.loops, uvs):
+                loop[self.uv].uv = (u0 + 0.01 + a * (u1 - u0 - 0.02), v0 + 0.01 + b * (v1 - v0 - 0.02))
+
+        def lathe(self, profile, rects, sides=16, cx=0.0, cy=0.0, rot=0.0, cap=None, sy=1.0, jitter=0.0):
+            """Surface of revolution through (r, z) points; rects[i] textures segment i (u around, v along).
+            r == 0 at an end closes it to a point; `cap` rect closes flat ends. sy squashes it into an oval along y,
+            jitter roughens the radius per vertex (rock)."""
+            bm = self.bm
+            ang = [rot + 2 * math.pi * i / sides for i in range(sides)]
+            rough = lambda i, k: 1 + jitter * math.sin(i * 2.71 + k * 1.37 + cx * 3.1) * math.cos(i * 1.13 - k * 0.7)
+            rings = [[bm.verts.new((cx, cy, z))] * sides if r == 0 else
+                     [bm.verts.new((cx + r * rough(i, k) * math.cos(a), cy + sy * r * rough(i, k) * math.sin(a), z))
+                      for i, a in enumerate(ang)] for k, (r, z) in enumerate(profile)]
+            for k in range(len(rings) - 1):
+                lo, hi = rings[k], rings[k + 1]
+                rect = rects[k] if isinstance(rects, list) else rects
+                for i in range(sides):
+                    j = (i + 1) % sides
+                    a, b = i / sides, (i + 1) / sides
+                    if lo[i] is lo[j]:
+                        f, uvs = bm.faces.new((lo[i], hi[j], hi[i])), (((a + b) / 2, 0), (b, 1), (a, 1))
+                    elif hi[i] is hi[j]:
+                        f, uvs = bm.faces.new((lo[i], lo[j], hi[i])), ((a, 0), (b, 0), ((a + b) / 2, 1))
+                    else:
+                        f, uvs = bm.faces.new((lo[i], lo[j], hi[j], hi[i])), ((a, 0), (b, 0), (b, 1), (a, 1))
+                    self.put(f, uvs, rect)
+            disc = [(0.5 + 0.5 * math.cos(a), 0.5 + 0.5 * math.sin(a)) for a in ang]
+            if cap and len(set(rings[0])) > 1:
+                self.put(bm.faces.new(rings[0][::-1]), disc[::-1], cap)
+            if cap and len(set(rings[-1])) > 1:
+                self.put(bm.faces.new(rings[-1]), disc, cap)
+
+        def box(self, x0, y0, z0, x1, y1, z1, rect, top=None):
+            bm = self.bm
+            v = {(i, j, k): bm.verts.new((x1 if i else x0, y1 if j else y0, z1 if k else z0))
+                 for i in (0, 1) for j in (0, 1) for k in (0, 1)}
+            quads = [((0, 0, 0), (1, 0, 0), (1, 0, 1), (0, 0, 1)), ((1, 1, 0), (0, 1, 0), (0, 1, 1), (1, 1, 1)),
+                     ((0, 1, 0), (0, 0, 0), (0, 0, 1), (0, 1, 1)), ((1, 0, 0), (1, 1, 0), (1, 1, 1), (1, 0, 1)),
+                     ((0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)), ((0, 1, 0), (1, 1, 0), (1, 0, 0), (0, 0, 0))]
+            for n, q in enumerate(quads):
+                self.put(bm.faces.new([v[c] for c in q]), ((0, 0), (1, 0), (1, 1), (0, 1)), top if n == 4 and top else rect)
+
+        def tube(self, p0, p1, r, rect, sides=10, r1=None):
+            """Cylinder (cone if r1) between two points (any direction), closed with a flat end at p1."""
+            from mathutils import Vector  # type: ignore
+            p0, p1 = Vector(p0), Vector(p1)
+            d = (p1 - p0).normalized()
+            u = d.cross(Vector((0, 0, 1))).normalized()
+            w = d.cross(u)
+            ring = lambda p: [self.bm.verts.new(p + r * (math.cos(2 * math.pi * i / sides) * u + math.sin(2 * math.pi * i / sides) * w))
+                              for i in range(sides)]
+            lo = ring(p0)
+            r = r if r1 is None else r1
+            hi = ring(p1)
+            for i in range(sides):
+                j = (i + 1) % sides
+                self.put(self.bm.faces.new((lo[i], lo[j], hi[j], hi[i])),
+                         ((i / sides, 0), ((i + 1) / sides, 0), ((i + 1) / sides, 1), (i / sides, 1)), rect)
+            self.put(self.bm.faces.new(hi), [(0.5, 0.5)] * sides, rect)
+
+        def prism(self, profile, x0, x1, rect, end=None):
+            """Side profile [(y, z), ...] (counter-clockwise seen from +x) extruded across x0..x1."""
+            bm = self.bm
+            a = [bm.verts.new((x0, y, z)) for y, z in profile]
+            b = [bm.verts.new((x1, y, z)) for y, z in profile]
+            n = len(profile)
+            for i in range(n):
+                j = (i + 1) % n
+                self.put(bm.faces.new((a[i], a[j], b[j], b[i])), ((0, 0), (1, 0), (1, 1), (0, 1)), rect)
+            ys, zs = [y for y, _ in profile], [z for _, z in profile]
+            uv = [((y - min(ys)) / (max(ys) - min(ys)), (z - min(zs)) / (max(zs) - min(zs))) for y, z in profile]
+            self.put(bm.faces.new(a[::-1]), uv[::-1], end or rect)
+            self.put(bm.faces.new(b), uv, end or rect)
+
+        def arch(self, x0, x1, y0, y1, z0, rect, segs=8):
+            """Hangar roof: half-cylinder across x, running along y, standing on z0; `rect` on the end walls."""
+            bm = self.bm
+            cx, r = (x0 + x1) / 2, (x1 - x0) / 2
+            pts = [(cx - r * math.cos(math.pi * i / segs), z0 + r * math.sin(math.pi * i / segs)) for i in range(segs + 1)]
+            front = [bm.verts.new((x, y0, z)) for x, z in pts]
+            back = [bm.verts.new((x, y1, z)) for x, z in pts]
+            for i in range(segs):
+                self.put(bm.faces.new((front[i], front[i + 1], back[i + 1], back[i])),
+                         ((i / segs, 0), ((i + 1) / segs, 0), ((i + 1) / segs, 1), (i / segs, 1)), METAL)
+            end = [((x - x0) / (x1 - x0), (z - z0) / r) for x, z in pts]
+            self.put(bm.faces.new(front), end, rect)
+            self.put(bm.faces.new(back[::-1]), end[::-1], rect)
+
+    SKIRT = 2.5     # landmark walls run this far below the origin: no gap under them on uneven or lower ground
+
+    def build(name, geometry, shader="PdxMeshAdvancedSnow", out=LM_OUT, tex="hod_landmarks"):
+        bpy.ops.wm.read_factory_settings(use_empty=True)
+        bm = bmesh.new()
+        geometry(Kit(bm, bm.loops.layers.uv.new("UVMap")))
+        bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
+        me = bpy.data.meshes.new(name)
+        bm.to_mesh(me)
+        bm.free()
+        obj = bpy.data.objects.new(name, me)
+        bpy.context.scene.collection.objects.link(obj)
+        mat = bie.create_shader(Mat(shader, tex), name, os.path.abspath(out))
+        mat[PDX_SHADER] = shader
+        me.materials.append(mat)
+        bpy.context.view_layer.objects.active = obj
+        obj.select_set(True)
+        m = obj.modifiers.new("t", "TRIANGULATE")
+        bpy.ops.object.modifier_apply(modifier=m.name)
+        bie.export_meshfile(os.path.abspath(f"{out}/{name}.mesh"), exp_mesh=True, exp_skel=False, exp_locs=False)
+        print(f"{name}: {len(me.polygons)} tris")
+
+    def temple(k):
+        # canon Jedi Temple: stepped sandstone ziggurat, flat roof, four corner spires and a taller central one.
+        # Square = 4-sided lathe turned 45 degrees (radius = half side * sqrt 2); the plinth starts below ground
+        # so uneven terrain never shows a gap under it.
+        q = math.sqrt(2)
+        k.lathe([(1.75 * q, -SKIRT), (1.75 * q, 0.06), (1.62 * q, 0.06), (1.38 * q, 0.42), (1.26 * q, 0.42),
+                 (1.06 * q, 0.74), (0.96 * q, 0.74), (0.84 * q, 0.98)],
+                [SAND, SAND, SAND_WIN, SAND, SAND_WIN, SAND, SAND_WIN], sides=4, rot=math.pi / 4, cap=SAND)
+        for x, y in ((-0.56, -0.56), (0.56, -0.56), (-0.56, 0.56), (0.56, 0.56)):
+            k.lathe([(0.15, 0.98), (0.1, 2.0), (0.14, 2.06), (0.14, 2.12), (0.05, 2.18), (0.0, 2.3)],
+                    [SAND_WIN, BRONZE, BRONZE, BRONZE, BRONZE], sides=12, cx=x, cy=y)
+        k.lathe([(0.22, 0.98), (0.14, 2.45), (0.2, 2.53), (0.2, 2.6), (0.07, 2.68), (0.015, 3.0), (0.0, 3.05)],
+                [SAND_WIN, BRONZE, BRONZE, BRONZE, BRONZE, BRONZE], sides=12)      # fluted spires, flared crowns
+        k.box(-0.42, -2.6, -SKIRT, 0.42, -1.75, 0.06, SAND, top=SAND)       # processional way out the front
+
+    def senate(k):
+        # Senate Rotunda: mushroom dome on a stem, plaza ringed with statues
+        k.lathe([(2.05, -SKIRT), (2.05, 0.06)], METAL, sides=40, cap=METAL)
+        k.lathe([(0.78, 0.06), (0.64, 0.36), (0.7, 0.52), (1.22, 0.74), (1.58, 0.93), (1.58, 1.02), (1.32, 1.14),
+                 (0.82, 1.24), (0.0, 1.28)],
+                [METAL_WIN, METAL, METAL, METAL, METAL_WIN, METAL, METAL, METAL], sides=40)
+        for i in range(16):
+            a = 2 * math.pi * (i + 0.5) / 16
+            k.lathe([(0.05, 0.06), (0.05, 0.3), (0.0, 0.36)], [METAL, METAL], sides=6,
+                    cx=1.86 * math.cos(a), cy=1.86 * math.sin(a))
+
+    def dock(k):
+        # space dock: shore deck with hangar + tower (y > 0), pier out to sea (-y, like vanilla navalbase_01) to a
+        # landing pad between two ship gantries
+        k.box(-1.7, -0.25, -0.2, 1.7, 1.25, 0.1, METAL, top=DECK)
+        k.box(-1.45, 0.05, 0.1, -0.15, 1.15, 0.22, METAL_WIN)
+        k.arch(-1.45, -0.15, 0.05, 1.15, 0.22, METAL_WIN)
+        k.lathe([(0.16, 0.1), (0.12, 1.1), (0.28, 1.18), (0.28, 1.32), (0.12, 1.4), (0.0, 1.5)],
+                [METAL, METAL, METAL_WIN, METAL, METAL], sides=10, cx=1.0, cy=0.7)
+        k.box(0.2, 0.3, 0.1, 0.75, 1.1, 0.42, METAL_WIN)                    # workshops
+        k.box(-0.28, -3.3, -0.05, 0.28, -0.25, 0.1, METAL, top=DECK)       # pier
+        k.lathe([(0.62, -0.05), (0.62, 0.12)], METAL, sides=24, cy=-3.4, cap=DECK)
+        for s in (-1, 1):
+            for y in (-3.0, -2.0, -1.0):
+                k.box(s * 1.25 - 0.05, y - 0.05, -0.1, s * 1.25 + 0.05, y + 0.05, 0.95, METAL)        # gantry post
+                k.box(min(s * 0.28, s * 1.25), y - 0.035, 0.82, max(s * 0.28, s * 1.25), y + 0.035, 0.9, METAL)  # arm
+            k.box(s * 1.25 - 0.06, -3.1, 0.9, s * 1.25 + 0.06, -0.9, 0.98, METAL_WIN)              # top beam
+
+    def ion_cannon(k):
+        # anti-air: ion cannon emplacement (Stars in Shadow defense base): dome turret with a long barrel on a sloped
+        # base, walled round pad with buttresses, gatehouse, sensor domes
+        k.lathe([(2.0, -0.4), (2.0, 0.05)], METAL, sides=32, cap=DECK)
+        k.lathe([(1.95, 0.05), (1.95, 0.3), (1.78, 0.3), (1.78, 0.05)], [METAL, METAL, METAL], sides=32)   # ring wall
+        for i in range(6):
+            a = 2 * math.pi * (i + 0.5) / 6
+            k.lathe([(0.3, 0.05), (0.27, 0.42), (0.16, 0.46)], [METAL, METAL], sides=4, rot=a + math.pi / 4,
+                    cx=1.86 * math.cos(a), cy=1.86 * math.sin(a), cap=METAL)                           # buttress
+        k.box(-0.4, -2.2, 0.0, 0.4, -1.65, 0.55, METAL_WIN, top=METAL)                                # gatehouse
+        k.lathe([(1.05, 0.05), (0.95, 0.28), (0.72, 0.46), (0.62, 0.5)], [METAL, METAL_WIN, METAL], sides=24)
+        k.lathe([(0.6, 0.5), (0.68, 0.64), (0.67, 0.8), (0.59, 0.96), (0.43, 1.1), (0.22, 1.19), (0.0, 1.22)],
+                [METAL, METAL_WIN, METAL, METAL, METAL, METAL], sides=24)                              # turret dome
+        k.tube((-0.28, 0.28, 0.98), (-0.5, 0.5, 1.12), 0.15, METAL, sides=8)                          # mantlet
+        k.tube((-0.45, 0.45, 1.09), (-1.25, 1.25, 1.6), 0.07, METAL)                                  # barrel
+        k.tube((-1.15, 1.15, 1.54), (-1.32, 1.32, 1.65), 0.1, BRONZE)                                 # muzzle
+        for x, y, r in ((1.1, 0.55, 0.16), (1.25, -0.15, 0.13), (-0.9, -1.0, 0.14)):
+            k.lathe([(r, 0.05), (r * 0.8, r * 0.75), (0.0, r)], [METAL, METAL], sides=12, cx=x, cy=y)  # sensor domes
+        k.lathe([(0.06, 0.3), (0.06, 0.55), (0.18, 0.6), (0.17, 0.72), (0.0, 0.8)], [METAL, METAL, METAL, METAL],
+                sides=12, cy=1.86)                                                                    # radar on the wall
+
+    def tipoca(k):
+        # Tipoca City (Kamino): pale saucer domes on stilts over the sea, linked by walkways, needle spires on some
+        domes = [(0.0, 0.0, 0.8, 0.75, True), (1.45, 0.35, 0.55, 0.7, True), (-1.3, 0.55, 0.5, 0.68, False),
+                 (0.35, 1.45, 0.48, 0.72, False), (-0.45, -1.4, 0.55, 0.66, True), (1.15, -1.15, 0.42, 0.7, False)]
+        for x, y, r, z, spire in domes:
+            for i in range(3):
+                a = 2 * math.pi * i / 3 + x
+                k.tube((x + 0.45 * r * math.cos(a), y + 0.45 * r * math.sin(a), -SKIRT),
+                       (x + 0.45 * r * math.cos(a), y + 0.45 * r * math.sin(a), z), 0.09, METAL, sides=8)     # stilts
+            k.lathe([(0.3 * r, z), (r, z + 0.18), (r, z + 0.26), (0.78 * r, z + 0.42), (0.42 * r, z + 0.54), (0.0, z + 0.58)],
+                    [METAL, METAL_WIN, METAL, METAL, METAL], sides=24, cx=x, cy=y)
+            if spire:
+                k.lathe([(0.1, z + 0.5), (0.05, z + 1.0), (0.0, z + 1.45)], [METAL, METAL], sides=8, cx=x, cy=y)
+        for i, j in ((0, 1), (0, 2), (0, 3), (0, 4), (1, 5), (4, 5)):
+            (x0, y0, _, z0, _), (x1, y1, _, z1, _) = domes[i], domes[j]
+            z = min(z0, z1) + 0.17
+            k.tube((x0, y0, z), (x1, y1, z), 0.06, METAL, sides=6)                                       # walkways
+
+    def arena(k):
+        # Petranaki Arena (Geonosis): oval bowl cut into a fluted ochre mesa, tiered stands, sand floor; hive spires
+        k.lathe([(1.95, -SKIRT), (1.95, 0.0), (1.8, 0.9), (1.66, 1.2), (1.3, 1.22), (1.28, 1.02), (1.14, 0.98),
+                 (1.12, 0.78), (0.98, 0.74), (0.96, 0.52), (0.84, 0.48), (0.82, 0.22), (0.0, 0.2)],
+                [ROCK, ROCK, ROCK, ROCK, ROCK, ROCK, ROCK, ROCK, ROCK, ROCK, ROCK, SAND], sides=32, sy=0.78, jitter=0.04)
+        for x, y, h in ((-1.9, 1.3, 2.4), (1.95, 1.2, 1.9), (2.1, -0.9, 1.5), (-2.0, -1.0, 1.7)):
+            k.lathe([(0.34, -SKIRT), (0.34, 0.0), (0.26, h * 0.4), (0.17, h * 0.75), (0.06, h * 0.95), (0.0, h)],
+                    ROCK, sides=10, cx=x, cy=y, jitter=0.12)                                              # hive spires
+
+    def massassi(k):
+        # Great Temple of the Massassi (Yavin 4): steep stepped pyramid of mossy stone, stepped crown; smaller pyramid
+        q = math.sqrt(2)
+        steps = [(1.55, 0.0), (1.38, 0.38), (1.22, 0.38), (1.05, 0.76), (0.92, 0.76), (0.76, 1.14), (0.65, 1.14),
+                 (0.5, 1.52), (0.41, 1.52), (0.32, 1.9), (0.25, 1.9), (0.21, 2.25), (0.14, 2.25), (0.1, 2.5)]
+        k.lathe([(1.55 * q, -SKIRT)] + [(a * q, z) for a, z in steps],
+                [MOSS] + [MOSS_WIN if i % 2 == 0 else MOSS for i in range(len(steps) - 1)],
+                sides=4, rot=math.pi / 4, cap=MOSS)
+        k.lathe([(0.55 * q, -SKIRT), (0.55 * q, 0.0), (0.42 * q, 0.35), (0.34 * q, 0.35), (0.2 * q, 0.75), (0.1 * q, 0.9)],
+                [MOSS, MOSS_WIN, MOSS, MOSS_WIN, MOSS], sides=4, rot=math.pi / 4, cx=-1.95, cy=1.5, cap=MOSS)
+        k.box(-0.3, -2.2, -SKIRT, 0.3, -1.4, 0.12, MOSS, top=MOSS)                                  # landing apron
+
+    def jabba(k):
+        # Jabba's palace (Tatooine): squat rust-tan drum with stacked flared roof rings, slim domed tower beside it
+        k.lathe([(1.0, -SKIRT), (1.0, 0.0), (1.0, 0.85), (1.16, 0.9), (1.16, 0.96), (0.86, 1.02), (0.86, 1.12), (0.98, 1.16),
+                 (0.98, 1.21), (0.7, 1.27), (0.7, 1.35), (0.45, 1.4), (0.2, 1.47), (0.0, 1.49)],
+                [RUST, RUST_WIN, RUST, RUST, RUST, RUST, RUST, RUST, RUST, RUST, RUST, RUST, RUST], sides=28)
+        k.lathe([(0.3, -SKIRT), (0.3, 0.0), (0.28, 1.6), (0.38, 1.66), (0.38, 1.72), (0.3, 1.78), (0.32, 1.92), (0.2, 2.03),
+                 (0.0, 2.08)], [RUST, RUST_WIN, RUST, RUST, RUST, RUST_WIN, RUST, RUST], sides=16, cx=1.05, cy=0.5)
+        k.lathe([(0.42, -SKIRT), (0.42, 0.0), (0.42, 0.55), (0.3, 0.72), (0.0, 0.8)], [RUST, RUST, RUST, RUST],
+                sides=16, cx=1.1, cy=-0.45)                                                               # lower dome
+
+    def sundari(k):
+        # Sundari (Mandalore): huge dark grey panelled dome on a flared base ring
+        prof = [(2.05, -SKIRT), (2.05, 0.05), (1.96, 0.12), (1.82, 0.15)]
+        for i in range(9):
+            a = math.pi / 2 * i / 8
+            prof.append((1.78 * math.cos(a), 0.15 + 1.45 * math.sin(a)))
+        k.lathe(prof, [DARK, DARK, DARK, DARK_WIN, DARK_WIN, DARK, DARK_WIN, DARK, DARK, DARK, DARK, DARK], sides=36)
+
+    import random
+
+    def kam_city(kit, band, rng):
+        # Kamino stilt city: 1-3 small pale saucer domes on stilts (Tipoca in miniature), bigger/more downtown
+        for _ in range(rng.randint(1, 1 + band // 2)):
+            x, y = rng.uniform(-0.7, 0.7), rng.uniform(-0.7, 0.7)
+            r, z = rng.uniform(0.22, 0.3) + 0.06 * band, rng.uniform(0.35, 0.5)
+            for i in range(3):
+                a = 2 * math.pi * i / 3
+                k_ = (x + 0.45 * r * math.cos(a), y + 0.45 * r * math.sin(a))
+                kit.tube((k_[0], k_[1], -0.5), (k_[0], k_[1], z), 0.04, METAL, sides=5)
+            kit.lathe([(0.3 * r, z), (r, z + 0.1), (r, z + 0.15), (0.75 * r, z + 0.25), (0.0, z + 0.32)],
+                      [METAL, METAL_WIN, METAL, METAL], sides=14, cx=x, cy=y)
+            if band >= 3 and rng.random() < 0.6:
+                kit.lathe([(0.04, z + 0.28), (0.0, z + 0.28 + 0.25 * band)], [METAL], sides=6, cx=x, cy=y)
+
+    def man_city(kit, band, rng):
+        # Mandalore: small dark domes on flared rings (Sundari in miniature) and a few squat towers
+        for _ in range(rng.randint(1, 1 + band // 2)):
+            x, y = rng.uniform(-0.65, 0.65), rng.uniform(-0.65, 0.65)
+            r = rng.uniform(0.2, 0.3) + 0.08 * band
+            prof = [(r * 1.15, -0.5), (r * 1.15, 0.03), (r * 1.02, 0.07)]
+            prof += [(r * math.cos(math.pi / 2 * i / 5), 0.07 + 0.85 * r * math.sin(math.pi / 2 * i / 5)) for i in range(6)]
+            kit.lathe(prof, [DARK, DARK, DARK_WIN, DARK_WIN, DARK, DARK, DARK, DARK], sides=16, cx=x, cy=y)
+        if band >= 2:
+            x, y = rng.uniform(-0.6, 0.6), rng.uniform(-0.6, 0.6)
+            h = 0.25 * band
+            kit.lathe([(0.12, -0.5), (0.12, h), (0.0, h + 0.08)], [DARK_WIN, DARK], sides=8, cx=x, cy=y)
+
+    def geo_city(kit, band, rng):
+        # Geonosis hives: clusters of fluted rock spires, taller downtown
+        for _ in range(rng.randint(2, 2 + band)):
+            x, y = rng.uniform(-0.7, 0.7), rng.uniform(-0.7, 0.7)
+            h = rng.uniform(0.4, 0.7) * (0.6 + 0.45 * band)
+            r = rng.uniform(0.12, 0.2) + 0.03 * band
+            kit.lathe([(r, -0.5), (r, 0.0), (r * 0.75, h * 0.4), (r * 0.45, h * 0.8), (0.0, h)], ROCK,
+                      sides=8, cx=x, cy=y, jitter=0.15)
+
+    def nab_city(kit, band, rng):
+        # Naboo (Theed style), a mix of five building types: domed block, colonnaded hall with corner cupolas,
+        # round rotunda, slim campanile, and downtown a palace block with a big central dome
+        def dome(x, y, z, r, rect=VERDI):
+            kit.lathe([(r, z), (r, z + 0.04), (0.72 * r, z + 0.04 + 0.5 * r), (0.0, z + 0.04 + 0.78 * r)],
+                      [SAND, rect, rect], sides=12, cx=x, cy=y)
+
+        def domed_block(x, y):
+            w, d, h = rng.uniform(0.16, 0.26) + 0.03 * band, rng.uniform(0.14, 0.22) + 0.02 * band, 0.16 + 0.07 * band
+            kit.box(x - w, y - d, -0.5, x + w, y + d, h, SAND_WIN, top=SAND)
+            dome(x, y, h, min(w, d) * 0.8)
+
+        def colonnade(x, y):
+            w, d, h = rng.uniform(0.3, 0.45), rng.uniform(0.12, 0.18), 0.14 + 0.04 * band
+            kit.box(x - w, y - d, -0.5, x + w, y + d, h, SAND, top=SAND)
+            for i in range(6):                                                   # columns along the front
+                cx_ = x - w + (i + 0.5) * 2 * w / 6
+                kit.lathe([(0.025, h * 0.15), (0.025, h)], [SAND], sides=6, cx=cx_, cy=y - d - 0.05)
+            kit.box(x - w, y - d - 0.08, h, x + w, y - d, h + 0.04, SAND)
+            for sx in (-1, 1):
+                dome(x + sx * (w - 0.08), y, h, 0.08)
+
+        def rotunda(x, y):
+            r, h = rng.uniform(0.14, 0.2) + 0.02 * band, 0.15 + 0.06 * band
+            kit.lathe([(r, -0.5), (r, h)], [SAND_WIN], sides=14, cx=x, cy=y)
+            dome(x, y, h, r * 1.05)
+
+        def campanile(x, y):
+            h = 0.45 + 0.18 * band
+            kit.lathe([(0.07, -0.5), (0.07, h), (0.1, h + 0.04), (0.06, h + 0.12), (0.0, h + 0.17)],
+                      [SAND_WIN, SAND, VERDI, VERDI], sides=8, cx=x, cy=y)
+
+        def palace(x, y):
+            w, d, h = 0.42, 0.3, 0.3 + 0.06 * band
+            kit.box(x - w, y - d, -0.5, x + w, y + d, h, SAND_WIN, top=SAND)
+            kit.lathe([(0.2, h), (0.2, h + 0.12)], [SAND_WIN], sides=14, cx=x, cy=y)       # drum
+            dome(x, y, h + 0.12, 0.22)
+            for sx in (-1, 1):
+                dome(x + sx * 0.3, y, h, 0.1)
+
+        kinds = [domed_block, colonnade, rotunda] + [campanile] * (band >= 2) + [palace] * (band >= 4)
+        spots = [(-0.45, -0.45), (0.45, -0.4), (-0.4, 0.45), (0.42, 0.42), (0.0, 0.0)]
+        rng.shuffle(spots)
+        for x, y in spots[:rng.randint(1, 1 + band // 2)]:
+            rng.choice(kinds)(x + rng.uniform(-0.1, 0.1), y + rng.uniform(-0.1, 0.1))
+
+    def fel_city(kit, band, rng):
+        # Felucian village: woven huts and glowing pods on ring platforms around a giant mushroom's stalk, more
+        # platforms and a rope bridge to a second dwelling downtown; small pod huts on the ground at the edge
+        def pod(x, y, z, r):
+            kit.lathe([(r, z - 0.5 if z <= 0 else z), (r * 1.08, z + 0.35 * r), (0.72 * r, z + 0.85 * r), (0.0, z + 1.05 * r)],
+                      [FPOD, FPOD, FPOD], sides=10, cx=x, cy=y)
+
+        def dwelling(x, y, h, cap, levels):
+            s = 0.07 + 0.02 * cap
+            kit.lathe([(s * 1.5, -0.5), (s * 1.2, 0.1), (s, h)], [FSTALK, FSTALK], sides=10, cx=x, cy=y)
+            for i in range(levels):
+                z, R = h * (0.35 + 0.5 * i / max(levels, 1)), 0.28 + 0.06 * cap
+                kit.lathe([(0.0, z), (R, z), (R, z + 0.035), (0.0, z + 0.035)], [FHUT, FHUT, FHUT], sides=12, cx=x, cy=y)
+                for j in range(rng.randint(2, 3)):
+                    a = rng.uniform(0, 2 * math.pi)
+                    hut = rng.choice((pod, None))
+                    px_, py_ = x + 0.8 * R * math.cos(a), y + 0.8 * R * math.sin(a)
+                    if hut:
+                        pod(px_, py_, z + 0.035, 0.07 + 0.01 * cap)
+                    else:
+                        kit.lathe([(0.07, z + 0.035), (0.07, z + 0.13), (0.0, z + 0.2)], [FHUT, FHUT], sides=6, cx=px_, cy=py_)
+            R = 0.3 + 0.1 * cap
+            kit.lathe([(s, h), (R, h + 0.03), (R * 0.95, h + 0.09), (R * 0.6, h + 0.2), (0.0, h + 0.26)],
+                      [FCAP, FCAP, FCAP, FCAP], sides=14, cx=x, cy=y)
+
+        if band == 1:
+            for _ in range(rng.randint(2, 3)):
+                pod(rng.uniform(-0.55, 0.55), rng.uniform(-0.55, 0.55), 0.0, rng.uniform(0.12, 0.18))
+        else:
+            x, y = rng.uniform(-0.25, 0.25), rng.uniform(-0.25, 0.25)
+            h = 0.45 + 0.35 * band
+            dwelling(x, y, h, band, band - 1)
+            if band == 4:
+                x2, y2 = -x * 0.3 + rng.choice((-0.55, 0.55)), -y * 0.3 + rng.choice((-0.5, 0.5))
+                dwelling(x2, y2, h * 0.65, 2, 1)
+                kit.tube((x, y, h * 0.6), (x2, y2, h * 0.6 * 0.65 + 0.03), 0.02, FHUT, sides=4)
+            else:
+                pod(rng.choice((-0.55, 0.55)), rng.uniform(-0.5, 0.5), 0.0, 0.13)
+
+    def cmg_outpost(kit, band, rng):
+        # Commerce Guild outpost on a frontier world: prefab hab modules, hexagonal domes, a landing pad; downtown a
+        # command dome, a sensor dish on a comm mast and a perimeter wall: metal, not homes
+        def hab(x, y, w, d, h):
+            kit.box(x - w, y - d, -0.5, x + w, y + d, h, METAL_WIN, top=DARK)
+            kit.box(x - w * 0.3, y - d - 0.05, 0.0, x + w * 0.3, y - d, h * 0.7, DARK)          # airlock
+
+        def hexdome(x, y, r, h):
+            kit.lathe([(r, -0.5), (r, h), (0.8 * r, h + 0.35 * r), (0.0, h + 0.5 * r)], [METAL_WIN, METAL, DARK],
+                      sides=6, cx=x, cy=y)
+
+        def pad(x, y, r):
+            kit.lathe([(r, -0.5), (r, 0.05)], [DARK], sides=6, cx=x, cy=y, cap=DECK)        # flat deck on top
+
+        def mast(x, y, h):
+            kit.lathe([(0.03, -0.5), (0.03, h)], [METAL], sides=5, cx=x, cy=y)
+            kit.lathe([(0.0, h - 0.02), (0.16, h + 0.05), (0.13, h + 0.09), (0.0, h + 0.04)], [DARK, METAL, METAL],
+                      sides=10, cx=x, cy=y)                                                            # dish
+
+        spots = [(-0.45, -0.4), (0.42, -0.42), (-0.4, 0.45), (0.45, 0.4)]
+        rng.shuffle(spots)
+        if band == 1:
+            for x, y in spots[:rng.randint(1, 2)]:
+                hab(x, y, rng.uniform(0.14, 0.2), rng.uniform(0.08, 0.12), 0.12)
+        elif band == 2:
+            hexdome(spots[0][0], spots[0][1], 0.22, 0.12)
+            hab(spots[1][0], spots[1][1], 0.18, 0.1, 0.14)
+            pad(spots[2][0], spots[2][1], 0.24)
+        elif band == 3:
+            hexdome(0.0, 0.0, 0.26, 0.18)
+            pad(spots[0][0], spots[0][1], 0.26)
+            mast(spots[1][0], spots[1][1], 0.9)
+            hab(spots[2][0], spots[2][1], 0.18, 0.1, 0.14)
+        else:
+            hexdome(0.0, 0.0, 0.36, 0.3)                                                           # command dome
+            mast(-0.55, 0.55, 1.3)
+            pad(0.5, -0.45, 0.3)
+            for sx, sy, w, d in ((0, -0.78, 0.8, 0.03), (0, 0.78, 0.8, 0.03), (-0.78, 0, 0.03, 0.8), (0.78, 0, 0.03, 0.8)):
+                kit.box(sx - w, sy - d, -0.5, sx + w, sy + d, 0.16, DARK)                          # perimeter wall
+
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng = random.Random(f"hod_cmg_outpost{band}{v}")
+            build(f"hod_cmg_outpost_{band}{v}", lambda k, band=band, rng=rng: cmg_outpost(k, band, rng), shader="PdxMeshSnow")
+
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng = random.Random(f"hod_fel_city{band}{v}")
+            build(f"hod_fel_city_{band}{v}", lambda k, band=band, rng=rng: fel_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_felucia_city")
+
+    for prefix, fn in (("hod_kam_city", kam_city), ("hod_man_city", man_city), ("hod_geo_city", geo_city),
+                       ("hod_nab_city", nab_city)):
+        for band in range(1, 5):
+            for v in range(1, 5):
+                rng = random.Random(f"{prefix}{band}{v}")
+
+                build(f"{prefix}_{band}{v}", lambda k, fn=fn, band=band, rng=rng: fn(k, band, rng), shader="PdxMeshSnow")
+
+    def spire(k, x, y, z0, h, r):
+        # Geonosian needle spire: thin, segmented with little bulges, slightly rough
+        k.lathe([(r, z0), (r * 0.7, z0 + 0.25 * h), (r * 0.9, z0 + 0.32 * h), (r * 0.55, z0 + 0.55 * h), (r * 0.7, z0 + 0.6 * h),
+                 (r * 0.32, z0 + 0.82 * h), (r * 0.4, z0 + 0.86 * h), (0.0, z0 + h)], ROCK, sides=8, cx=x, cy=y, jitter=0.06)
+
+    def stalgasin(k):
+        # Stalgasin hive (Geonosis): broad flat-topped butte crowned by tall segmented needle spires
+        k.lathe([(2.0, -SKIRT), (2.0, 0.0), (1.85, 0.45), (1.6, 0.62), (1.0, 0.64), (0.0, 0.64)], ROCK, sides=22, jitter=0.08)
+        for x, y, h, r in ((0.0, 0.1, 2.7, 0.24), (-0.8, 0.5, 1.9, 0.2), (0.7, 0.7, 1.6, 0.18), (0.9, -0.5, 1.3, 0.17),
+                           (-0.6, -0.7, 1.1, 0.16), (-1.3, -0.1, 0.8, 0.14)):
+            spire(k, x, y, 0.6, h, r)
+
+    def foundry(k):
+        # Droid Foundry Complex (Geonosis): rock mound with dark smelters, chimneys and assembly halls
+        k.lathe([(2.0, -SKIRT), (2.0, 0.0), (1.75, 0.45), (1.2, 0.72), (0.0, 0.8)], ROCK, sides=22, jitter=0.07)
+        for x, y in ((-0.7, 0.4), (0.15, 0.75)):
+            k.lathe([(0.45, 0.5), (0.45, 1.5), (0.3, 1.75), (0.12, 1.85)], [DARK_WIN, DARK, DARK], sides=16, cx=x, cy=y)
+        for x, y, h in ((-1.1, -0.2, 2.3), (-0.2, 0.0, 2.0), (0.6, 0.2, 2.5)):
+            k.tube((x, y, 0.5), (x, y, h), 0.11, DARK, sides=8)
+        k.lathe([(0.38, 0.45), (0.38, 1.25), (0.26, 1.45), (0.1, 1.55)], [DARK_WIN, DARK, DARK], sides=16, cx=0.7, cy=-0.55)
+        k.tube((-0.4, 0.5, 1.3), (0.55, -0.45, 1.15), 0.07, DARK, sides=6)                          # conveyor
+        spire(k, 1.4, 0.9, 0.3, 1.4, 0.18)
+
+    def progate(k):
+        # Progate Temple (Geonosis): tall rock fins leaning together into pointed arches, a central spire
+        k.lathe([(1.7, -SKIRT), (1.7, 0.0), (1.55, 0.15), (0.0, 0.15)], ROCK, sides=20, jitter=0.05)
+        for i in range(7):
+            a = 2 * math.pi * i / 7
+            k.tube((1.35 * math.cos(a), 1.35 * math.sin(a), -0.3), (0.32 * math.cos(a + 0.25), 0.32 * math.sin(a + 0.25), 2.2),
+                   0.32, ROCK, sides=6, r1=0.03)
+        spire(k, 0.0, 0.0, 0.1, 2.9, 0.28)
+
+    def dooku_hangar(k):
+        # Dooku's hangar (Geonosis): tall rounded rock tower with a lit hangar band and a landing ledge
+        k.lathe([(1.15, -SKIRT), (1.15, 0.0), (1.0, 0.8), (0.88, 1.6), (0.62, 2.25), (0.26, 2.65), (0.0, 2.75)], ROCK,
+                sides=18, jitter=0.06)
+        k.lathe([(1.12, 0.25), (1.12, 0.7)], DARK_WIN, sides=18)
+        k.box(-0.45, -1.9, 0.0, 0.45, -1.0, 0.3, METAL, top=DECK)
+
+    def theed(k):
+        # Theed Royal Palace (Naboo): tan stone wings with green-copper domes, a big central dome, slim towers
+        k.box(-0.9, -0.6, -SKIRT, 0.9, 0.6, 0.75, SAND_WIN, top=SAND)
+        k.box(-2.0, -0.4, -SKIRT, -0.9, 0.4, 0.55, SAND_WIN, top=SAND)
+        k.box(0.9, -0.4, -SKIRT, 2.0, 0.4, 0.55, SAND_WIN, top=SAND)
+        k.lathe([(0.5, 0.75), (0.5, 1.0), (0.42, 1.25), (0.25, 1.42), (0.0, 1.48)], [SAND_WIN, VERDI, VERDI, VERDI], sides=20)
+        k.lathe([(0.06, 1.46), (0.06, 1.65), (0.0, 1.72)], [VERDI, VERDI], sides=8)                       # lantern
+        for x in (-1.75, -1.15, 1.15, 1.75):
+            k.lathe([(0.2, 0.55), (0.2, 0.68), (0.14, 0.82), (0.0, 0.88)], [SAND, VERDI, VERDI], sides=12, cx=x)
+        for x, y in ((-0.95, 0.75), (0.95, 0.75)):
+            k.lathe([(0.12, -SKIRT), (0.12, 1.5), (0.16, 1.55), (0.1, 1.7), (0.0, 1.75)], [SAND_WIN, SAND, VERDI, VERDI],
+                    sides=10, cx=x, cy=y)
+
+    def coronet(k):
+        # Coronet City starport (Corellia): quay deck, spherical tanks on legs, a slim control spire, gantry cranes
+        k.box(-1.9, -1.2, -SKIRT, 1.9, 1.2, 0.1, METAL, top=DECK)
+        for x, y in ((-1.0, 0.5), (0.0, 0.7)):
+            for i in range(4):
+                a = math.pi / 4 + math.pi / 2 * i
+                k.tube((x + 0.3 * math.cos(a), y + 0.3 * math.sin(a), 0.1), (x + 0.2 * math.cos(a), y + 0.2 * math.sin(a), 1.3),
+                       0.04, DARK, sides=5)
+            prof = [(0.45 * math.sin(math.pi * i / 8), 1.55 - 0.45 * math.cos(math.pi * i / 8)) for i in range(9)]
+            k.lathe(prof, [METAL, METAL, METAL_WIN, METAL_WIN, METAL, METAL, METAL, METAL], sides=16, cx=x, cy=y)
+        k.lathe([(0.12, 0.1), (0.08, 2.4), (0.0, 2.7)], [METAL_WIN, METAL], sides=8, cx=1.1, cy=0.6)
+        k.box(0.5, -1.0, 0.1, 1.5, -0.3, 0.6, METAL_WIN, top=METAL)
+        for x in (-1.5, -0.5):
+            k.box(x - 0.05, -1.1, 0.1, x + 0.05, -1.0, 1.0, DARK)
+            k.box(x - 0.05, -1.1, 0.95, x + 0.05, 0.2, 1.05, DARK)
+
+    def raxus(k):
+        # Separatist Senate (Raxus): cluster of slender faceted gothic towers, tall setback central tower, bronze spires
+        k.lathe([(1.7, -SKIRT), (1.7, 0.0), (1.6, 0.12), (0.0, 0.12)], SAND, sides=24)
+        k.lathe([(1.35, 0.12), (1.35, 0.55), (1.2, 0.62), (0.0, 0.62)], [SAND_WIN, SAND, SAND], sides=12)
+        k.lathe([(0.48, 0.62), (0.44, 1.9), (0.36, 1.96), (0.33, 2.55), (0.25, 2.6), (0.21, 3.05), (0.0, 3.7)],
+                [SAND_WIN, SAND, SAND_WIN, SAND, SAND_WIN, BRONZE], sides=6)
+        for i, h in enumerate((2.3, 1.6, 2.0, 1.4, 2.2, 1.7)):
+            a = 2 * math.pi * i / 6 + 0.5
+            k.lathe([(0.2, 0.62), (0.17, h), (0.13, h + 0.05), (0.0, h + 0.55)], [SAND_WIN, SAND, BRONZE], sides=6,
+                    cx=0.95 * math.cos(a), cy=0.95 * math.sin(a))
+
+    def serenno(k):
+        # Castle Serenno: terrace with a tall capsule-shaped hall ringed by cone spires
+        k.box(-1.7, -1.3, -SKIRT, 1.7, 1.3, 0.2, METAL, top=SAND)
+        k.lathe([(0.0, 0.2), (0.32, 0.25), (0.45, 0.6), (0.45, 1.65), (0.3, 2.05), (0.0, 2.2)],
+                [METAL, METAL, METAL_WIN, METAL, METAL], sides=20)
+        for i in range(8):
+            a = 2 * math.pi * i / 8
+            k.lathe([(0.12, 0.2), (0.0, 0.95)], [METAL], sides=8, cx=1.15 * math.cos(a), cy=0.95 * math.sin(a))
+        k.box(-1.6, 0.6, 0.2, -0.7, 1.2, 0.6, METAL_WIN, top=METAL)
+        k.box(0.7, 0.6, 0.2, 1.6, 1.2, 0.6, METAL_WIN, top=METAL)
+
+    def korriban(k):
+        # Valley of the Dark Lords (Korriban): sharp red rock peaks round a tomb entrance with two dark obelisks
+        for x, y, h, r in ((-1.3, 0.7, 2.4, 0.6), (-0.4, 1.2, 1.9, 0.5), (0.6, 1.1, 2.2, 0.55), (1.4, 0.4, 1.6, 0.45),
+                           (-1.5, -0.6, 1.4, 0.45), (1.3, -0.8, 1.2, 0.4), (0.1, 0.4, 1.0, 0.35)):
+            k.lathe([(r, -SKIRT), (r, 0.0), (0.0, h)], REDROCK, sides=5, cx=x, cy=y, rot=x, jitter=0.1)
+        k.box(-0.35, -0.5, -SKIRT, 0.35, 0.0, 0.55, DARK_WIN, top=DARK)                                  # tomb gate
+        for x in (-0.6, 0.6):
+            k.lathe([(0.09, 0.0), (0.06, 1.1), (0.0, 1.25)], [DARK, DARK], sides=4, cx=x, cy=-0.75, rot=math.pi / 4)
+
+    def sandcrawler(k):
+        # Jawa sandcrawler (map prop): rust hull with the overhanging sloped prow, raised rear tower, four tread units
+        k.prism([(-1.45, 0.3), (0.85, 0.3), (1.5, 1.15), (-0.25, 1.15), (-0.25, 1.4), (-1.45, 1.4)], -0.5, 0.5, RUST)
+        for x in (-0.36, 0.36):
+            for y in (-0.95, 0.55):
+                k.box(x - 0.16, y - 0.38, 0.0, x + 0.16, y + 0.38, 0.32, DARK)
+
+    build("hod_ion_cannon", ion_cannon)
+    for name, fn in (("hod_stalgasin_hive", stalgasin), ("hod_droid_foundry", foundry), ("hod_progate_temple", progate),
+                     ("hod_dooku_hangar", dooku_hangar), ("hod_theed_palace", theed),
+                     ("hod_coronet_port", coronet), ("hod_raxus_senate", raxus),
+                     ("hod_castle_serenno", serenno), ("hod_korriban_valley", korriban)):
+        build(name, fn)
+    # the prop keeps vanilla tree wiring (gfx/entities/trees.gfx mapobject_53 -> this file), with its own atlas copy
+    build("hod_flora_53_sandcrawler", sandcrawler, out=FLORA_OUT, tex="hod_flora_53_sandcrawler")
+    build("hod_tipoca", tipoca)
+    build("hod_petranaki_arena", arena)
+    build("hod_massassi_temple", massassi)
+    build("hod_jabba_palace", jabba)
+    build("hod_sundari_dome", sundari)
+    build("hod_jedi_temple", temple)
+    build("hod_senate", senate)
+    build("hod_spacedock", dock)
+
+
 def wire():
     """gfx/entities/buildings.asset = vanilla with the air base entity pointed at our mesh."""
     s = open(VANILLA_ASSET, encoding="utf-8-sig").read()
@@ -163,6 +874,40 @@ def wire():
 		event = { time = 0 particle = "bunker_smoke_effect" }
 	}
 }""")
+    replace_entity("building_anti_air_building", """entity = {
+	name = "building_anti_air_building"
+	pdxmesh = "hod_ion_cannon_mesh"
+	scale = 1.0
+	# HOD: ion cannon emplacement (WIPGFX/plans & scripts/military_buildings.py); static, so no animations
+	locator = { name = "barrel"	position = { -1.32 1.65 1.32 } }
+	locator = { name = "damage_locator_01"	position = { 0.8 0.3 0.6 } }
+	locator = { name = "damage_locator_02"	position = { -0.3 1.0 -0.2 } }
+
+	default_state = "idle"
+	state = { name = "idle" }
+	state = { name = "combat_idle" }
+	state = { name = "attack"
+		event = { time = 0.00 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes }
+		event = { time = 2.00 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes }
+		event = { time = 4.00 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes }
+		event = { time = 6.00 node="barrel" particle = "light_tank_attack_barrel_particle"  keep_particle = yes }
+	}
+	state = { name = "damaged"
+		event = { time = 0.1 node="damage_locator_01" particle = "building_damaged_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0.1 node="damage_locator_02" particle = "building_damaged_particle" keep_particle = yes trigger_once = yes }
+	}
+}""")
+    # naval bases -> space dock; bigger levels just scale up
+    for name, scale in (("building_naval_base_spawn", 0.8), ("building_naval_base_1", 0.7), ("building_naval_base_2", 0.8),
+                        ("building_naval_base_3", 0.9)):
+        m = re.search(r'entity = \{\s*name = "%s".*?\n\}' % name, s, re.S)
+        assert m, name
+        block = re.sub(r'pdxmesh = "[^"]+"', 'pdxmesh = "hod_spacedock_mesh"', m.group(0))
+        if re.search(r"\n\tscale = ", block):
+            block = re.sub(r"\n\tscale = [0-9.]+", f"\n\tscale = {scale}", block)
+        else:
+            block = block.replace('pdxmesh = "hod_spacedock_mesh"', f'pdxmesh = "hod_spacedock_mesh"\n\tscale = {scale}')
+        s = s[:m.start()] + block + s[m.end():]
     # factories -> Christophsis buildings (sketchfab_props.py building kind, 1.8 tall at scale 1); vanilla factory
     # is ~1.9 tall in the world. No chimney smoke on a tower.
     for ent, (mesh, scale) in FACTORIES.items():
@@ -173,18 +918,23 @@ def wire():
         block = block.replace('event = { time = 0.1 node="factorysmoke" particle = "factory_smoke_particle" }', "")
         s = s[:m.start()] + block + s[m.end():]
     open("gfx/entities/buildings.asset", "w", encoding="utf-8", newline="\n").write(
-        "# HOD: vanilla gfx/entities/buildings.asset with building_air_base, building_industrial_complex and\n"
-        "# building_arms_factory swapped\n"
+        "# HOD: vanilla gfx/entities/buildings.asset with building_air_base, building_industrial_complex,\n"
+        "# building_arms_factory, building_naval_base_* and building_anti_air_building swapped\n"
         "# (WIPGFX/plans & scripts/military_buildings.py wire)\n" + s)
     with open("gfx/entities/hod_buildings.gfx", "w", encoding="utf-8", newline="\n") as f:
         f.write('objectTypes = {\n\t# HOD: Star Wars building models (WIPGFX/plans & scripts/military_buildings.py)\n'
                 f'\tpdxmesh = {{\n\t\tname = "hod_launchpad_mesh"\n\t\tfile = "{OUT}/hod_launchpad.mesh"\n\t}}\n'
                 + "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "gfx/models/buildings/hod_sw/{m}.mesh"\n\t}}\n'
                           for m in sorted({m for m, _ in FACTORIES.values()})) +
-                '\tpdxmesh = {\n\t\tname = "hod_bld_jedi_temple_mesh"\n\t\tfile = "gfx/models/buildings/hod_sw/hod_bld_jedi_temple.mesh"\n\t}\n}\n')
+                "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "{LM_OUT}/{m}.mesh"\n\t}}\n'
+                        for m in ("hod_jedi_temple", "hod_senate", "hod_spacedock", "hod_ion_cannon") + NEW_LANDMARKS
+                        if m not in LANDMARK_MESH) + '}\n')
     with open("gfx/entities/hod_landmarks.asset", "w", encoding="utf-8", newline="\n") as f:
         f.write('# HOD: landmarks placed by map/ambient_object.txt (military_buildings.py wire)\n'
-                'entity = {\n\tname = "hod_jedi_temple_entity"\n\tpdxmesh = "hod_bld_jedi_temple_mesh"\n\tscale = 1\n}\n')
+                'entity = {\n\tname = "hod_jedi_temple_entity"\n\tpdxmesh = "hod_jedi_temple_mesh"\n\tscale = 1\n}\n'
+                'entity = {\n\tname = "hod_senate_entity"\n\tpdxmesh = "hod_senate_mesh"\n\tscale = 1\n}\n'
+                + "".join(f'entity = {{\n\tname = "{m}_entity"\n\tpdxmesh = "{LANDMARK_MESH.get(m, (m + "_mesh",))[0]}"\n'
+                          f'\tscale = {LANDMARK_MESH.get(m, (0, 1))[1]}\n}}\n' for m in NEW_LANDMARKS))
     print("wrote gfx/entities/buildings.asset + hod_buildings.gfx")
 
 
@@ -192,35 +942,108 @@ FACTORIES = {   # vanilla factory entity -> (our building mesh in gfx/models/bui
     "building_industrial_complex": ("hod_bld_chr_07", 1.1),     # striped Christophsis high-rise block
     "building_arms_factory": ("hod_bld_chr_04", 1.0),           # octagonal Christophsis towers
 }
-LANDMARKS = {   # ambient object: (entity, state file whose centre it stands on, scale, yaw degrees)
-    "hod_jedi_temple": ("hod_jedi_temple_entity", "history/states/128-Jedi Sector.txt", 1.6, 0.0),
+LANDMARKS = {   # ambient object: (entity, victory point province it stands on, scale, yaw degrees, footprint radius px)
+    "hod_jedi_temple": ("hod_jedi_temple_entity", 4836, 1.3, 0.0, 4.5),     # VICTORY_POINTS_4836 "Jedi Temple"
+    "hod_senate": ("hod_senate_entity", 12535, 1.3, 0.0, 3.5),              # VICTORY_POINTS_12535 "Galactic Senate"
+    "hod_tipoca": ("hod_tipoca_entity", 6230, 1.2, 0.0, 3.5),               # VICTORY_POINTS_6230 "Tipoca", Kamino
+    "hod_petranaki_arena": ("hod_petranaki_arena_entity", 1611, 1.2, 0.0, 3.5),   # "Petranaki Arena", Geonosis
+    "hod_massassi_temple": ("hod_massassi_temple_entity", 9060, 1.2, 0.0, 3.5),   # Yavin IV
+    "hod_jabba_palace": ("hod_jabba_palace_entity", 1109, 1.2, 0.0, 3.0),         # Tatooine
+    "hod_sundari_dome": ("hod_sundari_dome_entity", 9748, 1.2, 0.0, 3.0),         # Mandalore
 }
+LANDMARKS.update({   # Geonosis set (VP names from victory_points_l_english.yml) and the capitals of famous worlds
+    "hod_stalgasin_hive": ("hod_stalgasin_hive_entity", 767, 1.2, 0.0, 3.0),       # "Stalgasin"
+    "hod_droid_foundry": ("hod_droid_foundry_entity", 148, 1.2, 0.0, 3.0),         # "Droid Foundry Complex"
+    "hod_progate_temple": ("hod_progate_temple_entity", 1954, 1.2, 0.0, 2.5),      # "Progate Temple"
+    "hod_dooku_hangar": ("hod_dooku_hangar_entity", 16697, 1.2, 0.0, 2.5),         # "Dooku's Hangar"
+    "hod_theed_palace": ("hod_theed_palace_entity", 17479, 1.2, 0.0, 3.0),         # Naboo, Theed
+    "hod_kachirho": ("hod_kachirho_entity", 186, 1.0, 0.0, 2.5),                   # Kashyyyk (wroshyr giant)
+    "hod_coronet_port": ("hod_coronet_port_entity", 3554, 1.2, 0.0, 3.0),          # Corellia
+    "hod_raxus_senate": ("hod_raxus_senate_entity", 194, 1.2, 0.0, 3.0),           # Raxus (city district around it)
+    "hod_castle_serenno": ("hod_castle_serenno_entity", 8479, 1.2, 0.0, 3.0),      # Serenno (city district around it)
+    "hod_korriban_valley": ("hod_korriban_valley_entity", 1594, 1.2, 0.0, 3.0),    # Korriban
+})
+CITY_TERRAIN, PLAZA_TERRAIN = [13], 25   # terrain.bmp: spawn_city urban -> urban_plaza_25 (same texture, no cities)
+CITY_MARGIN = 2.0   # px of cities.bmp cleared past a landmark's footprint (city meshes reach ~1.7 map units)
+NEW_LANDMARKS = tuple(n for n in LANDMARKS if n not in ("hod_jedi_temple", "hod_senate"))
+LANDMARK_MESH = {"hod_kachirho": ("mapobject_40", 0.75)}   # landmarks that reuse an existing pdxmesh (trees.gfx), scale
 
 
 def landmarks():
-    """map/ambient_object.txt: (re)place each landmark at its state's centre, on the heightmap (height = px / 10)."""
+    """map/ambient_object.txt: (re)place each landmark on its province centre (y = 0: the game stands ambient
+    objects on the terrain and adds y, like vanilla's chinese_wall_entity),
+    clear map/cities.bmp and spawn_city terrain (-> urban_plaza_25) under its footprint so no city stands in it, and push map/buildings.txt
+    buildings out of it to its edge. Rerun after planet_terrain_gen --write."""
     import io
     import numpy as np
     from PIL import Image
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from planet_terrain_gen import load_provinces
     land, cls, pid = load_provinces()
-    hgt = np.asarray(Image.open(io.BytesIO(open("map/heightmap.bmp", "rb").read())).convert("L")).astype(np.float32)
     H = pid.shape[0]
     txt = open("map/ambient_object.txt", encoding="utf-8-sig").read()
-    for name, (entity, state, scale, yaw) in LANDMARKS.items():
-        provs = [int(x) for x in re.search(r"provinces\s*=\s*\{([^}]*)\}", open(state, encoding="utf-8-sig").read()).group(1).split()]
-        ys, xs = np.nonzero(np.isin(pid, provs))
-        cy, cx = int(np.median(ys)), int(np.median(xs))
-        y = hgt[cy, cx] / 10
+    city = Image.open(io.BytesIO(open("map/cities.bmp", "rb").read()))     # in memory: we overwrite the file
+    terr = Image.open(io.BytesIO(open("map/terrain.bmp", "rb").read()))
+    tidx = np.array(terr)
+    styles = np.array(city)
+    yy, xx = np.mgrid[0:H, 0:pid.shape[1]]
+    placed = {}
+    for name, (entity, prov, scale, yaw, foot) in LANDMARKS.items():
+        ys, xs = np.nonzero(pid == prov)
+        cy, cx = int(round(ys.mean())), int(round(xs.mean()))
+        clear = np.hypot(yy - cy, xx - cx) <= foot + CITY_MARGIN
+        styles[clear] = 0
+        tidx[clear & np.isin(tidx, CITY_TERRAIN)] = PLAZA_TERRAIN   # cities also spawn from spawn_city terrain
+        placed[name] = (cx, H - cy)
+        y = 0.0
         block = (f'type={{\n\ttype="{entity}"\n\tuse_animation=no\n\tscale={scale:.6f}\n\tobject={{\n\t\tname="{name}"\n'
                  f'\t\tposition={{\n\t\t\t{cx:.3f} {y:.3f} {H - cy:.3f} \n\t\t}}\n\t\trotation={{\n\t\t\t0.000 {math.radians(yaw):.3f} 0.000 \n\t\t}}\n\t}}\n}}\n')
         txt = re.sub(r'type=\{\s*type="%s".*?\n\}\n' % entity, "", txt, flags=re.S)     # replace an earlier placement
         txt = txt.rstrip("\n") + "\n" + block
-        print(f"{name}: x {cx} z {H - cy} height {y:.1f}")
+        print(f"{name}: x {cx} z {H - cy}")
     open("map/ambient_object.txt", "w", encoding="utf-8", newline="\n").write(txt)
+    # buildings must stay on land inside their own state (the game drops them otherwise), and anything tied to a sea
+    # province (naval bases, coastal bunkers: last column) must not move at all, or coastal provinces lose their port
+    # and the game crashes on load; naval / coastal buildings stay put too
+    state_of = {}
+    for fn in os.listdir("history/states"):
+        st = open(f"history/states/{fn}", encoding="utf-8-sig").read()
+        sid = re.search(r"\bid\s*=\s*(\d+)", st)
+        pm = re.search(r"provinces\s*=\s*\{([^}]*)\}", st)
+        if sid and pm:
+            for pv in pm.group(1).split():
+                state_of[int(pv)] = int(sid.group(1))
+    lines = []
+    for line in open("map/buildings.txt", encoding="utf-8-sig", newline=""):   # keep each line's own CRLF/LF
+        body, end = line.rstrip("\r\n"), line[len(line.rstrip("\r\n")):]
+        q = body.split(";")
+        if len(q) >= 7 and q[2] and q[6].strip() == "0" and not re.search("naval|coastal|floating", q[1]):
+            x, z = float(q[2]), float(q[4])
+            for name, (entity, prov, scale, yaw, foot) in LANDMARKS.items():
+                cx, cz = placed[name]
+                if math.hypot(x - cx, z - cz) >= foot + 0.5:
+                    continue
+                # nearest land pixel of the same state outside the footprint
+                r0, c0 = H - 1 - int(round(cz)), int(round(cx))
+                win = (slice(max(0, r0 - 14), r0 + 15), slice(max(0, c0 - 14), c0 + 15))
+                py, px_ = np.nonzero(land[win])
+                py, px_ = py + win[0].start, px_ + win[1].start
+                ok = [(math.hypot(c - x, (H - 1 - r) - z), c, H - 1 - r) for r, c in zip(py, px_)
+                      if state_of.get(int(pid[r, c])) == int(q[0]) and math.hypot(c - cx, (H - 1 - r) - cz) >= foot + 0.5]
+                if ok:
+                    _, x, z = min(ok)
+                    q[2], q[4] = f"{x:.2f}", f"{z:.2f}"
+        lines.append(";".join(q) + end)
+    open("map/buildings.txt", "w", encoding="utf-8", newline="").write("".join(lines))
+    tout = Image.fromarray(tidx, "P")
+    tout.putpalette(terr.getpalette())
+    tout.save("map/terrain.bmp")
+    out = Image.fromarray(styles, "P")
+    out.putpalette(city.getpalette())
+    out.save("map/cities.bmp")
 
 
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
-    {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks}[args[0]]()
+    {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks, "atlas": atlas,
+     "felucia_atlas": felucia_atlas, "models": models}[args[0]]()

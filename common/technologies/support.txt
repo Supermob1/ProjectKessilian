@@ -91,6 +91,10 @@ technologies = {
 		enable_subunits = {
 			engineer
 		}
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_engineer
+		}
 
 		path = {
 			leads_to_tech = tech_engineers2
@@ -439,6 +443,11 @@ technologies = {
 			mot_recon
 			armored_car_recon
 			light_tank_recon
+
+		}
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_recon
 		}
 
 		path = {
@@ -1019,6 +1028,10 @@ technologies = {
 		enable_subunits = {
 			field_hospital
 		}
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_field_hospital
+		}
 
 		path = {
 			leads_to_tech = tech_field_hospital2
@@ -1257,7 +1270,7 @@ technologies = {
 		category_support_battalions = {
 			max_organisation = 10
 			soft_attack = 0.25
-			experience_loss_factor = 0.05
+			experience_loss_factor = -0.05
 		}
 	}
 
@@ -1473,6 +1486,11 @@ technologies = {
 
 		enable_subunits = {
 			signal_company
+			radio = 1
+		}
+		enable_subunits = {
+			limit = { has_dlc = "Thunder at Our Gates"}
+			hq_signal
 		}
 
 		path = {
@@ -1486,7 +1504,6 @@ technologies = {
 		}
 
 		dependencies = {
-			radio = 1
 			motorised_infantry = 1
 		}
 

@@ -1,0 +1,120 @@
+# HOD: the Felucian tribes' border wars on the Guild's frontier (felucia_tribes.py)
+add_namespace = hod_felucia
+
+# the warbands come down from the jungle: a border war on a neighbouring lowland state, when they are strong enough
+country_event = {
+	id = hod_felucia.1
+	title = hod_felucia.1.t
+	desc = hod_felucia.1.d
+	picture = GFX_country_event_seperatists_killed
+	hidden = yes
+
+	trigger = {
+		tag = FLT
+		has_war = no
+		NOT = { has_country_flag = HOD_felucian_border_war }
+		has_army_size = { size > 3 }
+		any_owned_state = {
+			any_neighbor_state = { is_owned_by = CMG impassable = no }
+		}
+	}
+	mean_time_to_happen = { days = 150 }
+
+	immediate = {
+		set_country_flag = { flag = HOD_felucian_border_war days = 365 }
+		random_owned_state = {
+			limit = { any_neighbor_state = { is_owned_by = CMG impassable = no } }
+			save_global_event_target_as = HOD_fel_bw_attacker
+			random_neighbor_state = {
+				limit = { is_owned_by = CMG impassable = no }
+				save_global_event_target_as = HOD_fel_bw_defender
+			}
+		}
+		start_border_war = {
+			change_state_after_war = no
+			combat_width = 40
+			minimum_duration_in_days = 21
+			attacker = {
+				state = event_target:HOD_fel_bw_attacker
+				num_provinces = 3
+				on_win = hod_felucia.2
+				on_lose = hod_felucia.3
+				on_cancel = hod_felucia.3
+				terrain_factor = 1.5
+			}
+			defender = {
+				state = event_target:HOD_fel_bw_defender
+				num_provinces = 3
+				on_win = hod_felucia.4
+				on_lose = hod_felucia.5
+				on_cancel = hod_felucia.5
+			}
+		}
+		CMG = { country_event = { id = hod_felucia.6 } }
+	}
+}
+
+# tribes win: the frontier burns
+country_event = {
+	id = hod_felucia.2
+	title = hod_felucia.2.t
+	desc = hod_felucia.2.d
+	picture = GFX_country_event_seperatists_killed
+	is_triggered_only = yes
+	option = {
+		name = hod_felucia.2.a
+		army_experience = 10
+		add_manpower = 1000
+	}
+}
+# tribes beaten back into the jungle
+country_event = {
+	id = hod_felucia.3
+	title = hod_felucia.3.t
+	desc = hod_felucia.3.d
+	picture = GFX_country_event_seperatists_killed
+	is_triggered_only = yes
+	option = {
+		name = hod_felucia.3.a
+		add_manpower = -1500
+	}
+}
+# Guild holds the frontier
+country_event = {
+	id = hod_felucia.4
+	title = hod_felucia.4.t
+	desc = hod_felucia.4.d
+	picture = GFX_country_event_seperatists_killed
+	is_triggered_only = yes
+	option = {
+		name = hod_felucia.4.a
+		army_experience = 5
+	}
+}
+# Guild loses: plantations burned
+country_event = {
+	id = hod_felucia.5
+	title = hod_felucia.5.t
+	desc = hod_felucia.5.d
+	picture = GFX_country_event_seperatists_killed
+	is_triggered_only = yes
+	option = {
+		name = hod_felucia.5.a
+		add_manpower = -3000
+		add_stability = -0.03
+		event_target:HOD_fel_bw_defender = {
+			damage_building = { type = infrastructure damage = 1 }
+		}
+	}
+}
+# the Guild hears the drums
+country_event = {
+	id = hod_felucia.6
+	title = hod_felucia.6.t
+	desc = hod_felucia.6.d
+	picture = GFX_country_event_seperatists_killed
+	is_triggered_only = yes
+	option = {
+		name = hod_felucia.6.a
+	}
+}

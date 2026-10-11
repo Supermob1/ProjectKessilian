@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "sturmlaeufer_mesh"
+		file = "gfx/models/units/walkers/sturmlaeufer.mesh"
+
+		animation = { id = "attack"			type = "sturmlaeufer_attack_animation" }
+		animation = { id = "idle"			type = "sturmlaeufer_idle_animation" }
+		animation = { id = "move"			type = "sturmlaeufer_move_animation" }
+		animation = { id = "death"			type = "sturmlaeufer_death_animation" }
+		scale = 0.47
+	}
+}

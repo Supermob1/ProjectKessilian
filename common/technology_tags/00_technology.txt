@@ -146,13 +146,21 @@ technology_folders = {
 	# and REP on the republic tree (mirroring vanilla's infantry_folder).
 	droid_folder = {
 		available = {
-			tag = CIS
+			# HOD: the Confederacy, its member corporations and any successor that keeps droid foundries
+			OR = {
+				original_tag = CIS
+				has_tech = early_droid_infantry
+			}
 		}
 		ledger = army
 	}
 	republic_folder = {
 		available = {
-			tag = REP
+			# HOD: the Republic and its successors (Empire, breakaway states that keep the clone programme)
+			OR = {
+				original_tag = REP
+				has_tech = kamino_standardization
+			}
 		}
 		ledger = army #For now
 	}
@@ -176,7 +184,17 @@ technology_folders = {
 		}
 		ledger = army
 	}
+	hod_rep_armour_folder = {
+		available = { OR = { original_tag = REP has_tech = rep_walker_atpt } }
+		ledger = army
+	}
+	hod_cis_armour_folder = {
+		available = { OR = { original_tag = CIS has_tech = cis_aat } }
+		ledger = army
+	}
 	nsb_armour_folder = {
+		# HOD: Republic and Separatist lineages use their own armour tabs
+		available = { NOT = { OR = { OR = { original_tag = REP has_tech = rep_walker_atpt } OR = { original_tag = CIS has_tech = cis_aat } } } }
 		ledger = army
 	}
 	artillery_folder = {
