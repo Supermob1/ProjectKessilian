@@ -28,10 +28,14 @@ Usage (from the mod root):
                                                          colormap / terrain.bmp / atlas change)
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --felucia      only repaint Felucia (giant flora, alien ground, amber
                                                          haze); run after --write / --world-tweaks, then --globe-texture
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --raxus-prime  only repaint Raxus Prime (junk world); run after
+                                                         raxus_prime_map.py, then --globe-texture
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --raxus        only repaint Raxus (capital, countryside); run after
+                                                         raxus_map.py, then --globe-texture
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --world-tweaks  only apply city districts, red worlds, dense
                                                          forests (terrain/cities/trees.bmp + colormap); run once
 """
-import argparse, collections, csv, glob, io, os, re
+import argparse, collections, csv, glob, io, json, os, re
 import numpy as np
 from PIL import Image
 from scipy import ndimage as ndi
@@ -430,7 +434,8 @@ WATER_CITY_WORLDS = {"Kamino Oceans", "Manaan", "Mon Calamari", "Celegia", "Best
 STYLE_WORLDS = {5: WATER_CITY_WORLDS, 6: {"Mandalore"}, 7: {"Gehenbar Hive"},     # Gehenbar Hive = Geonosis' land body
                 8: {"Naboo"}}
 # hand-picked world tweaks (applied on --write, or alone with --world-tweaks)
-CITY_DISTRICTS = {194: 12, 8479: 8}       # province -> radius px of urban terrain + megacity buildings (Raxus, Serenno)
+CITY_DISTRICTS = {8479: 8}                # province -> radius px of urban terrain + megacity buildings (Serenno;
+                                          # Raxus has its own capital: --raxus)
 RED_WORLDS = {"Korriban"}
 RED_TERRAIN = {6: 24, 10: 24, 11: 24, 7: 31}   # grey rock / sand -> red rock (index 24 = atlas slot 17), red-brown sand
 RED_TINT = (1.5, 0.72, 0.58)                   # colormap paint (globe zoomed out, hue up close) pulled toward this
@@ -649,6 +654,276 @@ def felucia(t, trees, cm, water, city, h, labels, names, pid, rng):
     return t, trees, cm, water, city, h, kar
 
 
+# Raxus Secundus: "a pastoral world" of meadows, farms, golden woods and villages among scattered mountains, and its
+# capital Raxulon (Wookieepedia; The Clone Wars / The Bad Batch stills, Presley's concept art). Zones from
+# raxus_map.py: 1 Senate hall, 2 city, 3 street, 4 countryside, 5 Senate Plaza, 6 Great Alley, 7 massif, 9 lake; the
+# countryside provinces' gameplay terrain (plains / forest / hills / mountain foothills) decides fields, woods and
+# downs. Woods are Raxus' own golden trees and crimson shrubs (flora_props.py 62-64).
+RAXUS = "Raxus"
+RAXUS_ZONES, RAXUS_JSON = "WIPGFX/Assets/raxus_zones.png", "WIPGFX/Assets/raxus_zones.json"
+RAXUS_CITY_STYLE = 11        # map/cities.txt group: Raxus sandstone blocks and spires (military_buildings.py rax_city)
+RAXUS_VILLAGE_R = (3, 2)     # map px radius of the market towns (victory points) and of the villages
+RAXUS_PLATEAU = 4            # the capital stands this far above the base ground (heightmap steps, 10 = 1 map unit)
+RAXUS_DOWNS, RAXUS_ROLL = 22, 7   # lift of the downs (hills provinces) and of the rolling countryside
+RAXUS_PEAKS = (10, 80)       # massifs: lift above their foothills, plus jagged ridges and summits toward the core
+RAXUS_LONE = (45, 75, 4.5)   # lone peaks (passable): height range, radius (px)
+RAXUS_SNOW = 205             # heightmap value above which the peaks are snow-capped
+RAXUS_FOOTHILLS = (5.0, 38)  # the countryside climbs into each massif over this many px, up to this lift
+RAXUS_FIELD = 3              # px: size of a field in the patchwork
+RAXUS_TREES = {2: (0.85, (62, 62, 63, 6)), 1: (0.07, (62, 63, 64)), 3: (0.12, (63, 64, 62)),
+               5: (0.3, (63, 62, 64))}   # province terrain (5 = foothills) -> cover, tree picks (trees.bmp index)
+
+
+def raxus(t, trees, cm, city, h, labels, names, pid, rng):
+    """Repaint Raxus only: Raxulon on a level plateau (paved plaza and alley, streets free of city models), scattered
+    massifs rising out of foothills, rolling countryside of field patchwork, golden woods and downs, a lake, market
+    towns at the countryside victory points and villages round the land."""
+    import json
+    t, trees, cm, city = t.copy(), trees.copy(), cm.copy(), city.copy()
+    H, W = labels.shape
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    rax = planet == RAXUS
+    zone = np.asarray(Image.open(RAXUS_ZONES))
+    zj = json.load(open(RAXUS_JSON))
+    prov = {int(p): v for p, v in zj["provinces"].items()}
+    ptype = np.zeros(int(pid.max()) + 1, np.uint8)               # 1 plains 2 forest 3 hills 5 foothills
+    for p, v in prov.items():
+        ptype[p] = {"plains": 1, "forest": 2, "hills": 3, "mountain": 5}.get(v["terrain"], 0)
+    ctry = ptype[pid] * (zone == 4)
+    ys, xs = np.nonzero(rax)
+    y0, y1, x0, x1 = ys.min() - 2, ys.max() + 3, xs.min() - 2, xs.max() + 3
+    sl = np.s_[y0:y1, x0:x1]
+    sub, z, ct = rax[sl], zone[sl], ctry[sl]
+    # market towns at the countryside victory points, villages round the land
+    town = np.zeros((H, W), bool)
+    yy, xx = np.mgrid[y0:y1, x0:x1]
+    spots = []
+    for f in glob.glob("history/states/*Raxus - *.txt"):
+        st = open(f, encoding="utf-8-sig").read()
+        spots += [(int(vp), RAXUS_VILLAGE_R[0]) for vp in re.findall(r"victory_points\s*=\s*\{\s*(\d+)", st)
+                  if prov.get(int(vp), {}).get("kind") == 4]
+    spots += [(p, RAXUS_VILLAGE_R[1]) for p in zj.get("villages", [])]
+    for p, rad in spots:
+        cy, cx = prov[p]["centre"]
+        town[sl] |= np.hypot(yy - cy, xx - cx) <= rad
+    town &= rax & (zone == 4)
+    # relief: level capital, massifs (lift + ridges + summits toward the core) out of foothills, rolling countryside
+    rim = smoothstep(np.clip((ndi.distance_transform_edt(sub) - 2) / 10, 0, 1))
+    mass = z == 7
+    core = ndi.distance_transform_edt(mass)
+    lab, n = ndi.label(mass)
+    depth = np.zeros(sub.shape, np.float32)
+    for i in range(1, n + 1):
+        m_ = lab == i
+        depth[m_] = core[m_] / max(core[m_].max(), 1)                       # 0 at the foot .. 1 at the core
+    ridge = (1 - np.abs(2 * noise(sub.shape, 4, rng, 3) - 1)) ** 2
+    peaks = smoothstep(np.clip(core / 2.5, 0, 1)) * (RAXUS_PEAKS[0] + RAXUS_PEAKS[1] * depth ** 0.8 * (0.45 + 0.75 * ridge))
+    peaks = ndi.gaussian_filter(peaks, 0.7)
+    foot = np.exp(-ndi.distance_transform_edt(~mass) / RAXUS_FOOTHILLS[0]) * RAXUS_FOOTHILLS[1] * (z == 4)
+    roll = noise(sub.shape, 10, rng, 3) * RAXUS_ROLL
+    downs = ndi.gaussian_filter((ct == 3).astype(np.float32), 2.5) * RAXUS_DOWNS * (0.6 + 0.8 * noise(sub.shape, 5, rng, 2))
+    wood = ndi.gaussian_filter((ct == 2).astype(np.float32), 2) * 4
+    country = (z == 4).astype(np.float32)
+    lone = np.zeros(sub.shape, np.float32)
+    for p, v in prov.items():                                              # lone peaks: a rocky cone each
+        if v.get("peak"):
+            d = np.hypot(yy - v["centre"][0], xx - v["centre"][1]) / RAXUS_LONE[2]
+            lone = np.maximum(lone, rng.uniform(*RAXUS_LONE[:2]) * np.clip(1 - d, 0, 1) ** 1.6 * (0.8 + 0.4 * ridge))
+    # the massifs start from the foothills' height at their foot (no moat round them)
+    rel = RAXUS_PLATEAU + country * (roll + downs + wood + foot + lone) + peaks + (z == 7) * RAXUS_FOOTHILLS[1]
+    rel = np.where(z == 9, 1.0, rel)                                         # the lake: a level sheet
+    rel = np.where(town[sl], ndi.gaussian_filter(rel, 3), rel)              # towns on gentle ground
+    rel = np.where(np.isin(z, (1, 2, 3, 5, 6)), RAXUS_PLATEAU, rel)         # the capital stays level
+    hn = h.copy()
+    hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
+    gy, gx = np.gradient(hn[sl])
+    slope = np.hypot(gx, gy)
+    # terrain.bmp
+    field = np.zeros((H, W), np.float32)
+    field[sl] = noise(sub.shape, RAXUS_FIELD, rng, 1)
+    tz = np.full((H, W), -1, np.int16)
+    tz[rax & np.isin(zone, (1, 3, 5, 6))] = 25                             # urban_plaza_25: no city models
+    tz[rax & (zone == 2)] = URBAN
+    tz[rax & (ctry == 1)] = np.where(field > 0.55, GRASS, FARM)[rax & (ctry == 1)]
+    tz[rax & (ctry == 2)] = np.where(field > 0.7, DFOREST, FOREST)[rax & (ctry == 2)]
+    tz[rax & (ctry == 3)] = np.where(field > 0.6, GRASS, GRASSHILL)[rax & (ctry == 3)]
+    tz[rax & (ctry == 5)] = np.where(field > 0.5, GRASSHILL, HILLS)[rax & (ctry == 5)]
+    hs, sls = np.zeros((H, W), np.float32), np.zeros((H, W), np.float32)
+    hs[sl], sls[sl] = hn[sl], slope
+    lone_px = np.zeros((H, W), bool)
+    lone_px[sl] = lone > 18
+    mtn = rax & ((zone == 7) | lone_px)
+    tz[mtn] = np.where(hs > RAXUS_SNOW, SNOWROCK, np.where(sls > 6, ROCK, GREENMTN))[mtn]
+    tz[rax & (zone == 9)] = WATER
+    tz[town] = TOWN
+    t = np.where(tz >= 0, tz, t).astype(t.dtype)
+    city[rax] = 0
+    city[rax & np.isin(zone, (2, 3))] = RAXUS_CITY_STYLE                   # streets keep the blocks one urban area
+    city[town] = RAXUS_CITY_STYLE
+    # trees: Raxus' golden trees and crimson shrubs; woods dense, copses on fields and downs, scattered on the
+    # foothills and the massifs' lower slopes; nothing in the city, towns or lake
+    TH, TW = trees.shape
+    gi = np.ix_(np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1),
+                np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1))
+    trees[rax[gi]] = 0
+    r = rng.random((TH, TW))
+    ok = rax[gi] & (zone[gi] == 4) & ~ndi.binary_dilation(town, iterations=2)[gi]
+    for kind, (cover, pick) in RAXUS_TREES.items():
+        sel = ok & (ctry[gi] == kind) & (r < cover)
+        trees[sel] = rng.choice(pick, size=int(sel.sum()))
+    slopes = rax[gi] & (zone[gi] == 7) & (hs[gi] < RAXUS_SNOW - 40) & (r < 0.3)
+    trees[slopes] = rng.choice((63, 6), size=int(slopes.sum()))
+    # the colormap (painted globe zoomed out, hue up close) stays the original painting: the user prefers it
+    print(f"Raxus: {int((tz == URBAN).sum())} px city, {int(mtn.sum())} px massifs (top {int(hs[sl].max())}), "
+          f"{len(spots)} towns and villages, {int((trees[rax[gi]] > 0).sum())} tree cells")
+    return t, trees, cm, city, hn
+
+
+# Raxus Prime: "a planet covered in junk" (Wookieepedia), the galaxy's dump, a maze of junk yards. Zones from
+# raxus_prime_map.py: 1 the Sienar Refinery, 2 the capital's junk town, 4 yards (passable, on the ground or the upper
+# level of junk plateau), 5 the maze's walls (impassable strips), 7 scrap mountains, 9 the toxic waste pools. Yards are
+# level, ramps only where an opening joins yards of different levels (elsewhere the walls hide the cliffs); the walls
+# are flat-topped ridges of junk a step above their yards, crowned with junk heaps; props only stand on flat ground (a
+# prop on a slope tilts with it). Ground: our junk tile (atlas slot 19: scrap_28 / scrap_town_29); heaps and wrecks:
+# flora_props.py 65-78; scrap towns (city style 12) at the capital and every state's victory point. The painted globe
+# (colormap) stays as it was.
+RP = "Raxus Prime"
+RP_ZONES, RP_JSON = "WIPGFX/Assets/raxus_prime_zones.png", "WIPGFX/Assets/raxus_prime_zones.json"
+SCRAP, SCRAP_TOWN = 28, 29          # terrain.bmp indices (common/terrain/00_terrain.txt)
+RP_CITY_STYLE = 12                  # map/cities.txt group: scrap towns (coruscant_buildings.py)
+RP_TOWN_R = 2.5                     # px radius of each outer scrap town
+RP_SPRAWL_W = 1.2                   # px half-width of the passageways the city sprawls along (raxus_prime_map.py)
+RP_PLATEAU = 3                      # the ground level above the base (heightmap steps, 10 = 1 map unit)
+RP_UPPER = 30                       # height of the upper level of junk plateau
+RP_RAMP = 1.3                       # px of blur that turns an opening between two levels into a ramp
+RP_WALL_H = 0                       # the walls: level with the higher yard beside them; their heaps make the wall
+RP_PEAKS = (25, 70)                 # scrap mountains: lift above their level + heaped peaks toward the core
+RP_RIM = 4.0                        # px from the coast kept bare (no junk spilling into space)
+RP_FLAT = 6.0                       # max slope (heightmap steps per px) a prop may stand on
+# heaps on the walls (every cell) and the mountains' flat tops; on yard floors three cells in four get a wreck or junk
+RP_WALL_PROPS = [(76, 0.26), (73, 0.16), (74, 0.16), (75, 0.12), (77, 0.15), (78, 0.15)]
+RP_YARD_PROPS = [(69, 0.16), (70, 0.08), (71, 0.09), (72, 0.07), (65, 0.045), (66, 0.045), (67, 0.04), (68, 0.02),
+                 (77, 0.1), (73, 0.08), (78, 0.04)]
+RP_SITE_CLEAR = 3.5                 # px kept free of props round the big wrecks (raxus_prime_map.py WRECKS)
+RP_SITE_PAD = 6.0                   # px of level ground round each big wreck: no plateau or wall may bury the hulls
+RP_WALL_FLAT = 9.0                  # wall heaps may stand on steeper ground (a wall above a cliff)
+
+
+def raxus_prime(t, trees, city, h, labels, names, pid, rng):
+    """Repaint Raxus Prime only (terrain.bmp, heightmap, cities.bmp, trees.bmp); the colormap is left alone."""
+    import json
+    t, trees, city = t.copy(), trees.copy(), city.copy()
+    H, W = labels.shape
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    rp = planet == RP
+    zone = np.asarray(Image.open(RP_ZONES))
+    zj = json.load(open(RP_JSON))
+    prov = {int(p): v for p, v in zj["provinces"].items()}
+    ys, xs = np.nonzero(rp)
+    y0, y1, x0, x1 = ys.min() - 2, ys.max() + 3, xs.min() - 2, xs.max() + 3
+    sl = np.s_[y0:y1, x0:x1]
+    sub, z, ps = rp[sl], zone[sl], pid[sl]
+    yy, xx = np.mgrid[y0:y1, x0:x1]
+    town = np.zeros((H, W), bool)
+    for p in zj["towns"]:
+        if prov[p]["kind"] == 4:
+            cy, cx = prov[p]["centre"]
+            town[sl] |= np.hypot(yy - cy, xx - cx) <= RP_TOWN_R
+    town |= rp & (zone == 2)
+    town &= rp & np.isin(zone, (2, 4))
+    # the city's sprawl: scrap-town ground (city models) along the passageways from the capital to the outer towns
+    sprawl = np.zeros(sub.shape, bool)
+    for line in zj.get("passages", []):
+        for (ay, ax), (by, bx) in zip(line[:-1], line[1:]):
+            dy, dx = by - ay, bx - ax
+            t_ = np.clip(((yy - ay) * dy + (xx - ax) * dx) / max(dy * dy + dx * dx, 1e-6), 0, 1)
+            sprawl |= np.hypot(yy - ay - t_ * dy, xx - ax - t_ * dx) <= RP_SPRAWL_W
+    sprawl &= sub & (z == 4)
+    # relief: level yards (ramps through openings only), walls a step above, mountains on their yard, sunken pools
+    coast = ndi.distance_transform_edt(sub)
+    rim = smoothstep(np.clip((coast - 2) / 8, 0, 1))
+    lvl = np.zeros(int(pid.max()) + 1, np.float32)
+    for p, v in prov.items():
+        lvl[p] = v.get("level", 0)
+    yard = sub & np.isin(z, (1, 2, 4))
+    base = np.where(yard, lvl[ps] * RP_UPPER, 0).astype(np.float32)
+    wsum = ndi.gaussian_filter(base * yard, RP_RAMP)
+    wcnt = ndi.gaussian_filter(yard.astype(np.float32), RP_RAMP)
+    ground = np.where(yard, wsum / np.maximum(wcnt, 1e-3), 0)                # blurred only among touching yards
+    near = ndi.grey_dilation(np.where(yard, ground, 0), size=5)             # the higher yard beside each wall
+    wall = sub & (z == 5)
+    mass = sub & (z == 7)
+    core = ndi.distance_transform_edt(mass)
+    lab, n = ndi.label(mass)
+    depth = np.zeros(sub.shape, np.float32)
+    for i in range(1, n + 1):
+        m_ = lab == i
+        depth[m_] = core[m_] / max(core[m_].max(), 1)
+    heap = (1 - np.abs(2 * noise(sub.shape, 3, rng, 3) - 1)) ** 1.5
+    peaks = smoothstep(np.clip(core / 2.0, 0, 1)) * (RP_PEAKS[0] + RP_PEAKS[1] * depth ** 0.7 * (0.4 + 0.8 * heap))
+    rel = RP_PLATEAU + ground + noise(sub.shape, 5, rng, 2) * 2 * yard
+    rel = np.where(wall, RP_PLATEAU + near + RP_WALL_H, rel)
+    rel = np.where(mass, RP_PLATEAU + near + ndi.gaussian_filter(peaks, 0.6), rel)
+    rel = np.where(z == 9, 0.5, rel)
+    for sy, sx in zj["sites"].values():                                       # the wrecks lie on a level pad, the
+        pad = (np.hypot(yy - sy, xx - sx) <= RP_SITE_PAD) & sub & (z != 9)   # walls and plateaus stepping back
+        rel = np.where(pad, np.minimum(rel, rel[pad].min() + 0.5), rel)
+    flat = town[sl] | (z == 1)                                               # towns / the refinery: level ground
+    fl, nf = ndi.label(flat)
+    for i in range(1, nf + 1):
+        m_ = fl == i
+        rel[m_] = np.median(rel[m_])
+    hn = h.copy()
+    hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
+    gy, gx = np.gradient(hn[sl])
+    slope = np.zeros((H, W), np.float32)
+    slope[sl] = np.hypot(gx, gy)
+    # terrain.bmp: junk everywhere, bare brown faces on the steepest cliffs, the pools marsh
+    tz = np.full((H, W), -1, np.int16)
+    tz[rp] = SCRAP
+    tz[rp & (slope > 10)] = BROWN
+    tz[rp & (zone == 9)] = WATER
+    tz[rp & (zone == 1)] = 25                                                # under the refinery: no city models
+    tz[sl][sprawl] = SCRAP_TOWN
+    tz[town] = SCRAP_TOWN
+    t = np.where(tz >= 0, tz, t).astype(t.dtype)
+    city[rp] = 0
+    city[sl][sprawl] = RP_CITY_STYLE
+    city[town] = RP_CITY_STYLE
+    # props: heaps along every wall and on the mountains' flat tops, half the yard floors strewn with wrecks and
+    # junk; only on flat ground, yard junk not on the coast, nothing in the towns, the pools or by the big wrecks
+    TH, TW = trees.shape
+    gi = np.ix_(np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1),
+                np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1))
+    trees[rp[gi]] = 0
+    clear = ndi.binary_dilation(town, iterations=1) | (rp & np.isin(zone, (1, 9)))
+    lane = np.zeros((H, W), bool)
+    lane[sl] = sprawl                                                         # yard junk off the passageways
+    for sy, sx in zj["sites"].values():
+        clear[sl] |= np.hypot(yy - sy, xx - sx) <= RP_SITE_CLEAR
+    inland = np.zeros((H, W), bool)
+    inland[sl] = coast > RP_RIM
+    on_wall = np.zeros((H, W), bool)
+    on_wall[sl] = ndi.binary_dilation(wall, iterations=2)
+    level_ok = slope <= RP_FLAT
+    ok = rp[gi] & ~clear[gi]
+    ashore = np.zeros((H, W), bool)
+    ashore[sl] = coast > 2.5                                                 # wall heaps: not hanging over space
+    ok &= ashore[gi]
+    r = rng.random((TH, TW))
+    for cells, props in ((ok & on_wall[gi] & (slope <= RP_WALL_FLAT)[gi], RP_WALL_PROPS),
+                         (ok & ~on_wall[gi] & (zone[gi] == 7) & level_ok[gi], RP_WALL_PROPS),
+                         (ok & inland[gi] & ~on_wall[gi] & ~lane[gi] & (zone[gi] == 4) & level_ok[gi], RP_YARD_PROPS)):
+        lo = 0.0
+        for idx, share in props:
+            sel = cells & (r >= lo) & (r < lo + share)
+            trees[sel] = idx
+            lo += share
+    print(f"Raxus Prime: {int(wall.sum())} px walls, {int(mass.sum())} px scrap mountains (top {int(hn[sl].max())}), "
+          f"{int(town.sum())} px towns, {int(sprawl.sum())} px sprawl, {int((trees[rp[gi]] > 0).sum())} prop cells")
+    return t, trees, city, hn
+
+
 def world_styles(cmap, labels, names):
     """Ocean worlds, Mandalore and Geonosis get their own city style wherever the map has buildings (0 stays 0)."""
     planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
@@ -661,6 +936,9 @@ GLOBE_SIZE = 4096             # globe texture is GLOBE_SIZE square: the engine r
                               # (6144 failed, error.log); the shader samples it by map uv, so it needn't match the map shape
 TILE_PERIOD = 3328 / 228.0    # map px per terrain tile repeat (pdxmap.shader: uv2 * TERRAIN_TILE_FREQ, x scaled by W/H)
 GLOBE_DETAIL = 0.6            # how much of the terrain tiles' light/dark pattern goes onto the painted colours
+# Raxus, Raxus Prime: the zoomed-out globe keeps the original painting and terrain pattern (the user prefers it)
+GLOBE_TERRAIN_KEEP = [("WIPGFX/Assets/raxus_globe_terrain.png", "WIPGFX/Assets/raxus_globe_terrain.json"),
+                      ("WIPGFX/Assets/raxus_prime_globe_terrain.png", "WIPGFX/Assets/raxus_prime_globe_terrain.json")]
 
 
 def save_dxt1_mips(rgb, path):
@@ -688,6 +966,10 @@ def globe_texture():
     cmap = np.array(load(f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds").convert("RGB"))
     terr = np.array(load(f"{MAP}/terrain.bmp"))
     H, W = terr.shape
+    for path, at in GLOBE_TERRAIN_KEEP:            # planets repainted up close whose old globe look is kept
+        keep = np.array(Image.open(path))
+        y0, x0 = json.load(open(at))["at"]
+        terr[y0:y0 + keep.shape[0], x0:x0 + keep.shape[1]] = keep
     GH = GW = GLOBE_SIZE
     slot_of = {int(m.group(1)): int(m.group(2)) for m in re.finditer(
         r"color\s*=\s*\{\s*(\d+)\s*\}\s*texture\s*=\s*(\d+)",
@@ -778,7 +1060,60 @@ def main():
     ap.add_argument("--round-coasts", action="store_true", help="only round the planet coastlines in heightmap.bmp")
     ap.add_argument("--world-tweaks", action="store_true", help="only apply CITY_DISTRICTS, RED_WORLDS, DENSE_TREE_WORLDS")
     ap.add_argument("--felucia", action="store_true", help="only repaint Felucia (flora, ground, atmosphere); then --globe-texture")
+    ap.add_argument("--raxus", action="store_true", help="only repaint Raxus (capital, countryside); then --globe-texture")
+    ap.add_argument("--raxus-prime", action="store_true", help="only repaint Raxus Prime (junk world); then --globe-texture")
     a = ap.parse_args()
+    if a.raxus_prime:
+        land, _, pid = load_provinces()
+        labels, n = ndi.label(land, np.ones((3, 3)))
+        names = planet_names(labels, n, pid)
+        tr, terr, cty = load(f"{MAP}/trees.bmp"), load(f"{MAP}/terrain.bmp"), load(f"{MAP}/cities.bmp")
+        h0 = np.asarray(load(f"{MAP}/heightmap.bmp").convert("L")).astype(np.float32)
+        t, trees, city, h = raxus_prime(np.array(terr), np.array(tr), np.array(cty), h0, labels, names, pid,
+                                        np.random.default_rng(SEED + 196))
+        rp = np.isin(labels, [l for l in range(1, n + 1) if names[l].split(" - ")[0] == RP])
+        Image.fromarray(np.rint(h).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
+        gy, gx = np.gradient(ndi.gaussian_filter(h, 1.0)[::2, ::2])
+        nv = np.stack([-NORMAL_K * gx, NORMAL_K * gy, np.ones_like(gx)], -1)
+        nv /= np.linalg.norm(nv, axis=-1, keepdims=True)
+        wn = np.array(load(f"{MAP}/world_normal.bmp").convert("RGB"))
+        ys, xs = np.nonzero(rp[::2, ::2][:wn.shape[0], :wn.shape[1]])
+        sl = np.s_[max(ys.min() - 4, 0):ys.max() + 5, max(xs.min() - 4, 0):xs.max() + 5]
+        wn[sl] = np.clip(np.rint(nv[sl] * 127.5 + 127.5), 0, 255).astype(np.uint8)
+        Image.fromarray(wn, "RGB").save(f"{MAP}/world_normal.bmp")
+        reheight(np.rint(h))
+        for arr, img, path in ((t, terr, "terrain.bmp"), (trees, tr, "trees.bmp"), (city, cty, "cities.bmp")):
+            out = Image.fromarray(arr.astype(np.uint8), "P")
+            out.putpalette(img.getpalette())
+            out.save(f"{MAP}/{path}")
+        return
+    if a.raxus:
+        land, _, pid = load_provinces()
+        labels, n = ndi.label(land, np.ones((3, 3)))
+        names = planet_names(labels, n, pid)
+        tr, terr, cty = load(f"{MAP}/trees.bmp"), load(f"{MAP}/terrain.bmp"), load(f"{MAP}/cities.bmp")
+        cmp = f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds"
+        cm = np.array(load(cmp).convert("RGBA")).astype(np.float32) / 255
+        h0 = np.asarray(load(f"{MAP}/heightmap.bmp").convert("L")).astype(np.float32)
+        t, trees, cm, city, h = raxus(np.array(terr), np.array(tr), cm, np.array(cty), h0, labels, names, pid,
+                                      np.random.default_rng(SEED + 79))
+        rax = np.isin(labels, [l for l in range(1, n + 1) if names[l].split(" - ")[0] == RAXUS])
+        Image.fromarray(np.rint(h).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
+        # world_normal.bmp (half res) redone around Raxus only
+        gy, gx = np.gradient(ndi.gaussian_filter(h, 1.0)[::2, ::2])
+        nv = np.stack([-NORMAL_K * gx, NORMAL_K * gy, np.ones_like(gx)], -1)
+        nv /= np.linalg.norm(nv, axis=-1, keepdims=True)
+        wn = np.array(load(f"{MAP}/world_normal.bmp").convert("RGB"))
+        ys, xs = np.nonzero(rax[::2, ::2][:wn.shape[0], :wn.shape[1]])
+        sl = np.s_[max(ys.min() - 4, 0):ys.max() + 5, max(xs.min() - 4, 0):xs.max() + 5]
+        wn[sl] = np.clip(np.rint(nv[sl] * 127.5 + 127.5), 0, 255).astype(np.uint8)
+        Image.fromarray(wn, "RGB").save(f"{MAP}/world_normal.bmp")
+        reheight(np.rint(h))
+        for arr, img, path in ((t, terr, "terrain.bmp"), (trees, tr, "trees.bmp"), (city, cty, "cities.bmp")):
+            out = Image.fromarray(arr.astype(np.uint8), "P")
+            out.putpalette(img.getpalette())
+            out.save(f"{MAP}/{path}")
+        return save_bgra_dds(cmp, np.rint(np.clip(cm, 0, 1) * 255).astype(np.uint8), cmp)
     if a.felucia:
         land, _, pid = load_provinces()
         labels, n = ndi.label(land, np.ones((3, 3)))

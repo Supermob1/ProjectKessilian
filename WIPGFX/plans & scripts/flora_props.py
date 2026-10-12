@@ -44,12 +44,34 @@ PROCEDURAL = {
     59: "fel_bulbs",      # translucent orange / yellow stalks with bulbous heads (Revenge of the Sith)
     60: "fel_pitcher",    # giant teal pitcher plant with a magenta lip
     61: "fel_fronds",     # giant curling crimson fronds
+    # Raxus Secundus (The Clone Wars: Raxulon's parks and avenues): tall straight red-brown trunks branching high
+    # into dense rounded crowns of golden-orange leaves, smaller ones with their leaves in stacked puffs, and
+    # crimson shrubs beneath
+    62: "rax_tree",       # tall tree, broad golden crown
+    63: "rax_tiered",     # slimmer tree, stacked orange puffs
+    64: "rax_shrubs",     # crimson shrubs
+    # Raxus Prime, the galaxy's dump: heaps of junk wider than a trees.bmp cell, so neighbouring heaps run together
+    # into one carpet of scrap: a mound of packed junk (the terrain's junk tile) bristling with hull plates, girders,
+    # pipes and drums
+    73: "rp_heap_a",      # broad low mound
+    74: "rp_heap_b",      # tall cone
+    75: "rp_heap_c",      # mound with a big hull plate and a drum stack
+    76: "rp_heap_ridge",  # long ridge of junk (walls of the dump's maze)
+    77: "rp_heap_tangle", # tangle of girders and pipes over a low spread
+    78: "rp_heap_slabs",  # hull slabs leaning on each other
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
-             61: ["hod_fel_frond"]}
+             61: ["hod_fel_frond"], 62: ["hod_rax_trunk", "hod_foliage_raxus"], 63: ["hod_rax_trunk", "hod_foliage_raxus"],
+             64: ["hod_foliage_crimson"], 73: ["hod_scrap_tile", "hod_scrap_metal"],
+             74: ["hod_scrap_tile", "hod_scrap_metal"], 75: ["hod_scrap_tile", "hod_scrap_metal"]}
+# the heaps are built like the trees: a body plus clumps of cut-out cards (junk pieces on transparent ground)
+PROC_MATS.update({i: ["hod_scrap_tile", "hod_scrap_metal", "hod_junk_clump"] for i in range(73, 79)})
 # Sketchfab models converted by sketchfab_props.py (meshes land in OUT as hod_flora_<index>_<name>.mesh)
 EXTERNAL = {53: "sandcrawler", 54: "vaporators", 56: "wreck_harrower", 57: "wreck_foray"}
+# Raxus Prime junk (sketchfab_props.py SPECS rp_*: Battlefront II / Empire at War models)
+EXTERNAL.update({65: "rp_wreck_bloodmark", 66: "rp_wreck_chela", 67: "rp_wreck_b28", 68: "rp_wreck_ebonhawk",
+                 69: "rp_junk_heap", 70: "rp_barrels", 71: "rp_hull_chunk", 72: "rp_wing_chunk"})
 LEAF_SRC = "island_tree_01"  # Poly Haven leaf sheet the foliage clumps are composed from
 
 
@@ -137,7 +159,9 @@ def textures():
     lab, n = ndi.label(mask)
     leaves = [(sheet[sl], mask[sl] & (lab[sl] == i + 1)) for i, sl in enumerate(ndi.find_objects(lab))
               if (lab[sl] == i + 1).sum() > 4000]
-    for name, tint in (("hod_foliage_wroshyr", (0.55, 0.75, 0.5)), ("hod_foliage_jungle", (0.8, 1.0, 0.6))):
+    for name, tint in (("hod_foliage_wroshyr", (0.55, 0.75, 0.5)), ("hod_foliage_jungle", (0.8, 1.0, 0.6)),
+                       ("hod_foliage_raxus", ((250, 190, 70), (235, 125, 35))),       # gold .. orange, per leaf
+                       ("hod_foliage_crimson", ((200, 45, 60), (150, 25, 50)))):
         S = TEX_SIZE
         col = np.zeros((S, S, 3), np.float32)
         alp = np.zeros((S, S), np.float32)
@@ -155,7 +179,13 @@ def textures():
             ys, xs = ys + y0, xs + x0
             ok = (ys >= 0) & (ys < S) & (xs >= 0) & (xs < S)
             shade = 0.55 + 0.45 * (1 - r / (S * 0.42)) * rng.uniform(0.8, 1.1)    # darker toward the rim, like depth
-            col[ys[ok], xs[ok]] = ci[ys[ok] - y0, xs[ok] - x0] * np.array(tint) * shade
+            src = ci[ys[ok] - y0, xs[ok] - x0]
+            if isinstance(tint[0], tuple):                                       # recolour by leaf brightness
+                hue = np.array(tint[0], np.float32) + (np.array(tint[1], np.float32) - tint[0]) * rng.random()
+                src = (src.mean(-1, keepdims=True) / 70) * hue                   # bright: map trees render dark
+            else:
+                src = src * np.array(tint)
+            col[ys[ok], xs[ok]] = src * shade
             alp[ys[ok], xs[ok]] = 255
         save(name, np.dstack([np.clip(col, 0, 255), alp]), flat_n)
         leaf[name] = True
@@ -215,8 +245,44 @@ def textures():
     organic("hod_fel_pitcher", [(0, (25, 70, 65)), (0.55, (40, 165, 160)), (0.82, (90, 210, 200)), (0.9, (225, 45, 140)),
                                 (1, (250, 110, 190))], veins=0.25)
     organic("hod_fel_frond", [(0, (70, 15, 30)), (0.5, (200, 30, 60)), (1, (255, 120, 70))], veins=0.3)
-    for stem in ("hod_fel_stalk", "hod_fel_cap", "hod_fel_bulb", "hod_fel_pitcher", "hod_fel_frond"):
+    organic("hod_rax_trunk", [(0, (78, 40, 26)), (0.5, (128, 66, 38)), (1, (150, 84, 48))], veins=0.35)
+    for stem in ("hod_fel_stalk", "hod_fel_cap", "hod_fel_bulb", "hod_fel_pitcher", "hod_fel_frond", "hod_rax_trunk"):
         leaf[stem] = False
+    # last, so the random stream of every texture above stays the same
+    surface("hod_scrap_metal", (150, 96, 64), 1, 0.25)                    # rusty plating for the junk pieces
+    from terrain_atlas import scrap_tile                                    # the junk heaps' packed surface
+    junk, _h = scrap_tile(512, seed=73)
+    save("hod_scrap_tile", np.dstack([np.clip(junk * 1.25, 0, 255), np.full((S, S), 255, np.float32)]), flat_n)
+    leaf["hod_scrap_metal"] = leaf["hod_scrap_tile"] = False
+    # junk clump cards: hundreds of plates, girders and drums packed in a soft disc on transparent ground, the way
+    # foliage clumps are made from leaves
+    from PIL import ImageDraw
+    rj = np.random.default_rng(74)
+    im = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    for _ in range(520):
+        rr, a = S * 0.43 * np.sqrt(rj.random()), rj.uniform(0, 6.283)
+        cx, cy = S / 2 + rr * np.cos(a), S / 2 + rr * np.sin(a)
+        rust = rj.random()
+        c = (np.array([160, 88, 48]) * rust + np.array([128, 126, 122]) * (1 - rust)) * rj.uniform(0.6, 1.2)
+        if rj.random() < 0.07:
+            c = np.array([(150, 60, 45), (60, 85, 125), (170, 150, 70)][rj.integers(3)])
+        c = tuple(int(v) for v in np.clip(c * (1.1 - 0.4 * rr / (S * 0.43)), 0, 255)) + (255,)
+        k = rj.random()
+        if k < 0.6:
+            w, h, t = rj.uniform(6, 26), rj.uniform(4, 14), rj.uniform(0, np.pi)
+            pts = [(cx + dx * np.cos(t) - dy * np.sin(t), cy + dx * np.sin(t) + dy * np.cos(t))
+                   for dx, dy in ((-w, -h), (w, -h), (w, h), (-w, h))]
+            d.polygon(pts, fill=c, outline=(28, 22, 18, 255))
+        elif k < 0.85:
+            L, t = rj.uniform(12, 40), rj.uniform(0, np.pi)
+            d.line([(cx - L * np.cos(t), cy - L * np.sin(t)), (cx + L * np.cos(t), cy + L * np.sin(t))], fill=c,
+                   width=int(rj.integers(2, 6)))
+        else:
+            r_ = rj.uniform(4, 10)
+            d.ellipse([cx - r_, cy - r_, cx + r_, cy + r_], fill=c, outline=(28, 22, 18, 255))
+    save("hod_junk_clump", np.asarray(im).astype(np.float32), flat_n)
+    leaf["hod_junk_clump"] = True
     # one atlas per multi-material model: the tree renderer draws only a mesh's first material (vanilla trees
     # all have one), so trunk + leaves share one texture, one vertical slot each (bottom-up = Blender's v)
     atlas = {idx: [f"hod_{m[0]}" for m in materials(pid)] for idx, (pid, *_r) in ASSETS.items()}
@@ -609,6 +675,93 @@ def procedural():
                 frond(bm, uv, 2 * math.pi * (i + rng.uniform(-.3, .3)) / 9, rng.uniform(2.6, 3.6), rng.uniform(0.3, 0.45),
                       rng.uniform(0.35, 0.6))
 
+    def raxus_flora(bm, uv, kind):
+        if kind == "rax_tree":
+            # ~1.4x a vanilla tree: tall bare trunk, the crown high up (units stay visible underneath)
+            giant(bm, uv, 2.9, 0.13, 3, [(2.5, 4, 0.75, 0.75), (3.1, 3, 0.55, 0.7)], 3.6, 460)
+        elif kind == "rax_tiered":
+            for i in range(2):
+                x, y = (0, 0) if i == 0 else (rng.uniform(0.8, 1.1), rng.uniform(-0.6, 0.6))
+                h = 3.2 if i == 0 else 2.2
+                tube(bm, uv, [(Vector((x, y, h * k / 5)), 0.09 * (1 - 0.6 * k / 5)) for k in range(6)], 6, 0)
+                for z, rr in ((0.45, 0.42), (0.62, 0.5), (0.8, 0.42), (0.95, 0.3)):
+                    a = rng.uniform(0, 6.283)
+                    c = Vector((x + math.cos(a) * 0.18, y + math.sin(a) * 0.18, h * z))
+                    limb(bm, uv, Vector((x, y, h * z - 0.25)), c, 0.04, 0.02, 0, sides=4, segs=1)
+                    clump(bm, uv, c, rr * (h / 3.2), rr * 0.45, 42, 1, size=(0.45, 0.7))
+        else:
+            for _ in range(6):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.9)
+                r = rng.uniform(0.3, 0.5)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.7)), r, r * 0.6, 26, 0, size=(0.35, 0.6))
+
+    def junk_heap(bm, uv, kind):
+        """Raxus Prime junk heap: a mound body (material 0: packed junk), clumps of cut-out junk cards over it like a
+        tree's foliage (material 2) and plates, girders and drums sticking out (material 1). Six kinds, so the dump
+        varies: (radius x, radius y, height, cards, pieces)."""
+        RX, RY, H, cards, n = {"rp_heap_a": (2.1, 2.1, 0.8, 110, 14), "rp_heap_b": (1.6, 1.6, 1.9, 120, 16),
+                               "rp_heap_c": (2.0, 1.8, 1.0, 100, 12), "rp_heap_ridge": (3.0, 1.1, 1.3, 150, 18),
+                               "rp_heap_tangle": (1.9, 1.9, 0.5, 70, 34), "rp_heap_slabs": (2.0, 1.7, 0.7, 70, 6)}[kind]
+        segs, sides = 5, 12
+        rings = []
+        for k in range(segs + 1):
+            t = k / segs
+            sh = math.cos(t * math.pi / 2) ** (0.6 if kind == "rp_heap_b" else 1.0)
+            z = H * math.sin(t * math.pi / 2) - 0.15
+            rings.append([bm.verts.new((math.cos(a) * (RX * sh + 0.02) * rng.uniform(0.8, 1.2),
+                                        math.sin(a) * (RY * sh + 0.02) * rng.uniform(0.8, 1.2), z + rng.uniform(-0.1, 0.15) * (k > 0)))
+                          for a in (2 * math.pi * i / sides for i in range(sides))])
+        for k in range(segs):
+            for i in range(sides):
+                j = (i + 1) % sides
+                f = bm.faces.new((rings[k][i], rings[k][j], rings[k + 1][j], rings[k + 1][i]))
+                f.material_index = 0
+                for loop, (u, v) in zip(f.loops, ((i / sides, k / segs), ((i + 1) / sides, k / segs),
+                                                  ((i + 1) / sides, (k + 1) / segs), (i / sides, (k + 1) / segs))):
+                    loop[uv].uv = (u, v)
+
+        def on_heap(spread=1.0):
+            a, t = rng.uniform(0, 6.283), rng.uniform(0.0, 0.95)
+            sh = math.cos(t * math.pi / 2) * spread
+            return Vector((math.cos(a) * RX * sh, math.sin(a) * RY * sh, H * math.sin(t * math.pi / 2) - 0.1)), a
+
+        for _ in range(cards):                           # junk clumps: the heap's ragged, organic silhouette
+            c, _a = on_heap(1.05)
+            card(bm, uv, c + Vector((0, 0, rng.uniform(0.0, 0.25))), rng.uniform(0.5, 1.1), 2)
+
+        def plate(c, w, d, th, tilt, spin):
+            g = bmesh.ops.create_cube(bm, size=1.0)
+            m = Matrix.Translation(c) @ Matrix.Rotation(spin, 4, "Z") @ Matrix.Rotation(tilt, 4, "X") @ \
+                Matrix.Diagonal((w, d, th, 1.0))
+            bmesh.ops.transform(bm, matrix=m, verts=g["verts"])
+            for f in {f for v in g["verts"] for f in v.link_faces}:
+                f.material_index = 1
+                for loop, q in zip(f.loops, ((0, 0), (1, 0), (1, 1), (0, 1))):
+                    loop[uv].uv = q
+
+        girders = 0.85 if kind == "rp_heap_tangle" else 0.35
+        for _ in range(n):
+            c, a = on_heap()
+            p = rng.random()
+            if p < 1 - girders - 0.15:
+                plate(c, rng.uniform(0.4, 1.0), rng.uniform(0.3, 0.7), 0.05, rng.uniform(0.3, 1.3), rng.uniform(0, 6.283))
+            elif p < 0.85:
+                d = Vector((math.cos(a) * rng.uniform(0.2, 1.0), math.sin(a) * rng.uniform(0.2, 1.0), rng.uniform(0.2, 1.0)))
+                limb(bm, uv, c - d * 0.3, c + d.normalized() * rng.uniform(0.6, 1.6), rng.uniform(0.04, 0.08),
+                     rng.uniform(0.03, 0.06), 1, sides=4, segs=1)
+            else:
+                r = rng.uniform(0.15, 0.25)
+                tube(bm, uv, [(c + Vector((0, 0, -0.1)), r), (c + Vector((0, 0, rng.uniform(0.3, 0.55))), r)], 8, 1)
+        if kind == "rp_heap_c":                          # a big hull plate and a stack of drums at its foot
+            plate(Vector((0.5, -0.3, 0.6)), 2.0, 1.2, 0.08, 0.9, 0.4)
+            for k in range(3):
+                tube(bm, uv, [(Vector((-1.6 + 0.4 * k, 1.0, 0.0)), 0.2), (Vector((-1.6 + 0.4 * k, 1.0, 0.5)), 0.2)], 8, 1)
+        if kind == "rp_heap_slabs":                      # big hull slabs leaning on each other
+            for k in range(5):
+                a = rng.uniform(0, 6.283)
+                plate(Vector((math.cos(a) * 0.8, math.sin(a) * 0.8, 0.5)), rng.uniform(1.2, 2.0), rng.uniform(0.8, 1.3),
+                      0.08, rng.uniform(0.7, 1.2), a + math.pi / 2)
+
     def homestead(bm, uv):
         dome(bm, uv, (0, 0, -0.05), 0.45)              # main dome
         dome(bm, uv, (0.75, 0.2, -0.03), 0.22)         # entrance
@@ -634,6 +787,12 @@ def procedural():
         elif kind.startswith("fel_"):
             felucia(bm, uv, kind)
             mats = PROC_MATS[idx]
+        elif kind.startswith("rax_"):
+            raxus_flora(bm, uv, kind)
+            mats = PROC_MATS[idx]
+        elif kind.startswith("rp_heap"):
+            junk_heap(bm, uv, kind)
+            mats = PROC_MATS[idx]
         else:
             homestead(bm, uv)
             mats = PROC_MATS[idx]
@@ -643,7 +802,7 @@ def procedural():
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith("fel_"):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)
@@ -659,6 +818,9 @@ def procedural():
         name = f"hod_flora_{idx}_{kind}"
         obj.name = me.name = name
         bie.export_meshfile(os.path.join(out_dir, name + ".mesh"), exp_mesh=True, exp_skel=False, exp_locs=False)
+        if kind in ("rax_tree", "rax_tiered"):     # copies stood on Raxulon's Great Alley as map objects: the map
+            me.materials[0][PDX_SHADER] = "PdxMeshHodAlphaTest"   # object shader must cut the leaf cards out itself
+            bie.export_meshfile(os.path.join(out_dir, f"hod_rax_alley_{idx}.mesh"), exp_mesh=True, exp_skel=False, exp_locs=False)
         zs = [v.co.z for v in me.vertices]
         print(f"{idx} {kind}: {len(me.polygons)} tris, height {max(zs):.2f}")
 

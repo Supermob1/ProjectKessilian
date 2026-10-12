@@ -1,0 +1,33 @@
+state={
+	id=1054
+	name="STATE_1054"
+	# HOD: Raxus Prime, plains (raxus_prime_map.py)
+	provinces={
+		21770 21771 21774 21775 21779 21782 21784 21785 21786
+	}
+	resources={
+		coal=1
+		oil=2
+	}
+	history = {
+		victory_points = {
+			21779 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+					21771 = {
+				naval_base = 1
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 325195
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

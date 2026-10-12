@@ -1,0 +1,35 @@
+state={
+	id=79
+	name="STATE_79"
+	# HOD: Raxus, plaza (raxus_map.py)
+	provinces={
+		367 469 516 551 1538 1579 1665 1722 1831 2424 2568 2586 2797 2836 3166 3319 3378 3415 3454 3469 3571 4184 4421 4471 4684 4833 4847 5267 5454 5524 5529 5578 5651 8541 8548 8552 8556 8561 8563 8566
+	}
+	resources={
+		oil=2#Fuel
+		rubber=1#Doonium
+		tungsten=1#Bacta
+		steel=2#Alloys
+		chromium=3#Circuitry
+	}
+	history = {
+		victory_points = {
+			367 10
+		}
+		victory_points = {
+			469 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 4
+			air_base = 3
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 1701349
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

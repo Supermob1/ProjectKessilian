@@ -134,9 +134,7 @@ def plan_states(z, pid, fel):
 
 def main():
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    import planet_terrain_gen as g
     from felucia_map import felucia_mask
-    from scipy import ndimage as ndi
     z = json.load(open(ZONES_JSON))
     land, pid, fel = felucia_mask()
     H, W = pid.shape
@@ -190,6 +188,33 @@ def main():
         open(f"history/states/{sid}-Felucia - {st['name'].replace(chr(39), '')}.txt", "w", encoding="utf-8", newline="\n").write(text)
     for sid in set(old) - set(states):
         os.remove(old[sid])
+    place(states, prov, pid, land, fel, fel_ids, vps[CAPITAL][-1][0], CAPITAL, rng)
+    fprov = {p for st in states.values() for p in st["provinces"]}
+    # names
+    def fs(s):
+        for sid in names:
+            s = re.sub(rf'\n STATE_{sid}:\d* "[^"]*"', "", s)
+        return s.rstrip("\n") + "\n" + "".join(f' STATE_{sid}:0 "{n}"\n' for sid, n in sorted(names.items()))
+    rw("localisation/english/state_names_l_english.yml", fs)
+    def fv(s):
+        s = re.sub(r'\n VICTORY_POINTS_(\d+):\d* "[^"]*"', lambda m: "" if int(m.group(1)) in fprov else m.group(0), s)
+        return s.rstrip("\n") + "\n" + "".join(f' VICTORY_POINTS_{p}:0 "{n}"\n' for p, n in vp_names.items())
+    rw("localisation/english/victory_points_l_english.yml", fv)
+    rw(REGION, lambda s: re.sub(r"\tweather=\{.*\n\t\}", WEATHER, s, count=1, flags=re.S))
+    for sid, st in sorted(states.items()):
+        print(f"{sid:5} {st['kind']:5} {len(st['provinces']):3} provinces  {st['name']}")
+    country()
+
+
+def place(states, prov, pid, land, fel, state_ids, port_p, capital, rng):
+    """buildings.txt and unitstacks.txt for every state / province of one planet (mask `fel`), the capital's
+    airport + rocket site on port_p, railways cut at the planet, supply hubs, hyperspace lanes re-anchored.
+    states: sid -> dict(kind, provinces, coastal, main); prov: province -> dict(zone, coastal, sea, centre).
+    state_ids: every state id of the planet, old and new (their old map positions go)."""
+    import planet_terrain_gen as g
+    from scipy import ndimage as ndi
+    H, W = pid.shape
+    fel_ids = state_ids
     # ── positions: buildings.txt and unitstacks.txt for every Felucian state / province ──
     hm = np.asarray(g.load("map/heightmap.bmp").convert("L")).astype(float)
     pos = lambda r, c: (float(c), hm[int(r), int(c)] / 10, float(H - 1 - r))
@@ -259,9 +284,8 @@ def main():
             out.append(f"{p};{t};{x:.2f};{y:.2f};{zz:.2f};{ang:.2f};{q[6].strip()}{end}")
     open("map/unitstacks.txt", "w", encoding="utf-8", newline="").write("".join(out))
     # airport and rocket site: the capital's spaceport
-    port_p = vps[CAPITAL][-1][0]
     for fn in ("map/airports.txt", "map/rocketsites.txt"):
-        rw(fn, lambda s: re.sub(rf"(?m)^{CAPITAL}\s*=\s*\{{[^}}]*\}}", f"{CAPITAL} = {{ {port_p} }}", s))
+        rw(fn, lambda s: re.sub(rf"(?m)^{capital}\s*=\s*\{{[^}}]*\}}", f"{capital} = {{ {port_p} }}", s))
     # railways stop at Felucia; supply hubs at every passable state's main province
     rails = []
     for line in open("map/railways.txt"):
@@ -299,20 +323,6 @@ def main():
                 q[0 if a in fprov else 1] = str(pick)
                 lines[i] = ";".join(q)
     open("map/adjacencies.csv", "w", encoding="utf-8", newline="").write("".join(lines))
-    # names
-    def fs(s):
-        for sid in names:
-            s = re.sub(rf'\n STATE_{sid}:\d* "[^"]*"', "", s)
-        return s.rstrip("\n") + "\n" + "".join(f' STATE_{sid}:0 "{n}"\n' for sid, n in sorted(names.items()))
-    rw("localisation/english/state_names_l_english.yml", fs)
-    def fv(s):
-        s = re.sub(r'\n VICTORY_POINTS_(\d+):\d* "[^"]*"', lambda m: "" if int(m.group(1)) in fprov else m.group(0), s)
-        return s.rstrip("\n") + "\n" + "".join(f' VICTORY_POINTS_{p}:0 "{n}"\n' for p, n in vp_names.items())
-    rw("localisation/english/victory_points_l_english.yml", fv)
-    rw(REGION, lambda s: re.sub(r"\tweather=\{.*\n\t\}", WEATHER, s, count=1, flags=re.S))
-    for sid, st in sorted(states.items()):
-        print(f"{sid:5} {st['kind']:5} {len(st['provinces']):3} provinces  {st['name']}")
-    country()
 
 
 # ── the Felucian tribes: a country nobody can deal with; at peace, but raiding the Guild's frontier ──

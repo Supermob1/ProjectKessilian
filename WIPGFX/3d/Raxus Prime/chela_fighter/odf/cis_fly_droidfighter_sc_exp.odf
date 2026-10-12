@@ -1,0 +1,48 @@
+[ExplosionClass]
+//"ClassLabel" is a designation that sorts .odf's into appropriate groups.
+//These groups include: (explosion, flyer, walker, weapon, bolt, laser, soldier)
+
+ClassLabel = "explosion"
+
+[Properties]
+//"LifeSpan" determines how long the explosion is in the world
+//"Effect" is the name of the special effects file, or simply, the explosion
+LifeSpan        = "0.2"
+Effect          = "com_sfx_vehicle_exp"
+
+//"Damage" denotes the amount of damage the explosion will create.
+//"DamageRadius" denotes the distance in meters from the point of impact that
+//will cause damage for the duration of the explosion.
+Damage          = "40.0"
+DamageRadius    = "30.0"
+
+//"Scale" values determine if the weapons damage is reduced or increased as
+//a result of the what kind of object is being hit.  i.e. 3.0 is three times
+//the damage where as 0.5 is half damage.
+ArmorScale      = "3.0"
+HealthScale     = "0.8"
+ShieldScale     = "0.5"
+
+//"Shake" sets the intensity of the camera shaking
+//"Push" sets the amount of force a unit in the explosion will be hit with.
+//This can cause them to be thrown outward or upward at varyying heights.
+//"Length" this value sets how long the shake will last for.
+//"Radius" values determine at what distance from the center of the explosion
+//things will be affected by Push or Shake
+Shake           = "1.0"
+ShakeLength     = "1.0"
+ShakeRadius     = "35.0"
+Push            = "13.0"
+PushRadius      = "29.0"
+
+NumChunks = "3"
+ChunkGeometryName = "com_mediumchunk1"
+ChunkTerrainCollisions = "8"
+ChunkTrailEffect = "com_sfx_chunktrail"
+ChunkPhysics = "FULL"
+ChunkOmega = "4.0 4.0 4.0"
+ChunkSpeed = "16.0 28.0"
+ChunkGravity        = "0.0 0.0 0.0"
+ChunkStartDistance = "1.5"
+
+SoundProperty = "com_weap_obj_med_exp"

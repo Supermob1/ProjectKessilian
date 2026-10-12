@@ -7,6 +7,7 @@ reads .rbg so B is up) + A spec.
   python "WIPGFX/plans & scripts/terrain_atlas.py" polyhaven    Poly Haven (CC0) ground photos (4x4)
   python "WIPGFX/plans & scripts/terrain_atlas.py" satellite    Sentinel-2 cloudless 2016 (CC BY 4.0, credit EOX)
   python "WIPGFX/plans & scripts/terrain_atlas.py" restore      the atlas the mod had before (WIPGFX/Assets/atlas_backup)
+  python "WIPGFX/plans & scripts/terrain_atlas.py" scrap        our junk-field tile into slot 19 (Raxus Prime)
 Slots not listed in a source keep their current tile (6 water, 14 lava). Each new tile is brightness-matched to the
 pre-existing tile it replaces, so planet colours (colormap overlay) stay balanced. Comparison: WIPGFX/terrain_compare.png
 """
@@ -148,6 +149,7 @@ def revolution():
     c = c.replace("[[", "[[\n// HOD: vanilla constants.fxh with Revolution_Realized's terrain atlas values (terrain_atlas.py)", 1)
     open("gfx/FX/constants.fxh", "w", encoding="utf-8", newline="\n").write(c)
     print("Revolution_Realized atlas written (5x5) + gfx/FX/constants.fxh")
+    scrap()                                                # our own tile on top (Raxus Prime)
 
 
 def restore():
@@ -158,6 +160,113 @@ def restore():
     print("restored the pre-existing atlas from", BACKUP)
 
 
+SCRAP_SLOT = 19      # unused slot of the 5x5 atlas (00_terrain.txt: scrap_28, scrap_town_29)
+
+
+def scrap_tile(S=1024, seed=19):
+    """Raxus Prime's junk fields seen from above, tileable: hull plates, girders, pipes and drums piled on each other,
+    rust and grey metal with flecks of old paint, dark gaps between. -> (diffuse RGB, height 0..1)"""
+    from PIL import ImageDraw
+    from scipy import ndimage as ndi
+    rng = np.random.default_rng(seed)
+    col = Image.new("RGB", (3 * S, 3 * S), (46, 38, 32))
+    hgt = Image.new("L", (3 * S, 3 * S), 0)
+    dc, dh = ImageDraw.Draw(col), ImageDraw.Draw(hgt)
+    paints = [(150, 70, 50), (70, 90, 120), (160, 140, 70), (90, 110, 80), (170, 170, 165)]
+    for k in range(1400):
+        x, y = rng.uniform(0, S), rng.uniform(0, S)
+        z = int(40 + 215 * k / 1400)                                     # later pieces lie on top
+        rust = rng.random()
+        base = (np.array([150, 84, 46]) * rust + np.array([118, 116, 112]) * (1 - rust)) * rng.uniform(0.6, 1.15)
+        if rng.random() < 0.08:
+            base = np.array(paints[rng.integers(len(paints))]) * rng.uniform(0.6, 1.0)
+        c = tuple(int(v) for v in np.clip(base, 0, 255))
+        kind = rng.random()
+        for ox in (-S, 0, S):                                            # drawn into every neighbouring copy: tileable
+            for oy in (-S, 0, S):
+                cx, cy = x + ox + S, y + oy + S
+                if kind < 0.6:                                          # plate
+                    w, h, a = rng.uniform(8, 46) * S / 512, rng.uniform(5, 26) * S / 512, rng.uniform(0, np.pi)
+                    pts = [(cx + dx * np.cos(a) - dy * np.sin(a), cy + dx * np.sin(a) + dy * np.cos(a))
+                           for dx, dy in ((-w, -h), (w, -h), (w, h), (-w, h))]
+                    dc.polygon(pts, fill=c, outline=(30, 24, 20))
+                    dh.polygon(pts, fill=z)
+                elif kind < 0.85:                                       # girder / pipe
+                    L, a = rng.uniform(20, 70) * S / 512, rng.uniform(0, np.pi)
+                    p0, p1 = (cx - L * np.cos(a), cy - L * np.sin(a)), (cx + L * np.cos(a), cy + L * np.sin(a))
+                    wd = int(rng.uniform(2, 6) * S / 512) + 1
+                    dc.line([p0, p1], fill=c, width=wd)
+                    dh.line([p0, p1], fill=z, width=wd)
+                else:                                                   # drum / round tank end
+                    r = rng.uniform(4, 14) * S / 512
+                    dc.ellipse([cx - r, cy - r, cx + r, cy + r], fill=c, outline=(30, 24, 20))
+                    dh.ellipse([cx - r, cy - r, cx + r, cy + r], fill=z)
+    col = np.asarray(col, np.float32)[S:2 * S, S:2 * S]
+    h = np.asarray(hgt, np.float32)[S:2 * S, S:2 * S] / 255
+    grime = ndi.gaussian_filter(rng.random((S, S)), 3, mode="wrap")
+    grime = (grime - grime.min()) / np.ptp(grime)
+    ao = np.clip(1 - 2.5 * (ndi.gaussian_filter(h, 4, mode="wrap") - h), 0.45, 1)  # dark where pieces overlap
+    col = col * (0.8 + 0.35 * grime[..., None]) * ao[..., None]
+    return np.clip(col, 0, 255), h
+
+
+def splice_slot(path, new_path, slot, grid=5):
+    """Copy one atlas slot's DXT5 blocks from new_path into path, every mip level whose tiles are whole blocks: the
+    other tiles stay byte for byte (re-encoding the whole atlas would recompress every terrain in the game)."""
+    import struct
+
+    def levels(b):
+        h, w = struct.unpack_from("<II", b, 12)
+        assert b[84:88] == b"DXT5"
+        off, out = 128, []
+        for _ in range(max(1, struct.unpack_from("<I", b, 28)[0])):
+            bw, bh = max(1, (w + 3) // 4), max(1, (h + 3) // 4)
+            out.append((off, w, bw))
+            off += bw * bh * 16
+            w, h = max(1, w // 2), max(1, h // 2)
+        return out
+    o, n = bytearray(open(path, "rb").read()), open(new_path, "rb").read()
+    r, c = divmod(slot, grid)
+    for (oo, w, bw), (no, w2, _bw) in zip(levels(o), levels(n)):
+        assert w == w2
+        t = w // grid
+        if t < 4 or t % 4:
+            break
+        x0, x1 = c * t // 4, (c + 1) * t // 4
+        for by in range(r * t // 4, (r + 1) * t // 4):
+            a, b = oo + (by * bw + x0) * 16, no + (by * bw + x0) * 16
+            o[a:a + (x1 - x0) * 16] = n[b:b + (x1 - x0) * 16]
+    open(path, "wb").write(bytes(o))
+
+
+def scrap():
+    """Write the junk tile into SCRAP_SLOT of the current atlas (all 3 levels, diffuse + normal), brightness kept
+    close to the brown rock tile so the colormap overlay stays balanced."""
+    from scipy import ndimage as ndi
+    col, h = scrap_tile()
+    gx, gy = ndi.sobel(h, 1, mode="wrap") * 2.0, ndi.sobel(h, 0, mode="wrap") * 2.0
+    nrm = np.stack([-gx, -gy, np.ones_like(gx)], -1)
+    nrm /= np.linalg.norm(nrm, axis=-1, keepdims=True)
+    for lvl in range(3):
+        for kind in ("atlas", "atlas_normal"):
+            im = np.asarray(Image.open(f"{MAP}/{kind}{lvl}.dds").convert("RGBA")).copy()
+            t = im.shape[0] // 5
+            cell = lambda a, k: a[(k // 5) * t:(k // 5 + 1) * t, (k % 5) * t:(k % 5 + 1) * t]
+            if kind == "atlas":
+                ref = cell(im, 13)[..., :3].mean()                     # brown mountain tile
+                d = col * ref / max(col.mean(), 1)
+                tile = np.dstack([d, np.full(h.shape, 90, np.float32)])           # A = gloss: dull metal
+            else:
+                n = nrm * 127.5 + 127.5                                 # stored like the other tiles: B is up
+                tile = np.dstack([n[..., 0], n[..., 1], n[..., 2], np.full(h.shape, 70, np.float32)])
+            cell(im, SCRAP_SLOT)[:] = np.asarray(Image.fromarray(np.clip(tile, 0, 255).astype(np.uint8), "RGBA").resize((t, t), Image.LANCZOS))
+            tmp = f"{MAP}/{kind}{lvl}.scrap.dds"
+            save_dxt5_mips(im, tmp)
+            splice_slot(f"{MAP}/{kind}{lvl}.dds", tmp, SCRAP_SLOT)     # only the slot's blocks change
+            os.remove(tmp)
+    Image.fromarray(np.clip(col, 0, 255).astype(np.uint8)).resize((512, 512)).save("WIPGFX/scrap_tile_preview.png")
+    print("scrap tile written to atlas slot", SCRAP_SLOT)
+
 if __name__ == "__main__":
     {"polyhaven": lambda: build(POLYHAVEN), "satellite": lambda: build(SATELLITE), "restore": restore,
-     "revolution": revolution}[sys.argv[1]]()
+     "revolution": revolution, "scrap": scrap}[sys.argv[1]]()

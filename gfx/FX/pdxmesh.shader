@@ -834,6 +834,21 @@ Effect PdxMeshAdvancedSnowShadow
 	PixelShader = "PixelPdxMeshStandardShadow"
 }
 
+# HOD: leaf cards on map objects (the trees of Raxulon's Great Alley, flora_props.py): the standard mesh shader
+# with its own ALPHA_TEST cut-out; no shadow
+Effect PdxMeshHodAlphaTest
+{
+	VertexShader = "VertexPdxMeshStandard"
+	PixelShader = "PixelPdxMeshStandard"
+	Defines = { "ALPHA_TEST" "EMISSIVE" "PDX_IMPROVED_BLINN_PHONG" "RIM_LIGHT" "PDX_SNOW" }
+}
+
+Effect PdxMeshHodAlphaTestShadow
+{
+	VertexShader = "VertexPdxMeshStandardShadow"
+	PixelShader = "PixelPdxMeshNoShadow"
+}
+
 Effect PdxMeshAdvancedSnowSkinnedShadow
 {
 	VertexShader = "VertexPdxMeshStandardSkinnedShadow"

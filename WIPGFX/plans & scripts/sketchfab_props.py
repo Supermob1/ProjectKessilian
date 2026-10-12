@@ -48,6 +48,49 @@ for _k in (0, 1, 2, 3, 4, 7):
     SPECS[f"chr_{_k:02d}"] = dict(path=f"WIPGFX/3d/sketchfab/christophsis_buildings/site_{_k:02d}.glb", kind="building",
                                   budget=1500, size=1.8, double=_k in (0, 2, 3),   # single-sided panel towers
                                   lift=(110, (175, 215, 222)))   # level is lit at night: daylight crystal-teal glass
+# Raxus Prime, the junk world: Battlefront II / Empire at War models converted by msh_to_glb.py (WIPGFX/3d/Raxus
+# Prime, WIPGFX/3d/SWEAW_prop_conversions). Split ships half buried as landmarks (raxus_prime_map.py places them),
+# small wrecks and junk as map props (trees.bmp), junk stacks as scrap-town buildings (city style 12).
+_RP, _EAW = "WIPGFX/3d/_glb/raxus_prime", "WIPGFX/3d/_glb/eaw"
+SPECS.update({
+    # landmarks (ambient objects): broken capital ships, tilt (rad about y, x) and how deep they are buried
+    "rp_derriphan_bow": dict(path=f"{_RP}/derriphan_chunk1.glb", kind="building", budget=2500, size=7.0, wreck="rust",
+                             tilt=(0.35, 0.1), bury=0.12),
+    "rp_derriphan_stern": dict(path=f"{_RP}/derriphan_chunk2.glb", kind="building", budget=2500, size=5.5, wreck="rust",
+                               tilt=(-0.25, 0.3), bury=0.15),
+    "rp_hammerhead_bow": dict(path=f"{_RP}/hammerhead_chunk1.glb", kind="building", budget=2000, size=4.5, wreck="rust",
+                              tilt=(0.5, 0.2), bury=0.2),
+    "rp_hammerhead_stern": dict(path=f"{_RP}/hammerhead_chunk2.glb", kind="building", budget=2000, size=5.0, wreck="rust",
+                                tilt=(-0.2, -0.15), bury=0.1),
+    "rp_lethisk": dict(path=f"{_RP}/orp_fly_lethisk.glb", kind="building", budget=1800, size=3.2, wreck="rust",
+                       tilt=(0.25, -0.2), bury=0.08),
+    "rp_factory": dict(path=f"{_EAW}/eaw_abandonedFactory.glb", kind="building", budget=4000, size=7.5),
+    "rp_droidworks": dict(path=f"{_EAW}/eaw_droidworks.glb", kind="building", budget=2500, size=3.5),
+    # map props (trees.bmp index): crashed fighters, the Ebon Hawk, hull chunks, junk heaps, barrel stacks
+    "rp_wreck_bloodmark": dict(path=f"{_RP}/sth_fly_bloodmark.glb", kind="prop", index=65, budget=800, size=1.5, wreck="rust"),
+    "rp_wreck_chela": dict(path=f"{_RP}/orp_fly_chela.glb", kind="prop", index=66, budget=700, size=1.4, wreck="rust",
+                           tilt=(1.2, 0.2), bury=0.15),
+    "rp_wreck_b28": dict(path=f"{_RP}/sth_fly_b28bomber.glb", kind="prop", index=67, budget=900, size=1.7, wreck="rust"),
+    "rp_wreck_ebonhawk": dict(path=f"{_RP}/ebon_hawk.glb", kind="prop", index=68, budget=1200, size=2.2, wreck="rust"),
+    "rp_junk_heap": dict(path=f"{_EAW}/eaw_crates10.glb", kind="prop", index=69, budget=700, size=1.8),
+    "rp_barrels": dict(path=f"{_EAW}/eaw_crates3.glb", kind="prop", index=70, budget=600, size=1.0),
+    "rp_hull_chunk": dict(path=f"{_RP}/lethisk_chunk2.glb", kind="prop", index=71, budget=600, size=1.6, wreck="rust",
+                          tilt=(0.6, 0.4), bury=0.2),
+    "rp_wing_chunk": dict(path=f"{_RP}/chela_chunk1.glb", kind="prop", index=72, budget=400, size=1.0, wreck="rust"),
+    # scrap-town buildings (city style 12): container stacks, crate blocks, a junk tower
+    **{f"rpt_{n}": dict(path=f"{_EAW}/eaw_{n}.glb", kind="building", budget=600, size=sz)
+       for n, sz in (("crates4", 1.4), ("crates5", 1.2), ("crates6", 1.3), ("crates9", 1.4), ("crates1", 1.0),
+                     ("huttTower", 1.3), ("fuelCellC", 1.4))},
+})
+# vanilla building replacements (military_buildings.py EAW_BUILDINGS): Empire at War buildings, largest extent in map
+# units at entity scale 1 (vanilla factories stand ~2 across)
+SPECS.update({f"eaw_{n}": dict(path=f"{_EAW}/eaw_{n}.glb", kind="building", budget=budget, size=size)
+              for n, size, budget in (("vehicleFactory", 2.4, 2000), ("lightfactory", 2.2, 2000), ("rebelBarracks", 2.4, 1800),
+                                      ("emplacement", 1.8, 1200), ("prison", 2.6, 2000), ("tibannaStation", 1.6, 1200),
+                                      ("fuelCellC", 2.0, 1200), ("corBuild4", 2.4, 1200), ("corBuild3", 2.4, 1200),
+                                      ("researchAcademy", 2.0, 1800), ("crates9", 1.2, 600), ("crates4", 1.2, 400),
+                                      ("officerAcademy", 2.0, 1800), ("infantrybarracks", 2.2, 1800),
+                                      ("rebelBuilding1", 2.2, 1800), ("bespinBuilding3", 2.0, 1500), ("droidworks", 2.2, 2000))})
 BUILDING_OUT = "gfx/models/buildings/hod_sw"
 
 
@@ -249,9 +292,10 @@ def bake(*only):
         bpy.data.objects.remove(hi, do_unlink=True)
         # poses: wrecks nose-down, rolled and half buried; vaporators as a group of three
         if s.get("wreck"):
-            lo.data.transform(Matrix.Rotation(0.2, 4, "Y") @ Matrix.Rotation(0.15, 4, "X"))
+            ty, tx = s.get("tilt", (0.2, 0.15))
+            lo.data.transform(Matrix.Rotation(ty, 4, "Y") @ Matrix.Rotation(tx, 4, "X"))
             zmin = min(v.co.z for v in lo.data.vertices)
-            lo.data.transform(Matrix.Translation((0, 0, -zmin - 0.3 * s["size"] * 0.15)))
+            lo.data.transform(Matrix.Translation((0, 0, -zmin - s.get("bury", 0.045) * s["size"])))
         if s.get("copies"):
             parts = [lo]
             for x, y, sc_ in ((0.75, 0.35, 0.85), (-0.4, 0.7, 0.9))[: s["copies"] - 1]:
@@ -296,7 +340,7 @@ def textures():
         stem = mesh_name(name)
         OUT_ = out_of(name)
         if s.get("wreck"):
-            im = burnt(im)
+            im = rusted(im) if s["wreck"] == "rust" else burnt(im)
         if s.get("ao"):
             im = im.mean(-1, keepdims=True) / 255 * np.array(s["ao"], np.float32)
         emi_src = im
@@ -358,6 +402,22 @@ def burnt(im):
     grey = im.mean(-1, keepdims=True)
     out = (im * 0.4 + grey * 0.6) * (0.25 + 0.35 * n[..., None] + 0.15 * fine[..., None])
     out += np.array([18, 8, 2], np.float32) * (n[..., None] < 0.3)          # rusty-brown scorch edges
+    return np.clip(out, 0, 255)
+
+
+def rusted(im):
+    """Old hulks left to the weather (Raxus Prime): paint kept but faded, rust patches and streaks running down."""
+    import numpy as np
+    from scipy import ndimage as ndi
+    rng = np.random.default_rng(6)
+    n = ndi.gaussian_filter(rng.random(im.shape[:2]), 14)
+    n = (n - n.min()) / np.ptp(n)
+    streak = ndi.gaussian_filter(rng.random(im.shape[:2]), (20, 1.5))
+    streak = (streak - streak.min()) / np.ptp(streak)
+    rust = np.clip((0.45 - n) / 0.2, 0, 1)[..., None] * 0.7 + (streak[..., None] > 0.72) * 0.35
+    lum = im.mean(-1, keepdims=True)
+    out = (im * 0.75 + lum * 0.25) * (0.8 + 0.2 * n[..., None])
+    out = out * (1 - rust) + np.array([150, 82, 44], np.float32) * (0.6 + lum / 255) * rust
     return np.clip(out, 0, 255)
 
 

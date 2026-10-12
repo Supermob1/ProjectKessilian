@@ -9,7 +9,8 @@
   blender -b --factory-startup --python "WIPGFX/plans & scripts/military_buildings.py" -- launchpad
   python "WIPGFX/plans & scripts/military_buildings.py" atlas         hod_landmarks textures
   python "WIPGFX/plans & scripts/military_buildings.py" felucia_atlas hod_felucia_city textures (Felucian villages)
-  blender -b --factory-startup --python "WIPGFX/plans & scripts/military_buildings.py" -- models   temple, senate, dock
+  blender -b --factory-startup --python "WIPGFX/plans & scripts/military_buildings.py" -- models [prefix...]  temple,
+                                                                 senate, dock... (only names starting with a prefix)
   python "WIPGFX/plans & scripts/military_buildings.py" landmarks     map/ambient_object.txt
   python "WIPGFX/plans & scripts/military_buildings.py" wire     gfx/entities/buildings.asset (vanilla copy, 2 entities
                                                                  swapped) + gfx/entities/hod_buildings.gfx
@@ -143,6 +144,7 @@ SAND_WIN, METAL_WIN, MOSS_WIN, RUST_WIN = (_cell(i, 0) for i in range(4))
 SAND, METAL, MOSS, RUST = (_cell(i, 1) for i in range(4))
 BRONZE, DECK, ROCK, DARK = (_cell(i, 2) for i in range(4))
 DARK_WIN, LEAF, VERDI, REDROCK = (_cell(i, 3) for i in range(4))
+BANNER, BANNER_POLE = (0.0, 0.125, 1.0, 1.0), (0.0, 0.0, 1.0, 0.12)   # hod_cis_banner texture: banner above, pole below
 # plain (no windows) materials of the last row: RGB, spec, metalness
 LM_PLAIN = {"LEAF": ((62, 90, 46), 20, 0),          # Kachirho canopy
             "VERDI": ((96, 140, 118), 90, 120),     # Theed palace domes: green copper
@@ -280,8 +282,9 @@ def felucia_atlas():
     print("felucia atlas written to", LM_OUT)
 
 
-def models():
-    """Blender: build hod_jedi_temple, hod_senate and hod_spacedock (z up, origin on the ground) and export .mesh."""
+def models(*only):
+    """Blender: build hod_jedi_temple, hod_senate and hod_spacedock (z up, origin on the ground) and export .mesh.
+    `only`: name prefixes to build (e.g. hod_raxus_senate hod_rax_city); default all."""
     import bmesh  # type: ignore
     import bpy  # type: ignore
     sys.path.insert(0, os.path.join(os.path.dirname(bpy.app.binary_path), "4.2", "scripts", "addons"))
@@ -391,6 +394,8 @@ def models():
     SKIRT = 2.5     # landmark walls run this far below the origin: no gap under them on uneven or lower ground
 
     def build(name, geometry, shader="PdxMeshAdvancedSnow", out=LM_OUT, tex="hod_landmarks"):
+        if only and not name.startswith(only):
+            return
         bpy.ops.wm.read_factory_settings(use_empty=True)
         bm = bmesh.new()
         geometry(Kit(bm, bm.loops.layers.uv.new("UVMap")))
@@ -694,6 +699,24 @@ def models():
             for sx, sy, w, d in ((0, -0.78, 0.8, 0.03), (0, 0.78, 0.8, 0.03), (-0.78, 0, 0.03, 0.8), (0.78, 0, 0.03, 0.8)):
                 kit.box(sx - w, sy - d, -0.5, sx + w, sy + d, 0.16, DARK)                          # perimeter wall
 
+    def rax_city(kit, band, rng):
+        # Raxus capital: low flat-roofed sandstone blocks packed close, and slender gothic spires rising out of
+        # them, more and taller downtown (the Clone Wars establishing shot)
+        spots = [(-0.45, -0.45), (0.45, -0.45), (-0.45, 0.45), (0.45, 0.45), (0.0, 0.0)]
+        rng.shuffle(spots)
+        for x, y in spots[:rng.randint(2, 3 + band // 2)]:
+            w, d = rng.uniform(0.2, 0.34), rng.uniform(0.2, 0.34)
+            h = rng.uniform(0.12, 0.22) + 0.05 * band
+            x, y = x + rng.uniform(-0.08, 0.08), y + rng.uniform(-0.08, 0.08)
+            kit.box(x - w, y - d, -0.5, x + w, y + d, h, SAND_WIN, top=SAND)
+            if rng.random() < 0.35:
+                kit.box(x - w * 0.6, y - d * 0.6, h, x + w * 0.6, y + d * 0.6, h + 0.1 + 0.03 * band, SAND_WIN, top=SAND)
+        for _ in range(rng.randint(0, 1) + (band >= 2) + (band >= 4)):
+            x, y = rng.uniform(-0.6, 0.6), rng.uniform(-0.6, 0.6)
+            h = rng.uniform(0.6, 1.0) * (0.6 + 0.35 * band)
+            kit.lathe([(0.09, -0.5), (0.08, 0.6 * h), (0.11, 0.62 * h), (0.06, 0.85 * h), (0.0, h)],
+                      [SAND_WIN, SAND, SAND, BRONZE], sides=6, cx=x, cy=y)
+
     for band in range(1, 5):
         for v in range(1, 5):
             rng = random.Random(f"hod_cmg_outpost{band}{v}")
@@ -706,7 +729,7 @@ def models():
                   tex="hod_felucia_city")
 
     for prefix, fn in (("hod_kam_city", kam_city), ("hod_man_city", man_city), ("hod_geo_city", geo_city),
-                       ("hod_nab_city", nab_city)):
+                       ("hod_nab_city", nab_city), ("hod_rax_city", rax_city)):
         for band in range(1, 5):
             for v in range(1, 5):
                 rng = random.Random(f"{prefix}{band}{v}")
@@ -781,16 +804,158 @@ def models():
             k.box(x - 0.05, -1.1, 0.1, x + 0.05, -1.0, 1.0, DARK)
             k.box(x - 0.05, -1.1, 0.95, x + 0.05, 0.2, 1.05, DARK)
 
+    # The Separatist Senate on Raxus is a "battlefield" landmark: map scale (11 units round, the Senate's 7 room
+    # provinces of raxus_map.py), so its walls tile the atlas every TILE units instead of stretching one cell.
+    TILE = 2.0
+
+    def tblock(k, poly, z0, z1, rect, top=None, rows=None, poly_top=None):
+        """Prism over a CCW polygon [(x, y)...] from z0 to z1 (to poly_top at z1: battered walls), open at the
+        bottom: wall faces tiled every TILE (uv cropped to the tile so window rows keep their size), a flat roof."""
+        bm = k.bm
+        poly_top = poly_top or poly
+
+        def subdiv(pl, counts):
+            out = []
+            for i, (xa, ya) in enumerate(pl):
+                xb, yb = pl[(i + 1) % len(pl)]
+                out += [(xa + (xb - xa) * s / counts[i], ya + (yb - ya) * s / counts[i]) for s in range(counts[i])]
+            return out
+        counts = [max(1, math.ceil(math.hypot(poly[(i + 1) % len(poly)][0] - x, poly[(i + 1) % len(poly)][1] - y) / TILE - 1e-6))
+                  for i, (x, y) in enumerate(poly)]
+        lo, hi = subdiv(poly, counts), subdiv(poly_top, counts)
+        nz = rows or max(1, math.ceil((z1 - z0) / TILE - 1e-6))
+        rings = [[bm.verts.new((a[0] + (b[0] - a[0]) * j / nz, a[1] + (b[1] - a[1]) * j / nz, z0 + (z1 - z0) * j / nz))
+                  for a, b in zip(lo, hi)] for j in range(nz + 1)]
+        n = len(lo)
+        fv = min(1.0, (z1 - z0) / nz / TILE)
+        for j in range(nz):
+            for i in range(n):
+                a, b = lo[i], lo[(i + 1) % n]
+                fu = min(1.0, math.hypot(b[0] - a[0], b[1] - a[1]) / TILE)
+                k.put(bm.faces.new((rings[j][i], rings[j][(i + 1) % n], rings[j + 1][(i + 1) % n], rings[j + 1][i])),
+                      ((0, 0), (fu, 0), (fu, fv), (0, fv)), rect)
+        xs, ys = [p[0] for p in hi], [p[1] for p in hi]
+        sx, sy = max(max(xs) - min(xs), 1e-3), max(max(ys) - min(ys), 1e-3)
+        k.put(bm.faces.new(rings[-1]), [((x - min(xs)) / sx, (y - min(ys)) / sy) for x, y in hi], top or rect)
+
+    def ngon(cx, cy, r, sides, rot=0.0):
+        return [(cx + r * math.cos(rot + 2 * math.pi * i / sides), cy + r * math.sin(rot + 2 * math.pi * i / sides))
+                for i in range(sides)]
+
+    def polar(r, deg):
+        return r * math.cos(math.radians(deg)), r * math.sin(math.radians(deg))
+
+    def arc(r0, r1, a0, a1, step=7.5):
+        """CCW outline of an annular sector: outer arc a0 -> a1, inner arc back"""
+        n = max(2, math.ceil((a1 - a0) / step))
+        angs = [a0 + (a1 - a0) * i / n for i in range(n + 1)]
+        return [polar(r1, a) for a in angs] + [polar(r0, a) for a in reversed(angs)]
+
+    def pinnacle(k, x, y, z0, h, r=0.22):
+        k.lathe([(r, z0), (r * 0.8, z0 + 0.7 * h), (r * 1.1, z0 + 0.74 * h), (0.0, z0 + h)], [SAND, SAND, BRONZE],
+                sides=6, cx=x, cy=y)
+
+    def gothic_tower(k, x, y, half, z0, levels, spire, rot=0.0):
+        """square setback tower: levels [(half-width, top)], pinnacles on every setback, bronze spire on top"""
+        h0 = z0
+        for hw, top in levels:
+            tblock(k, ngon(x, y, hw * math.sqrt(2), 4, rot + math.pi / 4), h0, top, SAND_WIN, SAND)
+            for px, py in ngon(x, y, hw * math.sqrt(2) * 0.92, 4, rot + math.pi / 4):
+                pinnacle(k, px, py, top, 0.5 + 0.35 * hw, 0.08 + 0.08 * hw)
+            h0 = top
+        k.lathe([(levels[-1][0] * 0.9, h0), (levels[-1][0] * 0.5, h0 + 0.35 * spire), (0.0, h0 + spire)],
+                [SAND, BRONZE], sides=4, cx=x, cy=y, rot=rot + math.pi / 4)
+
     def raxus(k):
-        # Separatist Senate (Raxus): cluster of slender faceted gothic towers, tall setback central tower, bronze spires
-        k.lathe([(1.7, -SKIRT), (1.7, 0.0), (1.6, 0.12), (0.0, 0.12)], SAND, sides=24)
-        k.lathe([(1.35, 0.12), (1.35, 0.55), (1.2, 0.62), (0.0, 0.62)], [SAND_WIN, SAND, SAND], sides=12)
-        k.lathe([(0.48, 0.62), (0.44, 1.9), (0.36, 1.96), (0.33, 2.55), (0.25, 2.6), (0.21, 3.05), (0.0, 3.7)],
-                [SAND_WIN, SAND, SAND_WIN, SAND, SAND_WIN, BRONZE], sides=6)
-        for i, h in enumerate((2.3, 1.6, 2.0, 1.4, 2.2, 1.7)):
-            a = 2 * math.pi * i / 6 + 0.5
-            k.lathe([(0.2, 0.62), (0.17, h), (0.13, h + 0.05), (0.0, h + 0.55)], [SAND_WIN, SAND, BRONZE], sides=6,
-                    cx=0.95 * math.cos(a), cy=0.95 * math.sin(a))
+        # Separatist Senate, Raxulon (The Clone Wars / The Bad Batch stills, Presley's concept art): a long curved
+        # range of stepped sandstone halls, battered walls and buttress ramps sloping down to the Senate Plaza, more
+        # halls and the great towers behind it, needle spires and sky bridges; the plaza in front with its grove of
+        # tall orange-crowned trees opens south onto the Great Alley. Parts sit on the room provinces of raxus_map.py
+        # ROOMS (sectors in degrees from east, counter-clockwise; model +x = east, +y = north, as the pdx exporter
+        # maps them): front range 10..170 at 5.5..10.5, back halls 35..145 at 10.5..15.
+        # front range: tiers stepping down toward the plaza, shorter toward its ends
+        tiers = ((5.8, 10.5, -SKIRT, 2.0), (6.9, 10.5, 2.0, 3.8), (8.0, 10.4, 3.8, 5.6), (9.0, 10.3, 5.6, 7.0))
+        for i, (r0, r1, z0, z1) in enumerate(tiers):
+            batter = 0.35 if i < 3 else 0.2
+            a0, a1 = 10 + 5 * i, 170 - 5 * i
+            tblock(k, arc(r0, r1, a0, a1), z0, z1, SAND_WIN, SAND, poly_top=arc(r0 + batter, r1 - batter * 0.4, a0 + 1, a1 - 1))
+        # back halls: a broad block and a second storey, higher than the front range
+        tblock(k, arc(10.3, 14.7, 36, 144), -SKIRT, 7.8, SAND_WIN, SAND, poly_top=arc(10.5, 14.4, 37, 143))
+        tblock(k, arc(10.8, 14.0, 46, 134), 7.8, 9.8, SAND_WIN, SAND, poly_top=arc(11.0, 13.8, 47, 133))
+        # plaza: paving, a ring of light pylons, the grove on its round planter
+        k.lathe([(9.6, -SKIRT), (9.6, 0.05), (0.0, 0.05)], SAND, sides=48)
+        k.lathe([(2.3, 0.05), (2.3, 0.3), (2.1, 0.3), (2.1, 0.22), (0.0, 0.22)], [DARK, DARK, DARK, LEAF], sides=28)
+        for i in range(10):
+            x, y = polar(4.3, 18 + 36 * i)
+            k.lathe([(0.12, 0.05), (0.1, 0.9), (0.16, 0.95), (0.0, 1.25)], [DARK_WIN, METAL, METAL], sides=4, cx=x, cy=y)
+        rng = __import__("random").Random("raxulon grove")
+        for i in range(16):
+            ang, dist = rng.uniform(0, 360), 1.9 * math.sqrt(rng.random())
+            x, y = polar(dist, ang)
+            h = rng.uniform(2.0, 3.6)
+            k.tube((x, y, 0.2), (x + rng.uniform(-0.1, 0.1), y + rng.uniform(-0.1, 0.1), h), 0.06, DARK, sides=5)
+            for lvl in range(rng.randint(1, 3)):
+                cz, cr = h - 0.45 * lvl, rng.uniform(0.32, 0.55) * (1 - 0.2 * lvl)
+                k.lathe([(0.04, cz - 0.12), (cr, cz), (cr * 0.8, cz + 0.1), (0.0, cz + 0.14)], [BRONZE, BRONZE, BRONZE],
+                        sides=9, cx=x, cy=y)
+        # buttress ramps sloping from the front range down to the plaza
+        bm = k.bm
+        for ang in (28, 62, 118, 152):
+            c, s = math.cos(math.radians(ang)), math.sin(math.radians(ang))
+            pt = lambda u, v, zz: bm.verts.new((u * c - v * s, u * s + v * c, zz))
+            w = 0.45
+            v = [pt(5.2, -w, 0.0), pt(5.2, w, 0.0), pt(8.2, w, 0.0), pt(8.2, -w, 0.0), pt(8.2, -w, 5.6), pt(8.2, w, 5.6)]
+            for f, uv in (((v[0], v[3], v[4]), ((0, 0), (1, 0), (1, 1))), ((v[1], v[5], v[2]), ((0, 0), (1, 1), (1, 0))),
+                          ((v[0], v[4], v[5], v[1]), ((0, 0), (1, 0), (1, 1), (0, 1))),
+                          ((v[3], v[2], v[5], v[4]), ((0, 0), (1, 0), (1, 1), (0, 1)))):
+                k.put(bm.faces.new(f), uv, SAND)
+        # the range's two ends: gothic towers
+        for ang in (14, 166):
+            gothic_tower(k, *polar(8.2, ang), 1.1, -SKIRT, ((1.1, 8.2), (0.85, 10.2)), 2.8, math.radians(ang))
+        # Senate Chamber (front, 55..125): the clock tower in the middle of the range, fluted towers flanking it
+        cx_, cy_ = polar(9.3, 90)
+        gothic_tower(k, cx_, cy_, 1.5, 7.0, ((1.5, 10.6), (1.15, 13.2), (0.85, 15.0)), 3.6)
+        for ang in (68, 112):
+            gothic_tower(k, *polar(9.5, ang), 0.95, 7.0, ((0.95, 9.8), (0.7, 11.4)), 2.4, math.radians(ang))
+        # Head of State's Office (back, 72..108): the tallest tower, a sky bridge to the clock tower, the needle spire
+        hx, hy = polar(12.6, 82)
+        gothic_tower(k, hx, hy, 1.3, 9.8, ((1.3, 14.0), (1.0, 16.4), (0.7, 18.0)), 3.4, math.radians(82))
+        k.tube((hx, hy, 12.0), (cx_, cy_, 12.0), 0.14, SAND, sides=4)
+        nx, ny = polar(12.8, 100)
+        k.lathe([(0.5, 9.8), (0.42, 17.0), (0.32, 17.2), (0.26, 20.5), (0.0, 25.0)], [SAND_WIN, SAND, SAND_WIN, BRONZE],
+                sides=6, cx=nx, cy=ny)
+        k.tube((nx, ny, 14.5), (hx, hy, 14.5), 0.1, SAND, sides=4)
+        # Delegates' Wing (back, 108..145): two fluted towers over the halls
+        for ang, top in ((122, 13.0), (136, 11.6)):
+            gothic_tower(k, *polar(12.6, ang), 0.9, 7.8, ((0.9, top), (0.65, top + 1.6)), 2.2, math.radians(ang))
+        # Security Bureau (back, 35..72): octagonal turrets with bronze cones
+        for ang, h in ((44, 10.2), (56, 11.4), (66, 10.6)):
+            x, y = polar(12.7, ang)
+            tblock(k, ngon(x, y, 0.8, 8, math.pi / 8), 7.8, h, SAND_WIN, SAND)
+            k.lathe([(0.85, h), (0.0, h + 1.7)], [BRONZE], sides=8, cx=x, cy=y, rot=math.pi / 8)
+        # Parliament Archives (front, 125..170): bronze dome on a drum
+        ax, ay = polar(9.4, 148)
+        k.lathe([(1.4, 7.0), (1.4, 7.9), (1.52, 8.0), (0.0, 8.0)], [SAND_WIN, SAND, SAND], sides=20, cx=ax, cy=ay)
+        k.lathe([(1.3, 8.0)] + [(1.3 * math.cos(math.pi / 2 * i / 5), 8.0 + 1.2 * math.sin(math.pi / 2 * i / 5))
+                                for i in range(1, 6)], [BRONZE] * 5, sides=20, cx=ax, cy=ay)
+        # Senate Landing Platforms (front, 10..55): pads on short pylons above the top tier, a control tower
+        for ang, z in ((24, 8.2), (42, 8.9)):
+            x, y = polar(9.6, ang)
+            k.lathe([(0.25, 7.0), (0.25, z - 0.2)], [SAND], sides=8, cx=x, cy=y)
+            k.lathe([(0.9, z - 0.3), (1.1, z - 0.1), (1.1, z)], [SAND, METAL], sides=20, cx=x, cy=y, cap=DECK)
+        x, y = polar(10.1, 33)
+        k.lathe([(0.3, 7.0), (0.26, 10.6), (0.6, 10.9), (0.6, 11.3), (0.3, 11.6), (0.0, 12.2)],
+                [SAND_WIN, SAND, METAL_WIN, SAND, BRONZE], sides=10, cx=x, cy=y)
+        # pinnacles along the tier edges
+        for i, (r0, r1, z0, z1) in enumerate(tiers[:3]):
+            for ang in range(18 + 5 * i, 163 - 5 * i, 12):
+                pinnacle(k, *polar(r0 + 0.5, ang), z1, 0.9, 0.16)
+
+    def cis_banner(k):
+        # Confederate banner on the Great Alley: navy banner with the white roundel and hexagon, on a metal pole
+        k.lathe([(0.06, -0.5), (0.05, 3.3), (0.1, 3.36), (0.0, 3.6)], [BANNER_POLE, BANNER_POLE, BANNER_POLE], sides=6)
+        k.box(-0.38, -0.025, 3.02, 0.38, 0.025, 3.08, BANNER_POLE)
+        k.box(-0.32, -0.012, 1.1, 0.32, 0.012, 3.0, BANNER, top=BANNER_POLE)
 
     def serenno(k):
         # Castle Serenno: terrace with a tall capsule-shaped hall ringed by cone spires
@@ -820,9 +985,11 @@ def models():
                 k.box(x - 0.16, y - 0.38, 0.0, x + 0.16, y + 0.38, 0.32, DARK)
 
     build("hod_ion_cannon", ion_cannon)
+    build("hod_raxus_senate", raxus)
+    build("hod_cis_banner", cis_banner, tex="hod_cis_banner")
     for name, fn in (("hod_stalgasin_hive", stalgasin), ("hod_droid_foundry", foundry), ("hod_progate_temple", progate),
                      ("hod_dooku_hangar", dooku_hangar), ("hod_theed_palace", theed),
-                     ("hod_coronet_port", coronet), ("hod_raxus_senate", raxus),
+                     ("hod_coronet_port", coronet),
                      ("hod_castle_serenno", serenno), ("hod_korriban_valley", korriban)):
         build(name, fn)
     # the prop keeps vanilla tree wiring (gfx/entities/trees.gfx mapobject_53 -> this file), with its own atlas copy
@@ -908,24 +1075,34 @@ def wire():
         else:
             block = block.replace('pdxmesh = "hod_spacedock_mesh"', f'pdxmesh = "hod_spacedock_mesh"\n\tscale = {scale}')
         s = s[:m.start()] + block + s[m.end():]
-    # factories -> Christophsis buildings (sketchfab_props.py building kind, 1.8 tall at scale 1); vanilla factory
-    # is ~1.9 tall in the world. No chimney smoke on a tower.
-    for ent, (mesh, scale) in FACTORIES.items():
+    # Empire at War buildings: mesh and scale swapped; effect nodes the new mesh lacks become locators over its
+    # middle so the particles still have somewhere to play; no chimney smoke on the factories
+    for ent, (mesh, scale) in EAW_BUILDINGS.items():
         m = re.search(r'entity = \{\s*name = "%s".*?\n\}' % ent, s, re.S)
         assert m, ent
-        block = m.group(0).replace(f'pdxmesh = "{ent}"', f'pdxmesh = "{mesh}_mesh"')
-        block = re.sub(r"scale = [0-9.]+", f"scale = {scale}", block)
-        block = block.replace('event = { time = 0.1 node="factorysmoke" particle = "factory_smoke_particle" }', "")
-        s = s[:m.start()] + block + s[m.end():]
+        block = re.sub(r'pdxmesh = "[^"]+"', f'pdxmesh = "{mesh}_mesh"', m.group(0), count=1)
+        if re.search(r"\n\tscale = ", block):
+            block = re.sub(r"\n\tscale = [0-9.]+", f"\n\tscale = {scale}", block, count=1)
+        else:
+            block = block.replace(f'pdxmesh = "{mesh}_mesh"', f'pdxmesh = "{mesh}_mesh"\n\tscale = {scale}', 1)
+        block = re.sub(r'[ \t]*event = \{[^{}]*node\s*=\s*"factorysmoke2?"[^{}]*\}\n?', "", block)
+        # a static mesh has no skeleton: state animations (and their blend / speed settings) go
+        block = re.sub(r'[ \t]*animation(_blend_time|_speed)? = ("[^"]*"|[0-9.]+)', "", block)
+        have = set(re.findall(r'locator = \{\s*name = "([^"]+)"', block))
+        need = sorted(set(re.findall(r'node\s*=\s*"([^"]+)"', block)) - have)
+        if need:
+            locs = "".join(f'\n\tlocator = {{ name = "{n}"\tposition = {{ 0.0 0.8 0.0 }} }}' for n in need)
+            block = block.replace(f'pdxmesh = "{mesh}_mesh"', f'pdxmesh = "{mesh}_mesh"{locs}', 1)
+        s = s[:m.start()] + "\t# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)\n" + block + s[m.end():]
     open("gfx/entities/buildings.asset", "w", encoding="utf-8", newline="\n").write(
-        "# HOD: vanilla gfx/entities/buildings.asset with building_air_base, building_industrial_complex,\n"
-        "# building_arms_factory, building_naval_base_* and building_anti_air_building swapped\n"
+        "# HOD: vanilla gfx/entities/buildings.asset with building_air_base, building_naval_base_* and\n"
+        "# building_anti_air_building on our models and the EAW_BUILDINGS entities on Empire at War models\n"
         "# (WIPGFX/plans & scripts/military_buildings.py wire)\n" + s)
     with open("gfx/entities/hod_buildings.gfx", "w", encoding="utf-8", newline="\n") as f:
         f.write('objectTypes = {\n\t# HOD: Star Wars building models (WIPGFX/plans & scripts/military_buildings.py)\n'
                 f'\tpdxmesh = {{\n\t\tname = "hod_launchpad_mesh"\n\t\tfile = "{OUT}/hod_launchpad.mesh"\n\t}}\n'
                 + "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "gfx/models/buildings/hod_sw/{m}.mesh"\n\t}}\n'
-                          for m in sorted({m for m, _ in FACTORIES.values()})) +
+                          for m in sorted({m for m, _ in EAW_BUILDINGS.values()})) +
                 "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "{LM_OUT}/{m}.mesh"\n\t}}\n'
                         for m in ("hod_jedi_temple", "hod_senate", "hod_spacedock", "hod_ion_cannon") + NEW_LANDMARKS
                         if m not in LANDMARK_MESH) + '}\n')
@@ -938,9 +1115,33 @@ def wire():
     print("wrote gfx/entities/buildings.asset + hod_buildings.gfx")
 
 
-FACTORIES = {   # vanilla factory entity -> (our building mesh in gfx/models/buildings/hod_sw, entity scale)
-    "building_industrial_complex": ("hod_bld_chr_07", 1.1),     # striped Christophsis high-rise block
-    "building_arms_factory": ("hod_bld_chr_04", 1.0),           # octagonal Christophsis towers
+# vanilla building entity -> (mesh in gfx/models/buildings/hod_sw, entity scale): Star Wars: Empire at War buildings
+# converted by msh_to_glb.py and baked by sketchfab_props.py (eaw_*); air base, anti-air and naval base stay ours
+EAW_BUILDINGS = {
+    "building_industrial_complex": ("hod_bld_eaw_vehicleFactory", 1.0),
+    "building_arms_factory": ("hod_bld_eaw_lightfactory", 1.0),
+    "building_dockyard_1": ("hod_bld_eaw_rebelBarracks", 0.85),     # starship hangars
+    "building_dockyard_2": ("hod_bld_eaw_rebelBarracks", 0.95),
+    "building_dockyard_3": ("hod_bld_eaw_rebelBarracks", 1.05),
+    "building_bunker": ("hod_bld_eaw_emplacement", 0.9),
+    "building_coastal_bunker": ("hod_bld_eaw_emplacement", 0.8),
+    "building_stronghold_network": ("hod_bld_eaw_prison", 1.0),     # walled fortress
+    "building_radar_station": ("hod_bld_eaw_tibannaStation", 1.0),  # sensor sphere on a mast
+    "building_synthetic_refinery": ("hod_bld_eaw_fuelCellC", 1.0),
+    "building_rocket_site": ("hod_bld_eaw_corBuild4", 1.0),        # launch spire
+    "building_rocket_site_spawn": ("hod_bld_eaw_corBuild4", 1.0),
+    "building_nuclear_reactor": ("hod_bld_eaw_researchAcademy", 1.0),
+    "building_nuclear_reactor_spawn": ("hod_bld_eaw_researchAcademy", 1.0),
+    "building_commercial_nuclear_reactor": ("hod_bld_eaw_researchAcademy", 1.0),
+    "building_supply_node": ("hod_bld_eaw_crates9", 1.0),
+    "building_naval_supply_hub": ("hod_bld_eaw_crates4", 1.0),
+    "building_naval_headquarters": ("hod_bld_eaw_officerAcademy", 1.0),
+    "building_land_facility": ("hod_bld_eaw_infantrybarracks", 1.0),
+    "building_air_facility": ("hod_bld_eaw_rebelBuilding1", 1.0),
+    "building_naval_facility": ("hod_bld_eaw_bespinBuilding3", 1.0),   # round platform
+    "building_nuclear_facility": ("hod_bld_eaw_researchAcademy", 1.0),
+    "building_electronics_facility": ("hod_bld_eaw_droidworks", 1.0),
+    "building_rocket_facility": ("hod_bld_eaw_corBuild3", 1.0),
 }
 LANDMARKS = {   # ambient object: (entity, victory point province it stands on, scale, yaw degrees, footprint radius px)
     "hod_jedi_temple": ("hod_jedi_temple_entity", 4836, 1.3, 0.0, 4.5),     # VICTORY_POINTS_4836 "Jedi Temple"
@@ -959,7 +1160,8 @@ LANDMARKS.update({   # Geonosis set (VP names from victory_points_l_english.yml)
     "hod_theed_palace": ("hod_theed_palace_entity", 17479, 1.2, 0.0, 3.0),         # Naboo, Theed
     "hod_kachirho": ("hod_kachirho_entity", 186, 1.0, 0.0, 2.5),                   # Kashyyyk (wroshyr giant)
     "hod_coronet_port": ("hod_coronet_port_entity", 3554, 1.2, 0.0, 3.0),          # Corellia
-    "hod_raxus_senate": ("hod_raxus_senate_entity", 194, 1.2, 0.0, 3.0),           # Raxus (city district around it)
+    "hod_raxus_senate": ("hod_raxus_senate_entity", 194, 1.0, 0.0, 9.5),           # Raxus: map scale, over its rooms;
+                                                                                   # stands on the planet's centre (below)
     "hod_castle_serenno": ("hod_castle_serenno_entity", 8479, 1.2, 0.0, 3.0),      # Serenno (city district around it)
     "hod_korriban_valley": ("hod_korriban_valley_entity", 1594, 1.2, 0.0, 3.0),    # Korriban
 })
@@ -991,6 +1193,9 @@ def landmarks():
     for name, (entity, prov, scale, yaw, foot) in LANDMARKS.items():
         ys, xs = np.nonzero(pid == prov)
         cy, cx = int(round(ys.mean())), int(round(xs.mean()))
+        if name == "hod_raxus_senate":          # built round the plaza's centre = the planet's (raxus_map.py)
+            import json
+            cy, cx = (int(round(c)) for c in json.load(open("WIPGFX/Assets/raxus_zones.json"))["centre"])
         clear = np.hypot(yy - cy, xx - cx) <= foot + CITY_MARGIN
         styles[clear] = 0
         tidx[clear & np.isin(tidx, CITY_TERRAIN)] = PLAZA_TERRAIN   # cities also spawn from spawn_city terrain
@@ -1043,7 +1248,101 @@ def landmarks():
     out.save("map/cities.bmp")
 
 
+def banner_texture():
+    """hod_cis_banner: a Confederate banner (navy, gold trim, the white roundel with the CIS hexagon) above a strip of
+    pole metal (BANNER / BANNER_POLE rects). Advanced layout like the landmarks: normal B = emission (none)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from flora_props import save_dxt5_mips
+    W, H = 256, 1024
+    im = Image.new("RGB", (W, H), (110, 112, 118))                       # pole metal (bottom 12%)
+    d = ImageDraw.Draw(im)
+    top = int(H * (1 - BANNER[3])) + 2
+    bot = int(H * (1 - BANNER[1]))
+    navy, gold, white = (22, 26, 92), (200, 160, 60), (236, 236, 240)
+    d.rectangle([0, top, W, bot], fill=navy)
+    d.rectangle([10, top + 10, W - 11, bot - 10], outline=gold, width=8)
+    cx, cy, r = W / 2, top + (bot - top) * 0.36, W * 0.34
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=white)
+    hexr = r * 0.72
+    hexagon = [(cx + hexr * math.cos(math.radians(60 * i + 30)), cy + hexr * math.sin(math.radians(60 * i + 30))) for i in range(6)]
+    d.polygon(hexagon, outline=navy, width=12)
+    for x, y in hexagon:                                                  # the six spokes
+        d.line([(cx, cy), (x, y)], fill=navy, width=12)
+    d.ellipse([cx - r * 0.2, cy - r * 0.2, cx + r * 0.2, cy + r * 0.2], fill=navy)
+    for i in range(3):                                                    # gold chevrons below the roundel
+        y = cy + r * 1.5 + i * 60
+        d.line([(30, y), (cx, y + 40), (W - 30, y)], fill=gold, width=10)
+    col = np.asarray(im).astype(np.float32)
+    full = lambda v: np.full((H, W), v, np.float32)
+    save_dxt5_mips(np.dstack([col, full(255)]), f"{LM_OUT}/hod_cis_banner_diffuse.dds")
+    save_dxt5_mips(np.dstack([full(0), full(128), full(0), full(128)]), f"{LM_OUT}/hod_cis_banner_normal.dds")
+    save_dxt5_mips(np.dstack([full(0), full(50), full(0), full(90)]), f"{LM_OUT}/hod_cis_banner_properties.dds")
+    print("banner texture written to", LM_OUT)
+
+
+ALLEY_MARK = ("# HOD: the Great Alley of Raxulon (military_buildings.py raxus_alley)", "# HOD: end of the Great Alley")
+ALLEY_TREES = (2.4, 1.8, 0.85)      # trees: offset from the alley's axis, spacing, scale
+ALLEY_BANNERS = (1.4, 3.6)          # banners: offset from the axis, spacing
+
+
+def raxus_alley():
+    """The Great Alley (raxus_map.py zone 6): golden trees (flora_props.py alley copies, alpha-tested) down both
+    sides and Confederate banners between them: entities + map/ambient_object.txt block (y = 0: stood on the ground)."""
+    import json
+    import numpy as np
+    from PIL import Image
+    z = json.load(open("WIPGFX/Assets/raxus_zones.json"))
+    zone = np.asarray(Image.open("WIPGFX/Assets/raxus_zones.png"))
+    H = zone.shape[0]
+    cy, cx = z["centre"]
+    rows = np.nonzero((zone == 6).any(1))[0]
+    r0, r1 = rows.min() + 0.8, rows.max() - 0.5
+    open("gfx/entities/hod_raxus_alley.gfx", "w", encoding="utf-8", newline="\n").write(
+        "objectTypes = {\n\t# HOD: the Great Alley of Raxulon (military_buildings.py raxus_alley)\n"
+        + "".join(f'\tpdxmesh = {{\n\t\tname = "hod_rax_alley_{i}_mesh"\n\t\tfile = "{FLORA_OUT}/hod_rax_alley_{i}.mesh"\n\t}}\n'
+                  for i in (62, 63))
+        + f'\tpdxmesh = {{\n\t\tname = "hod_cis_banner_mesh"\n\t\tfile = "{LM_OUT}/hod_cis_banner.mesh"\n\t}}\n}}\n')
+    open("gfx/entities/hod_raxus_alley.asset", "w", encoding="utf-8", newline="\n").write(
+        "# HOD: the Great Alley of Raxulon (military_buildings.py raxus_alley)\n"
+        + "".join(f'entity = {{\n\tname = "{n}_entity"\n\tpdxmesh = "{n}_mesh"\n\tscale = 1\n}}\n'
+                  for n in ("hod_rax_alley_62", "hod_rax_alley_63", "hod_cis_banner")))
+    rng = __import__("random").Random("great alley")
+    objs = {"hod_rax_alley_62": [], "hod_rax_alley_63": [], "hod_cis_banner": []}
+    row = r0
+    while row <= r1:
+        for side in (-1, 1):
+            name = "hod_rax_alley_62" if rng.random() < 0.6 else "hod_rax_alley_63"
+            objs[name].append((cx + side * ALLEY_TREES[0], H - 1 - row, rng.uniform(0, 6.28)))
+        row += ALLEY_TREES[1]
+    row = r0 + ALLEY_TREES[1] / 2
+    while row <= r1:
+        for side in (-1, 1):
+            objs["hod_cis_banner"].append((cx + side * ALLEY_BANNERS[0], H - 1 - row, 0.0))
+        row += ALLEY_BANNERS[1]
+    block = ALLEY_MARK[0] + "\n"
+    for name, pts in objs.items():
+        scale = ALLEY_TREES[2] if "alley" in name else 1.0
+        block += f'type={{\n\ttype="{name}_entity"\n\tuse_animation=no\n\tscale={scale:.6f}\n'
+        block += "".join(f'\tobject={{\n\t\tname="{name}_{i}"\n\t\tposition={{\n\t\t\t{x:.3f} 0.000 {zz:.3f} \n\t\t}}\n'
+                         f'\t\trotation={{\n\t\t\t0.000 {yaw:.3f} 0.000 \n\t\t}}\n\t}}\n' for i, (x, zz, yaw) in enumerate(pts))
+        block += "}\n"
+    block += ALLEY_MARK[1] + "\n"
+    path = "map/ambient_object.txt"
+    raw = open(path, "rb").read()
+    bom = raw.startswith(b"\xef\xbb\xbf")
+    s = raw.decode("utf-8-sig")
+    crlf = "\r\n" in s
+    s = s.replace("\r\n", "\n")
+    s = re.sub(re.escape(ALLEY_MARK[0]) + r".*?" + re.escape(ALLEY_MARK[1]) + r"\n", "", s, flags=re.S)
+    s = s.rstrip("\n") + "\n" + block
+    assert s.count("{") == s.count("}")
+    open(path, "wb").write((b"\xef\xbb\xbf" if bom else b"") + (s.replace("\n", "\r\n") if crlf else s).encode("utf-8"))
+    print("Great Alley:", {k: len(v) for k, v in objs.items()})
+
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks, "atlas": atlas,
-     "felucia_atlas": felucia_atlas, "models": models}[args[0]]()
+     "felucia_atlas": felucia_atlas, "models": models,
+     "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])
