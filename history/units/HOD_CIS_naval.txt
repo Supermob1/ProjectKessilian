@@ -7,12 +7,12 @@ units = {
 	############################
 	fleet = {
 		name = "Confederacy Corporate Core Fleet"
-		naval_base = 9026
+		naval_base = 8658
 
 		# MAIN COMMAND
 		task_force = {
 			name = "Raxus Command Group"
-			location = 9026
+			location = 8658
 
 			ship = { name = "Invisible Hand" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
 			ship = { name = "Trade Federation Command Ship Alpha" definition = battleship equipment = { battleship_1 = { amount = 1 owner = CIS } } }
@@ -37,7 +37,7 @@ units = {
 		# ESCORT GROUP
 		task_force = {
 			name = "Corporate Escort Wing"
-			location = 9026
+			location = 8658
 
 			ship = { name = "Escort Cruiser B1" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
 			ship = { name = "Escort Cruiser B2" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
@@ -54,12 +54,12 @@ units = {
 	############################
 	fleet = {
 		name = "Separatist Outer Rim Swarm Fleet"
-		naval_base = 9026
+		naval_base = 8658
 
 		# MAIN SWARM
 		task_force = {
 			name = "Geonosis Swarm Command"
-			location = 9026
+			location = 8658
 
 			ship = { name = "Hive Control Ship Omega" definition = battleship equipment = { battleship_1 = { amount = 1 owner = CIS } } }
 
@@ -86,7 +86,7 @@ units = {
 		# PATROL SWARM (important for AI spread)
 		task_force = {
 			name = "Outer Rim Patrol Swarm"
-			location = 9026
+			location = 8658
 
 			ship = { name = "Light Patrol Cruiser 1" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
 			ship = { name = "Light Patrol Cruiser 2" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
@@ -103,11 +103,11 @@ units = {
 	############################
 	fleet = {
 		name = "Separatist Deep Space Raiding Fleet"
-		naval_base = 9026
+		naval_base = 8658
 
 		task_force = {
 			name = "Shadow Droid Task Force"
-			location = 9026
+			location = 8658
 
 			ship = { name = "Silent Profit Carrier" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
 

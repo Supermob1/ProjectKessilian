@@ -1,5 +1,5 @@
-# HOD: vanilla gfx/entities/buildings.asset with building_air_base, building_industrial_complex,
-# building_arms_factory, building_naval_base_* and building_anti_air_building swapped
+# HOD: vanilla gfx/entities/buildings.asset with building_air_base, building_naval_base_* and
+# building_anti_air_building on our models and the EAW_BUILDINGS entities on Empire at War models
 # (WIPGFX/plans & scripts/military_buildings.py wire)
 
 #### Cities ########################################################
@@ -176,10 +176,11 @@ entity = {
 #### Buildings ########################################################
 # Name must match "building_" + building tag
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_dockyard_1"
-	pdxmesh = "building_dockyard_1"
-	scale = 0.8
+	pdxmesh = "hod_bld_eaw_rebelBarracks_mesh"
+	scale = 0.85
 	
 	locator = { name = "damage_locator_01"	position = { 1.7 1.0 -1.7 } }
 	locator = { name = "damage_locator_02"	position = { -0.1 1.0 0.5 } }
@@ -192,10 +193,11 @@ entity = {
 		event = { time = 0.1 node="damage_locator_02" particle = "building_damaged_particle" }
 	}
 }
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_dockyard_2"
-	pdxmesh = "building_dockyard_2"
-	scale = 0.8
+	pdxmesh = "hod_bld_eaw_rebelBarracks_mesh"
+	scale = 0.95
 	
 	locator = { name = "damage_locator_01"	position = { 1.7 1.0 -1.7 } }
 	locator = { name = "damage_locator_02"	position = { -0.1 1.0 0.5 } }
@@ -208,10 +210,11 @@ entity = {
 		event = { time = 0.1 node="damage_locator_02" particle = "building_damaged_particle" }
 	}
 }
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_dockyard_3"
-	pdxmesh = "building_dockyard_3"
-	scale = 0.8
+	pdxmesh = "hod_bld_eaw_rebelBarracks_mesh"
+	scale = 1.05
 	
 	locator = { name = "damage_locator_01"	position = { 1.7 1.0 -1.7 } }
 	locator = { name = "damage_locator_02"	position = { -0.1 1.0 0.5 } }
@@ -277,10 +280,11 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_naval_supply_hub"
-	pdxmesh = "building_naval_supply_hub"
-	scale = 0.6
+	pdxmesh = "hod_bld_eaw_crates4_mesh"
+	scale = 1.0
 	
 	locator = { name = "damage_locator_01"	position = { -0.8 0.4 -3.5 } }
 	locator = { name = "damage_locator_02"	position = { 0.0 0.7 -1.0 } }
@@ -296,10 +300,11 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_naval_headquarters"
-	pdxmesh = "building_naval_headquarters"
-	scale = 0.8
+	pdxmesh = "hod_bld_eaw_officerAcademy_mesh"
+	scale = 1.0
 	
 	locator = { name = "damage_locator_01"	position = { -0.8 0.4 -3.5 } }
 	locator = { name = "damage_locator_02"	position = { 0.0 0.7 -1.0 } }
@@ -389,13 +394,15 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_nuclear_facility"
-	pdxmesh = "building_nuclear_facility"
+	pdxmesh = "hod_bld_eaw_researchAcademy_mesh"
+	locator = { name = "lamp"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 	
 	default_state = "idle"
 	state = { name = "idle" 
-		event = { time = 0.1 node="factorysmoke" particle = "factory_smoke_particle" }
 		event = { time = 0.1 node="lamp" particle = "lamp_yellow_particle" }
 	}
 }
@@ -412,9 +419,12 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_air_facility"
-	pdxmesh = "building_air_facility"
+	pdxmesh = "hod_bld_eaw_rebelBuilding1_mesh"
+	locator = { name = "lamp"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 	
 	default_state = "idle"
 	state = { name = "idle" 
@@ -435,9 +445,12 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_naval_facility"
-	pdxmesh = "building_naval_facility"
+	pdxmesh = "hod_bld_eaw_bespinBuilding3_mesh"
+	locator = { name = "lamp"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 
 	default_state = "idle"
 	state = { name = "idle" 
@@ -456,9 +469,12 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_land_facility"
-	pdxmesh = "building_land_facility"
+	pdxmesh = "hod_bld_eaw_infantrybarracks_mesh"
+	locator = { name = "lamp"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 
 	default_state = "idle"
 	state = { name = "idle" 
@@ -478,18 +494,22 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_electronics_facility"
-	pdxmesh = "building_electronics_facility"
+	pdxmesh = "hod_bld_eaw_droidworks_mesh"
+	scale = 1.0
 
 	default_state = "idle"
 	state = { name = "idle" 
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_rocket_facility"
-	pdxmesh = "building_rocket_facility"
+	pdxmesh = "hod_bld_eaw_corBuild3_mesh"
+	scale = 1.0
 
 	default_state = "idle"
 	state = { name = "idle" 
@@ -539,15 +559,16 @@ entity = {
 #}
 
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_bunker"
-	pdxmesh = "building_bunker"
+	pdxmesh = "hod_bld_eaw_emplacement_mesh"
 	
 	default_state = "idle"
 	state = { name = "idle" 
 	}
 
-	scale = 0.8
+	scale = 0.9
 
 }
 
@@ -571,9 +592,11 @@ entity = {
 
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_coastal_bunker"
-	pdxmesh = "building_coastal_bunker"
+	pdxmesh = "hod_bld_eaw_emplacement_mesh"
+	scale = 0.8
 	
 	default_state = "idle"
 	state = { name = "idle"
@@ -621,25 +644,30 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_radar_station"
-	pdxmesh = "building_radar_station_mesh"
+	pdxmesh = "hod_bld_eaw_tibannaStation_mesh"
+	scale = 1.0
 
 	locator = { name = "damage_locator_01"	position = { 0.8 0.0 -0.4 } }
 	locator = { name = "damage_locator_02"	position = { -0.4 1.2 -0.6 } }
 	
 	default_state = "idle"
-	state = { name = "idle"			animation = "idle" 				animation_blend_time = 0.0 animation_speed = 0.3 
+	state = { name = "idle" 
 	}
-	state = { name = "damaged" 		animation = "damaged"		animation_blend_time = 0.0	animation_speed = 1.0
+	state = { name = "damaged"
 		event = { time = 0.1 node="damage_locator_01" particle = "building_damaged_particle" keep_particle = yes trigger_once = yes }
 		event = { time = 0.1 node="damage_locator_02" particle = "building_damaged_particle" keep_particle = yes trigger_once = yes }
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_rocket_site"
-	pdxmesh = "building_rocket_site"
+	pdxmesh = "hod_bld_eaw_corBuild4_mesh"
+	locator = { name = "rocket_pad"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 	
 	locator = { name = "damage_locator_01"	position = { 0.0 0.0 0.0 } }
 	locator = { name = "damage_locator_02"	position = { -1.0 0.2 0.4 } }
@@ -699,15 +727,22 @@ entity = {
 
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_stronghold_network"
-	pdxmesh = "building_stronghold_network"
+	pdxmesh = "hod_bld_eaw_prison_mesh"
+	locator = { name = "canon_barrel1"	position = { 0.0 0.8 0.0 } }
+	locator = { name = "canon_barrel3"	position = { 0.0 0.8 0.0 } }
+	locator = { name = "mg1"	position = { 0.0 0.8 0.0 } }
+	locator = { name = "mg2"	position = { 0.0 0.8 0.0 } }
+	locator = { name = "turret_mg1"	position = { 0.0 0.8 0.0 } }
+	locator = { name = "turret_mg2"	position = { 0.0 0.8 0.0 } }
 
 	default_state = "idle"
-	state = { name = "idle" 		animation = "idle" 			animation_blend_time = 0.0  animation_speed = 1.0 looping = yes
+	state = { name = "idle" looping = yes
 			}
 
-	state = { name = "defend" 		animation = "defend" 			animation_blend_time = 0.0  animation_speed = 1.0 looping = yes
+	state = { name = "defend" looping = yes
 			event = { time = 0 node="mg1" particle = "aa_muzzle_small_particle"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = mechanized_units_mg_fire } } 
 			event = { time = 0 node="mg1" particle = "aa_muzzle_smoke_small_particle"  keep_particle = yes light = "mg_muzzle_flash"  } 
 			event = { time = 14 node="mg1" particle = "aa_muzzle_small_particle"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = mechanized_units_mg_fire } } 
@@ -723,7 +758,7 @@ entity = {
 			event = { time = 9.7 node="canon_barrel3" particle = "light_tank_attack_barrel_particle"  keep_particle = yes sound = { soundeffect = light_armour_fire } } 
 			}
 
-	scale = 1.2
+	scale = 1.0
 
 }
 
@@ -744,17 +779,22 @@ entity = {
 
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_rocket_site_spawn"
-	pdxmesh = "building_rocket_site"
+	pdxmesh = "hod_bld_eaw_corBuild4_mesh"
+	scale = 1.0
 	default_state = "idle"
 	state = { name = "idle" }
 }
 
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_nuclear_reactor"
-	pdxmesh = "building_nuclear_reactor"
+	pdxmesh = "hod_bld_eaw_researchAcademy_mesh"
+	locator = { name = "locator2"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 	
 	locator = { name = "damage_locator_01"	position = { 1.6 0.4 -0.1 } }
 	locator = { name = "damage_locator_02"	position = { -0.5 0.2 0.4 } }
@@ -762,8 +802,7 @@ entity = {
 	
 	default_state = "idle"
 	state = { name = "idle" 
-		#event = { time = 0.1 node="factorysmoke" particle = "factory_smoke_particle" }
-		event = { time = 0.1 node="locator2" particle = "factory_smoke_particle" }
+		#		event = { time = 0.1 node="locator2" particle = "factory_smoke_particle" }
 	}
 	state = { name = "damaged" 
 		event = { time = 0.1 node="damage_locator_01" particle = "building_damaged_particle" }
@@ -789,9 +828,13 @@ entity = {
 	name = "building_nuclear_reactor_heavy_water"
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_commercial_nuclear_reactor"
-	pdxmesh = "building_commercial_nuclear_reactor"
+	pdxmesh = "hod_bld_eaw_researchAcademy_mesh"
+	locator = { name = "locator1"	position = { 0.0 0.8 0.0 } }
+	locator = { name = "locator2"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 	
 	locator = { name = "damage_locator_01"	position = { 1.6 0.4 -0.1 } }
 	locator = { name = "damage_locator_02"	position = { -0.5 0.2 0.4 } }
@@ -822,19 +865,23 @@ entity = {
 }
 
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_nuclear_reactor_spawn"
-	pdxmesh = "building_nuclear_reactor_spawn"
+	pdxmesh = "hod_bld_eaw_researchAcademy_mesh"
+	locator = { name = "locator2"	position = { 0.0 0.8 0.0 } }
+	scale = 1.0
 	default_state = "idle"
 	state = { name = "idle" 
 		event = { time = 0.1 node="locator2" particle = "factory_smoke_particle" }
-		#event = { time = 0.1 node="factorysmoke2" particle = "factory_smoke_particle" }
-	}
+		#	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_synthetic_refinery"
-	pdxmesh = "building_oil_refinery"
+	pdxmesh = "hod_bld_eaw_fuelCellC_mesh"
+	scale = 1.0
 	
 	locator = { name = "damage_locator_01"	position = { 0.4 0.4 -0.1 } }
 	locator = { name = "damage_locator_02"	position = { -1.4 0.2 0.2 } }
@@ -850,35 +897,16 @@ entity = {
 	}
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_industrial_complex"
-	pdxmesh = "hod_bld_chr_07_mesh"
+	pdxmesh = "hod_bld_eaw_vehicleFactory_mesh"
 	
 	locator = { name = "damage_locator_01"	position = { 0.4 0.1 0.4 } }
 	locator = { name = "damage_locator_02"	position = { -0.1 0.45 -0.3 } }
 	
 	default_state = "idle"
 	state = { name = "idle" 
-		
-	}
-	state = { name = "damaged" 
-		event = { time = 0.1 node="damage_locator_01" particle = "building_damaged_particle" }
-		event = { time = 0.1 node="damage_locator_02" particle = "building_damaged_particle" }
-	}
-	
-	scale = 1.1
-}
-
-entity = {
-	name = "building_arms_factory"
-	pdxmesh = "hod_bld_chr_04_mesh"
-
-	locator = { name = "damage_locator_01"	position = { 0.25 0.4 0.2 } }
-	locator = { name = "damage_locator_02"	position = { -0.15 0.5 -0.3 } }
-	
-	default_state = "idle"
-	state = { name = "idle" 
-		
 	}
 	state = { name = "damaged" 
 		event = { time = 0.1 node="damage_locator_01" particle = "building_damaged_particle" }
@@ -888,21 +916,41 @@ entity = {
 	scale = 1.0
 }
 
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
+entity = {
+	name = "building_arms_factory"
+	pdxmesh = "hod_bld_eaw_lightfactory_mesh"
+
+	locator = { name = "damage_locator_01"	position = { 0.25 0.4 0.2 } }
+	locator = { name = "damage_locator_02"	position = { -0.15 0.5 -0.3 } }
+	
+	default_state = "idle"
+	state = { name = "idle" 
+	}
+	state = { name = "damaged" 
+		event = { time = 0.1 node="damage_locator_01" particle = "building_damaged_particle" }
+		event = { time = 0.1 node="damage_locator_02" particle = "building_damaged_particle" }
+	}
+	
+	scale = 1.0
+}
+
+	# HOD: Empire at War model (military_buildings.py EAW_BUILDINGS)
 entity = {
 	name = "building_supply_node"
-	pdxmesh = "supply_station_mesh"
+	pdxmesh = "hod_bld_eaw_crates9_mesh"
 
 	locator = { name = "damage_locator_01"	position = { 1.7 1.0 -1.7 } }
 	locator = { name = "damage_locator_02"	position = { -0.1 1.0 0.5 } }
 
 	default_state = "idle"
-	state = { name = "idle"	animation = "idle" }
+	state = { name = "idle" }
 	state = { name = "damaged"
 		event = { time = 0.1 node="damage_locator_01" particle = "building_damaged_particle" }
 		event = { time = 0.1 node="damage_locator_02" particle = "building_damaged_particle" }
 	}
 
-	scale = 2
+	scale = 1.0
 }
 
 #### Dams ########################################################
