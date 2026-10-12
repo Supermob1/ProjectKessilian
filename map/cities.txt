@@ -1,6 +1,7 @@
 # HOD: written by WIPGFX/plans & scripts/coruscant_buildings.py wire. map/cities.bmp (planet_terrain_gen.py)
 # picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages,
-# 5 ocean-world stilt domes, 6 Mandalore domes, 7 Geonosis hives, 8 Naboo, 9 Felucian villages, 10 Guild outposts.
+# 5 ocean-world stilt domes, 6 Mandalore domes, 7 Geonosis hives, 8 Naboo, 9 Felucian villages, 10 Guild outposts,
+# 11 Raxus capital, 12 Raxus Prime scrap towns.
 types_source = "map/cities.bmp"
 pixel_step_x = 2
 pixel_step_y = 2
@@ -525,6 +526,184 @@ city_group = {
 			"hod_cmg_outpost_42_entity"
 			"hod_cmg_outpost_43_entity"
 			"hod_cmg_outpost_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 11
+	density = 0.45
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_rax_city_11_entity"
+			"hod_rax_city_12_entity"
+			"hod_rax_city_13_entity"
+			"hod_rax_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_rax_city_21_entity"
+			"hod_rax_city_22_entity"
+			"hod_rax_city_23_entity"
+			"hod_rax_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_rax_city_31_entity"
+			"hod_rax_city_32_entity"
+			"hod_rax_city_33_entity"
+			"hod_rax_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_rax_city_41_entity"
+			"hod_rax_city_42_entity"
+			"hod_rax_city_43_entity"
+			"hod_rax_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 12
+	density = 0.4
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates4_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates5_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates6_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates9_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_crates1_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_huttTower_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
+			"hod_bld_rpt_fuelCellC_entity"
 		}
 	}
 }

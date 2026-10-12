@@ -1,7 +1,7 @@
 # HOD: an invisible emitter for the Felucian jungle mist (felucia_mist.py), placed by map/ambient_object.txt
 entity = {
 	name = "hod_felucia_mist_entity"
-	cull_radius = 20
+	cull_radius = 16
 	default_state = "idle"
 	state = { name = "idle" state_time = 2 looping = no
 		event = { time = 0 particle = "hod_felucia_mist_particle" keep_particle = yes }

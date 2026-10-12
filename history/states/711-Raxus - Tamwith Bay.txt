@@ -1,0 +1,31 @@
+state={
+	id=711
+	name="STATE_711"
+	# HOD: Raxus, country (raxus_map.py)
+	provinces={
+		8762 8769 8777 8782 8786 8787 8788 8796 8797 8804 8811 8814 8815 8820 8821 8833 8834 8851 8852 8853 8854 8862 8873 8874 8883 8886
+	}
+	resources={
+		coal=3
+	}
+	history = {
+		victory_points = {
+			8852 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			air_base = 1
+			dockyard = 1
+					8762 = {
+				naval_base = 3
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 372892
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
