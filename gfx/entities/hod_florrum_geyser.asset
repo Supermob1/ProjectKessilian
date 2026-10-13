@@ -1,0 +1,9 @@
+# HOD: an invisible emitter for Florrum's sulfur geysers (florrum_fx.py), placed by map/ambient_object.txt
+entity = {
+	name = "hod_florrum_geyser_entity"
+	cull_radius = 6
+	default_state = "idle"
+	state = { name = "idle" state_time = 2 looping = no
+		event = { time = 0 particle = "hod_florrum_geyser_particle" keep_particle = yes }
+	}
+}

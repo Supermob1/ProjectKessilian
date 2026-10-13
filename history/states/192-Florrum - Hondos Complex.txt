@@ -1,0 +1,32 @@
+state={
+	id=192
+	name="STATE_192"
+	# HOD: Florrum (florrum_map.py)
+	provinces={
+		21835 21836 21837
+	}
+	resources={
+		oil=2#Fuel
+		rubber=2#Doonium
+		tungsten=2#Bacta
+		steel=2#Alloys
+		chromium=2#Circuitry
+	}
+	history = {
+		victory_points = {
+			21837 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = OHN
+		add_core_of = OHN
+	}
+	manpower = 1606002
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
