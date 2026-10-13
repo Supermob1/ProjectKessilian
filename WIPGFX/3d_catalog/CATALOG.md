@@ -38,7 +38,8 @@ How models get into the game:
 | hod_theed_palace | 4.0 x 1.5 x 4.2 | Naboo: Theed palace | procedural |
 | hod_coronet_port | 3.8 x 2.4 x 5.2 | Corellia: Coronet spaceport | procedural |
 | hod_castle_serenno | 3.4 x 2.6 x 4.7 | Serenno: Castle Serenno | procedural |
-| hod_korriban_valley | 3.8 x 2.8 x 4.9 | Korriban: Valley of the Dark Lords | procedural |
+| hod_kor_academy (ruined temple), hod_kor_ziggurat, hod_kor_tomb_a-d, hod_kor_ragnos, hod_kor_twins, hod_kor_head, hod_kor_statue, hod_kor_obelisks, hod_kor_banner (unused) | - | Korriban (placed by `military_buildings.py korriban_place`, sheet korriban.png) | procedural, weathered |
+| hod_flo_complex, hod_flo_outpost_a/b, hod_flo_refinery, hod_flo_vault_r0-7 | - | Florrum: Hondo's complex, mercenary outposts, Guild sulfur works, Hondo's vault (placed by `military_buildings.py florrum_place`) | procedural |
 | hod_ion_cannon | 4.0 x 4.3 x 2.1 | anti-air building (all planets) | procedural |
 | hod_spacedock | 3.4 x 5.3 x 1.7 | naval base (all planets) | procedural |
 | hod_launchpad | 3.3 x 2.6 x 1.5 | air base (all planets) | procedural |
@@ -151,6 +152,6 @@ Ready to bake with a `sketchfab_props.py` SPECS entry (see `sources_*.png`):
 | Royal / garden (Naboo, Alderaan, Raxus) | theed_palace, theedPalace, alderaanBldg1-3 / 4-5 | 8 Naboo, 11 Raxus | 62-64, 44, 51 |
 | Jungle / tree (Kashyyyk, Yavin, Felucia) | massassi_temple, kachirho (40), feluciaPlantA-C | 4 treehouse, 9 Felucia | 40, 41, 46, 58-61 |
 | Junk / industrial (Raxus Prime, Lotho Minor) | rp_factory, droidworks, abandonedFactory, split ship wrecks | 12 scrap towns | 65-78 |
-| Sith / dark (Korriban, Dathomir, Mustafar) | korriban_valley, palace (dark tower), rockSpire 1-2 | 2 towns | 47, 48, 49 |
+| Sith / dark (Korriban, Dathomir, Mustafar) | hod_kor_*, palace (dark tower), rockSpire 1-2 | 2 towns | 47, 48, 49 |
 | Military frontier / outpost (Christophsis, Ryloth) | prison, emplacement, commandcenter*, twilekBuilding | 3 Christophsis, 10 Guild outposts | 52, 71, 72 |
 | Mandalore | sundari_dome | 6 Mandalore domes | 48, 49 |

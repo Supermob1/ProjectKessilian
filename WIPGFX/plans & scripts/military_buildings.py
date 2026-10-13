@@ -282,6 +282,174 @@ def felucia_atlas():
     print("felucia atlas written to", LM_OUT)
 
 
+# hod_korriban atlas (4 x 4 cells like hod_landmarks; normal B = night emission): carved red stone with glyph bands,
+# plain red masonry, weathered statue stone, dark doorways, glowing bands, the Sith Empire banner, Dreshdae's metal
+K_GLYPH, K_STONE, K_STATUE, K_DARK = (_cell(i, 0) for i in range(4))
+K_LIGHT, K_BANNER, K_METAL, K_METAL_WIN = (_cell(i, 1) for i in range(4))
+K_GOLD, K_SAND, K_CONCRETE, K_RUBBLE = (_cell(i, 2) for i in range(4))
+
+
+def kadavo_atlas():
+    """hod_kadavo texture for the volcanic craters ("Slaves of the Republic", "Escape from Kadavo" stills): irregular
+    rounded blocks like pillow lava, each lit from above with a dark crevice round it. Seamless left-right. The top
+    half (v 0.5-1) is the weathered grey-olive outside, the bottom half (v 0-0.5) the soot-dark throat."""
+    import numpy as np
+    from scipy import ndimage as ndi
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from flora_props import save_dxt5_mips
+    N = LM_S
+    rng = np.random.default_rng(83)
+    half = N // 2
+    yy, xx = np.mgrid[0:half, 0:N].astype(np.float32)
+
+    def pillows(n, base, dark):
+        pts = np.stack([rng.uniform(0, half, n), rng.uniform(0, N, n)], 1)
+        d1 = np.full((half, N), 1e9, np.float32)
+        d2 = np.full((half, N), 1e9, np.float32)
+        own = np.zeros((half, N), np.int32)
+        for i, (py, px) in enumerate(pts):                                  # periodic in x: seamless left-right
+            dx = np.minimum(np.abs(xx - px), N - np.abs(xx - px))
+            d = np.hypot((yy - py) * 1.25, dx)                              # blocks a little wider than tall
+            closer = d < d1
+            d2 = np.where(closer, d1, np.minimum(d2, d))
+            own = np.where(closer, i, own)
+            d1 = np.where(closer, d, d1)
+        gap = np.clip((d2 - d1) / 6.0, 0, 1)                                # 0 in the crevice
+        size = np.sqrt(N * half / n)
+        dome = np.clip(1 - d1 / (size * 0.75), 0, 1) ** 0.5                 # each block bulges
+        top = np.clip((yy - pts[own, 0]) / size + 0.5, 0, 1)                # lit from above: upper side brighter
+        shade = rng.uniform(0.75, 1.15, n)[own]
+        rgb = base[None, None] * (0.55 + 0.45 * dome)[..., None] * (1.05 - 0.3 * top)[..., None] * shade[..., None]
+        rgb = rgb * gap[..., None] + dark * (1 - gap[..., None])
+        return rgb
+    outside = pillows(170, np.array([122, 118, 100], np.float32), np.array([28, 27, 24], np.float32))
+    inside = pillows(150, np.array([62, 58, 52], np.float32), np.array([14, 13, 12], np.float32))
+    grain = ndi.gaussian_filter(rng.random((half, N)), 1.0)
+    grain = (grain - grain.min()) / np.ptp(grain)
+    col = np.concatenate([outside * (0.85 + 0.25 * grain)[..., None], inside * (0.85 + 0.25 * grain)[..., None]], 0)
+    full = lambda v: np.full((N, N), v, np.float32)
+    save_dxt5_mips(np.dstack([np.clip(col, 0, 255), full(255)]), f"{LM_OUT}/hod_kadavo_diffuse.dds")
+    save_dxt5_mips(np.dstack([full(0), full(128), full(0), full(128)]), f"{LM_OUT}/hod_kadavo_normal.dds")
+    save_dxt5_mips(np.dstack([full(0), full(20), full(0), full(100)]), f"{LM_OUT}/hod_kadavo_properties.dds")
+    from PIL import Image
+    Image.fromarray(np.clip(col, 0, 255).astype(np.uint8)).resize((512, 512)).save("WIPGFX/kadavo_stone_preview.png")
+    print("kadavo crater texture written to", LM_OUT)
+
+
+def korriban_atlas():
+    """hod_korriban textures (korriban_research.md): red-ochre stone with incised glyph rows and masonry courses,
+    pale weathered statue stone, black doorways, a red-gold glowing band, a red banner with the black Sith Empire
+    emblem, grey Dreshdae plating (plain and with lit windows), tarnished gold, red dust."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    from scipy import ndimage as ndi
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from flora_props import save_dxt5_mips
+    N = LM_S
+    t = N // 4
+    rng = np.random.default_rng(66)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime = ndi.gaussian_filter(rng.random((t, t)), 2)
+    grime = ((grime - grime.min()) / np.ptp(grime))[..., None]
+    blotch = ndi.gaussian_filter(rng.random((t, t)), 10)
+    blotch = ((blotch - blotch.min()) / np.ptp(blotch))[..., None]
+    col = np.zeros((N, N, 3), np.float32)
+    emi = np.zeros((N, N), np.float32)
+    spec = np.full((N, N), 30, np.float32)
+    red = np.array([168, 84, 58], np.float32)
+
+    def put(rect, rgb, e=None, sp=30):
+        u0, v0, u1, v1 = rect
+        r, c = slice(int(round((1 - v1) * N)), int(round((1 - v0) * N))), slice(int(round(u0 * N)), int(round(u1 * N)))
+        col[r, c] = np.clip(rgb, 0, 255)
+        if e is not None:
+            emi[r, c] = e
+        spec[r, c] = sp
+
+    courses = (yy % 32) < 2
+    # ages of sand and wind: vertical streaks, cracks, chipped blotches, sand drifted up the foot of every wall
+    streak = ndi.gaussian_filter(rng.random((t, t)), (28, 1.2))
+    streak = ((streak - streak.min()) / np.ptp(streak))[..., None]
+    crack = np.zeros((t, t), np.float32)
+    for _ in range(40):
+        y_, x_ = rng.uniform(0, t), rng.uniform(0, t)
+        for _s in range(int(rng.integers(8, 30))):
+            a_ = rng.uniform(0, 6.283)
+            y2, x2 = y_ + 3 * math.sin(a_) + 2, x_ + 3 * math.cos(a_)
+            n_ = 6
+            for q in range(n_):
+                yi, xi = int((y_ + (y2 - y_) * q / n_) % t), int((x_ + (x2 - x_) * q / n_) % t)
+                crack[yi, xi] = 1
+            y_, x_ = y2, x2
+    crack = np.clip(ndi.gaussian_filter(crack, 0.6) * 3, 0, 1)[..., None]
+    drift = np.clip((yy - t * 0.72) / (t * 0.28), 0, 1)[..., None] * (0.6 + 0.4 * blotch)
+    sandc = np.array([186, 118, 82], np.float32)
+
+    def aged(rgb):
+        rgb = rgb * (0.78 + 0.32 * streak) * (1 - 0.45 * crack) * (0.82 + 0.3 * blotch)
+        return rgb * (1 - drift) + sandc * (0.85 + 0.2 * grime) * drift
+    stone = aged(red * (0.78 + 0.3 * grime) * (1 - 0.18 * courses[..., None]))
+    put(K_STONE, stone)
+    glyph = Image.new("L", (t, t), 0)
+    d = ImageDraw.Draw(glyph)
+    for row in range(t // 32):                                           # rows of incised glyphs between courses
+        y = row * 32 + 8
+        x = 4
+        while x < t - 12:
+            w = int(rng.integers(6, 14))
+            kind = rng.integers(4)
+            if kind == 0:
+                d.rectangle([x, y, x + w, y + 14], outline=255, width=2)
+            elif kind == 1:
+                d.line([(x, y), (x + w, y + 14)], fill=255, width=2)
+                d.line([(x + w, y), (x, y + 14)], fill=255, width=2)
+            elif kind == 2:
+                d.ellipse([x, y, x + w, y + 14], outline=255, width=2)
+            else:
+                d.line([(x + w // 2, y), (x + w // 2, y + 14)], fill=255, width=2)
+                d.line([(x, y + 7), (x + w, y + 7)], fill=255, width=2)
+            x += w + int(rng.integers(4, 9))
+    g = np.asarray(glyph, np.float32)[..., None] / 255
+    put(K_GLYPH, stone * (1 - 0.32 * g * (0.4 + 0.6 * blotch)))          # glyphs worn faint in places
+    put(K_STATUE, aged(np.array([170, 128, 108], np.float32) * (0.72 + 0.35 * grime)))
+    put(K_DARK, np.array([26, 18, 18], np.float32) * (0.8 + 0.4 * grime))
+    band = np.abs(yy - t / 2) / (t / 2)
+    put(K_LIGHT, np.array([255, 120, 60], np.float32) * (1.1 - 0.5 * band)[..., None], e=255 * (1 - band), sp=80)
+    # the Sith Empire emblem (hexagon, six blades round a hub) in black on a crimson banner with a gold hem
+    ban = Image.new("RGB", (t, t), (150, 18, 22))
+    d = ImageDraw.Draw(ban)
+    d.rectangle([0, 0, t - 1, t - 1], outline=(190, 150, 60), width=8)
+    cx, cy, R = t / 2, t * 0.42, t * 0.3
+    hexa = [(cx + R * math.cos(math.radians(60 * i + 30)), cy + R * math.sin(math.radians(60 * i + 30))) for i in range(6)]
+    d.polygon(hexa, outline=(15, 10, 10), width=10)
+    for i in range(6):
+        a0, a1 = math.radians(60 * i + 10), math.radians(60 * i + 40)
+        d.polygon([(cx + 0.25 * R * math.cos(a0), cy + 0.25 * R * math.sin(a0)), (cx + 0.8 * R * math.cos(a0), cy + 0.8 * R * math.sin(a0)),
+                   (cx + 0.8 * R * math.cos(a1), cy + 0.8 * R * math.sin(a1))], fill=(15, 10, 10))
+    d.ellipse([cx - 0.18 * R, cy - 0.18 * R, cx + 0.18 * R, cy + 0.18 * R], fill=(15, 10, 10))
+    put(K_BANNER, np.asarray(ban, np.float32) * (0.85 + 0.2 * grime))
+    panels = (((xx % 48) < 2) | ((yy % 40) < 2))[..., None]
+    metal = np.array([150, 148, 150], np.float32) * (0.8 + 0.3 * grime) * (1 - 0.2 * panels)
+    put(K_METAL, metal, sp=70)
+    win = ((xx % 16) > 5) & ((xx % 16) < 11) & ((yy % 32) > 12) & ((yy % 32) < 22)
+    put(K_METAL_WIN, np.where(win[..., None], [70, 60, 50], metal), e=np.where(win & (rng.random((t, t)) > 0.3), 220, 0), sp=70)
+    put(K_GOLD, np.array([170, 128, 64], np.float32) * (0.75 + 0.35 * grime), sp=120)
+    put(K_SAND, np.array([182, 104, 72], np.float32) * (0.85 + 0.25 * grime))
+    # the academy's ferrocrete: grey-red slabs, formwork seams, rust and soot stains running down, sand at the foot
+    seams = (((xx % 96) < 2) | ((yy % 72) < 2))[..., None]
+    soot = ndi.gaussian_filter(rng.random((t, t)), (36, 3))
+    soot = ((soot - soot.min()) / np.ptp(soot))[..., None]
+    conc = np.array([128, 112, 106], np.float32) * (0.8 + 0.3 * grime) * (1 - 0.25 * seams) * (1 - 0.45 * (soot > 0.62))
+    put(K_CONCRETE, aged(conc))
+    rub = np.array([150, 100, 80], np.float32) * (0.55 + 0.6 * ndi.gaussian_filter(rng.random((t, t)), 1.5)[..., None])
+    put(K_RUBBLE, rub)
+    full = lambda v: np.full((N, N), v, np.float32)
+    save_dxt5_mips(np.dstack([col, full(255)]), f"{LM_OUT}/hod_korriban_diffuse.dds")
+    save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{LM_OUT}/hod_korriban_normal.dds")
+    save_dxt5_mips(np.dstack([full(0), spec, full(0), full(100)]), f"{LM_OUT}/hod_korriban_properties.dds")
+    Image.fromarray(col.astype(np.uint8)).resize((512, 512)).save("WIPGFX/korriban_atlas_preview.png")
+    print("korriban atlas written to", LM_OUT)
+
 def models(*only):
     """Blender: build hod_jedi_temple, hod_senate and hod_spacedock (z up, origin on the ground) and export .mesh.
     `only`: name prefixes to build (e.g. hod_raxus_senate hod_rax_city); default all."""
@@ -393,12 +561,16 @@ def models(*only):
 
     SKIRT = 2.5     # landmark walls run this far below the origin: no gap under them on uneven or lower ground
 
-    def build(name, geometry, shader="PdxMeshAdvancedSnow", out=LM_OUT, tex="hod_landmarks"):
+    def build(name, geometry, shader="PdxMeshAdvancedSnow", out=LM_OUT, tex="hod_landmarks", rot=0.0):
+        """rot: turn the model about its vertical axis (radians, counter-clockwise seen from above) before export"""
         if only and not name.startswith(only):
             return
         bpy.ops.wm.read_factory_settings(use_empty=True)
         bm = bmesh.new()
         geometry(Kit(bm, bm.loops.layers.uv.new("UVMap")))
+        if rot:
+            from mathutils import Matrix  # type: ignore
+            bmesh.ops.rotate(bm, verts=bm.verts[:], cent=(0, 0, 0), matrix=Matrix.Rotation(rot, 3, "Z"))
         bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
         me = bpy.data.meshes.new(name)
         bm.to_mesh(me)
@@ -984,6 +1156,507 @@ def models(*only):
             for y in (-0.95, 0.55):
                 k.box(x - 0.16, y - 0.38, 0.0, x + 0.16, y + 0.38, 0.32, DARK)
 
+    # ---- Korriban (korriban_research.md: KOTOR, The Old Republic, The Clone Wars, comics) ---------------------------
+    def kstatue(k, x, y, h, base=True):
+        """hooded robed Sith lord, arms crossed, facing -y (the Valley's statues, tomb guardians)"""
+        if base:
+            k.box(x - 0.24 * h, y - 0.24 * h, -SKIRT, x + 0.24 * h, y + 0.24 * h, 0.08 * h, K_STONE)
+        z0 = 0.08 * h if base else 0.0
+        k.lathe([(0.2 * h, z0), (0.17 * h, z0 + 0.35 * h), (0.13 * h, z0 + 0.62 * h), (0.15 * h, z0 + 0.72 * h),
+                 (0.11 * h, z0 + 0.8 * h), (0.09 * h, z0 + 0.93 * h), (0.0, z0 + h)],
+                [K_STATUE] * 6, sides=10, cx=x, cy=y, sy=0.8)
+        k.box(x - 0.12 * h, y - 0.16 * h, z0 + 0.52 * h, x + 0.12 * h, y - 0.1 * h, z0 + 0.6 * h, K_STATUE)   # arms
+        k.box(x - 0.06 * h, y - 0.1 * h, z0 + 0.8 * h, x + 0.06 * h, y - 0.08 * h, z0 + 0.88 * h, K_DARK)    # face in shadow
+
+    def kobelisk(k, x, y, h, w=0.22):
+        k.box(x - w * 1.3, y - w * 1.3, -SKIRT, x + w * 1.3, y + w * 1.3, 0.12, K_STONE)
+        k.lathe([(w * 1.41, 0.12), (w * 1.0, h), (0.0, h + w * 1.5)], [K_GLYPH, K_GOLD], sides=4, cx=x, cy=y,
+                rot=math.pi / 4)
+
+    def kstairs(k, x0, x1, y0, y1, z1, steps=5):
+        """steps rising from y0 (low, front) to y1 at height z1"""
+        for i in range(steps):
+            t0 = i / steps
+            k.box(x0, y0 + (y1 - y0) * t0, -SKIRT, x1, y1, z1 * (i + 1) / steps, K_STONE)
+
+    def krubble(k, rng, x0, x1, y0, y1, n, size=(0.15, 0.45)):
+        """broken blocks strewn about, a few tilted"""
+        for _ in range(n):
+            x, y, w = rng.uniform(x0, x1), rng.uniform(y0, y1), rng.uniform(*size)
+            k.box(x - w, y - w * 0.8, -0.3, x + w, y + w * 0.8, w * rng.uniform(0.6, 1.4), K_RUBBLE)
+
+    def kfallen(k, x, y, h, ang):
+        """a toppled statue lying on the ground, broken in two"""
+        c, s_ = math.cos(ang), math.sin(ang)
+        k.tube((x, y, 0.15), (x + c * h * 0.55, y + s_ * h * 0.55, 0.2), 0.16 * h, K_STATUE, sides=8, r1=0.13 * h)
+        k.tube((x + c * h * 0.68, y + s_ * h * 0.68, 0.12), (x + c * h * 0.95, y + s_ * h * 0.95, 0.1), 0.1 * h, K_STATUE,
+               sides=8, r1=0.04 * h)
+
+    def ksand(k, x0, x1, y0, y1, z):
+        """a drift of sand banked against a wall (wedge from z at y1 down to the ground at y0)"""
+        bm = k.bm
+        v = [bm.verts.new(q) for q in ((x0, y0, -0.2), (x1, y0, -0.2), (x1, y1, z), (x0, y1, z), (x0, y1, -0.2), (x1, y1, -0.2))]
+        for f_, uv in (((v[0], v[1], v[2], v[3]), ((0, 0), (1, 0), (1, 1), (0, 1))), ((v[0], v[3], v[4]), ((0, 0), (1, 1), (1, 0))),
+                       ((v[1], v[5], v[2]), ((0, 0), (1, 0), (1, 1)))):
+            k.put(bm.faces.new(f_), uv, K_SAND)
+
+    def korriban_tomb(k, variant):
+        """a tomb cut into the cliff: only its entrance stands out of the rock. The block behind (+y) runs into the
+        mountain; the portal faces -y. Aged: guardians broken or toppled, steps half buried in sand, rubble about."""
+        rng = random.Random("tomb" + variant)
+        tblock(k, [(-2.0, 0.2), (2.0, 0.2), (2.0, 4.0), (-2.0, 4.0)], -SKIRT, 3.2, K_GLYPH, K_STONE)     # into the rock
+        if variant in "ac":                    # pylon portal: two battered pylons, a heavy lintel (cracked through)
+            for x in (-1.15, 1.15):
+                tblock(k, [(x - 0.55, -0.4), (x + 0.55, -0.4), (x + 0.55, 0.4), (x - 0.55, 0.4)], -SKIRT, 3.0, K_GLYPH, K_STONE,
+                       poly_top=[(x - 0.42, -0.28), (x + 0.42, -0.28), (x + 0.42, 0.3), (x - 0.42, 0.3)])
+            k.box(-1.75, -0.45, 3.0, -0.05, 0.4, 3.55, K_STONE)
+            k.box(0.08, -0.4, 2.95, 1.75, 0.4, 3.45, K_STONE)                                       # the broken half sagged
+            k.box(-0.6, -0.12, 0.0, 0.6, 0.25, 2.6, K_DARK)
+        else:                                  # stepped frame: nested receding frames round a narrow door
+            for i_, (w, h, d) in enumerate(((1.8, 3.2, -0.5), (1.4, 2.8, -0.3), (1.0, 2.4, -0.1))):
+                k.box(-w, d, -SKIRT, w, d + 0.25, h, K_GLYPH if i_ % 2 == 0 else K_STONE)
+            k.box(-0.45, -0.55, 0.0, 0.45, -0.48, 2.0, K_DARK)
+            if variant == "d":                 # the face of a sleeping king over the door, half its brow fallen
+                k.lathe([(0.9, 2.6), (0.85, 3.3), (0.6, 3.9), (0.0, 4.1)], [K_STATUE] * 3, sides=10, cx=0, cy=-0.1, sy=0.6)
+                k.box(-0.3, -0.62, 3.0, -0.08, -0.52, 3.15, K_DARK)
+                k.box(0.08, -0.62, 3.0, 0.3, -0.52, 3.15, K_DARK)
+        # guardians: one standing (a third of the time headless), the other toppled on the steps
+        side = rng.choice((-1, 1))
+        kstatue(k, side * 1.9, -1.0, rng.uniform(1.8, 2.3))
+        kfallen(k, -side * 1.6, -1.4, 2.0, rng.uniform(-2.6, -0.5))
+        kstairs(k, -0.9, 0.9, -1.9, -0.5, 0.45, 3)
+        ksand(k, -2.2, 2.2, -2.4, -0.5, 0.9)                                                         # sand blown in
+        krubble(k, rng, -2.4, 2.4, -3.0, -0.6, 9)
+        if variant == "b":                     # a broken obelisk before the door
+            kobelisk(k, 1.4, -2.6, 0.9, 0.18)
+            k.tube((-0.4, -2.9, 0.15), (-1.8, -2.4, 0.3), 0.16, K_GLYPH, sides=4, r1=0.12)
+
+    def korriban_ragnos(k):
+        # Tomb of Marka Ragnos (KOTOR): a horned colossus seated in the cliff, a stair running up into its chest
+        k.box(-2.2, -0.2, -SKIRT, 2.2, 2.6, 1.2, K_STONE)                                 # throne base
+        for x in (-0.9, 0.9):
+            k.box(x - 0.55, -1.2, 1.2, x + 0.55, 0.6, 2.2, K_STATUE)                     # thighs
+            k.box(x - 0.5, -1.3, -SKIRT, x + 0.5, -0.7, 1.2, K_STATUE)                   # shins
+        tblock(k, [(-1.4, 0.4), (1.4, 0.4), (1.4, 2.0), (-1.4, 2.0)], 2.2, 4.4, K_STATUE, K_STATUE,
+               poly_top=[(-1.1, 0.6), (1.1, 0.6), (1.1, 1.8), (-1.1, 1.8)])
+        for x in (-1.9, 1.9):                                                             # forearms on the throne
+            k.box(x - 0.35, -0.6, 2.2, x + 0.35, 1.6, 2.7, K_STATUE)
+        k.lathe([(0.8, 4.4), (0.75, 5.2), (0.5, 5.8), (0.0, 6.0)], [K_STATUE] * 3, sides=10, cx=0, cy=1.1, sy=0.85)
+        for sx in (-1, 1):                                                                # horns
+            k.tube((sx * 0.6, 1.0, 5.4), (sx * 1.3, 0.8, 6.6), 0.16, K_STATUE, sides=6, r1=0.05)
+        k.box(-0.35, 0.35, 2.4, 0.35, 0.45, 3.6, K_DARK)                                  # door in the chest
+        kstairs(k, -0.4, 0.4, -2.4, 0.4, 2.4, 8)
+        for x in (-0.9, 0.9):
+            kstatue(k, x, -2.6, 1.3)
+
+    def korriban_twins(k):
+        # the Sith temple of Moraband (canon): two colossal hooded statues guarding a gate cut in the rock
+        k.box(-3.2, 0.0, -SKIRT, 3.2, 2.0, 3.0, K_STONE, top=K_STONE)
+        k.box(-0.8, -0.06, 0.0, 0.8, 0.02, 2.4, K_DARK)
+        for x in (-1.9, 1.9):
+            kstatue(k, x, -0.6, 6.5)
+        kstairs(k, -1.0, 1.0, -2.0, -0.1, 0.5, 4)
+
+    def korriban_head(k):
+        # colossal stone head of a fallen statue, half buried, tilted
+        k.lathe([(0.0, -0.6), (0.9, -0.3), (1.05, 0.6), (0.9, 1.4), (0.5, 1.9), (0.0, 2.0)], [K_STATUE] * 5,
+                sides=12, cy=0, sy=0.85, jitter=0.04)
+        k.box(-0.55, -0.92, 0.5, 0.55, -0.7, 1.4, K_STATUE)
+        k.box(-0.4, -0.95, 1.05, -0.12, -0.85, 1.2, K_DARK)
+        k.box(0.12, -0.95, 1.05, 0.4, -0.85, 1.2, K_DARK)
+
+    def korriban_academy(k):
+        # the Sith Academy (TOR's temple at the valley's head), long abandoned: a battered red-stone temple on a
+        # platform, a huge dark portal between two colossal hooded guardians (one fallen), a stepped upper tier whose
+        # spire broke off and lies across the platform, the right wing collapsed, sand drifted up the steps, broken
+        # obelisks down the approach. Faces -y.
+        rng = random.Random("academy")
+        tblock(k, [(-5.6, -3.6), (5.6, -3.6), (5.6, 4.6), (-5.6, 4.6)], -SKIRT, 0.8, K_STONE, K_STONE)        # platform
+        tblock(k, [(-3.6, -2.2), (3.6, -2.2), (3.6, 3.8), (-3.6, 3.8)], 0.8, 5.6, K_GLYPH, K_STONE,
+               poly_top=[(-2.9, -1.5), (2.9, -1.5), (2.9, 3.1), (-2.9, 3.1)])                                  # temple
+        tblock(k, [(-2.3, -0.9), (2.3, -0.9), (2.3, 2.6), (-2.3, 2.6)], 5.6, 7.4, K_GLYPH, K_STONE,
+               poly_top=[(-1.8, -0.4), (1.8, -0.4), (1.8, 2.1), (-1.8, 2.1)])                                  # upper tier
+        k.lathe([(0.75, 7.4), (0.55, 9.6), (0.42, 10.1)], [K_GLYPH, K_STONE], sides=4, cx=0.0, cy=0.85,
+                rot=math.pi / 4)                                                                               # spire stump
+        k.tube((2.6, -1.0, 0.95), (5.2, -3.0, 1.3), 0.4, K_GLYPH, sides=4, r1=0.12)                          # ...fallen
+        for x0, x1 in ((-1.35, -0.95), (0.95, 1.35)):                                                       # portal frame
+            k.box(x0, -2.45, 0.8, x1, -2.0, 4.6, K_STONE)
+        k.box(-1.35, -2.45, 4.3, 1.35, -2.0, 4.9, K_STONE)
+        k.box(-0.95, -2.3, 0.8, 0.95, -2.1, 4.3, K_DARK)
+        kstairs(k, -1.3, 1.3, -3.6, -2.2, 0.8, 4)
+        kstatue(k, -2.3, -2.9, 4.4)                                                                          # guardians
+        kfallen(k, 2.0, -3.1, 4.2, -0.4)
+        tblock(k, [(-5.3, -1.6), (-3.6, -1.6), (-3.6, 3.0), (-5.3, 3.0)], 0.8, 3.2, K_GLYPH, K_STONE)        # left wing
+        tblock(k, [(3.6, -1.6), (5.3, -1.6), (5.3, 3.0), (3.6, 3.0)], 0.8, 1.5, K_GLYPH, K_RUBBLE)           # right: fallen
+        krubble(k, rng, 3.5, 5.8, -2.0, 3.4, 14, (0.25, 0.6))
+        for x, y, z0, z1 in ((-4.7, -1.65, 1.4, 2.6), (-2.0, -2.25, 2.4, 3.6), (2.4, 2.1, 5.8, 6.8)):        # holes
+            k.box(x - 0.3, y - 0.05, z0, x + 0.3, y + 0.05, z1, K_DARK)
+        for x, y, h in ((-1.8, -5.0, 2.2), (1.8, -5.0, 0.8), (-1.8, -6.8, 1.1), (1.8, -6.8, 2.0)):          # approach
+            kobelisk(k, x, y, h, 0.2)
+        ksand(k, -5.8, 5.8, -5.2, -3.6, 1.0)
+        krubble(k, rng, -6.0, 6.0, -7.5, -3.8, 18, (0.15, 0.45))
+
+    def korriban_ziggurat(k):
+        # the Sith Citadel: an ancient stepped ziggurat, a stair up its face (-y) to a dark shrine, one corner
+        # slumped into rubble, obelisks at the foot of the stair
+        rng = random.Random("ziggurat")
+        for i in range(5):
+            w0, w1, z0 = 4.2 - 0.75 * i, 4.2 - 0.75 * i - 0.2, 0.95 * i
+            tblock(k, [(-w0, -w0), (w0, -w0), (w0, w0), (-w0, w0)], -SKIRT if i == 0 else z0, z0 + 0.95, K_GLYPH, K_STONE,
+                   poly_top=[(-w1, -w1), (w1, -w1), (w1, w1), (-w1, w1)])
+        k.box(-0.6, -0.4, 4.75, 0.6, 0.6, 5.9, K_STONE)                                                     # shrine
+        k.box(-0.3, -0.45, 4.75, 0.3, -0.38, 5.5, K_DARK)
+        kstairs(k, -0.7, 0.7, -5.4, -1.2, 4.75, 9)
+        krubble(k, rng, 2.0, 4.6, 2.0, 4.6, 16, (0.3, 0.7))                                                  # slumped corner
+        for x in (-1.6, 1.6):
+            kobelisk(k, x, -5.6, 1.8 if x < 0 else 0.9, 0.2)
+        krubble(k, rng, -5.0, 5.0, -6.5, -4.4, 10, (0.12, 0.35))
+
+    def kcolumn(k, x, y, h, r=0.22):
+        """a round column on a square base; h is what still stands"""
+        k.box(x - r * 1.4, y - r * 1.4, -SKIRT, x + r * 1.4, y + r * 1.4, 0.18, K_STONE)
+        k.lathe([(r, 0.18), (r * 0.92, h)], [K_GLYPH], sides=8, cx=x, cy=y, cap=K_STONE)
+
+    def korriban_ruin(k, variant):
+        """ruins strewn on the valley floor (Valley of Tombs map, KOTOR): a broken colonnade, a collapsed gateway, a
+        fallen colossus, a roofless shrine; all half sunk in sand, rubble about"""
+        rng = random.Random("ruin" + variant)
+        if variant == "a":                     # colonnade: two rows, most broken, one lintel still up, drums fallen
+            for row in (-0.8, 0.8):
+                for i, x in enumerate((-2.1, -0.7, 0.7, 2.1)):
+                    h = 2.6 if (row < 0 and i in (1, 2)) else rng.choice((0.4, 0.8, 1.3, 1.9))
+                    kcolumn(k, x, row, h)
+            k.box(-1.0, -1.05, 2.6, 1.0, -0.55, 2.95, K_STONE)
+            for _ in range(4):
+                x, y, a = rng.uniform(-2.4, 2.4), rng.uniform(-0.3, 0.3), rng.uniform(0, math.pi)
+                k.tube((x, y, 0.15), (x + math.cos(a) * 0.7, y + math.sin(a) * 0.7, 0.15), 0.2, K_GLYPH, sides=8)
+        elif variant == "b":                   # gateway: two battered pylons, the lintel fallen and broken in two
+            for x in (-1.3, 1.3):
+                tblock(k, [(x - 0.6, -0.5), (x + 0.6, -0.5), (x + 0.6, 0.5), (x - 0.6, 0.5)], -SKIRT, 2.8 if x < 0 else 2.1,
+                       K_GLYPH, K_STONE, poly_top=[(x - 0.45, -0.38), (x + 0.45, -0.38), (x + 0.45, 0.38), (x - 0.45, 0.38)])
+            k.box(-0.9, -1.4, -0.1, 0.4, -0.9, 0.45, K_STONE)
+            k.tube((0.6, -1.0, 0.15), (2.0, -1.9, 0.3), 0.26, K_STONE, sides=4)
+            kstatue(k, -2.5, -0.9, 1.6)
+        elif variant == "c":                   # fallen colossus: the plinth with its feet, the body broken on the sand
+            k.box(-1.0, -0.8, -SKIRT, 1.0, 0.8, 0.7, K_STONE)
+            for x in (-0.4, 0.4):
+                k.box(x - 0.28, -0.45, 0.7, x + 0.28, 0.35, 1.3, K_STATUE)
+            kfallen(k, 0.6, 1.4, 5.0, 0.35)
+            k.lathe([(0.0, -0.3), (0.55, -0.1), (0.62, 0.45), (0.5, 0.9), (0.0, 1.05)], [K_STATUE] * 4, sides=10,
+                    cx=-1.6, cy=2.6, sy=0.85)
+        else:                                  # roofless shrine: stepped base, three broken walls, an altar
+            tblock(k, [(-1.8, -1.6), (1.8, -1.6), (1.8, 1.6), (-1.8, 1.6)], -SKIRT, 0.35, K_STONE, K_STONE)
+            tblock(k, [(-1.5, -1.3), (1.5, -1.3), (1.5, 1.3), (-1.5, 1.3)], 0.35, 0.7, K_STONE, K_STONE)
+            k.box(-1.4, 0.95, 0.7, 1.4, 1.25, 2.4, K_GLYPH)
+            k.box(-1.4, -0.9, 0.7, -1.1, 1.0, 1.7, K_GLYPH)
+            k.box(1.1, -0.2, 0.7, 1.4, 1.0, 1.1, K_GLYPH)
+            k.box(-0.4, 0.2, 0.7, 0.4, 0.7, 1.25, K_DARK, top=K_GOLD)
+            ksand(k, -1.9, 1.9, -2.6, -1.6, 0.6)
+        krubble(k, rng, -2.8, 2.8, -2.6, 2.6, 10, (0.12, 0.35))
+
+    # ---- Florrum (The Clone Wars: Hondo's complex, the pirates' outposts, Hondo's secret ship vault) ------------------
+    def ffin(k, a, r0, r1, rt, h, z0, thick, rect):
+        """a tall triangular fin standing on a disc at angle a: base from radius r0 to r1 at z0, its tip at radius rt,
+        height h (leaning in when rt < r0)"""
+        bm = k.bm
+        c, s_ = math.cos(a), math.sin(a)
+        px, py = -s_ * thick / 2, c * thick / 2
+        pts = [(r0, z0), (r1, z0), (rt, z0 + h)]
+        sides = [[bm.verts.new((c * r + sg * px, s_ * r + sg * py, z)) for r, z in pts] for sg in (-1, 1)]
+        a_, b_ = sides
+        uv = [(0, 0), (1, 0), (0.5, 1)]
+        k.put(bm.faces.new(a_[::-1]), uv[::-1], rect)
+        k.put(bm.faces.new(b_), uv, rect)
+        for i in range(3):
+            j = (i + 1) % 3
+            k.put(bm.faces.new((a_[i], a_[j], b_[j], b_[i])), ((0, 0), (1, 0), (1, 1), (0, 1)), rect)
+
+    def fblade(k, pts, y0, y1, rect):
+        """a flat blade: polygon [(x, z), ...] (counter-clockwise seen from -y) extruded from y0 to y1"""
+        bm = k.bm
+        fr = [bm.verts.new((x, y0, z)) for x, z in pts]
+        bk = [bm.verts.new((x, y1, z)) for x, z in pts]
+        xs, zs = [x for x, _ in pts], [z for _, z in pts]
+        uv = [((x - min(xs)) / (max(xs) - min(xs)), (z - min(zs)) / (max(zs) - min(zs))) for x, z in pts]
+        k.put(bm.faces.new(fr), uv, rect)
+        k.put(bm.faces.new(bk[::-1]), uv[::-1], rect)
+        for i in range(len(pts)):
+            j = (i + 1) % len(pts)
+            k.put(bm.faces.new((fr[j], fr[i], bk[i], bk[j])), ((0, 0), (1, 0), (1, 1), (0, 1)), rect)
+
+    def florrum_complex(k):
+        # Hondo's complex ("Dooku Captured" establishing shot): a round drum walled by Y-shaped struts, a panelled
+        # skirt flaring out above it, a flat deck ringed by a raised outer ring; the spire is two tall blades with a
+        # slit between them, standing OFF centre on a block at the ring's front edge (-y); a big turbine lies at the foot
+        k.lathe([(2.5, -SKIRT), (2.5, 1.0)], [DARK_WIN], sides=24)                                # the drum
+        for i in range(10):                                                                      # Y struts round it
+            a = 2 * math.pi * i / 10
+            c, s_ = math.cos(a), math.sin(a)
+            k.tube((2.62 * c, 2.62 * s_, 0.0), (2.62 * c, 2.62 * s_, 0.55), 0.07, METAL, sides=5)
+            for d in (-0.22, 0.22):
+                k.tube((2.62 * c, 2.62 * s_, 0.55), (2.65 * math.cos(a + d), 2.65 * math.sin(a + d), 0.95), 0.06, METAL, sides=5)
+        k.lathe([(2.55, 0.95), (3.35, 1.55), (3.35, 1.62)], [SAND_WIN, SAND], sides=32)            # flared skirt
+        k.lathe([(3.35, 1.62), (2.5, 1.66)], [DECK], sides=32, cap=DECK)                         # the deck
+        k.lathe([(3.15, 1.6), (3.7, 1.6), (3.7, 1.95), (3.15, 1.95), (3.15, 1.6)], [METAL, SAND, METAL, SAND], sides=32)
+        k.lathe([(2.0, 1.66), (2.25, 1.66), (2.25, 1.85), (2.0, 1.85), (2.0, 1.66)], [METAL, SAND, METAL, SAND], sides=24)
+        # the spire: a block at the ring's front edge, two blades rising from it with a slit between
+        k.box(-0.75, -3.4, 1.6, 0.75, -2.5, 2.45, SAND_WIN, top=SAND)
+        fblade(k, [(-0.07, 2.4), (-0.07, 7.6), (-0.7, 2.4)][::-1], -3.25, -2.65, SAND)
+        fblade(k, [(0.07, 2.4), (0.7, 2.4), (0.07, 7.2)], -3.25, -2.65, SAND)
+        k.tube((1.4, -3.3, 0.35), (3.0, -2.6, 0.45), 0.42, RUST, sides=10)                       # the turbine at its foot
+        for x, y in ((-3.9, -2.3), (3.6, 2.9)):                                                  # gate posts (lit pink in the show)
+            for dx in (-0.25, 0.25):
+                k.box(x + dx - 0.06, y - 0.06, -0.2, x + dx + 0.06, y + 0.06, 0.6, METAL)
+            k.box(x - 0.31, y - 0.06, 0.6, x + 0.31, y + 0.06, 0.68, METAL)
+
+    def florrum_outpost(k, variant):
+        rng = random.Random("flo" + variant)
+        if variant == "a":                     # pirate post: a two-tier disc with two fins and a pad
+            k.lathe([(1.25, -SKIRT), (1.25, 0.35), (0.95, 0.5), (0.85, 0.85)], [SAND, SAND_WIN, SAND], sides=16, cap=DECK)
+            for a in (0.4, 0.4 + math.pi):
+                ffin(k, a, 0.4, 1.1, 0.2, 1.8, 0.8, 0.16, SAND)
+            k.lathe([(0.6, -SKIRT), (0.6, 0.15)], [METAL], sides=12, cx=1.9, cy=0.4, cap=DECK)
+        else:                                  # mercenary keep ("A Necessary Bond"): a battered block, two great fins
+            tblock(k, [(-1.3, -1.0), (1.3, -1.0), (1.3, 1.0), (-1.3, 1.0)], -SKIRT, 1.1, SAND_WIN, SAND,
+                   poly_top=[(-0.9, -0.7), (0.9, -0.7), (0.9, 0.7), (-0.9, 0.7)])
+            for a, lean in ((0.0, 0.6), (math.pi, 0.6)):
+                ffin(k, a, 0.6, 1.5, 1.5 + lean, 2.4, 1.0, 0.2, SAND)
+            k.box(-0.4, -1.05, 0.0, 0.4, -0.98, 0.7, DARK_WIN)
+        for _ in range(4):                                                                       # crates
+            x, y, w = rng.uniform(-1.8, 1.8), rng.uniform(-1.8, 1.8), rng.uniform(0.12, 0.22)
+            if math.hypot(x, y) > 1.4:
+                k.box(x - w, y - w, -0.2, x + w, y + w, w * 1.6, RUST)
+
+    def florrum_refinery(k):
+        # a Commerce Guild sulfur works: domed tanks, a drill derrick over the acid flat, pipes, a pump house
+        for x, y, r in ((-1.0, 0.6, 0.55), (0.1, 0.9, 0.45), (-0.4, -0.5, 0.5)):
+            k.lathe([(r, -SKIRT), (r, 0.9), (r * 0.7, 1.15), (0.0, 1.25)], [METAL, METAL, METAL], sides=12, cx=x, cy=y)
+        for dx, dy in ((-0.35, -0.35), (0.35, -0.35), (0.35, 0.35), (-0.35, 0.35)):                  # derrick
+            k.tube((1.3 + dx, -0.3 + dy, 0.0), (1.3 + dx * 0.25, -0.3 + dy * 0.25, 2.6), 0.05, RUST, sides=5)
+        k.box(1.1, -0.5, 2.5, 1.5, -0.1, 2.75, RUST)
+        k.tube((-1.0, 0.6, 0.5), (1.3, -0.3, 0.3), 0.08, BRONZE, sides=6)
+        k.tube((-0.4, -0.5, 0.4), (1.3, -0.3, 0.3), 0.08, BRONZE, sides=6)
+        k.box(0.5, 0.4, -SKIRT, 1.5, 1.2, 0.6, METAL_WIN, top=METAL)
+
+    def florrum_vault(k):
+        # Hondo's secret ship vault: a blast door in a rock face (front -y), a ramp down to it, a pad before it
+        k.lathe([(1.9, -SKIRT), (1.8, 0.9), (1.3, 1.9), (0.6, 2.4), (0.0, 2.5)], [REDROCK] * 4, sides=9, cy=1.4,
+                sy=0.8, jitter=0.12)
+        k.box(-0.8, -0.05, -SKIRT, 0.8, 0.25, 1.3, METAL)
+        k.box(-0.62, -0.1, 0.0, 0.62, -0.04, 1.1, DARK_WIN)
+        k.box(-0.65, -1.3, -SKIRT, 0.65, -0.05, 0.08, DECK)
+        k.lathe([(0.7, -SKIRT), (0.7, 0.1)], [METAL], sides=12, cx=0.0, cy=-2.1, cap=DECK)
+
+    # ---- Kadavo (The Clone Wars "Escape from Kadavo": the slave processing facility over its crater) ----------------
+    KAD_ARMS = (90, 210, 330)        # = kadavo_map.ARMS: the girder arms' bearings (degrees, counter-clockwise from east)
+    KAD_RIM = 6.8                    # the crater rim above the model's origin (the bowl floor under the hub;
+                                     # planet_terrain_gen.py (KAD_DECK - KAD_FLOOR - 1) / 10)
+
+    def kadavo_facility(k):
+        # the slave processing facility, measured off the user's plan2.png (side view, one arm; 2026-10-13). Plan pixels
+        # -> model: K units per px, plan x 910 = the axis, plan y 1070 = the crater rim (KAD_RIM above the origin, the
+        # bowl floor). Bottom to top: antenna; "lower circular prob, slaves facilities" (round, chamfered top); the
+        # "circular/closest to hexagonal facility"; the long triangular platform surrounding the station; the quarters
+        # (triangular, full of windows) with a tall block at each corner; a trapezoid deck, pillars, and the tall tower
+        # with a notched top. In front of each side a small two-stage tower. At each corner a chimney (spike below), a
+        # short double strut out to a pod, then two struts down to the ground beyond the rim. Three arms (KAD_ARMS).
+        K = 0.0308
+        KAD_DROP = 5.5                   # how far the station sits below the plan's ground line (user: into the crater)
+        Z = lambda y: KAD_RIM - KAD_DROP + (1070 - y) * K                                      # the station sunk into the bowl
+        P = lambda x: (x - 910) * K
+        tri = lambda r, bs=KAD_ARMS: [(r * math.cos(math.radians(b_)), r * math.sin(math.radians(b_))) for b_ in bs]
+        k.lathe([(0.12, Z(1015)), (0.0, Z(1103))], [DARK], sides=6)                              # antenna
+        k.lathe([(0.0, Z(1015)), (P(1017), Z(1015)), (P(1068), Z(908)), (P(1035), Z(890)), (0.0, Z(890))],
+                [METAL, METAL_WIN, METAL, METAL], sides=16)                                        # lower slave facility
+        k.lathe([(P(1080), Z(888)), (P(1098), Z(815))], [METAL_WIN], sides=6, cap=METAL)          # the hexagonal facility
+        tblock(k, tri(12.5), Z(838), Z(817), DECK, DECK)                                           # the triangular platform
+        tblock(k, tri(9.0), Z(815), Z(740), METAL_WIN, METAL)                                      # the quarters
+        for bearing in KAD_ARMS:                                                                   # the corner blocks
+            c, s_ = math.cos(math.radians(bearing)), math.sin(math.radians(bearing))
+            rot = lambda u, v: (c * u - s_ * v, s_ * u + c * v)
+            tblock(k, [rot(P(1190), -1.1), rot(P(1247), -1.1), rot(P(1247), 1.1), rot(P(1190), 1.1)], Z(863), Z(697),
+                   METAL_WIN, METAL)
+        k.lathe([(P(1048), Z(740)), (P(1025), Z(662))], [METAL_WIN], sides=6, cap=METAL)          # the trapezoid deck
+        for i in range(4):                                                                         # its pillars
+            a_ = math.pi / 4 + i * math.pi / 2
+            k.tube((2.6 * math.cos(a_), 2.6 * math.sin(a_), Z(664)), (2.6 * math.cos(a_), 2.6 * math.sin(a_), Z(588)),
+                   0.3, METAL, sides=6)
+        w0, w1 = P(1015), P(969)                                                                   # the tall tower
+        tblock(k, [(-w0, -w0), (w0, -w0), (w0, w0), (-w0, w0)], Z(590), Z(318), METAL_WIN, METAL,
+               poly_top=[(-w1, -w1), (w1, -w1), (w1, w1), (-w1, w1)])
+        for x0, x1 in ((-w1, -0.85), (0.85, w1)):                                                  # its notched top
+            k.box(x0, -w1, Z(318), x1, w1, Z(298), METAL, top=METAL)
+        for bearing in (30, 150, 270):                                                             # the small front towers
+            cx, cy = 5.4 * math.cos(math.radians(bearing)), 5.4 * math.sin(math.radians(bearing))
+            k.lathe([(P(972) * 0.98, Z(815)), (P(943) - P(910) + 0.2, Z(716))], [METAL_WIN], sides=4, rot=math.pi / 4,
+                    cx=cx, cy=cy, cap=METAL)
+            k.lathe([(0.45, Z(716)), (0.45, Z(695))], [DARK], sides=6, cx=cx, cy=cy)
+            k.lathe([(P(940) + 0.06, Z(695)), (P(928) + 0.06, Z(563))], [METAL_WIN], sides=4, rot=math.pi / 4,
+                    cx=cx, cy=cy, cap=METAL)
+        for bearing in KAD_ARMS:
+            c, s_ = math.cos(math.radians(bearing)), math.sin(math.radians(bearing))
+            px, py = -s_, c
+            at = lambda r, z, t=0.0: (c * r + px * t, s_ * r + py * t, z)
+            rc = (P(1267) + P(1335)) / 2                                                           # the chimney
+            k.lathe([(0.48, Z(671)), (0.9, Z(740)), (1.05, Z(762)), (1.05, Z(900)), (0.6, Z(915)), (0.0, Z(922))],
+                    [RUST, METAL, METAL_WIN, METAL, METAL], sides=10, cx=c * rc, cy=s_ * rc, cap=DARK)
+            k.lathe([(0.1, Z(918)), (0.0, Z(990))], [DARK], sides=5, cx=c * rc, cy=s_ * rc)
+            for t in (-0.35, 0.35):                                                                # chimney -> pod
+                k.tube(at(P(1335), Z(825), t), at(P(1437), Z(880), t), 0.09, METAL, sides=5)
+                k.tube(at(P(1335), Z(862), t), at(P(1425), Z(905), t), 0.09, METAL, sides=5)
+            rp = (P(1430) + P(1490)) / 2                                                           # the pod
+            k.lathe([(0.0, Z(970)), (0.36, Z(970)), (0.36, Z(940)), (0.92, Z(920)), (0.92, Z(865)), (0.28, Z(836)),
+                     (0.0, Z(834))], [METAL, METAL, DARK_WIN, METAL_WIN, METAL, METAL], sides=10, cx=c * rp, cy=s_ * rp)
+            for (x0, y0), (x1, y1) in (((1490, 882), (1690, 1068)), ((1492, 910), (1690, 1068))):  # struts to one footing
+                za, zb = Z(y0), KAD_RIM                                                            # pod -> footing on the rim
+                for t in (-0.35, 0.35):
+                    k.tube(at(P(x0), za, t), at(P(x1), zb - 0.4, t), 0.13, METAL, sides=5)
+                n_ = 7
+                for i in range(1, n_):
+                    f = i / n_
+                    xx, zz_ = x0 + (x1 - x0) * f, za + (zb - 0.4 - za) * f
+                    k.tube(at(P(xx), zz_, -0.35), at(P(xx), zz_, 0.35), 0.05, METAL, sides=4)
+                if y0 != 882:
+                    continue                                                                       # one footing per arm
+                rf = P(x1)                                                                         # the footing
+                tblock(k, [(c * rf - 0.7, s_ * rf - 0.7), (c * rf + 0.7, s_ * rf - 0.7), (c * rf + 0.7, s_ * rf + 0.7),
+                           (c * rf - 0.7, s_ * rf + 0.7)], KAD_RIM - 2.0, KAD_RIM + 0.5, METAL, METAL)
+
+    KAD_CRATER_PROFILES = {
+        # (r, z) from the foot round the shoulder to the lip and down the throat; the lip index splits outside/inside
+        "a": ([(1.0, -0.25), (1.03, 0.12), (1.0, 0.34), (0.92, 0.55), (0.8, 0.7), (0.66, 0.78), (0.56, 0.77)],
+              [(0.5, 0.68), (0.47, 0.4), (0.44, 0.0), (0.4, -0.35)], 3.2),               # a high bulging beehive
+        "b": ([(1.0, -0.2), (1.0, 0.06), (0.95, 0.18), (0.86, 0.27), (0.77, 0.3)],
+              [(0.7, 0.24), (0.66, 0.1), (0.62, -0.1), (0.55, -0.3)], 4.6),               # a low wide ring
+        "c": ([(1.0, -0.25), (1.02, 0.15), (0.97, 0.38), (0.86, 0.55), (0.72, 0.64), (0.6, 0.64)],
+              [(0.54, 0.55), (0.5, 0.25), (0.46, -0.3)], 2.6),                             # a rounded dome
+        "d": ([(1.0, -0.25), (1.0, 0.2), (0.88, 0.5), (0.7, 0.68), (0.55, 0.7)],
+              [(0.48, 0.6), (0.44, 0.2), (0.4, -0.3)], 1.4),                               # a little pit cone
+    }
+
+    def kadavo_crater(k, variant):
+        """a volcanic crater of Kadavo: a bulging dome of pillowed blocks with a wide round mouth dropping into a dark
+        throat (stills). Built here rather than by lathe(): the texture must repeat round the dome, not stretch."""
+        import bmesh  # type: ignore
+        outer, inner, R = KAD_CRATER_PROFILES[variant]
+        prof = [(r * R, z * R) for r, z in outer + inner]
+        n_out = len(outer)
+        sides = 40
+        rng_ = random.Random("crater" + variant)
+        ph = [rng_.uniform(0, 6.28) for _ in range(3)]
+        wob = [1 + 0.035 * math.sin(2 * math.pi * i / sides * 2 + ph[0]) + 0.02 * math.sin(2 * math.pi * i / sides * 3 + ph[1])
+               for i in range(sides)]                                                    # gently out of round
+        rings = [[k.bm.verts.new((r * wob[i] * math.cos(2 * math.pi * i / sides), r * wob[i] * math.sin(2 * math.pi * i / sides), z))
+                  for i in range(sides)] for r, z in prof]
+        circ = 2 * math.pi * R
+        seg = [0.0]
+        for (r0, z0), (r1, z1) in zip(prof, prof[1:]):
+            seg.append(seg[-1] + math.hypot(r1 - r0, z1 - z0))
+        reps = max(2, round(circ / (seg[n_out - 1] * 1.6)))                                    # blocks keep their shape
+        for kk in range(len(prof) - 1):
+            inside = kk >= n_out - 1
+            span = (seg[n_out - 1] if not inside else seg[-1] - seg[n_out - 1]) or 1
+            base = 0.0 if not inside else seg[n_out - 1]
+            v0 = (seg[kk] - base) / span
+            v1 = (seg[kk + 1] - base) / span
+            vv = (lambda v: 0.51 + 0.48 * (1 - v)) if not inside else (lambda v: 0.49 - 0.48 * v)  # outside: top half
+            for i in range(sides):
+                j = (i + 1) % sides
+                f = k.bm.faces.new((rings[kk][i], rings[kk][j], rings[kk + 1][j], rings[kk + 1][i]))
+                f.smooth = True                                                                  # a rounded dome, no facets
+                u0, u1 = i / sides * reps, (i + 1) / sides * reps
+                for loop, uv in zip(f.loops, ((u0, vv(v0)), (u1, vv(v0)), (u1, vv(v1)), (u0, vv(v1)))):
+                    loop[k.uv].uv = uv
+
+    def kadavo_tower(k):
+        # a ray-shield tower ("Escape from Kadavo"; comic: a tall tower held by cables): tapering shaft, a ring of
+        # emitters, a domed top, three anchor cables
+        k.lathe([(1.0, -SKIRT), (1.0, 0.6), (0.7, 1.0), (0.55, 7.0), (0.8, 7.4), (0.8, 7.9), (0.5, 8.4), (0.0, 8.8)],
+                [METAL, METAL, METAL_WIN, METAL, DARK_WIN, METAL, METAL], sides=12)
+        for i in range(3):
+            a = 2 * math.pi * i / 3 + 0.4
+            k.tube((0.45 * math.cos(a), 0.45 * math.sin(a), 6.2), (3.6 * math.cos(a), 3.6 * math.sin(a), -0.2), 0.04, DARK, sides=4)
+            k.box(3.6 * math.cos(a) - 0.25, 3.6 * math.sin(a) - 0.25, -SKIRT, 3.6 * math.cos(a) + 0.25,
+                  3.6 * math.sin(a) + 0.25, 0.3, METAL)
+
+    def kadavo_dock(k):
+        # the slavers' landing field: two raised pads, a control block with a mast, cargo
+        for x, y in ((-1.6, 0.4), (1.7, -0.3)):
+            k.lathe([(1.25, -SKIRT), (1.25, 0.35)], [METAL], sides=16, cx=x, cy=y, cap=DECK)
+        k.box(-0.6, 1.4, -SKIRT, 0.9, 2.6, 1.3, METAL_WIN, top=METAL)
+        k.tube((0.6, 2.2, 1.3), (0.6, 2.2, 2.8), 0.05, METAL, sides=5)
+        for x in (-0.2, 0.25):
+            k.box(x - 0.2, -1.8, -0.2, x + 0.2, -1.4, 0.3, RUST)
+
+    def kadavo_mine(k):
+        # an ore pit's rig: a gantry crane over the pit, a conveyor up to heaps of red Kadavo ore
+        for x in (-1.6, 1.6):
+            for y in (-0.8, 0.8):
+                k.tube((x, y, -0.5), (x, y, 2.2), 0.08, RUST, sides=5)
+        k.box(-1.8, -0.9, 2.1, 1.8, 0.9, 2.35, RUST)
+        k.box(-0.3, -0.3, 1.2, 0.3, 0.3, 2.1, METAL)
+        k.tube((1.6, 0.0, 1.8), (3.6, 0.6, 0.4), 0.12, METAL, sides=4)
+        for x, y, r in ((3.9, 0.9, 0.7), (3.0, 1.6, 0.5)):
+            k.lathe([(r, -0.3), (r * 0.6, r * 0.5), (0.0, r * 0.8)], [REDROCK, REDROCK], sides=8, cx=x, cy=y, jitter=0.2)
+
+    def kadavo_camp(k):
+        # a Zygerrian slave camp: a fenced compound of low huts, a watchtower at the gate
+        for i in range(10):
+            a = 2 * math.pi * i / 10
+            k.tube((1.6 * math.cos(a), 1.6 * math.sin(a), -0.3), (1.6 * math.cos(a), 1.6 * math.sin(a), 0.6), 0.04, DARK, sides=4)
+        for x, y in ((-0.6, -0.4), (0.5, -0.5), (-0.4, 0.6), (0.6, 0.5)):
+            k.box(x - 0.35, y - 0.25, -0.2, x + 0.35, y + 0.25, 0.35, METAL, top=RUST)
+        k.tube((1.6, 0.0, -0.2), (1.6, 0.0, 1.9), 0.08, METAL, sides=5)
+        k.box(1.3, -0.3, 1.9, 1.9, 0.3, 2.3, DARK_WIN, top=METAL)
+
+    def korriban_banner(k):
+        k.lathe([(0.07, -0.5), (0.06, 3.2), (0.0, 3.4)], [K_GOLD, K_GOLD], sides=6)
+        k.box(-0.42, -0.04, 1.0, 0.42, 0.04, 3.1, K_BANNER)
+
+    def korriban_obelisks(k):
+        for x, y, h in ((0.0, 0.0, 2.2), (0.9, 0.5, 1.5), (-0.8, 0.6, 1.2)):
+            kobelisk(k, x, y, h)
+
+    def dre_city(kit, band, rng):
+        # Dreshdae (KOTOR, comics): round metal halls and domes, a squat tower with lit windows, dishes and masts
+        for _ in range(rng.randint(1, 2 + band // 2)):
+            x, y = rng.uniform(-0.55, 0.55), rng.uniform(-0.55, 0.55)
+            r, h = rng.uniform(0.22, 0.32) + 0.03 * band, rng.uniform(0.2, 0.3) + 0.06 * band
+            kit.lathe([(r, -0.5), (r, h), (r * 0.9, h + 0.05), (r * 0.5, h + 0.18), (0.0, h + 0.22)],
+                      [K_METAL_WIN, K_METAL, K_METAL, K_METAL], sides=12, cx=x, cy=y)
+        if band >= 2:
+            x, y = rng.uniform(-0.5, 0.5), rng.uniform(-0.5, 0.5)
+            kit.lathe([(0.03, 0.0), (0.03, 0.6 + 0.2 * band), (0.0, 0.65 + 0.2 * band)], [K_METAL, K_LIGHT], sides=5, cx=x, cy=y)
+            kit.lathe([(0.0, 0.25), (0.22, 0.33), (0.2, 0.36)], [K_METAL, K_METAL], sides=10, cx=-x, cy=-y)
+
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng = random.Random(f"hod_dre_city{band}{v}")
+            build(f"hod_dre_city_{band}{v}", lambda k, band=band, rng=rng: dre_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_korriban")
+    # HOI4 ignores an ambient object's rotation (every model faced south in game): the models that face somewhere
+    # come in KOR_TURNS turned copies, <name>_r<i> turned i * 360 / KOR_TURNS degrees counter-clockwise
+    for name, fn in (("hod_kor_academy", korriban_academy), ("hod_kor_ragnos", korriban_ragnos),
+                     ("hod_kor_twins", korriban_twins), ("hod_kor_statue", lambda k: kstatue(k, 0, 0, 3.0))) +             tuple((f"hod_kor_tomb_{v}", lambda k, v=v: korriban_tomb(k, v)) for v in "abcd"):
+        for i_ in range(KOR_TURNS):
+            build(f"{name}_r{i_}", fn, tex="hod_korriban", rot=2 * math.pi * i_ / KOR_TURNS)
+    for v in "abcd":
+        build(f"hod_kor_ruin_{v}", lambda k, v=v: korriban_ruin(k, v), tex="hod_korriban")
+    for name, fn in (("hod_kad_facility", kadavo_facility), ("hod_kad_tower", kadavo_tower), ("hod_kad_dock", kadavo_dock),
+                     ("hod_kad_mine", kadavo_mine), ("hod_kad_camp", kadavo_camp)):
+        build(name, fn)
+    for v in "abcd":
+        build(f"hod_kad_crater_{v}", lambda k, v=v: kadavo_crater(k, v), tex="hod_kadavo")
+    build("hod_flo_complex", florrum_complex)
+    build("hod_flo_refinery", florrum_refinery)
+    for v in "ab":
+        build(f"hod_flo_outpost_{v}", lambda k, v=v: florrum_outpost(k, v))
+    for i_ in range(KOR_TURNS):                                            # faces out of its rock: turned copies
+        build(f"hod_flo_vault_r{i_}", florrum_vault, rot=2 * math.pi * i_ / KOR_TURNS)
+    for name, fn in (("hod_kor_head", korriban_head), ("hod_kor_obelisks", korriban_obelisks),
+                     ("hod_kor_ziggurat", korriban_ziggurat), ("hod_kor_banner", korriban_banner)):
+        build(name, fn, tex="hod_korriban")
+
     build("hod_ion_cannon", ion_cannon)
     build("hod_raxus_senate", raxus)
     build("hod_cis_banner", cis_banner, tex="hod_cis_banner")
@@ -1085,7 +1758,9 @@ def wire():
             block = re.sub(r"\n\tscale = [0-9.]+", f"\n\tscale = {scale}", block, count=1)
         else:
             block = block.replace(f'pdxmesh = "{mesh}_mesh"', f'pdxmesh = "{mesh}_mesh"\n\tscale = {scale}', 1)
-        block = re.sub(r'[ \t]*event = \{[^{}]*node\s*=\s*"factorysmoke2?"[^{}]*\}\n?', "", block)
+        # whole lines only: vanilla has some of these commented out, and eating just the event left its "#" to comment
+        # out the brace on the next line (every entity after building_nuclear_reactor_spawn broke)
+        block = re.sub(r'(?m)^[ \t]*#?[ \t]*event = \{[^{}\n]*node\s*=\s*"factorysmoke2?"[^{}\n]*\}[ \t]*\n', "", block)
         # a static mesh has no skeleton: state animations (and their blend / speed settings) go
         block = re.sub(r'[ \t]*animation(_blend_time|_speed)? = ("[^"]*"|[0-9.]+)', "", block)
         have = set(re.findall(r'locator = \{\s*name = "([^"]+)"', block))
@@ -1163,7 +1838,6 @@ LANDMARKS.update({   # Geonosis set (VP names from victory_points_l_english.yml)
     "hod_raxus_senate": ("hod_raxus_senate_entity", 194, 1.0, 0.0, 9.5),           # Raxus: map scale, over its rooms;
                                                                                    # stands on the planet's centre (below)
     "hod_castle_serenno": ("hod_castle_serenno_entity", 8479, 1.2, 0.0, 3.0),      # Serenno (city district around it)
-    "hod_korriban_valley": ("hod_korriban_valley_entity", 1594, 1.2, 0.0, 3.0),    # Korriban
 })
 CITY_TERRAIN, PLAZA_TERRAIN = [13], 25   # terrain.bmp: spawn_city urban -> urban_plaza_25 (same texture, no cities)
 CITY_MARGIN = 2.0   # px of cities.bmp cleared past a landmark's footprint (city meshes reach ~1.7 map units)
@@ -1341,8 +2015,337 @@ def raxus_alley():
     open(path, "wb").write((b"\xef\xbb\xbf" if bom else b"") + (s.replace("\n", "\r\n") if crlf else s).encode("utf-8"))
     print("Great Alley:", {k: len(v) for k, v in objs.items()})
 
+KOR_MARK = ("# HOD: Korriban (military_buildings.py korriban_place)", "# HOD: end of Korriban")
+KOR_TURNS = 8          # turned copies of the Korriban models (their front is -y: south on the map, unturned)
+KOR_TOMB_MODEL = {"Tomb of Marka Ragnos": "hod_kor_ragnos"}
+KOR_TOMB_BACK = 1.5    # px a tomb sits back from its niche's middle, against the rock
+KOR_STATUE_STEP = 7.0  # px between the statues lining the valley walls
+KOR_AVENUE = (9.0, 4.0)  # obelisks in pairs down the valley (Valley of Tombs map): px apart along, across
+KOR_RUINS = (12, 6.0, 3.0)  # ruins on the valley floor: how many, px from other models, px from unit positions
+KOR_SCALE = {"tomb": 0.9, "hod_kor_academy": 1.0, "hod_kor_twins": 0.7}
+
+
+def korriban_place():
+    """map/ambient_object.txt for korriban_map.py's layout: a tomb model in each tomb niche facing the valley, hooded
+    statues lining the valley walls, an avenue of obelisks down it, the twin-statue gate between the valley and
+    Dreshdae, the ruined academy at the valley's head facing down it (y = 0: stood on the ground). HOI4 ignores the
+    objects' rotation, so each facing model is one of its KOR_TURNS turned copies. Entities in
+    gfx/entities/hod_korriban.{gfx,asset}. Run after korriban_map.py, free_province_ids.py and
+    planet_terrain_gen.py --korriban."""
+    import json
+    import random
+    import numpy as np
+    from PIL import Image
+    from scipy import ndimage as ndi
+    z = json.load(open("WIPGFX/Assets/korriban_zones.json"))
+    zone = np.asarray(Image.open("WIPGFX/Assets/korriban_zones.png"))
+    H = zone.shape[0]
+    rng = random.Random("korriban")
+    prov = z["provinces"]
+    valley = zone == 2
+    _, (vy, vx) = ndi.distance_transform_edt(~valley, return_indices=True)
+    to_mtn = ndi.distance_transform_edt(zone != 4)
+    to_space = ndi.distance_transform_edt(zone > 0)
+    objs = {}
+
+    def put(mesh, r, c, scale=1.0):
+        objs.setdefault((mesh, round(scale, 2)), []).append((c, H - 1 - r, 0.0))
+
+    def facing(mesh, r, c, r1, c1, scale=1.0):        # the turned copy whose front looks from (r, c) toward (r1, c1)
+        turn = math.atan2(-(r1 - r), c1 - c) + math.pi / 2               # map rows grow south; unturned front: south
+        put(f"{mesh}_r{round(turn / (2 * math.pi / KOR_TURNS)) % KOR_TURNS}", r, c, scale)
+    centre = lambda feat: np.mean([v["centre"] for v in prov.values() if v["feature"] == feat], 0)
+    # tombs: against the back of each niche, facing out onto the valley floor
+    plain = ["hod_kor_tomb_a", "hod_kor_tomb_b", "hod_kor_tomb_c", "hod_kor_tomb_d"]
+    tombs = sorted({v["feature"] for v in prov.values() if v["zone"] == "tomb"})       # one per tomb, not per province
+    for i, name in enumerate(tombs):
+        r, c = centre(name)
+        ri, ci = int(round(r)), int(round(c))
+        dr, dc = vy[ri, ci] - r, vx[ri, ci] - c
+        n_ = math.hypot(dr, dc) or 1
+        r, c = r - dr / n_ * KOR_TOMB_BACK, c - dc / n_ * KOR_TOMB_BACK
+        facing(KOR_TOMB_MODEL.get(name, plain[i % 4]), r, c, r + dr, c + dc, KOR_SCALE["tomb"])
+    # hooded statues along the valley walls, facing into the valley (not in front of the tombs)
+    gy, gx = np.gradient(ndi.gaussian_filter(to_mtn, 1.0))
+    near_tomb = ndi.distance_transform_edt(zone != 1) < 3
+    edge = np.argwhere(valley & (to_mtn <= 1.5) & (to_space > 2) & ~near_tomb)
+    taken = []
+    for k in sorted(range(len(edge)), key=lambda _: rng.random()):
+        r, c = edge[k]
+        if all((r - a) ** 2 + (c - b) ** 2 >= KOR_STATUE_STEP ** 2 for a, b in taken):
+            taken.append((r, c))
+            facing("hod_kor_statue", r, c, r + gy[r, c], c + gx[r, c], rng.uniform(0.85, 1.05))
+    # the avenue: obelisk pairs either side of the valley floor's long axis
+    vf = np.argwhere(valley & (to_mtn > 2))
+    cen = vf.mean(0)
+    ax = np.linalg.svd(vf - cen, full_matrices=False)[2][0]
+    t = (vf - cen) @ ax
+    for d in np.arange(t.min() + KOR_AVENUE[0], t.max() - KOR_AVENUE[0] / 2, KOR_AVENUE[0]):
+        r, c = cen + ax * d
+        for side in (-1, 1):
+            orr, oc = r + side * ax[1] * KOR_AVENUE[1], c - side * ax[0] * KOR_AVENUE[1]
+            if valley[int(round(orr)), int(round(oc))] and to_mtn[int(round(orr)), int(round(oc))] > 2:
+                put("hod_kor_obelisks", orr, oc, 0.7)
+    # ruins here and there on the valley floor: clear of the walls, the avenue and the provinces' unit positions
+    taken = [(r, c) for (m_, _s), pts in objs.items() for c, zz, _y in pts for r in [H - 1 - zz]]
+    units = [v["centre"] for v in prov.values()]
+    spots = np.argwhere(valley & (to_mtn > 4))
+    n_ruin = 0
+    for k in sorted(range(len(spots)), key=lambda _: rng.random()):
+        r, c = spots[k]
+        if all(math.hypot(r - a, c - b) >= KOR_RUINS[1] for a, b in taken) and \
+                all(math.hypot(r - a, c - b) >= KOR_RUINS[2] for a, b in units):
+            taken.append((r, c))
+            put(f"hod_kor_ruin_{'abcd'[n_ruin % 4]}", r, c, rng.uniform(0.7, 0.9))
+            n_ruin += 1
+            if n_ruin == KOR_RUINS[0]:
+                break
+    # the gate: the twin statues where Dreshdae opens onto the valley, looking out toward Dreshdae
+    town, vc = centre("Dreshdae"), centre("Valley of the Dark Lords")
+    town_px = np.argwhere(zone == 7)
+    gate = town_px[np.argmin(np.hypot(*(town_px - vc).T))]               # Dreshdae's edge nearest the valley
+    gr, gc = gate + (vc - gate) / (np.hypot(*(vc - gate)) or 1) * 3
+    facing("hod_kor_twins", gr, gc, *town, KOR_SCALE["hod_kor_twins"])
+    # the ruined academy in the middle of its grounds, facing down the valley
+    ac = centre("Sith Academy")
+    facing("hod_kor_academy", ac[0], ac[1], *vc, KOR_SCALE["hod_kor_academy"])
+    meshes = sorted({m for m, _ in objs})
+    open("gfx/entities/hod_korriban.gfx", "w", encoding="utf-8", newline="\n").write(
+        "objectTypes = {\n\t# HOD: Korriban (military_buildings.py korriban_place)\n"
+        + "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "{LM_OUT}/{m}.mesh"\n\t}}\n' for m in meshes) + "}\n")
+    open("gfx/entities/hod_korriban.asset", "w", encoding="utf-8", newline="\n").write(
+        "# HOD: Korriban (military_buildings.py korriban_place)\n"
+        + "".join(f'entity = {{\n\tname = "{m}_entity"\n\tpdxmesh = "{m}_mesh"\n\tscale = 1\n}}\n' for m in meshes))
+    block_ = KOR_MARK[0] + "\n"
+    for (mesh, scale), pts in sorted(objs.items()):
+        block_ += f'type={{\n\ttype="{mesh}_entity"\n\tuse_animation=no\n\tscale={scale:.6f}\n'
+        block_ += "".join(f'\tobject={{\n\t\tname="{mesh}_{int(scale * 100)}_{i}"\n\t\tposition={{\n\t\t\t{x:.3f} 0.000 {zz:.3f} \n'
+                          f'\t\t}}\n\t\trotation={{\n\t\t\t0.000 {yaw:.3f} 0.000 \n\t\t}}\n\t}}\n' for i, (x, zz, yaw) in enumerate(pts))
+        block_ += "}\n"
+    block_ += KOR_MARK[1] + "\n"
+
+    def fix(s):
+        s = re.sub(re.escape(KOR_MARK[0]) + r".*?" + re.escape(KOR_MARK[1]) + r"\n", "", s, flags=re.S)
+        s = re.sub(r'type=\{\s*type="hod_korriban_valley_entity".*?\n\}\n', "", s, flags=re.S)   # the old landmark
+        return s.rstrip("\n") + "\n" + block_
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from felucia_tribes import rw
+    rw("map/ambient_object.txt", fix)
+    count = {}
+    for (mesh, _s), pts in objs.items():
+        count[mesh] = count.get(mesh, 0) + len(pts)
+    print("Korriban:", count)
+
+FLO_MARK = ("# HOD: Florrum (military_buildings.py florrum_place)", "# HOD: end of Florrum")
+FLO_SCALE = {"hod_flo_complex": 0.85, "hod_flo_refinery": 0.8, "hod_flo_outpost": 0.75, "hod_flo_vault": 0.7}
+FLO_OFF = 2.5           # px a base stands off its province's unit position
+FLO_SCATTER = (5, 6.0)  # extra outposts on the plains: how many, px apart from everything else
+
+
+def florrum_place():
+    """map/ambient_object.txt for florrum_map.py's layout (y = 0: stood on the ground): Hondo's complex in its enclave,
+    the vault door in the eastern shelf facing out, the junk market's wrecks and crates (Raxus Prime models), a
+    mercenary outpost at each Commerce Guild victory point, the sulfur refinery on the acid flats, a few outposts
+    scattered on the plains; all off the provinces' unit positions. Entities in gfx/entities/hod_florrum.{gfx,asset}
+    (the wrecks and crates are already defined by Raxus Prime). Run after florrum_map.py and --florrum."""
+    import json
+    import random
+    import numpy as np
+    from PIL import Image
+    from scipy import ndimage as ndi
+    z = json.load(open("WIPGFX/Assets/florrum_zones.json"))
+    zone = np.asarray(Image.open("WIPGFX/Assets/florrum_zones.png"))
+    H = zone.shape[0]
+    rng = random.Random("florrum")
+    prov = z["provinces"]
+    units = [v["centre"] for v in prov.values()]
+    vp_at = {n: prov[p]["centre"] for p, n in z["vp_names"].items()}
+    open_ = np.isin(zone, (1, 2, 3, 5, 6))
+    to_shelf = ndi.distance_transform_edt(zone != 4)
+    to_space = ndi.distance_transform_edt(zone > 0)
+    objs, taken = {}, []
+
+    def put(mesh, r, c, scale=1.0):
+        objs.setdefault((mesh, round(scale, 2)), []).append((c, H - 1 - r, 0.0))
+        taken.append((r, c))
+
+    def off(r, c):                                   # a spot a little off a unit position, on open ground
+        for _ in range(40):
+            a = rng.uniform(0, 6.28)
+            rr, cc = r + FLO_OFF * math.sin(a), c + FLO_OFF * math.cos(a)
+            ri, ci = int(round(rr)), int(round(cc))
+            if open_[ri, ci] and to_space[ri, ci] > 2 and all(math.hypot(rr - a_, cc - b_) > 2.0 for a_, b_ in units):
+                return rr, cc
+        return r, c
+    centre = lambda feat: np.mean([v["centre"] for v in prov.values() if v["feature"] == feat], 0)
+    # Hondo's complex: in the middle of its enclave
+    cr, cc = centre("Hondo's Complex")
+    put("hod_flo_complex", cr, cc, FLO_SCALE["hod_flo_complex"])
+    # the vault: its door at the back of its pocket in the shelf, facing out toward the way in
+    vr, vc = vp_at["Hondo's Secret Ship Vault"]
+    dr, dc = cr - vr, cc - vc                                            # out of the pocket: toward the complex
+    n_ = math.hypot(dr, dc) or 1
+    r0, c0 = vr - dr / n_ * 1.5, vc - dc / n_ * 1.5                     # back against the rock
+    turn = math.atan2(-dr, dc) + math.pi / 2                             # front (south when unturned) faces out
+    put(f"hod_flo_vault_r{round(turn / (math.pi / 4)) % 8}", r0, c0, FLO_SCALE["hod_flo_vault"])
+    # the junk market: wrecked ships and scrap among the stalls
+    mk = np.argwhere(zone == 6)
+    for mesh, sc in (("hod_bld_rp_lethisk", 0.8), ("hod_bld_rp_hammerhead_bow", 0.5), ("hod_bld_rpt_crates1", 0.8),
+                     ("hod_bld_rpt_crates5", 0.8), ("hod_bld_rpt_crates9", 0.8), ("hod_bld_rpt_huttTower", 0.6)):
+        for _ in range(60):
+            r, c = mk[rng.randrange(len(mk))]
+            if all(math.hypot(r - a, c - b) > 1.8 for a, b in taken + units):
+                put(mesh, r, c, sc)
+                break
+    # Commerce Guild posts at their victory points, the refinery on the acid flats
+    for name in ("Doshar Fields", "Guild Sulfur Works", "Skalder Plains", "Dustbowl Outpost"):
+        r, c = off(*vp_at[name])
+        put(f"hod_flo_outpost_{'ab'[len(taken) % 2]}", r, c, FLO_SCALE["hod_flo_outpost"])
+    r, c = off(*vp_at["Guild Sulfur Refinery"])
+    put("hod_flo_refinery", r, c, FLO_SCALE["hod_flo_refinery"])
+    # a few more mercenary outposts on the open plains
+    spots = np.argwhere((zone == 1) & (to_shelf > 2) & (to_space > 3))
+    n_out = 0
+    for k in sorted(range(len(spots)), key=lambda _: rng.random()):
+        r, c = spots[k]
+        if all(math.hypot(r - a, c - b) >= FLO_SCATTER[1] for a, b in taken) and \
+                all(math.hypot(r - a, c - b) >= 2.5 for a, b in units):
+            put(f"hod_flo_outpost_{'ab'[n_out % 2]}", r, c, FLO_SCALE["hod_flo_outpost"])
+            n_out += 1
+            if n_out == FLO_SCATTER[0]:
+                break
+    own = sorted({m for m, _ in objs if m.startswith("hod_flo_")})
+    open("gfx/entities/hod_florrum.gfx", "w", encoding="utf-8", newline="\n").write(
+        "objectTypes = {\n\t# HOD: Florrum (military_buildings.py florrum_place)\n"
+        + "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "{LM_OUT}/{m}.mesh"\n\t}}\n' for m in own) + "}\n")
+    open("gfx/entities/hod_florrum.asset", "w", encoding="utf-8", newline="\n").write(
+        "# HOD: Florrum (military_buildings.py florrum_place)\n"
+        + "".join(f'entity = {{\n\tname = "{m}_entity"\n\tpdxmesh = "{m}_mesh"\n\tscale = 1\n}}\n' for m in own))
+    block_ = FLO_MARK[0] + "\n"
+    for (mesh, scale), pts in sorted(objs.items()):
+        block_ += f'type={{\n\ttype="{mesh}_entity"\n\tuse_animation=no\n\tscale={scale:.6f}\n'
+        block_ += "".join(f'\tobject={{\n\t\tname="{mesh}_flo_{int(scale * 100)}_{i}"\n\t\tposition={{\n\t\t\t{x:.3f} 0.000 {zz:.3f} \n'
+                          f'\t\t}}\n\t\trotation={{\n\t\t\t0.000 0.000 0.000 \n\t\t}}\n\t}}\n' for i, (x, zz, _y) in enumerate(pts))
+        block_ += "}\n"
+    block_ += FLO_MARK[1] + "\n"
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from felucia_tribes import rw
+    rw("map/ambient_object.txt", lambda s: re.sub(re.escape(FLO_MARK[0]) + r".*?" + re.escape(FLO_MARK[1]) + r"\n", "", s,
+                                                    flags=re.S).rstrip("\n") + "\n" + block_)
+    count = {}
+    for (mesh, _s), pts in objs.items():
+        count[mesh] = count.get(mesh, 0) + len(pts)
+    print("Florrum:", count)
+
+KAD_MARK = ("# HOD: Kadavo (military_buildings.py kadavo_place)", "# HOD: end of Kadavo")
+KAD_SCALE = {"hod_kad_facility": 1.0, "hod_kad_tower": 0.7, "hod_kad_dock": 1.0, "hod_kad_mine": 0.9, "hod_kad_camp": 1.0}
+KAD_OFF = 2.6                    # px a model stands off a unit position
+KAD_CRATERS = 50                 # volcanic crater models scattered over the planet
+KAD_CRATER_R = {"a": 3.2, "b": 4.6, "c": 2.6, "d": 1.4}                 # footprint radii at scale 1 (KAD_CRATER_PROFILES)
+KAD_CRATER_SCALE = {"a": (0.5, 1.0), "b": (0.45, 0.85), "c": (0.5, 1.0), "d": (0.7, 1.4)}
+KAD_CRATER_MOUTH = 0.5           # the mouth's share of the footprint: no unit position inside it
+
+
+def kadavo_place():
+    """map/ambient_object.txt for kadavo_map.py's layout (y = 0: stood on the ground): the processing facility on the
+    prison deck in the Great Crater (its girder arms along the causeways to bastions on the rim), the
+    slavers' dock, rigs in the ore pits, a slave camp at each plains victory point; all off the unit positions.
+    Entities in gfx/entities/hod_kadavo.{gfx,asset}. Run after kadavo_map.py and planet_terrain_gen.py --kadavo."""
+    import json
+    import random
+    import numpy as np
+    from PIL import Image
+    from scipy import ndimage as ndi
+    z = json.load(open("WIPGFX/Assets/kadavo_zones.json"))
+    zone = np.asarray(Image.open("WIPGFX/Assets/kadavo_zones.png"))
+    H = zone.shape[0]
+    rng = random.Random("kadavo")
+    prov = z["provinces"]
+    units = [v["centre"] for v in prov.values()]
+    vp_at = {n: prov[p]["centre"] for p, n in z["vp_names"].items()}
+    objs, taken = {}, []
+
+    def put(mesh, r, c):
+        objs.setdefault((mesh, KAD_SCALE[mesh]), []).append((c, H - 1 - r, 0.0))
+        taken.append((r, c))
+
+    def clear(r, c, d=KAD_OFF):
+        return all(math.hypot(r - a, c - b) >= d for a, b in units)
+
+    def near(r, c, zones):                           # a spot on these zones a little off (r, c) and the unit positions
+        for rad in (KAD_OFF, KAD_OFF + 1, KAD_OFF + 2, KAD_OFF + 3):
+            for _ in range(30):
+                a = rng.uniform(0, 6.28)
+                rr, cc = r + rad * math.sin(a), c + rad * math.cos(a)
+                if zone[int(round(rr)), int(round(cc))] in zones and clear(rr, cc) and \
+                        all(math.hypot(rr - a_, cc - b_) > 3 for a_, b_ in taken):
+                    return rr, cc
+        return r, c
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import kadavo_map as km
+    (pcy, pcx), R = z["centre"], z["radius"]
+    hub = (pcy + km.HUB[1] * R, pcx + km.HUB[0] * R)                     # the prison deck's middle (the arms' origin)
+    put("hod_kad_facility", *hub)
+    put("hod_kad_dock", *near(*vp_at["Slaver Landing Field"], (5,)))
+    inner = ndi.distance_transform_edt(zone == 6) > 2.5                  # inside the pits, not on their rims
+    pits = [q for q in np.argwhere(inner) if clear(*q, 2.6)]
+    for _ in range(2):
+        q = max(pits, key=lambda q: min(math.hypot(*(q - np.array(t))) for t in taken))
+        put("hod_kad_mine", *q)
+    for name in ("Northern Slave Camp", "Cinder Outpost", "Crater Field Watchpost", "Smog Flats Camp"):
+        put("hod_kad_camp", *near(*vp_at[name], (1,)))
+    # volcanic crater models (the stills): on the plains, the great dome's flank and the lava flows; a unit may stand
+    # beside one but not in its mouth; none over another model or off the planet's edge
+    edge = ndi.distance_transform_edt(zone > 0)
+    spots = np.argwhere(np.isin(zone, (1, 2, 4)) & (edge > 3))
+    unit_arr = np.array(units)
+    stats = {"edge": 0, "unit": 0, "model": 0}
+    placed = 0
+    for i in sorted(range(len(spots)), key=lambda _: rng.random()):
+        r, c = spots[i]
+        v = rng.choices("abcd", weights=(25, 15, 25, 35))[0]
+        sc = rng.uniform(*KAD_CRATER_SCALE[v])
+        foot = KAD_CRATER_R[v] * sc
+        if edge[r, c] <= foot + 0.5:
+            stats["edge"] += 1
+            continue
+        if np.min(np.hypot(unit_arr[:, 0] - r, unit_arr[:, 1] - c)) < foot * KAD_CRATER_MOUTH + 0.5:
+            stats["unit"] += 1
+            continue
+        if any(math.hypot(r - a_, c - b_) < foot + 0.8 for a_, b_ in taken):
+            stats["model"] += 1
+            continue
+        objs.setdefault((f"hod_kad_crater_{v}", round(sc, 1)), []).append((c, H - 1 - r, 0.0))
+        taken.append((r, c))
+        placed += 1
+        if placed == KAD_CRATERS:
+            break
+    print("craters placed", placed, "rejected", stats)
+    meshes = sorted({m for m, _ in objs})
+    open("gfx/entities/hod_kadavo.gfx", "w", encoding="utf-8", newline="\n").write(
+        "objectTypes = {\n\t# HOD: Kadavo (military_buildings.py kadavo_place)\n"
+        + "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "{LM_OUT}/{m}.mesh"\n\t}}\n' for m in meshes) + "}\n")
+    open("gfx/entities/hod_kadavo.asset", "w", encoding="utf-8", newline="\n").write(
+        "# HOD: Kadavo (military_buildings.py kadavo_place)\n"
+        + "".join(f'entity = {{\n\tname = "{m}_entity"\n\tpdxmesh = "{m}_mesh"\n\tscale = 1\n}}\n' for m in meshes))
+    block_ = KAD_MARK[0] + "\n"
+    for (mesh, scale), pts in sorted(objs.items()):
+        block_ += f'type={{\n\ttype="{mesh}_entity"\n\tuse_animation=no\n\tscale={scale:.6f}\n'
+        block_ += "".join(f'\tobject={{\n\t\tname="{mesh}_{int(scale * 100)}_{i}"\n\t\tposition={{\n\t\t\t{x:.3f} 0.000 {zz:.3f} \n'
+                          f'\t\t}}\n\t\trotation={{\n\t\t\t0.000 0.000 0.000 \n\t\t}}\n\t}}\n' for i, (x, zz, _y) in enumerate(pts))
+        block_ += "}\n"
+    block_ += KAD_MARK[1] + "\n"
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from felucia_tribes import rw
+    rw("map/ambient_object.txt", lambda s: re.sub(re.escape(KAD_MARK[0]) + r".*?" + re.escape(KAD_MARK[1]) + r"\n", "", s,
+                                                    flags=re.S).rstrip("\n") + "\n" + block_)
+    count = {}
+    for (m, _s), p in objs.items():
+        count[m] = count.get(m, 0) + len(p)
+    print("Kadavo:", count)
+
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks, "atlas": atlas,
-     "felucia_atlas": felucia_atlas, "models": models,
+     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "models": models,
      "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])

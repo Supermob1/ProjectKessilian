@@ -334,6 +334,7 @@ PixelShader =
 				clip( vDiffuseColor.a - 0.5f );
 			
 			clip( 0.17 - GetTreeMask( TreeMaskTexture, In.vPos ) );
+			clip( In.vPos.y - WATER_HEIGHT ); // HOD: no mirrored trees under the space "sea"
 			
 			float2 uv = float2( ( ( In.vPos.x+0.5f ) / MAP_SIZE_X ), ( ( In.vPos.z+0.5f-MAP_SIZE_Y ) / -MAP_SIZE_Y )); 
 			
@@ -434,6 +435,7 @@ PixelShader =
 				clip( vDiffuseColor.a - 0.5f );
 			
 			clip( 0.17 - GetTreeMask( TreeMaskTexture, In.vPos ) );
+			clip( In.vPos.y - WATER_HEIGHT ); // HOD: no mirrored trees under the space "sea"
 		
 			// Grab the shadow term
 			float fShadowTerm = CalculateShadow( In.vShadowProj, ShadowMap);

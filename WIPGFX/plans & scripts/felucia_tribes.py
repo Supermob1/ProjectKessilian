@@ -310,7 +310,7 @@ def place(states, prov, pid, land, fel, state_ids, port_p, capital, rng):
     def pcentre(p):
         rs, cs = np.nonzero(pid == p)
         return rs.mean(), cs.mean()
-    landing = [p for p in fprov if prov[p]["coastal"] and prov[p]["zone"] != "white"]
+    landing = [p for p in fprov if prov[p]["coastal"] and prov[p]["zone"] not in ("white", "mountain")]   # passable
     lines = open("map/adjacencies.csv", encoding="utf-8-sig", newline="").readlines()
     for i, l in enumerate(lines):
         q = l.split(";")
@@ -404,6 +404,7 @@ recruit_character = {TRIBES}_rancor_rider
 
 set_technology = {{
 	infantry_weapons = 1
+	tech_support = 1
 	tech_recon = 1
 	tech_engineers = 1
 }}

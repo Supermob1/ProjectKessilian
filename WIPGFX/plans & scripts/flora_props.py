@@ -59,6 +59,10 @@ PROCEDURAL = {
     76: "rp_heap_ridge",  # long ridge of junk (walls of the dump's maze)
     77: "rp_heap_tangle", # tangle of girders and pipes over a low spread
     78: "rp_heap_slabs",  # hull slabs leaning on each other
+    # Korriban (korriban_research.md): the mountains a field of razor-sharp red spires (Moraband, The Clone Wars),
+    # the valley floors strewn with the ruins of the Sith (broken columns, fallen statues, rubble)
+    79: "kor_spires",     # a cluster of needle spires
+    80: "kor_ruins",      # broken columns and a fallen statue
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
@@ -67,6 +71,7 @@ PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_de
              74: ["hod_scrap_tile", "hod_scrap_metal"], 75: ["hod_scrap_tile", "hod_scrap_metal"]}
 # the heaps are built like the trees: a body plus clumps of cut-out cards (junk pieces on transparent ground)
 PROC_MATS.update({i: ["hod_scrap_tile", "hod_scrap_metal", "hod_junk_clump"] for i in range(73, 79)})
+PROC_MATS.update({79: ["hod_kor_rock"], 80: ["hod_kor_rock", "hod_kor_stone"]})
 # Sketchfab models converted by sketchfab_props.py (meshes land in OUT as hod_flora_<index>_<name>.mesh)
 EXTERNAL = {53: "sandcrawler", 54: "vaporators", 56: "wreck_harrower", 57: "wreck_foray"}
 # Raxus Prime junk (sketchfab_props.py SPECS rp_*: Battlefront II / Empire at War models)
@@ -283,6 +288,9 @@ def textures():
             d.ellipse([cx - r_, cy - r_, cx + r_, cy + r_], fill=c, outline=(28, 22, 18, 255))
     save("hod_junk_clump", np.asarray(im).astype(np.float32), flat_n)
     leaf["hod_junk_clump"] = True
+    surface("hod_kor_rock", (156, 64, 44), 0, 0.2)                      # Korriban: red rock, streaked
+    surface("hod_kor_stone", (176, 132, 112), 0, 0.05)                  # pale carved stone of the ruins
+    leaf["hod_kor_rock"] = leaf["hod_kor_stone"] = False
     # one atlas per multi-material model: the tree renderer draws only a mesh's first material (vanilla trees
     # all have one), so trunk + leaves share one texture, one vertical slot each (bottom-up = Blender's v)
     atlas = {idx: [f"hod_{m[0]}" for m in materials(pid)] for idx, (pid, *_r) in ASSETS.items()}
@@ -762,6 +770,23 @@ def procedural():
                 plate(Vector((math.cos(a) * 0.8, math.sin(a) * 0.8, 0.5)), rng.uniform(1.2, 2.0), rng.uniform(0.8, 1.3),
                       0.08, rng.uniform(0.7, 1.2), a + math.pi / 2)
 
+    def korriban_flora(bm, uv, kind):
+        if kind == "kor_spires":                        # needle spires: tall thin cones, leaning a little
+            for i in range(rng.randint(4, 7)):
+                a, d = rng.uniform(0, 6.283), (0 if i == 0 else rng.uniform(0.4, 1.3))
+                h, r = rng.uniform(2.4, 4.8) * (1.15 if i == 0 else 0.8), rng.uniform(0.3, 0.55)
+                lean = (rng.uniform(-.06, .06), rng.uniform(-.06, .06))
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.3, r * 1.2), (0.3 * h, r * 0.75), (0.65 * h, r * 0.4),
+                                                                    (h, 0.01)], 6, 0, lean)
+        else:                                           # broken columns, a toppled statue, rubble
+            for i in range(3):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.3, 1.0)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, 0.2), (rng.uniform(0.4, 1.6), 0.18)], 8, 1)
+            limb(bm, uv, Vector((-1.0, 0.3, 0.15)), Vector((0.6, -0.4, 0.35)), 0.28, 0.2, 1, sides=8, segs=2)
+            for _ in range(5):
+                c = Vector((rng.uniform(-1.2, 1.2), rng.uniform(-1.2, 1.2), 0.0))
+                lathe(bm, uv, (c.x, c.y), [(-0.1, rng.uniform(0.12, 0.25)), (0.18, 0.12), (0.25, 0.01)], 5, 0)
+
     def homestead(bm, uv):
         dome(bm, uv, (0, 0, -0.05), 0.45)              # main dome
         dome(bm, uv, (0.75, 0.2, -0.03), 0.22)         # entrance
@@ -793,6 +818,9 @@ def procedural():
         elif kind.startswith("rp_heap"):
             junk_heap(bm, uv, kind)
             mats = PROC_MATS[idx]
+        elif kind.startswith("kor_"):
+            korriban_flora(bm, uv, kind)
+            mats = PROC_MATS[idx]
         else:
             homestead(bm, uv)
             mats = PROC_MATS[idx]
@@ -802,7 +830,7 @@ def procedural():
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap")):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)

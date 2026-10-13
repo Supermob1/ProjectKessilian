@@ -1,0 +1,31 @@
+state={
+	id=734
+	name="STATE_734"
+	# HOD: Kadavo (kadavo_map.py)
+	provinces={
+		2525 2587 2746 2779 2789 2830 2948
+	}
+	resources={
+		oil=2
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			2525 3
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			dockyard = 2
+					2587 = {
+				naval_base = 3
+			}
+		}
+		owner = ZGY
+		add_core_of = ZGY
+	}
+	manpower = 62337
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

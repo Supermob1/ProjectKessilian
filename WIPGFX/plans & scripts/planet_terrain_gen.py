@@ -28,6 +28,12 @@ Usage (from the mod root):
                                                          colormap / terrain.bmp / atlas change)
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --felucia      only repaint Felucia (giant flora, alien ground, amber
                                                          haze); run after --write / --world-tweaks, then --globe-texture
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --kadavo       only repaint Kadavo; run after kadavo_map.py,
+                                                         then --globe-texture
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --florrum      only repaint Florrum (and its colours); run after
+                                                         florrum_map.py, then --globe-texture
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --korriban     only repaint Korriban (valleys, tombs, spires); run
+                                                         after korriban_map.py, then --globe-texture
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --raxus-prime  only repaint Raxus Prime (junk world); run after
                                                          raxus_prime_map.py, then --globe-texture
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --raxus        only repaint Raxus (capital, countryside); run after
@@ -924,6 +930,387 @@ def raxus_prime(t, trees, city, h, labels, names, pid, rng):
     return t, trees, city, hn
 
 
+# Korriban (korriban_map.py, after the user's references 2026-10-13: Moraband fan maps, Tom Cartos' Valley of Tombs,
+# KOTOR/TOR/TCW art). Zones: 1 tomb niches, 2 the Valley of the Dark Lords and its entrance, 3 the ruined Sith
+# Academy, 4 mountain massifs (impassable), 5 the open wastes, 6 the Dead Lake (impassable), 7 the ruins of Dreshdae, 8 the
+# ziggurat (Sith Citadel), 9 the crypts behind the tombs (zones 5, 6, 8 are from an earlier layout). Open dune wastes with a few lone buttes; massifs with one crest line down their middle and
+# gullies off it; a flat valley floor walled in by its range, the tombs cut into the walls at floor level; the academy
+# ruins on a terrace at the valley's head; Dreshdae a ruin too (the planet is abandoned: no city models). The painted globe (colormap) stays.
+KORRIBAN = "Korriban"
+KOR_ZONES, KOR_JSON = "WIPGFX/Assets/korriban_zones.png", "WIPGFX/Assets/korriban_zones.json"
+KOR_LEVEL = {1: 2, 2: 2, 3: 12, 5: 4, 6: 0.5, 7: 4, 8: 5, 9: 1}   # heightmap steps above the base, by zone
+KOR_DUNES = 5                       # dune relief on the wastes
+KOR_RAMP = 2.5                      # px over which the academy terrace climbs from the valley floor
+KOR_WALL = (14, 1.5)                # cliff at the foot of the ranges: height, px it takes to climb it
+KOR_RANGE = (40, 110)               # range height above the cliff: thinnest and broadest massifs (crest)
+KOR_BUTTES = (7, 0.76, 2.0, 24)     # rock outcrops on the wastes: noise cell, threshold, px to full height, height
+KOR_TERRAIN = {1: 25, 2: BROWN, 3: 25, 5: DUNES, 6: ROCK2, 7: 25, 8: 25, 9: ROCK}  # urban_plaza_25: stone, no city models
+KOR_PROPS = {4: [(50, 0.05), (48, 0.03)],                               # boulders at the range feet only
+             5: [(48, 0.015), (49, 0.015), (80, 0.008)],                   # the wastes: rocks, a ruin here and there
+             2: [(80, 0.04), (48, 0.02)],                                  # valley floor: ruins and rocks
+             3: [(80, 0.2)],                                               # the academy grounds: rubble and ruins
+             7: [(80, 0.15), (48, 0.03)],                                  # the ruins of Dreshdae
+             9: [(80, 0.12), (50, 0.06)]}                                  # the crypts: bones of ruins, boulders
+
+
+def korriban(t, trees, city, h, labels, names, pid, rng):
+    """Repaint Korriban only (terrain.bmp, heightmap, cities.bmp, trees.bmp); the colormap is left alone."""
+    t, trees, city = t.copy(), trees.copy(), city.copy()
+    H, W = labels.shape
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    kor = planet == KORRIBAN
+    zone = np.asarray(Image.open(KOR_ZONES))
+    ys, xs = np.nonzero(kor)
+    y0, y1, x0, x1 = ys.min() - 2, ys.max() + 3, xs.min() - 2, xs.max() + 3
+    sl = np.s_[y0:y1, x0:x1]
+    sub, z = kor[sl], zone[sl]
+    yy, xx = np.mgrid[0:sub.shape[0], 0:sub.shape[1]].astype(np.float32)
+    rim = smoothstep(np.clip((ndi.distance_transform_edt(sub) - 2) / 5, 0, 1))
+    mtn = z == 4
+    # px into the massifs, from a signed distance smoothed so their feet curve instead of following pixel steps;
+    # height follows it, scaled so every massif peaks on its own middle line; broader massifs stand taller; warped
+    # ridged noise cuts spurs and gullies down the flanks
+    into = np.maximum(ndi.gaussian_filter(ndi.distance_transform_edt(mtn) - ndi.distance_transform_edt(~mtn), 1.4), 0)
+    crest = ndi.grey_dilation(into, size=(13, 13))
+    u = np.clip(into / np.maximum(crest, 1), 0, 1)
+    tall = np.clip((crest - 3) / 9, 0, 1)
+    wy, wx = (noise(sub.shape, 10, rng, 2) - 0.5) * 5, (noise(sub.shape, 10, rng, 2) - 0.5) * 5
+    wyi = np.clip(np.rint(yy + wy).astype(int), 0, sub.shape[0] - 1)
+    wxi = np.clip(np.rint(xx + wx).astype(int), 0, sub.shape[1] - 1)
+    gully = np.zeros(sub.shape, np.float32)
+    for cell, amp in ((6, 0.6), (3, 0.4)):
+        gully += amp * (1 - np.abs(2 * noise(sub.shape, cell, rng, 1)[wyi, wxi] - 1)) ** 3
+    cliff = smoothstep(np.clip(into / KOR_WALL[1], 0, 1)) * KOR_WALL[0]
+    peak = (KOR_RANGE[0] + (KOR_RANGE[1] - KOR_RANGE[0]) * tall) * u * (0.45 + 0.85 * gully)
+    # the open ground: each zone at its level, dunes on the wastes, lone buttes away from the province centres
+    lvl = np.zeros(sub.shape, np.float32)
+    for zk, v in KOR_LEVEL.items():
+        lvl[z == zk] = v
+    lvl = np.where(z == 3, KOR_LEVEL[2] + (KOR_LEVEL[3] - KOR_LEVEL[2])
+                   * smoothstep(np.clip(ndi.distance_transform_edt(z == 3) / KOR_RAMP, 0, 1)), lvl)
+    wastes = z == 5
+    dunes = noise(sub.shape, 5, rng, 3) * KOR_DUNES * smoothstep(np.clip(ndi.distance_transform_edt(wastes) / 3, 0, 1))
+    zj = json.load(open(KOR_JSON))
+    cen = np.array([v["centre"] for v in zj["provinces"].values()]) - [y0, x0]
+    far = (ndi.distance_transform_edt(wastes) > 2.5) & (np.min([np.hypot(yy - a, xx - b) for a, b in cen], 0) > 4)
+    blob = far & (noise(sub.shape, KOR_BUTTES[0], rng, 3) > KOR_BUTTES[1])
+    sizes = ndi.sum(blob, ndi.label(blob)[0], range(ndi.label(blob)[1] + 1))
+    blob &= sizes[ndi.label(blob)[0]] >= 5                                   # no single-pixel pimples
+    buttes = KOR_BUTTES[3] * smoothstep(np.clip(ndi.gaussian_filter(ndi.distance_transform_edt(blob), 0.7) / KOR_BUTTES[2], 0, 1))         * (0.5 + 0.7 * gully)
+    open_ = (~mtn).astype(np.float32)
+    flat = ndi.gaussian_filter(lvl * open_, 1.2) / np.maximum(ndi.gaussian_filter(open_, 1.2), 1e-3)
+    rel = np.where(mtn, KOR_LEVEL[5] + cliff + peak, flat + np.where(wastes, dunes + buttes, 0))
+    rel = np.where(z == 6, KOR_LEVEL[6], rel)                               # the Dead Lake: dead flat
+    hn = h.copy()
+    hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
+    gy, gx = np.gradient(hn[sl])
+    slope = np.hypot(gx, gy)
+    # terrain.bmp: rock by slope on the massifs and buttes, dunes on the wastes, stone at the tombs, academy, citadel
+    tz = np.full(sub.shape, -1, np.int16)
+    for zk, tt in KOR_TERRAIN.items():
+        tz[sub & (z == zk)] = tt
+    rock = sub & (mtn | (wastes & (buttes > 4)))
+    tz[rock] = np.where(slope > 9, 24, np.where(slope > 4, BROWNMTN, BROWN))[rock]
+    t[sl] = np.where(tz >= 0, tz, t[sl]).astype(t.dtype)
+    city[kor] = 0
+                                                                            # an abandoned planet: no city models
+    TH, TW = trees.shape
+    gi = np.ix_(np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1),
+                np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1))
+    trees[kor[gi]] = 0
+    r = rng.random((TH, TW))
+    ashore = np.zeros((H, W), bool)
+    ashore[sl] = ndi.distance_transform_edt(sub) > 2.5
+    feet = np.zeros((H, W), bool)
+    feet[sl] = mtn & (into < 3)
+    level = np.zeros((H, W), bool)
+    level[sl] = slope < 4
+    for zk, props in KOR_PROPS.items():
+        ok = kor[gi] & ashore[gi] & (zone[gi] == zk) & (feet[gi] if zk == 4 else level[gi])
+        lo = 0.0
+        for idx, share in props:
+            trees[ok & (r >= lo) & (r < lo + share)] = idx
+            lo += share
+    print(f"Korriban: zones {dict(zip(*np.unique(z[sub], return_counts=True)))}, top {int(hn[sl].max())}")
+    return t, trees, city, hn
+
+
+# Florrum (florrum_map.py; The Clone Wars stills: "Dooku Captured", "The Gungan General", "A Necessary Bond"): olive
+# and ochre dust plains broken by flat-topped rock shelves stacked in tiers, a canyon with sandstone walls down the
+# middle, acid flats with sulfur pools and geysers (florrum_fx.py), the Ohnaka Gang's bases on level pads. Zones:
+# 1 plains, 2 canyon, 3 acid flats, 4 shelves (impassable), 5 bases, 6 the junk market. The painted globe is pushed
+# toward olive green and sulfur yellow (user: "a greenish look"), brightness kept.
+FLORRUM = "Florrum"
+FLO_ZONES, FLO_JSON = "WIPGFX/Assets/florrum_zones.png", "WIPGFX/Assets/florrum_zones.json"
+FLO_PLAIN, FLO_FLOOR, FLO_PAD = 16, 2, 17      # heightmap steps above the base: plains, canyon floor, base pads
+FLO_TIER = (16, 3.6, 3)                        # shelves: height of a tier, px of ground per tier, tiers at most
+FLO_OUTCROP = (8, 0.8, 1.5, 9)                 # little passable shelves on the plains: noise cell, threshold, px/tier, tier
+FLO_POOLS = (5, 0.78, 3)                       # sulfur pools on the acid flats: noise cell, threshold, depth
+FLO_PUDDLES = (4, 0.86)                        # a few puddles on the plains too
+WET = 9                                        # terrain.bmp marsh (atlas slot 6: water)
+FLO_GROUND = [(0.0, (0.20, 0.21, 0.09)), (0.45, (0.40, 0.42, 0.17)), (0.8, (0.55, 0.52, 0.24)), (1.0, (0.66, 0.60, 0.30))]
+FLO_ZONE_TINT = {3: (1.0, 1.08, 0.8), 4: (1.1, 0.95, 0.85), 2: (1.08, 0.97, 0.88)}   # acid flats greener, rock ochre
+FLO_PROPS = {1: [(48, 0.012), (49, 0.012), (50, 0.008)], 2: [(50, 0.04), (48, 0.03)], 4: [(50, 0.03)],
+             3: [(49, 0.01)]}
+
+
+def florrum(t, trees, city, h, labels, names, pid, rng, cm):
+    """Repaint Florrum only (terrain.bmp, heightmap, cities.bmp, trees.bmp, and its colours in the colormap)."""
+    t, trees, city, cm = t.copy(), trees.copy(), city.copy(), cm.copy()
+    H, W = labels.shape
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    flo = planet == FLORRUM
+    zone = np.asarray(Image.open(FLO_ZONES))
+    ys, xs = np.nonzero(flo)
+    y0, y1, x0, x1 = ys.min() - 2, ys.max() + 3, xs.min() - 2, xs.max() + 3
+    sl = np.s_[y0:y1, x0:x1]
+    sub, z = flo[sl], zone[sl]
+    rim = smoothstep(np.clip((ndi.distance_transform_edt(sub) - 1.5) / 3, 0, 1))
+    zj = json.load(open(FLO_JSON))
+    cen = np.array([v["centre"] for v in zj["provinces"].values()]) - [y0, x0]
+    yy, xx = np.mgrid[0:sub.shape[0], 0:sub.shape[1]].astype(np.float32)
+    near_unit = np.min([np.hypot(yy - a, xx - b) for a, b in cen], 0) < 2.5
+    # shelves: tiers stepping up toward the middle of each (flat tops, sheer steps, ragged edges)
+    shelf = z == 4
+    into = ndi.distance_transform_edt(shelf) + (noise(sub.shape, 5, rng, 2) - 0.5) * 2.4
+    tiers = np.clip(np.floor(into / FLO_TIER[1]) + 1, 0, FLO_TIER[2])
+    edge = np.clip((into / FLO_TIER[1]) % 1 * 4, 0, 1)                      # the step climbs over a quarter tier
+    rel = np.where(shelf, FLO_PLAIN + (tiers - 1 + smoothstep(edge)) * FLO_TIER[0], FLO_PLAIN)
+    # plains: soft dust, a few small stacked outcrops away from the unit positions
+    plains = np.isin(z, (1, 3))
+    rel = np.where(plains, FLO_PLAIN + noise(sub.shape, 9, rng, 3) * 3, rel)
+    crop = plains & (noise(sub.shape, FLO_OUTCROP[0], rng, 3) > FLO_OUTCROP[1]) & ~near_unit & (ndi.distance_transform_edt(sub) > 3)
+    cd = ndi.distance_transform_edt(crop)
+    rel = np.where(crop, rel + np.clip(np.ceil(cd / FLO_OUTCROP[2]), 0, 2) * FLO_OUTCROP[3], rel)
+    # canyon: sunk below the plains, sheer sandstone walls
+    can = z == 2
+    cin = ndi.gaussian_filter(ndi.distance_transform_edt(can), 0.6)
+    rel = np.where(can, FLO_PLAIN - (FLO_PLAIN - FLO_FLOOR) * smoothstep(np.clip(cin / 1.2, 0, 1)), rel)
+    # bases and the market: level pads
+    rel = np.where(np.isin(z, (5, 6)), FLO_PAD, rel)
+    # sulfur pools on the acid flats, puddles here and there on the plains: shallow and dead flat
+    pools = (z == 3) & (noise(sub.shape, FLO_POOLS[0], rng, 2) > FLO_POOLS[1]) & ~near_unit
+    pools |= (z == 1) & (noise(sub.shape, FLO_PUDDLES[0], rng, 2) > FLO_PUDDLES[1]) & ~near_unit & ~crop
+    pools &= ndi.distance_transform_edt(sub) > 3                           # none on the planet's rim
+    rel = np.where(pools, FLO_PLAIN - FLO_POOLS[2], rel)
+    hn = h.copy()
+    hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
+    gy, gx = np.gradient(hn[sl])
+    slope = np.hypot(gx, gy)
+    # terrain.bmp: sand and olive scrub on the plains, scrubland on the acid flats, water in the pools, rock by slope
+    tz = np.full(sub.shape, -1, np.int16)
+    mix = noise(sub.shape, 6, rng, 2)
+    tz[sub & plains] = np.where(mix > 0.55, BROWN, DUNES)[sub & plains]
+    tz[sub & (z == 3)] = np.where(mix > 0.4, SAVANNA, BROWN)[sub & (z == 3)]
+    tz[sub & can] = SAND
+    tz[sub & shelf] = BROWNMTN
+    tz[sub & np.isin(z, (5, 6))] = 25                                      # urban_plaza_25: pads, no city models
+    steep = sub & (slope > 4) & ~np.isin(z, (5, 6))
+    tz[steep] = np.where(slope > 8, ROCK, BROWNMTN)[steep]
+    tz[sub & pools] = WET
+    t[sl] = np.where(tz >= 0, tz, t[sl]).astype(t.dtype)
+    city[flo] = 0                                                          # bases are models (military_buildings.py)
+    # props: rocks on the plains and at the canyon walls, none on pools, pads or where units stand
+    TH, TW = trees.shape
+    gi = np.ix_(np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1),
+                np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1))
+    trees[flo[gi]] = 0
+    r = rng.random((TH, TW))
+    ok = np.zeros((H, W), bool)
+    ok[sl] = sub & ~pools & ~near_unit & (ndi.distance_transform_edt(sub) > 2)
+    for zk, props in FLO_PROPS.items():
+        cells = ok[gi] & (zone[gi] == zk)
+        lo = 0.0
+        for idx, share in props:
+            trees[cells & (r >= lo) & (r < lo + share)] = idx
+            lo += share
+    # colours: the painting's brightness through an olive -> sulfur-yellow ramp, zones nudged (half-res colormap)
+    fh = flo[::2, ::2][:cm.shape[0], :cm.shape[1]]
+    lum = cm[..., :3].mean(-1)
+    lo_, hi_ = np.percentile(lum[fh], (2, 98))
+    k = np.clip((ndi.gaussian_filter(lum, 1.5) - lo_) / max(hi_ - lo_, 1e-3), 0, 1)
+    stops, cols = zip(*FLO_GROUND)
+    pal = np.stack([np.interp(k, stops, [c[i] for c in cols]) for i in range(3)], -1)
+    zh = zone[::2, ::2][:cm.shape[0], :cm.shape[1]]
+    for zk, tint in FLO_ZONE_TINT.items():
+        pal = np.where((zh == zk)[..., None], pal * np.array(tint), pal)
+    pal *= (np.maximum(lum, 0.12) / np.maximum(pal.mean(-1), 1e-3))[..., None]
+    cm[..., :3] = np.where(fh[..., None], np.clip(pal, 0, 1), cm[..., :3])
+    print(f"Florrum: zones {dict(zip(*np.unique(z[sub], return_counts=True)))}, top {int(hn[sl].max())}, "
+          f"{int(pools.sum())} px pools, {int(crop.sum())} px outcrops")
+    return t, trees, city, hn, cm
+
+
+# Kadavo (kadavo_map.py; The Clone Wars "Slaves of the Republic" / "Escape from Kadavo" stills): grey ash plains
+# crowded with stone domes with crater openings, and pit craters, under smog, great dormant volcanoes with summit craters and long
+# low lava flows, the Great Crater on top of the largest dome with lava glowing in it (the facility hangs over it),
+# terraced ore pits. Zones: 1 plains, 2 facility, 3 crater, 4 volcano (+ flows), 5 landing field, 6 ore pits. The
+# painted globe (dark grey-brown with orange lava, like the show's planet) stays.
+KADAVO = "Kadavo"
+KAD_ZONES, KAD_JSON = "WIPGFX/Assets/kadavo_zones.png", "WIPGFX/Assets/kadavo_zones.json"
+KAD_PLAIN, KAD_DECK, KAD_FLOOR, KAD_PAD = 8, 70, 1, 9     # heightmap steps above the base (KAD_DECK: the dome's rim;
+                                                          # military_buildings.py KAD_RIM = (KAD_DECK - KAD_FLOOR - 1) / 10)
+KAD_CONES = (0.014, (1.8, 6.5), (2, 6))   # stone-rimmed craters on the plains ("Escape from Kadavo": everywhere, every
+                                     # size, overlapping): per px density, radius range, rim height range
+KAD_HOLE = 0.6                       # their crater openings: share of the radius
+KAD_PITS = (0.006, (1.2, 2.4), 3)    # pit craters: density, radius range, depth
+KAD_VOLCANO = (95, 0.18)             # great volcanoes: summit height above the plains, summit crater (share of radius)
+KAD_FLOW = 5                         # lava flows: a low rough sheet this high
+KAD_PIT_STEPS = (3, 2.2)             # ore pits: terraces, px per terrace
+KAD_PROPS = {1: [(48, 0.012), (49, 0.012), (50, 0.008)], 4: [(50, 0.02)], 6: [(48, 0.04)]}
+
+
+def kadavo(t, trees, city, h, labels, names, pid, rng):
+    """Repaint Kadavo only (terrain.bmp, heightmap, cities.bmp, trees.bmp); the colormap is left alone."""
+    import kadavo_map as km
+    t, trees, city = t.copy(), trees.copy(), city.copy()
+    H, W = labels.shape
+    planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+    kad = planet == KADAVO
+    zone = np.asarray(Image.open(KAD_ZONES))
+    zj = json.load(open(KAD_JSON))
+    (pcy, pcx), R = zj["centre"], zj["radius"]
+    ys, xs = np.nonzero(kad)
+    y0, y1, x0, x1 = ys.min() - 2, ys.max() + 3, xs.min() - 2, xs.max() + 3
+    sl = np.s_[y0:y1, x0:x1]
+    sub, z = kad[sl], zone[sl]
+    yy, xx = np.mgrid[0:sub.shape[0], 0:sub.shape[1]].astype(np.float32)
+    rim = smoothstep(np.clip((ndi.distance_transform_edt(sub) - 1.5) / 4, 0, 1))
+    cen = np.array([v["centre"] for v in zj["provinces"].values()]) - [y0, x0]
+    near_unit = np.min([np.hypot(yy - a, xx - b) for a, b in cen], 0) < 2.6
+    rough = noise(sub.shape, 5, rng, 3)
+    rel = np.full(sub.shape, float(KAD_PLAIN)) + rough * 2
+    # the plains: domes of stacked stone blocks with wide crater openings ("Slaves of the Republic"), and pit craters,
+    # kept off the unit positions
+    plains = z == 1
+    free = plains & (ndi.distance_transform_edt(plains) > 1.5)
+    unit_d = np.min([np.hypot(yy - a, xx - b) for a, b in cen], 0)
+    cones = np.zeros(sub.shape, np.float32)
+    cand = np.argwhere(free)
+    for r, c in cand[rng.random(len(cand)) < KAD_CONES[0]]:
+        rad = KAD_CONES[1][0] + (KAD_CONES[1][1] - KAD_CONES[1][0]) * rng.random() ** 2   # many small, a few wide
+        hgt = rng.uniform(*KAD_CONES[2]) * (0.6 + 0.4 * rad / KAD_CONES[1][1])
+        if unit_d[r, c] < 1.2:                                             # a unit may stand in a crater, not on its rim
+            continue
+        d = np.hypot(yy - r, xx - c) / rad
+        # a real impact/collapse crater: a bowl below the plain, a raised rim, an apron sloping away outside
+        bowl = -min(KAD_PLAIN - 2, 0.9 * rad + 1) * np.clip(1 - d ** 2, 0, 1)
+        rimz = hgt * (0.6 + 0.25 * rad) * np.exp(-((d - 1.0) / 0.28) ** 2)
+        apron = hgt * 0.35 * np.clip(1.9 - d, 0, 0.9) * (d > 1)
+        crat = bowl + rimz + apron
+        cones = np.where(np.abs(crat) > np.abs(cones), crat, cones)
+    for r, c in cand[rng.random(len(cand)) < KAD_PITS[0]]:
+        rad = rng.uniform(*KAD_PITS[1])
+        d = np.hypot(yy - r, xx - c) / rad
+        cones += np.where(d < 1, -KAD_PITS[2] * (1 - d ** 2), 1.5 * np.clip(1 - abs(d - 1.15) / 0.3, 0, 1))
+    rel = np.where(plains, np.maximum(rel + cones, 2), rel)
+    # the great volcanoes: a cone round each one's main shape, a summit crater; their flows a low rough sheet
+    vol = z == 4
+    vh = np.zeros(sub.shape, np.float32)
+    for name, kind, sid, n, shapes in km.FEATURES:
+        if kind != "volcano":
+            continue
+        _, u, v, ru, rv, deg = shapes[0]
+        cy, cx = pcy + v * R - y0, pcx + u * R - x0
+        d = np.hypot((yy - cy) / (rv * R), (xx - cx) / (ru * R))
+        ang = np.arctan2(yy - cy, xx - cx)                                 # gullies running down the flanks
+        gully = 1 - np.abs(np.sin(ang * rng.integers(9, 14) + 3 * rough)) ** 0.6
+        cone = KAD_VOLCANO[0] * np.clip(1 - d, 0, 1) ** 1.4 * (0.82 + 0.25 * rough) * (1 - 0.22 * gully * np.clip(d * 2, 0, 1))
+        cone -= KAD_VOLCANO[0] * 0.35 * smoothstep(np.clip(1 - d / KAD_VOLCANO[1], 0, 1))
+        vh = np.maximum(vh, cone)
+    rel = np.where(vol, KAD_PLAIN + KAD_FLOW * (0.6 + 0.8 * noise(sub.shape, 3, rng, 2)) + vh, rel)
+    # the great dome: its flank (the facility's decks, and the causeways where they run over it) rises smoothly from
+    # the plains to the crater's rim; inside the rim (the crater's hull) is the bowl
+    from skimage.morphology import convex_hull_image
+    hull = convex_hull_image(z == 3)
+    fac = (z == 2) | ((z == 7) & ~hull)
+    inbowl = (z == 3) | ((z == 7) & hull)
+    out_d, in_d = ndi.distance_transform_edt(fac | inbowl), ndi.distance_transform_edt(~inbowl)
+    k = np.clip(out_d / np.maximum(out_d + in_d, 1e-3), 0, 1)              # 0 at the dome's foot, 1 at the rim
+    rel = np.where(fac, KAD_PLAIN + (KAD_DECK - KAD_PLAIN) * (1 - (1 - k) ** 1.8), rel)
+    # the crater: a deep U-shaped bowl from the rim down (the user's side-view sketch), the prison's ground and links at
+    # its bottom under the hub that hangs over it (military_buildings.py kadavo_facility); lava only in the deepest parts
+    bowl = inbowl
+    bd = ndi.gaussian_filter(ndi.distance_transform_edt(bowl), 1.0)
+    kb = np.clip(bd / max(bd.max() * 0.55, 1e-3), 0, 1)
+    rel = np.where(bowl, KAD_DECK - (KAD_DECK - KAD_FLOOR) * np.sqrt(np.clip(1 - (1 - kb) ** 2, 0, 1)), rel)
+    rel = np.where((z == 7) & hull, np.minimum(rel, KAD_FLOOR + 1), rel)
+    cra = z == 3
+    cin = kb * 3
+    # the landing field: level pads; the ore pits: terraces stepping down into the ground
+    rel = np.where(z == 5, KAD_PAD, rel)
+    mine = z == 6
+    step = np.clip(np.floor(ndi.distance_transform_edt(mine) / KAD_PIT_STEPS[1]), 0, KAD_PIT_STEPS[0])
+    rel = np.where(mine, KAD_PLAIN - step * (KAD_PLAIN - 1) / KAD_PIT_STEPS[0], rel)
+    hn = h.copy()
+    hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
+    gy, gx = np.gradient(hn[sl])
+    slope = np.hypot(gx, gy)
+    # terrain.bmp: grey ash and dark scoria, red-brown ore rock in the pits, lava on the crater floor, stone decks
+    tz = np.full(sub.shape, -1, np.int16)
+    mix = noise(sub.shape, 7, rng, 2)
+    tz[sub & plains] = np.where(mix > 0.62, BROWNMTN, ROCK2)[sub & plains]
+    tz[sub & vol] = np.where(vh > 8, ROCK2, BROWNMTN)[sub & vol]
+    steep = sub & (slope > 6) & (plains | vol)
+    tz[steep] = ROCK
+    tz[sub & cra] = np.where(kb > 0.3, LAVA, ROCK)[sub & cra]                  # a lava lake over the whole floor
+    tz[sub & fac] = ROCK2                                                 # the dome's stone
+    tz[sub & (z == 5)] = 25                                               # urban_plaza_25: the landing pads
+    tz[sub & (z == 7) & hull] = LAVA                                          # lava under the hanging prison (user)
+    tz[sub & (z == 7) & ~hull] = ROCK2                                        # the causeways over the dome
+    tz[sub & mine] = 24                                                   # red rock: the Kadavo ore
+    t[sl] = np.where(tz >= 0, tz, t[sl]).astype(t.dtype)
+    city[kad] = 0                                                         # no towns: the bases are models
+    TH, TW = trees.shape
+    gi = np.ix_(np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1),
+                np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1))
+    trees[kad[gi]] = 0
+    r = rng.random((TH, TW))
+    ok = np.zeros((H, W), bool)
+    ok[sl] = sub & ~near_unit & (ndi.distance_transform_edt(sub) > 2) & (slope < 6)
+    for zk, props in KAD_PROPS.items():
+        cells = ok[gi] & (zone[gi] == zk)
+        lo = 0.0
+        for idx, share in props:
+            trees[cells & (r >= lo) & (r < lo + share)] = idx
+            lo += share
+    print(f"Kadavo: zones {dict(zip(*np.unique(z[sub], return_counts=True)))}, top {int(hn[sl].max())}")
+    return t, trees, city, hn
+
+
+def repaint_planet(fn, planet, seed, with_cm=False):
+    """Run one planet's repaint fn(t, trees, city, h, labels, names, pid, rng) -> (t, trees, city, h) and write
+    heightmap.bmp, world_normal.bmp (around that planet only), terrain/trees/cities.bmp and the re-snapped positions.
+    The colormap is not touched."""
+    land, _, pid = load_provinces()
+    labels, n = ndi.label(land, np.ones((3, 3)))
+    names = planet_names(labels, n, pid)
+    tr, terr, cty = load(f"{MAP}/trees.bmp"), load(f"{MAP}/terrain.bmp"), load(f"{MAP}/cities.bmp")
+    h0 = np.asarray(load(f"{MAP}/heightmap.bmp").convert("L")).astype(np.float32)
+    cmp = f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds"
+    if with_cm:                                                            # the planet repaints its colours too
+        cm = np.array(load(cmp).convert("RGBA")).astype(np.float32) / 255
+        t, trees, city, h, cm = fn(np.array(terr), np.array(tr), np.array(cty), h0, labels, names, pid,
+                                   np.random.default_rng(seed), cm)
+        save_bgra_dds(cmp, np.rint(np.clip(cm, 0, 1) * 255).astype(np.uint8), cmp)
+    else:
+        t, trees, city, h = fn(np.array(terr), np.array(tr), np.array(cty), h0, labels, names, pid, np.random.default_rng(seed))
+    mask = np.isin(labels, [l for l in range(1, n + 1) if names[l].split(" - ")[0] == planet])
+    Image.fromarray(np.rint(h).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
+    gy, gx = np.gradient(ndi.gaussian_filter(h, 1.0)[::2, ::2])
+    nv = np.stack([-NORMAL_K * gx, NORMAL_K * gy, np.ones_like(gx)], -1)
+    nv /= np.linalg.norm(nv, axis=-1, keepdims=True)
+    wn = np.array(load(f"{MAP}/world_normal.bmp").convert("RGB"))
+    ys, xs = np.nonzero(mask[::2, ::2][:wn.shape[0], :wn.shape[1]])
+    sl = np.s_[max(ys.min() - 4, 0):ys.max() + 5, max(xs.min() - 4, 0):xs.max() + 5]
+    wn[sl] = np.clip(np.rint(nv[sl] * 127.5 + 127.5), 0, 255).astype(np.uint8)
+    Image.fromarray(wn, "RGB").save(f"{MAP}/world_normal.bmp")
+    reheight(np.rint(h))
+    for arr, img, path in ((t, terr, "terrain.bmp"), (trees, tr, "trees.bmp"), (city, cty, "cities.bmp")):
+        out = Image.fromarray(arr.astype(np.uint8), "P")
+        out.putpalette(img.getpalette())
+        out.save(f"{MAP}/{path}")
+
 def world_styles(cmap, labels, names):
     """Ocean worlds, Mandalore and Geonosis get their own city style wherever the map has buildings (0 stays 0)."""
     planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
@@ -936,9 +1323,10 @@ GLOBE_SIZE = 4096             # globe texture is GLOBE_SIZE square: the engine r
                               # (6144 failed, error.log); the shader samples it by map uv, so it needn't match the map shape
 TILE_PERIOD = 3328 / 228.0    # map px per terrain tile repeat (pdxmap.shader: uv2 * TERRAIN_TILE_FREQ, x scaled by W/H)
 GLOBE_DETAIL = 0.6            # how much of the terrain tiles' light/dark pattern goes onto the painted colours
-# Raxus, Raxus Prime: the zoomed-out globe keeps the original painting and terrain pattern (the user prefers it)
+# Raxus, Raxus Prime, Korriban: the zoomed-out globe keeps the original painting and terrain pattern (the user prefers it)
 GLOBE_TERRAIN_KEEP = [("WIPGFX/Assets/raxus_globe_terrain.png", "WIPGFX/Assets/raxus_globe_terrain.json"),
-                      ("WIPGFX/Assets/raxus_prime_globe_terrain.png", "WIPGFX/Assets/raxus_prime_globe_terrain.json")]
+                      ("WIPGFX/Assets/raxus_prime_globe_terrain.png", "WIPGFX/Assets/raxus_prime_globe_terrain.json"),
+                      ("WIPGFX/Assets/korriban_globe_terrain.png", "WIPGFX/Assets/korriban_globe_terrain.json")]
 
 
 def save_dxt1_mips(rgb, path):
@@ -1062,31 +1450,18 @@ def main():
     ap.add_argument("--felucia", action="store_true", help="only repaint Felucia (flora, ground, atmosphere); then --globe-texture")
     ap.add_argument("--raxus", action="store_true", help="only repaint Raxus (capital, countryside); then --globe-texture")
     ap.add_argument("--raxus-prime", action="store_true", help="only repaint Raxus Prime (junk world); then --globe-texture")
+    ap.add_argument("--korriban", action="store_true", help="only repaint Korriban (valleys, tombs, spires); then --globe-texture")
+    ap.add_argument("--kadavo", action="store_true", help="only repaint Kadavo (ash plains, volcanoes, crater); then --globe-texture")
+    ap.add_argument("--florrum", action="store_true", help="only repaint Florrum (sulfur desert, shelves, canyon); then --globe-texture")
     a = ap.parse_args()
     if a.raxus_prime:
-        land, _, pid = load_provinces()
-        labels, n = ndi.label(land, np.ones((3, 3)))
-        names = planet_names(labels, n, pid)
-        tr, terr, cty = load(f"{MAP}/trees.bmp"), load(f"{MAP}/terrain.bmp"), load(f"{MAP}/cities.bmp")
-        h0 = np.asarray(load(f"{MAP}/heightmap.bmp").convert("L")).astype(np.float32)
-        t, trees, city, h = raxus_prime(np.array(terr), np.array(tr), np.array(cty), h0, labels, names, pid,
-                                        np.random.default_rng(SEED + 196))
-        rp = np.isin(labels, [l for l in range(1, n + 1) if names[l].split(" - ")[0] == RP])
-        Image.fromarray(np.rint(h).astype(np.uint8), "L").save(f"{MAP}/heightmap.bmp")
-        gy, gx = np.gradient(ndi.gaussian_filter(h, 1.0)[::2, ::2])
-        nv = np.stack([-NORMAL_K * gx, NORMAL_K * gy, np.ones_like(gx)], -1)
-        nv /= np.linalg.norm(nv, axis=-1, keepdims=True)
-        wn = np.array(load(f"{MAP}/world_normal.bmp").convert("RGB"))
-        ys, xs = np.nonzero(rp[::2, ::2][:wn.shape[0], :wn.shape[1]])
-        sl = np.s_[max(ys.min() - 4, 0):ys.max() + 5, max(xs.min() - 4, 0):xs.max() + 5]
-        wn[sl] = np.clip(np.rint(nv[sl] * 127.5 + 127.5), 0, 255).astype(np.uint8)
-        Image.fromarray(wn, "RGB").save(f"{MAP}/world_normal.bmp")
-        reheight(np.rint(h))
-        for arr, img, path in ((t, terr, "terrain.bmp"), (trees, tr, "trees.bmp"), (city, cty, "cities.bmp")):
-            out = Image.fromarray(arr.astype(np.uint8), "P")
-            out.putpalette(img.getpalette())
-            out.save(f"{MAP}/{path}")
-        return
+        return repaint_planet(raxus_prime, RP, SEED + 196)
+    if a.korriban:
+        return repaint_planet(korriban, KORRIBAN, SEED + 90)
+    if a.kadavo:
+        return repaint_planet(kadavo, KADAVO, SEED + 83)
+    if a.florrum:
+        return repaint_planet(florrum, FLORRUM, SEED + 192, with_cm=True)
     if a.raxus:
         land, _, pid = load_provinces()
         labels, n = ndi.label(land, np.ones((3, 3)))
