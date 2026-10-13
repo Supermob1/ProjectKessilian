@@ -460,6 +460,7 @@ PixelShader =
 		#endif
 		
 			float3 vPos = In.vPos_Height.xyz;
+			clip( vPos.y - WATER_HEIGHT ); // HOD: no mirrored copies under the "sea" (it is space): nothing real is below it
 		
 			float3 vColor = vDiffuse.rgb;
 			float3 vInNormal = normalize( In.vNormal );
@@ -605,6 +606,7 @@ PixelShader =
 		#endif
 			
 			float3 vPos = In.vPos_Height.xyz;
+			clip( vPos.y - WATER_HEIGHT ); // HOD: no mirrored copies under the "sea" (it is space): nothing real is below it
 		
 			float3 vColor = vDiffuse.rgb;
 			float4 vProperties = tex2D( SpecularMap, In.vUV0 );

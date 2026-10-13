@@ -1,0 +1,35 @@
+state={
+	id=90
+	name="STATE_90"
+	# HOD: Korriban (korriban_map.py)
+	provinces={
+		3180 3286 3327 3392 3639 3642
+	}
+	resources={
+		oil=3
+	}
+	history = {
+		victory_points = {
+			3180 2
+		}
+		victory_points = {
+			3392 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 5
+			air_base = 3
+			dockyard = 1
+					3180 = {
+				naval_base = 3
+			}
+		}
+		owner = CMG
+		add_core_of = CMG
+	}
+	manpower = 1975092
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
