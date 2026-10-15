@@ -1,0 +1,9 @@
+# HOD: an invisible emitter for Ruuria (ruuria_fx.py), placed by map/ambient_object.txt
+entity = {
+	name = "hod_ruu_mist_entity"
+	cull_radius = 16
+	default_state = "idle"
+	state = { name = "idle" state_time = 2 looping = no
+		event = { time = 0 particle = "hod_ruu_mist_particle" keep_particle = yes }
+	}
+}

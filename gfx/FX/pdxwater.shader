@@ -384,13 +384,11 @@ PixelShader =
 				vColor = lerp( vColor, GalaxyColor( vPos, vArmMask ) * GALAXY_BRIGHTNESS, vGalaxyFade );
 				vArmMask *= vGalaxyFade;
 			}
-		#ifndef NO_REFRACTIONS
-			// per-planet atmospheres: baked into colormap_water_*.dds (black elsewhere), seen through the refraction pass
-			float2 refractiveUV = ( Input.screen_pos.xy / Input.screen_pos.w ) * 0.5f + 0.5f;
-			refractiveUV.y = 1.0f - refractiveUV.y;
-			refractiveUV += vTime_HalfPixelOffset.gb;
-			vColor += tex2D( WaterRefraction, refractiveUV ).rgb;
-		#endif
+			// per-planet atmospheres: colormap_water_0.dds (black elsewhere) copied to map/terrain/ice_diffuse.dds by
+			// planet_terrain_gen.py, read here at the map UV (= the terrain's uv2). Not through the refraction pass: that
+			// buffer also holds the engine's mirrored copies of trees and buildings (the "reflections" in lakes and at
+			// coasts). 0.3 ~ the underwater pass's tint * WATER_COLOR_LIGHTNESS mixed with the dark space floor
+			vColor += tex2D( IceDiffuse, Input.uv ).rgb * 0.3f;
 
 			// --- stars, three parallax layers (far layers pan slower than the map) for depth over the flat galaxy art
 			float vStarSize = max( vCamPos.y * 0.0012f, 0.06f ); // keeps stars ~1-2 px wide at any zoom (camera y 50..3000)

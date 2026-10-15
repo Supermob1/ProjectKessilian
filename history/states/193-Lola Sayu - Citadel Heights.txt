@@ -1,0 +1,39 @@
+state={
+	id=193
+	name="STATE_193"
+	# HOD: Lola Sayu (lola_sayu_map.py)
+	provinces={
+		21263 21266 21268 21311
+	}
+	resources={
+		oil=13#Fuel
+		rubber=12#Doonium
+		tungsten=12#Bacta
+		steel=5#Alloys
+		chromium=2#Circuitry
+	}
+	history = {
+		victory_points = {
+			21263 10
+		}
+		victory_points = {
+			21268 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 4
+			air_base = 3
+			dockyard = 2
+					21268 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 823052
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

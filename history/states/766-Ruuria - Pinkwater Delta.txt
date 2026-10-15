@@ -1,0 +1,31 @@
+state={
+	id=766
+	name="STATE_766"
+	# HOD: Ruuria (ruuria_map.py)
+	provinces={
+		791 6751 6755 6756 6761 6762 6769 6777 6784 6789
+	}
+	resources={
+		coal=3
+		oil=2
+	}
+	history = {
+		victory_points = {
+			791 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			dockyard = 5
+					6761 = {
+				naval_base = 3
+			}
+		}
+		owner = CSA
+		add_core_of = CSA
+	}
+	manpower = 364671
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

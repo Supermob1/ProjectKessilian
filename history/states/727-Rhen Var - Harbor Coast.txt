@@ -1,0 +1,30 @@
+state={
+	id=727
+	name="STATE_727"
+	# HOD: Rhen Var (rhen_var_map.py)
+	provinces={
+		222 441 524 9906 9907 9919 9920 9921 9926 9932 9936 9939 9940 9943 9944 9945 9948 9953
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			222 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 2
+					9920 = {
+				naval_base = 4
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 132064
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
