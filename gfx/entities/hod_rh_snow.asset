@@ -1,0 +1,9 @@
+# HOD: an invisible emitter for Rhen Var (rhen_var_fx.py), placed by map/ambient_object.txt
+entity = {
+	name = "hod_rh_snow_entity"
+	cull_radius = 18
+	default_state = "idle"
+	state = { name = "idle" state_time = 2 looping = no
+		event = { time = 0 particle = "hod_rh_snow_particle" keep_particle = yes }
+	}
+}

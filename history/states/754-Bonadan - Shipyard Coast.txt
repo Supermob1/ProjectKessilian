@@ -1,0 +1,30 @@
+state={
+	id=754
+	name="STATE_754"
+	# HOD: Bonadan (bonadan_map.py)
+	provinces={
+		533 603 696 697 6570 6573 6574 6575 6577 6583 6584 6591 6592 6593
+	}
+	resources={
+		rubber=3
+	}
+	history = {
+		victory_points = {
+			697 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			dockyard = 5
+					533 = {
+				naval_base = 4
+			}
+		}
+		owner = CSA
+		add_core_of = CSA
+	}
+	manpower = 505498
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

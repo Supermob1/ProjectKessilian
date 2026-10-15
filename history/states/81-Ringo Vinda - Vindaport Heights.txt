@@ -1,0 +1,36 @@
+state={
+	id=81
+	name="STATE_81"
+	# HOD: Ringo Vinda (ringo_vinda_map.py)
+	provinces={
+		207 398 581 9374 9376 9391
+	}
+	resources={
+		aluminium=1#Minerals
+		steel=1#Alloys
+	}
+	history = {
+		victory_points = {
+			207 10
+		}
+		victory_points = {
+			581 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 3
+			dockyard = 2
+					207 = {
+				naval_base = 4
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 1870906
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
