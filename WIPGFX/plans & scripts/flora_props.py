@@ -8,6 +8,8 @@ the diffuse (clip at 0.5), so leaf cards keep their cut-out.
   blender -b --factory-startup --python "WIPGFX/plans & scripts/flora_props.py" -- meshes
   blender -b --factory-startup --python "WIPGFX/plans & scripts/flora_props.py" -- procedural
   python "WIPGFX/plans & scripts/flora_props.py" wire         gfx/entities/trees.gfx = vanilla entries + ours
+  python "WIPGFX/plans & scripts/flora_props.py" planet_textures   only the PLANET_FOLIAGE textures + their atlases
+  blender ... flora_props.py -- procedural 81 82 ...           only these PROCEDURAL indices (or kinds)
 """
 import collections, glob, io, json, os, struct, sys
 
@@ -63,6 +65,25 @@ PROCEDURAL = {
     # the valley floors strewn with the ruins of the Sith (broken columns, fallen statues, rubble)
     79: "kor_spires",     # a cluster of needle spires
     80: "kor_ruins",      # broken columns and a fallen statue
+    # Dromund Kaas (Legends; TOR stills "Jungle Valley", "Dark Temple pass", concept art): "massive, dark-wooded
+    # trees grew in the swampy water, forming canyon-like groupings of foliage covered in vines"; gnarled trunks,
+    # crooked sprawling limbs, dense rounded dark crowns; dead snags and root tangles in the marsh
+    81: "dk_swamp_tree",  # massive gnarled tree, flared roots, sprawling crooked limbs, broad dark crown
+    82: "dk_jungle_tree", # tall broadleaf tree, dense rounded crown (the northern storm jungle)
+    83: "dk_dead_snag",   # dead broken-topped trunk with bare crooked limbs and a few moss clumps
+    84: "dk_root_tangle", # arching roots over the water, ferns between them
+    85: "dk_reeds",       # low clumps of marsh growth at the water's edge
+    # Zygerria (The Clone Wars "Slaves of the Republic": olive grass on the airy plains; forests are a design
+    # choice of the user's): small copses of dry-country trees and shrubs in dusty olive
+    86: "zyg_tree",       # spreading flat-crowned tree
+    87: "zyg_shrubs",     # low shrub clumps
+    # Cantonica (canon: Cantonican cactus, Chinar tree (Rules of the Game; the Databank still shows chinars as
+    # cloud-pruned trees: a crooked trunk, flat dark pads of foliage on the branch ends); green scrub on the shore
+    # (comic still); the ancient ruins are Sith (the user's design choice, 2026-10-14)
+    88: "canto_chinar",   # cloud-pruned tree: crooked trunk, flat dark-green pads
+    89: "canto_cactus",   # a stand of ribbed column cacti, some with arms, and barrel cacti
+    90: "canto_scrub",    # low grey-green scrub of the sea shore
+    91: "canto_rubble",   # Sith ruins in the sand: a broken obelisk, tilted pylon blocks, scattered blocks
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
@@ -72,12 +93,74 @@ PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_de
 # the heaps are built like the trees: a body plus clumps of cut-out cards (junk pieces on transparent ground)
 PROC_MATS.update({i: ["hod_scrap_tile", "hod_scrap_metal", "hod_junk_clump"] for i in range(73, 79)})
 PROC_MATS.update({79: ["hod_kor_rock"], 80: ["hod_kor_rock", "hod_kor_stone"]})
+PROC_MATS.update({81: ["hod_dead_tree_trunk_02", "hod_foliage_dk"], 82: ["hod_dead_tree_trunk_02", "hod_foliage_dk"],
+                  83: ["hod_dead_tree_trunk_02", "hod_foliage_dk"], 84: ["hod_dead_tree_trunk_02", "hod_foliage_dk"],
+                  85: ["hod_foliage_dk"], 86: ["hod_dead_tree_trunk_02", "hod_foliage_zyg"], 87: ["hod_foliage_zyg"]})
+PROC_MATS.update({88: ["hod_dead_tree_trunk_02", "hod_foliage_canto"], 89: ["hod_canto_cactus"],
+                  90: ["hod_foliage_canto_scrub"], 91: ["hod_canto_sandstone"]})
 # Sketchfab models converted by sketchfab_props.py (meshes land in OUT as hod_flora_<index>_<name>.mesh)
 EXTERNAL = {53: "sandcrawler", 54: "vaporators", 56: "wreck_harrower", 57: "wreck_foray"}
 # Raxus Prime junk (sketchfab_props.py SPECS rp_*: Battlefront II / Empire at War models)
 EXTERNAL.update({65: "rp_wreck_bloodmark", 66: "rp_wreck_chela", 67: "rp_wreck_b28", 68: "rp_wreck_ebonhawk",
                  69: "rp_junk_heap", 70: "rp_barrels", 71: "rp_hull_chunk", 72: "rp_wing_chunk"})
 LEAF_SRC = "island_tree_01"  # Poly Haven leaf sheet the foliage clumps are composed from
+
+
+# foliage for the planet floras below (made by planet_textures, not textures: the other textures stay untouched)
+PLANET_FOLIAGE = {"hod_foliage_dk": ((70, 120, 100), (40, 80, 75)),      # Dromund Kaas: dark teal-green (TOR stills)
+                  "hod_foliage_zyg": ((165, 160, 85), (125, 125, 65)),   # Zygerria: dusty olive (TCW plains)
+                  "hod_foliage_canto": ((70, 105, 70), (45, 80, 55)),    # Cantonica: the chinar pads, dark green
+                  "hod_foliage_canto_scrub": ((130, 150, 95), (100, 125, 80))}   # the shore scrub, grey-green
+# solid (no alpha cut) textures of the planet floras: name -> (base rgb, pattern), painted by planet_textures
+PLANET_SOLID = {"hod_canto_cactus": ((92, 128, 84), "ribs"), "hod_canto_sandstone": ((196, 164, 118), "blocks")}
+
+
+def planet_textures():
+    """the PLANET_FOLIAGE textures and the atlases of the PROCEDURAL models that use them; merges atlas.json and
+    leaf_materials.json (own random seed: textures() output is unchanged)"""
+    import numpy as np
+    from PIL import Image
+    rng = np.random.default_rng(81)
+    leaves = _leaves()
+    tex = {}
+    flat_n = np.dstack([np.full((TEX_SIZE, TEX_SIZE), v, np.float32) for v in (128, 128, 255, 255)])
+    for name, tint in PLANET_FOLIAGE.items():
+        col, alp = _foliage(tint, rng, leaves)
+        tex[name] = (np.dstack([np.clip(col, 0, 255), alp]), flat_n)
+        save_dxt5_mips(tex[name][0], f"{OUT}/{name}_diffuse.dds")
+        save_dxt5_mips(flat_n, f"{OUT}/{name}_normal.dds")
+    from scipy import ndimage as ndi
+    yy, xx = np.mgrid[0:TEX_SIZE, 0:TEX_SIZE].astype(np.float32)
+    for name, (base, kind) in PLANET_SOLID.items():
+        g = ndi.gaussian_filter(rng.random((TEX_SIZE, TEX_SIZE)), 3)
+        g = ((g - g.min()) / np.ptp(g))[..., None]
+        if kind == "ribs":                                                   # u runs round the cactus: ribs + spines
+            pat = (0.75 + 0.35 * np.abs(np.sin(xx * np.pi * 12 / TEX_SIZE)))[..., None]
+            pat = pat * (1 + 0.25 * (rng.random((TEX_SIZE, TEX_SIZE)) > 0.985)[..., None])
+        else:                                                                # weathered courses of big blocks
+            b = ndi.gaussian_filter(rng.random((TEX_SIZE, TEX_SIZE)), 18)
+            pat = (1 - 0.3 * (((yy % 64) < 3) | (((xx + 48 * ((yy // 64) % 2)) % 96) < 3)))[..., None]
+            pat = pat * (0.8 + 0.3 * ((b - b.min()) / np.ptp(b)))[..., None]
+        col = np.clip(np.array(base, np.float32) * (0.8 + 0.3 * g) * pat, 0, 255)
+        tex[name] = (np.dstack([col, np.full((TEX_SIZE, TEX_SIZE), 255, np.float32)]), flat_n)
+        save_dxt5_mips(tex[name][0], f"{OUT}/{name}_diffuse.dds")
+        save_dxt5_mips(flat_n, f"{OUT}/{name}_normal.dds")
+    rgb = lambda q: np.asarray(Image.open(q).convert("RGB").resize((TEX_SIZE, TEX_SIZE), Image.LANCZOS)).astype(np.float32)
+    for mname, diff, nrm, _alpha in materials("dead_tree_trunk_02"):  # the bark, as textures() makes it
+        n = rgb(nrm) if nrm else np.dstack([np.full((TEX_SIZE, TEX_SIZE), v, np.float32) for v in (128, 128, 255)])
+        tex[f"hod_{mname}"] = (np.dstack([rgb(diff), np.full((TEX_SIZE, TEX_SIZE), 255, np.float32)]),
+                               np.dstack([n, np.full(n.shape[:2], 255, np.float32)]))
+    atlas = json.load(open(f"{OUT}/atlas.json"))
+    leaf = json.load(open(f"{OUT}/leaf_materials.json"))
+    for idx, stems in PROC_MATS.items():
+        if any(st in PLANET_FOLIAGE or st in PLANET_SOLID for st in stems):
+            if len(stems) > 1:
+                _atlas(idx, stems, tex)
+                atlas[str(idx)] = stems
+    leaf.update({name: True for name in PLANET_FOLIAGE})
+    json.dump(atlas, open(f"{OUT}/atlas.json", "w"), indent=1)
+    json.dump(leaf, open(f"{OUT}/leaf_materials.json", "w"), indent=1)
+    print("planet foliage:", list(PLANET_FOLIAGE), "atlases:", [i for i, st in PROC_MATS.items() if any(x in PLANET_FOLIAGE for x in st)])
 
 
 def save_dxt5_mips(rgba, path):
@@ -133,6 +216,64 @@ def materials(pid):
     return out
 
 
+def _leaves():
+    """the Poly Haven leaf sheet cut into single leaves: [(rgb, mask)]"""
+    import numpy as np
+    from PIL import Image
+    from scipy import ndimage as ndi
+    sheet = np.asarray(Image.open(f"{SRC}/{LEAF_SRC}/textures/{LEAF_SRC}_leaves_diff_1k.jpg").convert("RGB")).astype(np.float32)
+    mask = np.asarray(Image.open(f"{SRC}/{LEAF_SRC}/textures/{LEAF_SRC}_leaves_alpha_1k.png").convert("L")) > 128
+    lab, n = ndi.label(mask)
+    return [(sheet[sl], mask[sl] & (lab[sl] == i + 1)) for i, sl in enumerate(ndi.find_objects(lab))
+            if (lab[sl] == i + 1).sum() > 4000]
+
+
+def _foliage(tint, rng, leaves):
+    """one foliage-clump texture: hundreds of small leaves packed into a soft disc (one leaf card = one clump of
+    foliage, the way game trees are built). tint: rgb multiplier, or (rgb, rgb) to recolour each leaf by brightness"""
+    import numpy as np
+    from PIL import Image
+    S = TEX_SIZE
+    col = np.zeros((S, S, 3), np.float32)
+    alp = np.zeros((S, S), np.float32)
+    for _ in range(420):
+        c, m = leaves[rng.integers(len(leaves))]
+        sc = rng.uniform(0.07, 0.13) * S / max(c.shape[:2])
+        ang = rng.uniform(0, 360)
+        ci = Image.fromarray(c.astype(np.uint8)).resize((max(2, int(c.shape[1] * sc)), max(2, int(c.shape[0] * sc))))
+        mi = Image.fromarray((m * 255).astype(np.uint8)).resize(ci.size)
+        ci, mi = np.asarray(ci.rotate(ang, expand=True)).astype(np.float32), np.asarray(mi.rotate(ang, expand=True)) > 128
+        r = S * 0.42 * np.sqrt(rng.random())
+        a = rng.uniform(0, 6.283)
+        y0, x0 = int(S / 2 + r * np.sin(a) - mi.shape[0] / 2), int(S / 2 + r * np.cos(a) - mi.shape[1] / 2)
+        ys, xs = np.nonzero(mi)
+        ys, xs = ys + y0, xs + x0
+        ok = (ys >= 0) & (ys < S) & (xs >= 0) & (xs < S)
+        shade = 0.55 + 0.45 * (1 - r / (S * 0.42)) * rng.uniform(0.8, 1.1)    # darker toward the rim, like depth
+        src = ci[ys[ok] - y0, xs[ok] - x0]
+        if isinstance(tint[0], tuple):                                       # recolour by leaf brightness
+            hue = np.array(tint[0], np.float32) + (np.array(tint[1], np.float32) - tint[0]) * rng.random()
+            src = (src.mean(-1, keepdims=True) / 70) * hue                   # bright: map trees render dark
+        else:
+            src = src * np.array(tint)
+        col[ys[ok], xs[ok]] = src * shade
+        alp[ys[ok], xs[ok]] = 255
+    return col, alp
+
+
+def _atlas(idx, stems, tex):
+    """one atlas per multi-material model: the tree renderer draws only a mesh's first material (vanilla trees all
+    have one), so trunk + leaves share one texture, one vertical slot each (bottom-up = Blender's v)"""
+    import numpy as np
+    k = 1 << (len(stems) - 1).bit_length()
+    for ch, suffix in ((0, "diffuse"), (1, "normal")):
+        img = np.zeros((TEX_SIZE * k, TEX_SIZE, 4), np.float32)
+        img[...] = tex[stems[0]][ch][0, 0]
+        for slot, stem in enumerate(stems):
+            img[(k - 1 - slot) * TEX_SIZE:(k - slot) * TEX_SIZE] = tex[stem][ch]
+        save_dxt5_mips(img, f"{OUT}/hod_flora_{idx}_atlas_{suffix}.dds")
+
+
 def textures():
     import numpy as np
     from PIL import Image
@@ -159,39 +300,11 @@ def textures():
     # foliage clumps: hundreds of small copies of the Poly Haven leaves packed into a soft disc (one leaf card
     # = one clump of foliage, the way game trees are built)
     from scipy import ndimage as ndi
-    sheet = np.asarray(Image.open(f"{SRC}/{LEAF_SRC}/textures/{LEAF_SRC}_leaves_diff_1k.jpg").convert("RGB")).astype(np.float32)
-    mask = np.asarray(Image.open(f"{SRC}/{LEAF_SRC}/textures/{LEAF_SRC}_leaves_alpha_1k.png").convert("L")) > 128
-    lab, n = ndi.label(mask)
-    leaves = [(sheet[sl], mask[sl] & (lab[sl] == i + 1)) for i, sl in enumerate(ndi.find_objects(lab))
-              if (lab[sl] == i + 1).sum() > 4000]
+    leaves = _leaves()
     for name, tint in (("hod_foliage_wroshyr", (0.55, 0.75, 0.5)), ("hod_foliage_jungle", (0.8, 1.0, 0.6)),
                        ("hod_foliage_raxus", ((250, 190, 70), (235, 125, 35))),       # gold .. orange, per leaf
                        ("hod_foliage_crimson", ((200, 45, 60), (150, 25, 50)))):
-        S = TEX_SIZE
-        col = np.zeros((S, S, 3), np.float32)
-        alp = np.zeros((S, S), np.float32)
-        for _ in range(420):
-            c, m = leaves[rng.integers(len(leaves))]
-            sc = rng.uniform(0.07, 0.13) * S / max(c.shape[:2])
-            ang = rng.uniform(0, 360)
-            ci = Image.fromarray(c.astype(np.uint8)).resize((max(2, int(c.shape[1] * sc)), max(2, int(c.shape[0] * sc))))
-            mi = Image.fromarray((m * 255).astype(np.uint8)).resize(ci.size)
-            ci, mi = np.asarray(ci.rotate(ang, expand=True)).astype(np.float32), np.asarray(mi.rotate(ang, expand=True)) > 128
-            r = S * 0.42 * np.sqrt(rng.random())
-            a = rng.uniform(0, 6.283)
-            y0, x0 = int(S / 2 + r * np.sin(a) - mi.shape[0] / 2), int(S / 2 + r * np.cos(a) - mi.shape[1] / 2)
-            ys, xs = np.nonzero(mi)
-            ys, xs = ys + y0, xs + x0
-            ok = (ys >= 0) & (ys < S) & (xs >= 0) & (xs < S)
-            shade = 0.55 + 0.45 * (1 - r / (S * 0.42)) * rng.uniform(0.8, 1.1)    # darker toward the rim, like depth
-            src = ci[ys[ok] - y0, xs[ok] - x0]
-            if isinstance(tint[0], tuple):                                       # recolour by leaf brightness
-                hue = np.array(tint[0], np.float32) + (np.array(tint[1], np.float32) - tint[0]) * rng.random()
-                src = (src.mean(-1, keepdims=True) / 70) * hue                   # bright: map trees render dark
-            else:
-                src = src * np.array(tint)
-            col[ys[ok], xs[ok]] = src * shade
-            alp[ys[ok], xs[ok]] = 255
+        col, alp = _foliage(tint, rng, leaves)
         save(name, np.dstack([np.clip(col, 0, 255), alp]), flat_n)
         leaf[name] = True
     # homestead adobe (panelled-surface generator, panels off)
@@ -297,13 +410,7 @@ def textures():
     atlas.update(PROC_MATS)
     atlas = {idx: stems for idx, stems in atlas.items() if len(stems) > 1}
     for idx, stems in atlas.items():
-        k = 1 << (len(stems) - 1).bit_length()
-        for ch, suffix in ((0, "diffuse"), (1, "normal")):
-            img = np.zeros((TEX_SIZE * k, TEX_SIZE, 4), np.float32)
-            img[...] = tex[stems[0]][ch][0, 0]
-            for slot, stem in enumerate(stems):
-                img[(k - 1 - slot) * TEX_SIZE:(k - slot) * TEX_SIZE] = tex[stem][ch]
-            save_dxt5_mips(img, f"{OUT}/hod_flora_{idx}_atlas_{suffix}.dds")
+        _atlas(idx, stems, tex)
     json.dump(atlas, open(f"{OUT}/atlas.json", "w"), indent=1)
     leaf["hod_adobe"] = False
     json.dump(leaf, open(f"{OUT}/leaf_materials.json", "w"), indent=1)
@@ -504,8 +611,10 @@ def meshes():
     print("\n".join(report))
 
 
-def procedural():
-    """Blender: wroshyr, jungle giant and homestead from primitives (textures from textures())."""
+def procedural(*only):
+    """Blender: the PROCEDURAL models from primitives (textures from textures() / planet_textures()). only: indices or
+    kinds to build (default all); the planet floras (dk_, zyg_) reseed per model, so they come out the same alone or
+    with the rest."""
     import math
     import random
     import bmesh  # type: ignore
@@ -787,6 +896,111 @@ def procedural():
                 c = Vector((rng.uniform(-1.2, 1.2), rng.uniform(-1.2, 1.2), 0.0))
                 lathe(bm, uv, (c.x, c.y), [(-0.1, rng.uniform(0.12, 0.25)), (0.18, 0.12), (0.25, 0.01)], 5, 0)
 
+    def planet_flora(bm, uv, kind):
+        """Dromund Kaas, Zygerria and Cantonica floras (PROCEDURAL 81-91). Mat 0 = bark, 1 = foliage (one-material kinds: 0)."""
+        def crooked(base, direction, length, r0, parts=3, kink=0.35):
+            """a crooked limb: `parts` straight pieces, each turned a little; returns the tip"""
+            p, d = base, direction.normalized()
+            for i in range(parts):
+                d = (d + Vector((rng.uniform(-kink, kink), rng.uniform(-kink, kink), rng.uniform(-kink * 0.5, kink * 0.7)))).normalized()
+                q = p + d * (length / parts)
+                limb(bm, uv, p, q, r0 * (1 - 0.6 * i / parts), r0 * (1 - 0.6 * (i + 1) / parts), 0, sides=5, segs=1)
+                p = q
+            return p
+        if kind == "dk_swamp_tree":
+            h = 2.0                                                         # short massive trunk, flared into the water
+            tube(bm, uv, [(Vector((0, 0, -0.3)), 0.62), (Vector((0, 0, 0.25)), 0.4), (Vector((0.05, 0, h * 0.6)), 0.3),
+                          (Vector((0.1, 0.05, h)), 0.24)], 9, 0)
+            for i in range(6):                                              # buttress roots arching into the water
+                a = 2 * math.pi * (i + rng.uniform(-.2, .2)) / 6
+                out = Vector((math.cos(a), math.sin(a), 0))
+                limb(bm, uv, out * 0.2 + Vector((0, 0, 0.7)), out * rng.uniform(1.0, 1.4) + Vector((0, 0, -0.3)), 0.16, 0.06, 0, sides=4, segs=2)
+            for i in range(6):                                              # long, near-level crooked limbs: a wide tree
+                a = 2 * math.pi * (i + rng.uniform(-.3, .3)) / 6
+                tip = crooked(Vector((0.1, 0.05, h * rng.uniform(0.7, 0.95))), Vector((math.cos(a), math.sin(a), rng.uniform(0.05, 0.3))),
+                              rng.uniform(2.0, 2.8), 0.18, parts=4, kink=0.3)
+                clump(bm, uv, tip + Vector((0, 0, 0.2)), rng.uniform(0.7, 0.95), 0.22, 30, 1, size=(0.7, 1.0))   # flat lobe
+            clump(bm, uv, Vector((0.1, 0.05, h + 0.5)), 0.6, 0.25, 18, 1, size=(0.7, 1.0))   # small lobe over the trunk
+        elif kind == "dk_jungle_tree":
+            giant(bm, uv, 3.0, 0.2, 4, [(2.4, 5, 0.9, 0.95), (3.0, 4, 0.6, 0.85)], 3.7, 520)
+        elif kind == "dk_dead_snag":
+            top = crooked(Vector((0, 0, -0.2)), Vector((0, 0, 1)), 2.6, 0.2, parts=4, kink=0.18)
+            for z in (1.2, 1.7, 2.1):
+                a = rng.uniform(0, 6.283)
+                crooked(Vector((0, 0, z)), Vector((math.cos(a), math.sin(a), 0.4)), rng.uniform(0.6, 1.0), 0.07, parts=2)
+            for _ in range(3):                                              # moss on the broken top and a fork
+                clump(bm, uv, top + Vector((rng.uniform(-.3, .3), rng.uniform(-.3, .3), -rng.uniform(0, 0.8))), 0.25, 0.15, 6, 1, size=(0.3, 0.5))
+        elif kind == "dk_root_tangle":
+            for i in range(9):                                              # arching roots from a low stump
+                a = 2 * math.pi * (i + rng.uniform(-.3, .3)) / 9
+                out = Vector((math.cos(a), math.sin(a), 0))
+                mid = out * rng.uniform(0.5, 0.8) + Vector((0, 0, rng.uniform(0.45, 0.75)))
+                limb(bm, uv, Vector((0, 0, 0.5)), mid, 0.11, 0.08, 0, sides=4, segs=1)
+                limb(bm, uv, mid, out * rng.uniform(1.1, 1.5) + Vector((0, 0, -0.25)), 0.08, 0.04, 0, sides=4, segs=1)
+            tube(bm, uv, [(Vector((0, 0, -0.2)), 0.3), (Vector((0, 0, 0.6)), 0.18)], 7, 0)
+            for _ in range(4):                                              # ferns between the roots
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.6, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.2)), 0.35, 0.15, 10, 1, size=(0.35, 0.55))
+        elif kind == "dk_reeds":
+            for _ in range(7):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.0)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.25)), 0.3, 0.25, 14, 0, size=(0.3, 0.5))
+        elif kind == "canto_chinar":
+            top = crooked(Vector((0, 0, -0.2)), Vector((0.2, 0, 1)), 2.4, 0.16, parts=4, kink=0.3)
+            clump(bm, uv, top + Vector((0, 0, 0.1)), 0.55, 0.12, 22, 1, size=(0.45, 0.7))     # the crown pad
+            for i in range(7):                                              # branches stepping up, a flat pad on each:
+                a = 2.4 * i + rng.uniform(-.3, .3)                         # long low ones, short high ones (bonsai)
+                tip = crooked(Vector((0.1, 0, 0.6 + 0.25 * i)), Vector((math.cos(a), math.sin(a), 0.12)),
+                              (1.5 - 0.15 * i) * rng.uniform(0.85, 1.1), 0.07, parts=2, kink=0.15)
+                clump(bm, uv, tip + Vector((0, 0, 0.06)), 0.5 - 0.03 * i, 0.08, 16, 1, size=(0.35, 0.55))
+        elif kind == "canto_cactus":
+            def column(x, y, h, r, arms):
+                tube(bm, uv, [(Vector((x, y, -0.2)), r), (Vector((x, y, h - r)), r), (Vector((x, y, h - r * 0.3)), r * 0.7),
+                              (Vector((x, y, h)), r * 0.15)], 8, 0, vrep=2.0)
+                for _ in range(arms):                                        # arms: out, then up
+                    a, z = rng.uniform(0, 6.283), rng.uniform(0.35, 0.6) * h
+                    out = Vector((math.cos(a), math.sin(a), 0))
+                    p0 = Vector((x, y, z)) + out * r * 0.5
+                    p1 = p0 + out * rng.uniform(0.25, 0.4) + Vector((0, 0, 0.08))
+                    limb(bm, uv, p0, p1, r * 0.6, r * 0.6, 0, sides=6, segs=1)
+                    up = rng.uniform(0.3, 0.55)
+                    tube(bm, uv, [(p1 - Vector((0, 0, r * 0.4)), r * 0.62), (p1 + Vector((0, 0, up)), r * 0.6),
+                                  (p1 + Vector((0, 0, up + r * 0.4)), r * 0.12)], 7, 0)
+            for i in range(rng.randint(3, 5)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.3, 0.9) * (i > 0)
+                column(math.cos(a) * d, math.sin(a) * d, rng.uniform(1.6, 2.0) if i == 0 else rng.uniform(0.8, 1.6),
+                       rng.uniform(0.13, 0.18), 2 if i == 0 else rng.randint(0, 1))
+            for _ in range(rng.randint(2, 4)):                               # barrel cacti
+                a, d, r = rng.uniform(0, 6.283), rng.uniform(0.6, 1.3), rng.uniform(0.15, 0.24)
+                x, y = math.cos(a) * d, math.sin(a) * d
+                tube(bm, uv, [(Vector((x, y, -0.1)), r), (Vector((x, y, r * 0.9)), r * 1.05), (Vector((x, y, r * 1.5)), r * 0.15)], 8, 0)
+        elif kind == "canto_scrub":
+            for _ in range(8):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                r = rng.uniform(0.25, 0.45)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.5)), r, r * 0.45, 18, 0, size=(0.3, 0.5))
+        elif kind == "canto_rubble":
+            a = rng.uniform(0, 6.283)                                      # the broken obelisk: tapered, leaning
+            lathe(bm, uv, (0.0, 0.0), [(-0.3, 0.32), (1.6, 0.24), (1.75, 0.2)], 4, 0, (math.cos(a) * 0.12, math.sin(a) * 0.12))
+            for i in range(2):                                              # pylon blocks, tilted half into the sand
+                b_ = a + 2.2 + 2.0 * i
+                c = Vector((math.cos(b_), math.sin(b_), 0.0)) * rng.uniform(0.8, 1.2)
+                w = rng.uniform(0.3, 0.5)
+                lathe(bm, uv, (c.x, c.y), [(-0.4, w), (rng.uniform(0.3, 0.6), w * 0.75)], 4, 0,
+                      (rng.uniform(-0.4, 0.4), rng.uniform(-0.4, 0.4)))
+            top = Vector((math.cos(a + 1.1) * 0.9, math.sin(a + 1.1) * 0.9, 0.12))   # its fallen top
+            limb(bm, uv, top, top + Vector((math.cos(a + 0.6), math.sin(a + 0.6), 0.05)) * 0.9, 0.2, 0.15, 0, sides=4, segs=1)
+            for _ in range(6):
+                c = Vector((rng.uniform(-1.4, 1.4), rng.uniform(-1.4, 1.4), 0.0))
+                lathe(bm, uv, (c.x, c.y), [(-0.1, rng.uniform(0.1, 0.2)), (0.15, 0.12), (0.22, 0.02)], 4, 0)
+        elif kind == "zyg_tree":
+            giant(bm, uv, 1.6, 0.12, 3, [(1.45, 5, 0.85, 0.7)], 1.75, 360)   # short trunk, flat spreading crown
+        else:                                                               # zyg_shrubs
+            for _ in range(6):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.0)
+                r = rng.uniform(0.3, 0.5)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.6)), r, r * 0.5, 24, 0, size=(0.35, 0.6))
+
     def homestead(bm, uv):
         dome(bm, uv, (0, 0, -0.05), 0.45)              # main dome
         dome(bm, uv, (0.75, 0.2, -0.03), 0.22)         # entrance
@@ -796,6 +1010,10 @@ def procedural():
         tube(bm, uv, [(Vector((-0.2, -0.75, z)), r) for z, r in vaporator], 6, 0)
 
     for idx, kind in PROCEDURAL.items():
+        if only and str(idx) not in only and kind not in only:
+            continue
+        if kind.startswith(("dk_", "zyg_", "canto_")):
+            rng.seed(kind)
         bpy.ops.wm.read_factory_settings(use_empty=True)
         me = bpy.data.meshes.new(kind)
         obj = bpy.data.objects.new(kind, me)
@@ -821,6 +1039,9 @@ def procedural():
         elif kind.startswith("kor_"):
             korriban_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
+        elif kind.startswith(("dk_", "zyg_", "canto_")):
+            planet_flora(bm, uv, kind)
+            mats = PROC_MATS[idx]
         else:
             homestead(bm, uv)
             mats = PROC_MATS[idx]
@@ -830,7 +1051,7 @@ def procedural():
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_")):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)
@@ -871,4 +1092,5 @@ def wire():
 
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
-    {"download": download, "textures": textures, "meshes": meshes, "procedural": procedural, "wire": wire}[args[0]]()
+    {"download": download, "textures": textures, "planet_textures": planet_textures, "meshes": meshes,
+     "procedural": procedural, "wire": wire}[args[0]](*args[1:])

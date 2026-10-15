@@ -36,12 +36,14 @@ Usage (from the mod root):
                                                          after korriban_map.py, then --globe-texture
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --raxus-prime  only repaint Raxus Prime (junk world); run after
                                                          raxus_prime_map.py, then --globe-texture
+  python "WIPGFX/plans & scripts/planet_terrain_gen.py" --planet NAME  only repaint a planet whose map script has a
+                                                         TERRAIN_CFG (Zygerria; --zygerria is the same), then --globe-texture
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --raxus        only repaint Raxus (capital, countryside); run after
                                                          raxus_map.py, then --globe-texture
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --world-tweaks  only apply city districts, red worlds, dense
                                                          forests (terrain/cities/trees.bmp + colormap); run once
 """
-import argparse, collections, csv, glob, io, json, os, re
+import argparse, collections, csv, glob, io, json, os, re, sys
 import numpy as np
 from PIL import Image
 from scipy import ndimage as ndi
@@ -1278,6 +1280,192 @@ def kadavo(t, trees, city, h, labels, names, pid, rng):
     return t, trees, city, hn
 
 
+# ---------------------------------------------------------------- data-driven repaint (TERRAIN_CFG in <planet>_map.py)
+# A planet's map script describes its terrain as data; zone_repaint() does the rest. Zones are the map script's KIND
+# values (the <planet>_zones.png pixels). Heights are heightmap steps above GROUND; random draws happen in a fixed
+# order (rough, then each zone's operator in TERRAIN_CFG order, then the texture mix, then the props), so the same
+# config and seed always give the same map.
+#   TERRAIN_CFG = dict(
+#       seed=85,                     # added to SEED for this planet's generator
+#       base=4, rough=4,             # every zone starts at base + rough * noise(cell 5) ("rough", reused by operators)
+#       open=(1, 11, 5, 6),          # open ground: where ramps lead down to
+#       zones={kind: dict(relief=(operator, ...), tex=..., props=[(trees index, share), ...],
+#                         clusters=[(noise cell, threshold, props), ...]), ...},   # clusters: forest patches
+#       steep=(texture, slope, kinds),   # rock texture on slopes steeper than slope, in these zones
+#       city={kind: style, ...},     # map/cities.txt group per zone (0 elsewhere on the planet)
+#       prop_clear=2.6,              # props keep this far (px) from unit positions
+#       hook=None)                   # fn(ctx) -> None: a planet's own extra shaping (ctx: rel, z, sub, rng, rough, ...)
+# relief operators:
+#   ("rolling", level, amp, cell)            level + amp * noise (cell None: the shared rough noise)
+#   ("flat", level)
+#   ("ramp_top", top, foot, ramp_px)         a flat top falling to `foot` over ramp_px px towards the open ground
+#   ("flank", low, high, inner, gullies)     rises from the open side (low) to the inner zones' rim (high), gullied
+#   ("mesa", low, top, edge_px, notch)       sheer sides, flat top; notch = (noise cell, threshold) nicks in the edge
+#   ("spires", floor, floor_rough, density, (r0, r1), (h0, h1))   flat-topped pillars on a floor
+# tex: a texture (name from this module, e.g. "SAVANNA", or index) or [default, (texture, ">"|"<", threshold), ...]
+# over the shared texture mix (noise cell 7); later bands win.
+TERRAIN_TEXTURES = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27,
+                    28, 29, 30, 31, 32}           # graphical terrain indices of common/terrain/00_terrain.txt
+CITY_TEXTURES = {13, 26, 29, 30, 32}                # ... the ones with spawn_city = yes: city models only grow on these
+RELIEF_OPS = {"rolling": 4, "flat": 2, "ramp_top": 4, "flank": 5, "mesa": 5, "spires": 6}   # operator -> tuple length
+
+
+def _tex(v):
+    return globals()[v] if isinstance(v, str) else v
+
+
+def check_terrain_cfg(mod):
+    """problems with a planet's TERRAIN_CFG (empty list = fine); nothing is read from the map"""
+    cfg, errs = getattr(mod, "TERRAIN_CFG", None), []
+    if cfg is None:
+        return [f"{mod.__name__}: no TERRAIN_CFG"]
+    kinds = set(mod.KIND.values())
+    for k, zc in cfg["zones"].items():
+        if k not in kinds:
+            errs.append(f"zone {k}: not a KIND value of {mod.__name__} ({sorted(kinds)})")
+        op = zc.get("relief")
+        if op and (op[0] not in RELIEF_OPS or len(op) != RELIEF_OPS[op[0]]):
+            errs.append(f"zone {k}: relief {op!r}: unknown operator or wrong arity ({RELIEF_OPS})")
+        if op and op[0] == "flank" and not set(op[3]) <= kinds:
+            errs.append(f"zone {k}: flank inner zones {op[3]} not all KIND values")
+        tex = zc.get("tex")
+        for t_ in ([tex] if not isinstance(tex, list) else [tex[0]] + [b[0] for b in tex[1:]]) if tex is not None else []:
+            if isinstance(t_, str) and not isinstance(globals().get(t_), int):
+                errs.append(f"zone {k}: texture name {t_!r} unknown")
+            elif _tex(t_) not in TERRAIN_TEXTURES:
+                errs.append(f"zone {k}: texture {t_!r} is not a graphical terrain index")
+        for idx, share in zc.get("props", []) + [x for c in zc.get("clusters", []) for x in c[2]]:
+            if not (0 < idx < 256 and 0 < share < 1):
+                errs.append(f"zone {k}: prop {(idx, share)} out of range")
+    groups = len(re.findall(r"^city_group", open(f"{MAP}/cities.txt", encoding="utf-8").read(), re.M))
+    for k, style in cfg.get("city", {}).items():
+        if k not in kinds or not 0 <= style <= groups:
+            errs.append(f"city: zone {k} style {style} (zones {sorted(kinds)}, styles 0..{groups})")
+        tex = cfg["zones"].get(k, {}).get("tex")
+        texs = {_tex(t_) for t_ in ([tex] if not isinstance(tex, list) else [tex[0]] + [b[0] for b in tex[1:]])} if tex is not None else set()
+        if style and not texs & CITY_TEXTURES:          # the city style is painted but no building would spawn
+            errs.append(f"city: zone {k} has style {style} but texture {tex!r} has no spawn_city ({sorted(CITY_TEXTURES)})")
+    if not set(cfg.get("open", ())) <= kinds or not set(cfg.get("steep", (0, 0, ()))[2]) <= kinds:
+        errs.append("open / steep zones are not all KIND values")
+    for path in (mod.ZONES_PNG, mod.ZONES_JSON):
+        if not os.path.exists(path):
+            errs.append(f"{path} missing: run {mod.__name__}.py first")
+    return errs
+
+
+def zone_repaint(mod):
+    """repaint_planet() fn for a planet whose map script has a TERRAIN_CFG"""
+    cfg = mod.TERRAIN_CFG
+
+    def fn(t, trees, city, h, labels, names, pid, rng):
+        t, trees, city = t.copy(), trees.copy(), city.copy()
+        H, W = labels.shape
+        planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
+        on = planet == mod.PLANET
+        zone = np.asarray(Image.open(mod.ZONES_PNG))
+        zj = json.load(open(mod.ZONES_JSON))
+        ys, xs = np.nonzero(on)
+        y0, y1, x0, x1 = ys.min() - 2, ys.max() + 3, xs.min() - 2, xs.max() + 3
+        sl = np.s_[y0:y1, x0:x1]
+        sub, z = on[sl], zone[sl]
+        yy, xx = np.mgrid[0:sub.shape[0], 0:sub.shape[1]].astype(np.float32)
+        rim = smoothstep(np.clip((ndi.distance_transform_edt(sub) - 1.5) / 4, 0, 1))
+        cen = np.array([v["centre"] for v in zj["provinces"].values()]) - [y0, x0]
+        unit_d = np.min([np.hypot(yy - a, xx - b) for a, b in cen], 0)
+        rough = noise(sub.shape, 5, rng, 3)
+        rel = (cfg["base"] + cfg["rough"] * rough).astype(np.float32)
+        open_ = sub & np.isin(z, cfg["open"])
+        d_open = ndi.distance_transform_edt(~open_)                       # px to the nearest open ground
+        for k, zc in cfg["zones"].items():
+            op, m = zc.get("relief"), z == k
+            if not op:
+                continue
+            if op[0] == "rolling":
+                rel = np.where(m, op[1] + op[2] * (rough if op[3] is None else noise(sub.shape, op[3], rng, 3)), rel)
+            elif op[0] == "flat":
+                rel = np.where(m, op[1], rel)
+            elif op[0] == "ramp_top":
+                rel = np.where(m, op[2] + (op[1] - op[2]) * smoothstep(np.clip(d_open / op[3], 0, 1)), rel)
+            elif op[0] == "flank":
+                din, dout = ndi.distance_transform_edt(~np.isin(z, op[3])), ndi.distance_transform_edt(m)
+                kk = np.clip(dout / np.maximum(dout + din, 1e-3), 0, 1)     # 0 at the foot, 1 at the rim
+                gully = 1 - np.abs(np.sin(np.arctan2(yy - yy[m].mean(), xx - xx[m].mean()) * op[4] + 3 * rough)) ** 0.5
+                rel = np.where(m, op[1] + (op[2] - op[1]) * np.clip(kk * 1.35, 0, 1) ** 0.55 * (1 - 0.15 * gully * (1 - kk)), rel)
+            elif op[0] == "mesa":
+                dm = ndi.distance_transform_edt(m)
+                notch = noise(sub.shape, op[4][0], rng, 2) > op[4][1]
+                rel = np.where(m, op[1] + (op[2] - op[1]) * smoothstep(np.clip((dm - 0.5 * notch) / op[3], 0, 1)), rel)
+            elif op[0] == "spires":
+                pf = np.full(sub.shape, op[1] + op[2] * rough, np.float32)
+                cand = np.argwhere(m & (ndi.distance_transform_edt(m) > 1))
+                for r, c in cand[rng.random(len(cand)) < op[3]]:
+                    rad = rng.uniform(*op[4])
+                    d = np.hypot(yy - r, xx - c) / rad
+                    pf = np.maximum(pf, op[1] + rng.uniform(*op[5]) * np.clip(1 - d ** 6, 0, 1))
+                rel = np.where(m, pf, rel)
+        ctx = dict(rel=rel, z=z, sub=sub, rng=rng, rough=rough, yy=yy, xx=xx, unit_d=unit_d, zj=zj, sl=sl)
+        if cfg.get("hook"):
+            cfg["hook"](ctx)                                               # a planet's own shaping, in place on ctx["rel"]
+            rel = ctx["rel"]
+        hn = h.copy()
+        hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
+        gy, gx = np.gradient(hn[sl])
+        slope = np.hypot(gx, gy)
+        tz = np.full(sub.shape, -1, np.int16)
+        mix = noise(sub.shape, 7, rng, 2)
+        for k, zc in cfg["zones"].items():
+            tex = zc.get("tex")
+            if tex is None:
+                continue
+            m = sub & (z == k)
+            if not isinstance(tex, list):
+                tz[m] = _tex(tex)
+                continue
+            v = np.full(sub.shape, _tex(tex[0]), np.int16)
+            for band in tex[1:]:
+                v = np.where(mix > band[2] if band[1] == ">" else mix < band[2], _tex(band[0]), v)
+            tz[m] = v[m]
+        if cfg.get("steep"):
+            st_tex, st_slope, st_zones = cfg["steep"]
+            tz[sub & (slope > st_slope) & np.isin(z, st_zones)] = _tex(st_tex)
+        t[sl] = np.where(tz >= 0, tz, t[sl]).astype(t.dtype)
+        city[on] = 0
+        for k, style in cfg.get("city", {}).items():
+            city[sl] = np.where(sub & (z == k), style, city[sl])
+        TH, TW = trees.shape
+        gi = np.ix_(np.minimum(((np.arange(TH) + 0.5) * H / TH).astype(int), H - 1),
+                    np.minimum(((np.arange(TW) + 0.5) * W / TW).astype(int), W - 1))
+        trees[on[gi]] = 0
+        r = rng.random((TH, TW))
+        ok = np.zeros((H, W), bool)
+        ok[sl] = sub & (unit_d >= cfg.get("prop_clear", 2.6)) & (ndi.distance_transform_edt(sub) > 2) & (slope < 6)
+        for k, zc in cfg["zones"].items():
+            cells = ok[gi] & (zone[gi] == k)
+            lo = 0.0
+            for idx, share in zc.get("props", []):
+                trees[cells & (r >= lo) & (r < lo + share)] = idx
+                lo += share
+        for k, zc in cfg["zones"].items():                                 # forest patches: drawn last, only if used
+            for cell, thr, props in zc.get("clusters", []):
+                patch = np.zeros((H, W), bool)
+                patch[sl] = noise(sub.shape, cell, rng, 3) > thr
+                cells = ok[gi] & (zone[gi] == k) & patch[gi]
+                lo = 0.0
+                for idx, share in props:
+                    trees[cells & (r >= lo) & (r < lo + share)] = idx
+                    lo += share
+        print(f"{mod.PLANET}: zones {dict(zip(*np.unique(z[sub], return_counts=True)))}, top {int(hn[sl].max())}")
+        return t, trees, city, hn
+    return fn
+
+
+def planet_module(name):
+    """the map script module of a planet ('Zygerria', 'Raxus Prime' -> zygerria_map, raxus_prime_map)"""
+    import importlib
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    return importlib.import_module(name.lower().replace(" ", "_") + "_map")
+
+
 def repaint_planet(fn, planet, seed, with_cm=False):
     """Run one planet's repaint fn(t, trees, city, h, labels, names, pid, rng) -> (t, trees, city, h) and write
     heightmap.bmp, world_normal.bmp (around that planet only), terrain/trees/cities.bmp and the re-snapped positions.
@@ -1452,6 +1640,8 @@ def main():
     ap.add_argument("--raxus-prime", action="store_true", help="only repaint Raxus Prime (junk world); then --globe-texture")
     ap.add_argument("--korriban", action="store_true", help="only repaint Korriban (valleys, tombs, spires); then --globe-texture")
     ap.add_argument("--kadavo", action="store_true", help="only repaint Kadavo (ash plains, volcanoes, crater); then --globe-texture")
+    ap.add_argument("--planet", help="only repaint this planet from its map script's TERRAIN_CFG; then --globe-texture")
+    ap.add_argument("--zygerria", action="store_true", help="same as --planet Zygerria")
     ap.add_argument("--florrum", action="store_true", help="only repaint Florrum (sulfur desert, shelves, canyon); then --globe-texture")
     a = ap.parse_args()
     if a.raxus_prime:
@@ -1460,6 +1650,12 @@ def main():
         return repaint_planet(korriban, KORRIBAN, SEED + 90)
     if a.kadavo:
         return repaint_planet(kadavo, KADAVO, SEED + 83)
+    if a.zygerria or a.planet:
+        mod = planet_module(a.planet or "Zygerria")
+        errs = check_terrain_cfg(mod)
+        if errs:                                                           # nothing written
+            sys.exit(f"{mod.__name__}.TERRAIN_CFG:\n  " + "\n  ".join(errs))
+        return repaint_planet(zone_repaint(mod), mod.PLANET, SEED + mod.TERRAIN_CFG["seed"])
     if a.florrum:
         return repaint_planet(florrum, FLORRUM, SEED + 192, with_cm=True)
     if a.raxus:

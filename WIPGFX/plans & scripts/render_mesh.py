@@ -31,6 +31,15 @@ def main(out, *meshes):
                 lo = Vector(map(min, lo, p))
                 hi = Vector(map(max, hi, p))
         x += w * 1.15
+    for m in bpy.data.materials:                     # leaf cards: cut out by the diffuse alpha, as the game does
+        nodes = m.node_tree.nodes if m.use_nodes and m.node_tree else []
+        diff = next((n for n in nodes if n.type == "TEX_IMAGE" and n.image and "diffuse" in n.image.name), None)
+        bsdf = next((n for n in nodes if n.type == "BSDF_PRINCIPLED"), None)
+        if diff and bsdf and "_flora_" in diff.image.name:   # foliage atlases only: buildings keep alpha for night lights
+            diff.image.alpha_mode = "STRAIGHT"
+            m.node_tree.links.new(diff.outputs["Alpha"], bsdf.inputs["Alpha"])
+            m.node_tree.nodes.active = diff
+            m.blend_method, m.alpha_threshold = "CLIP", 0.5
     scene = bpy.context.scene
     scene.render.engine = "BLENDER_WORKBENCH"
     scene.display.shading.light = "STUDIO"

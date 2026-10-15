@@ -8,19 +8,19 @@ asset), ash plains between the volcanoes. No towns: the bases are models (milita
     python "WIPGFX/plans & scripts/kadavo_map.py"     provinces.bmp, definition.csv, states, names, positions
 
 All 200 province ids are kept (strategic region unchanged); only the pixels move. The crater and the volcanoes are
-impassable states (130-123, new). Writes WIPGFX/Assets/kadavo_zones.json + kadavo_zones.png (KIND per pixel).
+impassable states (1150-1155). Writes WIPGFX/Assets/kadavo_zones.json + kadavo_zones.png (KIND per pixel).
 Run order: kadavo_map.py -> planet_terrain_gen.py --kadavo -> military_buildings.py kadavo_place -> kadavo_fx.py ->
 planet_terrain_gen.py --globe-texture.
 """
-import csv, glob, json, math, os, re, sys
+import glob, math, os, re, sys
 import numpy as np
-from PIL import Image
 from scipy import ndimage as ndi
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from felucia_map import split_area
 from felucia_tribes import block, place, rw
 from raxus_map import mend
+import planet_common as pcom
 from korriban_map import shape as kshape, uncross
 
 PLANET = "Kadavo"
@@ -48,17 +48,17 @@ tri = lambda r: [(HUB[0] + r * math.cos(math.radians(a)), HUB[1] - r * math.sin(
 FEATURES = [
     ("Kadavo Processing Facility", "prison", CAPITAL, 5,
      [("poly", tri(HUB[2]))] + [("cap", HUB[0], HUB[1], u, v, ARM_W) for u, v in tri(RIM)]),
-    ("The Great Crater", "crater", 130, 0, [("ell", HUB[0], HUB[1], 0.38, 0.35, 15)]),
+    ("The Great Crater", "crater", 1150, 0, [("ell", HUB[0], HUB[1], 0.38, 0.35, 15)]),
     ("Kadavo Processing Facility", "facility", CAPITAL, 12,
      [("ell", 0.03, 0.02, 0.52, 0.48, 10)]),
     ("Slaver Landing Field", "dock", 734, 7, [("ell", 0.7, 0.12, 0.17, 0.14, 20), ("rect", 0.88, 0.14, 0.14, 0.07, 5)]),
     ("Ore Pits", "mine", 736, 10, [("ell", -0.62, 0.28, 0.2, 0.15, -30), ("ell", -0.45, 0.45, 0.13, 0.1, 10)]),
     # the volcanoes and their old lava flows (impassable tongues reaching across the plains)
-    ("Mount Vorsk", "volcano", 126, 0, [("ell", -0.52, -0.48, 0.27, 0.23, 30), ("cap", -0.5, -0.45, -0.95, -0.25, 0.09),
+    ("Mount Vorsk", "volcano", 1151, 0, [("ell", -0.52, -0.48, 0.27, 0.23, 30), ("cap", -0.5, -0.45, -0.95, -0.25, 0.09),
                                          ("cap", -0.45, -0.4, -0.3, 0.0, 0.07), ("cap", -0.55, -0.5, -0.35, -0.95, 0.08)]),
-    ("The Ashen Cones", "volcano", 125, 0, [("ell", 0.1, 0.7, 0.3, 0.18, -10), ("ell", 0.34, 0.6, 0.13, 0.11, 0),
+    ("The Ashen Cones", "volcano", 1152, 0, [("ell", 0.1, 0.7, 0.3, 0.18, -10), ("ell", 0.34, 0.6, 0.13, 0.11, 0),
                                              ("cap", 0.0, 0.66, -0.28, 0.55, 0.08), ("cap", 0.25, 0.65, 0.55, 0.85, 0.08)]),
-    ("Mount Khesh", "volcano", 123, 0, [("ell", 0.52, -0.6, 0.22, 0.19, -25), ("cap", 0.5, -0.55, 0.3, -0.3, 0.07),
+    ("Mount Khesh", "volcano", 1153, 0, [("ell", 0.52, -0.6, 0.22, 0.19, -25), ("cap", 0.5, -0.55, 0.3, -0.3, 0.07),
                                          ("cap", 0.5, -0.62, 0.25, -0.98, 0.07)]),
 ]
 # the ash plains states: each takes the big natural pocket of plains nearest its seed (u, v)
@@ -167,6 +167,7 @@ def tidy(lab, feats, m):
 
 
 def main():
+    pcom.guard(PLANET, STATE_NAMES, [f[2] for f in FEATURES])
     land, pid, m = mask()
     ids = sorted(np.unique(pid[m]).tolist())
     rng = np.random.default_rng(SEED)
@@ -201,50 +202,20 @@ def main():
     uncross(newpid, m)
     for sid in {v["state"] for v in prov.values()}:
         assert ndi.label(np.isin(newpid, [p for p, v in prov.items() if v["state"] == sid]))[1] == 1, f"state {sid} in pieces"
-    rows = {int(r[0]): r for r in csv.reader(open("map/definition.csv", encoding="utf-8-sig"), delimiter=";") if r and r[0].isdigit()}
-    sea = np.isin(pid, [i for i, r in rows.items() if r[4] == "sea"])
-    for p, v in prov.items():
-        pm = newpid == p
-        ring = ndi.binary_dilation(pm) & ~pm
-        v["coastal"] = bool((ring & sea).any())
-        v["sea"] = int(np.bincount(pid[ring & sea]).argmax()) if v["coastal"] else 0
-        v["centre"] = [float(c) for c in ndi.center_of_mass(pm)]
-        v["area"] = int(pm.sum())
-        v["terrain"] = TERRAIN[v["zone"]]
-    bmp = np.array(Image.open("map/provinces.bmp").convert("RGB"))
-    ys, xs = np.nonzero(m)
-    bmp[ys, xs] = np.array([[int(rows[p][1]), int(rows[p][2]), int(rows[p][3])] for p in newpid[ys, xs]], np.uint8)
-    Image.fromarray(bmp, "RGB").save("map/provinces.bmp")
-    path = "map/definition.csv"
-    raw_txt = open(path, "rb").read()
-    out = []
-    for line in raw_txt.decode("utf-8-sig").splitlines(keepends=True):
-        body, end = line.rstrip("\r\n"), line[len(line.rstrip("\r\n")):]
-        q = body.split(";")
-        if len(q) >= 7 and q[0].isdigit() and int(q[0]) in prov:
-            q[5] = "true" if prov[int(q[0])]["coastal"] else "false"
-            q[6] = prov[int(q[0])]["terrain"]
-        out.append(";".join(q) + end)
-    open(path, "wb").write((b"\xef\xbb\xbf" if raw_txt.startswith(b"\xef\xbb\xbf") else b"") + "".join(out).encode("utf-8"))
+    rows = pcom.definition_rows()
+    pcom.measure(prov, newpid, pid, rows, TERRAIN)
+    pcom.write_map(newpid, m, rows, prov)
     vp_names = states(prov, land, m, newpid, rng)
     kind = np.zeros(m.shape, np.uint8)
     for p, v in prov.items():
         kind[newpid == p] = v["kind"]
-    ys, xs = np.nonzero(m)
-    json.dump({"centre": [float(ys.mean()), float(xs.mean())], "radius": math.sqrt(m.sum() / math.pi),
-               "vp_names": {str(p): n for p, n in vp_names.items()},
-               "provinces": {str(p): v for p, v in prov.items()}}, open(ZONES_JSON, "w"), indent=1)
-    Image.fromarray(np.where(m, kind, 0).astype(np.uint8)).save(ZONES_PNG)
+    pcom.write_zones(ZONES_JSON, ZONES_PNG, m, kind, vp_names, prov)
 
 
 def states(prov, land, m, newpid, rng):
     """state files keeping resources, industry and manpower (owner kept); victory points, names, map positions,
     units (off the impassable ground), the port on the landing field"""
-    old = {}
-    for f in glob.glob("history/states/*.txt"):
-        sid = int(re.search(r"\bid\s*=\s*(\d+)", open(f, encoding="utf-8-sig").read()).group(1))
-        if sid in STATE_NAMES:
-            old[sid] = f
+    old = pcom.old_states(STATE_NAMES)
     pc = lambda p: np.array(prov[p]["centre"])
     by_state = {}
     for p, v in prov.items():
@@ -314,11 +285,7 @@ def states(prov, land, m, newpid, rng):
                                                                          if int(q.group(2)) in fprov and prov[int(q.group(2))]["state"] in IMPASSABLE
                                                                          else q.group(2)), s_))
 
-    def fs(s):
-        for sid in STATE_NAMES:
-            s = re.sub(rf'\n STATE_{sid}:\d* "[^"]*"', "", s)
-        return s.rstrip("\n") + "\n" + "".join(f' STATE_{sid}:0 "{n}"\n' for sid, n in sorted(STATE_NAMES.items()))
-    rw("localisation/english/state_names_l_english.yml", fs)
+    pcom.state_names_loc(STATE_NAMES)
 
     def fv(s):
         s = re.sub(r'\n ?VICTORY_POINTS_(\d+):\d* "[^"]*"', lambda q: "" if int(q.group(1)) in fprov else q.group(0), s)
@@ -330,4 +297,4 @@ def states(prov, land, m, newpid, rng):
 
 
 if __name__ == "__main__":
-    main()
+    pcom.run(main)

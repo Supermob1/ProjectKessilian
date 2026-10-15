@@ -14,15 +14,15 @@ planet_terrain_gen.py --korriban and military_buildings.py korriban_place.
 Run order: korriban_map.py -> planet_terrain_gen.py --korriban -> military_buildings.py korriban_place ->
 planet_terrain_gen.py --globe-texture.
 """
-import csv, glob, json, math, os, re, sys
+import glob, math, os, re, sys
 import numpy as np
-from PIL import Image
 from scipy import ndimage as ndi
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from felucia_map import split_area
 from felucia_tribes import block, place, rw
 from raxus_map import mend
+import planet_common as pcom
 
 PLANET = "Korriban"
 ZONES_JSON = "WIPGFX/Assets/korriban_zones.json"
@@ -153,6 +153,7 @@ def tidy(lab, feats, m):
 
 
 def main():
+    pcom.guard(PLANET, STATE_NAMES, [f[2] for f in FEATURES])
     land, pid, m = mask()
     ids = sorted(np.unique(pid[m]).tolist())
     rng = np.random.default_rng(SEED)
@@ -188,40 +189,14 @@ def main():
     uncross(newpid, m)
     for sid in {v["state"] for v in prov.values()}:
         assert ndi.label(np.isin(newpid, [p for p, v in prov.items() if v["state"] == sid]))[1] == 1, f"state {sid} in pieces"
-    rows = {int(r[0]): r for r in csv.reader(open("map/definition.csv", encoding="utf-8-sig"), delimiter=";") if r and r[0].isdigit()}
-    bmp = np.array(Image.open("map/provinces.bmp").convert("RGB"))
-    ys, xs = np.nonzero(m)
-    bmp[ys, xs] = np.array([[int(rows[p][1]), int(rows[p][2]), int(rows[p][3])] for p in newpid[ys, xs]], np.uint8)
-    Image.fromarray(bmp, "RGB").save("map/provinces.bmp")
-    sea = np.isin(pid, [i for i, r in rows.items() if r[4] == "sea"])
-    for p, v in prov.items():
-        pm = newpid == p
-        ring = ndi.binary_dilation(pm) & ~pm
-        v["coastal"] = bool((ring & sea).any())
-        v["sea"] = int(np.bincount(pid[ring & sea]).argmax()) if v["coastal"] else 0
-        v["centre"] = [float(c) for c in ndi.center_of_mass(pm)]
-        v["area"] = int(pm.sum())
-        v["terrain"] = TERRAIN[v["zone"]]
-    path = "map/definition.csv"
-    raw_txt = open(path, "rb").read()
-    out = []
-    for line in raw_txt.decode("utf-8-sig").splitlines(keepends=True):
-        body, end = line.rstrip("\r\n"), line[len(line.rstrip("\r\n")):]
-        q = body.split(";")
-        if len(q) >= 7 and q[0].isdigit() and int(q[0]) in prov:
-            q[5] = "true" if prov[int(q[0])]["coastal"] else "false"
-            q[6] = prov[int(q[0])]["terrain"]
-        out.append(";".join(q) + end)
-    open(path, "wb").write((b"\xef\xbb\xbf" if raw_txt.startswith(b"\xef\xbb\xbf") else b"") + "".join(out).encode("utf-8"))
+    rows = pcom.definition_rows()
+    pcom.measure(prov, newpid, pid, rows, TERRAIN)
+    pcom.write_map(newpid, m, rows, prov)
     vp_names = states(prov, land, m, newpid, spare, rng)
     kind = np.zeros(m.shape, np.uint8)
     for p, v in prov.items():
         kind[newpid == p] = v["kind"]
-    ys, xs = np.nonzero(m)
-    json.dump({"centre": [float(ys.mean()), float(xs.mean())], "radius": math.sqrt(m.sum() / math.pi),
-               "vp_names": {str(p): n for p, n in vp_names.items()},
-               "provinces": {str(p): v for p, v in prov.items()}}, open(ZONES_JSON, "w"), indent=1)
-    Image.fromarray(np.where(m, kind, 0).astype(np.uint8)).save(ZONES_PNG)
+    pcom.write_zones(ZONES_JSON, ZONES_PNG, m, kind, vp_names, prov)
     assert not spare, "every id should have pixels"
 
 
@@ -249,11 +224,7 @@ def uncross(newpid, m):
 def states(prov, land, m, newpid, spare, rng):
     """state files keeping resources, industry and manpower (owner kept); victory points, names, map positions,
     units. Lanes and rails through the spare ids go through the capital first, so place() re-anchors them too."""
-    old = {}
-    for f in glob.glob("history/states/*.txt"):
-        sid = int(re.search(r"\bid\s*=\s*(\d+)", open(f, encoding="utf-8-sig").read()).group(1))
-        if sid in STATE_NAMES:
-            old[sid] = f
+    old = pcom.old_states(STATE_NAMES)
     owner = re.search(r"owner\s*=\s*(\w+)", open(old[CAPITAL], encoding="utf-8-sig").read()).group(1)
     pc = lambda p: np.array(prov[p]["centre"])
     by_state = {}
@@ -267,7 +238,8 @@ def states(prov, land, m, newpid, spare, rng):
         cen = np.mean([pc(p) for p in prov if prov[p]["feature"] == feat], 0)    # the middle of the feature
         p = min(cand, key=lambda q: np.hypot(*(pc(q) - cen)))
         vp_names[p], vps[p] = name, val
-    for name in {v["feature"] for v in prov.values() if v["zone"] == "tomb"}:   # one per tomb, on its biggest province
+    for name in dict.fromkeys(v["feature"] for v in prov.values() if v["zone"] == "tomb"):   # one per tomb, on its biggest
+        # province; in layout order (a set's order follows PYTHONHASHSEED and changed the output between runs)
         p = max((q for q, v in prov.items() if v["feature"] == name), key=lambda q: prov[q]["area"])
         vp_names[p], vps[p] = name, 5 if name == "Tomb of Marka Ragnos" else 3
     capital_p = next(p for p, n in vp_names.items() if n == "Dreshdae")
@@ -330,11 +302,7 @@ def states(prov, land, m, newpid, spare, rng):
             rw(f, lambda s_: re.sub(r"\blocation(\s*=\s*)(\d+)\b",
                                     lambda q: "location" + q.group(1) + (str(capital_p) if int(q.group(2)) in blocked else q.group(2)), s_))
 
-    def fs(s):
-        for sid in STATE_NAMES:
-            s = re.sub(rf'\n STATE_{sid}:\d* "[^"]*"', "", s)
-        return s.rstrip("\n") + "\n" + "".join(f' STATE_{sid}:0 "{n}"\n' for sid, n in sorted(STATE_NAMES.items()))
-    rw("localisation/english/state_names_l_english.yml", fs)
+    pcom.state_names_loc(STATE_NAMES)
 
     def fv(s):
         s = re.sub(r'\n VICTORY_POINTS_(\d+):\d* "[^"]*"', lambda q: "" if int(q.group(1)) in fprov else q.group(0), s)
@@ -346,4 +314,4 @@ def states(prov, land, m, newpid, spare, rng):
 
 
 if __name__ == "__main__":
-    main()
+    pcom.run(main)

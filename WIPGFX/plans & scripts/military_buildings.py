@@ -12,6 +12,8 @@
   blender -b --factory-startup --python "WIPGFX/plans & scripts/military_buildings.py" -- models [prefix...]  temple,
                                                                  senate, dock... (only names starting with a prefix)
   python "WIPGFX/plans & scripts/military_buildings.py" landmarks     map/ambient_object.txt
+  python "WIPGFX/plans & scripts/military_buildings.py" place NAME  a planet's models from its map script's PLACEMENT
+                                                                 (zygerria_place = place Zygerria)
   python "WIPGFX/plans & scripts/military_buildings.py" wire     gfx/entities/buildings.asset (vanilla copy, 2 entities
                                                                  swapped) + gfx/entities/hod_buildings.gfx
 """
@@ -287,6 +289,27 @@ def felucia_atlas():
 K_GLYPH, K_STONE, K_STATUE, K_DARK = (_cell(i, 0) for i in range(4))
 K_LIGHT, K_BANNER, K_METAL, K_METAL_WIN = (_cell(i, 1) for i in range(4))
 K_GOLD, K_SAND, K_CONCRETE, K_RUBBLE = (_cell(i, 2) for i in range(4))
+# hod_zygerria atlas (zygerria_atlas; The Clone Wars "Slaves of the Republic" stills): the palace's blue slate, plain and
+# with lit windows, terracotta, the city's sandstone, plain and lit, teal tent roofs, bronze domes, dark doorways,
+# striped awnings, pale trim stone, dark metal
+Z_SLATE, Z_SLATE_WIN, Z_RED, Z_SAND = (_cell(i, 0) for i in range(4))
+Z_SAND_WIN, Z_ROOF, Z_BRONZE, Z_DARK = (_cell(i, 1) for i in range(4))
+Z_AWNING, Z_PALE, Z_METAL, Z_SPARE = (_cell(i, 2) for i in range(4))
+# hod_dromund atlas (dromund_atlas; TOR stills of Kaas City, the Imperial Citadel and the Dark Temple): dark blue-grey
+# Sith plating (plain / with mostly dead window slits), pale grey temple stone (clean / weathered with moss), black,
+# red glow, the Sith Empire emblem, grey rubble, dark overgrowth, mast steel
+D_PLATE, D_PLATE_WIN, D_STONE, D_STONE_WORN = (_cell(i, 0) for i in range(4))
+D_DARK, D_LIGHT, D_EMBLEM, D_RUBBLE = (_cell(i, 1) for i in range(4))
+D_MOSS, D_METAL, D_SPARE1, D_SPARE2 = (_cell(i, 2) for i in range(4))
+# hod_cantonica atlas (cantonica_atlas; Canto Bight in TLJ / Star Wars Outlaws, the user's references 2026-10-14): pale
+# beige stone with pilasters, plain and with a lit window band; pale plaster, plain and with small lit windows; dark
+# slate roof plates, plain and with the lit band under a dome's lip; warm grey flat roofs; black doorways; warm light;
+# dark railings; a landing pad with its red ring; garden green; the ancient Sith ruins' sandstone (plain, carved with
+# a glyph band, dark weathered), drift sand
+C_STONE, C_STONE_WIN, C_PLASTER, C_PLASTER_WIN = (_cell(i, 0) for i in range(4))
+C_SLATE, C_SLATE_LIT, C_ROOF, C_DARK = (_cell(i, 1) for i in range(4))
+C_GLOW, C_RAIL, C_PAD, C_GARDEN = (_cell(i, 2) for i in range(4))
+C_SITH, C_SITH_GLYPH, C_SITH_DARK, C_SAND = (_cell(i, 3) for i in range(4))
 
 
 def kadavo_atlas():
@@ -449,6 +472,200 @@ def korriban_atlas():
     save_dxt5_mips(np.dstack([full(0), spec, full(0), full(100)]), f"{LM_OUT}/hod_korriban_properties.dds")
     Image.fromarray(col.astype(np.uint8)).resize((512, 512)).save("WIPGFX/korriban_atlas_preview.png")
     print("korriban atlas written to", LM_OUT)
+
+def _atlas_canvas(N, seed):
+    """a 4 x 4 cell atlas being painted: (col, emi, spec, put, noise) where put(cell, rgb, e=None, sp=30) fills one
+    _cell and noise(sigma) is a smooth 0..1 field the size of a cell"""
+    import numpy as np
+    from scipy import ndimage as ndi
+    rng = np.random.default_rng(seed)
+    col = np.zeros((N, N, 3), np.float32)
+    emi = np.zeros((N, N), np.float32)
+    spec = np.full((N, N), 30, np.float32)
+
+    def put(rect, rgb, e=None, sp=30):
+        u0, v0, u1, v1 = rect
+        r, c = slice(int(round((1 - v1) * N)), int(round((1 - v0) * N))), slice(int(round(u0 * N)), int(round(u1 * N)))
+        col[r, c] = np.clip(rgb, 0, 255)
+        if e is not None:
+            emi[r, c] = e
+        spec[r, c] = sp
+
+    def noise(sigma):
+        a = ndi.gaussian_filter(rng.random((N // 4, N // 4)), sigma)
+        return ((a - a.min()) / np.ptp(a))[..., None]
+    return col, emi, spec, put, noise, rng
+
+
+def _atlas_save(name, col, emi, spec):
+    import numpy as np
+    from PIL import Image
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from flora_props import save_dxt5_mips
+    N = col.shape[0]
+    full = lambda v: np.full((N, N), v, np.float32)
+    save_dxt5_mips(np.dstack([col, full(255)]), f"{LM_OUT}/{name}_diffuse.dds")
+    save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{LM_OUT}/{name}_normal.dds")
+    save_dxt5_mips(np.dstack([full(0), spec, full(0), full(100)]), f"{LM_OUT}/{name}_properties.dds")
+    os.makedirs("WIPGFX/research/previews", exist_ok=True)
+    Image.fromarray(col.astype(np.uint8)).resize((512, 512)).save(f"WIPGFX/research/previews/{name}_atlas.png")
+    print(name, "atlas written to", LM_OUT)
+
+
+def dromund_atlas():
+    """hod_dromund textures from the TOR stills (Kaas City, the Imperial Citadel, the Dark Temple pass)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 89)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    panels = (((xx % 64) < 2) | ((yy % 48) < 2))[..., None]
+    plate = np.array([74, 82, 100], np.float32) * (0.8 + 0.3 * grime) * (1 - 0.3 * panels) * (0.8 + 0.3 * streak)
+    put(D_PLATE, plate, sp=60)
+    slit = ((xx % 20) > 7) & ((xx % 20) < 12) & ((yy % 40) > 6) & ((yy % 40) < 30)
+    lit = slit & (rng.random((t, t)) > 0.9)                                  # a few windows still glow, most are dead
+    put(D_PLATE_WIN, np.where(slit[..., None], [18, 20, 26], plate), e=np.where(lit, 160, 0), sp=60)
+    courses = ((yy % 28) < 2)[..., None]
+    stone = np.array([168, 170, 172], np.float32) * (0.82 + 0.25 * grime) * (1 - 0.2 * courses) * (0.85 + 0.2 * blotch)
+    put(D_STONE, stone)
+    moss = np.clip((blotch - 0.55) * 3, 0, 1) * (0.5 + 0.5 * streak)
+    put(D_STONE_WORN, stone * (1 - 0.6 * moss) + np.array([40, 70, 50], np.float32) * moss * 0.9)
+    put(D_DARK, np.array([16, 16, 20], np.float32) * (0.8 + 0.4 * grime))
+    band = np.abs(yy - t / 2) / (t / 2)
+    put(D_LIGHT, np.array([255, 70, 55], np.float32) * (1.35 - 0.35 * band)[..., None] + 40, e=255 * (1 - band), sp=200)  # always
+                                                          # day on this map (no night emission): the glow is painted bright
+    ban = Image.new("RGB", (t, t), (150, 18, 22))                            # the Sith Empire emblem on crimson
+    d = ImageDraw.Draw(ban)
+    cx, cy, R = t / 2, t / 2, t * 0.36
+    hexa = [(cx + R * math.cos(math.radians(60 * i + 30)), cy + R * math.sin(math.radians(60 * i + 30))) for i in range(6)]
+    d.polygon(hexa, outline=(15, 10, 10), width=10)
+    for i in range(6):
+        a0, a1 = math.radians(60 * i + 10), math.radians(60 * i + 40)
+        d.polygon([(cx + 0.25 * R * math.cos(a0), cy + 0.25 * R * math.sin(a0)), (cx + 0.8 * R * math.cos(a0), cy + 0.8 * R * math.sin(a0)),
+                   (cx + 0.8 * R * math.cos(a1), cy + 0.8 * R * math.sin(a1))], fill=(15, 10, 10))
+    d.ellipse([cx - 0.18 * R, cy - 0.18 * R, cx + 0.18 * R, cy + 0.18 * R], fill=(15, 10, 10))
+    put(D_EMBLEM, np.asarray(ban, np.float32) * (0.85 + 0.2 * grime), e=60)
+    put(D_RUBBLE, np.array([100, 102, 108], np.float32) * (0.5 + 0.7 * noise(1.5)))
+    put(D_MOSS, np.array([34, 58, 44], np.float32) * (0.7 + 0.5 * grime))
+    put(D_METAL, np.array([90, 94, 104], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    put(D_SPARE1, plate)
+    put(D_SPARE2, stone)
+    _atlas_save("hod_dromund", col, emi, spec)
+
+
+def cantonica_atlas():
+    """hod_cantonica textures from the user's Canto Bight references (TLJ casino and drum building, Star Wars Outlaws
+    view of the city) and the ancient Sith ruins (design choice). The map is always day: lights are painted bright."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 84)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    aged = lambda rgb: rgb * (0.82 + 0.25 * grime) * (0.88 + 0.18 * blotch)
+    pil = ((xx % 32) < 5)[..., None]                                          # pilasters: u runs round a drum
+    stone = aged(np.array([214, 200, 172], np.float32)) * (1 - 0.18 * ((yy % 40) < 2)[..., None]) * (1 + 0.08 * pil)
+    put(C_STONE, stone)
+    band = (np.abs(yy - t / 2) < t * 0.2)                                     # one window band round the middle
+    win = band & ((xx % 32) > 8) & ((xx % 32) < 28)
+    warm = np.array([255, 196, 110], np.float32)
+    put(C_STONE_WIN, np.where(win[..., None], warm * (0.85 + 0.2 * grime), stone), e=np.where(win, 230, 0))
+    plaster = aged(np.array([226, 214, 190], np.float32))
+    put(C_PLASTER, plaster)
+    small = ((xx % 22) > 8) & ((xx % 22) < 14) & ((yy % 30) > 10) & ((yy % 30) < 20)
+    lit = small & (rng.random((t, t)) > 0.45)
+    put(C_PLASTER_WIN, np.where(lit[..., None], warm, np.where(small[..., None], [60, 52, 44], plaster)), e=np.where(lit, 220, 0))
+    seams = (((xx % 24) < 2) | ((yy % 18) < 2))[..., None]
+    slate = np.array([70, 76, 88], np.float32) * (0.85 + 0.25 * grime) * (1 - 0.25 * seams)
+    put(C_SLATE, slate, sp=70)
+    lip = yy < t * 0.3                                                        # v 0 (the lathe's lower ring) lit
+    put(C_SLATE_LIT, np.where(lip[..., None], warm * (0.9 + 0.1 * grime), slate), e=np.where(lip, 230, 0), sp=70)
+    put(C_ROOF, aged(np.array([150, 140, 128], np.float32)))
+    put(C_DARK, np.array([24, 22, 22], np.float32) * (0.8 + 0.4 * grime))
+    put(C_GLOW, warm * (1.0 + 0.1 * grime) + 10, e=255, sp=200)
+    put(C_RAIL, np.array([52, 54, 60], np.float32) * (0.8 + 0.3 * grime), sp=90)
+    pad = Image.new("RGB", (t, t), (150, 148, 142))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(255, 70, 70), width=int(t * 0.05))   # the red ring
+    d.ellipse([t * 0.3, t * 0.3, t * 0.7, t * 0.7], outline=(90, 90, 90), width=int(t * 0.03))
+    put(C_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(C_GARDEN, np.array([78, 112, 66], np.float32) * (0.7 + 0.5 * noise(1.5)))
+    sith = aged(np.array([186, 150, 106], np.float32)) * (1 - 0.25 * ((yy % 48) < 3)[..., None]) * (0.85 + 0.25 * streak)
+    put(C_SITH, sith)
+    gl = Image.new("L", (t, t), 0)                                            # a band of carved glyphs
+    d = ImageDraw.Draw(gl)
+    for i in range(10):
+        x0 = i * t / 10 + 4
+        for _ in range(3):
+            a, b = rng.uniform(0, t / 10 - 8, 2)
+            d.line([(x0 + a, t * 0.38 + rng.uniform(0, t * 0.1)), (x0 + b, t * 0.52 + rng.uniform(0, t * 0.1))], fill=255, width=5)
+    cut = (np.asarray(gl, np.float32) / 255)[..., None]
+    put(C_SITH_GLYPH, sith * (1 - 0.55 * cut) * (1 - 0.3 * (np.abs(yy - t * 0.5) < t * 0.2)[..., None] * 0.4))
+    put(C_SITH_DARK, aged(np.array([120, 84, 62], np.float32)))
+    put(C_SAND, np.array([212, 172, 118], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    _atlas_save("hod_cantonica", col, emi, spec)
+
+
+def zygerria_atlas():
+    """hod_zygerria textures from the TCW stills of the Zygerrian capital: slate-blue palace stone in battered courses
+    (and with rows of lit arched windows), terracotta brick, warm sandstone (plain and lit), teal tent-roof cloth,
+    bronze, black doorways, red / orange / cream striped awnings, pale trim stone, dark metal."""
+    import numpy as np
+    from PIL import Image
+    from scipy import ndimage as ndi
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from flora_props import save_dxt5_mips
+    N = LM_S
+    t = N // 4
+    rng = np.random.default_rng(85)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    norm = lambda a: (a - a.min()) / np.ptp(a)
+    grime = norm(ndi.gaussian_filter(rng.random((t, t)), 2))[..., None]
+    blotch = norm(ndi.gaussian_filter(rng.random((t, t)), 10))[..., None]
+    streak = norm(ndi.gaussian_filter(rng.random((t, t)), (28, 1.2)))[..., None]
+    col = np.zeros((N, N, 3), np.float32)
+    emi = np.zeros((N, N), np.float32)
+    spec = np.full((N, N), 30, np.float32)
+
+    def put(rect, rgb, e=None, sp=30):
+        u0, v0, u1, v1 = rect
+        r, c = slice(int(round((1 - v1) * N)), int(round((1 - v0) * N))), slice(int(round(u0 * N)), int(round(u1 * N)))
+        col[r, c] = np.clip(rgb, 0, 255)
+        if e is not None:
+            emi[r, c] = e
+        spec[r, c] = sp
+    aged = lambda rgb: rgb * (0.8 + 0.3 * streak) * (0.85 + 0.25 * blotch)
+    courses = ((yy % 24) < 2)[..., None]
+    joints = (((xx + 20 * ((yy // 24) % 2)) % 40) < 2)[..., None] & ~courses
+    block = 1 - 0.22 * courses - 0.12 * joints
+    slate = aged(np.array([92, 112, 140], np.float32) * (0.8 + 0.3 * grime) * block)
+    put(Z_SLATE, slate)
+    arch = (((xx % 32) > 10) & ((xx % 32) < 22) & ((yy % 48) > 14) & ((yy % 48) < 38)
+            & ~(((yy % 48) < 18) & (np.abs((xx % 32) - 16) > 4)))                # tall slits with arched heads
+    lit = arch & (rng.random((t, t)) > 0.35)
+    put(Z_SLATE_WIN, np.where(arch[..., None], [40, 36, 30], slate), e=np.where(lit, 210, 0))
+    put(Z_RED, aged(np.array([150, 70, 52], np.float32) * (0.8 + 0.3 * grime) * (1 - 0.25 * ((yy % 12) < 2)[..., None])))
+    sand = aged(np.array([196, 160, 116], np.float32) * (0.82 + 0.25 * grime) * (1 - 0.15 * courses))
+    put(Z_SAND, sand)
+    win = ((xx % 24) > 8) & ((xx % 24) < 16) & ((yy % 32) > 10) & ((yy % 32) < 22)
+    put(Z_SAND_WIN, np.where(win[..., None], [52, 44, 36], sand), e=np.where(win & (rng.random((t, t)) > 0.4), 200, 0))
+    folds = (0.85 + 0.15 * np.sin(xx / 6.0))[..., None]
+    put(Z_ROOF, np.array([70, 128, 118], np.float32) * (0.8 + 0.25 * grime) * folds)
+    put(Z_BRONZE, np.array([168, 128, 70], np.float32) * (0.75 + 0.35 * grime), sp=120)
+    put(Z_DARK, np.array([22, 20, 22], np.float32) * (0.8 + 0.4 * grime))
+    stripes = ((xx // 20) % 3)[..., None]
+    put(Z_AWNING, np.where(stripes == 0, [196, 70, 40], np.where(stripes == 1, [230, 150, 50], [226, 210, 170])) * (0.85 + 0.2 * grime))
+    put(Z_PALE, aged(np.array([200, 196, 180], np.float32) * (0.85 + 0.2 * grime)))
+    put(Z_METAL, np.array([70, 70, 76], np.float32) * (0.8 + 0.3 * grime), sp=90)
+    put(Z_SPARE, sand)
+    full = lambda v: np.full((N, N), v, np.float32)
+    save_dxt5_mips(np.dstack([col, full(255)]), f"{LM_OUT}/hod_zygerria_diffuse.dds")
+    save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{LM_OUT}/hod_zygerria_normal.dds")
+    save_dxt5_mips(np.dstack([full(0), spec, full(0), full(100)]), f"{LM_OUT}/hod_zygerria_properties.dds")
+    Image.fromarray(col.astype(np.uint8)).resize((512, 512)).save("WIPGFX/research/previews/zygerria_atlas.png")
+    print("zygerria atlas written to", LM_OUT)
+
 
 def models(*only):
     """Blender: build hod_jedi_temple, hod_senate and hod_spacedock (z up, origin on the ground) and export .mesh.
@@ -1642,11 +1859,427 @@ def models(*only):
             build(f"{name}_r{i_}", fn, tex="hod_korriban", rot=2 * math.pi * i_ / KOR_TURNS)
     for v in "abcd":
         build(f"hod_kor_ruin_{v}", lambda k, v=v: korriban_ruin(k, v), tex="hod_korriban")
+    def dk_citadel(k):
+        # the Imperial Citadel of Kaas City (TOR still "Imperial Citadel"), ruined by the Clone Wars era (Legends): a very
+        # tall chamfered dark tower with vertical ribs and window bands, two great diagonal buttress struts down to
+        # needle masts with red tip lights, lit lower wings either side, the red Sith emblem over the gate. Ruin: the
+        # crown broken off, the east strut snapped and fallen, the east mast broken, rubble. Map-scale (user rule).
+        rng = random.Random("dk_citadel2")
+        sq = lambda x, y: [(-x, -y), (x, -y), (x, y), (-x, y)]
+        tblock(k, sq(9.0, 6.5), -SKIRT, 0.8, D_PLATE, D_PLATE)                                  # platform
+        for sx in (-1, 1):                                                                           # lower wings
+            k.box(min(3.2 * sx, 8.2 * sx), -3.4, 0.8, max(3.2 * sx, 8.2 * sx), 3.4, 4.6, D_PLATE, top=D_PLATE)
+            for z in (1.6, 2.6, 3.6):                                                                # dark window rows
+                k.box(min(3.6 * sx, 7.8 * sx), -3.45, z, max(3.6 * sx, 7.8 * sx), -3.38, z + 0.35, D_DARK)
+        k.lathe([(3.0, 0.8), (2.8, 8.0), (2.3, 14.0), (1.7, 19.0), (1.4, 21.0)], [D_PLATE] * 4, sides=8, rot=math.pi / 8,
+                cap=D_RUBBLE)                                                                          # broken top, closed
+        for x, y in ((0.0, -2.78), (-1.97, -1.97), (1.97, -1.97)):                                   # ribs on the tapering faces
+            k.tube((x, y, 1.0), (x * 0.6, y * 0.6, 18.5), 0.17, D_DARK, sides=4)
+        for z in (9.0, 11.0, 13.0):
+            k.box(-1.0, -2.55 + 0.04 * z, z, 1.0, -2.45 + 0.04 * z, z + 0.5, D_PLATE_WIN)
+        for x, y, h in ((-0.9, -0.5, 1.6), (0.4, 0.6, 1.0), (0.9, -0.6, 0.6)):                       # the broken crown
+            k.box(x - 0.45, y - 0.45, 21.0, x + 0.45, y + 0.45, 21.0 + h, D_PLATE, top=D_RUBBLE)
+        k.tube((-1.8, 0.0, 13.0), (-7.4, 0.0, 6.2), 0.45, D_DARK, sides=4, r1=0.3)                    # west strut
+        k.tube((1.8, 0.0, 13.0), (3.9, 0.0, 10.4), 0.45, D_DARK, sides=4, r1=0.4)                     # east strut, snapped
+        k.tube((5.0, 1.8, 1.2), (8.6, 3.4, 0.9), 0.4, D_DARK, sides=4, r1=0.3)                        # ...its fallen end
+        for sx, top, lean in ((-1, 15.0, 0.0), (1, 9.0, 0.6)):                                       # needle masts
+            x = 7.6 * sx
+            k.box(x - 0.8, -0.8, 0.8, x + 0.8, 0.8, 6.4, D_PLATE, top=D_PLATE)
+            k.tube((x, 0.0, 6.4), (x + lean * sx, 0.15, top), 0.3, D_PLATE, sides=6, r1=0.1)
+            if top > 10:
+                k.box(x - 0.15, -0.15, top, x + 0.15, 0.15, top + 0.3, D_LIGHT)                       # red tip light
+        k.box(-1.0, -3.1, 0.8, 1.0, -2.85, 3.6, D_DARK)                                             # the gate
+        k.box(-1.1, -3.15, 3.9, 1.1, -2.95, 6.1, D_EMBLEM)                                           # the Sith emblem
+        for _ in range(10):
+            x, y = rng.uniform(-8.5, 8.5), rng.uniform(-6.0, 6.0)
+            if abs(x) > 3.4 or abs(y) > 3.6:
+                r = rng.uniform(0.5, 1.2)
+                k.lathe([(r, 0.75), (r * 0.6, 0.75 + r * 0.5), (0.0, 0.75 + r * 0.7)], [D_RUBBLE, D_RUBBLE], sides=7,
+                        cx=x, cy=y, jitter=0.25)
+
+    def dk_dark_temple(k):
+        # the Dark Temple in its pass (TOR still "Dark Temple pass"; largely collapsed since 3640 BBY, Legends): a tall
+        # pale stone slab tower with a dark vertical recess, flanked by two great curved blade pylons curving inward,
+        # on a stepped base, reached by a walled approach whose walls have broken down. Ruin: the east blade's tip gone.
+        sq = lambda x, y: [(-x, -y), (x, -y), (x, y), (-x, y)]
+        tblock(k, sq(6.2, 4.6), -SKIRT, 1.2, D_STONE, D_STONE)                                  # base
+        tblock(k, sq(4.6, 3.4), 1.2, 2.2, D_STONE, D_STONE, poly_top=sq(4.3, 3.1))
+        k.box(-1.3, -1.0, 2.2, 1.3, 1.0, 11.6, D_STONE_WORN, top=D_STONE)                              # the slab tower
+        k.box(-0.45, -1.06, 2.2, 0.45, -0.98, 10.2, D_DARK)                                          # its recess
+        k.box(-1.5, -1.2, 11.6, 1.5, 1.2, 12.2, D_STONE, top=D_STONE)                          # cap
+        for sx, segs in ((-1, 4), (1, 3)):                                                          # the curved blades
+            pts = [(3.9 * sx, 0.0, 2.2), (4.4 * sx, 0.0, 5.5), (4.2 * sx, 0.0, 8.6), (3.3 * sx, 0.0, 11.0), (2.1 * sx, 0.0, 12.6)]
+            for n_ in range(segs):
+                r0, r1 = 0.75 - 0.12 * n_, 0.75 - 0.12 * (n_ + 1)
+                k.tube(pts[n_], pts[n_ + 1], r0, D_STONE_WORN, sides=4, r1=r1)
+        k.box(-0.8, -3.35, 1.2, 0.8, -3.1, 3.2, D_DARK)                                              # door
+        for n_ in range(4):                                                                          # stair
+            k.box(-1.4, -4.6 - 0.45 * (3 - n_), 0.2 * n_, 1.4, -3.4, 0.2 * (n_ + 1) + 1.0 * (n_ == 3), D_STONE, top=D_STONE)
+        for sx in (-1, 1):                                                                           # approach walls
+            for n_, h in enumerate((1.4, 0.6, 1.1, 0.3)):
+                y0 = -6.2 - 1.6 * n_
+                k.box(1.8 * sx - 0.25, y0 - 1.4, -SKIRT, 1.8 * sx + 0.25, y0, h, D_STONE, top=D_RUBBLE)
+        tblock(k, [(3.0, -4.6), (6.2, -4.6), (6.2, -1.0), (3.0, -1.0)], 1.2, 1.8, D_RUBBLE, D_RUBBLE)     # caved-in corner
+
+    def kaas_ruin(k, band, rng):
+        # Kaas City's towers 3600 years after the Empire fell (TOR "Kaas City" still: dark ribbed towers in setbacks,
+        # needle spires, skybridges), ruined. The game lays city meshes on a grid, so nothing here is square or axis-
+        # aligned (user: "massive squary cities, not organic"): no podium, towers at random spots and angles, jagged
+        # stumps, wall fragments and slabs as turned slabs (lathe, 4 sides, squashed), skybridges as angled spans,
+        # irregular rubble mounds; some cells hold only rubble; everything spreads over the whole 2-unit cell and past it,
+        # so neighbouring cells blend and the grid's rows disappear. band 1 outskirts .. 4 downtown
+        slab = lambda x, y, z0, z1, w, d, a, mat: k.lathe([(w, z0), (w, z1)], [mat], sides=4, cx=x, cy=y, rot=a,
+                                                        sy=d / w, cap=D_RUBBLE)
+        for _ in range(rng.randint(2, 4)):                                                            # rubble mounds
+            x, y, r = rng.uniform(-0.85, 0.85), rng.uniform(-0.85, 0.85), rng.uniform(0.2, 0.5)   # spill into the next cells
+            k.lathe([(r, -0.05), (r * 0.6, r * 0.25), (0.0, r * 0.35)], [D_RUBBLE, D_RUBBLE], sides=7, cx=x, cy=y,
+                    jitter=0.35, sy=rng.uniform(0.6, 1.0), rot=rng.uniform(0, 6.283))
+        n_towers = 0 if (band == 1 and rng.random() < 0.4) else rng.randint(1, 2) + (band >= 3)
+        towers = []
+        for _ in range(n_towers):
+            for _try in range(12):
+                x, y, r = rng.uniform(-0.8, 0.8), rng.uniform(-0.8, 0.8), rng.uniform(0.1, 0.18)   # anywhere in the cell
+                if all(math.hypot(x - a, y - b) > r + c + 0.05 for a, b, c, _h in towers):
+                    break
+            else:
+                continue
+            h = rng.uniform(0.35, 0.6) * (0.5 + 0.6 * band)
+            towers.append((x, y, r, h))
+            broken = rng.random() < 0.75
+            top = h * (rng.uniform(0.5, 0.8) if broken else 1.0)
+            rot = rng.uniform(0, 6.283)
+            prof = [(r, -0.3), (r, top * 0.45), (r * 0.82, top * 0.47), (r * 0.82, top * 0.78), (r * 0.66, top * 0.8), (r * 0.66, top)]
+            k.lathe(prof, [D_PLATE_WIN, D_PLATE, D_PLATE_WIN, D_PLATE, D_PLATE_WIN], sides=rng.choice([6, 8]), cx=x, cy=y,
+                    rot=rot, cap=D_RUBBLE)                                                           # setback tiers
+            if broken:                                                                               # jagged stump
+                for _b in range(rng.randint(2, 3)):
+                    a = rng.uniform(0, 6.283)
+                    w = r * rng.uniform(0.2, 0.35)
+                    slab(x + math.cos(a) * r * 0.35, y + math.sin(a) * r * 0.35, top - 0.02, top + rng.uniform(0.05, 0.2),
+                         w, w * rng.uniform(0.5, 1.0), rng.uniform(0, 6.283), D_PLATE)
+                if rng.random() < 0.6:                                                               # a floor slab out
+                    a = rng.uniform(0, 6.283)
+                    z = top * rng.uniform(0.6, 0.9)
+                    slab(x + math.cos(a) * r * 0.9, y + math.sin(a) * r * 0.9, z, z + 0.025, 0.1, 0.06, a, D_METAL)
+            elif band >= 3:                                                                          # an intact needle
+                k.lathe([(r * 0.2, top), (0.0, top + 0.35 + 0.1 * band)], [D_METAL], sides=4, cx=x, cy=y)
+        if len(towers) >= 2 and rng.random() < 0.6:                                                  # a broken skybridge
+            (x0, y0, r0, h0), (x1, y1, r1, h1) = towers[0], towers[1]
+            z = min(h0, h1) * 0.35
+            k.tube((x0, y0, z), (x0 + (x1 - x0) * 0.55, y0 + (y1 - y0) * 0.55, z - 0.04), 0.035, D_METAL, sides=4)
+        for _ in range(rng.randint(1, 3) if band <= 2 else rng.randint(0, 2)):                       # wall fragments
+            x, y = rng.uniform(-0.85, 0.85), rng.uniform(-0.85, 0.85)
+            slab(x, y, -0.1, rng.uniform(0.06, 0.25), rng.uniform(0.08, 0.2), 0.025, rng.uniform(0, 6.283), D_PLATE_WIN)
+        if band >= 2 and rng.random() < 0.4:                                                         # a fallen section
+            a = rng.uniform(0, 6.283)
+            x, y = rng.uniform(-0.6, 0.6), rng.uniform(-0.6, 0.6)
+            k.tube((x, y, 0.1), (x + math.cos(a) * 0.45, y + math.sin(a) * 0.45, 0.06), 0.07, D_PLATE_WIN, sides=6, r1=0.06)
+
+    def zygerria_palace(k):
+        # the Royal Palace of Zygerria (TCW "Slaves of the Republic" stills): a massive stepped pyramid of blue slate with
+        # battered walls in four tiers, a red band, rows of lit arched windows, a crowned tower on top bristling with
+        # upright prongs; a domed hall to its west, a tall slanted-topped obelisk tower and a terracotta tower in front;
+        # the grand stair and gate south to the city; north (+y, over the mesa's cliff) the balcony with the hanging cage
+        sq = lambda x, y: [(-x, -y), (x, -y), (x, y), (-x, y)]
+        tblock(k, sq(8.4, 7.4), -SKIRT, 0.6, Z_SAND, Z_SAND)                                         # the terrace
+        tiers = [(7.2, 6.2, 0.6, 4.0, 6.4, 5.5), (5.7, 4.9, 4.4, 7.6, 5.0, 4.2), (4.3, 3.6, 7.6, 10.4, 3.7, 3.0),
+                 (3.0, 2.5, 10.4, 12.6, 2.4, 2.0)]                                                   # inset: ledges
+        for n_, (x0, y0, z0, z1, x1, y1) in enumerate(tiers):
+            tblock(k, sq(x0, y0), z0, z1, Z_SLATE_WIN if n_ % 2 == 0 else Z_SLATE, Z_SLATE, poly_top=sq(x1, y1))
+            if n_ == 0:
+                tblock(k, sq(6.45, 5.55), 4.0, 4.4, Z_RED, Z_SLATE)                                   # the red band
+        k.box(-1.5, -1.2, 12.6, 1.5, 1.2, 15.4, Z_SLATE_WIN, top=Z_SLATE)                            # the crowned tower
+        for x, y in ((-1.3, -1.0), (0.0, -1.0), (1.3, -1.0), (-1.3, 1.0), (1.3, 1.0), (0.0, 1.0)):   # its prongs
+            k.box(x - 0.18, y - 0.18, 15.4, x + 0.18, y + 0.18, 17.0 + 0.5 * (x == 0.0), Z_SLATE, top=Z_PALE)
+        k.box(-10.4, -4.2, 0.6, -7.0, 0.2, 5.4, Z_SAND_WIN, top=Z_SAND)                              # domed west hall
+        k.lathe([(1.6, 5.4), (1.55, 6.2), (1.2, 7.3), (0.6, 8.0), (0.0, 8.2)], [Z_BRONZE] * 4, sides=14, cx=-8.7, cy=-2.0)
+        k.lathe([(0.9, 0.6), (0.7, 11.0), (0.0, 12.6)], [Z_SAND, Z_PALE], sides=4, cx=-10.0, cy=-6.4, rot=math.pi / 4)  # obelisk
+        k.box(7.8, -7.6, 0.6, 9.6, -5.8, 9.2, Z_RED, top=Z_SLATE)                                    # terracotta tower
+        for x, y in ((7.8, -7.6), (9.2, -7.6), (7.8, -6.2), (9.2, -6.2)):
+            k.box(x + 0.05, y + 0.05, 9.15, x + 0.35, y + 0.35, 9.8, Z_RED, top=Z_RED)
+        for n_ in range(6):                                                                          # the grand stair
+            k.box(-2.2, -7.4 - 0.5 * (5 - n_), 0.6 + 0.55 * n_, 2.2, -6.2, 0.6 + 0.55 * (n_ + 1), Z_PALE, top=Z_PALE)
+        k.box(-1.3, -6.35, 3.9, 1.3, -6.1, 7.0, Z_DARK)                                              # the gate (tier 2)
+        for x in (-4.8, 4.8):                                                                        # awnings over the front
+            k.box(x - 1.4, -6.6, 2.4, x + 1.4, -6.0, 2.55, Z_AWNING, top=Z_AWNING)
+        k.box(-1.6, 5.3, 6.6, 1.6, 7.6, 7.0, Z_PALE, top=Z_PALE)                                     # the balcony (north)
+        k.tube((0.0, 7.2, 7.0), (0.0, 8.8, 8.4), 0.12, Z_METAL, sides=5)                            # the gibbet arm
+        k.box(-0.04, 8.76, 6.6, 0.04, 8.84, 8.4, Z_METAL)                                           # the chain
+        k.lathe([(0.45, 5.6), (0.45, 6.5), (0.0, 6.7)], [Z_METAL, Z_METAL], sides=8, cx=0.0, cy=8.8)   # the cage
+
+    def zyg_arena(k):
+        # the Royal Slave Auction's courtyard (TCW "Slaves of the Republic"): an open square of sand walled in by high
+        # slate walls with lit galleries, crenellated corner towers, the raised stepped stage in the middle, the
+        # queen's balcony under a red canopy on the north wall (+y)
+        sq = lambda x, y: [(-x, -y), (x, -y), (x, y), (-x, y)]
+        k.box(-4.45, -4.45, -SKIRT, 4.45, 4.45, 0.4, Z_SAND, top=Z_SAND)                             # the sand floor, inset
+        for x0, y0, x1, y1 in ((-4.6, -4.6, 4.6, -3.8), (-4.6, 3.8, 4.6, 4.6), (-4.6, -3.8, -3.8, 3.8), (3.8, -3.8, 4.6, 3.8)):
+            k.box(x0, y0, -0.3, x1, y1, 2.6, Z_SLATE_WIN, top=Z_SLATE)                              # walls, galleries
+        for x in (-4.6, 3.6):                                                                        # corner towers
+            for y in (-4.6, 3.6):
+                k.box(x - 0.15, y - 0.15, -0.3, x + 1.15, y + 1.15, 3.6, Z_SLATE, top=Z_SLATE)   # proud of the walls
+                for cx, cy in ((x, y), (x + 0.75, y), (x, y + 0.75), (x + 0.75, y + 0.75)):
+                    k.box(cx - 0.05, cy - 0.05, 3.55, cx + 0.2, cy + 0.2, 3.95, Z_SLATE, top=Z_PALE)
+        for n_ in range(3):                                                                          # the stepped stage
+            w = 1.6 - 0.45 * n_
+            tblock(k, sq(w, w), 0.3 + 0.3 * n_, 0.7 + 0.3 * n_, Z_PALE, Z_PALE)
+        k.box(-1.6, 3.2, 1.4, 1.6, 3.8, 1.6, Z_PALE, top=Z_PALE)                                     # the queen's balcony
+        k.box(-1.6, 3.2, 2.4, 1.6, 3.8, 2.55, Z_RED, top=Z_RED)                                      # its canopy
+        for x in (-1.5, 1.5):
+            k.box(x - 0.08, 3.25, 1.6, x + 0.08, 3.4, 2.4, Z_BRONZE, top=Z_BRONZE)
+        k.box(-0.9, -4.75, -0.3, 0.9, -4.55, 1.8, Z_DARK)                                            # the south gate
+        for x in (-2.6, 2.6):                                                                        # awnings on the walls
+            k.box(x - 1.0, -3.85, 1.2, x + 1.0, -3.3, 1.3, Z_AWNING, top=Z_AWNING)
+
+    def zyg_fortress(k):
+        # a mesa-top fortress (canon: fortresses built on the mesas with slave labour; shape: the palace's language):
+        # battered curtain walls, corner towers with teal tent roofs, a slate keep crowned with prongs, the gate south
+        sq = lambda x, y: [(-x, -y), (x, -y), (x, y), (-x, y)]
+        tblock(k, sq(3.6, 3.6), -SKIRT, 1.9, Z_SAND, Z_SAND, poly_top=sq(3.3, 3.3))                    # curtain wall
+        tblock(k, sq(2.9, 2.9), 1.9, 2.0, Z_SAND, Z_SAND)                                            # inner court
+        for x in (-3.6, 2.6):
+            for y in (-3.6, 2.6):
+                k.box(x - 0.15, y - 0.15, -0.3, x + 1.15, y + 1.15, 3.0, Z_SAND_WIN, top=Z_SAND)
+                k.lathe([(0.75, 3.0), (0.0, 3.9)], [Z_ROOF], sides=4, cx=x + 0.5, cy=y + 0.5, rot=math.pi / 4)
+        tblock(k, sq(1.6, 1.4), 2.0, 4.6, Z_SLATE_WIN, Z_SLATE, poly_top=sq(1.3, 1.1))               # the keep
+        for x in (-0.9, 0.0, 0.9):
+            k.box(x - 0.15, -0.15, 4.6, x + 0.15, 0.15, 5.5 + 0.4 * (x == 0.0), Z_SLATE, top=Z_PALE)
+        k.box(-0.7, -3.75, 0.0, 0.7, -3.5, 1.5, Z_DARK)                                              # the gate
+        k.box(-1.2, -3.9, 1.6, 1.2, -3.55, 1.7, Z_RED, top=Z_RED)                                    # red band over it
+
+    def zyg_landing(k):
+        # the slavers' landing field (Zygerrian capital landing platform, comics): metal decks on arched sandstone piers,
+        # a cargo crane, a control tower under a tent roof, cargo crates; ships are not part of the model
+        for x0, x1 in ((-5.0, -0.6), (0.6, 5.0)):
+            k.box(x0, -2.4, 1.2, x1, 2.4, 1.45, Z_METAL, top=Z_METAL)                                # the decks
+            for x in (x0 + 0.5, (x0 + x1) / 2, x1 - 0.5):                                            # piers
+                k.box(x - 0.35, -2.0, -SKIRT, x + 0.35, 2.0, 1.2, Z_SAND, top=Z_SAND)
+        k.box(-0.6, -0.8, -SKIRT, 0.6, 0.8, 3.6, Z_SAND_WIN, top=Z_SAND)                             # control tower
+        k.lathe([(0.95, 3.6), (0.0, 4.5)], [Z_ROOF], sides=4, rot=math.pi / 4)
+        k.box(-0.65, -0.85, 2.8, 0.65, 0.85, 3.0, Z_AWNING, top=Z_AWNING)
+        k.box(4.15, 1.85, 1.45, 4.45, 2.15, 4.3, Z_METAL, top=Z_METAL)                               # the crane's mast
+        k.tube((4.3, 2.0, 4.1), (2.2, 0.6, 4.4), 0.08, Z_METAL, sides=5)
+        k.box(2.17, 0.57, 2.6, 2.23, 0.63, 4.4, Z_DARK)                                             # its cable
+        for x, y in ((-4.2, 1.6), (-3.6, 1.6), (-4.2, 1.0), (3.4, -1.6), (2.8, -1.7)):              # crates
+            k.box(x - 0.25, y - 0.25, 1.45, x + 0.25, y + 0.25, 1.9, Z_RED, top=Z_RED)
+
+    def zyg_city(k, band, rng):
+        # the Zygerrian capital (TCW stills): crenellated sandstone and terracotta blocks, peaked teal tent roofs,
+        # striped awnings, towers and bronze domes downtown. band 1 outskirts .. 4 downtown
+        sq = lambda x, y, w, d: (x - w, y - d, x + w, y + d)
+        for _ in range(rng.randint(2, 3)):
+            x, y = rng.uniform(-0.45, 0.45), rng.uniform(-0.45, 0.45)
+            w, d = rng.uniform(0.14, 0.22), rng.uniform(0.14, 0.22)
+            h = rng.uniform(0.18, 0.3) + 0.12 * band
+            mat = rng.choice([Z_SAND_WIN, Z_SAND_WIN, Z_RED])
+            x0, y0, x1, y1 = sq(x, y, w, d)
+            k.box(x0, y0, -0.3, x1, y1, h, mat, top=Z_SAND)
+            if rng.random() < 0.55:                                                                   # a peaked tent roof
+                k.lathe([(max(w, d) * 1.25, h), (0.0, h + 0.18 + 0.05 * band)], [Z_ROOF], sides=4, cx=x, cy=y, rot=math.pi / 4)
+            else:                                                                                     # crenellations
+                for cx_, cy_ in ((x0, y0), (x1 - 0.05, y0), (x0, y1 - 0.05), (x1 - 0.05, y1 - 0.05)):
+                    k.box(cx_ + 0.01, cy_ + 0.01, h - 0.02, cx_ + 0.05, cy_ + 0.05, h + 0.06, mat, top=mat)
+            if rng.random() < 0.5:                                                                    # an awning
+                k.box(x0, y0 - 0.06, h * 0.35, x1, y0, h * 0.35 + 0.03, Z_AWNING, top=Z_AWNING)
+        if band >= 2 and rng.random() < 0.45 + 0.15 * band:                                          # a tower
+            x, y = rng.uniform(-0.4, 0.4), rng.uniform(-0.4, 0.4)
+            h = 0.6 + 0.25 * band
+            k.box(x - 0.08, y - 0.08, -0.3, x + 0.08, y + 0.08, h, rng.choice([Z_RED, Z_SAND_WIN]), top=Z_SAND)
+            k.lathe([(0.11, h), (0.0, h + 0.22)], [Z_ROOF if rng.random() < 0.5 else Z_PALE], sides=4, cx=x, cy=y, rot=math.pi / 4)
+        if band >= 3 and rng.random() < 0.5:                                                         # a bronze dome
+            x, y, r = rng.uniform(-0.35, 0.35), rng.uniform(-0.35, 0.35), rng.uniform(0.16, 0.24)
+            k.box(x - r, y - r, -0.3, x + r, y + r, 0.35 + 0.1 * band, Z_SAND_WIN, top=Z_SAND)
+            k.lathe([(r * 0.95, 0.35 + 0.1 * band), (r * 0.7, 0.5 + 0.1 * band), (0.0, 0.6 + 0.1 * band)], [Z_BRONZE, Z_BRONZE],
+                    sides=10, cx=x, cy=y)
+
+    def cslab(k, x, y, z0, z1, w, d, a, mat, top, wt=None, dt=None):
+        """a turned box: half sizes w, d at z0 (wt, dt at z1: a frustum, e.g. a hip roof), turned by a; each wall
+        gets the whole atlas cell, `top` closes it, the bottom stays open (sunk into the ground)"""
+        ca, sa = math.cos(a), math.sin(a)
+        ring = lambda hw, hd, z: [k.bm.verts.new((x + ca * px - sa * py, y + sa * px + ca * py, z))
+                                  for px, py in ((-hw, -hd), (hw, -hd), (hw, hd), (-hw, hd))]
+        lo, hi = ring(w, d, z0), ring(w if wt is None else wt, d if dt is None else dt, z1)
+        for i in range(4):
+            j = (i + 1) % 4
+            k.put(k.bm.faces.new((lo[i], lo[j], hi[j], hi[i])), ((0, 0), (1, 0), (1, 1), (0, 1)), mat)
+        k.put(k.bm.faces.new(hi), ((0, 0), (1, 0), (1, 1), (0, 1)), top)
+
+    def canto_drum(k, x, y, z0, h, r, saucers=1, mast=False, sides=12):
+        """a Canto Bight drum: a pale stone cylinder with its lit window band under wide shallow slate saucer roofs
+        (TLJ casino: two or three stacked, each smaller, the lit band under every lip)"""
+        k.lathe([(r, z0), (r, z0 + h)], [C_STONE_WIN], sides=sides, cx=x, cy=y, cap=C_ROOF)
+        z, rr = z0 + h, r
+        for n_ in range(saucers):
+            w = rr * (1.5 - 0.1 * n_)
+            k.lathe([(rr * 0.98, z - 0.02), (w, z + 0.03 * w), (w * 0.97, z + 0.08 * w), (rr * 0.55, z + 0.3 * w),
+                     (0.0, z + 0.36 * w)], [C_SLATE_LIT, C_SLATE, C_SLATE, C_SLATE], sides=sides * 2, cx=x, cy=y)
+            if n_ + 1 < saucers:                                         # the next drum stands on the roof
+                rr *= 0.62
+                k.lathe([(rr, z + 0.2 * w), (rr, z + 0.2 * w + 0.6 * h)], [C_STONE_WIN], sides=sides, cx=x, cy=y)
+                z += 0.2 * w + 0.6 * h
+        if mast:
+            k.lathe([(0.03 * r / 0.2, z + 0.3 * rr), (0.0, z + 0.3 * rr + 0.9 * r)], [C_RAIL], sides=4, cx=x, cy=y)
+
+    def canto_city(k, band, rng):
+        # Canto Bight (the user's Star Wars Outlaws reference: the city seen from the sea; TLJ stills): pale stone and
+        # plaster houses under low slate hip roofs or flat roofs, packed tight, round drum buildings with wide shallow
+        # slate saucer roofs and a warm window band between them; downtown (the casino district) taller stone blocks
+        # and drums with stacked saucers. Nothing square or axis-aligned (the game lays these on a 2-unit grid):
+        # turned houses at random spots over the whole cell and past it. band 1 outskirts .. 4 downtown
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(rng.randint(2, 3) + (band >= 3)):                                              # drums
+            r = rng.uniform(0.12, 0.2) * (1 + 0.12 * band)
+            p_ = spot(r * 1.45)
+            if p_:
+                tall = band >= 3 and rng.random() < 0.5
+                canto_drum(k, *p_, -0.3, rng.uniform(0.32, 0.45) + 0.12 * band + 0.3 * tall, r,
+                           saucers=1 + tall + (band == 4 and rng.random() < 0.3), mast=tall and rng.random() < 0.4)
+        for _ in range(4 + 2 * band):                                                                 # houses
+            w, d = rng.uniform(0.08, 0.15), rng.uniform(0.06, 0.12)
+            p_ = spot(max(w, d) * 1.2)
+            if not p_:
+                continue
+            a = rng.uniform(0, math.pi)
+            h = rng.uniform(0.14, 0.26) + 0.08 * band + (0.35 * rng.random() if band >= 3 else 0.0)
+            wall = C_STONE_WIN if band >= 3 and rng.random() < 0.5 else C_PLASTER_WIN
+            if rng.random() < 0.6:                                                                    # a low hip roof
+                cslab(k, *p_, -0.3, h, w, d, a, wall, C_ROOF)
+                cslab(k, *p_, h - 0.005, h + 0.1, w * 1.12, d * 1.12, a, C_SLATE, C_SLATE, wt=w * 0.55, dt=d * 0.12)
+            else:                                                                                     # a flat roof
+                cslab(k, *p_, -0.3, h, w, d, a, wall, C_ROOF)
+                if rng.random() < 0.4:                                                                # a small roof dome
+                    k.lathe([(min(w, d) * 0.7, h - 0.01), (min(w, d) * 0.45, h + 0.07), (0.0, h + 0.1)], [C_SLATE, C_SLATE],
+                            sides=10, cx=p_[0], cy=p_[1])
+        if band >= 3 and rng.random() < 0.6:                                                          # a lit plaza lamp
+            p_ = spot(0.05)
+            if p_:
+                k.lathe([(0.025, -0.1), (0.025, 0.3)], [C_RAIL], sides=4, cx=p_[0], cy=p_[1])
+                k.lathe([(0.05, 0.3), (0.05, 0.36)], [C_GLOW], sides=6, cx=p_[0], cy=p_[1], cap=C_GLOW)
+
+    def sith_ruin(k, band, rng):
+        # ancient Sith ruins half-buried in Cantonica's sand (the user, 2026-10-14: "the ruins are ancient Sith ruins";
+        # the shapes follow the Sith architecture of Korriban / Dromund Kaas: tapering pylons, trapezoid gateways,
+        # colonnades of square pillars, glyph-carved walls, stepped ziggurat stumps), all broken and drifted over;
+        # spread over the whole cell and past it, turned at random. band 1 outskirts .. 4 the heart of the necropolis
+        for _ in range(rng.randint(3, 4)):                                                            # sand drifts
+            x, y, r = rng.uniform(-1.0, 1.0), rng.uniform(-1.0, 1.0), rng.uniform(0.25, 0.5)
+            k.lathe([(r, -0.05), (r * 0.6, r * 0.2), (0.0, r * 0.3)], [C_SAND, C_SAND], sides=7, cx=x, cy=y,
+                    jitter=0.3, sy=rng.uniform(0.5, 0.9), rot=rng.uniform(0, 6.283))
+        for _ in range(rng.randint(1, 2) + (band >= 3)):                                              # pylons
+            x, y, a = rng.uniform(-1.0, 1.0), rng.uniform(-1.0, 1.0), rng.uniform(0, math.pi)
+            w, h = rng.uniform(0.07, 0.12), rng.uniform(0.3, 0.55) * (0.6 + 0.3 * band)
+            top = h * (rng.uniform(0.45, 0.8) if rng.random() < 0.6 else 1.0)
+            f = 1 - 0.4 * top / h                                                                     # tapering
+            cslab(k, x, y, -0.3, top, w, w * 0.7, a, C_SITH_GLYPH, C_SITH_DARK, wt=w * f, dt=w * 0.7 * f)
+        if rng.random() < 0.5 + 0.1 * band:                                                           # a gateway
+            x, y, a = rng.uniform(-0.8, 0.8), rng.uniform(-0.8, 0.8), rng.uniform(0, math.pi)
+            h, half = rng.uniform(0.3, 0.45) + 0.08 * band, rng.uniform(0.14, 0.2)
+            ca, sa = math.cos(a), math.sin(a)
+            for sx in (-1, 1):
+                k.lathe([(0.1, -0.3), (0.065, h)], [C_SITH], sides=4, cx=x + sx * half * ca, cy=y + sx * half * sa,
+                        rot=a + math.pi / 4, cap=C_SITH_DARK)
+            if rng.random() < 0.6:                                                                    # its lintel
+                cslab(k, x, y, h - 0.02, h + 0.06, half + 0.08, 0.06, a, C_SITH_GLYPH, C_SITH_DARK)
+            else:                                                                                     # ...fallen
+                k.tube((x + 0.2 * sa, y - 0.2 * ca, 0.05), (x + 0.2 * sa + 0.3 * ca, y - 0.2 * ca + 0.3 * sa, 0.08),
+                       0.05, C_SITH, sides=4)
+        for _ in range(rng.randint(0, 2) + (band <= 2)):                                              # colonnade stumps
+            x, y, a = rng.uniform(-0.95, 0.95), rng.uniform(-0.95, 0.95), rng.uniform(0, math.pi)
+            for i in range(rng.randint(3, 5)):
+                px, py = x + math.cos(a) * 0.14 * i, y + math.sin(a) * 0.14 * i
+                k.lathe([(0.04, -0.2), (0.035, rng.uniform(0.05, 0.35))], [C_SITH], sides=4, cx=px, cy=py,
+                        rot=a + math.pi / 4, cap=C_SITH_DARK)
+        for _ in range(rng.randint(1, 2)):                                                            # wall fragments
+            x, y = rng.uniform(-1.05, 1.05), rng.uniform(-1.05, 1.05)
+            cslab(k, x, y, -0.2, rng.uniform(0.08, 0.22), rng.uniform(0.1, 0.22), 0.025, rng.uniform(0, math.pi),
+                  C_SITH_GLYPH, C_SITH_DARK)
+        if band >= 3 and rng.random() < 0.6:                                                          # a ziggurat stump
+            x, y, a = rng.uniform(-0.7, 0.7), rng.uniform(-0.7, 0.7), rng.uniform(0, math.pi)
+            r = rng.uniform(0.25, 0.35)
+            for n_ in range(3):
+                rr = r * (1 - 0.25 * n_)
+                k.lathe([(rr * 1.41, -0.3 if n_ == 0 else 0.12 * n_ - 0.01), (rr * 1.3, 0.12 * (n_ + 1))],
+                        [C_SITH if n_ % 2 else C_SITH_GLYPH], sides=4, cx=x, cy=y, rot=a + math.pi / 4, cap=C_SITH_DARK)
+        if rng.random() < 0.4:                                                                        # a toppled obelisk
+            x, y, a = rng.uniform(-0.9, 0.9), rng.uniform(-0.9, 0.9), rng.uniform(0, 6.283)
+            k.tube((x, y, 0.04), (x + math.cos(a) * 0.5, y + math.sin(a) * 0.5, 0.1), 0.07, C_SITH, sides=4, r1=0.04)
+
+    def westhill(k):
+        # Westhill Palace on the Westhill cliffs (Star Wars Outlaws still "Westhill cliffs": domed mansions along a
+        # cliff top over the sea, a round landing pad with a red light; the user's TLJ still for the building: a
+        # round drum of pale stone with pilasters, a lit window band, a ring balcony with railings, a slate dome with a
+        # lip, flanking pale blocks behind, a slate-domed round pavilion beside it). Front (-y) faces the sea.
+        k.lathe([(4.6, -SKIRT), (4.6, 0.4)], [C_STONE], sides=11, cy=0.4, sy=0.85, jitter=0.06, cap=C_ROOF)   # cliff-top
+        k.lathe([(2.5, -SKIRT), (2.5, 0.3)], [C_STONE], sides=14, cy=-4.4, cap=C_STONE)                # lower terrace
+        k.lathe([(1.9, 0.29), (1.9, 0.38)], [C_STONE], sides=24, cy=-4.9, cap=C_PAD)                  # the landing pad
+        for x in (-1.0, 1.0):                                                                        # its red lights
+            k.lathe([(0.12, 0.38), (0.12, 0.5)], [C_GLOW], sides=6, cx=x, cy=-6.75, cap=C_GLOW)
+        k.box(-0.5, -3.0, 0.3, 0.5, -1.9, 0.47, C_STONE, top=C_STONE)                               # the stair down to it
+        cx, cy = 0.0, 0.6                                                                           # the main mansion
+        k.lathe([(2.3, 0.35), (2.3, 2.1)], [C_STONE_WIN], sides=24, cx=cx, cy=cy)
+        for i in range(12):                                                                          # pilasters
+            a = 2 * math.pi * i / 12
+            cslab(k, cx + 2.36 * math.cos(a), cy + 2.36 * math.sin(a), 0.35, 2.2, 0.16, 0.09, a + math.pi / 2, C_STONE,
+                  C_STONE)
+        k.lathe([(3.1, 2.1), (3.1, 2.24)], [C_STONE], sides=24, cx=cx, cy=cy, cap=C_ROOF)          # ring balcony
+        k.lathe([(3.05, 2.24), (3.05, 2.5)], [C_RAIL], sides=24, cx=cx, cy=cy)                     # its railing
+        k.lathe([(1.85, 2.2), (1.85, 3.35)], [C_STONE_WIN], sides=20, cx=cx, cy=cy)                 # upper drum
+        for i in range(8):
+            a = 2 * math.pi * (i + 0.5) / 8
+            cslab(k, cx + 1.9 * math.cos(a), cy + 1.9 * math.sin(a), 2.2, 3.4, 0.14, 0.08, a + math.pi / 2, C_STONE, C_STONE)
+        k.lathe([(1.83, 3.33), (2.15, 3.42), (2.1, 3.56), (1.6, 4.0), (0.9, 4.32), (0.0, 4.45)],
+                [C_SLATE_LIT, C_SLATE, C_SLATE, C_SLATE, C_SLATE], sides=24, cx=cx, cy=cy)            # the dome
+        for sx in (-1, 1):                                                                           # pale blocks behind
+            k.box(sx * 1.2 - 0.9, 2.2, 0.35, sx * 1.2 + 0.9, 3.6, 3.7, C_STONE, top=C_ROOF)
+            k.box(sx * 1.2 - 0.6, 2.15, 1.0, sx * 1.2 + 0.6, 2.21, 3.0, C_PLASTER_WIN)
+        canto_drum(k, 3.2, -1.7, 0.35, 0.8, 0.85, sides=14)                                           # the pavilion
+        k.lathe([(1.05, 0.33), (1.05, 0.5)], [C_STONE], sides=16, cx=3.2, cy=-1.7, cap=C_ROOF)       # its round terrace
+        canto_drum(k, -3.1, 1.2, 0.35, 1.3, 1.1, saucers=2, sides=14)                                 # a second mansion
+        canto_drum(k, -2.4, -2.2, 0.35, 0.7, 0.65, sides=12)                                          # a garden house
+        for x, y, r in ((1.4, -2.6, 0.9), (-0.9, -2.9, 0.7), (3.4, 1.6, 0.8)):                       # gardens
+            k.lathe([(r, 0.38), (r, 0.46)], [C_GARDEN], sides=9, cx=x, cy=y, jitter=0.15, cap=C_GARDEN)
+        for x, y in ((-1.6, -3.4), (1.6, -3.4), (2.6, -3.0), (-2.9, -3.0)):                          # lamp posts
+            k.lathe([(0.05, 0.4), (0.05, 1.1)], [C_RAIL], sides=4, cx=x, cy=y)
+            k.lathe([(0.12, 1.1), (0.12, 1.25)], [C_GLOW], sides=6, cx=x, cy=y, cap=C_GLOW)
+
     for name, fn in (("hod_kad_facility", kadavo_facility), ("hod_kad_tower", kadavo_tower), ("hod_kad_dock", kadavo_dock),
                      ("hod_kad_mine", kadavo_mine), ("hod_kad_camp", kadavo_camp)):
         build(name, fn)
     for v in "abcd":
         build(f"hod_kad_crater_{v}", lambda k, v=v: kadavo_crater(k, v), tex="hod_kadavo")
+    build("hod_zyg_palace", zygerria_palace, tex="hod_zygerria")
+    for name_, fn_, rot_ in (("hod_zyg_arena", zyg_arena, 0.0), ("hod_zyg_fortress", zyg_fortress, math.pi / 4),   # fortresses
+                             ("hod_zyg_landing", zyg_landing, 0.0)):                                            # face SE
+        build(name_, fn_, tex="hod_zygerria", rot=rot_)
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_z = random.Random(f"hod_zyg_city{band}{v}")
+            build(f"hod_zyg_city_{band}{v}", lambda k, band=band, rng=rng_z: zyg_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_zygerria")
+    build("hod_dk_citadel", dk_citadel, tex="hod_dromund", rot=-math.pi / 2)          # faces west, back to the sea
+    build("hod_dk_dark_temple", dk_dark_temple, tex="hod_dromund", rot=math.pi / 4)   # faces south-east, down the pass
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_k = random.Random(f"hod_kaas_ruin{band}{v}")
+            build(f"hod_kaas_ruin_{band}{v}", lambda k, band=band, rng=rng_k: kaas_ruin(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_dromund")
+    build("hod_cant_westhill", westhill, tex="hod_cantonica", rot=-math.pi / 4)   # faces south-west, out to sea
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_c = random.Random(f"hod_cant_city{band}{v}")
+            build(f"hod_cant_city_{band}{v}", lambda k, band=band, rng=rng_c: canto_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_cantonica")
+            rng_s = random.Random(f"hod_cant_sith_ruin{band}{v}")
+            build(f"hod_cant_sith_ruin_{band}{v}", lambda k, band=band, rng=rng_s: sith_ruin(k, band, rng),
+                  shader="PdxMeshSnow", tex="hod_cantonica")
     build("hod_flo_complex", florrum_complex)
     build("hod_flo_refinery", florrum_refinery)
     for v in "ab":
@@ -1840,6 +2473,7 @@ LANDMARKS.update({   # Geonosis set (VP names from victory_points_l_english.yml)
     "hod_castle_serenno": ("hod_castle_serenno_entity", 8479, 1.2, 0.0, 3.0),      # Serenno (city district around it)
 })
 CITY_TERRAIN, PLAZA_TERRAIN = [13], 25   # terrain.bmp: spawn_city urban -> urban_plaza_25 (same texture, no cities)
+NO_SPAWN = {13: 25, 26: 5, 29: 28, 30: 9, 32: 7}  # every spawn_city texture -> the same look without city models (place_planet)
 CITY_MARGIN = 2.0   # px of cities.bmp cleared past a landmark's footprint (city meshes reach ~1.7 map units)
 NEW_LANDMARKS = tuple(n for n in LANDMARKS if n not in ("hod_jedi_temple", "hod_senate"))
 LANDMARK_MESH = {"hod_kachirho": ("mapobject_40", 0.75)}   # landmarks that reuse an existing pdxmesh (trees.gfx), scale
@@ -2344,8 +2978,161 @@ def kadavo_place():
         count[m] = count.get(m, 0) + len(p)
     print("Kadavo:", count)
 
+def _planet_module(name):
+    import importlib
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    return importlib.import_module(name.lower().replace(" ", "_") + "_map")
+
+
+def check_placement_cfg(mod):
+    """problems with a planet's PLACEMENT (empty list = fine): missing meshes, entities defined twice or nowhere,
+    unknown VP names or zones"""
+    import glob
+    import json
+    cfg, errs = getattr(mod, "PLACEMENT", None), []
+    if cfg is None:
+        return [f"{mod.__name__}: no PLACEMENT"]
+    slug = mod.PLANET.lower().replace(" ", "_")
+    own = f"gfx/entities/hod_{slug}.asset"
+    defined = {}
+    for f in glob.glob("gfx/entities/*.asset"):
+        for n in re.findall(r'name\s*=\s*"([^"]+)_entity"', open(f, encoding="utf-8", errors="replace").read()):
+            defined.setdefault(n, []).append(f.replace("\\", "/"))
+    if not os.path.exists(mod.ZONES_JSON):
+        return errs + [f"{mod.ZONES_JSON} missing: run {mod.__name__}.py first"]
+    vps = set(json.load(open(mod.ZONES_JSON))["vp_names"].values())
+    kinds = set(mod.KIND.values())
+    for mesh, scale, where in cfg["items"]:
+        if not os.path.exists(f"{LM_OUT}/{mesh}.mesh"):
+            errs.append(f"{mesh}: no {LM_OUT}/{mesh}.mesh" + (" (build it: models " + mesh + ")" if mesh in cfg["new_models"] else ""))
+        elsewhere = [f for f in defined.get(mesh, []) if f != own]
+        if mesh in cfg["new_models"] and elsewhere:
+            errs.append(f"{mesh}: listed as new but already defined in {elsewhere}")
+        if mesh not in cfg["new_models"] and not elsewhere:
+            errs.append(f"{mesh}: reused but no {mesh}_entity in gfx/entities (add it to new_models?)")
+        if not 0 < scale <= 5:
+            errs.append(f"{mesh}: scale {scale}")
+        if where[0] == "zone_centre" and where[1] not in kinds:
+            errs.append(f"{mesh}: zone_centre {where[1]} is not a KIND value")
+        elif where[0] == "near_vp":
+            for n in [where[1]] if isinstance(where[1], str) else where[1]:
+                if n not in vps:
+                    errs.append(f"{mesh}: VP '{n}' not in {mod.ZONES_JSON}")
+            if not set(where[2]) <= kinds:
+                errs.append(f"{mesh}: zones {where[2]} not all KIND values")
+        elif where[0] == "at_vp":
+            for n in [where[1]] if isinstance(where[1], str) else where[1]:
+                if n not in vps:
+                    errs.append(f"{mesh}: VP '{n}' not in {mod.ZONES_JSON}")
+        elif where[0] not in ("zone_centre", "near_vp"):
+            errs.append(f"{mesh}: unknown placement {where[0]!r} (zone_centre, near_vp, at_vp)")
+    for mesh, foot in cfg.get("clear", {}).items():
+        if mesh not in {m for m, _s, _w in cfg["items"]} or not 0 < foot < 30:
+            errs.append(f"clear: {mesh} {foot} (a placed mesh, footprint 0-30 px)")
+    return errs
+
+
+def place_planet(name):
+    """map/ambient_object.txt for a planet whose map script has a PLACEMENT (y = 0: stood on the ground):
+        PLACEMENT = dict(new_models={meshes this planet defines}, items=[(mesh, scale, where), ...], hook=None,
+                     clear={mesh: footprint radius px})   # no city models inside these (cities.bmp + terrain.bmp)
+        where: ("zone_centre", kind)               the middle of that zone
+               ("near_vp", name or [names], kinds)  a spot on those zones a little off the VP and off unit positions
+               ("at_vp", name or [names])           on the VP province's centre (big landmarks)
+    Items are placed in order; meshes in new_models get entities in gfx/entities/hod_<planet>.{gfx,asset}, the rest
+    must already be defined. The block in ambient_object.txt is marked '# HOD: <Planet> (military_buildings.py
+    <planet>_place)' and replaced on each run. hook(ctx) may add objects with ctx['put'](mesh, scale, r, c)."""
+    import json
+    import random
+    import numpy as np
+    from PIL import Image
+    mod = _planet_module(name)
+    errs = check_placement_cfg(mod)
+    if errs:                                                               # nothing written
+        sys.exit(f"{mod.__name__}.PLACEMENT:\n  " + "\n  ".join(errs))
+    cfg, planet = mod.PLACEMENT, mod.PLANET
+    slug = planet.lower().replace(" ", "_")
+    tag = cfg.get("tag", slug[:3])
+    mark = (f"# HOD: {planet} (military_buildings.py {slug}_place)", f"# HOD: end of {planet}")
+    z = json.load(open(mod.ZONES_JSON))
+    zone = np.asarray(Image.open(mod.ZONES_PNG))
+    H = zone.shape[0]
+    rng = random.Random(slug)
+    units = [v["centre"] for v in z["provinces"].values()]
+    vp_at = {n: z["provinces"][p]["centre"] for p, n in z["vp_names"].items()}
+    objs, taken = {}, []
+
+    def put(mesh, scale, r, c):
+        objs.setdefault((mesh, scale), []).append((c, H - 1 - r, 0.0))
+        taken.append((r, c))
+
+    def clear(r, c, d=KAD_OFF):
+        return all(math.hypot(r - a, c - b) >= d for a, b in units)
+
+    def near(r, c, zones):                           # a spot on these zones a little off (r, c) and the unit positions
+        for rad in (KAD_OFF, KAD_OFF + 1, KAD_OFF + 2, KAD_OFF + 3):
+            for _ in range(30):
+                a = rng.uniform(0, 6.28)
+                rr, cc = r + rad * math.sin(a), c + rad * math.cos(a)
+                if zone[int(round(rr)), int(round(cc))] in zones and clear(rr, cc) and \
+                        all(math.hypot(rr - a_, cc - b_) > 3 for a_, b_ in taken):
+                    return rr, cc
+        print("  no clear spot near", (round(r), round(c)), "zones", zones, "- placed on the VP")
+        return r, c
+    for mesh, scale, where in cfg["items"]:
+        if where[0] == "zone_centre":
+            put(mesh, scale, *np.argwhere(zone == where[1]).mean(0))
+        elif where[0] == "at_vp":                                          # big landmarks: on the VP province itself
+            for n in [where[1]] if isinstance(where[1], str) else where[1]:
+                put(mesh, scale, *vp_at[n])
+        else:
+            for n in [where[1]] if isinstance(where[1], str) else where[1]:
+                put(mesh, scale, *near(*vp_at[n], where[2]))
+    if cfg.get("hook"):
+        cfg["hook"](dict(put=put, near=near, clear=clear, zone=zone, z=z, rng=rng, taken=taken, vp_at=vp_at))
+    if cfg.get("clear"):                                                   # no city models inside the big landmarks
+        import io
+        city = Image.open(io.BytesIO(open("map/cities.bmp", "rb").read()))
+        terr = Image.open(io.BytesIO(open("map/terrain.bmp", "rb").read()))
+        styles, tidx = np.array(city), np.array(terr)
+        yy, xx = np.mgrid[0:H, 0:zone.shape[1]]
+        for (mesh, _sc), pts in objs.items():
+            foot = cfg["clear"].get(mesh)
+            for x, zz, _y in pts if foot else ():
+                cy, cx = H - 1 - zz, x
+                win = np.s_[max(int(cy - foot - CITY_MARGIN - 1), 0):int(cy + foot + CITY_MARGIN + 2),
+                            max(int(cx - foot - CITY_MARGIN - 1), 0):int(cx + foot + CITY_MARGIN + 2)]
+                inside = np.hypot(yy[win] - cy, xx[win] - cx) <= foot + CITY_MARGIN
+                styles[win][inside] = 0
+                t_ = tidx[win]
+                for spawn, plain in NO_SPAWN.items():                      # spawn_city textures -> their plain twins
+                    t_[inside & (t_ == spawn)] = plain
+        for arr, img, path in ((styles, city, "map/cities.bmp"), (tidx, terr, "map/terrain.bmp")):
+            out = Image.fromarray(arr.astype(np.uint8), "P")
+            out.putpalette(img.getpalette())
+            out.save(path)
+    new = sorted({m for m, _ in objs if m in cfg["new_models"]})
+    open(f"gfx/entities/hod_{slug}.gfx", "w", encoding="utf-8", newline="\n").write(
+        f"objectTypes = {{\n\t{mark[0]}\n"
+        + "".join(f'\tpdxmesh = {{\n\t\tname = "{m}_mesh"\n\t\tfile = "{LM_OUT}/{m}.mesh"\n\t}}\n' for m in new) + "}\n")
+    open(f"gfx/entities/hod_{slug}.asset", "w", encoding="utf-8", newline="\n").write(
+        f"{mark[0]}\n" + "".join(f'entity = {{\n\tname = "{m}_entity"\n\tpdxmesh = "{m}_mesh"\n\tscale = 1\n}}\n' for m in new))
+    block_ = mark[0] + "\n"
+    for (mesh, scale), pts in sorted(objs.items()):
+        block_ += f'type={{\n\ttype="{mesh}_entity"\n\tuse_animation=no\n\tscale={scale:.6f}\n'
+        block_ += "".join(f'\tobject={{\n\t\tname="{mesh}_{tag}_{int(scale * 100)}_{i}"\n\t\tposition={{\n\t\t\t{x:.3f} 0.000 {zz:.3f} \n'
+                          f'\t\t}}\n\t\trotation={{\n\t\t\t0.000 0.000 0.000 \n\t\t}}\n\t}}\n' for i, (x, zz, _y) in enumerate(pts))
+        block_ += "}\n"
+    block_ += mark[1] + "\n"
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from felucia_tribes import rw
+    rw("map/ambient_object.txt", lambda s: re.sub(re.escape(mark[0]) + r".*?" + re.escape(mark[1]) + r"\n", "", s,
+                                                    flags=re.S).rstrip("\n") + "\n" + block_)
+    print(f"{planet}:", {m: len(p) for (m, _s), p in objs.items()})
+
+
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks, "atlas": atlas,
-     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "models": models,
+     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
      "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])

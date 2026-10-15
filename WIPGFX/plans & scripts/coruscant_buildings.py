@@ -387,7 +387,8 @@ def towns():
 LM = "gfx/models/buildings/hod_landmarks"     # procedural families from military_buildings.py models
 FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
             "hod_kam_city": LM, "hod_man_city": LM, "hod_geo_city": LM, "hod_nab_city": LM, "hod_fel_city": LM,
-            "hod_cmg_outpost": LM, "hod_rax_city": LM, "hod_dre_city": LM}
+            "hod_cmg_outpost": LM, "hod_rax_city": LM, "hod_dre_city": LM, "hod_zyg_city": LM, "hod_kaas_ruin": LM,
+            "hod_cant_city": LM, "hod_cant_sith_ruin": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 SCRAP_TOWN = [f"hod_bld_rpt_{n}" for n in ("crates4", "crates5", "crates6", "crates9", "crates1", "huttTower", "fuelCellC")]
 SINGLE.update({n: SW for n in SCRAP_TOWN})  # Raxus Prime scrap towns: Empire at War junk stacks (sketchfab_props.py rpt_*)
@@ -404,7 +405,11 @@ CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]
                10: (0.3, ["hod_cmg_outpost"]),                                          # Felucia: Guild outposts
                11: (0.45, ["hod_rax_city"]),                                            # Raxus: sandstone blocks + spires
                12: (0.4, SCRAP_TOWN),                                                    # Raxus Prime: scrap towns
-               13: (0.4, ["hod_dre_city"])}                                             # Korriban: Dreshdae
+               13: (0.4, ["hod_dre_city"]),                                             # Korriban: Dreshdae
+               14: (0.45, ["hod_zyg_city"]),                                            # Zygerria: the capital
+               16: (0.3, ["hod_kaas_ruin"]),                                            # Dromund Kaas: Kaas City's ruins
+               17: (0.45, ["hod_cant_city"]),                                           # Cantonica: Canto Bight
+               18: (0.3, ["hod_cant_sith_ruin"])}                                       # Cantonica: the Sith ruins
 
 
 def wire():
@@ -424,7 +429,8 @@ def wire():
         f.write("# HOD: written by WIPGFX/plans & scripts/coruscant_buildings.py wire. map/cities.bmp (planet_terrain_gen.py)\n"
                 "# picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages,\n"
                 "# 5 ocean-world stilt domes, 6 Mandalore domes, 7 Geonosis hives, 8 Naboo, 9 Felucian villages, 10 Guild outposts,\n"
-                "# 11 Raxus capital, 12 Raxus Prime scrap towns, 13 Dreshdae (Korriban).\n"
+                "# 11 Raxus capital, 12 Raxus Prime scrap towns, 13 Dreshdae (Korriban), 14 Zygerrian capital,\n"
+                "# 16 Kaas City ruins (Dromund Kaas).\n"
                 'types_source = "map/cities.bmp"\npixel_step_x = 2\npixel_step_y = 2\n')
         for idx, (dens, fams) in CITY_GROUPS.items():
             f.write(f"city_group = {{\n\tcolor_index = {idx}\n\tdensity = {format(dens, '.5f').rstrip('0')}\n"
