@@ -84,6 +84,40 @@ PROCEDURAL = {
     89: "canto_cactus",   # a stand of ribbed column cacti, some with arms, and barrel cacti
     90: "canto_scrub",    # low grey-green scrub of the sea shore
     91: "canto_rubble",   # Sith ruins in the sand: a broken obelisk, tilted pylon blocks, scattered blocks
+    # Bonadan (Legends: a polluted industrial world, its topsoil destroyed by "constant drilling and construction",
+    # plant life killed by "careless mining operations"): no flora, the wastes strewn with industry instead
+    92: "bon_derrick",    # a drilling rig: a tapering lattice tower over a pump house, pipes running off
+    93: "bon_tanks",      # a cluster of storage tanks joined by pipework
+    94: "bon_slag",       # spoil and slag heaps dumped by the mines
+    95: "bon_stacks",     # a pair of smokestacks over a small works
+    # Etti IV (canon: forests, burnt by Cybot Galactica to expand the Arcoplex; Legends: hot, stormy plains and
+    # shallow seas)
+    96: "etti_tree",      # tall broadleaf forest tree, a broad layered crown
+    97: "etti_burnt",     # charred snags and stumps of the burnt forest
+    98: "etti_grass",     # tall dry grass and shrub clumps of the hot plains
+    99: "etti_reeds",     # reed beds in the shallow seas
+    # Ruuria (Legends: a warm and humid jungle world; canon: pink rivers): jungle giants, tree ferns, the wild cocoon
+    # clusters of the Ruurians' metamorphosis (design choice), pinkish reeds along the rivers
+    100: "ruu_tree",      # jungle giant: tall trunk, umbrella canopy
+    101: "ruu_fern",      # tree ferns
+    102: "ruu_cocoons",   # silk cocoons hung in a low thicket
+    103: "ruu_reeds",     # reeds at the pink rivers' edges
+    # Ossus (canon flora: bamboo, the Uneti tree; Legends: the wodobo bush; ruins everywhere since the Cron Supernova)
+    104: "oss_bamboo",    # a stand of tall bamboo culms with leafy tops
+    105: "oss_uneti",     # an uneti tree: thick gnarled trunk, broad spreading crown
+    106: "oss_wodobo",    # wodobo bushes
+    107: "oss_rubble",    # ruin rubble in the grass: a broken column, a dome shard, blocks
+    # Lola Sayu (canon: volcanic, caves, crevasses, no plant or animal life): vents and basalt shards, nothing alive
+    108: "lola_vent",     # volcanic vent cones, cratered tops
+    109: "lola_shards",   # jagged basalt shards thrust up from the cracked crust
+    # Ringo Vinda (the surface after the Cato Neimoidia concept art: banded rock pillars and arches; temperate design)
+    110: "rv_pillars",    # a cluster of banded rock pillars
+    111: "rv_arch",       # a small natural rock arch
+    112: "rv_tree",       # a temperate broadleaf tree, a tall rounded crown
+    # Rhen Var (Legends: once "a fertile paradise", now frozen tundra, glaciers and snowy mountains over the ruins)
+    113: "rh_ice",        # ice spikes and shards pushed up by the frost
+    114: "rh_ruin",       # a snow-buried fragment of the old civilization: a column stump, a wall corner
+    115: "rh_deadtree",   # a dead tree from the fertile age, frozen standing
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
@@ -98,6 +132,16 @@ PROC_MATS.update({81: ["hod_dead_tree_trunk_02", "hod_foliage_dk"], 82: ["hod_de
                   85: ["hod_foliage_dk"], 86: ["hod_dead_tree_trunk_02", "hod_foliage_zyg"], 87: ["hod_foliage_zyg"]})
 PROC_MATS.update({88: ["hod_dead_tree_trunk_02", "hod_foliage_canto"], 89: ["hod_canto_cactus"],
                   90: ["hod_foliage_canto_scrub"], 91: ["hod_canto_sandstone"]})
+PROC_MATS.update({92: ["hod_bon_metal"], 93: ["hod_bon_metal"], 94: ["hod_bon_slag"], 95: ["hod_bon_metal"]})
+PROC_MATS.update({96: ["hod_dead_tree_trunk_02", "hod_foliage_etti"], 97: ["hod_etti_char"],
+                  98: ["hod_foliage_etti_dry"], 99: ["hod_foliage_etti_reed"]})
+PROC_MATS.update({100: ["hod_dead_tree_trunk_02", "hod_foliage_ruu"], 101: ["hod_dead_tree_trunk_02", "hod_foliage_ruu_fern"],
+                  102: ["hod_ruu_silk", "hod_foliage_ruu"], 103: ["hod_foliage_ruu_reed"]})
+PROC_MATS.update({104: ["hod_oss_bamboo", "hod_foliage_oss_bamboo"], 105: ["hod_dead_tree_trunk_02", "hod_foliage_oss_uneti"],
+                  106: ["hod_foliage_oss_wodobo"], 107: ["hod_oss_stone"]})
+PROC_MATS.update({108: ["hod_lola_basalt"], 109: ["hod_lola_basalt"]})
+PROC_MATS.update({110: ["hod_rv_rock"], 111: ["hod_rv_rock"], 112: ["hod_dead_tree_trunk_02", "hod_foliage_rv"]})
+PROC_MATS.update({113: ["hod_rh_ice"], 114: ["hod_rh_stone"], 115: ["hod_dead_tree_trunk_02"]})
 # Sketchfab models converted by sketchfab_props.py (meshes land in OUT as hod_flora_<index>_<name>.mesh)
 EXTERNAL = {53: "sandcrawler", 54: "vaporators", 56: "wreck_harrower", 57: "wreck_foray"}
 # Raxus Prime junk (sketchfab_props.py SPECS rp_*: Battlefront II / Empire at War models)
@@ -112,7 +156,24 @@ PLANET_FOLIAGE = {"hod_foliage_dk": ((70, 120, 100), (40, 80, 75)),      # Dromu
                   "hod_foliage_canto": ((70, 105, 70), (45, 80, 55)),    # Cantonica: the chinar pads, dark green
                   "hod_foliage_canto_scrub": ((130, 150, 95), (100, 125, 80))}   # the shore scrub, grey-green
 # solid (no alpha cut) textures of the planet floras: name -> (base rgb, pattern), painted by planet_textures
-PLANET_SOLID = {"hod_canto_cactus": ((92, 128, 84), "ribs"), "hod_canto_sandstone": ((196, 164, 118), "blocks")}
+PLANET_SOLID = {"hod_canto_cactus": ((92, 128, 84), "ribs"), "hod_canto_sandstone": ((196, 164, 118), "blocks"),
+                "hod_bon_metal": ((150, 128, 98), "plates"), "hod_bon_slag": ((96, 70, 52), "slag"),
+                "hod_etti_char": ((44, 38, 34), "slag"), "hod_ruu_silk": ((226, 220, 200), "slag"),
+                "hod_oss_bamboo": ((150, 158, 82), "ribs"), "hod_oss_stone": ((200, 190, 166), "blocks"),
+                "hod_lola_basalt": ((58, 52, 54), "slag"), "hod_rv_rock": ((190, 162, 128), "blocks"),
+                "hod_rh_ice": ((176, 214, 236), "slag"), "hod_rh_stone": ((150, 158, 168), "blocks")}
+# planet foliage from Etti IV on: each texture its own random seed (from its name), so adding one leaves the others'
+# textures unchanged (PLANET_FOLIAGE above shares one random stream: never append to it)
+PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),          # Etti IV: deep forest green
+                      "hod_foliage_etti_dry": ((178, 160, 92), (140, 128, 70)),   # the hot plains' dry grass
+                      "hod_foliage_etti_reed": ((96, 140, 84), (70, 112, 66)),    # reed beds in the shallows
+                      "hod_foliage_ruu": ((56, 118, 64), (36, 88, 52)),            # Ruuria: humid jungle green
+                      "hod_foliage_ruu_fern": ((84, 140, 70), (60, 112, 56)),      # its tree ferns
+                      "hod_foliage_ruu_reed": ((150, 130, 110), (120, 110, 90)),   # pink-river reeds, washed out
+                      "hod_foliage_oss_bamboo": ((120, 160, 70), (90, 130, 56)),   # Ossus: bamboo leaves
+                      "hod_foliage_oss_uneti": ((66, 112, 72), (48, 90, 60)),      # the uneti's dark crown
+                      "hod_foliage_oss_wodobo": ((112, 128, 70), (88, 104, 58)),   # wodobo bushes
+                      "hod_foliage_rv": ((80, 124, 66), (58, 100, 56))}            # Ringo Vinda: temperate green
 
 
 def planet_textures():
@@ -137,12 +198,25 @@ def planet_textures():
         if kind == "ribs":                                                   # u runs round the cactus: ribs + spines
             pat = (0.75 + 0.35 * np.abs(np.sin(xx * np.pi * 12 / TEX_SIZE)))[..., None]
             pat = pat * (1 + 0.25 * (rng.random((TEX_SIZE, TEX_SIZE)) > 0.985)[..., None])
+        elif kind == "plates":                                               # rust-streaked steel plates
+            b = ndi.gaussian_filter(rng.random((TEX_SIZE, TEX_SIZE)), (40, 2))
+            pat = (1 - 0.3 * (((yy % 48) < 3) | ((xx % 64) < 3)))[..., None]
+            pat = pat * (0.75 + 0.4 * ((b - b.min()) / np.ptp(b)))[..., None]
+        elif kind == "slag":                                                 # lumpy dark spoil with rust and ochre
+            b = ndi.gaussian_filter(rng.random((TEX_SIZE, TEX_SIZE)), 6)
+            pat = (0.7 + 0.6 * ((b - b.min()) / np.ptp(b)))[..., None] * np.array([1.0, 0.95, 0.85])
         else:                                                                # weathered courses of big blocks
             b = ndi.gaussian_filter(rng.random((TEX_SIZE, TEX_SIZE)), 18)
             pat = (1 - 0.3 * (((yy % 64) < 3) | (((xx + 48 * ((yy // 64) % 2)) % 96) < 3)))[..., None]
             pat = pat * (0.8 + 0.3 * ((b - b.min()) / np.ptp(b)))[..., None]
         col = np.clip(np.array(base, np.float32) * (0.8 + 0.3 * g) * pat, 0, 255)
         tex[name] = (np.dstack([col, np.full((TEX_SIZE, TEX_SIZE), 255, np.float32)]), flat_n)
+        save_dxt5_mips(tex[name][0], f"{OUT}/{name}_diffuse.dds")
+        save_dxt5_mips(flat_n, f"{OUT}/{name}_normal.dds")
+    import zlib
+    for name, tint in PLANET_FOLIAGE_OWN.items():
+        col, alp = _foliage(tint, np.random.default_rng(zlib.crc32(name.encode())), leaves)
+        tex[name] = (np.dstack([np.clip(col, 0, 255), alp]), flat_n)
         save_dxt5_mips(tex[name][0], f"{OUT}/{name}_diffuse.dds")
         save_dxt5_mips(flat_n, f"{OUT}/{name}_normal.dds")
     rgb = lambda q: np.asarray(Image.open(q).convert("RGB").resize((TEX_SIZE, TEX_SIZE), Image.LANCZOS)).astype(np.float32)
@@ -153,11 +227,11 @@ def planet_textures():
     atlas = json.load(open(f"{OUT}/atlas.json"))
     leaf = json.load(open(f"{OUT}/leaf_materials.json"))
     for idx, stems in PROC_MATS.items():
-        if any(st in PLANET_FOLIAGE or st in PLANET_SOLID for st in stems):
+        if any(st in PLANET_FOLIAGE or st in PLANET_FOLIAGE_OWN or st in PLANET_SOLID for st in stems):
             if len(stems) > 1:
                 _atlas(idx, stems, tex)
                 atlas[str(idx)] = stems
-    leaf.update({name: True for name in PLANET_FOLIAGE})
+    leaf.update({name: True for name in list(PLANET_FOLIAGE) + list(PLANET_FOLIAGE_OWN)})
     json.dump(atlas, open(f"{OUT}/atlas.json", "w"), indent=1)
     json.dump(leaf, open(f"{OUT}/leaf_materials.json", "w"), indent=1)
     print("planet foliage:", list(PLANET_FOLIAGE), "atlases:", [i for i, st in PROC_MATS.items() if any(x in PLANET_FOLIAGE for x in st)])
@@ -993,6 +1067,150 @@ def procedural(*only):
             for _ in range(6):
                 c = Vector((rng.uniform(-1.4, 1.4), rng.uniform(-1.4, 1.4), 0.0))
                 lathe(bm, uv, (c.x, c.y), [(-0.1, rng.uniform(0.1, 0.2)), (0.15, 0.12), (0.22, 0.02)], 4, 0)
+        elif kind == "bon_derrick":
+            h = 3.2
+            for i in range(4):                                              # the four legs, leaning in
+                a = math.pi / 4 + i * math.pi / 2
+                foot, head = Vector((math.cos(a) * 0.55, math.sin(a) * 0.55, -0.2)), Vector((math.cos(a) * 0.12, math.sin(a) * 0.12, h))
+                limb(bm, uv, foot, head, 0.05, 0.035, 0, sides=4, segs=1)
+                b_ = a + math.pi / 2
+                for z in (0.7, 1.5, 2.3):                                   # cross braces between neighbouring legs
+                    f = z / h
+                    p0 = foot.lerp(head, f)
+                    q = Vector((math.cos(b_) * 0.55, math.sin(b_) * 0.55, -0.2)).lerp(Vector((math.cos(b_) * 0.12, math.sin(b_) * 0.12, h)), f + 0.2)
+                    limb(bm, uv, p0, q, 0.025, 0.025, 0, sides=3, segs=1)
+            lathe(bm, uv, (0.0, 0.0), [(h - 0.05, 0.2), (h + 0.15, 0.2)], 4, 0)       # the crown block
+            lathe(bm, uv, (0.9, -0.2), [(-0.2, 0.32), (0.45, 0.32), (0.55, 0.05)], 6, 0)   # pump house
+            limb(bm, uv, Vector((0.9, -0.2, 0.15)), Vector((2.0, 0.6, 0.12)), 0.07, 0.07, 0, sides=5, segs=1)   # pipe
+        elif kind == "bon_tanks":
+            spots = [(0.0, 0.0, 0.55), (1.1, 0.35, 0.42), (-0.5, 1.0, 0.38), (0.6, -0.95, 0.32)]
+            for x, y, r in spots[:rng.randint(3, 4)]:
+                hh = rng.uniform(0.7, 1.1)
+                lathe(bm, uv, (x, y), [(-0.2, r), (hh, r), (hh + 0.15 * r, r * 0.6), (hh + 0.25 * r, 0.02)], 10, 0)
+            for (x0, y0, _), (x1, y1, _) in zip(spots, spots[1:3]):        # pipes between them
+                limb(bm, uv, Vector((x0, y0, 0.35)), Vector((x1, y1, 0.35)), 0.05, 0.05, 0, sides=5, segs=1)
+        elif kind == "bon_slag":
+            for i in range(rng.randint(3, 5)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.0) * (i > 0)
+                r = rng.uniform(0.5, 0.9) * (1.3 if i == 0 else 1.0)
+                hh = r * rng.uniform(0.5, 0.75)
+                c = (math.cos(a) * d, math.sin(a) * d)
+                lathe(bm, uv, c, [(-0.2, r), (hh * 0.4, r * 0.8), (hh * 0.85, r * 0.35), (hh, 0.05)], 9, 0,
+                      (rng.uniform(-0.1, 0.1), rng.uniform(-0.1, 0.1)))
+        elif kind == "bon_stacks":
+            lathe(bm, uv, (0.0, 0.0), [(-0.2, 0.55), (0.5, 0.55), (0.55, 0.4)], 4, 0)   # the small works
+            for x, y, hh in ((0.25, 0.2, 2.6), (-0.3, -0.15, 2.0)):
+                lathe(bm, uv, (x, y), [(0.3, 0.14), (hh, 0.1), (hh + 0.05, 0.12)], 8, 0)
+        elif kind == "etti_tree":
+            giant(bm, uv, 2.8, 0.17, 4, [(2.3, 5, 1.0, 0.95), (2.9, 3, 0.55, 0.8)], 3.3, 460)
+        elif kind == "etti_burnt":
+            for i in range(rng.randint(3, 5)):                              # charred snags, broken tops, a few limbs
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.0) * (i > 0)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                top = crooked(base, Vector((rng.uniform(-.2, .2), rng.uniform(-.2, .2), 1)), rng.uniform(1.0, 2.4),
+                              rng.uniform(0.09, 0.15), parts=3, kink=0.15)
+                if rng.random() < 0.6:
+                    b_ = rng.uniform(0, 6.283)
+                    crooked(top - Vector((0, 0, 0.4)), Vector((math.cos(b_), math.sin(b_), 0.3)), 0.5, 0.04, parts=2)
+            for _ in range(rng.randint(2, 4)):                              # stumps and a fallen trunk
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.5, 1.3)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, 0.14), (0.2, 0.11), (0.26, 0.06)], 6, 0)
+            a = rng.uniform(0, 6.283)
+            limb(bm, uv, Vector((-0.9, 0.2, 0.08)), Vector((-0.9 + 1.6 * math.cos(a), 0.2 + 1.6 * math.sin(a), 0.12)),
+                 0.11, 0.07, 0, sides=5, segs=1)
+        elif kind == "etti_grass":
+            for _ in range(9):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.3)
+                r = rng.uniform(0.25, 0.45)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.55)), r * 0.8, r * 0.6, 14, 0, size=(0.3, 0.5))
+        elif kind == "etti_reeds":
+            for _ in range(8):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.35)), 0.22, 0.4, 12, 0, size=(0.25, 0.45))
+        elif kind == "ruu_tree":
+            giant(bm, uv, 3.4, 0.2, 5, [(3.0, 5, 1.2, 1.1), (3.6, 3, 0.6, 0.9)], 4.0, 520)
+        elif kind == "ruu_fern":
+            for i in range(rng.randint(2, 3)):                              # slim trunks, a rosette of fronds on top
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.7) * (i > 0)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                top = crooked(base, Vector((0, 0, 1)), rng.uniform(1.0, 1.8), 0.07, parts=2, kink=0.12)
+                clump(bm, uv, top + Vector((0, 0, 0.1)), 0.6, 0.15, 14, 1, size=(0.5, 0.8))
+        elif kind == "ruu_cocoons":
+            clump(bm, uv, Vector((0, 0, 0.5)), 1.0, 0.45, 26, 1, size=(0.4, 0.7))   # the thicket
+            for _ in range(rng.randint(3, 5)):                              # silk cocoons in it
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.2, 0.9)
+                c = Vector((math.cos(a) * d, math.sin(a) * d, rng.uniform(0.4, 0.9)))
+                tube(bm, uv, [(c + Vector((0, 0, -0.32)), 0.03), (c + Vector((0, 0, -0.2)), 0.13), (c, 0.16),
+                              (c + Vector((0, 0, 0.2)), 0.12), (c + Vector((0, 0, 0.3)), 0.02)], 8, 0)
+        elif kind == "ruu_reeds":
+            for _ in range(8):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.35)), 0.22, 0.42, 12, 0, size=(0.25, 0.45))
+        elif kind == "oss_bamboo":
+            for _ in range(rng.randint(9, 14)):                             # culms: tall, thin, leaning a little
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.8)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                top = base + Vector((rng.uniform(-.25, .25), rng.uniform(-.25, .25), rng.uniform(2.2, 3.4)))
+                limb(bm, uv, base, top, 0.045, 0.03, 0, sides=5, segs=2)
+                clump(bm, uv, top - Vector((0, 0, 0.3)), 0.35, 0.45, 6, 1, size=(0.35, 0.55))
+        elif kind == "oss_uneti":
+            giant(bm, uv, 2.2, 0.32, 6, [(1.9, 6, 1.5, 1.1), (2.5, 3, 0.7, 1.0)], 2.9, 520)
+        elif kind == "oss_wodobo":
+            for _ in range(7):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.1)
+                r = rng.uniform(0.3, 0.5)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.6)), r, r * 0.55, 18, 0, size=(0.35, 0.55))
+        elif kind == "oss_rubble":
+            a = rng.uniform(0, 6.283)                                       # a toppled column in pieces
+            for i in range(3):
+                c = Vector((math.cos(a) * 0.55 * i - 0.5, math.sin(a) * 0.55 * i, 0.12))
+                limb(bm, uv, c, c + Vector((math.cos(a), math.sin(a), 0)) * 0.48, 0.14, 0.14, 0, sides=8, segs=1)
+            lathe(bm, uv, (0.6, -0.5), [(-0.3, 0.3), (0.5, 0.26)], 8, 0)    # a standing stump
+            for _ in range(6):
+                c = Vector((rng.uniform(-1.3, 1.3), rng.uniform(-1.3, 1.3), 0.0))
+                lathe(bm, uv, (c.x, c.y), [(-0.1, rng.uniform(0.12, 0.22)), (0.18, 0.14), (0.25, 0.03)], 4, 0)
+        elif kind == "lola_vent":
+            for i in range(rng.randint(2, 3)):                              # cones with a crater dip on top
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.9) * (i > 0)
+                r, h = rng.uniform(0.5, 0.8) * (1.0 if i == 0 else 0.7), rng.uniform(0.6, 1.0) * (1.0 if i == 0 else 0.7)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (h * 0.7, r * 0.45), (h, r * 0.3),
+                                                                     (h * 0.8, r * 0.15)], 9, 0)
+        elif kind == "lola_shards":
+            for _ in range(rng.randint(4, 7)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.1)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, rng.uniform(0.12, 0.25)), (rng.uniform(0.5, 1.5), 0.02)],
+                      4, 0, (rng.uniform(-0.25, 0.25), rng.uniform(-0.25, 0.25)))
+        elif kind == "rv_pillars":
+            for i in range(rng.randint(3, 5)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.9) * (i > 0)
+                h, r = rng.uniform(1.4, 2.8) * (1.0 if i == 0 else 0.75), rng.uniform(0.18, 0.3)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r * 1.4), (h * 0.3, r), (h * 0.75, r * 0.85),
+                                                                     (h, r * 1.15), (h * 1.05, r * 0.6)], 7, 0)
+        elif kind == "rv_arch":
+            for x in (-0.8, 0.8):
+                lathe(bm, uv, (x, 0.0), [(-0.2, 0.32), (1.2, 0.26), (1.5, 0.3)], 7, 0)
+            pts = [Vector((-0.8 + 1.6 * i / 6, 0.0, 1.4 + 0.45 * math.sin(math.pi * i / 6))) for i in range(7)]
+            for a_, b_ in zip(pts, pts[1:]):
+                limb(bm, uv, a_, b_, 0.2, 0.2, 0, sides=6, segs=1)
+        elif kind == "rv_tree":
+            giant(bm, uv, 2.2, 0.15, 3, [(1.8, 5, 0.75, 0.85), (2.4, 3, 0.4, 0.75)], 2.8, 380)
+        elif kind == "rh_ice":
+            for _ in range(rng.randint(5, 8)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.0)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, rng.uniform(0.1, 0.22)), (rng.uniform(0.4, 1.3), 0.02)],
+                      5, 0, (rng.uniform(-0.3, 0.3), rng.uniform(-0.3, 0.3)))
+        elif kind == "rh_ruin":
+            lathe(bm, uv, (0.0, 0.0), [(-0.3, 0.26), (rng.uniform(0.6, 1.2), 0.22)], 8, 0)            # a column stump
+            box(bm, uv, (0.4, -0.6, -0.3), (1.2, -0.45, 0.6), 0)                                     # a wall corner
+            box(bm, uv, (1.05, -0.6, -0.3), (1.2, 0.2, 0.45), 0)
+            for _ in range(4):
+                c = Vector((rng.uniform(-1.2, 1.2), rng.uniform(-1.2, 1.2), 0.0))
+                lathe(bm, uv, (c.x, c.y), [(-0.1, rng.uniform(0.12, 0.2)), (0.18, 0.13), (0.24, 0.03)], 4, 0)
+        elif kind == "rh_deadtree":
+            top = crooked(Vector((0, 0, -0.2)), Vector((0, 0, 1)), rng.uniform(1.8, 2.6), 0.13, parts=4, kink=0.2)
+            for z in (0.9, 1.3, 1.7):
+                a = rng.uniform(0, 6.283)
+                crooked(Vector((0, 0, z)), Vector((math.cos(a), math.sin(a), 0.45)), rng.uniform(0.5, 0.9), 0.05, parts=2)
         elif kind == "zyg_tree":
             giant(bm, uv, 1.6, 0.12, 3, [(1.45, 5, 0.85, 0.7)], 1.75, 360)   # short trunk, flat spreading crown
         else:                                                               # zyg_shrubs
@@ -1012,7 +1230,7 @@ def procedural(*only):
     for idx, kind in PROCEDURAL.items():
         if only and str(idx) not in only and kind not in only:
             continue
-        if kind.startswith(("dk_", "zyg_", "canto_")):
+        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_")):
             rng.seed(kind)
         bpy.ops.wm.read_factory_settings(use_empty=True)
         me = bpy.data.meshes.new(kind)
@@ -1039,7 +1257,7 @@ def procedural(*only):
         elif kind.startswith("kor_"):
             korriban_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
-        elif kind.startswith(("dk_", "zyg_", "canto_")):
+        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_")):
             planet_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
         else:
@@ -1051,7 +1269,7 @@ def procedural(*only):
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_")):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)

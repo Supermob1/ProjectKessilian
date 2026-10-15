@@ -1,0 +1,920 @@
+{
+ "centre": [
+  763.4119601328904,
+  2288.261854424645
+ ],
+ "radius": 32.46419617293074,
+ "vp_names": {
+  "207": "Vindaport",
+  "581": "Station Lift",
+  "607": "Archhold",
+  "796": "Pillarwatch",
+  "984": "Terrace Reach",
+  "1517": "Mistfall",
+  "1760": "Westspan",
+  "2371": "Lowbridge",
+  "2888": "Spirefall"
+ },
+ "provinces": {
+  "207": {
+   "zone": "city",
+   "kind": 4,
+   "feature": "Vindaport",
+   "state": 81,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    774.6722689075631,
+    2290.9579831932774
+   ],
+   "area": 119,
+   "terrain": "urban"
+  },
+  "398": {
+   "zone": "city",
+   "kind": 4,
+   "feature": "Vindaport",
+   "state": 81,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    766.6732026143791,
+    2297.424836601307
+   ],
+   "area": 153,
+   "terrain": "urban"
+  },
+  "581": {
+   "zone": "lift",
+   "kind": 6,
+   "feature": "Station Lift",
+   "state": 81,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    757.0,
+    2301.3214285714284
+   ],
+   "area": 28,
+   "terrain": "urban"
+  },
+  "607": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Archhold",
+   "state": 720,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    781.5806451612904,
+    2274.548387096774
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "796": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Pillarwatch",
+   "state": 721,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    740.074074074074,
+    2285.5925925925926
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "984": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Terrace Reach",
+   "state": 722,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    766.0,
+    2312.793103448276
+   ],
+   "area": 29,
+   "terrain": "urban"
+  },
+  "1517": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Mistfall",
+   "state": 723,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    788.074074074074,
+    2295.4074074074074
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "1760": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Westspan",
+   "state": 724,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    752.34375,
+    2265.0
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "2371": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Lowbridge",
+   "state": 725,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    779.0,
+    2307.206896551724
+   ],
+   "area": 29,
+   "terrain": "urban"
+  },
+  "2888": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Spirefall",
+   "state": 726,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    751.6666666666666,
+    2276.5
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "3027": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    765.5416666666666,
+    2263.4166666666665
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "3052": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    769.5454545454545,
+    2289.6363636363635
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "3597": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    768.952380952381,
+    2276.8571428571427
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "3751": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    771.68,
+    2271.24
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "4511": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    765.1428571428571,
+    2269.5238095238096
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4523": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    767.9473684210526,
+    2281.4210526315787
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "5003": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    765.8260869565217,
+    2257.8695652173915
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "5071": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    769.0869565217391,
+    2267.4347826086955
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "5361": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    768.4375,
+    2285.3125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "5723": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Mist Chasm",
+   "state": 1184,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    767.25,
+    2273.45
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "5743": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    741.3571428571429,
+    2297.3928571428573
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "9319": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    749.7307692307693,
+    2312.346153846154
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "9327": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    733.0526315789474,
+    2294.3684210526317
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "9335": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    740.125,
+    2307.8333333333335
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "9344": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    736.1153846153846,
+    2300.923076923077
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "9349": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    744.4705882352941,
+    2308.529411764706
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "9352": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    736.3809523809524,
+    2296.3333333333335
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "9360": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    740.4,
+    2303.233333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "9369": {
+   "zone": "range",
+   "kind": 8,
+   "feature": "Spire Range",
+   "state": 1185,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    744.9,
+    2312.3
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "9374": {
+   "zone": "highland",
+   "kind": 2,
+   "feature": "Vindaport Heights",
+   "state": 81,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    761.2261904761905,
+    2287.3571428571427
+   ],
+   "area": 84,
+   "terrain": "hills"
+  },
+  "9376": {
+   "zone": "highland",
+   "kind": 2,
+   "feature": "Vindaport Heights",
+   "state": 81,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    752.1830985915493,
+    2303.4084507042253
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "9391": {
+   "zone": "highland",
+   "kind": 2,
+   "feature": "Vindaport Heights",
+   "state": 81,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    755.6551724137931,
+    2295.4367816091954
+   ],
+   "area": 87,
+   "terrain": "hills"
+  },
+  "9402": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Arch Valleys",
+   "state": 720,
+   "group": 12,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    773.0340909090909,
+    2261.590909090909
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "9407": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Arch Valleys",
+   "state": 720,
+   "group": 12,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    789.5463917525773,
+    2277.6907216494847
+   ],
+   "area": 97,
+   "terrain": "plains"
+  },
+  "9426": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Arch Valleys",
+   "state": 720,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    775.0597014925373,
+    2278.955223880597
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "9432": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Arch Valleys",
+   "state": 720,
+   "group": 12,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    783.9090909090909,
+    2267.4545454545455
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "9438": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Arch Valleys",
+   "state": 720,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    776.8666666666667,
+    2269.7
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "9439": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Arch Valleys",
+   "state": 720,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    781.9295774647887,
+    2282.169014084507
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "9441": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Northern Pillars",
+   "state": 721,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    747.0642201834862,
+    2286.4495412844035
+   ],
+   "area": 109,
+   "terrain": "hills"
+  },
+  "9443": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Northern Pillars",
+   "state": 721,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    746.1944444444445,
+    2298.4166666666665
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "9451": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Northern Pillars",
+   "state": 721,
+   "group": 13,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    737.1267605633802,
+    2290.6619718309857
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "9466": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Northern Pillars",
+   "state": 721,
+   "group": 13,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    739.7311827956989,
+    2276.2258064516127
+   ],
+   "area": 93,
+   "terrain": "hills"
+  },
+  "9467": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Northern Pillars",
+   "state": 721,
+   "group": 13,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    734.53125,
+    2282.6875
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "9480": {
+   "zone": "highland",
+   "kind": 2,
+   "feature": "Eastern Terraces",
+   "state": 722,
+   "group": 14,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    759.35,
+    2316.225
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "9481": {
+   "zone": "highland",
+   "kind": 2,
+   "feature": "Eastern Terraces",
+   "state": 722,
+   "group": 14,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    752.0921052631579,
+    2311.8947368421054
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "9491": {
+   "zone": "highland",
+   "kind": 2,
+   "feature": "Eastern Terraces",
+   "state": 722,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    762.9125,
+    2307.35
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "9499": {
+   "zone": "highland",
+   "kind": 2,
+   "feature": "Eastern Terraces",
+   "state": 722,
+   "group": 14,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    769.7540983606557,
+    2316.6721311475408
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "9511": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Southern Mistlands",
+   "state": 723,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    782.943820224719,
+    2290.8988764044943
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "9526": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Southern Mistlands",
+   "state": 723,
+   "group": 15,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    789.5540540540541,
+    2299.445945945946
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "9547": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Southern Mistlands",
+   "state": 723,
+   "group": 15,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    791.8023255813954,
+    2288.2441860465115
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "9576": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Western Pillars",
+   "state": 724,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    759.7222222222222,
+    2268.3611111111113
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "9577": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Western Pillars",
+   "state": 724,
+   "group": 16,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    746.8823529411765,
+    2263.1960784313724
+   ],
+   "area": 51,
+   "terrain": "hills"
+  },
+  "9587": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Western Pillars",
+   "state": 724,
+   "group": 16,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    758.329268292683,
+    2259.9268292682927
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "9606": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Lowbridge Vale",
+   "state": 725,
+   "group": 17,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    784.987012987013,
+    2307.7922077922076
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "9613": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Lowbridge Vale",
+   "state": 725,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    777.9264705882352,
+    2301.926470588235
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "9614": {
+   "zone": "valley",
+   "kind": 1,
+   "feature": "Lowbridge Vale",
+   "state": 725,
+   "group": 17,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    775.0,
+    2311.4315789473685
+   ],
+   "area": 95,
+   "terrain": "plains"
+  },
+  "9618": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Spirefall Highlands",
+   "state": 726,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    761.2093023255813,
+    2278.360465116279
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "9619": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Spirefall Highlands",
+   "state": 726,
+   "group": 18,
+   "coastal": true,
+   "sea": 18966,
+   "centre": [
+    744.4567901234568,
+    2270.7283950617284
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "9642": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Spirefall Highlands",
+   "state": 726,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    752.688524590164,
+    2272.4754098360654
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "9652": {
+   "zone": "pillars",
+   "kind": 3,
+   "feature": "Spirefall Highlands",
+   "state": 726,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    753.6290322580645,
+    2283.048387096774
+   ],
+   "area": 62,
+   "terrain": "hills"
+  }
+ }
+}

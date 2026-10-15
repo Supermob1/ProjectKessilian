@@ -1,0 +1,9 @@
+# HOD: an invisible emitter for Etti IV (etti_iv_fx.py), placed by map/ambient_object.txt
+entity = {
+	name = "hod_etti_smoke_entity"
+	cull_radius = 4
+	default_state = "idle"
+	state = { name = "idle" state_time = 2 looping = no
+		event = { time = 0 particle = "hod_etti_smoke_particle" keep_particle = yes }
+	}
+}

@@ -92,6 +92,19 @@ SPECS.update({f"eaw_{n}": dict(path=f"{_EAW}/eaw_{n}.glb", kind="building", budg
                                       ("officerAcademy", 2.0, 1800), ("infantrybarracks", 2.2, 1800),
                                       ("rebelBuilding1", 2.2, 1800), ("bespinBuilding3", 2.0, 1500), ("droidworks", 2.2, 2000))})
 BUILDING_OUT = "gfx/models/buildings/hod_sw"
+# Bonadan's orbital shipyard (military_buildings.py bon_shipyard): the Old Republic ships of the Battlefront II /
+# Empire at War conversions, clean (not wrecked), as parts of the shipyard mesh: written next to it (hod_landmarks)
+# so its materials find their textures. size = length in map units
+_LM = "gfx/models/buildings/hod_landmarks"
+SPECS.update({
+    "bon_derriphan": dict(path=f"{_RP}/sth_fly_derriphan.glb", kind="building", budget=2200, size=10.5, out=_LM,
+                          lift=(125, (172, 170, 164))),   # Sith-dark grey hull: lifted to the yard's light grey
+    "bon_hammerhead": dict(path=f"{_RP}/orp_fly_hammerhead.glb", kind="building", budget=1600, size=8.5, out=_LM),
+    "bon_foray": dict(src="star_wars_foray-class_blockade_runner", kind="building", budget=1400, size=6.5, remesh=6,
+                      out=_LM),
+    "bon_lethisk": dict(path=f"{_RP}/orp_fly_lethisk.glb", kind="building", budget=700, size=2.6, out=_LM),
+    "bon_chela": dict(path=f"{_RP}/orp_fly_chela.glb", kind="building", budget=300, size=1.1, out=_LM),
+})
 
 
 def mesh_name(name):
@@ -100,7 +113,7 @@ def mesh_name(name):
 
 
 def out_of(name):
-    return BUILDING_OUT if SPECS[name]["kind"] == "building" else OUT
+    return SPECS[name].get("out") or (BUILDING_OUT if SPECS[name]["kind"] == "building" else OUT)
 
 
 def bake(*only):
@@ -326,14 +339,14 @@ def bake(*only):
         print(f"{name}: {tris} -> {len(lo.data.polygons)} tris, size {d[0]:.2f} x {d[1]:.2f} x {d[2]:.2f}")
 
 
-def textures():
+def textures(*only):
     import numpy as np
     from PIL import Image
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from flora_props import save_dxt5_mips
     for name, s in SPECS.items():
         path = f"{BAKED}/{name}.png"
-        if not os.path.exists(path):
+        if only and name not in only or not os.path.exists(path):
             continue
         im = np.asarray(Image.open(path).convert("RGB").resize((512, 512), Image.LANCZOS)).astype(np.float32)
         full = lambda v: np.full((512, 512), v, np.float32)
@@ -351,7 +364,8 @@ def textures():
             for v, hue in PAINT.items():
                 save_dxt5_mips(np.dstack([repaint(im, hue), full(255)]), f"{OUT_}/{stem}_{v}_diffuse.dds")
         if s["kind"] != "prop":      # Advanced layout (normal G/A = xy, B = night emission; props G spec, B metal, A gloss)
-            emi = windows(emi_src) if s["kind"] == "building" else full(0)
+            # ships (out = the shipyard) get no "lit windows": their white hull paint glowed as white dots
+            emi = windows(emi_src) if s["kind"] == "building" and not name.startswith("bon_") else full(0)
             save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{OUT_}/{stem}_normal.dds")
             save_dxt5_mips(np.dstack([full(0), full(70), full(0), full(90)]), f"{OUT_}/{stem}_properties.dds")
         else:

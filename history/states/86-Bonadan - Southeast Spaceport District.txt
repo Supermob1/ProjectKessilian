@@ -1,0 +1,35 @@
+state={
+	id=86
+	name="STATE_86"
+	# HOD: Bonadan (bonadan_map.py)
+	provinces={
+		119 167 242 258 307 373 378 408 6517 6520 6524 6525 6529 6531 6536 6537 6545 6546 6549 6550 6552 6559 6566 6569
+	}
+	resources={
+		aluminium=3#Minerals
+		steel=1#Alloys
+	}
+	history = {
+		victory_points = {
+			242 10
+		}
+		victory_points = {
+			258 3
+		}
+		victory_points = {
+			408 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 5
+			air_base = 3
+		}
+		owner = CSA
+		add_core_of = CSA
+	}
+	manpower = 1831210
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

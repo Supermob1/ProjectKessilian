@@ -1,0 +1,44 @@
+state={
+	id=87
+	name="STATE_87"
+	# HOD: Etti IV (etti_iv_map.py)
+	provinces={
+		18 21 77 152 176 208 213 235 5922 6130 6175 6181 6202 6216 6475 6476 6478 6482 6488 6493 6501 6502 6505
+	}
+	resources={
+		coal=2
+		oil=2
+	}
+	history = {
+		victory_points = {
+			21 10
+		}
+		victory_points = {
+			77 2
+		}
+		victory_points = {
+			152 1
+		}
+		victory_points = {
+			208 2
+		}
+		victory_points = {
+			235 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 4
+					21 = {
+				naval_base = 4
+			}
+		}
+		owner = CSA
+		add_core_of = CSA
+	}
+	manpower = 332573
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

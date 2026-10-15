@@ -310,6 +310,84 @@ C_STONE, C_STONE_WIN, C_PLASTER, C_PLASTER_WIN = (_cell(i, 0) for i in range(4))
 C_SLATE, C_SLATE_LIT, C_ROOF, C_DARK = (_cell(i, 1) for i in range(4))
 C_GLOW, C_RAIL, C_PAD, C_GARDEN = (_cell(i, 2) for i in range(4))
 C_SITH, C_SITH_GLYPH, C_SITH_DARK, C_SAND = (_cell(i, 3) for i in range(4))
+# hod_bonadan atlas (bonadan_atlas; Legends: a polluted industrial world of factories, refineries, docks and shipyards
+# on yellow eroded wastes): grimy ochre-grey factory plate, plain and with lit window rows; stained concrete, plain and
+# with lit strip windows; rust; soot black; corrugated roof sheet; hazard stripes; warm light; a landing pad;
+# steel pipework; hull plating; girder lattice; soot-stained chimney brick; yellow drift dust
+B_PLATE, B_PLATE_WIN, B_CONC, B_CONC_WIN = (_cell(i, 0) for i in range(4))
+B_RUST, B_SOOT, B_ROOF, B_HAZARD = (_cell(i, 1) for i in range(4))
+B_GLOW, B_PAD, B_PIPE, B_HULL = (_cell(i, 2) for i in range(4))
+B_GIRDER, B_BRICK, B_DUST, B_DARK = (_cell(i, 3) for i in range(4))
+# hod_etti atlas (etti_atlas; Etti IV, the Corporate Sector's rich capital world: Mondder's towers in the Legends comics
+# "Mondder streets" / "Imperial Embassy" stills: pale ceramic and teal glass, neon at street level; Cybot Galactica's
+# Arcoplex in cobalt and gold): white ceramic panels, plain and with lit window bands; teal glass curtain wall, plain
+# and lit; cobalt panels with windows; gold trim; blue-grey steel; roof; warm light; neon; a landing pad; hazard
+# stripes; garden; dome glass; concrete; dark
+E_CERAMIC, E_CERAMIC_WIN, E_GLASS, E_GLASS_LIT = (_cell(i, 0) for i in range(4))
+E_COBALT, E_COBALT_WIN, E_GOLD, E_STEEL = (_cell(i, 1) for i in range(4))
+E_ROOF, E_GLOW, E_NEON, E_PAD = (_cell(i, 2) for i in range(4))
+E_HAZARD, E_GARDEN, E_DOME, E_DARK = (_cell(i, 3) for i in range(4))
+# hod_ruuria atlas (ruuria_atlas; Ruuria: the caterpillar-like Ruurians' colony hives in a humid jungle (Legends), the
+# University of Ruuria (canon + Legends); the look is a design choice from the species: silk, chitin, resin):
+# woven silk-white cocoon wall, plain and with resin-lit openings; amber chitin plates, plain and with openings;
+# pale university stone, plain and with arched windows; green roof moss; warm resin glow; dark openings; bark-brown
+# stalk; slate roof; pink river stone; leaf green; bronze; dome glass; mud
+R_SILK, R_SILK_WIN, R_CHITIN, R_CHITIN_WIN = (_cell(i, 0) for i in range(4))
+R_STONE, R_STONE_WIN, R_MOSS, R_GLOW = (_cell(i, 1) for i in range(4))
+R_DARK, R_STALK, R_SLATE, R_PINK = (_cell(i, 2) for i in range(4))
+R_LEAF, R_BRONZE, R_DOME, R_MUD = (_cell(i, 3) for i in range(4))
+# hod_ossus atlas (ossus_atlas; Ossus four thousand years after the Cron Supernova: Knossa "built from stone and
+# bronzium, its squat domes" (canon), the Great Jedi Library "a large, unadorned stone building" (Legends), the masked
+# Ysanna tribes (canon + Legends), Jedi archaeologists' digs (Legends)): weathered pale stone, plain and with dark
+# empty windows; stone scorched by the supernova; patinated bronzium; moss and vines; rubble; Ysanna hide, timber,
+# painted mask red; excavation tarp; scaffold wood; the vergence's pale glow; dark openings; earth
+O_STONE, O_STONE_WIN, O_SCORCH, O_BRONZE = (_cell(i, 0) for i in range(4))
+O_MOSS, O_RUBBLE, O_HIDE, O_TIMBER = (_cell(i, 1) for i in range(4))
+O_MASK, O_TARP, O_SCAFFOLD, O_GLOW = (_cell(i, 2) for i in range(4))
+O_DARK, O_EARTH, O_ROCK, O_STONE_CARVED = (_cell(i, 3) for i in range(4))
+# hod_lola atlas (lola_atlas; Lola Sayu: the broken volcanic world and the Citadel, the Republic's prison for rogue Jedi
+# (canon, TCW "The Citadel"): a dark angular fortress of grey plating with pale window bands, built over lava):
+# basalt, plain and with glowing lava cracks; cooled crust; dark grey plating, plain and with lit window bands;
+# ribbed metal; lava (bright); sulfur; dark openings; landing pad; pale light; red warning light; Republic blue trim
+L_BASALT, L_BASALT_CRACK, L_CRUST, L_PLATE = (_cell(i, 0) for i in range(4))
+L_PLATE_WIN, L_RIB, L_LAVA, L_SULFUR = (_cell(i, 1) for i in range(4))
+L_DARK, L_PAD, L_GLOW, L_RED = (_cell(i, 2) for i in range(4))
+L_TRIM, L_ROCK, L_STRATA, L_SPARE2 = (_cell(i, 3) for i in range(4))   # L_STRATA: the planet's cross-section
+# hod_ringo atlas (ringo_atlas; Ringo Vinda: the surface after the early Cato Neimoidia concept art the planet was
+# designed from (canon, out-of-universe): pale banded rock pillars and arches, cities of cream stone with green-bronze
+# domes hung beneath them; the space station (TCW): a vast grey-tan ring of hull plating): banded pillar rock, plain
+# and weathered; cream city stone, plain and with lit windows; green-bronze dome; slate roof; warm light; dark; grey-tan
+# hull, plain and with lit window rows; ribbed panels; dock lights; hazard; landing pad; garden; glass
+V_ROCK, V_ROCK_DARK, V_STONE, V_STONE_WIN = (_cell(i, 0) for i in range(4))
+V_DOME, V_ROOF, V_GLOW, V_DARK = (_cell(i, 1) for i in range(4))
+V_HULL, V_HULL_WIN, V_PANEL, V_LIGHT = (_cell(i, 2) for i in range(4))
+V_HAZARD, V_PAD, V_GARDEN, V_GLASS = (_cell(i, 3) for i in range(4))
+# hod_rhen atlas (rhen_atlas; Rhen Var: the castles, fortresses and temples of a lost civilization engulfed by an ice
+# age (Legends; Star Wars: Battlefront "Rhen Var Harbor" / "Rhen Var Citadel"), the Republic's Bravo Base (Legends)):
+# frost-weathered blue-grey stone, plain and with dark arched windows; carved stone; snow; ice; dark openings;
+# Republic prefab panel, plain and with lit windows; Republic red stripe; dark Sith stone; Rakatan stone with glowing
+# script; light; landing pad; hazard; frozen timber
+H_STONE, H_STONE_WIN, H_CARVED, H_SNOW = (_cell(i, 0) for i in range(4))
+H_ICE, H_DARK, H_PANEL, H_PANEL_WIN = (_cell(i, 1) for i in range(4))
+H_RED, H_SITH, H_RAKATA, H_GLOW = (_cell(i, 2) for i in range(4))
+H_PAD, H_HAZARD, H_TIMBER, H_ROOF = (_cell(i, 3) for i in range(4))
+# the orbital shipyard's arc (bonadan_map.PLACEMENT puts the origin): radius round the planet centre in map units
+# (the planet is ~60 px across in radius), its ends as angles (degrees, east = 0, north +: provinces 6525 and 6947),
+# and the height its underside floats above the space floor
+BON_ORBIT_R, BON_ARC, BON_FLOAT = 72.0, (-51.8, 47.5), 3.0
+LOLA_TURNS = 3     # yaw copies of each Lola Sayu chunk
+# Ringo Vinda's ring station: radius round the planet centre (map units; the planet is ~32 px in radius and Lola Sayu's
+# land is 47 px away to the east), its underside's height over the space floor, its graving docks, the moored ships'
+# scale (the converted ships of sketchfab_props.py bon_*)
+RV_RING_R, RV_FLOAT, RV_DOCKS, RV_SHIP_SCALE = 38.0, 2.5, 12, 0.85
+LOLA_FLOAT = 2.0   # Lola Sayu's debris: the chunks' undersides float this far above the space floor (water plane ~1.1 up)
+# its slips from the south end to the north: (ship, share of the hull plated), the ships of sketchfab_props.py bon_*;
+# (length, beam, height) of each as baked
+BON_SLIPS = [("hammerhead", 1.0), ("derriphan", 0.45), ("foray", 1.0), ("hammerhead", 0.6), ("derriphan", 1.0),
+             ("hammerhead", 0.35), ("derriphan", 0.7), ("foray", 0.5)]
+BON_SHIP_SCALE = 1.45          # the baked ships (sketchfab_props.py sizes) enlarged to fill their slips
+BON_SHIP_DIMS = {k_: tuple(BON_SHIP_SCALE * d for d in v) for k_, v in
+                 {"derriphan": (10.5, 2.9, 6.2), "hammerhead": (8.5, 3.85, 3.7), "foray": (6.0, 1.4, 1.0)}.items()}
 
 
 def kadavo_atlas():
@@ -607,6 +685,350 @@ def cantonica_atlas():
     _atlas_save("hod_cantonica", col, emi, spec)
 
 
+def bonadan_atlas():
+    """hod_bonadan textures (Legends Bonadan: factories, refineries, docks and shipyards under polluted air; the map is
+    always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 86)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    sooty = lambda rgb: rgb * (0.78 + 0.28 * grime) * (0.8 + 0.25 * blotch) * (0.75 + 0.3 * streak)
+    seams = (((xx % 48) < 2) | ((yy % 32) < 2))[..., None]
+    plate = sooty(np.array([150, 140, 112], np.float32)) * (1 - 0.25 * seams)
+    put(B_PLATE, plate, sp=60)
+    rows = ((yy % 32) > 12) & ((yy % 32) < 20) & ((xx % 16) > 3)
+    lit = rows & (rng.random((t, t)) > 0.3)
+    warm = np.array([255, 205, 120], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], warm, np.where(rows[..., None], [36, 34, 30], plate)), e=np.where(lit, 220, 0), sp=60)
+    conc = sooty(np.array([168, 160, 144], np.float32)) * (1 - 0.15 * ((yy % 40) < 2)[..., None])
+    put(B_CONC, conc)
+    strip = (np.abs((yy % 40) - 22) < 3) & ((xx % 64) > 4)
+    put(B_CONC_WIN, np.where(strip[..., None], warm * (0.9 + 0.1 * grime), conc), e=np.where(strip, 230, 0))
+    put(B_RUST, np.array([150, 72, 38], np.float32) * (0.7 + 0.45 * grime) * (0.8 + 0.3 * streak), sp=50)
+    put(B_SOOT, np.array([34, 30, 28], np.float32) * (0.8 + 0.4 * grime))
+    put(B_ROOF, sooty(np.array([128, 124, 116], np.float32)) * (0.85 + 0.15 * np.sin(xx / 3.0))[..., None], sp=80)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [235, 190, 40], [30, 28, 26]) * (0.8 + 0.25 * grime))
+    put(B_GLOW, warm * (1.0 + 0.1 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (110, 108, 102))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(240, 190, 40), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 230), width=int(t * 0.04))
+    d.line([(t * 0.2, t * 0.5), (t * 0.8, t * 0.5)], fill=(240, 240, 230), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.75 + 0.3 * grime))
+    put(B_PIPE, np.array([120, 118, 112], np.float32) * (0.75 + 0.35 * grime) * (0.9 + 0.1 * np.sin(yy / 2.0))[..., None], sp=110)
+    hull = np.array([176, 176, 168], np.float32) * (0.85 + 0.2 * grime) * (1 - 0.2 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=90)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [110, 96, 70], [40, 36, 32]) * (0.8 + 0.3 * grime), sp=80)
+    brick = 1 - 0.25 * (((yy % 12) < 2) | ((((xx + 12 * ((yy // 12) % 2)) % 24) < 2)))[..., None]
+    soot_top = np.clip((t * 0.35 - yy) / (t * 0.35), 0, 1)[..., None]   # v 1 (the top) blackened
+    put(B_BRICK, np.array([142, 82, 56], np.float32) * brick * (0.8 + 0.3 * grime) * (1 - 0.75 * soot_top))
+    put(B_DUST, np.array([214, 184, 112], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    put(B_DARK, np.array([20, 20, 22], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_bonadan", col, emi, spec)
+
+
+def etti_atlas():
+    """hod_etti textures (Etti IV: Mondder's corporate towers, Cybot Galactica's Arcoplex; the map is always day:
+    lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 87)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.9 + 0.12 * grime) * (0.94 + 0.08 * blotch)
+    seams = (((xx % 64) < 2) | ((yy % 40) < 2))[..., None]
+    ceramic = clean(np.array([226, 224, 216], np.float32)) * (1 - 0.12 * seams)
+    put(E_CERAMIC, ceramic, sp=80)
+    band = (yy % 40 > 14) & (yy % 40 < 26)
+    lit = band & ((xx % 20) > 3) & (rng.random((t, t)) > 0.25)
+    warm = np.array([255, 214, 150], np.float32)
+    put(E_CERAMIC_WIN, np.where(lit[..., None], warm, np.where(band[..., None], [48, 70, 78], ceramic)), e=np.where(lit, 220, 0), sp=80)
+    mull = (((xx % 24) < 2) | ((yy % 32) < 2))[..., None]
+    glass = np.array([70, 150, 160], np.float32) * (0.85 + 0.25 * blotch) * (1 - 0.35 * mull) + 25 * mull
+    put(E_GLASS, glass, sp=220)
+    glit = ~mull[..., 0] & (rng.random((t, t)) > 0.55)
+    put(E_GLASS_LIT, np.where(glit[..., None], warm * 0.95, glass), e=np.where(glit, 200, 0), sp=220)
+    cob = np.array([48, 72, 132], np.float32) * (0.85 + 0.2 * grime) * (1 - 0.2 * seams)
+    put(E_COBALT, cob, sp=120)
+    cw = ((xx % 16) > 5) & ((yy % 24) > 9) & ((yy % 24) < 17)
+    put(E_COBALT_WIN, np.where(cw[..., None], [150, 220, 255], cob), e=np.where(cw, 210, 0), sp=120)
+    put(E_GOLD, np.array([214, 172, 80], np.float32) * (0.85 + 0.25 * grime), sp=200)
+    put(E_STEEL, np.array([120, 132, 146], np.float32) * (0.85 + 0.25 * grime) * (1 - 0.15 * seams), sp=140)
+    put(E_ROOF, clean(np.array([150, 154, 158], np.float32)), sp=60)
+    put(E_GLOW, warm + 10, e=255, sp=200)
+    stripes = ((yy // 16) % 3)[..., None]
+    put(E_NEON, np.where(stripes == 0, [80, 240, 255], np.where(stripes == 1, [255, 80, 200], [255, 230, 120])), e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (96, 100, 108))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(90, 230, 240), width=int(t * 0.045))
+    d.rectangle([t * 0.44, t * 0.25, t * 0.56, t * 0.75], fill=(230, 230, 225))
+    put(E_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(E_HAZARD, np.where(haz, [235, 190, 40], [30, 28, 26]) * (0.85 + 0.2 * grime))
+    put(E_GARDEN, np.array([70, 128, 70], np.float32) * (0.7 + 0.5 * noise(1.5)))
+    lattice = ((np.abs(((xx + yy) % 40) - 20) < 2) | (np.abs(((xx - yy) % 40) - 20) < 2))[..., None]
+    put(E_DOME, np.where(lattice, [235, 235, 240], [150, 200, 215]) * (0.9 + 0.1 * grime), sp=230)
+    put(E_DARK, np.array([22, 24, 28], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_etti", col, emi, spec)
+
+
+def ruuria_atlas():
+    """hod_ruuria textures (Ruurian colony hives and the University of Ruuria; the map is always day: lights are
+    painted bright)."""
+    import numpy as np
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 88)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    weave = (0.86 + 0.1 * np.sin(xx / 2.5 + 2 * np.sin(yy / 9.0)) * np.sin(yy / 3.0 + xx / 17.0))[..., None]
+    silk = np.array([232, 226, 206], np.float32) * weave * (0.9 + 0.12 * blotch)
+    put(R_SILK, silk, sp=50)
+    holes = ((((xx - 12) % 32) ** 2 / 36 + ((yy - 14) % 40) ** 2 / 64) < 1)
+    lit = holes & (rng.random((t, t)) > 0.3)
+    resin = np.array([255, 186, 90], np.float32)
+    put(R_SILK_WIN, np.where(lit[..., None], resin, np.where(holes[..., None], [60, 44, 30], silk)), e=np.where(lit, 220, 0), sp=50)
+    plates = (1 - 0.3 * ((yy % 22) < 3)[..., None]) * (0.8 + 0.3 * grime)
+    chitin = np.array([186, 120, 52], np.float32) * plates * (0.85 + 0.2 * streak)
+    put(R_CHITIN, chitin, sp=170)
+    ch = ((xx % 28) > 9) & ((xx % 28) < 19) & ((yy % 22) > 7) & ((yy % 22) < 17)
+    put(R_CHITIN_WIN, np.where(ch[..., None], resin, chitin), e=np.where(ch, 210, 0), sp=170)
+    courses = ((yy % 24) < 2)[..., None]
+    stone = np.array([214, 206, 188], np.float32) * (0.85 + 0.2 * grime) * (1 - 0.15 * courses)
+    put(R_STONE, stone)
+    arch = (((xx % 32) > 10) & ((xx % 32) < 22) & ((yy % 48) > 14) & ((yy % 48) < 38)
+            & ~(((yy % 48) < 18) & (np.abs((xx % 32) - 16) > 4)))
+    al = arch & (rng.random((t, t)) > 0.3)
+    put(R_STONE_WIN, np.where(arch[..., None], np.where(al[..., None], resin * 0.95, [40, 36, 32]), stone), e=np.where(al, 200, 0))
+    put(R_MOSS, np.array([78, 120, 58], np.float32) * (0.7 + 0.5 * noise(1.5)))
+    put(R_GLOW, resin + 10, e=255, sp=200)
+    put(R_DARK, np.array([26, 22, 20], np.float32) * (0.8 + 0.4 * grime))
+    put(R_STALK, np.array([106, 80, 56], np.float32) * (0.75 + 0.3 * streak) * (0.9 + 0.1 * np.sin(xx / 3.0))[..., None])
+    put(R_SLATE, np.array([84, 96, 92], np.float32) * (0.85 + 0.25 * grime) * (1 - 0.2 * (((xx % 20) < 2) | ((yy % 14) < 2)))[..., None], sp=70)
+    put(R_PINK, np.array([214, 132, 160], np.float32) * (0.85 + 0.2 * blotch))
+    put(R_LEAF, np.array([62, 112, 54], np.float32) * (0.7 + 0.5 * noise(1.5)))
+    put(R_BRONZE, np.array([176, 136, 76], np.float32) * (0.8 + 0.3 * grime), sp=150)
+    lattice = ((np.abs(((xx + yy) % 36) - 18) < 2) | (np.abs(((xx - yy) % 36) - 18) < 2))[..., None]
+    put(R_DOME, np.where(lattice, [190, 160, 90], [170, 214, 196]) * (0.9 + 0.1 * grime), sp=220)
+    put(R_MUD, np.array([110, 86, 62], np.float32) * (0.8 + 0.3 * noise(1.5)))
+    _atlas_save("hod_ruuria", col, emi, spec)
+
+
+def ossus_atlas():
+    """hod_ossus textures (Ossus' ruins, the Ysanna and the archaeologists; nothing is lit but the vergence)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 194)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    courses = ((yy % 28) < 2)[..., None]
+    joints = (((xx + 22 * ((yy // 28) % 2)) % 44) < 2)[..., None] & ~courses
+    weather = (0.8 + 0.25 * grime) * (0.85 + 0.2 * blotch) * (0.85 + 0.2 * streak)
+    stone = np.array([206, 196, 172], np.float32) * weather * (1 - 0.2 * courses - 0.12 * joints)
+    put(O_STONE, stone)
+    win = ((xx % 36) > 12) & ((xx % 36) < 24) & ((yy % 56) > 16) & ((yy % 56) < 44) \
+        & ~(((yy % 56) < 21) & (np.abs((xx % 36) - 18) > 3))
+    put(O_STONE_WIN, np.where(win[..., None], [30, 28, 26], stone))
+    soot = smooth = noise(6)
+    put(O_SCORCH, stone * (0.35 + 0.5 * soot) * np.array([0.9, 0.85, 0.8]))
+    patina = noise(4)
+    bronze = np.array([176, 128, 64], np.float32) * (1 - patina * 0.6) + np.array([90, 150, 120], np.float32) * patina * 0.6
+    put(O_BRONZE, bronze * (0.8 + 0.25 * grime) * (1 - 0.15 * ((xx % 40) < 2)[..., None]), sp=140)
+    put(O_MOSS, np.array([86, 120, 62], np.float32) * (0.65 + 0.55 * noise(1.5)))
+    put(O_RUBBLE, np.array([168, 158, 138], np.float32) * (0.6 + 0.6 * noise(1.2)))
+    put(O_HIDE, np.array([170, 132, 92], np.float32) * (0.8 + 0.3 * grime) * (0.9 + 0.1 * np.sin(xx / 5.0))[..., None])
+    put(O_TIMBER, np.array([112, 82, 54], np.float32) * (0.75 + 0.3 * streak))
+    mask = Image.new("RGB", (t, t), (170, 46, 36))
+    d = ImageDraw.Draw(mask)
+    for i in range(4):                                                    # painted mask bands and eye shapes
+        d.rectangle([0, i * t // 4 + t // 10, t, i * t // 4 + t // 7], fill=(226, 196, 120))
+        d.ellipse([t * 0.2, i * t // 4 + 4, t * 0.4, i * t // 4 + t // 12], fill=(24, 20, 18))
+        d.ellipse([t * 0.6, i * t // 4 + 4, t * 0.8, i * t // 4 + t // 12], fill=(24, 20, 18))
+    put(O_MASK, np.asarray(mask, np.float32) * (0.85 + 0.2 * grime))
+    put(O_TARP, np.array([92, 112, 96], np.float32) * (0.85 + 0.2 * grime) * (0.9 + 0.1 * np.sin(yy / 4.0))[..., None])
+    put(O_SCAFFOLD, np.array([150, 122, 82], np.float32) * (0.8 + 0.3 * streak) * (1 - 0.3 * ((xx % 24) < 3)[..., None]))
+    put(O_GLOW, np.array([190, 230, 255], np.float32) + 10, e=255, sp=200)
+    put(O_DARK, np.array([22, 20, 18], np.float32) * (0.8 + 0.4 * grime))
+    put(O_EARTH, np.array([126, 104, 76], np.float32) * (0.8 + 0.3 * noise(1.5)))
+    put(O_ROCK, np.array([138, 130, 118], np.float32) * (0.7 + 0.4 * noise(3)) * (0.9 + 0.15 * streak))
+    gl = Image.new("L", (t, t), 0)                                        # carved band of Ossan script
+    d = ImageDraw.Draw(gl)
+    for i in range(12):
+        x0 = i * t / 12 + 3
+        for _ in range(3):
+            a, b = rng.uniform(0, t / 12 - 6, 2)
+            d.line([(x0 + a, t * 0.42 + rng.uniform(0, t * 0.06)), (x0 + b, t * 0.54 + rng.uniform(0, t * 0.06))], fill=255, width=4)
+    cut = (np.asarray(gl, np.float32) / 255)[..., None]
+    put(O_STONE_CARVED, stone * (1 - 0.5 * cut))
+    _atlas_save("hod_ossus", col, emi, spec)
+
+
+def lola_atlas():
+    """hod_lola textures (Lola Sayu's basalt and lava, the Citadel's plating; lava and lights painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 193)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    basalt = np.array([58, 52, 54], np.float32) * (0.7 + 0.45 * noise(1.5)) * (0.85 + 0.25 * blotch)
+    put(L_BASALT, basalt, sp=60)
+    cr = Image.new("L", (t, t), 0)                                         # a web of glowing cracks
+    d = ImageDraw.Draw(cr)
+    for _ in range(14):
+        x, y = rng.uniform(0, t, 2)
+        for _ in range(6):
+            x2, y2 = x + rng.uniform(-40, 40), y + rng.uniform(-40, 40)
+            d.line([(x, y), (x2, y2)], fill=255, width=int(rng.integers(2, 5)))
+            x, y = x2, y2
+    c = (np.asarray(cr, np.float32) / 255)[..., None]
+    lava = np.array([255, 170, 50], np.float32)
+    put(L_BASALT_CRACK, basalt * (1 - c) + lava * c, e=c[..., 0] * 255, sp=60)
+    put(L_CRUST, np.array([84, 70, 62], np.float32) * (0.65 + 0.5 * noise(3)), sp=40)
+    seams = (((xx % 40) < 2) | ((yy % 24) < 2))[..., None]
+    plate = np.array([86, 90, 98], np.float32) * (0.8 + 0.25 * grime) * (1 - 0.3 * seams) * (0.85 + 0.2 * streak)
+    put(L_PLATE, plate, sp=120)
+    band = (yy % 32 > 13) & (yy % 32 < 19) & ((xx % 12) > 2)
+    lit = band & (rng.random((t, t)) > 0.35)
+    put(L_PLATE_WIN, np.where(lit[..., None], [235, 236, 220], np.where(band[..., None], [26, 28, 32], plate)),
+        e=np.where(lit, 210, 0), sp=120)
+    put(L_RIB, plate * (0.75 + 0.3 * (np.sin(xx / 2.5) > 0)[..., None]), sp=140)
+    put(L_LAVA, np.array([255, 150, 40], np.float32) * (0.85 + 0.25 * noise(1.5)) + np.array([0, 60, 0]) * noise(3),
+        e=255, sp=200)
+    put(L_SULFUR, np.array([220, 196, 70], np.float32) * (0.75 + 0.35 * noise(1.5)))
+    put(L_DARK, np.array([16, 16, 18], np.float32) * (0.8 + 0.4 * grime))
+    pad = Image.new("RGB", (t, t), (70, 74, 80))
+    dd = ImageDraw.Draw(pad)
+    dd.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(230, 60, 50), width=int(t * 0.045))
+    put(L_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(L_GLOW, np.array([240, 240, 225], np.float32) + 10, e=255, sp=200)
+    put(L_RED, np.array([255, 60, 40], np.float32), e=255, sp=200)
+    put(L_TRIM, np.array([70, 96, 150], np.float32) * (0.85 + 0.2 * grime), sp=150)
+    put(L_ROCK, np.array([96, 84, 80], np.float32) * (0.65 + 0.45 * noise(3)) * (0.9 + 0.15 * streak))
+    # the cross-section of the planet on a fracture face, v = 1 at the old surface down to v = 0 at the molten core:
+    # dark crust, banded rock strata, a red mantle getting hotter, glowing orange, a white-yellow core (emissive with
+    # depth); band edges ragged
+    depth = yy / t + 0.04 * (noise(1.2)[..., 0] - 0.5)                    # 0 at the surface (v = 1) .. 1 at the core
+    stops = [(0.0, (46, 42, 44)), (0.12, (62, 54, 52)), (0.14, (110, 92, 78)), (0.2, (84, 70, 62)), (0.24, (126, 104, 84)),
+             (0.3, (92, 66, 56)), (0.42, (130, 52, 34)), (0.58, (220, 92, 30)), (0.75, (255, 160, 50)), (1.0, (255, 236, 170))]
+    ds, cs = zip(*stops)
+    strata = np.stack([np.interp(depth, ds, [c[i] for c in cs]) for i in range(3)], -1)
+    strata *= (0.85 + 0.2 * noise(1.5)) * (1 - 0.12 * ((yy % 9) < 1)[..., None] * (depth < 0.32)[..., None])
+    put(L_STRATA, strata, e=np.clip((depth - 0.38) / 0.4, 0, 1) * 255, sp=80)
+    put(L_SPARE2, plate)
+    _atlas_save("hod_lola", col, emi, spec)
+
+
+def ringo_atlas():
+    """hod_ringo textures (Ringo Vinda's rock arches, hanging cities and orbital ring; lights painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 81)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    bands = (0.85 + 0.15 * np.sin(yy / 5.0 + 3 * noise(4)[..., 0]))[..., None]
+    rock = np.array([196, 168, 132], np.float32) * bands * (0.8 + 0.25 * blotch) * (0.85 + 0.2 * streak)
+    put(V_ROCK, rock)
+    put(V_ROCK_DARK, rock * np.array([0.62, 0.6, 0.6]) * (0.8 + 0.3 * grime))
+    courses = ((yy % 22) < 2)[..., None]
+    stone = np.array([226, 216, 192], np.float32) * (0.88 + 0.15 * grime) * (1 - 0.14 * courses)
+    put(V_STONE, stone)
+    win = ((xx % 20) > 6) & ((xx % 20) < 14) & ((yy % 30) > 9) & ((yy % 30) < 22)
+    lit = win & (rng.random((t, t)) > 0.35)
+    warm = np.array([255, 210, 140], np.float32)
+    put(V_STONE_WIN, np.where(lit[..., None], warm, np.where(win[..., None], [52, 50, 48], stone)), e=np.where(lit, 210, 0))
+    patina = noise(4)
+    put(V_DOME, np.array([110, 150, 120], np.float32) * (0.75 + 0.3 * patina) + np.array([60, 30, 0]) * (1 - patina),
+        sp=140)
+    put(V_ROOF, np.array([92, 98, 104], np.float32) * (0.85 + 0.2 * grime) * (1 - 0.2 * (((xx % 18) < 2) | ((yy % 12) < 2)))[..., None])
+    put(V_GLOW, warm + 10, e=255, sp=200)
+    put(V_DARK, np.array([22, 22, 24], np.float32) * (0.8 + 0.4 * grime))
+    seams = (((xx % 48) < 2) | ((yy % 28) < 2))[..., None]
+    hull = np.array([156, 148, 132], np.float32) * (0.82 + 0.22 * grime) * (1 - 0.25 * seams) * (0.9 + 0.12 * streak)
+    put(V_HULL, hull, sp=110)
+    rows = (yy % 28 > 11) & (yy % 28 < 17) & ((xx % 10) > 2)
+    hl = rows & (rng.random((t, t)) > 0.3)
+    put(V_HULL_WIN, np.where(hl[..., None], [240, 236, 210], np.where(rows[..., None], [30, 30, 32], hull)), e=np.where(hl, 220, 0), sp=110)
+    put(V_PANEL, hull * (0.7 + 0.35 * (np.sin(xx / 2.0) > 0)[..., None]), sp=130)
+    put(V_LIGHT, np.array([200, 230, 255], np.float32) + 10, e=255, sp=200)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(V_HAZARD, np.where(haz, [230, 180, 40], [30, 28, 26]) * (0.85 + 0.2 * grime))
+    pad = Image.new("RGB", (t, t), (110, 108, 104))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(240, 200, 90), width=int(t * 0.045))
+    put(V_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(V_GARDEN, np.array([86, 128, 72], np.float32) * (0.7 + 0.5 * noise(1.5)))
+    put(V_GLASS, np.array([120, 170, 180], np.float32) * (0.85 + 0.2 * blotch), sp=220)
+    _atlas_save("hod_ringo", col, emi, spec)
+
+
+def rhen_atlas():
+    """hod_rhen textures (Rhen Var's frozen ruins and Bravo Base; lights painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 82)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    courses = ((yy % 26) < 2)[..., None]
+    joints = (((xx + 20 * ((yy // 26) % 2)) % 40) < 2)[..., None] & ~courses
+    frost = np.clip(noise(3) * 1.4 - 0.3, 0, 1)                            # frost settled in patches
+    stone = np.array([132, 140, 150], np.float32) * (0.8 + 0.25 * grime) * (1 - 0.2 * courses - 0.12 * joints)
+    stone = stone * (1 - 0.5 * frost) + np.array([226, 234, 242]) * 0.5 * frost
+    put(H_STONE, stone)
+    arch = (((xx % 32) > 10) & ((xx % 32) < 22) & ((yy % 52) > 14) & ((yy % 52) < 42)
+            & ~(((yy % 52) < 19) & (np.abs((xx % 32) - 16) > 3)))
+    put(H_STONE_WIN, np.where(arch[..., None], [26, 28, 34], stone))
+    gl = Image.new("L", (t, t), 0)
+    d = ImageDraw.Draw(gl)
+    for i in range(10):
+        x0 = i * t / 10 + 4
+        d.rectangle([x0, t * 0.4, x0 + t / 10 - 10, t * 0.6], outline=255, width=3)
+        d.line([(x0 + 4, t * 0.5), (x0 + t / 10 - 14, t * 0.5)], fill=255, width=3)
+    put(H_CARVED, stone * (1 - 0.4 * (np.asarray(gl, np.float32) / 255)[..., None]))
+    put(H_SNOW, np.array([236, 242, 250], np.float32) * (0.9 + 0.1 * noise(1.5)), sp=60)
+    put(H_ICE, np.array([170, 210, 235], np.float32) * (0.85 + 0.2 * blotch) * (0.9 + 0.12 * streak), sp=230)
+    put(H_DARK, np.array([20, 22, 28], np.float32) * (0.8 + 0.4 * grime))
+    seams = (((xx % 40) < 2) | ((yy % 30) < 2))[..., None]
+    panel = np.array([214, 216, 212], np.float32) * (0.88 + 0.14 * grime) * (1 - 0.18 * seams)
+    put(H_PANEL, panel, sp=110)
+    win = (yy % 30 > 12) & (yy % 30 < 19) & ((xx % 14) > 3)
+    lit = win & (rng.random((t, t)) > 0.3)
+    put(H_PANEL_WIN, np.where(lit[..., None], [250, 240, 200], np.where(win[..., None], [40, 44, 52], panel)),
+        e=np.where(lit, 220, 0), sp=110)
+    stripe = (np.abs(yy - t * 0.5) < t * 0.12)[..., None]
+    put(H_RED, np.where(stripe, [170, 40, 34], panel), sp=110)
+    put(H_SITH, np.array([46, 40, 44], np.float32) * (0.8 + 0.3 * grime) * (1 - 0.25 * courses) * (1 - 0.4 * frost)
+        + np.array([200, 210, 220]) * 0.4 * frost)
+    rk = Image.new("L", (t, t), 0)                                         # Rakatan script lines
+    d = ImageDraw.Draw(rk)
+    for i in range(16):
+        y = 10 + i * t / 16
+        for _ in range(5):
+            a, b = rng.uniform(0, t, 2)
+            d.line([(a, y), (b, y + rng.uniform(-6, 6))], fill=255, width=2)
+    cut = (np.asarray(rk, np.float32) / 255)[..., None]
+    rak = np.array([58, 64, 60], np.float32) * (0.8 + 0.3 * grime)
+    put(H_RAKATA, rak * (1 - cut) + np.array([120, 255, 160], np.float32) * cut, e=cut[..., 0] * 200)
+    put(H_GLOW, np.array([210, 236, 255], np.float32) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (150, 152, 156))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(180, 40, 34), width=int(t * 0.05))
+    put(H_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(H_HAZARD, np.where(haz, [230, 180, 40], [30, 28, 26]) * (0.85 + 0.2 * grime))
+    put(H_TIMBER, np.array([86, 72, 60], np.float32) * (0.75 + 0.3 * streak))
+    put(H_ROOF, np.array([90, 98, 110], np.float32) * (0.85 + 0.2 * grime) * (1 - 0.2 * (((xx % 18) < 2) | ((yy % 12) < 2)))[..., None]
+        * (1 - 0.5 * frost) + np.array([230, 236, 244]) * 0.5 * frost)
+    _atlas_save("hod_rhen", col, emi, spec)
+
+
 def zygerria_atlas():
     """hod_zygerria textures from the TCW stills of the Zygerrian capital: slate-blue palace stone in battered courses
     (and with rows of lit arched windows), terracotta brick, warm sandstone (plain and lit), teal tent-roof cloth,
@@ -778,8 +1200,9 @@ def models(*only):
 
     SKIRT = 2.5     # landmark walls run this far below the origin: no gap under them on uneven or lower ground
 
-    def build(name, geometry, shader="PdxMeshAdvancedSnow", out=LM_OUT, tex="hod_landmarks", rot=0.0):
-        """rot: turn the model about its vertical axis (radians, counter-clockwise seen from above) before export"""
+    def build(name, geometry, shader="PdxMeshAdvancedSnow", out=LM_OUT, tex="hod_landmarks", rot=0.0, extra=None):
+        """rot: turn the model about its vertical axis (radians, counter-clockwise seen from above) before export;
+        extra(): adds more mesh objects (own materials) to the scene, exported with it"""
         if only and not name.startswith(only):
             return
         bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -801,6 +1224,8 @@ def models(*only):
         obj.select_set(True)
         m = obj.modifiers.new("t", "TRIANGULATE")
         bpy.ops.object.modifier_apply(modifier=m.name)
+        if extra:
+            extra()
         bie.export_meshfile(os.path.abspath(f"{out}/{name}.mesh"), exp_mesh=True, exp_skel=False, exp_locs=False)
         print(f"{name}: {len(me.polygons)} tris")
 
@@ -2280,6 +2705,1440 @@ def models(*only):
             rng_s = random.Random(f"hod_cant_sith_ruin{band}{v}")
             build(f"hod_cant_sith_ruin_{band}{v}", lambda k, band=band, rng=rng_s: sith_ruin(k, band, rng),
                   shader="PdxMeshSnow", tex="hod_cantonica")
+    def bon_stack(k, x, y, z0, h, r, sides=10):
+        """a factory smokestack: soot-topped brick, a band of lights near the top"""
+        k.lathe([(r, z0), (r * 0.72, z0 + h)], [B_BRICK], sides=sides, cx=x, cy=y, cap=B_SOOT)
+        k.lathe([(r * 0.8, z0 + h * 0.86), (r * 0.8, z0 + h * 0.89)], [B_GLOW], sides=sides, cx=x, cy=y)
+
+    def bon_tank(k, x, y, z0, h, r, sides=12):
+        """a storage tank: plate drum under a shallow dome"""
+        k.lathe([(r, z0), (r, z0 + h), (r * 0.6, z0 + h + 0.25 * r), (0.0, z0 + h + 0.32 * r)],
+                [B_PLATE, B_ROOF, B_ROOF], sides=sides, cx=x, cy=y)
+
+    def bon_hall(k, x, y, z0, h, w, d, a, wall=None, saw=True):
+        """a factory hall turned by a: plate walls, a sawtooth roof (or a flat one)"""
+        cslab(k, x, y, z0, h, w, d, a, wall or B_PLATE_WIN, B_ROOF)
+        if saw:
+            n = max(2, int(w / 0.07))
+            ca, sa = math.cos(a), math.sin(a)
+            for i in range(n):
+                px = -w + (2 * i + 1) * w / n
+                cslab(k, x + ca * px, y + sa * px, h - 0.005, h + 0.07 + 0.02 * w, w / n, d, a, B_ROOF, B_GLOW, wt=w / n * 0.1)
+
+    def bon_city(k, band, rng):
+        # Bonadan's industrial cities (Legends: "covered with factories, refineries, docks, and shipbuilding
+        # facilities"): sooty factory halls with sawtooth roofs, storage tanks, smokestacks, concrete hab blocks with
+        # lit strip windows; downtown taller blocks, cooling towers and landing pads. Turned at random over the
+        # whole cell (the game lays these on a 2-unit grid). band 1 outskirts .. 4 downtown
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(rng.randint(1, 2) + (band >= 2)):                                               # halls
+            w, d = rng.uniform(0.2, 0.32), rng.uniform(0.12, 0.2)
+            p_ = spot(max(w, d) * 1.05)
+            if p_:
+                bon_hall(k, *p_, -0.3, rng.uniform(0.18, 0.26) + 0.04 * band, w, d, rng.uniform(0, math.pi),
+                         saw=rng.random() < 0.7)
+        for _ in range(rng.randint(1, 3)):                                                             # tanks
+            r = rng.uniform(0.07, 0.12)
+            p_ = spot(r * 1.3)
+            if p_:
+                bon_tank(k, *p_, -0.3, rng.uniform(0.3, 0.45), r)
+        for _ in range(1 + (band >= 2) + (band >= 4)):                                                 # stacks
+            p_ = spot(0.06)
+            if p_:
+                bon_stack(k, *p_, -0.3, rng.uniform(0.9, 1.3) + 0.2 * band, rng.uniform(0.04, 0.06))
+        for _ in range(2 * band):                                                                      # hab blocks
+            w, d = rng.uniform(0.07, 0.12), rng.uniform(0.06, 0.1)
+            p_ = spot(max(w, d) * 1.2)
+            if p_:
+                h = rng.uniform(0.2, 0.35) + 0.12 * band + (0.5 * rng.random() if band >= 3 else 0.0)
+                cslab(k, *p_, -0.3, h, w, d, rng.uniform(0, math.pi), B_CONC_WIN, B_ROOF)
+        if band >= 3 and rng.random() < 0.5:                                                           # cooling tower
+            p_ = spot(0.2)
+            if p_:
+                k.lathe([(0.2, -0.3), (0.13, 0.45), (0.15, 0.7)], [B_CONC, B_CONC], sides=14, cx=p_[0], cy=p_[1])
+        if band >= 2 and rng.random() < 0.4:                                                           # a landing pad
+            p_ = spot(0.17)
+            if p_:
+                k.lathe([(0.16, -0.3), (0.16, 0.08)], [B_PLATE], sides=12, cx=p_[0], cy=p_[1], cap=B_PAD)
+
+    def bon_spaceport(k):
+        # Spaceport Southeast II, the largest of Bonadan's ten spaceports (Legends; its look is a design choice):
+        # a ring of round landing pads on raised decks round a control tower, hangars with arched roofs, cargo halls,
+        # stacks, tank farm. ~11 map units across
+        k.lathe([(5.4, -SKIRT), (5.4, 0.3)], [B_CONC], sides=10, sy=0.85, jitter=0.05, cap=B_CONC)        # the apron
+        for i in range(6):                                                                              # the pads
+            a = 2 * math.pi * (i + 0.5) / 6
+            x, y = 3.6 * math.cos(a), 3.0 * math.sin(a)
+            k.lathe([(1.15, 0.3), (1.15, 0.75)], [B_HAZARD], sides=16, cx=x, cy=y, cap=B_PAD)
+            for j in range(4):                                                                          # pad lights
+                b = 2 * math.pi * j / 4 + a
+                k.lathe([(0.08, 0.75), (0.08, 0.9)], [B_GLOW], sides=4, cx=x + 1.05 * math.cos(b), cy=y + 1.05 * math.sin(b),
+                        cap=B_GLOW)
+        k.lathe([(0.9, 0.3), (0.7, 4.2)], [B_CONC_WIN], sides=12, cap=B_ROOF)                            # control tower
+        k.lathe([(0.75, 4.2), (1.35, 4.5), (1.35, 4.95), (0.9, 5.25), (0.0, 5.35)],
+                [B_PLATE_WIN, B_PLATE_WIN, B_ROOF, B_ROOF], sides=16)                                   # its cab
+        k.tube((0, 0, 5.3), (0, 0, 6.4), 0.05, B_PIPE, sides=4)                                         # mast
+        for y in (2.5, -2.5):                                                                           # hangars
+            bon_hall(k, 0.0, y, 0.3, 1.4, 1.2, 1.0, 0.0, wall=B_PLATE)
+            k.box(-0.7, y - 1.02 if y > 0 else y + 0.98, 0.3, 0.7, y - 0.98 if y > 0 else y + 1.02, 1.2, B_HAZARD)
+        bon_hall(k, -2.0, 0.0, 0.3, 1.1, 0.8, 0.55, math.pi / 2)                                        # cargo halls
+        bon_hall(k, 2.0, 0.0, 0.3, 1.1, 0.8, 0.55, math.pi / 2)
+        for x, y in ((4.6, -0.3), (4.9, 0.5), (-4.7, 0.2)):                                             # tank farm
+            bon_tank(k, x, y, 0.3, 0.7, 0.35)
+        bon_stack(k, -4.4, -1.2, 0.3, 3.2, 0.22)
+
+    def bon_fleet():
+        """the orbital shipyard's layout, shared by its structure and its ships: [(kind, x, y, z, heading, built)] in
+        model units (origin = the arc's middle); slips along the arc, ships lying along it (heading = tangent), and
+        the small craft: Lethisk freighters docked at the end stations, Chela shuttles flying over the slips"""
+        R, a0, a1, mid = BON_ORBIT_R, math.radians(BON_ARC[0]), math.radians(BON_ARC[1]), math.radians(sum(BON_ARC) / 2)
+        cx, cy, z0 = -R * math.cos(mid), -R * math.sin(mid), BON_FLOAT
+        pt = lambda r, t: (cx + r * math.cos(t), cy + r * math.sin(t))
+        out = []
+        for i, (kind, built) in enumerate(BON_SLIPS):
+            t = a0 + (a1 - a0) * (i + 0.5) / len(BON_SLIPS)
+            out.append((kind, *pt(R, t), z0 + 0.9, t + math.pi / 2 * (1 if i % 2 else -1), built))
+        rng = random.Random("bon_fleet")
+        for t, sgn in ((a0, -1), (a1, 1)):                                  # freighters docked on the end stations' rings
+            sx, sy = pt(R + 3.0, t + sgn * 0.06)
+            away = math.atan2(sgn * math.cos(t), -sgn * math.sin(t))        # along the arc, outward
+            for j in (-1, 0, 1):
+                b_ = away + j * 0.8
+                out.append(("lethisk", sx + 9.6 * math.cos(b_), sy + 9.6 * math.sin(b_), z0 + 1.9, b_, 1.0))
+        for j in range(12):                                                 # shuttles over the slips
+            t = a0 + (a1 - a0) * rng.random()
+            out.append(("chela", *pt(R + rng.uniform(-9, 9), t), z0 + rng.uniform(9.5, 12.0), t + rng.uniform(-0.6, 0.6), 1.0))
+        return out, pt, z0
+
+    def bon_shipyard(k):
+        # the Bonadan shipyards in orbit (the user, 2026-10-15: a large space shipyard floating round the planet, a long
+        # semicircle with ships being built in it, using our ship models, from province 6947 (NE) to 6525 (SE), outside
+        # the atmosphere). Legends: Class IB, able to build cruisers. Origin = the arc's middle, stood on the space floor
+        # (height 8.5): everything floats from BON_FLOAT up, clear of the water plane (~9.6) that clips meshes.
+        # The slips (BON_SLIPS) hold the Battlefront II / EaW ships (sketchfab_props.py bon_*, added by bon_ships);
+        # this is the yard round them: an outer spine of two decks (habitat drums, radiator fins, container stacks,
+        # masts and dishes on top), a triangulated truss on the inner side, gantry towers and crane bridges between the
+        # slips, clamp arms and tractor emitters reaching the hulls, scaffold hoops over the unbuilt parts, a command
+        # tower at mid-arc and a ring station at each end
+        R, a0, a1 = BON_ORBIT_R, math.radians(BON_ARC[0]), math.radians(BON_ARC[1])
+        fleet, pt, z0 = bon_fleet()
+        P = lambda r, t, z: (*pt(r, t), z)
+        rng = random.Random("hod_bon_shipyard")
+        n_seg, slips = 48, len(BON_SLIPS)
+        rin, rout = R - 5.2, R + 5.2
+        for i in range(n_seg):                                               # the outer spine, two decks
+            t0, t1 = a0 + (a1 - a0) * i / n_seg, a0 + (a1 - a0) * (i + 1) / n_seg
+            tm, half = (t0 + t1) / 2, (rout + 1.6) * (t1 - t0) / 2 * 1.03
+            x, y = pt(rout + 1.6, tm)
+            cslab(k, x, y, z0 - 0.8, z0 + 4.2, half, 1.8, tm + math.pi / 2, B_PLATE_WIN, B_ROOF, dt=1.5)    # lower deck
+            cslab(k, x, y, z0 - 1.6, z0 - 0.8, half, 1.2, tm + math.pi / 2, B_HULL, B_SOOT)                # keel
+            x, y = pt(rout + 2.2, tm)
+            cslab(k, x, y, z0 + 4.2, z0 + 5.8, half * 0.98, 1.1, tm + math.pi / 2, B_CONC_WIN, B_ROOF)    # upper deck
+            x, y = pt(rout - 0.35, tm)
+            cslab(k, x, y, z0 + 1.0, z0 + 1.25, half, 0.35, tm + math.pi / 2, B_HAZARD, B_HAZARD)          # walkway
+            x, y = pt(rout + 3.6, tm)
+            cslab(k, x, y, z0 + 0.6, z0 + 3.4, half, 0.2, tm + math.pi / 2, B_PIPE, B_GLOW)                # outer gallery
+            roll = rng.random()                                              # what stands on the upper deck
+            x, y = pt(rout + 2.2 + rng.uniform(-0.5, 0.5), tm)
+            if roll < 0.3:                                                   # habitat drum
+                k.lathe([(0.8, z0 + 5.8), (0.8, z0 + 7.0), (0.5, z0 + 7.5), (0.0, z0 + 7.6)], [B_CONC_WIN, B_ROOF, B_ROOF],
+                        sides=12, cx=x, cy=y)
+            elif roll < 0.55:                                                # radiator fins
+                for f in (-0.6, 0.0, 0.6):
+                    fx, fy = pt(rout + 2.2 + f, tm)
+                    cslab(k, fx, fy, z0 + 5.8, z0 + 7.6, half * 0.7, 0.04, tm + math.pi / 2, B_GIRDER, B_GLOW)
+            elif roll < 0.8:                                                 # container stacks
+                for c in range(rng.randint(2, 4)):
+                    cxx, cyy = pt(rout + 2.2 + rng.uniform(-0.6, 0.6), tm + (c - 1.5) * (t1 - t0) * 0.22)
+                    cslab(k, cxx, cyy, z0 + 5.8, z0 + 5.8 + 0.45 * rng.randint(1, 3), 0.55, 0.28, tm + math.pi / 2,
+                          rng.choice([B_RUST, B_HAZARD, B_PLATE]), B_ROOF)
+            else:                                                            # mast and dish
+                k.tube((x, y, z0 + 5.8), (x, y, z0 + 9.5), 0.07, B_PIPE, sides=4)
+                k.lathe([(0.1, z0 + 7.6), (0.7, z0 + 8.0), (0.85, z0 + 8.4)], [B_HULL, B_HULL], sides=10, cx=x, cy=y)
+                k.lathe([(0.1, z0 + 9.5), (0.1, z0 + 9.7)], [B_GLOW], sides=4, cx=x, cy=y, cap=B_GLOW)
+        for i in range(n_seg):                                               # the inner truss: 3 chords, diagonals
+            t0, t1 = a0 + (a1 - a0) * i / n_seg, a0 + (a1 - a0) * (i + 1) / n_seg
+            for r_, z_ in ((rin - 0.6, z0 + 0.4), (rin + 0.6, z0 + 0.4), (rin, z0 + 2.4)):
+                k.tube(P(r_, t0, z_), P(r_, t1, z_), 0.1, B_GIRDER, sides=4)
+            k.tube(P(rin - 0.6, t0, z0 + 0.4), P(rin, t1, z0 + 2.4), 0.06, B_GIRDER, sides=3)
+            k.tube(P(rin + 0.6, t1, z0 + 0.4), P(rin, t0, z0 + 2.4), 0.06, B_GIRDER, sides=3)
+            k.tube(P(rin - 0.6, t0, z0 + 0.4), P(rin + 0.6, t1, z0 + 0.4), 0.05, B_GIRDER, sides=3)
+        for i in range(slips + 1):                                           # gantries between the slips
+            t = a0 + (a1 - a0) * i / slips
+            for r_ in (rin, rout - 0.4):                                     # towers
+                x, y = pt(r_, t)
+                cslab(k, x, y, z0 - 1.0, z0 + 9.0, 0.35, 0.35, t, B_GIRDER, B_RUST)
+                for z_ in (2.5, 5.0, 7.5):
+                    k.lathe([(0.12, z0 + z_), (0.12, z0 + z_ + 0.15)], [B_GLOW], sides=4, cx=x, cy=y, cap=B_GLOW)
+            x, y = pt(R, t)
+            cslab(k, x, y, z0 + 8.6, z0 + 9.3, (rout - rin) / 2 + 0.4, 0.3, t, B_GIRDER, B_HAZARD)          # bridge
+            cslab(k, x, y, z0 + 9.3, z0 + 9.45, (rout - rin) / 2 + 0.4, 0.4, t, B_HAZARD, B_HAZARD)
+            tx_, ty_ = pt(R + rng.uniform(-4, 4), t)                         # the crane trolley and its hook line
+            cslab(k, tx_, ty_, z0 + 8.2, z0 + 9.6, 0.5, 0.55, t, B_HAZARD, B_ROOF)
+            k.box(tx_ - 0.03, ty_ - 0.03, z0 + 5.0, tx_ + 0.03, ty_ + 0.03, z0 + 8.2, B_DARK)
+            k.lathe([(0.25, z0 + 4.7), (0.25, z0 + 5.0)], [B_RUST], sides=6, cx=tx_, cy=ty_, cap=B_RUST)
+        for kind, x, y, z, head, built in fleet[:slips]:                      # round each ship in its slip
+            L, W, H = BON_SHIP_DIMS[kind]
+            ch, sh = math.cos(head), math.sin(head)
+            at = lambda u, v, zz: (x + ch * u - sh * v, y + sh * u + ch * v, zz)
+            span = R * abs(a1 - a0) / slips / 2 - 0.5
+            for u in [span * (j / 3 - 1) for j in range(7)]:                 # the slip's girder floor
+                k.tube(at(u, -5.0, z0 - 0.6), at(u, 5.0, z0 - 0.6), 0.09, B_GIRDER, sides=4)
+            for v_ in (-3.4, -1.2, 1.2, 3.4):
+                k.tube(at(-span, v_, z0 - 0.6), at(span, v_, z0 - 0.6), 0.09, B_GIRDER, sides=4)
+            for j in range(6):
+                u_, v_ = rng.uniform(-span, span), rng.uniform(-4, 4)        # parts stacked on the floor
+                cslab(k, *at(u_, v_, 0)[:2], z0 - 0.5, z0 - 0.5 + rng.uniform(0.3, 0.8), rng.uniform(0.3, 0.7),
+                      rng.uniform(0.25, 0.5), head + rng.uniform(-0.3, 0.3), rng.choice([B_RUST, B_HULL, B_HAZARD]), B_ROOF)
+            for u in (-0.32, 0.0, 0.32):                                     # clamp arms from both sides
+                for side in (-1, 1):
+                    hull = at(u * L, side * W * 0.5, z + H * 0.35)
+                    root = at(u * L, side * 5.0, z + 1.4)
+                    k.tube(root, hull, 0.12, B_HAZARD, sides=5)
+                    k.lathe([(0.22, hull[2] - 0.15), (0.22, hull[2] + 0.15)], [B_PIPE], sides=6, cx=hull[0], cy=hull[1])
+            for side in (-1, 1):                                             # tractor emitters on the spine side
+                ex, ey, _ = at(rng.uniform(-0.3, 0.3) * L, side * 4.8, 0)
+                k.lathe([(0.45, z + 3.2), (0.35, z + 3.7), (0.0, z + 3.9)], [B_HULL, B_GLOW], sides=10, cx=ex, cy=ey)
+            for j in range(6):                                               # worklights on posts round the slip
+                lx, ly, _ = at((j / 5 - 0.5) * L * 1.05, (1 if j % 2 else -1) * 4.4, 0)
+                k.tube((lx, ly, z0 - 0.5), (lx, ly, z + H + 0.6), 0.05, B_PIPE, sides=4)
+                k.lathe([(0.18, z + H + 0.6), (0.18, z + H + 0.8)], [B_GLOW], sides=6, cx=lx, cy=ly, cap=B_GLOW)
+            if built < 1:                                                    # scaffold hoops over the unbuilt part
+                u0, u1 = -L / 2 + L * built, L / 2
+                n = max(3, int((u1 - u0) / 1.0))
+                for j in range(n + 1):
+                    u = u0 + (u1 - u0) * j / n
+                    taper = 1 - 0.6 * (u - u0) / max(u1 - u0, 1e-3) * (u1 - u0) / L
+                    w, h = W * 0.55 * taper + 0.2, H * taper + 0.3
+                    k.tube(at(u, -w, z - 0.2), at(u, -w, z + h), 0.06, B_GIRDER, sides=3)
+                    k.tube(at(u, w, z - 0.2), at(u, w, z + h), 0.06, B_GIRDER, sides=3)
+                    k.tube(at(u, -w, z + h), at(u, w, z + h), 0.06, B_GIRDER, sides=3)
+                    k.tube(at(u, -w, z - 0.2), at(u, w, z - 0.2), 0.05, B_GIRDER, sides=3)
+                for v_, zz in ((-1, 0.5), (1, 0.5), (-1, 1.0), (1, 1.0)):    # stringers
+                    k.tube(at(u0, v_ * (W * 0.55 + 0.2), z + zz * H * 0.8), at(u1, v_ * (W * 0.25 + 0.2), z + zz * H * 0.5),
+                           0.05, B_GIRDER, sides=3)
+                for _ in range(5):                                           # welding sparks at the seam
+                    sx, sy, sz = at(u0 + rng.uniform(-0.2, 0.4), rng.uniform(-W, W) * 0.45, z + rng.uniform(0.2, H))
+                    k.box(sx - 0.07, sy - 0.07, sz - 0.07, sx + 0.07, sy + 0.07, sz + 0.07, B_GLOW, top=B_GLOW)
+        tm = (a0 + a1) / 2                                                    # the command tower, mid-arc, outside
+        x, y = pt(rout + 6.0, tm)
+        k.lathe([(2.6, z0 - 2.0), (2.8, z0 + 1.0), (2.2, z0 + 6.0), (1.6, z0 + 12.0)], [B_HULL, B_PLATE_WIN, B_CONC_WIN],
+                sides=16, cx=x, cy=y, cap=B_ROOF)
+        for zz, r_ in ((4.0, 3.6), (8.0, 3.0), (11.0, 2.6)):
+            k.lathe([(r_, z0 + zz), (r_, z0 + zz + 0.35)], [B_GLOW], sides=20, cx=x, cy=y, cap=B_PLATE)
+        k.lathe([(1.7, z0 + 12.0), (2.4, z0 + 12.6), (2.4, z0 + 13.4), (1.2, z0 + 14.2), (0.0, z0 + 14.4)],
+                [B_PLATE_WIN, B_PLATE_WIN, B_ROOF, B_ROOF], sides=16, cx=x, cy=y)
+        k.tube((x, y, z0 + 14.3), (x, y, z0 + 17.5), 0.1, B_PIPE, sides=4)
+        for j in range(3):                                                   # its dishes
+            dx, dy = x + 2.0 * math.cos(tm + 2.1 * j), y + 2.0 * math.sin(tm + 2.1 * j)
+            k.lathe([(0.15, z0 + 13.8), (1.0, z0 + 14.2), (1.2, z0 + 14.6)], [B_HULL, B_HULL], sides=12, cx=dx, cy=dy)
+        bx, by = pt(rout + 3.0, tm)                                          # the bridge out to it
+        k.tube((bx, by, z0 + 3.0), (x, y, z0 + 3.0), 0.6, B_PLATE_WIN, sides=8)
+        for t in (a0, a1):                                                   # ring stations at the ends
+            ox = t + (-0.06 if t == a0 else 0.06)
+            x, y = pt(R + 3.0, ox)
+            k.lathe([(3.2, z0 - 1.5), (3.6, z0 + 1.0), (3.6, z0 + 4.0), (2.4, z0 + 6.5), (0.8, z0 + 8.0)],
+                    [B_HULL, B_PLATE_WIN, B_CONC_WIN, B_ROOF], sides=18, cx=x, cy=y, cap=B_ROOF)
+            k.tube((x, y, z0 + 8.0), (x, y, z0 + 11.5), 0.12, B_PIPE, sides=4)
+            n_ring = 28
+            for j in range(n_ring):                                          # the docking ring and its spokes
+                b0, b1 = 2 * math.pi * j / n_ring, 2 * math.pi * (j + 1) / n_ring
+                p0 = (x + 8.0 * math.cos(b0), y + 8.0 * math.sin(b0), z0 + 2.0)
+                p1 = (x + 8.0 * math.cos(b1), y + 8.0 * math.sin(b1), z0 + 2.0)
+                k.tube(p0, p1, 0.55, B_PLATE_WIN if j % 2 else B_HULL, sides=8)
+                if j % 7 == 0:
+                    k.tube((x, y, z0 + 2.0), p0, 0.3, B_GIRDER, sides=5)
+                if j % 2 == 0:
+                    k.lathe([(0.15, z0 + 2.55), (0.15, z0 + 2.75)], [B_GLOW], sides=4, cx=p0[0], cy=p0[1], cap=B_GLOW)
+            k.tube(P(rout + 1.6, t, z0 + 2.0), (x, y, z0 + 2.0), 0.8, B_PLATE_WIN, sides=8)   # joined to the spine
+        for kind, x, y, z, head, built in fleet[slips:]:                      # docking cradles for the freighters
+            if kind == "lethisk":
+                k.lathe([(0.9, z - 0.25), (0.9, z)], [B_HAZARD], sides=10, cx=x, cy=y, cap=B_PAD)
+
+    def bon_ships():
+        """the ships in Bonadan's orbital shipyard (place_ships)"""
+        place_ships(bon_fleet()[0], lambda kind: BON_SHIP_SCALE if kind in BON_SHIP_DIMS else 1.0)
+
+    def place_ships(fleet, scale_of):
+        """ships copied into a model as extra objects: the converted Battlefront II / EaW models (sketchfab_props.py
+        bon_*, each with its own baked texture in hod_landmarks); fleet [(kind, x, y, z, heading, built)], unfinished
+        hulls cut at `built`, scale_of(kind) -> scale"""
+        from mathutils import Matrix  # type: ignore
+        parts = {}
+        for kind, x, y, z, head, built in fleet:
+            if kind not in parts:
+                before = set(bpy.data.objects)
+                bie.import_meshfile(os.path.abspath(f"{LM_OUT}/hod_bld_bon_{kind}.mesh"), imp_mesh=True, imp_skel=False,
+                                    imp_locs=False)
+                objs = [o for o in bpy.data.objects if o not in set(before) and o.type == "MESH"]
+                for o in bpy.data.objects:
+                    o.select_set(o in objs)
+                bpy.context.view_layer.objects.active = objs[0]
+                bpy.ops.object.parent_clear(type="CLEAR_KEEP_TRANSFORM")
+                bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+                for o in [o for o in bpy.data.objects if o not in before and o.type != "MESH"]:
+                    bpy.data.objects.remove(o, do_unlink=True)
+                src = objs[0]
+                co = [v.co for v in src.data.vertices]
+                ext = [max(c[i] for c in co) - min(c[i] for c in co) for i in range(3)]
+                if ext[2] > max(ext[0], ext[1]):                             # stood on its tail: lay it down along y
+                    src.data.transform(Matrix.Rotation(-math.pi / 2, 4, "X"))
+                elif ext[0] > ext[1]:                                        # lying along x: turn it along y
+                    src.data.transform(Matrix.Rotation(math.pi / 2, 4, "Z"))
+                co = [v.co for v in src.data.vertices]
+                lo_ = [min(c[i] for c in co) for i in range(3)]
+                hi_ = [max(c[i] for c in co) for i in range(3)]
+                src.data.transform(Matrix.Translation((-(lo_[0] + hi_[0]) / 2, -(lo_[1] + hi_[1]) / 2, -lo_[2])))
+                parts[kind] = (src, hi_[1] - lo_[1], [])
+            src, length, copies = parts[kind]
+            c = src.copy()
+            c.data = src.data.copy()
+            bpy.context.scene.collection.objects.link(c)
+            if built < 1:                                                    # only the stern part is plated yet
+                bm2 = bmesh.new()
+                bm2.from_mesh(c.data)
+                bmesh.ops.bisect_plane(bm2, geom=bm2.verts[:] + bm2.edges[:] + bm2.faces[:],
+                                       plane_co=(0, -length / 2 + length * built, 0), plane_no=(0, 1, 0), clear_outer=True)
+                bm2.to_mesh(c.data)
+                bm2.free()
+            # model y (its length) along the heading
+            sc_ = scale_of(kind)
+            c.data.transform(Matrix.Translation((x, y, z)) @ Matrix.Rotation(head - math.pi / 2, 4, "Z") @ Matrix.Scale(sc_, 4))
+            copies.append(c)
+        for kind, (src, _l, copies) in parts.items():
+            bpy.data.objects.remove(src, do_unlink=True)
+            for o in bpy.data.objects:
+                o.select_set(o in copies)
+            bpy.context.view_layer.objects.active = copies[0]
+            if len(copies) > 1:
+                bpy.ops.object.join()
+            m = copies[0].modifiers.new("t", "TRIANGULATE")
+            bpy.ops.object.modifier_apply(modifier=m.name)
+        print("  ships:", {k_: len(c_) for k_, (_s, _l, c_) in parts.items()})
+
+    def bon_weather(k):
+        # the weather-control station (Legends: "a massive weather-control station lay in the mountains to the north of
+        # the main cities; it was used to generate sweeper storms that cleaned the polluted air"; the look is a design
+        # choice): a concrete terrace dug into the slope, three tall emitter masts with stacked lit rings, a big
+        # dish, domed control halls, a pad. ~10 map units across
+        k.lathe([(4.6, -SKIRT), (4.6, 0.4)], [B_CONC], sides=9, sy=0.9, jitter=0.07, cap=B_CONC)        # the terrace
+        k.lathe([(3.0, 0.4), (2.8, 1.0)], [B_CONC_WIN], sides=12, cap=B_ROOF)                           # the base hall
+        for i in range(3):                                                                              # emitter masts
+            a = 2 * math.pi * i / 3 + 0.3
+            x, y = 1.6 * math.cos(a), 1.6 * math.sin(a)
+            k.lathe([(0.35, 1.0), (0.2, 7.0), (0.0, 7.6)], [B_PIPE, B_PIPE], sides=8, cx=x, cy=y)
+            for z in (3.2, 4.6, 6.0):                                                                   # the rings
+                k.lathe([(0.75, z), (0.75, z + 0.18)], [B_GLOW], sides=14, cx=x, cy=y, cap=B_PLATE)
+            k.lathe([(0.12, 7.6), (0.12, 7.8)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
+        k.lathe([(0.5, 1.0), (0.5, 4.2)], [B_PLATE_WIN], sides=10, cap=B_ROOF)                          # the dish pylon
+        k.lathe([(0.2, 4.2), (1.8, 4.7), (2.2, 5.3)], [B_HULL, B_HULL], sides=18)                       # the dish
+        for x, y, r in ((-2.6, 2.2, 0.9), (2.6, 2.4, 0.8), (0.0, -3.0, 1.0)):                          # domed halls
+            k.lathe([(r, 0.4), (r, 1.0), (r * 0.7, 1.5), (0.0, 1.7)], [B_CONC_WIN, B_ROOF, B_ROOF], sides=14, cx=x, cy=y)
+        k.lathe([(1.0, 0.4), (1.0, 0.6)], [B_HAZARD], sides=14, cx=-3.2, cy=-1.6, cap=B_PAD)            # the pad
+
+    def etti_tower(k, x, y, z0, h, r, rng, cap=True):
+        """a Mondder tower: ceramic shaft with lit bands, a teal glass setback, a rounded crown, sometimes a pad"""
+        sides = rng.choice([8, 10, 12])
+        k.lathe([(r, z0), (r, z0 + h * 0.6)], [E_CERAMIC_WIN], sides=sides, cx=x, cy=y)
+        k.lathe([(r * 0.82, z0 + h * 0.6), (r * 0.72, z0 + h)], [E_GLASS_LIT], sides=sides, cx=x, cy=y)
+        if cap:
+            k.lathe([(r * 0.74, z0 + h), (r * 0.5, z0 + h + r * 0.5), (0.0, z0 + h + r * 0.65)], [E_CERAMIC, E_ROOF],
+                    sides=sides, cx=x, cy=y)
+        else:                                                                   # a landing pad on top
+            k.lathe([(r * 1.35, z0 + h), (r * 1.35, z0 + h + 0.04)], [E_STEEL], sides=16, cx=x, cy=y, cap=E_PAD)
+
+    def etti_city(k, band, rng):
+        # Mondder (Legends: the Corporate Sector Authority's capital; comic stills "Mondder streets", "Imperial Embassy",
+        # the Mondder Spaceport pads): slender round ceramic towers with lit bands and teal glass tops, turned glass
+        # slab towers, low domed halls, street neon; downtown taller with sky-bridges. band 1 outskirts .. 4 downtown
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        towers = []
+        for _ in range(1 + band + rng.randint(0, 1)):                                                    # round towers
+            r = rng.uniform(0.07, 0.11) + 0.012 * band
+            p_ = spot(r * 1.4)
+            if p_:
+                h = rng.uniform(0.35, 0.6) + 0.28 * band + (0.5 * rng.random() if band == 4 else 0.0)
+                etti_tower(k, *p_, -0.3, h, r, rng, cap=rng.random() > 0.25)
+                towers.append((*p_, h))
+        for _ in range(rng.randint(1, 2) + (band >= 3)):                                                 # glass slabs
+            w, d = rng.uniform(0.1, 0.16), rng.uniform(0.05, 0.08)
+            p_ = spot(max(w, d) * 1.2)
+            if p_:
+                h = rng.uniform(0.3, 0.5) + 0.2 * band
+                a = rng.uniform(0, math.pi)
+                cslab(k, *p_, -0.3, h, w, d, a, E_GLASS_LIT, E_ROOF)
+                cslab(k, *p_, h, h + 0.08, w * 0.9, d * 0.9, a, E_CERAMIC, E_GOLD, wt=w * 0.5, dt=d * 0.4)
+        for _ in range(3 - band // 2):                                                                   # domed halls
+            r = rng.uniform(0.1, 0.16)
+            p_ = spot(r * 1.2)
+            if p_:
+                k.lathe([(r, -0.3), (r, 0.12), (r * 0.75, 0.24), (0.0, 0.3)], [E_CERAMIC_WIN, E_DOME, E_DOME], sides=12,
+                        cx=p_[0], cy=p_[1])
+        for _ in range(2):                                                                               # street neon
+            p_ = spot(0.03)
+            if p_:
+                k.box(p_[0] - 0.05, p_[1] - 0.01, 0.0, p_[0] + 0.05, p_[1] + 0.01, 0.12, E_NEON, top=E_NEON)
+        if band >= 3 and len(towers) >= 2:                                                               # sky-bridge
+            (x0, y0, h0), (x1, y1, h1) = towers[:2]
+            z = min(h0, h1) * 0.7
+            k.tube((x0, y0, z), (x1, y1, z), 0.025, E_GLASS_LIT, sides=4)
+
+    def arco_city(k, band, rng):
+        # the Arcoplex (canon: Cybot Galactica's city-headquarters on Etti IV, "actively expanding the city by burning
+        # the surrounding forests"; its look is a design choice): stepped cobalt arcology blocks with gold trim and lit
+        # window rows, droid-works sheds, arched gateways, cranes on the expansion edge. band 1 edge .. 4 core
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(1 + (band >= 2) + (band >= 4)):                                                   # arcology
+            w, d = rng.uniform(0.22, 0.32), rng.uniform(0.16, 0.24)
+            p_ = spot(max(w, d))
+            if p_:
+                a, z = rng.uniform(0, math.pi), -0.3
+                for step in range(1 + band // 2 + rng.randint(0, 1)):
+                    h = rng.uniform(0.18, 0.28)
+                    f = 1 - 0.22 * step
+                    cslab(k, *p_, z, z + h + 0.3 * (step == 0), w * f, d * f, a, E_COBALT_WIN, E_STEEL)
+                    z += h + 0.3 * (step == 0)
+                    cslab(k, *p_, z, z + 0.03, w * f * 1.02, d * f * 1.02, a, E_GOLD, E_GOLD)
+        for _ in range(rng.randint(1, 2)):                                                               # droid works
+            w, d = rng.uniform(0.15, 0.22), rng.uniform(0.09, 0.13)
+            p_ = spot(max(w, d))
+            if p_:
+                cslab(k, *p_, -0.3, 0.2, w, d, rng.uniform(0, math.pi), E_STEEL, E_ROOF)
+        if rng.random() < 0.5:                                                                           # an arch gate
+            p_ = spot(0.18)
+            if p_:
+                a = rng.uniform(0, math.pi)
+                pts = [(p_[0] + 0.16 * math.cos(math.pi * i / 6) * math.cos(a), p_[1] + 0.16 * math.cos(math.pi * i / 6) * math.sin(a),
+                        0.3 * math.sin(math.pi * i / 6)) for i in range(7)]
+                for q0, q1 in zip(pts, pts[1:]):
+                    k.tube(q0, q1, 0.025, E_GOLD, sides=4)
+        if band == 1 and rng.random() < 0.6:                                                             # a crane
+            p_ = spot(0.05)
+            if p_:
+                k.box(p_[0] - 0.02, p_[1] - 0.02, -0.3, p_[0] + 0.02, p_[1] + 0.02, 0.8, E_HAZARD, top=E_HAZARD)
+                k.tube((p_[0], p_[1], 0.78), (p_[0] + 0.3, p_[1], 0.82), 0.015, E_HAZARD, sides=4)
+
+    def etti_spaceport(k):
+        # the Mondder Spaceport (Legends: the primary spaceport of Etti IV's capital, its holding bays (Docking Bays
+        # 41 and 45) and the Dream Emporium entertainment complex inside it; comic still: shuttles landing on round
+        # pads among white towers): a terminal crescent with a control tower, sunken round holding bays, landing pads
+        # on pylons, the Dream Emporium's neon-lit dome. ~11 map units across
+        k.lathe([(5.6, -SKIRT), (5.6, 0.3)], [E_CERAMIC], sides=12, sy=0.85, jitter=0.03, cap=E_ROOF)       # the apron
+        for i, a in enumerate((-0.9, -0.3, 0.3, 0.9)):                                                     # holding bays
+            x, y = 3.7 * math.sin(a), -2.6 + 1.2 * math.cos(a)
+            k.lathe([(1.25, 0.3), (1.25, 0.75), (1.05, 0.75), (1.05, 0.31)], [E_CERAMIC_WIN, E_ROOF, E_CERAMIC], sides=18,
+                    cx=x, cy=y)
+            k.lathe([(1.04, 0.31), (1.04, 0.33)], [E_PAD], sides=18, cx=x, cy=y, cap=E_PAD)
+            k.box(x - 0.18, y + 1.15, 0.3, x + 0.18, y + 1.32, 0.8, E_NEON, top=E_NEON)                    # bay number
+        for x, y in ((-4.0, 1.4), (4.0, 1.4)):                                                             # raised pads
+            k.lathe([(0.35, 0.3), (0.28, 1.4)], [E_STEEL], sides=8, cx=x, cy=y)
+            k.lathe([(1.3, 1.4), (1.3, 1.55)], [E_HAZARD], sides=16, cx=x, cy=y, cap=E_PAD)
+        for i in range(9):                                                                                 # terminal
+            a0, a1 = math.pi * (0.15 + 0.7 * i / 9), math.pi * (0.15 + 0.7 * (i + 1) / 9)
+            am = (a0 + a1) / 2
+            cslab(k, 3.2 * math.cos(am), 0.6 + 2.0 * math.sin(am), 0.3, 1.6, 0.6, 0.55, am + math.pi / 2,
+                  E_GLASS_LIT if i % 2 else E_CERAMIC_WIN, E_ROOF)
+        k.lathe([(0.75, 0.3), (0.55, 4.8)], [E_CERAMIC_WIN], sides=12, cy=2.4)                             # control tower
+        k.lathe([(0.6, 4.8), (1.2, 5.1), (1.2, 5.6), (0.7, 5.9), (0.0, 6.0)], [E_GLASS_LIT, E_GLASS_LIT, E_ROOF, E_ROOF],
+                sides=16, cy=2.4)
+        k.tube((0, 2.4, 5.95), (0, 2.4, 7.0), 0.05, E_STEEL, sides=4)
+        k.lathe([(1.5, 0.3), (1.5, 0.9), (1.25, 1.6), (0.7, 2.1), (0.0, 2.25)],
+                [E_NEON, E_DOME, E_DOME, E_DOME], sides=20, cx=0.0, cy=0.2)                                  # Dream Emporium
+        for j in range(8):                                                                                 # its neon posts
+            a = 2 * math.pi * j / 8
+            k.box(1.75 * math.cos(a) - 0.06, 0.2 + 1.75 * math.sin(a) - 0.06, 0.3, 1.75 * math.cos(a) + 0.06,
+                  0.2 + 1.75 * math.sin(a) + 0.06, 1.2, E_NEON, top=E_NEON)
+
+    def etti_arcoplex(k):
+        # the Arcoplex (canon: Cybot Galactica's city-headquarters on Etti IV; the look is a design choice from its name):
+        # a vast arc of stepped cobalt arcology wrapping a central headquarters spire with a gold crown, a second
+        # lower arc behind, droid-assembly halls in the yard, landing pads on the arc's roof, gold trim on every step.
+        # ~13 map units across
+        k.lathe([(6.4, -SKIRT), (6.4, 0.3)], [E_STEEL], sides=14, sy=0.9, jitter=0.03, cap=E_ROOF)          # the base
+        for ring, (r0, steps, a_span) in enumerate(((4.8, 4, 0.78), (3.0, 3, 0.62))):
+            n = 14 if ring == 0 else 10
+            for i in range(n):
+                a0, a1 = math.pi * (0.5 - a_span + 2 * a_span * i / n), math.pi * (0.5 - a_span + 2 * a_span * (i + 1) / n)
+                am, half = (a0 + a1) / 2, r0 * (a1 - a0) / 2 * 1.03
+                z = 0.3
+                for st in range(steps):                                                                     # stepped
+                    h = 1.0 if st == 0 else 0.75
+                    f = 1 - 0.2 * st
+                    cslab(k, r0 * math.cos(am), r0 * math.sin(am) - 0.6, z, z + h, half, 0.75 * f, am + math.pi / 2,
+                          E_COBALT_WIN, E_STEEL)
+                    cslab(k, r0 * math.cos(am), r0 * math.sin(am) - 0.6, z + h, z + h + 0.06, half * 1.01, 0.77 * f,
+                          am + math.pi / 2, E_GOLD, E_GOLD)
+                    z += h + 0.06
+                if ring == 0 and i % 4 == 1:                                                                 # roof pads
+                    k.lathe([(0.45, z), (0.45, z + 0.05)], [E_STEEL], sides=12, cx=r0 * math.cos(am), cy=r0 * math.sin(am) - 0.6,
+                            cap=E_PAD)
+        k.lathe([(1.5, 0.3), (1.2, 3.0), (0.9, 6.5), (0.6, 8.0)], [E_COBALT_WIN, E_COBALT_WIN, E_GLASS_LIT], sides=12, cy=0.6)
+        k.lathe([(0.62, 8.0), (0.9, 8.3), (0.5, 9.0), (0.0, 9.8)], [E_GOLD, E_GOLD, E_GOLD], sides=12, cy=0.6)   # crown
+        for a in (0.4, 2.0, 3.6, 5.2):                                                                      # buttresses
+            k.tube((1.4 * math.cos(a), 0.6 + 1.4 * math.sin(a), 0.3), (0.7 * math.cos(a), 0.6 + 0.7 * math.sin(a), 6.0),
+                   0.14, E_GOLD, sides=4)
+        for x in (-2.2, 0.0, 2.2):                                                                          # droid halls
+            cslab(k, x, -3.6, 0.3, 1.1, 0.9, 0.55, 0.0, E_STEEL, E_ROOF)
+            k.box(x - 0.5, -4.16, 0.3, x + 0.5, -4.14, 0.9, E_HAZARD)
+        for x in (-4.6, 4.6):                                                                               # the gates
+            pts = [(x, -1.2 + 1.0 * math.cos(math.pi * i / 8), 0.3 + 1.6 * math.sin(math.pi * i / 8)) for i in range(9)]
+            for q0, q1 in zip(pts, pts[1:]):
+                k.tube(q0, q1, 0.12, E_GOLD, sides=5)
+
+    def etti_dancedome(k):
+        # the Free-Flight Dance Dome (Legends: an elegant bistro in Mondder, where Han Solo met Ploovo Two-For-One; its
+        # name is the look: a zero-gravity dance floor under a dome; the Essential Guide image is the reference the
+        # user can supply): a slender ceramic stem rising from a terraced garden plaza to a broad glass dome with
+        # glowing hover rings inside, a ring terrace with lamps round it, two pavilions on the plaza. ~8 map units
+        k.lathe([(4.0, -SKIRT), (4.0, 0.3)], [E_CERAMIC], sides=16, sy=0.9, cap=E_GARDEN)                   # the plaza
+        for x, y, r in ((-2.4, -1.6, 0.8), (2.5, -1.4, 0.7), (0.0, 2.6, 0.9)):                            # gardens
+            k.lathe([(r, 0.29), (r, 0.42)], [E_GARDEN], sides=10, cx=x, cy=y, jitter=0.12, cap=E_GARDEN)
+        k.lathe([(0.7, 0.3), (0.42, 2.0), (0.38, 3.6), (0.9, 4.2)], [E_CERAMIC_WIN, E_CERAMIC, E_CERAMIC], sides=14)  # stem
+        k.lathe([(2.6, 4.2), (2.6, 4.45)], [E_CERAMIC_WIN], sides=24, cap=E_ROOF)                           # dome floor
+        k.lathe([(2.55, 4.45), (2.4, 5.3), (1.9, 6.0), (1.0, 6.55), (0.0, 6.75)], [E_DOME, E_DOME, E_DOME, E_DOME], sides=24)
+        for z, r in ((4.9, 1.7), (5.5, 1.2), (6.0, 0.7)):                                                   # hover rings
+            k.lathe([(r, z), (r, z + 0.1)], [E_NEON], sides=18, cap=E_NEON)
+        k.lathe([(3.1, 4.25), (3.1, 4.35)], [E_GOLD], sides=24, cap=E_CERAMIC)                              # ring terrace
+        for j in range(10):
+            a = 2 * math.pi * j / 10
+            k.lathe([(0.08, 4.35), (0.08, 4.75)], [E_GOLD], sides=4, cx=3.0 * math.cos(a), cy=3.0 * math.sin(a))
+            k.lathe([(0.14, 4.75), (0.14, 4.88)], [E_GLOW], sides=6, cx=3.0 * math.cos(a), cy=3.0 * math.sin(a), cap=E_GLOW)
+        for x, y in ((-2.9, 1.0), (2.9, 1.2)):                                                              # pavilions
+            k.lathe([(0.7, 0.3), (0.7, 0.9), (0.45, 1.25), (0.0, 1.35)], [E_GLASS_LIT, E_DOME, E_DOME], sides=12, cx=x, cy=y)
+
+    def ruu_pod(k, x, y, z0, h, r, mat=None, stalk=0.0, sides=10):
+        """a Ruurian cocoon pod: a tapered ellipsoid of silk (resin-lit openings), on a stalk if `stalk` > 0"""
+        if stalk:
+            k.lathe([(r * 0.18, z0), (r * 0.12, z0 + stalk)], [R_STALK], sides=6, cx=x, cy=y)
+            z0 += stalk
+        m = mat or R_SILK_WIN
+        k.lathe([(r * 0.3, z0), (r * 0.85, z0 + h * 0.18), (r, z0 + h * 0.45), (r * 0.8, z0 + h * 0.75),
+                 (r * 0.35, z0 + h * 0.95), (0.0, z0 + h)], [m, m, m, R_SILK, R_SILK], sides=sides, cx=x, cy=y)
+
+    def ruu_segments(k, x0, y0, x1, y1, z0, r, n, mat=R_CHITIN_WIN):
+        """a segmented hall like the Ruurians' own bodies: a row of overlapping chitin rings from (x0, y0) to (x1, y1)"""
+        for i in range(n):
+            f = i / max(n - 1, 1)
+            x, y = x0 + (x1 - x0) * f, y0 + (y1 - y0) * f
+            rr = r * (0.8 + 0.2 * math.sin(math.pi * f))
+            k.lathe([(rr * 0.9, z0), (rr, z0 + rr * 0.5), (rr * 0.85, z0 + rr * 0.95), (0.0, z0 + rr * 1.2)],
+                    [mat, R_CHITIN, R_MOSS], sides=10, cx=x, cy=y)
+
+    def ruu_city(k, band, rng):
+        # a Ruurian colony (Legends: Ruurian society "made up of 143 colonies, and every Ruurian belonged to a single
+        # colony for life"; the look is a design choice from the caterpillar-like species): clusters of silk cocoon
+        # pods, some raised on stalks, segmented chitin halls, silk bridges between pods, moss on the roofs; the
+        # colony's heart taller. band 1 edge .. 4 heart
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        pods = []
+        for _ in range(2 + band + rng.randint(0, 1)):                                                     # pods
+            r = rng.uniform(0.13, 0.2) + 0.012 * band
+            p_ = spot(r * 1.1)
+            if p_:
+                st = rng.uniform(0.15, 0.4) * (rng.random() < 0.25 + 0.1 * band)
+                h = rng.uniform(0.15, 0.3) + 0.12 * band
+                ruu_pod(k, *p_, -0.3, h + 0.3, r, stalk=st)
+                pods.append((*p_, -0.3 + st + (h + 0.3) * 0.5))
+        for _ in range(rng.randint(1, 2)):                                                                # segmented hall
+            a = rng.uniform(0, math.pi)
+            p_ = spot(0.3)
+            if p_:
+                L = rng.uniform(0.25, 0.4)
+                ruu_segments(k, p_[0] - L * math.cos(a), p_[1] - L * math.sin(a), p_[0] + L * math.cos(a),
+                             p_[1] + L * math.sin(a), -0.08, rng.uniform(0.13, 0.18), rng.randint(3, 5))
+        for (x0, y0, z0), (x1, y1, z1) in zip(pods, pods[1:3]):                                            # silk bridges
+            k.tube((x0, y0, z0), (x1, y1, z1), 0.02, R_SILK, sides=4)
+        if band >= 3:                                                                                     # the heart pod
+            p_ = spot(0.2)
+            if p_:
+                ruu_pod(k, *p_, -0.3, 0.9 + 0.25 * band, 0.26, mat=R_CHITIN_WIN, sides=12)
+
+    def ruu_university(k):
+        # the University of Ruuria (canon: a university on Ruuria, still teaching in 6 BBY; Legends: the Ruurian
+        # historian S. ... wrote there; the look is a design choice): an old academic quarter of pale arched-stone halls
+        # round a green quad, a library spire of stacked silk-and-stone rings, a domed observatory, a lecture
+        # amphitheatre, and Ruurian segmented halls and cocoon dormitories added round it. ~12 map units
+        k.lathe([(5.8, -SKIRT), (5.8, 0.3)], [R_STONE], sides=14, sy=0.9, jitter=0.03, cap=R_MOSS)          # the campus
+        k.box(-2.2, -1.6, 0.3, 2.2, 1.6, 0.36, R_LEAF, top=R_LEAF)                                        # the quad
+        for sx, sy_, w, d in ((-3.2, 0, 0.9, 2.4), (3.2, 0, 0.9, 2.4), (0, 2.6, 2.6, 0.9)):               # stone halls
+            k.box(sx - w, sy_ - d, 0.3, sx + w, sy_ + d, 1.9, R_STONE_WIN, top=R_STONE)
+            cslab(k, sx, sy_, 1.9, 2.5, w * 1.05, d * 1.05, 0.0, R_SLATE, R_SLATE, wt=w * 0.3, dt=d * 0.92)
+        x, y = 0.0, 3.0                                                                                  # library spire
+        for i, (r, h) in enumerate(((1.3, 1.6), (1.1, 1.3), (0.9, 1.2), (0.7, 1.0))):
+            z = 0.3 + sum(hh for _r, hh in ((1.3, 1.6), (1.1, 1.3), (0.9, 1.2), (0.7, 1.0))[:i])
+            k.lathe([(r, z), (r, z + h * 0.8)], [R_STONE_WIN if i % 2 == 0 else R_SILK_WIN], sides=14, cx=x, cy=y)
+            k.lathe([(r * 1.12, z + h * 0.8), (r * 0.9, z + h)], [R_BRONZE], sides=14, cx=x, cy=y)
+        k.lathe([(0.55, 5.4), (0.0, 7.0)], [R_BRONZE], sides=10, cx=x, cy=y)
+        k.lathe([(1.4, 0.3), (1.4, 1.2), (1.1, 1.9), (0.6, 2.3), (0.0, 2.45)], [R_STONE_WIN, R_DOME, R_DOME, R_DOME],
+                sides=18, cx=-3.4, cy=-3.2)                                                              # observatory
+        for i in range(5):                                                                               # amphitheatre
+            r0 = 1.0 + 0.35 * i
+            k.lathe([(r0, 0.3 + 0.12 * i), (r0, 0.42 + 0.12 * i)], [R_STONE], sides=16, cx=3.2, cy=-3.2, cap=R_STONE)
+        k.lathe([(0.9, 0.3), (0.9, 0.35)], [R_MUD], sides=16, cx=3.2, cy=-3.2, cap=R_MUD)
+        ruu_segments(k, -4.8, 1.2, -4.8, 4.2, 0.3, 0.6, 5)                                               # Ruurian halls
+        ruu_segments(k, 4.6, 1.0, 3.2, 4.4, 0.3, 0.55, 5)
+        for x, y in ((-1.6, -3.9), (0.2, -4.4), (1.6, -3.8), (-4.2, -1.0)):                               # dormitories
+            ruu_pod(k, x, y, 0.3, 1.6, 0.55, stalk=0.4)
+        for x, y in ((-1.5, 0.0), (1.5, 0.0), (0.0, -0.9), (0.0, 0.9)):                                  # quad trees
+            k.lathe([(0.08, 0.36), (0.06, 0.9)], [R_STALK], sides=5, cx=x, cy=y)
+            k.lathe([(0.15, 0.8), (0.45, 1.05), (0.3, 1.35), (0.0, 1.45)], [R_LEAF, R_LEAF, R_LEAF], sides=8, cx=x, cy=y)
+
+    def ruu_great_hive(k):
+        # the First Colony's great hive (the oldest of the 143 colonies (Legends: 143 colonies; "first" is invented)):
+        # a vast mound of fused cocoon pods rising in tiers to a crown pod, segmented tunnels radiating out, pods on
+        # stalks round it, silk cables strung between them, resin light in every opening. ~11 map units
+        k.lathe([(5.2, -SKIRT), (5.2, 0.3)], [R_MUD], sides=13, sy=0.9, jitter=0.08, cap=R_MOSS)            # the mound
+        k.lathe([(3.6, 0.3), (3.4, 1.6), (2.6, 3.2), (1.6, 4.6), (0.0, 5.4)], [R_SILK_WIN, R_SILK_WIN, R_SILK, R_SILK],
+                sides=16, jitter=0.06)
+        for i in range(9):                                                                               # fused pods
+            a = 2 * math.pi * i / 9
+            r_ = 2.6 + 0.4 * (i % 2)
+            ruu_pod(k, r_ * math.cos(a), r_ * math.sin(a), 0.3 + 0.6 * (i % 3), 2.2 + 0.4 * (i % 2), 0.8, sides=10)
+        ruu_pod(k, 0.0, 0.0, 4.6, 2.4, 0.9, mat=R_CHITIN_WIN, sides=12)                                   # crown pod
+        for i in range(4):                                                                               # tunnels
+            a = 2 * math.pi * i / 4 + 0.4
+            ruu_segments(k, 3.4 * math.cos(a), 3.4 * math.sin(a), 5.0 * math.cos(a), 5.0 * math.sin(a), 0.3, 0.55, 4)
+        tops = []
+        for i in range(6):                                                                               # stalked pods
+            a = 2 * math.pi * (i + 0.5) / 6
+            x, y = 4.4 * math.cos(a), 4.4 * math.sin(a)
+            ruu_pod(k, x, y, 0.3, 1.1, 0.45, stalk=1.4)
+            tops.append((x, y, 2.3))
+        for (x0, y0, z0), (x1, y1, z1) in zip(tops, tops[1:] + tops[:1]):                                 # silk cables
+            k.tube((x0, y0, z0), (x1, y1, z1), 0.04, R_SILK, sides=4)
+        for x, y, z in tops[::2]:
+            k.tube((x, y, z), (0.0, 0.0, 4.2), 0.05, R_SILK, sides=4)
+
+    def oss_dome(k, x, y, z0, r, h, broken, rng):
+        """a squat Ossan dome of bronzium on a stone drum (Knossa: "its squat domes"); broken ones lose their cap"""
+        k.lathe([(r, z0), (r, z0 + h * 0.45)], [O_STONE_WIN], sides=12, cx=x, cy=y)
+        prof = [(r * 1.04, z0 + h * 0.45), (r * 0.95, z0 + h * 0.65), (r * 0.72, z0 + h * 0.85), (r * 0.38, z0 + h)]
+        if broken:                                                          # the cap fell in: a jagged rim
+            k.lathe(prof[:3], [O_BRONZE, O_BRONZE], sides=12, cx=x, cy=y, jitter=0.12)
+        else:
+            k.lathe(prof + [(0.0, z0 + h * 1.04)], [O_BRONZE, O_BRONZE, O_BRONZE, O_BRONZE], sides=12, cx=x, cy=y)
+
+    def oss_rubble(k, rng, cx, cy, spread, n, size=(0.08, 0.22), z0=-0.05):
+        for _ in range(n):
+            x, y = cx + rng.uniform(-spread, spread), cy + rng.uniform(-spread, spread)
+            w = rng.uniform(*size)
+            cslab(k, x, y, z0, z0 + w * rng.uniform(0.5, 1.2), w, w * rng.uniform(0.5, 1.0), rng.uniform(0, math.pi),
+                  rng.choice([O_RUBBLE, O_STONE, O_SCORCH]), O_RUBBLE)
+
+    def oss_ruin(k, band, rng):
+        # the ruins of Ossus' cities (Knossa: stone and bronzium, squat domes (canon); "the Cron incident destroyed most
+        # of the buildings in these cities" (Legends)): broken stone walls and roofless houses, squat bronzium domes,
+        # some fallen in, toppled columns, rubble and moss; the heart has the bigger domes. band 1 edge .. 4 heart
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(1 + band // 2 + rng.randint(0, 1)):                                                # domes
+            r = rng.uniform(0.14, 0.2) + 0.03 * band
+            p_ = spot(r * 1.1)
+            if p_:
+                oss_dome(k, *p_, -0.3, r, 0.42 + 0.05 * band, rng.random() < 0.45, rng)   # squat (canon)
+        for _ in range(2 + band):                                                                         # roofless walls
+            w, d = rng.uniform(0.1, 0.18), rng.uniform(0.08, 0.14)
+            p_ = spot(max(w, d) * 1.1)
+            if p_:
+                a = rng.uniform(0, math.pi)
+                h = rng.uniform(0.12, 0.3) + 0.05 * band
+                ca, sa = math.cos(a), math.sin(a)
+                for sx, sy, ww, dd in ((0, d, w, 0.02), (0, -d, w, 0.02), (w, 0, 0.02, d), (-w, 0, 0.02, d)):
+                    if rng.random() < 0.8:                                                                # a wall stands
+                        hh = h * rng.uniform(0.4, 1.0)
+                        cslab(k, p_[0] + ca * sx - sa * sy, p_[1] + sa * sx + ca * sy, -0.3, hh, ww, dd, a,
+                              rng.choice([O_STONE_WIN, O_STONE, O_SCORCH]), O_MOSS)
+        for _ in range(band):                                                                             # columns
+            p_ = spot(0.05)
+            if p_:
+                if rng.random() < 0.5:
+                    k.lathe([(0.04, -0.3), (0.035, rng.uniform(0.3, 0.6))], [O_STONE], sides=6, cx=p_[0], cy=p_[1], cap=O_MOSS)
+                else:                                                                                     # toppled
+                    a = rng.uniform(0, 6.28)
+                    k.tube((p_[0], p_[1], 0.04), (p_[0] + 0.4 * math.cos(a), p_[1] + 0.4 * math.sin(a), 0.04), 0.04, O_STONE, sides=6)
+        oss_rubble(k, rng, 0.0, 0.0, 0.8, 3 + band)
+
+    def ysanna_camp(k, band, rng):
+        # an Ysanna camp (canon + Legends: masked tribes who depend on the kirruk and live in the valleys near the Eocho
+        # Mountains, among the ruins they revere; the look is a design choice): conical hide tents on timber poles,
+        # a long timber hall, totem poles carved with painted masks, a fire ring, a reused ruin wall
+        placed = []
+
+        def spot(r, lim=0.8):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(2 + band):                                                                         # tents
+            r = rng.uniform(0.09, 0.14)
+            p_ = spot(r * 1.2)
+            if p_:
+                h = rng.uniform(0.28, 0.4)
+                k.lathe([(r, -0.05), (r * 0.25, h), (0.02, h + 0.08)], [O_HIDE, O_TIMBER], sides=7, cx=p_[0], cy=p_[1])
+        if band >= 2:                                                                                     # long hall
+            p_ = spot(0.25)
+            if p_:
+                a = rng.uniform(0, math.pi)
+                cslab(k, *p_, -0.1, 0.14, 0.22, 0.09, a, O_TIMBER, O_TIMBER)
+                cslab(k, *p_, 0.14, 0.26, 0.24, 0.11, a, O_HIDE, O_HIDE, wt=0.24, dt=0.01)
+        for _ in range(1 + band // 2):                                                                    # mask totems
+            p_ = spot(0.04)
+            if p_:
+                k.lathe([(0.035, -0.1), (0.03, 0.55)], [O_MASK], sides=6, cx=p_[0], cy=p_[1], cap=O_TIMBER)
+        p_ = spot(0.1)
+        if p_:                                                                                            # fire ring
+            k.lathe([(0.1, -0.05), (0.1, 0.03)], [O_STONE], sides=8, cx=p_[0], cy=p_[1], cap=O_DARK)
+        if rng.random() < 0.5:                                                                            # a ruin wall
+            p_ = spot(0.2)
+            if p_:
+                cslab(k, *p_, -0.3, 0.25, 0.2, 0.025, rng.uniform(0, math.pi), O_STONE_CARVED, O_MOSS)
+
+    def oss_library(k):
+        # the ruins of the Great Jedi Library (Legends: "located on a hill in the Ooroo Canyon, the Library was a large,
+        # unadorned stone building with many of its rooms located below ground"; canon: designed by Odan-Urr, devastated
+        # by the Cron Supernova, "its ruins were the only remains of what was once a palatial facility"; Legends: the
+        # Academy of Jedi Archaeology and others excavated the ruins): a vast plain stone hall on its hill, roof fallen,
+        # walls broken to stumps on one side and scorched, its colonnade toppled, excavation pits opening into the
+        # rooms below, the archaeologists' tents, scaffolds and a crane. ~12 map units
+        rng = random.Random("hod_oss_library")
+        k.lathe([(6.2, -SKIRT), (5.6, 0.4), (4.4, 1.0)], [O_ROCK, O_EARTH], sides=12, sy=0.85, jitter=0.07, cap=O_EARTH)   # hill
+        x0, x1, y0, y1, z0 = -3.6, 3.6, -2.2, 2.2, 1.0
+        k.box(x0 - 0.3, y0 - 0.3, z0 - 0.6, x1 + 0.3, y1 + 0.3, z0 + 0.15, O_STONE, top=O_STONE)               # plinth
+        for i in range(12):                                                                              # long walls
+            f0, f1 = i / 12, (i + 1) / 12
+            for y, side in ((y0, 0), (y1, 1)):
+                h = 3.2 if (side == 0 or i < 7) else rng.uniform(0.6, 1.8)
+                k.box(x0 + (x1 - x0) * f0, y - 0.25, z0, x0 + (x1 - x0) * f1 - 0.02, y + 0.25, z0 + h,
+                      O_STONE_WIN if h > 2 else O_SCORCH, top=O_MOSS)
+        for x, h in ((x0, 3.2), (x1, 2.0)):                                                              # end walls
+            k.box(x - 0.25, y0, z0, x + 0.25, y1, z0 + h, O_STONE_CARVED, top=O_MOSS)
+        for i in range(4):                                                                               # roof beams left
+            x = x0 + 0.8 + 1.2 * i
+            k.box(x - 0.15, y0, z0 + 3.0, x + 0.15, y1, z0 + 3.3, O_STONE, top=O_MOSS)
+        k.box(-3.3, -1.9, z0 + 0.15, -1.0, 1.9, z0 + 0.2, O_DARK, top=O_DARK)                           # open pits:
+        k.box(0.4, -1.2, z0 + 0.15, 2.8, 1.4, z0 + 0.2, O_DARK, top=O_DARK)                             # rooms below
+        for x in (-2.2, 1.6):                                                                            # scaffolds
+            for y in (-1.6, 1.0):
+                k.tube((x, y, z0 + 0.2), (x, y, z0 + 2.4), 0.05, O_SCAFFOLD, sides=4)
+            k.box(x - 0.1, -1.7, z0 + 2.3, x + 0.1, 1.1, z0 + 2.4, O_SCAFFOLD, top=O_SCAFFOLD)
+        for i in range(8):                                                                               # colonnade
+            x = x0 + 0.4 + 0.9 * i
+            if i % 3 == 1:                                                                               # toppled
+                k.tube((x, y0 - 0.9, z0 - 0.1), (x + 1.0, y0 - 1.5, z0 - 0.3), 0.18, O_STONE, sides=6)
+            else:
+                k.lathe([(0.2, z0 - 0.4), (0.17, z0 + rng.uniform(1.0, 2.6))], [O_STONE], sides=8, cx=x, cy=y0 - 0.9, cap=O_MOSS)
+        oss_rubble(k, rng, 0.0, -3.4, 3.4, 18, size=(0.2, 0.5), z0=z0 - 0.4)
+        for x, y in ((-4.6, 3.0), (-3.6, 3.6), (-2.6, 3.4)):                                             # dig camp tents
+            k.lathe([(0.5, 0.9), (0.5, 1.3), (0.0, 1.8)], [O_TARP, O_TARP], sides=4, cx=x, cy=y, rot=math.pi / 4)
+        k.tube((4.4, 2.6, 0.9), (4.4, 2.6, 4.2), 0.08, O_SCAFFOLD, sides=4)                             # the crane
+        k.tube((4.4, 2.6, 4.2), (2.4, 1.0, 4.4), 0.06, O_SCAFFOLD, sides=4)
+        k.box(2.37, 0.97, z0 + 1.0, 2.43, 1.03, 4.4, O_DARK)
+
+    def oss_knossa(k):
+        # the ruins of Knossa (canon: "built from stone and bronzium, and its squat domes were located high in the
+        # western Eocho Mountains"; the Knossa Branch Library commissioned by Odan-Urr; Legends capital): a terraced
+        # mountain city of squat bronzium domes on stone drums, many fallen in, the Branch Library's long hall,
+        # retaining walls stepping down the slope, broken stairs, rubble. ~11 map units
+        rng = random.Random("hod_oss_knossa")
+        for i, (r, z) in enumerate(((5.6, 0.0), (4.2, 0.9), (2.8, 1.8))):                               # terraces
+            k.lathe([(r + 0.3, -SKIRT if i == 0 else z - 0.9), (r, z + 0.5)], [O_STONE], sides=14, cy=0.3 * i,
+                    sy=0.85, jitter=0.04, cap=O_EARTH)
+        for i in range(7):                                                                               # domes, ring 1
+            a = 2 * math.pi * i / 7 + 0.3
+            oss_dome(k, 4.4 * math.cos(a), 0.85 * 4.4 * math.sin(a), 0.5, 0.7, 1.6, i % 3 == 0, rng)
+        for i in range(5):                                                                               # ring 2
+            a = 2 * math.pi * i / 5 + 0.9
+            oss_dome(k, 3.0 * math.cos(a), 0.3 + 0.85 * 3.0 * math.sin(a), 1.4, 0.85, 1.9, i == 2, rng)
+        oss_dome(k, 0.0, 0.6, 2.3, 1.5, 2.8, False, rng)                                                # the great dome
+        k.box(-2.2, -1.8, 1.4, 0.8, -1.0, 3.0, O_STONE_WIN, top=O_SCORCH)                               # Branch Library
+        k.box(-2.2, -1.85, 2.2, 0.8, -1.75, 2.45, O_STONE_CARVED)
+        for j in range(6):                                                                               # broken stair
+            k.box(1.6 + 0.35 * j, -3.4, -0.3, 1.95 + 0.35 * j, -2.4, 0.15 * j + 0.3, O_STONE, top=O_STONE)
+        oss_rubble(k, rng, 0.0, 0.0, 4.8, 22, size=(0.15, 0.4), z0=0.3)
+
+    def oss_agorn(k):
+        # the Knossa Spaceport on Agorn Mountain (canon / Legends: "a sprawling promenade wrapped around Agorn Mountain",
+        # built by the Jedi for pilgrims; ruined since the Cron Supernova): a rocky peak with a broad stone promenade
+        # spiralling up round it, landing terraces jutting out at each turn, broken arches, a pilgrims' gate at the
+        # foot; the Eye of Ashlanae vergence on a nearby peak shows as a faint glow at the summit. ~10 map units
+        rng = random.Random("hod_oss_agorn")
+        k.lathe([(4.6, -SKIRT), (3.6, 1.5), (2.4, 4.0), (1.3, 6.5), (0.4, 8.2), (0.0, 8.6)],
+                [O_ROCK, O_ROCK, O_ROCK, O_ROCK, O_ROCK], sides=11, jitter=0.12)                         # the mountain
+        turns, steps = 2.25, 40
+        for i in range(steps):                                                                           # promenade
+            f0, f1 = i / steps, (i + 1) / steps
+            a0, a1 = 2 * math.pi * turns * f0, 2 * math.pi * turns * f1
+            z0 = 0.4 + 6.4 * f0
+            r = 4.0 - 2.6 * f0 + 0.6
+            am = (a0 + a1) / 2
+            cslab(k, r * math.cos(am), r * math.sin(am), z0 - 0.5, z0, r * (a1 - a0) / 2 * 1.1, 0.65, am + math.pi / 2,
+                  O_STONE, O_STONE)
+            if i % 4 == 0 and rng.random() < 0.75:                                                       # parapet posts
+                k.lathe([(0.08, z0), (0.08, z0 + 0.5)], [O_STONE], sides=4, cx=(r + 0.6) * math.cos(am), cy=(r + 0.6) * math.sin(am))
+            if i % 10 == 5:                                                                              # landing terrace
+                tx, ty = (r + 1.3) * math.cos(am), (r + 1.3) * math.sin(am)
+                k.lathe([(1.0, z0 - 0.8), (1.0, z0)], [O_STONE_CARVED], sides=12, cx=tx, cy=ty, cap=O_STONE)
+                k.lathe([(0.15, z0 - 3.5), (0.12, z0 - 0.8)], [O_STONE], sides=6, cx=tx, cy=ty)
+        for x in (-0.9, 0.9):                                                                            # the gate
+            k.box(x - 0.25, -4.9, -0.3, x + 0.25, -4.4, 2.2, O_STONE_CARVED, top=O_MOSS)
+        k.box(-1.15, -4.9, 2.2, 1.15, -4.4, 2.6, O_STONE, top=O_MOSS)
+        k.lathe([(0.25, 8.4), (0.25, 8.9)], [O_GLOW], sides=8, cap=O_GLOW)                              # vergence glow
+        oss_rubble(k, rng, 0.0, 0.0, 4.6, 14, size=(0.15, 0.45), z0=0.0)
+
+    def oss_temple(k):
+        # the ruins of the First Temple, the Jedi Praxeum (canon: "located on the Outer Rim Territories planet Ossus",
+        # where Odan-Urr trained under Master Ooroo): a stepped stone platform, a ring of great columns (some fallen)
+        # round a cracked meditation dome open to the sky, four stairs, carved lintels, bamboo and moss creeping over
+        # all of it. ~10 map units
+        rng = random.Random("hod_oss_temple")
+        for i, (r, z) in enumerate(((5.0, 0.0), (4.0, 0.7), (3.0, 1.4))):                               # steps
+            k.lathe([(r, -SKIRT if i == 0 else z - 0.7), (r, z + 0.7)], [O_STONE_CARVED], sides=4, rot=math.pi / 4,
+                    cap=O_STONE if i < 2 else O_MOSS)
+        for j in range(4):                                                                               # stairs
+            a = math.pi / 2 * j
+            for s_ in range(5):
+                rr = 5.6 - 0.45 * s_
+                cslab(k, rr * math.cos(a), rr * math.sin(a), -0.3, 0.42 * s_ + 0.2, 0.25, 1.0, a, O_STONE, O_STONE)
+        for i in range(12):                                                                              # columns
+            a = 2 * math.pi * i / 12
+            x, y = 2.5 * math.cos(a), 2.5 * math.sin(a)
+            if i in (2, 7, 9):                                                                           # fallen
+                k.tube((x, y, 2.2), (x + 2.4 * math.cos(a + 0.6), y + 2.4 * math.sin(a + 0.6), 0.9), 0.28, O_STONE, sides=8)
+            else:
+                h = rng.uniform(3.0, 4.2)
+                k.lathe([(0.32, 2.1), (0.28, 2.1 + h)], [O_STONE], sides=8, cx=x, cy=y, cap=O_MOSS)
+        for i in range(12):                                                                              # lintels left
+            if i in (0, 4, 5, 10):
+                a0, a1 = 2 * math.pi * i / 12, 2 * math.pi * (i + 1) / 12
+                am = (a0 + a1) / 2
+                cslab(k, 2.5 * math.cos(am), 2.5 * math.sin(am), 5.5, 6.0, 0.7, 0.3, am + math.pi / 2, O_STONE_CARVED, O_MOSS)
+        k.lathe([(1.6, 2.1), (1.6, 3.0), (1.3, 3.9), (0.6, 4.4)], [O_STONE_WIN, O_BRONZE, O_BRONZE], sides=14, jitter=0.1)
+        k.lathe([(0.3, 2.15), (0.3, 2.3)], [O_GLOW], sides=8, cap=O_GLOW)                               # the meditation stone
+        oss_rubble(k, rng, 0.0, 0.0, 4.2, 16, size=(0.15, 0.45), z0=1.4)
+
+    def lola_citadel(k):
+        # the Citadel (canon, TCW "The Citadel" / "Counter Attack" / "Citadel Rescue"; concept art): a maximum-security
+        # prison the Republic and the Jedi built in 522 BBY for rogue and fallen Jedi, "on the north-western side of the
+        # planet, along a bridge between two lakes of yellow lava, powered by the geothermal" heat; a dark, angular,
+        # many-levelled tower on a sheer rock pinnacle, landing platforms, sentry turrets. Here: the pinnacle of basalt,
+        # the tower in stepped octagonal tiers with window bands and angled buttress fins, a crown of spikes and an
+        # antenna, a cantilevered landing platform, a walled forecourt with guard towers, the causeway west-east across
+        # the two lava lakes on pylons, geothermal pipes plunging into the lava at both ends. ~13 map units long
+        k.lathe([(4.2, -SKIRT), (3.6, 1.5), (3.0, 3.2), (2.9, 3.6)], [L_BASALT_CRACK, L_BASALT, L_BASALT], sides=10,
+                jitter=0.12, cap=L_PLATE)                                                                # the pinnacle
+        z = 3.6
+        for i, (r, h) in enumerate(((2.3, 2.0), (1.95, 2.0), (1.6, 1.8), (1.3, 1.6), (1.0, 1.4))):    # the tower tiers
+            k.lathe([(r, z), (r * 0.94, z + h)], [L_PLATE_WIN if i % 2 == 0 else L_RIB], sides=8, rot=math.pi / 8)
+            k.lathe([(r * 1.06, z + h - 0.1), (r * 0.9, z + h + 0.15)], [L_PLATE], sides=8, rot=math.pi / 8, cap=L_PLATE)
+            z += h + 0.15
+        for j in range(8):                                                                               # buttress fins
+            a = 2 * math.pi * j / 8
+            k.tube((2.35 * math.cos(a), 2.35 * math.sin(a), 3.6), (1.35 * math.cos(a), 1.35 * math.sin(a), 9.6),
+                   0.16, L_PLATE, sides=4)
+        for j in range(6):                                                                               # crown spikes
+            a = 2 * math.pi * j / 6
+            k.tube((0.85 * math.cos(a), 0.85 * math.sin(a), z), (1.1 * math.cos(a), 1.1 * math.sin(a), z + 1.4), 0.12,
+                   L_PLATE, sides=4, r1=0.02)
+        k.tube((0, 0, z), (0, 0, z + 3.0), 0.08, L_RIB, sides=4)                                        # antenna
+        k.lathe([(0.14, z + 3.0), (0.14, z + 3.2)], [L_RED], sides=6, cx=0, cy=0, cap=L_RED)
+        k.box(-1.0, 1.6, 8.0, 1.0, 4.4, 8.3, L_PLATE, top=L_PAD)                                         # landing deck
+        for x in (-0.8, 0.8):
+            k.tube((x, 1.8, 7.6), (x, 4.0, 8.0), 0.1, L_RIB, sides=4)
+        k.box(-3.3, -3.3, 3.6, 3.3, -3.0, 4.6, L_PLATE, top=L_PLATE)                                     # forecourt wall
+        k.box(-3.3, -3.3, 3.6, -3.0, 0.8, 4.6, L_PLATE, top=L_PLATE)
+        k.box(3.0, -3.3, 3.6, 3.3, 0.8, 4.6, L_PLATE, top=L_PLATE)
+        for x, y in ((-3.15, -3.15), (3.15, -3.15), (-3.15, 0.8), (3.15, 0.8)):                         # guard towers
+            k.lathe([(0.35, 3.6), (0.3, 5.4)], [L_PLATE_WIN], sides=6, cx=x, cy=y, cap=L_PLATE)
+            k.lathe([(0.08, 5.4), (0.08, 5.6)], [L_GLOW], sides=4, cx=x, cy=y, cap=L_GLOW)
+        for sx in (-1, 1):                                                                               # the causeway
+            k.box(sx * 2.6, -0.5, 2.0, sx * 7.4, 0.5, 2.4, L_PLATE, top=L_RIB)
+            k.box(sx * 2.6, -0.55, 2.4, sx * 7.4, -0.45, 2.7, L_TRIM)
+            k.box(sx * 2.6, 0.45, 2.4, sx * 7.4, 0.55, 2.7, L_TRIM)
+            for x in (3.8, 5.2, 6.6):                                                                    # its pylons
+                k.lathe([(0.3, -SKIRT), (0.25, 2.0)], [L_RIB], sides=6, cx=sx * x, cy=0.0)
+            for y in (-1.2, 1.2):                                                                        # geothermal taps
+                k.tube((sx * 4.4, y, 2.2), (sx * 5.0, y * 1.6, -1.5), 0.22, L_RIB, sides=6)
+                k.lathe([(0.3, -1.6), (0.3, -1.2)], [L_LAVA], sides=8, cx=sx * 5.0, cy=y * 1.6, cap=L_LAVA)
+            k.box(sx * 7.4 - 0.6, -0.9, 1.6, sx * 7.4 + 0.6, 0.9, 3.4, L_PLATE_WIN, top=L_PLATE)        # gatehouses
+
+    def lola_chunk(k, variant):
+        # a piece of Lola Sayu's lost southern hemisphere (canon: "nearly the entire southern hemisphere of the planet
+        # had disappeared, forming a gravitational belt of planetary debris in its orbit"; the planet "had suffered an
+        # unknown event that caused its molten core to be exposed"): cut out of the planet itself, so it is a piece of a
+        # sphere: its outer face a curved patch of the old surface (basalt, glowing cracks, crags), its broken sides the
+        # planet's cross-section (crust, rock strata, red mantle, glowing interior: L_STRATA), its inner face molten.
+        # A closed grid in (angle a, angle b, radius) space, the fracture walls ragged. Tilted so the cut shows from
+        # above; floats from LOLA_FLOAT up (the origin stands on the space floor, under the water plane)
+        rng = random.Random(f"hod_lola_chunk_{variant}")
+        Rp, A, B, depth, tilt, lift = {"a": (9.0, 0.36, 0.3, 0.5, 0.4, 0.0),      # a deep chunk
+                                        "b": (10.0, 0.42, 0.2, 0.18, 0.2, 1.2),    # a slab of crust
+                                        "c": (8.0, 0.26, 0.24, 0.72, 0.95, 0.6),   # a wedge cut deep
+                                        "d": (9.0, 0.12, 0.4, 0.35, 0.7, 2.0)}[variant]   # a sliver
+        na, nb, nr = 22, 20, 9                                             # dense: room for real lumps
+        ph = [rng.uniform(0, 6.28) for _ in range(40)]
+
+        def fbm(x, y, z, o=0, octaves=4):
+            """smooth fractal noise about -1..1 (sums of products of sines with random phases)"""
+            t_, amp, f = 0.0, 1.0, 1.0
+            for q in range(octaves):
+                p0, p1, p2 = ph[(o + 3 * q) % 40], ph[(o + 3 * q + 1) % 40], ph[(o + 3 * q + 2) % 40]
+                t_ += amp * math.sin(f * (1.7 * x + 0.6 * y - 0.9 * z) + p0) * math.sin(f * (-0.8 * x + 1.5 * y + 1.1 * z) + p1)                     * (0.6 + 0.4 * math.sin(f * (0.5 * x - 0.7 * y + 1.9 * z) + p2))
+                amp, f = amp * 0.55, f * 2.1
+            return t_ * 0.9
+
+        def edge(side, s_, l_):                                            # the outline: lobes and bites, per wall
+            return 1 + 0.32 * fbm(3 * s_, 2.2 * l_, side * 1.7, o=side * 5, octaves=3)
+
+        def pos(i, j, l):
+            fa, fb, fr = i / na, j / nb, l / nr
+            a_lo, a_hi = -A * edge(1, fb, fr), A * edge(2, fb, fr)
+            b_lo, b_hi = -B * edge(3, fa, fr), B * edge(4, fa, fr)
+            aa, bb = a_lo + (a_hi - a_lo) * fa, b_lo + (b_hi - b_lo) * fb
+            r_in = Rp * (1 - depth * (1 + 0.15 * fbm(4 * fa, 4 * fb, 0.0, o=11)))
+            r = r_in + (Rp - r_in) * fr
+            if l == nr:                                                    # the old surface: hills, crags, gouges
+                r += 0.9 * fbm(5 * fa, 5 * fb, 1.0, o=17) + 0.7 * max(0.0, fbm(9 * fa, 9 * fb, 2.0, o=23, octaves=3)) ** 1.5
+            elif l == 0:                                                   # the torn inner face, molten and lumpy
+                r += 0.5 * fbm(7 * fa, 7 * fb, 3.0, o=29)
+            d = (math.tan(aa), math.tan(bb), 1.0)
+            n_ = math.sqrt(d[0] ** 2 + d[1] ** 2 + 1)
+            x, y, z = r * d[0] / n_, r * d[1] / n_, r / n_
+            if 0 < l < nr and (i in (0, na) or j in (0, nb)):              # fracture walls: chunky blocks and scoops
+                w = 0.6 * fbm(x * 0.8, y * 0.8, z * 0.8, o=31, octaves=3) + 0.12 * fbm(x * 2.2, y * 2.2, z * 2.2, o=7, octaves=2)
+                nx, ny = (-1 if i == 0 else 1 if i == na else 0), (-1 if j == 0 else 1 if j == nb else 0)
+                x, y = x + nx * w * 1.2, y + ny * w * 1.2
+            g = 0.28                                                       # everything a little warped: no flat facets
+            return (x + g * fbm(y, z, x, o=13, octaves=2), y + g * fbm(z, x, y, o=19, octaves=2), z + g * fbm(x, y, z, o=37, octaves=2))
+
+        verts = {}
+
+        def v(i, j, l):
+            if (i, j, l) not in verts:
+                verts[(i, j, l)] = k.bm.verts.new(pos(i, j, l))
+            return verts[(i, j, l)]
+
+        def quad(c4, uvs, rect):
+            k.put(k.bm.faces.new([v(*c) for c in c4]), uvs, rect)
+        for i in range(na):                                                # outer surface and molten inner face
+            for j in range(nb):
+                uv = ((i / na, j / nb), ((i + 1) / na, j / nb), ((i + 1) / na, (j + 1) / nb), (i / na, (j + 1) / nb))
+                quad([(i, j, nr), (i + 1, j, nr), (i + 1, j + 1, nr), (i, j + 1, nr)], uv,
+                     L_BASALT_CRACK if fbm(3 * i / na, 3 * j / nb, 5.0, o=3, octaves=2) > -0.25 else L_CRUST)
+                quad([(i, j + 1, 0), (i + 1, j + 1, 0), (i + 1, j, 0), (i, j, 0)], uv, L_LAVA)
+        for l in range(nr):                                                # the four fracture walls: the strata
+            for i in range(na):
+                uv = ((i / na, l / nr), ((i + 1) / na, l / nr), ((i + 1) / na, (l + 1) / nr), (i / na, (l + 1) / nr))
+                quad([(i, 0, l), (i + 1, 0, l), (i + 1, 0, l + 1), (i, 0, l + 1)], uv, L_STRATA)
+                quad([(i + 1, nb, l), (i, nb, l), (i, nb, l + 1), (i + 1, nb, l + 1)], uv, L_STRATA)
+            for j in range(nb):
+                uv = ((j / nb, l / nr), ((j + 1) / nb, l / nr), ((j + 1) / nb, (l + 1) / nr), (j / nb, (l + 1) / nr))
+                quad([(0, j + 1, l), (0, j, l), (0, j, l + 1), (0, j + 1, l + 1)], uv, L_STRATA)
+                quad([(na, j, l), (na, j + 1, l), (na, j + 1, l + 1), (na, j, l + 1)], uv, L_STRATA)
+        from mathutils import Matrix  # type: ignore
+        piece = list(verts.values())
+        bmesh.ops.translate(k.bm, verts=piece, vec=(0.0, 0.0, -Rp))        # the old surface's top at z ~ 0
+        bmesh.ops.rotate(k.bm, verts=piece, cent=(0, 0, 0), matrix=Matrix.Rotation(tilt, 3, "X"))   # show the cut
+        zmin = min(p_.co.z for p_ in piece)
+        bmesh.ops.translate(k.bm, verts=piece, vec=(0.0, 0.0, LOLA_FLOAT + lift - zmin))
+        for _ in range(5):                                                 # loose shards drifting round it
+            a_ = rng.uniform(0, 6.28)
+            d_ = Rp * max(A, B) * rng.uniform(1.4, 2.0)
+            x, y, z = d_ * math.cos(a_), d_ * math.sin(a_), LOLA_FLOAT + lift + rng.uniform(0.5, 3.0)
+            s_ = rng.uniform(0.2, 0.5)
+            k.lathe([(0.0, z - s_), (s_, z), (s_ * 0.5, z + s_ * 0.8), (0.0, z + s_ * 1.3)],
+                    [L_STRATA, L_BASALT, L_BASALT], sides=5, cx=x, cy=y, jitter=0.3)
+
+    def rv_pillar(k, x, y, z0, h, r, sides=7):
+        """a banded rock pillar, wider at the foot and the crown (Cato Neimoidia's arches)"""
+        k.lathe([(r * 1.35, z0), (r, z0 + h * 0.3), (r * 0.85, z0 + h * 0.7), (r * 1.1, z0 + h), (r * 0.7, z0 + h * 1.06)],
+                [V_ROCK, V_ROCK, V_ROCK, V_ROCK_DARK], sides=sides, cx=x, cy=y, jitter=0.14)
+
+    def rv_arch(k, p0, p1, z, rise, w, segs=8):
+        """a stone arch from pillar top p0 to p1 (x, y), rising `rise` at the middle; returns the arch points"""
+        pts = []
+        for i in range(segs + 1):
+            f = i / segs
+            pts.append((p0[0] + (p1[0] - p0[0]) * f, p0[1] + (p1[1] - p0[1]) * f, z + rise * math.sin(math.pi * f)))
+        for a_, b_ in zip(pts, pts[1:]):
+            k.tube(a_, b_, w, V_ROCK_DARK, sides=6)
+        return pts
+
+    def rv_hang(k, x, y, ztop, rng, big=1.0):
+        """a building hung beneath an arch: a cream stone drum with lit windows under a green dome, cables above"""
+        r = rng.uniform(0.08, 0.13) * big
+        h = rng.uniform(0.2, 0.35) * big
+        zb = ztop - rng.uniform(0.25, 0.5) * big - h
+        k.lathe([(r * 0.3, zb - 0.06 * big), (r, zb), (r, zb + h)], [V_STONE, V_STONE_WIN], sides=8, cx=x, cy=y)
+        k.lathe([(r * 1.05, zb + h), (r * 0.6, zb + h + r * 0.6), (0.0, zb + h + r * 0.85)], [V_DOME, V_DOME], sides=8, cx=x, cy=y)
+        k.tube((x, y, zb + h + r * 0.8), (x, y, ztop), 0.012 * big, V_DARK, sides=3)
+
+    def rv_city(k, band, rng):
+        # Ringo Vinda's bridge-cities (canon, out-of-universe: the planet designed from the early Cato Neimoidia concept
+        # art: cities slung beneath great rock arches): banded rock pillars joined by arches, buildings hung beneath
+        # the arches and perched on the pillar crowns, a few at the feet; the heart has more pillars and taller arches.
+        # band 1 edge .. 4 heart
+        n = 2 + (band >= 3)
+        pil = []
+        for i in range(n):
+            a = 2 * math.pi * i / n + rng.uniform(-0.4, 0.4)
+            d = rng.uniform(0.45, 0.65)
+            h = rng.uniform(0.7, 1.0) + 0.25 * band
+            x, y = d * math.cos(a), d * math.sin(a)
+            rv_pillar(k, x, y, -0.3, h, rng.uniform(0.1, 0.14))
+            pil.append((x, y, h - 0.3))
+            k.lathe([(0.14, h - 0.3), (0.14, h - 0.12), (0.09, h + 0.02), (0.0, h + 0.08)], [V_STONE_WIN, V_DOME, V_DOME],
+                    sides=8, cx=x, cy=y)                                                          # a crown house
+        for (x0, y0, h0), (x1, y1, h1) in zip(pil, pil[1:] + pil[:1] if n > 2 else pil[1:]):
+            pts = rv_arch(k, (x0, y0), (x1, y1), min(h0, h1) - 0.05, 0.12 + 0.04 * band, 0.035)
+            for q in pts[2:-2:2]:                                                                     # hung buildings
+                rv_hang(k, q[0], q[1], q[2], rng)
+        for _ in range(band):                                                                         # at the feet
+            x, y = rng.uniform(-0.8, 0.8), rng.uniform(-0.8, 0.8)
+            if all(math.hypot(x - a_, y - b_) > 0.25 for a_, b_, _h in pil):
+                cslab(k, x, y, -0.3, rng.uniform(0.1, 0.22), 0.09, 0.07, rng.uniform(0, math.pi), V_STONE_WIN, V_ROOF)
+
+    def rv_archcity(k):
+        # Vindaport (invented name; the look after the early Cato Neimoidia concept art Ringo Vinda was designed from):
+        # two colossal banded pillars joined by a great stone arch, the city hung beneath it in tiers of domed drums
+        # on cables, towers and domes along the arch's back, smaller arches and pillars round them, landing platforms
+        # on the crowns. ~13 map units long
+        rng = random.Random("hod_rv_archcity")
+        for x in (-5.2, 5.2):
+            rv_pillar(k, x, 0.0, -SKIRT, 9.0 + SKIRT, 1.3, sides=10)
+            k.lathe([(1.7, 8.9), (1.7, 9.1)], [V_STONE], sides=12, cx=x, cy=0.0, cap=V_PAD)              # crown platforms
+        pts = rv_arch(k, (-5.2, 0.0), (5.2, 0.0), 8.2, 2.2, 0.55, segs=14)
+        for q in pts[1:-1]:                                                                          # along the back
+            if rng.random() < 0.7:
+                h = rng.uniform(0.5, 1.4)
+                k.lathe([(0.35, q[2] + 0.4), (0.32, q[2] + 0.4 + h), (0.2, q[2] + 0.6 + h), (0.0, q[2] + 0.75 + h)],
+                        [V_STONE_WIN, V_DOME, V_DOME], sides=8, cx=q[0], cy=q[1] + rng.uniform(-0.2, 0.2))
+        for i, q in enumerate(pts[2:-2]):                                                            # the hung city
+            for dy in (-0.7, 0.0, 0.7):
+                rv_hang(k, q[0] + rng.uniform(-0.2, 0.2), q[1] + dy, q[2] - 0.3, rng, big=4.0)
+        for x, y, h in ((-2.6, -3.4, 5.0), (2.4, 3.6, 5.5), (-1.0, 3.8, 4.2), (1.8, -3.6, 4.6)):          # lesser pillars
+            rv_pillar(k, x, y, -SKIRT, h + SKIRT, 0.55)
+        rv_arch(k, (-2.6, -3.4), (1.8, -3.6), 4.6, 0.8, 0.22)
+        rv_arch(k, (-1.0, 3.8), (2.4, 3.6), 4.1, 0.7, 0.22)
+        for x in (-0.6, 0.4, 1.2):
+            rv_hang(k, x, -3.5, 5.0, rng, big=2.5)
+            rv_hang(k, x + 0.4, 3.7, 4.6, rng, big=2.5)
+
+    def rv_lift(k):
+        # the Station Lift (invented): the shuttle port between Vindaport and the ring station above (a civilian
+        # graving dock, canon): a tall slender spire of cream stone and glass, three landing rings round it, beacon
+        # lights at the top, a terminal at its foot. ~9 map units tall
+        k.lathe([(3.0, -SKIRT), (3.0, 0.4)], [V_STONE], sides=14, cap=V_PAD)
+        k.lathe([(1.2, 0.4), (0.9, 3.0), (0.6, 6.5), (0.3, 8.6), (0.0, 9.6)], [V_STONE_WIN, V_GLASS, V_STONE_WIN, V_HULL],
+                sides=10)
+        for z, r in ((2.2, 2.2), (4.2, 1.8), (6.0, 1.4)):                                            # landing rings
+            k.lathe([(r, z), (r, z + 0.15)], [V_HAZARD], sides=16, cap=V_PAD)
+            for j in range(4):
+                a = math.pi / 2 * j
+                k.tube((0.7 * math.cos(a), 0.7 * math.sin(a), z - 0.6), (r * math.cos(a), r * math.sin(a), z), 0.06, V_PANEL, sides=4)
+        k.lathe([(0.15, 9.5), (0.15, 9.8)], [V_LIGHT], sides=6, cap=V_LIGHT)
+        for a in (0.5, 2.6, 4.7):                                                                    # terminal halls
+            cslab(k, 2.2 * math.cos(a), 2.2 * math.sin(a), 0.4, 1.2, 0.7, 0.45, a, V_STONE_WIN, V_DOME)
+
+    def rv_fleet():
+        """ships moored in the ring's graving docks (civilian: blockade runners and freighters, shuttles round it)"""
+        R, out = RV_RING_R, []
+        cx, cy = -R, 0.0                                                    # the planet's centre (origin: the ring's east)
+        rng = random.Random("rv_fleet")
+        for i in range(RV_DOCKS):
+            t = 2 * math.pi * (i + 0.5) / RV_DOCKS
+            x, y = cx + (R + 3.6) * math.cos(t), cy + (R + 3.6) * math.sin(t)
+            out.append((rng.choice(["foray", "lethisk", "foray"]), x, y, RV_FLOAT + 1.0, t + math.pi / 2, 1.0))
+        for _ in range(10):
+            t = rng.uniform(0, 2 * math.pi)
+            rr = R + rng.uniform(-2.0, 5.0)
+            out.append(("chela", cx + rr * math.cos(t), cy + rr * math.sin(t), RV_FLOAT + rng.uniform(3.0, 5.0), t, 1.0))
+        return out
+
+    def rv_ring(k):
+        # the Ringo Vinda space station (canon + Legends: "a ring-shaped civilian graving dock that encircled the
+        # planet"; TCW: a vast ring of grey-tan hull, its decks fought through in the war): a closed ring round the
+        # planet's disc, RV_RING_R map units from its centre (origin = the ring's eastern point, on the space floor;
+        # everything floats from RV_FLOAT up, over the water plane). The hull in two decks with lit window rows, an
+        # outer dock gallery, RV_DOCKS graving docks reaching out with cradle arms round moored ships (rv_fleet), hab
+        # towers and radiator fins on the inner side, beacon lights all round. ~85 map units across
+        R, z0 = RV_RING_R, RV_FLOAT
+        cx, cy = -R, 0.0
+        P = lambda r, t, z: (cx + r * math.cos(t), cy + r * math.sin(t), z)
+        n = 96
+        rng = random.Random("hod_rv_ring")
+        for i in range(n):
+            t0, t1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+            tm, half = (t0 + t1) / 2, R * (t1 - t0) / 2 * 1.04
+            x, y, _ = P(R, tm, 0)
+            cslab(k, x, y, z0 - 0.4, z0 + 0.4, half, 2.1, tm + math.pi / 2, V_PANEL, V_HULL, dt=2.3)       # keel
+            cslab(k, x, y, z0 + 0.4, z0 + 1.6, half, 2.3, tm + math.pi / 2, V_HULL_WIN, V_HULL, dt=2.0)     # lower deck
+            cslab(k, x, y, z0 + 1.6, z0 + 2.5, half, 1.6, tm + math.pi / 2, V_HULL_WIN, V_PANEL, dt=1.3)    # upper deck
+            x, y, _ = P(R + 2.4, tm, 0)
+            cslab(k, x, y, z0 + 0.2, z0 + 1.3, half, 0.2, tm + math.pi / 2, V_PANEL, V_LIGHT)               # dock gallery
+            roll = rng.random()                                                                     # its back
+            bx, by, _ = P(R + rng.uniform(-0.7, 0.7), tm, 0)
+            if roll < 0.3:                                                                          # tower blocks
+                cslab(k, bx, by, z0 + 2.5, z0 + 2.5 + rng.uniform(0.8, 2.2), half * 0.6, rng.uniform(0.5, 0.9), tm + math.pi / 2,
+                      V_HULL_WIN, V_PANEL)
+            elif roll < 0.5:                                                                        # domes
+                k.lathe([(0.8, z0 + 2.5), (0.6, z0 + 3.1), (0.0, z0 + 3.4)], [V_HULL, V_HULL], sides=10, cx=bx, cy=by)
+            elif roll < 0.7:                                                                        # antenna masts
+                k.tube((bx, by, z0 + 2.5), (bx, by, z0 + 4.6), 0.07, V_PANEL, sides=4)
+                k.lathe([(0.1, z0 + 4.6), (0.1, z0 + 4.8)], [V_LIGHT], sides=4, cx=bx, cy=by, cap=V_LIGHT)
+            if i % 4 == 0:                                                                          # beacons
+                lx, ly, _ = P(R - 2.3, tm, 0)
+                k.lathe([(0.15, z0 + 1.6), (0.15, z0 + 1.9)], [V_LIGHT], sides=4, cx=lx, cy=ly, cap=V_LIGHT)
+            if i % 6 == 3:                                                                          # inner hab drums
+                hx, hy, _ = P(R - 2.6, tm, 0)
+                k.lathe([(0.7, z0 + 0.0), (0.7, z0 + 2.8), (0.4, z0 + 3.3)], [V_HULL_WIN, V_HULL], sides=10, cx=hx, cy=hy,
+                        cap=V_PANEL)
+            elif i % 6 == 0:                                                                        # radiator fins
+                fx, fy, _ = P(R - 2.4, tm, 0)
+                cslab(k, fx, fy, z0 + 1.6, z0 + 3.6, half * 0.9, 0.05, tm + math.pi / 2, V_PANEL, V_PANEL)
+        for i in range(RV_DOCKS):                                                                   # graving docks
+            t = 2 * math.pi * (i + 0.5) / RV_DOCKS
+            for side in (-1, 1):                                                                    # cradle arms
+                for f in (3.0, 4.4):
+                    a_ = t + side * 0.05
+                    k.tube(P(R + 2.4, a_, z0 + 0.9), P(R + f, a_, z0 + 1.0), 0.18, V_PANEL, sides=4)
+            k.tube(P(R + 2.4, t, z0 + 0.3), P(R + 4.6, t, z0 + 0.3), 0.25, V_HAZARD, sides=4)        # the keel spine
+            for a_ in (t - 0.055, t + 0.055):                                                       # gantry posts
+                ex, ey, _ = P(R + 4.4, a_, 0)
+                k.lathe([(0.2, z0), (0.2, z0 + 3.0)], [V_PANEL], sides=6, cx=ex, cy=ey)
+                k.lathe([(0.16, z0 + 3.0), (0.16, z0 + 3.2)], [V_LIGHT], sides=4, cx=ex, cy=ey, cap=V_LIGHT)
+            k.tube(P(R + 4.4, t - 0.055, z0 + 3.0), P(R + 4.4, t + 0.055, z0 + 3.0), 0.14, V_HAZARD, sides=4)
+
+    def rh_tower(k, x, y, z0, h, r, crenel=True, sides=8):
+        """a ruined round tower of frost-weathered stone with dark arched windows, snow on its broken top"""
+        k.lathe([(r * 1.08, z0), (r, z0 + h)], [H_STONE_WIN], sides=sides, cx=x, cy=y, cap=H_SNOW)
+        if crenel:
+            for j in range(sides):
+                if j % 2 == 0:
+                    a = 2 * math.pi * j / sides
+                    cslab(k, x + r * 0.9 * math.cos(a), y + r * 0.9 * math.sin(a), z0 + h - 0.02, z0 + h + r * 0.35,
+                          r * 0.22, r * 0.12, a + math.pi / 2, H_STONE, H_SNOW)
+
+    def rh_wall(k, p0, p1, z0, h, th, rng, broken=0.0):
+        """a curtain wall from p0 to p1 with crenels, broken in places, snow along its top"""
+        n = max(2, int(math.hypot(p1[0] - p0[0], p1[1] - p0[1]) / 0.6))
+        a = math.atan2(p1[1] - p0[1], p1[0] - p0[0])
+        for i in range(n):
+            f0, f1 = i / n, (i + 1) / n
+            if rng.random() < broken:
+                continue
+            x, y = p0[0] + (p1[0] - p0[0]) * (f0 + f1) / 2, p0[1] + (p1[1] - p0[1]) * (f0 + f1) / 2
+            half = math.hypot(p1[0] - p0[0], p1[1] - p0[1]) / n / 2 * 1.02
+            hh = h * (rng.uniform(0.5, 1.0) if broken else 1.0)
+            cslab(k, x, y, z0, z0 + hh, half, th, a, H_STONE, H_SNOW)
+            if i % 2 == 0 and not broken:
+                cslab(k, x, y, z0 + hh, z0 + hh + th * 1.4, half * 0.5, th, a, H_STONE, H_SNOW)
+
+    def rh_drift(k, rng, cx, cy, spread, n, z0=-0.1):
+        """snow drifts heaped against the ruins"""
+        for _ in range(n):
+            x, y = cx + rng.uniform(-spread, spread), cy + rng.uniform(-spread, spread)
+            r = rng.uniform(0.3, 0.8) * spread / 3
+            k.lathe([(r, z0), (r * 0.6, z0 + r * 0.35), (0.0, z0 + r * 0.45)], [H_SNOW, H_SNOW], sides=8, cx=x, cy=y,
+                    sy=rng.uniform(0.5, 1.0), jitter=0.15)
+
+    def rh_ruins(k, band, rng):
+        # the ruins of Rhen Var's lost civilization (Legends: "castles, fortresses and temples"; "snow engulfed the
+        # ruins of their creations"; Battlefront's Rhen Var maps): broken towers, roofless halls, arches, half buried in
+        # drifts. band 1 edge .. 4 heart
+        placed = []
+
+        def spot(r, lim=0.8):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(1 + band // 2):                                                                # towers
+            r = rng.uniform(0.08, 0.13)
+            p_ = spot(r * 1.3)
+            if p_:
+                rh_tower(k, *p_, -0.3, rng.uniform(0.5, 0.9) + 0.2 * band, r, crenel=rng.random() < 0.6)
+        for _ in range(1 + band):                                                                     # roofless halls
+            w, d = rng.uniform(0.12, 0.2), rng.uniform(0.08, 0.14)
+            p_ = spot(max(w, d))
+            if p_:
+                a = rng.uniform(0, math.pi)
+                ca, sa = math.cos(a), math.sin(a)
+                h = rng.uniform(0.15, 0.32) + 0.04 * band
+                for sx, sy, ww, dd in ((0, d, w, 0.02), (0, -d, w, 0.02), (w, 0, 0.02, d), (-w, 0, 0.02, d)):
+                    if rng.random() < 0.8:
+                        cslab(k, p_[0] + ca * sx - sa * sy, p_[1] + sa * sx + ca * sy, -0.3, h * rng.uniform(0.5, 1.0), ww, dd,
+                              a, H_STONE_WIN, H_SNOW)
+        if band >= 2:                                                                                 # an arch
+            p_ = spot(0.2)
+            if p_:
+                a = rng.uniform(0, math.pi)
+                pts = [(p_[0] + 0.18 * math.cos(math.pi * i / 6) * math.cos(a), p_[1] + 0.18 * math.cos(math.pi * i / 6) * math.sin(a),
+                        0.3 * math.sin(math.pi * i / 6)) for i in range(7)]
+                for q0, q1 in zip(pts, pts[1:]):
+                    k.tube(q0, q1, 0.035, H_STONE, sides=5)
+        rh_drift(k, rng, 0.0, 0.0, 0.8, 3 + band)
+
+    def rh_prefab(k, band, rng):
+        # Bravo Base's prefab buildings (Legends: "a Republic military facility"; the look is a design choice): white
+        # prefab modules with a red stripe and lit windows, small domes, a few masts. band 1 edge .. 4 heart
+        placed = []
+
+        def spot(r, lim=0.8):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(2 + band):
+            w, d = rng.uniform(0.12, 0.2), rng.uniform(0.06, 0.09)
+            p_ = spot(max(w, d))
+            if p_:
+                a = rng.choice([0.0, math.pi / 2]) + rng.uniform(-0.1, 0.1)
+                cslab(k, *p_, -0.3, rng.uniform(0.12, 0.2), w, d, a, rng.choice([H_PANEL_WIN, H_RED]), H_ROOF)
+        for _ in range(1 + band // 2):
+            r = rng.uniform(0.08, 0.13)
+            p_ = spot(r)
+            if p_:
+                k.lathe([(r, -0.1), (r * 0.7, r * 0.6), (0.0, r * 0.85)], [H_PANEL, H_PANEL], sides=10, cx=p_[0], cy=p_[1])
+        if band >= 3:
+            p_ = spot(0.03)
+            if p_:
+                k.tube((p_[0], p_[1], -0.1), (p_[0], p_[1], 0.9), 0.015, H_PANEL, sides=4)
+                k.lathe([(0.04, 0.9), (0.04, 0.96)], [H_GLOW], sides=4, cx=p_[0], cy=p_[1], cap=H_GLOW)
+
+    def rh_citadel(k):
+        # the Rhen Var Citadel (Legends; Star Wars: Battlefront "Rhen Var: Citadel"; later an Imperial listening outpost):
+        # a castle of the lost civilization on a snowy crag: a tall central keep with a spired tower, an inner
+        # courtyard, a square curtain wall with round corner towers, a gatehouse and an arched bridge across a ravine,
+        # drifts piled against the walls. ~12 map units
+        rng = random.Random("hod_rh_citadel")
+        k.lathe([(5.4, -SKIRT), (4.6, 1.2), (4.0, 1.6)], [H_STONE, H_SNOW], sides=11, jitter=0.12, cap=H_SNOW)   # crag
+        c = [(-3.0, -3.0), (3.0, -3.0), (3.0, 3.0), (-3.0, 3.0)]
+        for i in range(4):
+            rh_wall(k, c[i], c[(i + 1) % 4], 1.5, 1.7, 0.28, rng, broken=0.12 if i == 2 else 0.0)
+            rh_tower(k, *c[i], 1.5, 2.6, 0.65)
+        k.box(-1.3, -1.3, 1.5, 1.3, 1.3, 4.6, H_STONE_WIN, top=H_SNOW)                                # the keep
+        rh_tower(k, 0.0, 0.0, 4.6, 3.2, 0.7)
+        k.lathe([(0.75, 7.8), (0.0, 9.6)], [H_ROOF], sides=8)                                          # its spire
+        for x, y in ((-1.3, -1.3), (1.3, -1.3), (1.3, 1.3), (-1.3, 1.3)):
+            rh_tower(k, x, y, 4.6, 0.8, 0.32)
+        k.box(-0.8, -3.6, 1.5, 0.8, -2.7, 3.6, H_STONE_WIN, top=H_SNOW)                               # gatehouse
+        for x in (-0.6, 0.6):
+            rh_tower(k, x, -3.6, 1.5, 2.5, 0.35)
+        pts = [(0.0, -3.7 - 3.0 * i / 8, 1.3 + 0.6 * math.sin(math.pi * i / 8)) for i in range(9)]       # the bridge
+        for q0, q1 in zip(pts, pts[1:]):
+            cslab(k, q0[0], (q0[1] + q1[1]) / 2, q0[2] - 0.3, q0[2], 0.6, abs(q1[1] - q0[1]) / 2 * 1.05, 0.0, H_STONE, H_SNOW)
+        for y in (-4.6, -5.8):
+            k.lathe([(0.3, -SKIRT), (0.25, 1.0)], [H_STONE], sides=6, cx=0.0, cy=y)
+        rh_drift(k, rng, 0.0, 0.0, 4.2, 14, z0=1.4)
+
+    def rh_harbor(k):
+        # Rhen Var Harbor (Legends: "an ancient location ... in use before the planet was plunged into an ice-age";
+        # Battlefront "Rhen Var: Harbor"): stone quays along a frozen bay, the ice sheet locking an old ship's hulk,
+        # tall towers with arched windows, an arched bridge across the inlet, roofless warehouses, drifts. ~13 units
+        rng = random.Random("hod_rh_harbor")
+        k.box(-6.5, -6.0, -SKIRT, -1.0, 6.0, 0.2, H_ICE, top=H_ICE)                                   # the frozen bay
+        k.box(-1.0, -6.0, -SKIRT, 4.5, 6.0, 0.8, H_STONE, top=H_SNOW)                                # the quay
+        for i in range(6):                                                                           # quay steps
+            k.box(-1.6, -5.0 + 2.0 * i, 0.2, -1.0, -4.2 + 2.0 * i, 0.5, H_STONE, top=H_SNOW)
+        hull = [(-0.8, 0.2), (0.8, 0.2), (1.0, 0.9), (-1.0, 0.9)]                                     # the frozen hulk
+        k.prism([(y, z) for y, z in hull], -5.6, -2.4, H_TIMBER)
+        k.prism([(-0.15, 0.9), (0.15, 0.9), (0.05, 3.6), (-0.05, 3.6)], -4.2, -4.0, H_TIMBER)          # its mast
+        for x, y, h in ((1.8, -3.8, 5.2), (3.2, 2.6, 4.2), (0.8, 4.4, 3.4)):                          # towers
+            rh_tower(k, x, y, 0.8, h, 0.85)
+        pts = [(-1.0 - 5.0 * i / 10, 0.0, 1.5 + 1.2 * math.sin(math.pi * i / 10)) for i in range(11)]   # the bridge
+        pts = [(x, -3.0, z) for x, _y, z in pts]
+        for q0, q1 in zip(pts, pts[1:]):
+            cslab(k, (q0[0] + q1[0]) / 2, -3.0, q0[2] - 0.35, q0[2], abs(q1[0] - q0[0]) / 2 * 1.05, 0.55, 0.0, H_STONE, H_SNOW)
+        for x in (-2.6, -4.6):
+            k.lathe([(0.35, -SKIRT), (0.3, 1.6)], [H_STONE], sides=6, cx=x, cy=-3.0)
+        for x, y in ((2.6, -0.8), (1.0, 1.4)):                                                        # warehouses
+            rh_wall(k, (x - 1.0, y - 0.6), (x + 1.0, y - 0.6), 0.8, 1.6, 0.18, rng, broken=0.2)
+            rh_wall(k, (x - 1.0, y + 0.6), (x + 1.0, y + 0.6), 0.8, 1.6, 0.18, rng, broken=0.3)
+            rh_wall(k, (x - 1.0, y - 0.6), (x - 1.0, y + 0.6), 0.8, 1.6, 0.18, rng)
+        rh_drift(k, rng, 1.8, 0.0, 3.0, 12, z0=0.7)
+
+    def rh_monument(k):
+        # the Jedi monument (Legends: "an old Jedi temple on the planet Rhen Var and the burial site of Ulic
+        # Qel-Droma", who spent his last years in exile here): a stepped stone temple, a ring of standing stones, an
+        # obelisk over the tomb with a faint light at its foot, all half drifted over. ~9 map units
+        rng = random.Random("hod_rh_monument")
+        for i, (r, z) in enumerate(((4.0, 0.0), (3.1, 0.6), (2.2, 1.2))):
+            k.lathe([(r, -SKIRT if i == 0 else z - 0.6), (r, z + 0.6)], [H_CARVED], sides=4, rot=math.pi / 4,
+                    cap=H_SNOW)
+        k.lathe([(0.55, 1.8), (0.4, 6.0), (0.0, 6.6)], [H_CARVED, H_STONE], sides=4, rot=math.pi / 4)   # the obelisk
+        k.lathe([(0.3, 1.8), (0.3, 2.0)], [H_GLOW], sides=8, cx=0.0, cy=-0.75, cap=H_GLOW)
+        for j in range(10):                                                                          # standing stones
+            a = 2 * math.pi * j / 10
+            if j % 4 != 3:
+                cslab(k, 4.6 * math.cos(a), 4.6 * math.sin(a), -0.3, rng.uniform(1.0, 1.8), 0.22, 0.4, a, H_STONE, H_SNOW)
+        rh_drift(k, rng, 0.0, 0.0, 4.0, 10, z0=0.0)
+
+    def rh_bravo(k):
+        # Bravo Base (Legends: "a Republic military facility located on the arctic world of Rhen Var"; the look is a
+        # design choice): white prefab barracks with a red stripe, a hangar with an arched roof, a command dome with a
+        # sensor mast and dish, landing pads, a shield-generator dome, turret emplacements at the corners of a
+        # perimeter fence. ~11 map units
+        k.box(-5.4, -4.6, -SKIRT, 5.4, 4.6, 0.25, H_SNOW, top=H_SNOW)                                # the cleared plateau
+        for x in (-3.2, -1.4):                                                                       # barracks
+            cslab(k, x, -2.6, 0.25, 1.1, 0.7, 1.6, 0.0, H_PANEL_WIN, H_ROOF)
+            cslab(k, x, -2.6, 0.55, 0.75, 0.72, 1.62, 0.0, H_RED, H_RED)
+        k.lathe([(1.5, 0.25), (1.5, 0.9), (1.1, 1.8), (0.0, 2.2)], [H_PANEL_WIN, H_PANEL, H_PANEL], sides=16, cx=0.8, cy=0.4)
+        k.tube((0.8, 0.4, 2.2), (0.8, 0.4, 5.4), 0.08, H_PANEL, sides=4)                             # the mast
+        k.tube((0.8, 0.4, 4.4), (1.5, 0.4, 4.4), 0.06, H_PANEL, sides=4)                             # the dish arm
+        k.lathe([(0.15, 4.3), (0.9, 4.6), (1.1, 5.0)], [H_PANEL, H_PANEL], sides=12, cx=1.6, cy=0.4)
+        k.lathe([(0.12, 5.4), (0.12, 5.6)], [H_GLOW], sides=4, cx=0.8, cy=0.4, cap=H_GLOW)
+        k.box(2.4, -3.4, 0.25, 4.8, -0.4, 0.4, H_PANEL, top=H_PANEL)                                  # the hangar
+        k.prism([(-1.9 - 1.5 * math.cos(math.pi * i / 8), 0.4 + 1.6 * math.sin(math.pi * i / 8)) for i in range(9)],
+                2.4, 4.8, H_ROOF)                                                                   # its arched roof
+        for x, y in ((-3.0, 2.6), (-0.6, 3.0)):                                                     # landing pads
+            k.lathe([(1.05, 0.25), (1.05, 0.45)], [H_HAZARD], sides=16, cx=x, cy=y, cap=H_PAD)
+        k.lathe([(1.0, 0.25), (0.8, 1.1), (0.0, 1.5)], [H_PANEL, H_GLOW], sides=12, cx=3.6, cy=2.6)     # shield dome
+        for x, y in ((-5.0, -4.2), (5.0, -4.2), (5.0, 4.2), (-5.0, 4.2)):                             # turrets
+            k.lathe([(0.45, 0.25), (0.45, 0.8), (0.3, 1.05)], [H_PANEL, H_PANEL], sides=8, cx=x, cy=y, cap=H_ROOF)
+            k.tube((x, y, 0.95), (x * 0.86, y * 0.86, 1.1), 0.06, H_DARK, sides=4)
+        for (x0, y0), (x1, y1) in (((-5.0, -4.2), (5.0, -4.2)), ((5.0, -4.2), (5.0, 4.2)), ((5.0, 4.2), (-5.0, 4.2)),
+                                   ((-5.0, 4.2), (-5.0, -4.2))):                                     # the fence
+            k.box(min(x0, x1) - 0.04, min(y0, y1) - 0.04, 0.25, max(x0, x1) + 0.04, max(y0, y1) + 0.04, 0.7, H_PANEL)
+
+    def rh_mekhis(k):
+        # the ruins of Darth Mekhis' fortress (Legends: set up "in one of the world's snowy mountainscapes" during the
+        # Great Galactic War, breached by Satele Shan): angular dark Sith walls and a broken tower on a ridge, spiked
+        # buttresses, a collapsed gate, drifts. ~8 map units
+        rng = random.Random("hod_rh_mekhis")
+        k.lathe([(4.0, -SKIRT), (3.4, 0.8), (2.8, 1.2)], [H_STONE, H_SNOW], sides=7, jitter=0.15, cap=H_SNOW)
+        for i in range(5):
+            a0, a1 = 2 * math.pi * i / 5, 2 * math.pi * (i + 1) / 5
+            if i == 3:
+                continue                                                                             # the breach
+            p0, p1 = (2.4 * math.cos(a0), 2.4 * math.sin(a0)), (2.4 * math.cos(a1), 2.4 * math.sin(a1))
+            am = (a0 + a1) / 2
+            cslab(k, (p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2, 1.1, 1.1 + rng.uniform(1.0, 2.2),
+                  math.hypot(p1[0] - p0[0], p1[1] - p0[1]) / 2, 0.3, am + math.pi / 2, H_SITH, H_SNOW, wt=None)
+            k.tube((2.6 * math.cos(a0), 2.6 * math.sin(a0), 1.1), (3.1 * math.cos(a0), 3.1 * math.sin(a0), 3.0), 0.18,
+                   H_SITH, sides=4, r1=0.02)
+        k.lathe([(0.9, 1.1), (0.7, 4.4), (0.0, 5.4)], [H_SITH, H_SITH], sides=6, jitter=0.12)               # broken tower
+        rh_drift(k, rng, 0.0, 0.0, 3.0, 9, z0=1.0)
+
+    def rh_rakata(k):
+        # the Forgotten Rakatan Temple (Legends: "the presence of the Rakatan script", its date disputed by the Duros
+        # archaeologist Levat): a dark angular stepped temple of the Infinite Empire's style, its panels of script
+        # still glowing faintly, half sunk in the snow. ~8 map units
+        rng = random.Random("hod_rh_rakata")
+        for i, (r, z, h) in enumerate(((3.6, -SKIRT, 1.0 + SKIRT), (2.7, 1.0, 1.0), (1.8, 2.0, 1.0), (1.0, 3.0, 1.4))):
+            k.lathe([(r, z), (r * 0.92, z + h)], [H_RAKATA if i % 2 else H_SITH], sides=6, cap=H_SITH)
+        k.lathe([(0.9, 4.4), (0.0, 5.6)], [H_SITH], sides=6)
+        for j in range(3):                                                                           # pylons
+            a = 2 * math.pi * j / 3 + 0.5
+            k.lathe([(0.35, -0.2), (0.15, 3.2), (0.0, 3.6)], [H_RAKATA, H_SITH], sides=4, cx=4.0 * math.cos(a), cy=4.0 * math.sin(a))
+        rh_drift(k, rng, 0.0, 0.0, 3.6, 10, z0=0.0)
+
+    for name_, fn_ in (("hod_rh_citadel", rh_citadel), ("hod_rh_harbor", rh_harbor), ("hod_rh_monument", rh_monument),
+                       ("hod_rh_bravo", rh_bravo), ("hod_rh_mekhis", rh_mekhis), ("hod_rh_rakata", rh_rakata)):
+        build(name_, fn_, tex="hod_rhen")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_h = random.Random(f"hod_rh_ruin{band}{v}")
+            build(f"hod_rh_ruin_{band}{v}", lambda k, band=band, rng=rng_h: rh_ruins(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_rhen")
+            rng_p = random.Random(f"hod_rh_prefab{band}{v}")
+            build(f"hod_rh_prefab_{band}{v}", lambda k, band=band, rng=rng_p: rh_prefab(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_rhen")
+    build("hod_rv_archcity", rv_archcity, tex="hod_ringo")
+    build("hod_rv_lift", rv_lift, tex="hod_ringo")
+    build("hod_rv_ring", rv_ring, tex="hod_ringo",
+          extra=lambda: place_ships(rv_fleet(), lambda kind: RV_SHIP_SCALE if kind in ("foray", "lethisk") else 1.0))
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_v = random.Random(f"hod_rv_city{band}{v}")
+            build(f"hod_rv_city_{band}{v}", lambda k, band=band, rng=rng_v: rv_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_ringo")
+    build("hod_lola_citadel", lola_citadel, tex="hod_lola")
+    for v in "abcd":                                                       # three turns of each (map objects are
+        for t_ in range(LOLA_TURNS):                                       # placed unrotated)
+            build(f"hod_lola_chunk_{v}{t_}", lambda k, v=v: lola_chunk(k, v), tex="hod_lola", rot=2 * math.pi * t_ / LOLA_TURNS + 0.4)
+    build("hod_oss_library", oss_library, tex="hod_ossus")
+    build("hod_oss_knossa", oss_knossa, tex="hod_ossus")
+    build("hod_oss_agorn", oss_agorn, tex="hod_ossus")
+    build("hod_oss_temple", oss_temple, tex="hod_ossus")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_o = random.Random(f"hod_oss_ruin{band}{v}")
+            build(f"hod_oss_ruin_{band}{v}", lambda k, band=band, rng=rng_o: oss_ruin(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_ossus")
+            rng_y = random.Random(f"hod_oss_ysanna{band}{v}")
+            build(f"hod_oss_ysanna_{band}{v}", lambda k, band=band, rng=rng_y: ysanna_camp(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_ossus")
+    build("hod_ruu_university", ruu_university, tex="hod_ruuria")
+    build("hod_ruu_great_hive", ruu_great_hive, tex="hod_ruuria")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_r = random.Random(f"hod_ruu_city{band}{v}")
+            build(f"hod_ruu_city_{band}{v}", lambda k, band=band, rng=rng_r: ruu_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_ruuria")
+    build("hod_etti_spaceport", etti_spaceport, tex="hod_etti")
+    build("hod_etti_arcoplex", etti_arcoplex, tex="hod_etti")
+    build("hod_etti_dancedome", etti_dancedome, tex="hod_etti")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_e = random.Random(f"hod_etti_city{band}{v}")
+            build(f"hod_etti_city_{band}{v}", lambda k, band=band, rng=rng_e: etti_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_etti")
+            rng_a = random.Random(f"hod_etti_arco{band}{v}")
+            build(f"hod_etti_arco_{band}{v}", lambda k, band=band, rng=rng_a: arco_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_etti")
+    build("hod_bon_spaceport", bon_spaceport, tex="hod_bonadan")
+    build("hod_bon_shipyard", bon_shipyard, tex="hod_bonadan", extra=bon_ships)
+    build("hod_bon_weather", bon_weather, tex="hod_bonadan")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_b = random.Random(f"hod_bon_city{band}{v}")
+            build(f"hod_bon_city_{band}{v}", lambda k, band=band, rng=rng_b: bon_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_bonadan")
     build("hod_flo_complex", florrum_complex)
     build("hod_flo_refinery", florrum_refinery)
     for v in "ab":
@@ -3134,5 +4993,5 @@ def place_planet(name):
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks, "atlas": atlas,
-     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
+     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "bonadan_atlas": bonadan_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
      "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])

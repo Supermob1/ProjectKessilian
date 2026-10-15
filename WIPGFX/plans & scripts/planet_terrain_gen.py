@@ -43,7 +43,7 @@ Usage (from the mod root):
   python "WIPGFX/plans & scripts/planet_terrain_gen.py" --world-tweaks  only apply city districts, red worlds, dense
                                                          forests (terrain/cities/trees.bmp + colormap); run once
 """
-import argparse, collections, csv, glob, io, json, os, re, sys
+import argparse, collections, csv, glob, io, json, os, re, shutil, sys
 import numpy as np
 from PIL import Image
 from scipy import ndimage as ndi
@@ -743,6 +743,7 @@ def raxus(t, trees, cm, city, h, labels, names, pid, rng):
     rel = np.where(town[sl], ndi.gaussian_filter(rel, 3), rel)              # towns on gentle ground
     rel = np.where(np.isin(z, (1, 2, 3, 5, 6)), RAXUS_PLATEAU, rel)         # the capital stays level
     hn = h.copy()
+    rel = landforms(rel, sub)
     hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
     gy, gx = np.gradient(hn[sl])
     slope = np.hypot(gx, gy)
@@ -882,6 +883,7 @@ def raxus_prime(t, trees, city, h, labels, names, pid, rng):
         m_ = fl == i
         rel[m_] = np.median(rel[m_])
     hn = h.copy()
+    rel = landforms(rel, sub)
     hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
     gy, gx = np.gradient(hn[sl])
     slope = np.zeros((H, W), np.float32)
@@ -1004,6 +1006,7 @@ def korriban(t, trees, city, h, labels, names, pid, rng):
     rel = np.where(mtn, KOR_LEVEL[5] + cliff + peak, flat + np.where(wastes, dunes + buttes, 0))
     rel = np.where(z == 6, KOR_LEVEL[6], rel)                               # the Dead Lake: dead flat
     hn = h.copy()
+    rel = landforms(rel, sub)
     hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
     gy, gx = np.gradient(hn[sl])
     slope = np.hypot(gx, gy)
@@ -1096,6 +1099,7 @@ def florrum(t, trees, city, h, labels, names, pid, rng, cm):
     pools &= ndi.distance_transform_edt(sub) > 3                           # none on the planet's rim
     rel = np.where(pools, FLO_PLAIN - FLO_POOLS[2], rel)
     hn = h.copy()
+    rel = landforms(rel, sub)
     hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
     gy, gx = np.gradient(hn[sl])
     slope = np.hypot(gx, gy)
@@ -1245,6 +1249,7 @@ def kadavo(t, trees, city, h, labels, names, pid, rng):
     step = np.clip(np.floor(ndi.distance_transform_edt(mine) / KAD_PIT_STEPS[1]), 0, KAD_PIT_STEPS[0])
     rel = np.where(mine, KAD_PLAIN - step * (KAD_PLAIN - 1) / KAD_PIT_STEPS[0], rel)
     hn = h.copy()
+    rel = landforms(rel, sub)
     hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
     gy, gx = np.gradient(hn[sl])
     slope = np.hypot(gx, gy)
@@ -1294,6 +1299,9 @@ def kadavo(t, trees, city, h, labels, names, pid, rng):
 #       steep=(texture, slope, kinds),   # rock texture on slopes steeper than slope, in these zones
 #       city={kind: style, ...},     # map/cities.txt group per zone (0 elsewhere on the planet)
 #       prop_clear=2.6,              # props keep this far (px) from unit positions
+#       tint={zone: ((r, g, b), s)}, # optional: blend these zones' colormap colour toward rgb (0..1) by s
+#       level=(zone, ...),           # optional: zones the landforms leave level like water (lava seas)
+#       colors={zone: (r, g, b)},    # optional: repaint the planet's colormap (its look from afar) from these, shaded
 #       hook=None)                   # fn(ctx) -> None: a planet's own extra shaping (ctx: rel, z, sub, rng, rough, ...)
 # relief operators:
 #   ("rolling", level, amp, cell)            level + amp * noise (cell None: the shared rough noise)
@@ -1345,6 +1353,14 @@ def check_terrain_cfg(mod):
         texs = {_tex(t_) for t_ in ([tex] if not isinstance(tex, list) else [tex[0]] + [b[0] for b in tex[1:]])} if tex is not None else set()
         if style and not texs & CITY_TEXTURES:          # the city style is painted but no building would spawn
             errs.append(f"city: zone {k} has style {style} but texture {tex!r} has no spawn_city ({sorted(CITY_TEXTURES)})")
+    for k, tn in cfg.get("tint", {}).items():
+        if k not in kinds or len(tn) != 2 or len(tn[0]) != 3 or not all(0 <= c <= 1 for c in (*tn[0], tn[1])):
+            errs.append(f"tint: zone {k} {tn!r} (a KIND value: ((r, g, b) 0..1, strength 0..1))")
+    for k, rgb in cfg.get("colors", {}).items():
+        if k not in kinds or len(rgb) != 3 or not all(0 <= c <= 1 for c in rgb):
+            errs.append(f"colors: zone {k} {rgb!r} (a KIND value: (r, g, b) 0..1)")
+    if not set(cfg.get("level", ())) <= kinds:
+        errs.append(f"level: zones {cfg['level']} are not all KIND values")
     if not set(cfg.get("open", ())) <= kinds or not set(cfg.get("steep", (0, 0, ()))[2]) <= kinds:
         errs.append("open / steep zones are not all KIND values")
     for path in (mod.ZONES_PNG, mod.ZONES_JSON):
@@ -1353,11 +1369,50 @@ def check_terrain_cfg(mod):
     return errs
 
 
+# landforms(): the broad shape of a planet's ground under its zones' own relief (user, 2026-10-15: "the heightmap is
+# underutilised, no hills, no curve; a hill or a mountain is treated as a unique thing"). Heightmap steps (10 = 1 map
+# unit); cells in map px (planets are ~120 px across)
+LANDFORM = dict(amp=20.0, cell=24,          # uplands and basins over the whole planet
+                terrace=0.6, steps=3,       # the uplands broken into steps with escarpments between them
+                hills=13.0, hill_cell=9,    # ridged hills (ridgelines, spurs), strongest where hilly (hill_area)
+                hill_area=30,               # cell of the field that makes some regions hilly and others gentle
+                valleys=9.0, valley_cell=14,   # winding valleys cut into the uplands (never below the base)
+                skirt=5.0, skirt_k=0.65,    # foothills: every high zone spreads a skirt this wide (px) and high
+                skirt_from=12.0,            # ... high = zones above this (mountains, plateaus): pits and gorges stay open
+                shore=3.0)                  # px over which the land rises from seas and rivers
+
+
+def landforms(rel, sub, water=None, opts=None):
+    """rel (steps above GROUND, the zones' own relief) with the planet's landforms added: uplands and basins,
+    ridged hills, foothill skirts round every high zone so mountains and plateaus rise out of the land instead of
+    standing alone. Water (default: ground sunk below the base, i.e. under the water plane) stays level and the
+    land rises from it.
+    Only ever raises the ground, so nothing new sinks below the water plane. Deterministic per planet (its own
+    random stream: the props and textures drawn after it are unchanged)."""
+    o = {**LANDFORM, **(opts or {})}
+    if not o.get("amp") and not o.get("hills") and not o.get("skirt_k"):
+        return rel
+    water = (rel < -0.5) & sub if water is None else water
+    lrng = np.random.default_rng(int(sub.sum()) * 7919 + sub.shape[0])
+    calm = smoothstep(np.clip(ndi.distance_transform_edt(~water) / max(o["shore"], 1e-3), 0, 1))
+    big = noise(sub.shape, o["cell"], lrng, 3)
+    q = big * o["steps"]                                                       # terraces: flat steps, steep risers
+    stepped = (np.floor(q) + smoothstep(np.clip((q - np.floor(q) - 0.35) / 0.3, 0, 1))) / o["steps"]
+    big = big + o["terrace"] * (stepped - big)
+    ridge = (1 - np.abs(2 * noise(sub.shape, o["hill_cell"], lrng, 3) - 1)) ** 2
+    area = smoothstep(np.clip(noise(sub.shape, o["hill_area"], lrng, 2) * 1.6 - 0.3, 0, 1))
+    valley = (1 - np.abs(2 * noise(sub.shape, o["valley_cell"], lrng, 2) - 1)) ** 6   # thin winding lines
+    land = np.where(sub & ~water & (rel > o["skirt_from"]), rel, 0).astype(np.float32)
+    skirt = ndi.gaussian_filter(land, o["skirt"]) * o["skirt_k"]               # foothills round high zones
+    lift = np.maximum(o["amp"] * big + o["hills"] * ridge * area - o["valleys"] * valley, 0)
+    out = np.maximum(rel, skirt) + calm * lift
+    return np.where(water | ~sub, rel, out).astype(np.float32)
+
 def zone_repaint(mod):
     """repaint_planet() fn for a planet whose map script has a TERRAIN_CFG"""
     cfg = mod.TERRAIN_CFG
 
-    def fn(t, trees, city, h, labels, names, pid, rng):
+    def fn(t, trees, city, h, labels, names, pid, rng, cm=None):
         t, trees, city = t.copy(), trees.copy(), city.copy()
         H, W = labels.shape
         planet = np.array([""] + [names[l].split(" - ")[0] for l in range(1, labels.max() + 1)])[labels]
@@ -1404,10 +1459,14 @@ def zone_repaint(mod):
                     pf = np.maximum(pf, op[1] + rng.uniform(*op[5]) * np.clip(1 - d ** 6, 0, 1))
                 rel = np.where(m, pf, rel)
         ctx = dict(rel=rel, z=z, sub=sub, rng=rng, rough=rough, yy=yy, xx=xx, unit_d=unit_d, zj=zj, sl=sl)
+        wet = [k for k, zc in cfg["zones"].items() if zc.get("tex") is not None and _tex(
+            zc["tex"] if not isinstance(zc["tex"], list) else zc["tex"][0]) == WATER]   # seas, rivers: kept level
+        wet += list(cfg.get("level", ()))                                    # lava seas etc.: kept level too
         if cfg.get("hook"):
             cfg["hook"](ctx)                                               # a planet's own shaping, in place on ctx["rel"]
             rel = ctx["rel"]
         hn = h.copy()
+        rel = landforms(rel, sub, water=np.isin(z, wet) & sub, opts=cfg.get("landforms"))
         hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
         gy, gx = np.gradient(hn[sl])
         slope = np.hypot(gx, gy)
@@ -1455,7 +1514,36 @@ def zone_repaint(mod):
                     trees[cells & (r >= lo) & (r < lo + share)] = idx
                     lo += share
         print(f"{mod.PLANET}: zones {dict(zip(*np.unique(z[sub], return_counts=True)))}, top {int(hn[sl].max())}")
-        return t, trees, city, hn
+        if cm is None:
+            return t, trees, city, hn
+        # shortcut: the tint blends into the current colormap, so each re-run pushes those zones further toward rgb
+        # (converges, but not idempotent); keep a copy of the colormap from before the first run if that matters
+        cm = cm.copy()                                                     # tint={zone: ((r, g, b) 0..1, strength)}
+        if cfg.get("colors"):                                              # colors={zone: (r, g, b)}: the far look
+            crng = np.random.default_rng(int(sub.sum()) * 31 + 7)
+            col = np.zeros(sub.shape + (3,), np.float32)
+            for k, rgb in cfg["colors"].items():
+                col[sub & (z == k)] = rgb
+            w = ndi.gaussian_filter(sub.astype(np.float32), 1.2)
+            col = np.stack([ndi.gaussian_filter(col[..., c], 1.2) for c in range(3)], -1) / np.maximum(w, 1e-3)[..., None]
+            gy, gx = np.gradient(ndi.gaussian_filter(hn[sl], 1.0))
+            shade = np.clip(1 + 0.035 * (gx - gy), 0.72, 1.22)              # lit from the north-west, as the relief
+            col *= (shade * (0.9 + 0.2 * noise(sub.shape, 6, crng, 3)))[..., None]
+            y0, x0 = sl[0].start, sl[1].start
+            hy = np.arange((y0 + 1) // 2, (sl[0].stop + 1) // 2)              # half-res rows / cols inside the box
+            hx = np.arange((x0 + 1) // 2, (sl[1].stop + 1) // 2)
+            hy, hx = hy[(2 * hy - y0) < sub.shape[0]], hx[(2 * hx - x0) < sub.shape[1]]
+            yy_, xx_ = np.meshgrid(2 * hy - y0, 2 * hx - x0, indexing="ij")
+            on_ = sub[yy_, xx_]
+            hy_, hx_ = np.meshgrid(hy, hx, indexing="ij")
+            cm[hy_[on_], hx_[on_], :3] = np.clip(col[yy_[on_], xx_[on_]], 0, 1)
+        zh = np.zeros(labels.shape, np.uint8)
+        zh[sl] = np.where(sub, z, 0)
+        zh = zh[::2, ::2][:cm.shape[0], :cm.shape[1]]                       # the colormap is half resolution
+        for k, (rgb, st) in cfg.get("tint", {}).items():
+            m = ndi.gaussian_filter((zh == k).astype(np.float32), 0.8)[..., None] * st
+            cm[..., :3] = cm[..., :3] * (1 - m) + np.array(rgb, np.float32) * m
+        return t, trees, city, hn, cm
     return fn
 
 
@@ -1655,7 +1743,8 @@ def main():
         errs = check_terrain_cfg(mod)
         if errs:                                                           # nothing written
             sys.exit(f"{mod.__name__}.TERRAIN_CFG:\n  " + "\n  ".join(errs))
-        return repaint_planet(zone_repaint(mod), mod.PLANET, SEED + mod.TERRAIN_CFG["seed"])
+        return repaint_planet(zone_repaint(mod), mod.PLANET, SEED + mod.TERRAIN_CFG["seed"],
+                              with_cm=bool(mod.TERRAIN_CFG.get("tint") or mod.TERRAIN_CFG.get("colors")))
     if a.florrum:
         return repaint_planet(florrum, FLORRUM, SEED + 192, with_cm=True)
     if a.raxus:
@@ -2106,6 +2195,8 @@ def main():
                       f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds")
         for lvl in range(3):
             save_bgra_dds(f"{BASE}/colormap_water_{lvl}.dds", water_out[lvl], f"{MAP}/terrain/colormap_water_{lvl}.dds")
+        # the water shader reads the atmospheres from the (otherwise unused) ice slot, not through the refraction pass
+        shutil.copyfile(f"{MAP}/terrain/colormap_water_0.dds", f"{MAP}/terrain/ice_diffuse.dds")
         reheight(np.rint(h))
         globe_texture()
         print("map files written")

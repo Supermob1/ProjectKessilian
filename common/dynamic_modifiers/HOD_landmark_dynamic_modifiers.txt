@@ -1,0 +1,271 @@
+# HOD: landmark lore (landmarks_lore.py)
+HOD_landmark_raxulon_parliament = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	compliance_gain = 0.02
+	resistance_target = -0.05
+}
+HOD_landmark_great_alley = {
+	icon = GFX_idea_generic_pp_unity_bonus
+	enable = { always = yes }
+	resistance_target = -0.03
+}
+HOD_landmark_rp_refinery = {
+	icon = GFX_idea_generic_exploit_mines
+	enable = { always = yes }
+	local_resources_factor = 0.1
+}
+HOD_landmark_rp_derriphan = {
+	icon = GFX_idea_generic_navy_cruiser_warfare
+	enable = { always = yes }
+	local_resources_factor = 0.05
+}
+HOD_landmark_rp_hammerhead = {
+	icon = GFX_idea_generic_navy_bonus
+	enable = { always = yes }
+	local_resources_factor = 0.05
+}
+HOD_landmark_rp_lethisk = {
+	icon = GFX_idea_generic_convoys
+	enable = { always = yes }
+	local_resources_factor = 0.05
+}
+HOD_landmark_rp_droidworks = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.1
+}
+HOD_landmark_sith_academy = {
+	icon = GFX_idea_generic_secret_police
+	enable = { always = yes }
+	resistance_target = 0.05
+}
+HOD_landmark_valley_dark_lords = {
+	icon = GFX_idea_generic_oppression
+	enable = { always = yes }
+	resistance_target = 0.03
+}
+HOD_landmark_tomb_ragnos = {
+	icon = GFX_idea_generic_oppression
+	enable = { always = yes }
+	resistance_target = 0.03
+}
+HOD_landmark_tomb_sadow = {
+	icon = GFX_idea_generic_oppression
+	enable = { always = yes }
+	resistance_target = 0.03
+}
+HOD_landmark_tomb_pall = {
+	icon = GFX_idea_generic_oppression
+	enable = { always = yes }
+	resistance_target = 0.03
+}
+HOD_landmark_tomb_hord = {
+	icon = GFX_idea_generic_oppression
+	enable = { always = yes }
+	resistance_target = 0.03
+}
+HOD_landmark_tomb_kressh = {
+	icon = GFX_idea_generic_oppression
+	enable = { always = yes }
+	resistance_target = 0.03
+}
+HOD_landmark_kadavo_facility = {
+	icon = GFX_idea_generic_prisoner
+	enable = { always = yes }
+	recruitable_population_factor = -0.2
+	compliance_gain = -0.02
+}
+HOD_landmark_kadavo_landing = {
+	icon = GFX_idea_generic_convoys
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_kadavo_pits = {
+	icon = GFX_idea_generic_exploit_mines
+	enable = { always = yes }
+	local_resources_factor = 0.1
+}
+HOD_landmark_kadavo_camps = {
+	icon = GFX_idea_generic_prisoner
+	enable = { always = yes }
+	recruitable_population_factor = -0.1
+}
+HOD_landmark_hondo_complex = {
+	icon = GFX_idea_generic_guerilla_warfare
+	enable = { always = yes }
+	resistance_target = 0.1
+	local_supplies = 0.1
+}
+HOD_landmark_florrum_refinery = {
+	icon = GFX_idea_generic_fuel_reserves
+	enable = { always = yes }
+	local_resources_factor = 0.1
+}
+HOD_landmark_florrum_outposts = {
+	icon = GFX_idea_generic_fortify_the_borders
+	enable = { always = yes }
+	local_supplies = 0.05
+}
+HOD_landmark_hondo_vault = {
+	icon = GFX_idea_generic_economic_increase
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_florrum_junk = {
+	icon = GFX_idea_generic_foreign_capital
+	enable = { always = yes }
+	local_resources_factor = 0.05
+}
+HOD_landmark_kaas_citadel = {
+	icon = GFX_idea_generic_secret_police
+	enable = { always = yes }
+	resistance_target = 0.05
+}
+HOD_landmark_dark_temple = {
+	icon = GFX_idea_generic_oppression
+	enable = { always = yes }
+	resistance_target = 0.05
+}
+HOD_landmark_zyg_palace = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	compliance_gain = 0.02
+}
+HOD_landmark_zyg_arena = {
+	icon = GFX_idea_generic_morale_bonus
+	enable = { always = yes }
+	recruitable_population_factor = 0.05
+}
+HOD_landmark_zyg_fortress = {
+	icon = GFX_idea_generic_mountain_warfare
+	enable = { always = yes }
+	resistance_damage_to_garrison = -0.1
+}
+HOD_landmark_zyg_landing = {
+	icon = GFX_idea_generic_convoys
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_westhill_palace = {
+	icon = GFX_idea_generic_foreign_capital
+	enable = { always = yes }
+	compliance_gain = 0.01
+}
+HOD_landmark_bonadan_spaceport = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.15
+}
+HOD_landmark_bonadan_shipyards = {
+	icon = GFX_idea_generic_navy_bonus
+	enable = { always = yes }
+	state_production_speed_dockyard_factor = 0.15
+}
+HOD_landmark_bonadan_weather = {
+	icon = GFX_idea_generic_radar
+	enable = { always = yes }
+	recruitable_population_factor = 0.05
+}
+HOD_landmark_arcoplex = {
+	icon = GFX_idea_generic_improved_industries
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.1
+}
+HOD_landmark_mondder_spaceport = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.15
+}
+HOD_landmark_dance_dome = {
+	icon = GFX_idea_generic_conference
+	enable = { always = yes }
+	compliance_gain = 0.02
+}
+HOD_landmark_ruuria_university = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}
+HOD_landmark_great_hive = {
+	icon = GFX_idea_generic_manpower_bonus
+	enable = { always = yes }
+	recruitable_population_factor = 0.1
+}
+HOD_landmark_great_library = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}
+HOD_landmark_knossa = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	resistance_target = -0.03
+}
+HOD_landmark_agorn_spaceport = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_first_temple = {
+	icon = GFX_idea_generic_morale_bonus
+	enable = { always = yes }
+	compliance_gain = 0.02
+}
+HOD_landmark_citadel = {
+	icon = GFX_idea_generic_prisoner
+	enable = { always = yes }
+	resistance_target = -0.1
+	compliance_gain = 0.03
+}
+HOD_landmark_shattered_hemisphere = {
+	icon = GFX_idea_generic_navy_submarines
+	enable = { always = yes }
+	local_supplies = -0.1
+}
+HOD_landmark_ringo_ring = {
+	icon = GFX_idea_generic_navy_bonus
+	enable = { always = yes }
+	state_production_speed_dockyard_factor = 0.15
+}
+HOD_landmark_vindaport = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	compliance_gain = 0.02
+}
+HOD_landmark_station_lift = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_bravo_base = {
+	icon = GFX_idea_generic_fortify_the_borders
+	enable = { always = yes }
+	resistance_target = -0.05
+	local_supplies = 0.1
+}
+HOD_landmark_rhen_harbor = {
+	icon = GFX_idea_generic_coastal_navy
+	enable = { always = yes }
+	local_supplies = 0.05
+}
+HOD_landmark_rhen_citadel = {
+	icon = GFX_idea_generic_mountain_warfare
+	enable = { always = yes }
+	resistance_damage_to_garrison = -0.1
+}
+HOD_landmark_jedi_monument = {
+	icon = GFX_idea_generic_morale_bonus
+	enable = { always = yes }
+	compliance_gain = 0.02
+}
+HOD_landmark_mekhis_fortress = {
+	icon = GFX_idea_generic_secret_police
+	enable = { always = yes }
+	resistance_target = 0.03
+}
+HOD_landmark_rakatan_temple = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}

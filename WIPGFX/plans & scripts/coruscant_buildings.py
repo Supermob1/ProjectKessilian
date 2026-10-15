@@ -388,7 +388,7 @@ LM = "gfx/models/buildings/hod_landmarks"     # procedural families from militar
 FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
             "hod_kam_city": LM, "hod_man_city": LM, "hod_geo_city": LM, "hod_nab_city": LM, "hod_fel_city": LM,
             "hod_cmg_outpost": LM, "hod_rax_city": LM, "hod_dre_city": LM, "hod_zyg_city": LM, "hod_kaas_ruin": LM,
-            "hod_cant_city": LM, "hod_cant_sith_ruin": LM}
+            "hod_cant_city": LM, "hod_cant_sith_ruin": LM, "hod_bon_city": LM, "hod_etti_city": LM, "hod_etti_arco": LM, "hod_ruu_city": LM, "hod_oss_ruin": LM, "hod_oss_ysanna": LM, "hod_rv_city": LM, "hod_rh_ruin": LM, "hod_rh_prefab": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 SCRAP_TOWN = [f"hod_bld_rpt_{n}" for n in ("crates4", "crates5", "crates6", "crates9", "crates1", "huttTower", "fuelCellC")]
 SINGLE.update({n: SW for n in SCRAP_TOWN})  # Raxus Prime scrap towns: Empire at War junk stacks (sketchfab_props.py rpt_*)
@@ -409,7 +409,16 @@ CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]
                14: (0.45, ["hod_zyg_city"]),                                            # Zygerria: the capital
                16: (0.3, ["hod_kaas_ruin"]),                                            # Dromund Kaas: Kaas City's ruins
                17: (0.45, ["hod_cant_city"]),                                           # Cantonica: Canto Bight
-               18: (0.3, ["hod_cant_sith_ruin"])}                                       # Cantonica: the Sith ruins
+               18: (0.3, ["hod_cant_sith_ruin"]),                                       # Cantonica: the Sith ruins
+               19: (0.45, ["hod_bon_city"]),                                            # Bonadan: industrial cities
+               20: (0.45, ["hod_etti_city"]),                                           # Etti IV: Mondder
+               21: (0.45, ["hod_etti_arco"]),                                           # Etti IV: the Arcoplex
+               22: (0.4, ["hod_ruu_city"]),                                             # Ruuria: colony hives
+               23: (0.35, ["hod_oss_ruin"]),                                            # Ossus: the ruined cities
+               24: (0.3, ["hod_oss_ysanna"]),                                           # Ossus: Ysanna camps
+               25: (0.35, ["hod_rv_city"]),                                             # Ringo Vinda: bridge-cities
+               26: (0.3, ["hod_rh_ruin"]),                                              # Rhen Var: frozen ruins
+               27: (0.35, ["hod_rh_prefab"])}                                           # Rhen Var: Bravo Base
 
 
 def wire():

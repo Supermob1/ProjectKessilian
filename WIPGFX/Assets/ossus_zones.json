@@ -1,0 +1,965 @@
+{
+ "centre": [
+  771.3941671677691,
+  2441.3487672880337
+ ],
+ "radius": 32.53765021397962,
+ "vp_names": {
+  "21258": "Ruins of Knossa",
+  "21260": "Knossa Spaceport Ruins",
+  "21262": "Knossos Plateau",
+  "21264": "Ruins of the Great Jedi Library",
+  "21265": "Archaeology Camp",
+  "21267": "Ruins of the First Temple",
+  "21269": "Ossus City",
+  "21271": "Gardens of T'alla",
+  "21272": "Ysanna Camp"
+ },
+ "provinces": {
+  "21258": {
+   "zone": "ruins",
+   "kind": 3,
+   "feature": "Ruins of Knossa",
+   "state": 194,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    783.2702702702703,
+    2422.2432432432433
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "21259": {
+   "zone": "ruins",
+   "kind": 3,
+   "feature": "Ruins of Knossa",
+   "state": 194,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    784.4074074074074,
+    2427.1481481481483
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "21260": {
+   "zone": "spaceport",
+   "kind": 11,
+   "feature": "Agorn Mountain",
+   "state": 194,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    787.1578947368421,
+    2432.5263157894738
+   ],
+   "area": 38,
+   "terrain": "hills"
+  },
+  "21261": {
+   "zone": "plateau",
+   "kind": 10,
+   "feature": "Knossos Plateau",
+   "state": 194,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    771.1612903225806,
+    2425.1935483870966
+   ],
+   "area": 31,
+   "terrain": "hills"
+  },
+  "21262": {
+   "zone": "plateau",
+   "kind": 10,
+   "feature": "Knossos Plateau",
+   "state": 194,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    765.8181818181819,
+    2427.5151515151515
+   ],
+   "area": 33,
+   "terrain": "hills"
+  },
+  "21264": {
+   "zone": "library",
+   "kind": 5,
+   "feature": "Great Jedi Library",
+   "state": 285,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    753.1666666666666,
+    2442.0
+   ],
+   "area": 30,
+   "terrain": "hills"
+  },
+  "21265": {
+   "zone": "camp",
+   "kind": 12,
+   "feature": "Archaeology Camp",
+   "state": 285,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    750.6363636363636,
+    2449.7272727272725
+   ],
+   "area": 44,
+   "terrain": "plains"
+  },
+  "21267": {
+   "zone": "temple",
+   "kind": 4,
+   "feature": "First Temple",
+   "state": 284,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    758.4193548387096,
+    2460.935483870968
+   ],
+   "area": 31,
+   "terrain": "hills"
+  },
+  "21269": {
+   "zone": "ruins",
+   "kind": 3,
+   "feature": "Ossus City",
+   "state": 287,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    770.2307692307693,
+    2449.8076923076924
+   ],
+   "area": 52,
+   "terrain": "urban"
+  },
+  "21271": {
+   "zone": "gardens",
+   "kind": 13,
+   "feature": "Gardens of T'alla",
+   "state": 287,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    777.0961538461538,
+    2443.7884615384614
+   ],
+   "area": 52,
+   "terrain": "forest"
+  },
+  "21272": {
+   "zone": "camp",
+   "kind": 12,
+   "feature": "Ysanna Camp",
+   "state": 286,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    785.0681818181819,
+    2445.9545454545455
+   ],
+   "area": 44,
+   "terrain": "plains"
+  },
+  "21273": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    800.6666666666666,
+    2436.0
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "21275": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    787.59375,
+    2416.46875
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "21276": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    792.3125,
+    2454.65625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "21277": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    800.6578947368421,
+    2447.5
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "21279": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    795.7777777777778,
+    2424.1944444444443
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "21282": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    789.1875,
+    2425.375
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "21283": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    794.609756097561,
+    2447.6585365853657
+   ],
+   "area": 41,
+   "terrain": "mountain"
+  },
+  "21284": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    798.5128205128206,
+    2453.974358974359
+   ],
+   "area": 39,
+   "terrain": "mountain"
+  },
+  "21288": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    794.939393939394,
+    2435.757575757576
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "21291": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    799.2424242424242,
+    2430.0
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "21292": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    798.8723404255319,
+    2441.68085106383
+   ],
+   "area": 47,
+   "terrain": "mountain"
+  },
+  "21294": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    791.3235294117648,
+    2420.0882352941176
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "21297": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Eocho Mountains",
+   "state": 1177,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    793.1578947368421,
+    2429.9736842105262
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "21298": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Trawormatt Mountains",
+   "state": 1178,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    750.1190476190476,
+    2422.5476190476193
+   ],
+   "area": 42,
+   "terrain": "mountain"
+  },
+  "21299": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Trawormatt Mountains",
+   "state": 1178,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    764.4333333333333,
+    2412.4
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "21302": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Trawormatt Mountains",
+   "state": 1178,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    757.8378378378378,
+    2420.7027027027025
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "21303": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Trawormatt Mountains",
+   "state": 1178,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    753.7777777777778,
+    2416.8611111111113
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "21304": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Trawormatt Mountains",
+   "state": 1178,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    752.4772727272727,
+    2427.4772727272725
+   ],
+   "area": 44,
+   "terrain": "mountain"
+  },
+  "21312": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Trawormatt Mountains",
+   "state": 1178,
+   "group": 10,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    760.4318181818181,
+    2415.340909090909
+   ],
+   "area": 44,
+   "terrain": "mountain"
+  },
+  "21314": {
+   "zone": "canyon",
+   "kind": 8,
+   "feature": "Imhar Canyon",
+   "state": 1179,
+   "group": 11,
+   "coastal": true,
+   "sea": 18919,
+   "centre": [
+    777.3265306122449,
+    2468.673469387755
+   ],
+   "area": 49,
+   "terrain": "mountain"
+  },
+  "21315": {
+   "zone": "canyon",
+   "kind": 8,
+   "feature": "Imhar Canyon",
+   "state": 1179,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    778.8780487804878,
+    2458.439024390244
+   ],
+   "area": 41,
+   "terrain": "mountain"
+  },
+  "21322": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "Knossa",
+   "state": 194,
+   "group": 12,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    772.0144927536232,
+    2412.0434782608695
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "21324": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "Knossa",
+   "state": 194,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    780.2631578947369,
+    2435.8026315789475
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "21325": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "Knossa",
+   "state": 194,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    761.728813559322,
+    2425.3728813559323
+   ],
+   "area": 59,
+   "terrain": "forest"
+  },
+  "21329": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "Knossa",
+   "state": 194,
+   "group": 12,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    780.375,
+    2415.4204545454545
+   ],
+   "area": 88,
+   "terrain": "forest"
+  },
+  "21331": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "Knossa",
+   "state": 194,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    771.8695652173913,
+    2430.8478260869565
+   ],
+   "area": 46,
+   "terrain": "forest"
+  },
+  "21338": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "Knossa",
+   "state": 194,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    770.060975609756,
+    2419.243902439024
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "21342": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "Knossa",
+   "state": 194,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    778.1639344262295,
+    2426.7377049180327
+   ],
+   "area": 61,
+   "terrain": "forest"
+  },
+  "21343": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "First Temple Woods",
+   "state": 284,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    758.6231884057971,
+    2455.710144927536
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "21344": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "First Temple Woods",
+   "state": 284,
+   "group": 13,
+   "coastal": true,
+   "sea": 18919,
+   "centre": [
+    770.0142857142857,
+    2469.714285714286
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "21345": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "First Temple Woods",
+   "state": 284,
+   "group": 13,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    746.8194444444445,
+    2455.8333333333335
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "21352": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "First Temple Woods",
+   "state": 284,
+   "group": 13,
+   "coastal": true,
+   "sea": 18919,
+   "centre": [
+    760.7848101265823,
+    2467.8227848101264
+   ],
+   "area": 79,
+   "terrain": "forest"
+  },
+  "21355": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "First Temple Woods",
+   "state": 284,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    768.8108108108108,
+    2462.864864864865
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "21363": {
+   "zone": "bamboo",
+   "kind": 2,
+   "feature": "First Temple Woods",
+   "state": 284,
+   "group": 13,
+   "coastal": true,
+   "sea": 18919,
+   "centre": [
+    752.3943661971831,
+    2462.6619718309857
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "21364": {
+   "zone": "barrens",
+   "kind": 9,
+   "feature": "Ooroo Canyon",
+   "state": 285,
+   "group": 14,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    744.0555555555555,
+    2446.411111111111
+   ],
+   "area": 90,
+   "terrain": "desert"
+  },
+  "21372": {
+   "zone": "barrens",
+   "kind": 9,
+   "feature": "Ooroo Canyon",
+   "state": 285,
+   "group": 14,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    745.1969696969697,
+    2428.530303030303
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "21373": {
+   "zone": "barrens",
+   "kind": 9,
+   "feature": "Ooroo Canyon",
+   "state": 285,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    760.0882352941177,
+    2437.220588235294
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "21374": {
+   "zone": "barrens",
+   "kind": 9,
+   "feature": "Ooroo Canyon",
+   "state": 285,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    757.5769230769231,
+    2446.9871794871797
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "21376": {
+   "zone": "barrens",
+   "kind": 9,
+   "feature": "Ooroo Canyon",
+   "state": 285,
+   "group": 14,
+   "coastal": true,
+   "sea": 18696,
+   "centre": [
+    742.5217391304348,
+    2437.7391304347825
+   ],
+   "area": 69,
+   "terrain": "desert"
+  },
+  "21377": {
+   "zone": "barrens",
+   "kind": 9,
+   "feature": "Ooroo Canyon",
+   "state": 285,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    750.2608695652174,
+    2436.8695652173915
+   ],
+   "area": 69,
+   "terrain": "desert"
+  },
+  "21383": {
+   "zone": "barrens",
+   "kind": 9,
+   "feature": "Ooroo Canyon",
+   "state": 285,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    756.8846153846154,
+    2431.2884615384614
+   ],
+   "area": 52,
+   "terrain": "desert"
+  },
+  "21384": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ysanna Valleys",
+   "state": 286,
+   "group": 15,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    792.7837837837837,
+    2461.135135135135
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "21385": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ysanna Valleys",
+   "state": 286,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    788.35,
+    2439.6
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "21389": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ysanna Valleys",
+   "state": 286,
+   "group": 15,
+   "coastal": true,
+   "sea": 19031,
+   "centre": [
+    784.1587301587301,
+    2468.15873015873
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "21396": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ysanna Valleys",
+   "state": 286,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    784.1694915254237,
+    2451.4745762711864
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "21399": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ysanna Valleys",
+   "state": 286,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    784.3513513513514,
+    2460.2297297297296
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "21402": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ysanna Valleys",
+   "state": 286,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    790.2777777777778,
+    2447.5833333333335
+   ],
+   "area": 36,
+   "terrain": "plains"
+  },
+  "21403": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ossus City Valley",
+   "state": 287,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    776.5625,
+    2452.4583333333335
+   ],
+   "area": 48,
+   "terrain": "plains"
+  },
+  "21410": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ossus City Valley",
+   "state": 287,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    769.8918918918919,
+    2436.162162162162
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "21414": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ossus City Valley",
+   "state": 287,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    764.0612244897959,
+    2451.1632653061224
+   ],
+   "area": 49,
+   "terrain": "plains"
+  },
+  "21415": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ossus City Valley",
+   "state": 287,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    770.6349206349206,
+    2457.3174603174602
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "21418": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Ossus City Valley",
+   "state": 287,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    768.0705882352942,
+    2442.8117647058825
+   ],
+   "area": 85,
+   "terrain": "plains"
+  }
+ }
+}

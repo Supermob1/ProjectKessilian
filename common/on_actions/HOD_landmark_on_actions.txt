@@ -1,0 +1,219 @@
+# HOD: landmark lore (landmarks_lore.py): each landmark's state gets its dynamic modifier at the start
+on_actions = {
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = { OR = { state = 79 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_raxulon_parliament }
+			}
+			every_state = {
+				limit = { OR = { state = 79 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_great_alley }
+			}
+			every_state = {
+				limit = { OR = { state = 1137 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rp_refinery }
+			}
+			every_state = {
+				limit = { OR = { state = 1052 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rp_derriphan }
+			}
+			every_state = {
+				limit = { OR = { state = 196 state = 1053 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rp_hammerhead }
+			}
+			every_state = {
+				limit = { OR = { state = 1055 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rp_lethisk }
+			}
+			every_state = {
+				limit = { OR = { state = 1057 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rp_droidworks }
+			}
+			every_state = {
+				limit = { OR = { state = 780 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_sith_academy }
+			}
+			every_state = {
+				limit = { OR = { state = 779 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_valley_dark_lords }
+			}
+			every_state = {
+				limit = { OR = { state = 781 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tomb_ragnos }
+			}
+			every_state = {
+				limit = { OR = { state = 782 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tomb_sadow }
+			}
+			every_state = {
+				limit = { OR = { state = 783 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tomb_pall }
+			}
+			every_state = {
+				limit = { OR = { state = 784 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tomb_hord }
+			}
+			every_state = {
+				limit = { OR = { state = 785 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tomb_kressh }
+			}
+			every_state = {
+				limit = { OR = { state = 83 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kadavo_facility }
+			}
+			every_state = {
+				limit = { OR = { state = 734 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kadavo_landing }
+			}
+			every_state = {
+				limit = { OR = { state = 736 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kadavo_pits }
+			}
+			every_state = {
+				limit = { OR = { state = 735 state = 737 state = 738 state = 739 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kadavo_camps }
+			}
+			every_state = {
+				limit = { OR = { state = 192 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_hondo_complex }
+			}
+			every_state = {
+				limit = { OR = { state = 1036 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_florrum_refinery }
+			}
+			every_state = {
+				limit = { OR = { state = 1035 state = 1036 state = 1037 state = 1038 state = 1039 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_florrum_outposts }
+			}
+			every_state = {
+				limit = { OR = { state = 1148 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_hondo_vault }
+			}
+			every_state = {
+				limit = { OR = { state = 1034 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_florrum_junk }
+			}
+			every_state = {
+				limit = { OR = { state = 89 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kaas_citadel }
+			}
+			every_state = {
+				limit = { OR = { state = 772 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dark_temple }
+			}
+			every_state = {
+				limit = { OR = { state = 85 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_zyg_palace }
+			}
+			every_state = {
+				limit = { OR = { state = 85 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_zyg_arena }
+			}
+			every_state = {
+				limit = { OR = { state = 749 state = 750 state = 751 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_zyg_fortress }
+			}
+			every_state = {
+				limit = { OR = { state = 752 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_zyg_landing }
+			}
+			every_state = {
+				limit = { OR = { state = 740 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_westhill_palace }
+			}
+			every_state = {
+				limit = { OR = { state = 86 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bonadan_spaceport }
+			}
+			every_state = {
+				limit = { OR = { state = 754 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bonadan_shipyards }
+			}
+			every_state = {
+				limit = { OR = { state = 755 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bonadan_weather }
+			}
+			every_state = {
+				limit = { OR = { state = 760 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_arcoplex }
+			}
+			every_state = {
+				limit = { OR = { state = 87 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mondder_spaceport }
+			}
+			every_state = {
+				limit = { OR = { state = 87 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dance_dome }
+			}
+			every_state = {
+				limit = { OR = { state = 88 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ruuria_university }
+			}
+			every_state = {
+				limit = { OR = { state = 88 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_great_hive }
+			}
+			every_state = {
+				limit = { OR = { state = 285 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_great_library }
+			}
+			every_state = {
+				limit = { OR = { state = 194 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_knossa }
+			}
+			every_state = {
+				limit = { OR = { state = 194 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_agorn_spaceport }
+			}
+			every_state = {
+				limit = { OR = { state = 284 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_first_temple }
+			}
+			every_state = {
+				limit = { OR = { state = 193 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_citadel }
+			}
+			every_state = {
+				limit = { OR = { state = 1180 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_shattered_hemisphere }
+			}
+			every_state = {
+				limit = { OR = { state = 81 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ringo_ring }
+			}
+			every_state = {
+				limit = { OR = { state = 81 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_vindaport }
+			}
+			every_state = {
+				limit = { OR = { state = 81 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_station_lift }
+			}
+			every_state = {
+				limit = { OR = { state = 82 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bravo_base }
+			}
+			every_state = {
+				limit = { OR = { state = 727 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rhen_harbor }
+			}
+			every_state = {
+				limit = { OR = { state = 728 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rhen_citadel }
+			}
+			every_state = {
+				limit = { OR = { state = 729 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_jedi_monument }
+			}
+			every_state = {
+				limit = { OR = { state = 730 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mekhis_fortress }
+			}
+			every_state = {
+				limit = { OR = { state = 731 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_rakatan_temple }
+			}
+		}
+	}
+}
