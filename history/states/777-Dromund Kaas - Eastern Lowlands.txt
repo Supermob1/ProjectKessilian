@@ -1,0 +1,27 @@
+state={
+	id=777
+	name="STATE_777"
+	# HOD: Dromund Kaas (dromund_kaas_map.py)
+	provinces={
+		7838 7852 7853 7856 7857 7859 7860 7861 7867 7877 7878
+	}
+	resources={
+		oil=3
+	}
+	history = {
+		victory_points = {
+			7853 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+		}
+		owner = CMG
+		add_core_of = CMG
+	}
+	manpower = 138558
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

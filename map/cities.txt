@@ -1,7 +1,8 @@
 # HOD: written by WIPGFX/plans & scripts/coruscant_buildings.py wire. map/cities.bmp (planet_terrain_gen.py)
 # picks the style per pixel: 1 megacity, 2 towns, 3 Christophsis, 4 treehouse villages,
 # 5 ocean-world stilt domes, 6 Mandalore domes, 7 Geonosis hives, 8 Naboo, 9 Felucian villages, 10 Guild outposts,
-# 11 Raxus capital, 12 Raxus Prime scrap towns, 13 Dreshdae (Korriban).
+# 11 Raxus capital, 12 Raxus Prime scrap towns, 13 Dreshdae (Korriban), 14 Zygerrian capital,
+# 16 Kaas City ruins (Dromund Kaas).
 types_source = "map/cities.bmp"
 pixel_step_x = 2
 pixel_step_y = 2
@@ -745,6 +746,170 @@ city_group = {
 			"hod_dre_city_42_entity"
 			"hod_dre_city_43_entity"
 			"hod_dre_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 14
+	density = 0.45
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_zyg_city_11_entity"
+			"hod_zyg_city_12_entity"
+			"hod_zyg_city_13_entity"
+			"hod_zyg_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_zyg_city_21_entity"
+			"hod_zyg_city_22_entity"
+			"hod_zyg_city_23_entity"
+			"hod_zyg_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_zyg_city_31_entity"
+			"hod_zyg_city_32_entity"
+			"hod_zyg_city_33_entity"
+			"hod_zyg_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_zyg_city_41_entity"
+			"hod_zyg_city_42_entity"
+			"hod_zyg_city_43_entity"
+			"hod_zyg_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 16
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_kaas_ruin_11_entity"
+			"hod_kaas_ruin_12_entity"
+			"hod_kaas_ruin_13_entity"
+			"hod_kaas_ruin_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_kaas_ruin_21_entity"
+			"hod_kaas_ruin_22_entity"
+			"hod_kaas_ruin_23_entity"
+			"hod_kaas_ruin_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_kaas_ruin_31_entity"
+			"hod_kaas_ruin_32_entity"
+			"hod_kaas_ruin_33_entity"
+			"hod_kaas_ruin_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_kaas_ruin_41_entity"
+			"hod_kaas_ruin_42_entity"
+			"hod_kaas_ruin_43_entity"
+			"hod_kaas_ruin_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 17
+	density = 0.45
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_cant_city_11_entity"
+			"hod_cant_city_12_entity"
+			"hod_cant_city_13_entity"
+			"hod_cant_city_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_cant_city_21_entity"
+			"hod_cant_city_22_entity"
+			"hod_cant_city_23_entity"
+			"hod_cant_city_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_cant_city_31_entity"
+			"hod_cant_city_32_entity"
+			"hod_cant_city_33_entity"
+			"hod_cant_city_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_cant_city_41_entity"
+			"hod_cant_city_42_entity"
+			"hod_cant_city_43_entity"
+			"hod_cant_city_44_entity"
+		}
+	}
+}
+city_group = {
+	color_index = 18
+	density = 0.3
+	# sorted by distance to the edge of the urban area (map pixels): low outskirts, tall downtown
+	building = {
+		distance = 1
+		mesh = {
+			"hod_cant_sith_ruin_11_entity"
+			"hod_cant_sith_ruin_12_entity"
+			"hod_cant_sith_ruin_13_entity"
+			"hod_cant_sith_ruin_14_entity"
+		}
+	}
+	building = {
+		distance = 2
+		mesh = {
+			"hod_cant_sith_ruin_21_entity"
+			"hod_cant_sith_ruin_22_entity"
+			"hod_cant_sith_ruin_23_entity"
+			"hod_cant_sith_ruin_24_entity"
+		}
+	}
+	building = {
+		distance = 3
+		mesh = {
+			"hod_cant_sith_ruin_31_entity"
+			"hod_cant_sith_ruin_32_entity"
+			"hod_cant_sith_ruin_33_entity"
+			"hod_cant_sith_ruin_34_entity"
+		}
+	}
+	building = {
+		distance = 4
+		mesh = {
+			"hod_cant_sith_ruin_41_entity"
+			"hod_cant_sith_ruin_42_entity"
+			"hod_cant_sith_ruin_43_entity"
+			"hod_cant_sith_ruin_44_entity"
 		}
 	}
 }

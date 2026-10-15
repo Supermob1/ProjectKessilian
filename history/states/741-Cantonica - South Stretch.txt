@@ -1,0 +1,33 @@
+state={
+	id=741
+	name="STATE_741"
+	# HOD: Cantonica (cantonica_map.py)
+	provinces={
+		2379 2466 2979 7191 7206 7221 7231 7232
+	}
+	resources={
+		oil=3
+	}
+	history = {
+		victory_points = {
+			2466 2
+		}
+		victory_points = {
+			2979 1
+		}
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+			dockyard = 1
+					7232 = {
+				naval_base = 4
+			}
+		}
+		owner = CSA
+		add_core_of = CSA
+	}
+	manpower = 84586
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

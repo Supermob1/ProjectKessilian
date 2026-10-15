@@ -1,0 +1,32 @@
+state={
+	id=752
+	name="STATE_752"
+	# HOD: Zygerria (zygerria_map.py)
+	provinces={
+		2049 2099 2154 2215 2285 2321
+	}
+	resources={
+		coal=2
+		oil=1
+	}
+	history = {
+		victory_points = {
+			2321 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			air_base = 1
+			dockyard = 5
+					2049 = {
+				naval_base = 4
+			}
+		}
+		owner = ZGY
+		add_core_of = ZGY
+	}
+	manpower = 301501
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

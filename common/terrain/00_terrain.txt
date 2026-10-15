@@ -380,5 +380,9 @@ terrain = {
 	# HOD: Raxus Prime junk fields (atlas slot 19, terrain_atlas.py scrap); the town variant spawns city models
 	scrap_28					= { type = desert			color = { 	28	 } texture = 19 }
 	scrap_town_29				= { type = desert			color = { 	29	 } texture = 19 spawn_city = yes }
+	# HOD: marsh water that spawns city models: Kaas City's ruins standing in the sea (Dromund Kaas sea quarter)
+	sea_town_30					= { type = marsh			color = { 	30	 } texture = 6 spawn_city = yes }
+	# HOD: desert sand that spawns city models: the ancient Sith ruins in Cantonica's sand
+	desert_town_32				= { type = desert			color = { 	32	 } texture = 12 spawn_city = yes }
 	
 }
