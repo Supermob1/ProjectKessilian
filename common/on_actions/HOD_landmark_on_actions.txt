@@ -135,6 +135,30 @@ on_actions = {
 				add_dynamic_modifier = { modifier = HOD_landmark_bonadan_weather }
 			}
 			every_state = {
+				limit = { OR = { state = 700 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_pammant_docks }
+			}
+			every_state = {
+				limit = { OR = { state = 700 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_pammant_liftport }
+			}
+			every_state = {
+				limit = { OR = { state = 78 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_pammant_tessar }
+			}
+			every_state = {
+				limit = { OR = { state = 77 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mcl_coral_city }
+			}
+			every_state = {
+				limit = { OR = { state = 77 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mcl_drome }
+			}
+			every_state = {
+				limit = { OR = { state = 695 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mcl_quarren_hq }
+			}
+			every_state = {
 				limit = { OR = { state = 760 } }
 				add_dynamic_modifier = { modifier = HOD_landmark_arcoplex }
 			}
