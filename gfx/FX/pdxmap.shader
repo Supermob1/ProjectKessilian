@@ -247,6 +247,18 @@ PixelShader =
 			return lerp( lerp( ATHash( i ), ATHash( i + float2( 1.0f, 0.0f ) ), u.x ),
 			             lerp( ATHash( i + float2( 0.0f, 1.0f ) ), ATHash( i + float2( 1.0f, 1.0f ) ), u.x ), u.y );
 		}
+		float HodCaustic( float2 p, float t )
+		{
+			// thin bright ridges of domain-warped value noise, two drifting layers (the second turned 37 degrees and
+			// finer), a large patchy mask: no lattice, nothing repeats
+			float2 w = float2( ATNoise( p * 0.21f + t * 0.03f ), ATNoise( p * 0.21f + 31.7f - t * 0.025f ) ) * 4.0f;
+			float n1 = ATNoise( p * 0.9f + w + float2( t * 0.12f, -t * 0.08f ) );
+			float2 r = float2( p.x * 0.8f - p.y * 0.6f, p.x * 0.6f + p.y * 0.8f ) * 1.6f;
+			float n2 = ATNoise( r - w * 0.7f + float2( -t * 0.1f, t * 0.14f ) + 7.3f );
+			float c1 = pow( saturate( 1.0f - abs( n1 * 2.0f - 1.0f ) ), 12.0f );
+			float c2 = pow( saturate( 1.0f - abs( n2 * 2.0f - 1.0f ) ), 12.0f );
+			return max( c1, c2 * 0.8f ) * ( 0.45f + 0.9f * ATNoise( p * 0.07f + 5.0f ) );
+		}
 		float2 ATRotate( float2 v, float a )
 		{
 			float c = cos( a );
@@ -334,6 +346,22 @@ PixelShader =
 			}
 			
 			diffuse.rgb *= vATMacro;
+
+			// HOD: the water tile (atlas slot WATER_TILE_SLOT: marsh terrain_9, sea_town_30) is drawn as water: the water
+			// plane shows space here, so seas on land provinces (Mon Cala) are painted by the terrain. vSea = the water
+			// tile's share of this pixel, with the same bilinear weights as the four-corner diffuse blend above
+			static const float WATER_TILE_SLOT = 6.0f;
+			float4 vIsWater = 1.0f - saturate( abs( IndexV * MAP_NUM_TILES + IndexU - WATER_TILE_SLOT ) );
+			float2 vFracW = frac( float2( Input.uv.x * MAP_SIZE_X - 0.5f, Input.uv.y * MAP_SIZE_Y - 0.5f ) );
+			float vSea = dot( vIsWater, float4( ( 1.0f - vFracW.x ) * vFracW.y, vFracW.x * ( 1.0f - vFracW.y ),
+			                                    ( 1.0f - vFracW.x ) * ( 1.0f - vFracW.y ), vFracW.x * vFracW.y ) );
+			vSea = smoothstep( 0.15f, 0.85f, vSea );
+			// HOD: the lava tile (atlas slot LAVA_TILE_SLOT: desert_hills = terrain.bmp 8) drawn as moving lava
+			static const float LAVA_TILE_SLOT = 14.0f;
+			float4 vIsLava = 1.0f - saturate( abs( IndexV * MAP_NUM_TILES + IndexU - LAVA_TILE_SLOT ) );
+			float vLava = dot( vIsLava, float4( ( 1.0f - vFracW.x ) * vFracW.y, vFracW.x * ( 1.0f - vFracW.y ),
+			                                    ( 1.0f - vFracW.x ) * ( 1.0f - vFracW.y ), vFracW.x * vFracW.y ) );
+			vLava = smoothstep( 0.15f, 0.85f, vLava );
 		#ifndef NO_SHADER_TEXTURE_LOD
 			terrain_normal =  terrain_normalRaw.rbg - 0.5f; //UnpackRRxGNormal(terrain_normalRaw).rgb;
 			//return float4(terrain_normal.rgb, 1.0f);
@@ -354,6 +382,22 @@ PixelShader =
 			normal = RotateVectorByVector( normal, terrain_normal );
 			normal = normalize(normal);
 		#endif
+			// HOD: a flat water surface with moving ripples instead of the ground's relief
+			{
+				// the slope of two drifting noise layers (finite differences): irregular ripples, no wave pattern
+				float2 vRP = vATPos * 1.4f;
+				float vRT = vGlobalTime;
+				float2 vD1 = float2( vRT * 0.11f, vRT * 0.07f );
+				float2 vD2 = float2( -vRT * 0.08f, vRT * 0.12f ) + 19.0f;
+				float vE = 0.35f;
+				float vHx = ATNoise( vRP + float2( vE, 0.0f ) + vD1 ) - ATNoise( vRP - float2( vE, 0.0f ) + vD1 )
+				          + 0.5f * ( ATNoise( vRP * 2.3f + float2( vE, 0.0f ) + vD2 ) - ATNoise( vRP * 2.3f - float2( vE, 0.0f ) + vD2 ) );
+				float vHz = ATNoise( vRP + float2( 0.0f, vE ) + vD1 ) - ATNoise( vRP - float2( 0.0f, vE ) + vD1 )
+				          + 0.5f * ( ATNoise( vRP * 2.3f + float2( 0.0f, vE ) + vD2 ) - ATNoise( vRP * 2.3f - float2( 0.0f, vE ) + vD2 ) );
+				float3 vRipple = normalize( float3( -vHx * 0.12f, 1.0f, -vHz * 0.12f ) );
+				normal = normalize( lerp( normal, vRipple, vSea ) );
+				normal = normalize( lerp( normal, float3( 0.0f, 1.0f, 0.0f ), vLava * 0.7f ) );   // molten rock lies flat
+			}
 			
 			float4 TerrainColor = tex2D( TerrainColorTint, Input.uv2 );
 			static const float PLANET_PAINT_NEAR = 450.0f;   // camera height where the globes start to show
@@ -411,6 +455,40 @@ PixelShader =
 	
 			float vSnowAlpha = 1-vSpec;
 			diffuse.rgb = GetOverlay( diffuse.rgb, TerrainColor.rgb, COLORMAP_OVERLAY_STRENGTH );
+			// HOD: the water itself: deep teal to shallow turquoise (large slow patches), the seabed faint below,
+			// animated caustic light and sun glints on the surface
+			{
+				float vT = vGlobalTime;
+				float2 vP = vATPos * 0.9f;
+				float vCaustic = HodCaustic( vP * 0.55f, vT ) * smoothstep( 0.4f, 0.75f, ATNoise( vATPos * 0.05f + 3.0f ) );
+				float vGlintN = ATNoise( vP * 2.3f + float2( vT * 0.45f, -vT * 0.3f ) ) * ATNoise( vP * 3.1f - float2( vT * 0.3f, vT * 0.4f ) );
+				float vGlint = pow( saturate( vGlintN * 1.6f ), 14.0f );
+				float vShallow = saturate( ATNoise( vATPos * 0.04f + 17.0f ) * 1.4f - 0.2f );
+				float3 vWaterCol = lerp( float3( 0.03f, 0.15f, 0.24f ), float3( 0.08f, 0.38f, 0.44f ), vShallow );
+				float vBed = 0.25f + 0.75f * ATNoise( vATPos * 0.13f + 43.0f );
+				float3 vUnder = vWaterCol + diffuse.rgb * float3( 0.06f, 0.11f, 0.12f ) * ( 0.5f + vShallow ) * vBed
+				              + vCaustic * float3( 0.05f, 0.10f, 0.11f ) * ( 0.4f + vShallow ) + vGlint * 0.2f;
+				diffuse.rgb = lerp( diffuse.rgb, vUnder, vSea );
+				vGlossiness = lerp( vGlossiness, 1.0f, vSea );
+				vSpec = lerp( vSpec, 0.9f, vSea );
+			}
+			float3 vLavaGlow = vec3( 0.0f );
+			{
+				float vT = vGlobalTime * 0.15f;
+				float2 vP = vATPos * 0.6f;
+				float2 vW = float2( ATNoise( vP * 0.35f + float2( vT, 0.0f ) ), ATNoise( vP * 0.35f + float2( 17.0f, vT * 0.8f ) ) ) * 3.0f;
+				float vN = ATNoise( vP + vW ) * 0.65f + ATNoise( vP * 2.3f + vW * 1.7f - vT * 0.5f ) * 0.35f;
+				float vCrack = pow( saturate( 1.0f - abs( vN * 2.0f - 1.0f ) ), 5.0f );
+				float vPool = smoothstep( 0.55f, 0.8f, ATNoise( vP * 0.12f + float2( -vT * 0.3f, 9.0f ) ) );
+				float vPulse = 0.85f + 0.15f * sin( vGlobalTime * 1.3f + vN * 6.0f );
+				float vHot = saturate( max( vCrack, vPool ) ) * vPulse;
+				float3 vCrust = float3( 0.07f, 0.05f, 0.045f ) * ( 0.7f + 0.6f * ATNoise( vP * 3.7f ) ) + diffuse.rgb * 0.08f;
+				float3 vMolten = lerp( float3( 0.85f, 0.18f, 0.02f ), float3( 1.0f, 0.75f, 0.25f ), vHot * vHot );
+				diffuse.rgb = lerp( diffuse.rgb, lerp( vCrust, vMolten * 0.5f, vHot ), vLava );
+				vLavaGlow = vMolten * vHot * vLava * 1.1f;
+				vGlossiness = lerp( vGlossiness, 0.3f, vLava );
+				vSpec = lerp( vSpec, 0.1f, vLava );
+			}
 			diffuse.rgb = lerp( diffuse.rgb, vGlobe * PLANET_PAINT_GAIN, vPlanetFade );
 
 			float4 vMudSnow = GetMudSnowColor( Input.prepos, SnowMudData );	
@@ -477,6 +555,7 @@ PixelShader =
 			float3 vOut = ComposeLightSnow(lightingProperties, diffuseLight, specularLight, vSnowAlpha);
 		
 			vOut = lerp( vOut, diffuse.rgb, BORDER_LIGHT_REMOVAL_FACTOR * ( 1 - vBloomAlpha ) );
+			vOut += vLavaGlow * ( 1.0f - vPlanetFade );   // HOD: the lava glows on its own (not on the zoomed-out globes)
 				
 			float3 vGlobeNormal = CalcGlobeNormal( Input.prepos.xz );
 			float vNightFactor = DayNightFactor( vGlobeNormal );

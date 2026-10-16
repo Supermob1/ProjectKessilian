@@ -1,0 +1,32 @@
+state={
+	id=77
+	name="STATE_77"
+	# HOD: Mon Calamari (mon_calamari_map.py)
+	provinces={
+		72 133 245 405 676 2794 2833 9532 9537 9538 9539 9543 9551 9552 9553 9558 9559 9568 9569 9571
+	}
+	resources={
+		steel=1#Alloys
+		chromium=4#Circuitry
+	}
+	history = {
+		victory_points = {
+			405 10
+		}
+		victory_points = {
+			676 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = MNC
+		add_core_of = MNC
+	}
+	manpower = 2264850
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

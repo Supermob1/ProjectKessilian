@@ -422,6 +422,33 @@ PixelShader =
 
 	MainCode PixelPdxMeshStandard
 	[[
+		// HOD: value noise and caustics for the underwater buildings (HOD_UNDERWATER)
+		float HodHash( float2 p )
+		{
+			float3 p3 = frac( float3( p.x, p.y, p.x ) * 0.1031f );
+			p3 += dot( p3, p3.yzx + 33.33f );
+			return frac( ( p3.x + p3.y ) * p3.z );
+		}
+		float HodNoise( float2 p )
+		{
+			float2 i = floor( p );
+			float2 f = frac( p );
+			float2 u = f * f * ( 3.0f - 2.0f * f );
+			return lerp( lerp( HodHash( i ), HodHash( i + float2( 1.0f, 0.0f ) ), u.x ),
+			             lerp( HodHash( i + float2( 0.0f, 1.0f ) ), HodHash( i + float2( 1.0f, 1.0f ) ), u.x ), u.y );
+		}
+		float HodCaustic( float2 p, float t )
+		{
+			// thin bright ridges of domain-warped value noise, two drifting layers (the second turned 37 degrees and
+			// finer), a large patchy mask: no lattice, nothing repeats
+			float2 w = float2( HodNoise( p * 0.21f + t * 0.03f ), HodNoise( p * 0.21f + 31.7f - t * 0.025f ) ) * 4.0f;
+			float n1 = HodNoise( p * 0.9f + w + float2( t * 0.12f, -t * 0.08f ) );
+			float2 r = float2( p.x * 0.8f - p.y * 0.6f, p.x * 0.6f + p.y * 0.8f ) * 1.6f;
+			float n2 = HodNoise( r - w * 0.7f + float2( -t * 0.1f, t * 0.14f ) + 7.3f );
+			float c1 = pow( saturate( 1.0f - abs( n1 * 2.0f - 1.0f ) ), 12.0f );
+			float c2 = pow( saturate( 1.0f - abs( n2 * 2.0f - 1.0f ) ), 12.0f );
+			return max( c1, c2 * 0.8f ) * ( 0.45f + 0.9f * HodNoise( p * 0.07f + 5.0f ) );
+		}
 		float3 ApplySnowMesh( float3 vColor, float3 vPos, inout float3 vNormal, float4 vFoWColor, out float vSnowAlpha )
 		{
 			float vIsSnow = GetSnow( vFoWColor );
@@ -568,6 +595,27 @@ PixelShader =
 
 			vColor.rgb = ApplyDistanceFog( vColor.rgb, vPos );			
 			vColor.rgb = DayNight( vColor.rgb, vGlobalNormal );
+
+		#ifdef HOD_UNDERWATER
+			// HOD: Mon Cala's cities stand under the sea (the seas are painted by pdxmap.shader's water tile): the
+			// water colour deepens towards the foot of the building (an imagined surface UW_SURFACE above the water
+			// plane), a blue-green haze over everything, caustic light playing over upward faces, the lit windows and
+			// gold lights still glowing through
+			{
+				static const float UW_SURFACE = 13.0f;      // the imagined sea surface: map units above WATER_HEIGHT
+				float vT = vGlobalTime;
+				float vDepth = saturate( ( WATER_HEIGHT + UW_SURFACE - vPos.y ) / UW_SURFACE );
+				float vShallow = saturate( HodNoise( vPos.xz * 0.04f + 17.0f ) * 1.4f - 0.2f );
+				float3 vWaterCol = lerp( float3( 0.03f, 0.15f, 0.24f ), float3( 0.08f, 0.38f, 0.44f ), vShallow );
+				float3 vSeen = vColor.rgb * lerp( float3( 0.75f, 0.95f, 1.0f ), float3( 0.35f, 0.65f, 0.75f ), vDepth );
+				float vCaustic = HodCaustic( vPos.xz * 0.5f, vT ) * saturate( vNormal.y * 0.7f + 0.3f ) * ( 1.0f - 0.6f * vDepth );
+				float3 vUnder = lerp( vSeen, vWaterCol, 0.25f + 0.35f * vDepth ) + vCaustic * float3( 0.06f, 0.12f, 0.13f );
+			#ifdef EMISSIVE
+				vUnder = lerp( vUnder, vColor.rgb, saturate( vEmissive ) * 0.7f );
+			#endif
+				vColor.rgb = vUnder;
+			}
+		#endif
 
 /*		#ifdef RIM_LIGHT
 			float vRim = smoothstep( RIM_START, RIM_END, 1.0f - dot( vInNormal, lightingProperties._ToCameraDir ) );
@@ -849,6 +897,20 @@ Effect PdxMeshHodAlphaTestShadow
 {
 	VertexShader = "VertexPdxMeshStandardShadow"
 	PixelShader = "PixelPdxMeshNoShadow"
+}
+
+# HOD: Mon Cala's buildings (military_buildings.py hod_mcl_*): PdxMeshSnow drawn as seen under the sea
+Effect PdxMeshHodUnderwater
+{
+	VertexShader = "VertexPdxMeshStandard"
+	PixelShader = "PixelPdxMeshStandard"
+	Defines = { "PDX_SNOW" "PDX_IMPROVED_BLINN_PHONG" "EMISSIVE" "RIM_LIGHT" "HOD_UNDERWATER" }
+}
+
+Effect PdxMeshHodUnderwaterShadow
+{
+	VertexShader = "VertexPdxMeshStandardShadow"
+	PixelShader = "PixelPdxMeshStandardShadow"
 }
 
 Effect PdxMeshAdvancedSnowSkinnedShadow

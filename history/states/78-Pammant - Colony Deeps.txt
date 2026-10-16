@@ -1,0 +1,33 @@
+state={
+	id=78
+	name="STATE_78"
+	# HOD: Pammant (pammant_map.py)
+	provinces={
+		255 302 634 766 809 836 1105 9433 9434 9452 9453 9454 9455 9459 9460
+	}
+	resources={
+		oil=1#Fuel
+		steel=2#Alloys
+		chromium=1#Circuitry
+	}
+	history = {
+		victory_points = {
+			766 10
+		}
+		victory_points = {
+			809 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 3
+			air_base = 3
+		}
+		owner = QUA
+		add_core_of = QUA
+	}
+	manpower = 1222841
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
