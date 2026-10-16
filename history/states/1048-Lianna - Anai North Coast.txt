@@ -1,0 +1,35 @@
+state={
+	id=1048
+	name="STATE_1048"
+	# HOD: Lianna (lianna_map.py)
+	provinces={
+		21210 21211 21212 21249 21250 21251 21252
+	}
+	resources={
+		chromium=3
+		coal=3
+	}
+	history = {
+		victory_points = {
+			21210 2
+		}
+		victory_points = {
+			21211 2
+		}
+		victory_points = {
+			21212 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = SIE
+		add_core_of = SIE
+	}
+	manpower = 1994486
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

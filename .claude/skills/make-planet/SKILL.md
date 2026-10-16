@@ -106,7 +106,10 @@ Models (user, 2026-10-14): every planet gets its OWN custom landmark models, BIG
 Korriban academy, Raxus senate); no reused camps / docks / arenas from other planets and no shrinking to fit; ask first.
 Model code: `military_buildings.models()` with the Kit (box / tube / lathe / prism), e.g. `zygerria_palace`.
 
-Run order: map → (free_province_ids) → validate → terrain → models → placement → FX → globe → validate again.
+Run order: map → (free_province_ids) → map fixers → validate → terrain → models → placement → FX → globe → validate again.
+Map fixers (2026-10-16 audit; each only touches what is wrong and prints it): `fix_small_provinces.py` (provinces
+under the game's 8 px minimum, X crossings), `fix_building_positions.py` (buildings off their state / off land),
+`fix_ports.py` (naval bases on inland provinces). Run them in that order after every map script.
 
 Files each stage writes (all tracked; preflight = `git status --short -- <these>` must be empty):
 - map: `planet_common.WRITES` (provinces.bmp, definition.csv, adjacencies, buildings, railways, airports,
