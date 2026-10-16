@@ -201,6 +201,102 @@ HOD_landmark_mcl_quarren_hq = {
 	local_manpower = 0.08
 	resistance_target = 0.05
 }
+HOD_landmark_ieg_cliffhold = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.1
+	stability_factor = 0.02
+}
+HOD_landmark_ieg_laserweb = {
+	icon = GFX_idea_generic_radar
+	enable = { always = yes }
+	resistance_target = 0.05
+}
+HOD_landmark_ieg_choir = {
+	icon = GFX_idea_generic_pp_unity_bonus
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_ieg_boneyard = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_supplies = 0.05
+}
+HOD_landmark_lia_hq = {
+	icon = GFX_idea_generic_improved_industries
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.1
+	stability_factor = 0.02
+}
+HOD_landmark_lia_academy = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_manpower = 0.05
+}
+HOD_landmark_lia_skycity = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_lia_shipyard = {
+	icon = GFX_idea_generic_navy_bonus
+	enable = { always = yes }
+	state_production_speed_dockyard_factor = 0.15
+}
+HOD_landmark_jab_choal = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+	local_manpower = 0.05
+}
+HOD_landmark_jab_bore = {
+	icon = GFX_idea_generic_improved_industries
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.1
+}
+HOD_landmark_jab_shelter = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_jab_cobalt = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_supplies = 0.05
+	resistance_target = -0.05
+}
+HOD_landmark_jab_aurek = {
+	icon = GFX_idea_generic_radar
+	enable = { always = yes }
+	resistance_target = 0.05
+}
+HOD_landmark_jab_shear = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_manpower = 0.05
+}
+HOD_landmark_sal_taleucema = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+	local_supplies = 0.05
+}
+HOD_landmark_sal_spaceport = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_sal_lawquane = {
+	icon = GFX_idea_generic_pp_unity_bonus
+	enable = { always = yes }
+	stability_factor = 0.01
+}
+HOD_landmark_sal_cloning = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_manpower = 0.05
+	resistance_target = 0.05
+}
 HOD_landmark_arcoplex = {
 	icon = GFX_idea_generic_improved_industries
 	enable = { always = yes }

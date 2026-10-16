@@ -159,6 +159,78 @@ on_actions = {
 				add_dynamic_modifier = { modifier = HOD_landmark_mcl_quarren_hq }
 			}
 			every_state = {
+				limit = { OR = { state = 76 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ieg_cliffhold }
+			}
+			every_state = {
+				limit = { OR = { state = 76 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ieg_laserweb }
+			}
+			every_state = {
+				limit = { OR = { state = 689 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ieg_choir }
+			}
+			every_state = {
+				limit = { OR = { state = 689 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ieg_boneyard }
+			}
+			every_state = {
+				limit = { OR = { state = 195 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_lia_hq }
+			}
+			every_state = {
+				limit = { OR = { state = 1048 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_lia_academy }
+			}
+			every_state = {
+				limit = { OR = { state = 1051 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_lia_skycity }
+			}
+			every_state = {
+				limit = { OR = { state = 195 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_lia_shipyard }
+			}
+			every_state = {
+				limit = { OR = { state = 75 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_jab_choal }
+			}
+			every_state = {
+				limit = { OR = { state = 678 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_jab_bore }
+			}
+			every_state = {
+				limit = { OR = { state = 680 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_jab_shelter }
+			}
+			every_state = {
+				limit = { OR = { state = 679 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_jab_cobalt }
+			}
+			every_state = {
+				limit = { OR = { state = 681 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_jab_aurek }
+			}
+			every_state = {
+				limit = { OR = { state = 682 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_jab_shear }
+			}
+			every_state = {
+				limit = { OR = { state = 74 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_sal_taleucema }
+			}
+			every_state = {
+				limit = { OR = { state = 671 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_sal_spaceport }
+			}
+			every_state = {
+				limit = { OR = { state = 672 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_sal_lawquane }
+			}
+			every_state = {
+				limit = { OR = { state = 673 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_sal_cloning }
+			}
+			every_state = {
 				limit = { OR = { state = 760 } }
 				add_dynamic_modifier = { modifier = HOD_landmark_arcoplex }
 			}

@@ -570,6 +570,10 @@ PixelShader =
 			float3 reflectiveColor = texCUBElod( EnvironmentMap, float4(reflection, MipmapIndex) ).rgb * CubemapIntensity;
 			specularLight += reflectiveColor * FresnelGlossy(lightingProperties._SpecularColor, -vEyeDir, lightingProperties._Normal, lightingProperties._Glossiness);
 		#endif
+			// HOD: no mirror flashes: the sun highlight plus the environment reflection, at the right view angle, turned
+			// whole flat faces of the big generated models (bases, decks, roofs) white, appearing and vanishing as the
+			// camera moved (the user's "white squares"); capped low, the diffuse light and colours are untouched
+			specularLight = min( specularLight, vec3( 0.2f ) );
 		
 		#ifdef PDX_SNOW
 			vColor = ComposeLightSnow(lightingProperties, diffuseLight, specularLight, vSnowAlpha);
@@ -624,6 +628,9 @@ PixelShader =
 */			
 
 			DebugReturn(vColor, lightingProperties, fShadowTerm);
+			// HOD: keep the colour finite and sane (max/min also turn a NaN into 0): a blown-up specular highlight on a
+			// flat face otherwise spreads into hard white squares in the bloom pass, changing with the view angle
+			vColor = min( max( vColor, vec3( 0.0f ) ), vec3( 8.0f ) );
 			
 		#ifdef TRAIN
 			alpha = TrainColor.a;

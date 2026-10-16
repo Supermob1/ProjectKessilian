@@ -1,0 +1,9 @@
+# HOD: an invisible emitter for Jabiim (jabiim_fx.py), placed by map/ambient_object.txt
+entity = {
+	name = "hod_jab_rain_entity"
+	cull_radius = 24
+	default_state = "idle"
+	state = { name = "idle" state_time = 2 looping = no
+		event = { time = 0 particle = "hod_jab_rain_particle" keep_particle = yes }
+	}
+}

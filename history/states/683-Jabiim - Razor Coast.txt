@@ -1,0 +1,32 @@
+state={
+	id=683
+	name="STATE_683"
+	# HOD: Jabiim (jabiim_map.py)
+	provinces={
+		1450 1917 1922 10867 10868 10871 10873 10874 10875 10876 10882 10883 10890 10895
+	}
+	resources={
+		oil=3
+	}
+	history = {
+		victory_points = {
+			10895 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+					10868 = {
+				naval_base = 3
+			}
+		}
+		owner = JAB
+		add_core_of = JAB
+	}
+	manpower = 83474
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
