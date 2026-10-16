@@ -469,25 +469,32 @@ PixelShader =
 				float3 vUnder = vWaterCol + diffuse.rgb * float3( 0.06f, 0.11f, 0.12f ) * ( 0.5f + vShallow ) * vBed
 				              + vCaustic * float3( 0.05f, 0.10f, 0.11f ) * ( 0.4f + vShallow ) + vGlint * 0.2f;
 				diffuse.rgb = lerp( diffuse.rgb, vUnder, vSea );
-				vGlossiness = lerp( vGlossiness, 1.0f, vSea );
-				vSpec = lerp( vSpec, 0.9f, vSea );
+				// not max gloss (1.0): its highlight blew up at some view angles into white squares in the bloom
+				vGlossiness = lerp( vGlossiness, 0.7f, vSea );
+				vSpec = lerp( vSpec, 0.45f, vSea );
 			}
 			float3 vLavaGlow = vec3( 0.0f );
 			{
-				float vT = vGlobalTime * 0.15f;
+				// HOD (user, 2026-10-16: less glowy, more magma): mostly dark rough cooled crust, faintly red where it is
+				// still hot, thin bright cracks between the crust plates, a few small open pools; a slow pulse; the glow
+				// (vLavaGlow, added after the lighting) only in the cracks and pools, and modest
+				float vT = vGlobalTime * 0.08f;
 				float2 vP = vATPos * 0.6f;
 				float2 vW = float2( ATNoise( vP * 0.35f + float2( vT, 0.0f ) ), ATNoise( vP * 0.35f + float2( 17.0f, vT * 0.8f ) ) ) * 3.0f;
 				float vN = ATNoise( vP + vW ) * 0.65f + ATNoise( vP * 2.3f + vW * 1.7f - vT * 0.5f ) * 0.35f;
-				float vCrack = pow( saturate( 1.0f - abs( vN * 2.0f - 1.0f ) ), 5.0f );
-				float vPool = smoothstep( 0.55f, 0.8f, ATNoise( vP * 0.12f + float2( -vT * 0.3f, 9.0f ) ) );
-				float vPulse = 0.85f + 0.15f * sin( vGlobalTime * 1.3f + vN * 6.0f );
+				float vCrack = pow( saturate( 1.0f - abs( vN * 2.0f - 1.0f ) ), 14.0f );
+				float vPool = smoothstep( 0.7f, 0.86f, ATNoise( vP * 0.12f + float2( -vT * 0.3f, 9.0f ) ) );
+				float vPulse = 0.8f + 0.2f * sin( vGlobalTime * 0.9f + vN * 6.0f );
 				float vHot = saturate( max( vCrack, vPool ) ) * vPulse;
-				float3 vCrust = float3( 0.07f, 0.05f, 0.045f ) * ( 0.7f + 0.6f * ATNoise( vP * 3.7f ) ) + diffuse.rgb * 0.08f;
-				float3 vMolten = lerp( float3( 0.85f, 0.18f, 0.02f ), float3( 1.0f, 0.75f, 0.25f ), vHot * vHot );
-				diffuse.rgb = lerp( diffuse.rgb, lerp( vCrust, vMolten * 0.5f, vHot ), vLava );
-				vLavaGlow = vMolten * vHot * vLava * 1.1f;
-				vGlossiness = lerp( vGlossiness, 0.3f, vLava );
-				vSpec = lerp( vSpec, 0.1f, vLava );
+				float vRough = ATNoise( vP * 3.7f ) * 0.6f + ATNoise( vP * 9.0f + 5.0f ) * 0.4f;
+				float vWarm = smoothstep( 0.35f, 0.0f, abs( vN * 2.0f - 1.0f ) ) * 0.5f;          // crust near the seams
+				float3 vCrust = float3( 0.055f, 0.045f, 0.042f ) * ( 0.6f + 0.8f * vRough ) + float3( 0.12f, 0.03f, 0.0f ) * vWarm
+				              + diffuse.rgb * 0.06f;
+				float3 vMolten = lerp( float3( 0.6f, 0.1f, 0.02f ), float3( 0.95f, 0.45f, 0.1f ), vHot * vHot );
+				diffuse.rgb = lerp( diffuse.rgb, lerp( vCrust, vMolten * 0.6f, vHot ), vLava );
+				vLavaGlow = vMolten * vHot * vLava * 0.45f;
+				vGlossiness = lerp( vGlossiness, 0.2f, vLava );
+				vSpec = lerp( vSpec, 0.05f, vLava );
 			}
 			diffuse.rgb = lerp( diffuse.rgb, vGlobe * PLANET_PAINT_GAIN, vPlanetFade );
 
@@ -556,6 +563,9 @@ PixelShader =
 		
 			vOut = lerp( vOut, diffuse.rgb, BORDER_LIGHT_REMOVAL_FACTOR * ( 1 - vBloomAlpha ) );
 			vOut += vLavaGlow * ( 1.0f - vPlanetFade );   // HOD: the lava glows on its own (not on the zoomed-out globes)
+			// HOD: keep the colour finite and sane (max/min also turn a NaN into 0): one blown-up highlight pixel
+			// otherwise spreads into hard white squares in the bloom pass, appearing and vanishing with the view angle
+			vOut = min( max( vOut, vec3( 0.0f ) ), vec3( 8.0f ) );
 				
 			float3 vGlobeNormal = CalcGlobeNormal( Input.prepos.xz );
 			float vNightFactor = DayNightFactor( vGlobeNormal );

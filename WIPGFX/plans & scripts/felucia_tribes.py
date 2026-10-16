@@ -250,8 +250,10 @@ def place(states, prov, pid, land, fel, state_ids, port_p, capital, rng):
         for p in provs:
             r, c = centre(p)
             for b in PROVINCE_BUILDINGS:
-                x, y, zz = pos(r + rng.uniform(-0.8, 0.8), c + rng.uniform(-0.8, 0.8))
-                rows.append(f"{sid};{b};{x:.2f};{y:.2f};{zz:.2f};{rng.uniform(0, 6.28):.2f};0")
+                # on the middle of the province's innermost pixel: a nudge or the pixel's corner can tip the building
+                # into the neighbour on a thin province, and the game then ignores it (fix_building_positions.py)
+                x, y, zz = pos(r, c)
+                rows.append(f"{sid};{b};{x + 0.5:.2f};{y:.2f};{zz + 0.5:.2f};{rng.uniform(0, 6.28):.2f};0")
             if prov[p]["coastal"]:
                 r, c, ang = coast(p)
                 x, y, zz = pos(r, c)

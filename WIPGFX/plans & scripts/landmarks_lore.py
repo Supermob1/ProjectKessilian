@@ -215,6 +215,73 @@ LANDMARKS = [
      "The seat of the Quarren in the depths of Quarren Town: dark towers on a rock mound, their war room sealed to "
      "Mon Calamari envoys. Separatist agents have been seen coming and going, and the Isolation League now meets "
      "here in the open.", None),
+    # --- Iego (canon: Cliffhold, the LaserWeb Defense Station; Legends: the Choir Alignment, the Boneyard). The 976
+    # histories (the station already standing, the spice trade's decline) are design choices
+    ("ieg_cliffhold", ["hod_ieg_cliffhold"], "GFX_idea_generic_logistics", {"local_supplies": 0.1, "stability_factor": 0.02},
+     "Cliffhold", "A spaceport city cut straight into the face of a basalt cliff, its landing pads jutting from the rock "
+     "over the desert. Once loud with spice convoys, it has grown quiet since the convoys stopped coming; the Iegoans "
+     "who remain say the world of a thousand moons does not let its people leave.", None),
+    ("ieg_laserweb", ["hod_ieg_laserweb"], "GFX_idea_generic_radar", {"resistance_target": 0.05},
+     "LaserWeb Defense Station", "A Separatist station hung in orbit over Iego by engineers who came as advisers. Its "
+     "six emitter pods can wrap the sky in a web of laser fire that no ship escapes; for now it only watches, and the "
+     "Iegoans have begun to wonder who it is meant to keep in.", 76),
+    ("ieg_choir", ["hod_ieg_choir"], "GFX_idea_generic_pp_unity_bonus", {"stability_factor": 0.02}, "Choir Alignment",
+     "A sunken valley a hundred metres across, shaped like a nine-pointed star and plainly not made by nature. Those "
+     "who stand at its centre say they hear a choir singing; no one knows who carved it, or when.", None),
+    ("ieg_boneyard", ["hod_ieg_boneyard"], "GFX_idea_generic_research_bonus", {"local_supplies": 0.05},
+     "The Boneyard", "The largest of Iego's bone piles, north of the Scatter: the skeletons of creatures far larger "
+     "than any that live on the planet now, ribs arching over the sand like the frames of buildings.", None),
+    # --- Lianna (Legends: the Santhe/Sienar headquarters in Lianna City, the Melford Star Academy, Sky City, the
+    # Class IB Lianna shipyards; the Santhe family's rule). The 976 histories are design choices
+    ("lia_hq", ["hod_lia_hq"], "GFX_idea_generic_improved_industries",
+     {"state_production_speed_buildings_factor": 0.1, "stability_factor": 0.02}, "Santhe/Sienar Headquarters",
+     "The towers of Santhe/Sienar Technologies over Lianna City, seat of Sienar, Curich Engineering and Santhe "
+     "Passenger and Freight. Valles Santhe runs the planet from its crown as much as any government does; the Republic "
+     "buys Sienar's ships, and Lianna intends to stay rich and independent whatever the coming war brings.", None),
+    ("lia_academy", ["hod_lia_academy"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Melford Star Academy", "The First Star Academy on Anai's northern coast, where the Tion Cluster's pilots and "
+     "officers have trained for generations under its great ribbed dome.", None),
+    ("lia_skycity", ["hod_lia_skycity"], "GFX_idea_generic_logistics", {"local_supplies": 0.1}, "Sky City",
+     "A city of decks on a single tapering stalk, raised over the Shaltin Strait so the sea lanes run beneath it.", None),
+    ("lia_shipyard", ["hod_lia_shipyard"], "GFX_idea_generic_navy_bonus",
+     {"state_production_speed_dockyard_factor": 0.15}, "Lianna Shipyards",
+     "Sienar's orbital yards over Lianna, rated Class IB and able to build cruisers. Couriers, patrol cruisers and "
+     "freighters leave their slips for buyers across the Republic and beyond.", 195),
+    # --- Jabiim (Legends: Choal, the mining machines, Shelter Base, Cobalt Station, Camp Aurek, Outpost Shear; the
+    # user, 2026-10-16: the bases already stand at the start). The 976 histories are design choices
+    ("jab_choal", ["hod_jab_choal"], "GFX_idea_generic_political_support", {"stability_factor": 0.02, "local_manpower": 0.05},
+     "Choal", "Jabiim's capital, raised on its great drum platform above the floods, its rain houses on stilts and "
+     "its council hall loud with argument: the Nationalists want out of the Republic, the loyalists want its help, "
+     "and the rain never stops for either.", None),
+    ("jab_bore", ["hod_jab_bore"], "GFX_idea_generic_improved_industries", {"state_production_speed_buildings_factor": 0.1},
+     "Jobreth Bore", "One of the huge boring machines cutting ever deeper into the dying planet, its drill grinding down "
+     "into a stepped pit on the Jobreth Plains while its conveyor builds a hill of spoil.", None),
+    ("jab_shelter", ["hod_jab_shelter"], "GFX_idea_generic_army_support", {"local_supplies": 0.1},
+     "Shelter Base", "A Republic command post of prefab domes on the northern fens, put up as Jabiim slid towards "
+     "secession; its gunships wait on their pads for weather that rarely lets them fly.", None),
+    ("jab_cobalt", ["hod_jab_cobalt"], "GFX_idea_generic_army_support", {"local_supplies": 0.05, "resistance_target": -0.05},
+     "Cobalt Station", "A Republic fortification just north of Monsoon Mesa: a curved rampart, four heavy turrets and a "
+     "shield generator, built to hold the high ground if the planet goes over to the Separatists.", None),
+    ("jab_aurek", ["hod_jab_aurek"], "GFX_idea_generic_radar", {"resistance_target": 0.05},
+     "Camp Aurek", "A Separatist camp in the south-eastern badlands, raised quietly by Confederate 'advisers' to the "
+     "Nationalists: a droid-control spire, racks of folded battle droids and a transport ready to unload more.", None),
+    ("jab_shear", ["hod_jab_shear"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Outpost Shear", "Stone bunkers and trenches on the north-eastern ridges, held by the Nationalists' militia. Its guns "
+     "point at the Republic's mesa.", None),
+    # --- Saleucami (Legends: Taleucema, the Saleucami Cloning Complex in the Magma Caverns; canon: Saleucami town, the
+    # Lawquane farmstead). The 976 histories are design choices
+    ("sal_taleucema", ["hod_sal_taleucema"], "GFX_idea_generic_political_support", {"stability_factor": 0.02, "local_supplies": 0.05},
+     "Taleucema", "The capital of Saleucami, its towers joined by tall arcing bridges over the domed assembly hall. "
+     "The Techno Union's money built the bridges; the Union's agents now sit in the hall.", None),
+    ("sal_spaceport", ["hod_sal_spaceport"], "GFX_idea_generic_logistics", {"local_supplies": 0.1}, "Saleucami Town",
+     "A dusty spaceport town of landing bowls and billboards on the eastern plains, where the freighters of the "
+     "Outer Rim put in for water and parts.", None),
+    ("sal_lawquane", ["hod_sal_lawquane"], "GFX_idea_generic_pp_unity_bonus", {"stability_factor": 0.01}, "Lawquane Farmstead",
+     "A domed adobe farm in the wetlands, its crop rows ringed by a fence. Its family keeps to itself, as the wetland "
+     "farmers always have.", None),
+    ("sal_cloning", ["hod_sal_cloning"], "GFX_idea_generic_research_bonus", {"local_manpower": 0.05, "resistance_target": 0.05},
+     "Saleucami Cloning Complex", "A secret installation in the Magma Caverns, its glass tanks lit by the lava below. "
+     "The Separatists who built it say nothing of what grows in them.", None),
     # --- Etti IV (Legends: Mondder, its spaceport, the Dream Emporium, the Free-Flight Dance Dome; canon: Cybot
     # Galactica's Arcoplex)
     ("arcoplex", ["hod_etti_arcoplex"], "GFX_idea_generic_improved_industries",
@@ -348,7 +415,7 @@ PLANET_OF = {"raxulon_parliament": "Raxus", "great_alley": "Raxus", "kaas_citade
              **{k: "Korriban" for k in ("sith_academy", "valley_dark_lords", "tomb_ragnos", "tomb_sadow", "tomb_pall",
                                         "tomb_hord", "tomb_kressh")},
              **{k: pl for pre, pl in (("rp_", "Raxus Prime"), ("kadavo_", "Kadavo"), ("hondo_", "Florrum"),
-                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"))
+                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"))
                 for k, *_ in LANDMARKS if k.startswith(pre)}}
 assert {k for k, *_ in LANDMARKS} == set(PLANET_OF), "every landmark needs its planet"
 

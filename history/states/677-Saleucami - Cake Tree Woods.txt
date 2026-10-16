@@ -1,0 +1,30 @@
+state={
+	id=677
+	name="STATE_677"
+	# HOD: Saleucami (saleucami_map.py)
+	provinces={
+		11328 11332 11342 11343 11351 11366 11371 11379 11385 11394 11401
+	}
+	resources={
+		tungsten=5
+		steel=3
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			11366 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+		}
+		owner = TCU
+		add_core_of = TCU
+	}
+	manpower = 98330
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

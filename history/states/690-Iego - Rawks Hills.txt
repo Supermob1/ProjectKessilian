@@ -1,0 +1,30 @@
+state={
+	id=690
+	name="STATE_690"
+	# HOD: Iego (iego_map.py)
+	provinces={
+		2017 10610 10614 10624 10630 10631 10632 10633 10639 10650 10651 10665 10666 10668
+	}
+	resources={
+		oil=2
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			2017 1
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			10666 = {
+				naval_base = 3
+			}
+		}
+		owner = IEG
+		add_core_of = IEG
+	}
+	manpower = 153073
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

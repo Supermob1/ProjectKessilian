@@ -122,6 +122,22 @@ PROCEDURAL = {
     116: "mcl_coral",     # coral heads breaking the surface of the reefs: staghorn branches round brain-coral domes
     117: "mcl_palm",      # island palms: leaning ringed trunks, frond crowns
     118: "mcl_seastack",  # sea stacks: wave-cut rock pillars standing out of the water
+    # Iego (canon: basaltic spires and canyons where the reeksa grow; Legends: the bone piles of the Boneyard)
+    119: "ieg_reeksa",    # reeksa: thick thorned stalks curling up into toothed maws
+    120: "ieg_basalt",    # a cluster of hexagonal basalt columns
+    121: "ieg_bones",     # a giant's bones half sunk in the sand: rib arches and a skull
+    # Lianna (Legends: temperate and dry, urban and plains; Sienar's industrial world)
+    122: "lia_tree",      # a dry-country umbrella tree: a leaning trunk, a flat spreading crown
+    123: "lia_grass",     # dry grass tussocks
+    124: "lia_pylon",     # power pylons and comm masts round Sienar's plants
+    # Jabiim (Legends: a rain-soaked world of mud plains; grasses, trees and bamboo)
+    125: "jab_tree",      # a rain-soaked broadleaf: a dark trunk, a heavy drooping crown
+    126: "jab_marsh",     # tall wet marsh grass
+    127: "jab_bamboo",    # a dense stand of dark bamboo
+    # Saleucami (canon: greater cake trees, towering bith; wetlands; Legends: oases of plant growth on an arid world)
+    128: "sal_caketree",  # a greater cake tree: a tall bare trunk carrying stacked flat round tiers of foliage
+    129: "sal_bith",      # towering bith: giant ribbed fungal spires in a cluster
+    130: "sal_reeds",     # wetland reeds
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
@@ -146,6 +162,11 @@ PROC_MATS.update({104: ["hod_oss_bamboo", "hod_foliage_oss_bamboo"], 105: ["hod_
 PROC_MATS.update({108: ["hod_lola_basalt"], 109: ["hod_lola_basalt"]})
 PROC_MATS.update({110: ["hod_rv_rock"], 111: ["hod_rv_rock"], 112: ["hod_dead_tree_trunk_02", "hod_foliage_rv"]})
 PROC_MATS.update({113: ["hod_rh_ice"], 114: ["hod_rh_stone"], 115: ["hod_dead_tree_trunk_02"]})
+PROC_MATS.update({128: ["hod_dead_tree_trunk_02", "hod_foliage_sal"], 129: ["hod_sal_bith"], 130: ["hod_foliage_sal_reed"]})
+PROC_MATS.update({125: ["hod_dead_tree_trunk_02", "hod_foliage_jab"], 126: ["hod_foliage_jab_marsh"],
+                  127: ["hod_jab_bamboo", "hod_foliage_jab_bamboo"]})
+PROC_MATS.update({122: ["hod_dead_tree_trunk_02", "hod_foliage_lia"], 123: ["hod_foliage_lia_dry"], 124: ["hod_lia_metal"]})
+PROC_MATS.update({119: ["hod_ieg_reeksa"], 120: ["hod_ieg_basalt"], 121: ["hod_ieg_bone"]})
 PROC_MATS.update({116: ["hod_mcl_coral"], 117: ["hod_dead_tree_trunk_02", "hod_foliage_mcl_palm"], 118: ["hod_mcl_rock"]})
 # Sketchfab models converted by sketchfab_props.py (meshes land in OUT as hod_flora_<index>_<name>.mesh)
 EXTERNAL = {53: "sandcrawler", 54: "vaporators", 56: "wreck_harrower", 57: "wreck_foray"}
@@ -167,7 +188,10 @@ PLANET_SOLID = {"hod_canto_cactus": ((92, 128, 84), "ribs"), "hod_canto_sandston
                 "hod_oss_bamboo": ((150, 158, 82), "ribs"), "hod_oss_stone": ((200, 190, 166), "blocks"),
                 "hod_lola_basalt": ((58, 52, 54), "slag"), "hod_rv_rock": ((190, 162, 128), "blocks"),
                 "hod_rh_ice": ((176, 214, 236), "slag"), "hod_rh_stone": ((150, 158, 168), "blocks"),
-                "hod_mcl_coral": ((226, 122, 104), "slag"), "hod_mcl_rock": ((128, 122, 112), "blocks")}
+                "hod_mcl_coral": ((226, 122, 104), "slag"), "hod_mcl_rock": ((128, 122, 112), "blocks"),
+                "hod_ieg_reeksa": ((92, 120, 62), "ribs"), "hod_ieg_basalt": ((62, 60, 62), "blocks"),
+                "hod_ieg_bone": ((222, 212, 186), "slag"), "hod_lia_metal": ((168, 170, 176), "plates"),
+                "hod_jab_bamboo": ((92, 104, 62), "ribs"), "hod_sal_bith": ((196, 150, 118), "ribs")}
 # planet foliage from Etti IV on: each texture its own random seed (from its name), so adding one leaves the others'
 # textures unchanged (PLANET_FOLIAGE above shares one random stream: never append to it)
 PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),          # Etti IV: deep forest green
@@ -180,7 +204,14 @@ PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),        
                       "hod_foliage_oss_uneti": ((66, 112, 72), (48, 90, 60)),      # the uneti's dark crown
                       "hod_foliage_oss_wodobo": ((112, 128, 70), (88, 104, 58)),   # wodobo bushes
                       "hod_foliage_rv": ((80, 124, 66), (58, 100, 56)),            # Ringo Vinda: temperate green
-                      "hod_foliage_mcl_palm": ((92, 150, 72), (64, 120, 58))}      # Mon Cala: island palm fronds
+                      "hod_foliage_mcl_palm": ((92, 150, 72), (64, 120, 58)),      # Mon Cala: island palm fronds
+                      "hod_foliage_lia": ((112, 132, 72), (86, 108, 58)),          # Lianna: dry olive-green crowns
+                      "hod_foliage_lia_dry": ((180, 162, 104), (146, 132, 86)),    # Lianna: dry grass
+                      "hod_foliage_jab": ((52, 88, 56), (36, 68, 46)),             # Jabiim: dark wet green
+                      "hod_foliage_jab_marsh": ((96, 118, 70), (72, 96, 58)),      # Jabiim: marsh grass
+                      "hod_foliage_jab_bamboo": ((70, 104, 60), (52, 84, 48)),     # Jabiim: bamboo leaves
+                      "hod_foliage_sal": ((110, 132, 76), (84, 108, 62)),          # Saleucami: cake-tree tiers
+                      "hod_foliage_sal_reed": ((118, 130, 78), (94, 108, 64))}     # Saleucami: wetland reeds
 
 
 def planet_textures():
@@ -1218,6 +1249,102 @@ def procedural(*only):
             for z in (0.9, 1.3, 1.7):
                 a = rng.uniform(0, 6.283)
                 crooked(Vector((0, 0, z)), Vector((math.cos(a), math.sin(a), 0.45)), rng.uniform(0.5, 0.9), 0.05, parts=2)
+        elif kind == "sal_caketree":
+            h = rng.uniform(2.6, 3.4)
+            top = crooked(Vector((0, 0, -0.2)), Vector((0, 0, 1)), h, 0.1, parts=3, kink=0.06)
+            for q, (r, dz) in enumerate(((0.95, -1.1), (0.75, -0.55), (0.5, 0.0))):   # stacked flat tiers
+                c = top + Vector((0, 0, dz))
+                for j in range(9):
+                    a = 6.283 * j / 9 + q
+                    clump(bm, uv, c + Vector((math.cos(a) * r * 0.6, math.sin(a) * r * 0.6, 0)), r * 0.45, 0.1, 4, 1,
+                          size=(0.35, 0.55))
+        elif kind == "sal_bith":
+            for i in range(rng.randint(3, 5)):                              # ribbed fungal spires
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.8) * (i > 0)
+                h, r = rng.uniform(1.8, 3.4) * (1.0 if i == 0 else 0.7), rng.uniform(0.18, 0.3)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r * 1.3), (h * 0.3, r), (h * 0.6, r * 1.1),
+                                                                     (h * 0.85, r * 0.7), (h, r * 0.9), (h * 1.05, 0.02)],
+                      8, 0, (rng.uniform(-0.06, 0.06), rng.uniform(-0.06, 0.06)))
+        elif kind == "sal_reeds":
+            for _ in range(9):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.35)), 0.2, 0.45, 12, 0, size=(0.25, 0.45))
+        elif kind == "jab_tree":
+            top = crooked(Vector((0, 0, -0.2)), Vector((0, 0, 1)), rng.uniform(1.8, 2.4), 0.14, parts=3, kink=0.12)
+            for j in range(7):                                              # heavy limbs, the crown drooping
+                a = 6.283 * j / 7 + rng.uniform(-0.2, 0.2)
+                tip = crooked(top - Vector((0, 0, 0.5)), Vector((math.cos(a), math.sin(a), 0.6)), rng.uniform(0.6, 0.9),
+                              0.06, parts=2, kink=0.2)
+                clump(bm, uv, tip, 0.5, 0.35, 10, 1, size=(0.4, 0.7))
+                clump(bm, uv, tip + Vector((math.cos(a) * 0.3, math.sin(a) * 0.3, -0.45)), 0.35, 0.3, 6, 1, size=(0.35, 0.6))
+            clump(bm, uv, top + Vector((0, 0, 0.1)), 0.6, 0.4, 12, 1, size=(0.4, 0.7))
+        elif kind == "jab_marsh":
+            for _ in range(10):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.35)), 0.2, 0.45, 12, 0, size=(0.25, 0.5))
+        elif kind == "jab_bamboo":
+            for _ in range(rng.randint(12, 18)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.9)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                top = base + Vector((rng.uniform(-.3, .3), rng.uniform(-.3, .3), rng.uniform(2.0, 3.0)))
+                limb(bm, uv, base, top, 0.05, 0.03, 0, sides=5, segs=2)
+                clump(bm, uv, top - Vector((0, 0, 0.35)), 0.35, 0.5, 6, 1, size=(0.35, 0.55))
+        elif kind == "lia_tree":
+            top = crooked(Vector((0, 0, -0.2)), Vector((rng.uniform(-0.3, 0.3), rng.uniform(-0.3, 0.3), 1)),
+                          rng.uniform(1.6, 2.2), 0.11, parts=3, kink=0.15)
+            for j in range(5):                                              # limbs fanning out under a flat crown
+                a = 6.283 * j / 5 + rng.uniform(-0.3, 0.3)
+                tip = crooked(top - Vector((0, 0, 0.3)), Vector((math.cos(a), math.sin(a), 0.5)), rng.uniform(0.6, 0.9), 0.05,
+                              parts=2, kink=0.2)
+                clump(bm, uv, tip + Vector((0, 0, 0.1)), 0.55, 0.18, 10, 1, size=(0.4, 0.7))
+        elif kind == "lia_grass":
+            for _ in range(9):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                r = rng.uniform(0.2, 0.32)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.5)), r, r * 0.6, 10, 0, size=(0.25, 0.45))
+        elif kind == "lia_pylon":
+            for i in range(2):                                              # two lattice pylons joined by a cable
+                x = -0.9 + 1.8 * i
+                legs = [Vector((x + 0.25 * sx, 0.25 * sy, -0.2)) for sx, sy in ((1, 1), (-1, 1), (-1, -1), (1, -1))]
+                apex = Vector((x, 0, 2.6))
+                for lg in legs:
+                    limb(bm, uv, lg, apex, 0.04, 0.025, 0, sides=4, segs=1)
+                for z in (0.9, 1.6, 2.2):
+                    limb(bm, uv, Vector((x - 0.45, 0, z)), Vector((x + 0.45, 0, z)), 0.03, 0.03, 0, sides=4, segs=1)
+            limb(bm, uv, Vector((-0.9, 0, 2.2)), Vector((0.9, 0, 2.15)), 0.015, 0.015, 0, sides=3, segs=2)
+            lathe(bm, uv, (0.0, 0.9), [(-0.2, 0.06), (2.8, 0.03)], 6, 0)       # a comm mast with a dish
+            lathe(bm, uv, (0.0, 0.9), [(2.3, 0.05), (2.45, 0.3), (2.5, 0.34)], 10, 0)
+        elif kind == "ieg_reeksa":
+            for _ in range(rng.randint(3, 5)):                              # stalks curling up, a toothed maw on each
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.7)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                tip = crooked(base, Vector((math.cos(a) * 0.5, math.sin(a) * 0.5, 1)), rng.uniform(1.2, 2.2), 0.14,
+                              parts=4, kink=0.3)
+                lathe(bm, uv, (tip.x, tip.y), [(tip.z - 0.25, 0.08), (tip.z - 0.05, 0.28), (tip.z + 0.15, 0.3),
+                                                 (tip.z + 0.3, 0.12)], 7, 0)
+                for j in range(5):                                          # the teeth round the maw
+                    b = 6.283 * j / 5
+                    c = Vector((tip.x + 0.28 * math.cos(b), tip.y + 0.28 * math.sin(b), tip.z + 0.15))
+                    limb(bm, uv, c, c + Vector((0.1 * math.cos(b), 0.1 * math.sin(b), 0.22)), 0.04, 0.005, 0, sides=3, segs=1)
+            for _ in range(4):                                              # thorned runners on the ground
+                a = rng.uniform(0, 6.283)
+                crooked(Vector((0, 0, 0.0)), Vector((math.cos(a), math.sin(a), 0.05)), rng.uniform(0.8, 1.4), 0.06, parts=3)
+        elif kind == "ieg_basalt":
+            for i in range(rng.randint(5, 9)):                              # hexagonal columns, tops at different heights
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.8) * (i > 0)
+                h, r = rng.uniform(0.8, 2.6) * (1.0 if i == 0 else 0.8), rng.uniform(0.16, 0.26)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (h, r), (h + 0.05, r * 0.9)], 6, 0)
+        elif kind == "ieg_bones":
+            a0 = rng.uniform(0, 6.283)
+            ax = Vector((math.cos(a0), math.sin(a0), 0))
+            side = Vector((-math.sin(a0), math.cos(a0), 0))
+            for j in range(6):                                              # rib arches along a sunken spine
+                c = ax * (j * 0.38 - 1.0)
+                for sg in (-1, 1):
+                    crooked(c, side * sg * 0.6 + Vector((0, 0, 1)), 1.3 - 0.1 * abs(j - 2.5), 0.06, parts=3, kink=0.08)
+            limb(bm, uv, ax * -1.1 + Vector((0, 0, 0.05)), ax * 1.2 + Vector((0, 0, 0.05)), 0.1, 0.06, 0, sides=5, segs=2)
+            sk = ax * 1.55                                                  # the skull, half buried
+            lathe(bm, uv, (sk.x, sk.y), [(-0.2, 0.35), (0.15, 0.42), (0.4, 0.3), (0.55, 0.05)], 8, 0)
         elif kind == "mcl_coral":
             for _ in range(rng.randint(2, 3)):                              # brain-coral domes
                 a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.8)
@@ -1270,7 +1397,7 @@ def procedural(*only):
     for idx, kind in PROCEDURAL.items():
         if only and str(idx) not in only and kind not in only:
             continue
-        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_")):
+        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_")):
             rng.seed(kind)
         bpy.ops.wm.read_factory_settings(use_empty=True)
         me = bpy.data.meshes.new(kind)
@@ -1297,7 +1424,7 @@ def procedural(*only):
         elif kind.startswith("kor_"):
             korriban_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
-        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_")):
+        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_")):
             planet_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
         else:
@@ -1309,7 +1436,7 @@ def procedural(*only):
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_")):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)
