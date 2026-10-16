@@ -167,6 +167,40 @@ HOD_landmark_bonadan_weather = {
 	enable = { always = yes }
 	recruitable_population_factor = 0.05
 }
+HOD_landmark_pammant_docks = {
+	icon = GFX_idea_generic_navy_bonus
+	enable = { always = yes }
+	state_production_speed_dockyard_factor = 0.2
+}
+HOD_landmark_pammant_liftport = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.1
+	local_supplies = 0.1
+}
+HOD_landmark_pammant_tessar = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+	local_manpower = 0.05
+}
+HOD_landmark_mcl_coral_city = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+	local_manpower = 0.05
+}
+HOD_landmark_mcl_drome = {
+	icon = GFX_idea_generic_pp_unity_bonus
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_mcl_quarren_hq = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_manpower = 0.08
+	resistance_target = 0.05
+}
 HOD_landmark_arcoplex = {
 	icon = GFX_idea_generic_improved_industries
 	enable = { always = yes }

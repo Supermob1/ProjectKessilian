@@ -1,0 +1,31 @@
+state={
+	id=700
+	name="STATE_700"
+	# HOD: Pammant (pammant_map.py)
+	provinces={
+		1113 1161 1223 9468 9469 9475 9476 9482 9486 9487 9492 9500 9501 9504 9506 9507 9512 9513 9517 9521 9527 9528 9535 9536 9542 9548 9549
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			1223 5
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			air_base = 1
+			dockyard = 1
+					9549 = {
+				naval_base = 3
+			}
+		}
+		owner = QUA
+		add_core_of = QUA
+	}
+	manpower = 170424
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

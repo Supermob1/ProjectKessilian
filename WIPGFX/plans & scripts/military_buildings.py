@@ -388,6 +388,15 @@ BON_SLIPS = [("hammerhead", 1.0), ("derriphan", 0.45), ("foray", 1.0), ("hammerh
 BON_SHIP_SCALE = 1.45          # the baked ships (sketchfab_props.py sizes) enlarged to fill their slips
 BON_SHIP_DIMS = {k_: tuple(BON_SHIP_SCALE * d for d in v) for k_, v in
                  {"derriphan": (10.5, 2.9, 6.2), "hammerhead": (8.5, 3.85, 3.7), "foray": (6.0, 1.4, 1.0)}.items()}
+# the Pammant Docks (pammant_map.PLACEMENT puts the ring's centre out in space): ring radius, the height its underside
+# floats over the space floor, where it sits (map units from the planet's centre, bearing in degrees, east = 0,
+# north +); the Malevolence's cradle heading (radians) and the piers of the Providence-class ships (bearing round the
+# ring, share of the hull plated); the ships' (length, beam, height) as baked (sketchfab_props.py pam_*)
+PAM_RING_R, PAM_FLOAT, PAM_AT = 20.0, 3.0, (104.0, 40.0)
+PAM_CRADLE = 0.45
+PAM_PIERS = [(PAM_CRADLE + math.pi / 2, 1.0), (PAM_CRADLE - math.pi / 2 + 0.6, 1.0), (PAM_CRADLE - math.pi / 2 - 0.6, 0.55)]
+PAM_SHIP_DIMS = {"pam_malevolence": (34.0, 9.42, 6.01), "pam_invisible_hand": (14.0, 3.06, 4.73)}
+PAM_PORT_A = math.radians(35)  # the lift port's long axis (pammant_map: its rect turned -35 deg in u east / v south)
 
 
 def kadavo_atlas():
@@ -730,6 +739,98 @@ def bonadan_atlas():
     put(B_DARK, np.array([20, 20, 22], np.float32) * (0.8 + 0.4 * grime))
     _atlas_save("hod_bonadan", col, emi, spec)
 
+
+
+def pammant_atlas():
+    """hod_pammant textures (the Quarren shipbuilders of Pammant and their Separatist yards: Confederacy tan plate and
+    grey hull, the Quarren's cool aqua window light; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 78)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    sooty = lambda rgb: rgb * (0.78 + 0.28 * grime) * (0.8 + 0.25 * blotch) * (0.75 + 0.3 * streak)
+    seams = (((xx % 48) < 2) | ((yy % 32) < 2))[..., None]
+    plate = sooty(np.array([178, 156, 112], np.float32)) * (1 - 0.25 * seams)
+    put(B_PLATE, plate, sp=60)
+    rows = ((yy % 32) > 12) & ((yy % 32) < 20) & ((xx % 16) > 3)
+    lit = rows & (rng.random((t, t)) > 0.3)
+    warm = np.array([150, 235, 230], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], warm, np.where(rows[..., None], [36, 34, 30], plate)), e=np.where(lit, 220, 0), sp=60)
+    conc = sooty(np.array([150, 150, 146], np.float32)) * (1 - 0.15 * ((yy % 40) < 2)[..., None])
+    put(B_CONC, conc)
+    strip = (np.abs((yy % 40) - 22) < 3) & ((xx % 64) > 4)
+    put(B_CONC_WIN, np.where(strip[..., None], warm * (0.9 + 0.1 * grime), conc), e=np.where(strip, 230, 0))
+    put(B_RUST, np.array([132, 78, 52], np.float32) * (0.7 + 0.45 * grime) * (0.8 + 0.3 * streak), sp=50)
+    put(B_SOOT, np.array([34, 30, 28], np.float32) * (0.8 + 0.4 * grime))
+    put(B_ROOF, sooty(np.array([112, 110, 108], np.float32)) * (0.85 + 0.15 * np.sin(xx / 3.0))[..., None], sp=80)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [235, 190, 40], [30, 28, 26]) * (0.8 + 0.25 * grime))
+    put(B_GLOW, warm * (1.0 + 0.1 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (110, 108, 102))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(240, 190, 40), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 230), width=int(t * 0.04))
+    d.line([(t * 0.2, t * 0.5), (t * 0.8, t * 0.5)], fill=(240, 240, 230), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.75 + 0.3 * grime))
+    put(B_PIPE, np.array([120, 118, 112], np.float32) * (0.75 + 0.35 * grime) * (0.9 + 0.1 * np.sin(yy / 2.0))[..., None], sp=110)
+    hull = np.array([168, 170, 172], np.float32) * (0.85 + 0.2 * grime) * (1 - 0.2 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=90)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [110, 96, 70], [40, 36, 32]) * (0.8 + 0.3 * grime), sp=80)
+    brick = 1 - 0.25 * (((yy % 12) < 2) | ((((xx + 12 * ((yy // 12) % 2)) % 24) < 2)))[..., None]
+    soot_top = np.clip((t * 0.35 - yy) / (t * 0.35), 0, 1)[..., None]   # v 1 (the top) blackened
+    put(B_BRICK, np.array([96, 92, 88], np.float32) * brick * (0.8 + 0.3 * grime) * (1 - 0.75 * soot_top))
+    put(B_DUST, np.array([92, 88, 84], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    put(B_DARK, np.array([20, 20, 22], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_pammant", col, emi, spec)
+
+
+def moncala_atlas():
+    """hod_moncala textures (Mon Cala: pale ribbed shell plate, sea-green panels, gold light from the domes, coral
+    pink, the Quarren's dark slate; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 77)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    sooty = lambda rgb: rgb * (0.78 + 0.28 * grime) * (0.8 + 0.25 * blotch) * (0.75 + 0.3 * streak)
+    seams = (((xx % 48) < 2) | ((yy % 32) < 2))[..., None]
+    plate = sooty(np.array([214, 208, 192], np.float32)) * (1 - 0.25 * seams)
+    put(B_PLATE, plate, sp=60)
+    rows = ((yy % 32) > 12) & ((yy % 32) < 20) & ((xx % 16) > 3)
+    lit = rows & (rng.random((t, t)) > 0.3)
+    warm = np.array([255, 214, 130], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], warm, np.where(rows[..., None], [36, 34, 30], plate)), e=np.where(lit, 220, 0), sp=60)
+    conc = sooty(np.array([118, 160, 150], np.float32)) * (1 - 0.15 * ((yy % 40) < 2)[..., None])
+    put(B_CONC, conc)
+    strip = (np.abs((yy % 40) - 22) < 3) & ((xx % 64) > 4)
+    put(B_CONC_WIN, np.where(strip[..., None], warm * (0.9 + 0.1 * grime), conc), e=np.where(strip, 230, 0))
+    put(B_RUST, np.array([228, 124, 106], np.float32) * (0.7 + 0.45 * grime) * (0.8 + 0.3 * streak), sp=50)
+    put(B_SOOT, np.array([34, 30, 28], np.float32) * (0.8 + 0.4 * grime))
+    put(B_ROOF, sooty(np.array([176, 184, 180], np.float32)) * (0.85 + 0.15 * np.sin(xx / 3.0))[..., None], sp=80)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [235, 190, 40], [30, 28, 26]) * (0.8 + 0.25 * grime))
+    put(B_GLOW, warm * (1.0 + 0.1 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (110, 108, 102))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(240, 190, 40), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 230), width=int(t * 0.04))
+    d.line([(t * 0.2, t * 0.5), (t * 0.8, t * 0.5)], fill=(240, 240, 230), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.75 + 0.3 * grime))
+    put(B_PIPE, np.array([120, 118, 112], np.float32) * (0.75 + 0.35 * grime) * (0.9 + 0.1 * np.sin(yy / 2.0))[..., None], sp=110)
+    hull = np.array([196, 202, 206], np.float32) * (0.85 + 0.2 * grime) * (1 - 0.2 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=90)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [110, 96, 70], [40, 36, 32]) * (0.8 + 0.3 * grime), sp=80)
+    brick = 1 - 0.25 * (((yy % 12) < 2) | ((((xx + 12 * ((yy // 12) % 2)) % 24) < 2)))[..., None]
+    soot_top = np.clip((t * 0.35 - yy) / (t * 0.35), 0, 1)[..., None]   # v 1 (the top) blackened
+    put(B_BRICK, np.array([64, 72, 82], np.float32) * brick * (0.8 + 0.3 * grime) * (1 - 0.75 * soot_top))
+    put(B_DUST, np.array([206, 190, 146], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    put(B_DARK, np.array([20, 20, 22], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_moncala", col, emi, spec)
 
 def etti_atlas():
     """hod_etti textures (Etti IV: Mondder's corporate towers, Cybot Galactica's Arcoplex; the map is always day:
@@ -2967,7 +3068,7 @@ def models(*only):
         """the ships in Bonadan's orbital shipyard (place_ships)"""
         place_ships(bon_fleet()[0], lambda kind: BON_SHIP_SCALE if kind in BON_SHIP_DIMS else 1.0)
 
-    def place_ships(fleet, scale_of):
+    def place_ships(fleet, scale_of, prefix="bon_"):
         """ships copied into a model as extra objects: the converted Battlefront II / EaW models (sketchfab_props.py
         bon_*, each with its own baked texture in hod_landmarks); fleet [(kind, x, y, z, heading, built)], unfinished
         hulls cut at `built`, scale_of(kind) -> scale"""
@@ -2976,7 +3077,7 @@ def models(*only):
         for kind, x, y, z, head, built in fleet:
             if kind not in parts:
                 before = set(bpy.data.objects)
-                bie.import_meshfile(os.path.abspath(f"{LM_OUT}/hod_bld_bon_{kind}.mesh"), imp_mesh=True, imp_skel=False,
+                bie.import_meshfile(os.path.abspath(f"{LM_OUT}/hod_bld_{prefix}{kind}.mesh"), imp_mesh=True, imp_skel=False,
                                     imp_locs=False)
                 objs = [o for o in bpy.data.objects if o not in set(before) and o.type == "MESH"]
                 for o in bpy.data.objects:
@@ -4131,6 +4232,434 @@ def models(*only):
             rng_a = random.Random(f"hod_etti_arco{band}{v}")
             build(f"hod_etti_arco_{band}{v}", lambda k, band=band, rng=rng_a: arco_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_etti")
+    def pam_fleet():
+        """the ships at the Pammant Docks, shared by the ring and its ships: [(kind, x, y, z, heading, built)] in model
+        units (origin = the ring's centre): the Malevolence in the cradle across the ring, the Providence-class ships
+        (Invisible Hand, Colicoid Swarm, Lucid Voice: one model) moored on piers outside it"""
+        z0 = PAM_FLOAT
+        out = [("pam_malevolence", 0.0, 0.0, z0 + 1.3, PAM_CRADLE, 1.0)]
+        L = PAM_SHIP_DIMS["pam_invisible_hand"][0]
+        for b, built in PAM_PIERS:
+            r = PAM_RING_R + 3.0 + L / 2
+            out.append(("pam_invisible_hand", r * math.cos(b), r * math.sin(b), z0 + 0.8, b, built))
+        return out
+
+    def pam_docks(k):
+        # the Pammant Docks (Legends: "a ring-shaped shipyard that orbited the planet Pammant", Free Dac Volunteers
+        # Engineering Corps; canon: Pammant built the Providence-class dreadnoughts and the Subjugator-class
+        # Malevolence). The user (2026-10-16): the shipyard in space, holding the Separatist ships of WIPGFX/separatists
+        # ships 3d. Its look is a design choice, in Separatist tan and grey: a ring of two decks (RING_R across the
+        # middle, lit window rows, an outer dock gallery, pressure domes, radiator fins and antenna masts on its
+        # back, beacons), a cradle spanning the ring with the Malevolence clamped in it (girder floor, gantry towers,
+        # crane bridges, clamp arms, worklights), three piers out from the ring with a Providence-class ship each
+        # (the last one, the Lucid Voice, still half in scaffolding), a command spire between two piers.
+        # Origin = the ring's centre; everything floats from PAM_FLOAT up, clear of the water plane. ~76 units across
+        R, z0 = PAM_RING_R, PAM_FLOAT
+        P = lambda r, t, z: (r * math.cos(t), r * math.sin(t), z)
+        rng = random.Random("hod_pam_docks")
+        fleet = pam_fleet()
+        n = 80
+        for i in range(n):                                                   # the ring
+            t0, t1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+            tm, half = (t0 + t1) / 2, R * (t1 - t0) / 2 * 1.04
+            x, y, _ = P(R, tm, 0)
+            cslab(k, x, y, z0 - 0.6, z0 + 0.3, half, 1.9, tm + math.pi / 2, B_HULL, B_HULL, dt=2.4)        # keel
+            cslab(k, x, y, z0 + 0.3, z0 + 1.7, half, 2.4, tm + math.pi / 2, B_PLATE_WIN, B_PLATE)          # lower deck
+            cslab(k, x, y, z0 + 1.7, z0 + 2.7, half * 0.98, 1.7, tm + math.pi / 2, B_CONC_WIN, B_ROOF, dt=1.3)
+            x, y, _ = P(R + 2.6, tm, 0)
+            cslab(k, x, y, z0 + 0.4, z0 + 1.4, half, 0.2, tm + math.pi / 2, B_PIPE, B_GLOW)                # gallery
+            bx, by, _ = P(R + rng.uniform(-0.8, 0.8), tm, 0)
+            roll = rng.random()
+            if roll < 0.25:                                                  # pressure domes
+                k.lathe([(0.9, z0 + 2.7), (0.75, z0 + 3.3), (0.0, z0 + 3.7)], [B_HULL, B_HULL], sides=12, cx=bx, cy=by)
+            elif roll < 0.45:                                                # radiator fins
+                for f in (-0.5, 0.0, 0.5):
+                    fx, fy, _ = P(R + f, tm, 0)
+                    cslab(k, fx, fy, z0 + 2.7, z0 + 4.2, half * 0.7, 0.05, tm + math.pi / 2, B_GIRDER, B_GLOW)
+            elif roll < 0.6:                                                 # antenna masts
+                k.tube((bx, by, z0 + 2.7), (bx, by, z0 + 5.5), 0.07, B_PIPE, sides=4)
+                k.lathe([(0.12, z0 + 5.5), (0.12, z0 + 5.7)], [B_GLOW], sides=4, cx=bx, cy=by, cap=B_GLOW)
+            if i % 5 == 0:                                                   # beacons on the inner rim
+                lx, ly, _ = P(R - 2.4, tm, 0)
+                k.lathe([(0.15, z0 + 1.7), (0.15, z0 + 2.0)], [B_GLOW], sides=6, cx=lx, cy=ly, cap=B_GLOW)
+        # the cradle across the ring, the Malevolence in it
+        _k, mx, my, mz, head, _b = fleet[0]
+        L, W, H = PAM_SHIP_DIMS["pam_malevolence"]
+        ch, sh = math.cos(head), math.sin(head)
+        at = lambda u, v, zz: (mx + ch * u - sh * v, my + sh * u + ch * v, zz)
+        span, side = R + 1.0, W / 2 + 1.6
+        for v_ in (-side, side):                                             # the two rails: decks along the ship
+            x, y, _ = at(0, v_, 0)
+            cslab(k, x, y, z0 - 0.4, z0 + 1.0, span, 0.9, head, B_PLATE_WIN, B_HAZARD)
+        for j in range(int(2 * span / 2.0) + 1):                             # the girder floor under the hull
+            u = -span + 2.0 * j
+            k.tube(at(u, -side, z0 + 0.2), at(u, side, z0 + 0.2), 0.12, B_GIRDER, sides=4)
+        for v_ in (-side / 2, 0.0, side / 2):
+            k.tube(at(-span, v_, z0 + 0.2), at(span, v_, z0 + 0.2), 0.1, B_GIRDER, sides=4)
+        for u in (-14.0, -7.0, 0.0, 7.0, 14.0):                              # gantry towers and crane bridges
+            for v_ in (-side, side):
+                x, y, _ = at(u, v_, 0)
+                cslab(k, x, y, z0 + 1.0, mz + H + 2.2, 0.35, 0.35, head, B_GIRDER, B_HAZARD)
+                for zz in (3.0, 6.0):
+                    k.lathe([(0.45, z0 + zz), (0.45, z0 + zz + 0.15)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
+            x, y, _ = at(u, 0, 0)
+            cslab(k, x, y, mz + H + 1.8, mz + H + 2.5, 0.35, side + 0.4, head, B_GIRDER, B_HAZARD)
+            tx_, ty_, _ = at(u, rng.uniform(-side * 0.6, side * 0.6), 0)     # trolley and hook line
+            cslab(k, tx_, ty_, mz + H + 1.4, mz + H + 2.7, 0.5, 0.5, head, B_HAZARD, B_ROOF)
+            k.box(tx_ - 0.03, ty_ - 0.03, mz + H + 0.3, tx_ + 0.03, ty_ + 0.03, mz + H + 1.4, B_DARK)
+        for u in (-0.36, -0.12, 0.12, 0.36):                                 # clamp arms from both rails
+            for s_ in (-1, 1):
+                hull, root = at(u * L, s_ * W * 0.42, mz + H * 0.3), at(u * L, s_ * side, z0 + 1.0)
+                k.tube(root, hull, 0.16, B_HAZARD, sides=5)
+                k.lathe([(0.28, hull[2] - 0.18), (0.28, hull[2] + 0.18)], [B_PIPE], sides=6, cx=hull[0], cy=hull[1])
+        # the piers and their Providence-class ships
+        Lp, Wp, Hp = PAM_SHIP_DIMS["pam_invisible_hand"]
+        for kind, x, y, z, b, built in fleet[1:]:
+            cb, sb = math.cos(b), math.sin(b)
+            at = lambda u, v, zz: (x + cb * u - sb * v, y + sb * u + cb * v, zz)
+            for s_ in (-1, 1):                                               # the pier's two arms
+                px_, py_, _ = at(-0.5, s_ * (Wp / 2 + 1.1), 0)
+                cslab(k, px_, py_, z0 - 0.3, z0 + 1.0, Lp / 2 + 2.0, 0.6, b, B_PLATE_WIN, B_PLATE)
+                for u in (-0.3, 0.0, 0.3):                                   # docking arms to the hull
+                    hull, root = at(u * Lp, s_ * Wp * 0.45, z + Hp * 0.3), at(u * Lp, s_ * (Wp / 2 + 1.1), z0 + 1.0)
+                    k.tube(root, hull, 0.12, B_HAZARD, sides=5)
+                ex, ey, _ = at(Lp / 2 + 1.0, s_ * (Wp / 2 + 1.1), 0)         # the arm's end tower
+                k.lathe([(0.5, z0 - 0.3), (0.45, z0 + 4.5), (0.2, z0 + 5.2)], [B_HULL, B_CONC_WIN], sides=10, cx=ex, cy=ey,
+                        cap=B_GLOW)
+            hx, hy, _ = at(-Lp / 2 - 1.0, 0, 0)                              # the pier root on the ring's gallery
+            cslab(k, hx, hy, z0 - 0.3, z0 + 1.6, 1.2, Wp / 2 + 1.7, b, B_PLATE_WIN, B_ROOF)
+            if built < 1:                                                    # the Lucid Voice: scaffold hoops forward
+                u0, u1 = -Lp / 2 + Lp * built, Lp / 2
+                m_ = max(3, int((u1 - u0) / 0.9))
+                for j in range(m_ + 1):
+                    u = u0 + (u1 - u0) * j / m_
+                    w, h = Wp * 0.6 + 0.2, Hp * (1 - 0.4 * j / m_) + 0.3
+                    k.tube(at(u, -w, z - 0.2), at(u, -w, z + h), 0.06, B_GIRDER, sides=3)
+                    k.tube(at(u, w, z - 0.2), at(u, w, z + h), 0.06, B_GIRDER, sides=3)
+                    k.tube(at(u, -w, z + h), at(u, w, z + h), 0.06, B_GIRDER, sides=3)
+                for v_ in (-1, 1):
+                    k.tube(at(u0, v_ * (Wp * 0.6 + 0.2), z + Hp * 0.7), at(u1, v_ * (Wp * 0.6 + 0.2), z + Hp * 0.5), 0.05,
+                           B_GIRDER, sides=3)
+                for _ in range(5):                                           # welding sparks at the seam
+                    sx, sy, sz = at(u0 + rng.uniform(-0.2, 0.4), rng.uniform(-Wp, Wp) * 0.4, z + rng.uniform(0.3, Hp))
+                    k.box(sx - 0.08, sy - 0.08, sz - 0.08, sx + 0.08, sy + 0.08, sz + 0.08, B_GLOW, top=B_GLOW)
+        # the command spire on the ring between the two piers on one side, a bridge to it
+        tc = PAM_CRADLE - math.pi / 2
+        x, y, _ = P(R + 5.5, tc, 0)
+        k.lathe([(2.2, z0 - 1.5), (2.4, z0 + 1.0), (1.8, z0 + 6.0), (1.2, z0 + 11.0)], [B_HULL, B_PLATE_WIN, B_CONC_WIN],
+                sides=16, cx=x, cy=y, cap=B_ROOF)
+        for zz, r_ in ((4.0, 3.0), (8.0, 2.4)):
+            k.lathe([(r_, z0 + zz), (r_, z0 + zz + 0.3)], [B_GLOW], sides=20, cx=x, cy=y, cap=B_PLATE)
+        k.lathe([(1.3, z0 + 11.0), (2.2, z0 + 11.6), (2.2, z0 + 12.4), (0.9, z0 + 13.2), (0.0, z0 + 13.4)],
+                [B_PLATE_WIN, B_PLATE_WIN, B_ROOF, B_ROOF], sides=16, cx=x, cy=y)
+        k.tube((x, y, z0 + 13.3), (x, y, z0 + 16.5), 0.1, B_PIPE, sides=4)
+        k.tube(P(R + 2.4, tc, z0 + 1.5), (x, y, z0 + 1.5), 0.6, B_PLATE_WIN, sides=8)
+
+    def pam_ships():
+        """the Separatist ships at the Pammant Docks (place_ships, the baked STLs of sketchfab_props.py pam_*)"""
+        place_ships(pam_fleet(), lambda kind: 1.0, prefix="")
+
+    def pam_liftport(k):
+        # the QFD Lift Port (invented; canon: Pammant's factories build the Separatist warships, Legends: the Pammant
+        # Docks in orbit): the heavy-lift spaceport where the Quarren foundries' prefabricated hull sections are
+        # lifted to the orbital docks. A long apron along PAM_PORT_A, three raised hexagonal heavy-lift pads in a row,
+        # each with a hull section on its cradle waiting for a lifter, a tug lifting one off the middle pad, a
+        # Quarren control tower, hangars and a cargo hall, a rail spur bringing sections from the foundries, beacon
+        # masts. ~17 units long
+        a = PAM_PORT_A
+        ca, sa = math.cos(a), math.sin(a)
+        at = lambda u, v, zz: (ca * u - sa * v, sa * u + ca * v, zz)
+        cslab(k, 0, 0, -SKIRT, 0.15, 8.5, 4.6, a, B_CONC, B_CONC)                       # the apron
+        for i, u in enumerate((-5.2, 0.0, 5.2)):                                       # the heavy-lift pads
+            x, y, _ = at(u, 1.0, 0)
+            k.lathe([(2.4, 0.1), (2.4, 0.55), (2.2, 0.7)], [B_PLATE_WIN, B_HAZARD], sides=6, cx=x, cy=y, rot=a,
+                    cap=B_PAD)
+            for j in range(6):                                                         # pad lights
+                b = a + math.pi / 3 * j
+                k.lathe([(0.12, 0.7), (0.12, 0.9)], [B_GLOW], sides=4, cx=x + 2.1 * math.cos(b), cy=y + 2.1 * math.sin(b),
+                        cap=B_GLOW)
+            lift = 4.5 if i == 1 else 0.0                                              # the middle one is lifting
+            for v_ in (-0.9, 0.9):                                                     # the cradle
+                cslab(k, *at(u + v_, 1.0, 0)[:2], 0.7, 1.2, 0.25, 1.4, a + math.pi / 2, B_GIRDER, B_HAZARD)
+            p0, p1 = at(u, -0.6, 1.9 + lift), at(u, 2.6, 1.9 + lift)                   # the hull section: a ribbed drum
+            k.tube(p0, p1, 1.0, B_HULL, sides=10)
+            k.tube(at(u, -0.75, 1.9 + lift), p0, 1.08, B_PLATE, sides=10)
+            k.tube(p1, at(u, 2.75, 1.9 + lift), 1.08, B_PLATE, sides=10)
+            if lift:                                                                   # the lifter tug above it
+                tx, ty, _ = at(u, 1.0, 0)
+                k.lathe([(1.4, 3.6 + lift), (1.7, 4.0 + lift), (1.2, 4.6 + lift), (0.0, 4.8 + lift)],
+                        [B_PLATE, B_HULL, B_ROOF], sides=8, cx=tx, cy=ty)
+                for d in ((-0.7, -0.4), (0.7, -0.4), (-0.7, 2.4), (0.7, 2.4)):
+                    k.tube(at(u + d[0], d[1], 2.6 + lift), at(u + d[0] * 0.6, 1.0 + (d[1] - 1.0) * 0.4, 3.6 + lift), 0.06,
+                           B_PIPE, sides=4)
+                for d in (-1.0, 1.0):                                                  # its engine glow
+                    gx, gy, _ = at(u + d, 1.0, 0)
+                    k.lathe([(0.3, 3.3 + lift), (0.3, 3.6 + lift)], [B_GLOW], sides=8, cx=gx, cy=gy, cap=B_GLOW)
+        tx, ty, _ = at(-7.4, -2.6, 0)                                                  # the control tower
+        pam_bulb(k, tx, ty, 0.15, 6.5, 0.9)
+        k.tube((tx, ty, 6.5), (tx, ty, 8.0), 0.06, B_PIPE, sides=4)
+        for u in (-3.0, 2.6):                                                          # hangars and the cargo hall
+            x, y, _ = at(u, -3.0, 0)
+            bon_hall(k, x, y, 0.15, 1.5, 1.6, 0.9, a)
+        x, y, _ = at(7.2, -3.0, 0)
+        bon_hall(k, x, y, 0.15, 1.1, 1.0, 0.8, a, saw=False)
+        for v_ in (-1.4, -1.0):                                                        # the rail spur
+            k.tube(at(-8.4, v_, 0.25), at(8.4, v_, 0.25), 0.06, B_PIPE, sides=4)
+        for u in (-4.0, 1.5):                                                          # flatcars with sections on them
+            cslab(k, *at(u, -1.2, 0)[:2], 0.25, 0.6, 1.1, 0.4, a, B_RUST, B_ROOF)
+            k.tube(at(u - 0.9, -1.2, 1.1), at(u + 0.9, -1.2, 1.1), 0.5, B_HULL, sides=8)
+        for u, v_ in ((-8.0, 4.0), (8.0, 4.0), (8.0, -4.2), (-2.6, 4.2), (2.6, 4.2)):  # beacon masts
+            x, y, _ = at(u, v_, 0)
+            k.tube((x, y, 0.15), (x, y, 3.2), 0.06, B_PIPE, sides=4)
+            k.lathe([(0.2, 3.2), (0.2, 3.45)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
+
+    def pam_bulb(k, x, y, z0, h, r, rng=None):
+        """a Quarren tower: a slim stem swelling into rounded lit bulbs, a cap and a mast (organic Calamari-style)"""
+        k.lathe([(r * 0.75, z0), (r * 0.55, z0 + h * 0.45), (r, z0 + h * 0.62), (r * 1.05, z0 + h * 0.78),
+                 (r * 0.7, z0 + h * 0.92), (0.0, z0 + h)], [B_HULL, B_CONC_WIN, B_PLATE_WIN, B_CONC_WIN, B_ROOF], sides=12,
+                cx=x, cy=y)
+        k.lathe([(r * 1.07, z0 + h * 0.7), (r * 1.07, z0 + h * 0.73)], [B_GLOW], sides=12, cx=x, cy=y)
+
+    def pam_colony(k):
+        # Tessar Deep, the Quarren colony's capital (canon: Pammant's Quarren engineers; the city is invented): a round
+        # terrace over the mouth of the colony's main shaft, a tall bulbous Quarren spire, five smaller towers round it
+        # joined by sky-tubes, the shaft mouth with its headframe, landing pads. ~11 units across
+        k.lathe([(5.4, -SKIRT), (5.4, 0.35)], [B_CONC], sides=14, jitter=0.04, cap=B_CONC)               # the terrace
+        pam_bulb(k, 0.0, 0.0, 0.35, 9.0, 1.3)
+        ring = []
+        for i in range(5):
+            t = 2 * math.pi * i / 5 + 0.3
+            x, y = 3.4 * math.cos(t), 3.4 * math.sin(t)
+            h = 4.0 + 1.2 * (i % 3)
+            pam_bulb(k, x, y, 0.35, h, 0.75)
+            ring.append((x, y, h))
+            k.tube((0.3 * x, 0.3 * y, 0.35 + h * 0.55), (x * 0.8, y * 0.8, 0.35 + h * 0.55), 0.18, B_PLATE_WIN, sides=6)
+        for (x0, y0, h0), (x1, y1, h1) in zip(ring, ring[1:] + ring[:1]):      # sky-tubes round the ring
+            zz = 0.35 + min(h0, h1) * 0.45
+            k.tube((x0, y0, zz), (x1, y1, zz), 0.12, B_PIPE, sides=6)
+        sx, sy = 3.6 * math.cos(math.pi * 1.25), 3.6 * math.sin(math.pi * 1.25)  # the shaft mouth and its headframe
+        k.lathe([(1.2, 0.35), (1.2, 0.5)], [B_HAZARD], sides=14, cx=sx + 1.4, cy=sy - 0.6, cap=B_DARK)
+        for d in (-0.8, 0.8):
+            k.tube((sx + 1.4 + d, sy - 0.6, 0.5), (sx + 1.4, sy - 0.6, 3.4), 0.1, B_GIRDER, sides=4)
+        k.lathe([(0.5, 3.3), (0.5, 3.5)], [B_RUST], sides=10, cx=sx + 1.4, cy=sy - 0.6, cap=B_RUST)
+        for t in (0.95, 2.2, 4.4):                                           # landing pads at the terrace's edge
+            k.lathe([(0.8, 0.35), (0.8, 0.55)], [B_HAZARD], sides=12, cx=4.6 * math.cos(t + 0.3), cy=4.6 * math.sin(t + 0.3),
+                    cap=B_PAD)
+
+    def pam_city(k, band, rng):
+        # Pammant's Quarren foundry towns (canon: Quarren engineers, factories building the Separatist navy; Legends:
+        # "tunneled"): rounded Quarren towers and domes, foundry halls, shaft headframes over the tunnels, stacks and
+        # tanks. band 1 outskirts .. 4 downtown; laid on a 2-unit grid, turned at random
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(rng.randint(1, 2)):                                                             # foundry halls
+            w, d = rng.uniform(0.18, 0.28), rng.uniform(0.11, 0.17)
+            p_ = spot(max(w, d) * 1.05)
+            if p_:
+                bon_hall(k, *p_, -0.3, rng.uniform(0.16, 0.24) + 0.03 * band, w, d, rng.uniform(0, math.pi),
+                         saw=rng.random() < 0.5)
+        for _ in range(1 + band):                                                                      # Quarren towers
+            r = rng.uniform(0.06, 0.1)
+            p_ = spot(r * 1.4)
+            if p_:
+                pam_bulb(k, *p_, -0.3, rng.uniform(0.5, 0.8) + 0.25 * band + (0.5 * rng.random() if band >= 3 else 0), r)
+        for _ in range(rng.randint(1, 2)):                                                             # hab domes
+            r = rng.uniform(0.09, 0.14)
+            p_ = spot(r * 1.2)
+            if p_:
+                k.lathe([(r, -0.3), (r, 0.05), (r * 0.7, 0.05 + r * 0.6), (0.0, 0.05 + r * 0.85)],
+                        [B_PLATE_WIN, B_HULL, B_HULL], sides=12, cx=p_[0], cy=p_[1])
+        if rng.random() < 0.6:                                                                         # a shaft headframe
+            p_ = spot(0.12)
+            if p_:
+                x, y = p_
+                k.lathe([(0.1, -0.3), (0.1, 0.02)], [B_HAZARD], sides=8, cx=x, cy=y, cap=B_DARK)
+                for d in (-0.09, 0.09):
+                    k.tube((x + d, y, 0.0), (x, y, 0.45 + 0.05 * band), 0.012, B_GIRDER, sides=3)
+                k.lathe([(0.05, 0.42 + 0.05 * band), (0.05, 0.47 + 0.05 * band)], [B_RUST], sides=8, cx=x, cy=y, cap=B_RUST)
+        for _ in range(rng.randint(0, 2)):                                                             # tanks
+            r = rng.uniform(0.06, 0.1)
+            p_ = spot(r * 1.3)
+            if p_:
+                bon_tank(k, *p_, -0.3, rng.uniform(0.3, 0.42), r)
+        for _ in range(band >= 2):                                                                     # a stack
+            p_ = spot(0.05)
+            if p_:
+                bon_stack(k, *p_, -0.3, rng.uniform(0.9, 1.2) + 0.15 * band, 0.045)
+
+    def mcl_curve(k, p0, p1, bulge, r0, r1, rect, n=6, sides=6):
+        """a curved tube from p0 to p1, bowed up by `bulge` at its middle, tapering r0 -> r1 (coral, buttresses)"""
+        pts = [(p0[0] + (p1[0] - p0[0]) * t, p0[1] + (p1[1] - p0[1]) * t,
+                p0[2] + (p1[2] - p0[2]) * t + bulge * 4 * t * (1 - t)) for t in [i / n for i in range(n + 1)]]
+        for i, (a, b) in enumerate(zip(pts, pts[1:])):
+            k.tube(a, b, r0 + (r1 - r0) * i / n, rect, sides=sides, r1=r0 + (r1 - r0) * (i + 1) / n)
+
+    def mcl_shell(k, x, y, z0, r, h, sides=16, sy=1.0):
+        """a Mon Calamari shell dome: ribbed (lit bands between pale ribs), a rim of lights at its foot"""
+        k.lathe([(r, z0), (r * 0.97, z0 + h * 0.3), (r * 0.85, z0 + h * 0.6), (r * 0.6, z0 + h * 0.85),
+                 (r * 0.25, z0 + h * 0.98), (0.0, z0 + h)], [B_PLATE_WIN, B_PLATE, B_PLATE_WIN, B_PLATE, B_ROOF],
+                sides=sides, cx=x, cy=y, sy=sy)
+        k.lathe([(r * 1.03, z0 + h * 0.12), (r * 1.03, z0 + h * 0.16)], [B_GLOW], sides=sides, cx=x, cy=y, sy=sy)
+
+    def mcl_spire(k, x, y, z0, h, r):
+        """a slim curving Mon Calamari spire: a fluted stem, a lit bulb, a needle"""
+        k.lathe([(r, z0), (r * 0.6, z0 + h * 0.55), (r * 1.25, z0 + h * 0.7), (r * 0.9, z0 + h * 0.82),
+                 (r * 0.3, z0 + h * 0.86), (0.0, z0 + h)], [B_CONC, B_PLATE_WIN, B_CONC_WIN, B_PLATE, B_PIPE],
+                sides=10, cx=x, cy=y)
+
+    def mcl_coral_tuft(k, x, y, z0, s, rng):
+        """a cluster of coral growth: a few bowed branches"""
+        for _ in range(rng.randint(3, 5)):
+            a = rng.uniform(0, 2 * math.pi)
+            mcl_curve(k, (x, y, z0), (x + s * math.cos(a), y + s * math.sin(a), z0 + s * rng.uniform(1.0, 1.8)),
+                      s * 0.4, s * 0.09, s * 0.03, B_RUST, n=3, sides=5)
+
+    def mcl_coral_city(k):
+        # Coral City, the capital of Mon Cala (canon: "built over a" reef, both peoples' preferred underwater style;
+        # TCW "Water War": ribbed shell domes and curving spires lit gold in the deep). Its look past that is a design
+        # choice: the royal palace's great ribbed shell dome on a terraced reef base, a tall central spire, a ring of
+        # lesser domes joined by sky-tubes, curving spires between them, coral growing over the terraces. ~13 units
+        rng = random.Random("hod_mcl_coral")
+        k.lathe([(6.4, -SKIRT), (6.2, 0.3), (5.0, 0.6), (4.8, 1.0)], [B_DUST, B_CONC, B_CONC], sides=18, jitter=0.06,
+                cap=B_CONC)                                                                     # the reef terraces
+        mcl_shell(k, 0.0, 0.0, 1.0, 3.0, 4.6, sides=20)                                         # the palace dome
+        for j in range(8):                                                                      # its outer ribs
+            a = 2 * math.pi * j / 8
+            mcl_curve(k, (3.1 * math.cos(a), 3.1 * math.sin(a), 1.0), (0.5 * math.cos(a), 0.5 * math.sin(a), 5.4), 1.0,
+                      0.16, 0.08, B_PLATE, n=5, sides=5)
+        mcl_spire(k, 0.0, 0.0, 5.2, 6.0, 0.45)
+        ring = []
+        for i in range(6):                                                                      # the lesser domes
+            a = 2 * math.pi * i / 6 + 0.25
+            x, y = 4.6 * math.cos(a), 4.6 * math.sin(a)
+            r = 0.9 + 0.3 * (i % 2)
+            mcl_shell(k, x, y, 0.6, r, r * 1.5, sides=14)
+            k.tube((x * 0.7, y * 0.7, 2.0), (x * 0.82, y * 0.82, 1.4), 0.2, B_PLATE_WIN, sides=6)
+            ring.append((x, y))
+            b = a + math.pi / 6                                                                 # spires between them
+            mcl_spire(k, 5.3 * math.cos(b), 5.3 * math.sin(b), 0.6, 3.0 + 1.5 * (i % 3) / 2, 0.22)
+        for (x0, y0), (x1, y1) in zip(ring, ring[1:] + ring[:1]):                               # sky-tubes
+            k.tube((x0, y0, 1.5), (x1, y1, 1.5), 0.13, B_PIPE, sides=6)
+        for _ in range(14):                                                                     # coral on the terraces
+            a, d = rng.uniform(0, 2 * math.pi), rng.uniform(3.4, 6.0)
+            mcl_coral_tuft(k, d * math.cos(a), d * math.sin(a), 0.5, rng.uniform(0.4, 0.8), rng)
+
+    def mcl_drome(k):
+        # the Moncaladrome, Mon Cala's opera house (canon: an opera house; its look is a design choice): three nested
+        # shell vaults stepping down from the stage end, ribs arching over each, a lit forecourt ring. ~9 units long
+        rng = random.Random("hod_mcl_drome")
+        k.lathe([(4.6, -SKIRT), (4.6, 0.35)], [B_CONC], sides=16, sy=0.7, cap=B_PAD)            # the forecourt
+        for i, (x, r, h) in enumerate(((-1.6, 2.2, 3.6), (0.6, 1.8, 2.8), (2.4, 1.3, 2.0))):   # the vaults
+            mcl_shell(k, x, 0.0, 0.35, r, h, sides=16, sy=0.75)
+            for j in (-2, -1, 0, 1, 2):                                                         # ribs over them
+                a = j * 0.45
+                mcl_curve(k, (x - r * 1.15 * math.cos(a), r * 0.9 * math.sin(a), 0.35),
+                          (x + r * 1.15 * math.cos(a), -r * 0.9 * math.sin(a), 0.35), h * 1.45, 0.09, 0.09, B_PLATE,
+                          n=6, sides=4)
+        for j in range(16):                                                                     # forecourt lights
+            a = 2 * math.pi * j / 16
+            x, y = 4.3 * math.cos(a), 3.0 * math.sin(a)
+            k.tube((x, y, 0.35), (x, y, 1.2), 0.04, B_PIPE, sides=4)
+            k.lathe([(0.12, 1.2), (0.12, 1.35)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
+        for _ in range(6):
+            a = rng.uniform(0, 2 * math.pi)
+            mcl_coral_tuft(k, 3.8 * math.cos(a), 2.6 * math.sin(a), 0.35, 0.5, rng)
+
+    def qua_tower(k, x, y, z0, h, r, legs=4):
+        """a Quarren tower: a dark tapering shaft over drooping tentacle buttresses, lit slits, a hooded crown"""
+        k.lathe([(r, z0), (r * 0.8, z0 + h * 0.4), (r * 0.55, z0 + h * 0.8), (r * 0.75, z0 + h * 0.86),
+                 (r * 0.3, z0 + h * 0.97), (0.0, z0 + h)], [B_BRICK, B_CONC_WIN, B_BRICK, B_SOOT, B_SOOT], sides=10,
+                cx=x, cy=y)
+        k.lathe([(r * 0.78, z0 + h * 0.83), (r * 0.78, z0 + h * 0.85)], [B_GLOW], sides=10, cx=x, cy=y)
+        for j in range(legs):
+            a = 2 * math.pi * j / legs + 0.4
+            mcl_curve(k, (x + r * 0.5 * math.cos(a), y + r * 0.5 * math.sin(a), z0 + h * 0.45),
+                      (x + r * 2.2 * math.cos(a), y + r * 2.2 * math.sin(a), z0), -h * 0.06, r * 0.3, r * 0.15, B_BRICK,
+                      n=4, sides=5)
+
+    def qua_hq(k):
+        # the Quarren headquarters in Quarren Town (canon: the Quarren capital's seat; in the Clone Wars Riff Tamson
+        # staged the attack on the Mon Calamari from it; its look is a design choice): a dark rock mound, a tall
+        # Quarren tower with tentacle buttresses, four lesser towers round it, a lit war-room drum, landing pads. ~11
+        rng = random.Random("hod_qua_hq")
+        k.lathe([(5.4, -SKIRT), (5.0, 0.6), (3.6, 1.6), (2.4, 2.0)], [B_SOOT, B_BRICK, B_BRICK], sides=13, jitter=0.12,
+                cap=B_CONC)                                                                     # the rock mound
+        qua_tower(k, 0.0, 0.0, 2.0, 10.0, 1.1, legs=6)
+        for i in range(4):
+            a = 2 * math.pi * i / 4 + 0.6
+            qua_tower(k, 3.4 * math.cos(a), 3.4 * math.sin(a), 0.9, 4.5 + 1.2 * (i % 2), 0.55)
+        k.lathe([(1.8, 2.0), (1.8, 3.0), (1.4, 3.4)], [B_CONC_WIN, B_ROOF], sides=14, cap=B_ROOF)  # the war-room drum
+        for a in (2.0, 4.6):                                                                    # landing pads
+            k.lathe([(0.8, 0.6), (0.8, 0.8)], [B_HAZARD], sides=12, cx=4.4 * math.cos(a), cy=4.4 * math.sin(a), cap=B_PAD)
+        for _ in range(8):
+            a, d = rng.uniform(0, 2 * math.pi), rng.uniform(4.2, 5.4)
+            mcl_coral_tuft(k, d * math.cos(a), d * math.sin(a), 0.3, 0.5, rng)
+
+    def mcl_city(k, band, rng):
+        # Mon Calamari reef cities (canon: underwater and surface cities; TCW: ribbed shell domes, curving spires,
+        # gold light): shell domes, spires, coral, small pads. band 1 outskirts .. 4 downtown; on a 2-unit grid
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(1 + band // 2):                                                             # shell domes
+            r = rng.uniform(0.12, 0.2) + 0.02 * band
+            p_ = spot(r)
+            if p_:
+                mcl_shell(k, *p_, -0.3, r, 0.3 + r * 1.6, sides=12)
+        for _ in range(band):                                                                      # spires
+            p_ = spot(0.06)
+            if p_:
+                mcl_spire(k, *p_, -0.3, rng.uniform(0.6, 0.9) + 0.25 * band, rng.uniform(0.04, 0.06))
+        for _ in range(rng.randint(1, 3)):                                                         # coral
+            p_ = spot(0.08)
+            if p_:
+                mcl_coral_tuft(k, *p_, -0.1, rng.uniform(0.12, 0.2), rng)
+        if band >= 2 and rng.random() < 0.4:                                                       # a pad
+            p_ = spot(0.14)
+            if p_:
+                k.lathe([(0.13, -0.3), (0.13, 0.05)], [B_PLATE], sides=12, cx=p_[0], cy=p_[1], cap=B_PAD)
+
+    def qua_city(k, band, rng):
+        # Quarren towns (canon: Quarren Town in the depths, Zeran Town in the north; the look is a design choice): dark
+        # tentacle-buttressed towers, low rock domes, lit slits. band 1 outskirts .. 4 downtown
+        placed = []
+
+        def spot(r, lim=0.85):
+            for _ in range(20):
+                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
+                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
+                    placed.append((x, y, r))
+                    return x, y
+            return None
+        for _ in range(1 + band):                                                                  # towers
+            r = rng.uniform(0.05, 0.08)
+            p_ = spot(r * 2.4)
+            if p_:
+                qua_tower(k, *p_, -0.3, rng.uniform(0.6, 0.9) + 0.22 * band, r, legs=3)
+        for _ in range(rng.randint(1, 2)):                                                         # rock domes
+            r = rng.uniform(0.1, 0.16)
+            p_ = spot(r)
+            if p_:
+                k.lathe([(r, -0.3), (r * 0.9, 0.05), (r * 0.5, 0.05 + r * 0.6), (0.0, 0.05 + r * 0.75)],
+                        [B_CONC_WIN, B_BRICK, B_BRICK], sides=9, cx=p_[0], cy=p_[1], jitter=0.08)
+        for _ in range(rng.randint(0, 2)):
+            p_ = spot(0.08)
+            if p_:
+                mcl_coral_tuft(k, *p_, -0.1, rng.uniform(0.1, 0.16), rng)
+
     build("hod_bon_spaceport", bon_spaceport, tex="hod_bonadan")
     build("hod_bon_shipyard", bon_shipyard, tex="hod_bonadan", extra=bon_ships)
     build("hod_bon_weather", bon_weather, tex="hod_bonadan")
@@ -4139,6 +4668,25 @@ def models(*only):
             rng_b = random.Random(f"hod_bon_city{band}{v}")
             build(f"hod_bon_city_{band}{v}", lambda k, band=band, rng=rng_b: bon_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_bonadan")
+    build("hod_pam_docks", pam_docks, tex="hod_pammant", extra=pam_ships)
+    build("hod_pam_liftport", pam_liftport, tex="hod_pammant")
+    build("hod_pam_colony", pam_colony, tex="hod_pammant")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_p = random.Random(f"hod_pam_city{band}{v}")
+            build(f"hod_pam_city_{band}{v}", lambda k, band=band, rng=rng_p: pam_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_pammant")
+    build("hod_mcl_coral_city", mcl_coral_city, tex="hod_moncala", shader="PdxMeshHodUnderwater")   # seen under the sea:
+    build("hod_mcl_drome", mcl_drome, tex="hod_moncala", shader="PdxMeshHodUnderwater")             # gfx/FX/pdxmesh.shader
+    build("hod_mcl_quarren_hq", qua_hq, tex="hod_moncala", shader="PdxMeshHodUnderwater")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_m = random.Random(f"hod_mcl_city{band}{v}")
+            build(f"hod_mcl_city_{band}{v}", lambda k, band=band, rng=rng_m: mcl_city(k, band, rng), shader="PdxMeshHodUnderwater",
+                  tex="hod_moncala")
+            rng_q = random.Random(f"hod_mcl_qcity{band}{v}")
+            build(f"hod_mcl_qcity_{band}{v}", lambda k, band=band, rng=rng_q: qua_city(k, band, rng), shader="PdxMeshHodUnderwater",
+                  tex="hod_moncala")
     build("hod_flo_complex", florrum_complex)
     build("hod_flo_refinery", florrum_refinery)
     for v in "ab":
@@ -4993,5 +5541,5 @@ def place_planet(name):
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks, "atlas": atlas,
-     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "bonadan_atlas": bonadan_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
+     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "bonadan_atlas": bonadan_atlas, "pammant_atlas": pammant_atlas, "moncala_atlas": moncala_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
      "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])

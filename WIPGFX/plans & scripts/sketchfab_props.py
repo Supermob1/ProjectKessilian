@@ -105,6 +105,15 @@ SPECS.update({
     "bon_lethisk": dict(path=f"{_RP}/orp_fly_lethisk.glb", kind="building", budget=700, size=2.6, out=_LM),
     "bon_chela": dict(path=f"{_RP}/orp_fly_chela.glb", kind="building", budget=300, size=1.1, out=_LM),
 })
+# Pammant's orbital docks (military_buildings.py pam_docks): the user's Separatist ship models (STL, untextured: an AO
+# bake tinted with the hull paint). Malevolence 4.8 km vs Providence 1 km, shown 34 vs 14 map units
+_SEP = "WIPGFX/separatists ships 3d"
+SPECS.update({
+    "pam_malevolence": dict(path=f"{_SEP}/Malevolence.stl", kind="building", budget=7000, size=34.0, out=_LM,
+                            ao=(196, 198, 202)),   # pale grey hull
+    "pam_invisible_hand": dict(path=f"{_SEP}/Invisible_Hand.stl", kind="building", budget=6400, size=14.0, out=_LM,
+                               ao=(198, 182, 150)),   # Separatist tan-grey hull
+})
 
 
 def mesh_name(name):
@@ -139,7 +148,11 @@ def bake(*only):
         if only and name not in only:
             continue
         bpy.ops.wm.read_factory_settings(use_empty=True)
-        bpy.ops.import_scene.gltf(filepath=os.path.abspath(s.get("path") or f"{SRC}/{s['src']}/scene.gltf"))
+        src_path = os.path.abspath(s.get("path") or f"{SRC}/{s['src']}/scene.gltf")
+        if src_path.lower().endswith(".stl"):
+            bpy.ops.wm.stl_import(filepath=src_path)
+        else:
+            bpy.ops.import_scene.gltf(filepath=src_path)
         meshes = [o for o in bpy.context.scene.objects if o.type == "MESH"]
         for o in bpy.context.scene.objects:
             o.select_set(o in meshes)
@@ -365,7 +378,7 @@ def textures(*only):
                 save_dxt5_mips(np.dstack([repaint(im, hue), full(255)]), f"{OUT_}/{stem}_{v}_diffuse.dds")
         if s["kind"] != "prop":      # Advanced layout (normal G/A = xy, B = night emission; props G spec, B metal, A gloss)
             # ships (out = the shipyard) get no "lit windows": their white hull paint glowed as white dots
-            emi = windows(emi_src) if s["kind"] == "building" and not name.startswith("bon_") else full(0)
+            emi = windows(emi_src) if s["kind"] == "building" and not name.startswith(("bon_", "pam_")) else full(0)
             save_dxt5_mips(np.dstack([full(0), full(128), emi, full(128)]), f"{OUT_}/{stem}_normal.dds")
             save_dxt5_mips(np.dstack([full(0), full(70), full(0), full(90)]), f"{OUT_}/{stem}_properties.dds")
         else:

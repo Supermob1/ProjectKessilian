@@ -388,7 +388,7 @@ LM = "gfx/models/buildings/hod_landmarks"     # procedural families from militar
 FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
             "hod_kam_city": LM, "hod_man_city": LM, "hod_geo_city": LM, "hod_nab_city": LM, "hod_fel_city": LM,
             "hod_cmg_outpost": LM, "hod_rax_city": LM, "hod_dre_city": LM, "hod_zyg_city": LM, "hod_kaas_ruin": LM,
-            "hod_cant_city": LM, "hod_cant_sith_ruin": LM, "hod_bon_city": LM, "hod_etti_city": LM, "hod_etti_arco": LM, "hod_ruu_city": LM, "hod_oss_ruin": LM, "hod_oss_ysanna": LM, "hod_rv_city": LM, "hod_rh_ruin": LM, "hod_rh_prefab": LM}
+            "hod_cant_city": LM, "hod_cant_sith_ruin": LM, "hod_bon_city": LM, "hod_etti_city": LM, "hod_etti_arco": LM, "hod_ruu_city": LM, "hod_oss_ruin": LM, "hod_oss_ysanna": LM, "hod_rv_city": LM, "hod_rh_ruin": LM, "hod_rh_prefab": LM, "hod_pam_city": LM, "hod_mcl_city": LM, "hod_mcl_qcity": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 SCRAP_TOWN = [f"hod_bld_rpt_{n}" for n in ("crates4", "crates5", "crates6", "crates9", "crates1", "huttTower", "fuelCellC")]
 SINGLE.update({n: SW for n in SCRAP_TOWN})  # Raxus Prime scrap towns: Empire at War junk stacks (sketchfab_props.py rpt_*)
@@ -418,7 +418,10 @@ CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]
                24: (0.3, ["hod_oss_ysanna"]),                                           # Ossus: Ysanna camps
                25: (0.35, ["hod_rv_city"]),                                             # Ringo Vinda: bridge-cities
                26: (0.3, ["hod_rh_ruin"]),                                              # Rhen Var: frozen ruins
-               27: (0.35, ["hod_rh_prefab"])}                                           # Rhen Var: Bravo Base
+               27: (0.35, ["hod_rh_prefab"]),                                           # Rhen Var: Bravo Base
+               28: (0.45, ["hod_pam_city"]),                                            # Pammant: Quarren foundry towns
+               29: (0.4, ["hod_mcl_city"]),                                             # Mon Cala: coral cities
+               30: (0.4, ["hod_mcl_qcity"])}                                            # Mon Cala: Quarren towers
 
 
 def wire():

@@ -118,6 +118,10 @@ PROCEDURAL = {
     113: "rh_ice",        # ice spikes and shards pushed up by the frost
     114: "rh_ruin",       # a snow-buried fragment of the old civilization: a column stump, a wall corner
     115: "rh_deadtree",   # a dead tree from the fertile age, frozen standing
+    # Mon Cala (canon: coral reefs in the light of the twin suns, island chains of rocky cliffs, beaches and dense jungle)
+    116: "mcl_coral",     # coral heads breaking the surface of the reefs: staghorn branches round brain-coral domes
+    117: "mcl_palm",      # island palms: leaning ringed trunks, frond crowns
+    118: "mcl_seastack",  # sea stacks: wave-cut rock pillars standing out of the water
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
@@ -142,6 +146,7 @@ PROC_MATS.update({104: ["hod_oss_bamboo", "hod_foliage_oss_bamboo"], 105: ["hod_
 PROC_MATS.update({108: ["hod_lola_basalt"], 109: ["hod_lola_basalt"]})
 PROC_MATS.update({110: ["hod_rv_rock"], 111: ["hod_rv_rock"], 112: ["hod_dead_tree_trunk_02", "hod_foliage_rv"]})
 PROC_MATS.update({113: ["hod_rh_ice"], 114: ["hod_rh_stone"], 115: ["hod_dead_tree_trunk_02"]})
+PROC_MATS.update({116: ["hod_mcl_coral"], 117: ["hod_dead_tree_trunk_02", "hod_foliage_mcl_palm"], 118: ["hod_mcl_rock"]})
 # Sketchfab models converted by sketchfab_props.py (meshes land in OUT as hod_flora_<index>_<name>.mesh)
 EXTERNAL = {53: "sandcrawler", 54: "vaporators", 56: "wreck_harrower", 57: "wreck_foray"}
 # Raxus Prime junk (sketchfab_props.py SPECS rp_*: Battlefront II / Empire at War models)
@@ -161,7 +166,8 @@ PLANET_SOLID = {"hod_canto_cactus": ((92, 128, 84), "ribs"), "hod_canto_sandston
                 "hod_etti_char": ((44, 38, 34), "slag"), "hod_ruu_silk": ((226, 220, 200), "slag"),
                 "hod_oss_bamboo": ((150, 158, 82), "ribs"), "hod_oss_stone": ((200, 190, 166), "blocks"),
                 "hod_lola_basalt": ((58, 52, 54), "slag"), "hod_rv_rock": ((190, 162, 128), "blocks"),
-                "hod_rh_ice": ((176, 214, 236), "slag"), "hod_rh_stone": ((150, 158, 168), "blocks")}
+                "hod_rh_ice": ((176, 214, 236), "slag"), "hod_rh_stone": ((150, 158, 168), "blocks"),
+                "hod_mcl_coral": ((226, 122, 104), "slag"), "hod_mcl_rock": ((128, 122, 112), "blocks")}
 # planet foliage from Etti IV on: each texture its own random seed (from its name), so adding one leaves the others'
 # textures unchanged (PLANET_FOLIAGE above shares one random stream: never append to it)
 PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),          # Etti IV: deep forest green
@@ -173,7 +179,8 @@ PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),        
                       "hod_foliage_oss_bamboo": ((120, 160, 70), (90, 130, 56)),   # Ossus: bamboo leaves
                       "hod_foliage_oss_uneti": ((66, 112, 72), (48, 90, 60)),      # the uneti's dark crown
                       "hod_foliage_oss_wodobo": ((112, 128, 70), (88, 104, 58)),   # wodobo bushes
-                      "hod_foliage_rv": ((80, 124, 66), (58, 100, 56))}            # Ringo Vinda: temperate green
+                      "hod_foliage_rv": ((80, 124, 66), (58, 100, 56)),            # Ringo Vinda: temperate green
+                      "hod_foliage_mcl_palm": ((92, 150, 72), (64, 120, 58))}      # Mon Cala: island palm fronds
 
 
 def planet_textures():
@@ -1211,6 +1218,39 @@ def procedural(*only):
             for z in (0.9, 1.3, 1.7):
                 a = rng.uniform(0, 6.283)
                 crooked(Vector((0, 0, z)), Vector((math.cos(a), math.sin(a), 0.45)), rng.uniform(0.5, 0.9), 0.05, parts=2)
+        elif kind == "mcl_coral":
+            for _ in range(rng.randint(2, 3)):                              # brain-coral domes
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.8)
+                r = rng.uniform(0.3, 0.55)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (r * 0.5, r * 0.9), (r * 0.85, r * 0.5),
+                                                                     (r, 0.05)], 9, 0)
+            for _ in range(rng.randint(4, 6)):                              # staghorn branches, forking once
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.2, 1.1)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.1))
+                tip = crooked(base, Vector((math.cos(a) * 0.4, math.sin(a) * 0.4, 1)), rng.uniform(0.6, 1.1), 0.07,
+                              parts=2, kink=0.3)
+                for _ in range(2):
+                    crooked(tip, Vector((rng.uniform(-1, 1), rng.uniform(-1, 1), 0.8)), rng.uniform(0.25, 0.45), 0.04,
+                            parts=1)
+        elif kind == "mcl_palm":
+            for i in range(rng.randint(2, 3)):                              # leaning ringed trunks
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.7) * (i > 0)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                lean = Vector((math.cos(a + 1.0) * 0.45, math.sin(a + 1.0) * 0.45, 1.0))
+                top = crooked(base, lean, rng.uniform(2.2, 3.2), 0.09, parts=4, kink=0.12)
+                for j in range(7):                                          # the frond crown: drooping fronds
+                    b = 2 * math.pi * j / 7 + rng.uniform(-0.2, 0.2)
+                    mid = top + Vector((math.cos(b) * 0.55, math.sin(b) * 0.55, 0.12))
+                    clump(bm, uv, mid, 0.32, 0.12, 4, 1, size=(0.4, 0.7))
+                    clump(bm, uv, mid + Vector((math.cos(b) * 0.4, math.sin(b) * 0.4, -0.22)), 0.25, 0.1, 3, 1,
+                          size=(0.35, 0.6))
+        elif kind == "mcl_seastack":
+            for i in range(rng.randint(2, 4)):                              # wave-cut pillars, notched at the foot
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.0) * (i > 0)
+                h, r = rng.uniform(1.6, 3.2) * (1.0 if i == 0 else 0.7), rng.uniform(0.25, 0.42)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.3, r * 1.2), (0.25, r * 0.7), (0.6, r),
+                                                                     (h * 0.8, r * 0.9), (h, r * 0.6), (h * 1.03, 0.05)],
+                      7, 0, (rng.uniform(-0.08, 0.08), rng.uniform(-0.08, 0.08)))
         elif kind == "zyg_tree":
             giant(bm, uv, 1.6, 0.12, 3, [(1.45, 5, 0.85, 0.7)], 1.75, 360)   # short trunk, flat spreading crown
         else:                                                               # zyg_shrubs
@@ -1230,7 +1270,7 @@ def procedural(*only):
     for idx, kind in PROCEDURAL.items():
         if only and str(idx) not in only and kind not in only:
             continue
-        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_")):
+        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_")):
             rng.seed(kind)
         bpy.ops.wm.read_factory_settings(use_empty=True)
         me = bpy.data.meshes.new(kind)
@@ -1257,7 +1297,7 @@ def procedural(*only):
         elif kind.startswith("kor_"):
             korriban_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
-        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_")):
+        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_")):
             planet_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
         else:
@@ -1269,7 +1309,7 @@ def procedural(*only):
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_")):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)

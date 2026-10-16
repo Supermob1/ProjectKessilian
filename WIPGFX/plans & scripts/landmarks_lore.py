@@ -180,6 +180,41 @@ LANDMARKS = [
      "Weather Control Station",
      "A massive weather-control station in the mountains north of the main cities. Its emitter masts raise the "
      "sweeper storms that scour Bonadan's polluted air; without them the factory cities would choke within a season.", None),
+    # --- Pammant (canon: Quarren engineers, the Providence-class and Subjugator-class built here, the Malevolence in
+    # secret; Legends: the ring-shaped Pammant Docks, Free Dac Volunteers Engineering Corps, "tunneled").
+    # Tessar Deep and the dates are design choices
+    ("pammant_docks", ["hod_pam_docks"], "GFX_idea_generic_navy_bonus",
+     {"state_production_speed_dockyard_factor": 0.2}, "Pammant Docks",
+     "A ring-shaped shipyard in orbit over Pammant, run by the Quarren of the Free Dac Volunteers Engineering Corps. "
+     "Since the Quarren sided with Count Dooku its berths hold Providence-class carriers built for the Trade "
+     "Federation - and, clamped in the great cradle across the ring, a hull far larger than any of them, whose "
+     "purpose the Quarren will not discuss.", 700),
+    ("pammant_liftport", ["hod_pam_liftport"], "GFX_idea_generic_logistics",
+     {"state_production_speed_buildings_factor": 0.1, "local_supplies": 0.1}, "QFD Lift Port",
+     "The heavy-lift spaceport of the Free Dac Volunteers Engineering Corps. Hull sections forged in the Quarren "
+     "foundries below arrive by rail, wait on its great hexagonal pads and are hauled up by lifter tugs to the docks "
+     "in orbit. Republic agents counting the sections lifted have reported more steel than any known warship needs; "
+     "none of those reports has yet reached Coruscant.", None),
+    ("pammant_tessar", ["hod_pam_colony"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.02, "local_manpower": 0.05}, "Tessar Deep",
+     "The capital of Pammant's Quarren colony: rounded towers rising from the mouth of the colony's main shaft, the "
+     "city's real bulk lying in the warrens below. Its engineers have built starships for generations; now their "
+     "Isolation League speaks for the Confederacy.", None),
+    # --- Mon Cala (canon: Coral City, the capital; the Moncaladrome opera house; the Quarren headquarters in Quarren
+    # Town, from which Riff Tamson staged the Clone Wars attack). The 976 histories are design choices
+    ("mcl_coral_city", ["hod_mcl_coral_city"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.03, "local_manpower": 0.05}, "Coral City",
+     "The capital of Mon Cala, its shell domes and spires grown over a living reef and lit gold through the water. "
+     "From the royal palace at its heart King Yos Kolina rules both peoples of the ocean world, a union the Mon "
+     "Calamari hold sacred and the Quarren increasingly call a cage.", None),
+    ("mcl_drome", ["hod_mcl_drome"], "GFX_idea_generic_pp_unity_bonus", {"stability_factor": 0.02}, "Moncaladrome",
+     "The great opera house of Mon Cala, three shell vaults whose ribbed halls carry song through the water as well as "
+     "the air. Its seasons are the pride of Coral City's society; Quarren rarely attend.", None),
+    ("mcl_quarren_hq", ["hod_mcl_quarren_hq"], "GFX_idea_generic_army_support",
+     {"local_manpower": 0.08, "resistance_target": 0.05}, "Quarren Headquarters",
+     "The seat of the Quarren in the depths of Quarren Town: dark towers on a rock mound, their war room sealed to "
+     "Mon Calamari envoys. Separatist agents have been seen coming and going, and the Isolation League now meets "
+     "here in the open.", None),
     # --- Etti IV (Legends: Mondder, its spaceport, the Dream Emporium, the Free-Flight Dance Dome; canon: Cybot
     # Galactica's Arcoplex)
     ("arcoplex", ["hod_etti_arcoplex"], "GFX_idea_generic_improved_industries",
@@ -313,7 +348,7 @@ PLANET_OF = {"raxulon_parliament": "Raxus", "great_alley": "Raxus", "kaas_citade
              **{k: "Korriban" for k in ("sith_academy", "valley_dark_lords", "tomb_ragnos", "tomb_sadow", "tomb_pall",
                                         "tomb_hord", "tomb_kressh")},
              **{k: pl for pre, pl in (("rp_", "Raxus Prime"), ("kadavo_", "Kadavo"), ("hondo_", "Florrum"),
-                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"))
+                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"))
                 for k, *_ in LANDMARKS if k.startswith(pre)}}
 assert {k for k, *_ in LANDMARKS} == set(PLANET_OF), "every landmark needs its planet"
 

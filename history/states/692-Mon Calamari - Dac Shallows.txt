@@ -1,0 +1,32 @@
+state={
+	id=692
+	name="STATE_692"
+	# HOD: Mon Calamari (mon_calamari_map.py)
+	provinces={
+		701 763 2236 2388 2767 9575 9578 9579 9582 9583 9590 9591 9592 9600 9604 9608
+	}
+	resources={
+		oil=2
+	}
+	history = {
+		victory_points = {
+			701 3
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+					9579 = {
+				naval_base = 4
+			}
+		}
+		owner = MNC
+		add_core_of = MNC
+	}
+	manpower = 185592
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

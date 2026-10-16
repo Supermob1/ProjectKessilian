@@ -1487,6 +1487,16 @@ def zone_repaint(mod):
         if cfg.get("steep"):
             st_tex, st_slope, st_zones = cfg["steep"]
             tz[sub & (slope > st_slope) & np.isin(z, st_zones)] = _tex(st_tex)
+        if cfg.get("shore_rise"):
+            # the seas are painted water at ground level (the water plane draws space): every pixel whose final
+            # texture is not water climbs `height` steps within `width` px of the nearest water pixel, so shores,
+            # islands and atolls stand up out of the sea as cliffs instead of lying flush with it
+            rise_h, rise_w = cfg["shore_rise"]
+            sea = sub & np.isin(tz, [WATER, 30])                            # marsh water, sea_town_30
+            if sea.any():
+                d_sea = ndi.distance_transform_edt(~sea)
+                lift = rise_h * smoothstep(np.clip((d_sea - 0.5) / rise_w, 0, 1))
+                hn[sl] = np.where(sub & ~sea, np.clip(hn[sl] + lift * rim, 0, 252), hn[sl])
         t[sl] = np.where(tz >= 0, tz, t[sl]).astype(t.dtype)
         city[on] = 0
         for k, style in cfg.get("city", {}).items():
