@@ -1492,6 +1492,8 @@ def models(*only):
             self.put(bm.faces.new(back[::-1]), end[::-1], rect)
 
     SKIRT = 2.5     # landmark walls run this far below the origin: no gap under them on uneven or lower ground
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import arch_kit as ak  # the shared architecture kit and the planets built with it
 
     def build(name, geometry, shader="PdxMeshAdvancedSnow", out=LM_OUT, tex="hod_landmarks", rot=0.0, extra=None):
         """rot: turn the model about its vertical axis (radians, counter-clockwise seen from above) before export;
@@ -2998,11 +3000,6 @@ def models(*only):
             rng_s = random.Random(f"hod_cant_sith_ruin{band}{v}")
             build(f"hod_cant_sith_ruin_{band}{v}", lambda k, band=band, rng=rng_s: sith_ruin(k, band, rng),
                   shader="PdxMeshSnow", tex="hod_cantonica")
-    def bon_stack(k, x, y, z0, h, r, sides=10):
-        """a factory smokestack: soot-topped brick, a band of lights near the top"""
-        k.lathe([(r, z0), (r * 0.72, z0 + h)], [B_BRICK], sides=sides, cx=x, cy=y, cap=B_SOOT)
-        k.lathe([(r * 0.8, z0 + h * 0.86), (r * 0.8, z0 + h * 0.89)], [B_GLOW], sides=sides, cx=x, cy=y)
-
     def bon_tank(k, x, y, z0, h, r, sides=12):
         """a storage tank: plate drum under a shallow dome"""
         k.lathe([(r, z0), (r, z0 + h), (r * 0.6, z0 + h + 0.25 * r), (0.0, z0 + h + 0.32 * r)],
@@ -3017,76 +3014,6 @@ def models(*only):
             for i in range(n):
                 px = -w + (2 * i + 1) * w / n
                 cslab(k, x + ca * px, y + sa * px, h - 0.005, h + 0.07 + 0.02 * w, w / n, d, a, B_ROOF, B_GLOW, wt=w / n * 0.1)
-
-    def bon_city(k, band, rng):
-        # Bonadan's industrial cities (Legends: "covered with factories, refineries, docks, and shipbuilding
-        # facilities"): sooty factory halls with sawtooth roofs, storage tanks, smokestacks, concrete hab blocks with
-        # lit strip windows; downtown taller blocks, cooling towers and landing pads. Turned at random over the
-        # whole cell (the game lays these on a 2-unit grid). band 1 outskirts .. 4 downtown
-        placed = []
-
-        def spot(r, lim=0.85):
-            for _ in range(20):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        for _ in range(rng.randint(1, 2) + (band >= 2)):                                               # halls
-            w, d = rng.uniform(0.2, 0.32), rng.uniform(0.12, 0.2)
-            p_ = spot(max(w, d) * 1.05)
-            if p_:
-                bon_hall(k, *p_, -0.3, rng.uniform(0.18, 0.26) + 0.04 * band, w, d, rng.uniform(0, math.pi),
-                         saw=rng.random() < 0.7)
-        for _ in range(rng.randint(1, 3)):                                                             # tanks
-            r = rng.uniform(0.07, 0.12)
-            p_ = spot(r * 1.3)
-            if p_:
-                bon_tank(k, *p_, -0.3, rng.uniform(0.3, 0.45), r)
-        for _ in range(1 + (band >= 2) + (band >= 4)):                                                 # stacks
-            p_ = spot(0.06)
-            if p_:
-                bon_stack(k, *p_, -0.3, rng.uniform(0.9, 1.3) + 0.2 * band, rng.uniform(0.04, 0.06))
-        for _ in range(2 * band):                                                                      # hab blocks
-            w, d = rng.uniform(0.07, 0.12), rng.uniform(0.06, 0.1)
-            p_ = spot(max(w, d) * 1.2)
-            if p_:
-                h = rng.uniform(0.2, 0.35) + 0.12 * band + (0.5 * rng.random() if band >= 3 else 0.0)
-                cslab(k, *p_, -0.3, h, w, d, rng.uniform(0, math.pi), B_CONC_WIN, B_ROOF)
-        if band >= 3 and rng.random() < 0.5:                                                           # cooling tower
-            p_ = spot(0.2)
-            if p_:
-                k.lathe([(0.2, -0.3), (0.13, 0.45), (0.15, 0.7)], [B_CONC, B_CONC], sides=14, cx=p_[0], cy=p_[1])
-        if band >= 2 and rng.random() < 0.4:                                                           # a landing pad
-            p_ = spot(0.17)
-            if p_:
-                k.lathe([(0.16, -0.3), (0.16, 0.08)], [B_PLATE], sides=12, cx=p_[0], cy=p_[1], cap=B_PAD)
-
-    def bon_spaceport(k):
-        # Spaceport Southeast II, the largest of Bonadan's ten spaceports (Legends; its look is a design choice):
-        # a ring of round landing pads on raised decks round a control tower, hangars with arched roofs, cargo halls,
-        # stacks, tank farm. ~11 map units across
-        k.lathe([(5.4, -SKIRT), (5.4, 0.3)], [B_CONC], sides=10, sy=0.85, jitter=0.05, cap=B_CONC)        # the apron
-        for i in range(6):                                                                              # the pads
-            a = 2 * math.pi * (i + 0.5) / 6
-            x, y = 3.6 * math.cos(a), 3.0 * math.sin(a)
-            k.lathe([(1.15, 0.3), (1.15, 0.75)], [B_HAZARD], sides=16, cx=x, cy=y, cap=B_PAD)
-            for j in range(4):                                                                          # pad lights
-                b = 2 * math.pi * j / 4 + a
-                k.lathe([(0.08, 0.75), (0.08, 0.9)], [B_GLOW], sides=4, cx=x + 1.05 * math.cos(b), cy=y + 1.05 * math.sin(b),
-                        cap=B_GLOW)
-        k.lathe([(0.9, 0.3), (0.7, 4.2)], [B_CONC_WIN], sides=12, cap=B_ROOF)                            # control tower
-        k.lathe([(0.75, 4.2), (1.35, 4.5), (1.35, 4.95), (0.9, 5.25), (0.0, 5.35)],
-                [B_PLATE_WIN, B_PLATE_WIN, B_ROOF, B_ROOF], sides=16)                                   # its cab
-        k.tube((0, 0, 5.3), (0, 0, 6.4), 0.05, B_PIPE, sides=4)                                         # mast
-        for y in (2.5, -2.5):                                                                           # hangars
-            bon_hall(k, 0.0, y, 0.3, 1.4, 1.2, 1.0, 0.0, wall=B_PLATE)
-            k.box(-0.7, y - 1.02 if y > 0 else y + 0.98, 0.3, 0.7, y - 0.98 if y > 0 else y + 1.02, 1.2, B_HAZARD)
-        bon_hall(k, -2.0, 0.0, 0.3, 1.1, 0.8, 0.55, math.pi / 2)                                        # cargo halls
-        bon_hall(k, 2.0, 0.0, 0.3, 1.1, 0.8, 0.55, math.pi / 2)
-        for x, y in ((4.6, -0.3), (4.9, 0.5), (-4.7, 0.2)):                                             # tank farm
-            bon_tank(k, x, y, 0.3, 0.7, 0.35)
-        bon_stack(k, -4.4, -1.2, 0.3, 3.2, 0.22)
 
     def bon_fleet():
         """the orbital shipyard's layout, shared by its structure and its ships: [(kind, x, y, z, heading, built)] in
@@ -3316,212 +3243,6 @@ def models(*only):
             m = copies[0].modifiers.new("t", "TRIANGULATE")
             bpy.ops.object.modifier_apply(modifier=m.name)
         print("  ships:", {k_: len(c_) for k_, (_s, _l, c_) in parts.items()})
-
-    def bon_weather(k):
-        # the weather-control station (Legends: "a massive weather-control station lay in the mountains to the north of
-        # the main cities; it was used to generate sweeper storms that cleaned the polluted air"; the look is a design
-        # choice): a concrete terrace dug into the slope, three tall emitter masts with stacked lit rings, a big
-        # dish, domed control halls, a pad. ~10 map units across
-        k.lathe([(4.6, -SKIRT), (4.6, 0.4)], [B_CONC], sides=9, sy=0.9, jitter=0.07, cap=B_CONC)        # the terrace
-        k.lathe([(3.0, 0.4), (2.8, 1.0)], [B_CONC_WIN], sides=12, cap=B_ROOF)                           # the base hall
-        for i in range(3):                                                                              # emitter masts
-            a = 2 * math.pi * i / 3 + 0.3
-            x, y = 1.6 * math.cos(a), 1.6 * math.sin(a)
-            k.lathe([(0.35, 1.0), (0.2, 7.0), (0.0, 7.6)], [B_PIPE, B_PIPE], sides=8, cx=x, cy=y)
-            for z in (3.2, 4.6, 6.0):                                                                   # the rings
-                k.lathe([(0.75, z), (0.75, z + 0.18)], [B_GLOW], sides=14, cx=x, cy=y, cap=B_PLATE)
-            k.lathe([(0.12, 7.6), (0.12, 7.8)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
-        k.lathe([(0.5, 1.0), (0.5, 4.2)], [B_PLATE_WIN], sides=10, cap=B_ROOF)                          # the dish pylon
-        k.lathe([(0.2, 4.2), (1.8, 4.7), (2.2, 5.3)], [B_HULL, B_HULL], sides=18)                       # the dish
-        for x, y, r in ((-2.6, 2.2, 0.9), (2.6, 2.4, 0.8), (0.0, -3.0, 1.0)):                          # domed halls
-            k.lathe([(r, 0.4), (r, 1.0), (r * 0.7, 1.5), (0.0, 1.7)], [B_CONC_WIN, B_ROOF, B_ROOF], sides=14, cx=x, cy=y)
-        k.lathe([(1.0, 0.4), (1.0, 0.6)], [B_HAZARD], sides=14, cx=-3.2, cy=-1.6, cap=B_PAD)            # the pad
-
-    def etti_tower(k, x, y, z0, h, r, rng, cap=True):
-        """a Mondder tower: ceramic shaft with lit bands, a teal glass setback, a rounded crown, sometimes a pad"""
-        sides = rng.choice([8, 10, 12])
-        k.lathe([(r, z0), (r, z0 + h * 0.6)], [E_CERAMIC_WIN], sides=sides, cx=x, cy=y)
-        k.lathe([(r * 0.82, z0 + h * 0.6), (r * 0.72, z0 + h)], [E_GLASS_LIT], sides=sides, cx=x, cy=y)
-        if cap:
-            k.lathe([(r * 0.74, z0 + h), (r * 0.5, z0 + h + r * 0.5), (0.0, z0 + h + r * 0.65)], [E_CERAMIC, E_ROOF],
-                    sides=sides, cx=x, cy=y)
-        else:                                                                   # a landing pad on top
-            k.lathe([(r * 1.35, z0 + h), (r * 1.35, z0 + h + 0.04)], [E_STEEL], sides=16, cx=x, cy=y, cap=E_PAD)
-
-    def etti_city(k, band, rng):
-        # Mondder (Legends: the Corporate Sector Authority's capital; comic stills "Mondder streets", "Imperial Embassy",
-        # the Mondder Spaceport pads): slender round ceramic towers with lit bands and teal glass tops, turned glass
-        # slab towers, low domed halls, street neon; downtown taller with sky-bridges. band 1 outskirts .. 4 downtown
-        placed = []
-
-        def spot(r, lim=0.85):
-            for _ in range(20):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        towers = []
-        for _ in range(1 + band + rng.randint(0, 1)):                                                    # round towers
-            r = rng.uniform(0.07, 0.11) + 0.012 * band
-            p_ = spot(r * 1.4)
-            if p_:
-                h = rng.uniform(0.35, 0.6) + 0.28 * band + (0.5 * rng.random() if band == 4 else 0.0)
-                etti_tower(k, *p_, -0.3, h, r, rng, cap=rng.random() > 0.25)
-                towers.append((*p_, h))
-        for _ in range(rng.randint(1, 2) + (band >= 3)):                                                 # glass slabs
-            w, d = rng.uniform(0.1, 0.16), rng.uniform(0.05, 0.08)
-            p_ = spot(max(w, d) * 1.2)
-            if p_:
-                h = rng.uniform(0.3, 0.5) + 0.2 * band
-                a = rng.uniform(0, math.pi)
-                cslab(k, *p_, -0.3, h, w, d, a, E_GLASS_LIT, E_ROOF)
-                cslab(k, *p_, h, h + 0.08, w * 0.9, d * 0.9, a, E_CERAMIC, E_GOLD, wt=w * 0.5, dt=d * 0.4)
-        for _ in range(3 - band // 2):                                                                   # domed halls
-            r = rng.uniform(0.1, 0.16)
-            p_ = spot(r * 1.2)
-            if p_:
-                k.lathe([(r, -0.3), (r, 0.12), (r * 0.75, 0.24), (0.0, 0.3)], [E_CERAMIC_WIN, E_DOME, E_DOME], sides=12,
-                        cx=p_[0], cy=p_[1])
-        for _ in range(2):                                                                               # street neon
-            p_ = spot(0.03)
-            if p_:
-                k.box(p_[0] - 0.05, p_[1] - 0.01, 0.0, p_[0] + 0.05, p_[1] + 0.01, 0.12, E_NEON, top=E_NEON)
-        if band >= 3 and len(towers) >= 2:                                                               # sky-bridge
-            (x0, y0, h0), (x1, y1, h1) = towers[:2]
-            z = min(h0, h1) * 0.7
-            k.tube((x0, y0, z), (x1, y1, z), 0.025, E_GLASS_LIT, sides=4)
-
-    def arco_city(k, band, rng):
-        # the Arcoplex (canon: Cybot Galactica's city-headquarters on Etti IV, "actively expanding the city by burning
-        # the surrounding forests"; its look is a design choice): stepped cobalt arcology blocks with gold trim and lit
-        # window rows, droid-works sheds, arched gateways, cranes on the expansion edge. band 1 edge .. 4 core
-        placed = []
-
-        def spot(r, lim=0.85):
-            for _ in range(20):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        for _ in range(1 + (band >= 2) + (band >= 4)):                                                   # arcology
-            w, d = rng.uniform(0.22, 0.32), rng.uniform(0.16, 0.24)
-            p_ = spot(max(w, d))
-            if p_:
-                a, z = rng.uniform(0, math.pi), -0.3
-                for step in range(1 + band // 2 + rng.randint(0, 1)):
-                    h = rng.uniform(0.18, 0.28)
-                    f = 1 - 0.22 * step
-                    cslab(k, *p_, z, z + h + 0.3 * (step == 0), w * f, d * f, a, E_COBALT_WIN, E_STEEL)
-                    z += h + 0.3 * (step == 0)
-                    cslab(k, *p_, z, z + 0.03, w * f * 1.02, d * f * 1.02, a, E_GOLD, E_GOLD)
-        for _ in range(rng.randint(1, 2)):                                                               # droid works
-            w, d = rng.uniform(0.15, 0.22), rng.uniform(0.09, 0.13)
-            p_ = spot(max(w, d))
-            if p_:
-                cslab(k, *p_, -0.3, 0.2, w, d, rng.uniform(0, math.pi), E_STEEL, E_ROOF)
-        if rng.random() < 0.5:                                                                           # an arch gate
-            p_ = spot(0.18)
-            if p_:
-                a = rng.uniform(0, math.pi)
-                pts = [(p_[0] + 0.16 * math.cos(math.pi * i / 6) * math.cos(a), p_[1] + 0.16 * math.cos(math.pi * i / 6) * math.sin(a),
-                        0.3 * math.sin(math.pi * i / 6)) for i in range(7)]
-                for q0, q1 in zip(pts, pts[1:]):
-                    k.tube(q0, q1, 0.025, E_GOLD, sides=4)
-        if band == 1 and rng.random() < 0.6:                                                             # a crane
-            p_ = spot(0.05)
-            if p_:
-                k.box(p_[0] - 0.02, p_[1] - 0.02, -0.3, p_[0] + 0.02, p_[1] + 0.02, 0.8, E_HAZARD, top=E_HAZARD)
-                k.tube((p_[0], p_[1], 0.78), (p_[0] + 0.3, p_[1], 0.82), 0.015, E_HAZARD, sides=4)
-
-    def etti_spaceport(k):
-        # the Mondder Spaceport (Legends: the primary spaceport of Etti IV's capital, its holding bays (Docking Bays
-        # 41 and 45) and the Dream Emporium entertainment complex inside it; comic still: shuttles landing on round
-        # pads among white towers): a terminal crescent with a control tower, sunken round holding bays, landing pads
-        # on pylons, the Dream Emporium's neon-lit dome. ~11 map units across
-        k.lathe([(5.6, -SKIRT), (5.6, 0.3)], [E_CERAMIC], sides=12, sy=0.85, jitter=0.03, cap=E_ROOF)       # the apron
-        for i, a in enumerate((-0.9, -0.3, 0.3, 0.9)):                                                     # holding bays
-            x, y = 3.7 * math.sin(a), -2.6 + 1.2 * math.cos(a)
-            k.lathe([(1.25, 0.3), (1.25, 0.75), (1.05, 0.75), (1.05, 0.31)], [E_CERAMIC_WIN, E_ROOF, E_CERAMIC], sides=18,
-                    cx=x, cy=y)
-            k.lathe([(1.04, 0.31), (1.04, 0.33)], [E_PAD], sides=18, cx=x, cy=y, cap=E_PAD)
-            k.box(x - 0.18, y + 1.15, 0.3, x + 0.18, y + 1.32, 0.8, E_NEON, top=E_NEON)                    # bay number
-        for x, y in ((-4.0, 1.4), (4.0, 1.4)):                                                             # raised pads
-            k.lathe([(0.35, 0.3), (0.28, 1.4)], [E_STEEL], sides=8, cx=x, cy=y)
-            k.lathe([(1.3, 1.4), (1.3, 1.55)], [E_HAZARD], sides=16, cx=x, cy=y, cap=E_PAD)
-        for i in range(9):                                                                                 # terminal
-            a0, a1 = math.pi * (0.15 + 0.7 * i / 9), math.pi * (0.15 + 0.7 * (i + 1) / 9)
-            am = (a0 + a1) / 2
-            cslab(k, 3.2 * math.cos(am), 0.6 + 2.0 * math.sin(am), 0.3, 1.6, 0.6, 0.55, am + math.pi / 2,
-                  E_GLASS_LIT if i % 2 else E_CERAMIC_WIN, E_ROOF)
-        k.lathe([(0.75, 0.3), (0.55, 4.8)], [E_CERAMIC_WIN], sides=12, cy=2.4)                             # control tower
-        k.lathe([(0.6, 4.8), (1.2, 5.1), (1.2, 5.6), (0.7, 5.9), (0.0, 6.0)], [E_GLASS_LIT, E_GLASS_LIT, E_ROOF, E_ROOF],
-                sides=16, cy=2.4)
-        k.tube((0, 2.4, 5.95), (0, 2.4, 7.0), 0.05, E_STEEL, sides=4)
-        k.lathe([(1.5, 0.3), (1.5, 0.9), (1.25, 1.6), (0.7, 2.1), (0.0, 2.25)],
-                [E_NEON, E_DOME, E_DOME, E_DOME], sides=20, cx=0.0, cy=0.2)                                  # Dream Emporium
-        for j in range(8):                                                                                 # its neon posts
-            a = 2 * math.pi * j / 8
-            k.box(1.75 * math.cos(a) - 0.06, 0.2 + 1.75 * math.sin(a) - 0.06, 0.3, 1.75 * math.cos(a) + 0.06,
-                  0.2 + 1.75 * math.sin(a) + 0.06, 1.2, E_NEON, top=E_NEON)
-
-    def etti_arcoplex(k):
-        # the Arcoplex (canon: Cybot Galactica's city-headquarters on Etti IV; the look is a design choice from its name):
-        # a vast arc of stepped cobalt arcology wrapping a central headquarters spire with a gold crown, a second
-        # lower arc behind, droid-assembly halls in the yard, landing pads on the arc's roof, gold trim on every step.
-        # ~13 map units across
-        k.lathe([(6.4, -SKIRT), (6.4, 0.3)], [E_STEEL], sides=14, sy=0.9, jitter=0.03, cap=E_ROOF)          # the base
-        for ring, (r0, steps, a_span) in enumerate(((4.8, 4, 0.78), (3.0, 3, 0.62))):
-            n = 14 if ring == 0 else 10
-            for i in range(n):
-                a0, a1 = math.pi * (0.5 - a_span + 2 * a_span * i / n), math.pi * (0.5 - a_span + 2 * a_span * (i + 1) / n)
-                am, half = (a0 + a1) / 2, r0 * (a1 - a0) / 2 * 1.03
-                z = 0.3
-                for st in range(steps):                                                                     # stepped
-                    h = 1.0 if st == 0 else 0.75
-                    f = 1 - 0.2 * st
-                    cslab(k, r0 * math.cos(am), r0 * math.sin(am) - 0.6, z, z + h, half, 0.75 * f, am + math.pi / 2,
-                          E_COBALT_WIN, E_STEEL)
-                    cslab(k, r0 * math.cos(am), r0 * math.sin(am) - 0.6, z + h, z + h + 0.06, half * 1.01, 0.77 * f,
-                          am + math.pi / 2, E_GOLD, E_GOLD)
-                    z += h + 0.06
-                if ring == 0 and i % 4 == 1:                                                                 # roof pads
-                    k.lathe([(0.45, z), (0.45, z + 0.05)], [E_STEEL], sides=12, cx=r0 * math.cos(am), cy=r0 * math.sin(am) - 0.6,
-                            cap=E_PAD)
-        k.lathe([(1.5, 0.3), (1.2, 3.0), (0.9, 6.5), (0.6, 8.0)], [E_COBALT_WIN, E_COBALT_WIN, E_GLASS_LIT], sides=12, cy=0.6)
-        k.lathe([(0.62, 8.0), (0.9, 8.3), (0.5, 9.0), (0.0, 9.8)], [E_GOLD, E_GOLD, E_GOLD], sides=12, cy=0.6)   # crown
-        for a in (0.4, 2.0, 3.6, 5.2):                                                                      # buttresses
-            k.tube((1.4 * math.cos(a), 0.6 + 1.4 * math.sin(a), 0.3), (0.7 * math.cos(a), 0.6 + 0.7 * math.sin(a), 6.0),
-                   0.14, E_GOLD, sides=4)
-        for x in (-2.2, 0.0, 2.2):                                                                          # droid halls
-            cslab(k, x, -3.6, 0.3, 1.1, 0.9, 0.55, 0.0, E_STEEL, E_ROOF)
-            k.box(x - 0.5, -4.16, 0.3, x + 0.5, -4.14, 0.9, E_HAZARD)
-        for x in (-4.6, 4.6):                                                                               # the gates
-            pts = [(x, -1.2 + 1.0 * math.cos(math.pi * i / 8), 0.3 + 1.6 * math.sin(math.pi * i / 8)) for i in range(9)]
-            for q0, q1 in zip(pts, pts[1:]):
-                k.tube(q0, q1, 0.12, E_GOLD, sides=5)
-
-    def etti_dancedome(k):
-        # the Free-Flight Dance Dome (Legends: an elegant bistro in Mondder, where Han Solo met Ploovo Two-For-One; its
-        # name is the look: a zero-gravity dance floor under a dome; the Essential Guide image is the reference the
-        # user can supply): a slender ceramic stem rising from a terraced garden plaza to a broad glass dome with
-        # glowing hover rings inside, a ring terrace with lamps round it, two pavilions on the plaza. ~8 map units
-        k.lathe([(4.0, -SKIRT), (4.0, 0.3)], [E_CERAMIC], sides=16, sy=0.9, cap=E_GARDEN)                   # the plaza
-        for x, y, r in ((-2.4, -1.6, 0.8), (2.5, -1.4, 0.7), (0.0, 2.6, 0.9)):                            # gardens
-            k.lathe([(r, 0.29), (r, 0.42)], [E_GARDEN], sides=10, cx=x, cy=y, jitter=0.12, cap=E_GARDEN)
-        k.lathe([(0.7, 0.3), (0.42, 2.0), (0.38, 3.6), (0.9, 4.2)], [E_CERAMIC_WIN, E_CERAMIC, E_CERAMIC], sides=14)  # stem
-        k.lathe([(2.6, 4.2), (2.6, 4.45)], [E_CERAMIC_WIN], sides=24, cap=E_ROOF)                           # dome floor
-        k.lathe([(2.55, 4.45), (2.4, 5.3), (1.9, 6.0), (1.0, 6.55), (0.0, 6.75)], [E_DOME, E_DOME, E_DOME, E_DOME], sides=24)
-        for z, r in ((4.9, 1.7), (5.5, 1.2), (6.0, 0.7)):                                                   # hover rings
-            k.lathe([(r, z), (r, z + 0.1)], [E_NEON], sides=18, cap=E_NEON)
-        k.lathe([(3.1, 4.25), (3.1, 4.35)], [E_GOLD], sides=24, cap=E_CERAMIC)                              # ring terrace
-        for j in range(10):
-            a = 2 * math.pi * j / 10
-            k.lathe([(0.08, 4.35), (0.08, 4.75)], [E_GOLD], sides=4, cx=3.0 * math.cos(a), cy=3.0 * math.sin(a))
-            k.lathe([(0.14, 4.75), (0.14, 4.88)], [E_GLOW], sides=6, cx=3.0 * math.cos(a), cy=3.0 * math.sin(a), cap=E_GLOW)
-        for x, y in ((-2.9, 1.0), (2.9, 1.2)):                                                              # pavilions
-            k.lathe([(0.7, 0.3), (0.7, 0.9), (0.45, 1.25), (0.0, 1.35)], [E_GLASS_LIT, E_DOME, E_DOME], sides=12, cx=x, cy=y)
 
     def ruu_pod(k, x, y, z0, h, r, mat=None, stalk=0.0, sides=10):
         """a Ruurian cocoon pod: a tapered ellipsoid of silk (resin-lit openings), on a stalk if `stalk` > 0"""
@@ -4413,16 +4134,16 @@ def models(*only):
             rng_r = random.Random(f"hod_ruu_city{band}{v}")
             build(f"hod_ruu_city_{band}{v}", lambda k, band=band, rng=rng_r: ruu_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_ruuria")
-    build("hod_etti_spaceport", etti_spaceport, tex="hod_etti")
-    build("hod_etti_arcoplex", etti_arcoplex, tex="hod_etti")
-    build("hod_etti_dancedome", etti_dancedome, tex="hod_etti")
+    build("hod_etti_spaceport", ak.etti_spaceport, tex="hod_etti")
+    build("hod_etti_arcoplex", ak.etti_arcoplex, tex="hod_etti")
+    build("hod_etti_dancedome", ak.etti_dancedome, tex="hod_etti")
     for band in range(1, 5):
         for v in range(1, 5):
             rng_e = random.Random(f"hod_etti_city{band}{v}")
-            build(f"hod_etti_city_{band}{v}", lambda k, band=band, rng=rng_e: etti_city(k, band, rng), shader="PdxMeshSnow",
+            build(f"hod_etti_city_{band}{v}", lambda k, band=band, rng=rng_e: ak.etti_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_etti")
             rng_a = random.Random(f"hod_etti_arco{band}{v}")
-            build(f"hod_etti_arco_{band}{v}", lambda k, band=band, rng=rng_a: arco_city(k, band, rng), shader="PdxMeshSnow",
+            build(f"hod_etti_arco_{band}{v}", lambda k, band=band, rng=rng_a: ak.arco_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_etti")
     def pam_fleet():
         """the ships at the Pammant Docks, shared by the ring and its ships: [(kind, x, y, z, heading, built)] in model
@@ -4684,7 +4405,7 @@ def models(*only):
         for _ in range(band >= 2):                                                                     # a stack
             p_ = spot(0.05)
             if p_:
-                bon_stack(k, *p_, -0.3, rng.uniform(0.9, 1.2) + 0.15 * band, 0.045)
+                ak.bon_stack(k, *p_, -0.3, rng.uniform(0.9, 1.2) + 0.15 * band, 0.045)
 
     def mcl_curve(k, p0, p1, bulge, r0, r1, rect, n=6, sides=6):
         """a curved tube from p0 to p1, bowed up by `bulge` at its middle, tapering r0 -> r1 (coral, buttresses)"""
@@ -4692,165 +4413,6 @@ def models(*only):
                 p0[2] + (p1[2] - p0[2]) * t + bulge * 4 * t * (1 - t)) for t in [i / n for i in range(n + 1)]]
         for i, (a, b) in enumerate(zip(pts, pts[1:])):
             k.tube(a, b, r0 + (r1 - r0) * i / n, rect, sides=sides, r1=r0 + (r1 - r0) * (i + 1) / n)
-
-    def mcl_shell(k, x, y, z0, r, h, sides=16, sy=1.0):
-        """a Mon Calamari shell dome: ribbed (lit bands between pale ribs), a rim of lights at its foot"""
-        k.lathe([(r, z0), (r * 0.97, z0 + h * 0.3), (r * 0.85, z0 + h * 0.6), (r * 0.6, z0 + h * 0.85),
-                 (r * 0.25, z0 + h * 0.98), (0.0, z0 + h)], [B_PLATE_WIN, B_PLATE, B_PLATE_WIN, B_PLATE, B_ROOF],
-                sides=sides, cx=x, cy=y, sy=sy)
-        k.lathe([(r * 1.03, z0 + h * 0.12), (r * 1.03, z0 + h * 0.16)], [B_GLOW], sides=sides, cx=x, cy=y, sy=sy)
-
-    def mcl_spire(k, x, y, z0, h, r):
-        """a slim curving Mon Calamari spire: a fluted stem, a lit bulb, a needle"""
-        k.lathe([(r, z0), (r * 0.6, z0 + h * 0.55), (r * 1.25, z0 + h * 0.7), (r * 0.9, z0 + h * 0.82),
-                 (r * 0.3, z0 + h * 0.86), (0.0, z0 + h)], [B_CONC, B_PLATE_WIN, B_CONC_WIN, B_PLATE, B_PIPE],
-                sides=10, cx=x, cy=y)
-
-    def mcl_coral_tuft(k, x, y, z0, s, rng):
-        """a cluster of coral growth: a few bowed branches"""
-        for _ in range(rng.randint(3, 5)):
-            a = rng.uniform(0, 2 * math.pi)
-            mcl_curve(k, (x, y, z0), (x + s * math.cos(a), y + s * math.sin(a), z0 + s * rng.uniform(1.0, 1.8)),
-                      s * 0.4, s * 0.09, s * 0.03, B_RUST, n=3, sides=5)
-
-    def mcl_coral_city(k):
-        # Coral City, the capital of Mon Cala (canon: "built over a" reef, both peoples' preferred underwater style;
-        # TCW "Water War": ribbed shell domes and curving spires lit gold in the deep). Its look past that is a design
-        # choice: the royal palace's great ribbed shell dome on a terraced reef base, a tall central spire, a ring of
-        # lesser domes joined by sky-tubes, curving spires between them, coral growing over the terraces. ~13 units
-        rng = random.Random("hod_mcl_coral")
-        k.lathe([(6.4, -SKIRT), (6.2, 0.3), (5.0, 0.6), (4.8, 1.0)], [B_DUST, B_CONC, B_CONC], sides=18, jitter=0.06,
-                cap=B_CONC)                                                                     # the reef terraces
-        mcl_shell(k, 0.0, 0.0, 1.0, 3.0, 4.6, sides=20)                                         # the palace dome
-        for j in range(8):                                                                      # its outer ribs
-            a = 2 * math.pi * j / 8
-            mcl_curve(k, (3.1 * math.cos(a), 3.1 * math.sin(a), 1.0), (0.5 * math.cos(a), 0.5 * math.sin(a), 5.4), 1.0,
-                      0.16, 0.08, B_PLATE, n=5, sides=5)
-        mcl_spire(k, 0.0, 0.0, 5.2, 6.0, 0.45)
-        ring = []
-        for i in range(6):                                                                      # the lesser domes
-            a = 2 * math.pi * i / 6 + 0.25
-            x, y = 4.6 * math.cos(a), 4.6 * math.sin(a)
-            r = 0.9 + 0.3 * (i % 2)
-            mcl_shell(k, x, y, 0.6, r, r * 1.5, sides=14)
-            k.tube((x * 0.7, y * 0.7, 2.0), (x * 0.82, y * 0.82, 1.4), 0.2, B_PLATE_WIN, sides=6)
-            ring.append((x, y))
-            b = a + math.pi / 6                                                                 # spires between them
-            mcl_spire(k, 5.3 * math.cos(b), 5.3 * math.sin(b), 0.6, 3.0 + 1.5 * (i % 3) / 2, 0.22)
-        for (x0, y0), (x1, y1) in zip(ring, ring[1:] + ring[:1]):                               # sky-tubes
-            k.tube((x0, y0, 1.5), (x1, y1, 1.5), 0.13, B_PIPE, sides=6)
-        for _ in range(14):                                                                     # coral on the terraces
-            a, d = rng.uniform(0, 2 * math.pi), rng.uniform(3.4, 6.0)
-            mcl_coral_tuft(k, d * math.cos(a), d * math.sin(a), 0.5, rng.uniform(0.4, 0.8), rng)
-
-    def mcl_drome(k):
-        # the Moncaladrome, Mon Cala's opera house (canon: an opera house; its look is a design choice): three nested
-        # shell vaults stepping down from the stage end, ribs arching over each, a lit forecourt ring. ~9 units long
-        rng = random.Random("hod_mcl_drome")
-        k.lathe([(4.6, -SKIRT), (4.6, 0.35)], [B_CONC], sides=16, sy=0.7, cap=B_PAD)            # the forecourt
-        for i, (x, r, h) in enumerate(((-1.6, 2.2, 3.6), (0.6, 1.8, 2.8), (2.4, 1.3, 2.0))):   # the vaults
-            mcl_shell(k, x, 0.0, 0.35, r, h, sides=16, sy=0.75)
-            for j in (-2, -1, 0, 1, 2):                                                         # ribs over them
-                a = j * 0.45
-                mcl_curve(k, (x - r * 1.15 * math.cos(a), r * 0.9 * math.sin(a), 0.35),
-                          (x + r * 1.15 * math.cos(a), -r * 0.9 * math.sin(a), 0.35), h * 1.45, 0.09, 0.09, B_PLATE,
-                          n=6, sides=4)
-        for j in range(16):                                                                     # forecourt lights
-            a = 2 * math.pi * j / 16
-            x, y = 4.3 * math.cos(a), 3.0 * math.sin(a)
-            k.tube((x, y, 0.35), (x, y, 1.2), 0.04, B_PIPE, sides=4)
-            k.lathe([(0.12, 1.2), (0.12, 1.35)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
-        for _ in range(6):
-            a = rng.uniform(0, 2 * math.pi)
-            mcl_coral_tuft(k, 3.8 * math.cos(a), 2.6 * math.sin(a), 0.35, 0.5, rng)
-
-    def qua_tower(k, x, y, z0, h, r, legs=4):
-        """a Quarren tower: a dark tapering shaft over drooping tentacle buttresses, lit slits, a hooded crown"""
-        k.lathe([(r, z0), (r * 0.8, z0 + h * 0.4), (r * 0.55, z0 + h * 0.8), (r * 0.75, z0 + h * 0.86),
-                 (r * 0.3, z0 + h * 0.97), (0.0, z0 + h)], [B_BRICK, B_CONC_WIN, B_BRICK, B_SOOT, B_SOOT], sides=10,
-                cx=x, cy=y)
-        k.lathe([(r * 0.78, z0 + h * 0.83), (r * 0.78, z0 + h * 0.85)], [B_GLOW], sides=10, cx=x, cy=y)
-        for j in range(legs):
-            a = 2 * math.pi * j / legs + 0.4
-            mcl_curve(k, (x + r * 0.5 * math.cos(a), y + r * 0.5 * math.sin(a), z0 + h * 0.45),
-                      (x + r * 2.2 * math.cos(a), y + r * 2.2 * math.sin(a), z0), -h * 0.06, r * 0.3, r * 0.15, B_BRICK,
-                      n=4, sides=5)
-
-    def qua_hq(k):
-        # the Quarren headquarters in Quarren Town (canon: the Quarren capital's seat; in the Clone Wars Riff Tamson
-        # staged the attack on the Mon Calamari from it; its look is a design choice): a dark rock mound, a tall
-        # Quarren tower with tentacle buttresses, four lesser towers round it, a lit war-room drum, landing pads. ~11
-        rng = random.Random("hod_qua_hq")
-        k.lathe([(5.4, -SKIRT), (5.0, 0.6), (3.6, 1.6), (2.4, 2.0)], [B_SOOT, B_BRICK, B_BRICK], sides=13, jitter=0.12,
-                cap=B_CONC)                                                                     # the rock mound
-        qua_tower(k, 0.0, 0.0, 2.0, 10.0, 1.1, legs=6)
-        for i in range(4):
-            a = 2 * math.pi * i / 4 + 0.6
-            qua_tower(k, 3.4 * math.cos(a), 3.4 * math.sin(a), 0.9, 4.5 + 1.2 * (i % 2), 0.55)
-        k.lathe([(1.8, 2.0), (1.8, 3.0), (1.4, 3.4)], [B_CONC_WIN, B_ROOF], sides=14, cap=B_ROOF)  # the war-room drum
-        for a in (2.0, 4.6):                                                                    # landing pads
-            k.lathe([(0.8, 0.6), (0.8, 0.8)], [B_HAZARD], sides=12, cx=4.4 * math.cos(a), cy=4.4 * math.sin(a), cap=B_PAD)
-        for _ in range(8):
-            a, d = rng.uniform(0, 2 * math.pi), rng.uniform(4.2, 5.4)
-            mcl_coral_tuft(k, d * math.cos(a), d * math.sin(a), 0.3, 0.5, rng)
-
-    def mcl_city(k, band, rng):
-        # Mon Calamari reef cities (canon: underwater and surface cities; TCW: ribbed shell domes, curving spires,
-        # gold light): shell domes, spires, coral, small pads. band 1 outskirts .. 4 downtown; on a 2-unit grid
-        placed = []
-
-        def spot(r, lim=0.85):
-            for _ in range(20):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        for _ in range(1 + band // 2):                                                             # shell domes
-            r = rng.uniform(0.12, 0.2) + 0.02 * band
-            p_ = spot(r)
-            if p_:
-                mcl_shell(k, *p_, -0.3, r, 0.3 + r * 1.6, sides=12)
-        for _ in range(band):                                                                      # spires
-            p_ = spot(0.06)
-            if p_:
-                mcl_spire(k, *p_, -0.3, rng.uniform(0.6, 0.9) + 0.25 * band, rng.uniform(0.04, 0.06))
-        for _ in range(rng.randint(1, 3)):                                                         # coral
-            p_ = spot(0.08)
-            if p_:
-                mcl_coral_tuft(k, *p_, -0.1, rng.uniform(0.12, 0.2), rng)
-        if band >= 2 and rng.random() < 0.4:                                                       # a pad
-            p_ = spot(0.14)
-            if p_:
-                k.lathe([(0.13, -0.3), (0.13, 0.05)], [B_PLATE], sides=12, cx=p_[0], cy=p_[1], cap=B_PAD)
-
-    def qua_city(k, band, rng):
-        # Quarren towns (canon: Quarren Town in the depths, Zeran Town in the north; the look is a design choice): dark
-        # tentacle-buttressed towers, low rock domes, lit slits. band 1 outskirts .. 4 downtown
-        placed = []
-
-        def spot(r, lim=0.85):
-            for _ in range(20):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        for _ in range(1 + band):                                                                  # towers
-            r = rng.uniform(0.05, 0.08)
-            p_ = spot(r * 2.4)
-            if p_:
-                qua_tower(k, *p_, -0.3, rng.uniform(0.6, 0.9) + 0.22 * band, r, legs=3)
-        for _ in range(rng.randint(1, 2)):                                                         # rock domes
-            r = rng.uniform(0.1, 0.16)
-            p_ = spot(r)
-            if p_:
-                k.lathe([(r, -0.3), (r * 0.9, 0.05), (r * 0.5, 0.05 + r * 0.6), (0.0, 0.05 + r * 0.75)],
-                        [B_CONC_WIN, B_BRICK, B_BRICK], sides=9, cx=p_[0], cy=p_[1], jitter=0.08)
-        for _ in range(rng.randint(0, 2)):
-            p_ = spot(0.08)
-            if p_:
-                mcl_coral_tuft(k, *p_, -0.1, rng.uniform(0.1, 0.16), rng)
 
     def ieg_cliffhold(k):
         # Cliffhold (canon: "a spaceport city that was built directly into the face of a basalt cliff"; TCW "Mystery
@@ -5153,124 +4715,6 @@ def models(*only):
             k.tube(at(L * 0.2, 0, L * 0.2), at(L * 0.48, 0, L * 0.2), L * 0.08, B_PLATE, sides=10, r1=L * 0.05)
             k.tube(at(L * 0.48, 0, L * 0.2), at(L * 0.5, 0, L * 0.2), L * 0.05, B_GLOW, sides=10)
 
-    def lia_tower(k, x, y, z0, h, r, sides=16, crown=True):
-        """a Sienar corporate tower: a round shaft tapering in a gentle curve, glass bands, a bulging crown"""
-        prof = [(r, z0), (r * 0.94, z0 + h * 0.3), (r * 0.82, z0 + h * 0.6), (r * 0.72, z0 + h * 0.8)]
-        mats = [B_PLATE_WIN, B_BRICK, B_PLATE_WIN]
-        if crown:
-            prof += [(r * 0.98, z0 + h * 0.86), (r * 0.95, z0 + h * 0.92), (r * 0.4, z0 + h * 0.98), (0.0, z0 + h)]
-            mats += [B_CONC_WIN, B_BRICK, B_HULL, B_ROOF]
-        else:
-            prof += [(0.0, z0 + h * 0.84)]
-            mats += [B_ROOF]
-        k.lathe(prof, mats, sides=sides, cx=x, cy=y)
-        for q in (0.25, 0.5, 0.75):
-            rr = r * (1 - 0.3 * q) + 0.04
-            k.lathe([(rr, z0 + h * q), (rr, z0 + h * q + 0.12)], [B_RUST], sides=sides, cx=x, cy=y)
-
-    def lia_hq(k):
-        # the Santhe/Sienar Technologies Corporate Headquarters in Lianna City (Legends: the seat of Santhe/Sienar,
-        # Curich Engineering, Santhe Passenger and Freight and Sienar Fleet Systems; its look is a design choice):
-        # three round terraced podiums, a tall tapering main tower with a bulging executive crown and a spire, three
-        # satellite towers joined to it by curved sky-tubes, landing pads cantilevered from the tower, rings of
-        # light round the terraces, a plaza ring of lamps. ~14 across, ~17 high
-        rng = random.Random("hod_lia_hq")
-        for r, zz in ((7.0, 0.3), (5.6, 0.9), (4.4, 1.5)):                  # the podiums
-            k.lathe([(r, -SKIRT if r > 6 else zz - 0.6), (r, zz - 0.08), (r - 0.15, zz)], [B_CONC_WIN, B_CONC], sides=32,
-                    cap=B_DUST)
-            k.lathe([(r + 0.02, zz - 0.3), (r + 0.02, zz - 0.2)], [B_GLOW], sides=32)
-        lia_tower(k, 0.0, 0.0, 1.5, 14.0, 1.7, sides=20)
-        k.lathe([(0.2, 15.4), (0.08, 17.5)], [B_PIPE], sides=6)
-        k.lathe([(0.14, 17.4), (0.14, 17.6)], [B_GLOW], sides=6, cap=B_GLOW)
-        for j in range(3):                                                  # satellite towers and sky-tubes
-            b = 2 * math.pi * j / 3 + 0.5
-            x, y = 3.4 * math.cos(b), 3.4 * math.sin(b)
-            h = 7.0 + 1.6 * j
-            lia_tower(k, x, y, 1.5, h, 0.8, sides=16)
-            for zz in (h * 0.45, h * 0.75):
-                mcl_curve(k, (x * 0.78, y * 0.78, 1.5 + zz), (x * 0.4, y * 0.4, 1.5 + zz + 0.6), 0.3, 0.22, 0.22,
-                          B_PLATE_WIN, n=4, sides=8)
-        for j, zz in enumerate((5.0, 8.5, 11.5)):                           # cantilevered pads
-            b = 2 * math.pi * j / 3 + 0.5 + math.pi / 3
-            px, py = 2.9 * math.cos(b), 2.9 * math.sin(b)
-            k.lathe([(0.3, zz - 0.5), (1.0, zz - 0.12), (1.0, zz)], [B_PLATE, B_PLATE], sides=18, cx=px, cy=py, cap=B_PAD)
-            k.tube((1.1 * math.cos(b), 1.1 * math.sin(b), zz - 0.1), (px, py, zz - 0.1), 0.2, B_PLATE, sides=8)
-        for j in range(18):                                                 # plaza lamps
-            b = 2 * math.pi * j / 18
-            x, y = 6.6 * math.cos(b), 6.6 * math.sin(b)
-            k.tube((x, y, 0.3), (x, y, 1.2), 0.04, B_PIPE, sides=5)
-            k.lathe([(0.1, 1.2), (0.1, 1.35)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
-        for _ in range(8):                                                  # ornamental trees in planters
-            b, r = rng.uniform(0, 2 * math.pi), rng.uniform(4.8, 5.4)
-            x, y = r * math.cos(b), r * math.sin(b)
-            k.lathe([(0.25, 0.9), (0.25, 1.1)], [B_CONC], sides=10, cx=x, cy=y, cap=B_DUST)
-            k.lathe([(0.05, 1.1), (0.35, 1.4), (0.3, 1.8), (0.0, 1.95)], [B_SOOT, B_SOOT, B_SOOT], sides=8, cx=x, cy=y)
-
-    def lia_academy(k):
-        # the Melford Star Academy (Legends: "the First Star Academy", later the Imperial Naval Academy, at Melford on
-        # Anai's northern coast; before the war a Republic-era naval and flight academy, a design choice): a ribbed
-        # great dome over the main hall inside a colonnaded round courtyard, two curved wings of lecture halls, two
-        # observatory domes, a parade ground, a training courier on its pad and a mast. ~15 across
-        rng = random.Random("hod_lia_academy")
-        k.lathe([(7.2, -SKIRT), (7.2, 0.3)], [B_CONC], sides=32, sy=0.8, cap=B_DUST)                 # the grounds
-        k.lathe([(3.0, 0.3), (3.0, 1.6), (2.7, 2.7), (2.1, 3.6), (1.2, 4.2), (0.0, 4.45)],
-                [B_PLATE_WIN, B_PLATE, B_PLATE_WIN, B_PLATE, B_ROOF], sides=28)                       # the great dome
-        for j in range(12):                                                 # its ribs
-            b = 2 * math.pi * j / 12
-            mcl_curve(k, (3.05 * math.cos(b), 3.05 * math.sin(b), 1.0), (0.3 * math.cos(b), 0.3 * math.sin(b), 4.45), 0.5,
-                      0.08, 0.06, B_HULL, n=5, sides=5)
-        k.lathe([(0.35, 4.4), (0.25, 5.0), (0.0, 5.2)], [B_HULL, B_GLOW], sides=10)                  # the lantern
-        for j in range(24):                                                 # the colonnade
-            b = 2 * math.pi * j / 24
-            x, y = 4.2 * math.cos(b), 4.2 * math.sin(b) * 0.8
-            k.lathe([(0.14, 0.3), (0.12, 1.8), (0.18, 1.9)], [B_HULL, B_HULL], sides=8, cx=x, cy=y)
-        k.lathe([(4.45, 1.9), (4.45, 2.15), (3.95, 2.15)], [B_PLATE, B_ROOF], sides=32, sy=0.8)          # its ring beam
-        for s_ in (-1, 1):                                                  # curved wings of lecture halls
-            for q in range(7):
-                b = (math.pi / 2 if s_ > 0 else -math.pi / 2) + (q - 3) * 0.17
-                x, y = 5.6 * math.cos(b) * 1.15, 5.6 * math.sin(b) * 0.85
-                k.lathe([(0.75, 0.3), (0.75, 1.5), (0.55, 1.8), (0.0, 1.9)], [B_PLATE_WIN, B_ROOF, B_ROOF], sides=14,
-                        cx=x, cy=y)
-        for x, y in ((-5.4, 2.4), (5.6, -2.0)):                              # observatory domes
-            k.lathe([(0.9, 0.3), (0.9, 1.4)], [B_CONC_WIN], sides=16, cx=x, cy=y)
-            k.lathe([(0.95, 1.4), (0.85, 1.9), (0.5, 2.25), (0.0, 2.35)], [B_HULL, B_HULL, B_HULL], sides=16, cx=x, cy=y)
-            k.tube((x, y, 1.9), (x + 0.6, y + 0.3, 2.6), 0.12, B_PIPE, sides=6)
-        k.lathe([(1.6, 0.3), (1.6, 0.45)], [B_HAZARD], sides=20, cx=-5.0, cy=-3.0, cap=B_PAD)        # the pad
-        lia_hull(k, -5.0, -3.0, 0.45, 0.6, 2.4, cruiser=False)                # a training courier on it
-        k.tube((5.4, 3.2, 0.3), (5.4, 3.2, 5.0), 0.06, B_PIPE, sides=5)        # the mast
-        k.box(5.42, 3.15, 4.2, 5.45, 4.0, 4.8, B_RUST)
-        for _ in range(10):
-            b, r = rng.uniform(0, 2 * math.pi), rng.uniform(6.2, 6.9)
-            x, y = r * math.cos(b), r * math.sin(b) * 0.8
-            k.lathe([(0.05, 0.3), (0.35, 0.6), (0.3, 1.0), (0.0, 1.15)], [B_SOOT, B_SOOT, B_SOOT], sides=8, cx=x, cy=y)
-
-    def lia_skycity(k):
-        # Sky City (Legends: a city of Lianna; the map floats it over the Shaltin Strait, a design choice honouring
-        # the "Mission to Lianna" cover, McQuarrie's Bespin painting): a broad saucer of decks on a tapering stalk
-        # rising from the water, a ring of bulb towers on the rim, a central spire, lit windows round its edge,
-        # landing pads on outriggers. ~12 across, deck ~6 up
-        z0 = 5.5
-        k.lathe([(0.6, -SKIRT), (0.5, 0.0), (0.9, z0 * 0.5), (2.2, z0 - 0.6), (5.6, z0 - 0.1)],
-                [B_HULL, B_PLATE, B_PLATE_WIN, B_PLATE], sides=24)                                       # stalk and underside
-        k.lathe([(1.2, 0.0), (1.4, 0.4), (1.1, 0.8)], [B_GLOW, B_HULL], sides=16)                         # its foot glow
-        k.lathe([(5.6, z0 - 0.1), (6.0, z0 + 0.3), (5.8, z0 + 0.7), (4.6, z0 + 0.9)], [B_PLATE_WIN, B_CONC_WIN, B_PLATE],
-                sides=36, cap=B_CONC)                                                                   # the deck rim
-        k.lathe([(6.02, z0 + 0.2), (6.02, z0 + 0.35)], [B_GLOW], sides=36)
-        k.lathe([(4.4, z0 + 0.9), (4.0, z0 + 1.6), (3.0, z0 + 2.0)], [B_PLATE_WIN, B_PLATE], sides=32, cap=B_DUST)
-        lia_tower(k, 0.0, 0.0, z0 + 2.0, 6.0, 0.9, sides=18)                                            # the spire
-        for j in range(8):                                                  # bulb towers round the rim
-            b = 2 * math.pi * j / 8 + 0.2
-            x, y = 4.8 * math.cos(b), 4.8 * math.sin(b)
-            h = 1.8 + 0.8 * (j % 3)
-            k.lathe([(0.35, z0 + 0.9), (0.3, z0 + 0.9 + h * 0.5), (0.6, z0 + 0.9 + h * 0.75), (0.5, z0 + 0.9 + h),
-                     (0.0, z0 + 1.0 + h * 1.15)], [B_HULL, B_PLATE_WIN, B_CONC_WIN, B_ROOF], sides=14, cx=x, cy=y)
-        for j in range(3):                                                  # pads on outriggers
-            b = 2 * math.pi * j / 3 + 1.0
-            px, py = 7.3 * math.cos(b), 7.3 * math.sin(b)
-            k.tube((5.6 * math.cos(b), 5.6 * math.sin(b), z0 + 0.3), (px, py, z0 + 0.3), 0.18, B_PLATE, sides=8)
-            k.lathe([(0.3, z0 - 0.1), (1.0, z0 + 0.25), (1.0, z0 + 0.35)], [B_PLATE, B_PLATE], sides=18, cx=px, cy=py,
-                    cap=B_PAD)
-
     def lia_shipyard(k):
         # the Lianna shipyards in orbit (Legends: "Class IB civilian shipyards, capable of producing cruisers"; Sienar's
         # yards; the user, 2026-10-16: in space, Republic-era ships, no TIEs). Origin = the hub, placed east of the
@@ -5333,127 +4777,6 @@ def models(*only):
             x, y = x0 + (x1 - x0) * t, y0 + (y1 - y0) * t
             k.lathe([(0.12, zc + 0.8), (0.12, zc + 1.0)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
 
-    def lia_city(k, band, rng):
-        # Lianna's megalopolis (Legends: urban sprawl, Lianna Metro, Sienar's world; the user, 2026-10-16: real
-        # cities, a megalopolis, nothing square): every cell a block of round tapering towers on a podium, taller and
-        # denser towards downtown, sky-bridges between the towers, masts on the tallest, low curved blocks, domes
-        # and pads in the outskirts. band 1 outskirts .. 4 downtown (map px in from the urban edge); 2-unit grid
-        placed = []
-
-        def spot(r, lim=0.88):
-            for _ in range(30):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        base = (0.0, 0.5, 0.9, 1.5, 2.3)[band]
-        if band >= 2:                                                        # the podium under the block
-            ph = 0.12 + 0.06 * band
-            k.lathe([(0.9, -0.3), (0.9, ph - 0.03), (0.86, ph)], [B_CONC_WIN, B_CONC], sides=14, sy=rng.uniform(0.75, 1.0),
-                    rot=rng.uniform(0, 3.1), cap=B_ROOF)
-        else:
-            ph = -0.3
-        towers = []
-        for _ in range((1, 2, 3, 4, 5)[band]):                               # towers
-            r = rng.uniform(0.09, 0.14) + 0.015 * band
-            p_ = spot(r * 1.15)
-            if p_:
-                h = base * rng.uniform(1.0, 1.9)
-                lia_tower(k, *p_, ph, h, r, sides=10, crown=rng.random() < 0.7)
-                towers.append((p_[0], p_[1], ph + h, r))
-        towers.sort(key=lambda t: -t[2])
-        if band >= 3 and towers:                                             # a mast on the tallest
-            x, y, top, _r = towers[0]
-            k.tube((x, y, top - 0.05), (x, y, top + 0.6 + 0.2 * band), 0.025, B_PIPE, sides=4)
-            k.lathe([(0.04, top + 0.6 + 0.2 * band), (0.04, top + 0.7 + 0.2 * band)], [B_GLOW], sides=4, cx=x, cy=y, cap=B_GLOW)
-        if band >= 2:                                                        # sky-bridges between the towers
-            for (x0, y0, t0, r0), (x1, y1, t1, r1) in zip(towers, towers[1:]):
-                zz = ph + (min(t0, t1) - ph) * rng.uniform(0.35, 0.7)
-                k.tube((x0, y0, zz), (x1, y1, zz), 0.03 + 0.005 * band, B_PLATE_WIN, sides=6)
-        if band <= 2:                                                        # low curved blocks
-            r0, h = rng.uniform(0.25, 0.4), rng.uniform(0.2, 0.32) + 0.08 * band
-            p_ = spot(r0 * 0.9)
-            if p_:
-                a0 = rng.uniform(0, 2 * math.pi)
-                for q in range(4):
-                    b = a0 + q * 0.38
-                    k.lathe([(0.07, -0.3), (0.07, h), (0.0, h + 0.03)], [B_PLATE_WIN, B_ROOF], sides=10,
-                            cx=p_[0] + r0 * math.cos(b) - r0 * math.cos(a0 + 0.57),
-                            cy=p_[1] + r0 * math.sin(b) - r0 * math.sin(a0 + 0.57))
-        for _ in range(rng.randint(1, 2)):                                   # domes
-            r = rng.uniform(0.07, 0.11)
-            p_ = spot(r)
-            if p_:
-                z0 = max(ph, -0.3)
-                k.lathe([(r, z0), (r, z0 + 0.08), (r * 0.7, z0 + 0.08 + r * 0.55), (0.0, z0 + 0.08 + r * 0.75)],
-                        [B_CONC_WIN, B_HULL, B_HULL], sides=12, cx=p_[0], cy=p_[1])
-        if rng.random() < 0.35:                                              # a pad
-            p_ = spot(0.14)
-            if p_:
-                k.lathe([(0.13, -0.3), (0.13, max(ph, 0.05) + 0.03)], [B_PLATE], sides=16, cx=p_[0], cy=p_[1], cap=B_PAD)
-
-    def jab_roofhouse(k, x, y, z0, r, h):
-        """a Jabiimi rain house: a round drum on stilts, a steep conical rain roof with a drip ring"""
-        for j in range(5):
-            b = 2 * math.pi * j / 5
-            k.tube((x + r * 0.8 * math.cos(b), y + r * 0.8 * math.sin(b), z0 - 0.6), (x + r * 0.8 * math.cos(b),
-                   y + r * 0.8 * math.sin(b), z0 + 0.05), r * 0.08, B_SOOT, sides=5)
-        k.lathe([(r, z0), (r, z0 + h)], [B_CONC_WIN], sides=12, cx=x, cy=y, cap=B_CONC)
-        k.lathe([(r * 1.25, z0 + h - 0.02), (r * 1.2, z0 + h + 0.05), (r * 0.45, z0 + h + r * 1.1), (0.0, z0 + h + r * 1.3)],
-                [B_ROOF, B_ROOF, B_ROOF], sides=12, cx=x, cy=y)
-
-    def jab_gunship(k, x, y, z, head, L):
-        """a Republic gunship at rest: a rounded body, the cockpit bubble, the wings with their pods"""
-        ch, sh = math.cos(head), math.sin(head)
-        at = lambda u, v, zz: (x + ch * u - sh * v, y + sh * u + ch * v, z + zz)
-        k.tube(at(-L * 0.5, 0, L * 0.12), at(L * 0.3, 0, L * 0.14), L * 0.11, B_PLATE, sides=10, r1=L * 0.13)
-        k.tube(at(L * 0.3, 0, L * 0.14), at(L * 0.5, 0, L * 0.12), L * 0.13, B_PLATE_WIN, sides=10, r1=L * 0.05)
-        k.tube(at(L * 0.05, -L * 0.45, L * 0.2), at(L * 0.05, L * 0.45, L * 0.2), L * 0.04, B_RUST, sides=8)
-        for s_ in (-1, 1):
-            k.tube(at(-L * 0.05, s_ * L * 0.42, L * 0.2), at(L * 0.2, s_ * L * 0.42, L * 0.2), L * 0.05, B_PLATE, sides=8)
-        k.tube(at(-L * 0.5, 0, L * 0.2), at(-L * 0.6, 0, L * 0.42), L * 0.03, B_RUST, sides=6, r1=L * 0.01)
-
-    def jab_choal(k):
-        # Choal, the capital of Jabiim (Legends: the Republic army under Norcuna was wiped out near it; its look is a
-        # design choice for a monsoon world): a great round drum platform raised above the floods with drainage
-        # spouts, the domed council hall on it ringed by buttresses, rain houses with conical roofs on stilts all
-        # round, raised walkways joining them, a canal ring with a bridge, a landing pad, rain cisterns. ~14 across
-        rng = random.Random("hod_jab_choal")
-        k.lathe([(7.2, -SKIRT), (7.2, 0.15)], [B_DUST], sides=32, cap=B_DUST)                         # mud ground
-        k.lathe([(6.4, 0.15), (6.4, 0.2), (5.9, 0.2), (5.9, 0.15)], [B_GLOW, B_GLOW, B_GLOW], sides=32)  # canal sheen
-        k.lathe([(3.4, -SKIRT), (3.4, 1.4), (3.2, 1.6)], [B_CONC_WIN, B_CONC], sides=28, cap=B_CONC)   # the drum
-        for j in range(12):                                                   # drainage spouts
-            b = 2 * math.pi * j / 12
-            k.tube((3.3 * math.cos(b), 3.3 * math.sin(b), 1.2), (3.9 * math.cos(b), 3.9 * math.sin(b), 1.0), 0.09, B_PIPE,
-                   sides=6)
-        k.lathe([(2.4, 1.6), (2.4, 2.8), (2.1, 3.7), (1.4, 4.4), (0.5, 4.75), (0.0, 4.8)],
-                [B_BRICK, B_PLATE_WIN, B_ROOF, B_ROOF, B_ROOF], sides=24)                                # the council hall
-        for j in range(8):                                                    # its buttresses
-            b = 2 * math.pi * j / 8 + 0.2
-            mcl_curve(k, (3.1 * math.cos(b), 3.1 * math.sin(b), 1.6), (2.2 * math.cos(b), 2.2 * math.sin(b), 3.6), 0.3,
-                      0.18, 0.1, B_BRICK, n=4, sides=6)
-        k.lathe([(0.25, 4.75), (0.15, 5.8)], [B_PIPE], sides=8)
-        k.lathe([(0.2, 5.7), (0.2, 5.9)], [B_GLOW], sides=8, cap=B_GLOW)
-        houses = []
-        for j in range(14):                                                   # rain houses on stilts
-            b = 2 * math.pi * j / 14 + rng.uniform(-0.1, 0.1)
-            d = rng.uniform(4.4, 5.4)
-            x, y = d * math.cos(b), d * math.sin(b)
-            r, h = rng.uniform(0.45, 0.7), rng.uniform(0.8, 1.4)
-            jab_roofhouse(k, x, y, 0.8, r, h)
-            houses.append((x, y))
-        for (x0, y0), (x1, y1) in zip(houses, houses[1:] + houses[:1]):        # raised walkways
-            k.tube((x0, y0, 0.95), (x1, y1, 0.95), 0.08, B_PLATE, sides=6)
-        for j in range(0, 14, 3):
-            x, y = houses[j]
-            k.tube((x, y, 0.95), (x * 0.66, y * 0.66, 1.5), 0.1, B_PLATE, sides=6)
-        bx = 6.1                                                              # the bridge over the canal
-        k.tube((bx - 1.0, 0.0, 0.5), (bx + 1.2, 0.0, 0.5), 0.35, B_CONC, sides=10)
-        k.lathe([(1.0, 0.5), (1.0, 0.7)], [B_HAZARD], sides=18, cx=-4.8, cy=-2.8, cap=B_PAD)           # a landing pad
-        for x, y in ((2.8, 4.2), (-2.4, 4.6), (4.4, -3.0)):                    # rain cisterns
-            k.lathe([(0.45, 0.15), (0.45, 1.1), (0.3, 1.25)], [B_PIPE, B_ROOF], sides=12, cx=x, cy=y, cap=B_ROOF)
-
     def jab_bore(k):
         # the Jobreth Bore (Legends: "huge digging and boring machines continued to cut ever deeper into the surface
         # of the dying planet"; this one and its name are a design choice): a huge tracked machine on the rim of its
@@ -5494,314 +4817,13 @@ def models(*only):
             k.tube((x, y, 0.0), (x, y, 3.6), 0.05, B_PIPE, sides=4)
             k.lathe([(0.14, 3.6), (0.14, 3.8)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
 
-    def jab_shelter(k):
-        # Shelter Base (Legends: the Republic's command centre in the Battle of Jabiim; the user, 2026-10-16: the
-        # bases already stand): a big white command dome with red bands on a round apron, six prefab domes round it
-        # joined by covered tubes, a comm tower with a dish, curved earth berms, two pads with gunships, searchlights
-        k.lathe([(6.4, -SKIRT), (6.4, 0.25)], [B_CONC], sides=32, cap=B_DUST)
-        k.lathe([(2.6, 0.25), (2.6, 1.2), (2.2, 2.5), (1.3, 3.3), (0.0, 3.6)], [B_PLATE_WIN, B_PLATE, B_PLATE, B_PLATE],
-                sides=28)                                                                                 # command dome
-        for zz in (1.0, 2.0):
-            r = 2.62 if zz < 1.2 else 2.3
-            k.lathe([(r, zz), (r, zz + 0.18)], [B_RUST], sides=28)
-        pods = []
-        for j in range(6):
-            b = 2 * math.pi * j / 6 + 0.3
-            x, y = 4.2 * math.cos(b), 4.2 * math.sin(b)
-            k.lathe([(0.95, 0.25), (0.95, 0.75), (0.7, 1.35), (0.0, 1.55)], [B_PLATE_WIN, B_PLATE, B_PLATE], sides=16, cx=x, cy=y)
-            k.lathe([(0.97, 0.6), (0.97, 0.72)], [B_RUST], sides=16, cx=x, cy=y)
-            k.tube((x * 0.6, y * 0.6, 0.6), (x * 0.78, y * 0.78, 0.6), 0.35, B_PLATE, sides=10)
-            pods.append((x, y))
-        cx_, cy_ = 3.3 * math.cos(2.9), 3.3 * math.sin(2.9)                  # comm tower, between two pods
-        k.lathe([(0.45, 0.25), (0.3, 1.0), (0.16, 6.6)], [B_PLATE, B_PIPE], sides=8, cx=cx_, cy=cy_)
-        k.lathe([(0.15, 5.6), (1.1, 6.0), (1.25, 6.4)], [B_PLATE, B_PLATE], sides=16, cx=cx_, cy=cy_)
-        k.lathe([(0.12, 6.6), (0.12, 6.85)], [B_GLOW], sides=6, cx=cx_, cy=cy_, cap=B_GLOW)
-        for j in range(4):                                                    # curved earth berms
-            b0 = 2 * math.pi * j / 4 + 0.4
-            pts = [(6.0 * math.cos(b0 + q * 0.18), 6.0 * math.sin(b0 + q * 0.18)) for q in range(7)]
-            for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
-                k.tube((x0, y0, 0.3), (x1, y1, 0.3), 0.45, B_DUST, sides=8)
-        for x, y, hd in ((3.6, -4.6, 0.4), (-4.4, -3.8, 2.4)):                  # pads with gunships
-            k.lathe([(1.4, 0.25), (1.4, 0.4)], [B_HAZARD], sides=20, cx=x, cy=y, cap=B_PAD)
-            jab_gunship(k, x, y, 0.4, hd, 2.6)
-        for j in range(4):                                                    # searchlights
-            b = 2 * math.pi * j / 4 + 1.1
-            x, y = 5.4 * math.cos(b), 5.4 * math.sin(b)
-            k.lathe([(0.2, 0.25), (0.12, 2.4)], [B_PIPE], sides=6, cx=x, cy=y)
-            k.tube((x, y, 2.4), (x + 0.4 * math.cos(b), y + 0.4 * math.sin(b), 2.6), 0.2, B_GLOW, sides=8)
-
-    def jab_cobalt(k):
-        # Cobalt Station (Legends: a Republic fortification "just north of Monsoon Mesa"; the bases stand at the start):
-        # a curved rampart round a rocky knoll, four round gun turrets with twin heavy barrels on it, a domed bunker,
-        # a shield-generator dome with a glowing ring, a gate, ammunition bunkers. ~10 across
-        k.lathe([(5.0, -SKIRT), (4.6, 0.6), (3.4, 1.2)], [B_BRICK, B_DUST], sides=14, jitter=0.1, cap=B_DUST)   # knoll
-        for q in range(20):                                                   # the rampart (a gap for the gate)
-            if q in (9, 10):
-                continue
-            b0, b1 = 2 * math.pi * q / 20, 2 * math.pi * (q + 1) / 20
-            k.tube((3.2 * math.cos(b0), 3.2 * math.sin(b0), 1.6), (3.2 * math.cos(b1), 3.2 * math.sin(b1), 1.6), 0.55,
-                   B_CONC, sides=10)
-        for j in range(4):                                                    # gun turrets
-            b = 2 * math.pi * j / 4 + math.pi / 4
-            x, y = 3.2 * math.cos(b), 3.2 * math.sin(b)
-            k.lathe([(0.9, 1.2), (0.9, 2.4), (0.75, 2.7)], [B_PLATE_WIN, B_PLATE], sides=16, cx=x, cy=y, cap=B_PLATE)
-            k.lathe([(0.6, 2.7), (0.55, 3.1), (0.0, 3.3)], [B_PLATE, B_PLATE], sides=14, cx=x, cy=y)
-            for s_ in (-0.2, 0.2):
-                k.tube((x - s_ * math.sin(b), y + s_ * math.cos(b), 3.0),
-                       (x + 2.0 * math.cos(b) - s_ * math.sin(b), y + 2.0 * math.sin(b) + s_ * math.cos(b), 3.25), 0.1, B_SOOT,
-                       sides=8)
-        k.lathe([(1.6, 1.2), (1.6, 1.8), (1.1, 2.4), (0.0, 2.6)], [B_PLATE_WIN, B_PLATE, B_PLATE], sides=20, cx=-0.6, cy=0.4)
-        k.lathe([(1.0, 1.2), (0.9, 2.0), (0.5, 2.6), (0.0, 2.75)], [B_HULL, B_HULL, B_HULL], sides=18, cx=1.2, cy=-0.8)   # generator
-        k.lathe([(1.05, 1.6), (1.05, 1.75)], [B_GLOW], sides=18, cx=1.2, cy=-0.8)
-        for s_ in (-1, 1):                                                    # the gate towers
-            b = 2 * math.pi * 9.5 / 20 + s_ * 0.22
-            k.lathe([(0.45, 1.0), (0.45, 2.6), (0.0, 3.0)], [B_CONC_WIN, B_RUST], sides=12, cx=3.2 * math.cos(b), cy=3.2 * math.sin(b))
-
-    def jab_aurek(k):
-        # Camp Aurek (Legends: "an influential base for the Confederacy" on Jabiim; the bases stand at the start; its
-        # look is a design choice in Separatist tan): a tall droid-control spire with ribbed bands and a crown of
-        # antennas, rounded hab pods in a ring, a parked troop transport, racks of folded battle droids, a dish
-        # array, a fence of round posts. ~12 across
-        rng = random.Random("hod_jab_aurek")
-        k.lathe([(6.0, -SKIRT), (6.0, 0.25)], [B_DUST], sides=28, cap=B_DUST)
-        k.lathe([(1.6, 0.25), (1.3, 3.0), (0.9, 6.5), (1.3, 7.2), (1.0, 7.8), (0.4, 8.6), (0.0, 9.0)],
-                [B_HULL, B_HULL, B_PLATE_WIN, B_HULL, B_HULL, B_ROOF], sides=18)                         # the spire
-        for zz in (1.5, 3.0, 4.5, 6.0):
-            r = 1.6 - 0.1 * zz
-            k.lathe([(r, zz), (r, zz + 0.2)], [B_PLATE], sides=18)
-        for j in range(5):                                                    # its antennas
-            b = 2 * math.pi * j / 5
-            k.tube((0.8 * math.cos(b), 0.8 * math.sin(b), 7.6), (1.4 * math.cos(b), 1.4 * math.sin(b), 9.6), 0.05, B_PIPE,
-                   sides=4)
-        for j in range(7):                                                    # hab pods
-            b = 2 * math.pi * j / 7 + 0.2
-            x, y = 3.8 * math.cos(b), 3.8 * math.sin(b)
-            k.lathe([(0.0, 0.25), (0.8, 0.45), (0.95, 0.9), (0.8, 1.45), (0.0, 1.7)], [B_HULL, B_PLATE_WIN, B_HULL, B_ROOF],
-                    sides=14, cx=x, cy=y, sy=0.8)
-        tx, ty = -2.6, 3.0                                                    # the troop transport
-        k.lathe([(0.0, 0.25), (1.5, 0.5), (1.7, 1.2), (1.4, 1.9), (0.0, 2.2)], [B_HULL, B_HULL, B_PLATE, B_ROOF], sides=16,
-                cx=tx, cy=ty, sy=0.6)
-        k.tube((tx + 1.4, ty, 1.2), (tx + 2.6, ty, 1.1), 0.6, B_PLATE, sides=12, r1=0.3)
-        for q in range(3):                                                    # droid racks
-            x, y = 2.2 + q * 0.6, -3.2
-            k.tube((x, y, 0.25), (x, y, 1.6), 0.05, B_GIRDER, sides=4)
-            for zz in (0.6, 1.1):
-                k.lathe([(0.15, zz), (0.12, zz + 0.3), (0.0, zz + 0.38)], [B_HULL, B_HULL], sides=6, cx=x + 0.2, cy=y)
-        for x, y in ((3.6, 1.8), (-3.4, -1.6)):                                # dishes
-            k.tube((x, y, 0.25), (x, y, 1.6), 0.08, B_PIPE, sides=5)
-            k.lathe([(0.12, 1.4), (0.9, 1.75), (1.05, 2.05)], [B_HULL, B_HULL], sides=14, cx=x, cy=y)
-        for j in range(36):                                                   # the fence
-            b = 2 * math.pi * j / 36
-            k.lathe([(0.07, 0.25), (0.07, 1.0)], [B_PIPE], sides=5, cx=5.6 * math.cos(b), cy=5.6 * math.sin(b),
-                    cap=B_GLOW if j % 6 == 0 else B_PIPE)
-
-    def jab_shear(k):
-        # Outpost Shear (Legends: a defensive position of the Confederacy-allied Jabiimi Nationalists; it stands at the
-        # start): rough round stone bunkers on the ridge, curved trench berms, two artillery pieces, a watchtower with
-        # a lookout cabin, a banner. ~9 across
-        rng = random.Random("hod_jab_shear")
-        for x, y, r in ((0.0, 0.0, 1.6), (2.6, 1.2, 1.0), (-2.4, 1.4, 0.9)):     # stone bunkers
-            k.lathe([(r * 1.1, -SKIRT), (r, 0.6), (r * 0.8, 1.0), (0.0, 1.15)], [B_BRICK, B_BRICK, B_SOOT], sides=11, cx=x, cy=y,
-                    jitter=0.1)
-            k.lathe([(r * 1.01, 0.4), (r * 1.01, 0.55)], [B_DARK], sides=11, cx=x, cy=y)           # firing slit
-        for j in range(2):                                                    # curved trench berms
-            r0 = 3.4 + 0.8 * j
-            pts = [(r0 * math.cos(-0.6 + q * 0.25), r0 * math.sin(-0.6 + q * 0.25) - 1.0) for q in range(9)]
-            for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
-                k.tube((x0, y0, 0.2), (x1, y1, 0.2), 0.35, B_DUST, sides=8)
-        for x, y, hd in ((1.6, -2.4, -0.4), (-1.8, -2.2, -2.6)):               # artillery
-            k.lathe([(0.55, 0.0), (0.55, 0.45)], [B_SOOT], sides=12, cx=x, cy=y, cap=B_PLATE)
-            k.tube((x, y, 0.55), (x + 2.0 * math.cos(hd), y + 2.0 * math.sin(hd), 1.3), 0.12, B_SOOT, sides=8)
-        tx, ty = -0.4, 2.8                                                    # the watchtower
-        for j in range(4):
-            b = 2 * math.pi * j / 4 + 0.78
-            k.tube((tx + 0.6 * math.cos(b), ty + 0.6 * math.sin(b), 0.0), (tx + 0.3 * math.cos(b), ty + 0.3 * math.sin(b), 4.2),
-                   0.06, B_GIRDER, sides=4)
-        k.lathe([(0.55, 4.2), (0.55, 4.8), (0.7, 4.9), (0.0, 5.4)], [B_CONC_WIN, B_ROOF, B_ROOF], sides=10, cx=tx, cy=ty)
-        k.tube((0.0, 0.0, 1.1), (0.0, 0.0, 3.6), 0.05, B_PIPE, sides=4)       # the banner
-        k.box(0.03, -0.02, 2.7, 0.05, 1.0, 3.5, B_RUST)
-
-    def jab_city(k, band, rng):
-        # Jabiimi rain towns (Legends: a rain-soaked world; the look is a design choice; nothing square): round rain
-        # houses on stilts with steep conical roofs, raised walkways, mud-brick domes, cisterns. band 1 outskirts ..
-        # 4 town centre; 2-unit grid
-        placed = []
-
-        def spot(r, lim=0.85):
-            for _ in range(20):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        houses = []
-        for _ in range(2 + band):
-            r = rng.uniform(0.09, 0.14)
-            p_ = spot(r * 1.4)
-            if p_:
-                jab_roofhouse(k, *p_, -0.05, r, rng.uniform(0.15, 0.25) + 0.08 * band)
-                houses.append(p_)
-        for (x0, y0), (x1, y1) in zip(houses, houses[1:]):
-            k.tube((x0, y0, 0.0), (x1, y1, 0.0), 0.02, B_PLATE, sides=4)
-        for _ in range(rng.randint(1, 2)):                                     # mud-brick domes
-            r = rng.uniform(0.08, 0.12)
-            p_ = spot(r)
-            if p_:
-                k.lathe([(r, -0.3), (r, 0.0), (r * 0.7, r * 0.5), (0.0, r * 0.7)], [B_BRICK, B_BRICK, B_BRICK], sides=10,
-                        cx=p_[0], cy=p_[1])
-        if rng.random() < 0.5:                                                 # a cistern
-            p_ = spot(0.07)
-            if p_:
-                k.lathe([(0.06, -0.3), (0.06, 0.25), (0.04, 0.29)], [B_PIPE, B_ROOF], sides=10, cx=p_[0], cy=p_[1], cap=B_ROOF)
-
-    def sal_house(k, x, y, z0, r, h):
-        """a Saleucami adobe house: a round drum, a rounded dome, a ring of window light"""
-        k.lathe([(r * 1.05, z0), (r, z0 + h), (r * 0.85, z0 + h + r * 0.45), (r * 0.45, z0 + h + r * 0.8),
-                 (0.0, z0 + h + r * 0.9)], [B_CONC_WIN, B_DUST, B_DUST, B_DUST], sides=14, cx=x, cy=y)
-
-    def sal_taleucema(k):
-        # Taleucema, the capital of Saleucami (Legends; its look follows Revenge of the Sith's "bridge planet" concept,
-        # arcing parabolic bridges, a design choice): a domed assembly hall on a round terraced base, six round towers
-        # with lantern crowns in a ring, tall parabolic bridges arcing from tower to tower and from each tower to the
-        # hall, adobe houses round the foot, a plaza ring of lamps. ~15 across
-        rng = random.Random("hod_sal_taleucema")
-        for r, zz in ((7.2, 0.25), (5.6, 0.7)):
-            k.lathe([(r, -SKIRT if r > 7 else zz - 0.5), (r, zz - 0.05), (r - 0.12, zz)], [B_CONC_WIN, B_CONC], sides=32,
-                    cap=B_DUST)
-        k.lathe([(2.6, 0.7), (2.6, 2.0), (2.3, 3.0), (1.6, 3.9), (0.6, 4.4), (0.0, 4.5)],
-                [B_PLATE_WIN, B_PLATE, B_ROOF, B_ROOF, B_ROOF], sides=28)                                  # the hall
-        k.lathe([(0.5, 4.4), (0.3, 5.6), (0.0, 6.0)], [B_PLATE, B_GLOW], sides=10)
-        towers = []
-        for j in range(6):
-            b = 2 * math.pi * j / 6 + 0.25
-            x, y = 4.6 * math.cos(b), 4.6 * math.sin(b)
-            h = 6.0 + 1.2 * (j % 2)
-            k.lathe([(0.75, 0.7), (0.6, h * 0.7), (0.85, h * 0.85), (0.85, h), (0.4, h + 0.5), (0.0, h + 0.7)],
-                    [B_PLATE_WIN, B_CONC, B_CONC_WIN, B_ROOF, B_ROOF], sides=16, cx=x, cy=y)
-            towers.append((x, y, h))
-        for (x0, y0, h0), (x1, y1, h1) in zip(towers, towers[1:] + towers[:1]):   # bridges arcing tower to tower
-            zz = min(h0, h1) * 0.55
-            mcl_curve(k, (x0, y0, zz), (x1, y1, zz), 1.8, 0.16, 0.16, B_PLATE, n=10, sides=8)
-        for x, y, h in towers:                                               # and tower to hall
-            mcl_curve(k, (x * 0.84, y * 0.84, h * 0.42), (x * 0.52, y * 0.52, 2.6), 1.2, 0.14, 0.14, B_PLATE, n=8, sides=8)
-        for _ in range(18):                                                  # adobe houses round the foot
-            b, d = rng.uniform(0, 2 * math.pi), rng.uniform(5.9, 6.9)
-            sal_house(k, d * math.cos(b), d * math.sin(b), 0.25, rng.uniform(0.3, 0.45), rng.uniform(0.3, 0.6))
-        for j in range(16):
-            b = 2 * math.pi * j / 16
-            x, y = 5.4 * math.cos(b), 5.4 * math.sin(b)
-            k.lathe([(0.05, 0.7), (0.05, 1.5)], [B_PIPE], sides=5, cx=x, cy=y)
-            k.lathe([(0.1, 1.5), (0.1, 1.65)], [B_GLOW], sides=6, cx=x, cy=y, cap=B_GLOW)
-
-    def sal_spaceport(k):
-        # Saleucami town's spaceport (canon: a spaceport town at the start of the Imperial era; TCW / Bad Batch stills
-        # show tall billboards; the look is a design choice): three dished landing bowls, a control tower with a
-        # bulging cab, two domed hangars, a cargo ring of tanks, two billboards on tall legs. ~12 across
-        k.lathe([(6.4, -SKIRT), (6.4, 0.25)], [B_CONC], sides=30, sy=0.8, cap=B_DUST)
-        for x, y in ((-3.2, -1.6), (0.4, -2.8), (3.6, -1.2)):                # the landing bowls
-            k.lathe([(1.5, 0.25), (1.6, 0.7), (1.35, 0.75), (0.9, 0.45)], [B_PLATE, B_HAZARD, B_PLATE], sides=20, cx=x, cy=y,
-                    cap=B_PAD)
-            for j in range(6):
-                b = 2 * math.pi * j / 6
-                k.lathe([(0.07, 0.7), (0.07, 0.85)], [B_GLOW], sides=4, cx=x + 1.5 * math.cos(b), cy=y + 1.5 * math.sin(b),
-                        cap=B_GLOW)
-        k.lathe([(0.7, 0.25), (0.5, 4.2), (1.2, 4.6), (1.2, 5.1), (0.6, 5.5), (0.0, 5.6)],
-                [B_CONC_WIN, B_CONC, B_PLATE_WIN, B_ROOF, B_ROOF], sides=16, cx=0.2, cy=1.2)            # the tower
-        for x in (-3.0, 3.2):                                                 # domed hangars
-            k.lathe([(1.4, 0.25), (1.4, 0.9), (1.0, 1.7), (0.0, 2.0)], [B_PLATE_WIN, B_ROOF, B_ROOF], sides=18, cx=x, cy=2.6,
-                    sy=0.8)
-        for j in range(6):                                                    # tanks
-            b = 2 * math.pi * j / 6
-            k.lathe([(0.35, 0.25), (0.35, 0.9), (0.2, 1.05)], [B_PIPE, B_ROOF], sides=10, cx=5.4 + 0.7 * math.cos(b),
-                    cy=1.0 + 0.7 * math.sin(b), cap=B_ROOF)
-        for x, y, a in ((-5.0, 1.2, 0.8), (1.8, 4.4, -0.3)):                  # billboards on legs
-            for s_ in (-1, 1):
-                k.lathe([(0.08, 0.25), (0.08, 3.0)], [B_PIPE], sides=6, cx=x + s_ * 0.7 * math.cos(a), cy=y + s_ * 0.7 * math.sin(a))
-            cslab(k, x, y, 2.4, 3.6, 1.0, 0.06, a, B_RUST, B_PLATE)
-
-    def sal_lawquane(k):
-        # the Lawquane farmstead (canon, TCW "The Deserter": Cut Lawquane's farm in Saleucami's wetlands, where Captain
-        # Rex hid; the look is a design choice after the episode): a round domed adobe house with two smaller domes
-        # joined to it, a barn dome, a water tower, a ring of fenced crop rows, a speeder pad. ~9 across
-        k.lathe([(4.8, -SKIRT), (4.8, 0.2)], [B_DUST], sides=28, cap=B_DUST)
-        sal_house(k, 0.0, 0.0, 0.2, 1.3, 0.9)
-        for x, y in ((1.5, 0.6), (-1.2, 1.1)):
-            sal_house(k, x, y, 0.2, 0.6, 0.5)
-        sal_house(k, -1.8, -2.0, 0.2, 0.9, 0.6)                              # the barn
-        k.lathe([(0.12, 0.2), (0.12, 1.8)], [B_PIPE], sides=6, cx=2.2, cy=-1.4)   # the water tower
-        k.lathe([(0.45, 1.8), (0.45, 2.5), (0.0, 2.75)], [B_PIPE, B_ROOF], sides=12, cx=2.2, cy=-1.4)
-        for q in range(7):                                                    # crop rows on an arc
-            b0 = 2.4 + q * 0.12
-            for j in range(10):
-                a0, a1 = b0, b0 + 0.08
-                r = 3.0 + j * 0.16
-                k.tube((r * math.cos(a0), r * math.sin(a0), 0.25), (r * math.cos(a1), r * math.sin(a1), 0.25), 0.05, B_SOOT, sides=4)
-        for j in range(30):                                                   # the fence
-            b = 2 * math.pi * j / 30
-            k.lathe([(0.04, 0.2), (0.04, 0.6)], [B_PIPE], sides=4, cx=4.4 * math.cos(b), cy=4.4 * math.sin(b))
-        k.lathe([(0.7, 0.2), (0.7, 0.32)], [B_HAZARD], sides=16, cx=1.6, cy=2.8, cap=B_PAD)
-
-    def sal_cloning(k):
-        # the Saleucami Cloning Complex (Legends: "an installation, overseen by the Dark Jedi Sora Bulq, built in the
-        # Magma Caverns"; it stands at the start, like the Jabiim bases): the mouth of the caverns in a volcanic rock
-        # mound glowing with lava, three glass cloning-tank towers lit from inside, a Separatist command dome, a lava
-        # channel running out of the mouth, a landing pad. ~11 across
-        k.lathe([(5.4, -SKIRT), (5.0, 1.2), (3.6, 3.0), (2.0, 4.0), (0.0, 4.3)], [B_SOOT, B_SOOT, B_BRICK, B_BRICK],
-                sides=12, cx=-1.4, cy=3.9, sy=0.8, jitter=0.15)                     # the mound, behind the mouth
-        k.lathe([(1.4, 0.0), (1.4, 1.2), (1.0, 1.9), (0.0, 2.2)], [B_DARK, B_DARK, B_DARK], sides=12, cx=0.9, cy=-0.6,
-                sy=0.45)                                                                                   # the mouth
-        k.lathe([(1.0, 0.05), (1.0, 0.2)], [B_GLOW], sides=12, cx=0.9, cy=-0.6, sy=0.45, cap=B_GLOW)
-        mcl_curve(k, (1.4, -1.0, 0.1), (5.0, -3.4, 0.05), 0.1, 0.35, 0.25, B_GLOW, n=8, sides=6)        # the lava channel
-        for j, (x, y) in enumerate(((3.0, 1.2), (4.2, 0.0), (2.8, -0.2))):   # the cloning-tank towers
-            h = 3.4 + 0.6 * j
-            k.lathe([(0.75, 0.0), (0.75, 0.5)], [B_PLATE], sides=16, cx=x, cy=y, cap=B_PLATE)
-            k.lathe([(0.55, 0.5), (0.55, h)], [B_GLOW], sides=16, cx=x, cy=y)
-            for zz in (1.4, 2.4):
-                k.lathe([(0.6, zz), (0.6, zz + 0.12)], [B_PLATE], sides=16, cx=x, cy=y)
-            k.lathe([(0.75, h), (0.6, h + 0.3), (0.0, h + 0.5)], [B_HULL, B_HULL], sides=16, cx=x, cy=y)
-        k.lathe([(1.6, 0.0), (1.6, 0.8), (1.2, 1.6), (0.0, 1.9)], [B_HULL, B_HULL, B_ROOF], sides=18, cx=-3.2, cy=-2.6)  # dome
-        k.lathe([(1.62, 0.6), (1.62, 0.75)], [B_GLOW], sides=18, cx=-3.2, cy=-2.6)
-        k.lathe([(1.0, 0.0), (1.0, 0.15)], [B_HAZARD], sides=16, cx=-0.4, cy=-3.8, cap=B_PAD)
-
-    def sal_city(k, band, rng):
-        # Saleucami towns (the look is a design choice: adobe domes after TCW's farm, small arched "bridge planet"
-        # spans between them): round domed houses, a taller domed tower downtown, little parabolic bridges, cisterns.
-        # band 1 outskirts .. 4 centre; 2-unit grid
-        placed = []
-
-        def spot(r, lim=0.85):
-            for _ in range(20):
-                x, y = rng.uniform(-lim, lim), rng.uniform(-lim, lim)
-                if all(math.hypot(x - a, y - b) > r + c for a, b, c in placed):
-                    placed.append((x, y, r))
-                    return x, y
-            return None
-        houses = []
-        for _ in range(2 + band):
-            r = rng.uniform(0.09, 0.15)
-            p_ = spot(r * 1.1)
-            if p_:
-                h = rng.uniform(0.12, 0.22) + 0.06 * band
-                sal_house(k, *p_, -0.3, r, h + 0.3)
-                houses.append((p_[0], p_[1], h))
-        if band >= 3:                                                         # a domed tower
-            p_ = spot(0.1)
-            if p_:
-                hh = 0.8 + 0.25 * band
-                k.lathe([(0.09, -0.3), (0.08, hh), (0.12, hh + 0.08), (0.0, hh + 0.22)], [B_CONC_WIN, B_ROOF, B_ROOF],
-                        sides=10, cx=p_[0], cy=p_[1])
-        for (x0, y0, h0), (x1, y1, h1) in zip(houses, houses[1:]):            # little arched bridges
-            if rng.random() < 0.5:
-                mcl_curve(k, (x0, y0, min(h0, h1) - 0.05), (x1, y1, min(h0, h1) - 0.05), 0.12, 0.02, 0.02, B_PLATE, n=5,
-                          sides=4)
-
-    build("hod_bon_spaceport", bon_spaceport, tex="hod_bonadan")
+    build("hod_bon_spaceport", ak.bon_spaceport, tex="hod_bonadan")
     build("hod_bon_shipyard", bon_shipyard, tex="hod_bonadan", extra=bon_ships)
-    build("hod_bon_weather", bon_weather, tex="hod_bonadan")
+    build("hod_bon_weather", ak.bon_weather, tex="hod_bonadan")
     for band in range(1, 5):
         for v in range(1, 5):
             rng_b = random.Random(f"hod_bon_city{band}{v}")
-            build(f"hod_bon_city_{band}{v}", lambda k, band=band, rng=rng_b: bon_city(k, band, rng), shader="PdxMeshSnow",
+            build(f"hod_bon_city_{band}{v}", lambda k, band=band, rng=rng_b: ak.bon_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_bonadan")
     build("hod_pam_docks", pam_docks, tex="hod_pammant", extra=pam_ships)
     build("hod_pam_liftport", pam_liftport, tex="hod_pammant")
@@ -5811,29 +4833,29 @@ def models(*only):
             rng_p = random.Random(f"hod_pam_city{band}{v}")
             build(f"hod_pam_city_{band}{v}", lambda k, band=band, rng=rng_p: pam_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_pammant")
-    for name, fn in (("hod_sal_taleucema", sal_taleucema), ("hod_sal_spaceport", sal_spaceport),
-                     ("hod_sal_lawquane", sal_lawquane), ("hod_sal_cloning", sal_cloning)):
+    for name, fn in (("hod_sal_taleucema", ak.sal_taleucema), ("hod_sal_spaceport", ak.sal_spaceport),
+                     ("hod_sal_lawquane", ak.sal_lawquane), ("hod_sal_cloning", ak.sal_cloning)):
         build(name, fn, tex="hod_saleucami")
     for band in range(1, 5):
         for v in range(1, 5):
             rng_s = random.Random(f"hod_sal_city{band}{v}")
-            build(f"hod_sal_city_{band}{v}", lambda k, band=band, rng=rng_s: sal_city(k, band, rng), shader="PdxMeshSnow",
+            build(f"hod_sal_city_{band}{v}", lambda k, band=band, rng=rng_s: ak.sal_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_saleucami")
-    for name, fn in (("hod_jab_choal", jab_choal), ("hod_jab_bore", jab_bore), ("hod_jab_shelter", jab_shelter),
-                     ("hod_jab_cobalt", jab_cobalt), ("hod_jab_aurek", jab_aurek), ("hod_jab_shear", jab_shear)):
+    for name, fn in (("hod_jab_choal", ak.jab_choal), ("hod_jab_bore", jab_bore), ("hod_jab_shelter", ak.jab_shelter),
+                     ("hod_jab_cobalt", ak.jab_cobalt), ("hod_jab_aurek", ak.jab_aurek), ("hod_jab_shear", ak.jab_shear)):
         build(name, fn, tex="hod_jabiim")
     for band in range(1, 5):
         for v in range(1, 5):
             rng_j = random.Random(f"hod_jab_city{band}{v}")
-            build(f"hod_jab_city_{band}{v}", lambda k, band=band, rng=rng_j: jab_city(k, band, rng), shader="PdxMeshSnow",
+            build(f"hod_jab_city_{band}{v}", lambda k, band=band, rng=rng_j: ak.jab_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_jabiim")
-    for name, fn in (("hod_lia_hq", lia_hq), ("hod_lia_academy", lia_academy), ("hod_lia_skycity", lia_skycity),
+    for name, fn in (("hod_lia_hq", ak.lia_hq), ("hod_lia_academy", ak.lia_academy), ("hod_lia_skycity", ak.lia_skycity),
                      ("hod_lia_shipyard", lia_shipyard)):
         build(name, fn, tex="hod_lianna")
     for band in range(1, 5):
         for v in range(1, 5):
             rng_l = random.Random(f"hod_lia_city{band}{v}")
-            build(f"hod_lia_city_{band}{v}", lambda k, band=band, rng=rng_l: lia_city(k, band, rng), shader="PdxMeshSnow",
+            build(f"hod_lia_city_{band}{v}", lambda k, band=band, rng=rng_l: ak.lia_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_lianna")
     for name, fn in (("hod_ieg_cliffhold", ieg_cliffhold), ("hod_ieg_laserweb", ieg_laserweb), ("hod_ieg_choir", ieg_choir),
                      ("hod_ieg_boneyard", ieg_boneyard)):
@@ -5843,16 +4865,16 @@ def models(*only):
             rng_i = random.Random(f"hod_ieg_city{band}{v}")
             build(f"hod_ieg_city_{band}{v}", lambda k, band=band, rng=rng_i: ieg_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_iego")
-    build("hod_mcl_coral_city", mcl_coral_city, tex="hod_moncala", shader="PdxMeshHodUnderwater")   # seen under the sea:
-    build("hod_mcl_drome", mcl_drome, tex="hod_moncala", shader="PdxMeshHodUnderwater")             # gfx/FX/pdxmesh.shader
-    build("hod_mcl_quarren_hq", qua_hq, tex="hod_moncala", shader="PdxMeshHodUnderwater")
+    build("hod_mcl_coral_city", ak.mcl_coral_city, tex="hod_moncala", shader="PdxMeshHodUnderwater")   # seen under the sea:
+    build("hod_mcl_drome", ak.mcl_drome, tex="hod_moncala", shader="PdxMeshHodUnderwater")             # gfx/FX/pdxmesh.shader
+    build("hod_mcl_quarren_hq", ak.qua_hq, tex="hod_moncala", shader="PdxMeshHodUnderwater")
     for band in range(1, 5):
         for v in range(1, 5):
             rng_m = random.Random(f"hod_mcl_city{band}{v}")
-            build(f"hod_mcl_city_{band}{v}", lambda k, band=band, rng=rng_m: mcl_city(k, band, rng), shader="PdxMeshHodUnderwater",
+            build(f"hod_mcl_city_{band}{v}", lambda k, band=band, rng=rng_m: ak.mcl_city(k, band, rng), shader="PdxMeshHodUnderwater",
                   tex="hod_moncala")
             rng_q = random.Random(f"hod_mcl_qcity{band}{v}")
-            build(f"hod_mcl_qcity_{band}{v}", lambda k, band=band, rng=rng_q: qua_city(k, band, rng), shader="PdxMeshHodUnderwater",
+            build(f"hod_mcl_qcity_{band}{v}", lambda k, band=band, rng=rng_q: ak.qua_city(k, band, rng), shader="PdxMeshHodUnderwater",
                   tex="hod_moncala")
     build("hod_flo_complex", florrum_complex)
     build("hod_flo_refinery", florrum_refinery)
