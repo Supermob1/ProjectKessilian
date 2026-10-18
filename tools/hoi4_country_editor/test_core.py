@@ -2,7 +2,10 @@
 import os
 import tempfile
 
-from hoi4_country_editor import Mod, REQUIRED, block_text, get, parse, read_text, set_loc, set_top
+import random
+
+from hoi4_country_editor import (Mod, REQUIRED, ROLES, add_character, block_text, character_text, get, make_flag,
+                                 parse, read_text, save_flag, save_portrait, set_loc, set_top, suggest_names)
 
 FILES = {
     'common/country_tags/t.txt': 'AAA = "countries/A.txt"\n',
@@ -56,6 +59,27 @@ with tempfile.TemporaryDirectory() as d:
     mod.reload()
     assert mod.loc.get('AAA_DEF') == 'the Aland' and mod.loc.get('AAA_ADJ') == 'Alandic' and 'AAA' not in mod.loc
     assert open(loc, 'rb').read().startswith(b'\xef\xbb\xbf')
+
+    # add leaders of every role: valid script, recruited in history, readable by the checker
+    from PIL import Image
+    Image.new('RGB', (300, 300), (9, 9, 9)).save(os.path.join(d, 'face.png'))
+    pic = save_portrait(mod, 'AAA', 'AAA_ann', os.path.join(d, 'face.png'))
+    for i, role in enumerate(ROLES):
+        add_character(mod, 'AAA', f'AAA_new{i}', character_text('AAA', f'AAA_new{i}', 'New', role, 'bad_sub', 't1', pic))
+        mod.reload()
+    c = mod.country('AAA')
+    assert [x[0] for x in c.leaders][-5:] == [f'AAA_new{i}' for i in range(5)]
+    assert c.ideo_rows['bad']['leader'] == 'AAA_new0' and all(x[4] == pic for x in c.leaders[-5:])
+    assert Image.open(mod.path(pic)).size == (156, 210)
+
+    flag = make_flag('three horizontal', [(255, 0, 0), (0, 255, 0), (0, 0, 255)], Image.new('RGBA', (10, 10), 'white'))
+    save_flag(mod, 'AAA_bad', flag)
+    mod.reload()
+    assert mod.country('AAA').ideo_rows['bad']['flag'] == 'AAA_bad.tga'
+    assert Image.open(mod.path('gfx/flags/small/AAA_bad.tga')).size == (10, 7)
+
+    n, long, adj, party = suggest_names('corist', 'Aland', 'Alandic', random.Random(1))
+    assert n and long and adj == 'Alandic' and party and suggest_names('nope', 'Aland', '', random.Random(1))[0]
 
 assert parse('a = { b = "x y" c >= 2 { 1 2 } }') == [('a', [('b', 'x y'), ('c', '2'), ('', [('', '1'), ('', '2')])])]
 print('ok')
