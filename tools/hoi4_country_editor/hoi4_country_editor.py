@@ -633,6 +633,7 @@ def write_text(path, text):
 # ---------------------------------------------------------------- Mod model
 
 LOC_LINE = re.compile(r'^\s*([^\s#:]+):\d*\s*"(.*)"\s*(?:#.*)?$')
+LOC_START = re.compile(r'^\s*([^\s#:]+):\d*\s*"')
 
 
 class Mod:
@@ -695,12 +696,15 @@ class Mod:
 
         self.loc = {}
         self.loc_file = {}
+        self.loc_broken = {}  # key -> (file, line number) of lines the game cannot read (e.g. missing end quote)
         for f in self.files('localisation', '_l_english.yml'):
-            for line in read_text(f).splitlines():
+            for n, line in enumerate(read_text(f).splitlines(), 1):
                 m = LOC_LINE.match(line)
                 if m:
                     self.loc[m.group(1)] = m.group(2)
                     self.loc_file[m.group(1)] = f
+                elif LOC_START.match(line):
+                    self.loc_broken[LOC_START.match(line).group(1)] = (f, n)
 
         self.characters = {}  # id -> (body, file)
         for f in self.files('common/characters'):
