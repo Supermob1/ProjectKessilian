@@ -98,8 +98,13 @@ broken = TREE.replace('\t\tx = 2\n\t\ty = 0\n\t}', '\t\tx = 2\n\t\ty = 0\n')
 assert brace_problem(TREE) is None
 assert brace_problem(broken)[0] == 5, brace_problem(broken)
 assert brace_problem(TREE + '}')[1].startswith('Extra')
+assert brace_problem(TREE.rstrip()[:-1])[1].startswith('The file ends with 1 block')  # focus_tree not closed at the end
 with tempfile.TemporaryDirectory() as d:
     write_text(os.path.join(d, 'x.txt'), broken)
     probs = check(FocusFile(os.path.join(d, 'x.txt')), Mod(d), others={})
     assert len(probs) == 1 and 'line 5' in probs[0][2]
+    write_text(os.path.join(d, 'y.txt'), TREE.rstrip()[:-1])
+    ff = FocusFile(os.path.join(d, 'y.txt'))
+    check(ff, Mod(d), others={})[0][3]()  # the one-click fix adds the missing } at the end
+    assert brace_problem(ff.text) is None and len(ff.focuses) == 3
 print('ok')

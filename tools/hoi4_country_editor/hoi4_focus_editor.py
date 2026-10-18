@@ -75,7 +75,9 @@ def brace_problem(text):
                     return open_line, (f'Missing "}}": the block opened on line {open_line} is not closed '
                                        f'before the {t} on line {line}')
     if stack:
-        return stack[-1][0], f'Missing "}}": the "{{" on line {stack[-1][0]} is never closed'
+        return stack[0][0], (f'The file ends with {len(stack)} block(s) still open: the "{{" on line {stack[0][0]} '
+                             f'is never closed, so a "}}" is missing at the end (HOI4 closes it itself and only '
+                             f'notes it in error.log)')
     return None
 
 
@@ -290,6 +292,10 @@ def check(ff, mod, sprites=None, others=None):
     out = []
     broken = brace_problem(ff.text)
     if broken:  # everything after a missing brace is misread, so other checks would only add noise
+        if broken[1].startswith('The file ends'):  # nothing is misread before the end: closing it there is safe
+            depth = brace_depth(ff.text)
+            return [('error', '', broken[1] + '. Double-click to add it.',
+                     lambda: ff.apply(ff.text.rstrip() + '\n' + '}' * depth + '\n'))]
         return [('error', '', broken[1] + '. Double-click to open the file text there. '
                  '(Other checks wait until this is fixed.)', None)]
     if not ff.trees and not any(f['tree'] == -1 for f in ff.focuses.values()):
@@ -969,11 +975,11 @@ def run_gui(mod_root):
             return
         fid, fix = fixes[sel[0]]
         line = re.search(r'line (\d+)', problems.item(sel[0], 'values')[2])
-        if not fid and line:
-            edit_file_text(int(line.group(1)))
-        elif fix:
+        if fix:
             fix()
             changed()
+        elif not fid and line:
+            edit_file_text(int(line.group(1)))
         elif fid in st['ff'].focuses:
             st['sel'] = fid
             fill_form()
