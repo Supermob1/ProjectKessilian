@@ -472,15 +472,16 @@ HOD_op_geonosis_buildup_REP = {
 	}
 }
 # Confederacy: garrison both lane ends on Geonosis (278 faces Christophsis, 282 faces Rishi) and the hidden base on Rishi (268).
-# Geonosis is GEO's until Clone_wars_start annexes it, so before that only 268 can really be garrisoned.
+# Geonosis is GEO's until Clone_wars_start annexes it, so before the war only 268 is reachable; the battle
+# itself starts with the droid army of history/units/HOD_op_geonosis_defence.txt on Geonosis.
 HOD_op_geonosis_buildup_CIS = {
 	allowed = { original_tag = CIS }
 	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = put_unit_buffers
-		ratio = 0.5
-		states = { 278 282 35 273 268 }
+		ratio = 0.2  # one small state: half the army would not fit its supply
+		states = { 268 }
 		subtract_fronts_from_need = no
 	}
 	ai_strategy = {
