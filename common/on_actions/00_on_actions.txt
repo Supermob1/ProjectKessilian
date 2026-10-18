@@ -1,4 +1,4 @@
-# yearly on_action by Yard1
+# on_actions: HOD calendar setup at startup and its daily counter
 
 on_actions = {
 	on_startup = {
@@ -24,7 +24,7 @@ on_actions = {
 			}
 		}
 	}
-	# this is executed on the 1st of every year FOR ONE RANDOM COUNTRY - use every_country inside
+	# runs every day for UTI only: the HOD calendar is kept on UTI
 	on_daily_UTI = {
 		effect = {
 			# HOD calendar: 10 months of 35 days + 18 days of festivities (month 11) = 368 days, no year 0
