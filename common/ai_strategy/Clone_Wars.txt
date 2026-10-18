@@ -454,7 +454,7 @@ Clone_Wars_Assault_Kamino_REP = {
 ############################################################################################
 
 # ---- Before the war: both sides gather their armies around Geonosis ----
-# Republic: stage on Christophsis (hyperlane to Geonosis) and Rishi
+# Republic: stage at both hyperlanes into Geonosis: Christophsis (state 444) and Rishi (state 262)
 HOD_op_geonosis_buildup_REP = {
 	allowed = { original_tag = REP }
 	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
@@ -462,7 +462,7 @@ HOD_op_geonosis_buildup_REP = {
 	ai_strategy = {
 		type = put_unit_buffers
 		ratio = 0.5
-		states = { 444 39 33 }
+		states = { 444 262 39 33 }
 		subtract_fronts_from_need = no
 	}
 	ai_strategy = {
@@ -471,7 +471,7 @@ HOD_op_geonosis_buildup_REP = {
 		value = 400
 	}
 }
-# Confederacy: garrison Geonosis (the Gehenbar Hive faces Christophsis) and the hidden base on Rishi
+# Confederacy: garrison both lane ends on Geonosis (278 faces Christophsis, 282 faces Rishi) and the hidden base on Rishi
 HOD_op_geonosis_buildup_CIS = {
 	allowed = { original_tag = CIS }
 	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
@@ -479,7 +479,7 @@ HOD_op_geonosis_buildup_CIS = {
 	ai_strategy = {
 		type = put_unit_buffers
 		ratio = 0.5
-		states = { 278 35 273 268 }
+		states = { 278 282 35 273 268 }
 		subtract_fronts_from_need = no
 	}
 	ai_strategy = {
@@ -490,7 +490,7 @@ HOD_op_geonosis_buildup_CIS = {
 }
 
 # ---- During the battle ----
-# Republic: everything into the theater, push across the Christophsis - Gehenbar Hive lane, land on Geonosis
+# Republic: everything into the theater, push across the Christophsis and Rishi lanes into Geonosis
 HOD_op_geonosis_attack_REP = {
 	allowed = { original_tag = REP }
 	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_geonosis }
@@ -536,7 +536,7 @@ HOD_op_geonosis_defend_CIS = {
 	ai_strategy = {
 		type = put_unit_buffers
 		ratio = 0.6
-		states = { 278 35 273 }
+		states = { 278 282 35 273 }
 		subtract_fronts_from_need = yes
 	}
 	ai_strategy = {
