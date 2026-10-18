@@ -410,6 +410,100 @@ def earliest_days(ff, per_cost):
     return memo
 
 
+def exclusive_groups(ff):
+    """Connected groups of mutually exclusive focuses, each with its options (maximal sets that can be taken together)."""
+    from itertools import combinations
+    adj = {fid: {m for m in f['mutex'] if m in ff.focuses} for fid, f in ff.focuses.items()}
+    for a in list(adj):
+        for b in adj[a]:
+            adj[b].add(a)
+    seen, groups = set(), []
+    for start in ff.order:
+        if start in seen or not adj.get(start):
+            continue
+        comp, todo = [], [start]
+        while todo:
+            x = todo.pop()
+            if x not in seen:
+                seen.add(x)
+                comp.append(x)
+                todo += adj[x]
+        indep = [set(c) for n in range(len(comp), 0, -1) for c in combinations(comp, n)
+                 if all(b not in adj[a] for a, b in combinations(c, 2))] if len(comp) <= 12 else [{x} for x in comp]
+        options = [o for o in indep if not any(o < other for other in indep)]
+        groups.append((comp, options))
+    return groups
+
+
+def reachable(ff, order, excluded):
+    """Focuses that can still be taken when `excluded` are not: every prerequisite group needs one takeable member."""
+    ok = set()
+    for fid in order:
+        if fid in excluded:
+            continue
+        if all(any(p in ok for p in g) or not any(p in ff.focuses for p in g) for g in ff.focuses[fid]['prereq']):
+            ok.add(fid)
+    return ok
+
+
+def prereq_order(ff):
+    """Focus ids with every prerequisite before the focus that needs it (loops are cut)."""
+    out, state = [], {}
+
+    def visit(fid):
+        if state.get(fid):
+            return
+        state[fid] = 1
+        for g in ff.focuses[fid]['prereq']:
+            for p in g:
+                if p in ff.focuses:
+                    visit(p)
+        state[fid] = 2
+        out.append(fid)
+
+    for fid in ff.order:
+        visit(fid)
+    return out
+
+
+def playthroughs(ff, per_cost, limit=40000):
+    """Longest and shortest total time of one full playthrough, where each exclusive group keeps one option and
+    loses everything only reachable through the others. Returns dict with days, the choices, and exact=False if
+    there were too many combinations and a greedy pick was used."""
+    from itertools import product
+    order = prereq_order(ff)
+    days = {fid: cost_days(f, per_cost) for fid, f in ff.focuses.items()}
+    groups = exclusive_groups(ff)
+    total = lambda excl: sum(days[f] for f in reachable(ff, order, excl))
+
+    def excluded(choice):
+        out = set()
+        for (comp, _), opt in zip(groups, choice):
+            out |= set(comp) - opt
+        return out
+
+    count = 1
+    for _, opts in groups:
+        count *= len(opts)
+    if count <= limit:
+        results = [(total(excluded(ch)), ch) for ch in product(*(opts for _, opts in groups))]
+        best, worst, exact = max(results, key=lambda r: r[0]), min(results, key=lambda r: r[0]), True
+    else:  # shortcut: too many combinations, pick each group on its own; fine until trees get huge
+        def pick(fn):
+            ch = []
+            for i, (comp, opts) in enumerate(groups):
+                ch.append(fn(opts, key=lambda o: total(set(comp) - o)))
+            return total(excluded(ch)), tuple(ch)
+        best, worst, exact = pick(max), pick(min), False
+    return {'longest': best[0], 'longest_choice': best[1], 'shortest': worst[0], 'shortest_choice': worst[1],
+            'groups': groups, 'exact': exact, 'all': sum(days.values()), 'days': days, 'order': order}
+
+
+def locked_behind(ff, order, fid):
+    """Focuses lost if `fid` is never taken (fid included)."""
+    return set(reachable(ff, order, set())) - reachable(ff, order, {fid})
+
+
 def fmt_days(days):
     d = round(days)
     years, rest = divmod(d, 365)
@@ -564,8 +658,6 @@ def run_gui(mod_root):
     file_pick.pack(side='left')
     status = ttk.Label(root, anchor='w')
     status.pack(side='bottom', fill='x')
-    totals = ttk.Label(root, anchor='w', padding=(6, 0))
-    totals.pack(side='top', fill='x')
 
     # ---------------- panes
     panes = tk.PanedWindow(root, orient='horizontal', sashwidth=6, sashrelief='raised')
@@ -646,10 +738,6 @@ def run_gui(mod_root):
             name = mod.loc.get(f['id'], f['id'])
             canvas.create_text(x, y + h / 2 - 16 * z, text=name, width=w - 4, fill='white',
                                font=('Segoe UI', max(6, int(8 * z))), tags=('focus', fid))
-        days = [cost_days(f, per_cost) for f in ff.focuses.values()]
-        early = earliest_days(ff, per_cost)
-        totals.configure(text=f'{len(days)} focuses: all of them {fmt_days(sum(days))}, longest chain '
-                              f'{fmt_days(max(early.values(), default=0))}   (1 cost = {per_cost:g} days)')
         for fid, f in ff.focuses.items():
             x, y = pos(f)
             canvas.create_text(x + w / 2 - 3, y - h / 2 + 2, anchor='ne', text=f'{cost_days(f, per_cost):g}d',
@@ -677,12 +765,70 @@ def run_gui(mod_root):
     def changed(keep_form=False):
         redraw()
         refresh_problems()
+        refresh_durations()
         if not keep_form:
             fill_form()
 
     # ---------------- focus form
-    form = ttk.Frame(right, padding=6)
-    form.pack(fill='both', expand=True)
+    side = ttk.Notebook(right)
+    side.pack(fill='both', expand=True)
+    form = ttk.Frame(side, padding=6)
+    side.add(form, text='Focus')
+    dur = ttk.Frame(side, padding=6)
+    side.add(dur, text='Durations')
+    dur_head = ttk.Label(dur, justify='left', font=('Segoe UI', 10))
+    dur_head.pack(fill='x', anchor='w')
+    ttk.Label(dur, text='Exclusive choices (★ = taken in the longest playthrough)', font=('Segoe UI', 9, 'bold')).pack(
+        anchor='w', pady=(10, 2))
+    choices = ttk.Treeview(dur, columns=('option', 'days', 'focuses'), show='tree headings', height=12)
+    choices.heading('#0', text='Group')
+    choices.heading('option', text='Option')
+    choices.heading('days', text='Days it unlocks')
+    choices.heading('focuses', text='Focuses')
+    for col, w in (('#0', 55), ('option', 210), ('days', 175), ('focuses', 60)):
+        choices.column(col, width=w, stretch=col == 'option')
+    choices.pack(fill='both', expand=True)
+    dur_sel = ttk.Label(dur, justify='left', foreground='#333', wraplength=460)
+    dur_sel.pack(fill='x', anchor='w', pady=(10, 0))
+    ttk.Label(dur, foreground='#777', wraplength=460, justify='left',
+              text='Days unlocked = the option itself plus every focus that can only be reached through it. '
+                   '"available" conditions in focus scripts are not evaluated.').pack(fill='x', anchor='w', pady=(8, 0))
+    dur_cache = {}
+
+    def refresh_durations(*_):
+        ff = st['ff']
+        if not ff or side.index('current') != side.index(dur):
+            return
+        key = (ff.text, per_cost)
+        if dur_cache.get('key') != key:
+            dur_cache.update(key=key, p=playthroughs(ff, per_cost), early=earliest_days(ff, per_cost))
+        p, early = dur_cache['p'], dur_cache['early']
+        name = lambda fid: mod.loc.get(ff.focuses[fid]['id'], fid)
+        dur_head.configure(text=(
+            f'1 cost = {per_cost:g} days (FOCUS_POINT_DAYS)\n\n'
+            f'Longest playthrough:  {fmt_days(p["longest"])}\n'
+            f'Shortest playthrough: {fmt_days(p["shortest"])}\n'
+            f'Longest single chain: {fmt_days(max(early.values(), default=0))}\n'
+            f'Every focus, ignoring exclusives: {fmt_days(p["all"])}  ({len(ff.focuses)} focuses)'
+            + ('' if p['exact'] else '\n(estimate: too many exclusive combinations to try them all)')))
+        choices.delete(*choices.get_children())
+        for gi, ((comp, opts), best) in enumerate(zip(p['groups'], p['longest_choice']), 1):
+            for oi, opt in enumerate(opts):
+                unlocked = set()
+                for fid in opt:
+                    unlocked |= locked_behind(ff, p['order'], fid)
+                choices.insert('', 'end', text=f'#{gi}' if oi == 0 else '',
+                               values=(('★ ' if opt == best else '   ') + ' + '.join(name(f) for f in opt),
+                                       fmt_days(sum(p['days'][f] for f in unlocked)), len(unlocked)))
+        fid = st['sel']
+        if fid in ff.focuses:
+            dur_sel.configure(text=f'Selected: {name(fid)}\n'
+                                   f'Takes {fmt_days(p["days"][fid])}; done at the earliest after {fmt_days(early[fid])}; '
+                                   f'{len(locked_behind(ff, p["order"], fid)) - 1} focuses need it.')
+        else:
+            dur_sel.configure(text='Select a focus to see its own numbers.')
+
+    side.bind('<<NotebookTabChanged>>', refresh_durations)
     fv = {k: tk.StringVar() for k in ('id', 'name', 'icon', 'cost', 'x', 'y', 'rel', 'prereq', 'mutex')}
     r = 0
     for key, label in (('id', 'Focus id'), ('name', 'Name')):
@@ -992,6 +1138,7 @@ def run_gui(mod_root):
         st['drag'] = (fid, grid_at(e)) if fid else None
         fill_form()
         redraw()
+        refresh_durations()
 
     def on_release(e):
         ff, drag = st['ff'], st['drag']
