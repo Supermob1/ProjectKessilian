@@ -160,6 +160,9 @@ HOD_operation_geonosis_start = {
 	REP = {
 		HOD_operation_start = yes
 		activate_mission = HOD_op_attack_70
+		# beachhead: take the Geonosis end of the Christophsis lane and land 6 legions on it
+		set_province_controller = 17077
+		load_oob = "HOD_op_geonosis_landing"
 	}
 	CIS = { activate_mission = HOD_op_defend_70 }
 }
