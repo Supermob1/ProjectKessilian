@@ -453,19 +453,64 @@ Clone_Wars_Assault_Kamino_REP = {
 # HOD operations: AI per operation. Each block is on only while its operation runs.
 ############################################################################################
 
-# Battle of Geonosis: the Republic lands on Geonosis (state 35); its only hyperlane comes from neutral Ryloth
+# ---- Before the war: both sides gather their armies around Geonosis ----
+# Republic: stage on Christophsis (hyperlane to Geonosis) and Rishi
+HOD_op_geonosis_buildup_REP = {
+	allowed = { original_tag = REP }
+	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.5
+		states = { 444 39 33 }
+		subtract_fronts_from_need = no
+	}
+	ai_strategy = {
+		type = area_priority
+		id = HOD_Geonosis_theater
+		value = 400
+	}
+}
+# Confederacy: garrison Geonosis (the Gehenbar Hive faces Christophsis) and the hidden base on Rishi
+HOD_op_geonosis_buildup_CIS = {
+	allowed = { original_tag = CIS }
+	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.5
+		states = { 278 35 273 268 }
+		subtract_fronts_from_need = no
+	}
+	ai_strategy = {
+		type = area_priority
+		id = HOD_Geonosis_theater
+		value = 400
+	}
+}
+
+# ---- During the battle ----
+# Republic: everything into the theater, push across the Christophsis - Gehenbar Hive lane, land on Geonosis
 HOD_op_geonosis_attack_REP = {
 	allowed = { original_tag = REP }
 	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_geonosis }
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = area_priority
-		id = Geonosis_Sector
-		value = 500
+		id = HOD_Geonosis_theater
+		value = 800
+	}
+	ai_strategy = {
+		type = front_control
+		area = HOD_Geonosis_theater
+		ratio = 1.0
+		priority = 500
+		ordertype = front
+		execution_type = rush
 	}
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 400
+		value = 300
 	}
 	ai_strategy = {
 		type = invasion_unit_request
@@ -477,37 +522,28 @@ HOD_op_geonosis_attack_REP = {
 		id = 35
 		value = 500
 	}
-	ai_strategy = {
-		type = front_control
-		area = Geonosis_Sector
-		ratio = 1.0
-		priority = 300
-		ordertype = front
-		execution_type = rush
-	}
 }
-
-# Battle of Geonosis: the Confederacy holds Geonosis
+# Confederacy: hold Geonosis, every state of it is an objective
 HOD_op_geonosis_defend_CIS = {
 	allowed = { original_tag = CIS }
 	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_geonosis }
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = area_priority
-		id = Geonosis_Sector
-		value = 500
+		id = HOD_Geonosis_theater
+		value = 800
 	}
 	ai_strategy = {
 		type = put_unit_buffers
 		ratio = 0.6
-		states = { 35 }
+		states = { 278 35 273 }
 		subtract_fronts_from_need = yes
 	}
 	ai_strategy = {
 		type = front_control
-		area = Geonosis_Sector
+		area = HOD_Geonosis_theater
 		ratio = 1.0
-		priority = 300
+		priority = 500
 		ordertype = front
 		execution_type = careful
 	}
