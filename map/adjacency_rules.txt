@@ -81,9 +81,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			124 = { has_state_flag = HOD_theater }
-			139 = { has_state_flag = HOD_theater }
+			AND = {
+				124 = { has_state_flag = HOD_theater }
+				139 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -131,15 +131,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			142 = { has_state_flag = HOD_theater }
-			137 = { has_state_flag = HOD_theater }
+			AND = {
+				142 = { has_state_flag = HOD_theater }
+				137 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18880
+	icon = 12097
 	offset = { 0 0 0 }
 }
 
@@ -176,20 +176,20 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 12404 12334 }
+	required_provinces = { 12404 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			125 = { has_state_flag = HOD_theater }
-			132 = { has_state_flag = HOD_theater }
+			AND = {
+				125 = { has_state_flag = HOD_theater }
+				132 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18880
+	icon = 12404
 	offset = { 0 0 0 }
 }
 
@@ -231,9 +231,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			136 = { has_state_flag = HOD_theater }
-			149 = { has_state_flag = HOD_theater }
+			AND = {
+				136 = { has_state_flag = HOD_theater }
+				149 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -281,15 +281,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			136 = { has_state_flag = HOD_theater }
-			5 = { has_state_flag = HOD_theater }
+			AND = {
+				136 = { has_state_flag = HOD_theater }
+				5 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18869
+	icon = 12152
 	offset = { 0 0 0 }
 }
 
@@ -331,15 +331,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			143 = { has_state_flag = HOD_theater }
-			148 = { has_state_flag = HOD_theater }
+			AND = {
+				143 = { has_state_flag = HOD_theater }
+				148 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18869
+	icon = 11793
 	offset = { 0 0 0 }
 }
 
@@ -376,14 +376,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 3427 12455 }
+	required_provinces = { 12455 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			134 = { has_state_flag = HOD_theater }
-			168 = { has_state_flag = HOD_theater }
+			AND = {
+				134 = { has_state_flag = HOD_theater }
+				168 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -431,15 +431,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			174 = { has_state_flag = HOD_theater }
-			162 = { has_state_flag = HOD_theater }
+			AND = {
+				174 = { has_state_flag = HOD_theater }
+				162 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18881
+	icon = 5412
 	offset = { 0 0 0 }
 }
 
@@ -481,15 +481,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			127 = { has_state_flag = HOD_theater }
-			208 = { has_state_flag = HOD_theater }
+			AND = {
+				127 = { has_state_flag = HOD_theater }
+				208 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18880
+	icon = 12835
 	offset = { 0 0 0 }
 }
 
@@ -531,9 +531,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			211 = { has_state_flag = HOD_theater }
-			9 = { has_state_flag = HOD_theater }
+			AND = {
+				211 = { has_state_flag = HOD_theater }
+				9 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -581,9 +581,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			291 = { has_state_flag = HOD_theater }
-			294 = { has_state_flag = HOD_theater }
+			AND = {
+				291 = { has_state_flag = HOD_theater }
+				294 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -631,9 +631,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			207 = { has_state_flag = HOD_theater }
-			11 = { has_state_flag = HOD_theater }
+			AND = {
+				207 = { has_state_flag = HOD_theater }
+				11 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -681,15 +681,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			224 = { has_state_flag = HOD_theater }
-			238 = { has_state_flag = HOD_theater }
+			AND = {
+				224 = { has_state_flag = HOD_theater }
+				238 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18868
+	icon = 13795
 	offset = { 0 0 0 }
 }
 
@@ -731,15 +731,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			173 = { has_state_flag = HOD_theater }
-			180 = { has_state_flag = HOD_theater }
+			AND = {
+				173 = { has_state_flag = HOD_theater }
+				180 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18881
+	icon = 1240
 	offset = { 0 0 0 }
 }
 
@@ -781,15 +781,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			171 = { has_state_flag = HOD_theater }
-			15 = { has_state_flag = HOD_theater }
+			AND = {
+				171 = { has_state_flag = HOD_theater }
+				15 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18881
+	icon = 12842
 	offset = { 0 0 0 }
 }
 
@@ -831,9 +831,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			179 = { has_state_flag = HOD_theater }
-			15 = { has_state_flag = HOD_theater }
+			AND = {
+				179 = { has_state_flag = HOD_theater }
+				15 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -881,15 +881,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			179 = { has_state_flag = HOD_theater }
-			330 = { has_state_flag = HOD_theater }
+			AND = {
+				179 = { has_state_flag = HOD_theater }
+				330 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19033
+	icon = 5601
 	offset = { 0 0 0 }
 }
 
@@ -931,9 +931,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			15 = { has_state_flag = HOD_theater }
-			19 = { has_state_flag = HOD_theater }
+			AND = {
+				15 = { has_state_flag = HOD_theater }
+				19 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -981,15 +981,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			15 = { has_state_flag = HOD_theater }
-			315 = { has_state_flag = HOD_theater }
+			AND = {
+				15 = { has_state_flag = HOD_theater }
+				315 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18762
+	icon = 13168
 	offset = { 0 0 0 }
 }
 
@@ -1031,15 +1031,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			329 = { has_state_flag = HOD_theater }
-			320 = { has_state_flag = HOD_theater }
+			AND = {
+				329 = { has_state_flag = HOD_theater }
+				320 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18762
+	icon = 2370
 	offset = { 0 0 0 }
 }
 
@@ -1081,9 +1081,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			17 = { has_state_flag = HOD_theater }
-			358 = { has_state_flag = HOD_theater }
+			AND = {
+				17 = { has_state_flag = HOD_theater }
+				358 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -1131,15 +1131,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			316 = { has_state_flag = HOD_theater }
-			337 = { has_state_flag = HOD_theater }
+			AND = {
+				316 = { has_state_flag = HOD_theater }
+				337 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18916
+	icon = 13519
 	offset = { 0 0 0 }
 }
 
@@ -1181,15 +1181,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			353 = { has_state_flag = HOD_theater }
-			347 = { has_state_flag = HOD_theater }
+			AND = {
+				353 = { has_state_flag = HOD_theater }
+				347 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18916
+	icon = 13594
 	offset = { 0 0 0 }
 }
 
@@ -1231,15 +1231,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			349 = { has_state_flag = HOD_theater }
-			340 = { has_state_flag = HOD_theater }
+			AND = {
+				349 = { has_state_flag = HOD_theater }
+				340 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18916
+	icon = 14100
 	offset = { 0 0 0 }
 }
 
@@ -1281,15 +1281,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			335 = { has_state_flag = HOD_theater }
-			345 = { has_state_flag = HOD_theater }
+			AND = {
+				335 = { has_state_flag = HOD_theater }
+				345 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18916
+	icon = 14091
 	offset = { 0 0 0 }
 }
 
@@ -1331,15 +1331,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			333 = { has_state_flag = HOD_theater }
-			322 = { has_state_flag = HOD_theater }
+			AND = {
+				333 = { has_state_flag = HOD_theater }
+				322 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18762
+	icon = 4176
 	offset = { 0 0 0 }
 }
 
@@ -1381,15 +1381,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			326 = { has_state_flag = HOD_theater }
-			28 = { has_state_flag = HOD_theater }
+			AND = {
+				326 = { has_state_flag = HOD_theater }
+				28 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18762
+	icon = 13820
 	offset = { 0 0 0 }
 }
 
@@ -1431,15 +1431,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			344 = { has_state_flag = HOD_theater }
-			24 = { has_state_flag = HOD_theater }
+			AND = {
+				344 = { has_state_flag = HOD_theater }
+				24 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18916
+	icon = 14467
 	offset = { 0 0 0 }
 }
 
@@ -1481,9 +1481,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			359 = { has_state_flag = HOD_theater }
-			369 = { has_state_flag = HOD_theater }
+			AND = {
+				359 = { has_state_flag = HOD_theater }
+				369 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -1531,15 +1531,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			365 = { has_state_flag = HOD_theater }
-			380 = { has_state_flag = HOD_theater }
+			AND = {
+				365 = { has_state_flag = HOD_theater }
+				380 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18882
+	icon = 14742
 	offset = { 0 0 0 }
 }
 
@@ -1581,9 +1581,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			372 = { has_state_flag = HOD_theater }
-			27 = { has_state_flag = HOD_theater }
+			AND = {
+				372 = { has_state_flag = HOD_theater }
+				27 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -1631,9 +1631,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			366 = { has_state_flag = HOD_theater }
-			379 = { has_state_flag = HOD_theater }
+			AND = {
+				366 = { has_state_flag = HOD_theater }
+				379 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -1681,9 +1681,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			26 = { has_state_flag = HOD_theater }
-			313 = { has_state_flag = HOD_theater }
+			AND = {
+				26 = { has_state_flag = HOD_theater }
+				313 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -1731,9 +1731,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			373 = { has_state_flag = HOD_theater }
-			517 = { has_state_flag = HOD_theater }
+			AND = {
+				373 = { has_state_flag = HOD_theater }
+				517 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -1781,15 +1781,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			518 = { has_state_flag = HOD_theater }
-			499 = { has_state_flag = HOD_theater }
+			AND = {
+				518 = { has_state_flag = HOD_theater }
+				499 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18910
+	icon = 15753
 	offset = { 0 0 0 }
 }
 
@@ -1831,15 +1831,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			376 = { has_state_flag = HOD_theater }
-			501 = { has_state_flag = HOD_theater }
+			AND = {
+				376 = { has_state_flag = HOD_theater }
+				501 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19010
+	icon = 15719
 	offset = { 0 0 0 }
 }
 
@@ -1881,9 +1881,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			500 = { has_state_flag = HOD_theater }
-			498 = { has_state_flag = HOD_theater }
+			AND = {
+				500 = { has_state_flag = HOD_theater }
+				498 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -1931,15 +1931,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			514 = { has_state_flag = HOD_theater }
-			495 = { has_state_flag = HOD_theater }
+			AND = {
+				514 = { has_state_flag = HOD_theater }
+				495 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18910
+	icon = 15808
 	offset = { 0 0 0 }
 }
 
@@ -1981,9 +1981,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			307 = { has_state_flag = HOD_theater }
-			305 = { has_state_flag = HOD_theater }
+			AND = {
+				307 = { has_state_flag = HOD_theater }
+				305 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2031,9 +2031,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			300 = { has_state_flag = HOD_theater }
-			235 = { has_state_flag = HOD_theater }
+			AND = {
+				300 = { has_state_flag = HOD_theater }
+				235 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2081,9 +2081,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			385 = { has_state_flag = HOD_theater }
-			29 = { has_state_flag = HOD_theater }
+			AND = {
+				385 = { has_state_flag = HOD_theater }
+				29 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2131,9 +2131,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			398 = { has_state_flag = HOD_theater }
-			447 = { has_state_flag = HOD_theater }
+			AND = {
+				398 = { has_state_flag = HOD_theater }
+				447 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2181,9 +2181,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			399 = { has_state_flag = HOD_theater }
-			400 = { has_state_flag = HOD_theater }
+			AND = {
+				399 = { has_state_flag = HOD_theater }
+				400 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2231,9 +2231,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			390 = { has_state_flag = HOD_theater }
-			394 = { has_state_flag = HOD_theater }
+			AND = {
+				390 = { has_state_flag = HOD_theater }
+				394 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2281,9 +2281,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			391 = { has_state_flag = HOD_theater }
-			613 = { has_state_flag = HOD_theater }
+			AND = {
+				391 = { has_state_flag = HOD_theater }
+				613 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2331,9 +2331,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			467 = { has_state_flag = HOD_theater }
-			635 = { has_state_flag = HOD_theater }
+			AND = {
+				467 = { has_state_flag = HOD_theater }
+				635 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2381,9 +2381,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			636 = { has_state_flag = HOD_theater }
-			641 = { has_state_flag = HOD_theater }
+			AND = {
+				636 = { has_state_flag = HOD_theater }
+				641 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2431,9 +2431,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			643 = { has_state_flag = HOD_theater }
-			651 = { has_state_flag = HOD_theater }
+			AND = {
+				643 = { has_state_flag = HOD_theater }
+				651 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2476,20 +2476,18 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 13650 5759 }
-
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			643 = { has_state_flag = HOD_theater }
-			651 = { has_state_flag = HOD_theater }
+			AND = {
+				643 = { has_state_flag = HOD_theater }
+				651 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19023
+	icon = 13650
 	offset = { 0 0 0 }
 }
 
@@ -2531,9 +2529,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			790 = { has_state_flag = HOD_theater }
-			772 = { has_state_flag = HOD_theater }
+			AND = {
+				790 = { has_state_flag = HOD_theater }
+				772 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2581,15 +2579,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			856 = { has_state_flag = HOD_theater }
-			1003 = { has_state_flag = HOD_theater }
+			AND = {
+				856 = { has_state_flag = HOD_theater }
+				1003 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18869
+	icon = 4022
 	offset = { 0 0 0 }
 }
 
@@ -2631,9 +2629,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1009 = { has_state_flag = HOD_theater }
-			884 = { has_state_flag = HOD_theater }
+			AND = {
+				1009 = { has_state_flag = HOD_theater }
+				884 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2681,9 +2679,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			444 = { has_state_flag = HOD_theater }
-			278 = { has_state_flag = HOD_theater }
+			AND = {
+				444 = { has_state_flag = HOD_theater }
+				278 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2731,9 +2729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			496 = { has_state_flag = HOD_theater }
-			491 = { has_state_flag = HOD_theater }
+			AND = {
+				496 = { has_state_flag = HOD_theater }
+				491 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2781,15 +2779,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1099 = { has_state_flag = HOD_theater }
-			46 = { has_state_flag = HOD_theater }
+			AND = {
+				1099 = { has_state_flag = HOD_theater }
+				46 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18859
+	icon = 19578
 	offset = { 0 0 0 }
 }
 
@@ -2831,9 +2829,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1098 = { has_state_flag = HOD_theater }
-			507 = { has_state_flag = HOD_theater }
+			AND = {
+				1098 = { has_state_flag = HOD_theater }
+				507 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2881,9 +2879,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			49 = { has_state_flag = HOD_theater }
-			525 = { has_state_flag = HOD_theater }
+			AND = {
+				49 = { has_state_flag = HOD_theater }
+				525 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2931,9 +2929,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			510 = { has_state_flag = HOD_theater }
-			59 = { has_state_flag = HOD_theater }
+			AND = {
+				510 = { has_state_flag = HOD_theater }
+				59 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2981,15 +2979,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			519 = { has_state_flag = HOD_theater }
-			529 = { has_state_flag = HOD_theater }
+			AND = {
+				519 = { has_state_flag = HOD_theater }
+				529 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18828
+	icon = 18257
 	offset = { 0 0 0 }
 }
 
@@ -3031,9 +3029,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			52 = { has_state_flag = HOD_theater }
-			588 = { has_state_flag = HOD_theater }
+			AND = {
+				52 = { has_state_flag = HOD_theater }
+				588 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3081,9 +3079,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			61 = { has_state_flag = HOD_theater }
-			597 = { has_state_flag = HOD_theater }
+			AND = {
+				61 = { has_state_flag = HOD_theater }
+				597 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3131,9 +3129,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			596 = { has_state_flag = HOD_theater }
-			601 = { has_state_flag = HOD_theater }
+			AND = {
+				596 = { has_state_flag = HOD_theater }
+				601 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3181,15 +3179,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			601 = { has_state_flag = HOD_theater }
-			585 = { has_state_flag = HOD_theater }
+			AND = {
+				601 = { has_state_flag = HOD_theater }
+				585 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18812
+	icon = 4917
 	offset = { 0 0 0 }
 }
 
@@ -3231,9 +3229,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			599 = { has_state_flag = HOD_theater }
-			608 = { has_state_flag = HOD_theater }
+			AND = {
+				599 = { has_state_flag = HOD_theater }
+				608 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3281,9 +3279,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			573 = { has_state_flag = HOD_theater }
-			564 = { has_state_flag = HOD_theater }
+			AND = {
+				573 = { has_state_flag = HOD_theater }
+				564 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3331,15 +3329,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			58 = { has_state_flag = HOD_theater }
-			538 = { has_state_flag = HOD_theater }
+			AND = {
+				58 = { has_state_flag = HOD_theater }
+				538 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18886
+	icon = 18408
 	offset = { 0 0 0 }
 }
 
@@ -3381,9 +3379,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			53 = { has_state_flag = HOD_theater }
-			544 = { has_state_flag = HOD_theater }
+			AND = {
+				53 = { has_state_flag = HOD_theater }
+				544 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3431,15 +3429,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			539 = { has_state_flag = HOD_theater }
-			550 = { has_state_flag = HOD_theater }
+			AND = {
+				539 = { has_state_flag = HOD_theater }
+				550 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18964
+	icon = 1575
 	offset = { 0 0 0 }
 }
 
@@ -3481,9 +3479,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			566 = { has_state_flag = HOD_theater }
-			562 = { has_state_flag = HOD_theater }
+			AND = {
+				566 = { has_state_flag = HOD_theater }
+				562 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3531,15 +3529,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			563 = { has_state_flag = HOD_theater }
-			551 = { has_state_flag = HOD_theater }
+			AND = {
+				563 = { has_state_flag = HOD_theater }
+				551 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18912
+	icon = 18501
 	offset = { 0 0 0 }
 }
 
@@ -3581,9 +3579,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			572 = { has_state_flag = HOD_theater }
-			581 = { has_state_flag = HOD_theater }
+			AND = {
+				572 = { has_state_flag = HOD_theater }
+				581 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3631,9 +3629,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			580 = { has_state_flag = HOD_theater }
-			1090 = { has_state_flag = HOD_theater }
+			AND = {
+				580 = { has_state_flag = HOD_theater }
+				1090 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3681,15 +3679,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1096 = { has_state_flag = HOD_theater }
-			45 = { has_state_flag = HOD_theater }
+			AND = {
+				1096 = { has_state_flag = HOD_theater }
+				45 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18811
+	icon = 19458
 	offset = { 0 0 0 }
 }
 
@@ -3731,9 +3729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			478 = { has_state_flag = HOD_theater }
-			489 = { has_state_flag = HOD_theater }
+			AND = {
+				478 = { has_state_flag = HOD_theater }
+				489 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3781,9 +3779,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			484 = { has_state_flag = HOD_theater }
-			44 = { has_state_flag = HOD_theater }
+			AND = {
+				484 = { has_state_flag = HOD_theater }
+				44 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3831,9 +3829,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			476 = { has_state_flag = HOD_theater }
-			452 = { has_state_flag = HOD_theater }
+			AND = {
+				476 = { has_state_flag = HOD_theater }
+				452 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3881,9 +3879,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			455 = { has_state_flag = HOD_theater }
-			459 = { has_state_flag = HOD_theater }
+			AND = {
+				455 = { has_state_flag = HOD_theater }
+				459 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3931,9 +3929,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			456 = { has_state_flag = HOD_theater }
-			446 = { has_state_flag = HOD_theater }
+			AND = {
+				456 = { has_state_flag = HOD_theater }
+				446 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -3981,9 +3979,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			451 = { has_state_flag = HOD_theater }
-			37 = { has_state_flag = HOD_theater }
+			AND = {
+				451 = { has_state_flag = HOD_theater }
+				37 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4031,15 +4029,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			424 = { has_state_flag = HOD_theater }
-			445 = { has_state_flag = HOD_theater }
+			AND = {
+				424 = { has_state_flag = HOD_theater }
+				445 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18889
+	icon = 17501
 	offset = { 0 0 0 }
 }
 
@@ -4081,9 +4079,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			431 = { has_state_flag = HOD_theater }
-			421 = { has_state_flag = HOD_theater }
+			AND = {
+				431 = { has_state_flag = HOD_theater }
+				421 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4131,15 +4129,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			428 = { has_state_flag = HOD_theater }
-			35 = { has_state_flag = HOD_theater }
+			AND = {
+				428 = { has_state_flag = HOD_theater }
+				35 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18706
+	icon = 17451
 	offset = { 0 0 0 }
 }
 
@@ -4181,15 +4179,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			444 = { has_state_flag = HOD_theater }
-			433 = { has_state_flag = HOD_theater }
+			AND = {
+				444 = { has_state_flag = HOD_theater }
+				433 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18889
+	icon = 2489
 	offset = { 0 0 0 }
 }
 
@@ -4231,15 +4229,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			437 = { has_state_flag = HOD_theater }
-			277 = { has_state_flag = HOD_theater }
+			AND = {
+				437 = { has_state_flag = HOD_theater }
+				277 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18889
+	icon = 16787
 	offset = { 0 0 0 }
 }
 
@@ -4281,15 +4279,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			281 = { has_state_flag = HOD_theater }
-			422 = { has_state_flag = HOD_theater }
+			AND = {
+				281 = { has_state_flag = HOD_theater }
+				422 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18706
+	icon = 206
 	offset = { 0 0 0 }
 }
 
@@ -4331,9 +4329,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			280 = { has_state_flag = HOD_theater }
-			257 = { has_state_flag = HOD_theater }
+			AND = {
+				280 = { has_state_flag = HOD_theater }
+				257 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4381,9 +4379,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			258 = { has_state_flag = HOD_theater }
-			464 = { has_state_flag = HOD_theater }
+			AND = {
+				258 = { has_state_flag = HOD_theater }
+				464 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4431,9 +4429,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			282 = { has_state_flag = HOD_theater }
-			262 = { has_state_flag = HOD_theater }
+			AND = {
+				282 = { has_state_flag = HOD_theater }
+				262 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4481,15 +4479,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			263 = { has_state_flag = HOD_theater }
-			34 = { has_state_flag = HOD_theater }
+			AND = {
+				263 = { has_state_flag = HOD_theater }
+				34 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18721
+	icon = 618
 	offset = { 0 0 0 }
 }
 
@@ -4531,9 +4529,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			270 = { has_state_flag = HOD_theater }
-			415 = { has_state_flag = HOD_theater }
+			AND = {
+				270 = { has_state_flag = HOD_theater }
+				415 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4581,9 +4579,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			416 = { has_state_flag = HOD_theater }
-			413 = { has_state_flag = HOD_theater }
+			AND = {
+				416 = { has_state_flag = HOD_theater }
+				413 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4631,9 +4629,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			406 = { has_state_flag = HOD_theater }
-			407 = { has_state_flag = HOD_theater }
+			AND = {
+				406 = { has_state_flag = HOD_theater }
+				407 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4681,9 +4679,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			31 = { has_state_flag = HOD_theater }
-			631 = { has_state_flag = HOD_theater }
+			AND = {
+				31 = { has_state_flag = HOD_theater }
+				631 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4731,15 +4729,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			411 = { has_state_flag = HOD_theater }
-			621 = { has_state_flag = HOD_theater }
+			AND = {
+				411 = { has_state_flag = HOD_theater }
+				621 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18935
+	icon = 1850
 	offset = { 0 0 0 }
 }
 
@@ -4781,15 +4779,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			632 = { has_state_flag = HOD_theater }
-			66 = { has_state_flag = HOD_theater }
+			AND = {
+				632 = { has_state_flag = HOD_theater }
+				66 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18935
+	icon = 13478
 	offset = { 0 0 0 }
 }
 
@@ -4831,9 +4829,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			628 = { has_state_flag = HOD_theater }
-			654 = { has_state_flag = HOD_theater }
+			AND = {
+				628 = { has_state_flag = HOD_theater }
+				654 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4881,9 +4879,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			657 = { has_state_flag = HOD_theater }
-			659 = { has_state_flag = HOD_theater }
+			AND = {
+				657 = { has_state_flag = HOD_theater }
+				659 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4931,9 +4929,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			661 = { has_state_flag = HOD_theater }
-			666 = { has_state_flag = HOD_theater }
+			AND = {
+				661 = { has_state_flag = HOD_theater }
+				666 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -4981,9 +4979,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			664 = { has_state_flag = HOD_theater }
-			70 = { has_state_flag = HOD_theater }
+			AND = {
+				664 = { has_state_flag = HOD_theater }
+				70 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5031,9 +5029,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			669 = { has_state_flag = HOD_theater }
-			672 = { has_state_flag = HOD_theater }
+			AND = {
+				669 = { has_state_flag = HOD_theater }
+				672 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5081,9 +5079,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			674 = { has_state_flag = HOD_theater }
-			678 = { has_state_flag = HOD_theater }
+			AND = {
+				674 = { has_state_flag = HOD_theater }
+				678 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5131,9 +5129,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			682 = { has_state_flag = HOD_theater }
-			688 = { has_state_flag = HOD_theater }
+			AND = {
+				682 = { has_state_flag = HOD_theater }
+				688 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5181,9 +5179,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			685 = { has_state_flag = HOD_theater }
-			704 = { has_state_flag = HOD_theater }
+			AND = {
+				685 = { has_state_flag = HOD_theater }
+				704 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5231,15 +5229,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			686 = { has_state_flag = HOD_theater }
-			695 = { has_state_flag = HOD_theater }
+			AND = {
+				686 = { has_state_flag = HOD_theater }
+				695 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18883
+	icon = 10391
 	offset = { 0 0 0 }
 }
 
@@ -5281,15 +5279,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			699 = { has_state_flag = HOD_theater }
-			700 = { has_state_flag = HOD_theater }
+			AND = {
+				699 = { has_state_flag = HOD_theater }
+				700 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18883
+	icon = 9773
 	offset = { 0 0 0 }
 }
 
@@ -5331,9 +5329,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			701 = { has_state_flag = HOD_theater }
-			711 = { has_state_flag = HOD_theater }
+			AND = {
+				701 = { has_state_flag = HOD_theater }
+				711 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5381,9 +5379,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			140 = { has_state_flag = HOD_theater }
-			871 = { has_state_flag = HOD_theater }
+			AND = {
+				140 = { has_state_flag = HOD_theater }
+				871 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5431,9 +5429,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			866 = { has_state_flag = HOD_theater }
-			876 = { has_state_flag = HOD_theater }
+			AND = {
+				866 = { has_state_flag = HOD_theater }
+				876 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5481,9 +5479,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			870 = { has_state_flag = HOD_theater }
-			853 = { has_state_flag = HOD_theater }
+			AND = {
+				870 = { has_state_flag = HOD_theater }
+				853 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5531,9 +5529,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			851 = { has_state_flag = HOD_theater }
-			862 = { has_state_flag = HOD_theater }
+			AND = {
+				851 = { has_state_flag = HOD_theater }
+				862 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5581,15 +5579,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			844 = { has_state_flag = HOD_theater }
-			864 = { has_state_flag = HOD_theater }
+			AND = {
+				844 = { has_state_flag = HOD_theater }
+				864 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18904
+	icon = 10010
 	offset = { 0 0 0 }
 }
 
@@ -5631,9 +5629,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			857 = { has_state_flag = HOD_theater }
-			845 = { has_state_flag = HOD_theater }
+			AND = {
+				857 = { has_state_flag = HOD_theater }
+				845 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5681,9 +5679,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			849 = { has_state_flag = HOD_theater }
-			99 = { has_state_flag = HOD_theater }
+			AND = {
+				849 = { has_state_flag = HOD_theater }
+				99 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5731,9 +5729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			144 = { has_state_flag = HOD_theater }
-			155 = { has_state_flag = HOD_theater }
+			AND = {
+				144 = { has_state_flag = HOD_theater }
+				155 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5781,15 +5779,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			4 = { has_state_flag = HOD_theater }
-			156 = { has_state_flag = HOD_theater }
+			AND = {
+				4 = { has_state_flag = HOD_theater }
+				156 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18725
+	icon = 11810
 	offset = { 0 0 0 }
 }
 
@@ -5831,15 +5829,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			164 = { has_state_flag = HOD_theater }
-			156 = { has_state_flag = HOD_theater }
+			AND = {
+				164 = { has_state_flag = HOD_theater }
+				156 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18725
+	icon = 2866
 	offset = { 0 0 0 }
 }
 
@@ -5881,9 +5879,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			101 = { has_state_flag = HOD_theater }
-			118 = { has_state_flag = HOD_theater }
+			AND = {
+				101 = { has_state_flag = HOD_theater }
+				118 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5931,15 +5929,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			939 = { has_state_flag = HOD_theater }
-			950 = { has_state_flag = HOD_theater }
+			AND = {
+				939 = { has_state_flag = HOD_theater }
+				950 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18898
+	icon = 11762
 	offset = { 0 0 0 }
 }
 
@@ -5981,9 +5979,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			945 = { has_state_flag = HOD_theater }
-			959 = { has_state_flag = HOD_theater }
+			AND = {
+				945 = { has_state_flag = HOD_theater }
+				959 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6031,15 +6029,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			965 = { has_state_flag = HOD_theater }
-			117 = { has_state_flag = HOD_theater }
+			AND = {
+				965 = { has_state_flag = HOD_theater }
+				117 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18899
+	icon = 12018
 	offset = { 0 0 0 }
 }
 
@@ -6081,9 +6079,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			612 = { has_state_flag = HOD_theater }
-			964 = { has_state_flag = HOD_theater }
+			AND = {
+				612 = { has_state_flag = HOD_theater }
+				964 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6131,9 +6129,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			612 = { has_state_flag = HOD_theater }
-			117 = { has_state_flag = HOD_theater }
+			AND = {
+				612 = { has_state_flag = HOD_theater }
+				117 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6181,9 +6179,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			117 = { has_state_flag = HOD_theater }
-			953 = { has_state_flag = HOD_theater }
+			AND = {
+				117 = { has_state_flag = HOD_theater }
+				953 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6231,9 +6229,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			956 = { has_state_flag = HOD_theater }
-			729 = { has_state_flag = HOD_theater }
+			AND = {
+				956 = { has_state_flag = HOD_theater }
+				729 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6281,9 +6279,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			732 = { has_state_flag = HOD_theater }
-			723 = { has_state_flag = HOD_theater }
+			AND = {
+				732 = { has_state_flag = HOD_theater }
+				723 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6331,9 +6329,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			721 = { has_state_flag = HOD_theater }
-			719 = { has_state_flag = HOD_theater }
+			AND = {
+				721 = { has_state_flag = HOD_theater }
+				719 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6381,15 +6379,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			713 = { has_state_flag = HOD_theater }
-			710 = { has_state_flag = HOD_theater }
+			AND = {
+				713 = { has_state_flag = HOD_theater }
+				710 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18919
+	icon = 9040
 	offset = { 0 0 0 }
 }
 
@@ -6431,15 +6429,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			101 = { has_state_flag = HOD_theater }
-			839 = { has_state_flag = HOD_theater }
+			AND = {
+				101 = { has_state_flag = HOD_theater }
+				839 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18761
+	icon = 2843
 	offset = { 0 0 0 }
 }
 
@@ -6481,9 +6479,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			946 = { has_state_flag = HOD_theater }
-			842 = { has_state_flag = HOD_theater }
+			AND = {
+				946 = { has_state_flag = HOD_theater }
+				842 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6531,15 +6529,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			841 = { has_state_flag = HOD_theater }
-			833 = { has_state_flag = HOD_theater }
+			AND = {
+				841 = { has_state_flag = HOD_theater }
+				833 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18975
+	icon = 3313
 	offset = { 0 0 0 }
 }
 
@@ -6581,15 +6579,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			836 = { has_state_flag = HOD_theater }
-			97 = { has_state_flag = HOD_theater }
+			AND = {
+				836 = { has_state_flag = HOD_theater }
+				97 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18975
+	icon = 10256
 	offset = { 0 0 0 }
 }
 
@@ -6631,15 +6629,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			843 = { has_state_flag = HOD_theater }
-			818 = { has_state_flag = HOD_theater }
+			AND = {
+				843 = { has_state_flag = HOD_theater }
+				818 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18975
+	icon = 10812
 	offset = { 0 0 0 }
 }
 
@@ -6681,9 +6679,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			823 = { has_state_flag = HOD_theater }
-			825 = { has_state_flag = HOD_theater }
+			AND = {
+				823 = { has_state_flag = HOD_theater }
+				825 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6731,9 +6729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			824 = { has_state_flag = HOD_theater }
-			248 = { has_state_flag = HOD_theater }
+			AND = {
+				824 = { has_state_flag = HOD_theater }
+				248 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6781,9 +6779,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			837 = { has_state_flag = HOD_theater }
-			95 = { has_state_flag = HOD_theater }
+			AND = {
+				837 = { has_state_flag = HOD_theater }
+				95 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6831,15 +6829,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			96 = { has_state_flag = HOD_theater }
-			814 = { has_state_flag = HOD_theater }
+			AND = {
+				96 = { has_state_flag = HOD_theater }
+				814 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18870
+	icon = 5989
 	offset = { 0 0 0 }
 }
 
@@ -6881,9 +6879,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			813 = { has_state_flag = HOD_theater }
-			807 = { has_state_flag = HOD_theater }
+			AND = {
+				813 = { has_state_flag = HOD_theater }
+				807 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6931,9 +6929,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			802 = { has_state_flag = HOD_theater }
-			792 = { has_state_flag = HOD_theater }
+			AND = {
+				802 = { has_state_flag = HOD_theater }
+				792 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6981,9 +6979,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			804 = { has_state_flag = HOD_theater }
-			91 = { has_state_flag = HOD_theater }
+			AND = {
+				804 = { has_state_flag = HOD_theater }
+				91 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7031,15 +7029,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			794 = { has_state_flag = HOD_theater }
-			787 = { has_state_flag = HOD_theater }
+			AND = {
+				794 = { has_state_flag = HOD_theater }
+				787 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18969
+	icon = 954
 	offset = { 0 0 0 }
 }
 
@@ -7081,15 +7079,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			791 = { has_state_flag = HOD_theater }
-			767 = { has_state_flag = HOD_theater }
+			AND = {
+				791 = { has_state_flag = HOD_theater }
+				767 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18992
+	icon = 7048
 	offset = { 0 0 0 }
 }
 
@@ -7131,15 +7129,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			774 = { has_state_flag = HOD_theater }
-			769 = { has_state_flag = HOD_theater }
+			AND = {
+				774 = { has_state_flag = HOD_theater }
+				769 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18992
+	icon = 7594
 	offset = { 0 0 0 }
 }
 
@@ -7181,9 +7179,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			709 = { has_state_flag = HOD_theater }
-			739 = { has_state_flag = HOD_theater }
+			AND = {
+				709 = { has_state_flag = HOD_theater }
+				739 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7231,9 +7229,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			771 = { has_state_flag = HOD_theater }
-			760 = { has_state_flag = HOD_theater }
+			AND = {
+				771 = { has_state_flag = HOD_theater }
+				760 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7281,9 +7279,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			747 = { has_state_flag = HOD_theater }
-			765 = { has_state_flag = HOD_theater }
+			AND = {
+				747 = { has_state_flag = HOD_theater }
+				765 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7331,15 +7329,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			747 = { has_state_flag = HOD_theater }
-			741 = { has_state_flag = HOD_theater }
+			AND = {
+				747 = { has_state_flag = HOD_theater }
+				741 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18709
+	icon = 7408
 	offset = { 0 0 0 }
 }
 
@@ -7381,15 +7379,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			740 = { has_state_flag = HOD_theater }
-			765 = { has_state_flag = HOD_theater }
+			AND = {
+				740 = { has_state_flag = HOD_theater }
+				765 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18709
+	icon = 7182
 	offset = { 0 0 0 }
 }
 
@@ -7431,9 +7429,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			764 = { has_state_flag = HOD_theater }
-			757 = { has_state_flag = HOD_theater }
+			AND = {
+				764 = { has_state_flag = HOD_theater }
+				757 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7481,9 +7479,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			743 = { has_state_flag = HOD_theater }
-			758 = { has_state_flag = HOD_theater }
+			AND = {
+				743 = { has_state_flag = HOD_theater }
+				758 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7531,15 +7529,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			735 = { has_state_flag = HOD_theater }
-			758 = { has_state_flag = HOD_theater }
+			AND = {
+				735 = { has_state_flag = HOD_theater }
+				758 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18838
+	icon = 7880
 	offset = { 0 0 0 }
 }
 
@@ -7581,15 +7579,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			735 = { has_state_flag = HOD_theater }
-			746 = { has_state_flag = HOD_theater }
+			AND = {
+				735 = { has_state_flag = HOD_theater }
+				746 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18838
+	icon = 7879
 	offset = { 0 0 0 }
 }
 
@@ -7631,15 +7629,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			739 = { has_state_flag = HOD_theater }
-			751 = { has_state_flag = HOD_theater }
+			AND = {
+				739 = { has_state_flag = HOD_theater }
+				751 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18838
+	icon = 7724
 	offset = { 0 0 0 }
 }
 
@@ -7681,9 +7679,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			877 = { has_state_flag = HOD_theater }
-			114 = { has_state_flag = HOD_theater }
+			AND = {
+				877 = { has_state_flag = HOD_theater }
+				114 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7731,9 +7729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			859 = { has_state_flag = HOD_theater }
-			895 = { has_state_flag = HOD_theater }
+			AND = {
+				859 = { has_state_flag = HOD_theater }
+				895 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7781,9 +7779,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			863 = { has_state_flag = HOD_theater }
-			878 = { has_state_flag = HOD_theater }
+			AND = {
+				863 = { has_state_flag = HOD_theater }
+				878 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7831,9 +7829,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			928 = { has_state_flag = HOD_theater }
-			934 = { has_state_flag = HOD_theater }
+			AND = {
+				928 = { has_state_flag = HOD_theater }
+				934 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -7881,15 +7879,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			931 = { has_state_flag = HOD_theater }
-			109 = { has_state_flag = HOD_theater }
+			AND = {
+				931 = { has_state_flag = HOD_theater }
+				109 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18770
+	icon = 8089
 	offset = { 0 0 0 }
 }
 
@@ -7931,15 +7929,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			891 = { has_state_flag = HOD_theater }
-			937 = { has_state_flag = HOD_theater }
+			AND = {
+				891 = { has_state_flag = HOD_theater }
+				937 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18770
+	icon = 2407
 	offset = { 0 0 0 }
 }
 
@@ -7981,9 +7979,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			897 = { has_state_flag = HOD_theater }
-			107 = { has_state_flag = HOD_theater }
+			AND = {
+				897 = { has_state_flag = HOD_theater }
+				107 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8031,15 +8029,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			896 = { has_state_flag = HOD_theater }
-			108 = { has_state_flag = HOD_theater }
+			AND = {
+				896 = { has_state_flag = HOD_theater }
+				108 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18759
+	icon = 7894
 	offset = { 0 0 0 }
 }
 
@@ -8081,15 +8079,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			879 = { has_state_flag = HOD_theater }
-			885 = { has_state_flag = HOD_theater }
+			AND = {
+				879 = { has_state_flag = HOD_theater }
+				885 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18759
+	icon = 7947
 	offset = { 0 0 0 }
 }
 
@@ -8131,9 +8129,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			889 = { has_state_flag = HOD_theater }
-			899 = { has_state_flag = HOD_theater }
+			AND = {
+				889 = { has_state_flag = HOD_theater }
+				899 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8181,9 +8179,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			898 = { has_state_flag = HOD_theater }
-			911 = { has_state_flag = HOD_theater }
+			AND = {
+				898 = { has_state_flag = HOD_theater }
+				911 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8231,15 +8229,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			938 = { has_state_flag = HOD_theater }
-			906 = { has_state_flag = HOD_theater }
+			AND = {
+				938 = { has_state_flag = HOD_theater }
+				906 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18732
+	icon = 7152
 	offset = { 0 0 0 }
 }
 
@@ -8281,9 +8279,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			932 = { has_state_flag = HOD_theater }
-			925 = { has_state_flag = HOD_theater }
+			AND = {
+				932 = { has_state_flag = HOD_theater }
+				925 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8331,9 +8329,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			924 = { has_state_flag = HOD_theater }
-			912 = { has_state_flag = HOD_theater }
+			AND = {
+				924 = { has_state_flag = HOD_theater }
+				912 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8381,15 +8379,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			935 = { has_state_flag = HOD_theater }
-			914 = { has_state_flag = HOD_theater }
+			AND = {
+				935 = { has_state_flag = HOD_theater }
+				914 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18970
+	icon = 7066
 	offset = { 0 0 0 }
 }
 
@@ -8431,9 +8429,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			111 = { has_state_flag = HOD_theater }
-			918 = { has_state_flag = HOD_theater }
+			AND = {
+				111 = { has_state_flag = HOD_theater }
+				918 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8481,15 +8479,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			521 = { has_state_flag = HOD_theater }
-			545 = { has_state_flag = HOD_theater }
+			AND = {
+				521 = { has_state_flag = HOD_theater }
+				545 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18964
+	icon = 18407
 	offset = { 0 0 0 }
 }
 
@@ -8531,15 +8529,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			292 = { has_state_flag = HOD_theater }
-			346 = { has_state_flag = HOD_theater }
+			AND = {
+				292 = { has_state_flag = HOD_theater }
+				346 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18916
+	icon = 13562
 	offset = { 0 0 0 }
 }
 
@@ -8581,15 +8579,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			574 = { has_state_flag = HOD_theater }
-			201 = { has_state_flag = HOD_theater }
+			AND = {
+				574 = { has_state_flag = HOD_theater }
+				201 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18886
+	icon = 18169
 	offset = { 0 0 0 }
 }
 
@@ -8631,15 +8629,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1087 = { has_state_flag = HOD_theater }
-			567 = { has_state_flag = HOD_theater }
+			AND = {
+				1087 = { has_state_flag = HOD_theater }
+				567 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18886
+	icon = 19246
 	offset = { 0 0 0 }
 }
 
@@ -8681,15 +8679,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1088 = { has_state_flag = HOD_theater }
-			583 = { has_state_flag = HOD_theater }
+			AND = {
+				1088 = { has_state_flag = HOD_theater }
+				583 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18690
+	icon = 19305
 	offset = { 0 0 0 }
 }
 
@@ -8731,9 +8729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			590 = { has_state_flag = HOD_theater }
-			1103 = { has_state_flag = HOD_theater }
+			AND = {
+				590 = { has_state_flag = HOD_theater }
+				1103 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8781,9 +8779,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1107 = { has_state_flag = HOD_theater }
-			1110 = { has_state_flag = HOD_theater }
+			AND = {
+				1107 = { has_state_flag = HOD_theater }
+				1110 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -8831,15 +8829,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1114 = { has_state_flag = HOD_theater }
-			47 = { has_state_flag = HOD_theater }
+			AND = {
+				1114 = { has_state_flag = HOD_theater }
+				47 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18961
+	icon = 19804
 	offset = { 0 0 0 }
 }
 
@@ -8881,15 +8879,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1113 = { has_state_flag = HOD_theater }
-			1118 = { has_state_flag = HOD_theater }
+			AND = {
+				1113 = { has_state_flag = HOD_theater }
+				1118 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18961
+	icon = 19819
 	offset = { 0 0 0 }
 }
 
@@ -8931,15 +8929,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1121 = { has_state_flag = HOD_theater }
-			492 = { has_state_flag = HOD_theater }
+			AND = {
+				1121 = { has_state_flag = HOD_theater }
+				492 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18910
+	icon = 19862
 	offset = { 0 0 0 }
 }
 
@@ -8981,15 +8979,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1122 = { has_state_flag = HOD_theater }
-			50 = { has_state_flag = HOD_theater }
+			AND = {
+				1122 = { has_state_flag = HOD_theater }
+				50 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18910
+	icon = 19969
 	offset = { 0 0 0 }
 }
 
@@ -9031,9 +9029,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			463 = { has_state_flag = HOD_theater }
-			200 = { has_state_flag = HOD_theater }
+			AND = {
+				463 = { has_state_flag = HOD_theater }
+				200 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9081,15 +9079,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1080 = { has_state_flag = HOD_theater }
-			455 = { has_state_flag = HOD_theater }
+			AND = {
+				1080 = { has_state_flag = HOD_theater }
+				455 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19040
+	icon = 19239
 	offset = { 0 0 0 }
 }
 
@@ -9131,15 +9129,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			652 = { has_state_flag = HOD_theater }
-			198 = { has_state_flag = HOD_theater }
+			AND = {
+				652 = { has_state_flag = HOD_theater }
+				198 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19023
+	icon = 3820
 	offset = { 0 0 0 }
 }
 
@@ -9181,15 +9179,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1069 = { has_state_flag = HOD_theater }
-			1073 = { has_state_flag = HOD_theater }
+			AND = {
+				1069 = { has_state_flag = HOD_theater }
+				1073 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19023
+	icon = 20240
 	offset = { 0 0 0 }
 }
 
@@ -9231,15 +9229,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			119 = { has_state_flag = HOD_theater }
-			1064 = { has_state_flag = HOD_theater }
+			AND = {
+				119 = { has_state_flag = HOD_theater }
+				1064 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18930
+	icon = 11035
 	offset = { 0 0 0 }
 }
 
@@ -9281,9 +9279,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1059 = { has_state_flag = HOD_theater }
-			251 = { has_state_flag = HOD_theater }
+			AND = {
+				1059 = { has_state_flag = HOD_theater }
+				251 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9331,15 +9329,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			94 = { has_state_flag = HOD_theater }
-			1013 = { has_state_flag = HOD_theater }
+			AND = {
+				94 = { has_state_flag = HOD_theater }
+				1013 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18863
+	icon = 6158
 	offset = { 0 0 0 }
 }
 
@@ -9381,15 +9379,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			810 = { has_state_flag = HOD_theater }
-			189 = { has_state_flag = HOD_theater }
+			AND = {
+				810 = { has_state_flag = HOD_theater }
+				189 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18771
+	icon = 8918
 	offset = { 0 0 0 }
 }
 
@@ -9431,15 +9429,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			810 = { has_state_flag = HOD_theater }
-			190 = { has_state_flag = HOD_theater }
+			AND = {
+				810 = { has_state_flag = HOD_theater }
+				190 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18771
+	icon = 8714
 	offset = { 0 0 0 }
 }
 
@@ -9481,15 +9479,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1024 = { has_state_flag = HOD_theater }
-			1028 = { has_state_flag = HOD_theater }
+			AND = {
+				1024 = { has_state_flag = HOD_theater }
+				1028 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18771
+	icon = 21628
 	offset = { 0 0 0 }
 }
 
@@ -9531,15 +9529,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1020 = { has_state_flag = HOD_theater }
-			191 = { has_state_flag = HOD_theater }
+			AND = {
+				1020 = { has_state_flag = HOD_theater }
+				191 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18771
+	icon = 21524
 	offset = { 0 0 0 }
 }
 
@@ -9581,15 +9579,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1015 = { has_state_flag = HOD_theater }
-			816 = { has_state_flag = HOD_theater }
+			AND = {
+				1015 = { has_state_flag = HOD_theater }
+				816 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18771
+	icon = 21503
 	offset = { 0 0 0 }
 }
 
@@ -9631,9 +9629,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1031 = { has_state_flag = HOD_theater }
-			92 = { has_state_flag = HOD_theater }
+			AND = {
+				1031 = { has_state_flag = HOD_theater }
+				92 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9681,15 +9679,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1026 = { has_state_flag = HOD_theater }
-			798 = { has_state_flag = HOD_theater }
+			AND = {
+				1026 = { has_state_flag = HOD_theater }
+				798 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18963
+	icon = 21741
 	offset = { 0 0 0 }
 }
 
@@ -9731,9 +9729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1029 = { has_state_flag = HOD_theater }
-			247 = { has_state_flag = HOD_theater }
+			AND = {
+				1029 = { has_state_flag = HOD_theater }
+				247 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9781,15 +9779,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1004 = { has_state_flag = HOD_theater }
-			144 = { has_state_flag = HOD_theater }
+			AND = {
+				1004 = { has_state_flag = HOD_theater }
+				144 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18869
+	icon = 20668
 	offset = { 0 0 0 }
 }
 
@@ -9831,15 +9829,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1008 = { has_state_flag = HOD_theater }
-			155 = { has_state_flag = HOD_theater }
+			AND = {
+				1008 = { has_state_flag = HOD_theater }
+				155 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18725
+	icon = 20861
 	offset = { 0 0 0 }
 }
 
@@ -9881,9 +9879,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			997 = { has_state_flag = HOD_theater }
-			868 = { has_state_flag = HOD_theater }
+			AND = {
+				997 = { has_state_flag = HOD_theater }
+				868 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9931,9 +9929,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			865 = { has_state_flag = HOD_theater }
-			971 = { has_state_flag = HOD_theater }
+			AND = {
+				865 = { has_state_flag = HOD_theater }
+				971 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9981,9 +9979,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			182 = { has_state_flag = HOD_theater }
-			983 = { has_state_flag = HOD_theater }
+			AND = {
+				182 = { has_state_flag = HOD_theater }
+				983 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10031,9 +10029,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			979 = { has_state_flag = HOD_theater }
-			984 = { has_state_flag = HOD_theater }
+			AND = {
+				979 = { has_state_flag = HOD_theater }
+				984 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10081,15 +10079,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			978 = { has_state_flag = HOD_theater }
-			992 = { has_state_flag = HOD_theater }
+			AND = {
+				978 = { has_state_flag = HOD_theater }
+				992 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19013
+	icon = 20618
 	offset = { 0 0 0 }
 }
 
@@ -10131,15 +10129,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			994 = { has_state_flag = HOD_theater }
-			184 = { has_state_flag = HOD_theater }
+			AND = {
+				994 = { has_state_flag = HOD_theater }
+				184 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 19013
+	icon = 20530
 	offset = { 0 0 0 }
 }
 
@@ -10181,9 +10179,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			968 = { has_state_flag = HOD_theater }
-			872 = { has_state_flag = HOD_theater }
+			AND = {
+				968 = { has_state_flag = HOD_theater }
+				872 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10231,9 +10229,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			90 = { has_state_flag = HOD_theater }
-			1035 = { has_state_flag = HOD_theater }
+			AND = {
+				90 = { has_state_flag = HOD_theater }
+				1035 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10281,9 +10279,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			718 = { has_state_flag = HOD_theater }
-			1039 = { has_state_flag = HOD_theater }
+			AND = {
+				718 = { has_state_flag = HOD_theater }
+				1039 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10331,15 +10329,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			777 = { has_state_flag = HOD_theater }
-			1035 = { has_state_flag = HOD_theater }
+			AND = {
+				777 = { has_state_flag = HOD_theater }
+				1035 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18884
+	icon = 7877
 	offset = { 0 0 0 }
 }
 
@@ -10381,15 +10379,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1037 = { has_state_flag = HOD_theater }
-			751 = { has_state_flag = HOD_theater }
+			AND = {
+				1037 = { has_state_flag = HOD_theater }
+				751 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18884
+	icon = 21866
 	offset = { 0 0 0 }
 }
 
@@ -10431,15 +10429,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1038 = { has_state_flag = HOD_theater }
-			739 = { has_state_flag = HOD_theater }
+			AND = {
+				1038 = { has_state_flag = HOD_theater }
+				739 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18751
+	icon = 21871
 	offset = { 0 0 0 }
 }
 
@@ -10481,9 +10479,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			712 = { has_state_flag = HOD_theater }
-			1055 = { has_state_flag = HOD_theater }
+			AND = {
+				712 = { has_state_flag = HOD_theater }
+				1055 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10531,15 +10529,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			722 = { has_state_flag = HOD_theater }
-			1041 = { has_state_flag = HOD_theater }
+			AND = {
+				722 = { has_state_flag = HOD_theater }
+				1041 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18696
+	icon = 9499
 	offset = { 0 0 0 }
 }
 
@@ -10581,15 +10579,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			719 = { has_state_flag = HOD_theater }
-			193 = { has_state_flag = HOD_theater }
+			AND = {
+				719 = { has_state_flag = HOD_theater }
+				193 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18696
+	icon = 9154
 	offset = { 0 0 0 }
 }
 
@@ -10631,15 +10629,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1044 = { has_state_flag = HOD_theater }
-			194 = { has_state_flag = HOD_theater }
+			AND = {
+				1044 = { has_state_flag = HOD_theater }
+				194 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18696
+	icon = 21391
 	offset = { 0 0 0 }
 }
 
@@ -10681,15 +10679,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			284 = { has_state_flag = HOD_theater }
-			711 = { has_state_flag = HOD_theater }
+			AND = {
+				284 = { has_state_flag = HOD_theater }
+				711 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18919
+	icon = 21345
 	offset = { 0 0 0 }
 }
 
@@ -10731,9 +10729,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1049 = { has_state_flag = HOD_theater }
-			705 = { has_state_flag = HOD_theater }
+			AND = {
+				1049 = { has_state_flag = HOD_theater }
+				705 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10781,15 +10779,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1046 = { has_state_flag = HOD_theater }
-			680 = { has_state_flag = HOD_theater }
+			AND = {
+				1046 = { has_state_flag = HOD_theater }
+				680 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18853
+	icon = 21245
 	offset = { 0 0 0 }
 }
 
@@ -10831,15 +10829,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			309 = { has_state_flag = HOD_theater }
-			1120 = { has_state_flag = HOD_theater }
+			AND = {
+				309 = { has_state_flag = HOD_theater }
+				1120 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18910
+	icon = 15443
 	offset = { 0 0 0 }
 }
 
@@ -10881,15 +10879,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			1116 = { has_state_flag = HOD_theater }
-			487 = { has_state_flag = HOD_theater }
+			AND = {
+				1116 = { has_state_flag = HOD_theater }
+				487 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18859
+	icon = 19763
 	offset = { 0 0 0 }
 }
 
@@ -10931,9 +10929,9 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			990 = { has_state_flag = HOD_theater }
-			606 = { has_state_flag = HOD_theater }
+			AND = {
+				990 = { has_state_flag = HOD_theater }
+				606 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10981,15 +10979,15 @@ adjacency_rule =
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
-			OR = {
-			384 = { has_state_flag = HOD_theater }
-			388 = { has_state_flag = HOD_theater }
+			AND = {
+				384 = { has_state_flag = HOD_theater }
+				388 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18932
+	icon = 15131
 	offset = { 0 0 0 }
 }
 # END HOD hyperlanes
