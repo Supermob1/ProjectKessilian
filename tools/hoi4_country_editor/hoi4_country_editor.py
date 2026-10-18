@@ -5,6 +5,7 @@ Run:  python hoi4_country_editor.py [mod_folder]           (GUI)
 """
 import colorsys
 import os
+import random
 import re
 import sys
 from collections import Counter, defaultdict
@@ -87,9 +88,8 @@ def to_rgb(color):
     return tuple(int(c * 255) for c in colorsys.hsv_to_rgb(h, sat, val))
 
 
-def set_top(text, key, value):
-    """Replace the first top-level `key = ...` (value or { block }) with `key = value`, or append it.
-    Edits the text in place so comments and the rest of the file are kept."""
+def top_span(text, key):
+    """(start, end) of the first top-level `key = value-or-{block}` in text, or None."""
     toks = [m for m in TOKEN.finditer(text) if not m.group().startswith('#')]
     depth = 0
     for i, m in enumerate(toks):
@@ -110,8 +110,172 @@ def set_top(text, key, value):
                     if d == 0:
                         end = toks[k].end()
                         break
-            return text[:m.start()] + f'{key} = {value}' + text[end:]
+            return m.start(), end
+    return None
+
+
+def set_top(text, key, value):
+    """Replace the first top-level `key = ...` (value or { block }) with `key = value`, or append it.
+    Edits the text in place so comments and the rest of the file are kept."""
+    span = top_span(text, key)
+    if span:
+        return text[:span[0]] + f'{key} = {value}' + text[span[1]:]
     return text.rstrip('\n') + f'\n{key} = {value}\n'
+
+
+def add_to_block(text, key, snippet):
+    """Insert snippet just before the closing brace of the top-level `key = { ... }`, creating it if needed."""
+    span = top_span(text, key)
+    if span and text[span[1] - 1] == '}':
+        return text[:span[1] - 1].rstrip() + '\n' + snippet.rstrip() + '\n}' + text[span[1]:]
+    return text.rstrip('\n') + f'\n{key} = {{\n{snippet.rstrip()}\n}}\n'
+
+
+ROLES = ('country_leader', 'political_advisor', 'corps_commander', 'field_marshal', 'navy_leader')
+
+
+def character_text(tag, cid, name, role, subtype='', traits='', portrait=''):
+    """A new common/characters entry, using the same layout as the mod's own characters."""
+    tr = f'traits = {{ {traits} }}' if traits else 'traits = { }'
+    pic = ''
+    if portrait:
+        kind = 'civilian' if role in ('country_leader', 'political_advisor') else 'army'
+        pic = f'\t\tportraits = {{ {kind} = {{ large = "{portrait}" }} }}\n'
+    body = {
+        'country_leader': f'country_leader = {{\n\t\t\tdesc = "{cid}_desc"\n\t\t\tideology = {subtype}\n'
+                          f'\t\t\t{tr}\n\t\t\tid = -1\n\t\t}}',
+        'political_advisor': f'advisor = {{\n\t\t\tslot = political_advisor\n\t\t\tidea_token = {cid}_pol\n'
+                             f'\t\t\tcost = 150\n\t\t\tallowed = {{ original_tag = {tag} }}\n\t\t\t{tr}\n'
+                             f'\t\t\tai_will_do = {{ factor = 1 }}\n\t\t}}',
+        'navy_leader': f'navy_leader = {{\n\t\t\t{tr}\n\t\t\tskill = 2\n\t\t\tattack_skill = 2\n'
+                       f'\t\t\tdefense_skill = 2\n\t\t\tmaneuvering_skill = 2\n\t\t\tcoordination_skill = 2\n'
+                       f'\t\t\tlegacy_id = -1\n\t\t}}',
+    }.get(role, f'{role} = {{\n\t\t\t{tr}\n\t\t\tskill = 2\n\t\t\tattack_skill = 2\n'
+                f'\t\t\tdefense_skill = 2\n\t\t\tplanning_skill = 2\n\t\t\tlogistics_skill = 2\n'
+                f'\t\t\tlegacy_id = -1\n\t\t}}')
+    return f'\t{cid} = {{\n\t\tname = "{name}"\n\t\tgender = male\n{pic}\t\t{body}\n\t}}\n'
+
+
+def add_character(mod, tag, cid, block):
+    """Append a character to the country's character file and recruit it in its history file."""
+    existing = next((f for c, (_, f) in mod.characters.items() if c.startswith(tag + '_')), None)
+    cfile = existing or mod.path('common', 'characters', f'{tag}.txt')
+    text = read_text(cfile) if os.path.exists(cfile) else ''
+    os.makedirs(os.path.dirname(cfile), exist_ok=True)
+    write_text(cfile, add_to_block(text, 'characters', block))
+    hfile = mod.history.get(tag)
+    if hfile:
+        h = read_text(hfile)
+        last = list(re.finditer(r'^[ \t]*recruit_character\s*=.*$', h, re.M))
+        line = f'recruit_character = {cid}'
+        h = h[:last[-1].end()] + '\n' + line + h[last[-1].end():] if last else h.rstrip('\n') + f'\n{line}\n'
+        write_text(hfile, h)
+    return cfile
+
+
+# Government-name patterns per ideology; {n} = country name, {a} = adjective. Unknown ideologies use 'default'.
+NAME_PATTERNS = {
+    'force_magocracy': ['{a} Dominion', 'Order of {n}', '{a} Sith Imperium', '{a} Theocracy', 'Holy {a} Enclave',
+                        '{a} Force Covenant'],
+    'inclusivist': ['{a} Commonwealth', '{a} Free Assembly', 'United Peoples of {n}', '{a} Concord',
+                    '{a} Open Republic'],
+    'distributionist': ["{a} People's Collective", '{a} Workers Union', "{a} People's Republic", 'Free Commune of {n}',
+                        '{a} Symbiotic Assembly'],
+    'corporate_consortium': ['{n} Consortium', '{a} Trade Combine', '{n} Holdings', '{a} Mercantile Directorate',
+                             '{n} Incorporated'],
+    'akaanadocrat': ['{a} Military Directorate', '{a} War Council', '{a} Clan Conclave', '{n} Martial Protectorate',
+                     '{a} Warlord State'],
+    'corist': ['Kingdom of {n}', '{a} Crown Worlds', '{a} Royal House', '{a} Senate Protectorate', 'Principality of {n}'],
+    'ruusanist': ['Republic of {n}', '{a} Senate', '{a} Federal Republic', '{a} Constitutional Republic',
+                  '{a} Sector Assembly'],
+    'trade_democrat': ['{a} Free Trade Republic', '{a} Market Alliance', '{a} Commerce Assembly',
+                       'Free Worlds of {n}', '{a} Trade Federation'],
+    'unitist': ['{a} Empire', '{a} Unified State', '{a} New Order', '{a} Imperial Remnant', '{a} Authority'],
+    'default': ['{a} State', '{a} Government', '{a} Authority', '{a} Regime'],
+}
+PARTY_PATTERNS = {
+    'force_magocracy': ['{a} Force Order', 'Disciples of the Force', 'The Dark Covenant'],
+    'inclusivist': ['{a} Unity Movement', 'Coalition for All Species', 'Open Galaxy Party'],
+    'distributionist': ["{a} People's Front", 'Workers Collective', 'Shared Prosperity Movement'],
+    'corporate_consortium': ['{a} Board of Directors', 'Shareholder Council', 'Consortium Executive'],
+    'akaanadocrat': ['{a} War Council', 'Officer Corps', 'Clan Assembly'],
+    'corist': ['{a} Loyalists', 'Royal Council', 'Old Houses'],
+    'ruusanist': ['{a} Reformists', 'Ruusan Constitutionalists', 'Senate Moderates'],
+    'trade_democrat': ['{a} Free Traders', 'Merchant Guild Party', 'Liberal Commerce League'],
+    'unitist': ['{a} Unity Front', 'Order and Unity Party', 'COMPNOR Cell'],
+    'default': ['{a} Party', '{a} Movement'],
+}
+
+
+def suggest_names(ideology, name, adj, rng):
+    """(name, long name, adjective, party) suggestion for one ideology of a country."""
+    long_name = len(name.split()) > 2  # "Kingdom of Independent Movement for ..." reads badly: use adjective forms only
+
+    def pick(table):
+        options = [o for o in table.get(ideology, table['default']) if not (long_name and '{n}' in o)]
+        return rng.choice(options or table['default']).format(n=name, a=adj or name)
+
+    long = pick(NAME_PATTERNS)
+    return long, 'the ' + long, adj or name, pick(PARTY_PATTERNS)
+
+
+FLAG_LAYOUTS = ('plain', 'two horizontal', 'three horizontal', 'three vertical', 'cross', 'diagonal', 'canton',
+                'border')
+
+
+def make_flag(layout, colors, emblem=None, emblem_scale=0.6, emblem_pos='center', size=(82, 52)):
+    """Draw a flag with Pillow. colors: 3 (r, g, b) tuples. emblem: an RGBA Image or None."""
+    from PIL import Image, ImageDraw
+    w, h = size
+    img = Image.new('RGBA', size, colors[0] + (255,))
+    d = ImageDraw.Draw(img)
+    c1, c2 = colors[1] + (255,), colors[2] + (255,)
+    if layout == 'two horizontal':
+        d.rectangle((0, h // 2, w, h), fill=c1)
+    elif layout == 'three horizontal':
+        d.rectangle((0, h // 3, w, 2 * h // 3), fill=c1)
+        d.rectangle((0, 2 * h // 3, w, h), fill=c2)
+    elif layout == 'three vertical':
+        d.rectangle((w // 3, 0, 2 * w // 3, h), fill=c1)
+        d.rectangle((2 * w // 3, 0, w, h), fill=c2)
+    elif layout == 'cross':
+        t = max(2, h // 6)
+        d.rectangle((0, h // 2 - t, w, h // 2 + t), fill=c1)
+        d.rectangle((w // 3 - t, 0, w // 3 + t, h), fill=c1)
+    elif layout == 'diagonal':
+        d.polygon([(0, h), (w, 0), (w, h)], fill=c1)
+    elif layout == 'canton':
+        d.rectangle((0, 0, w // 2, h // 2), fill=c1)
+    elif layout == 'border':
+        t = max(2, h // 8)
+        d.rectangle((0, 0, w - 1, h - 1), outline=c1, width=t)
+    if emblem is not None:
+        box = (w // 2, h // 2) if emblem_pos == 'canton' else (w, h)
+        e = emblem.copy()
+        e.thumbnail((max(1, int(box[0] * emblem_scale)), max(1, int(box[1] * emblem_scale))), Image.LANCZOS)
+        img.alpha_composite(e, ((box[0] - e.width) // 2, (box[1] - e.height) // 2))
+    return img
+
+
+def save_flag(mod, name, img):
+    """Write gfx/flags/NAME.tga in the three sizes HOI4 needs (82x52, 41x26, 10x7), 32-bit uncompressed."""
+    from PIL import Image
+    paths = []
+    for sub, size in (('', (82, 52)), ('medium', (41, 26)), ('small', (10, 7))):
+        path = mod.path('gfx', 'flags', sub, f'{name}.tga')
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        img.convert('RGBA').resize(size, Image.LANCZOS).save(path)
+        paths.append(path)
+    return paths
+
+
+def save_portrait(mod, tag, cid, src):
+    """Convert any image to a 156x210 .dds portrait in gfx/leaders/TAG/ and return its mod-relative path."""
+    from PIL import Image, ImageOps
+    rel = f'gfx/leaders/{tag}/portrait_{cid}.dds'
+    os.makedirs(os.path.dirname(mod.path(rel)), exist_ok=True)
+    ImageOps.fit(Image.open(src).convert('RGBA'), (156, 210), Image.LANCZOS).save(mod.path(rel))
+    return rel
 
 
 def block_text(pairs):
@@ -271,9 +435,12 @@ class Mod:
                     if isinstance(mod, list) and get(mod, 'tag') and get(mod, 'add', '0') not in ('0', '-0'):
                         self.focus_trees[get(mod, 'tag')].append(tid)
 
-        self.sprites = set()
+        self.sprites = {}  # GFX_name -> texture file
         for f in self.files('interface', '.gfx'):
-            self.sprites.update(re.findall(r'name\s*=\s*"?(GFX_[^\s"}]+)', read_text(f)))
+            for k, v in walk(parse(read_text(f))):
+                if k.lower() == 'spritetype' and isinstance(v, list):
+                    tex = next((x for kk, x in v if kk.lower() == 'texturefile'), '')
+                    self.sprites[get(v, 'name', '')] = tex
 
     def country(self, tag):
         return Country(self, tag)
@@ -418,11 +585,12 @@ class Country:
         port = get(body, 'portraits')
         if not port:
             return None
-        for _, v in walk(port):
-            if isinstance(v, str) and v:
+        pics = sorted(((k != 'large', v) for k, v in walk(port) if isinstance(v, str) and v))  # 'large' first
+        for _, v in pics:
+            if v:
                 if v.startswith('GFX_'):
-                    return v if v in self.mod.sprites else ''
-                return v if self.mod.find(v) else ''
+                    v = self.mod.sprites.get(v, '')
+                return v if v and self.mod.find(v) else ''
         return None
 
 
@@ -488,16 +656,20 @@ def run_gui(mod_root):
     state = {'country': None}
     flags = {}
 
-    def flag_photo(name, size):
-        if (name, size) not in flags:
-            f = mod.find(f'gfx/flags/{name}.tga')
-            flags[name, size] = None
+    def photo(rel, size):
+        """Cached Tk image of a mod file (flag .tga, portrait .dds/.png...), or None if missing/unreadable."""
+        if (rel, size) not in flags:
+            f = rel and mod.find(rel)
+            flags[rel, size] = None
             if f and Image:
                 try:
-                    flags[name, size] = ImageTk.PhotoImage(Image.open(f).convert('RGBA').resize(size, Image.LANCZOS))
+                    flags[rel, size] = ImageTk.PhotoImage(Image.open(f).convert('RGBA').resize(size, Image.LANCZOS))
                 except OSError:
                     pass
-        return flags[name, size]
+        return flags[rel, size]
+
+    def flag_photo(name, size):
+        return photo(f'gfx/flags/{name}.tga', size)
 
     status = ttk.Label(root, anchor='w')
     status.pack(side='bottom', fill='x')
@@ -669,7 +841,23 @@ def run_gui(mod_root):
     checklist.tag_configure('bad_required', foreground='#c00000')
     checklist.tag_configure('bad_recommended', foreground='#b06000')
     checklist.tag_configure('bad_optional', foreground='#777777')
-    leaders = tab('Leaders', ('id', 'name', 'roles', 'ideology', 'portrait'))
+    lead_frame = ttk.Frame(nb)
+    nb.add(lead_frame, text='Leaders')
+    lead_bar = ttk.Frame(lead_frame)
+    lead_bar.pack(fill='x')
+    ttk.Button(lead_bar, text='Add leader...', command=lambda: add_leader_dialog()).pack(side='left', padx=4, pady=4)
+    ttk.Style().configure('Portrait.Treeview', rowheight=66)
+    leaders = ttk.Treeview(lead_frame, columns=('id', 'name', 'roles', 'ideology'), show='tree headings',
+                           style='Portrait.Treeview')
+    leaders.heading('#0', text='Portrait')
+    leaders.column('#0', width=70, stretch=False)
+    for col, w in (('id', 170), ('name', 150), ('roles', 160), ('ideology', 110)):
+        leaders.heading(col, text=col)
+        leaders.column(col, width=w)
+    lsb2 = ttk.Scrollbar(lead_frame, command=leaders.yview)
+    leaders.configure(yscrollcommand=lsb2.set)
+    lsb2.pack(side='right', fill='y')
+    leaders.pack(fill='both', expand=True)
     ideas = tab('National ideas', ('idea', 'name'), {'idea': 250, 'name': 300})
     units = tab('OOB', ('oob', 'content'), {'oob': 150, 'content': 420})
 
@@ -749,8 +937,23 @@ def run_gui(mod_root):
             for col, key in enumerate(keys, 1):
                 names[key] = tk.StringVar(value=mod.loc.get(key, ''))
                 ttk.Entry(g, textvariable=names[key], width=14).grid(row=r, column=col, padx=1, pady=1)
-        ttk.Label(overview, foreground='#777', text='Empty ideology names fall back to the default one. New keys are '
-                  'saved next to the existing country name localisation.').pack(anchor='w', pady=(2, 6))
+        hint = ttk.Frame(overview)
+        hint.pack(fill='x', pady=(2, 6))
+        generated = set()  # keys filled by the generator, so a second click re-rolls them
+
+        def suggest():
+            rng = random.Random()
+            base_name, adj = names[tag].get() or tag, names[f'{tag}_ADJ'].get()
+            for ideo in ideologies:
+                keys = [f'{tag}_{ideo}', f'{tag}_{ideo}_DEF', f'{tag}_{ideo}_ADJ', f'{tag}_{ideo}_party']
+                for key, val in zip(keys, suggest_names(ideo, base_name, adj, rng)):
+                    if not names[key].get() or key in generated:
+                        names[key].set(val)
+                        generated.add(key)
+
+        ttk.Button(hint, text='Suggest names', command=suggest).pack(side='left')
+        ttk.Label(hint, foreground='#777', text=' fills the empty boxes (click again for others). Nothing is written '
+                  'until Save overview. Empty names fall back to the default.').pack(side='left')
         ttk.Separator(overview).pack(fill='x', pady=4)
 
         cf = ttk.Frame(overview)
@@ -767,6 +970,8 @@ def run_gui(mod_root):
                 swatch['background'] = hexa
 
         ttk.Button(cf, text='Pick...', command=pick).grid(row=0, column=2)
+        ttk.Button(cf, text='Flag maker...', command=lambda: flag_maker_dialog(c, tuple(color))).grid(
+            row=0, column=3, padx=6)
         ttk.Label(cf, text='Flags:').grid(row=1, column=0, sticky='nw', pady=4)
         fl = ttk.Frame(cf)
         fl.grid(row=1, column=1, columnspan=8, sticky='w', pady=4)
@@ -884,6 +1089,155 @@ def run_gui(mod_root):
         ttk.Button(bf, text='Edit history file', command=lambda: (nb.select(ed_frame))).pack(side='left', padx=4)
         ttk.Button(bf, text='Open flags folder', command=lambda: open_folder(mod.path('gfx', 'flags'))).pack(side='left')
 
+    def add_leader_dialog():
+        c = state['country']
+        if not c:
+            return
+        tag = c.tag
+        dlg = tk.Toplevel(root)
+        dlg.title(f'Add leader to {tag}')
+        dlg.transient(root)
+        v = {k: tk.StringVar() for k in ('name', 'id', 'role', 'subtype', 'traits', 'desc')}
+        v['role'].set('country_leader')
+        subtypes = sorted(mod.subtype_to_ideology)
+        v['subtype'].set(next((s for s in mod.ideologies.get(c.ruling, [])), subtypes[0] if subtypes else ''))
+        auto = {'id': True}
+
+        def on_name(*_):
+            if auto['id']:
+                slug = re.sub(r'[^a-z0-9]+', '_', v['name'].get().lower()).strip('_')
+                v['id'].set(f'{tag}_{slug}' if slug else '')
+
+        v['name'].trace_add('write', on_name)
+        rows = (('Name', ttk.Entry(dlg, textvariable=v['name'], width=34)),
+                ('Character id', ttk.Entry(dlg, textvariable=v['id'], width=34)),
+                ('Role', ttk.Combobox(dlg, textvariable=v['role'], values=ROLES, state='readonly', width=31)),
+                ('Ideology (leaders)', ttk.Combobox(dlg, textvariable=v['subtype'], values=subtypes,
+                                                    state='readonly', width=31)),
+                ('Traits (space separated)', ttk.Entry(dlg, textvariable=v['traits'], width=34)),
+                ('Description (leaders)', ttk.Entry(dlg, textvariable=v['desc'], width=34)))
+        for r, (label, widget) in enumerate(rows):
+            ttk.Label(dlg, text=label).grid(row=r, column=0, sticky='w', padx=6, pady=2)
+            widget.grid(row=r, column=1, sticky='w', padx=6, pady=2)
+        rows[1][1].bind('<Key>', lambda e: auto.update(id=False))
+        pic = {'src': None}
+        preview = ttk.Label(dlg, text='no portrait', width=20, anchor='center')
+        preview.grid(row=0, column=2, rowspan=6, padx=8)
+
+        def pick_portrait():
+            f = filedialog.askopenfilename(parent=dlg, title='Portrait image',
+                                           filetypes=[('Images', '*.png *.jpg *.jpeg *.dds *.tga *.webp'), ('All', '*')])
+            if f and Image:
+                try:
+                    from PIL import ImageOps
+                    img = ImageOps.fit(Image.open(f).convert('RGBA'), (156, 210), Image.LANCZOS)
+                except OSError as e:
+                    messagebox.showerror('Portrait', f'Cannot read this image: {e}', parent=dlg)
+                    return
+                pic['src'], pic['photo'] = f, ImageTk.PhotoImage(img)
+                preview.configure(image=pic['photo'], text='')
+
+        def create():
+            cid, name, role = v['id'].get().strip(), v['name'].get().strip(), v['role'].get()
+            if not name or not re.fullmatch(r'[A-Za-z0-9_]+', cid):
+                messagebox.showerror('Add leader', 'Give a name and an id made of letters, digits and _.', parent=dlg)
+                return
+            if cid in mod.characters:
+                messagebox.showerror('Add leader', f'{cid} already exists.', parent=dlg)
+                return
+            portrait = save_portrait(mod, tag, cid, pic['src']) if pic['src'] else ''
+            block = character_text(tag, cid, name.replace('"', "'"), role, v['subtype'].get(),
+                                   v['traits'].get().strip(), portrait)
+            cfile = add_character(mod, tag, cid, block)
+            if role == 'country_leader' and v['desc'].get().strip():
+                set_loc(mod, f'{cid}_desc', v['desc'].get().strip().replace('"', "'"),
+                        mod.loc_file.get(tag) or mod.path('localisation', 'english', 'country_editor_l_english.yml'))
+            dlg.destroy()
+            after_save()
+            nb.select(lead_frame)
+            status['text'] = f'Added {cid} to {os.path.relpath(cfile, mod.root)} and recruited it in the history file.'
+
+        ttk.Button(dlg, text='Portrait image...', command=pick_portrait).grid(row=6, column=2, pady=4)
+        ttk.Button(dlg, text='Create', command=create).grid(row=6, column=1, sticky='e', padx=6, pady=8)
+
+    def flag_maker_dialog(c, country_color):
+        if not Image:
+            messagebox.showerror('Flag maker', 'Needs Pillow: pip install pillow')
+            return
+        tag = c.tag
+        dlg = tk.Toplevel(root)
+        dlg.title(f'Flag maker - {tag}')
+        dlg.transient(root)
+        target = tk.StringVar(value='base')
+        layout = tk.StringVar(value='three horizontal')
+        pos = tk.StringVar(value='center')
+        scale = tk.DoubleVar(value=0.6)
+        colors = [list(country_color), [255, 255, 255], [20, 20, 20]]
+        fm = {'emblem': None}
+        ctl = ttk.Frame(dlg, padding=8)
+        ctl.pack(side='left', fill='y')
+        prev = ttk.Label(dlg, padding=8)
+        prev.pack(side='left')
+
+        def render(*_):
+            img = make_flag(layout.get(), [tuple(x) for x in colors], fm['emblem'], scale.get(), pos.get(), (328, 208))
+            fm['img'], fm['photo'] = img, ImageTk.PhotoImage(img)
+            prev.configure(image=fm['photo'])
+
+        ttk.Label(ctl, text='Save as').grid(row=0, column=0, sticky='w')
+        ttk.Combobox(ctl, textvariable=target, values=['base'] + list(mod.ideologies), state='readonly').grid(
+            row=0, column=1, columnspan=2, sticky='w')
+        ttk.Label(ctl, text='Layout').grid(row=1, column=0, sticky='w')
+        lay = ttk.Combobox(ctl, textvariable=layout, values=FLAG_LAYOUTS, state='readonly')
+        lay.grid(row=1, column=1, columnspan=2, sticky='w')
+        lay.bind('<<ComboboxSelected>>', render)
+        for i in range(3):
+            sw = tk.Label(ctl, width=6, relief='solid', background='#%02x%02x%02x' % tuple(colors[i]))
+            ttk.Label(ctl, text=f'Colour {i + 1}').grid(row=2 + i, column=0, sticky='w')
+            sw.grid(row=2 + i, column=1, sticky='w', pady=2)
+
+            def pick(i=i, sw=sw):
+                rgb, hexa = colorchooser.askcolor(sw['background'], parent=dlg)
+                if rgb:
+                    colors[i] = [int(x) for x in rgb]
+                    sw['background'] = hexa
+                    render()
+
+            ttk.Button(ctl, text='Pick...', command=pick).grid(row=2 + i, column=2, sticky='w')
+
+        def pick_emblem():
+            f = filedialog.askopenfilename(parent=dlg, title='Emblem image (PNG with transparency works best)',
+                                           filetypes=[('Images', '*.png *.tga *.dds *.jpg *.jpeg *.webp'), ('All', '*')])
+            if f:
+                try:
+                    fm['emblem'] = Image.open(f).convert('RGBA')
+                except OSError as e:
+                    messagebox.showerror('Emblem', f'Cannot read this image: {e}', parent=dlg)
+                render()
+
+        ttk.Button(ctl, text='Emblem image...', command=pick_emblem).grid(row=5, column=0, columnspan=2, sticky='w', pady=4)
+        ttk.Button(ctl, text='No emblem', command=lambda: (fm.update(emblem=None), render())).grid(row=5, column=2)
+        ttk.Label(ctl, text='Emblem size').grid(row=6, column=0, sticky='w')
+        ttk.Scale(ctl, from_=0.2, to=1.0, variable=scale, command=render).grid(row=6, column=1, columnspan=2, sticky='we')
+        ttk.Label(ctl, text='Emblem place').grid(row=7, column=0, sticky='w')
+        pb = ttk.Combobox(ctl, textvariable=pos, values=('center', 'canton'), state='readonly')
+        pb.grid(row=7, column=1, columnspan=2, sticky='w')
+        pb.bind('<<ComboboxSelected>>', render)
+
+        def save():
+            name = tag if target.get() == 'base' else f'{tag}_{target.get()}'
+            if mod.find(f'gfx/flags/{name}.tga') and not messagebox.askyesno(
+                    'Flag maker', f'{name}.tga already exists. Replace it (all 3 sizes)?', parent=dlg):
+                return
+            save_flag(mod, name, fm['img'])
+            flags.clear()
+            dlg.destroy()
+            after_save()
+            status['text'] = f'Saved gfx/flags/{name}.tga, medium/{name}.tga and small/{name}.tga.'
+
+        ttk.Button(ctl, text='Save flag', command=save).grid(row=8, column=0, columnspan=3, sticky='we', pady=10)
+        render()
+
     def show(tag):
         c = mod.country(tag)
         state['country'] = c
@@ -897,8 +1251,11 @@ def run_gui(mod_root):
         rows = sorted(c.checks, key=lambda x: (x[1], order[x[0]]))
         fill(checklist, [('OK' if ok else 'MISSING', lvl, txt) for lvl, ok, txt in rows],
              ['ok' if ok else f'bad_{lvl}' for lvl, ok, _ in rows])
-        fill(leaders, [(cid, name, roles, ideo, 'none' if pic is None else (pic or 'MISSING FILE'))
-                       for cid, name, roles, ideo, pic in c.leaders])
+        leaders.delete(*leaders.get_children())
+        for cid, name, roles, ideo, pic in c.leaders:
+            img = photo(pic, (46, 62))
+            leaders.insert('', 'end', image=img or '', text='' if img else ('no portrait' if pic is None else 'MISSING'),
+                           values=(cid, name, roles, ideo))
         fill(ideas, [(i, mod.loc.get(i, '')) for _, i in (get(c.history, 'add_ideas', []) or [])])
         fill(units, [(k, line) for k, lines in c.units.items() for line in lines])
         file_pick['values'] = list(c.files)
