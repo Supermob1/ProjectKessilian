@@ -501,12 +501,13 @@ def run_gui(mod_root):
 
     status = ttk.Label(root, anchor='w')
     status.pack(side='bottom', fill='x')
-    panes = ttk.PanedWindow(root, orient='horizontal')
+    # classic PanedWindow: per-pane minsize so no panel can start collapsed (ttk sashpos runs before Windows sizes it)
+    panes = tk.PanedWindow(root, orient='horizontal', sashwidth=6, sashrelief='raised')
     panes.pack(fill='both', expand=True)
 
     # ---------------- left: country list
     left = ttk.Frame(panes)
-    panes.add(left, weight=0)
+    panes.add(left, width=470, minsize=250, stretch='never')
     top = ttk.Frame(left)
     top.pack(fill='x', padx=4, pady=4)
     ttk.Label(top, text='Search:').pack(side='left')
@@ -525,7 +526,7 @@ def run_gui(mod_root):
 
     # ---------------- middle: map
     mid = ttk.Frame(panes)
-    panes.add(mid, weight=1)
+    panes.add(mid, width=600, minsize=250, stretch='always')
     modes = ttk.Frame(mid)
     modes.pack(fill='x', padx=4, pady=4)
     map_mode = tk.StringVar(value='countries')
@@ -636,7 +637,7 @@ def run_gui(mod_root):
 
     # ---------------- right: country page
     right = ttk.Frame(panes)
-    panes.add(right, weight=0)
+    panes.add(right, width=720, minsize=450, stretch='never')
     head = ttk.Frame(right)
     head.pack(fill='x', padx=6, pady=6)
     head_flag = ttk.Label(head)
@@ -946,9 +947,8 @@ def run_gui(mod_root):
     ttk.Button(btns, text='Reload mod', command=reload_all).pack(side='left')
     ttk.Button(btns, text='Export missing report', command=export).pack(side='left', padx=4)
     refresh_list()
-    root.update_idletasks()
-    panes.sashpos(0, 470)
-    panes.sashpos(1, max(700, root.winfo_width() - 700))
+    if countries.get_children():  # open on the first country so the right panel is never blank
+        countries.selection_set(countries.get_children()[0])
     root.mainloop()
 
 
