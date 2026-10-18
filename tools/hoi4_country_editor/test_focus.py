@@ -4,7 +4,7 @@ import tempfile
 
 from hoi4_country_editor import Mod, read_text, write_text
 from hoi4_focus_editor import (FocusFile, add_auto_names, auto_name, brace_depth, brace_problem, check, earliest_days,
-                               fmt_days, focus_point_days, import_icon, tree_text)
+                               fmt_days, focus_point_days, import_icon, playthroughs, tree_text)
 
 TREE = '''# my tree
 focus_tree = {
@@ -69,6 +69,15 @@ with tempfile.TemporaryDirectory() as d:
     per = focus_point_days(mod)
     assert per == 5 and earliest_days(ff, per) == {'AAA_a': 50, 'AAA_b': 100, 'AAA_c': 100}
     assert fmt_days(400) == '400 days (1 y 35 d)' and fmt_days(50) == '50 days'
+    # exclusives: B and C exclude each other; D needs B, so taking C also loses D
+    ff.add_focus('AAA_d', 5, 3, prereq='AAA_b')
+    ff.set_values('AAA_d', {'cost': '30'})
+    p = playthroughs(ff, per)
+    assert p['all'] == 50 + 50 + 50 + 150 and p['exact']
+    assert p['longest'] == 50 + 50 + 150 and p['shortest'] == 50 + 50
+    assert p['longest_choice'] == ({'AAA_b'},) and len(p['groups']) == 1
+    ff.undo_step()
+    ff.undo_step()
 
     # auto names: tag removed, _ -> space, existing and broken names left alone
     assert auto_name('CIS_The_Raxus_Address') == 'The Raxus Address' and auto_name('REP_we_are') == 'We are'
