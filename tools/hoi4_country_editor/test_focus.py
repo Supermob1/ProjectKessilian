@@ -7,6 +7,68 @@ from hoi4_focus_editor import (FocusFile, add_auto_names, auto_name, brace_depth
                                engine_date, fmt_days, focus_point_days, hod_calendar, hod_date, import_icon,
                                playthroughs, tree_text)
 
+DAILY_COUNTER_VERSION = '''# yearly on_action by Yard1
+
+on_actions = {
+	on_startup = {
+		effect = {
+			set_global_flag = Republic_Era
+			set_variable = { UTI.HODday = 1 }
+			set_variable = { UTI.HODmonth = 1 }
+			set_variable = { UTI.HODyear = -24 }
+			set_variable = { UTI.bby = 0 }
+			CIS = {
+				add_power_balance_value = {
+					id = Sidious_Dooku_Relationship
+					value = 1
+					tooltip_side = Palpy_side
+				}
+			}
+			REP = {
+				add_power_balance_value = {
+					id = REP_Secret_Remilitarization
+					value = 1
+					tooltip_side = REP_Kamino_overcapacity
+				}
+			}
+		}
+	}
+	# this is executed on the 1st of every year FOR ONE RANDOM COUNTRY - use every_country inside
+	on_daily_UTI = {
+		effect = {
+			UTI = {
+				add_to_variable = { UTI.HODday = 1 }
+				if = {
+					limit = {
+						AND = {
+							check_variable = { UTI.HODday = 20 }
+							check_variable = { UTI.HODmonth = 11 }
+						}
+					}
+					set_variable = { UTI.HODday = 1 }
+					set_variable = { UTI.HODmonth = 1 }
+					add_to_variable = { UTI.HODyear = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { UTI.HODday = 36 }
+					}
+					add_to_variable = { UTI.HODmonth = 1 }
+					set_variable = { UTI.HODday = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { UTI.HODyear = 0 }
+					}
+					set_variable = { UTI.bby = 1 }
+					add_to_variable = { UTI.HODyear = 1 }
+				}
+			}
+		}
+	}
+}
+'''
+
 NUM_DAYS_VERSION = '''on_actions = {
 	on_startup = {
 		effect = {
@@ -179,8 +241,7 @@ with tempfile.TemporaryDirectory() as d:
 # the mod calendar matches its on_actions counter, simulated day by day exactly as the script does it
 with tempfile.TemporaryDirectory() as d:
     os.makedirs(os.path.join(d, 'common/on_actions'))
-    write_text(os.path.join(d, 'common/on_actions/a.txt'), read_text(os.path.join(
-        os.path.dirname(os.path.abspath(__file__)), '..', '..', 'common', 'on_actions', '00_on_actions.txt')))
+    write_text(os.path.join(d, 'common/on_actions/a.txt'), DAILY_COUNTER_VERSION)
     cal = hod_calendar(Mod(d))
     assert cal == {'start_year': -24, 'month_days': 35, 'months': 10, 'fest_days': 19}, cal
     swapped = read_text(os.path.join(d, 'common/on_actions/a.txt')).replace(
