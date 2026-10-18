@@ -105,6 +105,7 @@ with tempfile.TemporaryDirectory() as d:
     assert len(probs) == 1 and 'line 5' in probs[0][2]
     write_text(os.path.join(d, 'y.txt'), TREE.rstrip()[:-1])
     ff = FocusFile(os.path.join(d, 'y.txt'))
-    check(ff, Mod(d), others={})[0][3]()  # the one-click fix adds the missing } at the end
-    assert brace_problem(ff.text) is None and len(ff.focuses) == 3
+    probs = check(ff, Mod(d), others={})  # like HOI4: loads anyway, warns, and writes the } only on save
+    assert len(ff.focuses) == 3 and ff.dirty and not [p for p in probs if p[0] == 'error']
+    assert any('without its last' in p[2] for p in probs)
 print('ok')
