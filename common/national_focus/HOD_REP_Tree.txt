@@ -1239,6 +1239,10 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = natarmy_mca_REP_MCA
 			CIS = { country_event = HOD_CIS.1 }
+			swap_ideas = {
+				remove_idea = volunteer_only
+				add_idea = no_conscription
+			}
 			add_popularity = {
 				ideology = unitist
 				popularity = 0.1
@@ -1259,13 +1263,11 @@ focus_tree = {
 			add_war_support = 0.2
 		}
     }
-	
-   #########WAR ECONOMY TREE START##############
+ #########WAR ECONOMY TREE START##############
 	focus = {
 		id = REP_the_war_economy
 		icon = GFX_REP_the_war_economy
-		cost = 5
-
+		cost = 3
 		prerequisite = {
 			#no prereq, start of tree
 		}
@@ -1278,6 +1280,7 @@ focus_tree = {
 		y = 0
 
 		completion_reward = {
+			add_ideas = war_economy
 		}
 	}
 
@@ -1285,8 +1288,7 @@ focus_tree = {
 	focus = {
 		id = REP_managing_the_manufacturing_sector
 		icon = GFX_REP_managing_the_manufacturing_sector
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_the_war_economy
 		}
@@ -1298,15 +1300,23 @@ focus_tree = {
 		relative_position_id = REP_the_war_economy
 
 		completion_reward = {
-
+			add_political_power = 50
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_resource = {
+				type = tungsten
+				amount = 16
+				state = 1					# replace with real core industrial state
+			}
 		}
 	}
-	##LEFT PATH
+	##BLASTECH PATH
 	focus = {
 		id = REP_blastech_contracts
 		icon = GFX_REP_blastech_contracts
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_managing_the_manufacturing_sector
 		}
@@ -1318,14 +1328,24 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
+			add_political_power = 40
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 3500
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 600
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_expanding_tech_factories_on_byblos
 		icon = GFX_REP_expanding_tech_factories_on_byblos
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_blastech_contracts
 		}
@@ -1337,16 +1357,34 @@ focus_tree = {
 		relative_position_id = REP_blastech_contracts
 
 		completion_reward = {
+			add_war_support = 0.03
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+				producer = ROOT
+			}
 		}
 	}
-	##END OF LEFT PATH
-
-	##CENTER PATH
+	##QUALITY VS SPEED
 	focus = {
 		id = REP_make_it_better
 		icon = GFX_REP_make_it_better
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_managing_the_manufacturing_sector
 		}
@@ -1365,14 +1403,25 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
+			add_stability = 0.04
+			add_tech_bonus = {
+				name = quality_weapons_bonus
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 400
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_make_it_faster
 		icon = GFX_REP_make_it_faster
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_managing_the_manufacturing_sector
 		}
@@ -1381,23 +1430,28 @@ focus_tree = {
 			focus = REP_make_it_better
 		}
 
-		available = {
-		}
-
-
 		x = 1
 		y = 1
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
+			add_war_support = 0.04
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_expanding_the_refineries_on_bespin
 		icon = GFX_REP_expanding_the_refineries_on_bespin
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_make_it_better
 			focus = REP_make_it_faster
@@ -1412,15 +1466,23 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
-
+			add_resource = {
+				type = oil
+				amount = 24
+				state = 1					# replace with Bespin or suitable state
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 800
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_the_might_of_balmora
 		icon = GFX_REP_the_might_of_balmora
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_expanding_the_refineries_on_bespin
 		}
@@ -1433,14 +1495,34 @@ focus_tree = {
 		relative_position_id = REP_expanding_the_refineries_on_bespin
 
 		completion_reward = {
+			add_war_support = 0.04
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 4000
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_the_giant_awoken
 		icon = GFX_REP_the_giant_awoken
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_the_might_of_balmora
 		}
@@ -1463,6 +1545,23 @@ focus_tree = {
 		relative_position_id = REP_the_might_of_balmora
 
 		completion_reward = {
+			add_political_power = 80
+			add_war_support = 0.06
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_manpower = 40000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 6000
+				producer = ROOT
+			}
+			army_experience = 20
 		}
 	}
 	##END OF CENTER PATH
@@ -1471,8 +1570,7 @@ focus_tree = {
 	focus = {
 		id = REP_rothana_heavy_engineering_contracts
 		icon = GFX_REP_rothana_heavy_engineering_contracts
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_managing_the_manufacturing_sector
 		}
@@ -1485,14 +1583,25 @@ focus_tree = {
 		relative_position_id = REP_managing_the_manufacturing_sector
 
 		completion_reward = {
+			add_political_power = 40
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis
+				amount = 200
+				producer = ROOT
+			}
+			add_tech_bonus = {
+				name = armour_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
 		}
 	}
 
 	focus = {
 		id = REP_streamlined_production_pipeline
 		icon = GFX_REP_streamlined_production_pipeline
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_rothana_heavy_engineering_contracts
 		}
@@ -1505,6 +1614,16 @@ focus_tree = {
 		relative_position_id = REP_rothana_heavy_engineering_contracts
 
 		completion_reward = {
+			add_command_power = 30
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 300
+				producer = ROOT
+			}
 		}
 	}
 	##END OF RIGHT PATH
@@ -1513,21 +1632,22 @@ focus_tree = {
 	focus = {
 		id = REP_desperate_times
 		icon = GFX_REP_desperate_times
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_the_war_economy
 		}
-		available = {
-		}
-
 
 		x = -8
 		y = 1
 		relative_position_id = REP_the_war_economy
 
 		completion_reward = {
-
+			add_political_power = 40
+			add_resource = {
+				type = coal
+				amount = 40
+				state = 1					# replace with real core state
+			}
 		}
 	}
 
@@ -1535,20 +1655,26 @@ focus_tree = {
 	focus = {
 		id = REP_droid_reclamation_on_gyndine
 		icon = GFX_REP_droid_reclamation_on_gyndine
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_desperate_times
 		}
-		available = {
-		}
-
-
 		x = 1
 		y = 1
 		relative_position_id = REP_desperate_times
 
 		completion_reward = {
+			add_resource = {
+				type = coal
+				amount = 50
+				state = 1
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1000
+				producer = ROOT
+			}
+			add_manpower = 25000
 		}
 	}
 
@@ -1556,8 +1682,7 @@ focus_tree = {
 	focus = {
 		id = REP_nationalize_key_industries
 		icon = GFX_REP_nationalize_key_industries
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_droid_reclamation_on_gyndine
 		}
@@ -1570,15 +1695,24 @@ focus_tree = {
 		relative_position_id = REP_droid_reclamation_on_gyndine
 
 		completion_reward = {
-
+			add_political_power = 60
+			add_resource = {
+				type = coal
+				amount = 60
+				state = 1
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_ideas = limited_exports
 		}
 	}
 
 	focus = {
 		id = REP_extreme_rationing
 		icon = GFX_REP_extreme_rationing
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_nationalize_key_industries
 		}
@@ -1587,17 +1721,20 @@ focus_tree = {
 			focus = REP_improved_restraining_bolts  
 		}
 
-		available = {
-			
-			
-		}
-
-
 		x = 0
 		y = 1
 		relative_position_id = REP_nationalize_key_industries
 
 		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.06
+			add_resource = {
+				type = coal
+				amount = 45
+				state = 1
+			}
+			add_manpower = 35000
+
 		}
 	}
 	##END OF RIGHT PATH
@@ -1607,8 +1744,7 @@ focus_tree = {
 	focus = { #recommended to have an event chain for this focus, people will lose their jobs and be replaced by droids
 		id = REP_droid_assisted_manufacturing
 		icon = GFX_REP_droid_assisted_manufacturing
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_desperate_times
 		}
@@ -1622,35 +1758,49 @@ focus_tree = {
 		relative_position_id = REP_desperate_times
 
 		completion_reward = {
+			add_resource = {
+				type = coal
+				amount = 35
+				state = 1
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 3000
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_improved_restraining_bolts
 		icon = GFX_REP_improved_restraining_bolts
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_droid_assisted_manufacturing
 		}
-
-		available = {
-		}
-
-
 		x = 0
 		y = 1
 		relative_position_id = REP_droid_assisted_manufacturing
 
 		completion_reward = {
+			add_stability = 0.05
+			add_resource = {
+				type = coal
+				amount = 40
+				state = 1
+			}
+			add_command_power = 25
 		}
 	}
 
 	focus = {
 		id = REP_total_war
 		icon = GFX_REP_total_war
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_improved_restraining_bolts
 		}
@@ -1659,286 +1809,328 @@ focus_tree = {
 			focus = REP_nationalize_key_industries
 		}
 
-		available = { 
-		}
-
-
 		x = 0
 		y = 1
 		relative_position_id = REP_improved_restraining_bolts
 
 		completion_reward = {
+			add_war_support = 0.08
+			add_stability = -0.04
+			add_resource = {
+				type = coal
+				amount = 80
+				state = 1
+			}
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			add_manpower = 50000
 		}
 	}
-	## END OF LEFT PATH
-
-	focus = { #capped at war economy, will just give war support and stability if already there.
+	
+	### END OF LEFT BRANCH ###
+	focus = {
 		id = REP_desperate_measures
 		icon = GFX_REP_desperate_measures
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_total_war
 		}
-
 		prerequisite = {
 			focus = REP_extreme_rationing
 		}
-
-		available = {
-		}
-
-
 		x = 0
 		y = 4
 		relative_position_id = REP_desperate_times
-
 		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.10
+			add_stability = -0.05
+			add_resource = {
+				type = coal
+				amount = 100
+				state = 1
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 3
+			}
 		}
 	}
-	### END OF LEFT BRANCH ###
 
-	### START OF RIGHT BRANCH ###
+### START OF RIGHT BRANCH (Control the Banks) ###
+
 	focus = {
 		id = REP_control_the_banks
 		icon = GFX_REP_control_the_banks
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_the_war_economy
 		}
-
-		available = {
-		}
-
-
 		x = 8
 		y = 1
 		relative_position_id = REP_the_war_economy
-
 		completion_reward = {
+			add_political_power = 60
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
+			add_resource = {
+				type = chromium
+				amount = 20
+				state = 1					# replace with real core state
+			}
 		}
 	}
-	##START OF CENTER PATH
+
+	# CENTER PATH
 	focus = {
 		id = REP_longer_hours
 		icon = GFX_REP_longer_hours
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_control_the_banks
 		}
-
-		available = {
-		}
-
-
 		x = 0
 		y = 1
 		relative_position_id = REP_control_the_banks
-
 		completion_reward = {
+			add_stability = -0.04
+			add_war_support = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 4000
+				producer = ROOT
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 800
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_lower_pay
 		icon = GFX_REP_lower_pay
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_longer_hours
 		}
-
-		available = {
-		}
-
-
 		x = 0
 		y = 1
 		relative_position_id = REP_longer_hours
-
 		completion_reward = {
+			add_political_power = 70
+			add_stability = -0.06
+			add_manpower = 60000
+			add_command_power = 40
 		}
 	}
-	##END OF CENTER PATH
 
-	##START OF LEFT PATH
+	# LEFT PATH (Kuat)
 	focus = {
 		id = REP_contacts_in_kuat
 		icon = GFX_REP_contacts_in_kuat
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_control_the_banks
 		}
-
-		available = {
-		}
-
-
 		x = -2
 		y = 1
 		relative_position_id = REP_control_the_banks
-
 		completion_reward = {
+			navy_experience = 30
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 40
+				producer = ROOT
+			}
+			add_tech_bonus = {
+				name = naval_defence_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_equipment
+			}
 		}
 	}
 
 	focus = {
 		id = REP_expanding_the_shipyards_on_kuat
 		icon = GFX_REP_expanding_the_shipyards_on_kuat
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_contacts_in_kuat
 		}
-
-		available = {
-		}
-
-
 		x = 0
 		y = 1
 		relative_position_id = REP_contacts_in_kuat
-
 		completion_reward = {
+			add_war_support = 0.03
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 60
+				producer = ROOT
+			}
 		}
 	}
 
-	focus = {
-		id = REP_all_must_give
-		icon = GFX_REP_all_must_give
-		cost = 10
-
-		prerequisite = {
-			focus = REP_expanding_the_shipyards_on_kuat
-		}
-
-		prerequisite = {
-			focus = REP_lower_pay
-		}
-
-		prerequisite = {
-			focus = REP_ensure_loyalty
-		}
-
-		mutually_exclusive = {
-			focus = REP_wartime_relief_efforts
-		}
-
-		available = {
-		}
-
-
-		x = -1
-		y = 3
-		relative_position_id = REP_control_the_banks
-
-		completion_reward = {
-		}
-	}
-	##END OF LEFT PATH
-
-	##START OF RIGHT PATH
+	# RIGHT PATH
 	focus = {
 		id = REP_a_guiding_hand
 		icon = GFX_REP_a_guiding_hand
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_control_the_banks
 		}
-
-		available = {
-		}
-
-
 		x = 2
 		y = 1
 		relative_position_id = REP_control_the_banks
-
 		completion_reward = {
+			add_tech_bonus = {
+				name = industry_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_ensure_loyalty
 		icon = GFX_REP_ensure_loyalty
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_a_guiding_hand
 		}
-
-		available = {
-		}
-
-
 		x = 0
 		y = 1
 		relative_position_id = REP_a_guiding_hand
-
 		completion_reward = {
+			add_stability = 0.10
+			add_command_power = 35
+			add_political_power = 40
+		}
+	}
+
+	# MUTUALLY EXCLUSIVE JOINING FOCUSES
+	focus = {
+		id = REP_all_must_give
+		icon = GFX_REP_all_must_give
+		cost = 3
+		prerequisite = {
+			focus = REP_expanding_the_shipyards_on_kuat
+		}
+		prerequisite = {
+			focus = REP_lower_pay
+		}
+		prerequisite = {
+			focus = REP_ensure_loyalty
+		}
+		mutually_exclusive = {
+			focus = REP_wartime_relief_efforts
+		}
+		x = -1
+		y = 3
+		relative_position_id = REP_control_the_banks
+		completion_reward = {
+			add_war_support = 0.10
+			add_stability = -0.07
+			add_political_power = 90
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = ROOT
+			}
 		}
 	}
 
 	focus = {
 		id = REP_wartime_relief_efforts
 		icon = GFX_REP_wartime_relief_efforts
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_ensure_loyalty
 		}
-
 		prerequisite = {
 			focus = REP_lower_pay
 		}
-
 		prerequisite = {
 			focus = REP_expanding_the_shipyards_on_kuat
 		}
-
 		mutually_exclusive = {
 			focus = REP_all_must_give
 		}
-
-		available = {
-		}
-
-
-		x = -1
-		y = 1
-		relative_position_id = REP_ensure_loyalty
-
+		x = 1
+		y = 3
+		relative_position_id = REP_control_the_banks
 		completion_reward = {
+			add_stability = 0.14
+			add_war_support = -0.04
+			add_manpower = 100000
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1200
+				producer = ROOT
+			}
 		}
 	}
 
-	##END OF RIGHT PATH
-
+	# FINAL FOCUS
 	focus = {
-		id = REP_total_control #UNLIMITED POWERRRRRRRRRRRRRRRRRRRRRR#
+		id = REP_total_control
 		icon = GFX_REP_total_control
-		cost = 10
-
+		cost = 3
 		prerequisite = {
 			focus = REP_wartime_relief_efforts
 			focus = REP_all_must_give
 		}
-
-
-		available = {
-		}
-
-
 		x = 0
 		y = 4
 		relative_position_id = REP_control_the_banks
-
 		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.08
+			add_stability = -0.03
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+			add_manpower = 50000
+			add_command_power = 50
+			army_experience = 25
 		}
-	}
+	
 	
 }
