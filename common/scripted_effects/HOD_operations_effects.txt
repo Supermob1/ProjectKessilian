@@ -105,7 +105,7 @@ HOD_operation_end = {
 # Started by Clone_wars_start, i.e. this is the opening of the Clone Wars.
 ############################################################################################
 HOD_operation_geonosis_start = {
-	set_global_variable = { HOD_op_number = 1 }
+	set_variable = { global.HOD_op_number = 1 }
 	clear_array = global.HOD_op_targets
 	35 = { add_to_array = { global.HOD_op_targets = THIS } }
 	set_global_flag = HOD_op_geonosis
