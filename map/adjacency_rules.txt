@@ -78,8 +78,9 @@ adjacency_rule =
 
 	required_provinces = { 12251 12151 }
 
+	# tested in game: the lane is CLOSED while this trigger is true
 	is_disabled = {
-		NOT = { has_global_flag = HOD_test_lane_closed }
+		has_global_flag = HOD_test_lane_closed
 		tooltip = HOD_test_lane_closed_tt
 	}
 
