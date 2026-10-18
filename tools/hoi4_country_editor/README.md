@@ -33,3 +33,41 @@ Three panels: the country list (flag, tag, number of states, `required / recomme
 - **Optional:** per-ideology flags (`TAG_<ideology>.tga`), country names (`TAG_<ideology>`), and leaders for every ideology that has popularity.
 
 Like the game itself, it only reads the top level of `common/*` and `history/*`, so folders such as `common/ideologies/backup` are ignored.
+
+# HOI4 Focus Tree Editor
+
+`HOI4FocusEditor.exe` (or `python hoi4_focus_editor.py`) is built by the same GitHub Action and `build_exe.bat`, and finds the mod the same way.
+
+## Using it
+- Pick a tree file at the top, or **New tree...** for a country tag. It writes `common/national_focus/TAG_focus.txt` with a `country` block for that tag and a first focus.
+- **The tree view**:
+  - drag a focus to move it (it snaps to the grid);
+  - double-click empty space to add a focus there;
+  - right-click a focus to add a child, add a required prerequisite, add an "or" prerequisite, make it mutually exclusive, duplicate or delete it.
+  - Lines: solid = required, dashed = "one of these", red with ⊘ = mutually exclusive.
+  - Mouse wheel scrolls (Shift for sideways), middle-drag pans, and Zoom -/+ changes the size.
+- **The form** (right): id (renaming updates every reference in the file), name and description (saved to localisation at once), icon, cost, position (absolute, or relative to another focus), prerequisites (one line per required group; `A or B` on a line means either one), and mutually exclusive.
+- **Icons**: **Pick...** opens a searchable icon grid. **Import image...** turns any PNG/JPG/DDS into a 94x86 `.dds` in `gfx/interface/goals/TAG/` and adds both the sprite and its `_shine` sprite to your goals `.gfx` files. Click **Game folder...** once (your HOI4 install) to see and use the vanilla icons too.
+- **Focus script**: the whole `focus = { ... }` block, for rewards, `available`, `bypass`, `ai_will_do` and everything else. **Apply script** checks the braces first.
+- **Save** (Ctrl+S), **Undo** (Ctrl+Z) and **Redo** (Ctrl+Y) work on the whole tree.
+
+Edits change only the lines they touch, so comments and formatting are kept. Moving a focus that uses `relative_position_id` writes the new offset, so its children move with it. Deleting a focus removes every link to it and keeps the focuses that were placed relative to it where they are.
+
+## Problems it catches (bottom list; double-click to jump there or fix it)
+- **Errors**:
+  - braces that do not match;
+  - a duplicate focus id (also against every other focus file in the mod);
+  - a prerequisite or mutually exclusive target, or a `relative_position_id`, that does not exist;
+  - prerequisite loops;
+  - a tree with no id;
+  - localisation lines the game cannot read (missing closing quote), with file and line.
+- **Warnings**:
+  - an exclusive focus not listed back on the other side (one-click fix);
+  - two focuses in the same spot;
+  - a focus placed above its prerequisite;
+  - missing name or description localisation;
+  - a missing icon or an icon sprite that is not defined;
+  - a missing cost;
+  - a tree with no `country` block.
+
+**Save** warns before writing a tree that still has errors. To check every tree without the GUI, run `python hoi4_focus_editor.py <mod folder> --check`.
