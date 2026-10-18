@@ -1,6 +1,6 @@
 # HOD operations: Republic landing force spawned on Geonosis when the Battle of Geonosis starts
-# (HOD_operation_geonosis_start). 17077 is the Geonosis end of the Christophsis lane (444 -> 278),
-# so reinforcements can follow it in.
+# (HOD_operation_geonosis_start), spread over state 278, which the Republic takes as its beachhead.
+# 17077 is the Geonosis end of the Christophsis lane (444 -> 278), so reinforcements can follow it in.
 division_template = {
 	name = "Geonosis Landing Legion"
 	division_names_group = REP_Inf_01
@@ -34,31 +34,51 @@ units = {
 	division = {
 		division_template = "Geonosis Landing Legion"
 		location = 17077
-		start_experience_factor = 0.3
+		start_experience_factor = 0.5
 	}
 	division = {
 		division_template = "Geonosis Landing Legion"
 		location = 17077
-		start_experience_factor = 0.3
+		start_experience_factor = 0.5
 	}
 	division = {
 		division_template = "Geonosis Landing Legion"
 		location = 17077
-		start_experience_factor = 0.3
+		start_experience_factor = 0.5
 	}
 	division = {
 		division_template = "Geonosis Landing Legion"
 		location = 17077
-		start_experience_factor = 0.3
+		start_experience_factor = 0.5
 	}
 	division = {
 		division_template = "Geonosis Landing Legion"
-		location = 17077
-		start_experience_factor = 0.3
+		location = 16972
+		start_experience_factor = 0.5
 	}
 	division = {
 		division_template = "Geonosis Landing Legion"
-		location = 17077
-		start_experience_factor = 0.3
+		location = 16972
+		start_experience_factor = 0.5
+	}
+	division = {
+		division_template = "Geonosis Landing Legion"
+		location = 16972
+		start_experience_factor = 0.5
+	}
+	division = {
+		division_template = "Geonosis Landing Legion"
+		location = 16976
+		start_experience_factor = 0.5
+	}
+	division = {
+		division_template = "Geonosis Landing Legion"
+		location = 16976
+		start_experience_factor = 0.5
+	}
+	division = {
+		division_template = "Geonosis Landing Legion"
+		location = 16976
+		start_experience_factor = 0.5
 	}
 }

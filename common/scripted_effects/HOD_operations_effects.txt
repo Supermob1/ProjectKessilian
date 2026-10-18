@@ -160,13 +160,48 @@ HOD_operation_geonosis_start = {
 	REP = {
 		HOD_operation_start = yes
 		activate_mission = HOD_op_attack_70
-		# beachhead: take the Geonosis end of the Christophsis lane and land 6 legions on it
+		# beachhead: all of state 278 (the Geonosis end of the Christophsis lane), so the landing has room and
+		# supply can trace in over the lane; 10 legions land on it
+		set_province_controller = 95
+		set_province_controller = 877
+		set_province_controller = 1238
+		set_province_controller = 1464
+		set_province_controller = 1824
+		set_province_controller = 2163
+		set_province_controller = 2734
+		set_province_controller = 3257
+		set_province_controller = 5047
+		set_province_controller = 5422
+		set_province_controller = 5519
+		set_province_controller = 16878
+		set_province_controller = 16888
+		set_province_controller = 16899
+		set_province_controller = 16914
+		set_province_controller = 16916
+		set_province_controller = 16918
+		set_province_controller = 16927
+		set_province_controller = 16928
+		set_province_controller = 16946
+		set_province_controller = 16950
+		set_province_controller = 16953
+		set_province_controller = 16972
+		set_province_controller = 16976
+		set_province_controller = 16993
+		set_province_controller = 17022
+		set_province_controller = 17039
+		set_province_controller = 17040
+		set_province_controller = 17063
+		set_province_controller = 17067
 		set_province_controller = 17077
+		set_province_controller = 17088
+		set_province_controller = 17124
+		set_province_controller = 17181
+		set_province_controller = 17214
 		load_oob = "HOD_op_geonosis_landing"
 	}
 	CIS = {
 		activate_mission = HOD_op_defend_70
-		# GEO had no army and the CIS lanes into Geonosis are now closed: 9 droid divisions defend it
+		# GEO had no army and the CIS lanes into Geonosis are now closed: 6 droid divisions defend it
 		load_oob = "HOD_op_geonosis_defence"
 	}
 }
