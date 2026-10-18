@@ -1,5 +1,6 @@
-"""Give every hyperlane (sea adjacency in map/adjacencies.csv) an adjacency rule that keeps it CLOSED to everyone,
-except while one of its two ends is in the theater of an operation (state flag HOD_theater, set by the operation).
+"""Give every hyperlane (sea adjacency in map/adjacencies.csv) an adjacency rule: lanes are open as usual, but while an
+operation runs (global flag HOD_op_active) every lane is CLOSED to everyone except the ones with an end in the
+operation's theater (state flag HOD_theater, set by the operation).
 
 Run again after adding or changing hyperlanes:  python gen_hyperlanes.py [mod_folder]
 Tested in game: a lane is closed while its rule's is_disabled trigger is true.
@@ -21,7 +22,7 @@ def rule(name, a, b, state_a, state_b, through):
     return (f'adjacency_rule =\n{{\n\tname = "{name}"\n\n'
             + ''.join(f'\t{rel} =\n{allow}' for rel in ('contested', 'enemy', 'friend', 'neutral'))
             + f'\n\trequired_provinces = {{ {a} {b} }}\n\n'
-            f'\tis_disabled = {{\n\t\tNOT = {{\n\t\t\tOR = {{\n\t\t\t{open_if}\n\t\t\t}}\n\t\t}}\n'
+            f'\tis_disabled = {{\n\t\thas_global_flag = HOD_op_active\n\t\tNOT = {{\n\t\t\tOR = {{\n\t\t\t{open_if}\n\t\t\t}}\n\t\t}}\n'
             f'\t\ttooltip = HOD_lane_closed_tt\n\t}}\n\n\ticon = {through}\n\toffset = {{ 0 0 0 }}\n}}\n')
 
 
@@ -56,4 +57,4 @@ def generate(mod):
 if __name__ == '__main__':
     root = sys.argv[1] if len(sys.argv) > 1 else find_mod_root()
     n, skipped = generate(Mod(root))
-    print(f'{n} hyperlanes now closed outside operations.' + (f' Skipped (end not in a state): {skipped}' if skipped else ''))
+    print(f'{n} hyperlanes: open normally, closed during operations unless they touch the theater.' + (f' Skipped (end not in a state): {skipped}' if skipped else ''))
