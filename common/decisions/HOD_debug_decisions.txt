@@ -31,7 +31,7 @@ generic_debug = {
 		}
 	}
 
-	# ---- HOD test kit for the operation system: one closable hyperlane + a garrison fleet ----
+	# ---- HOD operation system: test helpers ----
 	# Debug: CIS and the Republic go to war (if they are not already), to test the lane and the fleet
 	HOD_debug_test_war = {
 		cost = 0
@@ -41,22 +41,6 @@ generic_debug = {
 		complete_effect = {
 			CIS = { declare_war_on = { target = REP type = annex_everything } }
 		}
-	}
-	# Debug: close the Coruscant - Borleias hyperlane to enemy and neutral armies (own side can still use it)
-	HOD_debug_close_test_lane = {
-		cost = 0
-		fire_only_once = no
-		icon = generic_operation
-		available = { NOT = { has_global_flag = HOD_test_lane_closed } }
-		complete_effect = { set_global_flag = HOD_test_lane_closed }
-	}
-	# Debug: open it again
-	HOD_debug_open_test_lane = {
-		cost = 0
-		fire_only_once = no
-		icon = generic_operation
-		available = { has_global_flag = HOD_test_lane_closed }
-		complete_effect = { clr_global_flag = HOD_test_lane_closed }
 	}
 	# Debug: park a Republic garrison fleet in space next to Coruscant (Coruscant Sector), to test if it blocks invasions
 	HOD_debug_spawn_garrison_fleet = {

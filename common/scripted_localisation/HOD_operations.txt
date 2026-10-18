@@ -1,0 +1,25 @@
+# Names and results of HOD operations, used in the mission, event and decision texts
+defined_text = {
+	name = HOD_op_name
+	text = {
+		trigger = { check_variable = { global.HOD_op_number = 1 } }
+		localization_key = HOD_op_name_1
+	}
+	text = { localization_key = HOD_op_name_unknown }
+}
+defined_text = {
+	name = HOD_op_attacker
+	text = {
+		trigger = { has_global_flag = HOD_op_by_REP }
+		localization_key = HOD_op_side_REP
+	}
+	text = { localization_key = HOD_op_side_CIS }
+}
+defined_text = {
+	name = HOD_op_result
+	text = {
+		trigger = { has_global_flag = HOD_op_won }
+		localization_key = HOD_op_result_won
+	}
+	text = { localization_key = HOD_op_result_held }
+}

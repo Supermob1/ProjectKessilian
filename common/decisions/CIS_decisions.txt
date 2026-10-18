@@ -360,6 +360,7 @@ CIS_Sidious_Suspicions = {
 		activation = {
 			original_tag = CIS
 			has_war_with = REP
+			has_global_flag = HOD_op_kamino	# HOD operations: only during a Kamino operation (none yet)
 			NOT = { has_global_flag = The_Defense_of_Kamino }
 		}
 		fire_only_once = yes
