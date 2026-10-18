@@ -1,0 +1,23 @@
+name: Build HOI4 Country Editor
+on:
+  workflow_dispatch:
+  push:
+    paths: ['tools/hoi4_country_editor/**']
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: tools/hoi4_country_editor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python test_core.py
+      - run: pip install pyinstaller
+      - run: pyinstaller --onefile --windowed --name HOI4CountryEditor hoi4_country_editor.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HOI4CountryEditor
+          path: tools/hoi4_country_editor/dist/HOI4CountryEditor.exe
