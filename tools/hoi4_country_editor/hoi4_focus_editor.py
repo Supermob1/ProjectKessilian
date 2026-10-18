@@ -511,15 +511,23 @@ MONTH_KEYS = ['Alderensis', 'Corelliensis', 'Coruscensis', 'Durensis', 'Chandril
 def hod_calendar(mod):
     """The mod's own calendar, read from the daily counter in common/on_actions (Hearts of Durasteel style):
     start year, days per month, number of months, festival days. None if the mod has no such counter."""
-    text = '\n'.join(read_text(f) for f in mod.files('common/on_actions'))
-    start = re.search(r'HODyear\s*=\s*(-?\d+)', text)
-    fest = re.search(r'HODday\s*=\s*(\d+)\s*\}\s*check_variable\s*=\s*\{\s*UTI\.HODmonth\s*=\s*(\d+)', text)
-    month = re.search(r'limit\s*=\s*\{\s*check_variable\s*=\s*\{\s*UTI\.HODday\s*=\s*(\d+)', text)
-    if not (start and fest and month):
+    text = '\n'.join(re.sub(r'#[^\n]*', '', read_text(f)) for f in mod.files('common/on_actions'))
+    v = r'(?:UTI\.)?'
+    start = re.search(v + r'HODyear\s*=\s*(-?\d+)', text)
+    day_then_month = re.search(v + r'HODday\s*=\s*(\d+)\s*\}\s*check_variable\s*=\s*\{\s*' + v + r'HODmonth\s*=\s*(\d+)', text)
+    month_then_day = re.search(v + r'HODmonth\s*=\s*(\d+)\s*\}\s*check_variable\s*=\s*\{\s*' + v + r'HODday\s*=\s*(\d+)', text)
+    month = re.search(r'limit\s*=\s*\{\s*check_variable\s*=\s*\{\s*' + v + r'HODday\s*=\s*(\d+)', text)
+    if day_then_month:
+        fest_day, fest_month = day_then_month.groups()
+    elif month_then_day:
+        fest_month, fest_day = month_then_day.groups()
+    else:
+        return None
+    if not (start and month):
         return None
     # the counter rolls over when it *reaches* these values, so a month has value - 1 days
     return {'start_year': int(start.group(1)), 'month_days': int(month.group(1)) - 1,
-            'months': int(fest.group(2)) - 1, 'fest_days': int(fest.group(1)) - 1}
+            'months': int(fest_month) - 1, 'fest_days': int(fest_day) - 1}
 
 
 def hod_date(days, cal, loc=None):
@@ -832,9 +840,43 @@ def run_gui(mod_root):
     side.add(form, text='Focus')
     dur = ttk.Frame(side, padding=6)
     side.add(dur, text='Durations')
-    calendar, game_start = hod_calendar(mod), start_date(mod)
-    year_len = calendar['months'] * calendar['month_days'] + calendar['fest_days'] if calendar else 365
-    fdays = lambda d: fmt_days(d, year_len)  # years in the mod's own calendar when it has one
+    found, game_start = hod_calendar(mod), start_date(mod)
+    cal_keys = (('start_year', 'Start year'), ('months', 'Months'), ('month_days', 'Days per month'),
+                ('fest_days', 'Festival days'))
+    cal_vars = {k: tk.StringVar(value=str((found or settings.get('calendar') or {}).get(k, ''))) for k, _ in cal_keys}
+
+    def get_calendar():
+        """The calendar from the boxes; None (plain engine dates only) while they are not all whole numbers."""
+        try:
+            cal = {k: int(cal_vars[k].get()) for k, _ in cal_keys}
+        except ValueError:
+            return None
+        return cal if cal['months'] > 0 and cal['month_days'] > 0 and cal['fest_days'] >= 0 else None
+
+    def fdays(d):  # years in the mod's own calendar when it has one
+        cal = get_calendar()
+        return fmt_days(d, cal['months'] * cal['month_days'] + cal['fest_days'] if cal else 365)
+
+    cal_box = ttk.LabelFrame(dur, text='Mod calendar', padding=4)
+    cal_box.pack(fill='x', pady=(0, 6))
+    for i, (k, label) in enumerate(cal_keys):
+        ttk.Label(cal_box, text=label).grid(row=0, column=i * 2, sticky='e', padx=(6 if i else 0, 2))
+        ttk.Entry(cal_box, textvariable=cal_vars[k], width=5).grid(row=0, column=i * 2 + 1, sticky='w')
+    cal_note = ttk.Label(cal_box, foreground='#777', wraplength=460, justify='left', text=(
+        'Read from the date counter in common/on_actions.' if found else
+        'No date counter recognised in common/on_actions: fill these in once (they are remembered), '
+        'or leave them empty for engine dates only.'))
+    cal_note.grid(row=1, column=0, columnspan=8, sticky='w', pady=(4, 0))
+
+    def on_calendar(*_):
+        cal = get_calendar()
+        if cal and cal != found:
+            settings['calendar'] = cal
+            save_settings(settings)
+        refresh_durations()
+
+    for var in cal_vars.values():
+        var.trace_add('write', on_calendar)
     cal_bar = ttk.Frame(dur)
     cal_bar.pack(fill='x')
     ttk.Label(cal_bar, text='Tree starts on game day').pack(side='left')
@@ -881,7 +923,9 @@ def run_gui(mod_root):
             out = f'      ends {engine_date(offset + d, game_start)}'
             return out + (f'  =  {hod_date(offset + d, calendar, mod.loc)}' if calendar else '')
 
-        cal_text = (f'Calendar (from on_actions): {calendar["months"]} months x {calendar["month_days"]} days + '
+        calendar = get_calendar()
+
+        cal_text = (f'Calendar: {calendar["months"]} months x {calendar["month_days"]} days + '
                     f'{calendar["fest_days"]} festival days = '
                     f'{calendar["months"] * calendar["month_days"] + calendar["fest_days"]} days a year, '
                     f'starting {hod_date(0, calendar, mod.loc)}\n' if calendar else '')
