@@ -50,14 +50,14 @@ HOD_operation_start = {
 	}
 }
 
-# Scope: the attacker (its mission completed: it holds every objective).
+# Scope: the attacker (its mission completed: it or its faction holds every objective, all go to the attacker).
 HOD_operation_victory = {
 	if = {
 		limit = { has_global_flag = HOD_op_active }
 		for_each_scope_loop = {
 			array = global.HOD_op_targets
 			if = {
-				limit = { is_controlled_by = ROOT }
+				limit = { OR = { is_controlled_by = ROOT controller = { is_in_faction_with = ROOT } } }
 				ROOT = { transfer_state = PREV }
 			}
 		}
@@ -75,7 +75,7 @@ HOD_operation_failure = {
 	}
 }
 
-# Any scope: peace for every pair of countries at war across the two sides, close the lanes, start the cooldown.
+# Any scope: peace for every pair of countries at war with the Republic's side, reopen every lane, start the cooldown.
 HOD_operation_end = {
 	clr_global_flag = HOD_op_active
 	every_country = {
@@ -91,7 +91,7 @@ HOD_operation_end = {
 		limit = { has_dynamic_modifier = { modifier = HOD_operation_no_surrender } }
 		remove_dynamic_modifier = { modifier = HOD_operation_no_surrender }
 	}
-	set_global_flag = { flag = HOD_op_cooldown days = 35 }
+	set_global_flag = { flag = HOD_op_cooldown days = 35 }  # not used yet: meant to space out operations
 	every_country = {
 		limit = { OR = { tag = REP tag = CIS } }
 		country_event = { id = hod_operations.2 }
@@ -102,7 +102,8 @@ HOD_operation_end = {
 # Operation 1: Battle of Geonosis, 70 days. Started by Clone_wars_start: the opening of the Clone Wars.
 # Theater: Geonosis (strategic region 116), Christophsis (118, Republic; lane 444 -> 278 into Geonosis)
 # and Rishi (111, Republic with a hidden Separatist base; lane 262 -> 282 into Geonosis).
-# Objective: every state of Geonosis. Ryloth (neutral) stays out of it.
+# Objective: every state of Geonosis (GEO's, annexed by the CIS in Clone_wars_start). Ryloth (neutral) stays out of it.
+# The Besadii smugglers' base on Rishi (261, BKJ) is in the theater but not at war.
 ############################################################################################
 HOD_operation_geonosis_start = {
 	set_variable = { global.HOD_op_number = 1 }

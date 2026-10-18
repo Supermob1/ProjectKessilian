@@ -450,7 +450,7 @@ Clone_Wars_Assault_Kamino_REP = {
 }
 
 ############################################################################################
-# HOD operations: AI per operation. Each block is on only while its operation runs.
+# HOD operations: AI per operation. Buildup blocks run before their operation, the others while it runs.
 ############################################################################################
 
 # ---- Before the war: both sides gather their armies around Geonosis ----
@@ -471,7 +471,8 @@ HOD_op_geonosis_buildup_REP = {
 		value = 400
 	}
 }
-# Confederacy: garrison both lane ends on Geonosis (278 faces Christophsis, 282 faces Rishi) and the hidden base on Rishi
+# Confederacy: garrison both lane ends on Geonosis (278 faces Christophsis, 282 faces Rishi) and the hidden base on Rishi (268).
+# Geonosis is GEO's until Clone_wars_start annexes it, so before that only 268 can really be garrisoned.
 HOD_op_geonosis_buildup_CIS = {
 	allowed = { original_tag = CIS }
 	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
@@ -493,7 +494,7 @@ HOD_op_geonosis_buildup_CIS = {
 # Republic: everything into the theater, push across the Christophsis and Rishi lanes into Geonosis
 HOD_op_geonosis_attack_REP = {
 	allowed = { original_tag = REP }
-	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_geonosis }
+	enable = { has_global_flag = HOD_op_active check_variable = { global.HOD_op_number = 1 } }  # HOD_op_geonosis stays set after the battle
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = area_priority
@@ -526,7 +527,7 @@ HOD_op_geonosis_attack_REP = {
 # Confederacy: hold Geonosis, every state of it is an objective
 HOD_op_geonosis_defend_CIS = {
 	allowed = { original_tag = CIS }
-	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_geonosis }
+	enable = { has_global_flag = HOD_op_active check_variable = { global.HOD_op_number = 1 } }  # HOD_op_geonosis stays set after the battle
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = area_priority
