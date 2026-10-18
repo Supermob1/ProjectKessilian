@@ -65,12 +65,18 @@ generic_debug = {
 		icon = generic_operation
 		complete_effect = { REP = { load_oob = "HOD_test_space_garrison" } }
 	}
-	# Debug: white peace between CIS and the Republic
+	# Debug: white peace between the two sides, however many allies joined:
+	# every country on the Republic side makes peace with every country it is at war with
 	HOD_debug_test_peace = {
 		cost = 0
 		fire_only_once = no
 		icon = generic_operation
 		available = { CIS = { has_war_with = REP } }
-		complete_effect = { CIS = { white_peace = REP } }
+		complete_effect = {
+			every_country = {
+				limit = { OR = { tag = REP is_in_faction_with = REP } }
+				every_enemy_country = { white_peace = PREV }
+			}
+		}
 	}
 }
