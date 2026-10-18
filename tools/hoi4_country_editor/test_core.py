@@ -4,8 +4,10 @@ import tempfile
 
 import random
 
-from hoi4_country_editor import (Mod, REQUIRED, ROLES, add_character, block_text, character_text, get, make_flag,
-                                 parse, read_text, save_flag, save_portrait, set_loc, set_top, suggest_names)
+from hoi4_country_editor import (FLAG_LAYOUTS, FLAG_SYMBOLS, Mod, REQUIRED, ROLES, add_character, add_role, block_text,
+                                 character_text, del_in, delete_character, emblem_from_flag, get, make_flag, parse,
+                                 person_name, read_text, role_text, save_flag, save_portrait, set_in, set_loc, set_top,
+                                 suggest_names, write_text)
 
 FILES = {
     'common/country_tags/t.txt': 'AAA = "countries/A.txt"\n',
@@ -77,6 +79,37 @@ with tempfile.TemporaryDirectory() as d:
     mod.reload()
     assert mod.country('AAA').ideo_rows['bad']['flag'] == 'AAA_bad.tga'
     assert Image.open(mod.path('gfx/flags/small/AAA_bad.tga')).size == (10, 7)
+
+    # edit a character in place: nested values, new keys, roles added and removed, then delete it
+    cf = mod.characters['AAA_bob'][1]
+    t = read_text(cf)
+    t = set_in(t, ['characters', 'AAA_bob', 'country_leader', 'ideology'], 'bad_sub')
+    t = set_in(t, ['characters', 'AAA_bob', 'gender'], 'female')
+    t = set_in(t, ['characters', 'AAA_bob', 'portraits', 'civilian', 'large'], '"x.dds"')
+    t = add_role(t, 'AAA_bob', role_text('AAA', 'AAA_bob', 'navy_leader'))
+    write_text(cf, t)
+    mod.reload()
+    bob = mod.characters['AAA_bob'][0]
+    assert get(get(bob, 'country_leader'), 'ideology') == 'bad_sub' and get(bob, 'gender') == 'female'
+    assert get(get(get(bob, 'portraits'), 'civilian'), 'large') == 'x.dds' and get(get(bob, 'navy_leader'), 'skill') == '2'
+    assert 'AAA_new0' in mod.characters  # other characters untouched
+    write_text(cf, del_in(read_text(cf), ['characters', 'AAA_bob', 'navy_leader']))
+    mod.reload()
+    assert get(mod.characters['AAA_bob'][0], 'navy_leader') is None
+    delete_character(mod, 'AAA', 'AAA_bob')
+    mod.reload()
+    assert 'AAA_bob' not in mod.characters and 'AAA_bob' not in read_text(mod.history['AAA'])
+    assert 'AAA_new1' in mod.characters and len(person_name(random.Random(2), 'female').split()) == 2
+
+    # every layout and symbol draws; emblem extraction removes the flag background
+    for i, lay in enumerate(FLAG_LAYOUTS):
+        make_flag(lay, [(1, 2, 3)] * 4, symbol=FLAG_SYMBOLS[i % len(FLAG_SYMBOLS)], emblem_pos=('center', 'canton', 'hoist')[i % 3])
+    fl = Image.new('RGBA', (82, 52), (0, 0, 200, 255))
+    fl.paste((255, 255, 255, 255), (30, 20, 50, 32))
+    em = emblem_from_flag(fl)
+    assert em.size == (20, 12) and em.getpixel((0, 0)) == (255, 255, 255, 255)
+    tinted = make_flag('plain', [(0, 0, 0), (0, 0, 0), (0, 0, 0), (255, 0, 0)], em, 1.0, tint=(255, 0, 0))
+    assert tinted.getpixel((41, 26))[:3] == (255, 0, 0)
 
     n, long, adj, party = suggest_names('corist', 'Aland', 'Alandic', random.Random(1))
     assert n and long and adj == 'Alandic' and party and suggest_names('nope', 'Aland', '', random.Random(1))[0]

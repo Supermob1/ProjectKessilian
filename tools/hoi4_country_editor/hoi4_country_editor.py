@@ -131,17 +131,70 @@ def add_to_block(text, key, snippet):
     return text.rstrip('\n') + f'\n{key} = {{\n{snippet.rstrip()}\n}}\n'
 
 
+def _nested(text, path, fn, depth=0, create=True):
+    """Apply fn(inner_text, depth) inside the nested block `path[0] = { path[1] = { ... } }`."""
+    if not path:
+        return fn(text, depth)
+    span = top_span(text, path[0])
+    if not span or text[span[1] - 1] != '}':
+        if not create:
+            return text
+        text = set_top(text, path[0], '{ }')
+        span = top_span(text, path[0])
+    seg = text[span[0]:span[1]]
+    o = seg.index('{')
+    return text[:span[0]] + seg[:o + 1] + _nested(seg[o + 1:-1], path[1:], fn, depth + 1, create) + '}' + text[span[1]:]
+
+
+def set_in(text, path, value):
+    """Set `value` at a nested key path, e.g. ['characters', 'X_bob', 'country_leader', 'ideology']."""
+    def put(t, depth):
+        if top_span(t, path[-1]):
+            return set_top(t, path[-1], value)
+        return t.rstrip() + f'\n{chr(9) * depth}{path[-1]} = {value}\n' + chr(9) * max(depth - 1, 0)
+    return _nested(text, path[:-1], put)
+
+
+def del_in(text, path):
+    """Remove the nested key at path (with its whole line) if it exists."""
+    def rm(t, depth):
+        span = top_span(t, path[-1])
+        if not span:
+            return t
+        start, end = span
+        line_start = t.rfind('\n', 0, start) + 1
+        if not t[line_start:start].strip():
+            start = line_start
+        while end < len(t) and t[end] in ' \t':
+            end += 1
+        if t[end:end + 1] == '\n':
+            end += 1
+        return t[:start] + t[end:]
+    return _nested(text, path[:-1], rm, create=False)
+
+
 ROLES = ('country_leader', 'political_advisor', 'corps_commander', 'field_marshal', 'navy_leader')
 
 
-def character_text(tag, cid, name, role, subtype='', traits='', portrait=''):
+def character_text(tag, cid, name, role, subtype='', traits='', portrait='', gender='male'):
     """A new common/characters entry, using the same layout as the mod's own characters."""
-    tr = f'traits = {{ {traits} }}' if traits else 'traits = { }'
     pic = ''
     if portrait:
         kind = 'civilian' if role in ('country_leader', 'political_advisor') else 'army'
         pic = f'\t\tportraits = {{ {kind} = {{ large = "{portrait}" }} }}\n'
-    body = {
+    return f'\t{cid} = {{\n\t\tname = "{name}"\n\t\tgender = {gender}\n{pic}\t\t{role_text(tag, cid, role, subtype, traits)}\n\t}}\n'
+
+
+ROLE_KEY = {'political_advisor': 'advisor'}  # ROLES entry -> script key
+SKILLS = {'navy_leader': ('skill', 'attack_skill', 'defense_skill', 'maneuvering_skill', 'coordination_skill'),
+          'corps_commander': ('skill', 'attack_skill', 'defense_skill', 'planning_skill', 'logistics_skill'),
+          'field_marshal': ('skill', 'attack_skill', 'defense_skill', 'planning_skill', 'logistics_skill')}
+
+
+def role_text(tag, cid, role, subtype='', traits=''):
+    """The `role = { ... }` block of a character, indented for common/characters."""
+    tr = f'traits = {{ {traits} }}' if traits else 'traits = { }'
+    return {
         'country_leader': f'country_leader = {{\n\t\t\tdesc = "{cid}_desc"\n\t\t\tideology = {subtype}\n'
                           f'\t\t\t{tr}\n\t\t\tid = -1\n\t\t}}',
         'political_advisor': f'advisor = {{\n\t\t\tslot = political_advisor\n\t\t\tidea_token = {cid}_pol\n'
@@ -153,7 +206,42 @@ def character_text(tag, cid, name, role, subtype='', traits='', portrait=''):
     }.get(role, f'{role} = {{\n\t\t\t{tr}\n\t\t\tskill = 2\n\t\t\tattack_skill = 2\n'
                 f'\t\t\tdefense_skill = 2\n\t\t\tplanning_skill = 2\n\t\t\tlogistics_skill = 2\n'
                 f'\t\t\tlegacy_id = -1\n\t\t}}')
-    return f'\t{cid} = {{\n\t\tname = "{name}"\n\t\tgender = male\n{pic}\t\t{body}\n\t}}\n'
+
+
+def add_role(text, cid, block):
+    """Add a role block (from role_text) inside a character in a characters file."""
+    return _nested(text, ['characters', cid], lambda t, d: t.rstrip() + f'\n\t\t{block}\n\t')
+
+
+def unrecruit(mod, tag, cid):
+    hfile = mod.history.get(tag)
+    if hfile:
+        h = read_text(hfile)
+        write_text(hfile, re.sub(rf'^[ \t]*recruit_character\s*=\s*{re.escape(cid)}[ \t]*(#.*)?\n?', '', h, flags=re.M))
+
+
+def delete_character(mod, tag, cid):
+    """Remove a character's block from its file and its recruit_character line from the history file."""
+    _, cfile = mod.characters[cid]
+    write_text(cfile, del_in(read_text(cfile), ['characters', cid]))
+    unrecruit(mod, tag, cid)
+
+
+_FIRST = ['Ka', 'Vo', 'Ze', 'Tar', 'Mal', 'Dra', 'Sev', 'Ry', 'Jor', 'Bel', 'Ash', 'Nym', 'Qui', 'Ob', 'Sha', 'Tor',
+          'Lor', 'Ven', 'Kel', 'Ral', 'Zan', 'Dex', 'Cad', 'Hux', 'Iri', 'Lys', 'Mon', 'Tal', 'Bo', 'Ki', 'Wed', 'Gar',
+          'Syl', 'Ahs', 'Mar', 'Pa', 'Yu', 'Ror', 'Thra', 'Ves', 'Oz', 'Ny', 'Cor', 'Fen', 'Ula', 'Dal', 'Xan', 'Ree']
+_MID = ['', '', '', 'a', 'e', 'i', 'o', 'an', 'ar', 'en', 'or', 'is', 'us', 'ek', 'ra', 'na', 'vi', 'dr', 'th']
+_END_M = ['n', 'r', 's', 'x', 'k', 'th', 'l', 'm', 'd', 'an', 'os', 'ek', 'us', 'ar', 'is', 'on', 'ius', 'ir', 'ax']
+_END_F = ['a', 'ia', 'ra', 'na', 'is', 'el', 'ya', 'iss', 'ine', 'ae', 'ira', 'ess', 'ah', 'yn']
+_LAST = ['Organa', 'Dallen', 'Vass', 'Thrawn', 'Korr', 'Dameron', 'Antilles', 'Kenobi', 'Tarkin', 'Venn', 'Solus',
+         'Draay', 'Rhen', 'Kaan', 'Mothma', 'Valorum', 'Tano', 'Vizsla', 'Fett', 'Ordo', 'Kryze', 'Durd', 'Gunray']
+
+
+def person_name(rng, gender='male'):
+    """A Star Wars-sounding first and last name."""
+    first = rng.choice(_FIRST) + rng.choice(_MID) + rng.choice(_END_F if gender == 'female' else _END_M)
+    last = rng.choice(_FIRST) + rng.choice(_MID) + rng.choice(_END_M + _END_F) if rng.random() < .8 else rng.choice(_LAST)
+    return f'{first.capitalize()} {last.capitalize()}'
 
 
 def add_character(mod, tag, cid, block):
@@ -176,34 +264,68 @@ def add_character(mod, tag, cid, block):
 # Government-name patterns per ideology; {n} = country name, {a} = adjective. Unknown ideologies use 'default'.
 NAME_PATTERNS = {
     'force_magocracy': ['{a} Dominion', 'Order of {n}', '{a} Sith Imperium', '{a} Theocracy', 'Holy {a} Enclave',
-                        '{a} Force Covenant'],
+                        '{a} Force Covenant', '{a} Jedi Protectorate', 'Dark Throne of {n}', '{a} Sith Empire',
+                        '{a} Temple State', 'Brotherhood of {n}', '{a} Force Sovereignty', '{a} Dark Council',
+                        '{a} Holocron Order', 'Ascendant {a} Order', '{a} Order of the Force', '{a} Inquisitorium'],
     'inclusivist': ['{a} Commonwealth', '{a} Free Assembly', 'United Peoples of {n}', '{a} Concord',
-                    '{a} Open Republic'],
+                    '{a} Open Republic', '{a} Union of Species', 'Free Systems of {n}', '{a} Accord',
+                    '{a} Coalition', '{a} Alliance of Worlds', '{a} Harmony', 'United {n}', '{a} Common Council',
+                    '{a} Peoples Congress', 'New {a} Republic'],
     'distributionist': ["{a} People's Collective", '{a} Workers Union', "{a} People's Republic", 'Free Commune of {n}',
-                        '{a} Symbiotic Assembly'],
+                        '{a} Symbiotic Assembly', '{a} Socialist Systems', "{a} Workers' Soviet", '{a} Labour Union',
+                        '{a} Cooperative Worlds', "Democratic People's {n}", '{a} Commune', '{a} Equal Systems',
+                        '{a} Shared Union', '{a} Revolutionary Council', "{a} Spacers' Collective"],
     'corporate_consortium': ['{n} Consortium', '{a} Trade Combine', '{n} Holdings', '{a} Mercantile Directorate',
-                             '{n} Incorporated'],
+                             '{n} Incorporated', '{a} Commerce Authority', '{a} Corporate Sector', '{n} Syndicate',
+                             '{a} Industrial Combine', '{a} Mining Guild', '{a} Shareholder State', '{n} Conglomerate',
+                             '{a} Banking Clan', '{a} Executive Board', '{a} Corporate Directorate'],
     'akaanadocrat': ['{a} Military Directorate', '{a} War Council', '{a} Clan Conclave', '{n} Martial Protectorate',
-                     '{a} Warlord State'],
-    'corist': ['Kingdom of {n}', '{a} Crown Worlds', '{a} Royal House', '{a} Senate Protectorate', 'Principality of {n}'],
+                     '{a} Warlord State', '{a} Mand\'alorate', '{a} Battle Clans', '{a} Stratocracy',
+                     '{a} High Command', '{a} Garrison State', '{a} Warrior Conclave', '{a} Martial Empire',
+                     '{a} Supreme Command', '{a} War Clans', '{a} Military Junta'],
+    'corist': ['Kingdom of {n}', '{a} Crown Worlds', '{a} Royal House', '{a} Senate Protectorate', 'Principality of {n}',
+               '{a} Monarchy', '{a} Royal Court', 'Grand Duchy of {n}', '{a} Noble Houses', 'Royal House of {n}',
+               '{a} Core Dominion', '{a} Throne Worlds', '{a} High Court', 'Queendom of {n}', '{a} Regency'],
     'ruusanist': ['Republic of {n}', '{a} Senate', '{a} Federal Republic', '{a} Constitutional Republic',
-                  '{a} Sector Assembly'],
+                  '{a} Sector Assembly', '{a} Republic', '{a} Commonwealth Senate', 'Federated Systems of {n}',
+                  '{a} Representative Assembly', '{a} Galactic Republic', '{a} Restored Republic',
+                  '{a} Parliamentary Union', '{a} Senate of Worlds', '{a} Democratic Federation', '{a} Free Senate'],
     'trade_democrat': ['{a} Free Trade Republic', '{a} Market Alliance', '{a} Commerce Assembly',
-                       'Free Worlds of {n}', '{a} Trade Federation'],
-    'unitist': ['{a} Empire', '{a} Unified State', '{a} New Order', '{a} Imperial Remnant', '{a} Authority'],
-    'default': ['{a} State', '{a} Government', '{a} Authority', '{a} Regime'],
+                       'Free Worlds of {n}', '{a} Trade Federation', '{a} Trade League', '{a} Merchant Republic',
+                       '{a} Hyperlane Alliance', 'Free Port of {n}', '{a} Exchange', '{a} Freight Union',
+                       '{a} Trade Commonwealth', '{a} Free Market Union', '{a} Spaceport Republic',
+                       '{a} Commerce League'],
+    'unitist': ['{a} Empire', '{a} Unified State', '{a} New Order', '{a} Imperial Remnant', '{a} Authority',
+                '{a} Imperium', '{a} Imperial Order', '{a} Directorate', 'Imperial {n}', '{a} Sovereign State',
+                '{a} First Order', '{a} Hegemony', '{a} Unified Command', '{a} Imperial Regency', '{a} Unity State'],
+    'default': ['{a} State', '{a} Government', '{a} Authority', '{a} Regime', '{a} Council', '{a} Assembly'],
 }
 PARTY_PATTERNS = {
-    'force_magocracy': ['{a} Force Order', 'Disciples of the Force', 'The Dark Covenant'],
-    'inclusivist': ['{a} Unity Movement', 'Coalition for All Species', 'Open Galaxy Party'],
-    'distributionist': ["{a} People's Front", 'Workers Collective', 'Shared Prosperity Movement'],
-    'corporate_consortium': ['{a} Board of Directors', 'Shareholder Council', 'Consortium Executive'],
-    'akaanadocrat': ['{a} War Council', 'Officer Corps', 'Clan Assembly'],
-    'corist': ['{a} Loyalists', 'Royal Council', 'Old Houses'],
-    'ruusanist': ['{a} Reformists', 'Ruusan Constitutionalists', 'Senate Moderates'],
-    'trade_democrat': ['{a} Free Traders', 'Merchant Guild Party', 'Liberal Commerce League'],
-    'unitist': ['{a} Unity Front', 'Order and Unity Party', 'COMPNOR Cell'],
-    'default': ['{a} Party', '{a} Movement'],
+    'force_magocracy': ['{a} Force Order', 'Disciples of the Force', 'The Dark Covenant', 'Order of the Holocron',
+                        'Keepers of the Temple', 'The Dark Council', 'Followers of the Ashla', 'Sons of the Bogan',
+                        'The Inquisitorius', 'Circle of Seers'],
+    'inclusivist': ['{a} Unity Movement', 'Coalition for All Species', 'Open Galaxy Party', 'Friends of the Republic',
+                    'Rights of Beings League', 'Alliance for Equality', 'Interspecies Forum', 'Free Peoples Party',
+                    '{a} Progressive Front', 'Delegation of the 2000'],
+    'distributionist': ["{a} People's Front", 'Workers Collective', 'Shared Prosperity Movement', 'Spacers Union',
+                        "Miners' Brotherhood", 'Red Dawn Movement', 'Labour Council', 'Free Droid Front',
+                        '{a} Socialist Party', 'Equal Shares League'],
+    'corporate_consortium': ['{a} Board of Directors', 'Shareholder Council', 'Consortium Executive',
+                             'Guild Directorate', 'Investors Assembly', 'The Board', 'Industrial Lobby',
+                             'Chamber of Commerce', '{a} Business Bloc', 'Credit Holders Union'],
+    'akaanadocrat': ['{a} War Council', 'Officer Corps', 'Clan Assembly', 'Veterans League', 'Iron Fist Faction',
+                     'Warrior Caste', 'General Staff', 'The Blades', '{a} Martial Party', 'Sons of Akaan'],
+    'corist': ['{a} Loyalists', 'Royal Council', 'Old Houses', 'Crown Party', 'Noble Assembly', 'Traditionalists',
+               'Core Loyalists', 'Royal Guard Faction', '{a} Conservatives', 'Keepers of the Throne'],
+    'ruusanist': ['{a} Reformists', 'Ruusan Constitutionalists', 'Senate Moderates', 'Republican Union',
+                  'Democratic Assembly', 'Senate Loyalists', 'Constitution Party', 'Rebirth Coalition',
+                  '{a} Federalists', 'Free Senate Party'],
+    'trade_democrat': ['{a} Free Traders', 'Merchant Guild Party', 'Liberal Commerce League', 'Open Lanes Party',
+                       'Free Market Union', 'Hyperlane Alliance', 'Trader Assembly', 'Independent Merchants',
+                       '{a} Liberals', 'Freight Captains League'],
+    'unitist': ['{a} Unity Front', 'Order and Unity Party', 'COMPNOR Cell', 'New Order Party', 'Imperial Loyalists',
+                'Unification Front', 'Sovereign Guard', 'Party of the Throne', '{a} Nationalists', 'Iron Order'],
+    'default': ['{a} Party', '{a} Movement', '{a} Front', '{a} League'],
 }
 
 
@@ -219,42 +341,233 @@ def suggest_names(ideology, name, adj, rng):
     return long, 'the ' + long, adj or name, pick(PARTY_PATTERNS)
 
 
-FLAG_LAYOUTS = ('plain', 'two horizontal', 'three horizontal', 'three vertical', 'cross', 'diagonal', 'canton',
-                'border')
+FLAG_LAYOUTS = ('plain', 'two horizontal', 'three horizontal', 'five horizontal', 'two vertical', 'three vertical',
+                'hoist band', 'center band', 'cross', 'centered cross', 'saltire', 'diagonal', 'diagonal band',
+                'triangle hoist', 'chevron', 'quartered', 'canton', 'border', 'disc', 'diamond', 'sun rays',
+                'checkered', 'bordered stripe', 'fimbriated cross')
+FLAG_SYMBOLS = ('none', 'star', 'six star', 'eight star', 'three stars', 'circle', 'ring', 'crescent',
+                'crescent and star', 'diamond', 'triangle', 'hexagon', 'cross', 'cog', 'sunburst', 'wheel',
+                'starbird', 'crown')
+FLAG_PLACES = ('center', 'canton', 'hoist')
+FLAG_PALETTE = [(200, 16, 46), (0, 56, 147), (0, 122, 61), (255, 205, 0), (255, 255, 255), (20, 20, 20),
+                (120, 20, 120), (230, 110, 0), (0, 150, 200), (110, 70, 30), (150, 150, 160), (90, 0, 20),
+                (0, 70, 60), (25, 30, 70)]
 
 
-def make_flag(layout, colors, emblem=None, emblem_scale=0.6, emblem_pos='center', size=(82, 52)):
-    """Draw a flag with Pillow. colors: 3 (r, g, b) tuples. emblem: an RGBA Image or None."""
+def _star(cx, cy, r, points=5, inner=0.4, rot=-90):
+    import math
+    pts = []
+    for i in range(points * 2):
+        a = math.radians(rot + i * 180 / points)
+        rr = r if i % 2 == 0 else r * inner
+        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    return pts
+
+
+def _regular(cx, cy, r, n, rot=-90):
+    import math
+    return [(cx + r * math.cos(math.radians(rot + i * 360 / n)), cy + r * math.sin(math.radians(rot + i * 360 / n)))
+            for i in range(n)]
+
+
+def draw_symbol(layer, kind, cx, cy, r, color):
+    """Draw a symbol on a transparent RGBA layer; cut-outs are made transparent so any background shows through."""
+    import math
+    from PIL import ImageDraw
+    d = ImageDraw.Draw(layer)
+    c, clear = color + (255,), (0, 0, 0, 0)
+    box = lambda k: (cx - r * k, cy - r * k, cx + r * k, cy + r * k)
+    if kind == 'star':
+        d.polygon(_star(cx, cy, r), fill=c)
+    elif kind == 'six star':
+        d.polygon(_star(cx, cy, r, 6, 0.55), fill=c)
+    elif kind == 'eight star':
+        d.polygon(_star(cx, cy, r, 8, 0.45), fill=c)
+    elif kind == 'three stars':
+        for dx in (-1, 0, 1):
+            d.polygon(_star(cx + dx * r * 0.75, cy, r * 0.36), fill=c)
+    elif kind == 'circle':
+        d.ellipse(box(1), fill=c)
+    elif kind == 'ring':
+        d.ellipse(box(1), fill=c)
+        d.ellipse(box(0.68), fill=clear)
+    elif kind in ('crescent', 'crescent and star'):
+        d.ellipse(box(1), fill=c)
+        d.ellipse((cx - r * 0.65, cy - r * 0.85, cx + r * 1.05, cy + r * 0.85), fill=clear)
+        if kind == 'crescent and star':
+            d.polygon(_star(cx + r * 0.45, cy, r * 0.35), fill=c)
+    elif kind == 'diamond':
+        d.polygon([(cx, cy - r), (cx + r * 0.7, cy), (cx, cy + r), (cx - r * 0.7, cy)], fill=c)
+    elif kind == 'triangle':
+        d.polygon(_regular(cx, cy + r * 0.15, r, 3), fill=c)
+    elif kind == 'hexagon':
+        d.polygon(_regular(cx, cy, r, 6), fill=c)
+        d.polygon(_regular(cx, cy, r * 0.55, 6), fill=clear)
+    elif kind == 'cross':
+        t = r * 0.3
+        d.rectangle((cx - t, cy - r, cx + t, cy + r), fill=c)
+        d.rectangle((cx - r, cy - t, cx + r, cy + t), fill=c)
+    elif kind == 'cog':
+        for i in range(10):
+            a = math.radians(i * 36)
+            pts = [(cx + r * f * math.cos(a + o), cy + r * f * math.sin(a + o))
+                   for f, o in ((0.7, -0.17), (1.0, -0.12), (1.0, 0.12), (0.7, 0.17))]
+            d.polygon(pts, fill=c)
+        d.ellipse(box(0.75), fill=c)
+        d.ellipse(box(0.35), fill=clear)
+    elif kind == 'sunburst':
+        for i in range(12):
+            a = math.radians(i * 30)
+            d.polygon([(cx + r * math.cos(a), cy + r * math.sin(a)),
+                       (cx + r * 0.45 * math.cos(a + 0.22), cy + r * 0.45 * math.sin(a + 0.22)),
+                       (cx + r * 0.45 * math.cos(a - 0.22), cy + r * 0.45 * math.sin(a - 0.22))], fill=c)
+        d.ellipse(box(0.45), fill=c)
+    elif kind == 'wheel':
+        d.ellipse(box(1), fill=c)
+        d.ellipse(box(0.8), fill=clear)
+        for i in range(8):
+            a = math.radians(i * 45)
+            d.line((cx, cy, cx + r * 0.8 * math.cos(a), cy + r * 0.8 * math.sin(a)), fill=c, width=max(1, int(r / 7)))
+        d.ellipse(box(0.25), fill=c)
+    elif kind == 'starbird':  # a generic winged bird of light, not any studio's logo
+        d.polygon([(cx, cy - r), (cx + r * 0.25, cy - r * 0.1), (cx + r, cy - r * 0.35), (cx + r * 0.35, cy + r * 0.2),
+                   (cx + r * 0.2, cy + r), (cx, cy + r * 0.45), (cx - r * 0.2, cy + r), (cx - r * 0.35, cy + r * 0.2),
+                   (cx - r, cy - r * 0.35), (cx - r * 0.25, cy - r * 0.1)], fill=c)
+    elif kind == 'crown':
+        d.polygon([(cx - r, cy + r * 0.6), (cx - r, cy - r * 0.5), (cx - r * 0.5, cy), (cx, cy - r * 0.8),
+                   (cx + r * 0.5, cy), (cx + r, cy - r * 0.5), (cx + r, cy + r * 0.6)], fill=c)
+
+
+def make_flag(layout, colors, emblem=None, emblem_scale=0.6, emblem_pos='center', size=(82, 52),
+              symbol='none', base=None, tint=None):
+    """Draw a flag with Pillow.
+    colors: 3 or 4 (r, g, b): background, layout colour 2, layout colour 3, symbol colour.
+    emblem: RGBA image or None, recoloured to `tint` if given. base: an image used instead of the layout."""
     from PIL import Image, ImageDraw
     w, h = size
-    img = Image.new('RGBA', size, colors[0] + (255,))
+    colors = list(colors) + [(255, 255, 255)] * (4 - len(colors))
+    img = base.convert('RGBA').resize(size, Image.LANCZOS) if base else Image.new('RGBA', size, tuple(colors[0]) + (255,))
     d = ImageDraw.Draw(img)
-    c1, c2 = colors[1] + (255,), colors[2] + (255,)
-    if layout == 'two horizontal':
+    c0, c1, c2 = (tuple(x) + (255,) for x in colors[:3])
+    t = max(2, h // 6)
+    if base:
+        pass
+    elif layout == 'two horizontal':
         d.rectangle((0, h // 2, w, h), fill=c1)
     elif layout == 'three horizontal':
         d.rectangle((0, h // 3, w, 2 * h // 3), fill=c1)
         d.rectangle((0, 2 * h // 3, w, h), fill=c2)
+    elif layout == 'five horizontal':
+        for i, c in enumerate((c0, c1, c2, c1, c0)):
+            d.rectangle((0, i * h // 5, w, (i + 1) * h // 5), fill=c)
+    elif layout == 'two vertical':
+        d.rectangle((0, 0, w // 2, h), fill=c1)
     elif layout == 'three vertical':
         d.rectangle((w // 3, 0, 2 * w // 3, h), fill=c1)
         d.rectangle((2 * w // 3, 0, w, h), fill=c2)
+    elif layout == 'hoist band':
+        d.rectangle((0, 0, w // 3, h), fill=c1)
+        d.rectangle((w // 3, h // 2, w, h), fill=c2)
+    elif layout == 'center band':
+        d.rectangle((w // 4, 0, 3 * w // 4, h), fill=c1)
     elif layout == 'cross':
-        t = max(2, h // 6)
         d.rectangle((0, h // 2 - t, w, h // 2 + t), fill=c1)
         d.rectangle((w // 3 - t, 0, w // 3 + t, h), fill=c1)
+    elif layout == 'fimbriated cross':
+        d.rectangle((0, h // 2 - t * 1.6, w, h // 2 + t * 1.6), fill=c2)
+        d.rectangle((w // 3 - t * 1.6, 0, w // 3 + t * 1.6, h), fill=c2)
+        d.rectangle((0, h // 2 - t, w, h // 2 + t), fill=c1)
+        d.rectangle((w // 3 - t, 0, w // 3 + t, h), fill=c1)
+    elif layout == 'centered cross':
+        d.rectangle((0, h // 2 - t, w, h // 2 + t), fill=c1)
+        d.rectangle((w // 2 - t, 0, w // 2 + t, h), fill=c1)
+    elif layout == 'saltire':
+        d.line((0, 0, w, h), fill=c1, width=t * 2)
+        d.line((0, h, w, 0), fill=c1, width=t * 2)
     elif layout == 'diagonal':
         d.polygon([(0, h), (w, 0), (w, h)], fill=c1)
+    elif layout == 'diagonal band':
+        d.polygon([(0, h), (w, 0), (w, h)], fill=c2)
+        d.line((0, h, w, 0), fill=c1, width=t * 2)
+    elif layout == 'triangle hoist':
+        d.rectangle((0, h // 2, w, h), fill=c2)
+        d.polygon([(0, 0), (w * 0.4, h / 2), (0, h)], fill=c1)
+    elif layout == 'chevron':
+        d.polygon([(0, 0), (w * 0.5, h / 2), (0, h)], fill=c1)
+        d.polygon([(0, h * 0.2), (w * 0.3, h / 2), (0, h * 0.8)], fill=c2)
+    elif layout == 'quartered':
+        d.rectangle((w // 2, 0, w, h // 2), fill=c1)
+        d.rectangle((0, h // 2, w // 2, h), fill=c1)
     elif layout == 'canton':
         d.rectangle((0, 0, w // 2, h // 2), fill=c1)
     elif layout == 'border':
-        t = max(2, h // 8)
-        d.rectangle((0, 0, w - 1, h - 1), outline=c1, width=t)
+        d.rectangle((0, 0, w - 1, h - 1), outline=c1, width=max(2, h // 8))
+    elif layout == 'disc':
+        d.ellipse((w / 2 - h * 0.32, h * 0.18, w / 2 + h * 0.32, h * 0.82), fill=c1)
+    elif layout == 'diamond':
+        d.polygon([(w * 0.08, h / 2), (w / 2, h * 0.1), (w * 0.92, h / 2), (w / 2, h * 0.9)], fill=c1)
+    elif layout == 'sun rays':
+        import math
+        r = w + h
+        for i in range(0, 16, 2):
+            a1, a2 = math.radians(i * 22.5), math.radians((i + 1) * 22.5)
+            d.polygon([(w / 2, h / 2), (w / 2 + r * math.cos(a1), h / 2 + r * math.sin(a1)),
+                       (w / 2 + r * math.cos(a2), h / 2 + r * math.sin(a2))], fill=c1)
+    elif layout == 'checkered':
+        for i in range(8):
+            for j in range(5):
+                if (i + j) % 2:
+                    d.rectangle((i * w / 8, j * h / 5, (i + 1) * w / 8, (j + 1) * h / 5), fill=c1)
+    elif layout == 'bordered stripe':
+        d.rectangle((0, h * 0.3, w, h * 0.7), fill=c2)
+        d.rectangle((0, h * 0.37, w, h * 0.63), fill=c1)
+    box = {'canton': (0, 0, w // 2, h // 2), 'hoist': (0, 0, w // 3, h)}.get(emblem_pos, (0, 0, w, h))
+    bw, bh = box[2] - box[0], box[3] - box[1]
+    if symbol != 'none':
+        layer = Image.new('RGBA', size, (0, 0, 0, 0))
+        draw_symbol(layer, symbol, box[0] + bw / 2, box[1] + bh / 2, min(bw, bh) / 2 * emblem_scale, tuple(colors[3]))
+        img.alpha_composite(layer)
     if emblem is not None:
-        box = (w // 2, h // 2) if emblem_pos == 'canton' else (w, h)
         e = emblem.copy()
-        e.thumbnail((max(1, int(box[0] * emblem_scale)), max(1, int(box[1] * emblem_scale))), Image.LANCZOS)
-        img.alpha_composite(e, ((box[0] - e.width) // 2, (box[1] - e.height) // 2))
+        if tint:  # keep the shading: the lightest parts become the tint colour, dark parts stay dark
+            lum = e.convert('L')
+            top = max(1, lum.getextrema()[1])
+            e = Image.merge('RGBA', [lum.point(lambda v, c=c: min(255, v * c // top)) for c in tint] + [e.getchannel('A')])
+        e.thumbnail((max(1, int(bw * emblem_scale)), max(1, int(bh * emblem_scale))), Image.LANCZOS)
+        img.alpha_composite(e, (box[0] + (bw - e.width) // 2, box[1] + (bh - e.height) // 2))
     return img
+
+
+def emblem_from_flag(img, tolerance=60):
+    """Turn a flag into a transparent emblem: pixels close to the flag's border colour become see-through."""
+    from collections import Counter as _C
+    img = img.convert('RGBA')
+    w, h = img.size
+    px = img.load()
+    border = [px[x, y][:3] for x in range(w) for y in (0, h - 1)] + [px[x, y][:3] for y in range(h) for x in (0, w - 1)]
+    bg = _C(border).most_common(1)[0][0]
+    for y in range(h):
+        for x in range(w):
+            r, g, b, a = px[x, y]
+            if abs(r - bg[0]) + abs(g - bg[1]) + abs(b - bg[2]) < tolerance:
+                px[x, y] = (0, 0, 0, 0)
+    box = img.getchannel('A').getbbox()
+    return img.crop(box) if box else img
+
+
+def emblem_dirs(mod):
+    """Folders searched for ready-made emblem PNGs: next to the tool/exe, and the mod's gfx/emblems."""
+    here = os.path.dirname(sys.executable if getattr(sys, 'frozen', False) else os.path.abspath(__file__))
+    return [os.path.join(here, 'emblems'), mod.path('gfx', 'emblems')]
+
+
+def random_flag(rng, country_color=None):
+    """Random but tidy flag settings: (layout, 4 colours, symbol, place)."""
+    pal = FLAG_PALETTE + ([tuple(country_color)] * 3 if country_color else [])
+    colors = rng.sample(pal, 4)
+    if colors[3] in colors[:1]:
+        colors[3] = (255, 255, 255)
+    return rng.choice(FLAG_LAYOUTS), colors, rng.choice(FLAG_SYMBOLS), rng.choice(FLAG_PLACES)
 
 
 def save_flag(mod, name, img):
@@ -846,6 +1159,9 @@ def run_gui(mod_root):
     lead_bar = ttk.Frame(lead_frame)
     lead_bar.pack(fill='x')
     ttk.Button(lead_bar, text='Add leader...', command=lambda: add_leader_dialog()).pack(side='left', padx=4, pady=4)
+    ttk.Button(lead_bar, text='Edit selected...', command=lambda: leaders.selection() and edit_leader_dialog(
+        leaders.item(leaders.selection()[0], 'values')[0])).pack(side='left')
+    ttk.Label(lead_bar, text='  (or double-click a character)', foreground='#777').pack(side='left')
     ttk.Style().configure('Portrait.Treeview', rowheight=66)
     leaders = ttk.Treeview(lead_frame, columns=('id', 'name', 'roles', 'ideology'), show='tree headings',
                            style='Portrait.Treeview')
@@ -858,6 +1174,8 @@ def run_gui(mod_root):
     leaders.configure(yscrollcommand=lsb2.set)
     lsb2.pack(side='right', fill='y')
     leaders.pack(fill='both', expand=True)
+    leaders.bind('<Double-1>', lambda e: leaders.identify_row(e.y) and edit_leader_dialog(
+        leaders.item(leaders.identify_row(e.y), 'values')[0]))
     ideas = tab('National ideas', ('idea', 'name'), {'idea': 250, 'name': 300})
     units = tab('OOB', ('oob', 'content'), {'oob': 150, 'content': 420})
 
@@ -937,6 +1255,14 @@ def run_gui(mod_root):
             for col, key in enumerate(keys, 1):
                 names[key] = tk.StringVar(value=mod.loc.get(key, ''))
                 ttk.Entry(g, textvariable=names[key], width=14).grid(row=r, column=col, padx=1, pady=1)
+            if ideo:
+                ttk.Button(g, text='↻', width=2, command=lambda i=ideo: reroll(i)).grid(row=r, column=5)
+
+        def reroll(ideo):
+            keys = [f'{tag}_{ideo}', f'{tag}_{ideo}_DEF', f'{tag}_{ideo}_ADJ', f'{tag}_{ideo}_party']
+            vals = suggest_names(ideo, names[tag].get() or tag, names[f'{tag}_ADJ'].get(), random.Random())
+            for key, val in zip(keys, vals):
+                names[key].set(val)
         hint = ttk.Frame(overview)
         hint.pack(fill='x', pady=(2, 6))
         generated = set()  # keys filled by the generator, so a second click re-rolls them
@@ -952,8 +1278,8 @@ def run_gui(mod_root):
                         generated.add(key)
 
         ttk.Button(hint, text='Suggest names', command=suggest).pack(side='left')
-        ttk.Label(hint, foreground='#777', text=' fills the empty boxes (click again for others). Nothing is written '
-                  'until Save overview. Empty names fall back to the default.').pack(side='left')
+        ttk.Label(hint, foreground='#777', text=' fills the empty boxes (click again for others), ↻ re-rolls one row. '
+                  'Nothing is written until Save overview.').pack(side='left')
         ttk.Separator(overview).pack(fill='x', pady=4)
 
         cf = ttk.Frame(overview)
@@ -1097,8 +1423,9 @@ def run_gui(mod_root):
         dlg = tk.Toplevel(root)
         dlg.title(f'Add leader to {tag}')
         dlg.transient(root)
-        v = {k: tk.StringVar() for k in ('name', 'id', 'role', 'subtype', 'traits', 'desc')}
+        v = {k: tk.StringVar() for k in ('name', 'id', 'role', 'subtype', 'traits', 'desc', 'gender')}
         v['role'].set('country_leader')
+        v['gender'].set('male')
         subtypes = sorted(mod.subtype_to_ideology)
         v['subtype'].set(next((s for s in mod.ideologies.get(c.ruling, [])), subtypes[0] if subtypes else ''))
         auto = {'id': True}
@@ -1115,14 +1442,16 @@ def run_gui(mod_root):
                 ('Ideology (leaders)', ttk.Combobox(dlg, textvariable=v['subtype'], values=subtypes,
                                                     state='readonly', width=31)),
                 ('Traits (space separated)', ttk.Entry(dlg, textvariable=v['traits'], width=34)),
-                ('Description (leaders)', ttk.Entry(dlg, textvariable=v['desc'], width=34)))
+                ('Description (leaders)', ttk.Entry(dlg, textvariable=v['desc'], width=34)),
+                ('Gender', ttk.Combobox(dlg, textvariable=v['gender'], values=('male', 'female'), state='readonly',
+                                        width=31)))
         for r, (label, widget) in enumerate(rows):
             ttk.Label(dlg, text=label).grid(row=r, column=0, sticky='w', padx=6, pady=2)
             widget.grid(row=r, column=1, sticky='w', padx=6, pady=2)
         rows[1][1].bind('<Key>', lambda e: auto.update(id=False))
         pic = {'src': None}
         preview = ttk.Label(dlg, text='no portrait', width=20, anchor='center')
-        preview.grid(row=0, column=2, rowspan=6, padx=8)
+        preview.grid(row=0, column=2, rowspan=7, padx=8)
 
         def pick_portrait():
             f = filedialog.askopenfilename(parent=dlg, title='Portrait image',
@@ -1147,7 +1476,7 @@ def run_gui(mod_root):
                 return
             portrait = save_portrait(mod, tag, cid, pic['src']) if pic['src'] else ''
             block = character_text(tag, cid, name.replace('"', "'"), role, v['subtype'].get(),
-                                   v['traits'].get().strip(), portrait)
+                                   v['traits'].get().strip(), portrait, v['gender'].get())
             cfile = add_character(mod, tag, cid, block)
             if role == 'country_leader' and v['desc'].get().strip():
                 set_loc(mod, f'{cid}_desc', v['desc'].get().strip().replace('"', "'"),
@@ -1157,8 +1486,156 @@ def run_gui(mod_root):
             nb.select(lead_frame)
             status['text'] = f'Added {cid} to {os.path.relpath(cfile, mod.root)} and recruited it in the history file.'
 
-        ttk.Button(dlg, text='Portrait image...', command=pick_portrait).grid(row=6, column=2, pady=4)
-        ttk.Button(dlg, text='Create', command=create).grid(row=6, column=1, sticky='e', padx=6, pady=8)
+        ttk.Button(dlg, text='Random name', command=lambda: v['name'].set(
+            person_name(random.Random(), v['gender'].get()))).grid(row=7, column=0, sticky='w', padx=6)
+        ttk.Button(dlg, text='Portrait image...', command=pick_portrait).grid(row=7, column=2, pady=4)
+        ttk.Button(dlg, text='Create', command=create).grid(row=7, column=1, sticky='e', padx=6, pady=8)
+
+    def edit_leader_dialog(cid):
+        c = state['country']
+        if cid not in mod.characters:
+            return
+        body, cfile = mod.characters[cid]
+        tag = c.tag
+        dlg = tk.Toplevel(root)
+        dlg.title(f'Edit {cid}')
+        dlg.transient(root)
+        subtypes = sorted(mod.subtype_to_ideology)
+        fallback = mod.loc_file.get(tag) or mod.path('localisation', 'english', 'country_editor_l_english.yml')
+        P = ['characters', cid]
+        raw_name = get(body, 'name', cid)
+        top = ttk.Frame(dlg, padding=6)
+        top.pack(fill='x')
+        old = {}  # path tuple -> original value, so only changed values are written
+        var = {}
+
+        def field(parent, row, label, path, value, widget='entry', values=(), width=26):
+            var[path] = tk.StringVar(value=value)
+            old[path] = value
+            ttk.Label(parent, text=label).grid(row=row, column=0, sticky='w', padx=4, pady=1)
+            if widget == 'combo':
+                w = ttk.Combobox(parent, textvariable=var[path], values=values, width=width - 3)
+            elif widget == 'spin':
+                w = ttk.Spinbox(parent, from_=0, to=10, textvariable=var[path], width=5)
+            else:
+                w = ttk.Entry(parent, textvariable=var[path], width=width)
+            w.grid(row=row, column=1, sticky='w', padx=4, pady=1)
+
+        field(top, 0, 'Name', ('name',), mod.loc.get(raw_name, raw_name))
+        field(top, 1, 'Gender', ('gender',), get(body, 'gender', 'male'), 'combo', ('male', 'female'))
+        pic = {'src': None, 'photo': photo(c._portrait(body) or '', (78, 105))}
+        prev = ttk.Label(top, image=pic['photo'] or '', text='' if pic['photo'] else 'no portrait')
+        prev.grid(row=0, column=2, rowspan=3, padx=10)
+
+        def pick_portrait():
+            f = filedialog.askopenfilename(parent=dlg, title='New portrait image',
+                                           filetypes=[('Images', '*.png *.jpg *.jpeg *.dds *.tga *.webp'), ('All', '*')])
+            if f and Image:
+                try:
+                    from PIL import ImageOps
+                    pic['photo'] = ImageTk.PhotoImage(ImageOps.fit(Image.open(f).convert('RGBA'), (78, 105)))
+                except OSError as e:
+                    messagebox.showerror('Portrait', f'Cannot read this image: {e}', parent=dlg)
+                    return
+                pic['src'] = f
+                prev.configure(image=pic['photo'], text='')
+
+        ttk.Button(top, text='Replace portrait...', command=pick_portrait).grid(row=3, column=2)
+
+        role_keys = [k for k in ('country_leader', 'advisor', 'corps_commander', 'field_marshal', 'navy_leader')
+                     if get(body, k) is not None]
+
+        def change_file(fn, msg):
+            write_text(cfile, fn(read_text(cfile)))
+            dlg.destroy()
+            after_save()
+            status['text'] = msg
+            edit_leader_dialog(cid)
+
+        for key in role_keys:
+            rb = get(body, key)
+            fr = ttk.LabelFrame(dlg, text=key, padding=4)
+            fr.pack(fill='x', padx=6, pady=3)
+            traits = ' '.join(v for _, v in (get(rb, 'traits', []) or []))
+            row = 0
+            if key == 'country_leader':
+                field(fr, 0, 'Ideology', (key, 'ideology'), get(rb, 'ideology', ''), 'combo', subtypes)
+                dkey = get(rb, 'desc', f'{cid}_desc')
+                field(fr, 1, 'Description', ('desc_loc', dkey), mod.loc.get(dkey, ''), width=40)
+                row = 2
+            elif key == 'advisor':
+                field(fr, 0, 'Slot', (key, 'slot'), get(rb, 'slot', ''), 'combo',
+                      ('political_advisor', 'high_command', 'theorist', 'army_chief', 'navy_chief', 'air_chief'))
+                field(fr, 1, 'Cost', (key, 'cost'), get(rb, 'cost', '150'), width=6)
+                row = 2
+            else:
+                for i, sk in enumerate(SKILLS.get(key, ())):
+                    field(fr, i, sk.replace('_', ' '), (key, sk), get(rb, sk, '1'), 'spin')
+                row = len(SKILLS.get(key, ()))
+            field(fr, row, 'Traits', (key, 'traits'), traits, width=40)
+            ttk.Button(fr, text=f'Remove {key} role', command=lambda k=key: messagebox.askyesno(
+                'Remove role', f'Remove the {k} role from {cid}?', parent=dlg) and change_file(
+                lambda t: del_in(t, P + [k]), f'Removed {k} from {cid}.')).grid(row=0, column=2, padx=8)
+
+        add_bar = ttk.Frame(dlg, padding=6)
+        add_bar.pack(fill='x')
+        new_role = tk.StringVar()
+        missing = [r for r in ROLES if ROLE_KEY.get(r, r) not in role_keys]
+        if missing:
+            ttk.Combobox(add_bar, textvariable=new_role, values=missing, state='readonly', width=18).pack(side='left')
+            ttk.Button(add_bar, text='Add role', command=lambda: new_role.get() and change_file(
+                lambda t: add_role(t, cid, role_text(tag, cid, new_role.get(), mod.ideologies.get(c.ruling, [''])[0])),
+                f'Added {new_role.get()} to {cid}.')).pack(side='left', padx=4)
+
+        def save():
+            text = read_text(cfile)
+            for path, sv in var.items():
+                val = sv.get().strip().replace('"', "'")
+                if val == old[path]:
+                    continue
+                if path == ('name',):
+                    if raw_name in mod.loc:
+                        set_loc(mod, raw_name, val, fallback)
+                    else:
+                        text = set_in(text, P + ['name'], f'"{val}"')
+                elif path[0] == 'desc_loc':
+                    set_loc(mod, path[1], val, fallback)
+                    if path[1] == f'{cid}_desc' and not get(get(body, 'country_leader'), 'desc'):
+                        text = set_in(text, P + ['country_leader', 'desc'], f'"{path[1]}"')
+                elif path[-1] == 'traits':
+                    text = set_in(text, P + list(path), f'{{ {val} }}' if val else '{ }')
+                else:
+                    text = set_in(text, P + list(path), val)
+            if pic['src']:
+                rel = save_portrait(mod, tag, cid, pic['src'])
+                kind = next((k for k, _ in (get(body, 'portraits', []) or []) if k), 'civilian')
+                text = set_in(text, P + ['portraits', kind, 'large'], f'"{rel}"')
+            write_text(cfile, text)
+            dlg.destroy()
+            after_save()
+            status['text'] = f'Saved {cid} in {os.path.relpath(cfile, mod.root)}.'
+
+        def unrecruit_it():
+            if messagebox.askyesno('Remove from country', f'Remove {cid} from {tag} (keeps the character file)?',
+                                   parent=dlg):
+                unrecruit(mod, tag, cid)
+                dlg.destroy()
+                after_save()
+
+        def delete_it():
+            if messagebox.askyesno('Delete', f'Delete {cid} from {os.path.basename(cfile)} and from {tag}?',
+                                   parent=dlg):
+                delete_character(mod, tag, cid)
+                dlg.destroy()
+                after_save()
+
+        bb = ttk.Frame(dlg, padding=6)
+        bb.pack(fill='x')
+        ttk.Button(bb, text='Save', command=save).pack(side='left')
+        ttk.Button(bb, text='Remove from country', command=unrecruit_it).pack(side='left', padx=4)
+        ttk.Button(bb, text='Delete character', command=delete_it).pack(side='left')
+        ttk.Button(bb, text='Open file', command=lambda: (dlg.destroy(), nb.select(ed_frame), file_pick.set(
+            next((k for k, f in c.files.items() if f == cfile), file_pick.get())), load_file())).pack(side='right')
 
     def flag_maker_dialog(c, country_color):
         if not Image:
@@ -1170,31 +1647,93 @@ def run_gui(mod_root):
         dlg.transient(root)
         target = tk.StringVar(value='base')
         layout = tk.StringVar(value='three horizontal')
+        symbol = tk.StringVar(value='none')
         pos = tk.StringVar(value='center')
         scale = tk.DoubleVar(value=0.6)
-        colors = [list(country_color), [255, 255, 255], [20, 20, 20]]
+        tint = tk.BooleanVar(value=True)
+        bg_flag = tk.StringVar(value='(use layout)')
+        emblem_name = tk.StringVar(value='(none)')
+        colors = [list(country_color), [255, 255, 255], [20, 20, 20], [255, 205, 0]]
         fm = {'emblem': None}
+        flag_names = sorted(os.path.splitext(n)[0] for n in os.listdir(mod.path('gfx', 'flags'))
+                            if n.lower().endswith('.tga')) if os.path.isdir(mod.path('gfx', 'flags')) else []
+        emblem_files = {}
+        for folder in emblem_dirs(mod):
+            if os.path.isdir(folder):
+                for n in sorted(os.listdir(folder)):
+                    if n.lower().endswith(('.png', '.tga', '.dds', '.webp')):
+                        emblem_files[os.path.splitext(n)[0]] = os.path.join(folder, n)
+        emblem_choices = ['(none)'] + list(emblem_files) + [f'from flag: {n}' for n in flag_names]
+
         ctl = ttk.Frame(dlg, padding=8)
         ctl.pack(side='left', fill='y')
-        prev = ttk.Label(dlg, padding=8)
-        prev.pack(side='left')
+        right = ttk.Frame(dlg, padding=8)
+        right.pack(side='left', fill='both')
+        prev = ttk.Label(right)
+        prev.pack()
+        small = ttk.Frame(right)
+        small.pack(pady=6)
+        prev_m, prev_s = ttk.Label(small), ttk.Label(small)
+        prev_m.pack(side='left', padx=6)
+        prev_s.pack(side='left', padx=6)
+        ttk.Label(right, text='Actual in-game sizes: 41x26 and 10x7', foreground='#777').pack()
 
         def render(*_):
-            img = make_flag(layout.get(), [tuple(x) for x in colors], fm['emblem'], scale.get(), pos.get(), (328, 208))
-            fm['img'], fm['photo'] = img, ImageTk.PhotoImage(img)
+            base = None
+            if bg_flag.get() != '(use layout)':
+                f = mod.find(f'gfx/flags/{bg_flag.get()}.tga')
+                base = Image.open(f) if f else None
+            img = make_flag(layout.get(), [tuple(x) for x in colors], fm['emblem'], scale.get(), pos.get(), (328, 208),
+                            symbol.get(), base, tuple(colors[3]) if tint.get() else None)
+            fm['img'] = img
+            fm['photo'] = ImageTk.PhotoImage(img)
+            fm['pm'] = ImageTk.PhotoImage(img.resize((41, 26), Image.LANCZOS))
+            fm['ps'] = ImageTk.PhotoImage(img.resize((10, 7), Image.LANCZOS))
             prev.configure(image=fm['photo'])
+            prev_m.configure(image=fm['pm'])
+            prev_s.configure(image=fm['ps'])
 
-        ttk.Label(ctl, text='Save as').grid(row=0, column=0, sticky='w')
-        ttk.Combobox(ctl, textvariable=target, values=['base'] + list(mod.ideologies), state='readonly').grid(
-            row=0, column=1, columnspan=2, sticky='w')
-        ttk.Label(ctl, text='Layout').grid(row=1, column=0, sticky='w')
-        lay = ttk.Combobox(ctl, textvariable=layout, values=FLAG_LAYOUTS, state='readonly')
-        lay.grid(row=1, column=1, columnspan=2, sticky='w')
-        lay.bind('<<ComboboxSelected>>', render)
-        for i in range(3):
+        def choose_emblem(*_):
+            n = emblem_name.get()
+            try:
+                if n == '(none)':
+                    fm['emblem'] = None
+                elif n.startswith('from flag: '):
+                    fm['emblem'] = emblem_from_flag(Image.open(mod.find(f'gfx/flags/{n[11:]}.tga')).resize((328, 208)))
+                else:
+                    fm['emblem'] = Image.open(emblem_files[n]).convert('RGBA')
+            except (OSError, KeyError, TypeError) as e:
+                messagebox.showerror('Emblem', f'Cannot read this emblem: {e}', parent=dlg)
+                fm['emblem'] = None
+            render()
+
+        def pick_emblem_file():
+            f = filedialog.askopenfilename(parent=dlg, title='Emblem image (PNG with transparency works best)',
+                                           filetypes=[('Images', '*.png *.tga *.dds *.jpg *.jpeg *.webp'), ('All', '*')])
+            if f:
+                emblem_files[os.path.basename(f)] = f
+                emblem_name.set(os.path.basename(f))
+                choose_emblem()
+
+        row = 0
+
+        def combo(label, variable, values, cmd=render, width=22):
+            nonlocal row
+            ttk.Label(ctl, text=label).grid(row=row, column=0, sticky='w')
+            cb = ttk.Combobox(ctl, textvariable=variable, values=values, state='readonly', width=width)
+            cb.grid(row=row, column=1, columnspan=2, sticky='w', pady=1)
+            cb.bind('<<ComboboxSelected>>', cmd)
+            row += 1
+
+        combo('Save as', target, ['base'] + list(mod.ideologies), cmd=lambda *_: None)
+        combo('Layout', layout, FLAG_LAYOUTS)
+        combo('Or start from flag', bg_flag, ['(use layout)'] + flag_names)
+        swatches = []
+        for i, label in enumerate(('Colour 1 (background)', 'Colour 2', 'Colour 3', 'Colour 4 (symbol/emblem)')):
             sw = tk.Label(ctl, width=6, relief='solid', background='#%02x%02x%02x' % tuple(colors[i]))
-            ttk.Label(ctl, text=f'Colour {i + 1}').grid(row=2 + i, column=0, sticky='w')
-            sw.grid(row=2 + i, column=1, sticky='w', pady=2)
+            ttk.Label(ctl, text=label).grid(row=row, column=0, sticky='w')
+            sw.grid(row=row, column=1, sticky='w', pady=2)
+            swatches.append(sw)
 
             def pick(i=i, sw=sw):
                 rgb, hexa = colorchooser.askcolor(sw['background'], parent=dlg)
@@ -1203,26 +1742,33 @@ def run_gui(mod_root):
                     sw['background'] = hexa
                     render()
 
-            ttk.Button(ctl, text='Pick...', command=pick).grid(row=2 + i, column=2, sticky='w')
+            ttk.Button(ctl, text='Pick...', command=pick).grid(row=row, column=2, sticky='w')
+            row += 1
+        combo('Symbol', symbol, FLAG_SYMBOLS)
+        combo('Emblem', emblem_name, emblem_choices, cmd=choose_emblem)
+        ttk.Button(ctl, text='Emblem from image file...', command=pick_emblem_file).grid(
+            row=row, column=0, columnspan=2, sticky='w', pady=2)
+        ttk.Checkbutton(ctl, text='Recolour emblem (colour 4)', variable=tint, command=render).grid(
+            row=row, column=2, sticky='w')
+        row += 1
+        ttk.Label(ctl, text='Symbol/emblem size').grid(row=row, column=0, sticky='w')
+        ttk.Scale(ctl, from_=0.15, to=1.0, variable=scale, command=render).grid(row=row, column=1, columnspan=2,
+                                                                               sticky='we')
+        row += 1
+        combo('Symbol/emblem place', pos, FLAG_PLACES)
 
-        def pick_emblem():
-            f = filedialog.askopenfilename(parent=dlg, title='Emblem image (PNG with transparency works best)',
-                                           filetypes=[('Images', '*.png *.tga *.dds *.jpg *.jpeg *.webp'), ('All', '*')])
-            if f:
-                try:
-                    fm['emblem'] = Image.open(f).convert('RGBA')
-                except OSError as e:
-                    messagebox.showerror('Emblem', f'Cannot read this image: {e}', parent=dlg)
-                render()
-
-        ttk.Button(ctl, text='Emblem image...', command=pick_emblem).grid(row=5, column=0, columnspan=2, sticky='w', pady=4)
-        ttk.Button(ctl, text='No emblem', command=lambda: (fm.update(emblem=None), render())).grid(row=5, column=2)
-        ttk.Label(ctl, text='Emblem size').grid(row=6, column=0, sticky='w')
-        ttk.Scale(ctl, from_=0.2, to=1.0, variable=scale, command=render).grid(row=6, column=1, columnspan=2, sticky='we')
-        ttk.Label(ctl, text='Emblem place').grid(row=7, column=0, sticky='w')
-        pb = ttk.Combobox(ctl, textvariable=pos, values=('center', 'canton'), state='readonly')
-        pb.grid(row=7, column=1, columnspan=2, sticky='w')
-        pb.bind('<<ComboboxSelected>>', render)
+        def randomize():
+            lay, cols, sym, place = random_flag(random.Random(), country_color)
+            layout.set(lay)
+            symbol.set(sym)
+            pos.set(place)
+            bg_flag.set('(use layout)')
+            emblem_name.set('(none)')
+            fm['emblem'] = None
+            for i, col in enumerate(cols):
+                colors[i] = list(col)
+                swatches[i]['background'] = '#%02x%02x%02x' % tuple(col)
+            render()
 
         def save():
             name = tag if target.get() == 'base' else f'{tag}_{target.get()}'
@@ -1235,7 +1781,14 @@ def run_gui(mod_root):
             after_save()
             status['text'] = f'Saved gfx/flags/{name}.tga, medium/{name}.tga and small/{name}.tga.'
 
-        ttk.Button(ctl, text='Save flag', command=save).grid(row=8, column=0, columnspan=3, sticky='we', pady=10)
+        bar = ttk.Frame(ctl)
+        bar.grid(row=row, column=0, columnspan=3, sticky='we', pady=10)
+        ttk.Button(bar, text='Randomize', command=randomize).pack(side='left')
+        ttk.Button(bar, text='Save flag', command=save).pack(side='left', padx=6)
+        ttk.Label(ctl, foreground='#777', wraplength=330, justify='left',
+                  text='Ready-made emblems: every flag in the mod (background removed), plus any transparent PNG '
+                       'placed in an "emblems" folder next to this tool or in the mod\'s gfx/emblems.').grid(
+            row=row + 1, column=0, columnspan=3, sticky='w')
         render()
 
     def show(tag):
