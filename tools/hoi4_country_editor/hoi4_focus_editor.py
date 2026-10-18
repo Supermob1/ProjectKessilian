@@ -373,6 +373,70 @@ def check(ff, mod, sprites=None, others=None):
     return out
 
 
+def focus_point_days(mod):
+    """Days per focus cost point: the mod's NDefines.NFocus.FOCUS_POINT_DAYS (last file wins), else vanilla's 7."""
+    days = 7.0
+    for f in mod.files('common/defines', '.lua'):
+        for m in re.finditer(r'^[^-\n]*FOCUS_POINT_DAYS\s*=\s*(\d+(?:\.\d+)?)', read_text(f), re.M):
+            days = float(m.group(1))
+    return days
+
+
+def cost_days(f, per_cost):
+    try:
+        return float(f['cost'] or 10) * per_cost
+    except ValueError:
+        return 10 * per_cost
+
+
+def earliest_days(ff, per_cost):
+    """Day each focus can be finished at the earliest: its own time plus the slowest required group,
+    where a group of "or" prerequisites counts its quickest member."""
+    memo = {}
+
+    def go(fid, seen):
+        if fid in memo:
+            return memo[fid]
+        f = ff.focuses[fid]
+        wait = 0.0
+        for g in f['prereq']:
+            options = [go(p, seen | {fid}) for p in g if p in ff.focuses and p not in seen]
+            wait = max(wait, min(options) if options else 0.0)
+        memo[fid] = wait + cost_days(f, per_cost)
+        return memo[fid]
+
+    for fid in ff.focuses:
+        go(fid, frozenset())
+    return memo
+
+
+def fmt_days(days):
+    d = round(days)
+    years, rest = divmod(d, 365)
+    return f'{d:,} days' + (f' ({years} y {rest} d)' if years else '')
+
+
+def auto_name(focus_id):
+    """CIS_The_Raxus_Address -> "The Raxus Address": drop the tag prefix, underscores become spaces."""
+    text = re.sub(r'^[A-Z0-9]{2,4}_', '', focus_id).replace('_', ' ').strip()
+    return text[:1].upper() + text[1:]
+
+
+def add_auto_names(ff, mod, path):
+    """Write a name for every focus of the tree that has none, in one write. Broken lines are left for the user."""
+    new = [(f['id'], auto_name(f['id'])) for f in ff.focuses.values()
+           if f['id'] and f['id'] not in mod.loc and f['id'] not in mod.loc_broken]
+    if not new:
+        return 0
+    text = read_text(path) if os.path.exists(path) else 'l_english:\n'
+    text = text.rstrip('\n') + '\n' + ''.join(f' {k}:0 "{v}"\n' for k, v in new)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    write_text(path, text)
+    for k, v in new:
+        mod.loc[k], mod.loc_file[k] = v, path
+    return len(new)
+
+
 GOAL_SIZE = (94, 86)  # vanilla focus icon size
 
 
@@ -466,6 +530,7 @@ def run_gui(mod_root):
             return
     mod = Mod(mod_root)
     settings = load_settings()
+    per_cost = focus_point_days(mod)
     st = {'ff': None, 'sel': None, 'zoom': 0.7, 'link': None, 'drag': None, 'vanilla': game_sprites(settings.get('game_dir'))}
     icons = {}
 
@@ -499,6 +564,8 @@ def run_gui(mod_root):
     file_pick.pack(side='left')
     status = ttk.Label(root, anchor='w')
     status.pack(side='bottom', fill='x')
+    totals = ttk.Label(root, anchor='w', padding=(6, 0))
+    totals.pack(side='top', fill='x')
 
     # ---------------- panes
     panes = tk.PanedWindow(root, orient='horizontal', sashwidth=6, sashrelief='raised')
@@ -579,6 +646,14 @@ def run_gui(mod_root):
             name = mod.loc.get(f['id'], f['id'])
             canvas.create_text(x, y + h / 2 - 16 * z, text=name, width=w - 4, fill='white',
                                font=('Segoe UI', max(6, int(8 * z))), tags=('focus', fid))
+        days = [cost_days(f, per_cost) for f in ff.focuses.values()]
+        early = earliest_days(ff, per_cost)
+        totals.configure(text=f'{len(days)} focuses: all of them {fmt_days(sum(days))}, longest chain '
+                              f'{fmt_days(max(early.values(), default=0))}   (1 cost = {per_cost:g} days)')
+        for fid, f in ff.focuses.items():
+            x, y = pos(f)
+            canvas.create_text(x + w / 2 - 3, y - h / 2 + 2, anchor='ne', text=f'{cost_days(f, per_cost):g}d',
+                               fill='#c8d0e0', font=('Segoe UI', max(6, int(7 * z))), tags=('focus', fid))
         canvas.configure(scrollregion=canvas.bbox('all') or (0, 0, 1, 1))
         title = f'HOI4 Focus Tree Editor - {os.path.relpath(ff.path, mod.root)}' + (' *' if ff.dirty else '')
         root.title(title)
@@ -612,8 +687,10 @@ def run_gui(mod_root):
     r = 0
     for key, label in (('id', 'Focus id'), ('name', 'Name')):
         ttk.Label(form, text=label).grid(row=r, column=0, sticky='w')
-        ttk.Entry(form, textvariable=fv[key], width=44).grid(row=r, column=1, columnspan=3, sticky='we', pady=1)
+        ttk.Entry(form, textvariable=fv[key], width=44).grid(row=r, column=1, columnspan=2, sticky='we', pady=1)
         r += 1
+    ttk.Button(form, text='Auto', width=5, command=lambda: fv['name'].set(auto_name(fv['id'].get().strip()))).grid(
+        row=r - 1, column=3, sticky='w')
     ttk.Label(form, text='Description').grid(row=r, column=0, sticky='nw')
     desc = tk.Text(form, height=4, width=44, wrap='word', font=('Segoe UI', 9))
     desc.grid(row=r, column=1, columnspan=3, sticky='we', pady=1)
@@ -629,6 +706,8 @@ def run_gui(mod_root):
     r += 3
     ttk.Label(form, text='Cost').grid(row=r, column=0, sticky='w')
     ttk.Entry(form, textvariable=fv['cost'], width=8).grid(row=r, column=1, sticky='w')
+    duration = ttk.Label(form, foreground='#555')
+    duration.grid(row=r, column=1, columnspan=3, sticky='w', padx=(70, 0))
     r += 1
     ttk.Label(form, text='Position x / y').grid(row=r, column=0, sticky='w')
     xy = ttk.Frame(form)
@@ -684,8 +763,11 @@ def run_gui(mod_root):
         pre.delete('1.0', 'end')
         script.delete('1.0', 'end')
         icon_prev.configure(image='')
+        duration.configure(text='')
         if not f:
             return
+        early = earliest_days(ff, per_cost)
+        duration.configure(text=f'= {fmt_days(cost_days(f, per_cost))}, done at the earliest after {fmt_days(early[fid])}')
         fv['id'].set(f['id'])
         fv['name'].set(mod.loc.get(f['id'], ''))
         desc.insert('1.0', mod.loc.get(f'{f["id"]}_desc', '').replace('\\n', '\n'))
@@ -1127,6 +1209,22 @@ def run_gui(mod_root):
         mark(line)
         check_text()
 
+    def auto_names():
+        ff = st['ff']
+        if not ff:
+            return
+        missing = [f['id'] for f in ff.focuses.values() if f['id'] not in mod.loc and f['id'] not in mod.loc_broken]
+        if not missing:
+            messagebox.showinfo('Auto names', 'Every focus already has a name.')
+            return
+        target = loc_file()
+        if not messagebox.askyesno('Auto names', f'Write a name for {len(missing)} focuses, e.g.\n{missing[0]} -> '
+                                   f'"{auto_name(missing[0])}"\ninto {os.path.relpath(target, mod.root)}?'):
+            return
+        n = add_auto_names(ff, mod, target)
+        status['text'] = f'Added {n} names to {os.path.relpath(target, mod.root)}. Existing names were not touched.'
+        changed(keep_form=True)
+
     def zoom(f):
         st['zoom'] = max(0.3, min(2.0, st['zoom'] * f))
         icons.clear()
@@ -1146,6 +1244,7 @@ def run_gui(mod_root):
     for text, cmd in (('New tree...', new_tree), ('Save', save), ('Undo', undo), ('Redo', redo),
                       ('Zoom -', lambda: zoom(0.8)), ('Zoom +', lambda: zoom(1.25)),
                       ('Add focus', lambda: add_child()), ('Tree settings...', tree_settings),
+                      ('Auto names', lambda: auto_names()),
                       ('Edit file text...', lambda: edit_file_text()), ('Game folder...', set_game_dir)):
         ttk.Button(bar, text=text, command=cmd).pack(side='left', padx=2)
     ttk.Label(bar, foreground='#777', text='  drag = move, right-click = links/add/delete, double-click empty = new focus'

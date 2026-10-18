@@ -48,6 +48,10 @@ Like the game itself, it only reads the top level of `common/*` and `history/*`,
   - Mouse wheel scrolls (Shift for sideways), middle-drag pans, and Zoom -/+ changes the size.
 - **The form** (right): id (renaming updates every reference in the file), name and description (saved to localisation at once), icon, cost, position (absolute, or relative to another focus), prerequisites (one line per required group; `A or B` on a line means either one), and mutually exclusive.
 - **Icons**: **Pick...** opens a searchable icon grid. **Import image...** turns any PNG/JPG/DDS into a 94x86 `.dds` in `gfx/interface/goals/TAG/` and adds both the sprite and its `_shine` sprite to your goals `.gfx` files. Click **Game folder...** once (your HOI4 install) to see and use the vanilla icons too.
+- **Auto names** (toolbar): gives every focus without a name one made from its id: the tag is dropped and `_` becomes a space (`CIS_A_New_Birth_of_Freedom` → "A New Birth of Freedom"). They are written in one go next to the tree's other texts. Existing names and broken lines are not touched. The **Auto** button next to Name does the same for one focus (press Apply to keep it).
+- **Durations**: each box shows its days in the top-right corner. Days per cost come from your mod's `NDefines.NFocus.FOCUS_POINT_DAYS`, or vanilla's 7 if the mod does not set it.
+  - The form shows the selected focus's days, and how many days it takes to finish at the earliest, following its quickest prerequisite chain.
+  - The line under the toolbar shows the time to do every focus, and the longest chain, in days and years. Mutually exclusive focuses are counted too.
 - **Focus script**: the whole `focus = { ... }` block, for rewards, `available`, `bypass`, `ai_will_do` and everything else. **Apply script** checks the braces first.
 - **Edit file text...** opens the whole file with a **Check braces** button, for anything the form cannot reach.
 - **Save** (Ctrl+S), **Undo** (Ctrl+Z) and **Redo** (Ctrl+Y) work on the whole tree.
