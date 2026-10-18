@@ -517,6 +517,14 @@ def hod_calendar(mod):
     day_then_month = re.search(v + r'HODday\s*=\s*(\d+)\s*\}\s*check_variable\s*=\s*\{\s*' + v + r'HODmonth\s*=\s*(\d+)', text)
     month_then_day = re.search(v + r'HODmonth\s*=\s*(\d+)\s*\}\s*check_variable\s*=\s*\{\s*' + v + r'HODday\s*=\s*(\d+)', text)
     month = re.search(r'limit\s*=\s*\{\s*check_variable\s*=\s*\{\s*' + v + r'HODday\s*=\s*(\d+)', text)
+    year_mod = re.search(r'modulo(?:_temp)?_variable\s*=\s*\{\s*\w+\s*=\s*(\d+)\s*\}', text)
+    months_end = re.search(r'check_variable\s*=\s*\{\s*\w+\s*<\s*(\d+)\s*\}', text)
+    month_mod = re.search(r'modulo_variable\s*=\s*\{\s*' + v + r'HODday\s*=\s*(\d+)\s*\}', text)
+    start_add = re.search(r'add_to_variable\s*=\s*\{\s*' + v + r'HODyear\s*=\s*(-?\d+)\s*\}', text)
+    if 'num_days' in text and year_mod and months_end and month_mod and start_add:  # computed from num_days
+        year_len, in_months, per_month = (int(m.group(1)) for m in (year_mod, months_end, month_mod))
+        return {'start_year': int(start_add.group(1)), 'month_days': per_month, 'months': in_months // per_month,
+                'fest_days': year_len - in_months}
     if day_then_month:
         fest_day, fest_month = day_then_month.groups()
     elif month_then_day:
@@ -841,8 +849,8 @@ def run_gui(mod_root):
     dur = ttk.Frame(side, padding=6)
     side.add(dur, text='Durations')
     found, game_start = hod_calendar(mod), start_date(mod)
-    cal_keys = (('start_year', 'Start year'), ('months', 'Months'), ('month_days', 'Days per month'),
-                ('fest_days', 'Festival days'))
+    cal_keys = (('start_year', 'Start year'), ('months', 'Months (without festivities)'),
+                ('month_days', 'Days per month'), ('fest_days', 'Festival days'))
     cal_vars = {k: tk.StringVar(value=str((found or settings.get('calendar') or {}).get(k, ''))) for k, _ in cal_keys}
 
     def get_calendar():
