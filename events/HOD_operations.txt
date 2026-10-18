@@ -1,0 +1,21 @@
+add_namespace = hod_operations
+
+# An operation begins (sent to the Republic and the Confederacy)
+country_event = {
+	id = hod_operations.1
+	title = hod_operations.1.t
+	desc = hod_operations.1.d
+	picture = GFX_news_event_unthinkable
+	is_triggered_only = yes
+	option = { name = hod_operations.1.a }
+}
+
+# An operation is over
+country_event = {
+	id = hod_operations.2
+	title = hod_operations.2.t
+	desc = hod_operations.2.d
+	picture = GFX_news_event_unthinkable
+	is_triggered_only = yes
+	option = { name = hod_operations.2.a }
+}

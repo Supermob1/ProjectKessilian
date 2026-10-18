@@ -1,6 +1,6 @@
 Clone_wars_start = {
 	CIS = { 
-		declare_war_on = { target = REP type = annex_everything }
+		# the war is now declared by the first operation (HOD_operation_geonosis_start, below)
 		set_cosmetic_tag = CIS_Confderation_of_Independent_Systems
 		# load_oob = "HOD_Droid_Army"
 
@@ -43,4 +43,6 @@ Clone_wars_start = {
 		# load_oob = "HOD_CIS_naval"
 	}
 	# REP = { load_oob = "HOD_REP_naval" }
+	# The Clone Wars open with the first operation: the Republic attacks Geonosis
+	HOD_operation_geonosis_start = yes
 }

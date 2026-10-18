@@ -1,0 +1,38 @@
+# HOD operations: the mission timers of the attacker and the defender (see HOD_operations_effects.txt)
+HOD_operations_category = {
+
+	# Attacker: holds every objective before the timer ends -> victory
+	HOD_op_attack_70 = {
+		icon = mission_icon
+		allowed = { OR = { original_tag = CIS original_tag = REP } }
+		activation = { always = no }
+		available = {
+			has_global_flag = HOD_op_active
+			all_of_scopes = {
+				array = global.HOD_op_targets
+				is_controlled_by = ROOT
+			}
+		}
+		cancel_trigger = { NOT = { has_global_flag = HOD_op_active } }
+		is_good = yes
+		days_mission_timeout = 70
+		selectable_mission = no
+		fire_only_once = no
+		complete_effect = { HOD_operation_victory = yes }
+		timeout_effect = { HOD_operation_failure = yes }
+	}
+
+	# Defender: still holds an objective when the timer ends -> the operation fails
+	HOD_op_defend_70 = {
+		icon = mission_icon
+		allowed = { OR = { original_tag = CIS original_tag = REP } }
+		activation = { always = no }
+		available = { always = no }
+		cancel_trigger = { NOT = { has_global_flag = HOD_op_active } }
+		is_good = no
+		days_mission_timeout = 70
+		selectable_mission = no
+		fire_only_once = no
+		timeout_effect = { HOD_operation_failure = yes }
+	}
+}
