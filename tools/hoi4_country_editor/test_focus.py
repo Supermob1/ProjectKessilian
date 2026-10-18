@@ -139,6 +139,14 @@ with tempfile.TemporaryDirectory() as d:
         os.path.dirname(os.path.abspath(__file__)), '..', '..', 'common', 'on_actions', '00_on_actions.txt')))
     cal = hod_calendar(Mod(d))
     assert cal == {'start_year': -24, 'month_days': 35, 'months': 10, 'fest_days': 19}, cal
+    swapped = read_text(os.path.join(d, 'common/on_actions/a.txt')).replace(
+        'check_variable = { UTI.HODday = 20 }\n\t\t\t\t\t\t\tcheck_variable = { UTI.HODmonth = 11 }',
+        'check_variable = { HODmonth = 11 } check_variable = { HODday = 20 }')
+    assert 'HODmonth = 11 } check_variable = { HODday = 20' in swapped
+    write_text(os.path.join(d, 'common/on_actions/a.txt'), swapped)
+    assert hod_calendar(Mod(d)) == cal
+    write_text(os.path.join(d, 'common/on_actions/a.txt'), 'on_actions = { }')
+    assert hod_calendar(Mod(d)) is None
     day, month, year, bby = 1, 1, -24, 0
     names = ['Alderensis', 'Corelliensis', 'Coruscensis', 'Durensis', 'Chandrilensis', 'Bentaensis', 'Anaxensis',
              'Kuensis', 'Hosniensis', 'Esselensis', 'Festivities']

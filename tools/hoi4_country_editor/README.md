@@ -54,7 +54,7 @@ Like the game itself, it only reads the top level of `common/*` and `history/*`,
   - the **longest single chain**, and the plain total of every focus.
   - every **exclusive choice** with the days and number of focuses each option unlocks. ★ marks the options taken in the longest playthrough.
   - the selected focus: its days, when it can be done at the earliest, and how many focuses need it.
-  - **end dates** for each of these, as the engine date (from `START_DATE`) and, for Hearts of Durasteel, in the mod's own calendar. That calendar (months, days per month, festival days, start year) is read from the daily counter in `common/on_actions`, so it follows any change you make there. **Tree starts on game day** shifts everything for trees that begin later in the game.
+  - **end dates** for each of these, as the engine date (from `START_DATE`) and, for Hearts of Durasteel, in the mod's own calendar. That calendar (start year, months, days per month, festival days) is read from the daily counter in `common/on_actions`, so it follows any change you make there. If the counter is not recognised, type the four numbers into **Mod calendar** once; they are remembered. **Tree starts on game day** shifts everything for trees that begin later in the game.
   - years in day counts use the mod's year length (369 days for Hearts of Durasteel).
   - `available = { }` conditions inside focus scripts are not evaluated.
 - **Focus script**: the whole `focus = { ... }` block, for rewards, `available`, `bypass`, `ai_will_do` and everything else. **Apply script** checks the braces first.
