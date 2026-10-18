@@ -55,7 +55,7 @@ Like the game itself, it only reads the top level of `common/*` and `history/*`,
   - every **exclusive choice** with the days and number of focuses each option unlocks. ★ marks the options taken in the longest playthrough.
   - the selected focus: its days, when it can be done at the earliest, and how many focuses need it.
   - **end dates** for each of these, as the engine date (from `START_DATE`) and, for Hearts of Durasteel, in the mod's own calendar. That calendar (start year, months, days per month, festival days) is read from the daily counter in `common/on_actions`, so it follows any change you make there. If the counter is not recognised, type the four numbers into **Mod calendar** once; they are remembered. **Tree starts on game day** shifts everything for trees that begin later in the game.
-  - years in day counts use the mod's year length (369 days for Hearts of Durasteel).
+  - years in day counts use the mod's year length (368 days for Hearts of Durasteel).
   - `available = { }` conditions inside focus scripts are not evaluated.
 - **Focus script**: the whole `focus = { ... }` block, for rewards, `available`, `bypass`, `ai_will_do` and everything else. **Apply script** checks the braces first.
 - **Edit file text...** opens the whole file with a **Check braces** button, for anything the form cannot reach.
@@ -81,3 +81,17 @@ Edits change only the lines they touch, so comments and formatting are kept. Mov
   - a tree with no `country` block.
 
 **Save** warns before writing a tree that still has errors. To check every tree without the GUI, run `python hoi4_focus_editor.py <mod folder> --check`.
+
+# HOI4 Tech Tree Editor
+
+`HOI4TechEditor.exe` (or `python hoi4_tech_editor.py`) is built by the same GitHub Action and `build_exe.bat`, and finds the mod the same way. It works like the focus editor, on the files in `common/technologies`.
+
+- **File** and **Folder** pickers: the tree of one tech folder (`republic_folder`, `droid_folder`...) is drawn as in the game, with its paths (arrows), `xor` exclusives (red ⊘), research cost (top left), start year (top right) and icon (`GFX_<tech>_medium`). The rows are labelled with the file's `@` variables (the year rows, e.g. `@977`). A path to a tech in another folder shows as "→ tech (folder)". Doctrines are purple.
+- **Drag** a tech to move it. In files that use `@` rows, it snaps to the nearest row and writes the variable, so `y = @977` stays `y = @977`.
+- **Right-click** a tech: add the next tech below (with the path), add a path to another tech, make two techs exclusive (written on both sides), duplicate (without its paths), delete (also removes every path and `xor` pointing at it). Right-click empty space to add a tech there.
+- **Tech form**: id (renames every reference in the file), name and description (with **Auto** names), icon preview and **Import image...** (converts any image to a 64x64 `.dds` in `gfx/interface/technologies/` and registers `GFX_<tech>_medium`), folder, x / y (numbers or `@rows`), research cost, start year, categories, the techs it leads to (with their cost coefficient), and `xor`. **Tech script** holds the whole block for equipment, units, modifiers and `ai_will_do`.
+- **Research time**: research cost x `BASE_TECH_COST` (read from the mod's defines, else vanilla's 100 days), with one slot and no research bonuses. It also shows when a tech is done at the earliest through its quickest line (a tech unlocks when any one tech leading to it is researched), and the total for the folder with 1 and 3 slots, in years of the mod calendar. The ahead-of-time penalty is not counted.
+- **Problems** (double-click to jump or fix): missing or extra braces; a tech defined twice (also across files); a path with no `leads_to_tech` or to a tech that does not exist; `xor` or `dependencies` to unknown techs; `xor` not listed back (one-click fix); a folder or category that is not in `common/technology_tags`; an `@` row that is not defined; two techs in the same spot; a path going upward; a tech with no folder; missing name or description localisation; a missing icon; a missing research cost. Set **Game folder...** to read vanilla icons and localisation, so vanilla techs copied into the mod don't show as missing.
+- **New file...**, **Save** (Ctrl+S), **Undo** (Ctrl+Z), **Redo** (Ctrl+Y), **Auto names**, **Edit file text...**: as in the focus editor.
+
+To check every tech file without the GUI: `python hoi4_tech_editor.py <mod folder> --check`.
