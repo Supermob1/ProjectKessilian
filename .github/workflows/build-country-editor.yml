@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python test_core.py
-      - run: pip install pyinstaller
+      - run: pip install pyinstaller pillow
       - run: pyinstaller --onefile --windowed --name HOI4CountryEditor hoi4_country_editor.py
       - uses: actions/upload-artifact@v4
         with:
