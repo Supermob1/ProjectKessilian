@@ -1,0 +1,20 @@
+# HOD test: a Republic garrison fleet parked in space next to Coruscant (sea province 18880, Coruscant Sector),
+# loaded by the debug decision "Test: spawn Republic garrison fleet" to see if it blocks enemy naval invasions.
+units = {
+	fleet = {
+		name = "Coruscant Sector Garrison"
+		naval_base = 12333
+		task_force = {
+			name = "Coruscant Sector Garrison"
+			location = 18880
+			ship = { name = "RSF Sentinel I" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Sentinel II" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Sentinel III" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Sentinel IV" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+		}
+	}
+}
