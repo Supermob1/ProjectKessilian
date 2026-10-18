@@ -15,8 +15,9 @@ from hoi4_country_editor import (TOKEN, Mod, add_to_block, find_mod_root, get, g
 from hoi4_focus_editor import (FocusFile, auto_name, brace_depth, brace_problem, fmt, fmt_days, hod_calendar, inner,
                                load_settings, save_settings, spans)
 
-UX, UY = 52, 34  # editor pixels per tech grid step at zoom 1
-BW, BH = 98, 62  # tech box size at zoom 1 (about 2 x 2 grid steps, like the game)
+# The mod's tech screen runs left to right: y is the column (the @year grid), x the row.
+UX, UY = 70, 40  # editor pixels per x step (down) and per y step (across) at zoom 1
+BW, BH = 98, 62  # tech box size at zoom 1
 ICON_SIZE = (64, 64)  # most of the mod's tech icons
 
 
@@ -123,7 +124,7 @@ class TechFile(FocusFile):
         return text[:a] + fn(text[a:b]) + text[b:]
 
     def y_value(self, y):
-        """A row as written: the @variable holding that value when the file uses them for rows, else the number."""
+        """A y (column) as written: the @variable holding that value when the file uses them, else the number."""
         uses_vars = any(str(t['yraw']).startswith('@') for t in self.focuses.values())
         if uses_vars:
             for k, v in self.vars.items():
@@ -294,7 +295,7 @@ def check(tf, mod, sprites=None, others=None, tags=None, game_loc=frozenset()):
                                 [(a, c) for a, c in tf.focuses[tid]['leads'] if a != x])})))
             elif target in tf.focuses and tf.focuses[target]['folder'] == t['folder'] \
                     and tf.focuses[target]['y'] < t['y']:
-                out.append(('warning', tid, f'Leads to {target}, which is placed above it (the line goes upward)', None))
+                out.append(('warning', tid, f'Leads to {target}, which is placed before it (the line goes backward)', None))
         for m in t['xor']:
             if m not in known:
                 out.append(('error', tid, f'xor with {m}, which does not exist', None))
@@ -504,7 +505,7 @@ def run_gui(mod_root):
 
     def pos(t):
         z, (ox, oy) = st['zoom'], origin()
-        return (t['x'] - ox) * UX * z + 140 * z, (t['y'] - oy) * UY * z + 50 * z
+        return (t['y'] - oy) * UY * z + 70 * z, (t['x'] - ox) * UX * z + 60 * z
 
     def redraw():
         canvas.delete('all')
@@ -516,23 +517,24 @@ def run_gui(mod_root):
         here = shown()
         ox, oy = origin()
         small = ('Segoe UI', max(6, int(7 * z)))
-        # rows named by the file's @variables (the mod uses them for years)
+        # columns named by the file's @variables (the mod uses them for years)
         for k, v in sorted(tf.vars.items(), key=lambda kv: tf.num(kv[1])):
-            y = (tf.num(v) - oy) * UY * z + 50 * z
-            if y >= 0 and any(t['y'] == tf.num(v) for t in here.values()):
-                canvas.create_text(8, y, anchor='w', text=k.lstrip('@'), fill='#7d8796', font=small)
-                canvas.create_line(60 * z, y, 4000 * z, y, fill='#2f3540', dash=(2, 6))
+            cx = (tf.num(v) - oy) * UY * z + 70 * z
+            if cx >= 0 and any(t['y'] == tf.num(v) for t in here.values()):
+                canvas.create_text(cx, 8, anchor='n', text=k.lstrip('@'), fill='#7d8796', font=small)
+                canvas.create_line(cx, 24 * z, cx, 4000 * z, fill='#2f3540', dash=(2, 6))
         by_id = {t['id']: t for t in here.values()}
         for tid, t in here.items():
             x, y = pos(t)
             for target, _ in t['leads']:
                 if target in by_id:
                     tx, ty = pos(by_id[target])
-                    canvas.create_line(x, y + h / 2, x, (y + ty) / 2, tx, (y + ty) / 2, tx, ty - h / 2,
+                    canvas.create_line(x + w / 2, y, (x + tx) / 2, y, (x + tx) / 2, ty, tx - w / 2, ty,
                                        fill='#d8c890', width=2, arrow='last')
                 else:
                     other = tf.focuses.get(target, {}).get('folder') or 'another file'
-                    canvas.create_text(x, y + h / 2 + 8 * z, text=f'→ {target} ({other})', fill='#a0b8d0', font=small)
+                    canvas.create_text(x + w / 2 + 4, y, anchor='w', text=f'→ {target} ({other})', fill='#a0b8d0',
+                                       font=small)
             for m in t['xor']:
                 if m in by_id and m > t['id']:
                     mx, my = pos(by_id[m])
@@ -623,7 +625,7 @@ def run_gui(mod_root):
     ttk.Entry(xy, textvariable=fv['x'], width=7).pack(side='left')
     y_box = ttk.Combobox(xy, textvariable=fv['y'], width=9)
     y_box.pack(side='left', padx=4)
-    ttk.Label(xy, foreground='#777', text='number or @row').pack(side='left')
+    ttk.Label(xy, foreground='#777', text='y = column: number or @year').pack(side='left')
     r += 1
     ttk.Label(form, text='Research cost').grid(row=r, column=0, sticky='w')
     cy = ttk.Frame(form)
@@ -739,7 +741,7 @@ def run_gui(mod_root):
         for label, v in (('x', x), ('y', y), ('research cost', fv['cost'].get().strip() or '0'),
                          ('start year', fv['year'].get().strip() or '0')):
             if not re.fullmatch(r'-?\d+(\.\d+)?', v) and not (label in 'xy' and v in tf.vars):
-                messagebox.showerror('Not applied', f'{label} must be a number' + (' or a defined @row' if label in 'xy' else ''))
+                messagebox.showerror('Not applied', f'{label} must be a number' + (' or a defined @variable' if label in 'xy' else ''))
                 return
         values = {'research_cost': fv['cost'].get().strip() or None, 'start_year': fv['year'].get().strip() or None}
         if new_leads != t['leads']:
@@ -809,10 +811,10 @@ def run_gui(mod_root):
             ax, ay = at
         elif parent:
             rows = sorted({tf.num(v) for v in tf.vars.values()})
-            below = [r for r in rows if r > parent['y']]
-            ax, ay = parent['x'], below[0] if below else parent['y'] + 3
+            later = [r for r in rows if r > parent['y']]
+            ax, ay = parent['x'], later[0] if later else parent['y'] + 3
             while any(o['folder'] == parent['folder'] and o['x'] == ax and o['y'] == ay for o in tf.focuses.values()):
-                ax += 2
+                ax += 1
         else:
             ax, ay = 0, 0
         folder = parent['folder'] if parent else st['folder'] or (sorted(tags[0]) or [''])[0]
@@ -865,8 +867,8 @@ def run_gui(mod_root):
 
     def grid_at(e):
         z, (ox, oy) = st['zoom'], origin()
-        return (round((canvas.canvasx(e.x) - 140 * z) / (UX * z)) + ox,
-                round((canvas.canvasy(e.y) - 50 * z) / (UY * z)) + oy)
+        return (round((canvas.canvasy(e.y) - 60 * z) / (UX * z)) + ox,
+                round((canvas.canvasx(e.x) - 70 * z) / (UY * z)) + oy)
 
     def on_press(e):
         tid = tech_at(e)
@@ -898,7 +900,7 @@ def run_gui(mod_root):
             t = tf.focuses[tid]
             ny = t['y'] + gy - start[1]
             rows = sorted({tf.num(v) for v in tf.vars.values()})
-            if rows and str(t['yraw']).startswith('@'):  # snap to the nearest @row, the file's year grid
+            if rows and str(t['yraw']).startswith('@'):  # snap to the nearest @ year column
                 ny = min(rows, key=lambda r: abs(r - ny))
             tf.move(tid, t['x'] + gx - start[0], ny)
             changed()
@@ -917,7 +919,7 @@ def run_gui(mod_root):
             status['text'] = 'Click the tech to link to (Esc cancels).'
 
     menu = tk.Menu(root, tearoff=0)
-    menu.add_command(label='Add next tech below', command=lambda: add_child())
+    menu.add_command(label='Add next tech (next column)', command=lambda: add_child())
     menu.add_command(label='Add path (leads to)...', command=lambda: start_link('path'))
     menu.add_command(label='Make exclusive (xor) with...', command=lambda: start_link('xor'))
     menu.add_command(label='Duplicate', command=lambda: duplicate())
