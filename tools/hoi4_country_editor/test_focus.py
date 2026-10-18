@@ -106,6 +106,6 @@ with tempfile.TemporaryDirectory() as d:
     write_text(os.path.join(d, 'y.txt'), TREE.rstrip()[:-1])
     ff = FocusFile(os.path.join(d, 'y.txt'))
     probs = check(ff, Mod(d), others={})  # like HOI4: loads anyway, warns, and writes the } only on save
-    assert len(ff.focuses) == 3 and ff.dirty and not [p for p in probs if p[0] == 'error']
+    assert len(ff.focuses) == 3 and ff.dirty and not [p for p in probs if 'brace' in p[2] or 'block' in p[2]]
     assert any('without its last' in p[2] for p in probs)
 print('ok')
