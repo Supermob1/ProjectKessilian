@@ -3,7 +3,8 @@ import os
 import tempfile
 
 from hoi4_country_editor import Mod, read_text, write_text
-from hoi4_focus_editor import FocusFile, brace_depth, brace_problem, check, import_icon, tree_text
+from hoi4_focus_editor import (FocusFile, add_auto_names, auto_name, brace_depth, brace_problem, check, earliest_days,
+                               fmt_days, focus_point_days, import_icon, tree_text)
 
 TREE = '''# my tree
 focus_tree = {
@@ -39,6 +40,7 @@ focus_tree = {
 
 with tempfile.TemporaryDirectory() as d:
     files = {'common/national_focus/t.txt': TREE, 'common/national_focus/other.txt': tree_text('X', 'BBB', 'AAA_c'),
+             'common/defines/x.lua': '-- NDefines.NFocus.FOCUS_POINT_DAYS = 9\nNDefines.NFocus.FOCUS_POINT_DAYS = 5\n',
              'interface/g.gfx': 'spriteTypes = { spriteType = { name = "GFX_a" texturefile = "gfx/a.dds" } }',
              'localisation/english/f_l_english.yml': '﻿l_english:\n AAA_a:0 "A"\n AAA_a_desc:0 "broken\n'}
     for rel, body in files.items():
@@ -62,6 +64,18 @@ with tempfile.TemporaryDirectory() as d:
         if fix:
             fix()
     assert ff.focuses['AAA_c']['prereq'] == [['AAA_a']] and ff.focuses['AAA_c']['mutex'] == ['AAA_b']
+
+    # durations: AAA_b and AAA_c need AAA_a (10 cost each); 1 cost = 5 days from the mod's defines
+    per = focus_point_days(mod)
+    assert per == 5 and earliest_days(ff, per) == {'AAA_a': 50, 'AAA_b': 100, 'AAA_c': 100}
+    assert fmt_days(400) == '400 days (1 y 35 d)' and fmt_days(50) == '50 days'
+
+    # auto names: tag removed, _ -> space, existing and broken names left alone
+    assert auto_name('CIS_The_Raxus_Address') == 'The Raxus Address' and auto_name('REP_we_are') == 'We are'
+    loc = os.path.join(d, 'localisation/english/f_l_english.yml')
+    assert add_auto_names(ff, mod, loc) == 2  # AAA_b, AAA_c (AAA_a already named)
+    mod.reload()
+    assert mod.loc['AAA_b'] == 'B' and mod.loc['AAA_a'] == 'A' and add_auto_names(ff, mod, loc) == 0
 
     # moving a relative focus writes its offset, not its absolute position
     ff.move('AAA_b', 5, 4)
