@@ -41,3 +41,48 @@ adjacency_rule =
 	icon = 9833
 	offset = { 0 0 0 }
 }
+
+# HOD test: close one hyperlane (Coruscant - Borleias) with a global flag, see HOD_debug_decisions.txt
+adjacency_rule =
+{
+	name = "HOD_test_lane"
+
+	contested =
+	{
+		army = no
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	enemy =
+	{
+		army = no
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 12251 12151 }
+
+	is_disabled = {
+		NOT = { has_global_flag = HOD_test_lane_closed }
+		tooltip = HOD_test_lane_closed_tt
+	}
+
+	icon = 18880
+	offset = { 0 0 0 }
+}
