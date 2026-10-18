@@ -3,7 +3,7 @@ import os
 import tempfile
 
 from hoi4_country_editor import Mod, read_text, write_text
-from hoi4_focus_editor import FocusFile, brace_depth, check, import_icon, tree_text
+from hoi4_focus_editor import FocusFile, brace_depth, brace_problem, check, import_icon, tree_text
 
 TREE = '''# my tree
 focus_tree = {
@@ -93,4 +93,13 @@ with tempfile.TemporaryDirectory() as d:
     # a new tree from the template is valid and has no errors
     new = FocusFile(os.path.join(d, 'new.txt'), tree_text('CCC_focus', 'CCC', 'CCC_start'))
     assert [p for p in check(new, mod, others={}) if p[0] == 'error'] == []
+# a missing } is reported at the focus that lost it, and is the only problem shown
+broken = TREE.replace('\t\tx = 2\n\t\ty = 0\n\t}', '\t\tx = 2\n\t\ty = 0\n')
+assert brace_problem(TREE) is None
+assert brace_problem(broken)[0] == 5, brace_problem(broken)
+assert brace_problem(TREE + '}')[1].startswith('Extra')
+with tempfile.TemporaryDirectory() as d:
+    write_text(os.path.join(d, 'x.txt'), broken)
+    probs = check(FocusFile(os.path.join(d, 'x.txt')), Mod(d), others={})
+    assert len(probs) == 1 and 'line 5' in probs[0][2]
 print('ok')
