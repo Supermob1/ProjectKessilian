@@ -1,0 +1,5 @@
+HOD_operations_category = {
+	icon = generic_political_actions
+	allowed = { OR = { original_tag = CIS original_tag = REP } }
+	visible = { has_global_flag = HOD_op_active }
+}

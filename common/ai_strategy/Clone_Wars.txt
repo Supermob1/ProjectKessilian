@@ -307,11 +307,6 @@ Clone_Wars_Global_REP = {
 		value = 200
 	}
 
-	ai_strategy = {
-		type = prepare_for_war
-		id = CIS
-		value = 200
-	}
 }
 
 Clone_Wars_Global_CIS = {
@@ -325,15 +320,10 @@ Clone_Wars_Global_CIS = {
 		value = 200
 	}
 
-	ai_strategy = {
-		type = prepare_for_war
-		id = REP
-		value = 200
-	}
 }
 Clone_Wars_First_Offensive_CIS = {
 	allowed = { original_tag = CIS }
-	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
+	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
 	abort_when_not_enabled = yes
 
 	# HARD focus south
@@ -390,7 +380,7 @@ Clone_Wars_First_Offensive_CIS = {
 }
 Clone_Wars_Southern_Offensive_REP = {
 	allowed = { original_tag = REP }
-	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
+	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
 	abort_when_not_enabled = yes
 
 	# DEFEND south heavily
@@ -420,7 +410,7 @@ Clone_Wars_Southern_Offensive_REP = {
 }
 Clone_Wars_Assault_Kamino_CIS = {
 	allowed = { original_tag = CIS }
-	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
+	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -442,7 +432,7 @@ Clone_Wars_Assault_Kamino_CIS = {
 }
 Clone_Wars_Assault_Kamino_REP = {
 	allowed = { original_tag = REP }
-	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
+	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -456,5 +446,69 @@ Clone_Wars_Assault_Kamino_REP = {
 		type = area_priority
 		id = Kamino_Sector
 		value = 400
+	}
+}
+
+############################################################################################
+# HOD operations: AI per operation. Each block is on only while its operation runs.
+############################################################################################
+
+# Battle of Geonosis: the Republic lands on Geonosis (state 35); its only hyperlane comes from neutral Ryloth
+HOD_op_geonosis_attack_REP = {
+	allowed = { original_tag = REP }
+	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_geonosis }
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = area_priority
+		id = Geonosis_Sector
+		value = 500
+	}
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 400
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		state = 35
+		value = 8000
+	}
+	ai_strategy = {
+		type = invade
+		id = 35
+		value = 500
+	}
+	ai_strategy = {
+		type = front_control
+		area = Geonosis_Sector
+		ratio = 1.0
+		priority = 300
+		ordertype = front
+		execution_type = rush
+	}
+}
+
+# Battle of Geonosis: the Confederacy holds Geonosis
+HOD_op_geonosis_defend_CIS = {
+	allowed = { original_tag = CIS }
+	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_geonosis }
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = area_priority
+		id = Geonosis_Sector
+		value = 500
+	}
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.6
+		states = { 35 }
+		subtract_fronts_from_need = yes
+	}
+	ai_strategy = {
+		type = front_control
+		area = Geonosis_Sector
+		ratio = 1.0
+		priority = 300
+		ordertype = front
+		execution_type = careful
 	}
 }

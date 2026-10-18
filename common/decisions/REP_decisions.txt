@@ -111,6 +111,7 @@ REP_the_Grand_Army = {
 		activation = {
 			original_tag = REP
 			has_war_with = CIS
+			has_global_flag = HOD_op_kamino	# HOD operations: only during a Kamino operation (none yet)
 			NOT = { has_global_flag = The_Defense_of_Kamino }
 		}
 		fire_only_once = yes
