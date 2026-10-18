@@ -1,4 +1,4 @@
-name: Build HOI4 Country Editor and Focus Editor
+name: Build HOI4 Country, Focus and Tech Editors
 on:
   workflow_dispatch:
   push:
@@ -17,8 +17,10 @@ jobs:
       - run: pip install pyinstaller pillow
       - run: python test_core.py
       - run: python test_focus.py
+      - run: python test_tech.py
       - run: pyinstaller --onefile --windowed --name HOI4CountryEditor hoi4_country_editor.py
       - run: pyinstaller --onefile --windowed --name HOI4FocusEditor hoi4_focus_editor.py
+      - run: pyinstaller --onefile --windowed --name HOI4TechEditor hoi4_tech_editor.py
       - uses: actions/upload-artifact@v4
         with:
           name: HOI4CountryEditor
