@@ -7,12 +7,16 @@ ideas = {
 		# CIS/REP use DROIDS/CLONES 
 		no_conscription = {
 
-			cost = 0
+			cost = 1000
 			removal_cost = -1
 			level = 8
 
 			available = {
 				#has_tech = clone_army
+				OR = {
+					original_tag = REP
+					original_tag = CIS
+				}
 			}
 
 			modifier = {
@@ -33,6 +37,7 @@ ideas = {
 					has_idea = no_conscription
 				}
 				#has_manpower_for_recruit_change_to = { value = 0.005 group = mobilization_laws }
+				NOT = { original_tag = REP }
 			}
 
 			modifier = {
@@ -53,6 +58,7 @@ ideas = {
 					has_idea = no_conscription
 				}
 				#has_manpower_for_recruit_change_to =  { value = 0.015 group = mobilization_laws }
+				NOT = { original_tag = REP }
 			}
 
 			ai_will_do = {
