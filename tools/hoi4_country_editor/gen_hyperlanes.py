@@ -5,6 +5,9 @@ operation's theater (state flag HOD_theater, set by the operation on the theater
 The engine accepts a province only once as a rule icon and only once in any rule's required_provinces, so each rule
 only gets the ones no other rule (or a hand-written rule above the generated block) already uses.
 
+It also rewrites each lane's comment from its province numbers ("Planet to Planet (states A > B)", planets being
+strategic regions), since hand-written comments drift.
+
 Run again after adding or changing hyperlanes:  python gen_hyperlanes.py [mod_folder]
 Tested in game: a lane is closed while its rule's is_disabled trigger is true.
 """
@@ -30,8 +33,22 @@ def rule(name, required, state_a, state_b, icon):
             + (f'\n\ticon = {icon}\n\toffset = {{ 0 0 0 }}\n' if icon else '') + '}\n')
 
 
+def planet_names(mod):
+    """Province -> name of its strategic region (in this mod, a region is a planet)."""
+    from hoi4_country_editor import get, parse
+    out = {}
+    for f in mod.files('map/strategicregions'):
+        for _, reg in parse(read_text(f)):
+            if isinstance(reg, list):
+                name = mod.loc.get(get(reg, 'name', ''), get(reg, 'name', '?'))
+                for _, p in get(reg, 'provinces', []) or []:
+                    out.setdefault(p, name)
+    return out
+
+
 def generate(mod):
     prov_state = mod.prov_state
+    planet = planet_names(mod)
     adj_path = mod.path('map', 'adjacencies.csv')
     lines = read_text(adj_path).split('\n')
     rules_path = mod.path('map', 'adjacency_rules.txt')
@@ -52,6 +69,7 @@ def generate(mod):
             continue
         name = f'HOD_lane_{c[0]}_{c[1]}'
         c[8] = name
+        c[9] = f'{planet.get(c[0], "?")} to {planet.get(c[1], "?")} (states {sa} > {sb})'.replace(';', ',')
         lines[i] = ';'.join(c)
         required = [p for p in (c[0], c[1]) if p not in used_req]
         # the lane's sea province, else one of its land ends: each province may be an icon only once
