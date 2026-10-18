@@ -7,6 +7,50 @@ from hoi4_focus_editor import (FocusFile, add_auto_names, auto_name, brace_depth
                                engine_date, fmt_days, focus_point_days, hod_calendar, hod_date, import_icon,
                                playthroughs, tree_text)
 
+NUM_DAYS_VERSION = '''on_actions = {
+	on_startup = {
+		effect = {
+			set_variable = { UTI.HODstart = num_days }   # remember the first day, so START_DATE can change freely
+		}
+	}
+	on_daily_UTI = {
+		effect = {
+			UTI = {
+				set_temp_variable = { d = num_days }
+				subtract_from_temp_variable = { d = UTI.HODstart }      # days since the game started
+				set_temp_variable = { rest = d }
+				modulo_temp_variable = { rest = 369 }                  # day within the year (0-368)
+				set_variable = { UTI.HODyear = d }
+				subtract_from_variable = { UTI.HODyear = rest }
+				divide_variable = { UTI.HODyear = 369 }                # whole years passed
+				add_to_variable = { UTI.HODyear = -24 }
+				if = {
+					limit = { check_variable = { UTI.HODyear > -1 } }   # no year 0: -1 BBY -> 1 ABY
+					add_to_variable = { UTI.HODyear = 1 }
+					set_variable = { UTI.bby = 1 }
+				}
+				else = { set_variable = { UTI.bby = 0 } }
+				if = {
+					limit = { check_variable = { rest < 350 } }         # 10 months x 35 days
+					set_variable = { UTI.HODday = rest }
+					modulo_variable = { UTI.HODday = 35 }
+					set_variable = { UTI.HODmonth = rest }
+					subtract_from_variable = { UTI.HODmonth = UTI.HODday }
+					divide_variable = { UTI.HODmonth = 35 }
+					add_to_variable = { UTI.HODmonth = 1 }
+					add_to_variable = { UTI.HODday = 1 }
+				}
+				else = {                                               # festivities
+					set_variable = { UTI.HODmonth = 11 }
+					set_variable = { UTI.HODday = rest }
+					subtract_from_variable = { UTI.HODday = 349 }
+				}
+			}
+		}
+	}
+}
+'''
+
 TREE = '''# my tree
 focus_tree = {
 	id = AAA_tree
@@ -147,6 +191,8 @@ with tempfile.TemporaryDirectory() as d:
     assert hod_calendar(Mod(d)) == cal
     write_text(os.path.join(d, 'common/on_actions/a.txt'), 'on_actions = { }')
     assert hod_calendar(Mod(d)) is None
+    write_text(os.path.join(d, 'common/on_actions/a.txt'), NUM_DAYS_VERSION)  # the date computed from num_days
+    assert hod_calendar(Mod(d)) == cal
     day, month, year, bby = 1, 1, -24, 0
     names = ['Alderensis', 'Corelliensis', 'Coruscensis', 'Durensis', 'Chandrilensis', 'Bentaensis', 'Anaxensis',
              'Kuensis', 'Hosniensis', 'Esselensis', 'Festivities']
