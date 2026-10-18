@@ -47,6 +47,38 @@ def focus_blocks(text):
     return out
 
 
+def brace_problem(text):
+    """None, or (line, message) pointing at where a { } goes wrong."""
+    stack = []  # (line, indentation of that line) of each open {
+    indent_of = lambda pos: (lambda row: len(row) - len(row.lstrip()))(
+        text[text.rfind('\n', 0, pos) + 1:pos].expandtabs(4) + 'x')
+    for m in TOKEN.finditer(text):
+        t = m.group()
+        if t.startswith('#'):
+            continue
+        line = text.count('\n', 0, m.start()) + 1
+        if t == '{':
+            stack.append((line, indent_of(m.start())))
+        elif t == '}':
+            if not stack:
+                return line, f'Extra "}}" on line {line} closes nothing'
+            stack.pop()
+        elif t in ('focus', 'shared_focus', 'focus_tree'):
+            row_end = text.find('\n', m.start())
+            row = text[m.start():row_end if row_end >= 0 else len(text)]
+            if '{' not in row or not text[text.rfind('\n', 0, m.start()) + 1:m.start()].strip() == '':
+                continue
+            allowed = 1 if t == 'focus' else 0  # a focus sits inside focus_tree, the others at the top
+            ind = indent_of(m.start())
+            for open_line, open_ind in stack[allowed:]:
+                if ind <= open_ind:  # this block starts at or left of an open block: that block lost its }
+                    return open_line, (f'Missing "}}": the block opened on line {open_line} is not closed '
+                                       f'before the {t} on line {line}')
+    if stack:
+        return stack[-1][0], f'Missing "}}": the "{{" on line {stack[-1][0]} is never closed'
+    return None
+
+
 def brace_depth(text):
     d = 0
     for t in TOKEN.findall(text):
@@ -256,15 +288,17 @@ def check(ff, mod, sprites=None, others=None):
     sprites = sprites if sprites is not None else mod.sprites
     others = all_focus_ids(mod, ff.path) if others is None else others
     out = []
-    if brace_depth(ff.text) != 0:
-        out.append(('error', '', f'Braces do not match ({brace_depth(ff.text):+d}): the game will misread the file', None))
+    broken = brace_problem(ff.text)
+    if broken:  # everything after a missing brace is misread, so other checks would only add noise
+        return [('error', '', broken[1] + '. Double-click to open the file text there. '
+                 '(Other checks wait until this is fixed.)', None)]
     if not ff.trees and not any(f['tree'] == -1 for f in ff.focuses.values()):
         out.append(('error', '', 'No focus_tree block in this file', None))
     for t in ff.trees:
         if not get(t, 'id'):
             out.append(('error', '', 'A focus_tree has no id', None))
         if get(t, 'country') is None and get(t, 'default') != 'yes':
-            out.append(('warning', '', f'Tree {get(t, "id", "?")} has no country = {{ }} block, so no country gets it', None))
+            out.append(('warning', '', f'Tree {get(t, "id", os.path.basename(ff.path))} has no country = {{ }} block, so no country gets it', None))
     pos = {}
     for fid, f in ff.focuses.items():
         real = f['id']
@@ -934,7 +968,10 @@ def run_gui(mod_root):
         if not sel:
             return
         fid, fix = fixes[sel[0]]
-        if fix:
+        line = re.search(r'line (\d+)', problems.item(sel[0], 'values')[2])
+        if not fid and line:
+            edit_file_text(int(line.group(1)))
+        elif fix:
             fix()
             changed()
         elif fid in st['ff'].focuses:
@@ -1036,6 +1073,50 @@ def run_gui(mod_root):
             changed(keep_form=True)
             status['text'] = f'{len(st["vanilla"])} vanilla focus icons found.'
 
+    def edit_file_text(line=1):
+        """Whole-file editor, for problems the focus form cannot reach (like a missing brace)."""
+        ff = st['ff']
+        if not ff:
+            return
+        dlg = tk.Toplevel(root)
+        dlg.title(f'File text - {os.path.basename(ff.path)}')
+        dlg.geometry('900x700')
+        info = ttk.Label(dlg, anchor='w')
+        info.pack(side='bottom', fill='x')
+        txt = tk.Text(dlg, wrap='none', undo=True, font=('Consolas', 10))
+        sb = ttk.Scrollbar(dlg, command=txt.yview)
+        txt.configure(yscrollcommand=sb.set)
+        sb.pack(side='right', fill='y')
+        txt.pack(fill='both', expand=True)
+        txt.insert('1.0', ff.text)
+        txt.tag_configure('hit', background='#ffe08a')
+
+        def mark(n):
+            txt.tag_remove('hit', '1.0', 'end')
+            txt.tag_add('hit', f'{n}.0', f'{n}.end+1c')
+            txt.see(f'{n}.0')
+            txt.mark_set('insert', f'{n}.0')
+
+        def check_text():
+            b = brace_problem(txt.get('1.0', 'end-1c'))
+            info.configure(text=b[1] if b else 'Braces match.', foreground='#c00000' if b else '#008000')
+            if b:
+                mark(b[0])
+
+        def apply():
+            ff.apply(txt.get('1.0', 'end-1c'))
+            dlg.destroy()
+            st['sel'] = None
+            changed()
+
+        bar2 = ttk.Frame(dlg)
+        bar2.pack(side='bottom', fill='x')
+        ttk.Button(bar2, text='Check braces', command=check_text).pack(side='left', padx=4, pady=4)
+        ttk.Button(bar2, text='Apply to tree', command=apply).pack(side='left')
+        ttk.Label(bar2, foreground='#777', text='  Apply, then Save (Ctrl+S) in the main window.').pack(side='left')
+        mark(line)
+        check_text()
+
     def zoom(f):
         st['zoom'] = max(0.3, min(2.0, st['zoom'] * f))
         icons.clear()
@@ -1055,7 +1136,7 @@ def run_gui(mod_root):
     for text, cmd in (('New tree...', new_tree), ('Save', save), ('Undo', undo), ('Redo', redo),
                       ('Zoom -', lambda: zoom(0.8)), ('Zoom +', lambda: zoom(1.25)),
                       ('Add focus', lambda: add_child()), ('Tree settings...', tree_settings),
-                      ('Game folder...', set_game_dir)):
+                      ('Edit file text...', lambda: edit_file_text()), ('Game folder...', set_game_dir)):
         ttk.Button(bar, text=text, command=cmd).pack(side='left', padx=2)
     ttk.Label(bar, foreground='#777', text='  drag = move, right-click = links/add/delete, double-click empty = new focus'
               ).pack(side='left')

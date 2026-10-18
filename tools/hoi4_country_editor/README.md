@@ -49,13 +49,14 @@ Like the game itself, it only reads the top level of `common/*` and `history/*`,
 - **The form** (right): id (renaming updates every reference in the file), name and description (saved to localisation at once), icon, cost, position (absolute, or relative to another focus), prerequisites (one line per required group; `A or B` on a line means either one), and mutually exclusive.
 - **Icons**: **Pick...** opens a searchable icon grid. **Import image...** turns any PNG/JPG/DDS into a 94x86 `.dds` in `gfx/interface/goals/TAG/` and adds both the sprite and its `_shine` sprite to your goals `.gfx` files. Click **Game folder...** once (your HOI4 install) to see and use the vanilla icons too.
 - **Focus script**: the whole `focus = { ... }` block, for rewards, `available`, `bypass`, `ai_will_do` and everything else. **Apply script** checks the braces first.
+- **Edit file text...** opens the whole file with a **Check braces** button, for anything the form cannot reach.
 - **Save** (Ctrl+S), **Undo** (Ctrl+Z) and **Redo** (Ctrl+Y) work on the whole tree.
 
 Edits change only the lines they touch, so comments and formatting are kept. Moving a focus that uses `relative_position_id` writes the new offset, so its children move with it. Deleting a focus removes every link to it and keeps the focuses that were placed relative to it where they are.
 
 ## Problems it catches (bottom list; double-click to jump there or fix it)
 - **Errors**:
-  - braces that do not match;
+  - a missing or extra `}`, with the line of the block that is not closed. Double-click it to open **Edit file text...** at that line; until it is fixed the other checks are skipped, because everything after it is misread;
   - a duplicate focus id (also against every other focus file in the mod);
   - a prerequisite or mutually exclusive target, or a `relative_position_id`, that does not exist;
   - prerequisite loops;
