@@ -5,18 +5,18 @@ A small desktop tool to browse every country in the mod, edit its files, and see
 ## Get the .exe
 - **Easiest:** on GitHub, open *Actions → Build HOI4 Country Editor → latest run → Artifacts* and download `HOI4CountryEditor`.
 - **Or build it yourself (Windows):** install Python from python.org, then double-click `build_exe.bat`. The exe ends up in `dist/`.
-- **Or just run it:** `python hoi4_country_editor.py`
+- **Or just run it:** `pip install pillow`, then `python hoi4_country_editor.py` (without Pillow it still works, minus the map and flag pictures).
 
 Put the exe anywhere inside the mod folder and it finds the mod by itself (it looks for `descriptor.mod`). Anywhere else, it asks you to pick the folder.
 
 ## What it shows
-For each country (the list on the left shows `required / recommended` missing counts):
+Three panels: the country list (flag, tag, number of states, `required / recommended` missing counts), the map, and the selected country.
+
+- **Map**: provinces coloured by owner, by the selected country's cores (red = core, orange = owned but not a core), or by ruling ideology. Use the mouse wheel to zoom and right-drag to move. Click a planet to select its owner. The bottom bar shows the state under the mouse.
+- **Overview** (editable): name, long name (`_DEF`), adjective (`_ADJ`) and party name for the default and every ideology; map colour; all flags; capital; stability; war support; research slots; ruling party; elections; popularities (with a live total); the starting leader. **Save overview** only writes the lines you changed: history file values, `color` in the country file, and localisation lines in their existing file. New localisation keys go into the file that already holds the country name.
 - **Checklist**: what's there and what's missing, ranked *required* (red), *recommended* (orange), *optional* (grey).
-- **Overview**: capital, ruling party, stability, war support, ideas, focus tree.
-- **Ideologies**: popularity, leader, flag, country name and party name for each ideology.
-- **Leaders & characters**: each recruited character, their roles, ideology and portrait.
-- **Military**: divisions per template, fleets and ships from the OOB files.
-- **Edit files**: open the country's history, country, character or OOB file, change it, then press **Save (Ctrl+S)**. All checks run again after saving.
+- **Leaders**, **National ideas**, **OOB**: characters with their roles and portraits, the starting national spirits, and divisions or ships per unit file.
+- **Edit files**: the raw history, country, character and OOB files. Press **Save (Ctrl+S)** after editing.
 
 **Export missing report** writes a text file for all countries. From the command line: `python hoi4_country_editor.py <mod folder> --report`.
 
