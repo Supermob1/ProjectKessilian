@@ -1,0 +1,32 @@
+capital = 29
+
+oob = "HOD_generic"
+set_research_slots = 2
+
+set_stability = 0.5
+
+set_war_support = 0.05
+
+######CHARACTERS######
+
+set_popularities = {
+		akaanadocrat = 10
+		unitist = 5
+		corist = 70
+		distributionist = 5
+		corporate_consortium = 10
+		trade_democrat = 0
+		ruusanist = 0
+		inclusivist = 0
+		force_magocracy = 0
+	}
+add_ideas = {
+	volunteer_only
+}
+set_politics = {
+	ruling_party = corist
+	last_election = "999.1.1"
+	election_frequency = 48
+	elections_allowed = no
+	}
+recruit_character = FAL_falleen_royal_house
