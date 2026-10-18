@@ -504,9 +504,65 @@ def locked_behind(ff, order, fid):
     return set(reachable(ff, order, set())) - reachable(ff, order, {fid})
 
 
-def fmt_days(days):
+MONTH_KEYS = ['Alderensis', 'Corelliensis', 'Coruscensis', 'Durensis', 'Chandrilensis', 'Bentaensis', 'Anaxensis',
+              'Kuensis', 'Hosniensis', 'Esselensis']
+
+
+def hod_calendar(mod):
+    """The mod's own calendar, read from the daily counter in common/on_actions (Hearts of Durasteel style):
+    start year, days per month, number of months, festival days. None if the mod has no such counter."""
+    text = '\n'.join(read_text(f) for f in mod.files('common/on_actions'))
+    start = re.search(r'HODyear\s*=\s*(-?\d+)', text)
+    fest = re.search(r'HODday\s*=\s*(\d+)\s*\}\s*check_variable\s*=\s*\{\s*UTI\.HODmonth\s*=\s*(\d+)', text)
+    month = re.search(r'limit\s*=\s*\{\s*check_variable\s*=\s*\{\s*UTI\.HODday\s*=\s*(\d+)', text)
+    if not (start and fest and month):
+        return None
+    # the counter rolls over when it *reaches* these values, so a month has value - 1 days
+    return {'start_year': int(start.group(1)), 'month_days': int(month.group(1)) - 1,
+            'months': int(fest.group(2)) - 1, 'fest_days': int(fest.group(1)) - 1}
+
+
+def hod_date(days, cal, loc=None):
+    """Calendar date after `days` daily ticks from the start, e.g. "12 Coruscensis -22 BBY" (as the mod's GUI shows it)."""
+    days = int(round(days))
+    year_len = cal['months'] * cal['month_days'] + cal['fest_days']
+    years, rest = divmod(days, year_len)
+    year = cal['start_year'] + years
+    if cal['start_year'] < 0 <= year:  # the counter jumps from -1 straight to 1
+        year += 1
+    if rest < cal['months'] * cal['month_days']:
+        month, day = divmod(rest, cal['month_days'])
+        name = MONTH_KEYS[month] if month < len(MONTH_KEYS) else f'Month {month + 1}'
+    else:
+        day, name = rest - cal['months'] * cal['month_days'], 'Festivities'
+    name = (loc or {}).get(name, name)
+    return f'{day + 1} {name} {year} {"BBY" if year < 0 else "ABY"}'
+
+
+def engine_date(days, start='1936.1.1'):
+    """The game's own date after `days` (HOI4 has 365-day years without leap days)."""
+    y, m, d = (int(x) for x in start.split('.')[:3])
+    lengths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    left = int(round(days)) + d - 1
+    while left >= lengths[m - 1]:
+        left -= lengths[m - 1]
+        m += 1
+        if m > 12:
+            m, y = 1, y + 1
+    return f'{y}.{m}.{left + 1}'
+
+
+def start_date(mod):
+    for f in mod.files('common/defines', '.lua'):
+        m = re.search(r'START_DATE\s*=\s*"([\d.]+)"', read_text(f))
+        if m:
+            return m.group(1)
+    return '1936.1.1'
+
+
+def fmt_days(days, year_len=365):
     d = round(days)
-    years, rest = divmod(d, 365)
+    years, rest = divmod(d, year_len)
     return f'{d:,} days' + (f' ({years} y {rest} d)' if years else '')
 
 
@@ -776,8 +832,19 @@ def run_gui(mod_root):
     side.add(form, text='Focus')
     dur = ttk.Frame(side, padding=6)
     side.add(dur, text='Durations')
-    dur_head = ttk.Label(dur, justify='left', font=('Segoe UI', 10))
-    dur_head.pack(fill='x', anchor='w')
+    calendar, game_start = hod_calendar(mod), start_date(mod)
+    year_len = calendar['months'] * calendar['month_days'] + calendar['fest_days'] if calendar else 365
+    fdays = lambda d: fmt_days(d, year_len)  # years in the mod's own calendar when it has one
+    cal_bar = ttk.Frame(dur)
+    cal_bar.pack(fill='x')
+    ttk.Label(cal_bar, text='Tree starts on game day').pack(side='left')
+    tree_start = tk.StringVar(value='0')
+    ttk.Spinbox(cal_bar, from_=0, to=100000, increment=1, textvariable=tree_start, width=7,
+                command=lambda: refresh_durations()).pack(side='left', padx=4)
+    ttk.Label(cal_bar, text='(0 = the first day of the game)', foreground='#777').pack(side='left')
+    tree_start.trace_add('write', lambda *_: refresh_durations())
+    dur_head = ttk.Label(dur, justify='left', font=('Segoe UI', 10), wraplength=470)
+    dur_head.pack(fill='x', anchor='w', pady=(6, 0))
     ttk.Label(dur, text='Exclusive choices (★ = taken in the longest playthrough)', font=('Segoe UI', 9, 'bold')).pack(
         anchor='w', pady=(10, 2))
     choices = ttk.Treeview(dur, columns=('option', 'days', 'focuses'), show='tree headings', height=12)
@@ -804,12 +871,27 @@ def run_gui(mod_root):
             dur_cache.update(key=key, p=playthroughs(ff, per_cost), early=earliest_days(ff, per_cost))
         p, early = dur_cache['p'], dur_cache['early']
         name = lambda fid: mod.loc.get(ff.focuses[fid]['id'], fid)
+        try:
+            offset = max(0, int(tree_start.get() or 0))
+        except ValueError:
+            offset = 0
+
+        def when(d):
+            """End date of something taking d days, in the mod's calendar and the engine's."""
+            out = f'      ends {engine_date(offset + d, game_start)}'
+            return out + (f'  =  {hod_date(offset + d, calendar, mod.loc)}' if calendar else '')
+
+        cal_text = (f'Calendar (from on_actions): {calendar["months"]} months x {calendar["month_days"]} days + '
+                    f'{calendar["fest_days"]} festival days = '
+                    f'{calendar["months"] * calendar["month_days"] + calendar["fest_days"]} days a year, '
+                    f'starting {hod_date(0, calendar, mod.loc)}\n' if calendar else '')
         dur_head.configure(text=(
-            f'1 cost = {per_cost:g} days (FOCUS_POINT_DAYS)\n\n'
-            f'Longest playthrough:  {fmt_days(p["longest"])}\n'
-            f'Shortest playthrough: {fmt_days(p["shortest"])}\n'
-            f'Longest single chain: {fmt_days(max(early.values(), default=0))}\n'
-            f'Every focus, ignoring exclusives: {fmt_days(p["all"])}  ({len(ff.focuses)} focuses)'
+            f'1 cost = {per_cost:g} days (FOCUS_POINT_DAYS); game starts {game_start}\n' + cal_text + '\n'
+            f'Longest playthrough:  {fdays(p["longest"])}\n{when(p["longest"])}\n'
+            f'Shortest playthrough: {fdays(p["shortest"])}\n{when(p["shortest"])}\n'
+            f'Longest single chain: {fdays(max(early.values(), default=0))}\n'
+            f'{when(max(early.values(), default=0))}\n'
+            f'Every focus, ignoring exclusives: {fdays(p["all"])}  ({len(ff.focuses)} focuses)'
             + ('' if p['exact'] else '\n(estimate: too many exclusive combinations to try them all)')))
         choices.delete(*choices.get_children())
         for gi, ((comp, opts), best) in enumerate(zip(p['groups'], p['longest_choice']), 1):
@@ -819,11 +901,12 @@ def run_gui(mod_root):
                     unlocked |= locked_behind(ff, p['order'], fid)
                 choices.insert('', 'end', text=f'#{gi}' if oi == 0 else '',
                                values=(('★ ' if opt == best else '   ') + ' + '.join(name(f) for f in opt),
-                                       fmt_days(sum(p['days'][f] for f in unlocked)), len(unlocked)))
+                                       fdays(sum(p['days'][f] for f in unlocked)), len(unlocked)))
         fid = st['sel']
         if fid in ff.focuses:
             dur_sel.configure(text=f'Selected: {name(fid)}\n'
-                                   f'Takes {fmt_days(p["days"][fid])}; done at the earliest after {fmt_days(early[fid])}; '
+                                   f'Takes {fdays(p["days"][fid])}; done at the earliest after {fdays(early[fid])}'
+                                   f'\n{when(early[fid]).strip()}\n'
                                    f'{len(locked_behind(ff, p["order"], fid)) - 1} focuses need it.')
         else:
             dur_sel.configure(text='Select a focus to see its own numbers.')
@@ -913,7 +996,7 @@ def run_gui(mod_root):
         if not f:
             return
         early = earliest_days(ff, per_cost)
-        duration.configure(text=f'= {fmt_days(cost_days(f, per_cost))}, done at the earliest after {fmt_days(early[fid])}')
+        duration.configure(text=f'= {fdays(cost_days(f, per_cost))}, done at the earliest after {fdays(early[fid])}')
         fv['id'].set(f['id'])
         fv['name'].set(mod.loc.get(f['id'], ''))
         desc.insert('1.0', mod.loc.get(f'{f["id"]}_desc', '').replace('\\n', '\n'))
