@@ -164,5 +164,9 @@ HOD_operation_geonosis_start = {
 		set_province_controller = 17077
 		load_oob = "HOD_op_geonosis_landing"
 	}
-	CIS = { activate_mission = HOD_op_defend_70 }
+	CIS = {
+		activate_mission = HOD_op_defend_70
+		# GEO had no army and the CIS lanes into Geonosis are now closed: 9 droid divisions defend it
+		load_oob = "HOD_op_geonosis_defence"
+	}
 }
