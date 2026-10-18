@@ -4,7 +4,8 @@ import tempfile
 
 from hoi4_country_editor import Mod, read_text, write_text
 from hoi4_focus_editor import (FocusFile, add_auto_names, auto_name, brace_depth, brace_problem, check, earliest_days,
-                               fmt_days, focus_point_days, import_icon, playthroughs, tree_text)
+                               engine_date, fmt_days, focus_point_days, hod_calendar, hod_date, import_icon,
+                               playthroughs, tree_text)
 
 TREE = '''# my tree
 focus_tree = {
@@ -131,4 +132,25 @@ with tempfile.TemporaryDirectory() as d:
     probs = check(ff, Mod(d), others={})  # like HOI4: loads anyway, warns, and writes the } only on save
     assert len(ff.focuses) == 3 and ff.dirty and not [p for p in probs if 'brace' in p[2] or 'block' in p[2]]
     assert any('without its last' in p[2] for p in probs)
+# the mod calendar matches its on_actions counter, simulated day by day exactly as the script does it
+with tempfile.TemporaryDirectory() as d:
+    os.makedirs(os.path.join(d, 'common/on_actions'))
+    write_text(os.path.join(d, 'common/on_actions/a.txt'), read_text(os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), '..', '..', 'common', 'on_actions', '00_on_actions.txt')))
+    cal = hod_calendar(Mod(d))
+    assert cal == {'start_year': -24, 'month_days': 35, 'months': 10, 'fest_days': 19}, cal
+    day, month, year, bby = 1, 1, -24, 0
+    names = ['Alderensis', 'Corelliensis', 'Coruscensis', 'Durensis', 'Chandrilensis', 'Bentaensis', 'Anaxensis',
+             'Kuensis', 'Hosniensis', 'Esselensis', 'Festivities']
+    for n in range(369 * 30):
+        assert hod_date(n, cal) == f'{day} {names[month - 1]} {year} {"ABY" if bby else "BBY"}', (n, hod_date(n, cal))
+        day += 1
+        if day == 20 and month == 11:
+            day, month, year = 1, 1, year + 1
+        if day == 36:
+            month, day = month + 1, 1
+        if year == 0:
+            bby, year = 1, year + 1
+assert engine_date(0, '976.1.1.12') == '976.1.1' and engine_date(365, '976.1.1') == '977.1.1'
+assert engine_date(59, '976.1.1') == '976.3.1'
 print('ok')
