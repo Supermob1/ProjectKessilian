@@ -508,7 +508,7 @@ HOD_op_geonosis_attack_REP = {
 		ratio = 1.0
 		priority = 500
 		ordertype = front
-		execution_type = rush
+		execution_type = balanced  # rush threw the landing into attacks it could not win
 	}
 	ai_strategy = {
 		type = naval_invasion_focus

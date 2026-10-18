@@ -1,6 +1,6 @@
 ﻿# HOD operations: Confederate droid army spawned on Geonosis when the Battle of Geonosis starts
 # (HOD_operation_geonosis_start). GEO has no army and every CIS lane into Geonosis is closed during
-# the operation, so without this the CIS could not defend it. 16972 faces the Christophsis lane (state 278),
+# the operation, so without this the CIS could not defend it. State 278 is the Republic beachhead, so none here:
 # 16697 is the Geonosis end of the Rishi lane (state 282), 1578 is the capital of Geonosis (state 35).
 division_template = {
 	name = "Geonosis Defence Battalion"
@@ -38,17 +38,17 @@ division_template = {
 units = {
 	division = {
 		division_template = "Geonosis Defence Battalion"
-		location = 16972
+		location = 1578
 		start_experience_factor = 0.2
 	}
 	division = {
 		division_template = "Geonosis Defence Battalion"
-		location = 16972
+		location = 1578
 		start_experience_factor = 0.2
 	}
 	division = {
 		division_template = "Geonosis Defence Battalion"
-		location = 16972
+		location = 1578
 		start_experience_factor = 0.2
 	}
 	division = {
@@ -64,21 +64,6 @@ units = {
 	division = {
 		division_template = "Geonosis Defence Battalion"
 		location = 16697
-		start_experience_factor = 0.2
-	}
-	division = {
-		division_template = "Geonosis Defence Battalion"
-		location = 1578
-		start_experience_factor = 0.2
-	}
-	division = {
-		division_template = "Geonosis Defence Battalion"
-		location = 1578
-		start_experience_factor = 0.2
-	}
-	division = {
-		division_template = "Geonosis Defence Battalion"
-		location = 1578
 		start_experience_factor = 0.2
 	}
 }
