@@ -76,8 +76,7 @@ def brace_problem(text):
                                        f'before the {t} on line {line}')
     if stack:
         return stack[0][0], (f'The file ends with {len(stack)} block(s) still open: the "{{" on line {stack[0][0]} '
-                             f'is never closed, so a "}}" is missing at the end (HOI4 closes it itself and only '
-                             f'notes it in error.log)')
+                             f'is never closed, so a "}}" is missing at the end')
     return None
 
 
@@ -113,6 +112,12 @@ class FocusFile:
         self.text = read_text(path) if text is None else text
         self.undo, self.redo = [], []
         self.saved_text = self.text
+        # HOI4 closes blocks left open at the end of a file without complaint; do the same so the tree loads.
+        # The added } is written only when the user saves.
+        broken = brace_problem(self.text)
+        self.closed_at_end = brace_depth(self.text) if broken and broken[1].startswith('The file ends') else 0
+        if self.closed_at_end:
+            self.text = self.text.rstrip() + '\n' + '}' * self.closed_at_end + '\n'
         self.refresh()
 
     @property
@@ -292,10 +297,6 @@ def check(ff, mod, sprites=None, others=None):
     out = []
     broken = brace_problem(ff.text)
     if broken:  # everything after a missing brace is misread, so other checks would only add noise
-        if broken[1].startswith('The file ends'):  # nothing is misread before the end: closing it there is safe
-            depth = brace_depth(ff.text)
-            return [('error', '', broken[1] + '. Double-click to add it.',
-                     lambda: ff.apply(ff.text.rstrip() + '\n' + '}' * depth + '\n'))]
         return [('error', '', broken[1] + '. Double-click to open the file text there. '
                  '(Other checks wait until this is fixed.)', None)]
     if not ff.trees and not any(f['tree'] == -1 for f in ff.focuses.values()):
@@ -366,6 +367,9 @@ def check(ff, mod, sprites=None, others=None):
     for fid in ff.focuses:
         if not state.get(fid):
             visit(fid, [fid])
+    if ff.closed_at_end:
+        out.append(('warning', '', f'The file ends without its last "}}" ({ff.closed_at_end} missing). HOI4 accepts '
+                                   'that, so the editor added it too; Save writes it to the file.', None))
     return out
 
 
