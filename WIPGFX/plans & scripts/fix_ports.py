@@ -33,7 +33,7 @@ def main():
         sid = int(re.search(r"\bid\s*=\s*(\d+)", s).group(1))
         m = re.search(r"provinces\s*=\s*\{([^}]*)\}", s)
         files[sid] = (f, [int(p) for p in m.group(1).split()] if m else [])
-        if re.search(r"impassable\s*=\s*yes", s):
+        if re.search(r"\bimpassable\s*=\s*yes", s):
             impassable.add(sid)
     state_of = {p: sid for sid, (_f, ps) in files.items() for p in ps}
     bad = []

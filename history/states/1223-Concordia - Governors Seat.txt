@@ -1,0 +1,29 @@
+state={
+	id=1223
+	name="STATE_1223"
+	# HOD: Concordia (concordia_map.py)
+	provinces={
+		9400 9401 9523 9524 9525 9531 9541
+	}
+	resources={
+		steel=8
+		chromium=2
+	}
+	history = {
+		victory_points = {
+			9400 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 3
+			air_base = 1
+		}
+		owner = DWA
+		add_core_of = DWA
+	}
+	manpower = 450000
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,28 @@
+state={
+	id=1242
+	name="STATE_1242"
+	# HOD: Kashyyyk (kashyyyk_map.py)
+	provinces={
+		800 11982 11983 11984 11992 11996 11997 11998 12004 12006 12011 12013 12014 12019 12022 12024 12025 12041 12046 12049 12057 12064 12072 12076
+	}
+	resources={
+	}
+	history = {
+		victory_points = {
+			800 2
+		}
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+					11983 = {
+				naval_base = 3
+			}
+		}
+		owner = KAS
+		add_core_of = KAS
+	}
+	manpower = 180000
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

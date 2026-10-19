@@ -8,6 +8,7 @@ reads .rbg so B is up) + A spec.
   python "WIPGFX/plans & scripts/terrain_atlas.py" satellite    Sentinel-2 cloudless 2016 (CC BY 4.0, credit EOX)
   python "WIPGFX/plans & scripts/terrain_atlas.py" restore      the atlas the mod had before (WIPGFX/Assets/atlas_backup)
   python "WIPGFX/plans & scripts/terrain_atlas.py" scrap        our junk-field tile into slot 19 (Raxus Prime)
+  python "WIPGFX/plans & scripts/terrain_atlas.py" umbara       Umbara's dark jungle floor into slot 20 (shader: dusk + glow)
 Slots not listed in a source keep their current tile (6 water, 14 lava). Each new tile is brightness-matched to the
 pre-existing tile it replaces, so planet colours (colormap overlay) stay balanced. Comparison: WIPGFX/terrain_compare.png
 """
@@ -239,11 +240,10 @@ def splice_slot(path, new_path, slot, grid=5):
     open(path, "wb").write(bytes(o))
 
 
-def scrap():
-    """Write the junk tile into SCRAP_SLOT of the current atlas (all 3 levels, diffuse + normal), brightness kept
-    close to the brown rock tile so the colormap overlay stays balanced."""
+def write_tile(col, h, slot, gloss, spec, ref_slot=13, gain=1.0, name="tile"):
+    """Write a tile (diffuse RGB 0..255, height 0..1, tileable) into `slot` of the current atlas, all 3 levels, diffuse
+    + normal; brightness matched to `ref_slot` times `gain` so the colormap overlay stays balanced."""
     from scipy import ndimage as ndi
-    col, h = scrap_tile()
     gx, gy = ndi.sobel(h, 1, mode="wrap") * 2.0, ndi.sobel(h, 0, mode="wrap") * 2.0
     nrm = np.stack([-gx, -gy, np.ones_like(gx)], -1)
     nrm /= np.linalg.norm(nrm, axis=-1, keepdims=True)
@@ -253,20 +253,70 @@ def scrap():
             t = im.shape[0] // 5
             cell = lambda a, k: a[(k // 5) * t:(k // 5 + 1) * t, (k % 5) * t:(k % 5 + 1) * t]
             if kind == "atlas":
-                ref = cell(im, 13)[..., :3].mean()                     # brown mountain tile
-                d = col * ref / max(col.mean(), 1)
-                tile = np.dstack([d, np.full(h.shape, 90, np.float32)])           # A = gloss: dull metal
+                ref = cell(im, ref_slot)[..., :3].mean()
+                d = col * ref * gain / max(col.mean(), 1)
+                tile = np.dstack([d, np.full(h.shape, gloss, np.float32)])           # A = gloss
             else:
                 n = nrm * 127.5 + 127.5                                 # stored like the other tiles: B is up
-                tile = np.dstack([n[..., 0], n[..., 1], n[..., 2], np.full(h.shape, 70, np.float32)])
-            cell(im, SCRAP_SLOT)[:] = np.asarray(Image.fromarray(np.clip(tile, 0, 255).astype(np.uint8), "RGBA").resize((t, t), Image.LANCZOS))
-            tmp = f"{MAP}/{kind}{lvl}.scrap.dds"
+                tile = np.dstack([n[..., 0], n[..., 1], n[..., 2], np.full(h.shape, spec, np.float32)])
+            cell(im, slot)[:] = np.asarray(Image.fromarray(np.clip(tile, 0, 255).astype(np.uint8), "RGBA").resize((t, t), Image.LANCZOS))
+            tmp = f"{MAP}/{kind}{lvl}.{name}.dds"
             save_dxt5_mips(im, tmp)
-            splice_slot(f"{MAP}/{kind}{lvl}.dds", tmp, SCRAP_SLOT)     # only the slot's blocks change
+            splice_slot(f"{MAP}/{kind}{lvl}.dds", tmp, slot)            # only the slot's blocks change
             os.remove(tmp)
-    Image.fromarray(np.clip(col, 0, 255).astype(np.uint8)).resize((512, 512)).save("WIPGFX/scrap_tile_preview.png")
-    print("scrap tile written to atlas slot", SCRAP_SLOT)
+    Image.fromarray(np.clip(col, 0, 255).astype(np.uint8)).resize((512, 512)).save(f"WIPGFX/{name}_tile_preview.png")
+    print(name, "tile written to atlas slot", slot)
+
+
+def scrap():
+    """Write the junk tile into SCRAP_SLOT of the current atlas, brightness kept close to the brown rock tile."""
+    col, h = scrap_tile()
+    write_tile(col, h, SCRAP_SLOT, 90, 70, name="scrap")
+
+
+UMBARA_SLOT = 20     # unused slot of the 5x5 atlas (00_terrain.txt: umbara_33, umbara_town_34; pdxmap.shader dims it
+                     # and lights bioluminescent specks on it: Umbara's permanent dusk, the user 2026-10-19)
+
+
+def umbara_tile(S=1024, seed=20):
+    """Umbara's jungle floor seen from above, tileable: dark blue-green moss and leaf litter, black roots snaking
+    across it, darker hollows. -> (diffuse RGB, height 0..1)"""
+    from PIL import ImageDraw
+    from scipy import ndimage as ndi
+    rng = np.random.default_rng(seed)
+    big = Image.new("L", (3 * S, 3 * S), 0)
+    d = ImageDraw.Draw(big)
+    for _ in range(260):                                                 # roots: wandering dark lines
+        x, y = rng.uniform(0, S), rng.uniform(0, S)
+        a = rng.uniform(0, np.pi * 2)
+        pts = []
+        for _q in range(rng.integers(6, 14)):
+            pts.append((x, y))
+            a += rng.uniform(-0.6, 0.6)
+            step = rng.uniform(10, 28) * S / 512
+            x, y = x + step * np.cos(a), y + step * np.sin(a)
+        w = int(rng.uniform(2, 7) * S / 512) + 1
+        for ox in (-S, 0, S):
+            for oy in (-S, 0, S):
+                d.line([(px + ox + S, py + oy + S) for px, py in pts], fill=255, width=w)
+    roots = np.asarray(big, np.float32)[S:2 * S, S:2 * S] / 255
+    moss = ndi.gaussian_filter(rng.random((S, S)), 6, mode="wrap")
+    moss = (moss - moss.min()) / np.ptp(moss)
+    litter = ndi.gaussian_filter(rng.random((S, S)), 1.2, mode="wrap")
+    litter = (litter - litter.min()) / np.ptp(litter)
+    base = np.array([34, 56, 58], np.float32) * (0.6 + 0.6 * moss[..., None]) * (0.8 + 0.35 * litter[..., None])
+    base = base * (1 - 0.15 * (moss < 0.3)[..., None]) + np.array([20, 30, 50], np.float32) * (moss > 0.75)[..., None] * 0.4
+    col = base * (1 - 0.7 * roots[..., None]) + np.array([16, 14, 18], np.float32) * roots[..., None] * 0.7
+    h = 0.4 * moss + 0.2 * litter + 0.4 * roots
+    return np.clip(col, 0, 255), h
+
+
+def umbara():
+    """Write Umbara's jungle floor into UMBARA_SLOT (darker than the forest tile: the shader dims it further)."""
+    col, h = umbara_tile()
+    write_tile(col, h, UMBARA_SLOT, 70, 40, ref_slot=4, gain=0.55, name="umbara")
+
 
 if __name__ == "__main__":
     {"polyhaven": lambda: build(POLYHAVEN), "satellite": lambda: build(SATELLITE), "restore": restore,
-     "revolution": revolution, "scrap": scrap}[sys.argv[1]]()
+     "revolution": revolution, "scrap": scrap, "umbara": umbara}[sys.argv[1]]()

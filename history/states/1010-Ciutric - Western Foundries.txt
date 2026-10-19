@@ -1,0 +1,27 @@
+state={
+	id=1010
+	name="STATE_1010"
+	# HOD: Ciutric (ciutric_map.py)
+	provinces={
+		21720 21726 21728 21730 21731 21733 21739
+	}
+	resources={
+		coal=1
+		oil=2
+	}
+	history = {
+		victory_points = {
+			21731 2
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+		}
+		owner = CIH
+		add_core_of = CIH
+	}
+	manpower = 416595
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

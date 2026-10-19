@@ -1,0 +1,32 @@
+state={
+	id=65
+	name="STATE_65"
+	# HOD: Ruusan (ruusan_map.py)
+	provinces={
+		170 226 465 625 12848 12857 12860 12863 12864 12876 12879 12880 12881 12882 12884 12885 12891 12892 12893 12897
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			625 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 3
+			dockyard = 2
+					12891 = {
+				naval_base = 4
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 2229583
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

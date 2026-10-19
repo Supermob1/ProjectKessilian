@@ -220,7 +220,7 @@ PLANETS = {
     "Takodana": "forest .5 grassland .25 ocean .25",                  # lakes, plains, temperate forest
     "Taris": "city .8 ocean .2",                                      # urban sprawl, oceans
     "Tatooine": "desert .7 reddesert .3",                             # Dune Sea, canyons, rocky bluffs
-    "Telos": "@lat steppe .45 barren .3 ice .25",                     # restored plains, bombed wastes, polar ice
+    "Telos": "@lat city .85 ice .15",                                 # the city-world (user, 2026-10-19), polar ice
     "Terminus": "city .6 barren .4",                                  # urban
     "Teth": "jungle .6 reddesert .25 forest .15",                     # jungle lowlands, tall mesas
     "Tetan Depths": "city .75 industrial .25",                     # Empress Teta: Coruscant-like megacity, carbonite works
@@ -1313,8 +1313,8 @@ def kadavo(t, trees, city, h, labels, names, pid, rng):
 # tex: a texture (name from this module, e.g. "SAVANNA", or index) or [default, (texture, ">"|"<", threshold), ...]
 # over the shared texture mix (noise cell 7); later bands win.
 TERRAIN_TEXTURES = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27,
-                    28, 29, 30, 31, 32}           # graphical terrain indices of common/terrain/00_terrain.txt
-CITY_TEXTURES = {13, 26, 29, 30, 32}                # ... the ones with spawn_city = yes: city models only grow on these
+                    28, 29, 30, 31, 32, 33, 34}   # graphical terrain indices of common/terrain/00_terrain.txt
+CITY_TEXTURES = {13, 26, 29, 30, 32, 34}              # ... the ones with spawn_city = yes: city models only grow on these
 RELIEF_OPS = {"rolling": 4, "flat": 2, "ramp_top": 4, "flank": 5, "mesa": 5, "spires": 6}   # operator -> tuple length
 
 

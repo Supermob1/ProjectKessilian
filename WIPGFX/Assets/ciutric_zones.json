@@ -1,0 +1,964 @@
+{
+ "centre": [
+  589.4035693724813,
+  1348.3675877950488
+ ],
+ "radius": 33.253699713001694,
+ "vp_names": {
+  "21702": "Daplona",
+  "21640": "Daplona Base Training Center",
+  "21646": "Ciutric IV Prison",
+  "21647": "Bane's Mansion",
+  "21714": "Daplona Riverlands",
+  "21731": "Western Foundries",
+  "21740": "Eastern Mills",
+  "21783": "Northern Forests"
+ },
+ "provinces": {
+  "21640": {
+   "zone": "training",
+   "kind": 2,
+   "feature": "Daplona Base Training Center",
+   "state": 188,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    587.75,
+    1337.0
+   ],
+   "area": 20,
+   "terrain": "plains"
+  },
+  "21641": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Daplona",
+   "state": 188,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    581.2372881355932,
+    1345.4915254237287
+   ],
+   "area": 59,
+   "terrain": "urban"
+  },
+  "21642": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Daplona",
+   "state": 188,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    590.4556962025316,
+    1348.2784810126582
+   ],
+   "area": 79,
+   "terrain": "urban"
+  },
+  "21644": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Daplona",
+   "state": 188,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    584.2459016393443,
+    1339.8688524590164
+   ],
+   "area": 61,
+   "terrain": "urban"
+  },
+  "21646": {
+   "zone": "prison",
+   "kind": 3,
+   "feature": "Ciutric IV Prison",
+   "state": 1014,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    575.0,
+    1359.608695652174
+   ],
+   "area": 23,
+   "terrain": "hills"
+  },
+  "21647": {
+   "zone": "mansion",
+   "kind": 4,
+   "feature": "Bane's Mansion",
+   "state": 1012,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    610.1071428571429,
+    1348.25
+   ],
+   "area": 28,
+   "terrain": "forest"
+  },
+  "21651": {
+   "zone": "river",
+   "kind": 5,
+   "feature": "Daplona River",
+   "state": 1009,
+   "group": 4,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    598.6521739130435,
+    1373.1630434782608
+   ],
+   "area": 92,
+   "terrain": "marsh"
+  },
+  "21652": {
+   "zone": "river",
+   "kind": 5,
+   "feature": "Daplona River",
+   "state": 1009,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    596.3764705882353,
+    1360.5176470588235
+   ],
+   "area": 85,
+   "terrain": "marsh"
+  },
+  "21655": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    557.2727272727273,
+    1347.6363636363637
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "21656": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    583.6111111111111,
+    1378.7777777777778
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "21658": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    566.7142857142857,
+    1369.2857142857142
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "21663": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    571.0370370370371,
+    1355.4814814814815
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "21665": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    559.8181818181819,
+    1359.909090909091
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "21666": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    574.76,
+    1375.52
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "21670": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    566.3846153846154,
+    1345.9615384615386
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "21672": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    569.9090909090909,
+    1360.9545454545455
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "21674": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    564.5769230769231,
+    1352.6153846153845
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "21675": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    572.6842105263158,
+    1370.7894736842106
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "21677": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    564.7916666666666,
+    1361.9583333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "21678": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    559.92,
+    1344.04
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "21679": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    558.448275862069,
+    1353.2068965517242
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "21685": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    578.8888888888889,
+    1377.888888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "21687": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    566.8181818181819,
+    1357.2727272727273
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "21688": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    570.1111111111111,
+    1373.111111111111
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "21689": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    569.2592592592592,
+    1350.148148148148
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "21691": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    562.12,
+    1348.52
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "21692": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    562.25,
+    1356.95
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "21693": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    569.4782608695652,
+    1366.0434782608695
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "21701": {
+   "zone": "highlands",
+   "kind": 9,
+   "feature": "Ciutric Highlands",
+   "state": 1216,
+   "group": 5,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    563.4285714285714,
+    1365.7142857142858
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "21702": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Daplona",
+   "state": 188,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    593.5243902439024,
+    1337.8658536585365
+   ],
+   "area": 82,
+   "terrain": "urban"
+  },
+  "21706": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Daplona",
+   "state": 188,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    597.3934426229508,
+    1347.0819672131147
+   ],
+   "area": 61,
+   "terrain": "urban"
+  },
+  "21709": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Daplona",
+   "state": 188,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    597.1,
+    1329.95
+   ],
+   "area": 60,
+   "terrain": "urban"
+  },
+  "21711": {
+   "zone": "farms",
+   "kind": 6,
+   "feature": "Daplona Riverlands",
+   "state": 1009,
+   "group": 7,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    613.4714285714285,
+    1365.8142857142857
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "21713": {
+   "zone": "farms",
+   "kind": 6,
+   "feature": "Daplona Riverlands",
+   "state": 1009,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    601.6,
+    1357.6888888888889
+   ],
+   "area": 45,
+   "terrain": "plains"
+  },
+  "21714": {
+   "zone": "farms",
+   "kind": 6,
+   "feature": "Daplona Riverlands",
+   "state": 1009,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    606.4166666666666,
+    1362.6944444444443
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "21715": {
+   "zone": "farms",
+   "kind": 6,
+   "feature": "Daplona Riverlands",
+   "state": 1009,
+   "group": 7,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    605.9302325581396,
+    1371.2093023255813
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "21720": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Western Foundries",
+   "state": 1010,
+   "group": 8,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    582.0657894736842,
+    1319.8684210526317
+   ],
+   "area": 76,
+   "terrain": "urban"
+  },
+  "21726": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Western Foundries",
+   "state": 1010,
+   "group": 8,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    598.5584415584416,
+    1321.5454545454545
+   ],
+   "area": 77,
+   "terrain": "urban"
+  },
+  "21728": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Western Foundries",
+   "state": 1010,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    580.438596491228,
+    1333.6491228070176
+   ],
+   "area": 57,
+   "terrain": "urban"
+  },
+  "21730": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Western Foundries",
+   "state": 1010,
+   "group": 8,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    572.1470588235294,
+    1324.3382352941176
+   ],
+   "area": 68,
+   "terrain": "urban"
+  },
+  "21731": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Western Foundries",
+   "state": 1010,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    588.6705882352941,
+    1328.2
+   ],
+   "area": 85,
+   "terrain": "urban"
+  },
+  "21733": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Western Foundries",
+   "state": 1010,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    578.6666666666666,
+    1327.2222222222222
+   ],
+   "area": 63,
+   "terrain": "urban"
+  },
+  "21739": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Western Foundries",
+   "state": 1010,
+   "group": 8,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    590.7567567567568,
+    1319.2837837837837
+   ],
+   "area": 74,
+   "terrain": "urban"
+  },
+  "21740": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Eastern Mills",
+   "state": 1011,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    589.2191780821918,
+    1368.3013698630136
+   ],
+   "area": 73,
+   "terrain": "urban"
+  },
+  "21745": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Eastern Mills",
+   "state": 1011,
+   "group": 9,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    591.3218390804598,
+    1377.3103448275863
+   ],
+   "area": 87,
+   "terrain": "urban"
+  },
+  "21753": {
+   "zone": "industry",
+   "kind": 8,
+   "feature": "Eastern Mills",
+   "state": 1011,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    581.2840909090909,
+    1371.340909090909
+   ],
+   "area": 88,
+   "terrain": "urban"
+  },
+  "21754": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    608.5454545454545,
+    1341.5324675324675
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "21755": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    606.2278481012659,
+    1325.4556962025317
+   ],
+   "area": 79,
+   "terrain": "forest"
+  },
+  "21757": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    617.955223880597,
+    1357.865671641791
+   ],
+   "area": 67,
+   "terrain": "forest"
+  },
+  "21758": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    603.2467532467532,
+    1349.4155844155844
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "21762": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    602.6888888888889,
+    1335.9
+   ],
+   "area": 90,
+   "terrain": "forest"
+  },
+  "21772": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    612.4831460674158,
+    1331.5842696629213
+   ],
+   "area": 89,
+   "terrain": "forest"
+  },
+  "21776": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    617.8313253012049,
+    1348.8072289156626
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "21777": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    610.40625,
+    1354.75
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "21778": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Southern Forests",
+   "state": 1012,
+   "group": 10,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    617.5421686746988,
+    1339.8192771084337
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "21780": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Northern Forests",
+   "state": 1013,
+   "group": 11,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    562.8452380952381,
+    1338.9166666666667
+   ],
+   "area": 84,
+   "terrain": "forest"
+  },
+  "21781": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Northern Forests",
+   "state": 1013,
+   "group": 11,
+   "coastal": true,
+   "sea": 18863,
+   "centre": [
+    566.3815789473684,
+    1331.078947368421
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "21783": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Northern Forests",
+   "state": 1013,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    572.8809523809524,
+    1336.9761904761904
+   ],
+   "area": 84,
+   "terrain": "forest"
+  },
+  "21788": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Northern Forests",
+   "state": 1013,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    573.5584415584416,
+    1346.142857142857
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "21792": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Highland Marches",
+   "state": 1014,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    580.0333333333333,
+    1353.4444444444443
+   ],
+   "area": 90,
+   "terrain": "forest"
+  },
+  "21798": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Highland Marches",
+   "state": 1014,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    589.5243902439024,
+    1357.9024390243903
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "21799": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Highland Marches",
+   "state": 1014,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    575.719298245614,
+    1365.3684210526317
+   ],
+   "area": 57,
+   "terrain": "forest"
+  },
+  "21800": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Highland Marches",
+   "state": 1014,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    582.8125,
+    1361.265625
+   ],
+   "area": 64,
+   "terrain": "forest"
+  }
+ }
+}

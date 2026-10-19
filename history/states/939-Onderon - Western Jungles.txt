@@ -1,0 +1,29 @@
+state={
+	id=939
+	name="STATE_939"
+	# HOD: Onderon (onderon_map.py)
+	provinces={
+		11772 11779 11780 11782 11783
+	}
+	resources={
+		oil=2
+	}
+	history = {
+		victory_points = {
+			11782 1
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 2
+			11782 = {
+				naval_base = 4
+			}
+		}
+		owner = OND
+		add_core_of = OND
+	}
+	manpower = 171562
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

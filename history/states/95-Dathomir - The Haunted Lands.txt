@@ -1,0 +1,28 @@
+state={
+	id=95
+	name="STATE_95"
+	# HOD: Dathomir (dathomir_map.py)
+	provinces={
+		105 414 2589 2664 2695 2765 2805 2896 2937 3018 3022 3029 3054 3277
+	}
+	resources={
+		aluminium=3#Minerals
+	}
+	history = {
+		victory_points = {
+			414 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 7
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = DHT
+		add_core_of = DHT
+	}
+	manpower = 1853468
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

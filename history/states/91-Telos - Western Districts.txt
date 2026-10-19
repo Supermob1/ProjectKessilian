@@ -1,0 +1,31 @@
+state={
+	id=91
+	name="STATE_91"
+	# HOD: Telos (telos_map.py)
+	provinces={
+		7271 7281 7293 7296 7302 7313 7318 7329 7330 7335 7338 7356 7363 7377 7386 7393 7394
+	}
+	resources={
+		oil=2#Fuel
+		rubber=1#Doonium
+		tungsten=1#Bacta
+		chromium=3#Circuitry
+	}
+	history = {
+		victory_points = {
+			7394 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 187198
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

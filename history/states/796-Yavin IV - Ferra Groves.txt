@@ -1,0 +1,30 @@
+state={
+	id=796
+	name="STATE_796"
+	# HOD: Yavin IV (yavin_iv_map.py)
+	provinces={
+		772 894 931 9028 9032 9033 9034 9037 9044 9047 9049 9052 9053 9056 9059 9060
+	}
+	resources={
+		oil=4
+	}
+	history = {
+		victory_points = {
+			9034 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 2
+					931 = {
+				naval_base = 3
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 175691
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

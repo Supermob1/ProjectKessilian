@@ -1,0 +1,2973 @@
+{
+ "centre": [
+  630.92480141218,
+  1818.1957634598411
+ ],
+ "radius": 60.053734359008416,
+ "vp_names": {
+  "28": "Great Temple",
+  "145": "Temple of Exar Kun",
+  "8842": "Borundi Peak",
+  "9112": "Flat Mountain",
+  "8953": "Wetyin",
+  "9024": "Starloft",
+  "9034": "Ferra Groves"
+ },
+ "provinces": {
+  "28": {
+   "zone": "temple",
+   "kind": 1,
+   "feature": "Great Temple",
+   "state": 92,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    641.0222222222222,
+    1805.6666666666667
+   ],
+   "area": 45,
+   "terrain": "jungle"
+  },
+  "100": {
+   "zone": "temple",
+   "kind": 1,
+   "feature": "Great Temple",
+   "state": 92,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    635.5945945945946,
+    1806.972972972973
+   ],
+   "area": 37,
+   "terrain": "jungle"
+  },
+  "145": {
+   "zone": "sithtemple",
+   "kind": 2,
+   "feature": "Temple of Exar Kun",
+   "state": 792,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    621.9444444444445,
+    1833.462962962963
+   ],
+   "area": 54,
+   "terrain": "jungle"
+  },
+  "163": {
+   "zone": "volcano",
+   "kind": 3,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    603.5666666666667,
+    1846.1666666666667
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "438": {
+   "zone": "volcano",
+   "kind": 3,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    601.4770642201835,
+    1855.1743119266055
+   ],
+   "area": 109,
+   "terrain": "hills"
+  },
+  "474": {
+   "zone": "plateau",
+   "kind": 8,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    660.4166666666666,
+    1783.1944444444443
+   ],
+   "area": 36,
+   "terrain": "hills"
+  },
+  "478": {
+   "zone": "plateau",
+   "kind": 8,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    652.34375,
+    1789.625
+   ],
+   "area": 32,
+   "terrain": "hills"
+  },
+  "482": {
+   "zone": "plateau",
+   "kind": 8,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    655.5882352941177,
+    1784.6470588235295
+   ],
+   "area": 34,
+   "terrain": "hills"
+  },
+  "772": {
+   "zone": "river",
+   "kind": 4,
+   "feature": "Ferra River",
+   "state": 796,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    637.66,
+    1855.7
+   ],
+   "area": 150,
+   "terrain": "marsh"
+  },
+  "894": {
+   "zone": "river",
+   "kind": 4,
+   "feature": "Ferra River",
+   "state": 796,
+   "group": 4,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    665.3290322580646,
+    1846.9354838709678
+   ],
+   "area": 310,
+   "terrain": "marsh"
+  },
+  "931": {
+   "zone": "river",
+   "kind": 4,
+   "feature": "Ferra River",
+   "state": 796,
+   "group": 4,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    655.5421686746988,
+    1864.6939759036145
+   ],
+   "area": 415,
+   "terrain": "marsh"
+  },
+  "935": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    593.925925925926,
+    1840.3703703703704
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "954": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    629.1111111111111,
+    1876.2222222222222
+   ],
+   "area": 9,
+   "terrain": "mountain"
+  },
+  "1318": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    572.5294117647059,
+    1820.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "1349": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    601.6842105263158,
+    1868.6842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "1374": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    576.5714285714286,
+    1840.1904761904761
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "1500": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    586.8,
+    1855.6333333333334
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "1660": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    613.4375,
+    1862.3125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "1835": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    584.08,
+    1827.84
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "1859": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    615.3333333333334,
+    1874.5333333333333
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "1967": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    596.304347826087,
+    1859.9565217391305
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "2080": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    574.6785714285714,
+    1830.4285714285713
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "2139": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    585.4848484848485,
+    1844.3939393939395
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "2153": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    593.9629629629629,
+    1849.8148148148148
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "2177": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    583.6785714285714,
+    1835.7142857142858
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "2194": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    609.75,
+    1868.9375
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "2196": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    576.9444444444445,
+    1818.7222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "2199": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    591.16,
+    1834.6
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "2266": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    622.7142857142857,
+    1874.642857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "2275": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    582.9666666666667,
+    1850.2333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "2317": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    591.5,
+    1861.107142857143
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "2318": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    601.6086956521739,
+    1863.8695652173913
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "2389": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    578.7083333333334,
+    1826.7083333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "2455": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    588.1875,
+    1839.34375
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "2573": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    588.4705882352941,
+    1850.1470588235295
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "2631": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    576.7931034482758,
+    1835.2413793103449
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "2740": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    592.2,
+    1855.7333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "2790": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    597.04,
+    1864.92
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "2908": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    579.8214285714286,
+    1845.107142857143
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "3017": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    580.4,
+    1831.44
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3112": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    591.71875,
+    1844.9375
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "3226": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    572.9090909090909,
+    1825.3636363636363
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "3315": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    609.875,
+    1864.0625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "3349": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    586.8,
+    1832.2
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3386": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    595.3684210526316,
+    1836.0526315789473
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "3518": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    611.0666666666667,
+    1873.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "3556": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    613.7142857142857,
+    1870.5
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "3677": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    581.2142857142857,
+    1839.9642857142858
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "3884": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    606.2941176470588,
+    1870.6470588235295
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "4012": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    619.5882352941177,
+    1875.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "4517": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    575.8,
+    1822.8
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "4615": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    605.7368421052631,
+    1866.3684210526317
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4631": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    625.7142857142857,
+    1875.642857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "4672": {
+   "zone": "highlands",
+   "kind": 10,
+   "feature": "Borundi Highlands",
+   "state": 1209,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    612.7142857142857,
+    1866.5
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "4717": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    678.4814814814815,
+    1827.7777777777778
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "4764": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    685.125,
+    1795.875
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "4777": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    676.4761904761905,
+    1854.7142857142858
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4824": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    689.2173913043479,
+    1812.695652173913
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "4946": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    683.0,
+    1844.48
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "5130": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    676.9090909090909,
+    1812.7272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "5169": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    689.0,
+    1823.8260869565217
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "5178": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    675.6428571428571,
+    1838.2142857142858
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "5296": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    682.6153846153846,
+    1804.2692307692307
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "5451": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    683.9565217391304,
+    1818.9130434782608
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "5561": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    686.7619047619048,
+    1833.857142857143
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5686": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    674.0,
+    1848.0416666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "5721": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    672.9583333333334,
+    1826.7083333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "5802": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    679.2758620689655,
+    1849.344827586207
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "5833": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    681.5909090909091,
+    1835.5454545454545
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "5999": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    674.2608695652174,
+    1832.391304347826
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "8626": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    677.3333333333334,
+    1818.6666666666667
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "8629": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    682.48,
+    1810.24
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "8630": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    686.9047619047619,
+    1802.0
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "8645": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    679.0,
+    1807.0
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "8651": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    677.2142857142857,
+    1844.2142857142858
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "8662": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    684.074074074074,
+    1824.5555555555557
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "8667": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    687.448275862069,
+    1807.4137931034484
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "8669": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    688.9666666666667,
+    1818.6666666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "8670": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    683.625,
+    1799.3125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "8673": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    683.2222222222222,
+    1830.3333333333333
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "8682": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    673.6666666666666,
+    1852.4444444444443
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "8683": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    675.0434782608696,
+    1823.1304347826087
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "8687": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    680.3913043478261,
+    1815.5217391304348
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "8691": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    685.1304347826087,
+    1813.9565217391305
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "8692": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    678.1818181818181,
+    1833.1818181818182
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "8693": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    680.0434782608696,
+    1822.608695652174
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "8697": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    685.2272727272727,
+    1838.590909090909
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "8704": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    687.9583333333334,
+    1828.7083333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "8705": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1208,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    680.4166666666666,
+    1840.2916666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "8712": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    637.0777777777778,
+    1817.1555555555556
+   ],
+   "area": 90,
+   "terrain": "jungle"
+  },
+  "8715": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    639.9756097560976,
+    1793.658536585366
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "8716": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    616.4444444444445,
+    1816.1851851851852
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "8717": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    621.8513513513514,
+    1801.8783783783783
+   ],
+   "area": 74,
+   "terrain": "jungle"
+  },
+  "8721": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    646.328947368421,
+    1802.5526315789473
+   ],
+   "area": 76,
+   "terrain": "jungle"
+  },
+  "8726": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    632.609375,
+    1802.625
+   ],
+   "area": 64,
+   "terrain": "jungle"
+  },
+  "8727": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    627.7623762376238,
+    1812.069306930693
+   ],
+   "area": 101,
+   "terrain": "jungle"
+  },
+  "8732": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    625.2823529411764,
+    1792.8235294117646
+   ],
+   "area": 85,
+   "terrain": "jungle"
+  },
+  "8733": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    643.0972222222222,
+    1813.2777777777778
+   ],
+   "area": 72,
+   "terrain": "jungle"
+  },
+  "8739": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    652.2727272727273,
+    1810.2272727272727
+   ],
+   "area": 66,
+   "terrain": "jungle"
+  },
+  "8746": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Site",
+   "state": 92,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    618.6142857142858,
+    1809.357142857143
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "8748": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    619.855421686747,
+    1824.8192771084337
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  },
+  "8752": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    636.0760869565217,
+    1845.195652173913
+   ],
+   "area": 92,
+   "terrain": "jungle"
+  },
+  "8753": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    636.9753086419753,
+    1826.469135802469
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "8757": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    603.8484848484849,
+    1828.3939393939395
+   ],
+   "area": 66,
+   "terrain": "jungle"
+  },
+  "8758": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    626.2978723404256,
+    1842.936170212766
+   ],
+   "area": 94,
+   "terrain": "jungle"
+  },
+  "8759": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    628.4756097560976,
+    1821.6341463414635
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "8770": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    628.4933333333333,
+    1831.2266666666667
+   ],
+   "area": 75,
+   "terrain": "jungle"
+  },
+  "8774": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    617.8928571428571,
+    1841.107142857143
+   ],
+   "area": 84,
+   "terrain": "jungle"
+  },
+  "8775": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    611.231884057971,
+    1824.6666666666667
+   ],
+   "area": 69,
+   "terrain": "jungle"
+  },
+  "8778": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    635.1772151898734,
+    1835.873417721519
+   ],
+   "area": 79,
+   "terrain": "jungle"
+  },
+  "8781": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Massassi Valley",
+   "state": 792,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    613.1153846153846,
+    1833.1410256410256
+   ],
+   "area": 78,
+   "terrain": "jungle"
+  },
+  "8784": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    619.0123456790124,
+    1867.4938271604938
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "8794": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    598.948275862069,
+    1832.8275862068965
+   ],
+   "area": 58,
+   "terrain": "jungle"
+  },
+  "8795": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    643.8089887640449,
+    1864.1348314606741
+   ],
+   "area": 89,
+   "terrain": "jungle"
+  },
+  "8799": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    612.9090909090909,
+    1847.465909090909
+   ],
+   "area": 88,
+   "terrain": "jungle"
+  },
+  "8800": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    635.1157894736842,
+    1872.2421052631578
+   ],
+   "area": 95,
+   "terrain": "jungle"
+  },
+  "8801": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    625.25,
+    1850.8823529411766
+   ],
+   "area": 68,
+   "terrain": "jungle"
+  },
+  "8802": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    598.8723404255319,
+    1842.1489361702127
+   ],
+   "area": 47,
+   "terrain": "jungle"
+  },
+  "8809": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    632.8446601941747,
+    1860.3203883495146
+   ],
+   "area": 103,
+   "terrain": "jungle"
+  },
+  "8825": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    606.75,
+    1860.888888888889
+   ],
+   "area": 36,
+   "terrain": "jungle"
+  },
+  "8829": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    620.283950617284,
+    1857.8641975308642
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "8838": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    606.640625,
+    1837.78125
+   ],
+   "area": 64,
+   "terrain": "jungle"
+  },
+  "8842": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    612.5774647887324,
+    1855.3521126760563
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "8846": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Borundi Peak",
+   "state": 793,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    627.1931818181819,
+    1868.159090909091
+   ],
+   "area": 88,
+   "terrain": "jungle"
+  },
+  "8847": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    630.8658536585366,
+    1772.8536585365853
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "8848": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    595.2957746478874,
+    1774.7323943661972
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "8859": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    615.0454545454545,
+    1800.5227272727273
+   ],
+   "area": 44,
+   "terrain": "jungle"
+  },
+  "8860": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    633.9428571428572,
+    1789.6142857142856
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "8870": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    609.7466666666667,
+    1779.9333333333334
+   ],
+   "area": 75,
+   "terrain": "jungle"
+  },
+  "8871": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    610.3768115942029,
+    1765.7246376811595
+   ],
+   "area": 69,
+   "terrain": "jungle"
+  },
+  "8881": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    643.8115942028985,
+    1763.9420289855072
+   ],
+   "area": 69,
+   "terrain": "jungle"
+  },
+  "8889": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    644.6619718309859,
+    1775.4788732394366
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "8890": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    627.3103448275862,
+    1783.7701149425288
+   ],
+   "area": 87,
+   "terrain": "jungle"
+  },
+  "8891": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    605.3461538461538,
+    1787.7307692307693
+   ],
+   "area": 78,
+   "terrain": "jungle"
+  },
+  "8899": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    603.6136363636364,
+    1770.909090909091
+   ],
+   "area": 88,
+   "terrain": "jungle"
+  },
+  "8919": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    628.8301886792453,
+    1798.301886792453
+   ],
+   "area": 53,
+   "terrain": "jungle"
+  },
+  "8920": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    626.4303797468355,
+    1763.4430379746836
+   ],
+   "area": 79,
+   "terrain": "jungle"
+  },
+  "8924": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    614.7763157894736,
+    1773.4736842105262
+   ],
+   "area": 76,
+   "terrain": "jungle"
+  },
+  "8934": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    634.7662337662338,
+    1762.922077922078
+   ],
+   "area": 77,
+   "terrain": "jungle"
+  },
+  "8935": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    614.1609195402299,
+    1792.287356321839
+   ],
+   "area": 87,
+   "terrain": "jungle"
+  },
+  "8936": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    637.4,
+    1781.2333333333333
+   ],
+   "area": 90,
+   "terrain": "jungle"
+  },
+  "8939": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    638.75,
+    1770.9264705882354
+   ],
+   "area": 68,
+   "terrain": "jungle"
+  },
+  "8940": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    600.8767123287671,
+    1780.2739726027398
+   ],
+   "area": 73,
+   "terrain": "jungle"
+  },
+  "8945": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    617.8965517241379,
+    1784.0344827586207
+   ],
+   "area": 87,
+   "terrain": "jungle"
+  },
+  "8953": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    623.1375,
+    1775.1125
+   ],
+   "area": 80,
+   "terrain": "jungle"
+  },
+  "8954": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Wetyin",
+   "state": 794,
+   "group": 10,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    618.873417721519,
+    1765.0759493670887
+   ],
+   "area": 79,
+   "terrain": "jungle"
+  },
+  "8955": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    591.8024691358024,
+    1826.7530864197531
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "8964": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    589.2,
+    1780.7285714285715
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "8965": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    576.975,
+    1804.3
+   ],
+   "area": 80,
+   "terrain": "jungle"
+  },
+  "8967": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    609.5394736842105,
+    1802.5263157894738
+   ],
+   "area": 76,
+   "terrain": "jungle"
+  },
+  "8973": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    609.188679245283,
+    1817.9433962264152
+   ],
+   "area": 53,
+   "terrain": "jungle"
+  },
+  "8979": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    591.9879518072289,
+    1794.879518072289
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  },
+  "8982": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    582.7594936708861,
+    1820.6582278481012
+   ],
+   "area": 79,
+   "terrain": "jungle"
+  },
+  "8983": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    597.6506024096385,
+    1811.55421686747
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  },
+  "8984": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    579.3943661971831,
+    1794.6901408450703
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "8987": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    584.7954545454545,
+    1810.909090909091
+   ],
+   "area": 88,
+   "terrain": "jungle"
+  },
+  "8991": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    595.5135135135135,
+    1787.337837837838
+   ],
+   "area": 74,
+   "terrain": "jungle"
+  },
+  "8999": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    607.2469135802469,
+    1810.1975308641975
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "9000": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    591.3417721518987,
+    1817.8987341772151
+   ],
+   "area": 79,
+   "terrain": "jungle"
+  },
+  "9006": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    600.5,
+    1820.7142857142858
+   ],
+   "area": 84,
+   "terrain": "jungle"
+  },
+  "9007": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    599.7534246575342,
+    1802.5753424657535
+   ],
+   "area": 73,
+   "terrain": "jungle"
+  },
+  "9013": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": true,
+   "sea": 18854,
+   "centre": [
+    575.0,
+    1813.1153846153845
+   ],
+   "area": 78,
+   "terrain": "jungle"
+  },
+  "9018": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    584.8,
+    1800.3285714285714
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "9019": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": true,
+   "sea": 18963,
+   "centre": [
+    584.8048780487804,
+    1787.7560975609756
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "9022": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    603.2560975609756,
+    1795.2926829268292
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "9024": {
+   "zone": "deep",
+   "kind": 6,
+   "feature": "Starloft",
+   "state": 795,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    591.6621621621622,
+    1804.6756756756756
+   ],
+   "area": 74,
+   "terrain": "jungle"
+  },
+  "9028": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    668.2272727272727,
+    1832.439393939394
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "9032": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    644.171052631579,
+    1848.4736842105262
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "9033": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    650.4705882352941,
+    1817.6941176470589
+   ],
+   "area": 85,
+   "terrain": "forest"
+  },
+  "9034": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    651.3424657534247,
+    1833.0
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "9037": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    661.6338028169014,
+    1817.6760563380283
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "9044": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    652.1911764705883,
+    1850.1617647058824
+   ],
+   "area": 68,
+   "terrain": "forest"
+  },
+  "9047": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    655.6375,
+    1825.0
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "9049": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    645.609756097561,
+    1826.2560975609756
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "9052": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    643.1428571428571,
+    1836.857142857143
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "9053": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    659.9285714285714,
+    1835.0714285714287
+   ],
+   "area": 84,
+   "terrain": "forest"
+  },
+  "9056": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    650.3285714285714,
+    1841.5142857142857
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "9059": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    664.6,
+    1825.9571428571428
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "9060": {
+   "zone": "groves",
+   "kind": 7,
+   "feature": "Ferra Groves",
+   "state": 796,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    669.9375,
+    1819.171875
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "9065": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    649.5074626865671,
+    1795.7313432835822
+   ],
+   "area": 67,
+   "terrain": "jungle"
+  },
+  "9068": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    679.9764705882353,
+    1792.0
+   ],
+   "area": 85,
+   "terrain": "jungle"
+  },
+  "9072": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    651.4891304347826,
+    1767.2717391304348
+   ],
+   "area": 92,
+   "terrain": "jungle"
+  },
+  "9074": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    671.7594936708861,
+    1811.1772151898733
+   ],
+   "area": 79,
+   "terrain": "jungle"
+  },
+  "9076": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    666.8412698412699,
+    1784.6349206349207
+   ],
+   "area": 63,
+   "terrain": "jungle"
+  },
+  "9080": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    649.7538461538461,
+    1781.123076923077
+   ],
+   "area": 65,
+   "terrain": "jungle"
+  },
+  "9085": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    666.0142857142857,
+    1797.642857142857
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "9091": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    659.931506849315,
+    1809.6164383561643
+   ],
+   "area": 73,
+   "terrain": "jungle"
+  },
+  "9095": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    660.8939393939394,
+    1770.2575757575758
+   ],
+   "area": 66,
+   "terrain": "jungle"
+  },
+  "9099": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    675.038961038961,
+    1783.0389610389611
+   ],
+   "area": 77,
+   "terrain": "jungle"
+  },
+  "9111": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    675.5057471264367,
+    1800.8275862068965
+   ],
+   "area": 87,
+   "terrain": "jungle"
+  },
+  "9112": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    659.7560975609756,
+    1791.5365853658536
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "9126": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    656.7764705882353,
+    1801.105882352941
+   ],
+   "area": 85,
+   "terrain": "jungle"
+  },
+  "9127": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    671.1549295774648,
+    1791.5915492957747
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "9142": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    655.7662337662338,
+    1775.7272727272727
+   ],
+   "area": 77,
+   "terrain": "jungle"
+  },
+  "9143": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    645.7777777777778,
+    1788.2222222222222
+   ],
+   "area": 63,
+   "terrain": "jungle"
+  },
+  "9151": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    666.4705882352941,
+    1805.4117647058824
+   ],
+   "area": 68,
+   "terrain": "jungle"
+  },
+  "9153": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Flat Mountain",
+   "state": 797,
+   "group": 13,
+   "coastal": true,
+   "sea": 18733,
+   "centre": [
+    667.1807228915662,
+    1776.44578313253
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  }
+ }
+}

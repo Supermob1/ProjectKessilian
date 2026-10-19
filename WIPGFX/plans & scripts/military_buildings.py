@@ -402,6 +402,7 @@ PAM_PORT_A = math.radians(35)  # the lift port's long axis (pammant_map: its rec
 # the Lianna shipyards in orbit (lianna_map.PLACEMENT hook): the hub (map units from the planet's centre, bearing in
 # degrees, east = 0, north +) and the height its underside floats over the space floor
 LIA_YARD_AT, LIA_YARD_FLOAT = (66.0, 0.0), 3.0
+BOT_YARD_AT = (96.0, 0.0)   # Botajef's orbital yards (botajef_map.PLACEMENT hook), same convention; east is clear
 IEG_WEB_AT, IEG_WEB_FLOAT = (106.0, 0.0), 3.0
 IEG_CLIFF_SCALE = 0.42   # Cliffhold's city at this scale on the escarpment's face (iego_map.PLACEMENT hook)
 IEG_CLIFF_A = math.radians(6)   # Cliffhold faces the escarpment wall next to its VP (measured: the wall looks out at -84 deg)
@@ -843,6 +844,918 @@ def saleucami_atlas():
     put(B_DUST, np.array([214, 178, 132], np.float32) * (0.85 + 0.2 * noise(1.5)))
     put(B_DARK, np.array([20, 20, 22], np.float32) * (0.8 + 0.4 * grime))
     _atlas_save("hod_saleucami", col, emi, spec)
+
+
+def telos_atlas():
+    """hod_telos textures (Telos, the city-world, after Knights of the Old Republic II's Telos and Citadel Station:
+    cream modular plating, blue glass, orange Telosian trim, slate-blue roofs; polar ice and black malab for the
+    Academy and the Mirror Caverns; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 76)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    clean = lambda rgb: rgb * (0.9 + 0.12 * grime) * (0.92 + 0.1 * blotch) * (0.9 + 0.12 * streak)
+    seams = (((xx % 48) < 2) | ((yy % 32) < 2))[..., None]
+    plate = clean(np.array([226, 214, 188], np.float32)) * (1 - 0.18 * seams)
+    put(B_PLATE, plate, sp=70)
+    rows = ((yy % 32) > 12) & ((yy % 32) < 20) & ((xx % 16) > 3)
+    lit = rows & (rng.random((t, t)) > 0.35)
+    cool = np.array([170, 214, 246], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], cool, np.where(rows[..., None], [40, 70, 98], plate)), e=np.where(lit, 200, 0), sp=90)
+    conc = clean(np.array([186, 184, 176], np.float32)) * (1 - 0.12 * ((yy % 40) < 2)[..., None])
+    put(B_CONC, conc)
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [70, 86, 100], clean(np.array([62, 112, 156], np.float32))),
+        e=np.where(glass, 0, 90), sp=160)
+    put(B_RUST, clean(np.array([214, 110, 44], np.float32)), sp=80)                     # Telosian orange trim
+    put(B_SOOT, np.array([226, 238, 248], np.float32) * (0.88 + 0.14 * noise(1.5)), sp=120)   # polar ice
+    put(B_ROOF, clean(np.array([84, 102, 124], np.float32)) * (0.88 + 0.12 * np.sin(xx / 3.0))[..., None], sp=90)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [235, 150, 40], [40, 40, 44]) * (0.85 + 0.2 * grime))
+    put(B_GLOW, cool * (1.0 + 0.08 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (150, 150, 146))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(214, 110, 44), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 230), width=int(t * 0.04))
+    d.line([(t * 0.2, t * 0.5), (t * 0.8, t * 0.5)], fill=(240, 240, 230), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([150, 152, 156], np.float32) * (0.8 + 0.3 * grime) * (0.9 + 0.1 * np.sin(yy / 2.0))[..., None], sp=110)
+    hull = np.array([212, 212, 206], np.float32) * (0.88 + 0.15 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=100)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [150, 150, 150], [50, 52, 56]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_BRICK, np.array([18, 18, 22], np.float32) * (0.7 + 0.6 * noise(3)) + 6, sp=255)   # malab: black, lustrous
+    put(B_DUST, np.array([204, 200, 188], np.float32) * (0.88 + 0.15 * noise(1.5)))
+    put(B_DARK, np.array([20, 22, 26], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_telos", col, emi, spec)
+
+
+def serenno_atlas():
+    """hod_serenno textures (Serenno, the Count's world, after Tales of the Jedi and The Clone Wars: pale ashlar with
+    gold-lit arched windows, dark slate roofs, gold trim, grey cliff rock, the red-brown rock of the Aparian Wastes, the
+    Spike's cell rows, Separatist tan hulls; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 93)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    clean = lambda rgb: rgb * (0.88 + 0.14 * grime) * (0.92 + 0.1 * blotch) * (0.9 + 0.12 * streak)
+    course = ((yy % 24) < 2) | ((((yy // 24) % 2) * 24 + xx) % 48 < 2)                  # ashlar courses and joints
+    ashlar = clean(np.array([222, 206, 178], np.float32)) * (1 - 0.2 * course[..., None])
+    put(B_PLATE, ashlar, sp=40)
+    cx_, cy_ = (xx % 32) - 16, (yy % 64)                                                # tall arched windows
+    arch = (np.abs(cx_) < 6) & (cy_ > 14) & ((cy_ < 50) & ((cy_ > 26) | (cx_ ** 2 + (cy_ - 26) ** 2 < 36)))
+    lit = arch & (rng.random((t, t)) > 0.2)
+    gold = np.array([255, 214, 120], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], gold, np.where(arch[..., None], [60, 48, 40], ashlar)),
+        e=np.where(lit, 210, 0), sp=60)
+    put(B_CONC, clean(np.array([150, 148, 142], np.float32)) * (1 - 0.15 * course[..., None]))
+    cells = ((yy % 20) > 6) & ((yy % 20) < 15) & ((xx % 14) > 4)
+    put(B_CONC_WIN, np.where(cells[..., None], [40, 44, 50], clean(np.array([120, 118, 112], np.float32))),
+        e=np.where(cells & (rng.random((t, t)) > 0.7), 120, 0), sp=60)
+    put(B_RUST, clean(np.array([206, 160, 70], np.float32)), sp=180)                     # gold trim
+    put(B_SOOT, np.array([118, 116, 108], np.float32) * (0.75 + 0.35 * noise(3)) * (0.9 + 0.15 * noise(1.2)))   # cliff
+    tiles = ((yy % 10) < 1.5) | ((((yy // 10) % 2) * 8 + xx) % 16 < 1.5)
+    put(B_ROOF, clean(np.array([66, 72, 86], np.float32)) * (1 - 0.25 * tiles[..., None]), sp=110)   # slate
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [235, 150, 40], [40, 40, 44]) * (0.85 + 0.2 * grime))
+    put(B_GLOW, gold * (1.0 + 0.08 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (150, 146, 136))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(206, 160, 70), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 236, 220), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([150, 152, 156], np.float32) * (0.8 + 0.3 * grime) * (0.9 + 0.1 * np.sin(yy / 2.0))[..., None], sp=110)
+    hull = np.array([196, 176, 140], np.float32) * (0.88 + 0.15 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=100)                                                            # Separatist tan
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [150, 150, 150], [50, 52, 56]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_BRICK, np.array([142, 92, 66], np.float32) * (0.72 + 0.35 * noise(3)) * (0.9 + 0.15 * noise(1.2)))   # wastes rock
+    put(B_DUST, np.array([176, 166, 146], np.float32) * (0.85 + 0.2 * noise(1.5)))      # gravel
+    put(B_DARK, np.array([20, 20, 24], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_serenno", col, emi, spec)
+
+
+def yavin_atlas():
+    """hod_yavin textures (Yavin IV's Massassi ruins, after A New Hope and Rogue One's Great Temple: grey stone blocks
+    patched with moss, dark window slots, the black stone of Exar Kun's temple, volcanic rock, vines, a Sith-red glow;
+    the map is always day: the glow is painted bright)."""
+    import numpy as np
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 92)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    moss = np.clip((noise(6) - 0.55) * 4, 0, 1)
+    blocks = ((yy % 28) < 2) | ((((yy // 28) % 2) * 30 + xx) % 60 < 2)
+    stone = np.array([132, 130, 120], np.float32) * (0.85 + 0.2 * grime) * (0.9 + 0.12 * blotch) \
+        * (1 - 0.25 * blocks[..., None])
+    stone = stone * (1 - moss) + np.array([74, 102, 58], np.float32) * moss * (0.8 + 0.3 * grime)
+    put(B_PLATE, stone)
+    slots = ((yy % 56) > 18) & ((yy % 56) < 40) & ((xx % 40) > 16) & ((xx % 40) < 24)
+    put(B_PLATE_WIN, np.where(slots[..., None], [26, 26, 24], stone))
+    put(B_CONC, np.array([112, 110, 102], np.float32) * (0.8 + 0.25 * noise(3)) * (1 - 0.2 * blocks[..., None]))
+    put(B_CONC_WIN, np.array([40, 38, 42], np.float32) * (0.8 + 0.35 * noise(3)) * (1 - 0.3 * blocks[..., None]), sp=120)
+    put(B_RUST, np.array([70, 104, 54], np.float32) * (0.7 + 0.4 * noise(1.5)))        # moss
+    put(B_SOOT, np.array([58, 54, 54], np.float32) * (0.7 + 0.45 * noise(3)) * (0.9 + 0.2 * noise((20, 1.5))))   # volcanic
+    put(B_ROOF, stone * 0.6 + np.array([74, 102, 58], np.float32) * 0.4)                # mossy tops
+    put(B_BRICK, np.array([46, 86, 44], np.float32) * (0.6 + 0.6 * noise(1.2)))        # vines
+    put(B_GLOW, np.array([255, 70, 50], np.float32) * (0.95 + 0.08 * grime), e=255, sp=200)   # the Sith glow
+    put(B_DUST, np.array([104, 84, 60], np.float32) * (0.8 + 0.3 * noise(1.5)))        # jungle earth
+    put(B_DARK, np.array([16, 16, 18], np.float32) * (0.8 + 0.4 * grime))
+    for c in (B_HAZARD, B_PAD, B_PIPE, B_HULL, B_GIRDER):                               # unused: stone
+        put(c, stone)
+    _atlas_save("hod_yavin", col, emi, spec)
+
+
+def celanon_atlas():
+    """hod_celanon textures (Celanon, the guild-ruled trade world; a design choice: cream render, verdigris copper,
+    terracotta roofs, striped market awnings; Hutt adobe; tribal thatch and logs; the map is always day: lights are
+    painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 190)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.88 + 0.14 * grime) * (0.92 + 0.1 * blotch)
+    render = clean(np.array([230, 218, 192], np.float32))
+    put(B_PLATE, render * (1 - 0.12 * ((yy % 40) < 2)[..., None]), sp=40)
+    rows = ((yy % 32) > 10) & ((yy % 32) < 22) & ((xx % 20) > 5)
+    lit = rows & (rng.random((t, t)) > 0.3)
+    warm = np.array([255, 222, 150], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], warm, np.where(rows[..., None], [56, 70, 80], render)), e=np.where(lit, 200, 0),
+        sp=70)
+    put(B_CONC, clean(np.array([176, 170, 156], np.float32)) * (1 - 0.15 * (((xx % 32) < 2) | ((yy % 32) < 2)))[..., None])
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [80, 90, 96], clean(np.array([86, 140, 150], np.float32))),
+        e=np.where(glass, 0, 80), sp=160)
+    put(B_RUST, clean(np.array([96, 168, 140], np.float32)) * (0.9 + 0.12 * np.sin(xx / 4.0))[..., None], sp=120)   # verdigris
+    put(B_SOOT, np.array([184, 156, 96], np.float32) * (0.75 + 0.35 * noise(1.2)) * (0.9 + 0.15 * np.sin(yy / 1.5))[..., None])   # thatch
+    tiles = ((yy % 12) < 2) | ((((yy // 12) % 2) * 10 + xx) % 20 < 2)
+    put(B_ROOF, clean(np.array([178, 96, 64], np.float32)) * (1 - 0.2 * tiles[..., None]), sp=60)    # terracotta
+    stripes = ((xx // 20) % 2)[..., None]
+    put(B_HAZARD, np.where(stripes, [214, 70, 56], [236, 226, 200]) * (0.88 + 0.15 * grime))     # awnings
+    put(B_GLOW, warm * (1.0 + 0.08 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (150, 148, 140))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(96, 168, 140), width=int(t * 0.05))
+    d.line([(t * 0.3, t * 0.5), (t * 0.7, t * 0.5)], fill=(240, 236, 220), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([150, 152, 156], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    hull = np.array([200, 196, 186], np.float32) * (0.88 + 0.15 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=100)
+    put(B_GIRDER, np.array([110, 84, 58], np.float32) * (0.75 + 0.35 * noise(1.2)) * (0.9 + 0.1 * np.sin(xx / 2.0))[..., None])   # logs
+    put(B_BRICK, np.array([196, 160, 116], np.float32) * (0.82 + 0.25 * noise(3)) * (0.92 + 0.1 * grime))   # Hutt adobe
+    put(B_DUST, np.array([190, 180, 160], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    put(B_DARK, np.array([22, 20, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_celanon", col, emi, spec)
+
+
+def botajef_atlas():
+    """hod_botajef textures (Botajef, the industrial shipbuilding world; a design choice: grimy steel plate, lit window
+    rows, rust, soot brick, corrugated roofs, hazard yellow, freighter hulls, polar ice; the map is always day: lights
+    are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 191)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    dirty = lambda rgb: rgb * (0.78 + 0.25 * grime) * (0.85 + 0.15 * blotch) * (0.85 + 0.18 * streak)
+    plate = dirty(np.array([150, 146, 138], np.float32)) * (1 - 0.18 * (((xx % 48) < 2) | ((yy % 32) < 2)))[..., None]
+    put(B_PLATE, plate, sp=70)
+    rows = ((yy % 24) > 8) & ((yy % 24) < 15) & ((xx % 12) > 3)
+    lit = rows & (rng.random((t, t)) > 0.4)
+    amber = np.array([255, 196, 110], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], amber, np.where(rows[..., None], [36, 38, 42], plate)), e=np.where(lit, 200, 0),
+        sp=70)
+    put(B_CONC, dirty(np.array([136, 132, 124], np.float32)))
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [60, 62, 66], dirty(np.array([74, 104, 126], np.float32))),
+        e=np.where(glass, 0, 70), sp=160)
+    put(B_RUST, dirty(np.array([150, 80, 44], np.float32)), sp=60)
+    put(B_SOOT, np.array([226, 236, 244], np.float32) * (0.88 + 0.14 * noise(1.5)), sp=120)     # polar ice
+    put(B_ROOF, dirty(np.array([112, 116, 118], np.float32)) * (0.86 + 0.14 * np.sin(xx / 2.5))[..., None], sp=90)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [232, 186, 40], [40, 40, 44]) * (0.8 + 0.25 * grime))
+    put(B_GLOW, amber * (1.0 + 0.08 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (130, 128, 124))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(232, 186, 40), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 230), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([150, 152, 156], np.float32) * (0.8 + 0.3 * grime) * (0.9 + 0.1 * np.sin(yy / 2.0))[..., None], sp=110)
+    hull = np.array([190, 184, 172], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.18 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=100)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [150, 150, 150], [50, 52, 56]) * (0.8 + 0.3 * grime), sp=80)
+    courses = ((yy % 12) < 2) | ((((yy // 12) % 2) * 12 + xx) % 24 < 2)
+    put(B_BRICK, dirty(np.array([92, 64, 54], np.float32)) * (1 - 0.3 * courses[..., None]))     # soot brick
+    put(B_DUST, np.array([120, 112, 100], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_botajef", col, emi, spec)
+
+
+def axxila_atlas():
+    """hod_axxila textures (Axxila, the cliff-world metropolis of the ore trade; a design choice: ochre stone, lit
+    window rows, rust and steel, cliff rock, ore heaps, a neon sign for Fossfog's; the map is always day: lights are
+    painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 94)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    dirty = lambda rgb: rgb * (0.82 + 0.2 * grime) * (0.88 + 0.12 * blotch) * (0.88 + 0.14 * streak)
+    stone = dirty(np.array([196, 160, 112], np.float32)) * (1 - 0.15 * (((yy % 32) < 2) | ((xx % 64) < 2)))[..., None]
+    put(B_PLATE, stone, sp=40)
+    rows = ((yy % 28) > 9) & ((yy % 28) < 18) & ((xx % 14) > 4)
+    lit = rows & (rng.random((t, t)) > 0.35)
+    warm = np.array([255, 210, 140], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], warm, np.where(rows[..., None], [48, 40, 34], stone)), e=np.where(lit, 200, 0),
+        sp=60)
+    put(B_CONC, dirty(np.array([150, 136, 116], np.float32)))
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [70, 66, 60], dirty(np.array([90, 112, 120], np.float32))),
+        e=np.where(glass, 0, 70), sp=160)
+    put(B_RUST, dirty(np.array([156, 82, 46], np.float32)), sp=60)
+    put(B_SOOT, np.array([168, 128, 92], np.float32) * (0.7 + 0.4 * noise(3)) * (0.88 + 0.18 * noise((20, 1.5))))   # cliffs
+    put(B_ROOF, dirty(np.array([118, 104, 90], np.float32)), sp=60)
+    sign = ((yy % 64) > 16) & ((yy % 64) < 48) & (((xx // 10) % 3) > 0)
+    put(B_HAZARD, np.where(sign[..., None], [255, 90, 160], [40, 30, 40]), e=np.where(sign, 255, 0), sp=200)   # neon
+    put(B_GLOW, warm * (1.0 + 0.08 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (140, 128, 112))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(156, 82, 46), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 230, 210), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([150, 148, 144], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    hull = np.array([186, 178, 164], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.18 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=100)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [160, 120, 80], [50, 44, 40]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_BRICK, np.array([120, 76, 52], np.float32) * (0.6 + 0.6 * noise(1.2)))           # ore
+    put(B_DUST, np.array([170, 150, 122], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    put(B_DARK, np.array([20, 18, 16], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_axxila", col, emi, spec)
+
+
+def ciutric_atlas():
+    """hod_ciutric textures (Ciutric IV, the Hegemony's industrial forest world; a design choice: grey ferrocrete,
+    lit window rows, dark brick, slate, Hegemony red, dark stone for Bane's mansion; the map is always day: lights are
+    painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 188)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.86 + 0.16 * grime) * (0.9 + 0.12 * blotch)
+    ferro = clean(np.array([170, 170, 166], np.float32)) * (1 - 0.12 * (((yy % 40) < 2) | ((xx % 40) < 2)))[..., None]
+    put(B_PLATE, ferro, sp=50)
+    rows = ((yy % 26) > 8) & ((yy % 26) < 17) & ((xx % 10) > 2)
+    lit = rows & (rng.random((t, t)) > 0.35)
+    cool = np.array([236, 230, 200], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], cool, np.where(rows[..., None], [40, 46, 54], ferro)), e=np.where(lit, 190, 0),
+        sp=70)
+    put(B_CONC, clean(np.array([140, 138, 132], np.float32)))
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [70, 74, 80], clean(np.array([84, 110, 130], np.float32))),
+        e=np.where(glass, 0, 70), sp=160)
+    put(B_RUST, clean(np.array([150, 36, 36], np.float32)), sp=80)                          # Hegemony red
+    put(B_SOOT, np.array([62, 60, 64], np.float32) * (0.75 + 0.35 * noise(3)) * (1 - 0.2 * (((yy % 24) < 2) | ((((yy // 24) % 2) * 20 + xx) % 40 < 2)))[..., None])   # dark stone
+    tiles = ((yy % 10) < 1.5) | ((((yy // 10) % 2) * 8 + xx) % 16 < 1.5)
+    put(B_ROOF, clean(np.array([70, 74, 82], np.float32)) * (1 - 0.25 * tiles[..., None]), sp=110)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [235, 150, 40], [40, 40, 44]) * (0.85 + 0.2 * grime))
+    put(B_GLOW, np.array([255, 60, 40], np.float32) * (0.95 + 0.08 * grime), e=255, sp=200)   # the red window
+    pad = Image.new("RGB", (t, t), (140, 140, 136))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(150, 36, 36), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 230), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([150, 152, 156], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    hull = np.array([200, 200, 196], np.float32) * (0.88 + 0.15 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=100)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [150, 150, 150], [50, 52, 56]) * (0.8 + 0.3 * grime), sp=80)
+    courses = ((yy % 12) < 2) | ((((yy // 12) % 2) * 12 + xx) % 24 < 2)
+    put(B_BRICK, clean(np.array([118, 62, 50], np.float32)) * (1 - 0.3 * courses[..., None]))   # dark brick
+    put(B_DUST, np.array([150, 146, 136], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_ciutric", col, emi, spec)
+
+
+def cestus_atlas():
+    """hod_cestus textures (Ord Cestus, the X'Ting droid world; a design choice: red hive clay with lit openings, tan
+    plate, red rock and sand, purple fungus caps; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 189)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    dirty = lambda rgb: rgb * (0.82 + 0.2 * grime) * (0.88 + 0.12 * blotch) * (0.9 + 0.12 * streak)
+    clay = dirty(np.array([176, 92, 62], np.float32)) * (1 - 0.12 * ((yy % 22) < 2))[..., None]   # banded hive clay
+    put(B_PLATE, clay, sp=20)
+    holes = (((yy % 30) - 15) ** 2 / 36 + (((xx + 12 * ((yy // 30) % 2)) % 24) - 12) ** 2 / 16) < 1
+    lit = holes & (rng.random((t, t)) > 0.3)
+    warm = np.array([255, 200, 120], np.float32)
+    put(B_PLATE_WIN, np.where(lit[..., None], warm, np.where(holes[..., None], [40, 22, 16], clay)), e=np.where(lit, 200, 0),
+        sp=30)
+    put(B_CONC, dirty(np.array([188, 164, 130], np.float32)) * (1 - 0.15 * (((yy % 48) < 2) | ((xx % 64) < 2)))[..., None],
+        sp=60)
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [80, 70, 60], dirty(np.array([96, 120, 128], np.float32))),
+        e=np.where(glass, 0, 70), sp=160)
+    put(B_RUST, dirty(np.array([140, 70, 40], np.float32)), sp=60)
+    put(B_SOOT, np.array([150, 74, 50], np.float32) * (0.7 + 0.4 * noise(3)) * (0.88 + 0.18 * noise((20, 1.5))))   # red rock
+    put(B_ROOF, dirty(np.array([130, 92, 72], np.float32)), sp=40)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [235, 160, 40], [40, 36, 34]) * (0.85 + 0.2 * grime))
+    put(B_GLOW, warm * (1.0 + 0.08 * grime) + 10, e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (170, 140, 110))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(200, 110, 50), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 230, 210), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([160, 150, 140], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    hull = np.array([196, 186, 170], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.18 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None]
+    put(B_HULL, hull, sp=100)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [160, 120, 90], [50, 40, 36]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_BRICK, np.array([150, 96, 132], np.float32) * (0.75 + 0.35 * noise(1.5)))        # fungus caps
+    put(B_DUST, np.array([186, 104, 70], np.float32) * (0.85 + 0.2 * noise(1.5)))          # red sand
+    put(B_DARK, np.array([24, 20, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_cestus", col, emi, spec)
+
+
+def dathomir_atlas():
+    """hod_dathomir textures (Dathomir under its red sky: dark red-grey carved stone, openings lit magick green,
+    blood-red cloth, dark thatch, bone, grey basalt; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 95)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    dirty = lambda rgb: rgb * (0.78 + 0.25 * grime) * (0.85 + 0.15 * blotch) * (0.9 + 0.12 * streak)
+    courses = ((yy % 20) < 2) | ((((yy // 20) % 2) * 18 + xx) % 36 < 2)
+    stone = dirty(np.array([124, 96, 92], np.float32)) * (1 - 0.25 * courses)[..., None]
+    put(B_PLATE, stone, sp=20)
+    holes = ((yy % 40) > 14) & ((yy % 40) < 30) & ((((xx + 16 * ((yy // 40) % 2)) % 32) > 10) & (((xx + 16 * ((yy // 40) % 2)) % 32) < 22))
+    green = np.array([150, 255, 120], np.float32)
+    put(B_PLATE_WIN, np.where(holes[..., None], green, stone), e=np.where(holes, 230, 0), sp=30)
+    put(B_CONC, np.array([92, 90, 94], np.float32) * (0.75 + 0.35 * noise(3)))            # basalt tops
+    put(B_CONC_WIN, np.where(holes[..., None], green, stone), e=np.where(holes, 230, 0), sp=30)
+    put(B_RUST, dirty(np.array([150, 26, 30], np.float32)), sp=30)                          # blood-red cloth
+    put(B_SOOT, np.array([104, 82, 82], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))   # rock
+    thatch = (np.sin(xx * 0.9 + 3 * noise(4)[..., 0]) * 0.5 + 0.5)
+    put(B_ROOF, np.array([62, 48, 40], np.float32) * (0.75 + 0.35 * thatch)[..., None] * (0.85 + 0.2 * grime))
+    put(B_HAZARD, dirty(np.array([150, 26, 30], np.float32)))
+    put(B_GLOW, green * (1.0 + 0.05 * grime), e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (90, 64, 60))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.1, t * 0.1, t * 0.9, t * 0.9], outline=(150, 26, 30), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    wood = np.array([70, 52, 42], np.float32) * (0.75 + 0.3 * (np.sin(yy * 0.6 + 4 * noise(6)[..., 0]) * 0.5 + 0.5))[..., None]
+    put(B_PIPE, wood)
+    put(B_HULL, np.array([214, 204, 182], np.float32) * (0.85 + 0.2 * grime), sp=60)       # bone
+    put(B_GIRDER, wood)
+    blocks = ((yy % 16) < 2) | ((((yy // 16) % 2) * 14 + xx) % 28 < 2)
+    put(B_BRICK, np.array([110, 90, 84], np.float32) * (0.7 + 0.4 * noise(2)) * (1 - 0.35 * blocks)[..., None])
+    put(B_DUST, np.array([128, 66, 56], np.float32) * (0.85 + 0.2 * noise(1.5)))           # red earth
+    put(B_DARK, np.array([18, 12, 12], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_dathomir", col, emi, spec)
+
+
+def mandalore_atlas():
+    """hod_mandalore textures (Sundari's white cube panels with gold lines and glass, Keldabe's granite, stone and
+    timber, slate, Mandalorian red, Death Watch blue, beskar, white sand; the map is always day: lights are painted
+    bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 96)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.9 + 0.1 * grime) * (0.93 + 0.08 * blotch)
+    white = clean(np.array([226, 224, 216], np.float32))
+    gold = ((yy % 64) < 3) | ((xx % 64) < 3) | (np.abs(((xx + yy) % 64) - 32) < 1.5)
+    put(B_PLATE, np.where(gold[..., None], [196, 160, 80], white), sp=90)
+    win = ((yy % 24) > 8) & ((yy % 24) < 17) & ((xx % 16) > 3)
+    lit = win & (rng.random((t, t)) > 0.4)
+    put(B_PLATE_WIN, np.where(lit[..., None], [255, 236, 190], np.where(win[..., None], [60, 84, 96], white)),
+        e=np.where(lit, 170, 0), sp=110)
+    put(B_CONC, np.array([150, 148, 144], np.float32) * (0.82 + 0.25 * noise(3)))          # granite
+    glass = ((xx % 32) < 2) | ((yy % 32) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [196, 160, 80], clean(np.array([150, 196, 200], np.float32))),
+        e=np.where(glass, 0, 40), sp=200)
+    put(B_RUST, clean(np.array([168, 48, 36], np.float32)), sp=60)                          # Mandalorian red
+    put(B_SOOT, np.array([128, 124, 120], np.float32) * (0.7 + 0.4 * noise(3)) * (0.88 + 0.18 * noise((20, 1.5))))
+    tiles = ((yy % 10) < 1.5) | ((((yy // 10) % 2) * 8 + xx) % 16 < 1.5)
+    put(B_ROOF, clean(np.array([66, 70, 78], np.float32)) * (1 - 0.25 * tiles[..., None]), sp=100)
+    sigil = (np.abs(xx - t / 2) < t * 0.06) | ((np.abs(yy - t * 0.35) < t * 0.05) & (np.abs(xx - t / 2) < t * 0.3))
+    put(B_HAZARD, np.where(sigil[..., None], [220, 220, 230], [44, 72, 128]) * (0.9 + 0.12 * grime))   # Death Watch
+    put(B_GLOW, np.array([255, 220, 150], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (196, 194, 188))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(168, 48, 36), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(250, 250, 250), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.88 + 0.15 * grime))
+    put(B_PIPE, np.array([160, 160, 164], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    put(B_HULL, np.array([156, 166, 180], np.float32) * (0.85 + 0.2 * noise((6, 2))), sp=220)    # beskar
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [206, 170, 90], [120, 100, 60]) * (0.85 + 0.2 * grime), sp=150)   # gold lattice
+    beams = ((xx % 40) < 5) | ((yy % 48) < 4)
+    courses = ((yy % 14) < 2) | ((((yy // 14) % 2) * 12 + xx) % 24 < 2)
+    stone = np.array([150, 140, 124], np.float32) * (0.75 + 0.3 * noise(2)) * (1 - 0.3 * courses)[..., None]
+    put(B_BRICK, np.where(beams[..., None], [92, 66, 46], stone))                          # stone and timber
+    put(B_DUST, np.array([222, 218, 206], np.float32) * (0.88 + 0.15 * noise(1.5)))        # white sand
+    put(B_DARK, np.array([18, 18, 22], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_mandalore", col, emi, spec)
+
+
+def taris_atlas():
+    """hod_taris textures (the rebuilt city-world: pale tower plate and lit window grids, grimy concrete, blue glass,
+    container steel in rust and faded colours, cyan neon; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 99)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    clean = lambda rgb: rgb * (0.9 + 0.12 * grime) * (0.93 + 0.08 * blotch)
+    dirty = lambda rgb: rgb * (0.75 + 0.28 * grime) * (0.85 + 0.15 * blotch) * (0.85 + 0.18 * streak)
+    plate = clean(np.array([186, 200, 208], np.float32)) * (1 - 0.1 * (((yy % 64) < 2) | ((xx % 48) < 2)))[..., None]
+    put(B_PLATE, plate, sp=140)                                                # KOTOR's pale blue-grey plate
+    lit = ((yy % 12) > 4) & ((yy % 12) < 8) & ((xx % 16) > 3) & ((xx % 16) < 13) & (noise(6)[..., 0] > 0.25)
+    put(B_PLATE_WIN, np.where(lit[..., None], [210, 255, 214], [30, 36, 46]), e=np.where(lit, 220, 0), sp=160)
+    put(B_CONC, dirty(np.array([130, 126, 118], np.float32)))
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    teal = np.array([60, 168, 176], np.float32) * (0.8 + 0.3 * (1 - yy / t))[..., None] * (0.92 + 0.1 * grime)
+    put(B_CONC_WIN, np.where(((xx % 32) < 1)[..., None], [120, 210, 216], teal), e=20, sp=230)   # teal glass
+    put(B_RUST, dirty(np.array([176, 120, 80], np.float32)) * (1 - 0.2 * ((xx % 10) < 2))[..., None], sp=50)   # tan
+    put(B_SOOT, np.array([84, 80, 74], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_ROOF, clean(np.array([124, 138, 150], np.float32)), sp=90)
+    glyph = (((xx // 10) % 3) > 0) & (((yy // 14) % 4) > 0) & (((xx // 40 + yy // 56) % 3) > 0)
+    hue = (((yy // 56) % 2) == 0)[..., None]
+    neon = np.where(hue, [255, 90, 200], [90, 230, 255])                        # neon signs, magenta and cyan
+    put(B_HAZARD, np.where(glyph[..., None], neon, [24, 22, 30]), e=np.where(glyph, 255, 0), sp=200)
+    put(B_GLOW, np.array([200, 255, 210], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)   # pale green light
+    put(B_PIPE, np.array([150, 150, 154], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [150, 150, 154], [44, 46, 50]) * (0.8 + 0.3 * grime), sp=80)
+    band = ((yy // 64) % 4).astype(int)
+    palette = np.array([[60, 110, 150], [150, 60, 50], [60, 130, 80], [170, 150, 70]], np.float32)
+    put(B_BRICK, dirty(palette[band]) * (1 - 0.25 * ((xx % 10) < 2))[..., None], sp=40)    # faded containers
+    put(B_DUST, np.array([120, 112, 96], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (150, 150, 154))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(230, 190, 40), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 235), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([196, 192, 184], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=100)
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_taris", col, emi, spec)
+
+
+def wayland_atlas():
+    """hod_wayland textures (timber, dressed stone and fieldstone, shingles, thatch, mountain rock; the grey plate
+    and lit bands of the hidden facility; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 97)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.88 + 0.14 * grime) * (0.92 + 0.1 * blotch)
+    plate = clean(np.array([118, 122, 128], np.float32)) * (1 - 0.15 * (((yy % 40) < 2) | ((xx % 56) < 2)))[..., None]
+    put(B_PLATE, plate, sp=90)
+    win = ((yy % 24) > 9) & ((yy % 24) < 16)
+    put(B_PLATE_WIN, np.where(win[..., None], [255, 230, 170], plate), e=np.where(win, 200, 0), sp=100)
+    courses = ((yy % 18) < 2) | ((((yy // 18) % 2) * 16 + xx) % 32 < 2)
+    put(B_CONC, np.array([168, 160, 146], np.float32) * (0.8 + 0.25 * noise(2)) * (1 - 0.25 * courses)[..., None])
+    put(B_CONC_WIN, np.where(win[..., None], [255, 230, 170], plate), e=np.where(win, 200, 0), sp=100)
+    straw = np.sin(xx * 0.9 + 3 * noise(4)[..., 0]) * 0.5 + 0.5
+    put(B_RUST, np.array([168, 140, 86], np.float32) * (0.75 + 0.35 * straw)[..., None] * (0.85 + 0.2 * grime))   # thatch
+    put(B_SOOT, np.array([110, 106, 98], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    shing = ((yy % 12) < 2) | ((((yy // 12) % 2) * 10 + xx) % 20 < 1.5)
+    put(B_ROOF, clean(np.array([86, 70, 58], np.float32)) * (1 - 0.3 * shing)[..., None])
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [220, 180, 50], [40, 40, 44]) * (0.85 + 0.2 * grime))
+    put(B_GLOW, np.array([255, 200, 120], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    wood = np.array([116, 84, 58], np.float32) * (0.75 + 0.3 * (np.sin(yy * 0.7 + 4 * noise(6)[..., 0]) * 0.5 + 0.5))[..., None]
+    put(B_GIRDER, wood * (1 - 0.2 * ((xx % 24) < 2))[..., None])
+    put(B_PIPE, wood)
+    stones = np.sin(xx * 0.35 + 2 * noise(5)[..., 0]) * np.sin(yy * 0.45 + 2 * noise(5)[..., 0]) > 0.75
+    put(B_BRICK, np.array([140, 132, 118], np.float32) * (0.75 + 0.35 * noise(1.2)) * (1 - 0.35 * stones)[..., None])
+    put(B_DUST, np.array([120, 104, 80], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (150, 144, 132))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(220, 180, 50), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 235), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([196, 192, 184], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=100)
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_wayland", col, emi, spec)
+
+
+def concordia_atlas():
+    """hod_concordia textures (Mandalorian grey plate with red trim, prefab white, the rust of the old mines,
+    camouflage netting, Death Watch blue, forest earth; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 1223)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    clean = lambda rgb: rgb * (0.86 + 0.16 * grime) * (0.9 + 0.1 * blotch)
+    plate = clean(np.array([140, 144, 150], np.float32)) * (1 - 0.15 * (((yy % 36) < 2) | ((xx % 48) < 2)))[..., None]
+    put(B_PLATE, plate, sp=100)
+    win = ((yy % 22) > 8) & ((yy % 22) < 15) & ((xx % 14) > 3)
+    lit = win & (rng.random((t, t)) > 0.4)
+    put(B_PLATE_WIN, np.where(lit[..., None], [255, 230, 180], np.where(win[..., None], [44, 50, 58], plate)),
+        e=np.where(lit, 180, 0), sp=110)
+    put(B_CONC, clean(np.array([212, 210, 202], np.float32)), sp=60)                     # prefab white
+    glass = ((xx % 24) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [70, 72, 78], clean(np.array([96, 130, 150], np.float32))),
+        e=np.where(glass, 0, 60), sp=200)
+    put(B_RUST, np.array([140, 70, 42], np.float32) * (0.7 + 0.35 * grime) * (0.85 + 0.2 * streak), sp=40)   # rust, red trim
+    put(B_SOOT, np.array([92, 92, 86], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_ROOF, clean(np.array([70, 74, 80], np.float32)), sp=80)
+    sigil = (np.abs(xx - t / 2) < t * 0.06) | ((np.abs(yy - t * 0.35) < t * 0.05) & (np.abs(xx - t / 2) < t * 0.3))
+    put(B_HAZARD, np.where(sigil[..., None], [220, 220, 230], [44, 72, 128]) * (0.9 + 0.12 * grime))   # Death Watch
+    put(B_GLOW, np.array([255, 220, 150], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    put(B_PIPE, np.array([150, 152, 156], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [130, 132, 136], [48, 50, 52]) * (0.8 + 0.3 * grime), sp=80)
+    camo = noise(3)[..., 0] > 0.5
+    put(B_BRICK, np.where(camo[..., None], [70, 92, 56], [104, 96, 70]) * (0.8 + 0.3 * noise(1)))   # netting
+    put(B_DUST, np.array([60, 90, 52], np.float32) * (0.75 + 0.35 * noise(1.5)))          # forest earth, moss
+    pad = Image.new("RGB", (t, t), (150, 150, 150))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(140, 70, 42), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 235), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([196, 192, 184], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=100)
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_concordia", col, emi, spec)
+
+
+def bracca_atlas():
+    """hod_bracca textures (the Scrapper Guild's world: worn steel, stained concrete, rust, Guild yellow, the orange
+    glow of cutting torches, slag; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 197)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    dirty = lambda rgb: rgb * (0.72 + 0.3 * grime) * (0.85 + 0.15 * blotch) * (0.85 + 0.18 * streak)
+    rust = (noise(4)[..., 0] > 0.55)[..., None]
+    plate = np.where(rust, [130, 74, 42], dirty(np.array([140, 140, 136], np.float32))) * (1 - 0.15 * (((yy % 40) < 2) | ((xx % 56) < 2)))[..., None]
+    put(B_PLATE, plate, sp=60)
+    win = ((yy % 22) > 8) & ((yy % 22) < 15) & ((xx % 14) > 3)
+    lit = win & (rng.random((t, t)) > 0.45)
+    put(B_PLATE_WIN, np.where(lit[..., None], [255, 214, 150], np.where(win[..., None], [40, 40, 44], plate)),
+        e=np.where(lit, 180, 0), sp=70)
+    put(B_CONC, dirty(np.array([150, 144, 134], np.float32)))
+    put(B_CONC_WIN, np.where(win[..., None], [255, 214, 150], plate), e=np.where(win, 160, 0), sp=70)
+    put(B_RUST, np.array([136, 72, 38], np.float32) * (0.65 + 0.4 * noise(3)) * (0.85 + 0.2 * streak), sp=30)
+    put(B_SOOT, np.array([70, 64, 58], np.float32) * (0.7 + 0.4 * noise(3)))                    # slag
+    put(B_ROOF, dirty(np.array([96, 92, 88], np.float32)), sp=50)
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [232, 184, 40], [36, 34, 32]) * (0.75 + 0.3 * grime))           # Guild yellow
+    put(B_GLOW, np.array([255, 150, 60], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)     # cutting torches
+    put(B_PIPE, np.array([140, 136, 130], np.float32) * (0.75 + 0.3 * grime), sp=90)
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [160, 120, 60], [44, 40, 36]) * (0.75 + 0.3 * grime), sp=70)
+    put(B_BRICK, dirty(np.array([120, 112, 100], np.float32)))
+    put(B_DUST, np.array([132, 116, 96], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (140, 136, 128))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(232, 184, 40), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 235), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([176, 170, 160], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=100)
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_bracca", col, emi, spec)
+
+
+def trandosha_atlas():
+    """hod_trandosha textures (battered stone, dark metal roofs, scale-green plate, tanned hide, bone, dark wood, fire;
+    the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 119)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.85 + 0.16 * grime) * (0.9 + 0.12 * blotch)
+    scales = ((((yy // 10) % 2) * 8 + xx) % 16 - 8) ** 2 / 64 + ((yy % 10) - 5) ** 2 / 25 < 0.8
+    put(B_PLATE, clean(np.array([86, 110, 70], np.float32)) * (0.8 + 0.25 * scales)[..., None], sp=60)   # scale plate
+    slit = ((yy % 32) > 12) & ((yy % 32) < 20) & ((xx % 20) > 7) & ((xx % 20) < 12)
+    stone = np.array([132, 120, 100], np.float32) * (0.75 + 0.3 * noise(2))
+    frame = ((xx % 16) < 3) | ((yy % 20) < 3) | ((yy % 64) > 52)                # timber frame round paper screens
+    paper = (np.array([255, 226, 170], np.float32) * (0.92 + 0.08 * noise(3)))
+    put(B_PLATE_WIN, np.where(frame[..., None], [58, 40, 30], paper), e=np.where(frame, 0, 150), sp=20)
+    put(B_CONC, stone)
+    put(B_CONC_WIN, np.where(slit[..., None], [255, 180, 90], stone), e=np.where(slit, 220, 0))
+    put(B_RUST, np.array([168, 128, 82], np.float32) * (0.8 + 0.25 * noise(1.5)))              # tanned hide
+    put(B_SOOT, np.array([104, 96, 86], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    tiles = ((yy % 10) < 2) | ((xx % 12) < 2)
+    put(B_ROOF, clean(np.array([60, 66, 64], np.float32)) * (1 - 0.35 * tiles)[..., None], sp=110)   # roof tiles
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.array([196, 52, 34], np.float32) * (0.9 + 0.12 * grime), sp=120)       # vermilion lacquer
+    put(B_GLOW, np.array([255, 160, 70], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)     # fire
+    wood = np.array([84, 62, 44], np.float32) * (0.75 + 0.3 * (np.sin(yy * 0.7 + 4 * noise(6)[..., 0]) * 0.5 + 0.5))[..., None]
+    put(B_GIRDER, wood)
+    put(B_PIPE, np.array([120, 112, 100], np.float32) * (0.8 + 0.3 * grime), sp=90)
+    blocks = ((yy % 20) < 2) | ((((yy // 20) % 2) * 18 + xx) % 36 < 2)
+    put(B_BRICK, np.array([140, 126, 104], np.float32) * (0.72 + 0.35 * noise(2)) * (1 - 0.35 * blocks)[..., None])
+    put(B_DUST, np.array([138, 116, 80], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (140, 130, 110))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(170, 60, 30), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 235), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([222, 212, 188], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=100)
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_trandosha", col, emi, spec)
+
+
+def nyriaan_atlas():
+    """hod_nyriaan textures (a tropical mining frontier: ochre plaster, corrugated metal, rust, timber, Guild orange,
+    CIS hull plate, red earth; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 98)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    dirty = lambda rgb: rgb * (0.78 + 0.25 * grime) * (0.86 + 0.14 * blotch) * (0.88 + 0.15 * streak)
+    plaster = dirty(np.array([196, 164, 112], np.float32))
+    put(B_PLATE, plaster, sp=20)
+    win = ((yy % 26) > 9) & ((yy % 26) < 18) & ((xx % 18) > 5) & ((xx % 18) < 13)
+    put(B_PLATE_WIN, np.where(win[..., None], [255, 214, 140], plaster), e=np.where(win, 190, 0), sp=30)
+    put(B_CONC, dirty(np.array([150, 144, 134], np.float32)))
+    put(B_CONC_WIN, np.where(win[..., None], [255, 214, 140], plaster), e=np.where(win, 190, 0))
+    corr = np.sin(xx * 0.8) * 0.5 + 0.5
+    put(B_ROOF, np.array([126, 138, 130], np.float32) * (0.7 + 0.3 * corr)[..., None] * (0.85 + 0.2 * grime), sp=120)
+    put(B_RUST, np.array([140, 76, 40], np.float32) * (0.7 + 0.35 * noise(3)) * (0.85 + 0.2 * streak), sp=30)
+    put(B_SOOT, np.array([112, 100, 86], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [232, 130, 40], [40, 36, 32]) * (0.85 + 0.2 * grime))         # Guild orange
+    put(B_GLOW, np.array([255, 230, 170], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    wood = np.array([110, 80, 54], np.float32) * (0.75 + 0.3 * (np.sin(yy * 0.7 + 4 * noise(6)[..., 0]) * 0.5 + 0.5))[..., None]
+    put(B_GIRDER, wood)
+    put(B_BRICK, dirty(np.array([150, 96, 70], np.float32)))
+    put(B_DUST, np.array([150, 100, 68], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (140, 130, 116))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(232, 130, 40), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 235), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([150, 140, 120], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=100)
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_PIPE, np.array([140, 138, 134], np.float32) * (0.8 + 0.3 * grime), sp=90)
+    _atlas_save("hod_nyriaan", col, emi, spec)
+
+
+def corsin_atlas():
+    """hod_corsin textures (a Republic island resort world: white stucco, terracotta tiles, teal glazed domes, timber
+    decking, pale stone, sea-blue pool tile, sand, the selligore's grey-blue hide; the map is always day)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 100)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.92 + 0.08 * grime) * (0.94 + 0.07 * blotch)
+    stucco = clean(np.array([236, 232, 220], np.float32))
+    put(B_PLATE, stucco, sp=30)
+    win = ((yy % 28) > 10) & ((yy % 28) < 20) & ((xx % 18) > 6) & ((xx % 18) < 12)
+    put(B_PLATE_WIN, np.where(win[..., None], [60, 90, 110], stucco), sp=40)
+    put(B_CONC, clean(np.array([214, 204, 182], np.float32)))
+    glaze = np.array([70, 170, 170], np.float32) * (0.85 + 0.2 * noise(3))
+    put(B_CONC_WIN, glaze * (1 - 0.15 * ((yy % 16) < 2))[..., None], sp=220)                   # teal domes
+    tiles = ((yy % 10) < 2) | ((((yy // 10) % 2) * 6 + xx) % 12 < 1.5)
+    put(B_ROOF, clean(np.array([186, 96, 62], np.float32)) * (1 - 0.25 * tiles)[..., None], sp=60)   # terracotta
+    put(B_RUST, np.array([96, 112, 128], np.float32) * (0.8 + 0.25 * noise(4)), sp=200)         # selligore hide
+    put(B_SOOT, np.array([112, 106, 96], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    haz = (((xx + yy) // 24) % 2)[..., None]
+    put(B_HAZARD, np.where(haz, [200, 60, 50], [236, 232, 220]))
+    put(B_GLOW, np.array([255, 236, 180], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    deck = np.array([150, 112, 76], np.float32) * (0.8 + 0.25 * (np.sin(xx * 0.5 + 2 * noise(6)[..., 0]) * 0.5 + 0.5))[..., None]
+    put(B_GIRDER, deck * (1 - 0.25 * ((yy % 12) < 1.5))[..., None])
+    put(B_BRICK, np.array([70, 150, 190], np.float32) * (0.85 + 0.2 * noise(3)), sp=220)        # pool tile
+    put(B_DUST, np.array([226, 206, 160], np.float32) * (0.88 + 0.15 * noise(1.5)))            # sand
+    pad = Image.new("RGB", (t, t), (214, 210, 200))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(186, 96, 62), width=int(t * 0.05))
+    d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(240, 240, 235), width=int(t * 0.04))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([232, 230, 224], np.float32) * (0.85 + 0.18 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=100)
+    put(B_DARK, np.array([18, 18, 20], np.float32) * (0.8 + 0.4 * grime))
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_PIPE, np.array([140, 138, 134], np.float32) * (0.8 + 0.3 * grime), sp=90)
+    _atlas_save("hod_corsin", col, emi, spec)
+
+
+def kashyyyk_atlas():
+    """hod_kashyyyk textures (Wookiee building: wroshyr bark, woven wood walls with lit windows, dark timber roofing,
+    timber and rope, canopy leaves, worked metal, Republic white and red; the map is always day: lights are painted
+    bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 117)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.86 + 0.16 * grime) * (0.9 + 0.12 * blotch)
+    grain = np.sin(xx * 0.35 + 6 * noise(5)[..., 0]) * 0.5 + 0.5
+    bark = np.array([110, 80, 56], np.float32) * (0.65 + 0.4 * grain)[..., None] * (0.85 + 0.2 * grime)
+    put(B_PLATE, bark)
+    weave = ((((xx // 8) + (yy // 8)) % 2) * 0.2 + 0.8)
+    wall = np.array([150, 112, 72], np.float32) * weave[..., None] * (0.85 + 0.2 * grime)
+    win = ((yy % 30) > 11) & ((yy % 30) < 21) & ((xx % 22) > 7) & ((xx % 22) < 15)
+    put(B_PLATE_WIN, np.where(win[..., None], [255, 206, 130], wall), e=np.where(win, 200, 0))
+    put(B_CONC, clean(np.array([150, 144, 130], np.float32)))
+    put(B_CONC_WIN, np.where(win[..., None], [160, 200, 220], np.array([220, 222, 226], np.float32)), sp=120)
+    planks = (yy % 9) < 1.5
+    put(B_ROOF, np.array([86, 62, 44], np.float32) * (0.7 + 0.3 * grain)[..., None] * (1 - 0.3 * planks)[..., None])
+    put(B_RUST, clean(np.array([120, 110, 96], np.float32)) * (1 - 0.15 * ((yy % 24) < 2))[..., None], sp=90)
+    put(B_SOOT, np.array([86, 82, 74], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_HAZARD, np.array([170, 40, 36], np.float32) * (0.9 + 0.12 * grime), sp=90)            # Republic red
+    put(B_GLOW, np.array([255, 210, 140], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    put(B_GIRDER, np.array([128, 96, 64], np.float32) * (0.7 + 0.35 * grain)[..., None])
+    put(B_PIPE, np.array([130, 124, 116], np.float32) * (0.8 + 0.3 * grime), sp=90)
+    put(B_BRICK, np.array([62, 104, 50], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.25 * noise(1)))   # leaves
+    put(B_DUST, np.array([196, 180, 140], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (150, 140, 120))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(170, 40, 36), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([224, 222, 216], np.float32) * (0.88 + 0.14 * grime) * (1 - 0.15 * (((xx % 64) < 2) | ((yy % 24) < 2)))[..., None], sp=110)
+    put(B_DARK, np.array([22, 20, 18], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_kashyyyk", col, emi, spec)
+
+
+def onderon_atlas():
+    """hod_onderon textures (Iziz: tan stone with lit windows, great wall blocks, slate and teal-patina domes, logs,
+    ochre cloth, royal blue and gold; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 116)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch, streak = noise(2), noise(10), noise((28, 1.2))
+    dirty = lambda rgb: rgb * (0.82 + 0.2 * grime) * (0.88 + 0.12 * blotch) * (0.9 + 0.12 * streak)
+    courses = ((yy % 22) < 2) | ((((yy // 22) % 2) * 20 + xx) % 40 < 2)
+    stone = dirty(np.array([188, 168, 134], np.float32)) * (1 - 0.18 * courses)[..., None]
+    put(B_PLATE, stone, sp=20)
+    win = ((yy % 32) > 12) & ((yy % 32) < 24) & ((xx % 22) > 8) & ((xx % 22) < 14)
+    put(B_PLATE_WIN, np.where(win[..., None], [255, 214, 150], stone), e=np.where(win, 190, 0), sp=30)
+    put(B_CONC, dirty(np.array([170, 158, 136], np.float32)))
+    put(B_CONC_WIN, np.where(win[..., None], [255, 214, 150], stone), e=np.where(win, 190, 0))
+    patina = np.where((noise(4)[..., 0] > 0.45)[..., None], [86, 140, 128], [92, 96, 104]).astype(np.float32)
+    put(B_ROOF, patina * (0.8 + 0.25 * grime) * (1 - 0.2 * ((yy % 12) < 2))[..., None], sp=90)   # slate, patina
+    put(B_RUST, dirty(np.array([196, 140, 60], np.float32)), sp=30)                         # ochre cloth
+    put(B_SOOT, np.array([110, 104, 94], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    band = ((yy % 64) < 10)[..., None]
+    put(B_HAZARD, np.where(band, [212, 176, 70], [40, 64, 140]) * (0.9 + 0.12 * grime), sp=80)   # royal colours
+    put(B_GLOW, np.array([255, 200, 120], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    logs = np.array([112, 84, 58], np.float32) * (0.72 + 0.32 * (np.sin(yy * 0.5 + 3 * noise(6)[..., 0]) * 0.5 + 0.5))[..., None]
+    put(B_GIRDER, logs * (1 - 0.3 * ((xx % 18) < 2))[..., None])
+    put(B_PIPE, np.array([130, 124, 116], np.float32) * (0.8 + 0.3 * grime), sp=90)
+    blocks = ((yy % 40) < 3) | ((((yy // 40) % 2) * 36 + xx) % 72 < 3)
+    put(B_BRICK, dirty(np.array([168, 150, 120], np.float32)) * (1 - 0.3 * blocks)[..., None])    # wall blocks
+    put(B_DUST, np.array([120, 104, 80], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (160, 150, 130))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(40, 64, 140), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_HULL, np.array([58, 104, 50], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.25 * noise(1)))   # leaves
+    put(B_DARK, np.array([22, 20, 18], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_onderon", col, emi, spec)
+
+
+def umbara_atlas():
+    """hod_umbara textures (the shadow world: dark blue-grey plate with cyan window lines, black roofs, cyan and violet
+    light, pale fighter grey, the old dark stone and red glow of the Sith ruins; the map is always day: lights are
+    painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 120)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.85 + 0.16 * grime) * (0.9 + 0.12 * blotch)
+    plate = clean(np.array([52, 58, 72], np.float32)) * (1 - 0.2 * (((yy % 40) < 2) | ((xx % 28) < 2)))[..., None]
+    put(B_PLATE, plate, sp=160)
+    lines = ((yy % 18) < 3) & ((xx % 40) > 6)
+    put(B_PLATE_WIN, np.where(lines[..., None], [110, 230, 255], plate), e=np.where(lines, 230, 0), sp=170)
+    put(B_CONC, clean(np.array([60, 62, 70], np.float32)))
+    put(B_CONC_WIN, np.where(lines[..., None], [110, 230, 255], plate), e=np.where(lines, 230, 0))
+    put(B_ROOF, clean(np.array([28, 30, 38], np.float32)), sp=200)
+    put(B_GLOW, np.array([110, 230, 255], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)   # cyan light
+    put(B_HAZARD, np.array([190, 110, 255], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200) # violet light
+    put(B_HULL, clean(np.array([150, 156, 168], np.float32)) * (1 - 0.15 * ((yy % 24) < 2))[..., None], sp=150)
+    blocks = ((yy % 24) < 2) | ((((yy // 24) % 2) * 20 + xx) % 40 < 2)
+    put(B_BRICK, np.array([58, 52, 56], np.float32) * (0.7 + 0.4 * noise(2)) * (1 - 0.35 * blocks)[..., None])  # Sith stone
+    put(B_RUST, np.array([255, 60, 50], np.float32) * (0.95 + 0.05 * grime), e=255, sp=200)    # red glow
+    put(B_SOOT, np.array([40, 44, 46], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_DUST, np.array([46, 50, 48], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (60, 64, 74))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(110, 230, 255), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_DARK, np.array([14, 14, 16], np.float32) * (0.8 + 0.4 * grime))
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [110, 110, 116], [30, 30, 34]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_PIPE, np.array([120, 120, 126], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    _atlas_save("hod_umbara", col, emi, spec)
+
+
+def colla_atlas():
+    """hod_colla textures (the Colicoid spawnworld: ribbed chitin with amber-lit openings, dark glossy shell plate,
+    pale egg ivory, amber light, murky spawning water, droideka bronze, red earth; the map is always day)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 118)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.85 + 0.16 * grime) * (0.9 + 0.12 * blotch)
+    ribs = np.sin(xx * 0.4) * 0.5 + 0.5
+    chitin = clean(np.array([150, 104, 60], np.float32)) * (0.75 + 0.3 * ribs)[..., None]
+    put(B_PLATE, chitin, sp=120)
+    holes = (((yy % 34) - 17) ** 2 / 49 + (((xx + 14 * ((yy // 34) % 2)) % 28) - 14) ** 2 / 25) < 1
+    put(B_PLATE_WIN, np.where(holes[..., None], [255, 180, 70], chitin), e=np.where(holes, 220, 0), sp=120)
+    put(B_CONC, clean(np.array([150, 128, 100], np.float32)))
+    put(B_CONC_WIN, np.array([60, 84, 60], np.float32) * (0.8 + 0.3 * noise(3)), sp=220)       # spawning water
+    segs = ((yy % 20) < 3)
+    put(B_ROOF, clean(np.array([84, 56, 40], np.float32)) * (1 - 0.35 * segs)[..., None], sp=230)   # shell plate
+    put(B_HULL, clean(np.array([220, 210, 170], np.float32)), sp=120)                        # egg ivory
+    put(B_GLOW, np.array([255, 180, 70], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)  # amber
+    put(B_HAZARD, np.array([255, 180, 70], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)
+    put(B_RUST, clean(np.array([150, 112, 70], np.float32)) * (1 - 0.2 * ((xx % 16) < 2))[..., None], sp=150)   # bronze
+    put(B_SOOT, np.array([104, 80, 60], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_BRICK, chitin)
+    put(B_DUST, np.array([150, 90, 60], np.float32) * (0.8 + 0.25 * noise(1.5)))              # red earth
+    pad = Image.new("RGB", (t, t), (150, 128, 100))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(255, 180, 70), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_DARK, np.array([14, 14, 16], np.float32) * (0.8 + 0.4 * grime))
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [110, 110, 116], [30, 30, 34]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_PIPE, np.array([120, 120, 126], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    _atlas_save("hod_colla", col, emi, spec)
+
+
+def ruusan_atlas():
+    """hod_ruusan textures (the light-side mirror of Korriban: pale Jedi stone with gold-lit windows, verdigris copper
+    roofs, gold and blue light, tan fieldstone, weathered canvas, charred stone, brown canyon rock; the map is always
+    day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 65)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.85 + 0.16 * grime) * (0.9 + 0.12 * blotch)
+    courses = ((yy % 32) < 2) | ((((yy // 32) % 2) * 24 + xx) % 48 < 2)
+    stone = clean(np.array([226, 220, 202], np.float32)) * (1 - 0.18 * courses)[..., None]
+    put(B_PLATE, stone, sp=90)
+    win = ((yy % 40) > 12) & ((yy % 40) < 34) & ((xx % 24) > 8) & ((xx % 24) < 16)
+    put(B_PLATE_WIN, np.where(win[..., None], [255, 214, 120], stone), e=np.where(win, 210, 0), sp=100)
+    put(B_CONC, clean(np.array([196, 178, 140], np.float32)))
+    put(B_CONC_WIN, np.array([70, 110, 120], np.float32) * (0.8 + 0.3 * noise(3)), sp=220)
+    seams = (xx % 20) < 2
+    put(B_ROOF, clean(np.array([96, 150, 128], np.float32)) * (1 - 0.25 * seams)[..., None], sp=150)   # verdigris
+    put(B_GLOW, np.array([255, 214, 120], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)   # gold light
+    put(B_HAZARD, np.array([120, 200, 255], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200) # blue light
+    put(B_HULL, clean(np.array([200, 188, 160], np.float32)) * (1 - 0.15 * ((yy % 26) < 2))[..., None], sp=110)
+    blocks = ((yy % 22) < 2) | ((((yy // 22) % 2) * 18 + xx) % 36 < 2)
+    put(B_BRICK, np.array([176, 150, 112], np.float32) * (0.75 + 0.35 * noise(2)) * (1 - 0.3 * blocks)[..., None])
+    put(B_RUST, np.array([46, 40, 36], np.float32) * (0.7 + 0.5 * noise(3)))                     # charred stone
+    put(B_SOOT, np.array([128, 98, 70], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_DUST, np.array([140, 116, 80], np.float32) * (0.8 + 0.25 * noise(1.5)))
+    pad = Image.new("RGB", (t, t), (196, 178, 140))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(255, 214, 120), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_DARK, np.array([14, 14, 16], np.float32) * (0.8 + 0.4 * grime))
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [110, 100, 84], [44, 38, 30]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_PIPE, np.array([120, 112, 100], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    _atlas_save("hod_ruusan", col, emi, spec)
 
 def jabiim_atlas():
     """hod_jabiim textures (Jabiim, the monsoon world: Republic white and red, Separatist tan, rain-stained
@@ -1450,7 +2363,8 @@ def models(*only):
             from mathutils import Vector  # type: ignore
             p0, p1 = Vector(p0), Vector(p1)
             d = (p1 - p0).normalized()
-            u = d.cross(Vector((0, 0, 1))).normalized()
+            u = d.cross(Vector((0, 0, 1)))
+            u = (u if u.length > 1e-6 else d.cross(Vector((1, 0, 0)))).normalized()   # vertical tubes: zero cross
             w = d.cross(u)
             ring = lambda p: [self.bm.verts.new(p + r * (math.cos(2 * math.pi * i / sides) * u + math.sin(2 * math.pi * i / sides) * w))
                               for i in range(sides)]
@@ -4841,6 +5755,136 @@ def models(*only):
             rng_s = random.Random(f"hod_sal_city{band}{v}")
             build(f"hod_sal_city_{band}{v}", lambda k, band=band, rng=rng_s: ak.sal_city(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_saleucami")
+    for name, fn in (("hod_tel_thani", ak.tel_thani), ("hod_tel_terminal", ak.tel_terminal), ("hod_tel_academy", ak.tel_academy),
+                     ("hod_tel_caverns", ak.tel_caverns), ("hod_tel_rz", ak.tel_rz)):
+        build(name, fn, tex="hod_telos")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_t = random.Random(f"hod_tel_city{band}{v}")
+            build(f"hod_tel_city_{band}{v}", lambda k, band=band, rng=rng_t: ak.tel_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_telos")
+    for name, fn in (("hod_ser_carannia", ak.ser_carannia), ("hod_ser_assembly", ak.ser_assembly),
+                     ("hod_ser_castle", ak.ser_castle), ("hod_ser_borgin", ak.ser_borgin), ("hod_ser_spike", ak.ser_spike)):
+        build(name, fn, tex="hod_serenno")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_r = random.Random(f"hod_ser_city{band}{v}")
+            build(f"hod_ser_city_{band}{v}", lambda k, band=band, rng=rng_r: ak.ser_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_serenno")
+    for name, fn in (("hod_yav_temple", ak.yav_temple), ("hod_yav_exarkun", ak.yav_exarkun),
+                     ("hod_yav_borundi", ak.yav_borundi)):
+        build(name, fn, tex="hod_yavin")
+    for name, fn in (("hod_cel_city", ak.cel_city_centre), ("hod_cel_control", ak.cel_control),
+                     ("hod_cel_hospital", ak.cel_hospital), ("hod_cel_gularg", ak.cel_gularg)):
+        build(name, fn, tex="hod_celanon")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_c = random.Random(f"hod_cel_town{band}{v}")
+            build(f"hod_cel_town_{band}{v}", lambda k, band=band, rng=rng_c: ak.cel_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_celanon")
+            rng_v = random.Random(f"hod_cel_village{band}{v}")
+            build(f"hod_cel_village_{band}{v}", lambda k, band=band, rng=rng_v: ak.cel_village(k, band, rng),
+                  shader="PdxMeshSnow", tex="hod_celanon")
+    for name, fn in (("hod_bot_palace", ak.bot_palace), ("hod_bot_elevator", ak.bot_elevator), ("hod_bot_yards", ak.bot_yards),
+                     ("hod_bot_orbital", ak.bot_orbital), ("hod_bot_northbase", ak.bot_northbase), ("hod_bot_southbase", ak.bot_southbase)):
+        build(name, fn, tex="hod_botajef")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_b = random.Random(f"hod_bot_city{band}{v}")
+            build(f"hod_bot_city_{band}{v}", lambda k, band=band, rng=rng_b: ak.bot_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_botajef")
+    for name, fn in (("hod_axx_capital", ak.axx_capital), ("hod_axx_fossfog", ak.axx_fossfog),
+                     ("hod_axx_oreport", ak.axx_oreport)):
+        build(name, fn, tex="hod_axxila")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_a = random.Random(f"hod_axx_city{band}{v}")
+            build(f"hod_axx_city_{band}{v}", lambda k, band=band, rng=rng_a: ak.axx_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_axxila")
+    for name, fn in (("hod_cit_daplona", ak.cit_daplona), ("hod_cit_training", ak.cit_training),
+                     ("hod_cit_prison", ak.cit_prison), ("hod_cit_mansion", ak.cit_mansion)):
+        build(name, fn, tex="hod_ciutric")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_i = random.Random(f"hod_cit_city{band}{v}")
+            build(f"hod_cit_city_{band}{v}", lambda k, band=band, rng=rng_i: ak.cit_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_ciutric")
+    for name, fn in (("hod_ces_chikatlik", ak.ces_chikatlik), ("hod_ces_cybernetics", ak.ces_cybernetics),
+                     ("hod_ces_penitentiary", ak.ces_penitentiary), ("hod_ces_jantos", ak.ces_jantos),
+                     ("hod_ces_droidworks", ak.ces_droidworks), ("hod_ces_fungus", ak.ces_fungus)):
+        build(name, fn, tex="hod_cestus")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_c = random.Random(f"hod_ces_city{band}{v}")
+            build(f"hod_ces_city_{band}{v}", lambda k, band=band, rng=rng_c: ak.ces_city(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_cestus")
+    for name, fn in (("hod_dat_lair", ak.dat_lair), ("hod_dat_village", ak.dat_village), ("hod_dat_arena", ak.dat_arena),
+                     ("hod_dat_singing", ak.dat_singing), ("hod_dat_nardithi", ak.dat_nardithi)):
+        build(name, fn, tex="hod_dathomir")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_d = random.Random(f"hod_dat_hamlet{band}{v}")
+            build(f"hod_dat_hamlet_{band}{v}", lambda k, band=band, rng=rng_d: ak.dat_hamlet(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_dathomir")
+    for name, fn in (("hod_man_sundari", ak.man_sundari), ("hod_man_keldabe", ak.man_keldabe),
+                     ("hod_man_beskar", ak.man_beskar), ("hod_man_dwcamp", ak.man_dwcamp)):
+        build(name, fn, tex="hod_mandalore")
+    for band in range(1, 5):
+        for v in range(1, 5):
+            rng_m = random.Random(f"hod_man_dome{band}{v}")
+            build(f"hod_man_dome_{band}{v}", lambda k, band=band, rng=rng_m: ak.man_dome(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_mandalore")
+            rng_t = random.Random(f"hod_man_town{band}{v}")
+            build(f"hod_man_town_{band}{v}", lambda k, band=band, rng=rng_t: ak.man_town(k, band, rng), shader="PdxMeshSnow",
+                  tex="hod_mandalore")
+    for name, fn in (("hod_tar_spires", ak.tar_spires), ("hod_tar_pit", ak.tar_pit), ("hod_tar_swoop", ak.tar_swoop),
+                     ("hod_tar_jedi", ak.tar_jedi)):
+        build(name, fn, tex="hod_taris")
+    for name, fn in (("hod_way_tantiss", ak.way_tantiss), ("hod_way_colony", ak.way_colony),
+                     ("hod_way_council", ak.way_council)):
+        build(name, fn, tex="hod_wayland")
+    for name, fn in (("hod_con_city", ak.con_city), ("hod_con_mines", ak.con_mines), ("hod_con_hideout", ak.con_hideout)):
+        build(name, fn, tex="hod_concordia")
+    for name, fn in (("hod_bra_yards", ak.bra_yards), ("hod_bra_platform", ak.bra_platform), ("hod_bra_tower", ak.bra_tower),
+                     ("hod_bra_rail", ak.bra_rail), ("hod_bra_town", ak.bra_town)):
+        build(name, fn, tex="hod_bracca")
+    for name, fn in (("hod_tra_forak", ak.tra_forak), ("hod_tra_market", ak.tra_market), ("hod_tra_lodge", ak.tra_lodge),
+                     ("hod_tra_shrine", ak.tra_shrine)):
+        build(name, fn, tex="hod_trandosha")
+    for name, fn in (("hod_nyr_locus", ak.nyr_locus), ("hod_nyr_prosperity", ak.nyr_prosperity), ("hod_nyr_arena", ak.nyr_arena),
+                     ("hod_nyr_finalrest", ak.nyr_finalrest)):
+        build(name, fn, tex="hod_nyriaan")
+    for name, fn in (("hod_crs_port", ak.crs_port), ("hod_crs_retreat", ak.crs_retreat), ("hod_crs_resort", ak.crs_resort),
+                     ("hod_crs_station", ak.crs_station)):
+        build(name, fn, tex="hod_corsin")
+    for name, fn in (("hod_kas_kachirho", ak.kas_kachirho), ("hod_kas_refinery", ak.kas_refinery),
+                     ("hod_kas_rwookrrorro", ak.kas_rwookrrorro), ("hod_kas_caverns", ak.kas_caverns),
+                     ("hod_kas_wartaki", ak.kas_wartaki)):
+        build(name, fn, tex="hod_kashyyyk")
+    for name, fn in (("hod_ond_iziz", ak.ond_iziz), ("hod_ond_nest", ak.ond_nest), ("hod_ond_camp", ak.ond_camp),
+                     ("hod_ond_kira", ak.ond_kira), ("hod_ond_lodge", ak.ond_lodge)):
+        build(name, fn, tex="hod_onderon")
+    for name, fn in (("hod_umb_capital", ak.umb_capital), ("hod_umb_airbase", ak.umb_airbase), ("hod_umb_bunker", ak.umb_bunker),
+                     ("hod_umb_academy", ak.umb_academy)):
+        build(name, fn, tex="hod_umbara")
+    for name, fn in (("hod_col_hive", ak.col_hive), ("hod_col_nest", ak.col_nest), ("hod_col_spawn", ak.col_spawn)):
+        build(name, fn, tex="hod_colla")
+    for name, fn in (("hod_rus_olmondo", ak.rus_olmondo), ("hod_rus_mausoleum", ak.rus_mausoleum),
+                     ("hod_rus_cave", ak.rus_cave), ("hod_rus_camp", ak.rus_camp), ("hod_rus_fort", ak.rus_fort)):
+        build(name, fn, tex="hod_ruusan")
+    for fam, fn, tex in (("hod_tar_upper", ak.tar_upper, "hod_taris"), ("hod_tar_lower", ak.tar_lower, "hod_taris"),
+                         ("hod_tar_ruin", ak.tar_ruin, "hod_taris"), ("hod_way_town", ak.way_town, "hod_wayland"), ("hod_way_village", ak.way_village, "hod_wayland"),
+                         ("hod_con_town", ak.con_town, "hod_concordia"),
+                         ("hod_bra_city", ak.bra_city, "hod_bracca"), ("hod_tra_city", ak.tra_city, "hod_trandosha"),
+                         ("hod_nyr_town", ak.nyr_town, "hod_nyriaan"), ("hod_crs_town", ak.crs_town, "hod_corsin"),
+                         ("hod_kas_city", ak.kas_city, "hod_kashyyyk"), ("hod_ond_town", ak.ond_town, "hod_onderon"),
+                         ("hod_umb_city", ak.umb_city, "hod_umbara"), ("hod_col_city", ak.col_city, "hod_colla"),
+                         ("hod_rus_city", ak.rus_city, "hod_ruusan")):
+        for band in range(1, 5):
+            for v in range(1, 5):
+                rng_f = random.Random(f"{fam}{band}{v}")
+                build(f"{fam}_{band}{v}", lambda k, band=band, rng=rng_f, fn=fn: fn(k, band, rng), shader="PdxMeshSnow",
+                      tex=tex)
     for name, fn in (("hod_jab_choal", ak.jab_choal), ("hod_jab_bore", jab_bore), ("hod_jab_shelter", ak.jab_shelter),
                      ("hod_jab_cobalt", ak.jab_cobalt), ("hod_jab_aurek", ak.jab_aurek), ("hod_jab_shear", ak.jab_shear)):
         build(name, fn, tex="hod_jabiim")
@@ -5637,7 +6681,7 @@ def place_planet(name):
                ("at_vp", name or [names])           on the VP province's centre (big landmarks)
     Items are placed in order; meshes in new_models get entities in gfx/entities/hod_<planet>.{gfx,asset}, the rest
     must already be defined. The block in ambient_object.txt is marked '# HOD: <Planet> (military_buildings.py
-    <planet>_place)' and replaced on each run. hook(ctx) may add objects with ctx['put'](mesh, scale, r, c)."""
+    <planet>_place)' and replaced on each run. hook(ctx) may add objects with ctx['put'](mesh, scale, r, c, yaw=0.0), yaw in radians."""
     import json
     import random
     import numpy as np
@@ -5658,8 +6702,8 @@ def place_planet(name):
     vp_at = {n: z["provinces"][p]["centre"] for p, n in z["vp_names"].items()}
     objs, taken = {}, []
 
-    def put(mesh, scale, r, c):
-        objs.setdefault((mesh, scale), []).append((c, H - 1 - r, 0.0))
+    def put(mesh, scale, r, c, yaw=0.0):
+        objs.setdefault((mesh, scale), []).append((c, H - 1 - r, yaw))
         taken.append((r, c))
 
     def clear(r, c, d=KAD_OFF):
@@ -5686,11 +6730,14 @@ def place_planet(name):
                 put(mesh, scale, *near(*vp_at[n], where[2]))
     if cfg.get("hook"):
         cfg["hook"](dict(put=put, near=near, clear=clear, zone=zone, z=z, rng=rng, taken=taken, vp_at=vp_at))
-    if cfg.get("clear"):                                                   # no city models inside the big landmarks
+    if cfg.get("clear"):                                                   # no city models or trees inside the big landmarks
         import io
         city = Image.open(io.BytesIO(open("map/cities.bmp", "rb").read()))
         terr = Image.open(io.BytesIO(open("map/terrain.bmp", "rb").read()))
-        styles, tidx = np.array(city), np.array(terr)
+        tree = Image.open(io.BytesIO(open("map/trees.bmp", "rb").read()))
+        styles, tidx, tr = np.array(city), np.array(terr), np.array(tree)
+        ts = tr.shape[1] / zone.shape[1]                                   # trees.bmp px per map px
+        tyy, txx = np.mgrid[0:tr.shape[0], 0:tr.shape[1]]
         yy, xx = np.mgrid[0:H, 0:zone.shape[1]]
         for (mesh, _sc), pts in objs.items():
             foot = cfg["clear"].get(mesh)
@@ -5703,7 +6750,8 @@ def place_planet(name):
                 t_ = tidx[win]
                 for spawn, plain in NO_SPAWN.items():                      # spawn_city textures -> their plain twins
                     t_[inside & (t_ == spawn)] = plain
-        for arr, img, path in ((styles, city, "map/cities.bmp"), (tidx, terr, "map/terrain.bmp")):
+                tr[np.hypot(tyy - cy * ts, txx - cx * ts) <= (foot + CITY_MARGIN) * ts] = 0
+        for arr, img, path in ((styles, city, "map/cities.bmp"), (tidx, terr, "map/terrain.bmp"), (tr, tree, "map/trees.bmp")):
             out = Image.fromarray(arr.astype(np.uint8), "P")
             out.putpalette(img.getpalette())
             out.save(path)
@@ -5717,7 +6765,7 @@ def place_planet(name):
     for (mesh, scale), pts in sorted(objs.items()):
         block_ += f'type={{\n\ttype="{mesh}_entity"\n\tuse_animation=no\n\tscale={scale:.6f}\n'
         block_ += "".join(f'\tobject={{\n\t\tname="{mesh}_{tag}_{int(scale * 100)}_{i}"\n\t\tposition={{\n\t\t\t{x:.3f} 0.000 {zz:.3f} \n'
-                          f'\t\t}}\n\t\trotation={{\n\t\t\t0.000 0.000 0.000 \n\t\t}}\n\t}}\n' for i, (x, zz, _y) in enumerate(pts))
+                          f'\t\t}}\n\t\trotation={{\n\t\t\t0.000 {yaw:.3f} 0.000 \n\t\t}}\n\t}}\n' for i, (x, zz, yaw) in enumerate(pts))
         block_ += "}\n"
     block_ += mark[1] + "\n"
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -5730,5 +6778,8 @@ def place_planet(name):
 if __name__ == "__main__":
     args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
     {"textures": textures, "launchpad": launchpad, "wire": wire, "landmarks": landmarks, "atlas": atlas,
-     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "bonadan_atlas": bonadan_atlas, "pammant_atlas": pammant_atlas, "moncala_atlas": moncala_atlas, "iego_atlas": iego_atlas, "lianna_atlas": lianna_atlas, "jabiim_atlas": jabiim_atlas, "saleucami_atlas": saleucami_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
+     "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "bonadan_atlas": bonadan_atlas, "pammant_atlas": pammant_atlas, "moncala_atlas": moncala_atlas, "iego_atlas": iego_atlas, "lianna_atlas": lianna_atlas, "jabiim_atlas": jabiim_atlas, "saleucami_atlas": saleucami_atlas, "telos_atlas": telos_atlas, "serenno_atlas": serenno_atlas, "yavin_atlas": yavin_atlas, "celanon_atlas": celanon_atlas, "botajef_atlas": botajef_atlas, "axxila_atlas": axxila_atlas, "ciutric_atlas": ciutric_atlas, "cestus_atlas": cestus_atlas, "dathomir_atlas": dathomir_atlas, "mandalore_atlas": mandalore_atlas, "taris_atlas": taris_atlas, "wayland_atlas": wayland_atlas,
+            "concordia_atlas": concordia_atlas, "bracca_atlas": bracca_atlas,
+            "trandosha_atlas": trandosha_atlas, "nyriaan_atlas": nyriaan_atlas,
+            "corsin_atlas": corsin_atlas, "kashyyyk_atlas": kashyyyk_atlas, "onderon_atlas": onderon_atlas, "umbara_atlas": umbara_atlas, "colla_atlas": colla_atlas, "ruusan_atlas": ruusan_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
      "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])

@@ -1,0 +1,29 @@
+state={
+	id=92
+	name="STATE_92"
+	# HOD: Yavin IV (yavin_iv_map.py)
+	provinces={
+		28 100 8712 8715 8716 8717 8721 8726 8727 8732 8733 8739 8746
+	}
+	resources={
+		oil=4
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			28 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 1697585
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

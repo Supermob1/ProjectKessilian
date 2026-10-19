@@ -138,6 +138,75 @@ PROCEDURAL = {
     128: "sal_caketree",  # a greater cake tree: a tall bare trunk carrying stacked flat round tiers of foliage
     129: "sal_bith",      # towering bith: giant ribbed fungal spires in a cluster
     130: "sal_reeds",     # wetland reeds
+    # Telos (canon: the Ithorians "planted the short, thorny blba trees and the exotic bachani flowering plant";
+    # "fields of blue and lavender flowers")
+    131: "tel_blba",      # a short thorny blba tree: a squat twisted trunk, thorny limbs, a low broad crown
+    132: "tel_bachani",   # bachani flowers: a bed of blue and lavender blooms on short stems
+    # Serenno: old forests in autumn gold (Tales of the Jedi), dark pines on the heights
+    133: "ser_tree",      # a tall broadleaf, a high rounded golden crown
+    134: "ser_pine",      # a dark conifer: a straight trunk, tiers narrowing to a point
+    # Yavin IV: jungle of purple-barked Massassi trees, ferns, overgrown temple rubble
+    135: "yav_massassi",  # a Massassi tree: a tall purple trunk on buttress roots, a high spreading canopy
+    136: "yav_fern",      # climbing ferns and undergrowth
+    137: "yav_ruin",      # Massassi rubble overgrown with vines: stepped blocks, a toppled pillar
+    # Celanon: temperate forests and plains round the trade cities
+    138: "cel_tree",      # a tall columnar tree, a narrow crown along most of the trunk
+    139: "cel_grass",     # tall plains grass in golden tussocks
+    # Botajef: the industrial world
+    140: "bot_tanks",     # a tank farm: squat storage tanks, a tall one, a pipe run between them
+    # Axxila: the ore world
+    141: "axx_spoil",     # ore spoil heaps round a drill rig
+    # Ciutric IV: industry among forests
+    142: "cit_tree",      # a broad dark-crowned forest tree on a thick trunk
+    # Ord Cestus: red desert; the fungus farms (Legends: it exported fungi)
+    143: "ces_fungus",    # cultivated fungus stalks with broad caps
+    144: "ces_spike",     # a cluster of red rock spikes
+    # Dathomir: dark swamp forests under a red sky, rock spires
+    145: "dat_tree",      # a gnarled dark tree, crooked limbs, sparse blood-red crowns
+    146: "dat_fern",      # swamp ferns and undergrowth
+    147: "dat_rock",      # crooked rock spires
+    # Mandalore: veshok forests in the north (Legends), the white glassy wastes (canon)
+    148: "man_veshok",    # a veshok tree: a tall straight trunk, a high oval crown
+    149: "man_crystal",   # white glassy shards of the wastes
+    # Concordia (canon: the torrent wisp tree), Taris (canon: three-fingered vines and slime-slick fungus in Talinn),
+    # Wayland (forests and jungles)
+    150: "con_wisp",      # a torrent wisp tree: a tall slim trunk, wispy foliage hanging in long streamers
+    151: "tar_vines",     # vine tangles and fungus over rubble and walls
+    152: "way_tree",      # a big old temperate tree, a broad high crown
+    153: "way_fern",      # jungle undergrowth and ferns
+    # Bracca (canon: rocky plains and junkyards, "kinda like raxus prime"), Trandosha (Legends: jungles, savannahs, deserts)
+    154: "bra_scrap",     # a scrap heap: hull plates, girders and a broken engine cone piled together
+    155: "bra_rock",      # weathered boulders of the rocky plains
+    156: "tra_jungle",    # a jungle giant: a tall trunk on buttress roots, a broad dark canopy
+    157: "tra_thorn",     # a savannah thorn tree: a crooked trunk, a flat wide crown, grass round it
+    158: "tra_spine",     # desert spine plants: tall ribbed columns with thorny crowns
+    # Nyriaan (Legends: tropical plains and boggy valleys; Meadlin's tree, mire nettle), Corsin (tropical islands)
+    159: "nyr_meadlin",   # a Meadlin's tree: a pale trunk forking into spreading limbs, round tufted crowns
+    160: "nyr_nettle",    # mire nettles: spiky clumps standing in the wet
+    161: "crs_palm",      # a tropical palm: a curved ringed trunk, a crown of long fronds
+    162: "crs_shrub",     # flowering tropical shrubs
+    # Kashyyyk (canon: wroshyr forests - flora 40 is the wroshyr giant -, kshyy-vines, the cursed Black Forest)
+    163: "kas_vine",      # kshyy-vine tangles and ferns of the forest floor
+    164: "kas_black",     # a twisted black tree of the Black Forest, hung with web
+    # Onderon (canon: a temperate jungle; palm trees, skeleton weed, Hutt's tongue)
+    165: "ond_broadleaf", # a jungle giant: a pale trunk, a broad high canopy, hanging fronds
+    166: "ond_weed",      # skeleton weed and blue Hutt's-tongue undergrowth
+    # Umbara (canon: bioluminescent carnivorous plants; the user's references 2026-10-19: SWTOR's Umbara, the
+    # Galactic Contention Umbara art): near-black growths lit by bright magenta and red (the map is always day:
+    # the glow is painted into the textures, not emitted)
+    167: "umb_flamestalk",  # tall thin black stalks tipped with red flame-blade leaves
+    168: "umb_pod",       # undergrowth: black pods studded with red glowing spots, curled pink-glowing tendrils, blue grass
+    169: "umb_mushroom",  # a mushroom tree: a black trunk and bulbous cap studded with red-orange glowing spots
+    # Colla IV (Legends: the tropical Colicoid spawnworld)
+    170: "col_tree",      # a broad tropical tree
+    171: "col_mound",     # a Colicoid hive mound: a ribbed earthen spire
+    172: "col_eggs",      # egg clusters in the spawning swamps
+    173: "umb_tentacle",  # tentacle trees: huge black tentacles arching over, a ribbed magenta glow strip inside
+    # Ruusan (Legends: once temperate with rivers and forests, burnt to desert in the New Sith Wars; low scented bushes;
+    # the user, 2026-10-19: the scarred valley inside a healed green planet)
+    174: "rus_tree",      # a healed broadleaf: a straight pale trunk, a round golden-green crown
+    175: "rus_scrub",     # the low scented bushes, flowering lilac
+    176: "rus_scorched",  # the valley's scorched snags and stumps among pale fallen stones
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
@@ -163,6 +232,32 @@ PROC_MATS.update({108: ["hod_lola_basalt"], 109: ["hod_lola_basalt"]})
 PROC_MATS.update({110: ["hod_rv_rock"], 111: ["hod_rv_rock"], 112: ["hod_dead_tree_trunk_02", "hod_foliage_rv"]})
 PROC_MATS.update({113: ["hod_rh_ice"], 114: ["hod_rh_stone"], 115: ["hod_dead_tree_trunk_02"]})
 PROC_MATS.update({128: ["hod_dead_tree_trunk_02", "hod_foliage_sal"], 129: ["hod_sal_bith"], 130: ["hod_foliage_sal_reed"]})
+PROC_MATS.update({131: ["hod_dead_tree_trunk_02", "hod_foliage_tel"], 132: ["hod_foliage_tel_bachani"]})
+PROC_MATS.update({133: ["hod_dead_tree_trunk_02", "hod_foliage_ser"], 134: ["hod_dead_tree_trunk_02", "hod_foliage_ser_pine"],
+                  135: ["hod_yav_bark", "hod_foliage_yav"], 136: ["hod_dead_tree_trunk_02", "hod_foliage_yav_fern"],
+                  137: ["hod_yav_stone", "hod_foliage_yav"]})
+PROC_MATS.update({138: ["hod_dead_tree_trunk_02", "hod_foliage_cel"], 139: ["hod_foliage_cel_grass"],
+                  140: ["hod_bot_steel"]})
+PROC_MATS.update({141: ["hod_axx_ore", "hod_bot_steel"], 142: ["hod_dead_tree_trunk_02", "hod_foliage_cit"]})
+PROC_MATS.update({163: ["hod_foliage_kas_vine"], 164: ["hod_kas_blackbark", "hod_foliage_kas_web"],
+                  165: ["hod_dead_tree_trunk_02", "hod_foliage_ond"], 166: ["hod_foliage_ond_weed"],
+                  167: ["hod_umb_black", "hod_umb_red"],
+                  168: ["hod_umb_black", "hod_umb_red", "hod_umb_pink", "hod_foliage_umb_grass"],
+                  169: ["hod_umb_black", "hod_umb_red"], 170: ["hod_dead_tree_trunk_02", "hod_foliage_col"],
+                  171: ["hod_col_mound"], 172: ["hod_col_egg", "hod_foliage_col"],
+                  173: ["hod_umb_black", "hod_umb_pink"],
+                  174: ["hod_dead_tree_trunk_02", "hod_foliage_rus"], 175: ["hod_foliage_rus_scrub"],
+                  176: ["hod_etti_char", "hod_rus_stone"]})
+PROC_MATS.update({159: ["hod_dead_tree_trunk_02", "hod_foliage_nyr"], 160: ["hod_foliage_nyr_nettle"],
+                  161: ["hod_crs_palm", "hod_foliage_crs_palm"], 162: ["hod_foliage_crs_shrub"]})
+PROC_MATS.update({154: ["hod_bra_scrap", "hod_bra_rust"], 155: ["hod_bra_rock"],
+                  156: ["hod_dead_tree_trunk_02", "hod_foliage_tra"], 157: ["hod_dead_tree_trunk_02", "hod_foliage_tra_dry"],
+                  158: ["hod_tra_spine"]})
+PROC_MATS.update({150: ["hod_dead_tree_trunk_02", "hod_foliage_con"], 151: ["hod_tar_rubble", "hod_foliage_tar"],
+                  152: ["hod_dead_tree_trunk_02", "hod_foliage_way"], 153: ["hod_foliage_way_fern"]})
+PROC_MATS.update({143: ["hod_ces_stalk", "hod_ces_cap"], 144: ["hod_ces_rock"],
+                  145: ["hod_dead_tree_trunk_02", "hod_foliage_dat"], 146: ["hod_foliage_dat_fern"], 147: ["hod_dat_rock"],
+                  148: ["hod_dead_tree_trunk_02", "hod_foliage_man"], 149: ["hod_man_glass"]})
 PROC_MATS.update({125: ["hod_dead_tree_trunk_02", "hod_foliage_jab"], 126: ["hod_foliage_jab_marsh"],
                   127: ["hod_jab_bamboo", "hod_foliage_jab_bamboo"]})
 PROC_MATS.update({122: ["hod_dead_tree_trunk_02", "hod_foliage_lia"], 123: ["hod_foliage_lia_dry"], 124: ["hod_lia_metal"]})
@@ -191,7 +286,18 @@ PLANET_SOLID = {"hod_canto_cactus": ((92, 128, 84), "ribs"), "hod_canto_sandston
                 "hod_mcl_coral": ((226, 122, 104), "slag"), "hod_mcl_rock": ((128, 122, 112), "blocks"),
                 "hod_ieg_reeksa": ((92, 120, 62), "ribs"), "hod_ieg_basalt": ((62, 60, 62), "blocks"),
                 "hod_ieg_bone": ((222, 212, 186), "slag"), "hod_lia_metal": ((168, 170, 176), "plates"),
-                "hod_jab_bamboo": ((92, 104, 62), "ribs"), "hod_sal_bith": ((196, 150, 118), "ribs")}
+                "hod_jab_bamboo": ((92, 104, 62), "ribs"), "hod_sal_bith": ((196, 150, 118), "ribs"),
+                "hod_yav_bark": ((112, 72, 120), "ribs"), "hod_yav_stone": ((120, 116, 108), "blocks"),
+                "hod_bot_steel": ((150, 140, 124), "plates"), "hod_axx_ore": ((132, 92, 62), "slag"),
+                "hod_ces_stalk": ((212, 196, 170), "ribs"), "hod_ces_cap": ((150, 96, 132), "slag"),
+                "hod_ces_rock": ((150, 74, 52), "blocks"), "hod_dat_rock": ((74, 62, 64), "blocks"),
+                "hod_man_glass": ((226, 226, 218), "slag"), "hod_tar_rubble": ((128, 124, 118), "blocks"),
+                "hod_bra_scrap": ((132, 126, 118), "plates"), "hod_bra_rust": ((128, 72, 40), "slag"),
+                "hod_bra_rock": ((126, 112, 98), "blocks"), "hod_tra_spine": ((110, 130, 80), "ribs"),
+                "hod_crs_palm": ((150, 124, 92), "ribs"), "hod_kas_blackbark": ((40, 36, 34), "ribs"),
+                "hod_umb_black": ((40, 36, 62), "ribs"), "hod_umb_pink": ((255, 120, 240), "rings"),
+                "hod_umb_red": ((255, 74, 46), "slag"), "hod_col_mound": ((150, 112, 72), "ribs"),
+                "hod_col_egg": ((214, 206, 160), "slag"), "hod_rus_stone": ((206, 196, 172), "blocks")}
 # planet foliage from Etti IV on: each texture its own random seed (from its name), so adding one leaves the others'
 # textures unchanged (PLANET_FOLIAGE above shares one random stream: never append to it)
 PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),          # Etti IV: deep forest green
@@ -211,7 +317,37 @@ PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),        
                       "hod_foliage_jab_marsh": ((96, 118, 70), (72, 96, 58)),      # Jabiim: marsh grass
                       "hod_foliage_jab_bamboo": ((70, 104, 60), (52, 84, 48)),     # Jabiim: bamboo leaves
                       "hod_foliage_sal": ((110, 132, 76), (84, 108, 62)),          # Saleucami: cake-tree tiers
-                      "hod_foliage_sal_reed": ((118, 130, 78), (94, 108, 64))}     # Saleucami: wetland reeds
+                      "hod_foliage_sal_reed": ((118, 130, 78), (94, 108, 64)),     # Saleucami: wetland reeds
+                      "hod_foliage_tel": ((78, 118, 70), (58, 96, 58)),            # Telos: blba, dark Ithorian green
+                      "hod_foliage_tel_bachani": ((112, 128, 220), (150, 112, 200)),   # Telos: blue and lavender blooms
+                      "hod_foliage_ser": ((206, 156, 62), (184, 102, 46)),         # Serenno: autumn gold and amber
+                      "hod_foliage_ser_pine": ((52, 86, 62), (40, 70, 54)),        # Serenno: dark pine
+                      "hod_foliage_yav": ((50, 112, 58), (36, 88, 48)),            # Yavin IV: deep jungle green
+                      "hod_foliage_yav_fern": ((84, 144, 66), (60, 120, 54)),      # Yavin IV: ferns, brighter
+                      "hod_foliage_cel": ((86, 126, 64), (66, 106, 54)),           # Celanon: temperate green
+                      "hod_foliage_cel_grass": ((190, 170, 96), (160, 146, 82)),   # Celanon: golden plains grass
+                      "hod_foliage_cit": ((54, 92, 58), (44, 78, 50)),
+                      "hod_foliage_dat": ((128, 46, 44), (92, 34, 38)),            # Dathomir: blood-red crowns
+                      "hod_foliage_dat_fern": ((84, 76, 58), (62, 56, 46)),        # its swamp undergrowth, dark olive
+                      "hod_foliage_man": ((90, 122, 70), (68, 98, 58)),            # Mandalore: veshok green
+                      "hod_foliage_con": ((78, 128, 82), (56, 104, 66)),           # Concordia: wisp green
+                      "hod_foliage_tar": ((92, 120, 60), (110, 120, 70)),          # Taris: vines, sickly fungus
+                      "hod_foliage_way": ((64, 110, 56), (48, 90, 46)),            # Wayland: old forest green
+                      "hod_foliage_way_fern": ((82, 130, 64), (62, 108, 52)),      # its undergrowth
+                      "hod_foliage_tra": ((48, 96, 44), (36, 76, 38)),             # Trandosha: dark jungle green
+                      "hod_foliage_tra_dry": ((150, 140, 74), (120, 116, 62)),     # its savannah, dry olive
+                      "hod_foliage_nyr": ((82, 138, 60), (60, 116, 52)),           # Nyriaan: bright tropical green
+                      "hod_foliage_nyr_nettle": ((104, 120, 64), (84, 100, 56)),   # its mire nettles
+                      "hod_foliage_crs_palm": ((76, 146, 66), (56, 122, 56)),      # Corsin: palm fronds
+                      "hod_foliage_crs_shrub": ((182, 96, 120), (72, 132, 64)),    # its flowering shrubs
+                      "hod_foliage_kas_vine": ((70, 112, 54), (52, 92, 46)),       # Kashyyyk: forest floor
+                      "hod_foliage_kas_web": ((150, 150, 140), (60, 66, 56)),      # Black Forest: web and dead leaf
+                      "hod_foliage_ond": ((70, 124, 58), (52, 102, 50)),           # Onderon: jungle green
+                      "hod_foliage_ond_weed": ((92, 120, 150), (70, 110, 70)),     # skeleton weed, blue Hutt's tongue
+                      "hod_foliage_umb_grass": ((46, 54, 124), (176, 42, 66)),     # Umbara: dark blue grass, red tips
+                      "hod_foliage_col": ((84, 136, 52), (64, 112, 44)),
+                      "hod_foliage_rus": ((108, 150, 62), (150, 158, 70)),        # Ruusan: healed green, golden
+                      "hod_foliage_rus_scrub": ((96, 120, 70), (160, 130, 190))}  # scented bushes, lilac flowers           # Colla IV: tropical green             # Ciutric IV: dark forest green
 
 
 def planet_textures():
@@ -236,6 +372,8 @@ def planet_textures():
         if kind == "ribs":                                                   # u runs round the cactus: ribs + spines
             pat = (0.75 + 0.35 * np.abs(np.sin(xx * np.pi * 12 / TEX_SIZE)))[..., None]
             pat = pat * (1 + 0.25 * (rng.random((TEX_SIZE, TEX_SIZE)) > 0.985)[..., None])
+        elif kind == "rings":                                                # glowing segments along a tube (v)
+            pat = (0.5 + 0.6 * np.abs(np.sin(yy * np.pi * 10 / TEX_SIZE)) ** 0.5)[..., None]
         elif kind == "plates":                                               # rust-streaked steel plates
             b = ndi.gaussian_filter(rng.random((TEX_SIZE, TEX_SIZE)), (40, 2))
             pat = (1 - 0.3 * (((yy % 48) < 3) | ((xx % 64) < 3)))[..., None]
@@ -1269,6 +1407,350 @@ def procedural(*only):
             for _ in range(9):
                 a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
                 clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.35)), 0.2, 0.45, 12, 0, size=(0.25, 0.45))
+        elif kind == "tel_blba":
+            top = crooked(Vector((0, 0, -0.2)), Vector((rng.uniform(-0.2, 0.2), rng.uniform(-0.2, 0.2), 1)),
+                          rng.uniform(1.0, 1.4), 0.13, parts=3, kink=0.3)
+            for j in range(6):                                              # thorny limbs under a low broad crown
+                a = 6.283 * j / 6 + rng.uniform(-0.3, 0.3)
+                tip = crooked(top - Vector((0, 0, 0.25)), Vector((math.cos(a), math.sin(a), 0.35)), rng.uniform(0.6, 0.9),
+                              0.05, parts=2, kink=0.35)
+                for _ in range(3):                                          # the thorns
+                    limb(bm, uv, tip, tip + Vector((rng.uniform(-.2, .2), rng.uniform(-.2, .2), rng.uniform(-.1, .15))),
+                         0.02, 0.003, 0, sides=3, segs=1)
+                clump(bm, uv, tip + Vector((0, 0, 0.1)), 0.45, 0.25, 8, 1, size=(0.35, 0.6))
+            clump(bm, uv, top + Vector((0, 0, 0.05)), 0.55, 0.25, 10, 1, size=(0.35, 0.6))
+        elif kind == "tel_bachani":
+            for _ in range(12):                                             # a bed of low flowering clumps
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.3)
+                r = rng.uniform(0.18, 0.3)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.6)), r, r * 0.5, 10, 0, size=(0.2, 0.35))
+        elif kind == "ser_tree":
+            giant(bm, uv, rng.uniform(2.2, 2.7), 0.15, 3, [(1.9, 5, 0.8, 0.9), (2.5, 4, 0.45, 0.8)], 3.0, 400)
+        elif kind == "ser_pine":
+            h = rng.uniform(2.8, 3.6)
+            limb(bm, uv, Vector((0, 0, -0.2)), Vector((0, 0, h)), 0.1, 0.03, 0, sides=6, segs=3)
+            for q in range(6):                                              # tiers narrowing to the tip
+                z, r = 0.7 + q * (h - 0.8) / 6, 0.85 * (1 - q / 6.5)
+                clump(bm, uv, Vector((0, 0, z)), r, 0.22, 9, 1, size=(0.3, 0.5))
+            clump(bm, uv, Vector((0, 0, h)), 0.15, 0.25, 3, 1, size=(0.25, 0.35))
+        elif kind == "yav_massassi":
+            giant(bm, uv, rng.uniform(3.4, 4.0), 0.22, 6, [(3.0, 5, 1.2, 1.0), (3.7, 4, 0.7, 0.95)], 4.2, 560)
+        elif kind == "yav_fern":
+            for _ in range(rng.randint(5, 7)):                              # fern clumps, a few on short stems
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.1)
+                c = Vector((math.cos(a) * d, math.sin(a) * d, 0.0))
+                h = rng.choice((0.0, 0.0, rng.uniform(0.5, 1.0)))
+                if h:
+                    limb(bm, uv, c - Vector((0, 0, 0.2)), c + Vector((0, 0, h)), 0.05, 0.03, 0, sides=4, segs=1)
+                clump(bm, uv, c + Vector((0, 0, h + 0.25)), 0.4, 0.25, 9, 1, size=(0.35, 0.6))
+        elif kind == "yav_ruin":
+            for q in range(3):                                              # a stepped block fragment
+                w = 0.9 - q * 0.28
+                box(bm, uv, (-w, -w * 0.8, -0.3 + q * 0.3), (w, w * 0.8, q * 0.3), 0)
+            a = rng.uniform(0, 6.283)                                       # a toppled pillar beside it
+            c = Vector((math.cos(a) * 1.3, math.sin(a) * 1.3, 0.12))
+            limb(bm, uv, c, c + Vector((math.cos(a + 1.4), math.sin(a + 1.4), 0.05)) * 1.1, 0.16, 0.15, 0, sides=8, segs=1)
+            for _ in range(5):                                              # vines and moss over the stones
+                b = rng.uniform(0, 6.283)
+                clump(bm, uv, Vector((math.cos(b) * 0.7, math.sin(b) * 0.6, rng.uniform(0.1, 0.6))), 0.35, 0.25, 6, 1,
+                      size=(0.3, 0.5))
+        elif kind == "cel_tree":
+            h = rng.uniform(2.6, 3.4)
+            limb(bm, uv, Vector((0, 0, -0.2)), Vector((0, 0, h)), 0.1, 0.04, 0, sides=6, segs=3)
+            for q in range(5):                                              # a narrow crown along the trunk
+                clump(bm, uv, Vector((0, 0, 0.9 + q * (h - 0.9) / 5)), 0.42 - 0.04 * q, 0.35, 10, 1, size=(0.35, 0.55))
+        elif kind == "cel_grass":
+            for _ in range(10):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.3)), 0.22, 0.38, 10, 0, size=(0.25, 0.45))
+        elif kind == "bot_tanks":
+            for _ in range(rng.randint(3, 5)):                              # squat storage tanks
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.5, 1.2)
+                r = rng.uniform(0.3, 0.45)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (r * 1.4, r), (r * 1.6, r * 0.7),
+                                                                     (r * 1.65, 0.02)], 10, 0)
+            lathe(bm, uv, (0.0, 0.0), [(-0.2, 0.25), (1.8, 0.22), (1.9, 0.1)], 8, 0)      # a tall one
+            for _ in range(2):                                              # a pipe run
+                b = rng.uniform(0, 6.283)
+                limb(bm, uv, Vector((0, 0, 0.3)), Vector((math.cos(b) * 1.3, math.sin(b) * 1.3, 0.3)), 0.06, 0.06, 0,
+                     sides=5, segs=1)
+        elif kind == "axx_spoil":
+            for _ in range(rng.randint(3, 5)):                              # spoil heaps
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.4, 1.2)
+                r = rng.uniform(0.35, 0.6)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (r * 0.5, r * 0.55), (r * 0.8, 0.03)], 7, 0)
+            for i in range(3):                                              # the drill rig: a tripod and a cab
+                b = 6.283 * i / 3
+                limb(bm, uv, Vector((math.cos(b) * 0.35, math.sin(b) * 0.35, -0.1)), Vector((0, 0, 1.6)), 0.04, 0.03, 1,
+                     sides=4, segs=1)
+            box(bm, uv, (-0.15, -0.15, 0.0), (0.15, 0.15, 0.35), 1)
+        elif kind == "cit_tree":
+            giant(bm, uv, rng.uniform(1.8, 2.3), 0.17, 4, [(1.5, 6, 0.85, 0.85), (2.1, 4, 0.5, 0.8)], 2.6, 420)
+        elif kind == "ces_fungus":
+            for i in range(rng.randint(4, 6)):                              # stalks with broad flat caps
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.0) * (i > 0)
+                h, r = rng.uniform(0.6, 1.6), rng.uniform(0.25, 0.5)
+                c = (math.cos(a) * d, math.sin(a) * d)
+                lathe(bm, uv, c, [(-0.2, 0.09), (h, 0.06)], 6, 0)
+                lathe(bm, uv, c, [(h - 0.1, 0.05), (h, r), (h + 0.12, r * 0.85), (h + 0.22, 0.02)], 10, 1)
+        elif kind == "ces_spike":
+            for i in range(rng.randint(3, 5)):                              # red rock spikes, leaning
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.9) * (i > 0)
+                h, r = rng.uniform(0.9, 2.2), rng.uniform(0.2, 0.4)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.3, r * 1.2), (h * 0.4, r * 0.8), (h, 0.03)], 6, 0,
+                      (rng.uniform(-0.12, 0.12), rng.uniform(-0.12, 0.12)))
+        elif kind == "dat_tree":
+            top = crooked(Vector((0, 0, -0.2)), Vector((rng.uniform(-0.2, 0.2), rng.uniform(-0.2, 0.2), 1)),
+                          rng.uniform(1.8, 2.6), 0.14, parts=4, kink=0.35)
+            for j in range(5):                                              # crooked limbs, sparse red tufts
+                a = 6.283 * j / 5 + rng.uniform(-0.4, 0.4)
+                tip = crooked(top - Vector((0, 0, rng.uniform(0.2, 0.7))), Vector((math.cos(a), math.sin(a), 0.5)),
+                              rng.uniform(0.6, 1.1), 0.05, parts=3, kink=0.45)
+                clump(bm, uv, tip, 0.35, 0.25, 6, 1, size=(0.3, 0.5))
+            clump(bm, uv, top + Vector((0, 0, 0.05)), 0.4, 0.3, 7, 1, size=(0.3, 0.5))
+        elif kind == "dat_fern":
+            for _ in range(rng.randint(6, 9)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.25)), 0.35, 0.3, 9, 0, size=(0.3, 0.55))
+        elif kind == "dat_rock":
+            for i in range(rng.randint(2, 4)):                              # crooked spires, bulging and narrowing
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.8) * (i > 0)
+                h, r = rng.uniform(1.6, 3.4) * (1.0 if i == 0 else 0.6), rng.uniform(0.3, 0.5)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.3, r * 1.3), (h * 0.3, r * 0.8), (h * 0.55, r),
+                                                                     (h * 0.8, r * 0.5), (h, 0.05)], 7, 0,
+                      (rng.uniform(-0.15, 0.15), rng.uniform(-0.15, 0.15)))
+        elif kind == "man_veshok":
+            h = rng.uniform(3.0, 3.8)
+            limb(bm, uv, Vector((0, 0, -0.2)), Vector((0, 0, h)), 0.13, 0.05, 0, sides=6, segs=3)
+            for q in range(4):                                              # a high oval crown
+                z = h * 0.55 + q * h * 0.13
+                clump(bm, uv, Vector((0, 0, z)), 0.75 - 0.12 * abs(q - 1.5), 0.4, 11, 1, size=(0.35, 0.6))
+        elif kind == "con_wisp":
+            h = rng.uniform(3.0, 3.8)
+            top = crooked(Vector((0, 0, -0.2)), Vector((rng.uniform(-0.1, 0.1), rng.uniform(-0.1, 0.1), 1)), h, 0.09,
+                          parts=3, kink=0.08)
+            for q in range(7):                                              # wisps hanging in long streamers
+                a = 6.283 * q / 7 + rng.uniform(-0.3, 0.3)
+                for z in (h * 0.75, h * 0.55):
+                    c = Vector((math.cos(a) * 0.45, math.sin(a) * 0.45, z))
+                    clump(bm, uv, c, 0.18, 0.55, 4, 1, size=(0.2, 0.6))
+            clump(bm, uv, top, 0.35, 0.45, 8, 1, size=(0.25, 0.6))
+        elif kind == "tar_vines":
+            for _ in range(rng.randint(2, 4)):                              # rubble blocks
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.9)
+                w = rng.uniform(0.2, 0.45)
+                c = (math.cos(a) * d, math.sin(a) * d)
+                box(bm, uv, (c[0] - w, c[1] - w * 0.7, -0.2), (c[0] + w, c[1] + w * 0.7, rng.uniform(0.2, 0.7)), 0)
+            for _ in range(rng.randint(6, 9)):                              # vine tangles over them
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.1)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, rng.uniform(0.2, 0.7))), 0.35, 0.3, 8, 1,
+                      size=(0.3, 0.5))
+        elif kind == "way_tree":
+            giant(bm, uv, rng.uniform(2.4, 3.0), 0.18, 4, [(2.0, 6, 0.95, 0.9), (2.7, 4, 0.6, 0.85)], 3.3, 460)
+        elif kind == "way_fern":
+            for _ in range(rng.randint(6, 9)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.3)), 0.4, 0.32, 9, 0, size=(0.35, 0.6))
+        elif kind == "bra_scrap":
+            for _ in range(rng.randint(4, 7)):                              # hull plates leaning in a heap
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.8)
+                w, h = rng.uniform(0.25, 0.5), rng.uniform(0.3, 0.8)
+                c = (math.cos(a) * d, math.sin(a) * d)
+                box(bm, uv, (c[0] - w, c[1] - 0.05, -0.2), (c[0] + w, c[1] + 0.05, h), rng.randint(0, 1))
+            lathe(bm, uv, (0.0, 0.0), [(-0.2, 0.9), (0.3, 0.6), (0.6, 0.15)], 7, 1)          # the heap of slag
+            for _ in range(2):                                              # girders sticking out
+                b = rng.uniform(0, 6.283)
+                limb(bm, uv, Vector((0, 0, 0.2)), Vector((math.cos(b) * 1.0, math.sin(b) * 1.0, rng.uniform(0.6, 1.2))),
+                     0.04, 0.04, 0, sides=4, segs=1)
+            b = rng.uniform(0, 6.283)                                       # a broken engine cone
+            lathe(bm, uv, (math.cos(b) * 0.9, math.sin(b) * 0.9), [(-0.1, 0.35), (0.5, 0.25), (0.55, 0.1)], 8, 0,
+                  (0.3, 0.0))
+        elif kind == "bra_rock":
+            for i in range(rng.randint(2, 4)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.8) * (i > 0)
+                r = rng.uniform(0.3, 0.6)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (r * 0.6, r * 0.9), (r * 1.1, r * 0.4),
+                                                                     (r * 1.2, 0.05)], 6, 0)
+        elif kind == "tra_jungle":
+            giant(bm, uv, rng.uniform(3.0, 3.6), 0.2, 6, [(2.6, 5, 1.1, 0.95), (3.3, 4, 0.7, 0.9)], 3.8, 520)
+        elif kind == "tra_thorn":
+            top = crooked(Vector((0, 0, -0.2)), Vector((rng.uniform(-0.3, 0.3), rng.uniform(-0.3, 0.3), 1)),
+                          rng.uniform(1.4, 1.9), 0.09, parts=3, kink=0.25)
+            for j in range(5):                                              # a flat wide crown
+                a = 6.283 * j / 5 + rng.uniform(-0.3, 0.3)
+                clump(bm, uv, top + Vector((math.cos(a) * 0.6, math.sin(a) * 0.6, rng.uniform(-0.05, 0.1))), 0.45, 0.14,
+                      8, 1, size=(0.35, 0.6))
+            for _ in range(6):                                              # grass round it
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.4, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.2)), 0.2, 0.3, 8, 1, size=(0.2, 0.4))
+        elif kind == "tra_spine":
+            for i in range(rng.randint(2, 4)):                              # ribbed columns, thorny crowns
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.7) * (i > 0)
+                h, r = rng.uniform(0.8, 1.8), rng.uniform(0.1, 0.18)
+                c = (math.cos(a) * d, math.sin(a) * d)
+                lathe(bm, uv, c, [(-0.2, r), (h * 0.8, r), (h, r * 0.4), (h * 1.05, 0.02)], 7, 0)
+        elif kind == "nyr_meadlin":
+            top = crooked(Vector((0, 0, -0.2)), Vector((0, 0, 1)), rng.uniform(1.0, 1.4), 0.12, parts=2, kink=0.1)
+            for j in range(4):                                              # the fork into spreading limbs
+                a = 6.283 * j / 4 + rng.uniform(-0.4, 0.4)
+                tip = crooked(top, Vector((math.cos(a), math.sin(a), 0.7)), rng.uniform(0.8, 1.2), 0.06, parts=2, kink=0.2)
+                clump(bm, uv, tip + Vector((0, 0, 0.1)), 0.5, 0.35, 9, 1, size=(0.35, 0.6))
+            clump(bm, uv, top + Vector((0, 0, 0.6)), 0.5, 0.35, 9, 1, size=(0.35, 0.6))
+        elif kind == "nyr_nettle":
+            for _ in range(rng.randint(6, 9)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.1)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.35)), 0.18, 0.5, 9, 0, size=(0.15, 0.55))
+        elif kind == "crs_palm":
+            lean = (rng.uniform(-0.25, 0.25), rng.uniform(-0.25, 0.25))
+            h = rng.uniform(2.4, 3.2)
+            lathe(bm, uv, (0.0, 0.0), [(-0.2, 0.12), (h * 0.5, 0.09), (h, 0.07)], 6, 0, lean)
+            top = Vector((lean[0] * h, lean[1] * h, h))
+            for j in range(8):                                              # long arching fronds
+                a = 6.283 * j / 8 + rng.uniform(-0.2, 0.2)
+                clump(bm, uv, top + Vector((math.cos(a) * 0.55, math.sin(a) * 0.55, -0.2)), 0.35, 0.12, 5, 1,
+                      size=(0.25, 0.8))
+            clump(bm, uv, top, 0.3, 0.25, 5, 1, size=(0.25, 0.6))
+        elif kind == "crs_shrub":
+            for _ in range(rng.randint(5, 8)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.0)
+                r = rng.uniform(0.25, 0.45)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.7)), r, r * 0.7, 10, 0, size=(0.25, 0.45))
+        elif kind == "kas_vine":
+            for _ in range(rng.randint(7, 10)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.3)), 0.4, 0.4, 9, 0, size=(0.35, 0.6))
+        elif kind == "kas_black":
+            top = crooked(Vector((0, 0, -0.2)), Vector((rng.uniform(-0.3, 0.3), rng.uniform(-0.3, 0.3), 1)),
+                          rng.uniform(2.2, 3.0), 0.16, parts=4, kink=0.4)
+            for j in range(6):                                              # twisted bare limbs hung with web
+                a = 6.283 * j / 6 + rng.uniform(-0.4, 0.4)
+                tip = crooked(top - Vector((0, 0, rng.uniform(0.3, 1.0))), Vector((math.cos(a), math.sin(a), 0.2)),
+                              rng.uniform(0.7, 1.2), 0.06, parts=3, kink=0.5)
+                clump(bm, uv, tip - Vector((0, 0, 0.2)), 0.3, 0.45, 4, 1, size=(0.3, 0.6))
+        elif kind == "ond_broadleaf":
+            giant(bm, uv, rng.uniform(2.8, 3.4), 0.17, 5, [(2.4, 6, 1.1, 0.9), (3.1, 4, 0.7, 0.85)], 3.6, 480)
+        elif kind == "ond_weed":
+            for _ in range(rng.randint(7, 10)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.3)), 0.3, 0.45, 8, 0, size=(0.25, 0.6))
+        elif kind == "umb_tentacle":
+            for _ in range(rng.randint(3, 5)):                              # tentacles rising and arching over
+                a, d0 = rng.uniform(0, 6.283), rng.uniform(0.0, 0.5)
+                base = Vector((math.cos(a) * d0, math.sin(a) * d0, -0.3))
+                b = a + rng.uniform(-0.6, 0.6)
+                out = Vector((math.cos(b), math.sin(b), 0.0))
+                H, Wd = rng.uniform(3.2, 5.4), rng.uniform(2.2, 3.4)
+                P0, P1 = base, base + Vector((0, 0, H * 1.6)) + out * Wd * 0.35
+                P2 = base + out * Wd + Vector((0, 0, H * rng.uniform(0.05, 0.3)))   # arching back toward the ground
+                n, r0 = 10, rng.uniform(0.26, 0.36)
+                pts = [((1 - t) ** 2 * P0 + 2 * (1 - t) * t * P1 + t * t * P2, r0 * (1 - t) + 0.04)
+                       for t in (q / n for q in range(n + 1))]
+                tube(bm, uv, pts, 7, 0)
+                strip = []                                                  # the glow strip on the inner side
+                for q, (p, r) in enumerate(pts[:-1]):
+                    tdir = (pts[q + 1][0] - p).normalized()
+                    nrm = (p - P1) - tdir * (p - P1).dot(tdir)              # away from the control point: concave side
+                    nrm = nrm.normalized() if nrm.length > 1e-6 else Vector((0, 0, -1))
+                    strip.append((p + nrm * r * 0.8, r * 0.6))
+                tube(bm, uv, strip, 5, 1, vrep=4.0)
+        elif kind == "umb_mushroom":
+            H = rng.uniform(2.0, 3.0)
+            lean = (rng.uniform(-0.06, 0.06), rng.uniform(-0.06, 0.06))
+            lathe(bm, uv, (0.0, 0.0), [(-0.2, 0.42), (0.6, 0.3), (H * 0.6, 0.24), (H, 0.32)], 9, 0, lean)
+            prof = [(H, 0.32), (H + 0.12, 1.15), (H + 0.5, 1.3), (H + 0.9, 1.08), (H + 1.2, 0.6), (H + 1.32, 0.05)]
+            lathe(bm, uv, (lean[0] * H, lean[1] * H), prof, 12, 0)
+            for _ in range(26):                                             # glowing spots on the cap
+                z = rng.uniform(H + 0.15, H + 1.15)
+                k_ = max(q for q in range(len(prof) - 1) if prof[q][0] <= z)          # on the cap's surface
+                (z0_, r0_), (z1_, r1_) = prof[k_], prof[k_ + 1]
+                rr = r0_ + (r1_ - r0_) * (z - z0_) / max(z1_ - z0_, 1e-6)
+                a = rng.uniform(0, 6.283)
+                c = (lean[0] * H + math.cos(a) * rr, lean[1] * H + math.sin(a) * rr)
+                sr = rng.uniform(0.1, 0.2)
+                lathe(bm, uv, c, [(z - sr, 0.02), (z - sr * 0.4, sr), (z + sr * 0.4, sr), (z + sr, 0.02)], 6, 1)
+            for _ in range(6):                                              # and round the base of the trunk
+                a, z = rng.uniform(0, 6.283), rng.uniform(0.0, 0.6)
+                sr = rng.uniform(0.07, 0.12)
+                c = (math.cos(a) * 0.38, math.sin(a) * 0.38)
+                lathe(bm, uv, c, [(z - sr, 0.02), (z - sr * 0.4, sr), (z + sr * 0.4, sr), (z + sr, 0.02)], 6, 1)
+        elif kind == "umb_flamestalk":
+            for _ in range(rng.randint(4, 7)):                              # thin black stalks, flame-red blades
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 0.8)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                h = rng.uniform(1.4, 3.2)
+                bend = Vector((rng.uniform(-0.4, 0.4), rng.uniform(-0.4, 0.4), 0))
+                pts = [(base + Vector((0, 0, h * t)) + bend * t * t, 0.07 * (1 - 0.6 * t)) for t in (0, 0.33, 0.66, 1.0)]
+                tube(bm, uv, pts, 5, 0)
+                tip = pts[-1][0]
+                for q in range(rng.randint(3, 5)):
+                    c = 6.283 * q / 4 + rng.uniform(-0.4, 0.4)
+                    end = tip + Vector((math.cos(c) * 0.35, math.sin(c) * 0.35, rng.uniform(0.2, 0.5)))
+                    limb(bm, uv, tip, end, 0.07, 0.004, 1, sides=4, segs=1)
+        elif kind == "umb_pod":
+            for _ in range(rng.randint(2, 3)):                              # black pods with glowing spots
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.1, 0.9)
+                c = (math.cos(a) * d, math.sin(a) * d)
+                s_ = rng.uniform(0.7, 1.1)
+                lathe(bm, uv, c, [(-0.1, 0.22 * s_), (0.25 * s_, 0.42 * s_), (0.6 * s_, 0.32 * s_), (0.8 * s_, 0.08)], 9, 0)
+                for _q in range(7):
+                    b, z = rng.uniform(0, 6.283), rng.uniform(0.1, 0.6) * s_
+                    rr = 0.4 * s_
+                    sr = rng.uniform(0.05, 0.09)
+                    lathe(bm, uv, (c[0] + math.cos(b) * rr, c[1] + math.sin(b) * rr),
+                          [(z - sr, 0.02), (z, sr), (z + sr, 0.02)], 5, 1)
+            for _ in range(rng.randint(2, 3)):                              # curled pink-glowing tendrils
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.3, 1.1)
+                cx, cy = math.cos(a) * d, math.sin(a) * d
+                pts = [(Vector((cx + 0.25 * math.cos(t * 4.5) * (1 - t * 0.6), cy + 0.25 * math.sin(t * 4.5) * (1 - t * 0.6),
+                                -0.1 + 0.9 * t)), 0.05 * (1 - 0.5 * t)) for t in (q / 8 for q in range(9))]
+                tube(bm, uv, pts, 5, 2, vrep=3.0)
+            for _ in range(6):                                              # dark blue grass with red tips
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.25)), 0.25, 0.35, 8, 3, size=(0.2, 0.45))
+        elif kind == "rus_tree":
+            giant(bm, uv, rng.uniform(2.0, 2.6), 0.14, 3, [(1.7, 5, 0.75, 0.95), (2.3, 3, 0.4, 0.9)], 2.8, 440)
+        elif kind == "rus_scrub":
+            for _ in range(rng.randint(6, 9)):
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.2)
+                r = rng.uniform(0.25, 0.4)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, r * 0.5)), r, r * 0.6, 12, 0, size=(0.25, 0.45))
+        elif kind == "rus_scorched":
+            for i in range(rng.randint(2, 4)):                              # scorched snags, broken tops
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.0) * (i > 0)
+                base = Vector((math.cos(a) * d, math.sin(a) * d, -0.2))
+                top = crooked(base, Vector((rng.uniform(-.2, .2), rng.uniform(-.2, .2), 1)), rng.uniform(0.9, 2.2),
+                              rng.uniform(0.09, 0.14), parts=3, kink=0.18)
+                if rng.random() < 0.5:
+                    b_ = rng.uniform(0, 6.283)
+                    crooked(top - Vector((0, 0, 0.3)), Vector((math.cos(b_), math.sin(b_), 0.3)), 0.45, 0.04, parts=2)
+            for _ in range(rng.randint(3, 5)):                              # pale fallen stones, half sunk
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.4, 1.4)
+                r = rng.uniform(0.15, 0.32)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (r * 0.6, r * 0.9), (r * 1.1, r * 0.4),
+                                                                   (r * 1.2, 0.03)], 5, 1)
+        elif kind == "col_tree":
+            giant(bm, uv, rng.uniform(2.2, 2.8), 0.15, 4, [(1.8, 6, 1.0, 0.9), (2.5, 4, 0.6, 0.85)], 3.0, 420)
+        elif kind == "col_mound":
+            for i in range(rng.randint(1, 3)):                              # ribbed earthen spires
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 0.7) * (i > 0)
+                h, r = rng.uniform(1.2, 2.6) * (1.0 if i == 0 else 0.6), rng.uniform(0.35, 0.55)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (h * 0.3, r * 0.8), (h * 0.6, r * 0.55),
+                                                                     (h * 0.85, r * 0.3), (h, 0.04)], 7, 0)
+        elif kind == "col_eggs":
+            for _ in range(rng.randint(5, 9)):                              # pale egg clusters among reeds
+                a, d = rng.uniform(0, 6.283), rng.uniform(0, 1.0)
+                r = rng.uniform(0.12, 0.22)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.05, r * 0.6), (r * 0.8, r), (r * 1.7, r * 0.7),
+                                                                     (r * 2.1, 0.02)], 7, 0)
+            for _ in range(3):
+                b = rng.uniform(0, 6.283)
+                clump(bm, uv, Vector((math.cos(b) * 0.9, math.sin(b) * 0.9, 0.25)), 0.3, 0.4, 7, 1, size=(0.2, 0.5))
+        elif kind == "man_crystal":
+            for i in range(rng.randint(4, 7)):                              # glassy shards, steep and sharp
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.0) * (i > 0)
+                h, r = rng.uniform(0.4, 1.4), rng.uniform(0.1, 0.25)
+                lathe(bm, uv, (math.cos(a) * d, math.sin(a) * d), [(-0.2, r), (h, 0.01)], 4, 0,
+                      (rng.uniform(-0.3, 0.3), rng.uniform(-0.3, 0.3)))
         elif kind == "jab_tree":
             top = crooked(Vector((0, 0, -0.2)), Vector((0, 0, 1)), rng.uniform(1.8, 2.4), 0.14, parts=3, kink=0.12)
             for j in range(7):                                              # heavy limbs, the crown drooping
@@ -1397,7 +1879,7 @@ def procedural(*only):
     for idx, kind in PROCEDURAL.items():
         if only and str(idx) not in only and kind not in only:
             continue
-        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_")):
+        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_")):
             rng.seed(kind)
         bpy.ops.wm.read_factory_settings(use_empty=True)
         me = bpy.data.meshes.new(kind)
@@ -1424,7 +1906,7 @@ def procedural(*only):
         elif kind.startswith("kor_"):
             korriban_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
-        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_")):
+        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_")):
             planet_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
         else:
@@ -1436,7 +1918,7 @@ def procedural(*only):
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_")):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)

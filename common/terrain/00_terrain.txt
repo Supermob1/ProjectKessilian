@@ -384,5 +384,9 @@ terrain = {
 	sea_town_30					= { type = marsh			color = { 	30	 } texture = 6 spawn_city = yes }
 	# HOD: desert sand that spawns city models: the ancient Sith ruins in Cantonica's sand
 	desert_town_32				= { type = desert			color = { 	32	 } texture = 12 spawn_city = yes }
+	# HOD: Umbara's dark jungle floor (atlas slot 20, terrain_atlas.py umbara): pdxmap.shader dims it to permanent dusk
+	# and lights bioluminescent specks on it; the town variant spawns city models
+	umbara_33					= { type = jungle			color = { 	33	 } texture = 20 }
+	umbara_town_34				= { type = jungle			color = { 	34	 } texture = 20 spawn_city = yes }
 	
 }

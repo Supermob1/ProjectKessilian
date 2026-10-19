@@ -1,0 +1,979 @@
+{
+ "centre": [
+  1098.9045743714025,
+  1594.1093607997577
+ ],
+ "radius": 32.415134340191976,
+ "vp_names": {
+  "717": "Locus",
+  "760": "Final Rest",
+  "1269": "Prosperity Mine",
+  "10967": "Prosperity",
+  "1717": "Silence",
+  "1779": "Nyriaan Gladiator Arena",
+  "11034": "Northern Plains",
+  "11065": "Eastern Hills"
+ },
+ "provinces": {
+  "224": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Locus",
+   "state": 98,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1099.9268292682927,
+    1599.121951219512
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "500": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Locus",
+   "state": 98,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1094.4117647058824,
+    1596.8235294117646
+   ],
+   "area": 34,
+   "terrain": "urban"
+  },
+  "717": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Locus",
+   "state": 98,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1098.258064516129,
+    1593.1935483870968
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "760": {
+   "zone": "plateau",
+   "kind": 2,
+   "feature": "Final Rest",
+   "state": 825,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1082.0243902439024,
+    1594.3658536585365
+   ],
+   "area": 41,
+   "terrain": "hills"
+  },
+  "1269": {
+   "zone": "mine",
+   "kind": 3,
+   "feature": "Prosperity Mine",
+   "state": 826,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1099.923076923077,
+    1612.7948717948718
+   ],
+   "area": 39,
+   "terrain": "hills"
+  },
+  "1341": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Prosperity",
+   "state": 826,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1107.9512195121952,
+    1606.6097560975609
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "1717": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Silence",
+   "state": 827,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1091.4347826086957,
+    1574.5652173913043
+   ],
+   "area": 46,
+   "terrain": "urban"
+  },
+  "1779": {
+   "zone": "arena",
+   "kind": 4,
+   "feature": "Nyriaan Gladiator Arena",
+   "state": 828,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1115.4418604651162,
+    1594.5581395348838
+   ],
+   "area": 43,
+   "terrain": "urban"
+  },
+  "1964": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1104.5,
+    1565.3181818181818
+   ],
+   "area": 22,
+   "terrain": "marsh"
+  },
+  "2100": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1123.48,
+    1589.12
+   ],
+   "area": 25,
+   "terrain": "marsh"
+  },
+  "2603": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1106.1304347826087,
+    1587.1304347826087
+   ],
+   "area": 23,
+   "terrain": "marsh"
+  },
+  "3081": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1118.3703703703704,
+    1575.7407407407406
+   ],
+   "area": 27,
+   "terrain": "marsh"
+  },
+  "3531": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1109.5357142857142,
+    1577.1785714285713
+   ],
+   "area": 28,
+   "terrain": "marsh"
+  },
+  "4308": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1114.5384615384614,
+    1585.3461538461538
+   ],
+   "area": 26,
+   "terrain": "marsh"
+  },
+  "4369": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1113.2608695652175,
+    1567.695652173913
+   ],
+   "area": 23,
+   "terrain": "marsh"
+  },
+  "4753": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1121.8947368421052,
+    1582.4736842105262
+   ],
+   "area": 19,
+   "terrain": "marsh"
+  },
+  "5063": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1113.8076923076924,
+    1579.4615384615386
+   ],
+   "area": 26,
+   "terrain": "marsh"
+  },
+  "5210": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1111.3076923076924,
+    1589.2307692307693
+   ],
+   "area": 26,
+   "terrain": "marsh"
+  },
+  "5603": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1105.12,
+    1573.08
+   ],
+   "area": 25,
+   "terrain": "marsh"
+  },
+  "5935": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1108.7857142857142,
+    1570.2857142857142
+   ],
+   "area": 28,
+   "terrain": "marsh"
+  },
+  "6046": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1109.8461538461538,
+    1583.3461538461538
+   ],
+   "area": 26,
+   "terrain": "marsh"
+  },
+  "6186": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1104.9545454545455,
+    1582.909090909091
+   ],
+   "area": 22,
+   "terrain": "marsh"
+  },
+  "10904": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1117.4782608695652,
+    1589.5217391304348
+   ],
+   "area": 23,
+   "terrain": "marsh"
+  },
+  "10905": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1113.5,
+    1573.5
+   ],
+   "area": 26,
+   "terrain": "marsh"
+  },
+  "10908": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1108.6842105263158,
+    1565.3684210526317
+   ],
+   "area": 19,
+   "terrain": "marsh"
+  },
+  "10909": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1117.5,
+    1570.2307692307693
+   ],
+   "area": 26,
+   "terrain": "marsh"
+  },
+  "10920": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1102.0,
+    1568.7916666666667
+   ],
+   "area": 24,
+   "terrain": "marsh"
+  },
+  "10924": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1120.15,
+    1586.0
+   ],
+   "area": 20,
+   "terrain": "marsh"
+  },
+  "10925": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1118.0,
+    1581.1363636363637
+   ],
+   "area": 22,
+   "terrain": "marsh"
+  },
+  "10930": {
+   "zone": "bog",
+   "kind": 8,
+   "feature": "Great Bog",
+   "state": 1236,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1105.1904761904761,
+    1577.7619047619048
+   ],
+   "area": 21,
+   "terrain": "marsh"
+  },
+  "10934": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Locus",
+   "state": 98,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1092.0144927536232,
+    1599.3623188405797
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "10937": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Locus",
+   "state": 98,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1097.4761904761904,
+    1588.107142857143
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "10941": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Locus",
+   "state": 98,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1104.844155844156,
+    1596.2077922077922
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "10942": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Final Rest",
+   "state": 825,
+   "group": 8,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1072.7128712871288,
+    1591.6336633663366
+   ],
+   "area": 101,
+   "terrain": "hills"
+  },
+  "10944": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Final Rest",
+   "state": 825,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1082.5192307692307,
+    1597.826923076923
+   ],
+   "area": 52,
+   "terrain": "hills"
+  },
+  "10951": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Final Rest",
+   "state": 825,
+   "group": 8,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1071.6506024096386,
+    1600.2289156626507
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "10954": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Prosperity",
+   "state": 826,
+   "group": 9,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1100.87,
+    1621.7
+   ],
+   "area": 100,
+   "terrain": "hills"
+  },
+  "10958": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Prosperity",
+   "state": 826,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1104.121212121212,
+    1605.5454545454545
+   ],
+   "area": 33,
+   "terrain": "hills"
+  },
+  "10965": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Prosperity",
+   "state": 826,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1097.275,
+    1608.375
+   ],
+   "area": 40,
+   "terrain": "hills"
+  },
+  "10966": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Prosperity",
+   "state": 826,
+   "group": 9,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1112.1012658227849,
+    1620.139240506329
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "10967": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Prosperity",
+   "state": 826,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1107.8,
+    1613.15
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "10972": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Silence",
+   "state": 827,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1099.0,
+    1576.964705882353
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "10973": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Silence",
+   "state": 827,
+   "group": 10,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1083.9855072463768,
+    1570.7536231884058
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "10979": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Silence",
+   "state": 827,
+   "group": 10,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1097.9076923076923,
+    1565.6923076923076
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "10980": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Silence",
+   "state": 827,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1091.9753086419753,
+    1582.5802469135801
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "10983": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Silence",
+   "state": 827,
+   "group": 10,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1090.765625,
+    1567.203125
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "10995": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern Plains",
+   "state": 828,
+   "group": 11,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1124.360655737705,
+    1578.4262295081967
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "10996": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern Plains",
+   "state": 828,
+   "group": 11,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1118.2903225806451,
+    1613.032258064516
+   ],
+   "area": 93,
+   "terrain": "plains"
+  },
+  "11000": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern Plains",
+   "state": 828,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1110.709090909091,
+    1597.6545454545455
+   ],
+   "area": 55,
+   "terrain": "plains"
+  },
+  "11004": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern Plains",
+   "state": 828,
+   "group": 11,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1125.1818181818182,
+    1605.8961038961038
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "11016": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern Plains",
+   "state": 828,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1116.5569620253164,
+    1604.139240506329
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "11020": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern Plains",
+   "state": 828,
+   "group": 11,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1124.2178217821781,
+    1596.8613861386139
+   ],
+   "area": 101,
+   "terrain": "plains"
+  },
+  "11021": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern Plains",
+   "state": 828,
+   "group": 11,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1128.2758620689656,
+    1589.448275862069
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "11022": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 829,
+   "group": 12,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1073.4044943820224,
+    1583.1573033707866
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "11024": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 829,
+   "group": 12,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1078.320987654321,
+    1575.4938271604938
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "11031": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 829,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1085.625,
+    1589.9464285714287
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "11034": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 829,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1083.2625,
+    1582.525
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "11043": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Eastern Hills",
+   "state": 830,
+   "group": 13,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1084.3181818181818,
+    1618.7424242424242
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "11045": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Eastern Hills",
+   "state": 830,
+   "group": 13,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1074.2121212121212,
+    1608.0454545454545
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "11046": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Eastern Hills",
+   "state": 830,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1082.1917808219177,
+    1604.3972602739725
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "11055": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Eastern Hills",
+   "state": 830,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1089.7837837837837,
+    1608.0405405405406
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "11060": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Eastern Hills",
+   "state": 830,
+   "group": 13,
+   "coastal": true,
+   "sea": 18944,
+   "centre": [
+    1091.8392857142858,
+    1621.875
+   ],
+   "area": 56,
+   "terrain": "hills"
+  },
+  "11065": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Eastern Hills",
+   "state": 830,
+   "group": 13,
+   "coastal": true,
+   "sea": 18742,
+   "centre": [
+    1079.638888888889,
+    1613.25
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "11066": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Eastern Hills",
+   "state": 830,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1091.864406779661,
+    1614.915254237288
+   ],
+   "area": 59,
+   "terrain": "hills"
+  }
+ }
+}

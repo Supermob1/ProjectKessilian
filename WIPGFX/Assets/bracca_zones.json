@@ -1,0 +1,963 @@
+{
+ "centre": [
+  1062.3941671677692,
+  1872.3487672880337
+ ],
+ "radius": 32.53765021397962,
+ "vp_names": {
+  "21104": "Scrapper Guild Yards",
+  "21080": "Platform Thirty-Two",
+  "21081": "Retired Control Tower",
+  "21082": "Worker Rail Route 213",
+  "21083": "Scrapper Town",
+  "21133": "Eastern Plains",
+  "21139": "Salvage Fields"
+ },
+ "provinces": {
+  "21078": {
+   "zone": "yards",
+   "kind": 1,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1060.9130434782608,
+    1876.2391304347825
+   ],
+   "area": 46,
+   "terrain": "urban"
+  },
+  "21079": {
+   "zone": "yards",
+   "kind": 1,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1060.3469387755101,
+    1868.857142857143
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "21080": {
+   "zone": "platform",
+   "kind": 2,
+   "feature": "Platform Thirty-Two",
+   "state": 1059,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1061.6451612903227,
+    1890.5483870967741
+   ],
+   "area": 62,
+   "terrain": "urban"
+  },
+  "21081": {
+   "zone": "tower",
+   "kind": 3,
+   "feature": "Retired Control Tower",
+   "state": 1060,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1041.5964912280701,
+    1872.157894736842
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "21082": {
+   "zone": "rail",
+   "kind": 4,
+   "feature": "Worker Rail Route 213",
+   "state": 1061,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1059.581818181818,
+    1857.3818181818183
+   ],
+   "area": 55,
+   "terrain": "plains"
+  },
+  "21083": {
+   "zone": "town",
+   "kind": 5,
+   "feature": "Scrapper Town",
+   "state": 1062,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1057.3,
+    1846.32
+   ],
+   "area": 50,
+   "terrain": "urban"
+  },
+  "21084": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1087.4285714285713,
+    1873.107142857143
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "21085": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1072.75,
+    1844.0416666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "21086": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1087.608695652174,
+    1854.8260869565217
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "21087": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1074.8076923076924,
+    1858.1153846153845
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "21088": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1078.1666666666667,
+    1869.7333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "21089": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1091.7083333333333,
+    1864.1666666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "21090": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1078.25,
+    1852.392857142857
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "21091": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1083.162162162162,
+    1863.081081081081
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "21092": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1069.12,
+    1848.2
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "21093": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1082.4444444444443,
+    1875.0
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "21094": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1079.36,
+    1857.52
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "21095": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1082.9655172413793,
+    1869.5172413793102
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "21096": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1078.037037037037,
+    1863.1851851851852
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "21097": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1072.7241379310344,
+    1852.9655172413793
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "21098": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1088.75,
+    1860.1875
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "21099": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1088.138888888889,
+    1867.361111111111
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "21100": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1083.1851851851852,
+    1850.8148148148148
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "21101": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1074.52,
+    1848.0
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "21102": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1079.125,
+    1846.6666666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "21103": {
+   "zone": "heaps",
+   "kind": 8,
+   "feature": "Scrap Heaps",
+   "state": 1233,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1083.64,
+    1856.68
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "21104": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1066.6923076923076,
+    1871.7846153846153
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "21105": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1069.212765957447,
+    1881.1489361702127
+   ],
+   "area": 94,
+   "terrain": "hills"
+  },
+  "21106": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1056.46875,
+    1876.21875
+   ],
+   "area": 32,
+   "terrain": "hills"
+  },
+  "21107": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1069.076923076923,
+    1863.0
+   ],
+   "area": 104,
+   "terrain": "hills"
+  },
+  "21108": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1073.6764705882354,
+    1872.75
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "21109": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Scrapper Guild Yards",
+   "state": 197,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1056.4,
+    1867.16
+   ],
+   "area": 25,
+   "terrain": "hills"
+  },
+  "21110": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Platform District",
+   "state": 1059,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1058.6538461538462,
+    1883.826923076923
+   ],
+   "area": 52,
+   "terrain": "hills"
+  },
+  "21111": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Platform District",
+   "state": 1059,
+   "group": 7,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1068.83908045977,
+    1899.6091954022988
+   ],
+   "area": 87,
+   "terrain": "hills"
+  },
+  "21112": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Platform District",
+   "state": 1059,
+   "group": 7,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1059.5774647887324,
+    1900.9295774647887
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "21113": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Platform District",
+   "state": 1059,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1068.126984126984,
+    1889.4126984126983
+   ],
+   "area": 63,
+   "terrain": "hills"
+  },
+  "21114": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Platform District",
+   "state": 1059,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1057.9285714285713,
+    1893.9761904761904
+   ],
+   "area": 42,
+   "terrain": "hills"
+  },
+  "21115": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 1060,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1040.96875,
+    1877.28125
+   ],
+   "area": 32,
+   "terrain": "plains"
+  },
+  "21116": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 1060,
+   "group": 8,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1034.592105263158,
+    1868.092105263158
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "21117": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 1060,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1049.2923076923078,
+    1873.8
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "21118": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Northern Plains",
+   "state": 1060,
+   "group": 8,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1033.5942028985507,
+    1877.1014492753623
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "21119": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Rail Flats",
+   "state": 1061,
+   "group": 9,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1041.0142857142857,
+    1854.3857142857144
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "21120": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Rail Flats",
+   "state": 1061,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1050.8070175438597,
+    1867.0701754385964
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "21121": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Rail Flats",
+   "state": 1061,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1051.7971014492753,
+    1853.304347826087
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "21122": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Rail Flats",
+   "state": 1061,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1044.554054054054,
+    1862.2027027027027
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "21123": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Rail Flats",
+   "state": 1061,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1053.8125,
+    1860.109375
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "21124": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Rail Flats",
+   "state": 1061,
+   "group": 9,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1046.0169491525423,
+    1848.322033898305
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "21125": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Rail Flats",
+   "state": 1061,
+   "group": 9,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1036.516129032258,
+    1860.8870967741937
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "21126": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Scrapper Town",
+   "state": 1062,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1065.4880952380952,
+    1854.357142857143
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "21127": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Scrapper Town",
+   "state": 1062,
+   "group": 10,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1052.9268292682927,
+    1844.341463414634
+   ],
+   "area": 41,
+   "terrain": "plains"
+  },
+  "21128": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Scrapper Town",
+   "state": 1062,
+   "group": 10,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1064.2674418604652,
+    1843.7674418604652
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "21129": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Eastern Plains",
+   "state": 1063,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1051.4027777777778,
+    1890.9027777777778
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "21130": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Eastern Plains",
+   "state": 1063,
+   "group": 11,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1037.0,
+    1885.6060606060605
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "21131": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Eastern Plains",
+   "state": 1063,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1051.0967741935483,
+    1882.1612903225807
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "21132": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Eastern Plains",
+   "state": 1063,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1044.0151515151515,
+    1882.8030303030303
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "21133": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Eastern Plains",
+   "state": 1063,
+   "group": 11,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1042.7272727272727,
+    1892.5584415584415
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "21134": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Eastern Plains",
+   "state": 1063,
+   "group": 11,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1050.144927536232,
+    1898.7391304347825
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "21135": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Salvage Fields",
+   "state": 1064,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1079.8846153846155,
+    1880.7435897435898
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "21136": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Salvage Fields",
+   "state": 1064,
+   "group": 12,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1092.5,
+    1872.7727272727273
+   ],
+   "area": 44,
+   "terrain": "hills"
+  },
+  "21137": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Salvage Fields",
+   "state": 1064,
+   "group": 12,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1077.418918918919,
+    1896.7297297297298
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "21138": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Salvage Fields",
+   "state": 1064,
+   "group": 12,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1089.107142857143,
+    1881.3809523809523
+   ],
+   "area": 84,
+   "terrain": "hills"
+  },
+  "21139": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Salvage Fields",
+   "state": 1064,
+   "group": 12,
+   "coastal": true,
+   "sea": 18930,
+   "centre": [
+    1084.780487804878,
+    1890.1097560975609
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "21140": {
+   "zone": "salvage",
+   "kind": 7,
+   "feature": "Salvage Fields",
+   "state": 1064,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1075.9014084507041,
+    1888.7464788732395
+   ],
+   "area": 71,
+   "terrain": "hills"
+  }
+ }
+}
