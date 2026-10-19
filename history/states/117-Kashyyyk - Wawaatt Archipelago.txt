@@ -1,0 +1,31 @@
+state={
+	id=117
+	name="STATE_117"
+	# HOD: Kashyyyk (kashyyyk_map.py)
+	provinces={
+		186 197 244 489 11720 11722 11725 11726 11727 11731 11733 11736 11741 11742 11745 11749 11756 11757 11759 11766 11767 11768 11769 11770 11773 11778
+	}
+	resources={
+		chromium=2#Circuitry
+	}
+	history = {
+		victory_points = {
+			244 10
+		}
+		victory_points = {
+			489 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = KAS
+		add_core_of = KAS
+	}
+	manpower = 400000
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

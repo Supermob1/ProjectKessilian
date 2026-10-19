@@ -1,0 +1,18 @@
+# HOD: the Umbaran Militia (history/units/HOD_UMB.txt)
+UMB_MIL_01 = {
+    name = "Umbaran Militia"
+
+    for_countries = { UMB }
+
+    can_use = { always = yes }
+
+    division_types = { "infantry" }
+
+    fallback_name = "%dth Umbaran Militia"
+
+    ordered = {
+        1 = { "1st Shadow Militia" }
+        2 = { "2nd Shadow Militia" }
+        3 = { "3rd Shadow Militia" }
+    }
+}

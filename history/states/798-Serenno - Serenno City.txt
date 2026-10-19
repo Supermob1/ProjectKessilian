@@ -1,0 +1,31 @@
+state={
+	id=798
+	name="STATE_798"
+	# HOD: Serenno (serenno_map.py)
+	provinces={
+		592 812 925 1196 8112 8121 8122 8129 8136 8141 8145 8146 8147 8158 8169 8174
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			592 5
+		}
+		victory_points = {
+			925 3
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 79405
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

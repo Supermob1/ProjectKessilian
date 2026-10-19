@@ -1,0 +1,33 @@
+state={
+	id=837
+	name="STATE_837"
+	# HOD: Taris (taris_map.py)
+	provinces={
+		10180 10189 10201 10202 10203 10204 10218 10225 10233 10244 10247 10255 10256 10269 10270 10271 10284 10293
+	}
+	resources={
+		chromium=4
+		coal=3
+	}
+	history = {
+		victory_points = {
+			10225 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 2
+			dockyard = 10
+					10189 = {
+				naval_base = 4
+			}
+		}
+		owner = TAR
+		add_core_of = TAR
+	}
+	manpower = 2133197
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

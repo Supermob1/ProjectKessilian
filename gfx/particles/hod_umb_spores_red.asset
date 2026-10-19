@@ -1,0 +1,87 @@
+# HOD: Umbara (umbara_fx.py)
+particle={
+	name="hod_umb_spores_red_file"
+	subsystem={
+		name="main"
+		max_amount=20
+		slave_particles=0
+		sort="depth"
+		emitter_type="box"
+		box_emitter_x={ -5.000 5.000 }
+		box_emitter_y={ 0.000 0.300 }
+		box_emitter_z={ -5.000 5.000 }
+		invert=no
+		trail=no
+		local_space=no
+		billboard=yes
+		texture={
+			file="gfx/particles/cloud_6.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=255.000
+			y=90.000
+			z=50.000
+			alpha=190.000,hod_umb_spores_red_fade
+		}
+		position={
+			x=0.000
+			y=0.000
+			z=0.000
+		}
+		start=0.000
+		duration=-1.000
+		emitter_yaw={ 0.000 180.000 }
+		emitter_pitch={ 0.000 0.000 }
+		velocity_pitch={ 60.000 90.000 }
+		velocity_yaw={ 0.000 180.000 }
+		velocity=0.100
+		life=8.000
+		emission=2.000
+		size=0.260,hod_umb_spores_red_grow
+		rotation=180.000
+		force=hod_umb_spores_red_wind
+	}
+	animation={
+		name="hod_umb_spores_red_fade"
+		start=0.000
+		duration=1.000
+		repeat=no
+		minValue=0.000
+		maxValue=1.000
+		curve={
+			0.000 0.000 0.200 1.000 0.700 0.700 1.000 0.000
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="hod_umb_spores_red_grow"
+		start=0.000
+		duration=1.000
+		repeat=no
+		minValue=0.000
+		maxValue=1.000
+		curve={
+			0.000 0.600 1.000 0.800
+		}
+		op="MUL"
+		time="life"
+	}
+	force={
+		type="planar"
+		name="hod_umb_spores_red_wind"
+		position={
+			0.000 0.000 0.000
+		}
+		direction={
+			0.100 0.000 0.040
+		}
+		local_force=no
+		yaw=0.000
+		division=16
+		amount=0.012
+	}
+}

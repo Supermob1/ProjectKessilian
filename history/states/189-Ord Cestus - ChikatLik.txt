@@ -1,0 +1,39 @@
+state={
+	id=189
+	name="STATE_189"
+	# HOD: Ord Cestus (ord_cestus_map.py)
+	provinces={
+		21483 21484 21487 21488 21567 21572 21574
+	}
+	resources={
+		oil=20#Fuel
+		rubber=5#Doonium
+		tungsten=15#Bacta
+		steel=10#Alloys
+		chromium=10#Circuitry
+	}
+	history = {
+		victory_points = {
+			21483 3
+		}
+		victory_points = {
+			21484 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 2
+			dockyard = 3
+					21567 = {
+				naval_base = 3
+			}
+		}
+		owner = TDF
+		add_core_of = TDF
+	}
+	manpower = 724889
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

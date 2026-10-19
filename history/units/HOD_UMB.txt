@@ -1,0 +1,90 @@
+# HOD: Umbara's forces (user, 2026-10-19: an Umbaran tag for the Umbaran fighters). The Umbaran Militia holds the
+# capital, the airbase in Sector Delta and the bunkers Grek, Krill and Usk; the militia's starfighters fly from the
+# airbase. Provinces from WIPGFX/Assets/umbara_zones.json (vp_names).
+
+division_template = {
+	name = "Umbaran Militia"
+	division_names_group = UMB_MIL_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Umbaran Bunker Garrison"
+	division_names_group = UMB_MIL_01
+	is_locked = yes
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+	}
+}
+
+units = {
+	division = {
+		name = "1st Umbaran Militia"
+		location = 453
+		division_template = "Umbaran Militia"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2nd Umbaran Militia"
+		location = 453
+		division_template = "Umbaran Militia"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "3rd Umbaran Militia"
+		location = 526
+		division_template = "Umbaran Militia"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Bunker Grek Garrison"
+		location = 652
+		division_template = "Umbaran Bunker Garrison"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Bunker Krill Garrison"
+		location = 747
+		division_template = "Umbaran Bunker Garrison"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Bunker Usk Garrison"
+		location = 1093
+		division_template = "Umbaran Bunker Garrison"
+		start_experience_factor = 0.2
+	}
+}
+
+air_wings = {
+	959 = {
+		fighter_equipment_0 = {
+			owner = "UMB"
+			amount = 50
+		}
+		name = "Umbaran Starfighter Wing"
+	}
+}
+
+instant_effect = {
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_0
+		amount = 1500
+		producer = UMB
+	}
+}

@@ -1,0 +1,30 @@
+state={
+	id=612
+	name="STATE_612"
+	# HOD: Ruusan (ruusan_map.py)
+	provinces={
+		797 1185 12816 12821 12822 12824 12827 12830 12831 12832 12838 12843
+	}
+	resources={
+		oil=3
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			1185 3
+		}
+		victory_points = {
+			12832 5
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 144540
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

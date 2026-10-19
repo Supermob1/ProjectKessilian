@@ -1,0 +1,22 @@
+state={
+	id=1220
+	name="STATE_1220"
+	# HOD: Dathomir (dathomir_map.py)
+	impassable = yes
+	provinces={
+		2289 2369 2390 2419 2554 2582
+	}
+	resources={
+	}
+	history = {
+		buildings = {
+			infrastructure = 0
+		}
+		owner = DHT
+		add_core_of = DHT
+	}
+	manpower = 1000
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
