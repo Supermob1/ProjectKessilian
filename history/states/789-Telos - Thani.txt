@@ -1,0 +1,32 @@
+state={
+	id=789
+	name="STATE_789"
+	# HOD: Telos (telos_map.py)
+	provinces={
+		17 108 462 617 748 821 6768 6775 6776 6783 6794 6795 6805 6806
+	}
+	resources={
+		chromium=2
+		coal=1
+	}
+	history = {
+		victory_points = {
+			617 10
+		}
+		victory_points = {
+			821 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 2012726
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

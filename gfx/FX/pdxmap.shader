@@ -496,6 +496,25 @@ PixelShader =
 				vGlossiness = lerp( vGlossiness, 0.2f, vLava );
 				vSpec = lerp( vSpec, 0.05f, vLava );
 			}
+			// HOD: the Umbaran tile (atlas slot UMBARA_TILE_SLOT: umbara_33 / umbara_town_34). Umbara lies in permanent
+			// dusk (user, 2026-10-19): its ground is darkened here, the light on it is cut after the lighting, and
+			// bioluminescent specks in magenta and red glow on it, pulsing slowly (vUmbGlow, added after the lighting)
+			static const float UMBARA_TILE_SLOT = 20.0f;
+			float4 vIsUmb = 1.0f - saturate( abs( IndexV * MAP_NUM_TILES + IndexU - UMBARA_TILE_SLOT ) );
+			float vUmb = dot( vIsUmb, float4( ( 1.0f - vFracW.x ) * vFracW.y, vFracW.x * ( 1.0f - vFracW.y ),
+			                                  ( 1.0f - vFracW.x ) * ( 1.0f - vFracW.y ), vFracW.x * vFracW.y ) );
+			vUmb = smoothstep( 0.15f, 0.85f, vUmb );
+			float3 vUmbGlow = vec3( 0.0f );
+			{
+				float2 vP = vATPos * 0.9f;
+				float vN = ATNoise( vP ) * 0.6f + ATNoise( vP * 2.7f + 3.0f ) * 0.4f;
+				float vSpot = smoothstep( 0.74f, 0.9f, vN );                                  // glowing patches
+				float vFine = smoothstep( 0.88f, 0.98f, ATNoise( vP * 7.0f + 11.0f ) );     // single specks
+				float vPulse = 0.6f + 0.4f * sin( vGlobalTime * 1.2f + vN * 9.0f );
+				float3 vHue = lerp( float3( 1.0f, 0.3f, 0.9f ), float3( 1.0f, 0.3f, 0.16f ), ATNoise( vP * 0.22f + 7.0f ) );   // magenta, red (user's references)
+				vUmbGlow = vHue * saturate( vSpot * 0.7f + vFine * 0.6f ) * vPulse * vUmb * 0.5f;
+				diffuse.rgb = lerp( diffuse.rgb, diffuse.rgb * float3( 0.45f, 0.55f, 0.65f ), vUmb );
+			}
 			diffuse.rgb = lerp( diffuse.rgb, vGlobe * PLANET_PAINT_GAIN, vPlanetFade );
 
 			float4 vMudSnow = GetMudSnowColor( Input.prepos, SnowMudData );	
@@ -563,6 +582,8 @@ PixelShader =
 		
 			vOut = lerp( vOut, diffuse.rgb, BORDER_LIGHT_REMOVAL_FACTOR * ( 1 - vBloomAlpha ) );
 			vOut += vLavaGlow * ( 1.0f - vPlanetFade );   // HOD: the lava glows on its own (not on the zoomed-out globes)
+			vOut = lerp( vOut, vOut * float3( 0.4f, 0.45f, 0.55f ), vUmb * ( 1.0f - vPlanetFade ) );   // HOD: Umbara's dusk
+			vOut += vUmbGlow * ( 1.0f - vPlanetFade );                                         // and its glow
 			// HOD: keep the colour finite and sane (max/min also turn a NaN into 0): one blown-up highlight pixel
 			// otherwise spreads into hard white squares in the bloom pass, appearing and vanishing with the view angle
 			vOut = min( max( vOut, vec3( 0.0f ) ), vec3( 8.0f ) );

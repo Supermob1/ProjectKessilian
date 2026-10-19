@@ -2245,7 +2245,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_4126_13100"
+	name = "HOD_lane_4126_13109"
 
 	contested =
 	{
@@ -2276,14 +2276,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 4126 13100 }
+	required_provinces = { 4126 13109 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
 				391 = { has_state_flag = HOD_theater }
-				613 = { has_state_flag = HOD_theater }
+				617 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -2493,7 +2493,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_7241_1887"
+	name = "HOD_lane_7046_1887"
 
 	contested =
 	{
@@ -2524,7 +2524,7 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 7241 1887 }
+	required_provinces = { 7046 1887 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
@@ -2593,7 +2593,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_21739_1871"
+	name = "HOD_lane_21720_1871"
 
 	contested =
 	{
@@ -2624,13 +2624,13 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 21739 1871 }
+	required_provinces = { 21720 1871 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				1009 = { has_state_flag = HOD_theater }
+				1010 = { has_state_flag = HOD_theater }
 				884 = { has_state_flag = HOD_theater }
 			}
 		}
@@ -5643,7 +5643,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_10140_4147"
+	name = "HOD_lane_10140_10056"
 
 	contested =
 	{
@@ -5674,14 +5674,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 10140 4147 }
+	required_provinces = { 10140 10056 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
 				849 = { has_state_flag = HOD_theater }
-				99 = { has_state_flag = HOD_theater }
+				835 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5843,7 +5843,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_3495_11524"
+	name = "HOD_lane_3495_11562"
 
 	contested =
 	{
@@ -5874,14 +5874,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 3495 11524 }
+	required_provinces = { 3495 11562 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
 				101 = { has_state_flag = HOD_theater }
-				118 = { has_state_flag = HOD_theater }
+				948 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5893,7 +5893,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_11762_2062"
+	name = "HOD_lane_11817_11634"
 
 	contested =
 	{
@@ -5924,26 +5924,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 11762 2062 }
+	required_provinces = { 11817 11634 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				939 = { has_state_flag = HOD_theater }
+				941 = { has_state_flag = HOD_theater }
 				950 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 11762
+	icon = 11817
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_11902_11957"
+	name = "HOD_lane_11867_12040"
 
 	contested =
 	{
@@ -5974,14 +5974,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 11902 11957 }
+	required_provinces = { 11867 12040 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				945 = { has_state_flag = HOD_theater }
-				959 = { has_state_flag = HOD_theater }
+				943 = { has_state_flag = HOD_theater }
+				960 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -5993,7 +5993,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_12018_2281"
+	name = "HOD_lane_12117_11733"
 
 	contested =
 	{
@@ -6024,26 +6024,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 12018 2281 }
+	required_provinces = { 12117 11733 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				965 = { has_state_flag = HOD_theater }
+				961 = { has_state_flag = HOD_theater }
 				117 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 12018
+	icon = 12117
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_4457_12336"
+	name = "HOD_lane_12972_12183"
 
 	contested =
 	{
@@ -6074,14 +6074,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 4457 12336 }
+	required_provinces = { 12972 12183 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				612 = { has_state_flag = HOD_theater }
-				964 = { has_state_flag = HOD_theater }
+				616 = { has_state_flag = HOD_theater }
+				962 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6093,7 +6093,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_12704_12076"
+	name = "HOD_lane_12986_12022"
 
 	contested =
 	{
@@ -6124,14 +6124,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 12704 12076 }
+	required_provinces = { 12986 12022 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				612 = { has_state_flag = HOD_theater }
-				117 = { has_state_flag = HOD_theater }
+				616 = { has_state_flag = HOD_theater }
+				1242 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6143,7 +6143,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_11727_4662"
+	name = "HOD_lane_11787_11275"
 
 	contested =
 	{
@@ -6174,14 +6174,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 11727 4662 }
+	required_provinces = { 11787 11275 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				117 = { has_state_flag = HOD_theater }
-				953 = { has_state_flag = HOD_theater }
+				1238 = { has_state_flag = HOD_theater }
+				957 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6193,7 +6193,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_11015_10028"
+	name = "HOD_lane_11170_10028"
 
 	contested =
 	{
@@ -6224,13 +6224,13 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 11015 10028 }
+	required_provinces = { 11170 10028 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				956 = { has_state_flag = HOD_theater }
+				955 = { has_state_flag = HOD_theater }
 				729 = { has_state_flag = HOD_theater }
 			}
 		}
@@ -6393,7 +6393,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_2843_1160"
+	name = "HOD_lane_2843_10859"
 
 	contested =
 	{
@@ -6424,14 +6424,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 2843 1160 }
+	required_provinces = { 2843 10859 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
 				101 = { has_state_flag = HOD_theater }
-				839 = { has_state_flag = HOD_theater }
+				840 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6443,7 +6443,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_11360_4146"
+	name = "HOD_lane_11593_10722"
 
 	contested =
 	{
@@ -6474,14 +6474,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 11360 4146 }
+	required_provinces = { 11593 10722 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				946 = { has_state_flag = HOD_theater }
-				842 = { has_state_flag = HOD_theater }
+				949 = { has_state_flag = HOD_theater }
+				838 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6493,7 +6493,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_3313_10293"
+	name = "HOD_lane_10900_9877"
 
 	contested =
 	{
@@ -6524,26 +6524,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 3313 10293 }
+	required_provinces = { 10900 9877 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
 				841 = { has_state_flag = HOD_theater }
-				833 = { has_state_flag = HOD_theater }
+				832 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 3313
+	icon = 10900
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_10256_10406"
+	name = "HOD_lane_10271_10828"
 
 	contested =
 	{
@@ -6574,26 +6574,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 10256 10406 }
+	required_provinces = { 10271 10828 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				836 = { has_state_flag = HOD_theater }
-				97 = { has_state_flag = HOD_theater }
+				837 = { has_state_flag = HOD_theater }
+				824 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 10256
+	icon = 10271
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_10812_10756"
+	name = "HOD_lane_10898_10699"
 
 	contested =
 	{
@@ -6624,64 +6624,64 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 10812 10756 }
+	required_provinces = { 10898 10699 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				843 = { has_state_flag = HOD_theater }
-				818 = { has_state_flag = HOD_theater }
-			}
-		}
-		tooltip = HOD_lane_closed_tt
-	}
-
-	icon = 10812
-	offset = { 0 0 0 }
-}
-
-adjacency_rule =
-{
-	name = "HOD_lane_10797_10924"
-
-	contested =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	enemy =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-
-	required_provinces = { 10797 10924 }
-
-	is_disabled = {
-		has_global_flag = HOD_op_active
-		NOT = {
-			AND = {
+				841 = { has_state_flag = HOD_theater }
 				823 = { has_state_flag = HOD_theater }
-				825 = { has_state_flag = HOD_theater }
+			}
+		}
+		tooltip = HOD_lane_closed_tt
+	}
+
+	icon = 10898
+	offset = { 0 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "HOD_lane_10600_11024"
+
+	contested =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	enemy =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 10600 11024 }
+
+	is_disabled = {
+		has_global_flag = HOD_op_active
+		NOT = {
+			AND = {
+				822 = { has_state_flag = HOD_theater }
+				829 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6693,7 +6693,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_10399_10164"
+	name = "HOD_lane_10470_10240"
 
 	contested =
 	{
@@ -6724,14 +6724,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 10399 10164 }
+	required_provinces = { 10470 10240 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				824 = { has_state_flag = HOD_theater }
-				248 = { has_state_flag = HOD_theater }
+				820 = { has_state_flag = HOD_theater }
+				251 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6743,7 +6743,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_4382_9641"
+	name = "HOD_lane_9941_6154"
 
 	contested =
 	{
@@ -6774,14 +6774,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 4382 9641 }
+	required_provinces = { 9941 6154 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				837 = { has_state_flag = HOD_theater }
-				95 = { has_state_flag = HOD_theater }
+				834 = { has_state_flag = HOD_theater }
+				812 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6793,7 +6793,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_5989_9597"
+	name = "HOD_lane_9835_9162"
 
 	contested =
 	{
@@ -6824,76 +6824,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 5989 9597 }
+	required_provinces = { 9835 9162 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				96 = { has_state_flag = HOD_theater }
-				814 = { has_state_flag = HOD_theater }
-			}
-		}
-		tooltip = HOD_lane_closed_tt
-	}
-
-	icon = 5989
-	offset = { 0 0 0 }
-}
-
-adjacency_rule =
-{
-	name = "HOD_lane_9115_2421"
-
-	contested =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	enemy =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-
-	required_provinces = { 9115 2421 }
-
-	is_disabled = {
-		has_global_flag = HOD_op_active
-		NOT = {
-			AND = {
+				244 = { has_state_flag = HOD_theater }
 				813 = { has_state_flag = HOD_theater }
-				807 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 18771
+	icon = 9835
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_8527_8673"
+	name = "HOD_lane_8438_8964"
 
 	contested =
 	{
@@ -6924,14 +6874,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 8527 8673 }
+	required_provinces = { 8438 8964 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
 				802 = { has_state_flag = HOD_theater }
-				792 = { has_state_flag = HOD_theater }
+				795 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6943,7 +6893,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_8136_617"
+	name = "HOD_lane_8276_7188"
 
 	contested =
 	{
@@ -6974,14 +6924,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 8136 617 }
+	required_provinces = { 8276 7188 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				804 = { has_state_flag = HOD_theater }
-				91 = { has_state_flag = HOD_theater }
+				800 = { has_state_flag = HOD_theater }
+				791 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -6993,7 +6943,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_954_5137"
+	name = "HOD_lane_9013_7209"
 
 	contested =
 	{
@@ -7024,26 +6974,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 954 5137 }
+	required_provinces = { 9013 7209 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				794 = { has_state_flag = HOD_theater }
-				787 = { has_state_flag = HOD_theater }
+				795 = { has_state_flag = HOD_theater }
+				791 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 954
+	icon = 9013
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_7048_6828"
+	name = "HOD_lane_7147_6828"
 
 	contested =
 	{
@@ -7074,20 +7024,20 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 7048 6828 }
+	required_provinces = { 7147 6828 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				791 = { has_state_flag = HOD_theater }
+				790 = { has_state_flag = HOD_theater }
 				767 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 7048
+	icon = 7147
 	offset = { 0 0 0 }
 }
 
@@ -9193,7 +9143,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_11035_21088"
+	name = "HOD_lane_11079_21137"
 
 	contested =
 	{
@@ -9224,26 +9174,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 11035 21088 }
+	required_provinces = { 11079 21137 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				119 = { has_state_flag = HOD_theater }
+				953 = { has_state_flag = HOD_theater }
 				1064 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 11035
+	icon = 11079
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_21134_3476"
+	name = "HOD_lane_21124_10060"
 
 	contested =
 	{
@@ -9274,14 +9224,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 21134 3476 }
+	required_provinces = { 21124 10060 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				1059 = { has_state_flag = HOD_theater }
-				251 = { has_state_flag = HOD_theater }
+				1061 = { has_state_flag = HOD_theater }
+				248 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9293,7 +9243,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_6158_21715"
+	name = "HOD_lane_8907_21745"
 
 	contested =
 	{
@@ -9324,76 +9274,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 6158 21715 }
-
-	is_disabled = {
-		has_global_flag = HOD_op_active
-		NOT = {
-			AND = {
-				94 = { has_state_flag = HOD_theater }
-				1013 = { has_state_flag = HOD_theater }
-			}
-		}
-		tooltip = HOD_lane_closed_tt
-	}
-
-	icon = 6158
-	offset = { 0 0 0 }
-}
-
-adjacency_rule =
-{
-	name = "HOD_lane_8918_21618"
-
-	contested =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	enemy =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-
-	required_provinces = { 8918 21618 }
+	required_provinces = { 8907 21745 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
 				810 = { has_state_flag = HOD_theater }
-				189 = { has_state_flag = HOD_theater }
+				1011 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 8918
+	icon = 8907
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_8714_21686"
+	name = "HOD_lane_8747_21624"
 
 	contested =
 	{
@@ -9424,126 +9324,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 8714 21686 }
+	required_provinces = { 8747 21624 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				810 = { has_state_flag = HOD_theater }
-				190 = { has_state_flag = HOD_theater }
-			}
-		}
-		tooltip = HOD_lane_closed_tt
-	}
-
-	icon = 8714
-	offset = { 0 0 0 }
-}
-
-adjacency_rule =
-{
-	name = "HOD_lane_21628_21596"
-
-	contested =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	enemy =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-
-	required_provinces = { 21628 21596 }
-
-	is_disabled = {
-		has_global_flag = HOD_op_active
-		NOT = {
-			AND = {
-				1024 = { has_state_flag = HOD_theater }
-				1028 = { has_state_flag = HOD_theater }
-			}
-		}
-		tooltip = HOD_lane_closed_tt
-	}
-
-	icon = 21628
-	offset = { 0 0 0 }
-}
-
-adjacency_rule =
-{
-	name = "HOD_lane_21524_21511"
-
-	contested =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	enemy =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-
-	required_provinces = { 21524 21511 }
-
-	is_disabled = {
-		has_global_flag = HOD_op_active
-		NOT = {
-			AND = {
+				808 = { has_state_flag = HOD_theater }
 				1020 = { has_state_flag = HOD_theater }
-				191 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 21524
+	icon = 18771
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_21503_414"
+	name = "HOD_lane_8695_21742"
 
 	contested =
 	{
@@ -9574,26 +9374,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 21503 414 }
+	required_provinces = { 8695 21742 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				1015 = { has_state_flag = HOD_theater }
-				816 = { has_state_flag = HOD_theater }
+				807 = { has_state_flag = HOD_theater }
+				1025 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 21503
+	icon = 8695
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_21561_9052"
+	name = "HOD_lane_21697_21489"
 
 	contested =
 	{
@@ -9624,14 +9424,164 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 21561 9052 }
+	required_provinces = { 21697 21489 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
+				1022 = { has_state_flag = HOD_theater }
 				1031 = { has_state_flag = HOD_theater }
-				92 = { has_state_flag = HOD_theater }
+			}
+		}
+		tooltip = HOD_lane_closed_tt
+	}
+
+	icon = 21697
+	offset = { 0 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "HOD_lane_21590_21481"
+
+	contested =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	enemy =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 21590 21481 }
+
+	is_disabled = {
+		has_global_flag = HOD_op_active
+		NOT = {
+			AND = {
+				1017 = { has_state_flag = HOD_theater }
+				1031 = { has_state_flag = HOD_theater }
+			}
+		}
+		tooltip = HOD_lane_closed_tt
+	}
+
+	icon = 21590
+	offset = { 0 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "HOD_lane_21611_3318"
+
+	contested =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	enemy =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 21611 3318 }
+
+	is_disabled = {
+		has_global_flag = HOD_op_active
+		NOT = {
+			AND = {
+				1019 = { has_state_flag = HOD_theater }
+				811 = { has_state_flag = HOD_theater }
+			}
+		}
+		tooltip = HOD_lane_closed_tt
+	}
+
+	icon = 21611
+	offset = { 0 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "HOD_lane_21519_9095"
+
+	contested =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	enemy =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 21519 9095 }
+
+	is_disabled = {
+		has_global_flag = HOD_op_active
+		NOT = {
+			AND = {
+				1032 = { has_state_flag = HOD_theater }
+				797 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -9643,7 +9593,7 @@ adjacency_rule =
 
 adjacency_rule =
 {
-	name = "HOD_lane_21741_8534"
+	name = "HOD_lane_21669_8181"
 
 	contested =
 	{
@@ -9674,26 +9624,26 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 21741 8534 }
+	required_provinces = { 21669 8181 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				1026 = { has_state_flag = HOD_theater }
-				798 = { has_state_flag = HOD_theater }
+				190 = { has_state_flag = HOD_theater }
+				799 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
 	}
 
-	icon = 21741
+	icon = 21669
 	offset = { 0 0 0 }
 }
 
 adjacency_rule =
 {
-	name = "HOD_lane_21313_9706"
+	name = "HOD_lane_21543_9764"
 
 	contested =
 	{
@@ -9724,14 +9674,14 @@ adjacency_rule =
 		trade = yes
 	}
 
-	required_provinces = { 21313 9706 }
+	required_provinces = { 21543 9764 }
 
 	is_disabled = {
 		has_global_flag = HOD_op_active
 		NOT = {
 			AND = {
-				1029 = { has_state_flag = HOD_theater }
-				247 = { has_state_flag = HOD_theater }
+				1027 = { has_state_flag = HOD_theater }
+				241 = { has_state_flag = HOD_theater }
 			}
 		}
 		tooltip = HOD_lane_closed_tt
@@ -10988,6 +10938,56 @@ adjacency_rule =
 	}
 
 	icon = 15131
+	offset = { 0 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "HOD_lane_9541_10052"
+
+	contested =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	enemy =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	required_provinces = { 9541 10052 }
+
+	is_disabled = {
+		has_global_flag = HOD_op_active
+		NOT = {
+			AND = {
+				1223 = { has_state_flag = HOD_theater }
+				248 = { has_state_flag = HOD_theater }
+			}
+		}
+		tooltip = HOD_lane_closed_tt
+	}
+
+	icon = 9541
 	offset = { 0 0 0 }
 }
 # END HOD hyperlanes

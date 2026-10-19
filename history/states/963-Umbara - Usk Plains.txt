@@ -1,0 +1,32 @@
+state={
+	id=963
+	name="STATE_963"
+	# HOD: Umbara (umbara_map.py)
+	provinces={
+		1093 12215 12223 12224 12226 12230 12231 12232 12248 12249 12255 12256 12258 12260 12263 12268
+	}
+	resources={
+		rubber=2
+	}
+	history = {
+		victory_points = {
+			1093 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 3
+			12255 = {
+				naval_base = 4
+			}
+		}
+		owner = UMB
+		add_core_of = UMB
+	}
+	manpower = 556041
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

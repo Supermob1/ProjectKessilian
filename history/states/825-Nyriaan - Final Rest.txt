@@ -1,0 +1,33 @@
+state={
+	id=825
+	name="STATE_825"
+	# HOD: Nyriaan (nyriaan_map.py)
+	provinces={
+		760 10942 10944 10951
+	}
+	resources={
+		tungsten=1
+		coal=1
+	}
+	history = {
+		victory_points = {
+			760 2
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 2
+			air_base = 1
+			dockyard = 5
+			10942 = {
+				naval_base = 3
+			}
+		}
+		owner = TDF
+		add_core_of = TDF
+	}
+	manpower = 213948
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

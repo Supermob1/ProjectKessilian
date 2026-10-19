@@ -1,0 +1,30 @@
+state={
+	id=842
+	name="STATE_842"
+	# HOD: Corsin (corsin_map.py)
+	provinces={
+		10938 10939 10940 10943 10945 10946 10947 10948 10949 10950 10952 10953 10955 10956 10957 10959
+	}
+	resources={
+		rubber=2
+	}
+	history = {
+		victory_points = {
+			10953 1
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			dockyard = 2
+					10948 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 327124
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

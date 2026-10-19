@@ -1,0 +1,31 @@
+state={
+	id=1019
+	name="STATE_1019"
+	# HOD: Ord Cestus (ord_cestus_map.py)
+	provinces={
+		21499 21503 21611 21613 21616
+	}
+	resources={
+		coal=1
+		oil=2
+	}
+	history = {
+		victory_points = {
+			21503 2
+		}
+		victory_points = {
+			21616 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 2
+		}
+		owner = TDF
+		add_core_of = TDF
+	}
+	manpower = 550797
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

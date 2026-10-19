@@ -1,0 +1,31 @@
+state={
+	id=811
+	name="STATE_811"
+	# HOD: Dathomir (dathomir_map.py)
+	provinces={
+		487 509 525 3318 3344 3425 3523 3662 3692 3926 3974 3979 4181 4193 4348 4591 4849 4968 5124
+	}
+	resources={
+		rubber=1
+	}
+	history = {
+		victory_points = {
+			487 3
+		}
+		victory_points = {
+			525 1
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 2
+			air_base = 1
+		}
+		owner = DHT
+		add_core_of = DHT
+	}
+	manpower = 569707
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
