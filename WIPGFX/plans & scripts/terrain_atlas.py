@@ -317,6 +317,36 @@ def umbara():
     write_tile(col, h, UMBARA_SLOT, 70, 40, ref_slot=4, gain=0.55, name="umbara")
 
 
+CLOUD_SLOT = 21      # unused slot of the 5x5 atlas (00_terrain.txt: clouds_35, the clouds terrain category; the user
+                     # 2026-10-20: Ithor is a sea of clouds the herdships cross on narrow sky-lanes)
+
+
+def clouds_tile(S=1024, seed=21):
+    """a cloud deck seen from above, tileable: heaped cumulus tops in white, soft blue-grey shadows in the creases
+    between the heaps, a faint warm tint on the sunlit crowns. -> (diffuse RGB, height 0..1)"""
+    from scipy import ndimage as ndi
+    rng = np.random.default_rng(seed)
+    dens = np.zeros((S, S), np.float32)
+    for sigma, w in ((48, 0.45), (20, 0.3), (8, 0.17), (3, 0.08)):           # billows at four scales
+        n = ndi.gaussian_filter(rng.random((S, S)), sigma, mode="wrap")
+        dens += w * (n - n.min()) / np.ptp(n)
+    dens = (dens - dens.min()) / np.ptp(dens)
+    puff = np.clip((dens - 0.25) / 0.6, 0, 1) ** 0.7                          # rounded heaps
+    gy, gx = np.gradient(ndi.gaussian_filter(puff, 2, mode="wrap"))
+    lit = np.clip(0.5 - 9.0 * (gx + gy), 0, 1)                                # sun from the upper left
+    white = np.array([246, 246, 250], np.float32)
+    shade = np.array([150, 162, 186], np.float32)
+    col = shade + (white - shade) * (0.35 + 0.65 * puff[..., None] * (0.55 + 0.45 * lit[..., None]))
+    col = col + np.array([8, 4, -6], np.float32) * (puff * lit)[..., None]      # warm sunlit crowns
+    return np.clip(col, 0, 255), puff
+
+
+def clouds():
+    """Write the cloud deck into CLOUD_SLOT, kept brighter than the snow tile it is matched to."""
+    col, h = clouds_tile()
+    write_tile(col, h, CLOUD_SLOT, 30, 20, ref_slot=9, gain=1.05, name="clouds")
+
+
 if __name__ == "__main__":
     {"polyhaven": lambda: build(POLYHAVEN), "satellite": lambda: build(SATELLITE), "restore": restore,
-     "revolution": revolution, "scrap": scrap, "umbara": umbara}[sys.argv[1]]()
+     "revolution": revolution, "scrap": scrap, "umbara": umbara, "clouds": clouds}[sys.argv[1]]()

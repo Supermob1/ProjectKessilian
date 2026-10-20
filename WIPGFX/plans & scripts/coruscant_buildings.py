@@ -390,7 +390,9 @@ FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
             "hod_cmg_outpost": LM, "hod_rax_city": LM, "hod_dre_city": LM, "hod_zyg_city": LM, "hod_kaas_ruin": LM,
             "hod_cant_city": LM, "hod_cant_sith_ruin": LM, "hod_bon_city": LM, "hod_etti_city": LM, "hod_etti_arco": LM, "hod_ruu_city": LM, "hod_oss_ruin": LM, "hod_oss_ysanna": LM, "hod_rv_city": LM, "hod_rh_ruin": LM, "hod_rh_prefab": LM, "hod_pam_city": LM, "hod_mcl_city": LM, "hod_mcl_qcity": LM, "hod_ieg_city": LM, "hod_lia_city": LM, "hod_jab_city": LM, "hod_sal_city": LM, "hod_tel_city": LM, "hod_ser_city": LM, "hod_cel_town": LM, "hod_cel_village": LM, "hod_bot_city": LM, "hod_axx_city": LM, "hod_cit_city": LM, "hod_ces_city": LM, "hod_dat_hamlet": LM, "hod_man_dome": LM, "hod_man_town": LM, "hod_con_town": LM, "hod_tar_upper": LM, "hod_tar_lower": LM, "hod_tar_ruin": LM, "hod_way_town": LM,
             "hod_way_village": LM, "hod_bra_city": LM, "hod_tra_city": LM, "hod_nyr_town": LM,
-            "hod_crs_town": LM, "hod_kas_city": LM, "hod_ond_town": LM, "hod_umb_city": LM, "hod_col_city": LM, "hod_rus_city": LM}
+            "hod_crs_town": LM, "hod_kas_city": LM, "hod_ond_town": LM, "hod_umb_city": LM, "hod_col_city": LM, "hod_rus_city": LM,
+            "hod_om_town": LM, "hod_gar_farm": LM, "hod_gar_city": LM, "hod_aga_town": LM, "hod_ot_town": LM,
+            "hod_dan_estate": LM, "hod_dub_city": LM, "hod_bas_town": LM, "hod_kal_town": LM, "hod_muun_town": LM, "hod_myg_town": LM, "hod_yag_town": LM, "hod_ans_town": LM, "hod_dor_town": LM, "hod_yin_town": LM, "hod_cha_town": LM, "hod_cor_town": LM, "hod_ark_town": LM, "hod_anx_town": LM, "hod_ess_town": LM, "hod_cos_town": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 SCRAP_TOWN = [f"hod_bld_rpt_{n}" for n in ("crates4", "crates5", "crates6", "crates9", "crates1", "huttTower", "fuelCellC")]
 SINGLE.update({n: SW for n in SCRAP_TOWN})  # Raxus Prime scrap towns: Empire at War junk stacks (sketchfab_props.py rpt_*)
@@ -453,7 +455,28 @@ CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]
                57: (0.45, ["hod_ond_town"]),                                            # Onderon: stone towns
                58: (0.4, ["hod_umb_city"]),                                             # Umbara: dark towns
                59: (0.4, ["hod_col_city"]),                                             # Colla IV: hive towns
-               60: (0.45, ["hod_rus_city"])}                                            # Ruusan: fieldstone towns
+               60: (0.45, ["hod_rus_city"]),                                            # Ruusan: fieldstone towns
+               61: (0.4, ["hod_om_town"]),                                              # Ord Mantell: stucco towns
+               62: (0.12, ["hod_gar_farm"]),                                            # Garqi: lone farmsteads
+               63: (0.45, ["hod_gar_city"]),                                            # Garqi: Pesktda's avenues
+               64: (0.35, ["hod_aga_town"]),                                            # Agamar: sandstone towns
+               65: (0.4, ["hod_ot_town"]),                                              # Ord Trasi: depot towns
+               66: (0.12, ["hod_dan_estate"]),                                          # Dantooine: lone estates
+               67: (0.4, ["hod_dub_city"]),                                             # Dubrillion: high-rise towns
+               68: (0.4, ["hod_bas_town"]),                                             # Bastion: stone towns
+               69: (0.35, ["hod_kal_town"]),                                            # Kalee: temple towns
+               70: (0.4, ["hod_muun_town"]),                                            # Muunilinst: spire towns
+               71: (0.4, ["hod_myg_town"]),                                             # Mygeeto: crystal-capped towers
+               72: (0.4, ["hod_yag_town"]),                                             # Yaga Minor: Yagai hive towns
+               73: (0.4, ["hod_ans_town"]),                                             # Ansion: whitewashed towns
+               74: (0.4, ["hod_dor_town"]),                                             # Dorin: Kel Dor towers
+               75: (0.4, ["hod_yin_town"]),                                             # Yinchorr: Yinchorri city-states
+               76: (0.4, ["hod_cha_town"]),                                             # Chandrila: cream stone, patina roofs
+               77: (0.4, ["hod_cor_town"]),                                             # Corulag: glass towers
+               78: (0.4, ["hod_ark_town"]),                                             # Arkania: white domes, crystal spires
+               79: (0.4, ["hod_anx_town"]),                                             # Anaxes: Republic blocks
+               80: (0.4, ["hod_ess_town"]),                                             # Esseles: cream and terracotta
+               81: (0.4, ["hod_cos_town"])}                                             # Coruscant: fewer, bigger towers
 
 
 def wire():

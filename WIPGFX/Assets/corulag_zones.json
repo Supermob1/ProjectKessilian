@@ -1,0 +1,905 @@
+{
+ "centre": [
+  1318.0981223500908,
+  986.7471229557843
+ ],
+ "radius": 32.42004386454276,
+ "vp_names": {
+  "418": "Curamelle",
+  "1171": "Sienar Advanced Research Division",
+  "1503": "Dammon University",
+  "1833": "Corulag Academy",
+  "1865": "Adjesk",
+  "2225": "Crullov City",
+  "2246": "Tasjon",
+  "2423": "Abersaith Canyon",
+  "11775": "Resoria"
+ },
+ "provinces": {
+  "35": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Curamelle",
+   "state": 146,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1310.7368421052631,
+    986.8947368421053
+   ],
+   "area": 19,
+   "terrain": "urban"
+  },
+  "323": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Curamelle",
+   "state": 146,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1308.75,
+    993.5
+   ],
+   "area": 8,
+   "terrain": "urban"
+  },
+  "418": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Curamelle",
+   "state": 146,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1312.0,
+    991.0
+   ],
+   "area": 13,
+   "terrain": "urban"
+  },
+  "913": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Curamelle",
+   "state": 146,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1309.2,
+    990.5
+   ],
+   "area": 10,
+   "terrain": "urban"
+  },
+  "1171": {
+   "zone": "works",
+   "kind": 2,
+   "feature": "Sienar Advanced Research Division",
+   "state": 5,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1297.7222222222222,
+    990.4722222222222
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "1503": {
+   "zone": "academy",
+   "kind": 3,
+   "feature": "Dammon University",
+   "state": 5,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1298.3333333333333,
+    977.4848484848485
+   ],
+   "area": 33,
+   "terrain": "plains"
+  },
+  "1833": {
+   "zone": "academy",
+   "kind": 3,
+   "feature": "Corulag Academy",
+   "state": 145,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1307.842105263158,
+    1004.0526315789474
+   ],
+   "area": 19,
+   "terrain": "plains"
+  },
+  "1865": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1318.6666666666667,
+    1007.4166666666666
+   ],
+   "area": 12,
+   "terrain": "urban"
+  },
+  "1977": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1321.0588235294117,
+    1009.5882352941177
+   ],
+   "area": 17,
+   "terrain": "urban"
+  },
+  "2168": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Crullov City",
+   "state": 143,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1312.9285714285713,
+    966.6428571428571
+   ],
+   "area": 14,
+   "terrain": "urban"
+  },
+  "2225": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Crullov City",
+   "state": 143,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1311.1818181818182,
+    963.8181818181819
+   ],
+   "area": 11,
+   "terrain": "urban"
+  },
+  "2246": {
+   "zone": "track",
+   "kind": 4,
+   "feature": "Tasjon",
+   "state": 144,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1325.735294117647,
+    989.7058823529412
+   ],
+   "area": 34,
+   "terrain": "plains"
+  },
+  "2423": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Abersaith Canyon",
+   "state": 144,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1324.2,
+    1001.4
+   ],
+   "area": 20,
+   "terrain": "hills"
+  },
+  "3165": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1333.1935483870968,
+    989.6451612903226
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "3276": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1339.0666666666666,
+    973.2666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "3351": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1340.7666666666667,
+    997.6333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "3481": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1344.6923076923076,
+    987.8846153846154
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "4130": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1333.8695652173913,
+    979.9565217391304
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "4932": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1338.4761904761904,
+    981.0
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4938": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1336.76,
+    994.08
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "5151": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1339.3333333333333,
+    990.0
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "5187": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1334.3793103448277,
+    985.0344827586207
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "5498": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1343.7857142857142,
+    993.0714285714286
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "5658": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1340.1739130434783,
+    985.2608695652174
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "11645": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1343.4761904761904,
+    981.7619047619048
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "11646": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1336.3,
+    976.0
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "11660": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1300,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1341.1904761904761,
+    977.2857142857143
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "11662": {
+   "zone": "bamboo",
+   "kind": 10,
+   "feature": "South Kallis",
+   "state": 1299,
+   "group": 9,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1335.8461538461538,
+    1011.2307692307693
+   ],
+   "area": 26,
+   "terrain": "forest"
+  },
+  "11675": {
+   "zone": "bamboo",
+   "kind": 10,
+   "feature": "South Kallis",
+   "state": 1299,
+   "group": 9,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1342.2307692307693,
+    1002.7307692307693
+   ],
+   "area": 26,
+   "terrain": "forest"
+  },
+  "11677": {
+   "zone": "bamboo",
+   "kind": 10,
+   "feature": "South Kallis",
+   "state": 1299,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1334.9583333333333,
+    1005.875
+   ],
+   "area": 24,
+   "terrain": "forest"
+  },
+  "11678": {
+   "zone": "bamboo",
+   "kind": 10,
+   "feature": "South Kallis",
+   "state": 1299,
+   "group": 9,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1340.0,
+    1007.2592592592592
+   ],
+   "area": 27,
+   "terrain": "forest"
+  },
+  "11688": {
+   "zone": "bamboo",
+   "kind": 10,
+   "feature": "South Kallis",
+   "state": 1299,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1337.0,
+    1002.0
+   ],
+   "area": 22,
+   "terrain": "forest"
+  },
+  "11689": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Curamelle",
+   "state": 146,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1312.6489361702127,
+    984.8404255319149
+   ],
+   "area": 94,
+   "terrain": "plains"
+  },
+  "11692": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Curamelle",
+   "state": 146,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1309.465909090909,
+    994.9659090909091
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "11693": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Curamelle",
+   "state": 146,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1319.3118279569892,
+    980.3118279569892
+   ],
+   "area": 93,
+   "terrain": "plains"
+  },
+  "11696": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Dammon",
+   "state": 5,
+   "group": 11,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1289.948051948052,
+    991.2987012987013
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "11710": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Dammon",
+   "state": 5,
+   "group": 11,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1293.9887640449438,
+    972.7865168539325
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "11711": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Dammon",
+   "state": 5,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1302.0526315789473,
+    984.280701754386
+   ],
+   "area": 114,
+   "terrain": "plains"
+  },
+  "11713": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Dammon",
+   "state": 5,
+   "group": 11,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1294.9722222222222,
+    998.5185185185185
+   ],
+   "area": 108,
+   "terrain": "plains"
+  },
+  "11716": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Dammon",
+   "state": 5,
+   "group": 11,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1291.1134020618556,
+    982.3505154639175
+   ],
+   "area": 97,
+   "terrain": "plains"
+  },
+  "11721": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Crullov",
+   "state": 143,
+   "group": 12,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1307.8297872340424,
+    960.7446808510638
+   ],
+   "area": 94,
+   "terrain": "hills"
+  },
+  "11723": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Crullov",
+   "state": 143,
+   "group": 12,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1318.5625,
+    959.8035714285714
+   ],
+   "area": 112,
+   "terrain": "hills"
+  },
+  "11729": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Crullov",
+   "state": 143,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1317.129411764706,
+    970.5529411764705
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "11730": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Crullov",
+   "state": 143,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1308.2692307692307,
+    973.8269230769231
+   ],
+   "area": 104,
+   "terrain": "hills"
+  },
+  "11734": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Crullov",
+   "state": 143,
+   "group": 12,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1300.3636363636363,
+    966.3333333333334
+   ],
+   "area": 99,
+   "terrain": "hills"
+  },
+  "11735": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Tasjon",
+   "state": 144,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1330.71,
+    997.81
+   ],
+   "area": 100,
+   "terrain": "plains"
+  },
+  "11738": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Tasjon",
+   "state": 144,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1326.857142857143,
+    984.6857142857143
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "11740": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Tasjon",
+   "state": 144,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1320.8505747126437,
+    995.2528735632184
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "11746": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 14,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1304.6888888888889,
+    1011.0111111111111
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "11751": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 14,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1328.3177570093458,
+    1008.7663551401869
+   ],
+   "area": 107,
+   "terrain": "hills"
+  },
+  "11752": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1314.2169811320755,
+    1003.0566037735849
+   ],
+   "area": 106,
+   "terrain": "hills"
+  },
+  "11754": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 14,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1300.0,
+    1004.0857142857143
+   ],
+   "area": 105,
+   "terrain": "hills"
+  },
+  "11755": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 14,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1323.1184210526317,
+    1015.3421052631579
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "11764": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Adjesk",
+   "state": 145,
+   "group": 14,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1313.5979381443299,
+    1013.8762886597938
+   ],
+   "area": 97,
+   "terrain": "hills"
+  },
+  "11775": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Resoria",
+   "state": 147,
+   "group": 15,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1338.3211009174313,
+    967.5963302752293
+   ],
+   "area": 109,
+   "terrain": "forest"
+  },
+  "11777": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Resoria",
+   "state": 147,
+   "group": 15,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1347.1864406779662,
+    995.3050847457627
+   ],
+   "area": 59,
+   "terrain": "forest"
+  },
+  "11784": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Resoria",
+   "state": 147,
+   "group": 15,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1346.6533333333334,
+    978.64
+   ],
+   "area": 75,
+   "terrain": "forest"
+  },
+  "11793": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Resoria",
+   "state": 147,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1327.8796992481202,
+    973.4285714285714
+   ],
+   "area": 133,
+   "terrain": "forest"
+  },
+  "11798": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Resoria",
+   "state": 147,
+   "group": 15,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1328.6666666666667,
+    961.829268292683
+   ],
+   "area": 123,
+   "terrain": "forest"
+  }
+ }
+}

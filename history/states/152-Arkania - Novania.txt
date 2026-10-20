@@ -1,0 +1,52 @@
+state={
+	id=152
+	name="STATE_152"
+	# HOD: Arkania (arkania_map.py)
+	provinces={
+		2630 3240 11941 11947 11948
+	}
+	resources={
+		# #credits #Credits
+		# chromium #Circuitry
+		steel=10#Alloys
+		# tungsten=100#Minerals
+		rubber =10#Bacta
+		# aluminium #Doonium
+		# oil #Fuel
+	}
+	history = {
+		victory_points = {
+			3240 5
+		}
+		buildings = {
+
+			# radar_station = #Tracking Station
+
+			# #credits_building = #Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = #Planetary Shields
+
+			industrial_complex = 1#Civilian Factories
+
+			arms_factory = 3#Military Factories#Shipyard
+
+			infrastructure = 1#Infrastructure
+
+			# air_base = 1#Small Spaceports
+			dockyard = 5
+					11947 = {
+				naval_base = 4
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 329684
+	state_category = industrial_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

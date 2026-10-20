@@ -420,18 +420,25 @@ LANDMARKS = [
     ("dat_nardithi", ["hod_dat_nardithi"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.1},
      "Nardithi Cluster", "A field of hexagonal stone spikes rising out of the jungle, older than any clan's memory.", None),
     ("man_sundari", ["hod_man_sundari"], "GFX_idea_generic_political_support", {"stability_factor": 0.03, "compliance_gain": 0.02},
-     "Sundari", "The New Mandalorians' capital, a city of white cubes under its dome on the desert the ancient wars "
-     "left. From the Royal Palace Duchess Satine Kryze keeps Mandalore neutral, and the Council of Neutral Systems meets "
-     "in her halls.", None),
+     "Sundari", "The New Mandalorians' capital, a city of cubes under a vast black dome on the white desert the "
+     "Excision left, built over one of the largest beskar mines on Mandalore. The Republic recognises it, not Keldabe, "
+     "as the planet's capital; from its Royal Palace by the Peace Park Duchess Satine Kryze keeps Mandalore neutral.", None),
     ("man_keldabe", ["hod_man_keldabe"], "GFX_idea_generic_army_support", {"local_manpower": 0.1},
-     "Keldabe", "The old capital on its granite hill in a bend of the Kelita River, where the clans still keep the "
-     "warrior ways the New Mandalorians gave up. The MandalMotors tower rises over its slate roofs.", None),
+     "Keldabe", "The clans' capital since before the Mandalorian Wars, a hill-fort town on granite in a bend of the "
+     "Kelita River. Its streets are a jumble of plaster houses, warehouses and granite towers; the clan chiefs meet in "
+     "the Oyu'baat, and the MandalMotors tower with its mythosaur skull guides pilots home.", None),
     ("man_beskar", ["hod_man_beskar"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.15},
-     "Beskar Mines", "Deep pits in the eastern badlands where the iron Mandalorians forge into beskar is still dug, "
-     "under the watch of the government in Sundari.", None),
+     "Tokursh Beskar Mines", "Deep pits in the Tokursh badlands, the richest beskar country on Mandalore. Clan "
+     "smiths guard the secrets of working the iron; the government in Sundari guards the pits.", None),
     ("man_dwcamp", ["hod_man_dwcamp"], "GFX_idea_generic_secret_police", {"resistance_target": 0.05},
      "Death Watch Camp", "A hidden camp of Death Watch, the exiles who would return Mandalore to its warrior past. "
      "Pre Vizsla's fighters train here and wait for allies against the Duchess.", None),
+    ("man_cityofbone", ["hod_man_cityofbone"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "City of Bone", "An amusement park an enterprising Mandalorian built in the shape of a giant mythosaur skeleton, "
+     "hoping to draw adventure tourists to Mandalore. They never came; its rides stand idle on the plains by Enceri.", None),
+    ("man_norgbral", ["hod_man_norgbral"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Norg Bral", "A hill-fort town behind two rings of stone walls, home of Clan Bralor. Its warriors answer to their "
+     "chieftain before any council in Sundari.", None),
     ("tar_spires", ["hod_tar_spires"], "GFX_idea_generic_political_support", {"stability_factor": 0.02, "compliance_gain": 0.02},
      "Upper City", "The towers of Taris' rich, raised again over the ruins the Sith fleet left four thousand years ago "
      "and guarded by private security. From their decks the city looks out over smog and the slums below.", None),
@@ -578,6 +585,311 @@ LANDMARKS = [
     ("rus_olmondo", ["hod_rus_olmondo"], "GFX_idea_generic_political_support", {"stability_factor": 0.02, "compliance_gain": 0.02},
      "Olmondo", "Ruusan's capital, rebuilt in fieldstone after the war burnt the old cities. Its assembly now leans "
      "toward the Separatists, who promise to remember the worlds the Republic forgot.", None),
+    # --- Ithor (Legends: the herdship cities over the sacred Mother Jungle, the Falls of Dessiar)
+    ("ith_tafanda", ["hod_ith_tafanda"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Tafanda Bay", "The greatest of the Ithorian herdships and the seat of Ithor's elected council, a floating garden "
+     "city of living hulls that drifts over the clouds so its people never wound the Mother Jungle below. Offworld "
+     "traders land at its balcony to buy Ithorian medicines and botanicals.", None),
+    ("ith_tarintha", ["hod_ith_tarintha"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Tree of Tarintha", "A herdship grown round a single colossal tree, its roots trailing far below the hull. Its "
+     "herd tends gardens that feed half the Ithorian fleet of cities.", None),
+    ("ith_cloudmother", ["hod_ith_cloudmother"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Cloud-Mother", "A herdship of three linked hulls, home of the House of the Healers, where Ithorian healers "
+     "treat patients from across the Mid Rim with the medicines of the jungle.", None),
+    ("ith_falls", ["hod_ith_falls"], "GFX_idea_generic_political_support", {"compliance_gain": 0.03},
+     "Falls of Dessiar", "Waterfalls in a horseshoe of jungle cliffs, renowned across the galaxy for their beauty and "
+     "peace. No Ithorian may walk there under the Law of Life; they watch them from the herdships passing over.", None),
+    # --- Ord Mantell (Legends first: Worlport; canon: Ord Mantell City, its junkyards and mining tunnels)
+    ("om_city", ["hod_om_city"], "GFX_idea_generic_political_support", {"stability_factor": 0.02, "compliance_gain": 0.02},
+     "Ord Mantell City", "The capital, a sprawl of towers and old mining districts over tunnels nobody has mapped in "
+     "centuries. Bounty hunters, smugglers and Black Sun's agents do their business in its back streets.", None),
+    ("om_worlport", ["hod_om_worlport"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Worlport", "Ord Mantell's great spaceport city, built in the Corellian style of its first settlers in the days "
+     "of the Old Republic, with a Casino District that draws gamblers from across the Mid Rim.", None),
+    ("om_junkyard", ["hod_om_junkyard"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.1},
+     "Ord Mantell Junkyards", "Mountains of scrapped starships and droids on the edge of the capital, where salvagers "
+     "strip hulls for parts and anyone can disappear for a price.", None),
+    ("om_oldcity", ["hod_om_oldcity"], "GFX_idea_generic_secret_police", {"resistance_target": 0.03},
+     "Old Ord Mantell City", "The ruins of the first capital, abandoned when the settlers moved on. Its broken towers "
+     "shelter scavengers, outlaws and the gangs that hunt them.", None),
+    ("om_garnik", ["hod_om_garnik"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Fort Garnik", "A Republic stronghold on the volcanic island of Avilatan, its guns covering the Bright Sea from "
+     "the black slopes below Mount Avilatan, where lava still runs past the walls.", None),
+    # --- Garqi (Legends: Pesktda, the Agricultural University, the Xenobotanical Garden, the Vlassy River)
+    ("gar_pesktda", ["hod_gar_pesktda"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Pesktda", "Garqi's capital, a graceful city of broad avenues lined with bimiza trees and dotted with parks, its "
+     "Xenobotanical Garden home to a grove of telepathic bafforr trees brought from Ithor.", None),
+    ("gar_university", ["hod_gar_university"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.1}, "Garqi Agricultural University", "The leading university of "
+     "Garqi, where the agronomists of the Mid Rim learn their trade, and its students argue politics late into the night.", None),
+    ("gar_combine", ["hod_gar_combine"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.1},
+     "Garqi Agricultural Combine", "The silos and processing works of the Combine that feeds Garqi and ships grain and "
+     "caf to the banking worlds of the Core.", None),
+    ("gar_vlassy", ["hod_gar_vlassy"], "GFX_idea_generic_political_support", {"compliance_gain": 0.03},
+     "Vlassy Nature Preserve", "Forested bluffs and canyons along the Vlassy River, too rough to farm, kept wild and "
+     "visited by tourists in the caf off-season.", None),
+    # --- Agamar (Legends: Calna Muun, the Council Center, the University, the Crescent Sea ruins, natural bridges)
+    ("aga_calna", ["hod_aga_calna"], "GFX_idea_generic_political_support", {"stability_factor": 0.02, "compliance_gain": 0.02},
+     "Calna Muun", "Agamar's capital and spaceport on the shore of the Crescent Sea, where the Agamarian Council meets "
+     "in the shell-roofed Council Center. Its farmers and ranchers have lately thrown in their lot with the Confederacy.", None),
+    ("aga_university", ["hod_aga_university"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.1}, "University of Agamar", "A college of a frontier world with a "
+     "xenoarchaeology faculty respected across the sector, built on what the droughts uncovered in the Crescent Sea.", None),
+    ("aga_ruins", ["hod_aga_ruins"], "GFX_idea_generic_secret_police", {"resistance_target": 0.03},
+     "Crescent Shallows Ruins", "The stepped temple of a civilisation that lived under the Crescent Sea in the days of "
+     "the Rakatan Infinite Empire, laid bare by drought. Farmers nearby swear the stones still hum at night.", None),
+    ("aga_bridges", ["hod_aga_bridges"], "GFX_idea_generic_political_support", {"compliance_gain": 0.03},
+     "Stone Bridges", "Great natural arches worn into the red rock of the northern badlands, where Agamarian youngsters "
+     "race their repulsorcraft through the gaps.", None),
+    ("aga_ranch", ["hod_aga_ranch"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Mugruebe Ranches", "The ranges where Agamar raises its mugruebe, beasts of burden and the meat of the stew the "
+     "rest of the galaxy will not eat.", None),
+    # --- Ord Trasi (Legends: the Republic's ordnance depot fortress world, the shipyards, the salvage yards)
+    ("ot_depot", ["hod_ot_depot"], "GFX_idea_generic_army_support", {"local_manpower": 0.05, "local_supplies": 0.1},
+     "Ord Trasi Depot", "An ordnance and regional depot fortress the Republic built to supply its exploration fleets, "
+     "its walls bristling with turbolasers over the cold dust plains. Who holds Ord Trasi holds the Braxant Run.", None),
+    ("ot_yards", ["hod_ot_yards", "hod_ot_orbital"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.15}, "Ord Trasi Shipyards", "What began as a refuelling stop grew into "
+     "one of the Outer Rim's great construction centres for capital ships, with cradles on the flats and slips in orbit "
+     "where Dreadnaught cruisers take shape.", None),
+    ("ot_salvage", ["hod_ot_salvage"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.1},
+     "Ord Trasi Salvage Yards", "Old warships come here to be cut apart; their metal goes back into the yards' new hulls.", None),
+    # --- Dantooine (Legends: Khoonda, the ruined Jedi Enclave, the ancient Jedi temple, the Rakatan ruins, the caves)
+    ("dan_khoonda", ["hod_dan_khoonda"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Khoonda", "The walled seat of Dantooine's settlers, raised from the old Matale estate after the Jedi Civil War, "
+     "where the farmers of the plains govern themselves and keep a militia against raiders.", None),
+    ("dan_enclave", ["hod_dan_enclave"], "GFX_idea_generic_political_support", {"compliance_gain": 0.03},
+     "Jedi Enclave", "The ruins of the Jedi Enclave of Vodo-Siosk Baas, bombed from orbit by Darth Malak four thousand "
+     "years ago and never rebuilt. Grass grows in its courtyard round the ancient tree.", None),
+    ("dan_rakatan", ["hod_dan_rakatan"], "GFX_idea_generic_secret_police", {"resistance_target": 0.03},
+     "Ancient Temple", "A temple of the Rakatan Infinite Empire half sunk into a mound north-east of the Enclave, its "
+     "doorway still glowing; the Star Map within has been dark since the Jedi Civil War.", None),
+    ("dan_matale", ["hod_dan_matale"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Matale Estate", "The walled house of the Matale family on its grounds east of the river, its kath hounds penned in "
+     "the yard. The settlers' first council met here before Khoonda was built.", None),
+    ("dan_sandral", ["hod_dan_sandral"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Sandral Estate", "The long house of the Sandral family, old rivals of the Matales, with its garden terraces and "
+     "landing pad on the south-western grounds.", None),
+    ("dan_grove", ["hod_dan_grove"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "The Grove", "A glade where the Jedi of the Enclave meditated round an ancient tree inside a ring of standing "
+     "stones. The settlers say something dark still lingers there.", None),
+    ("dan_cave", ["hod_dan_cave"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.1},
+     "Crystal Caves", "Caves in the Taikaha Hills where kinrath nest, and where Jedi once found kyber crystals in their "
+     "eggs.", None),
+    # --- Dubrillion (Legends: high-rise resort cities, the Dubrillion Aquarium)
+    ("dub_capital", ["hod_dub_capital"], "GFX_idea_generic_political_support", {"stability_factor": 0.02, "compliance_gain": 0.02},
+     "Dubrillion City", "The capital of a garden world, its white towers of hotels and luxury suites rising round the "
+     "Dubrillion Aquarium, where emerald sharks circle a great cylindrical tank. The banking clan's wealthy come here to "
+     "spend what they earn elsewhere.", None),
+    ("dub_resort", ["hod_dub_resort"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Sapphire Coast", "Terraced hotels stepping down to the beaches of the eastern shore, their pools on every level.", None),
+    # --- Bastion (Legends: Ravelin, Sartinaynian City, the customs station)
+    ("bas_ravelin", ["hod_bas_ravelin"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Ravelin", "The stern stone capital of the Braxant sector, its Sector Hall raising a dark spire over the hills. Its "
+     "governors already speak of order more than of the Senate.", None),
+    ("bas_sartinaynian", ["hod_bas_sartinaynian", "hod_bas_customs"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Sartinaynian City", "The harbour city of the south-eastern coast, its terraces climbing the hill above freighters "
+     "at the quays; every ship bound for Bastion first stops at the customs station in orbit.", None),
+    ("kal_kaleela", ["hod_kal_kaleela"], "GFX_idea_generic_army_support", {"local_manpower": 0.1},
+     "Kaleela", "The Kaleesh capital, its temple-houses climbing the walls of a moss-covered canyon under the mask of "
+     "the elders' palace. Fresh from the Huk War, its warriors owe their victory to the Banking Clan's credits.", None),
+    ("kal_shrupak", ["hod_kal_shrupak"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Shrupak", "The most sacred temple of the Kaleesh, on the edge of the Ausez Steppes, held by Qymaen jai Sheelal and "
+     "Ronderu lij Kummar against the Yam'rii.", None),
+    ("kal_abesmi", ["hod_kal_abesmi"], "GFX_idea_generic_political_support", {"compliance_gain": 0.03},
+     "Abesmi", "The island-monolith of the Jenuwaa Sea, from which the Kaleesh gods ascended to heaven. Pilgrims climb "
+     "its winding stair to the shrine at the top.", None),
+    ("kal_warruzan", ["hod_kal_warruzan"], "GFX_idea_generic_secret_police", {"resistance_target": 0.05},
+     "Warru'zan", "The bloodhalls of the Kaleesh elders, cut into a canyon wall, where the young are taught the ways of "
+     "war and honour.", None),
+    # --- Muunilinst (Legends: Harnaidan, High Port, Mariunhus, Pilaan)
+    ("muun_harnaidan", ["hod_muun_harnaidan", "hod_muun_highport"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.15}, "Harnaidan", "The greatest Muun city and the headquarters of the "
+     "InterGalactic Banking Clan, built round spires four kilometres tall; San Hill rules from his citadel, and a "
+     "skyhook climbs from the city to High Port.", None),
+    ("muun_mariunhus", ["hod_muun_mariunhus"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.15},
+     "Mariunhus", "A vault-spire built round a smoker rich in gold and platinum, out at sea: a mountain of wealth that "
+     "can be mined at a moment's notice to guarantee credit anywhere in the galaxy.", None),
+    ("muun_pilaan", ["hod_muun_pilaan"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Pilaan Podrace Course", "The course outside Pilaan, one of Muunilinst's largest cities, where podracers fly under "
+     "the arches before crowds of Muuns who bet on everything.", None),
+    # --- Mygeeto (Legends: Jygat and the Dressian Kiolsh bank, the crystal mines; canon: the spaceport city, the
+    # Southern Mesas, the Hammertong facility)
+    ("myg_jygat", ["hod_myg_jygat"], "GFX_idea_generic_production_bonus", {"state_production_speed_buildings_factor": 0.1},
+     "Jygat", "A city at the edge of the ice sheets, where the Dressian Kiolsh Merchant Bank has carved its vaults into "
+     "the glacier itself. Its doors glow with the crystal that powers every tower on Mygeeto.", None),
+    ("myg_city", ["hod_myg_city"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Mygeeto City", "The great spaceport metropolis of the Banking Clan, its dark spires rising out of the ice chasms "
+     "with crystal crowns, its bridges strung between them over the drop.", None),
+    ("myg_mesas", ["hod_myg_mesas"], "GFX_idea_generic_army_support", {"local_supplies": 0.05},
+     "Southern Mesas", "Towers built on top of the sheer southern mesas and joined to one another by bridges, out of "
+     "reach of anyone on the ice below.", None),
+    ("myg_hammertong", ["hod_myg_hammertong"], "GFX_idea_generic_secret_police", {"resistance_target": 0.05},
+     "Hammertong Facility", "A Geonosian research station on the ice, its spires shipped in from Geonosis. What the "
+     "drones do to the crystal in its test cradle, the Banking Clan does not say.", None),
+    ("myg_mines", ["hod_myg_mines"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.15},
+     "Crystal Mines", "Mountains of crystal spurs cut into by the Banking Clan's miners, the source of the synthesized "
+     "crystals that power Mygeeto's capacitor towers.", None),
+    # --- Yaga Minor (Legends: the Yagai hive, Yavvitiri Spaceport, the Preparation Center, drive units, the shipyards)
+    ("yag_hive", ["hod_yag_hive"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Yagai Hive", "The mounds of the Yagai rising out of the forest, home to castes that have built starships for the "
+     "galaxy for longer than the Republic has kept records of it.", None),
+    ("yag_spaceport", ["hod_yag_spaceport", "hod_yag_yards"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Yaga Minor Shipyards", "Yavvitiri Spaceport on the ground and the shipyards in orbit above it, where Yagai crews "
+     "assemble the hulls of Republic cruisers in cradles of curved ribs.", None),
+    ("yag_center", ["hod_yag_center"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Preparation Center", "A secluded Republic campus a few kilometres from Yavvitiri, built to train the crews of a "
+     "Jedi expedition beyond the galaxy that has not yet been launched.", None),
+    ("yag_works", ["hod_yag_works"], "GFX_idea_generic_production_bonus", {"state_production_speed_buildings_factor": 0.1},
+     "Drive Works", "The halls where Yaga Minor's starship drive units are built and fired on their test stands before "
+     "being shipped across the galaxy.", None),
+    # --- Ansion (Legends: Cuipernam, the Alwari overclan the Borokii, Dashbalar)
+    ("ans_cuipernam", ["hod_ans_cuipernam"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Cuipernam", "The walled city of the Sorr-ul-Paan Plateau and seat of the Unity of Community. Separatist agents and "
+     "the Hutt Soergg work its markets along Jaaruls Street to set the city against the plains, and through Ansion's "
+     "treaties pull whole sectors out of the Republic.", None),
+    ("ans_borokii", ["hod_ans_borokii"], "GFX_idea_generic_army_support", {"local_manpower": 0.1},
+     "Borokii Camp", "The great camp of the Borokii, the overclan of the Alwari nomads, in the valley that bears their "
+     "name. What the Borokii decide, the other clans of the plains follow.", None),
+    ("ans_dashbalar", ["hod_ans_dashbalar"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Dashbalar", "A market town round a great caravanserai, the favourite trading centre of the Qulun clan, where "
+     "nomads and city folk still do business with each other.", None),
+    # --- Ilum (canon: the Jedi Temple over the Crystal Caves; Legends: the Western Ice Shelf, the Circle, Fort Tonvarr)
+    ("ilu_temple", ["hod_ilu_temple"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Jedi Temple of Ilum", "One of the Order's earliest temples, cut into an ice mountain over the Crystal Caves where "
+     "younglings come to find the kyber crystals of their first lightsabers. Its entrance freezes shut at nightfall.", None),
+    ("ilu_ruins", ["hod_ilu_ruins", "hod_ilu_circle", "hod_ilu_tonvarr"], "GFX_idea_generic_army_support", {"local_supplies": 0.05},
+     "Ruins of the Ice Shelf", "The Western Ice Shelf keeps the bones of older wars: the broken Jedi shrine at the end "
+     "of the Cross-Shelf Corridor, the Circle, and the drifted-over walls of Fort Tonvarr.", None),
+    # --- Dorin (Legends: Dor'shan, the Baran Do temple, Dor'galk, the Jedi Enclave, the Caverns of the Hidden One)
+    ("dor_dorshan", ["hod_dor_dorshan"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Dor'shan", "The Kel Dor capital, its masked towers breathing the planet's helium-rich air, kand orchards on the "
+     "slopes outside it. Off-worlders walk its streets behind breath masks of their own.", None),
+    ("dor_dorgalk", ["hod_dor_dorgalk"], "GFX_idea_generic_production_bonus", {"state_production_speed_buildings_factor": 0.1},
+     "Dor'galk", "A plateau city round the atmosphere works whose vents keep the Kel Dor's air as it should be.", None),
+    ("dor_barando", ["hod_dor_barando", "hod_dor_caverns"], "GFX_idea_generic_secret_police", {"resistance_target": 0.05},
+     "Baran Do Temple", "The sages of the Baran Do climb to their pavilions above Dor'shan to read what is coming, as "
+     "they did before the Jedi came to Dorin. Below the plateaus, the Caverns of the Hidden One keep their own secrets.", None),
+    ("dor_enclave", ["hod_dor_enclave"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Jedi Enclave of Dorin", "The Order's hall on Dorin, built in the Kel Dor manner, where Force-sensitive Kel Dor "
+     "children are taught before they leave for Coruscant.", None),
+    # --- Yinchorr (Legends: Tol-Kachorn and its Council of Elders; the Uprising of 33 BBY and the Republic's
+    # demilitarisation of the system; DaaCorp and Zerpen kept from the mod's earlier map)
+    ("yin_tolkachorn", ["hod_yin_tolkachorn"], "GFX_idea_generic_political_support", {"stability_factor": -0.03, "local_manpower": 0.05},
+     "Tol-Kachorn", "Strongest of the Yinchorri city-states, fed by a hundred villages and served by five lesser cities. "
+     "Its Council of Elders sent their warriors against the Jedi Temple itself in the Uprising, and lost; the horned "
+     "towers still fly the war banners the Republic has not dared to take down.", None),
+    ("yin_garrison", ["hod_yin_garrison", "hod_yin_depot"], "GFX_idea_generic_army_support", {"resistance_target": -0.05},
+     "Republic Occupation", "Since the Uprising the Republic keeps garrisons north and south of Tol-Kachorn, and at the "
+     "southern depot the Yinchorri arsenal - rifles, cannon, the hulls of their warships - is broken up for scrap, "
+     "piece by piece, under guard.", None),
+    ("yin_mines", ["hod_yin_daacorp", "hod_yin_zerpen"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.1},
+     "Offworld Concessions", "Scouts once judged Yinchorr too poor to settle. DaaCorp's great pit and the Zerpen mines "
+     "came anyway, with the Republic's peace, and Yinchorri labour digs what the corporations ship off-world.", None),
+    # --- Chandrila (Legends: Hanna City, Emita and Nayli's spaceports, the Brionelle Memorial Military Academy, the
+    # Crystal Canyons)
+    ("cha_hanna", ["hod_cha_hanna"], "GFX_idea_generic_political_support", {"stability_factor": 0.05},
+     "Hanna City", "The capital between the Silver Sea and Lake Sah'ot, its white terraces looking down on the water. "
+     "Chandrila sends its senators to Coruscant from here, and a quieter, older democracy meets under the rotunda's "
+     "dome.", None),
+    ("cha_ports", ["hod_cha_emita", "hod_cha_nayli"], "GFX_idea_generic_production_bonus", {"state_production_speed_buildings_factor": 0.1},
+     "Spaceports of Chandrila", "Two of the planet's three full spaceports. Emita alone was allowed industry, and its "
+     "halls and freight yards work behind the docking bays while the rest of Chandrila keeps its plains green.", None),
+    ("cha_brionelle", ["hod_cha_brionelle"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Brionelle Memorial Military Academy", "The academy of the Chandrilan Defense Fleet, which trains nearly every one "
+     "of its officers. Cadets swear their oath beneath the Brionelle memorial at the head of the parade ground.", None),
+    ("cha_canyons", ["hod_cha_canyons"], "GFX_idea_generic_secret_police", {"resistance_target": 0.03},
+     "Crystal Canyons", "A gallery of rock and crystal around a tight trench above an abyss. Guides lead visitors across "
+     "the arch; the rest of the canyon system is mapped by no one.", None),
+    # --- Corulag (Legends: Curamelle, Sienar's Advanced Research Division, Tasjon's swoop race; canon: Corulag Academy)
+    ("cor_curamelle", ["hod_cor_curamelle", "hod_cor_crullov"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Curamelle", "Corulag's capital of glass towers, the Royal Galaxy Hotel on top of the tallest. The planet's money, "
+     "its universities and its schools of commerce turn out the Core's managers, and many of its officers.", None),
+    ("cor_sienar", ["hod_cor_sienar"], "GFX_idea_generic_production_bonus", {"state_production_speed_buildings_factor": 0.1},
+     "Sienar Advanced Research Division", "North of Curamelle, Sienar designs, builds and tests its prototypes behind "
+     "the fence: the runway and the wind tunnel are never quiet.", None),
+    ("cor_academy", ["hod_cor_academy", "hod_cor_tasjon"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Corulag Academy", "The academy whose cadets fill the officer corps of half the Core. On race days its cadets "
+     "slip off to Tasjon to watch the swoops tear round the course.", None),
+    # --- Arkania (Legends: Adascopolis and the House of Adasca, the diamond mines, Novania, Arca Jeth's praxeum,
+    # Veeshas Tuwan)
+    ("ark_adascopolis", ["hod_ark_adascopolis", "hod_ark_novania"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Adascopolis", "The ancient capital on its crag, seat of the House of Adasca. The Arkanians' meritocracy of "
+     "brilliance governs from here, and Novania's port ships what their science and their mines produce.", None),
+    ("ark_mines", ["hod_ark_mines"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.15},
+     "Diamond Mines of Arkania", "Under the ice lie diamond stores beyond counting, opened to the Republic's mining "
+     "concerns. The shafts go down further every year.", None),
+    ("ark_praxeum", ["hod_ark_praxeum", "hod_ark_veeshas"], "GFX_idea_generic_secret_police", {"resistance_target": 0.03},
+     "Old Arkania", "Snow fills the hall where Master Arca Jeth taught his students, and somewhere under the frozen wastes "
+     "the Sith library of Veeshas Tuwan waits for whoever digs deep enough.", None),
+    # --- Anaxes (Legends: Pols Anaxes, the Anaxes Citadel, the Republic Navy War College; canon: the shipyards, Fort
+    # Anaxes)
+    ("anx_citadel", ["hod_anx_citadel"], "GFX_idea_generic_army_support", {"local_manpower": 0.05, "stability_factor": 0.03},
+     "Anaxes Citadel", "Training schools, research labs and intelligence centres stacked on the terraces of the Sirpar "
+     "Hills: the Republic's military mind lives here.", None),
+    ("anx_yards", ["hod_anx_yards", "hod_anx_works"], "GFX_idea_generic_production_bonus", {"state_production_speed_buildings_factor": 0.15},
+     "Anaxes Shipyards", "Slips in orbit and fabrication halls below, building the Republic's warships. If Anaxes fell, the "
+     "Core would lose its forge.", None),
+    ("anx_college", ["hod_anx_college", "hod_anx_fort", "hod_anx_hydro"], "GFX_idea_generic_army_support", {"local_supplies": 0.1},
+     "Republic Navy War College", "Where the Navy's officers learn their trade, guarded by Fort Anaxes in its cave in the "
+     "canyon country and supplied by Czerka's waterworks.", None),
+    # --- Esseles (Legends: Calamar, the Esprix Estate, Nurrale and the Togatto Speedway, the Esseles starport)
+    ("ess_calamar", ["hod_ess_calamar", "hod_ess_starport"], "GFX_idea_generic_political_support", {"stability_factor": 0.05},
+     "Calamar", "The domed capital of Esseles, heart of the Darpa sector, its canals and towers busy with the trade of the "
+     "starport beside it.", None),
+    ("ess_esprix", ["hod_ess_esprix"], "GFX_idea_generic_political_support", {"political_power_factor": 0.05},
+     "Esprix Estate", "The residence of the senator of Esseles, built in the Naboo manner: gold-ribbed domes, arcades and "
+     "long gardens down to the sea.", None),
+    ("ess_togatto", ["hod_ess_togatto", "hod_ess_nurrale"], "GFX_idea_generic_production_bonus", {"stability_factor": 0.03},
+     "Togatto Speedway", "The Ferlanis' podracing arena in tropical Nurrale, the most spectacular in the Darpa sector. Half "
+     "the sector's fortunes change hands on race day.", None),
+    # --- Coruscant (canon/Legends: the Senate, the Jedi Temple, the Executive Building, the Courts, the Processional
+    # Way, Monument Plaza, 500 Republica, the Galaxies Opera House, the landing rings, the Works, Level 1313)
+    ("cos_senate", ["hod_cos_senate", "hod_cos_processional", "hod_cos_courts"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.05, "political_power_factor": 0.1},
+     "Galactic Senate", "A thousand generations of the Republic have been argued out under this dome. Down the Processional "
+     "Way the delegations still come, past the founders' statues, to the Grand Convocation Chamber; the Galactic Courts "
+     "sit in judgement beside it.", None),
+    ("cos_temple", ["hod_cos_temple"], "GFX_idea_generic_army_support", {"local_manpower": 0.05, "stability_factor": 0.03},
+     "Jedi Temple", "The Order's home for millennia: the High Council in its spire, the Archives holding all the "
+     "Republic's knowledge, the Room of a Thousand Fountains where Masters still find quiet above the city.", None),
+    ("cos_executive", ["hod_cos_executive", "hod_cos_republica", "hod_cos_monument"], "GFX_idea_generic_political_support",
+     {"political_power_factor": 0.05}, "Federal District", "The Chancellor's office in the Executive Building, the senators' "
+     "apartments in 500 Republica, Umate's bare summit at Monument Plaza: the government lives within sight of itself.", None),
+    ("cos_ports", ["hod_cos_exchange", "hod_cos_diner"], "GFX_idea_generic_production_bonus", {"state_production_speed_buildings_factor": 0.1},
+     "Commerce District", "The exchange trades in the goods of a thousand worlds under the towers of the north-east. "
+     " In CoCo Town Dex's Diner feeds the dockhands, and hears everything.", None),
+    ("cos_compor", ["hod_cos_compor"], "GFX_idea_generic_secret_police", {"resistance_target": -0.05, "stability_factor": 0.02},
+     "COMPOR Arcology", "A mass of dark stone beside the Senate, raised for the Commission for the Protection of the Republic and "
+     "its watchful bureaus. Its analysts read the HoloNet of a thousand worlds; what they do with it is not discussed.", None),
+    ("cos_entertainment", ["hod_cos_opera", "hod_cos_outlander"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Entertainment District", "Senators at the Galaxies Opera House, smugglers and bounty hunters at the Outlander Club: "
+     "all of Coruscant comes here after dark.", None),
+    ("cos_underworld", ["hod_cos_works", "hod_cos_level1313"], "GFX_idea_generic_secret_police", {"resistance_target": 0.05},
+     "Coruscant Underworld", "The Works rusts in silence, and below the shining levels Level 1313 swallows whoever the "
+     "upper city would rather forget.", None),
+    # --- Boz Pity (canon: a Foundry of the Confederacy; Legends: the graveyard planet, the Gargantelle ruins, the
+    # Confederacy base)
+    ("boz_base", ["hod_boz_base"], "GFX_idea_generic_army_support", {"local_manpower": 0.05, "local_supplies": 0.1},
+     "Boz Pity Confederacy Base", "The Techno Union raised this fortress in a canyon of the graveyard planet as soon "
+     "as Boz Pity joined Count Dooku's cause. Droid garrisons drill on its parade ground, and a grounded core ship "
+     "waits on its landing ring for the day the Confederacy needs a staging point on the Republic's border.", None),
+    ("boz_foundry", ["hod_boz_foundry"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.1}, "Foundry of the Confederacy", "Droid halls and smelters "
+     "the Techno Union built on a world nobody else wanted. With Metalorn, Saleucami and Felucia, Boz Pity is "
+     "to be one of the forges of the Separatist armies, if the crisis turns to war.", None),
+    ("boz_ruins", ["hod_boz_ruins"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Gargantelle Ruins", "A temple-mountain of the extinct Gargantelles, ringed by a still moat, its lotus towers "
+     "crowned with three-faced heads. Legend says the caliphs of Mourn returned to their world when the last "
+     "Gargantelle died; the temple has stood empty ever since.", None),
+    ("boz_skeletons", ["hod_boz_skeletons"], "GFX_idea_generic_secret_police", {"resistance_target": 0.03},
+     "Skeleton Fields", "In this sand valley the bones of the Gargantelles lie where they fell, ribs taller than a "
+     "walker and three-faced skulls half sunk in the drifts. Pilgrims from nearby systems still leave stelae "
+     "round the valley's edge.", None),
+    ("boz_headstones", ["hod_boz_headstones"], "GFX_idea_generic_political_support", {"compliance_gain": 0.03},
+     "Headstone Fields", "The great funerary obelisk of the Gargantelles rises over rows of carved stelae, and "
+     "round it the graves of every species that has brought its dead to the graveyard planet for a thousand "
+     "years.", None),
     # --- Etti IV (Legends: Mondder, its spaceport, the Dream Emporium, the Free-Flight Dance Dome; canon: Cybot
     # Galactica's Arcoplex)
     ("arcoplex", ["hod_etti_arcoplex"], "GFX_idea_generic_improved_industries",
@@ -711,7 +1023,7 @@ PLANET_OF = {"raxulon_parliament": "Raxus", "great_alley": "Raxus", "kaas_citade
              **{k: "Korriban" for k in ("sith_academy", "valley_dark_lords", "tomb_ragnos", "tomb_sadow", "tomb_pall",
                                         "tomb_hord", "tomb_kressh")},
              **{k: pl for pre, pl in (("rp_", "Raxus Prime"), ("kadavo_", "Kadavo"), ("hondo_", "Florrum"),
-                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"))
+                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
                 for k, *_ in LANDMARKS if k.startswith(pre)}}
 assert {k for k, *_ in LANDMARKS} == set(PLANET_OF), "every landmark needs its planet"
 

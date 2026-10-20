@@ -1,0 +1,30 @@
+state={
+	id=933
+	name="STATE_933"
+	# HOD: Muunilinst (muunilinst_map.py)
+	provinces={
+		996 1080 1085 7390 7391 7396 7400 7405 7409 7412 7415 7417 7420 7421 7422
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			996 5
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			dockyard = 5
+					7409 = {
+				naval_base = 4
+			}
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 165553
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -96,11 +96,11 @@ EXPANSION_REGION = [
 ]
 NORTHERN_COLONIES = [
     "Bastion", "Dorin", "Dubrillion", "Dantooine", 
-    "Muunilist", "Mygeeto", "Yaga Minor", "Ithor",
+    "Muunilinst", "Mygeeto", "Yaga Minor", "Ithor",
     "Ord Mantell", "Orinda", "Kalee", "Agamar",
-    "Garqi", "Jedha", "Despayre", "Ilum",
+    "Garqi", "Jedha", "Ord Trasi", "Ilum",
     "Csilla", "Copero", "Csaus", "Cioral",
-    "Aeten II",
+    "Ansion",
 ]
 
 # Build planet → continent_id (1-indexed)

@@ -299,7 +299,7 @@ ARMIES = {
     "TCU": ("history/units/HOD_TCU.txt", {
         "Foerost": [(BAT, 1), ("Octuptarra Strike Group", 1)], "Balmorra": [(BAT, 1)], "Mechis": [(BAT, 1)]}),
     "CMG": ("history/units/HOD_CMG.txt", {"Felucia": [(BAT, 1)], "Sullust": [(BAT, 1)], "Dromund Kaas": [(BAT, 1)]}),
-    "IBC": ("history/units/HOD_IBC.txt", {"Muunilist": [(GAR, 1), (BAT, 1)], "Mygeeto": [(BAT, 1)], "Kalee": [(BAT, 1)]}),
+    "IBC": ("history/units/HOD_IBC.txt", {"Muunilinst": [(GAR, 1), (BAT, 1)], "Mygeeto": [(BAT, 1)], "Kalee": [(BAT, 1)]}),
 }
 
 

@@ -1,0 +1,2989 @@
+{
+ "centre": [
+  149.94254699496955,
+  697.6018886241285
+ ],
+ "radius": 60.05638450946354,
+ "vp_names": {
+  "47": "Dubrillion City",
+  "6710": "Sapphire Coast",
+  "700": "Lakeview",
+  "910": "Greenhaven",
+  "6447": "Northern Highlands",
+  "6457": "Western Shore",
+  "6610": "Southern Cape",
+  "6665": "Eastern Forests"
+ },
+ "provinces": {
+  "47": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    122.93023255813954,
+    704.2093023255813
+   ],
+   "area": 43,
+   "terrain": "urban"
+  },
+  "68": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    133.36363636363637,
+    700.3863636363636
+   ],
+   "area": 44,
+   "terrain": "urban"
+  },
+  "185": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    129.81632653061226,
+    709.2244897959183
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "336": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    125.675,
+    697.9
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "429": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    128.97222222222223,
+    703.5277777777778
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "461": {
+   "zone": "resort",
+   "kind": 2,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    132.5,
+    719.5853658536586
+   ],
+   "area": 82,
+   "terrain": "urban"
+  },
+  "499": {
+   "zone": "resort",
+   "kind": 2,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    137.9206349206349,
+    726.2698412698413
+   ],
+   "area": 63,
+   "terrain": "urban"
+  },
+  "690": {
+   "zone": "resort",
+   "kind": 2,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    130.56164383561645,
+    729.1643835616438
+   ],
+   "area": 73,
+   "terrain": "urban"
+  },
+  "700": {
+   "zone": "town",
+   "kind": 3,
+   "feature": "Lakeview",
+   "state": 908,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    161.65853658536585,
+    696.0
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "910": {
+   "zone": "town",
+   "kind": 3,
+   "feature": "Greenhaven",
+   "state": 907,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    146.54545454545453,
+    717.0454545454545
+   ],
+   "area": 22,
+   "terrain": "urban"
+  },
+  "981": {
+   "zone": "lake",
+   "kind": 8,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    174.94736842105263,
+    691.0
+   ],
+   "area": 19,
+   "terrain": "marsh"
+  },
+  "1009": {
+   "zone": "lake",
+   "kind": 8,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    172.66666666666666,
+    695.2222222222222
+   ],
+   "area": 18,
+   "terrain": "marsh"
+  },
+  "1077": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    164.0,
+    662.0
+   ],
+   "area": 39,
+   "terrain": "marsh"
+  },
+  "1179": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    197.9090909090909,
+    666.1212121212121
+   ],
+   "area": 33,
+   "terrain": "marsh"
+  },
+  "1181": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    179.58620689655172,
+    687.2758620689655
+   ],
+   "area": 29,
+   "terrain": "marsh"
+  },
+  "1190": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18970,
+   "centre": [
+    156.29032258064515,
+    640.7096774193549
+   ],
+   "area": 31,
+   "terrain": "marsh"
+  },
+  "1236": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18970,
+   "centre": [
+    182.0,
+    650.425
+   ],
+   "area": 40,
+   "terrain": "marsh"
+  },
+  "1384": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    142.57575757575756,
+    658.6969696969697
+   ],
+   "area": 33,
+   "terrain": "marsh"
+  },
+  "1392": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    181.28947368421052,
+    671.2105263157895
+   ],
+   "area": 38,
+   "terrain": "marsh"
+  },
+  "1404": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    149.23076923076923,
+    671.7692307692307
+   ],
+   "area": 26,
+   "terrain": "marsh"
+  },
+  "1418": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    165.68,
+    678.24
+   ],
+   "area": 25,
+   "terrain": "marsh"
+  },
+  "1478": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    169.41463414634146,
+    651.0
+   ],
+   "area": 41,
+   "terrain": "marsh"
+  },
+  "1496": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    153.91176470588235,
+    653.2941176470588
+   ],
+   "area": 34,
+   "terrain": "marsh"
+  },
+  "1509": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    187.83783783783784,
+    661.6486486486486
+   ],
+   "area": 37,
+   "terrain": "marsh"
+  },
+  "1855": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    175.72093023255815,
+    659.953488372093
+   ],
+   "area": 43,
+   "terrain": "marsh"
+  },
+  "1950": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    152.9,
+    662.9666666666667
+   ],
+   "area": 30,
+   "terrain": "marsh"
+  },
+  "2071": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    188.9189189189189,
+    672.7567567567568
+   ],
+   "area": 37,
+   "terrain": "marsh"
+  },
+  "2271": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    174.88235294117646,
+    681.8823529411765
+   ],
+   "area": 34,
+   "terrain": "marsh"
+  },
+  "2343": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    159.58064516129033,
+    671.3548387096774
+   ],
+   "area": 31,
+   "terrain": "marsh"
+  },
+  "2347": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    171.1,
+    671.15
+   ],
+   "area": 40,
+   "terrain": "marsh"
+  },
+  "2374": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18970,
+   "centre": [
+    162.62857142857143,
+    641.7428571428571
+   ],
+   "area": 35,
+   "terrain": "marsh"
+  },
+  "2632": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18970,
+   "centre": [
+    175.73333333333332,
+    647.0666666666667
+   ],
+   "area": 45,
+   "terrain": "marsh"
+  },
+  "2656": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    163.78947368421052,
+    655.1052631578947
+   ],
+   "area": 38,
+   "terrain": "marsh"
+  },
+  "2772": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    184.34146341463415,
+    677.3170731707318
+   ],
+   "area": 41,
+   "terrain": "marsh"
+  },
+  "2778": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    147.38888888888889,
+    654.0277777777778
+   ],
+   "area": 36,
+   "terrain": "marsh"
+  },
+  "3019": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    158.1,
+    645.6
+   ],
+   "area": 30,
+   "terrain": "marsh"
+  },
+  "3379": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    193.71794871794873,
+    660.3333333333334
+   ],
+   "area": 39,
+   "terrain": "marsh"
+  },
+  "3487": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    158.18421052631578,
+    659.0263157894736
+   ],
+   "area": 38,
+   "terrain": "marsh"
+  },
+  "3521": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    181.52631578947367,
+    663.7105263157895
+   ],
+   "area": 38,
+   "terrain": "marsh"
+  },
+  "3584": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    188.09302325581396,
+    654.9767441860465
+   ],
+   "area": 43,
+   "terrain": "marsh"
+  },
+  "3633": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    175.5,
+    653.55
+   ],
+   "area": 40,
+   "terrain": "marsh"
+  },
+  "3698": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    191.41176470588235,
+    667.0294117647059
+   ],
+   "area": 34,
+   "terrain": "marsh"
+  },
+  "3723": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    182.0,
+    657.0
+   ],
+   "area": 43,
+   "terrain": "marsh"
+  },
+  "3864": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    169.41463414634146,
+    658.0
+   ],
+   "area": 41,
+   "terrain": "marsh"
+  },
+  "3939": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    153.0909090909091,
+    647.6666666666666
+   ],
+   "area": 33,
+   "terrain": "marsh"
+  },
+  "4017": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    158.85294117647058,
+    665.5294117647059
+   ],
+   "area": 34,
+   "terrain": "marsh"
+  },
+  "4043": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    147.92592592592592,
+    666.4074074074074
+   ],
+   "area": 27,
+   "terrain": "marsh"
+  },
+  "4148": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    176.0,
+    666.8461538461538
+   ],
+   "area": 39,
+   "terrain": "marsh"
+  },
+  "4240": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": true,
+   "sea": 18970,
+   "centre": [
+    169.25,
+    644.175
+   ],
+   "area": 40,
+   "terrain": "marsh"
+  },
+  "4475": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    180.1764705882353,
+    681.4117647058823
+   ],
+   "area": 34,
+   "terrain": "marsh"
+  },
+  "4690": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    185.70967741935485,
+    667.8064516129032
+   ],
+   "area": 31,
+   "terrain": "marsh"
+  },
+  "4834": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    159.46428571428572,
+    677.0714285714286
+   ],
+   "area": 28,
+   "terrain": "marsh"
+  },
+  "4936": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    164.85294117647058,
+    668.5294117647059
+   ],
+   "area": 34,
+   "terrain": "marsh"
+  },
+  "4986": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    147.06896551724137,
+    660.7931034482758
+   ],
+   "area": 29,
+   "terrain": "marsh"
+  },
+  "5021": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    171.125,
+    677.53125
+   ],
+   "area": 32,
+   "terrain": "marsh"
+  },
+  "5055": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    151.89655172413794,
+    657.8965517241379
+   ],
+   "area": 29,
+   "terrain": "marsh"
+  },
+  "5108": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    169.97297297297297,
+    664.5945945945946
+   ],
+   "area": 37,
+   "terrain": "marsh"
+  },
+  "5195": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    176.8095238095238,
+    674.8333333333334
+   ],
+   "area": 42,
+   "terrain": "marsh"
+  },
+  "5298": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    153.40740740740742,
+    667.925925925926
+   ],
+   "area": 27,
+   "terrain": "marsh"
+  },
+  "5413": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    154.75,
+    673.0
+   ],
+   "area": 28,
+   "terrain": "marsh"
+  },
+  "5425": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    159.03030303030303,
+    651.6969696969697
+   ],
+   "area": 33,
+   "terrain": "marsh"
+  },
+  "5495": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    163.91666666666666,
+    647.9722222222222
+   ],
+   "area": 36,
+   "terrain": "marsh"
+  },
+  "5532": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Dubrillion Ocean",
+   "state": 1275,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    165.0344827586207,
+    673.9655172413793
+   ],
+   "area": 29,
+   "terrain": "marsh"
+  },
+  "5612": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    115.34285714285714,
+    737.5428571428571
+   ],
+   "area": 35,
+   "terrain": "marsh"
+  },
+  "5714": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    120.58333333333333,
+    719.7777777777778
+   ],
+   "area": 36,
+   "terrain": "marsh"
+  },
+  "5976": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    129.875,
+    740.8125
+   ],
+   "area": 32,
+   "terrain": "marsh"
+  },
+  "5997": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    106.08823529411765,
+    728.7647058823529
+   ],
+   "area": 34,
+   "terrain": "marsh"
+  },
+  "6012": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    122.51351351351352,
+    748.081081081081
+   ],
+   "area": 37,
+   "terrain": "marsh"
+  },
+  "6019": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    122.89189189189189,
+    730.6756756756756
+   ],
+   "area": 37,
+   "terrain": "marsh"
+  },
+  "6038": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    106.0,
+    734.3714285714286
+   ],
+   "area": 35,
+   "terrain": "marsh"
+  },
+  "6045": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    115.72340425531915,
+    725.8297872340426
+   ],
+   "area": 47,
+   "terrain": "marsh"
+  },
+  "6351": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    121.1842105263158,
+    740.5526315789474
+   ],
+   "area": 38,
+   "terrain": "marsh"
+  },
+  "6352": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    116.44736842105263,
+    743.9736842105264
+   ],
+   "area": 38,
+   "terrain": "marsh"
+  },
+  "6354": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    111.61904761904762,
+    731.3571428571429
+   ],
+   "area": 42,
+   "terrain": "marsh"
+  },
+  "6356": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    117.94736842105263,
+    732.6052631578947
+   ],
+   "area": 38,
+   "terrain": "marsh"
+  },
+  "6362": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    126.58333333333333,
+    745.0555555555555
+   ],
+   "area": 36,
+   "terrain": "marsh"
+  },
+  "6363": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    122.83783783783784,
+    724.2162162162163
+   ],
+   "area": 37,
+   "terrain": "marsh"
+  },
+  "6368": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    110.24324324324324,
+    739.4054054054054
+   ],
+   "area": 37,
+   "terrain": "marsh"
+  },
+  "6369": {
+   "zone": "ocean",
+   "kind": 9,
+   "feature": "Emerald Sea",
+   "state": 1276,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    124.88571428571429,
+    736.7714285714286
+   ],
+   "area": 35,
+   "terrain": "marsh"
+  },
+  "6370": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    138.14545454545456,
+    704.6181818181818
+   ],
+   "area": 55,
+   "terrain": "plains"
+  },
+  "6373": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    95.81481481481481,
+    714.5925925925926
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "6375": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    114.49295774647888,
+    690.2957746478874
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "6377": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    145.42857142857142,
+    682.4920634920635
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "6379": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    111.85135135135135,
+    720.8513513513514
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "6383": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    100.11475409836065,
+    726.2131147540983
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "6387": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    129.9558823529412,
+    686.2794117647059
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "6388": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    110.0,
+    704.1866666666666
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "6391": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    143.12820512820514,
+    698.3974358974359
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "6395": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    118.24050632911393,
+    710.0
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "6398": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    103.43661971830986,
+    719.9577464788732
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "6399": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    117.37179487179488,
+    698.7179487179487
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "6400": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    98.55813953488372,
+    704.546511627907
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "6402": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    137.33823529411765,
+    682.2058823529412
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "6403": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    128.5142857142857,
+    713.0285714285715
+   ],
+   "area": 35,
+   "terrain": "plains"
+  },
+  "6405": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    107.29113924050633,
+    696.5189873417721
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "6407": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    133.16666666666666,
+    693.5833333333334
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "6410": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    122.65853658536585,
+    689.9146341463414
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "6411": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    103.5,
+    710.7941176470588
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "6413": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    111.01492537313433,
+    713.2388059701492
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "6414": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Dubrillion City",
+   "state": 111,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    141.0144927536232,
+    690.0
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "6415": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    120.1639344262295,
+    681.5081967213115
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "6416": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    92.21951219512195,
+    702.7560975609756
+   ],
+   "area": 41,
+   "terrain": "hills"
+  },
+  "6422": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    110.5340909090909,
+    657.5113636363636
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "6423": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    97.81481481481481,
+    675.5802469135803
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "6426": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    101.85714285714286,
+    691.6714285714286
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "6428": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    107.0657894736842,
+    674.7236842105264
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "6429": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    94.3972602739726,
+    686.6027397260274
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "6433": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    103.225,
+    666.225
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "6434": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    110.46341463414635,
+    683.9634146341464
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "6437": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    94.62337662337663,
+    695.8181818181819
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "6440": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    111.74647887323944,
+    666.3380281690141
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "6445": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    115.63380281690141,
+    674.5633802816901
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "6447": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Northern Highlands",
+   "state": 905,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    102.05555555555556,
+    682.9305555555555
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "6448": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    137.65384615384616,
+    642.7179487179487
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "6450": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    130.5735294117647,
+    677.4852941176471
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "6452": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    119.02597402597402,
+    651.2337662337662
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "6453": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    148.28301886792454,
+    676.0
+   ],
+   "area": 53,
+   "terrain": "plains"
+  },
+  "6457": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    135.5068493150685,
+    659.7260273972603
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "6458": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    121.34666666666666,
+    666.8266666666667
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "6463": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    126.86111111111111,
+    646.3333333333334
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "6467": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    139.05555555555554,
+    673.9722222222222
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "6468": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    140.22033898305085,
+    651.6949152542373
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "6471": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    127.13924050632912,
+    657.0126582278481
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "6474": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    130.5595238095238,
+    667.4285714285714
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "6487": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    141.1578947368421,
+    666.828947368421
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "6491": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": true,
+   "sea": 18820,
+   "centre": [
+    148.62686567164178,
+    640.5373134328358
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "6492": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    133.078125,
+    650.5
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "6495": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    124.171875,
+    674.96875
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "6497": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    119.27692307692308,
+    659.723076923077
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "6498": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Western Shore",
+   "state": 906,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    146.04918032786884,
+    646.9016393442623
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "6500": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Green Valleys",
+   "state": 907,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    159.16883116883116,
+    719.2597402597403
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "6506": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Green Valleys",
+   "state": 907,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    140.26923076923077,
+    713.6923076923077
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "6507": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Green Valleys",
+   "state": 907,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    157.640625,
+    710.3125
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "6509": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Green Valleys",
+   "state": 907,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    148.68115942028984,
+    722.8695652173913
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "6510": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Green Valleys",
+   "state": 907,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    144.864406779661,
+    708.2542372881356
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "6512": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Green Valleys",
+   "state": 907,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    151.4920634920635,
+    714.6825396825396
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "6513": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Green Valleys",
+   "state": 907,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    155.97368421052633,
+    727.2236842105264
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "6514": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    201.81967213114754,
+    673.7704918032787
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "6515": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    151.64864864864865,
+    704.3918918918919
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "6518": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    181.96153846153845,
+    708.8461538461538
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "6519": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    169.16326530612244,
+    685.8775510204082
+   ],
+   "area": 98,
+   "terrain": "plains"
+  },
+  "6521": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    186.35443037974684,
+    687.2911392405064
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "6522": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    151.62121212121212,
+    686.969696969697
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "6523": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    168.7,
+    696.8285714285714
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "6532": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    166.53333333333333,
+    712.3733333333333
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "6534": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    191.85714285714286,
+    680.1
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "6539": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    155.8448275862069,
+    697.3275862068965
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "6540": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    178.81428571428572,
+    700.7142857142857
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "6541": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    179.75438596491227,
+    693.3684210526316
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "6553": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    195.52857142857144,
+    694.9428571428572
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "6555": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    156.71830985915494,
+    681.5070422535211
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "6556": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    175.69736842105263,
+    715.5921052631579
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "6558": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    161.04,
+    688.7466666666667
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "6560": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    194.66666666666666,
+    687.5238095238095
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "6561": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    172.60526315789474,
+    706.078947368421
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "6562": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    195.42857142857142,
+    672.75
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "6571": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    187.28378378378378,
+    697.4459459459459
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "6576": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    149.66666666666666,
+    694.1333333333333
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "6578": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Crystal Lakes",
+   "state": 908,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    163.07792207792207,
+    703.8701298701299
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "6579": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    190.48648648648648,
+    724.6216216216217
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "6580": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    201.9078947368421,
+    682.0394736842105
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "6585": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    167.01315789473685,
+    721.3947368421053
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "6589": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    206.06060606060606,
+    705.6818181818181
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "6595": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    181.3896103896104,
+    743.922077922078
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "6596": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    189.97590361445782,
+    706.5542168674699
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "6597": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    176.3968253968254,
+    732.1269841269841
+   ],
+   "area": 63,
+   "terrain": "forest"
+  },
+  "6598": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    200.1951219512195,
+    722.0487804878048
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "6599": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    202.26666666666668,
+    692.8888888888889
+   ],
+   "area": 45,
+   "terrain": "forest"
+  },
+  "6608": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    184.43243243243242,
+    717.7432432432432
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "6609": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    189.87142857142857,
+    737.6285714285714
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "6610": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    193.52325581395348,
+    714.9302325581396
+   ],
+   "area": 86,
+   "terrain": "forest"
+  },
+  "6611": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    197.8170731707317,
+    703.4634146341464
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "6619": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    183.83823529411765,
+    734.3382352941177
+   ],
+   "area": 68,
+   "terrain": "forest"
+  },
+  "6621": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    206.42592592592592,
+    687.8888888888889
+   ],
+   "area": 54,
+   "terrain": "forest"
+  },
+  "6626": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    195.57534246575344,
+    730.5205479452055
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "6627": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    174.22388059701493,
+    724.2686567164179
+   ],
+   "area": 67,
+   "terrain": "forest"
+  },
+  "6633": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    202.72619047619048,
+    713.2619047619048
+   ],
+   "area": 84,
+   "terrain": "forest"
+  },
+  "6639": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": true,
+   "sea": 18732,
+   "centre": [
+    206.6769230769231,
+    697.5538461538462
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "6641": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Southern Cape",
+   "state": 909,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    182.4923076923077,
+    726.0153846153846
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "6643": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    174.35714285714286,
+    739.4714285714285
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "6644": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    144.50819672131146,
+    753.688524590164
+   ],
+   "area": 61,
+   "terrain": "forest"
+  },
+  "6650": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    152.44444444444446,
+    736.375
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "6651": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    160.3846153846154,
+    752.4923076923077
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "6652": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    166.97222222222223,
+    730.3055555555555
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "6655": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    173.9655172413793,
+    748.8103448275862
+   ],
+   "area": 58,
+   "terrain": "forest"
+  },
+  "6663": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    148.55128205128204,
+    745.4358974358975
+   ],
+   "area": 78,
+   "terrain": "forest"
+  },
+  "6665": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    158.13924050632912,
+    743.8354430379746
+   ],
+   "area": 79,
+   "terrain": "forest"
+  },
+  "6673": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    152.68115942028984,
+    753.1449275362319
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "6677": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    166.92,
+    748.5733333333334
+   ],
+   "area": 75,
+   "terrain": "forest"
+  },
+  "6690": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    159.984375,
+    734.453125
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "6695": {
+   "zone": "forest",
+   "kind": 5,
+   "feature": "Eastern Forests",
+   "state": 910,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    166.6086956521739,
+    739.1449275362319
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "6696": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    124.11538461538461,
+    717.1153846153846
+   ],
+   "area": 52,
+   "terrain": "plains"
+  },
+  "6700": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 14,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    138.48684210526315,
+    749.9868421052631
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "6704": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    144.95959595959596,
+    731.6666666666666
+   ],
+   "area": 99,
+   "terrain": "plains"
+  },
+  "6710": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    133.2027027027027,
+    734.8783783783783
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "6711": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    139.35135135135135,
+    719.4594594594595
+   ],
+   "area": 37,
+   "terrain": "plains"
+  },
+  "6714": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    140.7157894736842,
+    740.5578947368421
+   ],
+   "area": 95,
+   "terrain": "plains"
+  },
+  "6729": {
+   "zone": "beach",
+   "kind": 7,
+   "feature": "Sapphire Coast",
+   "state": 911,
+   "group": 14,
+   "coastal": true,
+   "sea": 18979,
+   "centre": [
+    131.35897435897436,
+    749.2435897435897
+   ],
+   "area": 78,
+   "terrain": "plains"
+  }
+ }
+}

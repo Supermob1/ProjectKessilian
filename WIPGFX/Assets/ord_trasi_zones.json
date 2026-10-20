@@ -1,0 +1,978 @@
+{
+ "centre": [
+  382.0976420798065,
+  799.406892382104
+ ],
+ "radius": 32.44948541188257,
+ "vp_names": {
+  "168": "Ord Trasi Depot",
+  "518": "Ord Trasi Shipyards",
+  "997": "Ord Trasi Salvage Yards",
+  "1432": "Trasi Station",
+  "7704": "Northern Steppe",
+  "7829": "Western Steppe",
+  "7841": "Mask Plateau"
+ },
+ "provinces": {
+  "27": {
+   "zone": "fort",
+   "kind": 1,
+   "feature": "Ord Trasi Depot",
+   "state": 108,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    378.55263157894734,
+    799.578947368421
+   ],
+   "area": 38,
+   "terrain": "urban"
+  },
+  "168": {
+   "zone": "fort",
+   "kind": 1,
+   "feature": "Ord Trasi Depot",
+   "state": 108,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    378.2549019607843,
+    793.3529411764706
+   ],
+   "area": 51,
+   "terrain": "urban"
+  },
+  "518": {
+   "zone": "yards",
+   "kind": 2,
+   "feature": "Ord Trasi Shipyards",
+   "state": 885,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    383.85714285714283,
+    815.6190476190476
+   ],
+   "area": 21,
+   "terrain": "urban"
+  },
+  "523": {
+   "zone": "yards",
+   "kind": 2,
+   "feature": "Ord Trasi Shipyards",
+   "state": 885,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    381.69565217391306,
+    819.6086956521739
+   ],
+   "area": 23,
+   "terrain": "urban"
+  },
+  "780": {
+   "zone": "salvage",
+   "kind": 3,
+   "feature": "Ord Trasi Salvage Yards",
+   "state": 886,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    391.7,
+    788.25
+   ],
+   "area": 20,
+   "terrain": "hills"
+  },
+  "997": {
+   "zone": "salvage",
+   "kind": 3,
+   "feature": "Ord Trasi Salvage Yards",
+   "state": 886,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    391.3636363636364,
+    785.0909090909091
+   ],
+   "area": 11,
+   "terrain": "hills"
+  },
+  "1432": {
+   "zone": "town",
+   "kind": 4,
+   "feature": "Trasi Station",
+   "state": 888,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    396.6842105263158,
+    806.578947368421
+   ],
+   "area": 19,
+   "terrain": "urban"
+  },
+  "1746": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    363.44444444444446,
+    803.8888888888889
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "1940": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    366.6666666666667,
+    773.3333333333334
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "2015": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    360.96,
+    787.6
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "2095": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    366.64,
+    781.2
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "2135": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    361.75,
+    812.375
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "2365": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    357.14285714285717,
+    796.3809523809524
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "3098": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    362.81481481481484,
+    776.7777777777778
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "3407": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    363.48,
+    792.96
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3607": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    369.48148148148147,
+    776.0
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "3701": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    365.8,
+    787.12
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3768": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    364.2142857142857,
+    809.2142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "3987": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    360.8709677419355,
+    799.3870967741935
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "5209": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    362.60869565217394,
+    782.3478260869565
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "5360": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    359.42857142857144,
+    792.7619047619048
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5385": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Trasi Range",
+   "state": 1268,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    361.2,
+    808.0666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "5836": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Southern Spines",
+   "state": 1269,
+   "group": 5,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    408.0,
+    809.375
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "7540": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Southern Spines",
+   "state": 1269,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    394.1578947368421,
+    824.3157894736842
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "7541": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Southern Spines",
+   "state": 1269,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    398.125,
+    816.125
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "7550": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Southern Spines",
+   "state": 1269,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    398.4166666666667,
+    820.9583333333334
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "7565": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Southern Spines",
+   "state": 1269,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    402.6363636363636,
+    815.9090909090909
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "7579": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Southern Spines",
+   "state": 1269,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    393.5833333333333,
+    820.0416666666666
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "7593": {
+   "zone": "mountains",
+   "kind": 8,
+   "feature": "Southern Spines",
+   "state": 1269,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    402.7,
+    811.1333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "7596": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Depot Plain",
+   "state": 108,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    369.4891304347826,
+    799.3369565217391
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "7607": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Depot Plain",
+   "state": 108,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    381.9166666666667,
+    791.9722222222222
+   ],
+   "area": 36,
+   "terrain": "plains"
+  },
+  "7613": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Depot Plain",
+   "state": 108,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    378.13698630136986,
+    804.8767123287671
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "7627": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Depot Plain",
+   "state": 108,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    370.8970588235294,
+    791.2647058823529
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "7634": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Shipyard Flats",
+   "state": 885,
+   "group": 7,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    379.41818181818184,
+    825.5181818181818
+   ],
+   "area": 110,
+   "terrain": "desert"
+  },
+  "7637": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Shipyard Flats",
+   "state": 885,
+   "group": 7,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    404.7846153846154,
+    819.2923076923076
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "7645": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Shipyard Flats",
+   "state": 885,
+   "group": 7,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    390.4938271604938,
+    827.4074074074074
+   ],
+   "area": 81,
+   "terrain": "desert"
+  },
+  "7653": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Shipyard Flats",
+   "state": 885,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    382.1954022988506,
+    811.4367816091954
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "7662": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Shipyard Flats",
+   "state": 885,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    388.16923076923075,
+    818.5076923076923
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "7663": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Salvage Fields",
+   "state": 886,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    398.0506329113924,
+    789.0506329113924
+   ],
+   "area": 79,
+   "terrain": "desert"
+  },
+  "7669": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Salvage Fields",
+   "state": 886,
+   "group": 8,
+   "coastal": true,
+   "sea": 18759,
+   "centre": [
+    407.5652173913044,
+    789.2391304347826
+   ],
+   "area": 92,
+   "terrain": "desert"
+  },
+  "7670": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Salvage Fields",
+   "state": 886,
+   "group": 8,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    396.2328767123288,
+    774.4246575342465
+   ],
+   "area": 73,
+   "terrain": "desert"
+  },
+  "7680": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Salvage Fields",
+   "state": 886,
+   "group": 8,
+   "coastal": true,
+   "sea": 18759,
+   "centre": [
+    403.17857142857144,
+    780.9880952380952
+   ],
+   "area": 84,
+   "terrain": "desert"
+  },
+  "7695": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Salvage Fields",
+   "state": 886,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    388.17391304347825,
+    789.5217391304348
+   ],
+   "area": 46,
+   "terrain": "desert"
+  },
+  "7696": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Salvage Fields",
+   "state": 886,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    391.93150684931504,
+    780.6712328767123
+   ],
+   "area": 73,
+   "terrain": "desert"
+  },
+  "7699": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Northern Steppe",
+   "state": 887,
+   "group": 9,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    371.1830985915493,
+    826.0845070422536
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "7703": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Northern Steppe",
+   "state": 887,
+   "group": 9,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    353.0,
+    796.6440677966102
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "7704": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Northern Steppe",
+   "state": 887,
+   "group": 9,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    357.4307692307692,
+    814.6769230769231
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "7732": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Northern Steppe",
+   "state": 887,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    370.51724137931035,
+    809.7471264367816
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "7733": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Northern Steppe",
+   "state": 887,
+   "group": 9,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    354.9647058823529,
+    805.6
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "7739": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Northern Steppe",
+   "state": 887,
+   "group": 9,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    363.7432432432432,
+    820.6891891891892
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "7740": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Northern Steppe",
+   "state": 887,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    371.013698630137,
+    817.013698630137
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "7743": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Basin",
+   "state": 888,
+   "group": 10,
+   "coastal": true,
+   "sea": 18759,
+   "centre": [
+    410.92,
+    805.18
+   ],
+   "area": 50,
+   "terrain": "desert"
+  },
+  "7757": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Basin",
+   "state": 888,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    388.2916666666667,
+    796.8472222222222
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "7764": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Basin",
+   "state": 888,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    393.85074626865674,
+    811.776119402985
+   ],
+   "area": 67,
+   "terrain": "desert"
+  },
+  "7768": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Basin",
+   "state": 888,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    398.7073170731707,
+    797.2926829268292
+   ],
+   "area": 82,
+   "terrain": "desert"
+  },
+  "7769": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Basin",
+   "state": 888,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    389.93589743589746,
+    803.9871794871794
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "7770": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Basin",
+   "state": 888,
+   "group": 10,
+   "coastal": true,
+   "sea": 18759,
+   "centre": [
+    409.68918918918916,
+    797.4459459459459
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "7788": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Basin",
+   "state": 888,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    401.76119402985074,
+    804.3582089552239
+   ],
+   "area": 67,
+   "terrain": "desert"
+  },
+  "7789": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Western Steppe",
+   "state": 889,
+   "group": 11,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    386.26732673267327,
+    771.5841584158416
+   ],
+   "area": 101,
+   "terrain": "plains"
+  },
+  "7794": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Western Steppe",
+   "state": 889,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    372.82894736842104,
+    783.1315789473684
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "7811": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Western Steppe",
+   "state": 889,
+   "group": 11,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    375.0285714285714,
+    770.8857142857142
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "7812": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Western Steppe",
+   "state": 889,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    382.52,
+    783.4666666666667
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "7829": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Western Steppe",
+   "state": 889,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    378.8529411764706,
+    776.9411764705883
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "7841": {
+   "zone": "plateau",
+   "kind": 7,
+   "feature": "Mask Plateau",
+   "state": 890,
+   "group": 12,
+   "coastal": true,
+   "sea": 19027,
+   "centre": [
+    356.22222222222223,
+    785.3086419753087
+   ],
+   "area": 81,
+   "terrain": "hills"
+  }
+ }
+}

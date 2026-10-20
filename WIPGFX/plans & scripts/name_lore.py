@@ -280,10 +280,9 @@ PLANET_LORE: Dict[str, Dict[str, List[str]]] = {
                     "Eastern Reaches", "Western Coast", "Outer Settlement"],
         "cities":  ["Botajef", "Botajef Spaceport"],
     },
-    "Aeten II": {
-        "regions": ["Aeten Crystal Fields", "Northern Mountains", "Western Desert",
-                    "Eastern Mining Complex", "Southern Wasteland", "Stygium Refinery"],
-        "cities":  ["Aeten Mining HQ", "Stygium Refinery", "Crystal Foundry"],
+    "Ansion": {
+        "regions": ["Sorr-ul-Paan Plateau", "Kander Region", "Valley of the Borokii", "Niruu Plateau", "Delgerhan"],
+        "cities":  ["Cuipernam", "Dashbalar", "Doigon", "Flerauw", "Hurkaset"],
     },
     "Tibrin": {
         "regions": ["Iskaayuma Reef", "Ishi Tib Reef Districts", "Open Seas",
@@ -353,7 +352,7 @@ PLANET_LORE: Dict[str, Dict[str, List[str]]] = {
                     "Western Refinery", "Frozen Outlands"],
         "cities":  ["Mygeeto City", "IBC Treasury", "Crystal Mining Hub"],
     },
-    "Muunilist": {
+    "Muunilinst": {
         "regions": ["Harnaidan", "IBC Banking Complex", "Northern Lush Fields",
                     "Southern Plains", "Eastern Territories", "Western Reach",
                     "Moneylending Vaults", "Outer Garden Zones"],

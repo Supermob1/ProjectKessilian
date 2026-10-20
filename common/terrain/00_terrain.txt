@@ -136,6 +136,21 @@ categories =  {
 			coastal_bunker = 6
 		}
 	}
+	# HOD: Ithor's sea of clouds and the narrow sky-lanes the herdships cross it on (the user, 2026-10-20)
+	clouds = {
+		color = { 230 236 250 }
+		movement_cost = 1.3
+		attrition = 0.1
+		ai_terrain_importance_factor = 2.0
+		combat_width = 50
+		combat_support_width = 25
+		match_value = 1.0
+		sound_type = plains
+		buildings_max_level = {
+			bunker = 2
+			coastal_bunker = 2
+		}
+	}
 	
 	urban = {
 		color = { 120 120 120 }
@@ -388,5 +403,7 @@ terrain = {
 	# and lights bioluminescent specks on it; the town variant spawns city models
 	umbara_33					= { type = jungle			color = { 	33	 } texture = 20 }
 	umbara_town_34				= { type = jungle			color = { 	34	 } texture = 20 spawn_city = yes }
+	# HOD: Ithor's cloud deck (atlas slot 21, terrain_atlas.py clouds), the clouds category
+	clouds_35					= { type = clouds			color = { 	35	 } texture = 21 }
 	
 }

@@ -1,19 +1,28 @@
-"""Mandalore, the homeworld of the Mandalorians, as one battlefield before the Clone Wars (research:
-WIPGFX/research/mandalore/). CANON: once lush, turned to white desert by the ancient wars; the New Mandalorians live
-in domed cities - Sundari, the capital with its cube-shaped buildings and the Duchess's Royal Palace, and Ronion, a
-bio-dome city; Keldabe the ancient capital; Norg Bral; the Apiruna River Valley. LEGENDS: veshok forests, grassland
-and farms in the north; Keldabe on a flat granite hill in a bend of the Kelita River, with the hundred-metre MandalMotors
-tower; Bralsin on a hill at the edge of the Kelita valley; the towns of Enceri and Shuror; beskar mined on the planet.
-Owner: MAN (as before; the old clan-territory states 240-251 were the user's, redone 2026-10-19: "you can redo
-everything i trust you"; the ids are kept). User: landmarks Sundari with the Royal Palace, Keldabe with MandalMotors,
-the beskar mines, a Death Watch camp.
-LOOK, A DESIGN CHOICE joining the two: the south is the canon white desert of the domed cities (Sundari, Ronion, the
-outposts), the north the Legends green world of the clans (Keldabe, the Kelita valley, the Apiruna valley, Norg Bral).
-The White Wastes (impassable dune sea) lie east of Sundari; the Northern Peaks (impassable) part Keldabe from Norg
-Bral; the beskar mines in the eastern badlands, the Death Watch camp hidden in the south-eastern wastes.
-Canon names: Sundari, Ronion, Keldabe, Norg Bral, the Apiruna River Valley, the Royal Palace. Legends: the Kelita River,
-Bralsin, Enceri, Shuror, MandalMotors. Invented: the Beskar Mines and the Death Watch Camp as named sites, the Kelita
-Valley, Bralsin Downs, Shuror Hills, the Western Wastes, the Southern Wastes, the Eastern Wastes, the White Wastes, the Northern Peaks.
+"""Mandalore, the homeworld of the Mandalorians, as one battlefield before the Clone Wars, after the LEGENDS article
+(user, 2026-10-20: "redo the planet to follow the legends version"; research: WIPGFX/research/mandalore/, the
+Mandalore/Legends, Keldabe/Legends and Sundari/Legends pages). LEGENDS: "lush veshok tree forests, dense jungle,
+sprawling hills and grassland well suited to farming, inhospitable deserts of white sand, and numerous rivers, lakes,
+and seas"; veshok forest over the northern hemisphere (the Olankur region) nearly to the polar ice caps; galek trees
+with silver leaves and golden amber ferns; the tropics further south (varos fruit); mythosaur skeletons left to bleach;
+the white deserts made by the Mandalorian Excision (738 BBY). Keldabe, the clans' capital, 45 degrees north on a flat
+granite hill nearly encircled by a bend of the Kelita River (a natural moat crossed by bridges, a stone balustrade
+over the drop), packed streets of every style, the hundred-metre MandalMotors tower with its mythosaur skull logo, the
+Oyu'baat tapcaf on the ancient square, the spaceport; Bralsin a suburb on a hill at the edge of the broad, shallow
+Kelita valley of farms and woods; Shuror a small town; Norg Bral a hill-fort town of Clan Bralor; Enceri a remote
+trading post; Sundari, the New Mandalorian capital recognised by the Republic, a black-domed bio-cube city out on the
+flat white desert over one of the largest beskar mines, ringed by smaller cube cities; the Tokursh region rich in
+beskar; the City of Bone, a failed amusement park shaped like a mythosaur skeleton near Keldabe. Owner: MAN (as
+before); the game capital stays Sundari (user, 2026-10-20). User: keep the Death Watch camp (in Legends their base was
+on Concordia: here a camp in the wastes, a design choice); no shipyards, no Kyrimorut (built in the war).
+LAYOUT IS A DESIGN CHOICE where the sources are silent: the polar ice cap along the north edge (impassable), the
+Olankur forest below it, Keldabe in the Kelita's bend in the north-centre with the river running west through the
+Kelita valley's farms, the City of Bone beside Enceri (user, 2026-10-20), the downs east of Keldabe, Norg Bral in the north-eastern hills, Shuror on the
+central hills, Sundari on the southern white desert with the White Wastes (impassable dunes) east of it, the Tokursh
+beskar badlands in the east, the Death Watch camp in the south-eastern wastes, Enceri on the western frontier, the
+tropical jungle in the south-west round the Varos Sea (impassable).
+Legends names: Keldabe, the Kelita River, MandalMotors, the Oyu'baat, Bralsin, Shuror, Norg Bral, Enceri, Sundari, the
+Olankur region, Tokursh, the City of Bone. Invented: Bralsin Downs, Keldabe Downs, Shuror Hills, the Eastern Wastes,
+the Western Jungle, the Varos Coast, the Varos Sea, the White Wastes, the Northern Ice Cap, the Death Watch Camp.
     python "WIPGFX/plans & scripts/mandalore_map.py" [--allow-dirty]   provinces.bmp, definition.csv, states, ...
     python "WIPGFX/plans & scripts/mandalore_map.py" --dry OUT.png      layout + every check, writes only OUT.png
 All 203 province ids are kept (strategic region unchanged); only the pixels move.
@@ -35,94 +44,110 @@ from korriban_map import shape as kshape, uncross
 PLANET = "Mandalore"
 ZONES_JSON = "WIPGFX/Assets/mandalore_zones.json"
 ZONES_PNG = "WIPGFX/Assets/mandalore_zones.png"
-KIND = {"dome": 1, "city": 2, "biodome": 3, "mine": 4, "camp": 5, "town": 6, "river": 7, "wastes": 8, "badlands": 9,
-        "forest": 10, "farms": 11, "hills": 12, "dunes": 13, "peaks": 14, "outpost": 15}
-TERRAIN = {"dome": "urban", "city": "urban", "biodome": "urban", "mine": "hills", "camp": "hills", "town": "urban",
+KIND = {"dome": 1, "city": 2, "fort": 3, "mine": 4, "camp": 5, "town": 6, "river": 7, "wastes": 8, "badlands": 9,
+        "forest": 10, "farms": 11, "hills": 12, "dunes": 13, "ice": 14, "bone": 15, "grass": 16, "jungle": 17, "sea": 18}
+TERRAIN = {"dome": "urban", "city": "urban", "fort": "urban", "mine": "hills", "camp": "hills", "town": "urban",
            "river": "marsh", "wastes": "desert", "badlands": "hills", "forest": "forest", "farms": "plains",
-           "hills": "hills", "dunes": "desert", "peaks": "mountain", "outpost": "urban"}
+           "hills": "hills", "dunes": "desert", "ice": "mountain", "bone": "plains", "grass": "plains",
+           "jungle": "jungle", "sea": "marsh"}
 SEED = 96
 CAPITAL = 240
 CAPITAL_VP = "Sundari"
 PORT_STATE = 96
-OWNER = {s: "MAN" for s in (96, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 1221, 1222)}
+OWNER = {s: "MAN" for s in (96, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 1221, 1222, 1254)}
 WARP = (0.13, 9)
 TARGET_PASSABLE = 135                # user rule: passable provinces outnumber impassable (~135 / 68)
-STRAIGHT = set()
+STRAIGHT = {"city", "river"}         # Keldabe and the Kelita's bend round it: unwarped, so the moat fits the hill
+# the Kelita's bend round Keldabe (centre -0.15, -0.45), open to the north where the hill meets the forest
+_BEND = [(-0.29, -0.6), (-0.36, -0.46), (-0.31, -0.31), (-0.15, -0.25), (0.01, -0.31), (0.06, -0.46), (0.0, -0.6)]
 # features painted in order, the first to claim a pixel keeps it: (name, kind, state, provinces or 0 = by area,
 # shapes); shapes as korriban_map.shape, u east, v south, planet radii
 FEATURES = [
-    ("Sundari", "dome", CAPITAL, 4, [("ell", 0.0, 0.22, 0.23, 0.17, 0)]),
-    ("Keldabe", "city", 241, 3, [("ell", -0.18, -0.42, 0.15, 0.11, -10)]),
-    ("Kelita River", "river", 244, 2, [("cap", -0.3, -0.36, -0.56, -0.42, 0.035), ("cap", -0.56, -0.42, -0.82, -0.32, 0.035)]),
-    ("Bralsin", "town", 250, 1, [("ell", -0.45, -0.16, 0.08, 0.07, 0)]),
-    ("Ronion", "biodome", 243, 2, [("ell", -0.52, 0.32, 0.11, 0.09, 0)]),
-    ("Beskar Mines", "mine", 242, 2, [("ell", 0.74, 0.04, 0.12, 0.09, 20)]),
-    ("Death Watch Camp", "camp", 248, 1, [("ell", 0.52, 0.6, 0.14, 0.11, 0)]),
-    ("Norg Bral", "town", 245, 1, [("ell", 0.56, -0.46, 0.08, 0.07, 0)]),
-    ("Enceri", "outpost", 246, 1, [("ell", -0.3, 0.74, 0.07, 0.06, 0)]),
-    ("Shuror", "town", 247, 1, [("ell", 0.36, -0.2, 0.1, 0.08, 0)]),
-    ("White Wastes", "dunes", 1221, 0, [("ell", 0.4, 0.26, 0.26, 0.17, 20), ("ell", 0.2, 0.46, 0.14, 0.1, 0)]),
-    ("Northern Peaks", "peaks", 1222, 0, [("cap", 0.34, -0.98, 0.26, -0.44, 0.16), ("cap", 0.28, -0.7, 0.5, -0.86, 0.1)]),
+    ("Sundari", "dome", CAPITAL, 4, [("ell", 0.06, 0.3, 0.2, 0.16, 0)]),
+    ("Keldabe", "city", 241, 3, [("ell", -0.15, -0.45, 0.17, 0.15, 0)]),
+    ("Kelita Bend", "river", 241, 2, [("cap", *a, *b, 0.03) for a, b in zip(_BEND, _BEND[1:])]),
+    ("Lower Kelita", "river", 244, 2, [("cap", -0.36, -0.46, -0.6, -0.38, 0.03), ("cap", -0.6, -0.38, -0.88, -0.26, 0.03)]),
+    ("Bralsin", "town", 250, 1, [("ell", -0.47, -0.2, 0.07, 0.06, 0)]),
+    ("City of Bone", "bone", 246, 1, [("ell", -0.6, -0.04, 0.1, 0.08, 15)]),   # beside Enceri (user, 2026-10-20)
+    ("Norg Bral", "fort", 245, 1, [("ell", 0.58, -0.36, 0.08, 0.07, 0)]),
+    ("Shuror", "town", 247, 1, [("ell", 0.3, -0.06, 0.08, 0.07, 0)]),
+    ("Enceri", "town", 246, 1, [("ell", -0.72, 0.1, 0.07, 0.06, 0)]),
+    ("Beskar Mines", "mine", 242, 2, [("ell", 0.74, 0.12, 0.12, 0.09, 20)]),
+    ("Death Watch Camp", "camp", 248, 1, [("ell", 0.44, 0.68, 0.11, 0.09, 0)]),
+    ("White Wastes", "dunes", 1221, 0, [("ell", 0.44, 0.32, 0.2, 0.14, 20), ("ell", 0.28, 0.52, 0.12, 0.09, 0)]),
+    ("Northern Ice Cap", "ice", 1222, 0, [("cap", -0.7, -0.88, 0.7, -0.88, 0.13), ("ell", 0.05, -0.93, 0.5, 0.13, 0)]),
+    ("Varos Sea", "sea", 1254, 0, [("ell", -0.46, 0.6, 0.24, 0.15, -25), ("ell", -0.62, 0.4, 0.1, 0.08, 0)]),
 ]
 # open ground: each pixel to the nearest region seed (u, v), in warped space so the borders come out ragged
-SEEDS = {CAPITAL: ((0.0, 0.2), "wastes"), 241: ((-0.1, -0.62), "forest"), 244: ((-0.6, -0.42), "farms"),
-         249: ((-0.82, 0.05), "farms"), 245: ((0.66, -0.42), "hills"), 243: ((-0.4, 0.3), "wastes"),
-         246: ((-0.3, 0.78), "wastes"), 96: ((0.12, 0.8), "wastes"), 248: ((0.62, 0.55), "badlands"),
-         242: ((0.8, 0.0), "badlands"), 247: ((0.32, -0.2), "hills"), 250: ((-0.45, -0.12), "farms"),
-         251: ((-0.72, 0.5), "wastes")}
-STATE_NAMES = {CAPITAL: "Sundari", 241: "Keldabe", 244: "Kelita Valley", 249: "Apiruna River Valley", 245: "Norg Bral",
-               243: "Ronion", 246: "Enceri", 96: "Southern Wastes", 248: "Eastern Wastes", 242: "Beskar Mines",
-               247: "Shuror Hills", 250: "Bralsin Downs", 251: "Western Wastes", 1221: "White Wastes",
-               1222: "Northern Peaks"}
-IMPASSABLE = {1221, 1222}
-VPS = [(CAPITAL, "Sundari", CAPITAL_VP, 10), (241, "Keldabe", "Keldabe", 5), (250, "Bralsin", "Bralsin", 1), (244, "farms", "Kelita Valley", 1),
-       (243, "Ronion", "Ronion", 3), (242, "Beskar Mines", "Beskar Mines", 3), (248, "Death Watch Camp", "Death Watch Camp", 2),
-       (245, "Norg Bral", "Norg Bral", 2), (246, "Enceri", "Enceri", 1), (247, "Shuror", "Shuror", 1),
-       (249, "farms", "Apiruna River Valley", 1), (96, "wastes", "Southern Wastes", 1), (251, "wastes", "Western Wastes", 1)]
+SEEDS = {CAPITAL: ((0.04, 0.38), "wastes"), 241: ((-0.08, -0.68), "forest"), 244: ((-0.68, -0.4), "farms"),
+         250: ((-0.45, -0.16), "farms"), 243: ((0.3, -0.56), "grass"), 245: ((0.62, -0.44), "hills"),
+         247: ((0.25, -0.1), "hills"), 249: ((-0.48, -0.7), "forest"), 246: ((-0.78, 0.12), "grass"),
+         242: ((0.82, 0.08), "badlands"), 248: ((0.55, 0.62), "badlands"), 251: ((-0.78, 0.42), "jungle"),
+         96: ((-0.12, 0.76), "jungle")}
+STATE_NAMES = {CAPITAL: "Sundari", 241: "Keldabe", 244: "Kelita Valley", 250: "Bralsin Downs", 243: "Keldabe Downs",
+               245: "Norg Bral", 247: "Shuror Hills", 249: "Olankur", 246: "Enceri", 242: "Tokursh",
+               248: "Eastern Wastes", 251: "Western Jungle", 96: "Varos Coast", 1221: "White Wastes",
+               1222: "Northern Ice Cap", 1254: "Varos Sea"}
+IMPASSABLE = {1221, 1222, 1254}
+VPS = [(CAPITAL, "Sundari", CAPITAL_VP, 10), (241, "Keldabe", "Keldabe", 8), (250, "Bralsin", "Bralsin", 1),
+       (246, "City of Bone", "City of Bone", 2), (243, "grass", "Keldabe Downs", 1), (245, "Norg Bral", "Norg Bral", 2), (247, "Shuror", "Shuror", 1),
+       (246, "Enceri", "Enceri", 1), (242, "Beskar Mines", "Tokursh Beskar Mines", 3),
+       (248, "Death Watch Camp", "Death Watch Camp", 2), (244, "farms", "Kelita Valley", 1),
+       (249, "forest", "Olankur", 1), (251, "jungle", "Western Jungle", 1), (96, "jungle", "Varos Coast", 1)]
 
-# terrain (planet_terrain_gen.py --planet Mandalore). Heights in heightmap steps above the base. The white wastes
-# with glassy shards (flora_props 149) and the domed cities' white cubes (map/cities.txt 44, military_buildings.py
-# man_dome); the green north of veshok forests (148), farms and clan towns (45, man_town); Keldabe on its granite hill
+# terrain (planet_terrain_gen.py --planet Mandalore). Heights in heightmap steps above the base. The Legends world:
+# veshok forest (flora 148) with galek groves (181) and amber ferns (182) in the north, farms and grassland in the
+# Kelita valley, jungle of varos trees (183) in the south-west, the Excision's white desert with glassy shards (149)
+# and bleached mythosaur bones (178); the cube cities (map/cities.txt 44, man_dome) round Sundari, the clan towns (45,
+# man_town) in the green north; Keldabe on its granite hill in the river's bend
 TERRAIN_CFG = dict(
-    seed=96, base=4, rough=2, open=(8, 9, 10, 11, 12),
+    seed=96, base=4, rough=2, open=(8, 9, 10, 11, 12, 16, 17),
     zones={  # order = random draw order: keep new zones at the end
-        1: dict(relief=("flat", 5), tex="URBAN"),                                                  # Sundari
-        2: dict(relief=("ramp_top", 11, 6, 4), tex="URBAN"),                                     # Keldabe's hill
-        3: dict(relief=("flat", 5), tex="URBAN"),                                                  # Ronion
-        4: dict(relief=("rolling", 5, 2, 5), tex=["ROCK2", ("SAND", ">", 0.6), (13, ">", 0.86)]),   # beskar mines
-        5: dict(relief=("rolling", 6, 2, 5), tex=["ROCK2", ("SAND", ">", 0.55)], props=[(149, 0.1)]),   # the camp
-        6: dict(relief=("rolling", 6, 2, 6), tex="URBAN", props=[(148, 0.05)]),                  # clan towns
+        1: dict(relief=("flat", 5), tex=["SNOWSAND", ("SAND", ">", 0.7), (13, ">", 0.45)]),                       # Sundari
+        2: dict(relief=("ramp_top", 13, 7, 3), tex=["ROCK", ("GRASSHILL", ">", 0.7)]),           # Keldabe's granite hill
+        3: dict(relief=("ramp_top", 11, 6, 4), tex=["GRASSHILL", ("ROCK", ">", 0.6), (13, ">", 0.6)], props=[(148, 0.08)]),   # Norg Bral
+        4: dict(relief=("rolling", 5, 2, 5), tex=["ROCK2", ("SAND", ">", 0.6)]),                  # beskar mines
+        5: dict(relief=("rolling", 6, 2, 5), tex=["ROCK2", ("SNOWSAND", ">", 0.55)], props=[(149, 0.1)]),   # the camp
+        6: dict(relief=("rolling", 6, 2, 6), tex=["GRASS", (13, ">", 0.3)], props=[(181, 0.05)]),   # clan towns
         7: dict(relief=("flat", 0.3), tex="WATER"),                                                # the Kelita
-        8: dict(relief=("rolling", 4, 2.5, 6), tex=["SNOWSAND", ("SAND", ">", 0.55), (13, ">", 0.9)],
-                props=[(149, 0.1)]),                                                               # the white wastes
-        9: dict(relief=("spires", 6, 3, 0.03, (2.0, 3.5), (8, 18)), tex=["ROCK2", ("SAND", ">", 0.55), (13, ">", 0.9)],
-                props=[(149, 0.06)]),                                                              # badlands
-        10: dict(relief=("rolling", 7, 5, 5), tex=["FOREST", ("GRASSHILL", ">", 0.65), (13, ">", 0.88)],
-                 props=[(148, 0.5)]),                                                              # veshok forests
+        8: dict(relief=("rolling", 4, 2.5, 6), tex=["SNOWSAND", ("SAND", ">", 0.6), (13, ">", 0.9)],
+                props=[(149, 0.08), (178, 0.03)]),                                                 # the white wastes
+        9: dict(relief=("spires", 6, 3, 0.03, (2.0, 3.5), (8, 18)), tex=["ROCK2", ("SAND", ">", 0.55), (13, ">", 0.92)],
+                props=[(149, 0.05), (178, 0.03)]),                                                 # badlands
+        10: dict(relief=("rolling", 7, 5, 5), tex=["FOREST", ("DFOREST", ">", 0.55), ("GRASSHILL", ">", 0.85), (13, ">", 0.93)],
+                 props=[(148, 0.55), (182, 0.15)], clusters=[(5, 0.55, [(181, 0.8), (182, 0.3)])]),   # veshok forest
         11: dict(relief=("rolling", 4, 2, 6), tex=["FARM", ("GRASS", ">", 0.55), (13, ">", 0.85)],
-                 props=[(148, 0.06)], clusters=[(6, 0.6, [(148, 0.8)])]),                         # farms, grassland
-        12: dict(relief=("rolling", 9, 6, 4), tex=["GRASSHILL", ("ROCK", ">", 0.6), (13, ">", 0.88)],
-                 props=[(148, 0.15)]),                                                             # hills
-        13: dict(relief=("rolling", 5, 4, 4), tex=["SNOWSAND", ("DUNES", ">", 0.5)], props=[(149, 0.05)]),   # dunes
-        14: dict(relief=("spires", 16, 9, 0.08, (1.5, 3.0), (24, 46)), tex=["ROCK", ("SNOWROCK", ">", 0.6)]),
-        15: dict(relief=("rolling", 4, 1, 6), tex="URBAN", props=[(149, 0.04)]),                  # desert outposts
+                 props=[(148, 0.05)], clusters=[(6, 0.6, [(148, 0.8)])]),                         # Kelita farms
+        12: dict(relief=("rolling", 9, 6, 4), tex=["GRASSHILL", ("ROCK", ">", 0.62), (13, ">", 0.88)],
+                 props=[(148, 0.12), (181, 0.06)]),                                                # hills
+        13: dict(relief=("rolling", 5, 4, 4), tex=["SNOWSAND", ("DUNES", ">", 0.5)], props=[(149, 0.04), (178, 0.04)]),
+        14: dict(relief=("mesa", 6, 16, 2.0, (4, 0.6)), tex=["SNOWSAND", ("SNOWROCK", ">", 0.55)]),   # the ice cap
+        15: dict(relief=("rolling", 4, 2, 6), tex=["GRASS", ("SAVANNA", ">", 0.6)], props=[(182, 0.05)]),   # City of Bone
+        16: dict(relief=("rolling", 5, 3, 6), tex=["GRASS", ("SAVANNA", ">", 0.6), ("GRASSHILL", ">", 0.85), (13, ">", 0.9)],
+                 props=[(182, 0.12)], clusters=[(4, 0.5, [(181, 0.7)])]),                         # grassland, downs
+        17: dict(relief=("rolling", 5, 3, 5), tex=["JUNGLE", ("JUNGLE2", ">", 0.5)], props=[(183, 0.6), (182, 0.15)]),
+        18: dict(relief=("flat", 0.3), tex="WATER"),                                               # the Varos Sea
     },
-    steep=("ROCK", 6, (8, 9, 10, 11, 12)),
-    city={1: 44, 3: 44, 15: 44, 8: 44, 9: 44, 4: 44, 2: 45, 6: 45, 10: 45, 11: 45, 12: 45},   # cities.txt 44 domes, 45 towns
+    steep=("ROCK", 6, (8, 9, 10, 11, 12, 16, 17)),
+    city={1: 44, 8: 44, 9: 44, 6: 45, 3: 45, 10: 45, 11: 45, 12: 45, 16: 45},   # cities.txt 44 cubes, 45 towns
     prop_clear=1.5,
     shore_rise=(4, 2.0),
-    colors={1: (0.8, 0.8, 0.78), 2: (0.56, 0.54, 0.48), 3: (0.78, 0.8, 0.78), 4: (0.6, 0.58, 0.54),
-            5: (0.66, 0.64, 0.6), 6: (0.52, 0.5, 0.42), 7: (0.2, 0.32, 0.38), 8: (0.84, 0.82, 0.76),
-            9: (0.64, 0.6, 0.54), 10: (0.28, 0.4, 0.24), 11: (0.48, 0.54, 0.3), 12: (0.44, 0.48, 0.34),
-            13: (0.88, 0.86, 0.8), 14: (0.56, 0.56, 0.54), 15: (0.8, 0.78, 0.74)},
+    colors={1: (0.84, 0.82, 0.78), 2: (0.5, 0.5, 0.46), 3: (0.46, 0.5, 0.36), 4: (0.6, 0.58, 0.54),
+            5: (0.7, 0.68, 0.64), 6: (0.42, 0.5, 0.32), 7: (0.2, 0.32, 0.38), 8: (0.86, 0.84, 0.78),
+            9: (0.66, 0.62, 0.56), 10: (0.2, 0.34, 0.2), 11: (0.48, 0.56, 0.3), 12: (0.42, 0.48, 0.32),
+            13: (0.9, 0.88, 0.82), 14: (0.9, 0.92, 0.94), 15: (0.5, 0.54, 0.34), 16: (0.46, 0.56, 0.3),
+            17: (0.16, 0.34, 0.16), 18: (0.16, 0.3, 0.38)},
 )
 
 # models (military_buildings.py place Mandalore): big, custom (user rule 2026-10-14)
 PLACEMENT = dict(
-    new_models={"hod_man_sundari", "hod_man_keldabe", "hod_man_beskar", "hod_man_dwcamp"},
-    items=[("hod_man_sundari", 1.0, ("at_vp", CAPITAL_VP)), ("hod_man_keldabe", 1.0, ("at_vp", "Keldabe")),
-           ("hod_man_beskar", 1.0, ("at_vp", "Beskar Mines")), ("hod_man_dwcamp", 0.9, ("at_vp", "Death Watch Camp"))],
-    clear={"hod_man_sundari": 6.5, "hod_man_keldabe": 5.5, "hod_man_beskar": 5.0, "hod_man_dwcamp": 4.0},
+    new_models={"hod_man_sundari", "hod_man_keldabe", "hod_man_beskar", "hod_man_dwcamp", "hod_man_cityofbone",
+                "hod_man_norgbral"},
+    items=[("hod_man_sundari", 1.0, ("at_vp", CAPITAL_VP)), ("hod_man_keldabe", 1.6, ("zone_centre", 2)),
+           ("hod_man_beskar", 1.0, ("at_vp", "Tokursh Beskar Mines")), ("hod_man_dwcamp", 0.9, ("at_vp", "Death Watch Camp")),
+           ("hod_man_cityofbone", 1.0, ("at_vp", "City of Bone")), ("hod_man_norgbral", 0.9, ("at_vp", "Norg Bral"))],
+    clear={"hod_man_sundari": 9.0, "hod_man_keldabe": 10.5, "hod_man_beskar": 5.0, "hod_man_dwcamp": 4.0,
+           "hod_man_cityofbone": 6.0, "hod_man_norgbral": 4.5},
 )
 
 

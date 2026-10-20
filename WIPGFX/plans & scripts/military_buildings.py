@@ -1233,9 +1233,9 @@ def dathomir_atlas():
 
 
 def mandalore_atlas():
-    """hod_mandalore textures (Sundari's white cube panels with gold lines and glass, Keldabe's granite, stone and
-    timber, slate, Mandalorian red, Death Watch blue, beskar, white sand; the map is always day: lights are painted
-    bright)."""
+    """hod_mandalore textures (Sundari's white cube panels with gold lines and glass, its black dome of dark
+    transparisteel, Keldabe's granite, stone and timber, slate, clipped greenery, Mandalorian red, Death Watch blue,
+    beskar, white sand; the map is always day: lights are painted bright)."""
     import numpy as np
     from PIL import Image, ImageDraw
     t = LM_S // 4
@@ -1260,13 +1260,15 @@ def mandalore_atlas():
     put(B_ROOF, clean(np.array([66, 70, 78], np.float32)) * (1 - 0.25 * tiles[..., None]), sp=100)
     sigil = (np.abs(xx - t / 2) < t * 0.06) | ((np.abs(yy - t * 0.35) < t * 0.05) & (np.abs(xx - t / 2) < t * 0.3))
     put(B_HAZARD, np.where(sigil[..., None], [220, 220, 230], [44, 72, 128]) * (0.9 + 0.12 * grime))   # Death Watch
-    put(B_GLOW, np.array([255, 220, 150], np.float32) * (1.0 + 0.05 * grime), e=255, sp=200)
+    hedge = (np.abs(np.sin(xx * 0.35)) * np.abs(np.sin(yy * 0.35)) > 0.6)[..., None]          # clipped greenery
+    put(B_GLOW, np.array([74, 118, 62], np.float32) * (0.8 + 0.3 * noise(1.5)) * (1 - 0.15 * hedge), sp=20)
     pad = Image.new("RGB", (t, t), (196, 194, 188))
     d = ImageDraw.Draw(pad)
     d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(168, 48, 36), width=int(t * 0.05))
     d.line([(t * 0.5, t * 0.2), (t * 0.5, t * 0.8)], fill=(250, 250, 250), width=int(t * 0.04))
     put(B_PAD, np.asarray(pad, np.float32) * (0.88 + 0.15 * grime))
-    put(B_PIPE, np.array([160, 160, 164], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    frames = (np.abs(((xx + yy * 0.5) % 40) - 20) < 1.5) | ((yy % 34) < 2)                      # Sundari's black dome
+    put(B_PIPE, np.where(frames[..., None], [70, 72, 80], [22, 24, 30]) * (0.9 + 0.15 * grime), sp=230)
     put(B_HULL, np.array([156, 166, 180], np.float32) * (0.85 + 0.2 * noise((6, 2))), sp=220)    # beskar
     lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
     put(B_GIRDER, np.where(lattice, [206, 170, 90], [120, 100, 60]) * (0.85 + 0.2 * grime), sp=150)   # gold lattice
@@ -1756,6 +1758,438 @@ def ruusan_atlas():
     put(B_GIRDER, np.where(lattice, [110, 100, 84], [44, 38, 30]) * (0.8 + 0.3 * grime), sp=80)
     put(B_PIPE, np.array([120, 112, 100], np.float32) * (0.8 + 0.3 * grime), sp=110)
     _atlas_save("hod_ruusan", col, emi, spec)
+
+def boz_atlas():
+    """hod_bozpity textures (Boz Pity: Separatist bronze-grey plate with amber window slots and blue-grey roofs, amber
+    and Separatist-blue lights, battle-droid tan; the Gargantelles' carved sandstone and bone; canyon rock, sand and
+    still dark water; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 73)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.85 + 0.16 * grime) * (0.9 + 0.12 * blotch)
+    panels = ((yy % 36) < 2) | ((xx % 52) < 2)
+    plate = clean(np.array([128, 116, 100], np.float32)) * (1 - 0.2 * panels)[..., None]
+    put(B_PLATE, plate, sp=120)
+    win = ((yy % 36) > 14) & ((yy % 36) < 22) & ((xx % 26) > 6) & ((xx % 26) < 20)
+    put(B_PLATE_WIN, np.where(win[..., None], [255, 190, 96], plate), e=np.where(win, 210, 0), sp=130)
+    put(B_CONC, clean(np.array([168, 150, 120], np.float32)))
+    put(B_CONC_WIN, np.array([44, 58, 60], np.float32) * (0.85 + 0.25 * noise(4)), sp=220)          # still water
+    seams = (xx % 22) < 2
+    put(B_ROOF, clean(np.array([84, 96, 114], np.float32)) * (1 - 0.25 * seams)[..., None], sp=150)  # blue-grey
+    put(B_GLOW, np.array([255, 186, 90], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)         # amber light
+    put(B_HAZARD, np.array([110, 170, 255], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)      # Separatist blue
+    put(B_HULL, clean(np.array([206, 182, 132], np.float32)), sp=110)                               # droid tan
+    blocks = ((yy % 22) < 2) | ((((yy // 22) % 2) * 18 + xx) % 36 < 2)
+    carve = (np.abs(np.sin(xx * 0.4) * np.sin(yy * 0.25)) > 0.85) & ((yy % 66) > 44)                # relief bands
+    put(B_BRICK, np.array([176, 160, 128], np.float32) * (0.75 + 0.35 * noise(2)) *
+        (1 - 0.3 * blocks - 0.18 * carve)[..., None])                                                # Gargantelle stone
+    put(B_RUST, np.array([226, 216, 190], np.float32) * (0.82 + 0.22 * noise(3)))                   # bone
+    put(B_SOOT, np.array([142, 108, 82], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_DUST, np.array([196, 172, 126], np.float32) * (0.82 + 0.22 * noise(1.5)))                 # sand
+    pad = Image.new("RGB", (t, t), (150, 136, 112))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(110, 170, 255), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_DARK, np.array([14, 14, 16], np.float32) * (0.8 + 0.4 * grime))
+    lattice = ((np.abs(((xx + yy) % 48) - 24) < 3) | (np.abs(((xx - yy) % 48) - 24) < 3) | ((yy % 48) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [110, 104, 96], [40, 38, 36]) * (0.8 + 0.3 * grime), sp=80)
+    put(B_PIPE, np.array([120, 114, 106], np.float32) * (0.8 + 0.3 * grime), sp=110)
+    _atlas_save("hod_bozpity", col, emi, spec)
+
+def ithor_atlas():
+    """hod_ithor textures (Ithor's herdships: sage living hull plates with warm round windows, wooden decking, falling
+    water, leafy canopy, rust-hued bushes, pink and blue blooms, repulsor glow, vines, pale stone, moss; the map is
+    always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 102)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.86 + 0.15 * grime) * (0.9 + 0.12 * blotch)
+    seams = (np.abs(np.sin(xx * 0.09 + np.sin(yy * 0.05) * 2)) < 0.06) | ((yy % 46) < 2)
+    hull = clean(np.array([196, 198, 168], np.float32)) * (1 - 0.2 * seams)[..., None]
+    put(B_PLATE, hull, sp=70)
+    win = ((xx % 28 - 14) ** 2 + (yy % 30 - 15) ** 2) < 36
+    put(B_PLATE_WIN, np.where(win[..., None], [255, 220, 150], hull), e=np.where(win, 200, 0), sp=80)
+    planks = ((yy % 12) < 1.5) | ((((yy // 12) % 3) * 30 + xx) % 90 < 1.5)
+    put(B_CONC, np.array([150, 116, 80], np.float32) * (0.8 + 0.3 * noise(2)) * (1 - 0.25 * planks)[..., None])
+    streak = noise((24, 1.2))
+    put(B_CONC_WIN, np.array([150, 200, 220], np.float32) * (0.75 + 0.35 * streak), sp=220)          # falling water
+    put(B_RUST, np.array([170, 96, 58], np.float32) * (0.75 + 0.4 * noise(1.5)))                     # rust bushes
+    put(B_SOOT, np.array([92, 86, 76], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    put(B_ROOF, np.array([64, 122, 58], np.float32) * (0.7 + 0.45 * noise(1.2)))                     # canopy
+    bloom = noise(1.5)
+    put(B_HAZARD, np.where(bloom > 0.5, [226, 128, 196], [108, 140, 232]) * (0.85 + 0.2 * grime))     # blooms
+    put(B_GLOW, np.array([200, 236, 255], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)        # repulsors
+    pad = Image.new("RGB", (t, t), (170, 168, 146))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(96, 140, 80), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.88 + 0.15 * grime))
+    put(B_PIPE, np.array([96, 80, 58], np.float32) * (0.75 + 0.35 * noise((16, 1.5))))              # vines, roots
+    put(B_HULL, clean(np.array([112, 120, 104], np.float32)) * (1 - 0.15 * seams)[..., None], sp=90)
+    lattice = ((np.abs(((xx + yy) % 40) - 20) < 3) | (np.abs(((xx - yy) % 40) - 20) < 3))[..., None]
+    put(B_GIRDER, np.where(lattice, [150, 120, 84], [60, 80, 50]) * (0.85 + 0.2 * grime))
+    courses = ((yy % 20) < 2) | ((((yy // 20) % 2) * 16 + xx) % 32 < 2)
+    put(B_BRICK, np.array([236, 234, 222], np.float32) * (0.85 + 0.15 * noise(2)) * (1 - 0.12 * courses)[..., None])
+    put(B_DUST, np.array([96, 130, 70], np.float32) * (0.75 + 0.35 * noise(1.5)))                    # moss
+    put(B_DARK, np.array([18, 20, 18], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_ithor", col, emi, spec)
+
+def ordmantell_atlas():
+    """hod_ordmantell textures (Ord Mantell: weathered tan-pink stucco with lit windows, dusty concrete, Corellian
+    blue glass, red-brown roofs and brick, rusted scrap, coal and grime, casino neon, amber light and lava, starship
+    hull, yellow crane lattice, arid sand; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 103)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.82 + 0.2 * grime) * (0.88 + 0.15 * blotch)
+    stucco = clean(np.array([200, 166, 146], np.float32)) * (1 - 0.15 * ((yy % 40) < 2))[..., None]
+    put(B_PLATE, stucco, sp=30)
+    win = ((yy % 28) > 10) & ((yy % 28) < 20) & ((xx % 20) > 5) & ((xx % 20) < 14)
+    lit = win & (rng.random((t, t)) > 0.5)
+    put(B_PLATE_WIN, np.where(lit[..., None], [255, 214, 150], np.where(win[..., None], [60, 56, 60], stucco)),
+        e=np.where(lit, 180, 0), sp=40)
+    put(B_CONC, clean(np.array([164, 154, 142], np.float32)))
+    glass = ((xx % 30) < 2) | ((yy % 24) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [90, 80, 74], clean(np.array([96, 140, 176], np.float32))), sp=200)
+    put(B_RUST, np.array([132, 76, 46], np.float32) * (0.65 + 0.5 * noise(2)))                      # scrap
+    put(B_SOOT, np.array([72, 66, 62], np.float32) * (0.7 + 0.45 * noise(3)))                       # grime, coal
+    tiles = ((yy % 10) < 1.5) | ((((yy // 10) % 2) * 8 + xx) % 16 < 1.5)
+    put(B_ROOF, clean(np.array([138, 74, 58], np.float32)) * (1 - 0.2 * tiles[..., None]), sp=60)    # red-brown
+    neon = ((yy % 16) < 6)[..., None]
+    put(B_HAZARD, np.where(neon, [255, 80, 210], [80, 220, 255]) * (1.0 + 0.04 * grime), e=255, sp=200)   # neon
+    put(B_GLOW, np.array([255, 150, 60], np.float32) * (0.9 + 0.2 * noise(2)), e=255, sp=200)       # amber, lava
+    pad = Image.new("RGB", (t, t), (150, 144, 136))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(230, 190, 60), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.85 + 0.2 * grime))
+    put(B_PIPE, np.array([140, 140, 140], np.float32) * (0.75 + 0.35 * grime), sp=110)
+    panels = ((yy % 34) < 2) | ((xx % 48) < 2)
+    put(B_HULL, clean(np.array([196, 196, 190], np.float32)) * (1 - 0.2 * panels)[..., None], sp=120)
+    lattice = ((np.abs(((xx + yy) % 40) - 20) < 3) | (np.abs(((xx - yy) % 40) - 20) < 3) | ((yy % 40) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [220, 180, 50], [70, 60, 40]) * (0.85 + 0.2 * grime), sp=80)
+    courses = ((yy % 14) < 2) | ((((yy // 14) % 2) * 12 + xx) % 24 < 2)
+    put(B_BRICK, np.array([150, 92, 72], np.float32) * (0.78 + 0.3 * noise(2)) * (1 - 0.25 * courses)[..., None])
+    put(B_DUST, np.array([204, 172, 132], np.float32) * (0.85 + 0.2 * noise(1.5)))
+    put(B_DARK, np.array([16, 16, 18], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_ordmantell", col, emi, spec)
+
+def garqi_atlas():
+    """hod_garqi textures (Garqi: cream stone with tall windows, pale paving, greenhouse glass, barn red, grey bluff
+    rock, blue-grey slate, the native plants' purple, warm light, silo metal, freighter hull, lattice, brick, green
+    crop rows; the map is always day: lights are painted bright)."""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, 104)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: rgb * (0.88 + 0.12 * grime) * (0.92 + 0.1 * blotch)
+    stone = clean(np.array([228, 220, 200], np.float32)) * (1 - 0.1 * ((yy % 36) < 2))[..., None]
+    put(B_PLATE, stone, sp=40)
+    win = ((yy % 40) > 8) & ((yy % 40) < 30) & ((xx % 22) > 7) & ((xx % 22) < 14)
+    put(B_PLATE_WIN, np.where(win[..., None], [70, 84, 100], stone), sp=60)
+    put(B_CONC, clean(np.array([196, 190, 176], np.float32)))
+    glass = ((xx % 26) < 2) | ((yy % 26) < 2)
+    put(B_CONC_WIN, np.where(glass[..., None], [220, 220, 210], clean(np.array([150, 204, 196], np.float32))), sp=220)
+    put(B_RUST, clean(np.array([152, 58, 44], np.float32)) * (1 - 0.2 * ((xx % 18) < 2))[..., None])   # barn red
+    put(B_SOOT, np.array([120, 112, 116], np.float32) * (0.7 + 0.4 * noise(3)) * (0.85 + 0.2 * noise((20, 1.5))))
+    tiles = ((yy % 10) < 1.5) | ((((yy // 10) % 2) * 8 + xx) % 16 < 1.5)
+    put(B_ROOF, clean(np.array([84, 98, 120], np.float32)) * (1 - 0.2 * tiles[..., None]), sp=80)       # slate
+    put(B_HAZARD, np.array([136, 72, 152], np.float32) * (0.7 + 0.45 * noise(1.2)))                 # purple plants
+    put(B_GLOW, np.array([255, 224, 160], np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)
+    pad = Image.new("RGB", (t, t), (180, 176, 164))
+    d = ImageDraw.Draw(pad)
+    d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=(136, 72, 152), width=int(t * 0.05))
+    put(B_PAD, np.asarray(pad, np.float32) * (0.88 + 0.15 * grime))
+    put(B_PIPE, clean(np.array([180, 182, 184], np.float32)) * (1 - 0.15 * ((yy % 30) < 2))[..., None], sp=140)
+    panels = ((yy % 34) < 2) | ((xx % 48) < 2)
+    put(B_HULL, clean(np.array([186, 180, 166], np.float32)) * (1 - 0.2 * panels)[..., None], sp=120)
+    lattice = ((np.abs(((xx + yy) % 40) - 20) < 3) | (np.abs(((xx - yy) % 40) - 20) < 3) | ((yy % 40) < 4))[..., None]
+    put(B_GIRDER, np.where(lattice, [190, 186, 176], [70, 70, 66]) * (0.85 + 0.2 * grime), sp=80)
+    courses = ((yy % 14) < 2) | ((((yy // 14) % 2) * 12 + xx) % 24 < 2)
+    put(B_BRICK, np.array([166, 100, 74], np.float32) * (0.8 + 0.3 * noise(2)) * (1 - 0.25 * courses)[..., None])
+    rows = (np.abs(np.sin(xx * 0.4)) > 0.5)[..., None]
+    put(B_DUST, np.where(rows, [96, 140, 64], [128, 108, 70]) * (0.85 + 0.2 * noise(1.5)))           # crop rows
+    put(B_DARK, np.array([16, 16, 18], np.float32) * (0.8 + 0.4 * grime))
+    _atlas_save("hod_garqi", col, emi, spec)
+
+def _atlas_generic(name, seed, c):
+    """a planet atlas from a colour table c (B_ cell -> rgb or (rgb, kind)); kinds: 'win' lit window slots over the
+    plate colour, 'glass' framed glass, 'tiles' roof tiles, 'courses' stone courses, 'glow' emissive, 'lattice' truss,
+    'pad' landing pad ring, 'noise' plain mottled; the map is always day: lights are painted bright"""
+    import numpy as np
+    from PIL import Image, ImageDraw
+    t = LM_S // 4
+    col, emi, spec, put, noise, rng = _atlas_canvas(LM_S, seed)
+    yy, xx = np.mgrid[0:t, 0:t].astype(np.float32)
+    grime, blotch = noise(2), noise(10)
+    clean = lambda rgb: np.array(rgb, np.float32) * (0.84 + 0.18 * grime) * (0.9 + 0.12 * blotch)
+    for cell, spec_ in c.items():
+        rgb, kind = spec_ if isinstance(spec_[0], (tuple, list)) else (spec_, "noise")
+        if kind == "win":
+            base = clean(c[B_PLATE] if not isinstance(c[B_PLATE][0], (tuple, list)) else c[B_PLATE][0])
+            win = ((yy % 28) > 10) & ((yy % 28) < 20) & ((xx % 20) > 5) & ((xx % 20) < 14)
+            lit = win & (rng.random((t, t)) > 0.45)
+            put(cell, np.where(lit[..., None], [255, 220, 160], np.where(win[..., None], rgb, base)),
+                e=np.where(lit, 170, 0), sp=60)
+        elif kind == "glass":
+            fr = ((xx % 30) < 2) | ((yy % 24) < 2)
+            put(cell, np.where(fr[..., None], [90, 90, 90], clean(rgb)), sp=200)
+        elif kind == "tiles":
+            tl = ((yy % 10) < 1.5) | ((((yy // 10) % 2) * 8 + xx) % 16 < 1.5)
+            put(cell, clean(rgb) * (1 - 0.22 * tl[..., None]), sp=70)
+        elif kind == "courses":
+            cr = ((yy % 16) < 2) | ((((yy // 16) % 2) * 14 + xx) % 28 < 2)
+            put(cell, np.array(rgb, np.float32) * (0.78 + 0.3 * noise(2)) * (1 - 0.25 * cr)[..., None])
+        elif kind == "glyphs":
+            cr = ((yy % 24) < 2) | ((xx % 36) < 2) | ((np.abs(np.sin(xx * 0.5) * np.sin(yy * 0.3)) > 0.9) & ((yy % 48) > 30))
+            put(cell, np.array(rgb, np.float32) * (0.8 + 0.3 * noise(2)) * (1 - 0.3 * cr)[..., None])
+        elif kind == "glow":
+            put(cell, np.array(rgb, np.float32) * (1.0 + 0.04 * grime), e=255, sp=200)
+        elif kind == "lattice":
+            lt = ((np.abs(((xx + yy) % 40) - 20) < 3) | (np.abs(((xx - yy) % 40) - 20) < 3) | ((yy % 40) < 4))[..., None]
+            put(cell, np.where(lt, rgb, [50, 50, 50]) * (0.85 + 0.2 * grime), sp=80)
+        elif kind == "pad":
+            pad = Image.new("RGB", (t, t), tuple(int(v) for v in rgb[0]))
+            d = ImageDraw.Draw(pad)
+            d.ellipse([t * 0.08, t * 0.08, t * 0.92, t * 0.92], outline=tuple(int(v) for v in rgb[1]), width=int(t * 0.05))
+            put(cell, np.asarray(pad, np.float32) * (0.88 + 0.15 * grime))
+        elif kind == "plates":
+            pl = ((yy % 34) < 2) | ((xx % 48) < 2)
+            put(cell, clean(rgb) * (1 - 0.2 * pl)[..., None], sp=120)
+        else:
+            put(cell, np.array(rgb, np.float32) * (0.8 + 0.3 * noise(1.5)))
+    _atlas_save(name, col, emi, spec)
+
+
+def agamar_atlas():
+    """hod_agamar textures (Agamar: cream sandstone, terracotta, sea-blue shell roofs, sea water, dark Rakatan stone
+    with glyphs, dry earth)."""
+    _atlas_generic("hod_agamar", 107, {
+        B_PLATE: ((214, 196, 160), "courses"), B_PLATE_WIN: ((70, 80, 90), "win"), B_CONC: (196, 180, 150),
+        B_CONC_WIN: ((90, 150, 160), "glass"), B_RUST: ((178, 98, 64), "tiles"), B_SOOT: (96, 84, 74),
+        B_ROOF: ((72, 124, 146), "tiles"), B_HAZARD: (92, 128, 66), B_GLOW: ((255, 220, 150), "glow"),
+        B_PAD: (((180, 170, 150), (178, 98, 64)), "pad"), B_PIPE: (150, 150, 150), B_HULL: ((196, 192, 182), "plates"),
+        B_GIRDER: ((170, 150, 110), "lattice"), B_BRICK: ((74, 68, 76), "glyphs"), B_DUST: (184, 150, 104),
+        B_DARK: (16, 16, 18)})
+
+
+def ordtrasi_atlas():
+    """hod_ordtrasi textures (Ord Trasi: Republic military grey-white plate, red markings, ferrocrete, dark roofing,
+    hazard stripes, gantry lattice, raw durasteel ribs, starship hull, dusty ground)."""
+    _atlas_generic("hod_ordtrasi", 108, {
+        B_PLATE: ((200, 200, 196), "plates"), B_PLATE_WIN: ((50, 60, 70), "win"), B_CONC: (150, 148, 142),
+        B_CONC_WIN: ((90, 130, 170), "glass"), B_RUST: (170, 50, 40), B_SOOT: (88, 78, 70),
+        B_ROOF: ((74, 76, 80), "tiles"), B_HAZARD: ((230, 190, 40), "lattice"), B_GLOW: ((150, 210, 255), "glow"),
+        B_PAD: (((160, 160, 156), (230, 190, 40)), "pad"), B_PIPE: (140, 140, 142), B_HULL: ((206, 206, 200), "plates"),
+        B_GIRDER: ((150, 150, 156), "lattice"), B_BRICK: ((120, 116, 110), "plates"), B_DUST: (170, 152, 124),
+        B_DARK: (16, 16, 18)})
+
+
+def dantooine_atlas():
+    """hod_dantooine textures (Dantooine: KOTOR's tan Jedi stone, slate-green roofs, weathered ochre, scorched stone,
+    dark Rakatan stone with glowing orange lines, grass and earth)."""
+    _atlas_generic("hod_dantooine", 110, {
+        B_PLATE: ((206, 186, 148), "courses"), B_PLATE_WIN: ((70, 76, 80), "win"), B_CONC: (190, 178, 150),
+        B_CONC_WIN: ((110, 160, 190), "glass"), B_RUST: (176, 140, 88), B_SOOT: (70, 64, 58),
+        B_ROOF: ((92, 118, 100), "tiles"), B_HAZARD: ((255, 150, 60), "glow"), B_GLOW: ((255, 224, 160), "glow"),
+        B_PAD: (((176, 166, 140), (92, 118, 100)), "pad"), B_PIPE: (150, 150, 150), B_HULL: ((196, 192, 182), "plates"),
+        B_GIRDER: ((160, 150, 120), "lattice"), B_BRICK: ((66, 60, 60), "glyphs"), B_DUST: (118, 150, 92),
+        B_DARK: (16, 16, 18)})
+
+def dubrillion_atlas():
+    """hod_dubrillion textures (Dubrillion: white plascrete towers with blue-lit windows, teal roofs, aqua glass and
+    water, emerald shark-tank water, coral, sandstone, sand)."""
+    _atlas_generic("hod_dubrillion", 111, {
+        B_PLATE: ((232, 232, 228), "plates"), B_PLATE_WIN: ((60, 110, 150), "win"), B_CONC: (210, 204, 190),
+        B_CONC_WIN: ((120, 200, 210), "glass"), B_RUST: (230, 120, 100), B_SOOT: (100, 96, 90),
+        B_ROOF: ((60, 150, 150), "tiles"), B_HAZARD: (40, 150, 110), B_GLOW: ((255, 230, 170), "glow"),
+        B_PAD: (((200, 200, 196), (60, 150, 150)), "pad"), B_PIPE: (170, 170, 172), B_HULL: ((220, 220, 214), "plates"),
+        B_GIRDER: ((190, 190, 186), "lattice"), B_BRICK: ((206, 186, 150), "courses"), B_DUST: (226, 210, 170),
+        B_DARK: (16, 16, 18)})
+
+
+def bastion_atlas():
+    """hod_bastion textures (Bastion: grey dressed granite, dark slate, Braxant red banners, pale paving, blue glass)."""
+    _atlas_generic("hod_bastion", 112, {
+        B_PLATE: ((150, 150, 154), "courses"), B_PLATE_WIN: ((50, 56, 66), "win"), B_CONC: (186, 184, 178),
+        B_CONC_WIN: ((90, 120, 160), "glass"), B_RUST: (156, 36, 36), B_SOOT: (70, 70, 74),
+        B_ROOF: ((64, 70, 82), "tiles"), B_HAZARD: ((220, 180, 40), "lattice"), B_GLOW: ((255, 220, 160), "glow"),
+        B_PAD: (((160, 160, 160), (156, 36, 36)), "pad"), B_PIPE: (150, 150, 154), B_HULL: ((206, 206, 200), "plates"),
+        B_GIRDER: ((150, 150, 156), "lattice"), B_BRICK: ((128, 128, 134), "courses"), B_DUST: (120, 112, 96),
+        B_DARK: (16, 16, 18)})
+
+
+def kalee_atlas():
+    """hod_kalee textures (Kalee: ochre carved stone, Kaleesh red, bone white, moss green, dark rock, fire)."""
+    _atlas_generic("hod_kalee", 113, {
+        B_PLATE: ((176, 140, 96), "glyphs"), B_PLATE_WIN: ((40, 30, 26), "win"), B_CONC: (170, 150, 116),
+        B_CONC_WIN: ((70, 120, 120), "glass"), B_RUST: ((150, 46, 36), "courses"), B_SOOT: (78, 70, 62),
+        B_ROOF: (76, 112, 58), B_HAZARD: ((255, 140, 50), "glow"), B_GLOW: ((255, 200, 120), "glow"),
+        B_PAD: (((160, 140, 110), (150, 46, 36)), "pad"), B_PIPE: (130, 126, 120), B_HULL: ((190, 184, 172), "plates"),
+        B_GIRDER: ((150, 130, 100), "lattice"), B_BRICK: ((232, 224, 204), "noise"), B_DUST: (150, 124, 90),
+        B_DARK: (14, 12, 12)})
+
+
+def muunilinst_atlas():
+    """hod_muunilinst textures (Muunilinst: pearl-white panels with gold-lit windows, gold crowns, IBC crimson, blue
+    glass, dark volcanic rock, lava, dark Damask stone, track sand)."""
+    _atlas_generic("hod_muunilinst", 115, {
+        B_PLATE: ((236, 234, 228), "plates"), B_PLATE_WIN: ((90, 110, 140), "win"), B_CONC: (214, 210, 200),
+        B_CONC_WIN: ((110, 160, 210), "glass"), B_RUST: (150, 30, 40), B_SOOT: (60, 54, 52),
+        B_ROOF: ((214, 176, 80), "plates"), B_HAZARD: ((255, 120, 40), "glow"), B_GLOW: ((255, 230, 170), "glow"),
+        B_PAD: (((200, 198, 190), (214, 176, 80)), "pad"), B_PIPE: (196, 198, 204), B_HULL: ((220, 218, 210), "plates"),
+        B_GIRDER: ((200, 190, 160), "lattice"), B_BRICK: ((50, 46, 56), "plates"), B_DUST: (190, 160, 110),
+        B_DARK: (16, 16, 18)})
+
+
+def mygeeto_atlas():
+    """hod_mygeeto textures (Mygeeto: dark blue-grey metal with cool-lit windows, packed ice, crystal glass and glow, IBC
+    crimson, Geonosian ochre stone, dark slate, glacier ice, snow)."""
+    _atlas_generic("hod_mygeeto", 109, {
+        B_PLATE: ((62, 70, 84), "plates"), B_PLATE_WIN: ((40, 46, 58), "win"), B_CONC: (226, 234, 242),
+        B_CONC_WIN: ((150, 220, 240), "glass"), B_RUST: (150, 30, 40), B_SOOT: ((150, 110, 70), "noise"),
+        B_ROOF: ((44, 50, 60), "plates"), B_HAZARD: ((140, 230, 255), "glow"), B_GLOW: ((255, 230, 170), "glow"),
+        B_PAD: (((90, 96, 108), (140, 230, 255)), "pad"), B_PIPE: (150, 156, 166), B_HULL: ((206, 206, 200), "plates"),
+        B_GIRDER: ((90, 96, 108), "lattice"), B_BRICK: ((176, 206, 230), "noise"), B_DUST: (236, 240, 246),
+        B_DARK: (16, 16, 18)})
+
+
+def yagaminor_atlas():
+    """hod_yaga_minor textures (Yaga Minor: ochre hive resin with amber-lit cells, honeycomb, moss, Republic white and
+    red, blue glass, drive-blue glow, dark earth)."""
+    _atlas_generic("hod_yaga_minor", 114, {
+        B_PLATE: ((176, 146, 96), "noise"), B_PLATE_WIN: ((120, 92, 54), "win"), B_CONC: (226, 224, 216),
+        B_CONC_WIN: ((90, 130, 170), "glass"), B_RUST: (150, 40, 36), B_SOOT: (60, 50, 40),
+        B_ROOF: ((80, 110, 60), "noise"), B_HAZARD: ((120, 190, 255), "glow"), B_GLOW: ((255, 190, 100), "glow"),
+        B_PAD: (((170, 160, 140), (150, 40, 36)), "pad"), B_PIPE: (150, 150, 154), B_HULL: ((210, 206, 196), "plates"),
+        B_GIRDER: ((150, 150, 154), "lattice"), B_BRICK: ((196, 160, 90), "tiles"), B_DUST: (120, 100, 70),
+        B_DARK: (16, 16, 18)})
+
+
+def ansion_atlas():
+    """hod_ansion textures (Ansion: sandstone, whitewash, terracotta, red and blue cloth, dark felt, weathered wood,
+    foliage green, dressed stone, trodden earth)."""
+    _atlas_generic("hod_ansion", 106, {
+        B_PLATE: ((206, 176, 130), "courses"), B_PLATE_WIN: ((226, 220, 204), "win"), B_CONC: (236, 232, 220),
+        B_CONC_WIN: ((90, 140, 180), "glass"), B_RUST: ((170, 50, 40), "lattice"), B_SOOT: ((92, 80, 68), "noise"),
+        B_ROOF: ((186, 96, 60), "tiles"), B_HAZARD: ((50, 90, 150), "lattice"), B_GLOW: ((255, 200, 120), "glow"),
+        B_PAD: (((180, 170, 150), (170, 50, 40)), "pad"), B_PIPE: (120, 92, 64), B_HULL: ((206, 200, 192), "plates"),
+        B_GIRDER: ((92, 126, 60), "noise"), B_BRICK: ((176, 150, 110), "courses"), B_DUST: (170, 150, 112),
+        B_DARK: (16, 16, 18)})
+
+
+def ilum_atlas():
+    """hod_ilum textures (Ilum: ancient grey Jedi stone, packed snow, ice, kyber blue glow, Republic red and old
+    plating, dark rock, weathered bronze, glacier ice, snow)."""
+    _atlas_generic("hod_ilum", 181, {
+        B_PLATE: ((150, 152, 156), "courses"), B_PLATE_WIN: ((120, 122, 128), "win"), B_CONC: (236, 240, 246),
+        B_CONC_WIN: ((170, 220, 245), "glass"), B_RUST: (150, 40, 36), B_SOOT: ((70, 74, 82), "noise"),
+        B_ROOF: ((120, 100, 70), "plates"), B_HAZARD: ((120, 200, 255), "glow"), B_GLOW: ((255, 230, 170), "glow"),
+        B_PAD: (((190, 194, 200), (150, 40, 36)), "pad"), B_PIPE: (130, 134, 140), B_HULL: ((176, 178, 176), "plates"),
+        B_GIRDER: ((130, 134, 140), "lattice"), B_BRICK: ((186, 214, 236), "noise"), B_DUST: (238, 242, 248),
+        B_DARK: (16, 16, 18)})
+
+
+def dorin_atlas():
+    """hod_dorin textures (Dorin: dark basalt with amber-lit windows, pale paving, amber glass and glow, rust-orange
+    cloth, soot-dark stone, copper, kand green, coursed stone, dusty earth)."""
+    _atlas_generic("hod_dorin", 105, {
+        B_PLATE: ((70, 66, 64), "plates"), B_PLATE_WIN: ((56, 52, 50), "win"), B_CONC: (176, 166, 150),
+        B_CONC_WIN: ((210, 150, 70), "glass"), B_RUST: (180, 90, 40), B_SOOT: ((48, 44, 42), "noise"),
+        B_ROOF: ((166, 104, 66), "plates"), B_HAZARD: ((255, 170, 60), "glow"), B_GLOW: ((255, 200, 120), "glow"),
+        B_PAD: (((120, 112, 104), (255, 170, 60)), "pad"), B_PIPE: (150, 120, 90), B_HULL: ((180, 170, 160), "plates"),
+        B_GIRDER: ((96, 112, 54), "noise"), B_BRICK: ((96, 88, 80), "courses"), B_DUST: (130, 110, 86),
+        B_DARK: (14, 12, 12)})
+
+
+def yinchorr_atlas():
+    """hod_yinchorr textures (Yinchorr: ochre sandstone with slit windows, pale paving, Republic glass and white plates,
+    red cloth, weathered dark stone, green-bronze scales, hazard yellow, fire, grey metal, coursed sandstone, bone)."""
+    _atlas_generic("hod_yinchorr", 159, {
+        B_PLATE: ((176, 120, 76), "plates"), B_PLATE_WIN: ((160, 108, 68), "win"), B_CONC: (206, 182, 140),
+        B_CONC_WIN: ((150, 200, 230), "glass"), B_RUST: (160, 38, 30), B_SOOT: ((92, 70, 54), "noise"),
+        B_ROOF: ((82, 112, 76), "plates"), B_HAZARD: ((236, 186, 40), "plates"), B_GLOW: ((255, 150, 60), "glow"),
+        B_PAD: (((196, 196, 192), (160, 38, 30)), "pad"), B_PIPE: (128, 130, 132), B_HULL: ((226, 224, 216), "plates"),
+        B_GIRDER: ((120, 122, 124), "lattice"), B_BRICK: ((168, 116, 74), "courses"), B_DUST: (226, 214, 186),
+        B_DARK: (16, 12, 10)})
+
+
+def chandrila_atlas():
+    """hod_chandrila textures (Chandrila: cream stone with tall windows, pale paving, blue glass, blue banners, grey
+    stone, patina roofs, gold trim, warm light, white plates, grey metal, garden green, sandy courses, pale rock)."""
+    _atlas_generic("hod_chandrila", 187, {
+        B_PLATE: ((228, 222, 204), "plates"), B_PLATE_WIN: ((220, 214, 196), "win"), B_CONC: (214, 210, 196),
+        B_CONC_WIN: ((120, 180, 220), "glass"), B_RUST: (54, 92, 156), B_SOOT: ((108, 108, 104), "noise"),
+        B_ROOF: ((92, 150, 132), "plates"), B_HAZARD: ((220, 180, 80), "plates"), B_GLOW: ((255, 220, 150), "glow"),
+        B_PAD: (((200, 200, 196), (54, 92, 156)), "pad"), B_PIPE: (140, 142, 146), B_HULL: ((232, 232, 228), "plates"),
+        B_GIRDER: ((72, 124, 60), "noise"), B_BRICK: ((196, 180, 148), "courses"), B_DUST: (176, 170, 160),
+        B_DARK: (10, 12, 16)})
+
+
+def corulag_atlas():
+    """hod_corulag textures (Corulag: steel and blue glass, white paving, Sienar red, slate, bamboo green)."""
+    _atlas_generic("hod_corulag", 146, {
+        B_PLATE: ((150, 154, 160), "plates"), B_PLATE_WIN: ((120, 126, 136), "win"), B_CONC: (220, 220, 214),
+        B_CONC_WIN: ((90, 150, 200), "glass"), B_RUST: (150, 40, 36), B_SOOT: ((62, 64, 70), "noise"),
+        B_ROOF: ((84, 88, 96), "plates"), B_HAZARD: ((230, 190, 50), "plates"), B_GLOW: ((250, 245, 230), "glow"),
+        B_PAD: (((180, 182, 186), (230, 190, 50)), "pad"), B_PIPE: (130, 134, 140), B_HULL: ((228, 230, 232), "plates"),
+        B_GIRDER: ((96, 134, 60), "noise"), B_BRICK: ((196, 192, 182), "courses"), B_DUST: (150, 130, 100),
+        B_DARK: (12, 12, 14)})
+
+
+def arkania_atlas():
+    """hod_arkania textures (Arkania: white stone, ice-blue glass, Adasca violet, silver, diamond glint, snow)."""
+    _atlas_generic("hod_arkania", 148, {
+        B_PLATE: ((226, 230, 236), "plates"), B_PLATE_WIN: ((210, 218, 228), "win"), B_CONC: (236, 240, 244),
+        B_CONC_WIN: ((150, 200, 240), "glass"), B_RUST: (110, 70, 140), B_SOOT: ((70, 72, 80), "noise"),
+        B_ROOF: ((180, 186, 196), "plates"), B_HAZARD: ((230, 245, 255), "glow"), B_GLOW: ((255, 220, 170), "glow"),
+        B_PAD: (((200, 204, 210), (110, 70, 140)), "pad"), B_PIPE: (130, 134, 140), B_HULL: ((236, 238, 240), "plates"),
+        B_GIRDER: ((120, 124, 130), "lattice"), B_BRICK: ((210, 212, 216), "courses"), B_DUST: (240, 244, 248),
+        B_DARK: (10, 12, 16)})
+
+
+def anaxes_atlas():
+    """hod_anaxes textures (Anaxes: Republic grey and white, red bands, concrete, red rock and earth)."""
+    _atlas_generic("hod_anaxes", 133, {
+        B_PLATE: ((140, 142, 146), "plates"), B_PLATE_WIN: ((130, 132, 138), "win"), B_CONC: (176, 174, 168),
+        B_CONC_WIN: ((100, 150, 200), "glass"), B_RUST: (170, 36, 32), B_SOOT: ((90, 50, 44), "noise"),
+        B_ROOF: ((70, 72, 78), "plates"), B_HAZARD: ((230, 190, 50), "plates"), B_GLOW: ((250, 245, 230), "glow"),
+        B_PAD: (((176, 176, 176), (170, 36, 32)), "pad"), B_PIPE: (128, 130, 134), B_HULL: ((224, 224, 220), "plates"),
+        B_GIRDER: ((120, 122, 126), "lattice"), B_BRICK: ((150, 120, 100), "courses"), B_DUST: (150, 80, 60),
+        B_DARK: (12, 12, 14)})
+
+
+def esseles_atlas():
+    """hod_esseles textures (Esseles: cream stone, terracotta, bronze-green and gold domes, garden green)."""
+    _atlas_generic("hod_esseles", 139, {
+        B_PLATE: ((230, 220, 196), "plates"), B_PLATE_WIN: ((222, 210, 184), "win"), B_CONC: (226, 218, 200),
+        B_CONC_WIN: ((90, 170, 160), "glass"), B_RUST: (186, 96, 60), B_SOOT: ((110, 106, 100), "noise"),
+        B_ROOF: ((90, 140, 110), "plates"), B_HAZARD: ((226, 180, 70), "plates"), B_GLOW: ((255, 220, 150), "glow"),
+        B_PAD: (((200, 196, 186), (186, 96, 60)), "pad"), B_PIPE: (140, 138, 134), B_HULL: ((232, 230, 224), "plates"),
+        B_GIRDER: ((70, 128, 58), "noise"), B_BRICK: ((200, 176, 136), "courses"), B_DUST: (210, 180, 130),
+        B_DARK: (12, 10, 10)})
+
+
+def coruscant_atlas():
+    """hod_coruscant_lm textures (Coruscant: pale grey plate and white stone, lit window rows, blue-grey glass, Senate
+    red, grime, dark grey, neon, warm light, white hull, metal, sandstone and bronze for the Jedi Temple)."""
+    _atlas_generic("hod_coruscant_lm", 1, {
+        B_PLATE: ((196, 198, 200), "plates"), B_PLATE_WIN: ((170, 174, 180), "win"), B_CONC: (226, 226, 222),
+        B_CONC_WIN: ((110, 140, 170), "glass"), B_RUST: (160, 30, 30), B_SOOT: ((70, 70, 74), "noise"),
+        B_ROOF: ((96, 98, 104), "plates"), B_HAZARD: ((120, 220, 255), "glow"), B_GLOW: ((255, 230, 180), "glow"),
+        B_PAD: (((170, 172, 176), (160, 30, 30)), "pad"), B_PIPE: (140, 142, 146), B_HULL: ((232, 232, 230), "plates"),
+        B_GIRDER: ((120, 120, 124), "lattice"), B_BRICK: ((206, 190, 160), "courses"), B_DUST: ((214, 150, 120), "plates"),
+        B_DARK: (10, 10, 12)})
+
 
 def jabiim_atlas():
     """hod_jabiim textures (Jabiim, the monsoon world: Republic white and red, Separatist tan, rain-stained
@@ -5827,7 +6261,8 @@ def models(*only):
             build(f"hod_dat_hamlet_{band}{v}", lambda k, band=band, rng=rng_d: ak.dat_hamlet(k, band, rng), shader="PdxMeshSnow",
                   tex="hod_dathomir")
     for name, fn in (("hod_man_sundari", ak.man_sundari), ("hod_man_keldabe", ak.man_keldabe),
-                     ("hod_man_beskar", ak.man_beskar), ("hod_man_dwcamp", ak.man_dwcamp)):
+                     ("hod_man_beskar", ak.man_beskar), ("hod_man_dwcamp", ak.man_dwcamp),
+                     ("hod_man_cityofbone", ak.man_cityofbone), ("hod_man_norgbral", ak.man_norgbral)):
         build(name, fn, tex="hod_mandalore")
     for band in range(1, 5):
         for v in range(1, 5):
@@ -5872,6 +6307,87 @@ def models(*only):
     for name, fn in (("hod_rus_olmondo", ak.rus_olmondo), ("hod_rus_mausoleum", ak.rus_mausoleum),
                      ("hod_rus_cave", ak.rus_cave), ("hod_rus_camp", ak.rus_camp), ("hod_rus_fort", ak.rus_fort)):
         build(name, fn, tex="hod_ruusan")
+    for name, fn in (("hod_ith_tafanda", ak.ith_tafanda), ("hod_ith_tarintha", ak.ith_tarintha),
+                     ("hod_ith_cloudmother", ak.ith_cloudmother), ("hod_ith_falls", ak.ith_falls)):
+        build(name, fn, tex="hod_ithor")
+    for name, fn in (("hod_om_city", ak.om_cityhall), ("hod_om_worlport", ak.om_worlport),
+                     ("hod_om_junkyard", ak.om_junkyard), ("hod_om_oldcity", ak.om_oldcity), ("hod_om_garnik", ak.om_garnik)):
+        build(name, fn, tex="hod_ordmantell")
+    for name, fn in (("hod_gar_pesktda", ak.gar_pesktda), ("hod_gar_university", ak.gar_university),
+                     ("hod_gar_combine", ak.gar_combine), ("hod_gar_vlassy", ak.gar_vlassy)):
+        build(name, fn, tex="hod_garqi")
+    build("hod_aga_calna", ak.aga_calna, tex="hod_agamar", extra=lambda: place_ships(ak.AGA_CALNA_FLEET, lambda kind: 1.0))
+    for name, fn in (("hod_aga_university", ak.aga_university),
+                     ("hod_aga_ruins", ak.aga_ruins), ("hod_aga_bridges", ak.aga_bridges), ("hod_aga_ranch", ak.aga_ranch)):
+        build(name, fn, tex="hod_agamar")
+    for name, fn in (("hod_ot_depot", ak.ot_depot), ("hod_ot_salvage", ak.ot_salvage)):
+        build(name, fn, tex="hod_ordtrasi")
+    ot_scale = lambda kind: ak.OT_SHIP_SCALE if kind == "hammerhead" else 1.0     # the yards hold our ship models
+    build("hod_ot_yards", ak.ot_yards, tex="hod_ordtrasi", extra=lambda: place_ships(ak.OT_YARD_FLEET, ot_scale))
+    build("hod_ot_orbital", ak.ot_orbital, tex="hod_ordtrasi", extra=lambda: place_ships(ak.OT_ORBIT_FLEET, ot_scale))
+    for name, fn in (("hod_dan_khoonda", ak.dan_khoonda), ("hod_dan_enclave", ak.dan_enclave), ("hod_dan_rakatan", ak.dan_rakatan),
+                     ("hod_dan_cave", ak.dan_cave), ("hod_dan_matale", ak.dan_matale), ("hod_dan_sandral", ak.dan_sandral),
+                     ("hod_dan_grove", ak.dan_grove)):
+        build(name, fn, tex="hod_dantooine")
+    for name, fn in (("hod_myg_jygat", ak.myg_jygat), ("hod_myg_city", ak.myg_city), ("hod_myg_mesas", ak.myg_mesas),
+                     ("hod_myg_hammertong", ak.myg_hammertong), ("hod_myg_mines", ak.myg_mines)):
+        build(name, fn, tex="hod_mygeeto")
+    for name, fn in (("hod_yag_hive", ak.yag_hive), ("hod_yag_center", ak.yag_center), ("hod_yag_works", ak.yag_works)):
+        build(name, fn, tex="hod_yaga_minor")
+    build("hod_yag_spaceport", ak.yag_spaceport, tex="hod_yaga_minor", extra=lambda: place_ships(ak.YAG_PORT_FLEET, lambda kind: 1.0))
+    build("hod_yag_yards", ak.yag_yards, tex="hod_yaga_minor",
+          extra=lambda: place_ships(ak.YAG_YARD_FLEET, lambda kind: ak.OT_SHIP_SCALE if kind == "hammerhead" else 1.0))
+    for name, fn in (("hod_ans_cuipernam", ak.ans_cuipernam), ("hod_ans_borokii", ak.ans_borokii),
+                     ("hod_ans_dashbalar", ak.ans_dashbalar)):
+        build(name, fn, tex="hod_ansion")
+    for name, fn in (("hod_ilu_temple", ak.ilu_temple), ("hod_ilu_tonvarr", ak.ilu_tonvarr), ("hod_ilu_circle", ak.ilu_circle),
+                     ("hod_ilu_ruins", ak.ilu_ruins)):
+        build(name, fn, tex="hod_ilum")
+    for name, fn in (("hod_dor_dorshan", ak.dor_dorshan), ("hod_dor_dorgalk", ak.dor_dorgalk), ("hod_dor_barando", ak.dor_barando),
+                     ("hod_dor_enclave", ak.dor_enclave), ("hod_dor_caverns", ak.dor_caverns)):
+        build(name, fn, tex="hod_dorin")
+    for name, fn in (("hod_yin_tolkachorn", ak.yin_tolkachorn), ("hod_yin_garrison", ak.yin_garrison), ("hod_yin_depot", ak.yin_depot),
+                     ("hod_yin_daacorp", ak.yin_daacorp), ("hod_yin_zerpen", ak.yin_zerpen)):
+        build(name, fn, tex="hod_yinchorr")
+    for name, fn in (("hod_cha_hanna", ak.cha_hanna), ("hod_cha_emita", ak.cha_emita), ("hod_cha_nayli", ak.cha_nayli),
+                     ("hod_cha_brionelle", ak.cha_brionelle), ("hod_cha_canyons", ak.cha_canyons)):
+        build(name, fn, tex="hod_chandrila")
+    for name, fn in (("hod_cor_curamelle", ak.cor_curamelle), ("hod_cor_sienar", ak.cor_sienar), ("hod_cor_academy", ak.cor_academy), ("hod_cor_tasjon", ak.cor_tasjon), ("hod_cor_crullov", ak.cor_crullov)):
+        build(name, fn, tex="hod_corulag")
+    for name, fn in (("hod_ark_adascopolis", ak.ark_adascopolis), ("hod_ark_mines", ak.ark_mines), ("hod_ark_praxeum", ak.ark_praxeum), ("hod_ark_veeshas", ak.ark_veeshas)):
+        build(name, fn, tex="hod_arkania")
+    for name, fn in (("hod_anx_citadel", ak.anx_citadel), ("hod_anx_works", ak.anx_works), ("hod_anx_college", ak.anx_college), ("hod_anx_fort", ak.anx_fort), ("hod_anx_hydro", ak.anx_hydro)):
+        build(name, fn, tex="hod_anaxes")
+    for name, fn in (("hod_ess_calamar", ak.ess_calamar), ("hod_ess_esprix", ak.ess_esprix), ("hod_ess_togatto", ak.ess_togatto), ("hod_ess_nurrale", ak.ess_nurrale)):
+        build(name, fn, tex="hod_esseles")
+    for name, fn in (("hod_cos_senate", ak.cos_senate), ("hod_cos_temple", ak.cos_temple), ("hod_cos_executive", ak.cos_executive),
+                     ("hod_cos_courts", ak.cos_courts), ("hod_cos_processional", ak.cos_processional),
+                     ("hod_cos_monument", ak.cos_monument), ("hod_cos_republica", ak.cos_republica), ("hod_cos_opera", ak.cos_opera),
+                     ("hod_cos_outlander", ak.cos_outlander), ("hod_cos_works", ak.cos_works), ("hod_cos_level1313", ak.cos_level1313),
+                     ("hod_cos_diner", ak.cos_diner)):
+        build(name, fn, tex="hod_coruscant_lm")
+    for name, fn in (("hod_cos_compor", ak.cos_compor), ("hod_cos_exchange", ak.cos_exchange)):
+        build(name, fn, tex="hod_coruscant_lm")
+    build("hod_ark_novania", ak.ark_novania, tex="hod_arkania", extra=lambda: place_ships(ak.ARK_PORT_FLEET, lambda kind: 1.0))
+    build("hod_ess_starport", ak.ess_starport, tex="hod_esseles", extra=lambda: place_ships(ak.ESS_PORT_FLEET, lambda kind: 1.0))
+    build("hod_anx_yards", ak.anx_yards, tex="hod_anaxes",
+          extra=lambda: place_ships(ak.ANX_YARD_FLEET, lambda kind: ak.OT_SHIP_SCALE if kind == "hammerhead" else 1.0))
+    build("hod_dub_capital", ak.dub_capital, tex="hod_dubrillion")
+    build("hod_dub_resort", ak.dub_resort, tex="hod_dubrillion")
+    one = lambda kind: ak.OT_SHIP_SCALE if kind == "hammerhead" else 1.0          # our ship models, as in the yards
+    build("hod_bas_ravelin", ak.bas_ravelin, tex="hod_bastion")
+    build("hod_bas_sartinaynian", ak.bas_sartinaynian, tex="hod_bastion", extra=lambda: place_ships(ak.BAS_PORT_FLEET, one))
+    build("hod_bas_customs", ak.bas_customs, tex="hod_bastion", extra=lambda: place_ships(ak.BAS_STATION_FLEET, one))
+    for name, fn in (("hod_kal_kaleela", ak.kal_kaleela), ("hod_kal_shrupak", ak.kal_shrupak), ("hod_kal_abesmi", ak.kal_abesmi),
+                     ("hod_kal_warruzan", ak.kal_warruzan)):
+        build(name, fn, tex="hod_kalee")
+    for name, fn in (("hod_muun_harnaidan", ak.muun_harnaidan), ("hod_muun_mariunhus", ak.muun_mariunhus),
+                     ("hod_muun_pilaan", ak.muun_pilaan)):
+        build(name, fn, tex="hod_muunilinst")
+    build("hod_muun_highport", ak.muun_highport, tex="hod_muunilinst", extra=lambda: place_ships(ak.MUUN_PORT_FLEET, one))
+    for name, fn in (("hod_boz_base", ak.boz_base), ("hod_boz_foundry", ak.boz_foundry), ("hod_boz_ruins", ak.boz_ruins),
+                     ("hod_boz_skeletons", ak.boz_skeletons), ("hod_boz_headstones", ak.boz_headstones)):
+        build(name, fn, tex="hod_bozpity")
     for fam, fn, tex in (("hod_tar_upper", ak.tar_upper, "hod_taris"), ("hod_tar_lower", ak.tar_lower, "hod_taris"),
                          ("hod_tar_ruin", ak.tar_ruin, "hod_taris"), ("hod_way_town", ak.way_town, "hod_wayland"), ("hod_way_village", ak.way_village, "hod_wayland"),
                          ("hod_con_town", ak.con_town, "hod_concordia"),
@@ -5879,7 +6395,18 @@ def models(*only):
                          ("hod_nyr_town", ak.nyr_town, "hod_nyriaan"), ("hod_crs_town", ak.crs_town, "hod_corsin"),
                          ("hod_kas_city", ak.kas_city, "hod_kashyyyk"), ("hod_ond_town", ak.ond_town, "hod_onderon"),
                          ("hod_umb_city", ak.umb_city, "hod_umbara"), ("hod_col_city", ak.col_city, "hod_colla"),
-                         ("hod_rus_city", ak.rus_city, "hod_ruusan")):
+                         ("hod_rus_city", ak.rus_city, "hod_ruusan"), ("hod_om_town", ak.om_city, "hod_ordmantell"),
+                         ("hod_gar_farm", ak.gar_farm, "hod_garqi"), ("hod_gar_city", ak.gar_city, "hod_garqi"),
+                         ("hod_aga_town", ak.aga_town, "hod_agamar"), ("hod_ot_town", ak.ot_town, "hod_ordtrasi"),
+                         ("hod_dan_estate", ak.dan_estate, "hod_dantooine"), ("hod_dub_city", ak.dub_city, "hod_dubrillion"),
+                         ("hod_bas_town", ak.bas_town, "hod_bastion"), ("hod_kal_town", ak.kal_town, "hod_kalee"),
+                         ("hod_muun_town", ak.muun_town, "hod_muunilinst"), ("hod_myg_town", ak.myg_town, "hod_mygeeto"),
+                         ("hod_yag_town", ak.yag_town, "hod_yaga_minor"), ("hod_ans_town", ak.ans_town, "hod_ansion"), ("hod_dor_town", ak.dor_town, "hod_dorin"),
+                         ("hod_yin_town", ak.yin_town, "hod_yinchorr"),
+                         ("hod_cha_town", ak.cha_town, "hod_chandrila"),
+                         ("hod_cor_town", ak.cor_town, "hod_corulag"), ("hod_ark_town", ak.ark_town, "hod_arkania"),
+                         ("hod_anx_town", ak.anx_town, "hod_anaxes"), ("hod_ess_town", ak.ess_town, "hod_esseles"),
+                         ("hod_cos_town", ak.cos_town, "hod_coruscant_lm")):
         for band in range(1, 5):
             for v in range(1, 5):
                 rng_f = random.Random(f"{fam}{band}{v}")
@@ -6667,7 +7194,8 @@ def check_placement_cfg(mod):
         elif where[0] not in ("zone_centre", "near_vp"):
             errs.append(f"{mesh}: unknown placement {where[0]!r} (zone_centre, near_vp, at_vp)")
     for mesh, foot in cfg.get("clear", {}).items():
-        if mesh not in {m for m, _s, _w in cfg["items"]} or not 0 < foot < 30:
+        hooked = set(cfg.get("new_models", ())) if cfg.get("hook") else set()   # a hook may place new meshes itself
+        if mesh not in {m for m, _s, _w in cfg["items"]} | hooked or not 0 < foot < 30:
             errs.append(f"clear: {mesh} {foot} (a placed mesh, footprint 0-30 px)")
     return errs
 
@@ -6781,5 +7309,6 @@ if __name__ == "__main__":
      "felucia_atlas": felucia_atlas, "korriban_atlas": korriban_atlas, "zygerria_atlas": zygerria_atlas, "dromund_atlas": dromund_atlas, "cantonica_atlas": cantonica_atlas, "bonadan_atlas": bonadan_atlas, "pammant_atlas": pammant_atlas, "moncala_atlas": moncala_atlas, "iego_atlas": iego_atlas, "lianna_atlas": lianna_atlas, "jabiim_atlas": jabiim_atlas, "saleucami_atlas": saleucami_atlas, "telos_atlas": telos_atlas, "serenno_atlas": serenno_atlas, "yavin_atlas": yavin_atlas, "celanon_atlas": celanon_atlas, "botajef_atlas": botajef_atlas, "axxila_atlas": axxila_atlas, "ciutric_atlas": ciutric_atlas, "cestus_atlas": cestus_atlas, "dathomir_atlas": dathomir_atlas, "mandalore_atlas": mandalore_atlas, "taris_atlas": taris_atlas, "wayland_atlas": wayland_atlas,
             "concordia_atlas": concordia_atlas, "bracca_atlas": bracca_atlas,
             "trandosha_atlas": trandosha_atlas, "nyriaan_atlas": nyriaan_atlas,
-            "corsin_atlas": corsin_atlas, "kashyyyk_atlas": kashyyyk_atlas, "onderon_atlas": onderon_atlas, "umbara_atlas": umbara_atlas, "colla_atlas": colla_atlas, "ruusan_atlas": ruusan_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
+            "corsin_atlas": corsin_atlas, "kashyyyk_atlas": kashyyyk_atlas, "onderon_atlas": onderon_atlas, "umbara_atlas": umbara_atlas, "colla_atlas": colla_atlas, "ruusan_atlas": ruusan_atlas, "boz_atlas": boz_atlas, "ithor_atlas": ithor_atlas, "ordmantell_atlas": ordmantell_atlas, "garqi_atlas": garqi_atlas, "agamar_atlas": agamar_atlas, "ordtrasi_atlas": ordtrasi_atlas, "dantooine_atlas": dantooine_atlas, "dubrillion_atlas": dubrillion_atlas, "bastion_atlas": bastion_atlas, "kalee_atlas": kalee_atlas, "muunilinst_atlas": muunilinst_atlas, "mygeeto_atlas": mygeeto_atlas, "yagaminor_atlas": yagaminor_atlas, "ansion_atlas": ansion_atlas, "ilum_atlas": ilum_atlas, "dorin_atlas": dorin_atlas, "yinchorr_atlas": yinchorr_atlas, "chandrila_atlas": chandrila_atlas, "corulag_atlas": corulag_atlas,
+            "arkania_atlas": arkania_atlas, "anaxes_atlas": anaxes_atlas, "esseles_atlas": esseles_atlas, "coruscant_atlas": coruscant_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
      "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])

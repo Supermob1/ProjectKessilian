@@ -63,7 +63,7 @@ PLANET_TARGETS = {
     109: ["Mygeeto City", "IBC Treasury District", "Crystal Wastes", "Northern Reaches",
           "Southern Mountain Territory", "Eastern Glacier", "Western Refinery", "Frozen Outlands"],  # Mygeeto
     115: ["Harnaidan", "IBC Banking Complex", "Northern Lush Fields", "Southern Plains",
-          "Eastern Territories", "Western Reach", "Moneylending Vaults", "Outer Garden Zones"],  # Muunilist
+          "Eastern Territories", "Western Reach", "Moneylending Vaults", "Outer Garden Zones"],  # Muunilinst
 
     # ── Inner Rim ────────────────────────────────────────────────────────────
     13:  ["Abregado Spaceport", "Northern Plains", "Southern Wetlands", "Eastern Mountain Ranges",
@@ -263,8 +263,8 @@ PLANET_TARGETS = {
     105: ["Dorin City", "Northern Gas Fields", "Southern Settlements", "Eastern Atmospheric Zone",
           "Kel Dor Highlands", "Western Storm Belt", "Outer Atmospheric Layer",
           "Helium-Hydrogen Refinery"],  # Dorin
-    106: ["Aeten Crystal Fields", "Northern Mountains", "Western Desert", "Eastern Mining Complex",
-          "Southern Wasteland", "Stygium Refinery", "Outer Quarries"],  # Aeten II
+    106: ["Sorr-ul-Paan Plateau", "Kander Region", "Valley of the Borokii", "Niruu Plateau", "Delgerhan",
+          "Dashbalar", "Doigon"],  # Ansion
     107: ["Calna Muun", "Northern Plains", "Southern Highlands", "Eastern Forests",
           "Western Reaches", "Coastal Settlement", "Rebel Outpost", "Outer Wilderness"],  # Agamar
     108: ["Despayre Prison Colony", "Northern Jungles", "Southern Territories", "Eastern Reaches",

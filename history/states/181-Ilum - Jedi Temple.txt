@@ -1,0 +1,32 @@
+state={
+	id=181
+	name="STATE_181"
+	# HOD: Ilum (ilum_map.py)
+	provinces={
+		21141 21142 21172 21173
+	}
+	resources={
+		oil=4#Fuel
+		rubber=6#Doonium
+		tungsten=3#Bacta
+		steel=1#Alloys
+		chromium=2#Circuitry
+	}
+	history = {
+		victory_points = {
+			21141 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 3
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 1272082
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

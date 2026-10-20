@@ -1,0 +1,951 @@
+{
+ "centre": [
+  1477.6384522370013,
+  926.0069528415961
+ ],
+ "radius": 32.44948541188257,
+ "vp_names": {
+  "159": "Pols Anaxes",
+  "393": "Anaxes Citadel",
+  "1088": "Anaxes Shipyards",
+  "1468": "Republic Navy War College",
+  "12304": "Fort Anaxes",
+  "1544": "Anaxes Canyon",
+  "2459": "Czerka Hydro-Extraction Works",
+  "2494": "Sirpar Station",
+  "12276": "Red Jungles",
+  "12416": "Azure Plains"
+ },
+ "provinces": {
+  "159": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Pols Anaxes",
+   "state": 133,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1477.7,
+    926.15
+   ],
+   "area": 20,
+   "terrain": "urban"
+  },
+  "315": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Pols Anaxes",
+   "state": 133,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1474.625,
+    925.0
+   ],
+   "area": 16,
+   "terrain": "urban"
+  },
+  "393": {
+   "zone": "citadel",
+   "kind": 2,
+   "feature": "Anaxes Citadel",
+   "state": 133,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1472.9666666666667,
+    930.1333333333333
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "1088": {
+   "zone": "yards",
+   "kind": 3,
+   "feature": "Anaxes Shipyards",
+   "state": 134,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1478.2307692307693,
+    950.2307692307693
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "1317": {
+   "zone": "yards",
+   "kind": 3,
+   "feature": "Anaxes Shipyards",
+   "state": 134,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1475.1153846153845,
+    947.3461538461538
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "1468": {
+   "zone": "college",
+   "kind": 5,
+   "feature": "Republic Navy War College",
+   "state": 137,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1461.2272727272727,
+    928.8181818181819
+   ],
+   "area": 22,
+   "terrain": "plains"
+  },
+  "1542": {
+   "zone": "fort",
+   "kind": 4,
+   "feature": "Fort Anaxes",
+   "state": 132,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1473.6842105263158,
+    908.2631578947369
+   ],
+   "area": 19,
+   "terrain": "hills"
+  },
+  "1544": {
+   "zone": "canyon",
+   "kind": 10,
+   "feature": "Anaxes Canyon",
+   "state": 132,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1480.5882352941176,
+    905.4264705882352
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "2454": {
+   "zone": "canyon",
+   "kind": 10,
+   "feature": "Anaxes Canyon",
+   "state": 132,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1470.5365853658536,
+    912.0
+   ],
+   "area": 41,
+   "terrain": "hills"
+  },
+  "2459": {
+   "zone": "works",
+   "kind": 6,
+   "feature": "Czerka Hydro-Extraction Works",
+   "state": 136,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1492.909090909091,
+    943.3636363636364
+   ],
+   "area": 11,
+   "terrain": "plains"
+  },
+  "2494": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Sirpar Station",
+   "state": 135,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1485.7037037037037,
+    915.8518518518518
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "2982": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1450.4545454545455,
+    917.1818181818181
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "3047": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1451.375,
+    943.125
+   ],
+   "area": 8,
+   "terrain": "mountain"
+  },
+  "3427": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1447.0,
+    932.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "4405": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1454.25,
+    928.1
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "4699": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1452.5,
+    936.0
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "4714": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1447.2307692307693,
+    922.7692307692307
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "5358": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1449.5714285714287,
+    911.7142857142857
+   ],
+   "area": 7,
+   "terrain": "mountain"
+  },
+  "5949": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1448.4666666666667,
+    936.4666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "12134": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1452.1818181818182,
+    923.1818181818181
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "12143": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1450.5882352941176,
+    928.0588235294117
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "12152": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1447.0,
+    918.5
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "12157": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1450.5,
+    939.7142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "12165": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1448.4545454545455,
+    914.8181818181819
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "12168": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1454.625,
+    932.5625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "12172": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1447.3333333333333,
+    926.8333333333334
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "12181": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1450.4,
+    932.4
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "12185": {
+   "zone": "ice",
+   "kind": 11,
+   "feature": "Northern Ice",
+   "state": 1303,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1449.6923076923076,
+    920.4615384615385
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "12191": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Anaxes Sea",
+   "state": 1304,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1497.6666666666667,
+    913.1904761904761
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "12205": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Anaxes Sea",
+   "state": 1304,
+   "group": 9,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1499.642857142857,
+    904.8571428571429
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "12206": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Anaxes Sea",
+   "state": 1304,
+   "group": 9,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1504.1666666666667,
+    911.0
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "12219": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Anaxes Sea",
+   "state": 1304,
+   "group": 9,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1501.65,
+    908.15
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "12222": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Anaxes Sea",
+   "state": 1304,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1497.3333333333333,
+    908.6
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "12225": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Anaxes Sea",
+   "state": 1304,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1501.0714285714287,
+    912.7142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "12236": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Pols Anaxes",
+   "state": 133,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1473.8181818181818,
+    934.7272727272727
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "12241": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Pols Anaxes",
+   "state": 133,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1470.2083333333333,
+    922.5
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "12242": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Pols Anaxes",
+   "state": 133,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1482.9565217391305,
+    931.4855072463768
+   ],
+   "area": 138,
+   "terrain": "hills"
+  },
+  "12253": {
+   "zone": "jungle",
+   "kind": 9,
+   "feature": "Red Jungles",
+   "state": 3,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1494.5,
+    933.1489361702128
+   ],
+   "area": 94,
+   "terrain": "jungle"
+  },
+  "12254": {
+   "zone": "jungle",
+   "kind": 9,
+   "feature": "Red Jungles",
+   "state": 3,
+   "group": 11,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1504.7692307692307,
+    919.0
+   ],
+   "area": 104,
+   "terrain": "jungle"
+  },
+  "12267": {
+   "zone": "jungle",
+   "kind": 9,
+   "feature": "Red Jungles",
+   "state": 3,
+   "group": 11,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1505.3394495412845,
+    930.7614678899082
+   ],
+   "area": 109,
+   "terrain": "jungle"
+  },
+  "12276": {
+   "zone": "jungle",
+   "kind": 9,
+   "feature": "Red Jungles",
+   "state": 3,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1497.2857142857142,
+    925.8051948051948
+   ],
+   "area": 77,
+   "terrain": "jungle"
+  },
+  "12277": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Fort Anaxes",
+   "state": 132,
+   "group": 12,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1459.2727272727273,
+    905.993006993007
+   ],
+   "area": 143,
+   "terrain": "hills"
+  },
+  "12280": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Fort Anaxes",
+   "state": 132,
+   "group": 12,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1483.685393258427,
+    898.1460674157304
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "12304": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Fort Anaxes",
+   "state": 132,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1471.7692307692307,
+    903.8846153846154
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "12310": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Fort Anaxes",
+   "state": 132,
+   "group": 12,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1470.5681818181818,
+    897.7045454545455
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "12311": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Fort Anaxes",
+   "state": 132,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1469.0555555555557,
+    913.4027777777778
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "12326": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Anaxes Shipyards",
+   "state": 134,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1476.351851851852,
+    942.4537037037037
+   ],
+   "area": 108,
+   "terrain": "plains"
+  },
+  "12334": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Anaxes Shipyards",
+   "state": 134,
+   "group": 13,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1484.4545454545455,
+    951.5555555555555
+   ],
+   "area": 99,
+   "terrain": "plains"
+  },
+  "12342": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Anaxes Shipyards",
+   "state": 134,
+   "group": 13,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1474.7777777777778,
+    954.5138888888889
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "12343": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Sirpar Hills",
+   "state": 135,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1479.9622641509434,
+    915.9150943396227
+   ],
+   "area": 106,
+   "terrain": "hills"
+  },
+  "12367": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Sirpar Hills",
+   "state": 135,
+   "group": 14,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1491.4924242424242,
+    904.719696969697
+   ],
+   "area": 132,
+   "terrain": "hills"
+  },
+  "12368": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Sirpar Hills",
+   "state": 135,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1493.1758241758241,
+    916.1868131868132
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "12375": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Sirpar Hills",
+   "state": 135,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1488.1097560975609,
+    922.8780487804878
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "12381": {
+   "zone": "jungle",
+   "kind": 9,
+   "feature": "Czerka Hydro-Extraction Zone",
+   "state": 136,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1489.7125,
+    940.9
+   ],
+   "area": 80,
+   "terrain": "jungle"
+  },
+  "12389": {
+   "zone": "jungle",
+   "kind": 9,
+   "feature": "Czerka Hydro-Extraction Zone",
+   "state": 136,
+   "group": 15,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1501.0947368421052,
+    941.8105263157895
+   ],
+   "area": 95,
+   "terrain": "jungle"
+  },
+  "12397": {
+   "zone": "jungle",
+   "kind": 9,
+   "feature": "Czerka Hydro-Extraction Zone",
+   "state": 136,
+   "group": 15,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1493.3820224719102,
+    949.5393258426966
+   ],
+   "area": 89,
+   "terrain": "jungle"
+  },
+  "12398": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "War College Grounds",
+   "state": 137,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1461.2685185185185,
+    921.9722222222222
+   ],
+   "area": 108,
+   "terrain": "plains"
+  },
+  "12405": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "War College Grounds",
+   "state": 137,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1462.1358024691358,
+    931.679012345679
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "12413": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "War College Grounds",
+   "state": 137,
+   "group": 16,
+   "coastal": true,
+   "sea": 18880,
+   "centre": [
+    1455.3536585365853,
+    915.1341463414634
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "12416": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Azure Plains",
+   "state": 138,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1465.531914893617,
+    939.7340425531914
+   ],
+   "area": 94,
+   "terrain": "plains"
+  },
+  "12427": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Azure Plains",
+   "state": 138,
+   "group": 17,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1465.1588785046729,
+    951.018691588785
+   ],
+   "area": 107,
+   "terrain": "plains"
+  },
+  "12435": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Azure Plains",
+   "state": 138,
+   "group": 17,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1457.091743119266,
+    943.045871559633
+   ],
+   "area": 109,
+   "terrain": "plains"
+  }
+ }
+}

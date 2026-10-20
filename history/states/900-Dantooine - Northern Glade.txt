@@ -1,0 +1,29 @@
+state={
+	id=900
+	name="STATE_900"
+	# HOD: Dantooine (dantooine_map.py)
+	provinces={
+		1415 1419 1556 6196 6204 6253 6705 6706 6712 6715 6716 6730 6738
+	}
+	resources={
+		coal=1
+		oil=1
+	}
+	history = {
+		victory_points = {
+			1415 1
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 2
+			air_base = 1
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 459671
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

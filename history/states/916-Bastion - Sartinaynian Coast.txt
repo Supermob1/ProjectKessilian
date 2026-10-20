@@ -1,0 +1,33 @@
+state={
+	id=916
+	name="STATE_916"
+	# HOD: Bastion (bastion_map.py)
+	provinces={
+		337 364 522 6417 6418 6419 6420 6421 6424 6425 6427 6430 6431 6432 6436 6439
+	}
+	resources={
+		oil=2
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			337 5
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+					6418 = {
+				naval_base = 3
+			}
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 81311
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

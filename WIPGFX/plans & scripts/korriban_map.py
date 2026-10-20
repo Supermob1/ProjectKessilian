@@ -202,23 +202,29 @@ def main():
 
 def uncross(newpid, m):
     """No four provinces meeting at one corner (HOI4 logs X crossings): one pixel of the 2 x 2 joins a neighbour,
-    if its own province stays in one piece."""
-    while True:
-        a = newpid
+    if its own province stays in one piece. Works on the planet's bounding box and checks the province in a window
+    round the pixel (whole-map labelling per crossing took minutes on Ithor's narrow sky-lanes, 2026-10-20)."""
+    ys, xs = np.nonzero(m)
+    y0, x0 = max(ys.min() - 1, 0), max(xs.min() - 1, 0)
+    a, mm = newpid[y0:ys.max() + 2, x0:xs.max() + 2], m[y0:ys.max() + 2, x0:xs.max() + 2]   # views: edits go through
+    W = 40                                                               # window half size: provinces are far smaller
+    for _ in range(200000):
         A, B, C, D = a[:-1, :-1], a[1:, :-1], a[:-1, 1:], a[1:, 1:]
-        x = (A != B) & (A != C) & (A != D) & (B != C) & (B != D) & (C != D) & m[:-1, :-1] & m[1:, 1:]
+        x = (A != B) & (A != C) & (A != D) & (B != C) & (B != D) & (C != D) & mm[:-1, :-1] & mm[1:, 1:]
         if not x.any():
             return
         r, c = np.argwhere(x)[0]
         for (pr, pc), (qr, qc) in (((r, c), (r + 1, c)), ((r + 1, c + 1), (r, c + 1)), ((r, c), (r, c + 1)),
                                    ((r + 1, c + 1), (r + 1, c))):
-            old = newpid[pr, pc]
-            newpid[pr, pc] = newpid[qr, qc]
-            if m[pr, pc] and ndi.label(newpid == old)[1] == 1:
+            old = a[pr, pc]
+            a[pr, pc] = a[qr, qc]
+            win = a[max(pr - W, 0):pr + W + 1, max(pc - W, 0):pc + W + 1] == old
+            if mm[pr, pc] and ndi.label(win)[1] == 1:
                 break
-            newpid[pr, pc] = old
+            a[pr, pc] = old
         else:
-            raise AssertionError(f"X crossing at {r}, {c} could not be fixed")
+            raise AssertionError(f"X crossing at {r + y0}, {c + x0} could not be fixed")
+    raise AssertionError("uncross: X crossings keep reappearing")
 
 
 def states(prov, land, m, newpid, spare, rng):

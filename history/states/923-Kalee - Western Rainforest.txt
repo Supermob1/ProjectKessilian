@@ -1,0 +1,29 @@
+state={
+	id=923
+	name="STATE_923"
+	# HOD: Kalee (kalee_map.py)
+	provinces={
+		7207 7213 7216 7222 7233 7234 7235 7239 7242 7256 7257 7267
+	}
+	resources={
+		coal=1
+		oil=1
+	}
+	history = {
+		victory_points = {
+			7233 1
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 2
+			air_base = 1
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 477571
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

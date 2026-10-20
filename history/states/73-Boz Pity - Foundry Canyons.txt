@@ -1,0 +1,32 @@
+state={
+	id=73
+	name="STATE_73"
+	# HOD: Boz Pity (boz_pity_map.py)
+	provinces={
+		86 402 596 11674 11679 11680 11683 11691 11695
+	}
+	resources={
+		coal=1
+	}
+	history = {
+		victory_points = {
+			86 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 5
+			air_base = 2
+			dockyard = 4
+					11674 = {
+				naval_base = 3
+			}
+		}
+		owner = TCU
+		add_core_of = TCU
+	}
+	manpower = 1977769
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

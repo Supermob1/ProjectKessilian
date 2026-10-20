@@ -1,0 +1,31 @@
+state={
+	id=847
+	name="STATE_847"
+	# HOD: Ithor (ithor_map.py)
+	provinces={
+		496 689 699 737 746 816 819 890 903 1199 1220 1296 10018 10022 10023 10029 10031
+	}
+	resources={
+		coal=2
+	}
+	history = {
+		victory_points = {
+			496 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			air_base = 1
+			dockyard = 1
+					10018 = {
+				naval_base = 4
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 369641
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

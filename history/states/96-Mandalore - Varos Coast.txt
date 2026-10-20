@@ -1,0 +1,33 @@
+state={
+	id=96
+	name="STATE_96"
+	# HOD: Mandalore (mandalore_map.py)
+	provinces={
+		10164 10170 10171 10190 10191 10197 10205 10206 10234 10240 10250 10257 10261
+	}
+	resources={
+		steel=4
+		chromium=1
+	}
+	history = {
+		victory_points = {
+			10257 1
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			arms_factory = 3
+			air_base = 2
+			dockyard = 3
+					10164 = {
+				naval_base = 3
+			}
+		}
+		owner = MAN
+		add_core_of = MAN
+	}
+	manpower = 989436
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,31 @@
+state={
+	id=891
+	name="STATE_891"
+	# HOD: Mygeeto (mygeeto_map.py)
+	provinces={
+		498 681 817 1084 7819 7820 7821 7824 7827 7828 7835 7836 7837 7844 7847
+	}
+	resources={
+		oil=3
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			1084 8
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			dockyard = 1
+					7837 = {
+				naval_base = 4
+			}
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 182562
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

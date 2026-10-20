@@ -1,0 +1,978 @@
+{
+ "centre": [
+  1375.3111782477342,
+  1046.403927492447
+ ],
+ "radius": 32.459293326693775,
+ "vp_names": {
+  "250": "Adascopolis",
+  "1388": "Diamond Mines",
+  "3240": "Novania",
+  "3734": "Trade City",
+  "4384": "Kanti",
+  "4493": "Arca Jeth's Praxeum",
+  "4727": "Veeshas Tuwan"
+ },
+ "provinces": {
+  "220": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1373.4583333333333,
+    1049.9166666666667
+   ],
+   "area": 24,
+   "terrain": "urban"
+  },
+  "250": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1377.4,
+    1047.16
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "1122": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1372.076923076923,
+    1045.423076923077
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "1388": {
+   "zone": "mines",
+   "kind": 3,
+   "feature": "Diamond Mines",
+   "state": 4,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1375.2727272727273,
+    1065.2727272727273
+   ],
+   "area": 11,
+   "terrain": "hills"
+  },
+  "1948": {
+   "zone": "mines",
+   "kind": 3,
+   "feature": "Diamond Mines",
+   "state": 4,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1373.5384615384614,
+    1063.2307692307693
+   ],
+   "area": 13,
+   "terrain": "hills"
+  },
+  "2630": {
+   "zone": "spaceport",
+   "kind": 2,
+   "feature": "Novania",
+   "state": 152,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1386.695652173913,
+    1067.5217391304348
+   ],
+   "area": 23,
+   "terrain": "urban"
+  },
+  "3240": {
+   "zone": "spaceport",
+   "kind": 2,
+   "feature": "Novania",
+   "state": 152,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1387.5833333333333,
+    1063.0833333333333
+   ],
+   "area": 24,
+   "terrain": "urban"
+  },
+  "3734": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Trade City",
+   "state": 153,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1395.7368421052631,
+    1044.6842105263158
+   ],
+   "area": 19,
+   "terrain": "urban"
+  },
+  "3886": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Trade City",
+   "state": 153,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1395.578947368421,
+    1048.2105263157894
+   ],
+   "area": 19,
+   "terrain": "urban"
+  },
+  "4384": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Kanti",
+   "state": 151,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1377.65,
+    1026.55
+   ],
+   "area": 20,
+   "terrain": "urban"
+  },
+  "4493": {
+   "zone": "ruins",
+   "kind": 4,
+   "feature": "Arca Jeth's Praxeum",
+   "state": 149,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1361.6,
+    1032.3
+   ],
+   "area": 20,
+   "terrain": "hills"
+  },
+  "4727": {
+   "zone": "temple",
+   "kind": 5,
+   "feature": "Veeshas Tuwan",
+   "state": 150,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1355.5333333333333,
+    1044.1333333333334
+   ],
+   "area": 15,
+   "terrain": "hills"
+  },
+  "4728": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1350.4666666666667,
+    1055.4666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "5315": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1364.909090909091,
+    1070.6363636363637
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "5528": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1353.7692307692307,
+    1067.6153846153845
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "5950": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1357.9473684210527,
+    1059.7894736842106
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "5960": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1356.2857142857142,
+    1054.0714285714287
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "11795": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1361.0,
+    1065.35
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "11805": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1352.304347826087,
+    1060.2173913043478
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "11810": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1359.0,
+    1071.357142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "11814": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1356.611111111111,
+    1063.611111111111
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "11822": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1354.6666666666667,
+    1057.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "11824": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1362.0588235294117,
+    1069.8823529411766
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "11827": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1352.4615384615386,
+    1053.076923076923
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "11832": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1357.2105263157894,
+    1068.2105263157894
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "11833": {
+   "zone": "glacier",
+   "kind": 9,
+   "feature": "Glacier Spine",
+   "state": 1301,
+   "group": 7,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1352.3125,
+    1064.5625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "11838": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1396.0526315789473,
+    1025.9473684210527
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "11843": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1399.9285714285713,
+    1039.142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "11844": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1388.0,
+    1019.8260869565217
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "11846": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1396.7142857142858,
+    1033.5
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "11848": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1391.0,
+    1023.7916666666666
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "11856": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1399.5294117647059,
+    1035.7058823529412
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "11861": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1393.6666666666667,
+    1028.5555555555557
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "11863": {
+   "zone": "crevasse",
+   "kind": 10,
+   "feature": "Great Crevasse",
+   "state": 1302,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1398.3157894736842,
+    1030.157894736842
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "11865": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1371.46875,
+    1053.1770833333333
+   ],
+   "area": 96,
+   "terrain": "plains"
+  },
+  "11866": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1386.4528301886792,
+    1040.7264150943397
+   ],
+   "area": 106,
+   "terrain": "plains"
+  },
+  "11874": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1383.5405405405406,
+    1050.837837837838
+   ],
+   "area": 111,
+   "terrain": "plains"
+  },
+  "11875": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1374.037037037037,
+    1040.0555555555557
+   ],
+   "area": 108,
+   "terrain": "plains"
+  },
+  "11881": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Adascopolis",
+   "state": 148,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1366.3015873015872,
+    1057.7619047619048
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "11882": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Diamond Fields",
+   "state": 4,
+   "group": 10,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1367.1,
+    1074.2777777777778
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "11885": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Diamond Fields",
+   "state": 4,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1379.6025641025642,
+    1061.8076923076924
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "11887": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Diamond Fields",
+   "state": 4,
+   "group": 10,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1379.544,
+    1073.384
+   ],
+   "area": 125,
+   "terrain": "hills"
+  },
+  "11888": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Diamond Fields",
+   "state": 4,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1368.7586206896551,
+    1065.5172413793102
+   ],
+   "area": 87,
+   "terrain": "hills"
+  },
+  "11889": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Praxeum Valley",
+   "state": 149,
+   "group": 11,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1353.7962962962963,
+    1030.4907407407406
+   ],
+   "area": 108,
+   "terrain": "hills"
+  },
+  "11898": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Praxeum Valley",
+   "state": 149,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1367.6447368421052,
+    1028.2763157894738
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "11900": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Praxeum Valley",
+   "state": 149,
+   "group": 11,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1360.3157894736842,
+    1022.8526315789474
+   ],
+   "area": 95,
+   "terrain": "hills"
+  },
+  "11901": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Praxeum Valley",
+   "state": 149,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1365.641791044776,
+    1035.6716417910447
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "11906": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Frozen Wastes",
+   "state": 150,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1361.09375,
+    1042.46875
+   ],
+   "area": 96,
+   "terrain": "plains"
+  },
+  "11911": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Frozen Wastes",
+   "state": 150,
+   "group": 12,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1349.5619047619048,
+    1038.695238095238
+   ],
+   "area": 105,
+   "terrain": "plains"
+  },
+  "11912": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Frozen Wastes",
+   "state": 150,
+   "group": 12,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1347.5777777777778,
+    1058.7333333333333
+   ],
+   "area": 45,
+   "terrain": "plains"
+  },
+  "11915": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Frozen Wastes",
+   "state": 150,
+   "group": 12,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1348.117117117117,
+    1047.8918918918919
+   ],
+   "area": 111,
+   "terrain": "plains"
+  },
+  "11916": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Frozen Wastes",
+   "state": 150,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1360.411111111111,
+    1052.7333333333333
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "11919": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Kanti",
+   "state": 151,
+   "group": 13,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1383.5526315789473,
+    1022.1315789473684
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "11926": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Kanti",
+   "state": 151,
+   "group": 13,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1369.7701149425288,
+    1019.6091954022988
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "11930": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Kanti",
+   "state": 151,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1377.4761904761904,
+    1031.357142857143
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "11935": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Kanti",
+   "state": 151,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1387.1648351648353,
+    1031.3186813186812
+   ],
+   "area": 91,
+   "terrain": "plains"
+  },
+  "11939": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Kanti",
+   "state": 151,
+   "group": 13,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1377.3846153846155,
+    1017.9102564102565
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "11941": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Novania",
+   "state": 152,
+   "group": 14,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1397.0309278350514,
+    1063.5463917525774
+   ],
+   "area": 97,
+   "terrain": "plains"
+  },
+  "11947": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Novania",
+   "state": 152,
+   "group": 14,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1389.8641975308642,
+    1070.3827160493827
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "11948": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Novania",
+   "state": 152,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1389.3058823529411,
+    1057.9058823529413
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "11967": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Trade City",
+   "state": 153,
+   "group": 15,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1400.335616438356,
+    1053.5479452054794
+   ],
+   "area": 146,
+   "terrain": "plains"
+  },
+  "11978": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Trade City",
+   "state": 153,
+   "group": 15,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1398.2142857142858,
+    1026.0714285714287
+   ],
+   "area": 42,
+   "terrain": "plains"
+  },
+  "11987": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Trade City",
+   "state": 153,
+   "group": 15,
+   "coastal": true,
+   "sea": 18869,
+   "centre": [
+    1403.438775510204,
+    1041.765306122449
+   ],
+   "area": 98,
+   "terrain": "plains"
+  },
+  "11991": {
+   "zone": "tundra",
+   "kind": 6,
+   "feature": "Trade City",
+   "state": 153,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1393.7162162162163,
+    1040.527027027027
+   ],
+   "area": 74,
+   "terrain": "plains"
+  }
+ }
+}

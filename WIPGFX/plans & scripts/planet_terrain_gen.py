@@ -92,7 +92,7 @@ ARCH = {
 # Unlisted worlds fall back to the hue of their painted planet (see fallback_archetype).
 PLANETS = {
     "Abregado-Rae": "temperate .5 city .3 grassland .2",              # Core trade world
-    "Aeten II": "reddesert .5 lava .5",                               # lava rivers, red deserts, volcanic
+    "Ansion": "grassland .7 temperate .2 steppe .1",                  # grassy plains, hills, plateaus
     "Agamar": "@lat steppe .5 barren .3 ice .2",                      # cold, rocky
     "Alderaan 9": "grassland .35 alpine .35 forest .15 ocean .15",    # forests, plains, grasslands, small seas, mountains
     "Allanteen VI": "temperate .5 industrial .5",                     # Imperial shipyard world
@@ -132,7 +132,7 @@ PLANETS = {
     "Csilla": "ice 1",                                                # ice-locked
     "Dantooine": "grassland .55 temperate .15 forest .2 alpine .1",   # grasslands, forests, hills, great lakes
     "Dathomir": "swamp .4 forest .3 reddesert .3",                    # rocky, swampy, forested, red
-    "Despayre": "jungle .75 ocean .25",                               # tropical jungles, rivers, seas
+    "Ord Trasi": "jungle .75 ocean .25",                              # (was Despayre; Ord Trasi since 2026-10-20)
     "Dorin": "alpine .5 barren .5",                                   # mountains, valleys, plateaus
     "Dromund Kaas": "swamp .5 jungle .35 ocean .15",                  # stormy swamp, jungle, oceans
     "Dubrillion": "ocean .6 temperate .4",                            # oceans
@@ -180,7 +180,7 @@ PLANETS = {
     "Mechis": "industrial .8 barren .2",                              # droid foundry planetoid
     "Mimban": "swamp .7 jungle .3",                                   # mud fields, rainforests, swamps
     "Mon Calamari": "ocean 1",                                        # oceans
-    "Muunilist": "temperate .4 alpine .25 forest .2 city .15",        # plains, forests, hills, mountains, cities
+    "Muunilinst": "temperate .4 alpine .25 forest .2 city .15",        # plains, forests, hills, mountains, cities
     "Mustafar": "lava .75 barren .25",                                # lava seas, obsidian ranges
     "Mygeeto": "ice .85 city .15",                                    # frigid, crystalline, crystal cities
     "Naboo": "grassland .4 swamp .25 alpine .2 temperate .15",        # swamps, hills, plains, cities, mountains
@@ -494,6 +494,7 @@ FELUCIA_TOWN_R = 5          # map px radius of the farm-village clearing around 
 FELUCIA_CITY_STYLE = 9      # map/cities.txt group: Felucian mushroom villages (coruscant_buildings.py)
 OUTPOST_CITY_STYLE = 10     # ... and the Commerce Guild's prefab outposts on the lowlands
 TOWN = 26                   # terrain.bmp farmland_town_26: farmland look that still spawns city models
+CLOUDS = 35                 # terrain.bmp clouds_35: Ithor's cloud deck (atlas slot 21), the clouds category
 FELUCIA_GROUND = [(0.0, (0.16, 0.07, 0.22)), (0.35, (0.36, 0.16, 0.42)), (0.6, (0.14, 0.46, 0.42)),
                   (0.85, (0.55, 0.66, 0.30)), (1.0, (0.85, 0.70, 0.40))]   # by brightness: violet loam -> teal moss -> ochre
 FELUCIA_ATMO = (1.0, 0.72, 0.30)                                   # hazy amber
@@ -1313,7 +1314,7 @@ def kadavo(t, trees, city, h, labels, names, pid, rng):
 # tex: a texture (name from this module, e.g. "SAVANNA", or index) or [default, (texture, ">"|"<", threshold), ...]
 # over the shared texture mix (noise cell 7); later bands win.
 TERRAIN_TEXTURES = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27,
-                    28, 29, 30, 31, 32, 33, 34}   # graphical terrain indices of common/terrain/00_terrain.txt
+                    28, 29, 30, 31, 32, 33, 34, 35}   # graphical terrain indices of common/terrain/00_terrain.txt
 CITY_TEXTURES = {13, 26, 29, 30, 32, 34}              # ... the ones with spawn_city = yes: city models only grow on these
 RELIEF_OPS = {"rolling": 4, "flat": 2, "ramp_top": 4, "flank": 5, "mesa": 5, "spires": 6}   # operator -> tuple length
 
@@ -1465,6 +1466,7 @@ def zone_repaint(mod):
         if cfg.get("hook"):
             cfg["hook"](ctx)                                               # a planet's own shaping, in place on ctx["rel"]
             rel = ctx["rel"]
+            z = ctx["z"]                                                   # (a hook may hand back re-zoned ground: craters)
         hn = h.copy()
         rel = landforms(rel, sub, water=np.isin(z, wet) & sub, opts=cfg.get("landforms"))
         hn[sl] = np.where(sub, np.clip(GROUND + rel * rim, 0, 252), h[sl])
@@ -1497,6 +1499,22 @@ def zone_repaint(mod):
                 d_sea = ndi.distance_transform_edt(~sea)
                 lift = rise_h * smoothstep(np.clip((d_sea - 0.5) / rise_w, 0, 1))
                 hn[sl] = np.where(sub & ~sea, np.clip(hn[sl] + lift * rim, 0, 252), hn[sl])
+        pl = getattr(mod, "PLACEMENT", None)
+        if pl:
+            # a level pad under every big landmark, eased into the ground round it (the user, 2026-10-20: models
+            # clipped into the slopes); PLACEMENT no_pad keeps a planet's own landform (Chandrila's canyon)
+            vpc = {n: zj["provinces"][q]["centre"] for q, n in zj["vp_names"].items()}
+            dry = sub & ~np.isin(tz, [WATER, 30])
+            for mesh, sc, where in pl["items"]:
+                if where[0] != "at_vp" or mesh in pl.get("no_pad", ()):
+                    continue
+                for n in [where[1]] if isinstance(where[1], str) else where[1]:
+                    d = np.hypot(yy - (vpc[n][0] - y0), xx - (vpc[n][1] - x0))
+                    rad = pl["clear"].get(mesh, 4.0) * sc
+                    core = dry & (d < rad)
+                    if core.any():
+                        w = smoothstep(np.clip((rad + 3.0 - d) / 3.0, 0, 1)) * dry
+                        hn[sl] = hn[sl] * (1 - w) + float(np.median(hn[sl][core])) * w
         t[sl] = np.where(tz >= 0, tz, t[sl]).astype(t.dtype)
         city[on] = 0
         for k, style in cfg.get("city", {}).items():
@@ -2207,6 +2225,8 @@ def main():
             save_bgra_dds(f"{BASE}/colormap_water_{lvl}.dds", water_out[lvl], f"{MAP}/terrain/colormap_water_{lvl}.dds")
         # the water shader reads the atmospheres from the (otherwise unused) ice slot, not through the refraction pass
         shutil.copyfile(f"{MAP}/terrain/colormap_water_0.dds", f"{MAP}/terrain/ice_diffuse.dds")
+        import galaxy_regions                                             # its alpha holds the galaxy chart's regions
+        galaxy_regions.reinject()
         reheight(np.rint(h))
         globe_texture()
         print("map files written")
