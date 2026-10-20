@@ -267,74 +267,31 @@ PixelShader =
 			return x < 0.0f ? ( y >= 0.0f ? 3.14159265f - a : -3.14159265f - a ) : a;
 		}
 
-		// Star Wars galaxy chart, procedural, in map units. Regions traced from the canon starwars.com galaxy map (DK 2025):
-		// nested ellipses pushed against the Unknown Regions in the west, bulging east/south, plus Hutt Space.
-		// Numpy twin for previews: keep in sync with WIPGFX/plans & scripts/swgalaxy_sim.py
-		static const float2 GALAXY_CORE = float2( 880.0f, 1700.0f );
-		static const float GALAXY_CELL = 215.0f;                           // map units per canon chart square
+		// Star Wars galaxy chart, in map units. The regions (fills, outlines, names) are baked by
+		// WIPGFX/plans & scripts/galaxy_regions.py round the planets' canon regions into the alpha of ice_diffuse.dds
+		// (vChart); the arms, haze, core glow, murk and grid stay procedural here.
+		static const float2 GALAXY_CORE = float2( 793.0f, 1551.0f );       // the Deep Core planets' centre
 		static const float2 GALAXY_GRID_CELL = float2( 215.0f, 215.0f );   // chart grid squares
 		static const float2 GALAXY_GRID_ORIGIN = float2( 860.6f, 1778.0f );
 		static const float GALAXY_GRID_STRENGTH = 0.10f;
 
-		// normalised elliptical radius (1 on the boundary); vC and vRad in chart cells (+x east, +y north) from the Deep Core
-		float RegionE( float2 vPos, float2 vC, float2 vRad, float vWob )
-		{
-			return length( ( vPos - GALAXY_CORE - vC * GALAXY_CELL ) / ( vRad * GALAXY_CELL ) ) * vWob;
-		}
-		// thin outline at a region boundary, vMinRad in cells
-		float RegionLine( float e, float vMinRad )
-		{
-			return 1.0f - saturate( abs( e - 1.0f ) * vMinRad * GALAXY_CELL / 3.5f );
-		}
-		// fill inside a band: from fOut at its outer boundary to fIn at the next boundary inwards
-		float RegionBand( float eOut, float eIn, float fOut, float fIn, float vCur )
-		{
-			float u = saturate( ( 1.0f - eOut ) / max( ( 1.0f - eOut ) + ( eIn - 1.0f ), 1e-4f ) );
-			return eOut < 1.0f ? lerp( fOut, fIn, u ) : vCur;
-		}
-
-		float3 GalaxyColor( float2 vPos, out float vArmMask )
+		float3 GalaxyColor( float2 vPos, float vChart, out float vArmMask )
 		{
 			float2 d = vPos - GALAXY_CORE;
 			float d0 = length( d );
-			float vWob = 1.0f + ( SpaceFbm( vPos * 0.002f ) - 0.5f ) * 0.18f;
-			float vRag = vWob + ( SpaceFbm( vPos * 0.006f + 11.0f ) - 0.5f ) * 0.22f;   // ragged Outer Rim / Hutt edge
-
-			float eDeep  = RegionE( vPos, float2( 0.00f,  0.00f ), float2( 1.25f, 1.25f ), vWob );
-			float eCore  = RegionE( vPos, float2( 0.16f, -0.04f ), float2( 2.31f, 2.15f ), vWob );
-			float eCol   = RegionE( vPos, float2( 0.18f,  0.00f ), float2( 2.90f, 2.73f ), vWob );
-			float eInner = RegionE( vPos, float2( 0.39f, -0.12f ), float2( 3.56f, 3.82f ), vWob );
-			float eExp   = RegionE( vPos, float2( 0.70f, -0.37f ), float2( 4.23f, 4.45f ), vWob );
-			float eMid   = RegionE( vPos, float2( 1.53f, -0.92f ), float2( 5.49f, 5.85f ), vWob );
-			float eOuter = RegionE( vPos, float2( 2.59f, -0.14f ), float2( 7.08f, 9.89f ), vRag );
-			float eHutt  = RegionE( vPos, float2( 7.48f, -0.18f ), float2( 1.32f, 2.55f ), vRag );
-
-			float vFill = max( 0.05f - ( eOuter - 1.0f ) * 0.3f, 0.0f );
-			vFill = RegionBand( eOuter, eMid, 0.05f, 0.12f, vFill );
-			vFill = RegionBand( eMid, eExp, 0.12f, 0.19f, vFill );
-			vFill = RegionBand( eExp, eInner, 0.19f, 0.27f, vFill );
-			vFill = RegionBand( eInner, eCol, 0.27f, 0.34f, vFill );
-			vFill = RegionBand( eCol, eCore, 0.34f, 0.44f, vFill );
-			vFill = RegionBand( eCore, eDeep, 0.44f, 0.62f, vFill );
-			vFill = eDeep < 1.0f ? lerp( 0.62f, 1.0f, 1.0f - eDeep ) : vFill;
-
-			float vLine = max( max( max( RegionLine( eCore, 2.15f ), RegionLine( eCol, 2.73f ) ), max( RegionLine( eInner, 3.56f ), RegionLine( eExp, 4.23f ) ) ),
-			                   max( max( RegionLine( eMid, 5.49f ), RegionLine( eOuter, 7.08f ) * 0.45f ), RegionLine( eHutt, 1.32f ) * 0.7f ) );
 
 			// faint outer spiral arms, tightly wound so they read as arcs around the regions
 			float theta = SpaceAtan2( d.y, d.x );
 			float rn = d0 / 1700.0f;
 			float phi = theta - log( max( rn, 0.05f ) ) / 0.28f + 0.4f + ( SpaceFbm( vPos * 0.0018f ) - 0.5f ) * 0.9f;
 			float vArm = pow( saturate( 0.5f + 0.5f * cos( 2.0f * phi ) ), 4.0f ) * saturate( ( rn - 0.3f ) * 3.0f ) * saturate( 1.7f - rn );
-			vArm *= 0.3f + 0.7f * saturate( ( eMid - 0.95f ) * 5.0f );   // canon chart: arms swirl outside the Mid Rim, not through known space
+			vArm *= 0.3f + 0.7f * saturate( ( 0.1f - vChart ) * 12.0f );   // canon chart: arms swirl outside the Mid Rim, not through known space
 			float vGrain = SpaceFbm( vPos * 0.03f + 3.0f );
 			float vHaze = exp( -rn / 0.45f ) * ( 0.6f + 0.5f * SpaceFbm( vPos * 0.006f + 40.0f ) );
-			vArmMask = saturate( vArm * 2.0f + vFill );
+			vArmMask = saturate( vArm * 2.0f + vChart );
 
 			float3 vCol = float3( 0.08f, 0.17f, 0.25f ) * vHaze * 0.32f;
 			vCol += float3( 0.20f, 0.40f, 0.52f ) * vArm * ( 0.35f + 0.9f * vGrain ) * 0.6f;
-			vCol += float3( 0.30f, 0.50f, 0.62f ) * vFill * 0.28f;
-			vCol += float3( 0.55f, 0.78f, 0.90f ) * vLine * 0.22f;
 			vCol += float3( 1.00f, 0.97f, 0.92f ) * exp( -( d0 / 150.0f ) * ( d0 / 150.0f ) ) * 1.15f;  // Deep Core (was 1.6)
 			vCol += float3( 0.75f, 0.88f, 1.00f ) * exp( -( d0 / 330.0f ) * ( d0 / 330.0f ) ) * 0.35f;  // Core glow (was 0.45)
 
@@ -342,6 +299,7 @@ PixelShader =
 			float vWest = saturate( ( GALAXY_CORE.x - 350.0f - vPos.x ) / 400.0f ) * saturate( 1.4f - abs( vPos.y - GALAXY_CORE.y ) / 1400.0f );
 			float vMurk = 0.35f + 0.4f * SpaceFbm( vPos * 0.004f + 70.0f );
 			vCol *= 1.0f - vWest * ( 1.0f - vMurk ) * 0.9f;
+			vCol += float3( 0.42f, 0.64f, 0.76f ) * vChart * 0.42f;   // the regions after the murk, so their names stay legible
 
 			// coordinate grid of the chart
 			float2 g = abs( frac( ( vPos - GALAXY_GRID_ORIGIN ) / GALAXY_GRID_CELL ) - 0.5f ) * GALAXY_GRID_CELL;
@@ -379,16 +337,17 @@ PixelShader =
 			float vGalaxyFade = smoothstep( GALAXY_FADE_NEAR, GALAXY_FADE_FAR, vCamPos.y );
 			float vArmMask = 0.0f;
 			float3 vColor = float3( 0.003f, 0.005f, 0.012f );
+			float4 vIce = tex2D( IceDiffuse, Input.uv );   // rgb: the planets' atmospheres, a: the region chart
 			if ( vGalaxyFade > 0.0f )
 			{
-				vColor = lerp( vColor, GalaxyColor( vPos, vArmMask ) * GALAXY_BRIGHTNESS, vGalaxyFade );
+				vColor = lerp( vColor, GalaxyColor( vPos, vIce.a, vArmMask ) * GALAXY_BRIGHTNESS, vGalaxyFade );
 				vArmMask *= vGalaxyFade;
 			}
 			// per-planet atmospheres: colormap_water_0.dds (black elsewhere) copied to map/terrain/ice_diffuse.dds by
 			// planet_terrain_gen.py, read here at the map UV (= the terrain's uv2). Not through the refraction pass: that
 			// buffer also holds the engine's mirrored copies of trees and buildings (the "reflections" in lakes and at
 			// coasts). 0.3 ~ the underwater pass's tint * WATER_COLOR_LIGHTNESS mixed with the dark space floor
-			vColor += tex2D( IceDiffuse, Input.uv ).rgb * 0.3f;
+			vColor += vIce.rgb * 0.3f;
 
 			// --- stars, three parallax layers (far layers pan slower than the map) for depth over the flat galaxy art
 			float vStarSize = max( vCamPos.y * 0.0012f, 0.06f ); // keeps stars ~1-2 px wide at any zoom (camera y 50..3000)

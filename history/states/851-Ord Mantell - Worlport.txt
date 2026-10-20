@@ -1,0 +1,33 @@
+state={
+	id=851
+	name="STATE_851"
+	# HOD: Ord Mantell (ord_mantell_map.py)
+	provinces={
+		350 360 456 485 10485 10489 10495 10496 10497 10503 10513 10514 10515 10516 10522 10523 10526
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			350 8
+		}
+		victory_points = {
+			485 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			dockyard = 2
+					10489 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 75748
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

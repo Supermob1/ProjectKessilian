@@ -1,0 +1,52 @@
+state={
+	id=143
+	name="STATE_143"
+	# HOD: Corulag (corulag_map.py)
+	provinces={
+		2168 2225 11721 11723 11729 11730 11734
+	}
+	resources={
+		# #credits #Credits
+		chromium =6#Circuitry
+		# steel #Alloys
+		# tungsten #Minerals
+		# rubber #Bacta
+		# aluminium #Doonium
+		# oil #Fuel
+	}
+	history = {
+		victory_points = {
+			2225 5
+		}
+		buildings = {
+
+			# radar_station = #Tracking Station
+
+			# #credits_building = #Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = #Planetary Shields
+
+			# industrial_complex = #Civilian Factories
+
+			# arms_factory = #Military Factories#Shipyard
+
+			infrastructure = 1#Infrastructure
+
+			# air_base = 1#Small Spaceports
+			dockyard = 6
+					11734 = {
+				naval_base = 3
+			}
+		}
+		owner = SIE
+		add_core_of = SIE
+	}
+	manpower = 120320
+	state_category = economic_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

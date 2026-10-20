@@ -1,0 +1,33 @@
+state={
+	id=2
+	name="STATE_2"
+	# HOD: Esseles (esseles_map.py)
+	provinces={
+		1562 1667 12035 12039 12043 12047 12048
+	}
+	resources={
+		tungsten=5#Minerals
+		rubber=10#Bacta
+	}
+	history = {
+		victory_points = {
+			1562 3
+		}
+		victory_points = {
+			1667 1
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+			anti_air_building = 1
+		}
+		owner = ESS
+		add_core_of = ESS
+	}
+	manpower = 276990
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

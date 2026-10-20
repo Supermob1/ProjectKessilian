@@ -1,0 +1,48 @@
+state={
+	id=142
+	name="STATE_142"
+	# HOD: Esseles (esseles_map.py)
+	provinces={
+		2811 3377 3399 12097 12108 12115 12125 12129 12140 12151
+	}
+	resources={
+		# #credits #Credits
+		chromium=15 #Circuitry
+		steel=15#Alloys
+		tungsten=15#Minerals
+		# rubber=10#Bacta
+		# aluminium #Doonium
+		# oil #Fuel
+		#credits=5
+	}
+	history = {
+		victory_points = {
+			2811 5
+		}
+		buildings = {
+			# radar_station = #Tracking Station
+
+			# #credits_building = 4#Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = 1#Planetary Shields
+
+			# industrial_complex = 3#Civilian Factories
+
+			arms_factory = 2#Military Factories#Shipyard
+
+			infrastructure = 2 #Infrastructure
+
+			air_base = 1#Small Spaceports
+		}
+		owner = ESS
+		add_core_of = ESS
+	}
+	manpower = 1205000
+	state_category = mining_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

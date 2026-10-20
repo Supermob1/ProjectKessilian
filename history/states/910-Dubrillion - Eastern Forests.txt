@@ -1,0 +1,29 @@
+state={
+	id=910
+	name="STATE_910"
+	# HOD: Dubrillion (dubrillion_map.py)
+	provinces={
+		6643 6644 6650 6651 6652 6655 6663 6665 6673 6677 6690 6695
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			6665 1
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+					6644 = {
+				naval_base = 3
+			}
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 188309
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

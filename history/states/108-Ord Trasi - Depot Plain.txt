@@ -1,0 +1,29 @@
+state={
+	id=108
+	name="STATE_108"
+	# HOD: Ord Trasi (ord_trasi_map.py)
+	provinces={
+		27 168 7596 7607 7613 7627
+	}
+	resources={
+		aluminium=3#Minerals
+		steel=2#Alloys
+	}
+	history = {
+		victory_points = {
+			168 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 4
+			air_base = 2
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 1134902
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

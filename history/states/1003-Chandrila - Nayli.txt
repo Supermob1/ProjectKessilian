@@ -1,0 +1,30 @@
+state={
+	id=1003
+	name="STATE_1003"
+	# HOD: Chandrila (chandrila_map.py)
+	provinces={
+		20689 20693 20713 20936 20937 20942 20943 20946 20949 20950 20951 20952 20953 20954 20955 20960 20961 20962
+	}
+	resources={
+		coal=3
+	}
+	history = {
+		victory_points = {
+			20713 2
+		}
+		victory_points = {
+			20953 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 495876
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

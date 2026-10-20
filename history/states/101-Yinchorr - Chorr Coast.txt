@@ -1,0 +1,29 @@
+state={
+	id=101
+	name="STATE_101"
+	# HOD: Yinchorr (yinchorr_map.py)
+	provinces={
+		1350 1371 11359 11368 11373 11374 11375 11381 11382 11387 11392 11396 11397
+	}
+	resources={
+		oil=3
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			1350 3
+		}
+		buildings = {
+			infrastructure = 1
+					11368 = {
+				naval_base = 2
+			}
+		}
+		owner = REP
+		add_core_of = YIN
+	}
+	manpower = 143137
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

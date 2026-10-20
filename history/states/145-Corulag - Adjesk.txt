@@ -1,0 +1,30 @@
+state={
+	id=145
+	name="STATE_145"
+	# HOD: Corulag (corulag_map.py)
+	provinces={
+		1833 1865 1977 11746 11751 11752 11754 11755 11764
+	}
+	resources={
+		rubber=10#Bacta
+		oil=10#Fuel
+	}
+	history = {
+		victory_points = {
+			1833 5
+		}
+		victory_points = {
+			1865 3
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 2
+		}
+		owner = SIE
+		add_core_of = SIE
+	}
+	manpower = 8560320
+	state_category = industrial_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
