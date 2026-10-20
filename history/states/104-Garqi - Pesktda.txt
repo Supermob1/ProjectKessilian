@@ -1,0 +1,31 @@
+state={
+	id=104
+	name="STATE_104"
+	# HOD: Garqi (garqi_map.py)
+	provinces={
+		301 329 430 444 724 9215 9231 9232 9233 9234 9237 9241 9245 9246 9251 9259 9260 9261
+	}
+	resources={
+		oil=1#Fuel
+	}
+	history = {
+		victory_points = {
+			329 10
+		}
+		victory_points = {
+			724 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 5
+			air_base = 3
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 1706201
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

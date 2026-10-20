@@ -1,0 +1,35 @@
+state={
+	id=928
+	name="STATE_928"
+	# HOD: Yaga Minor (yaga_minor_map.py)
+	provinces={
+		289 306 332 385 434 8166 8167 8170 8171 8177 8178 8191 8194 8195 8198 8202 8203 8221 8222 8223
+	}
+	resources={
+		coal=3
+		oil=2
+	}
+	history = {
+		victory_points = {
+			289 5
+		}
+		victory_points = {
+			385 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			air_base = 1
+			dockyard = 3
+					8191 = {
+				naval_base = 3
+			}
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 411804
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -407,6 +407,14 @@ on_actions = {
 				add_dynamic_modifier = { modifier = HOD_landmark_man_dwcamp }
 			}
 			every_state = {
+				limit = { OR = { state = 246 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_man_cityofbone }
+			}
+			every_state = {
+				limit = { OR = { state = 245 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_man_norgbral }
+			}
+			every_state = {
 				limit = { OR = { state = 99 } }
 				add_dynamic_modifier = { modifier = HOD_landmark_tar_spires }
 			}
@@ -601,6 +609,358 @@ on_actions = {
 			every_state = {
 				limit = { OR = { state = 65 } }
 				add_dynamic_modifier = { modifier = HOD_landmark_rus_olmondo }
+			}
+			every_state = {
+				limit = { OR = { state = 102 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ith_tafanda }
+			}
+			every_state = {
+				limit = { OR = { state = 844 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ith_tarintha }
+			}
+			every_state = {
+				limit = { OR = { state = 845 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ith_cloudmother }
+			}
+			every_state = {
+				limit = { OR = { state = 847 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ith_falls }
+			}
+			every_state = {
+				limit = { OR = { state = 103 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_om_city }
+			}
+			every_state = {
+				limit = { OR = { state = 851 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_om_worlport }
+			}
+			every_state = {
+				limit = { OR = { state = 853 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_om_junkyard }
+			}
+			every_state = {
+				limit = { OR = { state = 856 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_om_oldcity }
+			}
+			every_state = {
+				limit = { OR = { state = 857 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_om_garnik }
+			}
+			every_state = {
+				limit = { OR = { state = 104 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_gar_pesktda }
+			}
+			every_state = {
+				limit = { OR = { state = 104 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_gar_university }
+			}
+			every_state = {
+				limit = { OR = { state = 858 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_gar_combine }
+			}
+			every_state = {
+				limit = { OR = { state = 860 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_gar_vlassy }
+			}
+			every_state = {
+				limit = { OR = { state = 107 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_aga_calna }
+			}
+			every_state = {
+				limit = { OR = { state = 878 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_aga_university }
+			}
+			every_state = {
+				limit = { OR = { state = 879 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_aga_ruins }
+			}
+			every_state = {
+				limit = { OR = { state = 880 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_aga_bridges }
+			}
+			every_state = {
+				limit = { OR = { state = 883 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_aga_ranch }
+			}
+			every_state = {
+				limit = { OR = { state = 108 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ot_depot }
+			}
+			every_state = {
+				limit = { OR = { state = 885 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ot_yards }
+			}
+			every_state = {
+				limit = { OR = { state = 886 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ot_salvage }
+			}
+			every_state = {
+				limit = { OR = { state = 110 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dan_khoonda }
+			}
+			every_state = {
+				limit = { OR = { state = 898 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dan_enclave }
+			}
+			every_state = {
+				limit = { OR = { state = 904 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dan_rakatan }
+			}
+			every_state = {
+				limit = { OR = { state = 899 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dan_matale }
+			}
+			every_state = {
+				limit = { OR = { state = 902 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dan_sandral }
+			}
+			every_state = {
+				limit = { OR = { state = 901 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dan_grove }
+			}
+			every_state = {
+				limit = { OR = { state = 903 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dan_cave }
+			}
+			every_state = {
+				limit = { OR = { state = 111 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dub_capital }
+			}
+			every_state = {
+				limit = { OR = { state = 911 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dub_resort }
+			}
+			every_state = {
+				limit = { OR = { state = 112 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bas_ravelin }
+			}
+			every_state = {
+				limit = { OR = { state = 916 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bas_sartinaynian }
+			}
+			every_state = {
+				limit = { OR = { state = 113 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kal_kaleela }
+			}
+			every_state = {
+				limit = { OR = { state = 919 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kal_shrupak }
+			}
+			every_state = {
+				limit = { OR = { state = 921 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kal_abesmi }
+			}
+			every_state = {
+				limit = { OR = { state = 922 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kal_warruzan }
+			}
+			every_state = {
+				limit = { OR = { state = 115 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_muun_harnaidan }
+			}
+			every_state = {
+				limit = { OR = { state = 934 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_muun_mariunhus }
+			}
+			every_state = {
+				limit = { OR = { state = 932 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_muun_pilaan }
+			}
+			every_state = {
+				limit = { OR = { state = 109 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_myg_jygat }
+			}
+			every_state = {
+				limit = { OR = { state = 891 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_myg_city }
+			}
+			every_state = {
+				limit = { OR = { state = 892 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_myg_mesas }
+			}
+			every_state = {
+				limit = { OR = { state = 893 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_myg_hammertong }
+			}
+			every_state = {
+				limit = { OR = { state = 894 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_myg_mines }
+			}
+			every_state = {
+				limit = { OR = { state = 114 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_yag_hive }
+			}
+			every_state = {
+				limit = { OR = { state = 928 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_yag_spaceport }
+			}
+			every_state = {
+				limit = { OR = { state = 928 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_yag_center }
+			}
+			every_state = {
+				limit = { OR = { state = 929 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_yag_works }
+			}
+			every_state = {
+				limit = { OR = { state = 106 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ans_cuipernam }
+			}
+			every_state = {
+				limit = { OR = { state = 873 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ans_borokii }
+			}
+			every_state = {
+				limit = { OR = { state = 876 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ans_dashbalar }
+			}
+			every_state = {
+				limit = { OR = { state = 181 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ilu_temple }
+			}
+			every_state = {
+				limit = { OR = { state = 966 state = 968 state = 971 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ilu_ruins }
+			}
+			every_state = {
+				limit = { OR = { state = 105 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dor_dorshan }
+			}
+			every_state = {
+				limit = { OR = { state = 865 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dor_dorgalk }
+			}
+			every_state = {
+				limit = { OR = { state = 867 state = 869 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dor_barando }
+			}
+			every_state = {
+				limit = { OR = { state = 868 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dor_enclave }
+			}
+			every_state = {
+				limit = { OR = { state = 159 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_yin_tolkachorn }
+			}
+			every_state = {
+				limit = { OR = { state = 156 state = 160 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_yin_garrison }
+			}
+			every_state = {
+				limit = { OR = { state = 157 state = 161 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_yin_mines }
+			}
+			every_state = {
+				limit = { OR = { state = 187 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cha_hanna }
+			}
+			every_state = {
+				limit = { OR = { state = 1002 state = 1003 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cha_ports }
+			}
+			every_state = {
+				limit = { OR = { state = 1007 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cha_brionelle }
+			}
+			every_state = {
+				limit = { OR = { state = 1006 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cha_canyons }
+			}
+			every_state = {
+				limit = { OR = { state = 143 state = 146 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cor_curamelle }
+			}
+			every_state = {
+				limit = { OR = { state = 5 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cor_sienar }
+			}
+			every_state = {
+				limit = { OR = { state = 144 state = 145 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cor_academy }
+			}
+			every_state = {
+				limit = { OR = { state = 148 state = 152 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ark_adascopolis }
+			}
+			every_state = {
+				limit = { OR = { state = 4 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ark_mines }
+			}
+			every_state = {
+				limit = { OR = { state = 149 state = 150 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ark_praxeum }
+			}
+			every_state = {
+				limit = { OR = { state = 133 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_anx_citadel }
+			}
+			every_state = {
+				limit = { OR = { state = 134 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_anx_yards }
+			}
+			every_state = {
+				limit = { OR = { state = 132 state = 136 state = 137 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_anx_college }
+			}
+			every_state = {
+				limit = { OR = { state = 139 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ess_calamar }
+			}
+			every_state = {
+				limit = { OR = { state = 2 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ess_esprix }
+			}
+			every_state = {
+				limit = { OR = { state = 141 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ess_togatto }
+			}
+			every_state = {
+				limit = { OR = { state = 1 state = 126 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cos_senate }
+			}
+			every_state = {
+				limit = { OR = { state = 128 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cos_temple }
+			}
+			every_state = {
+				limit = { OR = { state = 1 state = 131 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cos_executive }
+			}
+			every_state = {
+				limit = { OR = { state = 122 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cos_ports }
+			}
+			every_state = {
+				limit = { OR = { state = 1 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cos_compor }
+			}
+			every_state = {
+				limit = { OR = { state = 126 state = 127 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cos_entertainment }
+			}
+			every_state = {
+				limit = { OR = { state = 123 state = 130 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cos_underworld }
+			}
+			every_state = {
+				limit = { OR = { state = 73 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_boz_base }
+			}
+			every_state = {
+				limit = { OR = { state = 668 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_boz_foundry }
+			}
+			every_state = {
+				limit = { OR = { state = 665 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_boz_ruins }
+			}
+			every_state = {
+				limit = { OR = { state = 666 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_boz_skeletons }
+			}
+			every_state = {
+				limit = { OR = { state = 667 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_boz_headstones }
 			}
 			every_state = {
 				limit = { OR = { state = 760 } }

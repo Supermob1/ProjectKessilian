@@ -1,0 +1,30 @@
+state={
+	id=112
+	name="STATE_112"
+	# HOD: Bastion (bastion_map.py)
+	provinces={
+		8 85 88 140 236 6295 6296 6297 6298 6299 6300 6301 6302 6303 6304 6305 6306 6307 6308
+	}
+	resources={
+		oil=2#Fuel
+		rubber=1#Doonium
+		tungsten=2#Bacta
+	}
+	history = {
+		victory_points = {
+			140 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 2255521
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

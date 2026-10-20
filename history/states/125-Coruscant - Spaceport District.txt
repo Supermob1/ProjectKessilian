@@ -1,0 +1,49 @@
+state={
+	id=125
+	name="STATE_125"
+	# HOD: Coruscant (coruscant_map.py)
+	provinces={
+		4111 4143 4158 4265 4544 4630 4634 4658 4673
+	}
+	resources={
+		# #credits #Credits
+		chromium = 5 #Circuitry
+		steel = 5 #Alloys
+		# tungsten #Minerals
+		# rubber #Bacta
+		aluminium = 5#Doonium
+		# oil #Fuel
+		#credits=5
+	}
+	history = {
+		victory_points = {
+			4265 3
+		}
+		buildings = {
+
+			# radar_station = #Tracking Station
+
+			# #credits_building = 4#Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = 1#Planetary Shields
+
+			industrial_complex = 2#Civilian Factories
+
+			# arms_factory = 2#Military Factories#Shipyard
+
+			infrastructure = 3 #Infrastructure
+
+			air_base = 1#Small Spaceports
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 2182105
+	state_category = mining_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

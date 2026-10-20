@@ -1,0 +1,28 @@
+state={
+	id=110
+	name="STATE_110"
+	# HOD: Dantooine (dantooine_map.py)
+	provinces={
+		2310 2512 2592 2605 2760 3045 3071 3082 6812 6817 6820 6825 6826 6833 6834 6839
+	}
+	resources={
+		oil=1#Fuel
+	}
+	history = {
+		victory_points = {
+			2310 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 3
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 2244643
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

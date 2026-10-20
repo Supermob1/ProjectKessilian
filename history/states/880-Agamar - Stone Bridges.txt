@@ -1,0 +1,28 @@
+state={
+	id=880
+	name="STATE_880"
+	# HOD: Agamar (agamar_map.py)
+	provinces={
+		810 1030 8207 8215 8217 8225 8233 8234 8241 8242 8243 8247 8248 8249 8255 8258 8267 8280
+	}
+	resources={
+		coal=2
+		oil=2
+	}
+	history = {
+		victory_points = {
+			1030 2
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 2
+		}
+		owner = IBC
+		add_core_of = IBC
+	}
+	manpower = 430898
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
