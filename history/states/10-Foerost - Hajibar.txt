@@ -1,0 +1,28 @@
+state={
+	id=10
+	name="STATE_10"
+	# HOD: Foerost (foerost_map.py)
+	provinces={
+		557 635 12989 12992 13002 13004
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			557 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = TCU
+		add_core_of = TCU
+	}
+	manpower = 2419448
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

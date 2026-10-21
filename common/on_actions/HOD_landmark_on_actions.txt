@@ -915,6 +915,178 @@ on_actions = {
 				add_dynamic_modifier = { modifier = HOD_landmark_ess_togatto }
 			}
 			every_state = {
+				limit = { OR = { state = 164 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_car_academy }
+			}
+			every_state = {
+				limit = { OR = { state = 164 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_car_district }
+			}
+			every_state = {
+				limit = { OR = { state = 7 state = 162 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_car_teeth }
+			}
+			every_state = {
+				limit = { OR = { state = 165 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_car_corsairs }
+			}
+			every_state = {
+				limit = { OR = { state = 16 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bal_binprime }
+			}
+			every_state = {
+				limit = { OR = { state = 178 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bal_arms }
+			}
+			every_state = {
+				limit = { OR = { state = 179 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bal_sobrik }
+			}
+			every_state = {
+				limit = { OR = { state = 180 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bal_bugtown }
+			}
+			every_state = {
+				limit = { OR = { state = 6 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ald_palace }
+			}
+			every_state = {
+				limit = { OR = { state = 6 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ald_university }
+			}
+			every_state = {
+				limit = { OR = { state = 169 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ald_crevasse }
+			}
+			every_state = {
+				limit = { OR = { state = 174 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ald_sanctuary }
+			}
+			every_state = {
+				limit = { OR = { state = 173 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ald_falls }
+			}
+			every_state = {
+				limit = { OR = { state = 8 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tyt_temple }
+			}
+			every_state = {
+				limit = { OR = { state = 210 state = 211 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tyt_retreat }
+			}
+			every_state = {
+				limit = { OR = { state = 209 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tyt_banlanding }
+			}
+			every_state = {
+				limit = { OR = { state = 9 state = 288 state = 290 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_fre_incom }
+			}
+			every_state = {
+				limit = { OR = { state = 9 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_fre_arches }
+			}
+			every_state = {
+				limit = { OR = { state = 294 state = 295 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_foe_yards }
+			}
+			every_state = {
+				limit = { OR = { state = 10 state = 299 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_foe_hajibar }
+			}
+			every_state = {
+				limit = { OR = { state = 297 state = 298 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_foe_works }
+			}
+			every_state = {
+				limit = { OR = { state = 22 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_crl_yards }
+			}
+			every_state = {
+				limit = { OR = { state = 22 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_crl_coronet }
+			}
+			every_state = {
+				limit = { OR = { state = 347 state = 349 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_crl_korvella }
+			}
+			every_state = {
+				limit = { OR = { state = 1339 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kua_yards }
+			}
+			every_state = {
+				limit = { OR = { state = 15 state = 1336 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kua_city }
+			}
+			every_state = {
+				limit = { OR = { state = 1335 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_kua_gardens }
+			}
+			every_state = {
+				limit = { OR = { state = 355 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ren_yards }
+			}
+			every_state = {
+				limit = { OR = { state = 23 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ren_hq }
+			}
+			every_state = {
+				limit = { OR = { state = 353 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_ren_base }
+			}
+			every_state = {
+				limit = { OR = { state = 17 state = 320 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_com_chasin }
+			}
+			every_state = {
+				limit = { OR = { state = 315 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_com_university }
+			}
+			every_state = {
+				limit = { OR = { state = 314 state = 316 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_com_arena }
+			}
+			every_state = {
+				limit = { OR = { state = 339 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dur_spacecity }
+			}
+			every_state = {
+				limit = { OR = { state = 20 state = 336 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dur_ranadaast }
+			}
+			every_state = {
+				limit = { OR = { state = 334 state = 335 state = 338 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_dur_royalty }
+			}
+			every_state = {
+				limit = { OR = { state = 21 state = 341 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_lor_corp }
+			}
+			every_state = {
+				limit = { OR = { state = 340 state = 342 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_lor_works }
+			}
+			every_state = {
+				limit = { OR = { state = 19 state = 328 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_nei_kotosi }
+			}
+			every_state = {
+				limit = { OR = { state = 329 state = 330 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_nei_hives }
+			}
+			every_state = {
+				limit = { OR = { state = 388 state = 389 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mim_temple }
+			}
+			every_state = {
+				limit = { OR = { state = 28 state = 390 state = 392 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mim_village }
+			}
+			every_state = {
+				limit = { OR = { state = 18 state = 321 state = 322 state = 323 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_mnn_ahto }
+			}
+			every_state = {
 				limit = { OR = { state = 1 state = 126 } }
 				add_dynamic_modifier = { modifier = HOD_landmark_cos_senate }
 			}

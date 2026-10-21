@@ -1,0 +1,31 @@
+state={
+	id=19
+	name="STATE_19"
+	# HOD: Neimodia (neimodia_map.py)
+	provinces={
+		134 180 297 13119 13126 13127
+	}
+	resources={
+		tungsten=4#Bacta
+	}
+	history = {
+		victory_points = {
+			134 10
+		}
+		victory_points = {
+			297 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 7
+			arms_factory = 4
+			air_base = 2
+		}
+		owner = TDF
+		add_core_of = TDF
+	}
+	manpower = 1045228
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

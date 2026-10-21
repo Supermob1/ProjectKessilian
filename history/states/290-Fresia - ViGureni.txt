@@ -1,0 +1,32 @@
+state={
+	id=290
+	name="STATE_290"
+	# HOD: Fresia (fresia_map.py)
+	provinces={
+		947 13480 13481 13498 13504 13518 13524
+	}
+	resources={
+		coal=2
+		oil=2
+	}
+	history = {
+		victory_points = {
+			947 3
+		}
+		victory_points = {
+			13518 2
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+		}
+		owner = FRE
+		add_core_of = FRE
+	}
+	manpower = 374593
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

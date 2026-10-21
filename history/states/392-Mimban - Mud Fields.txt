@@ -1,0 +1,31 @@
+state={
+	id=392
+	name="STATE_392"
+	# HOD: Mimban (mimban_map.py)
+	provinces={
+		897 14493 14494 14495 14496 14497 14498 14499 14500 14501 14502 14503 14506 14510 14511
+	}
+	resources={
+		tungsten=4
+		steel=2
+	}
+	history = {
+		victory_points = {
+			897 3
+		}
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+			dockyard = 1
+					14495 = {
+				naval_base = 3
+			}
+		}
+		owner = MIM
+		add_core_of = MIM
+	}
+	manpower = 111993
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
