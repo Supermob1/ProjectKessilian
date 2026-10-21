@@ -1,0 +1,949 @@
+{
+ "centre": [
+  1693.3844531485388,
+  1337.638445314854
+ ],
+ "radius": 32.50339231901805,
+ "vp_names": {
+  "134": "Koto-Si",
+  "297": "Koto-Si Docking Bays",
+  "623": "Kaantay",
+  "1054": "Communal Hives",
+  "1089": "Fungus Farms",
+  "13202": "Neimoidian Desert",
+  "13211": "Harvest Fields",
+  "13273": "Southern Rainforest"
+ },
+ "provinces": {
+  "134": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Koto-Si",
+   "state": 19,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1689.16,
+    1337.38
+   ],
+   "area": 50,
+   "terrain": "urban"
+  },
+  "180": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Koto-Si",
+   "state": 19,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1695.2444444444445,
+    1340.6222222222223
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "297": {
+   "zone": "port",
+   "kind": 4,
+   "feature": "Koto-Si Docking Bays",
+   "state": 19,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1698.3684210526317,
+    1345.421052631579
+   ],
+   "area": 19,
+   "terrain": "urban"
+  },
+  "623": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1671.25,
+    1332.1666666666667
+   ],
+   "area": 24,
+   "terrain": "urban"
+  },
+  "1054": {
+   "zone": "hives",
+   "kind": 2,
+   "feature": "Communal Hives",
+   "state": 329,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1689.0487804878048,
+    1320.9756097560976
+   ],
+   "area": 41,
+   "terrain": "jungle"
+  },
+  "1089": {
+   "zone": "farms",
+   "kind": 3,
+   "feature": "Fungus Farms",
+   "state": 330,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1693.3076923076924,
+    1355.5
+   ],
+   "area": 26,
+   "terrain": "plains"
+  },
+  "1312": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1673.047619047619,
+    1358.2857142857142
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "1553": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1684.608695652174,
+    1365.4347826086957
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "1720": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1675.6521739130435,
+    1344.6521739130435
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "1943": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1678.1176470588234,
+    1352.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2037": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1679.0555555555557,
+    1364.388888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "2252": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1677.4444444444443,
+    1358.4444444444443
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "2370": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1675.75,
+    1348.35
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "2530": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1681.7857142857142,
+    1362.7857142857142
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "2898": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1675.0,
+    1353.7
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "3707": {
+   "zone": "mountains",
+   "kind": 9,
+   "feature": "Neimoidian Highlands",
+   "state": 1360,
+   "group": 5,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1675.111111111111,
+    1362.1666666666667
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "4176": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1718.5555555555557,
+    1321.5925925925926
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "4622": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1707.75,
+    1327.4
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "4862": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1710.047619047619,
+    1319.904761904762
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4898": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1716.8,
+    1326.9
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "5092": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1713.3333333333333,
+    1323.5185185185185
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "5805": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1715.16,
+    1318.0
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13087": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1707.7368421052631,
+    1323.3684210526317
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "13088": {
+   "zone": "basin",
+   "kind": 10,
+   "feature": "Dry Basin",
+   "state": 1361,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1712.68,
+    1328.8
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13091": {
+   "zone": "marsh",
+   "kind": 11,
+   "feature": "Drowned Forest",
+   "state": 1362,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1690.3666666666666,
+    1312.1333333333334
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "13092": {
+   "zone": "marsh",
+   "kind": 11,
+   "feature": "Drowned Forest",
+   "state": 1362,
+   "group": 7,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1683.0454545454545,
+    1308.7272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "13105": {
+   "zone": "marsh",
+   "kind": 11,
+   "feature": "Drowned Forest",
+   "state": 1362,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1697.9473684210527,
+    1313.7368421052631
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "13106": {
+   "zone": "marsh",
+   "kind": 11,
+   "feature": "Drowned Forest",
+   "state": 1362,
+   "group": 7,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1687.857142857143,
+    1308.2857142857142
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "13113": {
+   "zone": "marsh",
+   "kind": 11,
+   "feature": "Drowned Forest",
+   "state": 1362,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1694.391304347826,
+    1314.8695652173913
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "13119": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Koto-Si",
+   "state": 19,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1699.2948717948718,
+    1337.8589743589744
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "13126": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Koto-Si",
+   "state": 19,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1685.6805555555557,
+    1340.9722222222222
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "13127": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Koto-Si",
+   "state": 19,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1686.8307692307692,
+    1332.3538461538462
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "13134": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 9,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1666.7590361445782,
+    1344.8915662650602
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "13135": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 9,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1671.6538461538462,
+    1321.076923076923
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "13136": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1676.8641975308642,
+    1328.851851851852
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "13140": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 9,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1664.939024390244,
+    1336.5243902439024
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "13147": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 9,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1669.3333333333333,
+    1352.7222222222222
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "13154": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 9,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1666.4558823529412,
+    1327.6764705882354
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "13156": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Kaantay",
+   "state": 328,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1675.1566265060242,
+    1338.5301204819277
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "13163": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Hive Forests",
+   "state": 329,
+   "group": 10,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1679.4496124031007,
+    1314.84496124031
+   ],
+   "area": 129,
+   "terrain": "jungle"
+  },
+  "13169": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Hive Forests",
+   "state": 329,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1691.1515151515152,
+    1323.3484848484848
+   ],
+   "area": 66,
+   "terrain": "jungle"
+  },
+  "13171": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Hive Forests",
+   "state": 329,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1683.3013698630136,
+    1324.2876712328766
+   ],
+   "area": 73,
+   "terrain": "jungle"
+  },
+  "13174": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Fungus Fields",
+   "state": 330,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1684.7920792079208,
+    1357.1386138613861
+   ],
+   "area": 101,
+   "terrain": "plains"
+  },
+  "13175": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Fungus Fields",
+   "state": 330,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1695.6521739130435,
+    1360.6521739130435
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "13176": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Fungus Fields",
+   "state": 330,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1684.0430107526881,
+    1347.8064516129032
+   ],
+   "area": 93,
+   "terrain": "plains"
+  },
+  "13178": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Fungus Fields",
+   "state": 330,
+   "group": 11,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1690.5675675675675,
+    1366.6486486486488
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "13185": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Fungus Fields",
+   "state": 330,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1694.607142857143,
+    1350.5238095238096
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "13189": {
+   "zone": "desert",
+   "kind": 7,
+   "feature": "Neimoidian Desert",
+   "state": 331,
+   "group": 12,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1719.2307692307693,
+    1346.5054945054944
+   ],
+   "area": 91,
+   "terrain": "desert"
+  },
+  "13191": {
+   "zone": "desert",
+   "kind": 7,
+   "feature": "Neimoidian Desert",
+   "state": 331,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1706.759493670886,
+    1334.4556962025317
+   ],
+   "area": 79,
+   "terrain": "desert"
+  },
+  "13192": {
+   "zone": "desert",
+   "kind": 7,
+   "feature": "Neimoidian Desert",
+   "state": 331,
+   "group": 12,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1721.2058823529412,
+    1329.25
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "13197": {
+   "zone": "desert",
+   "kind": 7,
+   "feature": "Neimoidian Desert",
+   "state": 331,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1707.41,
+    1344.5
+   ],
+   "area": 100,
+   "terrain": "desert"
+  },
+  "13202": {
+   "zone": "desert",
+   "kind": 7,
+   "feature": "Neimoidian Desert",
+   "state": 331,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1714.2987012987012,
+    1337.025974025974
+   ],
+   "area": 77,
+   "terrain": "desert"
+  },
+  "13205": {
+   "zone": "desert",
+   "kind": 7,
+   "feature": "Neimoidian Desert",
+   "state": 331,
+   "group": 12,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1721.9558823529412,
+    1338.25
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "13211": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Harvest Fields",
+   "state": 332,
+   "group": 13,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1710.2054794520548,
+    1360.6575342465753
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "13212": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Harvest Fields",
+   "state": 332,
+   "group": 13,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1701.8024691358025,
+    1364.8148148148148
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "13229": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Harvest Fields",
+   "state": 332,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1705.0108695652175,
+    1353.6739130434783
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "13235": {
+   "zone": "fields",
+   "kind": 6,
+   "feature": "Harvest Fields",
+   "state": 332,
+   "group": 13,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1715.5581395348838,
+    1353.7906976744187
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "13249": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Southern Rainforest",
+   "state": 333,
+   "group": 14,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1709.7230769230769,
+    1314.4
+   ],
+   "area": 65,
+   "terrain": "jungle"
+  },
+  "13257": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Southern Rainforest",
+   "state": 333,
+   "group": 14,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1695.659574468085,
+    1308.0851063829787
+   ],
+   "area": 47,
+   "terrain": "jungle"
+  },
+  "13272": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Southern Rainforest",
+   "state": 333,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1699.1954022988505,
+    1327.9310344827586
+   ],
+   "area": 87,
+   "terrain": "jungle"
+  },
+  "13273": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Southern Rainforest",
+   "state": 333,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1700.5402298850574,
+    1320.16091954023
+   ],
+   "area": 87,
+   "terrain": "jungle"
+  },
+  "13289": {
+   "zone": "jungle",
+   "kind": 5,
+   "feature": "Southern Rainforest",
+   "state": 333,
+   "group": 14,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1703.296875,
+    1310.78125
+   ],
+   "area": 64,
+   "terrain": "jungle"
+  }
+ }
+}

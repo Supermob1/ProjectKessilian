@@ -3,24 +3,28 @@ state={
 	name="STATE_122"
 	# HOD: Coruscant (coruscant_map.py)
 	provinces={
-		1420 1469 5458 5484 5602 5660 5666 5737 5741 5830 5934 5969 6109 6132 12239 12240 12247
+		313 1590 1716 5602 5660 5666 5737 5741 5830 5934 5969 6109 6132 12239 12240 12247
 	}
 	resources={
 		chromium=5#Circuitry
 	}
 	history = {
 		victory_points = {
-			1420 2
+			313 3
 		}
 		victory_points = {
-			1469 3
+			1590 2
+		}
+		victory_points = {
+			1716 3
 		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 3
 			air_base = 1
 			dockyard = 8
-					5741 = {
+					313 = {
+				coastal_bunker = 3
 				naval_base = 10
 			}
 		}

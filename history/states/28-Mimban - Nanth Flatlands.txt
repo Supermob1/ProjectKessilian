@@ -1,0 +1,32 @@
+state={
+	id=28
+	name="STATE_28"
+	# HOD: Mimban (mimban_map.py)
+	provinces={
+		173 545 14211 14214 14220 14225 14230 14234 14242 14246 14250 14251 14252 14261 14264
+	}
+	resources={
+		oil=2#Fuel
+		aluminium=3#Minerals
+	}
+	history = {
+		victory_points = {
+			173 10
+		}
+		victory_points = {
+			14211 1
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = MIM
+		add_core_of = MIM
+	}
+	manpower = 2063694
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

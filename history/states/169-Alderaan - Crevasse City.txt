@@ -1,0 +1,30 @@
+state={
+	id=169
+	name="STATE_169"
+	# HOD: Alderaan (alderaan_map.py)
+	provinces={
+		1467 1508 12579 12580 12586 12591 12592 12594 12598 12601 12602 12609
+	}
+	resources={
+		tungsten=5#Minerals
+		rubber=10#Bacta
+		aluminium=20#Doonium
+	}
+	history = {
+		victory_points = {
+			12598 5
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+		}
+		owner = ALD
+		add_core_of = ALD
+	}
+	manpower = 326043
+	state_category = industrial_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

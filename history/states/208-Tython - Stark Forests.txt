@@ -1,0 +1,33 @@
+state={
+	id=208
+	name="STATE_208"
+	# HOD: Tython (tython_map.py)
+	provinces={
+		3371 13167 13170 13172 13173 13177
+	}
+	resources={
+		coal=3
+		oil=1
+	}
+	history = {
+		victory_points = {
+			3371 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 4
+			arms_factory = 3
+			air_base = 2
+			dockyard = 4
+					13167 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 1497652
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

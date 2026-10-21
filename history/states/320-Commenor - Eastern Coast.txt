@@ -1,0 +1,31 @@
+state={
+	id=320
+	name="STATE_320"
+	# HOD: Commenor (commenor_map.py)
+	provinces={
+		2639 13519 13525 13526
+	}
+	resources={
+		oil=1
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			2639 3
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			dockyard = 1
+					13526 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 193713
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

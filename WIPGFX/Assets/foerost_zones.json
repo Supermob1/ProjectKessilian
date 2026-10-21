@@ -1,0 +1,964 @@
+{
+ "centre": [
+  1652.7556835404669,
+  1024.8781448923917
+ ],
+ "radius": 32.40531306005738,
+ "vp_names": {
+  "557": "Hajibar",
+  "769": "Hajibar Launch Fields",
+  "946": "Hull Works",
+  "1685": "Refineries",
+  "1886": "Foerost Communications Tower",
+  "2004": "Western Foundries",
+  "13096": "Foerost Wilds",
+  "13099": "Refinery Coast"
+ },
+ "provinces": {
+  "557": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Hajibar",
+   "state": 10,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1655.2285714285715,
+    1023.5714285714286
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "635": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Hajibar",
+   "state": 10,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1654.3513513513512,
+    1018.6486486486486
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "769": {
+   "zone": "launch",
+   "kind": 2,
+   "feature": "Hajibar Launch Fields",
+   "state": 294,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1671.566037735849,
+    1011.2264150943396
+   ],
+   "area": 53,
+   "terrain": "urban"
+  },
+  "946": {
+   "zone": "slips",
+   "kind": 3,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1668.888888888889,
+    1036.3555555555556
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "1685": {
+   "zone": "refinery",
+   "kind": 4,
+   "feature": "Refineries",
+   "state": 297,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1655.6666666666667,
+    1049.6
+   ],
+   "area": 15,
+   "terrain": "urban"
+  },
+  "1886": {
+   "zone": "tower",
+   "kind": 5,
+   "feature": "Foerost Communications Tower",
+   "state": 299,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1639.3529411764705,
+    1038.1764705882354
+   ],
+   "area": 17,
+   "terrain": "hills"
+  },
+  "2004": {
+   "zone": "foundry",
+   "kind": 6,
+   "feature": "Western Foundries",
+   "state": 298,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1657.5,
+    999.5
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "2648": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Foerost Mountains",
+   "state": 1332,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1646.7931034482758,
+    1043.3793103448277
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "2716": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Foerost Mountains",
+   "state": 1332,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1665.16,
+    1041.72
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "2874": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Foerost Mountains",
+   "state": 1332,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1657.0666666666666,
+    1044.7666666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "3230": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Foerost Mountains",
+   "state": 1332,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1638.421052631579,
+    1047.6842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4067": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Foerost Mountains",
+   "state": 1332,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1661.1538461538462,
+    1042.9615384615386
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "4200": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Foerost Mountains",
+   "state": 1332,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1652.0,
+    1044.3793103448277
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "4251": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Foerost Mountains",
+   "state": 1332,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1642.148148148148,
+    1043.2222222222222
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "4667": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1634.6470588235295,
+    1008.7058823529412
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "4670": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1654.3333333333333,
+    1012.3333333333334
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "4687": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1643.2903225806451,
+    996.4193548387096
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "4937": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1643.5428571428572,
+    1017.1428571428571
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "5758": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1638.0,
+    999.0555555555555
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "5827": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1642.0857142857142,
+    1010.7142857142857
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "12946": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1637.3548387096773,
+    1013.2258064516129
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "12947": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1633.28125,
+    1003.0
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "12951": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1638.9655172413793,
+    1004.6896551724138
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "12966": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1647.8823529411766,
+    1014.7941176470588
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "12967": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Hajibar Sea",
+   "state": 1333,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1652.1052631578948,
+    1010.2105263157895
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "12969": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Polar Ice",
+   "state": 1334,
+   "group": 8,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1623.4782608695652,
+    1034.4347826086957
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "12978": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Polar Ice",
+   "state": 1334,
+   "group": 8,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1625.2272727272727,
+    1010.9090909090909
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "12979": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Polar Ice",
+   "state": 1334,
+   "group": 8,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1623.7105263157894,
+    1022.3684210526316
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "12985": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Polar Ice",
+   "state": 1334,
+   "group": 8,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1624.842105263158,
+    1016.3157894736842
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "12988": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Polar Ice",
+   "state": 1334,
+   "group": 8,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1623.4193548387098,
+    1028.225806451613
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "12989": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hajibar",
+   "state": 10,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1654.3478260869565,
+    1032.695652173913
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "12992": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hajibar",
+   "state": 10,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1659.5333333333333,
+    1016.2
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "13002": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hajibar",
+   "state": 10,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1648.5764705882352,
+    1024.9529411764706
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "13004": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hajibar",
+   "state": 10,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1661.1304347826087,
+    1025.9710144927535
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "13011": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Launch Fields",
+   "state": 294,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1665.5438596491229,
+    1013.9649122807018
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "13012": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Launch Fields",
+   "state": 294,
+   "group": 10,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1680.341463414634,
+    1020.2560975609756
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "13024": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Launch Fields",
+   "state": 294,
+   "group": 10,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1672.4754098360656,
+    1003.0655737704918
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "13032": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Launch Fields",
+   "state": 294,
+   "group": 10,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1678.1940298507463,
+    1011.5671641791045
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "13034": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Launch Fields",
+   "state": 294,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1670.8214285714287,
+    1020.7142857142857
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "13038": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Launch Fields",
+   "state": 294,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1665.7164179104477,
+    1004.1940298507462
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "13045": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1674.9855072463768,
+    1029.5797101449275
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "13052": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1655.2162162162163,
+    1039.4864864864865
+   ],
+   "area": 37,
+   "terrain": "plains"
+  },
+  "13054": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 11,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1670.090909090909,
+    1046.9431818181818
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "13055": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 11,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1681.7428571428572,
+    1029.7571428571428
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "13063": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 11,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1676.2083333333333,
+    1039.4791666666667
+   ],
+   "area": 96,
+   "terrain": "plains"
+  },
+  "13070": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1662.8125,
+    1035.4583333333333
+   ],
+   "area": 48,
+   "terrain": "plains"
+  },
+  "13072": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Hull Works",
+   "state": 295,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1667.2962962962963,
+    1028.4074074074074
+   ],
+   "area": 54,
+   "terrain": "plains"
+  },
+  "13074": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Foerost Wilds",
+   "state": 296,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1630.2666666666667,
+    1028.9333333333334
+   ],
+   "area": 90,
+   "terrain": "forest"
+  },
+  "13079": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Foerost Wilds",
+   "state": 296,
+   "group": 12,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1629.4117647058824,
+    1008.6666666666666
+   ],
+   "area": 51,
+   "terrain": "forest"
+  },
+  "13080": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Foerost Wilds",
+   "state": 296,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1640.111111111111,
+    1028.984126984127
+   ],
+   "area": 63,
+   "terrain": "forest"
+  },
+  "13084": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Foerost Wilds",
+   "state": 296,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1639.9295774647887,
+    1021.943661971831
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "13096": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Foerost Wilds",
+   "state": 296,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1631.8823529411766,
+    1018.9411764705883
+   ],
+   "area": 85,
+   "terrain": "forest"
+  },
+  "13099": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Refinery Coast",
+   "state": 297,
+   "group": 13,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1652.0243902439024,
+    1053.1829268292684
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "13103": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Refinery Coast",
+   "state": 297,
+   "group": 13,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1643.8214285714287,
+    1050.9285714285713
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "13110": {
+   "zone": "works",
+   "kind": 10,
+   "feature": "Refinery Coast",
+   "state": 297,
+   "group": 13,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1661.759493670886,
+    1051.3037974683543
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "13120": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Western Foundries",
+   "state": 298,
+   "group": 14,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1651.0,
+    997.1529411764706
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "13124": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Western Foundries",
+   "state": 298,
+   "group": 14,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1662.433962264151,
+    996.8301886792453
+   ],
+   "area": 53,
+   "terrain": "hills"
+  },
+  "13132": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Western Foundries",
+   "state": 298,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1658.025974025974,
+    1006.6103896103896
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "13139": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Western Foundries",
+   "state": 298,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1646.795918367347,
+    1005.2244897959183
+   ],
+   "area": 98,
+   "terrain": "hills"
+  },
+  "13145": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Signal Heights",
+   "state": 299,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1635.9714285714285,
+    1036.9142857142858
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "13150": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Signal Heights",
+   "state": 299,
+   "group": 15,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1634.056338028169,
+    1046.394366197183
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "13158": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Signal Heights",
+   "state": 299,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1645.6575342465753,
+    1036.1917808219177
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "13162": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Signal Heights",
+   "state": 299,
+   "group": 15,
+   "coastal": true,
+   "sea": 18777,
+   "centre": [
+    1628.4722222222222,
+    1039.2916666666667
+   ],
+   "area": 72,
+   "terrain": "hills"
+  }
+ }
+}

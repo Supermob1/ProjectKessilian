@@ -392,7 +392,7 @@ FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
             "hod_way_village": LM, "hod_bra_city": LM, "hod_tra_city": LM, "hod_nyr_town": LM,
             "hod_crs_town": LM, "hod_kas_city": LM, "hod_ond_town": LM, "hod_umb_city": LM, "hod_col_city": LM, "hod_rus_city": LM,
             "hod_om_town": LM, "hod_gar_farm": LM, "hod_gar_city": LM, "hod_aga_town": LM, "hod_ot_town": LM,
-            "hod_dan_estate": LM, "hod_dub_city": LM, "hod_bas_town": LM, "hod_kal_town": LM, "hod_muun_town": LM, "hod_myg_town": LM, "hod_yag_town": LM, "hod_ans_town": LM, "hod_dor_town": LM, "hod_yin_town": LM, "hod_cha_town": LM, "hod_cor_town": LM, "hod_ark_town": LM, "hod_anx_town": LM, "hod_ess_town": LM, "hod_cos_town": LM}
+            "hod_dan_estate": LM, "hod_dub_city": LM, "hod_bas_town": LM, "hod_kal_town": LM, "hod_muun_town": LM, "hod_myg_town": LM, "hod_yag_town": LM, "hod_ans_town": LM, "hod_dor_town": LM, "hod_yin_town": LM, "hod_cha_town": LM, "hod_cor_town": LM, "hod_ark_town": LM, "hod_anx_town": LM, "hod_ess_town": LM, "hod_cos_town": LM, "hod_car_town": LM, "hod_bal_town": LM, "hod_ald_town": LM, "hod_fre_town": LM, "hod_foe_town": LM, "hod_crl_town": LM, "hod_kua_town": LM, "hod_ren_town": LM, "hod_com_town": LM, "hod_dur_town": LM, "hod_lor_town": LM, "hod_nei_town": LM, "hod_mim_town": LM, "hod_mnn_town": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 SCRAP_TOWN = [f"hod_bld_rpt_{n}" for n in ("crates4", "crates5", "crates6", "crates9", "crates1", "huttTower", "fuelCellC")]
 SINGLE.update({n: SW for n in SCRAP_TOWN})  # Raxus Prime scrap towns: Empire at War junk stacks (sketchfab_props.py rpt_*)
@@ -476,7 +476,21 @@ CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]
                78: (0.4, ["hod_ark_town"]),                                             # Arkania: white domes, crystal spires
                79: (0.4, ["hod_anx_town"]),                                             # Anaxes: Republic blocks
                80: (0.4, ["hod_ess_town"]),                                             # Esseles: cream and terracotta
-               81: (0.4, ["hod_cos_town"])}                                             # Coruscant: fewer, bigger towers
+               81: (0.4, ["hod_cos_town"]),                                             # Coruscant: fewer, bigger towers
+               82: (0.4, ["hod_car_town"]),                                             # Carida: academy towns
+               83: (0.4, ["hod_bal_town"]),                                             # Balmorra: factory towns
+               84: (0.4, ["hod_ald_town"]),                                             # Alderaan: white synthstone towns
+               85: (0.4, ["hod_fre_town"]),                                             # Fresia: Coromon works towns
+               86: (0.4, ["hod_foe_town"]),                                             # Foerost: Techno Union works towns
+               87: (0.4, ["hod_crl_town"]),                                             # Corellia: bronze Coronet towns
+               88: (0.4, ["hod_kua_town"]),                                             # Kuat: ivory spire towns
+               89: (0.4, ["hod_ren_town"]),                                             # Rendili: StarDrive towns
+               90: (0.4, ["hod_com_town"]),                                             # Commenor: sandstone towns
+               91: (0.4, ["hod_dur_town"]),                                             # Duro: grimy surface towns
+               92: (0.4, ["hod_lor_town"]),                                             # Loronar: corporate towns
+               93: (0.4, ["hod_nei_town"]),                                             # Neimoidia: hooked-crown towns
+               94: (0.4, ["hod_mim_town"]),                                             # Mimban: stilt villages
+               95: (0.4, ["hod_mnn_town"])}                                             # Manaan: floating platforms
 
 
 def wire():

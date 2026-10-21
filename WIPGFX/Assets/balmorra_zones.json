@@ -1,0 +1,967 @@
+{
+ "centre": [
+  1575.6070780399275,
+  1276.9579552329099
+ ],
+ "radius": 32.439674531715205,
+ "vp_names": {
+  "632": "Bin Prime",
+  "1710": "Swellbottom Market",
+  "1793": "Bin Prime Spaceport",
+  "2298": "Sobrik",
+  "3501": "Gorinth Canyon",
+  "4056": "Balmorra Outpost",
+  "4350": "Balmorran Arms Factory",
+  "4950": "Bugtown",
+  "5588": "Broken Valley",
+  "12862": "Jacent Valley",
+  "12847": "Sundari Flatlands"
+ },
+ "provinces": {
+  "632": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1575.9,
+    1262.6333333333334
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "1212": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1579.4642857142858,
+    1266.5714285714287
+   ],
+   "area": 28,
+   "terrain": "urban"
+  },
+  "1710": {
+   "zone": "market",
+   "kind": 3,
+   "feature": "Swellbottom Market",
+   "state": 16,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1581.48,
+    1272.28
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "1793": {
+   "zone": "port",
+   "kind": 14,
+   "feature": "Bin Prime Spaceport",
+   "state": 16,
+   "group": 2,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1569.8923076923077,
+    1249.553846153846
+   ],
+   "area": 65,
+   "terrain": "urban"
+  },
+  "2298": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1559.59375,
+    1288.5625
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "3473": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1562.625,
+    1283.21875
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "3501": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Gorinth Canyon",
+   "state": 179,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1576.735294117647,
+    1284.8529411764705
+   ],
+   "area": 34,
+   "terrain": "hills"
+  },
+  "4001": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Gorinth Canyon",
+   "state": 179,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1570.9772727272727,
+    1278.4318181818182
+   ],
+   "area": 44,
+   "terrain": "hills"
+  },
+  "4056": {
+   "zone": "outpost",
+   "kind": 6,
+   "feature": "Balmorra Outpost",
+   "state": 179,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1563.3125,
+    1297.1875
+   ],
+   "area": 16,
+   "terrain": "hills"
+  },
+  "4160": {
+   "zone": "factory",
+   "kind": 2,
+   "feature": "Balmorran Arms Factory",
+   "state": 178,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1591.1935483870968,
+    1292.4193548387098
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "4350": {
+   "zone": "factory",
+   "kind": 2,
+   "feature": "Balmorran Arms Factory",
+   "state": 178,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1592.2727272727273,
+    1287.6363636363637
+   ],
+   "area": 33,
+   "terrain": "urban"
+  },
+  "4950": {
+   "zone": "lab",
+   "kind": 5,
+   "feature": "Bugtown",
+   "state": 180,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1595.6,
+    1268.857142857143
+   ],
+   "area": 35,
+   "terrain": "plains"
+  },
+  "4992": {
+   "zone": "lake",
+   "kind": 13,
+   "feature": "Lake Farnell",
+   "state": 1317,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1598.2222222222222,
+    1278.6666666666667
+   ],
+   "area": 9,
+   "terrain": "mountain"
+  },
+  "5500": {
+   "zone": "lake",
+   "kind": 13,
+   "feature": "Lake Farnell",
+   "state": 1317,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1599.3636363636363,
+    1275.5454545454545
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "5588": {
+   "zone": "valley",
+   "kind": 10,
+   "feature": "Broken Valley",
+   "state": 180,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1592.03125,
+    1265.4375
+   ],
+   "area": 32,
+   "terrain": "hills"
+  },
+  "5601": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1547.6774193548388,
+    1288.4193548387098
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "5670": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1556.1785714285713,
+    1260.8214285714287
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "5838": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1546.1891891891892,
+    1272.081081081081
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "6223": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1556.483870967742,
+    1273.1290322580646
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "12603": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1551.6875,
+    1275.65625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "12604": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1547.625,
+    1265.71875
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "12616": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1552.0,
+    1269.6129032258063
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "12631": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1558.7222222222222,
+    1267.5555555555557
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "12648": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1546.1515151515152,
+    1278.5757575757575
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "12655": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1547.9736842105262,
+    1283.4473684210527
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "12664": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1550.7142857142858,
+    1260.2142857142858
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "12674": {
+   "zone": "spires",
+   "kind": 11,
+   "feature": "Northern Spires",
+   "state": 1315,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1553.5384615384614,
+    1264.8076923076924
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "12683": {
+   "zone": "crags",
+   "kind": 12,
+   "feature": "Grey Crags",
+   "state": 1316,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1569.9767441860465,
+    1292.2093023255813
+   ],
+   "area": 43,
+   "terrain": "mountain"
+  },
+  "12702": {
+   "zone": "crags",
+   "kind": 12,
+   "feature": "Grey Crags",
+   "state": 1316,
+   "group": 11,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1576.9354838709678,
+    1306.7096774193549
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "12703": {
+   "zone": "crags",
+   "kind": 12,
+   "feature": "Grey Crags",
+   "state": 1316,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1581.6315789473683,
+    1295.578947368421
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "12719": {
+   "zone": "crags",
+   "kind": 12,
+   "feature": "Grey Crags",
+   "state": 1316,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1572.655172413793,
+    1301.655172413793
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "12724": {
+   "zone": "crags",
+   "kind": 12,
+   "feature": "Grey Crags",
+   "state": 1316,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1574.878787878788,
+    1296.878787878788
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "12729": {
+   "zone": "crags",
+   "kind": 12,
+   "feature": "Grey Crags",
+   "state": 1316,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1577.48,
+    1301.96
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "12735": {
+   "zone": "crags",
+   "kind": 12,
+   "feature": "Grey Crags",
+   "state": 1316,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1575.3714285714286,
+    1291.4285714285713
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "12736": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1574.2413793103449,
+    1257.0344827586207
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "12755": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1578.2708333333333,
+    1275.625
+   ],
+   "area": 96,
+   "terrain": "desert"
+  },
+  "12756": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1556.517857142857,
+    1255.392857142857
+   ],
+   "area": 56,
+   "terrain": "desert"
+  },
+  "12760": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1569.3947368421052,
+    1268.9561403508771
+   ],
+   "area": 114,
+   "terrain": "desert"
+  },
+  "12763": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1582.547619047619,
+    1263.7380952380952
+   ],
+   "area": 42,
+   "terrain": "desert"
+  },
+  "12764": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1562.9117647058824,
+    1252.0441176470588
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "12766": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1578.2625,
+    1249.0375
+   ],
+   "area": 80,
+   "terrain": "desert"
+  },
+  "12773": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Bin Prime",
+   "state": 16,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1564.5384615384614,
+    1261.6483516483515
+   ],
+   "area": 91,
+   "terrain": "desert"
+  },
+  "12781": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1563.983606557377,
+    1292.7868852459017
+   ],
+   "area": 61,
+   "terrain": "desert"
+  },
+  "12785": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 13,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1568.120481927711,
+    1304.012048192771
+   ],
+   "area": 83,
+   "terrain": "desert"
+  },
+  "12786": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1555.025974025974,
+    1282.3636363636363
+   ],
+   "area": 77,
+   "terrain": "desert"
+  },
+  "12796": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1562.8513513513512,
+    1276.3783783783783
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "12797": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 13,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1553.2696629213483,
+    1293.1573033707866
+   ],
+   "area": 89,
+   "terrain": "desert"
+  },
+  "12804": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 13,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1559.142857142857,
+    1300.6571428571428
+   ],
+   "area": 70,
+   "terrain": "desert"
+  },
+  "12820": {
+   "zone": "wastes",
+   "kind": 9,
+   "feature": "Sobrik",
+   "state": 179,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1569.5942028985507,
+    1285.1014492753623
+   ],
+   "area": 69,
+   "terrain": "desert"
+  },
+  "12826": {
+   "zone": "flats",
+   "kind": 8,
+   "feature": "Sundari Flatlands",
+   "state": 178,
+   "group": 14,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1583.8354430379748,
+    1303.2278481012659
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "12836": {
+   "zone": "flats",
+   "kind": 8,
+   "feature": "Sundari Flatlands",
+   "state": 178,
+   "group": 14,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1603.202380952381,
+    1283.7738095238096
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "12837": {
+   "zone": "flats",
+   "kind": 8,
+   "feature": "Sundari Flatlands",
+   "state": 178,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1584.1267605633802,
+    1284.0281690140846
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "12846": {
+   "zone": "flats",
+   "kind": 8,
+   "feature": "Sundari Flatlands",
+   "state": 178,
+   "group": 14,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1598.860465116279,
+    1292.9186046511627
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "12847": {
+   "zone": "flats",
+   "kind": 8,
+   "feature": "Sundari Flatlands",
+   "state": 178,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1584.2833333333333,
+    1291.0666666666666
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "12852": {
+   "zone": "flats",
+   "kind": 8,
+   "feature": "Sundari Flatlands",
+   "state": 178,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1594.5735294117646,
+    1282.1764705882354
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "12856": {
+   "zone": "flats",
+   "kind": 8,
+   "feature": "Sundari Flatlands",
+   "state": 178,
+   "group": 14,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1591.6904761904761,
+    1299.8095238095239
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "12862": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Markaran Plains",
+   "state": 180,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1590.1184210526317,
+    1271.7894736842106
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "12870": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Markaran Plains",
+   "state": 180,
+   "group": 15,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1587.4666666666667,
+    1251.3555555555556
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "12875": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Markaran Plains",
+   "state": 180,
+   "group": 15,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1603.73417721519,
+    1274.506329113924
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "12877": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Markaran Plains",
+   "state": 180,
+   "group": 15,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1596.1648351648353,
+    1257.923076923077
+   ],
+   "area": 91,
+   "terrain": "plains"
+  },
+  "12890": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Markaran Plains",
+   "state": 180,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1586.844155844156,
+    1259.8701298701299
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "12896": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Markaran Plains",
+   "state": 180,
+   "group": 15,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1601.607594936709,
+    1266.2278481012659
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "12902": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Markaran Plains",
+   "state": 180,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1587.5098039215686,
+    1277.3725490196077
+   ],
+   "area": 51,
+   "terrain": "plains"
+  }
+ }
+}

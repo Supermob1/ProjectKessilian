@@ -1,0 +1,981 @@
+{
+ "centre": [
+  1686.403927492447,
+  839.3111782477341
+ ],
+ "radius": 32.459293326693775,
+ "vp_names": {
+  "1292": "Jedi Temple Ruins",
+  "1308": "Force-henge",
+  "1501": "Masters' Retreat",
+  "3371": "Belia Darzu's Fortress",
+  "3529": "Kalikori Village",
+  "4223": "Ban Landing",
+  "4347": "Je'daii Temple Ruins",
+  "4744": "Silent Desert",
+  "13166": "Tansa Reach",
+  "13222": "Firelands Shore"
+ },
+ "provinces": {
+  "893": {
+   "zone": "temple",
+   "kind": 1,
+   "feature": "Jedi Temple Ruins",
+   "state": 8,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1683.5652173913043,
+    837.3913043478261
+   ],
+   "area": 23,
+   "terrain": "hills"
+  },
+  "1292": {
+   "zone": "temple",
+   "kind": 1,
+   "feature": "Jedi Temple Ruins",
+   "state": 8,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1679.7368421052631,
+    837.1578947368421
+   ],
+   "area": 19,
+   "terrain": "hills"
+  },
+  "1308": {
+   "zone": "henge",
+   "kind": 2,
+   "feature": "Force-henge",
+   "state": 8,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1673.888888888889,
+    845.1666666666666
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "1501": {
+   "zone": "retreat",
+   "kind": 3,
+   "feature": "Masters' Retreat",
+   "state": 210,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1673.8666666666666,
+    855.1333333333333
+   ],
+   "area": 15,
+   "terrain": "hills"
+  },
+  "1621": {
+   "zone": "sea",
+   "kind": 14,
+   "feature": "Gnarls Lake",
+   "state": 1327,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1675.888888888889,
+    857.1111111111111
+   ],
+   "area": 9,
+   "terrain": "mountain"
+  },
+  "2322": {
+   "zone": "sea",
+   "kind": 14,
+   "feature": "Gnarls Lake",
+   "state": 1327,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1676.0,
+    851.75
+   ],
+   "area": 4,
+   "terrain": "mountain"
+  },
+  "2852": {
+   "zone": "sea",
+   "kind": 14,
+   "feature": "Gnarls Lake",
+   "state": 1327,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1676.5,
+    854.0
+   ],
+   "area": 6,
+   "terrain": "mountain"
+  },
+  "3371": {
+   "zone": "fortress",
+   "kind": 4,
+   "feature": "Belia Darzu's Fortress",
+   "state": 208,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1664.695652173913,
+    835.7391304347826
+   ],
+   "area": 23,
+   "terrain": "forest"
+  },
+  "3529": {
+   "zone": "ruins",
+   "kind": 5,
+   "feature": "Kalikori Village",
+   "state": 207,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1679.5384615384614,
+    819.0
+   ],
+   "area": 26,
+   "terrain": "plains"
+  },
+  "3749": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Ban Landing",
+   "state": 209,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1694.4,
+    846.05
+   ],
+   "area": 20,
+   "terrain": "plains"
+  },
+  "4004": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Ban Landing",
+   "state": 209,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1695.4761904761904,
+    839.7619047619048
+   ],
+   "area": 21,
+   "terrain": "plains"
+  },
+  "4223": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Ban Landing",
+   "state": 209,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1692.9444444444443,
+    843.0
+   ],
+   "area": 18,
+   "terrain": "plains"
+  },
+  "4347": {
+   "zone": "thoyor",
+   "kind": 7,
+   "feature": "Je'daii Temple Ruins",
+   "state": 211,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1703.25,
+    847.625
+   ],
+   "area": 16,
+   "terrain": "hills"
+  },
+  "4744": {
+   "zone": "desert",
+   "kind": 11,
+   "feature": "Silent Desert",
+   "state": 211,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1705.949152542373,
+    825.6949152542373
+   ],
+   "area": 59,
+   "terrain": "desert"
+  },
+  "4787": {
+   "zone": "sea",
+   "kind": 14,
+   "feature": "Moon Channel",
+   "state": 1325,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1694.1176470588234,
+    819.9117647058823
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "4808": {
+   "zone": "sea",
+   "kind": 14,
+   "feature": "Moon Channel",
+   "state": 1325,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1695.0,
+    833.5
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "5912": {
+   "zone": "sea",
+   "kind": 14,
+   "feature": "Moon Channel",
+   "state": 1325,
+   "group": 9,
+   "coastal": true,
+   "sea": 18868,
+   "centre": [
+    1693.1724137931035,
+    811.0
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "6058": {
+   "zone": "sea",
+   "kind": 14,
+   "feature": "Moon Channel",
+   "state": 1325,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1693.6153846153845,
+    826.8076923076923
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "6134": {
+   "zone": "rift",
+   "kind": 15,
+   "feature": "The Rift",
+   "state": 1326,
+   "group": 10,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1693.8918918918919,
+    866.4594594594595
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "13059": {
+   "zone": "rift",
+   "kind": 15,
+   "feature": "The Rift",
+   "state": 1326,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1695.7272727272727,
+    851.8181818181819
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "13060": {
+   "zone": "rift",
+   "kind": 15,
+   "feature": "The Rift",
+   "state": 1326,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1695.9666666666667,
+    859.7666666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "13067": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1712.3333333333333,
+    843.3703703703703
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "13068": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1714.0625,
+    825.1875
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "13077": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1715.0,
+    852.0588235294117
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "13083": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1715.6129032258063,
+    834.5483870967741
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "13090": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1711.76,
+    837.92
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13095": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1715.7142857142858,
+    846.75
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "13102": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1714.8,
+    830.0
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13116": {
+   "zone": "ice",
+   "kind": 13,
+   "feature": "Meridional Ice Cap",
+   "state": 1324,
+   "group": 11,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1716.36,
+    840.4
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13117": {
+   "zone": "peaks",
+   "kind": 16,
+   "feature": "Thyr Highlands",
+   "state": 1328,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1672.2,
+    837.56
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13123": {
+   "zone": "peaks",
+   "kind": 16,
+   "feature": "Thyr Highlands",
+   "state": 1328,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1672.7916666666667,
+    826.7916666666666
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "13128": {
+   "zone": "peaks",
+   "kind": 16,
+   "feature": "Thyr Highlands",
+   "state": 1328,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1670.28,
+    842.24
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13138": {
+   "zone": "peaks",
+   "kind": 16,
+   "feature": "Thyr Highlands",
+   "state": 1328,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1673.28,
+    832.2
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13143": {
+   "zone": "hills",
+   "kind": 10,
+   "feature": "Thyr",
+   "state": 8,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1689.2527472527472,
+    836.8571428571429
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "13144": {
+   "zone": "hills",
+   "kind": 10,
+   "feature": "Thyr",
+   "state": 8,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1678.140350877193,
+    834.9473684210526
+   ],
+   "area": 57,
+   "terrain": "hills"
+  },
+  "13148": {
+   "zone": "hills",
+   "kind": 10,
+   "feature": "Thyr",
+   "state": 8,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1689.5436893203882,
+    852.0
+   ],
+   "area": 103,
+   "terrain": "hills"
+  },
+  "13149": {
+   "zone": "hills",
+   "kind": 10,
+   "feature": "Thyr",
+   "state": 8,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1681.6448598130842,
+    845.1682242990654
+   ],
+   "area": 107,
+   "terrain": "hills"
+  },
+  "13155": {
+   "zone": "grass",
+   "kind": 9,
+   "feature": "Tansa Reach",
+   "state": 207,
+   "group": 14,
+   "coastal": true,
+   "sea": 18868,
+   "centre": [
+    1668.962962962963,
+    818.9907407407408
+   ],
+   "area": 108,
+   "terrain": "plains"
+  },
+  "13157": {
+   "zone": "grass",
+   "kind": 9,
+   "feature": "Tansa Reach",
+   "state": 207,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1687.4050632911392,
+    827.253164556962
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "13160": {
+   "zone": "grass",
+   "kind": 9,
+   "feature": "Tansa Reach",
+   "state": 207,
+   "group": 14,
+   "coastal": true,
+   "sea": 18868,
+   "centre": [
+    1686.0897435897436,
+    810.5
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "13161": {
+   "zone": "grass",
+   "kind": 9,
+   "feature": "Tansa Reach",
+   "state": 207,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1679.0121951219512,
+    825.5365853658536
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "13164": {
+   "zone": "grass",
+   "kind": 9,
+   "feature": "Tansa Reach",
+   "state": 207,
+   "group": 14,
+   "coastal": true,
+   "sea": 18868,
+   "centre": [
+    1676.784090909091,
+    813.1363636363636
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "13166": {
+   "zone": "grass",
+   "kind": 9,
+   "feature": "Tansa Reach",
+   "state": 207,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1687.6410256410256,
+    818.2179487179487
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "13167": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Stark Forests",
+   "state": 208,
+   "group": 15,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1658.360465116279,
+    846.3488372093024
+   ],
+   "area": 86,
+   "terrain": "forest"
+  },
+  "13170": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Stark Forests",
+   "state": 208,
+   "group": 15,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1661.8658536585365,
+    825.3780487804878
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "13172": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Stark Forests",
+   "state": 208,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1667.4307692307693,
+    831.3692307692307
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "13173": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Stark Forests",
+   "state": 208,
+   "group": 15,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1658.057471264368,
+    835.2873563218391
+   ],
+   "area": 87,
+   "terrain": "forest"
+  },
+  "13177": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Stark Forests",
+   "state": 208,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1664.8484848484848,
+    842.530303030303
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "13179": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tythonian Gnarls",
+   "state": 210,
+   "group": 16,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1678.1566265060242,
+    865.7951807228916
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "13180": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tythonian Gnarls",
+   "state": 210,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1671.025,
+    849.9375
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "13181": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tythonian Gnarls",
+   "state": 210,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1687.6478873239437,
+    859.6056338028169
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "13182": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tythonian Gnarls",
+   "state": 210,
+   "group": 16,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1663.4880952380952,
+    855.2857142857143
+   ],
+   "area": 84,
+   "terrain": "forest"
+  },
+  "13187": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tythonian Gnarls",
+   "state": 210,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1680.1076923076923,
+    856.0615384615385
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "13188": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tythonian Gnarls",
+   "state": 210,
+   "group": 16,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1686.9178082191781,
+    867.6301369863014
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "13190": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tythonian Gnarls",
+   "state": 210,
+   "group": 16,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1670.1777777777777,
+    861.7555555555556
+   ],
+   "area": 90,
+   "terrain": "forest"
+  },
+  "13196": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1700.5714285714287,
+    852.6493506493506
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "13201": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": true,
+   "sea": 18868,
+   "centre": [
+    1699.6,
+    815.0526315789474
+   ],
+   "area": 95,
+   "terrain": "hills"
+  },
+  "13207": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1707.8,
+    833.0266666666666
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "13208": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1699.3176470588235,
+    827.964705882353
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "13222": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1701.7757009345794,
+    840.4766355140187
+   ],
+   "area": 107,
+   "terrain": "hills"
+  },
+  "13223": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": true,
+   "sea": 18868,
+   "centre": [
+    1708.044776119403,
+    820.1044776119403
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "13224": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1700.6753246753246,
+    864.3116883116883
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "13233": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1708.7733333333333,
+    848.6666666666666
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "13243": {
+   "zone": "fire",
+   "kind": 12,
+   "feature": "Kato Zakar",
+   "state": 211,
+   "group": 17,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1708.1358024691358,
+    858.0123456790124
+   ],
+   "area": 81,
+   "terrain": "hills"
+  }
+ }
+}

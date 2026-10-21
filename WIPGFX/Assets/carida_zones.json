@@ -1,0 +1,950 @@
+{
+ "centre": [
+  1430.8718493774672,
+  1159.0573944731248
+ ],
+ "radius": 32.37583134381607,
+ "vp_names": {
+  "639": "Academy of Carida",
+  "914": "Caridan District",
+  "944": "Academy Landing Field",
+  "1081": "Teeth Training Ground",
+  "1366": "Forgofshar Survival Camp",
+  "3302": "Ressl River",
+  "2866": "Carida Corsairs' Base",
+  "12093": "Forgofshar Desert",
+  "12116": "Tarkin's Teeth"
+ },
+ "provinces": {
+  "639": {
+   "zone": "academy",
+   "kind": 1,
+   "feature": "Academy of Carida",
+   "state": 164,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1424.5853658536585,
+    1156.439024390244
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "713": {
+   "zone": "academy",
+   "kind": 1,
+   "feature": "Academy of Carida",
+   "state": 164,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1425.4634146341464,
+    1161.6829268292684
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "914": {
+   "zone": "district",
+   "kind": 2,
+   "feature": "Caridan District",
+   "state": 164,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1433.4705882352941,
+    1158.7058823529412
+   ],
+   "area": 17,
+   "terrain": "urban"
+  },
+  "944": {
+   "zone": "field",
+   "kind": 13,
+   "feature": "Academy Landing Field",
+   "state": 164,
+   "group": 2,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1403.655172413793,
+    1156.103448275862
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "1081": {
+   "zone": "camp",
+   "kind": 3,
+   "feature": "Teeth Training Ground",
+   "state": 162,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1432.6764705882354,
+    1171.7058823529412
+   ],
+   "area": 34,
+   "terrain": "hills"
+  },
+  "1366": {
+   "zone": "camp",
+   "kind": 3,
+   "feature": "Forgofshar Survival Camp",
+   "state": 7,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1443.5882352941176,
+    1144.1176470588234
+   ],
+   "area": 17,
+   "terrain": "hills"
+  },
+  "2866": {
+   "zone": "ruins",
+   "kind": 4,
+   "feature": "Carida Corsairs' Base",
+   "state": 165,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1423.9333333333334,
+    1145.6
+   ],
+   "area": 15,
+   "terrain": "plains"
+  },
+  "3302": {
+   "zone": "valley",
+   "kind": 9,
+   "feature": "Ressl River",
+   "state": 163,
+   "group": 6,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1455.202614379085,
+    1169.4705882352941
+   ],
+   "area": 153,
+   "terrain": "forest"
+  },
+  "3324": {
+   "zone": "valley",
+   "kind": 9,
+   "feature": "Ressl River",
+   "state": 163,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1443.8165137614678,
+    1163.559633027523
+   ],
+   "area": 109,
+   "terrain": "forest"
+  },
+  "3623": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1416.4642857142858,
+    1138.0
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "3837": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1406.4324324324325,
+    1142.945945945946
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "4162": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1418.3823529411766,
+    1147.9705882352941
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "4264": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1426.1290322580646,
+    1132.8064516129032
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "4776": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1411.5116279069769,
+    1146.8372093023256
+   ],
+   "area": 43,
+   "terrain": "mountain"
+  },
+  "4846": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1421.0344827586207,
+    1130.6206896551723
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "5205": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1410.425,
+    1138.65
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "5878": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1421.7777777777778,
+    1135.4814814814815
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "5885": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1416.7027027027027,
+    1143.027027027027
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "5909": {
+   "zone": "glacier",
+   "kind": 10,
+   "feature": "Ice Cap",
+   "state": 1313,
+   "group": 7,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1414.75,
+    1133.40625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "5941": {
+   "zone": "peaks",
+   "kind": 11,
+   "feature": "Teeth Peaks",
+   "state": 1312,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1430.125,
+    1176.625
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "6036": {
+   "zone": "peaks",
+   "kind": 11,
+   "feature": "Teeth Peaks",
+   "state": 1312,
+   "group": 8,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1416.3,
+    1185.7666666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "11963": {
+   "zone": "peaks",
+   "kind": 11,
+   "feature": "Teeth Peaks",
+   "state": 1312,
+   "group": 8,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1441.2307692307693,
+    1186.6153846153845
+   ],
+   "area": 39,
+   "terrain": "mountain"
+  },
+  "11968": {
+   "zone": "peaks",
+   "kind": 11,
+   "feature": "Teeth Peaks",
+   "state": 1312,
+   "group": 8,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1428.578947368421,
+    1186.3684210526317
+   ],
+   "area": 57,
+   "terrain": "mountain"
+  },
+  "11969": {
+   "zone": "peaks",
+   "kind": 11,
+   "feature": "Teeth Peaks",
+   "state": 1312,
+   "group": 8,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1434.5454545454545,
+    1188.1136363636363
+   ],
+   "area": 44,
+   "terrain": "mountain"
+  },
+  "11993": {
+   "zone": "peaks",
+   "kind": 11,
+   "feature": "Teeth Peaks",
+   "state": 1312,
+   "group": 8,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1422.659090909091,
+    1186.340909090909
+   ],
+   "area": 44,
+   "terrain": "mountain"
+  },
+  "12000": {
+   "zone": "peaks",
+   "kind": 11,
+   "feature": "Teeth Peaks",
+   "state": 1312,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1435.611111111111,
+    1180.9259259259259
+   ],
+   "area": 54,
+   "terrain": "mountain"
+  },
+  "12005": {
+   "zone": "ranges",
+   "kind": 12,
+   "feature": "Southern Ranges",
+   "state": 1314,
+   "group": 9,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1458.8688524590164,
+    1160.5245901639344
+   ],
+   "area": 61,
+   "terrain": "mountain"
+  },
+  "12008": {
+   "zone": "ranges",
+   "kind": 12,
+   "feature": "Southern Ranges",
+   "state": 1314,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1443.8461538461538,
+    1155.871794871795
+   ],
+   "area": 39,
+   "terrain": "mountain"
+  },
+  "12023": {
+   "zone": "ranges",
+   "kind": 12,
+   "feature": "Southern Ranges",
+   "state": 1314,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1454.3783783783783,
+    1154.7837837837837
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "12029": {
+   "zone": "ranges",
+   "kind": 12,
+   "feature": "Southern Ranges",
+   "state": 1314,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1450.159090909091,
+    1159.1363636363637
+   ],
+   "area": 44,
+   "terrain": "mountain"
+  },
+  "12036": {
+   "zone": "ranges",
+   "kind": 12,
+   "feature": "Southern Ranges",
+   "state": 1314,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1449.0,
+    1151.8947368421052
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "12037": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1403.2592592592594,
+    1165.6543209876543
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "12044": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1433.8292682926829,
+    1155.3902439024391
+   ],
+   "area": 41,
+   "terrain": "hills"
+  },
+  "12053": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1419.1014492753623,
+    1163.8260869565217
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "12059": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1413.121951219512,
+    1155.280487804878
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "12060": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1404.1960784313726,
+    1148.4901960784314
+   ],
+   "area": 51,
+   "terrain": "hills"
+  },
+  "12063": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1411.3866666666668,
+    1164.28
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "12071": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1431.7586206896551,
+    1160.655172413793
+   ],
+   "area": 29,
+   "terrain": "hills"
+  },
+  "12078": {
+   "zone": "plateau",
+   "kind": 5,
+   "feature": "Spinara Plateau",
+   "state": 164,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1421.7058823529412,
+    1152.7254901960785
+   ],
+   "area": 51,
+   "terrain": "hills"
+  },
+  "12080": {
+   "zone": "desert",
+   "kind": 6,
+   "feature": "Forgofshar Desert",
+   "state": 7,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1440.5897435897436,
+    1149.128205128205
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "12084": {
+   "zone": "desert",
+   "kind": 6,
+   "feature": "Forgofshar Desert",
+   "state": 7,
+   "group": 11,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1459.013888888889,
+    1150.9722222222222
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "12087": {
+   "zone": "desert",
+   "kind": 6,
+   "feature": "Forgofshar Desert",
+   "state": 7,
+   "group": 11,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1453.0307692307692,
+    1139.753846153846
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "12090": {
+   "zone": "desert",
+   "kind": 6,
+   "feature": "Forgofshar Desert",
+   "state": 7,
+   "group": 11,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1444.1969696969697,
+    1133.030303030303
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "12093": {
+   "zone": "desert",
+   "kind": 6,
+   "feature": "Forgofshar Desert",
+   "state": 7,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1450.84375,
+    1145.984375
+   ],
+   "area": 64,
+   "terrain": "desert"
+  },
+  "12103": {
+   "zone": "desert",
+   "kind": 6,
+   "feature": "Forgofshar Desert",
+   "state": 7,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1444.0892857142858,
+    1139.7857142857142
+   ],
+   "area": 56,
+   "terrain": "desert"
+  },
+  "12106": {
+   "zone": "teeth",
+   "kind": 8,
+   "feature": "Tarkin's Teeth",
+   "state": 162,
+   "group": 12,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1407.4761904761904,
+    1173.642857142857
+   ],
+   "area": 84,
+   "terrain": "mountain"
+  },
+  "12109": {
+   "zone": "teeth",
+   "kind": 8,
+   "feature": "Tarkin's Teeth",
+   "state": 162,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1436.55,
+    1174.4
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "12116": {
+   "zone": "teeth",
+   "kind": 8,
+   "feature": "Tarkin's Teeth",
+   "state": 162,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1425.3809523809523,
+    1169.8253968253969
+   ],
+   "area": 63,
+   "terrain": "mountain"
+  },
+  "12120": {
+   "zone": "teeth",
+   "kind": 8,
+   "feature": "Tarkin's Teeth",
+   "state": 162,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1423.4647887323943,
+    1179.0140845070423
+   ],
+   "area": 71,
+   "terrain": "mountain"
+  },
+  "12122": {
+   "zone": "teeth",
+   "kind": 8,
+   "feature": "Tarkin's Teeth",
+   "state": 162,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1432.7708333333333,
+    1166.0625
+   ],
+   "area": 48,
+   "terrain": "mountain"
+  },
+  "12123": {
+   "zone": "teeth",
+   "kind": 8,
+   "feature": "Tarkin's Teeth",
+   "state": 162,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1417.1714285714286,
+    1172.942857142857
+   ],
+   "area": 70,
+   "terrain": "mountain"
+  },
+  "12126": {
+   "zone": "teeth",
+   "kind": 8,
+   "feature": "Tarkin's Teeth",
+   "state": 162,
+   "group": 12,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1412.92,
+    1180.2266666666667
+   ],
+   "area": 75,
+   "terrain": "mountain"
+  },
+  "12135": {
+   "zone": "valley",
+   "kind": 9,
+   "feature": "Ressl Valley",
+   "state": 163,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1443.125,
+    1174.0833333333333
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "12141": {
+   "zone": "valley",
+   "kind": 9,
+   "feature": "Ressl Valley",
+   "state": 163,
+   "group": 13,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1451.09375,
+    1178.828125
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "12144": {
+   "zone": "valley",
+   "kind": 9,
+   "feature": "Ressl Valley",
+   "state": 163,
+   "group": 13,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1444.8153846153846,
+    1182.1384615384616
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "12147": {
+   "zone": "valley",
+   "kind": 9,
+   "feature": "Ressl Valley",
+   "state": 163,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1438.780487804878,
+    1167.1463414634147
+   ],
+   "area": 41,
+   "terrain": "forest"
+  },
+  "12163": {
+   "zone": "tundra",
+   "kind": 7,
+   "feature": "Caridan Tundra",
+   "state": 165,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1433.686274509804,
+    1149.2745098039215
+   ],
+   "area": 51,
+   "terrain": "plains"
+  },
+  "12166": {
+   "zone": "tundra",
+   "kind": 7,
+   "feature": "Caridan Tundra",
+   "state": 165,
+   "group": 14,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1430.5263157894738,
+    1130.0
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "12177": {
+   "zone": "tundra",
+   "kind": 7,
+   "feature": "Caridan Tundra",
+   "state": 165,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1424.878787878788,
+    1140.378787878788
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "12192": {
+   "zone": "tundra",
+   "kind": 7,
+   "feature": "Caridan Tundra",
+   "state": 165,
+   "group": 14,
+   "coastal": true,
+   "sea": 18950,
+   "centre": [
+    1436.6315789473683,
+    1132.6491228070176
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "12194": {
+   "zone": "tundra",
+   "kind": 7,
+   "feature": "Caridan Tundra",
+   "state": 165,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1427.5714285714287,
+    1147.7551020408164
+   ],
+   "area": 49,
+   "terrain": "plains"
+  },
+  "12200": {
+   "zone": "tundra",
+   "kind": 7,
+   "feature": "Caridan Tundra",
+   "state": 165,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1434.2469135802469,
+    1140.2222222222222
+   ],
+   "area": 81,
+   "terrain": "plains"
+  }
+ }
+}

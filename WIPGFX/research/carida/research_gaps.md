@@ -1,0 +1,29 @@
+# Carida: research gaps
+Status: open = nothing found, partial = some evidence, decision = needs a design choice, covered = enough for design. `--gaps` runs the searches of open/partial gaps once each.
+
+## settlements [open]
+Which settlements exist (capital, towns) and what do they look like?
+Needed for: state capitals, VP names, city models.
+- search `Carida city`
+- search `Carida settlement`
+- search `Carida village`
+
+## biomes [partial]
+Which biomes cover the surface, in what proportion?
+Needed for: terrain mix and zones.
+- search `Carida jungle`
+- search `Carida terrain`
+
+## layout [open]
+Where are things relative to each other (hemispheres, coasts, regions)?
+Needed for: placing zones and states; canon rarely gives a map, so most layout will be a labelled design choice.
+- search `Carida northern`
+- search `Carida southern`
+- search `Carida region`
+- search `Carida continent`
+
+## continuity [decision]
+Canon and Legends disagree on: affiliation, atmosphere, interest, suns, terrain. Which one does the mod follow?
+Needed for: the dossier never merges them; the user / design picks.
+
+Covered: landmarks, clone_wars_control, battles, visuals

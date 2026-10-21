@@ -1571,6 +1571,11 @@ def zone_repaint(mod):
         for k, (rgb, st) in cfg.get("tint", {}).items():
             m = ndi.gaussian_filter((zh == k).astype(np.float32), 0.8)[..., None] * st
             cm[..., :3] = cm[..., :3] * (1 - m) + np.array(rgb, np.float32) * m
+        lt = cfg.get("lights")                                             # lights=dict(zones, rgb, density, mix): city glow
+        if lt:                                                             # specks on the colormap (always day: no emissive)
+            lrng = np.random.default_rng(int(sub.sum()) * 17 + 3)
+            spot = np.isin(zh, lt["zones"]) & (lrng.random(zh.shape) < lt["density"])
+            cm[spot, :3] = cm[spot, :3] * (1 - lt["mix"]) + np.array(lt["rgb"], np.float32) * lt["mix"]
         return t, trees, city, hn, cm
     return fn
 

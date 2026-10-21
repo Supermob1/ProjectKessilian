@@ -1,0 +1,966 @@
+{
+ "centre": [
+  1748.00697392359,
+  964.1021831412977
+ ],
+ "radius": 32.40040130359718,
+ "vp_names": {
+  "146": "Incom Headquarters",
+  "686": "Afterburner Arches",
+  "758": "Z-95 Test Range",
+  "947": "Incom Warehouse",
+  "13392": "Coromon Islands",
+  "13438": "Outer Coromon",
+  "13445": "ViGureni Highlands",
+  "13531": "Southern ViGureni",
+  "13600": "ViGureni East Coast",
+  "13518": "ViGureni"
+ },
+ "provinces": {
+  "146": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Incom Headquarters",
+   "state": 9,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1739.6037735849056,
+    946.2641509433962
+   ],
+   "area": 53,
+   "terrain": "urban"
+  },
+  "483": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Incom Headquarters",
+   "state": 9,
+   "group": 0,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1729.3578947368421,
+    941.8315789473684
+   ],
+   "area": 95,
+   "terrain": "urban"
+  },
+  "686": {
+   "zone": "arches",
+   "kind": 2,
+   "feature": "Afterburner Arches",
+   "state": 9,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1732.0384615384614,
+    952.2692307692307
+   ],
+   "area": 26,
+   "terrain": "hills"
+  },
+  "758": {
+   "zone": "range",
+   "kind": 3,
+   "feature": "Z-95 Test Range",
+   "state": 288,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1746.267857142857,
+    938.1964285714286
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "947": {
+   "zone": "warehouse",
+   "kind": 4,
+   "feature": "Incom Warehouse",
+   "state": 290,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1752.0,
+    973.0
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "1154": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1738.58,
+    966.62
+   ],
+   "area": 50,
+   "terrain": "mountain"
+  },
+  "1156": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1741.7142857142858,
+    943.3809523809524
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "1228": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1723.774193548387,
+    962.258064516129
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "1414": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1750.0208333333333,
+    957.0416666666666
+   ],
+   "area": 48,
+   "terrain": "mountain"
+  },
+  "1730": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1736.5185185185185,
+    950.2592592592592
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "2269": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.3469387755101,
+    961.8775510204082
+   ],
+   "area": 49,
+   "terrain": "mountain"
+  },
+  "2508": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.9302325581396,
+    951.4186046511628
+   ],
+   "area": 43,
+   "terrain": "mountain"
+  },
+  "2519": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1734.9574468085107,
+    961.2978723404256
+   ],
+   "area": 47,
+   "terrain": "mountain"
+  },
+  "2750": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1740.8703703703704,
+    956.6111111111111
+   ],
+   "area": 54,
+   "terrain": "mountain"
+  },
+  "4434": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Coromon Sea",
+   "state": 1329,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1734.0967741935483,
+    943.7096774193549
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "4781": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1770.6904761904761,
+    945.6428571428571
+   ],
+   "area": 42,
+   "terrain": "mountain"
+  },
+  "4835": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1759.7674418604652,
+    937.1627906976744
+   ],
+   "area": 43,
+   "terrain": "mountain"
+  },
+  "4884": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1763.45,
+    953.75
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "5633": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1775.5,
+    957.65
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "5895": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1761.9056603773586,
+    946.1698113207547
+   ],
+   "area": 53,
+   "terrain": "mountain"
+  },
+  "5932": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1765.7333333333333,
+    940.6444444444444
+   ],
+   "area": 45,
+   "terrain": "mountain"
+  },
+  "13247": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1768.3333333333333,
+    951.025641025641
+   ],
+   "area": 39,
+   "terrain": "mountain"
+  },
+  "13252": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1774.780487804878,
+    951.2926829268292
+   ],
+   "area": 41,
+   "terrain": "mountain"
+  },
+  "13269": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Ocean",
+   "state": 1330,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1769.095238095238,
+    957.6666666666666
+   ],
+   "area": 42,
+   "terrain": "mountain"
+  },
+  "13281": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "ViGureni Mountains",
+   "state": 1331,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.0,
+    983.0
+   ],
+   "area": 59,
+   "terrain": "mountain"
+  },
+  "13295": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "ViGureni Mountains",
+   "state": 1331,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1758.3823529411766,
+    977.7058823529412
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "13304": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "ViGureni Mountains",
+   "state": 1331,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1737.6222222222223,
+    982.8222222222222
+   ],
+   "area": 45,
+   "terrain": "mountain"
+  },
+  "13307": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "ViGureni Mountains",
+   "state": 1331,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.8135593220338,
+    982.9491525423729
+   ],
+   "area": 59,
+   "terrain": "mountain"
+  },
+  "13326": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Prime Coromon",
+   "state": 9,
+   "group": 7,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1722.7692307692307,
+    950.9076923076923
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "13346": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Prime Coromon",
+   "state": 9,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1731.1470588235295,
+    952.9264705882352
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "13347": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Coromon Islands",
+   "state": 288,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1754.9848484848485,
+    942.1060606060606
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "13353": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Coromon Islands",
+   "state": 288,
+   "group": 8,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1740.5686274509803,
+    935.843137254902
+   ],
+   "area": 51,
+   "terrain": "hills"
+  },
+  "13371": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Coromon Islands",
+   "state": 288,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1755.671052631579,
+    952.0263157894736
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "13382": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Coromon Islands",
+   "state": 288,
+   "group": 8,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1751.2978723404256,
+    934.531914893617
+   ],
+   "area": 47,
+   "terrain": "hills"
+  },
+  "13392": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Coromon Islands",
+   "state": 288,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1748.4166666666667,
+    945.3166666666667
+   ],
+   "area": 60,
+   "terrain": "hills"
+  },
+  "13405": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Outer Coromon",
+   "state": 293,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1729.7837837837837,
+    965.7027027027027
+   ],
+   "area": 37,
+   "terrain": "hills"
+  },
+  "13414": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Outer Coromon",
+   "state": 293,
+   "group": 9,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1721.4310344827586,
+    974.7586206896551
+   ],
+   "area": 58,
+   "terrain": "hills"
+  },
+  "13433": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Outer Coromon",
+   "state": 293,
+   "group": 9,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1723.0813953488373,
+    958.2674418604652
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "13438": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Outer Coromon",
+   "state": 293,
+   "group": 9,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1719.621212121212,
+    966.7121212121212
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "13439": {
+   "zone": "isles",
+   "kind": 5,
+   "feature": "Outer Coromon",
+   "state": 293,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1728.0,
+    970.936507936508
+   ],
+   "area": 63,
+   "terrain": "hills"
+  },
+  "13445": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "ViGureni Highlands",
+   "state": 289,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1730.0,
+    979.3018867924528
+   ],
+   "area": 53,
+   "terrain": "hills"
+  },
+  "13453": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "ViGureni Highlands",
+   "state": 289,
+   "group": 10,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1739.6376811594203,
+    991.0
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "13454": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "ViGureni Highlands",
+   "state": 289,
+   "group": 10,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1732.1142857142856,
+    987.8428571428572
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "13474": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "ViGureni Highlands",
+   "state": 289,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1737.7714285714285,
+    977.6285714285714
+   ],
+   "area": 35,
+   "terrain": "hills"
+  },
+  "13475": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "ViGureni Highlands",
+   "state": 289,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1734.575,
+    972.9
+   ],
+   "area": 40,
+   "terrain": "hills"
+  },
+  "13479": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "ViGureni Highlands",
+   "state": 289,
+   "group": 10,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1724.4117647058824,
+    982.1372549019608
+   ],
+   "area": 51,
+   "terrain": "hills"
+  },
+  "13480": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "ViGureni",
+   "state": 290,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1759.2456140350878,
+    973.1754385964912
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "13481": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "ViGureni",
+   "state": 290,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1742.8125,
+    971.890625
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "13498": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "ViGureni",
+   "state": 290,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1756.32,
+    960.66
+   ],
+   "area": 50,
+   "terrain": "plains"
+  },
+  "13504": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "ViGureni",
+   "state": 290,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1748.0,
+    976.24
+   ],
+   "area": 50,
+   "terrain": "plains"
+  },
+  "13518": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "ViGureni",
+   "state": 290,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1750.063492063492,
+    966.936507936508
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "13524": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "ViGureni",
+   "state": 290,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1758.1041666666667,
+    966.9791666666666
+   ],
+   "area": 48,
+   "terrain": "plains"
+  },
+  "13531": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern ViGureni",
+   "state": 291,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1769.9827586206898,
+    965.0172413793103
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "13543": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern ViGureni",
+   "state": 291,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1763.0,
+    961.4285714285714
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "13557": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern ViGureni",
+   "state": 291,
+   "group": 12,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1771.5633802816901,
+    979.2394366197183
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "13562": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern ViGureni",
+   "state": 291,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1766.8064516129032,
+    971.758064516129
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "13569": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern ViGureni",
+   "state": 291,
+   "group": 12,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1775.241935483871,
+    972.2903225806451
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "13572": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Southern ViGureni",
+   "state": 291,
+   "group": 12,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1777.4107142857142,
+    964.0
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "13573": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "ViGureni East Coast",
+   "state": 292,
+   "group": 13,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1748.685393258427,
+    992.1348314606741
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "13583": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "ViGureni East Coast",
+   "state": 292,
+   "group": 13,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1767.1525423728813,
+    986.2033898305085
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "13600": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "ViGureni East Coast",
+   "state": 292,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1756.7916666666667,
+    986.7916666666666
+   ],
+   "area": 48,
+   "terrain": "plains"
+  },
+  "13616": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "ViGureni East Coast",
+   "state": 292,
+   "group": 13,
+   "coastal": true,
+   "sea": 18822,
+   "centre": [
+    1759.566037735849,
+    991.5471698113207
+   ],
+   "area": 53,
+   "terrain": "plains"
+  },
+  "13617": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "ViGureni East Coast",
+   "state": 292,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1762.3396226415093,
+    981.433962264151
+   ],
+   "area": 53,
+   "terrain": "plains"
+  }
+ }
+}

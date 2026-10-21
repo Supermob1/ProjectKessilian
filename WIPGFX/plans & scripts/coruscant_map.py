@@ -17,7 +17,11 @@ between Commerce and the Temple; the Temple's interior as three bays (the Archiv
 of a Thousand Fountains); the impassable megablocks.
 The COMPOR arcology (Legends: the Commission for the Protection of the Republic, formed in the Clone Wars; canon: the
 COMPNOR arcology of the Federal District houses the ISB Central Office, a complex the size of several city blocks).
-Invented names: the Commerce Exchange, the four Megablocks.
+The spaceports (the user, 2026-10-21: lanes that land where they point, a planet that is hard to invade): a ring of
+megablocks walls the whole rim, broken only by three one-province spaceports, each facing the world its hyperlane
+runs to (Esseles north, Anaxes east, Tython south) and fortified with coastal bunkers; Eastport (Legends) takes the
+fleet's port.
+Invented names: the Commerce Exchange, the five Megablocks, Northport, Southport.
     python "WIPGFX/plans & scripts/coruscant_map.py" [--allow-dirty]   provinces.bmp, definition.csv, states, ...
     python "WIPGFX/plans & scripts/coruscant_map.py" --dry OUT.png      layout + every check, writes only OUT.png
 All 197 province ids are kept (strategic region unchanged); only the pixels move.
@@ -73,19 +77,25 @@ def Oc(x, y, r):
 
 
 KIND = {"senate": 1, "temple": 2, "landmark": 3, "avenue": 4, "spire": 5, "works": 6, "underworld": 7, "district": 8,
-        "towers": 9, "blocks": 10}
+        "towers": 9, "blocks": 10, "spaceport": 11}
 TERRAIN = {"senate": "urban", "temple": "urban", "landmark": "urban", "avenue": "urban", "spire": "urban", "works": "urban",
-           "underworld": "urban", "district": "urban", "towers": "urban", "blocks": "mountain"}
+           "underworld": "urban", "district": "urban", "towers": "urban", "blocks": "mountain", "spaceport": "urban"}
 SEED = 1
 CAPITAL = 1
 CAPITAL_VP = "Senate Building"
 CORE = "REP"
 PORT_STATE = 122                     # CoCo Town, which reaches the rim (the megablocks wall the rest)
-OWNER = {s: "REP" for s in (1, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 1307, 1308, 1309, 1310)}
+OWNER = {s: "REP" for s in (1, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 1307, 1308, 1309, 1310, 1311)}
 WARP = (0.025, 9)
 TARGET_PASSABLE = 125                # user rule: passable provinces outnumber impassable (~125 / 72, the blocks are big)
-STRAIGHT = {"senate", "temple", "landmark", "avenue", "spire", "works", "underworld", "district", "towers"}
+RIM = 0.88                           # only the spaceports reach past this share of the radius: the rest of the rim is megablocks
+SPACEPORT_BUNKER = 3                 # coastal bunker level on every spaceport
+STRAIGHT = {"spaceport", "senate", "temple", "landmark", "avenue", "spire", "works", "underworld", "district", "towers"}
 FEATURES = [
+    # the spaceports: the only landing grounds on the rim, each facing its hyperlane
+    ("Northport", "spaceport", 125, 1, [Rc(760, -330, 900, -150)]),
+    ("Eastport", "spaceport", 122, 1, [Rc(1800, 300, 2250, 440)]),
+    ("Southport", "spaceport", 123, 1, [Rc(1140, 1850, 1280, 2150)]),
     # the landmarks, at their places in 1.png
     ("Senate Building", "senate", CAPITAL, 1, [Ci(765, 470, 115)]),
     ("Senate Plaza", "avenue", CAPITAL, 1, [Rc(690, 580, 840, 700)]),
@@ -119,12 +129,13 @@ FEATURES = [
     ("Level 1313 Shaft", "underworld", 130, 0, [Rc(1110, 1040, 1262, 1240)]),
 ]
 # the megablocks: everything else, by nearest seed
-SEEDS = {1307: (P(450, 40), "blocks"), 1308: (P(40, 700), "blocks"), 1309: (P(350, 1700), "blocks"), 1310: (P(1960, 700), "blocks")}
+SEEDS = {1307: (P(450, 40), "blocks"), 1308: (P(40, 700), "blocks"), 1309: (P(350, 1700), "blocks"), 1310: (P(1960, 700), "blocks"),
+         1311: (P(1700, -150), "blocks")}   # the rim arc between Northport and Eastport
 STATE_NAMES = {CAPITAL: "Federal District", 122: "CoCo Town", 123: "The Works", 124: "Southern Underground",
                125: "Spaceport District", 126: "Senate District", 127: "Entertainment District", 128: "Temple Precinct",
                129: "Financial District", 130: "Level 1313", 131: "Arts District", 1307: "Northern Megablocks",
-               1308: "Western Megablocks", 1309: "Southern Megablocks", 1310: "Eastern Megablocks"}
-IMPASSABLE = {1307, 1308, 1309, 1310}
+               1308: "Western Megablocks", 1309: "Southern Megablocks", 1310: "Eastern Megablocks", 1311: "North-eastern Megablocks"}
+IMPASSABLE = {1307, 1308, 1309, 1310, 1311}
 VPS = [(CAPITAL, "Senate Building", CAPITAL_VP, 50), (CAPITAL, "Senate Plaza", "Senate Plaza", 2),
        (CAPITAL, "Processional Way", "Processional Way", 3), (CAPITAL, "Republic Executive Building", "Republic Executive Building", 10),
        (CAPITAL, "Monument Plaza", "Monument Plaza", 5), (126, "Galaxies Opera House", "Galaxies Opera House", 5),
@@ -132,18 +143,20 @@ VPS = [(CAPITAL, "Senate Building", CAPITAL_VP, 50), (CAPITAL, "Senate Plaza", "
        (128, "Jedi High Council Chamber", "Jedi Temple", 20), (128, "Jedi Archives", "Jedi Archives", 5),
        (128, "Room of a Thousand Fountains", "Room of a Thousand Fountains", 2), (122, "Dex's Diner", "Dex's Diner", 2),
        (122, "Commerce Exchange", "Commerce Exchange", 3), 
+       (125, "Northport", "Northport", 2), (122, "Eastport", "Eastport", 3), (123, "Southport", "Southport", 2),
        (125, "Spaceport District", "Spaceport District", 3), (127, "Outlander Club", "Outlander Club", 3), (131, "500 Republica", "500 Republica", 5),
        (123, "The Works", "The Works", 5), (129, "Financial District", "Financial District", 5),
        (124, "Southern Underground", "Southern Underground", 2), (127, "Entertainment District", "Entertainment District", 2)]
 
 TERRAIN_CFG = dict(
-    seed=1, base=4, rough=1, open=(4, 8, 9),
+    seed=1, base=4, rough=1, open=(4, 8, 9, 11),
     zones={
         1: dict(relief=("flat", 6), tex="URBAN"),                                                     # the Senate
         2: dict(relief=("flat", 6), tex="URBAN"),                                                     # the Temple
         3: dict(relief=("flat", 5), tex="URBAN"),                                                     # the landmarks
         4: dict(relief=("flat", 5), tex=["URBAN", ("ROCK2", ">", 0.85)]),                             # avenues, plazas
         5: dict(relief=("flat", 5), tex="URBAN"),                                                     # the spires
+        11: dict(relief=("flat", 5), tex=["URBAN", ("ROCK2", ">", 0.85)]),                            # the spaceports
         6: dict(relief=("flat", 4), tex=["URBAN", ("BROWN", ">", 0.6)]),                              # the Works
         7: dict(relief=("flat", 3), tex=["URBAN", ("ROCK2", ">", 0.5)]),                              # Level 1313
         8: dict(relief=("flat", 5), tex=["URBAN", (13, ">", 0.4)]),                                   # the districts
@@ -152,8 +165,10 @@ TERRAIN_CFG = dict(
     },
     city={8: 81, 9: 81, 10: 81, 6: 81, 7: 81},   # map/cities.txt 81: Coruscant's towers (cos_town), fewer and bigger
     prop_clear=1.5,
+    lights=dict(zones=(8, 9, 10, 6, 7), rgb=(1.0, 0.56, 0.18), density=0.22, mix=0.85),   # Coruscant's orange glow
     colors={1: (0.62, 0.62, 0.64), 2: (0.66, 0.64, 0.6), 3: (0.58, 0.58, 0.6), 4: (0.64, 0.64, 0.66), 5: (0.56, 0.56, 0.58),
-            6: (0.46, 0.44, 0.42), 7: (0.36, 0.36, 0.4), 8: (0.56, 0.56, 0.58), 9: (0.58, 0.58, 0.6), 10: (0.44, 0.44, 0.47)},
+            6: (0.46, 0.44, 0.42), 7: (0.36, 0.36, 0.4), 8: (0.56, 0.56, 0.58), 9: (0.58, 0.58, 0.6), 10: (0.44, 0.44, 0.47),
+            11: (0.64, 0.64, 0.66)},
 )
 
 PLACEMENT = dict(
@@ -199,12 +214,13 @@ def layout(m, rng):
     U = U0 + (g.noise(U0.shape, WARP[1], rng, 2) - 0.5) * 2 * WARP[0]
     V = V0 + (g.noise(U0.shape, WARP[1], rng, 2) - 0.5) * 2 * WARP[0]
     sm = m[sl]
+    inner = np.hypot(U0, V0) < RIM
     fid = np.full(sm.shape, -1, np.int32)
     feats = []
     for name, k, sid, n, shapes in FEATURES:
         feats.append((name, k, sid, n))
         u_, v_ = (U0, V0) if k in STRAIGHT else (U, V)
-        fid[sm & (fid < 0) & np.any([shape(s_, u_, v_) for s_ in shapes], 0)] = len(feats) - 1
+        fid[sm & (fid < 0) & (inner | (k == "spaceport")) & np.any([shape(s_, u_, v_) for s_ in shapes], 0)] = len(feats) - 1
     free = sm & (fid < 0)
     sids = list(SEEDS)
     d = np.stack([np.hypot(U - SEEDS[s][0][0], V - SEEDS[s][0][1]) for s in sids])
@@ -324,11 +340,15 @@ def states(prov, land, m, newpid, rng):
         man = re.search(r"manpower\s*=\s*(\d+)", src).group(1) if src else "1000"
         cat = re.search(r"state_category\s*=\s*(\w+)", src).group(1) if src else "wasteland_sector"
         imp = ""
+        pb = {p: {"coastal_bunker": SPACEPORT_BUNKER} for p in provs if prov[p]["zone"] == "spaceport"}
         if sid == PORT_STATE:                                            # the fleet's port and yards: the landing zone
             if docks:
                 bld = bld.rstrip().rstrip("}") + f"\tdockyard = {docks}\n\t\t}}"
             if naval:
-                bld = bld.rstrip().rstrip("}") + f"\t\t\t{port} = {{\n\t\t\t\tnaval_base = {max(naval)}\n\t\t\t}}\n\t\t}}"
+                pb.setdefault(port, {})["naval_base"] = max(naval)
+        for p, b in sorted(pb.items()):
+            bld = (bld.rstrip().rstrip("}") + f"\t\t\t{p} = {{\n" + "".join(f"\t\t\t\t{k} = {v}\n" for k, v in b.items())
+                   + "\t\t\t}\n\t\t}")
         if sid in IMPASSABLE:
             imp = "\timpassable = yes\n"
             bld = "\n\t\tbuildings = {\n\t\t\tinfrastructure = 0\n\t\t}"

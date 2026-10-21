@@ -1,0 +1,967 @@
+{
+ "centre": [
+  1837.2561933534744,
+  1104.6238670694863
+ ],
+ "radius": 32.459293326693775,
+ "vp_names": {
+  "67": "Coronet City",
+  "1172": "The Bottoms",
+  "1206": "Treasure Ship Row",
+  "1231": "CorSec Headquarters",
+  "1402": "Doaba Guerfel",
+  "14110": "Bela Vistal",
+  "2467": "Kor Vella",
+  "2551": "Tyrena",
+  "2825": "Agrilat Swamps",
+  "3092": "Hunchuzuc Den",
+  "3130": "Gold Beaches"
+ },
+ "provinces": {
+  "67": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Coronet City",
+   "state": 22,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1827.0,
+    1110.7954545454545
+   ],
+   "area": 44,
+   "terrain": "urban"
+  },
+  "881": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Coronet City",
+   "state": 22,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1827.8918918918919,
+    1116.4594594594594
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "1172": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "The Bottoms",
+   "state": 22,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1833.95,
+    1117.25
+   ],
+   "area": 20,
+   "terrain": "urban"
+  },
+  "1206": {
+   "zone": "shiprow",
+   "kind": 3,
+   "feature": "Treasure Ship Row",
+   "state": 22,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1828.1525423728813,
+    1123.2881355932204
+   ],
+   "area": 59,
+   "terrain": "urban"
+  },
+  "1231": {
+   "zone": "corsec",
+   "kind": 4,
+   "feature": "CorSec Headquarters",
+   "state": 22,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1832.0,
+    1103.0
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "1402": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Doaba Guerfel",
+   "state": 346,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1827.1304347826087,
+    1098.9565217391305
+   ],
+   "area": 23,
+   "terrain": "urban"
+  },
+  "1916": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Bela Vistal",
+   "state": 351,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1811.8846153846155,
+    1113.8461538461538
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "2467": {
+   "zone": "mesa",
+   "kind": 5,
+   "feature": "Kor Vella",
+   "state": 347,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1839.7368421052631,
+    1082.2631578947369
+   ],
+   "area": 38,
+   "terrain": "hills"
+  },
+  "2551": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Tyrena",
+   "state": 350,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1849.576923076923,
+    1106.8846153846155
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "2825": {
+   "zone": "swamp",
+   "kind": 10,
+   "feature": "Agrilat Swamps",
+   "state": 348,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1855.4252873563219,
+    1092.3793103448277
+   ],
+   "area": 87,
+   "terrain": "marsh"
+  },
+  "3092": {
+   "zone": "den",
+   "kind": 6,
+   "feature": "Hunchuzuc Den",
+   "state": 349,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1843.7,
+    1125.8
+   ],
+   "area": 20,
+   "terrain": "hills"
+  },
+  "3130": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Gold Beaches",
+   "state": 352,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1858.28,
+    1120.64
+   ],
+   "area": 25,
+   "terrain": "plains"
+  },
+  "3554": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1823.3076923076924,
+    1078.8846153846155
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "3680": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1814.68,
+    1102.64
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "5120": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1817.2758620689656,
+    1088.9310344827586
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "5437": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1819.8181818181818,
+    1097.3181818181818
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "5478": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1818.695652173913,
+    1080.4347826086957
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "6189": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1814.1851851851852,
+    1097.962962962963
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "6195": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1818.84,
+    1084.4
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13767": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1829.5,
+    1077.0
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "13768": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1819.6296296296296,
+    1102.0740740740741
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "13781": {
+   "zone": "peaks",
+   "kind": 13,
+   "feature": "Nomad Peaks",
+   "state": 1345,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1817.0740740740741,
+    1093.6296296296296
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "13802": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Corellian Sea",
+   "state": 1346,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1865.4444444444443,
+    1094.4722222222222
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "13813": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Corellian Sea",
+   "state": 1346,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1858.25,
+    1081.5
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "13818": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Corellian Sea",
+   "state": 1346,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1866.081081081081,
+    1107.1891891891892
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "13819": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Corellian Sea",
+   "state": 1346,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1863.7222222222222,
+    1088.2777777777778
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "13825": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Corellian Sea",
+   "state": 1346,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1865.872340425532,
+    1101.1063829787233
+   ],
+   "area": 47,
+   "terrain": "mountain"
+  },
+  "13847": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Selonian Sea",
+   "state": 1347,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1837.4516129032259,
+    1135.5483870967741
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "13854": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Selonian Sea",
+   "state": 1347,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1851.1785714285713,
+    1130.9285714285713
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "13855": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Selonian Sea",
+   "state": 1347,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1830.0555555555557,
+    1133.5555555555557
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "13863": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Selonian Sea",
+   "state": 1347,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1841.3428571428572,
+    1132.0
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "13872": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Selonian Sea",
+   "state": 1347,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1835.0967741935483,
+    1130.9354838709678
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "13882": {
+   "zone": "sea",
+   "kind": 12,
+   "feature": "Selonian Sea",
+   "state": 1347,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1846.1612903225807,
+    1133.0
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "13894": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Coronet City",
+   "state": 22,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1834.2166666666667,
+    1110.4666666666667
+   ],
+   "area": 60,
+   "terrain": "urban"
+  },
+  "13900": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Nomad Mountains",
+   "state": 346,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1832.7073170731708,
+    1095.5975609756097
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "13907": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Nomad Mountains",
+   "state": 346,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1824.7326732673268,
+    1090.4653465346535
+   ],
+   "area": 101,
+   "terrain": "hills"
+  },
+  "13923": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Nomad Mountains",
+   "state": 346,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1825.7384615384615,
+    1104.076923076923
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "13924": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Kor Vella",
+   "state": 347,
+   "group": 16,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1845.6904761904761,
+    1077.702380952381
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "13930": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Kor Vella",
+   "state": 347,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1839.4142857142858,
+    1094.857142857143
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "13934": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Kor Vella",
+   "state": 347,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1827.9782608695652,
+    1081.804347826087
+   ],
+   "area": 46,
+   "terrain": "plains"
+  },
+  "13942": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Kor Vella",
+   "state": 347,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1845.113924050633,
+    1087.2025316455697
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "13955": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Kor Vella",
+   "state": 347,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1833.9027777777778,
+    1085.7777777777778
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "13957": {
+   "zone": "plains",
+   "kind": 7,
+   "feature": "Kor Vella",
+   "state": 347,
+   "group": 16,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1834.0919540229886,
+    1075.7701149425288
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "13964": {
+   "zone": "swamp",
+   "kind": 10,
+   "feature": "Agrilat",
+   "state": 348,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1849.1764705882354,
+    1094.9117647058824
+   ],
+   "area": 68,
+   "terrain": "marsh"
+  },
+  "13969": {
+   "zone": "swamp",
+   "kind": 10,
+   "feature": "Agrilat",
+   "state": 348,
+   "group": 17,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1854.3116883116884,
+    1082.909090909091
+   ],
+   "area": 77,
+   "terrain": "marsh"
+  },
+  "13981": {
+   "zone": "swamp",
+   "kind": 10,
+   "feature": "Agrilat",
+   "state": 348,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1860.0645161290322,
+    1095.4032258064517
+   ],
+   "area": 62,
+   "terrain": "marsh"
+  },
+  "13992": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Selonian Hills",
+   "state": 349,
+   "group": 18,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1831.264705882353,
+    1127.264705882353
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "13995": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Selonian Hills",
+   "state": 349,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1848.1666666666667,
+    1125.7962962962963
+   ],
+   "area": 54,
+   "terrain": "hills"
+  },
+  "13997": {
+   "zone": "hills",
+   "kind": 9,
+   "feature": "Selonian Hills",
+   "state": 349,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1840.235294117647,
+    1121.0392156862745
+   ],
+   "area": 102,
+   "terrain": "hills"
+  },
+  "14019": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tyrena",
+   "state": 350,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1849.6949152542372,
+    1102.3559322033898
+   ],
+   "area": 59,
+   "terrain": "forest"
+  },
+  "14026": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tyrena",
+   "state": 350,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1858.989247311828,
+    1107.4193548387098
+   ],
+   "area": 93,
+   "terrain": "forest"
+  },
+  "14027": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tyrena",
+   "state": 350,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1841.8961038961038,
+    1111.5194805194806
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "14036": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tyrena",
+   "state": 350,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1850.962962962963,
+    1111.5740740740741
+   ],
+   "area": 54,
+   "terrain": "forest"
+  },
+  "14042": {
+   "zone": "forest",
+   "kind": 8,
+   "feature": "Tyrena",
+   "state": 350,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1841.3827160493827,
+    1102.9135802469136
+   ],
+   "area": 81,
+   "terrain": "forest"
+  },
+  "14069": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Bela Vistal",
+   "state": 351,
+   "group": 20,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1808.3333333333333,
+    1098.9848484848485
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "14070": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Bela Vistal",
+   "state": 351,
+   "group": 20,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1820.735294117647,
+    1126.1470588235295
+   ],
+   "area": 102,
+   "terrain": "plains"
+  },
+  "14085": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Bela Vistal",
+   "state": 351,
+   "group": 20,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1819.9807692307693,
+    1112.7115384615386
+   ],
+   "area": 104,
+   "terrain": "plains"
+  },
+  "14086": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Bela Vistal",
+   "state": 351,
+   "group": 20,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1812.0169491525423,
+    1088.915254237288
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "14100": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Bela Vistal",
+   "state": 351,
+   "group": 20,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1813.3255813953488,
+    1119.906976744186
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "14110": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Bela Vistal",
+   "state": 351,
+   "group": 20,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1810.1195652173913,
+    1108.2065217391305
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "14130": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Gold Beaches",
+   "state": 352,
+   "group": 21,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1852.0823529411764,
+    1118.3058823529411
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "14131": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Gold Beaches",
+   "state": 352,
+   "group": 21,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1863.5058823529412,
+    1115.9529411764706
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "14140": {
+   "zone": "coast",
+   "kind": 11,
+   "feature": "Gold Beaches",
+   "state": 352,
+   "group": 21,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1857.4761904761904,
+    1125.6666666666667
+   ],
+   "area": 63,
+   "terrain": "plains"
+  }
+ }
+}

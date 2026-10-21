@@ -843,6 +843,170 @@ LANDMARKS = [
     ("ess_togatto", ["hod_ess_togatto", "hod_ess_nurrale"], "GFX_idea_generic_production_bonus", {"stability_factor": 0.03},
      "Togatto Speedway", "The Ferlanis' podracing arena in tropical Nurrale, the most spectacular in the Darpa sector. Half "
      "the sector's fortunes change hands on race day.", None),
+    # --- Carida (Legends: the Academy of Carida on the Spinara Plateau, the Caridan district, Tarkin's Teeth, the
+    # Forgofshar Desert, the Carida Corsairs' base; canon: the station Valor)
+    ("car_academy", ["hod_car_academy", "hod_car_field", "hod_car_valor"], "GFX_idea_generic_army_support",
+     {"local_manpower": 0.05, "stability_factor": 0.03},
+     "Academy of Carida", "The oldest military academy of the Core, walled on the Spinara Plateau. Under Carida's heavy "
+     "gravity cadets of a hundred worlds learn to march, fly and command; the station Valor watches over its landing field "
+     "from orbit.", None),
+    ("car_district", ["hod_car_district"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Caridan District", "The quarter just outside the Academy's gates, famous for its nightlife. Every cantina here has "
+     "seen a cadet spend a month's pay in one night before the Dean's curfew.", None),
+    ("car_teeth", ["hod_car_teeth", "hod_car_survival"], "GFX_idea_generic_army_support", {"local_supplies": 0.1},
+     "Tarkin's Teeth", "Desolate mountains three hundred kilometres from the Academy, a training ground for centuries. "
+     "Squads cross the Teeth on foot, then the Forgofshar Desert with what they carry: few forget either.", None),
+    ("car_corsairs", ["hod_car_corsairs"], "GFX_idea_generic_logistics", {"local_supplies": 0.05},
+     "Carida Corsairs' Base", "The frozen lair of the pirates who once raided the Perlemian Trade Route, found out by "
+     "the Republic long ago. Its hangars stand empty, but the cadets swear the old tunnels go deeper than the maps.", None),
+    # --- Balmorra (Legends/SWTOR: Bin Prime, Sobrik, the Balmorran Arms Factory, Bugtown; canon: the outpost, the
+    # Swellbottom market, the droid factories)
+    ("bal_binprime", ["hod_bal_binprime", "hod_bal_port", "hod_bal_market"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.03, "political_power_factor": 0.05},
+     "Bin Prime", "The capital of Balmorra since the government left Sobrik, now run from the council dome in the "
+     "Techno Union's interest. Freighters from Alderaan land at its spaceport; whatever they bring is sold in the "
+     "Swellbottom market by nightfall.", None),
+    ("bal_arms", ["hod_bal_arms"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Balmorran Arms Factory", "The great works of the Sundari Flatlands, fought over in every war the planet has seen. "
+     "Its foundry pours droid chassis day and night under the Techno Union's contracts.", None),
+    ("bal_sobrik", ["hod_bal_sobrik", "hod_bal_outpost"], "GFX_idea_generic_army_support", {"local_supplies": 0.1},
+     "Sobrik", "The old capital among the first assembly lines and refineries, its bunkers older than the Republic's "
+     "memory. Beyond the Gorinth Canyon an outpost holds the gorges for the Techno Union.", None),
+    ("bal_bugtown", ["hod_bal_bugtown"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Bugtown", "Lab 352, the Farnel Research Facility on Lake Farnell, where genetic research went wrong long ago. "
+     "The Broken Valley still swarms with what escaped, and nobody calls it anything but Bugtown.", None),
+    # --- Alderaan (canon: Aldera, the Royal Palace, the University, Crevasse City, Sanctuary Coast, the falls;
+    # Legends: the Petrified Mounds of the Killiks)
+    ("ald_palace", ["hod_ald_palace", "hod_ald_aldera"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.05, "political_power_factor": 0.1},
+     "Royal Palace of Alderaan", "The Mountain Palace of the royal house, above its lake among the snow-capped peaks, "
+     "with the white towers of Aldera below. From its south terrace the River Wuitho winds away towards the hills.", None),
+    ("ald_university", ["hod_ald_university"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "University of Alderaan", "The most renowned university of the Core. Its scholars have argued for centuries over "
+     "the stone mounds the Killiks left behind, and over everything else.", None),
+    ("ald_crevasse", ["hod_ald_crevasse"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Crevasse City", "The first and largest of the canyon cities, built into the walls of a great gorge. From above "
+     "there is almost nothing to see; inside, even the heavy industry is hidden in the rock.", None),
+    ("ald_sanctuary", ["hod_ald_sanctuary"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Sanctuary Coast", "A sprawling city on enormous stilts at the edge of the inland sea, whose leaders have always "
+     "taken in refugees from wars and oppression elsewhere.", None),
+    ("ald_falls", ["hod_ald_killik"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Wonders of Alderaan", "The Cloudshape and Istabith Falls, the Glarus Lagoons and the Petrified Mounds of the "
+     "Killiks: Alderaan guards its natural wonders the way other worlds guard their fortresses.", None),
+    # --- Tython (canon: the Jedi Temple, the Force-henge; Legends: the Je'daii temples round the Tho Yor, the Masters'
+    # Retreat, Belia Darzu's fortress, Ban Landing) - abandoned before the Clone Wars
+    ("tyt_temple", ["hod_tyt_temple", "hod_tyt_henge"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Jedi Temple Ruins", "The temple the Jedi kept on Tython after the Great Galactic War, empty for centuries since the "
+     "hyperlanes failed. Up on its mountain the Force-henge still holds its seeing stone, and the Order has not forgotten "
+     "either.", None),
+    ("tyt_retreat", ["hod_tyt_retreat", "hod_tyt_thoyor"], "GFX_idea_generic_research_bonus", {"stability_factor": 0.02},
+     "Je'daii Ruins", "The broken temple-cities of the Je'daii round the silent Tho Yor, and the Masters' Retreat on its "
+     "lake in the Gnarls: the cradle of the Jedi, given back to the forests and the Force storms.", None),
+    ("tyt_banlanding", ["hod_tyt_banlanding"], "GFX_idea_generic_logistics", {"local_supplies": 0.05},
+     "Ban Landing", "The empty city at the mouth of the Moon Channel, where Je'daii once crossed to the Moon Islands. Its "
+     "quays still stand; the only crossing between Thyr and Kato Zakar runs through its ruins.", None),
+    # --- Fresia (Legends: Incom on the Coromon Islands, the Afterburner Arches; canon: the Incom warehouse)
+    ("fre_incom", ["hod_fre_incom", "hod_fre_range", "hod_fre_warehouse"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1}, "Incom Corporation",
+     "Incom's plants and offices fill the Coromon Islands. Its Z-95 Headhunter, built with Subpro, flies over the storm "
+     "isles every day, and every navy in the Core wants it.", None),
+    ("fre_arches", ["hod_fre_arches"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Afterburner Arches", "Three great natural stone arches off the coast of Prime Coromon. Incom's test pilots fly "
+     "through them on their first day, or so the cantinas say.", None),
+    # --- Foerost (Legends: the vast and ancient Foerost Shipyards, the Techno Union's in the Clone Wars; Hajibar)
+    ("foe_yards", ["hod_foe_yards", "hod_foe_oldyards", "hod_foe_launch", "hod_foe_hullworks"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.15}, "Foerost Shipyards",
+     "Some of the oldest shipyards in the galaxy, high in orbit, now worked for the Techno Union. Beside them the Old "
+     "Yards' broken ring still holds a hull no one has finished in a thousand years.", None),
+    ("foe_hajibar", ["hod_foe_hajibar", "hod_foe_tower"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Hajibar", "Foerost's capital, its old works blocks under the Techno Union's spires. Every order for the yards passes "
+     "through its guild hall, and its communications tower talks to the slips day and night.", None),
+    ("foe_works", ["hod_foe_refinery", "hod_foe_foundry"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Foerost Works", "The refineries and foundries that feed the yards with fuel, alloys and hull plate.", None),
+    # --- Corellia (canon/Legends: Coronet City, the Bottoms, Treasure Ship Row, CorSec, Kor Vella, the shipyards)
+    ("crl_yards", ["hod_crl_yards", "hod_crl_bottoms"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.15}, "Corellian Shipyards",
+     "The Santhe yards over Coronet, where Corellian hulls are laid down, fed by the factories of the Bottoms below, "
+     "built on swamp the shipbuilders drained.", None),
+    ("crl_coronet", ["hod_crl_coronet", "hod_crl_shiprow", "hod_crl_corsec"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.03, "political_power_factor": 0.05}, "Coronet City",
+     "The Golden City: bronze towers, Treasure Ship Row's dealers selling anything that flies, and CorSec keeping some "
+     "order among the smugglers.", None),
+    ("crl_korvella", ["hod_crl_korvella", "hod_crl_den"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Kor Vella", "The city on its mesa, famous for its tailors' field jackets. In the hills east, the Selonians keep to "
+     "their dens, Hunchuzuc among them.", None),
+    # --- Kuat (Legends: Kuat City, the Gardens of Tralala, Kuat Drive Yards)
+    ("kua_yards", ["hod_kua_yards", "hod_kua_works"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.15}, "Kuat Drive Yards",
+     "The most famous shipyards in the galaxy, an arc of the ring that girdles Kuat. The noble houses below keep their "
+     "world a garden by building everything above it.", None),
+    ("kua_city", ["hod_kua_city", "hod_kua_estate"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Kuat City", "The capital of Kuat, its elegant towers and spires shaped like the yards' dock arms. Tekshar Falls "
+     "drops five hundred metres through its entertainment centre, a river turned aside at great expense.", None),
+    ("kua_gardens", ["hod_kua_gardens"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Gardens of Tralala", "Terraced gardens and glass conservatories kept by the noble houses, fertilised the old way "
+     "with drebin compost.", None),
+    # --- Rendili (Legends: Rendili StarDrive, the Dreadnaughts, the Home Defense Fleet)
+    ("ren_yards", ["hod_ren_yards", "hod_ren_works"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.15}, "Rendili StarDrive Yards",
+     "Where the Dreadnaught heavy cruisers are built, their engines test-fired at the Drive Works below before the hulls "
+     "go up to the slips.", None),
+    ("ren_hq", ["hod_ren_hq", "hod_ren_city"], "GFX_idea_generic_political_support", {"political_power_factor": 0.05},
+     "Rendili StarDrive", "The shipbuilder's headquarters over Rendili City. Its directors sell to the Republic, and "
+     "listen to anyone else who pays.", None),
+    ("ren_base", ["hod_ren_base"], "GFX_idea_generic_army_support", {"local_supplies": 0.1},
+     "Home Defense Fleet Base", "The ground base of the Rendili Home Defense Fleet, whose loyalty both the Republic and "
+     "the Separatists are already counting on.", None),
+    # --- Commenor (Legends: Chasin City, Anteluma, Munto, the University of Commenor)
+    ("com_chasin", ["hod_com_chasin", "hod_com_port"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Chasin City", "One of Commenor's greatest cities, famous across the Core for its restaurants. Traders off the Commenor "
+     "Run eat here before they sign anything.", None),
+    ("com_university", ["hod_com_university"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "University of Commenor", "Where, in the last days before the war, Senator Amidala told a great peace rally that the "
+     "Republic must not answer the Separatists with an army.", None),
+    ("com_arena", ["hod_com_arena", "hod_com_munto"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Anteluma", "The sporting centre of Commenor and home of its major leagues. Half of Munto, terraced up its valley, "
+     "comes down to watch on match day.", None),
+    # --- Duro (Legends: the space cities, Ranadaast, Tayana, the Valley of Royalty, the Tiercam Dam, New Tayana)
+    ("dur_spacecity", ["hod_dur_spacecity", "hod_dur_lift"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.1}, "Duros Space Cities",
+     "Twenty cities in orbit, Bburru Station the greatest, where the Duros live above the world their factories poisoned. "
+     "The lift fields feed them from the ground.", None),
+    ("dur_ranadaast", ["hod_dur_ranadaast", "hod_dur_factory"], "GFX_idea_generic_political_support", {"stability_factor": -0.02},
+     "Ranadaast", "The old royal capital, the City of Ashes: half its towers dark, its streets run by whoever pays. The "
+     "factory belt still works beyond it, as it has for centuries.", None),
+    ("dur_royalty", ["hod_dur_tombs", "hod_dur_tayana", "hod_dur_newtayana"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.02}, "Valley of Royalty",
+     "The tombs of Duro's monarchs, the ruins of Tayana in their crater, the old Tiercam Dam and the floating city of New "
+     "Tayana: what the Duros left on the ground and still remember.", None),
+    # --- Loronar (Legends: the Loronar shipyards, the Jade Moon, the Loronar Corporation)
+    ("lor_corp", ["hod_lor_hq", "hod_lor_city", "hod_lor_labs"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Loronar Corporation", "The corporation of strike cruisers, needle fighters and synthdroids, run from its crystal tower "
+     "over Loronar City.", None),
+    ("lor_works", ["hod_lor_port", "hod_lor_crystal"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1}, "Crystal Works",
+     "Where Loronar grows the synthetic crystals its corporation builds into everything it sells, shipped out through "
+     "the spaceport.", None),
+    # --- Neimoidia (canon: Koto-Si, the communal hives, the fungus farms; Legends: Kaantay)
+    ("nei_kotosi", ["hod_nei_kotosi", "hod_nei_docks", "hod_nei_kaantay"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1, "stability_factor": 0.02}, "Koto-Si",
+     "The capital of Neimoidia and the heart of the Trade Federation. Freighters land in its great bays every hour; the "
+     "Viceroy's dome looks out over all of it.", None),
+    ("nei_hives", ["hod_nei_hives", "hod_nei_farms"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Communal Hives", "The hives where every Neimoidian grub is raised, and the fungus farms below them where harvester "
+     "beetles tend the crop. A Neimoidian learns greed here before anything else.", None),
+    # --- Mimban (canon: the Nanth flatlands' tribes; Legends: the Temple of Pomojema, the Thrella wells, Dreypa's Oubliette)
+    ("mim_temple", ["hod_mim_temple", "hod_mim_wells"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Temple of Pomojema", "A ziggurat of volcanic rock raised to the god Pomojema, the Kaiburr crystal in its great statue. "
+     "Beyond it the Thrella wells drop into the dark.", None),
+    ("mim_village", ["hod_mim_village", "hod_mim_mine", "hod_mim_oubliette"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.02}, "Nanth Flatlands",
+     "The stilt villages of the Mimbanese in the mist, the prospectors' camp in the mud fields, and somewhere in the deep "
+     "forest Dreypa's Oubliette, which nobody local will go near.", None),
+    # --- Manaan (canon/Legends: Ahto City, the Hrakert Rift and Station, the swoop track, the Prince of Waves)
+    ("mnn_ahto", ["hod_mnn_ahto", "hod_mnn_swoop"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Ahto City", "The Selkath capital floating alone on Manaan's endless sea, white platforms and domes linked by bridges. Its "
+     "swoop track draws racers from across the Slice, and its kolto is sold to anyone.", None),
     # --- Coruscant (canon/Legends: the Senate, the Jedi Temple, the Executive Building, the Courts, the Processional
     # Way, Monument Plaza, 500 Republica, the Galaxies Opera House, the landing rings, the Works, Level 1313)
     ("cos_senate", ["hod_cos_senate", "hod_cos_processional", "hod_cos_courts"], "GFX_idea_generic_political_support",
@@ -1023,7 +1187,7 @@ PLANET_OF = {"raxulon_parliament": "Raxus", "great_alley": "Raxus", "kaas_citade
              **{k: "Korriban" for k in ("sith_academy", "valley_dark_lords", "tomb_ragnos", "tomb_sadow", "tomb_pall",
                                         "tomb_hord", "tomb_kressh")},
              **{k: pl for pre, pl in (("rp_", "Raxus Prime"), ("kadavo_", "Kadavo"), ("hondo_", "Florrum"),
-                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
+                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("mnn_", "Manaan"), ("mim_", "Mimban"), ("nei_", "Neimodia"), ("lor_", "Loronar"), ("dur_", "Duro"), ("com_", "Commenor"), ("ren_", "Rendilli"), ("kua_", "Kuat"), ("crl_", "Corellia"), ("foe_", "Foerost"), ("fre_", "Fresia"), ("tyt_", "Tython"), ("ald_", "Alderaan"), ("bal_", "Balmorra"), ("car_", "Carida"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
                 for k, *_ in LANDMARKS if k.startswith(pre)}}
 assert {k for k, *_ in LANDMARKS} == set(PLANET_OF), "every landmark needs its planet"
 

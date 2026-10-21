@@ -1,0 +1,38 @@
+state={
+	id=16
+	name="STATE_16"
+	# HOD: Balmorra (balmorra_map.py)
+	provinces={
+		632 1212 1710 1793 12736 12755 12756 12760 12763 12764 12766 12773
+	}
+	resources={
+		coal=3
+	}
+	history = {
+		victory_points = {
+			632 10
+		}
+		victory_points = {
+			1710 2
+		}
+		victory_points = {
+			1793 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 5
+			arms_factory = 1
+			air_base = 1
+			dockyard = 3
+					12756 = {
+				naval_base = 2
+			}
+		}
+		owner = TCU
+		add_core_of = TCU
+	}
+	manpower = 1470497
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

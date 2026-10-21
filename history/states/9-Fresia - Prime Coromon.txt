@@ -1,0 +1,35 @@
+state={
+	id=9
+	name="STATE_9"
+	# HOD: Fresia (fresia_map.py)
+	provinces={
+		146 483 686 13326 13346
+	}
+	resources={
+		chromium=1#Circuitry
+	}
+	history = {
+		victory_points = {
+			146 10
+		}
+		victory_points = {
+			686 2
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 3
+			air_base = 3
+			dockyard = 2
+					13326 = {
+				naval_base = 4
+			}
+		}
+		owner = FRE
+		add_core_of = FRE
+	}
+	manpower = 777104
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

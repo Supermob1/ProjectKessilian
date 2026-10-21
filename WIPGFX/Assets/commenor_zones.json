@@ -1,0 +1,949 @@
+{
+ "centre": [
+  1732.3740550347748,
+  1249.1626852131842
+ ],
+ "radius": 32.44458034263651,
+ "vp_names": {
+  "122": "Chasin City",
+  "467": "Anteluma",
+  "863": "University of Commenor",
+  "1124": "Munto",
+  "1959": "Kliffen",
+  "2639": "Commenor Run Spaceport",
+  "13415": "Commenor Desert",
+  "13456": "Canyonlands"
+ },
+ "provinces": {
+  "122": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Chasin City",
+   "state": 17,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1730.2926829268292,
+    1251.4146341463415
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "379": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Chasin City",
+   "state": 17,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1729.25,
+    1246.75
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "467": {
+   "zone": "arena",
+   "kind": 2,
+   "feature": "Anteluma",
+   "state": 314,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1718.851851851852,
+    1262.7777777777778
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "863": {
+   "zone": "university",
+   "kind": 3,
+   "feature": "University of Commenor",
+   "state": 315,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1712.9032258064517,
+    1247.5806451612902
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "1124": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Munto",
+   "state": 316,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1727.157894736842,
+    1236.7894736842106
+   ],
+   "area": 19,
+   "terrain": "hills"
+  },
+  "1754": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Munto",
+   "state": 316,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1728.7894736842106,
+    1232.3684210526317
+   ],
+   "area": 19,
+   "terrain": "hills"
+  },
+  "1959": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Kliffen",
+   "state": 317,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1738.1,
+    1236.4
+   ],
+   "area": 20,
+   "terrain": "urban"
+  },
+  "2639": {
+   "zone": "port",
+   "kind": 5,
+   "feature": "Commenor Run Spaceport",
+   "state": 320,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1732.5,
+    1274.5
+   ],
+   "area": 48,
+   "terrain": "urban"
+  },
+  "2824": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1742.878787878788,
+    1266.3939393939395
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "3078": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1726.8823529411766,
+    1258.7058823529412
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "3629": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1749.56,
+    1258.8
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3743": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1737.6896551724137,
+    1263.6206896551723
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "3805": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.4,
+    1261.4
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "3826": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1748.2272727272727,
+    1264.0
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "3924": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1732.6521739130435,
+    1261.3478260869565
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "3937": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Commenor Mountains",
+   "state": 1351,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1728.625,
+    1261.375
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "3984": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Northern Ocean",
+   "state": 1352,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1727.4848484848485,
+    1220.1818181818182
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "4556": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Northern Ocean",
+   "state": 1352,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1709.78125,
+    1232.15625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "5010": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Northern Ocean",
+   "state": 1352,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1716.1764705882354,
+    1224.2941176470588
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "5095": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Northern Ocean",
+   "state": 1352,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1715.1612903225807,
+    1230.967741935484
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "5291": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Northern Ocean",
+   "state": 1352,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1722.0,
+    1224.1052631578948
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "5536": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Northern Ocean",
+   "state": 1352,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1711.5,
+    1227.6666666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "13193": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Northern Ocean",
+   "state": 1352,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1721.409090909091,
+    1220.590909090909
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "13199": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1755.46875,
+    1239.53125
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "13209": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1745.0526315789473,
+    1221.6842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "13217": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1754.5483870967741,
+    1229.0
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "13225": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1761.4375,
+    1240.53125
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "13226": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1758.5,
+    1234.6470588235295
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "13242": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1749.2,
+    1229.12
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "13244": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1752.7931034482758,
+    1234.0
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "13248": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Southern Ocean",
+   "state": 1353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1749.3793103448277,
+    1224.344827586207
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "13255": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Chasin City",
+   "state": 17,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1729.5593220338983,
+    1255.5084745762713
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "13256": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Chasin City",
+   "state": 17,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1740.8407079646017,
+    1255.6814159292035
+   ],
+   "area": 113,
+   "terrain": "plains"
+  },
+  "13265": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Chasin City",
+   "state": 17,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1723.0666666666666,
+    1246.1733333333334
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "13277": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Chasin City",
+   "state": 17,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1736.4814814814815,
+    1246.3950617283951
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "13283": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Anteluma",
+   "state": 314,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1719.3454545454545,
+    1259.0181818181818
+   ],
+   "area": 55,
+   "terrain": "hills"
+  },
+  "13284": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Anteluma",
+   "state": 314,
+   "group": 10,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1716.6969696969697,
+    1272.2222222222222
+   ],
+   "area": 99,
+   "terrain": "hills"
+  },
+  "13285": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Anteluma",
+   "state": 314,
+   "group": 10,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1709.5809523809523,
+    1264.6285714285714
+   ],
+   "area": 105,
+   "terrain": "hills"
+  },
+  "13286": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Anteluma",
+   "state": 314,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1723.774647887324,
+    1266.8028169014085
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "13288": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Northern Commenor",
+   "state": 315,
+   "group": 11,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1705.8020833333333,
+    1255.6041666666667
+   ],
+   "area": 96,
+   "terrain": "hills"
+  },
+  "13312": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Northern Commenor",
+   "state": 315,
+   "group": 11,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1706.1780821917807,
+    1237.6301369863013
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "13317": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Northern Commenor",
+   "state": 315,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1716.1136363636363,
+    1252.7727272727273
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "13318": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Northern Commenor",
+   "state": 315,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1713.8055555555557,
+    1241.1944444444443
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "13320": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Northern Commenor",
+   "state": 315,
+   "group": 11,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1704.5869565217392,
+    1246.7934782608695
+   ],
+   "area": 92,
+   "terrain": "hills"
+  },
+  "13335": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Munto Valley",
+   "state": 316,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1720.857142857143,
+    1234.09243697479
+   ],
+   "area": 119,
+   "terrain": "hills"
+  },
+  "13338": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Munto Valley",
+   "state": 316,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1729.3296703296703,
+    1225.098901098901
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "13339": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Munto Valley",
+   "state": 316,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1729.4528301886792,
+    1237.9245283018868
+   ],
+   "area": 53,
+   "terrain": "hills"
+  },
+  "13360": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Kliffen",
+   "state": 317,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1739.4766355140187,
+    1228.9532710280373
+   ],
+   "area": 107,
+   "terrain": "plains"
+  },
+  "13375": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Kliffen",
+   "state": 317,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1744.609375,
+    1242.40625
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "13383": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Kliffen",
+   "state": 317,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1737.1296296296296,
+    1239.0925925925926
+   ],
+   "area": 54,
+   "terrain": "plains"
+  },
+  "13397": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Kliffen",
+   "state": 317,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1737.7671232876712,
+    1220.890410958904
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "13407": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Kliffen",
+   "state": 317,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1746.6712328767123,
+    1235.5616438356165
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "13415": {
+   "zone": "desert",
+   "kind": 8,
+   "feature": "Commenor Desert",
+   "state": 318,
+   "group": 14,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1753.734375,
+    1268.015625
+   ],
+   "area": 64,
+   "terrain": "desert"
+  },
+  "13416": {
+   "zone": "desert",
+   "kind": 8,
+   "feature": "Commenor Desert",
+   "state": 318,
+   "group": 14,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1756.6,
+    1261.4857142857143
+   ],
+   "area": 70,
+   "terrain": "desert"
+  },
+  "13428": {
+   "zone": "desert",
+   "kind": 8,
+   "feature": "Commenor Desert",
+   "state": 318,
+   "group": 14,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1748.076923076923,
+    1272.3384615384616
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "13456": {
+   "zone": "canyon",
+   "kind": 9,
+   "feature": "Canyonlands",
+   "state": 319,
+   "group": 15,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1759.9066666666668,
+    1247.4
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "13464": {
+   "zone": "canyon",
+   "kind": 9,
+   "feature": "Canyonlands",
+   "state": 319,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1750.0985915492959,
+    1252.7042253521126
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "13471": {
+   "zone": "canyon",
+   "kind": 9,
+   "feature": "Canyonlands",
+   "state": 319,
+   "group": 15,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1760.057142857143,
+    1255.3857142857144
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "13482": {
+   "zone": "canyon",
+   "kind": 9,
+   "feature": "Canyonlands",
+   "state": 319,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.378787878788,
+    1245.6818181818182
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "13519": {
+   "zone": "coast",
+   "kind": 10,
+   "feature": "Eastern Coast",
+   "state": 320,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1732.1571428571428,
+    1267.9285714285713
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "13525": {
+   "zone": "coast",
+   "kind": 10,
+   "feature": "Eastern Coast",
+   "state": 320,
+   "group": 16,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1739.9818181818182,
+    1275.3727272727272
+   ],
+   "area": 110,
+   "terrain": "plains"
+  },
+  "13526": {
+   "zone": "coast",
+   "kind": 10,
+   "feature": "Eastern Coast",
+   "state": 320,
+   "group": 16,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1726.3950617283951,
+    1277.037037037037
+   ],
+   "area": 81,
+   "terrain": "plains"
+  }
+ }
+}

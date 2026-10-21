@@ -1,0 +1,964 @@
+{
+ "centre": [
+  1744.6264732547597,
+  1135.7809005741915
+ ],
+ "radius": 32.45438973978965,
+ "vp_names": {
+  "822": "Rendili City",
+  "2173": "Rendili StarDrive Headquarters",
+  "2332": "Home Fleet Base",
+  "2353": "Drive Works",
+  "13406": "Rendili Plains",
+  "13532": "Southern Coast",
+  "13536": "Rendili Highlands",
+  "13610": "Northern Tundra"
+ },
+ "provinces": {
+  "822": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Rendili City",
+   "state": 23,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.7727272727273,
+    1135.4318181818182
+   ],
+   "area": 44,
+   "terrain": "urban"
+  },
+  "1091": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Rendili City",
+   "state": 23,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1742.0434782608695,
+    1139.2173913043478
+   ],
+   "area": 46,
+   "terrain": "urban"
+  },
+  "2173": {
+   "zone": "hq",
+   "kind": 2,
+   "feature": "Rendili StarDrive Headquarters",
+   "state": 23,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1747.5,
+    1142.6875
+   ],
+   "area": 16,
+   "terrain": "urban"
+  },
+  "2332": {
+   "zone": "base",
+   "kind": 3,
+   "feature": "Home Fleet Base",
+   "state": 353,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.5,
+    1159.5
+   ],
+   "area": 48,
+   "terrain": "urban"
+  },
+  "2353": {
+   "zone": "works",
+   "kind": 4,
+   "feature": "Drive Works",
+   "state": 355,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1726.7333333333333,
+    1150.3111111111111
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "2642": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1757.9545454545455,
+    1129.7272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "2944": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1749.2692307692307,
+    1111.4615384615386
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "3015": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1747.5454545454545,
+    1121.1363636363637
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "3205": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1762.0,
+    1139.3809523809523
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "3416": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.1923076923076,
+    1115.8461538461538
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "3610": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.5,
+    1126.1153846153845
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "4426": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.6785714285713,
+    1116.2857142857142
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "4666": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1756.25,
+    1125.4166666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "4681": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1759.392857142857,
+    1135.2857142857142
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "4706": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1764.952380952381,
+    1136.6190476190477
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4812": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.8260869565217,
+    1121.1304347826087
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "5897": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Rendili Mountains",
+   "state": 1348,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1755.0454545454545,
+    1132.2272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "5907": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1349,
+   "group": 5,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1758.7096774193549,
+    1109.6451612903227
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "6029": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1349,
+   "group": 5,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1737.3461538461538,
+    1107.5
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "6272": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1349,
+   "group": 5,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1747.4545454545455,
+    1106.3333333333333
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "13241": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1349,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1742.4827586206898,
+    1110.344827586207
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "13253": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1349,
+   "group": 5,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1753.725,
+    1108.0
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "13254": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1349,
+   "group": 5,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1741.8260869565217,
+    1105.695652173913
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "13270": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Polar Ice",
+   "state": 1350,
+   "group": 6,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1714.6896551724137,
+    1137.896551724138
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "13271": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Polar Ice",
+   "state": 1350,
+   "group": 6,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1714.1851851851852,
+    1130.4074074074074
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "13276": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Polar Ice",
+   "state": 1350,
+   "group": 6,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1715.6363636363637,
+    1143.8484848484848
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "13282": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Prime",
+   "state": 23,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1734.655172413793,
+    1136.3908045977012
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "13301": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Prime",
+   "state": 23,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1752.1917808219177,
+    1139.4109589041095
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "13308": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Prime",
+   "state": 23,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1747.3559322033898,
+    1130.7457627118645
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "13309": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Prime",
+   "state": 23,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1739.0285714285715,
+    1144.2142857142858
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "13316": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Home Fleet Base",
+   "state": 353,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1748.375,
+    1150.111111111111
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "13334": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Home Fleet Base",
+   "state": 353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1757.25,
+    1162.05
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "13348": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Home Fleet Base",
+   "state": 353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1738.3294117647058,
+    1163.0117647058823
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "13349": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Home Fleet Base",
+   "state": 353,
+   "group": 8,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1748.157894736842,
+    1165.2631578947369
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "13355": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Home Fleet Base",
+   "state": 353,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1739.8809523809523,
+    1153.0238095238096
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "13356": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Home Fleet Base",
+   "state": 353,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1752.3870967741937,
+    1156.4354838709678
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "13363": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Plains",
+   "state": 354,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1729.4032258064517,
+    1126.5806451612902
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "13372": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Plains",
+   "state": 354,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1731.0,
+    1110.5731707317073
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "13389": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Plains",
+   "state": 354,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1743.015625,
+    1124.15625
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "13393": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Plains",
+   "state": 354,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1722.25,
+    1117.0833333333333
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "13396": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Plains",
+   "state": 354,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1739.641791044776,
+    1115.7462686567164
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "13406": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Plains",
+   "state": 354,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1732.123287671233,
+    1119.150684931507
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "13426": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Rendili Plains",
+   "state": 354,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1736.78125,
+    1127.796875
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "13427": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Drive Works",
+   "state": 355,
+   "group": 10,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1720.253164556962,
+    1151.392405063291
+   ],
+   "area": 79,
+   "terrain": "forest"
+  },
+  "13434": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Drive Works",
+   "state": 355,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1733.421875,
+    1150.09375
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "13435": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Drive Works",
+   "state": 355,
+   "group": 10,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1729.25,
+    1159.1979166666667
+   ],
+   "area": 96,
+   "terrain": "forest"
+  },
+  "13455": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Drive Works",
+   "state": 355,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1725.2608695652175,
+    1143.8260869565217
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "13460": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Southern Coast",
+   "state": 356,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1772.3150684931506,
+    1141.3150684931506
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "13469": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Southern Coast",
+   "state": 356,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1764.3934426229507,
+    1156.8852459016393
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "13470": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Southern Coast",
+   "state": 356,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1756.7704918032787,
+    1144.4426229508197
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "13499": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Southern Coast",
+   "state": 356,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1769.7301587301588,
+    1149.888888888889
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "13500": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Southern Coast",
+   "state": 356,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1772.0941176470587,
+    1133.6
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "13505": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Southern Coast",
+   "state": 356,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1759.2089552238806,
+    1151.9701492537313
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "13532": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Southern Coast",
+   "state": 356,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1764.5333333333333,
+    1144.7
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "13536": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Rendili Highlands",
+   "state": 357,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1766.875,
+    1118.1944444444443
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "13544": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Rendili Highlands",
+   "state": 357,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1759.8135593220338,
+    1113.9322033898304
+   ],
+   "area": 59,
+   "terrain": "hills"
+  },
+  "13553": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Rendili Highlands",
+   "state": 357,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1763.888888888889,
+    1128.361111111111
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "13570": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Rendili Highlands",
+   "state": 357,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1771.296875,
+    1125.515625
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "13584": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Rendili Highlands",
+   "state": 357,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1758.4918032786886,
+    1120.377049180328
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "13587": {
+   "zone": "tundra",
+   "kind": 9,
+   "feature": "Northern Tundra",
+   "state": 358,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1721.597014925373,
+    1123.4626865671642
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "13594": {
+   "zone": "tundra",
+   "kind": 9,
+   "feature": "Northern Tundra",
+   "state": 358,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1720.8214285714287,
+    1137.9107142857142
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "13609": {
+   "zone": "tundra",
+   "kind": 9,
+   "feature": "Northern Tundra",
+   "state": 358,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1726.968253968254,
+    1135.015873015873
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "13610": {
+   "zone": "tundra",
+   "kind": 9,
+   "feature": "Northern Tundra",
+   "state": 358,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1719.446153846154,
+    1129.8461538461538
+   ],
+   "area": 65,
+   "terrain": "plains"
+  }
+ }
+}

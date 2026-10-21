@@ -1,0 +1,38 @@
+state={
+	id=22
+	name="STATE_22"
+	# HOD: Corellia (corellia_map.py)
+	provinces={
+		67 881 1172 1206 1231 13894
+	}
+	resources={
+		oil=1#Fuel
+		aluminium=2#Minerals
+	}
+	history = {
+		victory_points = {
+			67 15
+		}
+		victory_points = {
+			1172 3
+		}
+		victory_points = {
+			1206 3
+		}
+		victory_points = {
+			1231 3
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 4
+			air_base = 2
+		}
+		owner = COR
+		add_core_of = COR
+	}
+	manpower = 685256
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

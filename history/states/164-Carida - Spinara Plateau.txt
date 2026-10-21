@@ -1,0 +1,39 @@
+state={
+	id=164
+	name="STATE_164"
+	# HOD: Carida (carida_map.py)
+	provinces={
+		639 713 914 944 12037 12044 12053 12059 12060 12063 12071 12078
+	}
+	resources={
+		rubber=1
+		oil=1
+	}
+	history = {
+		victory_points = {
+			639 10
+		}
+		victory_points = {
+			914 3
+		}
+		victory_points = {
+			944 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+					12037 = {
+				naval_base = 2
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 40000
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

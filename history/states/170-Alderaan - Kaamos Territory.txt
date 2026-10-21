@@ -1,0 +1,30 @@
+state={
+	id=170
+	name="STATE_170"
+	# HOD: Alderaan (alderaan_map.py)
+	provinces={
+		683 1240 12610 12615 12621 12622 12627 12628 12630 12636
+	}
+	resources={
+		oil=2
+	}
+	history = {
+		victory_points = {
+			683 3
+		}
+		victory_points = {
+			1240 3
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			air_base = 1
+		}
+		owner = ALD
+		add_core_of = ALD
+	}
+	manpower = 184060
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

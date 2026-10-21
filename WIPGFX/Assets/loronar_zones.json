@@ -1,0 +1,964 @@
+{
+ "centre": [
+  1922.1384755542058,
+  1205.0334041907076
+ ],
+ "radius": 32.37583134381607,
+ "vp_names": {
+  "582": "Loronar City",
+  "1839": "Loronar Corporation Headquarters",
+  "2220": "Crystal Works",
+  "2290": "Synthdroid Labs",
+  "2346": "Loronar Spaceport",
+  "14428": "Northern Forests",
+  "14454": "Loronar Plains",
+  "14477": "Southern Highlands"
+ },
+ "provinces": {
+  "582": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Loronar City",
+   "state": 21,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1923.1190476190477,
+    1208.2619047619048
+   ],
+   "area": 42,
+   "terrain": "urban"
+  },
+  "1405": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Loronar City",
+   "state": 21,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1919.857142857143,
+    1202.547619047619
+   ],
+   "area": 42,
+   "terrain": "urban"
+  },
+  "1839": {
+   "zone": "hq",
+   "kind": 2,
+   "feature": "Loronar Corporation Headquarters",
+   "state": 21,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1926.3157894736842,
+    1212.2105263157894
+   ],
+   "area": 19,
+   "terrain": "urban"
+  },
+  "2220": {
+   "zone": "crystal",
+   "kind": 3,
+   "feature": "Crystal Works",
+   "state": 340,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1909.8,
+    1188.9
+   ],
+   "area": 50,
+   "terrain": "urban"
+  },
+  "2290": {
+   "zone": "labs",
+   "kind": 4,
+   "feature": "Synthdroid Labs",
+   "state": 341,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1909.8529411764705,
+    1219.5882352941176
+   ],
+   "area": 34,
+   "terrain": "urban"
+  },
+  "2346": {
+   "zone": "port",
+   "kind": 5,
+   "feature": "Loronar Spaceport",
+   "state": 342,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1898.0,
+    1209.0
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "2741": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1928.4347826086957,
+    1202.1304347826087
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "2968": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1927.0,
+    1184.857142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "3163": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1939.655172413793,
+    1208.1724137931035
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "3515": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1926.142857142857,
+    1192.5238095238096
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4023": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1932.7666666666667,
+    1202.4666666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "4512": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1929.6521739130435,
+    1196.9565217391305
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "4788": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1936.103448275862,
+    1205.6206896551723
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "5474": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1924.0,
+    1187.5714285714287
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "5656": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1925.7368421052631,
+    1197.157894736842
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "6037": {
+   "zone": "mountains",
+   "kind": 11,
+   "feature": "Loronar Mountains",
+   "state": 1357,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1926.8461538461538,
+    1188.6153846153845
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "6263": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1358,
+   "group": 6,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1916.392857142857,
+    1175.3214285714287
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "14248": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1358,
+   "group": 6,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1934.9545454545455,
+    1177.7272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "14249": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1358,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1929.4347826086957,
+    1182.1304347826087
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "14263": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1358,
+   "group": 6,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1922.5,
+    1174.8333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "14305": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1358,
+   "group": 6,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1929.5862068965516,
+    1176.344827586207
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "14320": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1358,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1925.5,
+    1178.1818181818182
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "14321": {
+   "zone": "sea",
+   "kind": 10,
+   "feature": "Western Sea",
+   "state": 1358,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1933.2105263157894,
+    1181.7894736842106
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "14322": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Ice Fields",
+   "state": 1359,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1950.774193548387,
+    1215.0967741935483
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "14323": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Ice Fields",
+   "state": 1359,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1950.4285714285713,
+    1192.8095238095239
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "14336": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Ice Fields",
+   "state": 1359,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1951.5,
+    1203.0
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "14339": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Ice Fields",
+   "state": 1359,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1950.9166666666667,
+    1198.0833333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "14344": {
+   "zone": "ice",
+   "kind": 12,
+   "feature": "Ice Fields",
+   "state": 1359,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1951.3529411764705,
+    1208.3823529411766
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "14345": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar City",
+   "state": 21,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1929.9464285714287,
+    1208.6607142857142
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "14354": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar City",
+   "state": 21,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1919.8181818181818,
+    1197.9610389610389
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "14355": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar City",
+   "state": 21,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1917.7692307692307,
+    1211.4615384615386
+   ],
+   "area": 117,
+   "terrain": "plains"
+  },
+  "14360": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Crystal Works",
+   "state": 340,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1912.7808219178082,
+    1180.3835616438357
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "14367": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Crystal Works",
+   "state": 340,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1900.6593406593406,
+    1188.6593406593406
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "14373": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Crystal Works",
+   "state": 340,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1915.7272727272727,
+    1191.4935064935064
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "14377": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Crystal Works",
+   "state": 340,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1905.2835820895523,
+    1181.8059701492537
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "14380": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Crystal Works",
+   "state": 340,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1920.6025641025642,
+    1183.2179487179487
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "14385": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Synthdroid Labs",
+   "state": 341,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1916.225,
+    1221.9375
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "14395": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Synthdroid Labs",
+   "state": 341,
+   "group": 10,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1900.9333333333334,
+    1224.2166666666667
+   ],
+   "area": 60,
+   "terrain": "forest"
+  },
+  "14396": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Synthdroid Labs",
+   "state": 341,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1910.6274509803923,
+    1213.862745098039
+   ],
+   "area": 51,
+   "terrain": "forest"
+  },
+  "14402": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Synthdroid Labs",
+   "state": 341,
+   "group": 10,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1914.9342105263158,
+    1231.7236842105262
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "14403": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Synthdroid Labs",
+   "state": 341,
+   "group": 10,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1907.55,
+    1228.4375
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "14407": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Synthdroid Labs",
+   "state": 341,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1903.909090909091,
+    1217.7636363636364
+   ],
+   "area": 55,
+   "terrain": "forest"
+  },
+  "14415": {
+   "zone": "coast",
+   "kind": 9,
+   "feature": "Loronar Spaceport",
+   "state": 342,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1892.888888888889,
+    1205.4920634920634
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "14421": {
+   "zone": "coast",
+   "kind": 9,
+   "feature": "Loronar Spaceport",
+   "state": 342,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1896.0379746835442,
+    1216.2278481012659
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "14422": {
+   "zone": "coast",
+   "kind": 9,
+   "feature": "Loronar Spaceport",
+   "state": 342,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1903.2285714285715,
+    1206.5857142857142
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "14425": {
+   "zone": "coast",
+   "kind": 9,
+   "feature": "Loronar Spaceport",
+   "state": 342,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1895.4625,
+    1197.5375
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "14428": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Northern Forests",
+   "state": 343,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1909.5050505050506,
+    1201.79797979798
+   ],
+   "area": 99,
+   "terrain": "forest"
+  },
+  "14432": {
+   "zone": "forest",
+   "kind": 7,
+   "feature": "Northern Forests",
+   "state": 343,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1902.4516129032259,
+    1195.5483870967741
+   ],
+   "area": 62,
+   "terrain": "forest"
+  },
+  "14433": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1945.128205128205,
+    1219.8461538461538
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "14439": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1923.4117647058824,
+    1233.9705882352941
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "14445": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1926.590909090909,
+    1219.7121212121212
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "14446": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1932.9605263157894,
+    1231.2631578947369
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "14447": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1935.6666666666667,
+    1215.12
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "14448": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1924.1571428571428,
+    1226.6714285714286
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "14454": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1934.2941176470588,
+    1222.8676470588234
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "14455": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1941.140625,
+    1226.875
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "14462": {
+   "zone": "plains",
+   "kind": 6,
+   "feature": "Loronar Plains",
+   "state": 344,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1944.5645161290322,
+    1211.7096774193549
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "14466": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Southern Highlands",
+   "state": 345,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1932.7837837837837,
+    1189.527027027027
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "14467": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Southern Highlands",
+   "state": 345,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1944.686746987952,
+    1201.9156626506024
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "14470": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Southern Highlands",
+   "state": 345,
+   "group": 14,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1946.171875,
+    1190.0
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "14475": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Southern Highlands",
+   "state": 345,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1936.9333333333334,
+    1197.95
+   ],
+   "area": 60,
+   "terrain": "hills"
+  },
+  "14476": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Southern Highlands",
+   "state": 345,
+   "group": 14,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1939.9594594594594,
+    1182.8918918918919
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "14477": {
+   "zone": "hills",
+   "kind": 8,
+   "feature": "Southern Highlands",
+   "state": 345,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1940.2857142857142,
+    1192.0714285714287
+   ],
+   "area": 56,
+   "terrain": "hills"
+  }
+ }
+}

@@ -1,0 +1,934 @@
+{
+ "centre": [
+  1657.0018143332325,
+  1234.4145751436347
+ ],
+ "radius": 32.44458034263651,
+ "vp_names": {
+  "457": "Kuat City",
+  "692": "Tekshar Falls",
+  "801": "Gardens of Tralala",
+  "1310": "Kuati Estates",
+  "1653": "KDY Ground Works",
+  "13085": "Western Continent",
+  "13111": "Southern Continent",
+  "13165": "Kuati Isles"
+ },
+ "provinces": {
+  "46": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Kuat City",
+   "state": 15,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1658.15,
+    1235.425
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "391": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Kuat City",
+   "state": 15,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1649.7857142857142,
+    1241.7857142857142
+   ],
+   "area": 28,
+   "terrain": "urban"
+  },
+  "457": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Kuat City",
+   "state": 15,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1654.3870967741937,
+    1239.3548387096773
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "692": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Tekshar Falls",
+   "state": 15,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1658.2727272727273,
+    1241.5454545454545
+   ],
+   "area": 11,
+   "terrain": "urban"
+  },
+  "801": {
+   "zone": "gardens",
+   "kind": 3,
+   "feature": "Gardens of Tralala",
+   "state": 1335,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1658.7142857142858,
+    1225.8214285714287
+   ],
+   "area": 28,
+   "terrain": "plains"
+  },
+  "1310": {
+   "zone": "estate",
+   "kind": 2,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1636.6538461538462,
+    1238.5384615384614
+   ],
+   "area": 26,
+   "terrain": "plains"
+  },
+  "1653": {
+   "zone": "works",
+   "kind": 4,
+   "feature": "KDY Ground Works",
+   "state": 1339,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1659.5686274509803,
+    1256.5294117647059
+   ],
+   "area": 51,
+   "terrain": "urban"
+  },
+  "1669": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1636.7142857142858,
+    1216.0714285714287
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "1693": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1658.3529411764705,
+    1219.764705882353
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "1823": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1628.8636363636363,
+    1222.590909090909
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "1884": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1648.896551724138,
+    1222.896551724138
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "2610": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1631.5454545454545,
+    1216.8636363636363
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "2801": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1640.551724137931,
+    1218.9310344827586
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "2959": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1653.0454545454545,
+    1221.7727272727273
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "3265": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1644.9655172413793,
+    1220.0689655172414
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "3839": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Inner Sea",
+   "state": 1341,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1633.2105263157894,
+    1220.3157894736842
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4217": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Sea",
+   "state": 1342,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1672.2758620689656,
+    1240.9310344827586
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "4680": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Sea",
+   "state": 1342,
+   "group": 6,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1672.3823529411766,
+    1258.3823529411766
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "4815": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Sea",
+   "state": 1342,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1672.3125,
+    1248.6875
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "5386": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Southern Sea",
+   "state": 1342,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1672.4375,
+    1233.96875
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "12963": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Western Gulf",
+   "state": 1344,
+   "group": 7,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1673.6451612903227,
+    1211.3870967741937
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "12964": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Western Gulf",
+   "state": 1344,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1673.057142857143,
+    1223.1714285714286
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "12970": {
+   "zone": "sea",
+   "kind": 9,
+   "feature": "Western Gulf",
+   "state": 1344,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1673.5777777777778,
+    1217.6444444444444
+   ],
+   "area": 45,
+   "terrain": "mountain"
+  },
+  "12971": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "Kuati Range",
+   "state": 1343,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1647.225,
+    1236.675
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "12980": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "Kuati Range",
+   "state": 1343,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1653.8823529411766,
+    1249.6176470588234
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "12981": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "Kuati Range",
+   "state": 1343,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1645.7142857142858,
+    1249.5428571428572
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "12983": {
+   "zone": "mountains",
+   "kind": 10,
+   "feature": "Kuati Range",
+   "state": 1343,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1643.9714285714285,
+    1242.7714285714285
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "12990": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Kuat City",
+   "state": 15,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1664.7623762376238,
+    1238.2970297029703
+   ],
+   "area": 101,
+   "terrain": "plains"
+  },
+  "12994": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Kuat City",
+   "state": 15,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1651.5438596491229,
+    1232.1929824561403
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "13008": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Kuat City",
+   "state": 15,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1651.938775510204,
+    1245.6326530612246
+   ],
+   "area": 49,
+   "terrain": "plains"
+  },
+  "13018": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Tralala",
+   "state": 1335,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1665.5641025641025,
+    1227.1367521367522
+   ],
+   "area": 117,
+   "terrain": "plains"
+  },
+  "13019": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Tralala",
+   "state": 1335,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1653.54,
+    1227.28
+   ],
+   "area": 50,
+   "terrain": "plains"
+  },
+  "13035": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Tralala",
+   "state": 1335,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1666.5,
+    1216.125
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "13039": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 11,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1629.142857142857,
+    1232.2551020408164
+   ],
+   "area": 98,
+   "terrain": "hills"
+  },
+  "13040": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 11,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1635.438202247191,
+    1252.1348314606741
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "13046": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1643.360655737705,
+    1227.327868852459
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "13051": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 11,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1630.065934065934,
+    1242.4505494505495
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "13061": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1638.40625,
+    1245.078125
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "13064": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1635.4133333333334,
+    1225.5866666666666
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "13069": {
+   "zone": "hills",
+   "kind": 7,
+   "feature": "Kuati Estates",
+   "state": 1336,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1639.75,
+    1234.1323529411766
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "13071": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Western Continent",
+   "state": 1337,
+   "group": 12,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1640.6351351351352,
+    1211.3918918918919
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "13075": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Western Continent",
+   "state": 1337,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1665.9315068493152,
+    1207.0684931506848
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "13076": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Western Continent",
+   "state": 1337,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1650.7297297297298,
+    1215.2027027027027
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "13085": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Western Continent",
+   "state": 1337,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1656.6351351351352,
+    1205.5
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "13086": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Western Continent",
+   "state": 1337,
+   "group": 12,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1648.2,
+    1207.3428571428572
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "13097": {
+   "zone": "forest",
+   "kind": 6,
+   "feature": "Western Continent",
+   "state": 1337,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1659.1857142857143,
+    1213.4
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "13098": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Southern Continent",
+   "state": 1338,
+   "group": 13,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1684.1917808219177,
+    1242.13698630137
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "13104": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Southern Continent",
+   "state": 1338,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1679.36,
+    1214.72
+   ],
+   "area": 50,
+   "terrain": "plains"
+  },
+  "13111": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Southern Continent",
+   "state": 1338,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1676.546875,
+    1228.828125
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "13112": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Southern Continent",
+   "state": 1338,
+   "group": 13,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1685.4625,
+    1232.275
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "13115": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Southern Continent",
+   "state": 1338,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1678.1029411764705,
+    1237.6323529411766
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "13118": {
+   "zone": "plains",
+   "kind": 5,
+   "feature": "Southern Continent",
+   "state": 1338,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1682.3950617283951,
+    1222.8148148148148
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "13121": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Drive Works Coast",
+   "state": 1339,
+   "group": 14,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1658.2295081967213,
+    1263.4262295081967
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "13125": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Drive Works Coast",
+   "state": 1339,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1667.1,
+    1248.7625
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "13133": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Drive Works Coast",
+   "state": 1339,
+   "group": 14,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1641.9625,
+    1257.5875
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "13146": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Drive Works Coast",
+   "state": 1339,
+   "group": 14,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1666.6309523809523,
+    1259.9166666666667
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "13151": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Drive Works Coast",
+   "state": 1339,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1660.392857142857,
+    1248.5535714285713
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "13153": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Drive Works Coast",
+   "state": 1339,
+   "group": 14,
+   "coastal": true,
+   "sea": 19033,
+   "centre": [
+    1648.983870967742,
+    1262.6129032258063
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "13159": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Drive Works Coast",
+   "state": 1339,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1651.7536231884058,
+    1255.768115942029
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "13165": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Kuati Isles",
+   "state": 1340,
+   "group": 15,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1677.1311475409836,
+    1255.049180327869
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "13168": {
+   "zone": "coast",
+   "kind": 8,
+   "feature": "Kuati Isles",
+   "state": 1340,
+   "group": 15,
+   "coastal": true,
+   "sea": 18762,
+   "centre": [
+    1679.7530864197531,
+    1248.1975308641975
+   ],
+   "area": 81,
+   "terrain": "plains"
+  }
+ }
+}

@@ -1,0 +1,963 @@
+{
+ "centre": [
+  1826.9097516656573,
+  1232.8010296789823
+ ],
+ "radius": 32.42004386454276,
+ "vp_names": {
+  "491": "Ranadaast",
+  "840": "Tayana",
+  "1090": "Valley of Royalty",
+  "1166": "Duro Factory Belt",
+  "1625": "Tiercam Dam",
+  "3727": "New Tayana",
+  "4301": "Orbital Lift Fields"
+ },
+ "provinces": {
+  "491": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1827.2162162162163,
+    1234.2972972972973
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "779": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1830.6153846153845,
+    1230.820512820513
+   ],
+   "area": 39,
+   "terrain": "urban"
+  },
+  "840": {
+   "zone": "ruins",
+   "kind": 2,
+   "feature": "Tayana",
+   "state": 334,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1812.5806451612902,
+    1215.4516129032259
+   ],
+   "area": 31,
+   "terrain": "hills"
+  },
+  "1090": {
+   "zone": "tombs",
+   "kind": 3,
+   "feature": "Valley of Royalty",
+   "state": 335,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1830.0,
+    1212.7222222222222
+   ],
+   "area": 18,
+   "terrain": "hills"
+  },
+  "1166": {
+   "zone": "factory",
+   "kind": 4,
+   "feature": "Duro Factory Belt",
+   "state": 336,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1828.5,
+    1250.5
+   ],
+   "area": 48,
+   "terrain": "urban"
+  },
+  "1625": {
+   "zone": "dam",
+   "kind": 5,
+   "feature": "Tiercam Dam",
+   "state": 337,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1813.32,
+    1245.16
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "2340": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Tiercam Reservoir",
+   "state": 1356,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1808.8,
+    1249.2
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "2522": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Tiercam Reservoir",
+   "state": 1356,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1802.076923076923,
+    1247.6153846153845
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "2580": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Tiercam Reservoir",
+   "state": 1356,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1809.157894736842,
+    1254.0
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "2870": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Tiercam Reservoir",
+   "state": 1356,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1804.764705882353,
+    1251.2941176470588
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2960": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Tiercam Reservoir",
+   "state": 1356,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1804.5,
+    1245.0
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "3141": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Tiercam Reservoir",
+   "state": 1356,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1805.5,
+    1248.0
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "3727": {
+   "zone": "floating",
+   "kind": 6,
+   "feature": "New Tayana",
+   "state": 338,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1846.1315789473683,
+    1225.6842105263158
+   ],
+   "area": 38,
+   "terrain": "plains"
+  },
+  "4301": {
+   "zone": "lift",
+   "kind": 7,
+   "feature": "Orbital Lift Fields",
+   "state": 339,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1850.5,
+    1238.5
+   ],
+   "area": 48,
+   "terrain": "urban"
+  },
+  "4535": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1818.157894736842,
+    1213.9473684210527
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "5159": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1819.3333333333333,
+    1225.7222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "5367": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1818.3333333333333,
+    1204.5
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "5874": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1817.304347826087,
+    1220.4782608695652
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "6049": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1820.047619047619,
+    1217.5238095238096
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "6112": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1820.157894736842,
+    1208.157894736842
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "13709": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1821.75,
+    1212.125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "13714": {
+   "zone": "mountains",
+   "kind": 12,
+   "feature": "Ash Mountains",
+   "state": 1354,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1816.25,
+    1225.0
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "13716": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1842.9565217391305,
+    1252.9130434782608
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "13735": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1829.7058823529412,
+    1263.2941176470588
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "13738": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1838.9,
+    1260.85
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "13749": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1845.1875,
+    1257.8125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "13763": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1834.5294117647059,
+    1259.2941176470588
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "13769": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1838.3333333333333,
+    1256.2222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "13770": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1847.5,
+    1254.35
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "13803": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1833.7058823529412,
+    1262.5882352941176
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "13804": {
+   "zone": "sea",
+   "kind": 11,
+   "feature": "Toxic Sea",
+   "state": 1355,
+   "group": 9,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1841.875,
+    1257.6875
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "13832": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1839.0169491525423,
+    1245.7796610169491
+   ],
+   "area": 59,
+   "terrain": "desert"
+  },
+  "13841": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1825.3880597014925,
+    1226.1940298507463
+   ],
+   "area": 67,
+   "terrain": "desert"
+  },
+  "13848": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1824.3176470588235,
+    1239.964705882353
+   ],
+   "area": 85,
+   "terrain": "desert"
+  },
+  "13849": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1836.2205882352941,
+    1229.3088235294117
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "13861": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1818.0714285714287,
+    1232.5833333333333
+   ],
+   "area": 84,
+   "terrain": "desert"
+  },
+  "13864": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "Ranadaast",
+   "state": 20,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1836.641304347826,
+    1237.9673913043478
+   ],
+   "area": 92,
+   "terrain": "desert"
+  },
+  "13865": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Tayana District",
+   "state": 334,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1807.655172413793,
+    1211.655172413793
+   ],
+   "area": 58,
+   "terrain": "desert"
+  },
+  "13868": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Tayana District",
+   "state": 334,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1800.157894736842,
+    1225.0657894736842
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "13883": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Tayana District",
+   "state": 334,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1810.5217391304348,
+    1223.6739130434783
+   ],
+   "area": 92,
+   "terrain": "desert"
+  },
+  "13891": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Tayana District",
+   "state": 334,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1803.1549295774648,
+    1217.7605633802816
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "13901": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Tayana District",
+   "state": 334,
+   "group": 11,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1814.0441176470588,
+    1207.7941176470588
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "13908": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Valley of Royalty",
+   "state": 335,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1826.3152173913043,
+    1217.9347826086957
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "13925": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Valley of Royalty",
+   "state": 335,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1838.629213483146,
+    1208.4831460674156
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "13935": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Valley of Royalty",
+   "state": 335,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1824.125,
+    1204.9722222222222
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "13939": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Valley of Royalty",
+   "state": 335,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1835.8453608247423,
+    1219.4639175257732
+   ],
+   "area": 97,
+   "terrain": "plains"
+  },
+  "13943": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Valley of Royalty",
+   "state": 335,
+   "group": 12,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1831.6410256410256,
+    1206.1025641025642
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "13949": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Factory Wastes",
+   "state": 336,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1815.6091954022988,
+    1258.8275862068965
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "13958": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Factory Wastes",
+   "state": 336,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1833.9882352941177,
+    1249.964705882353
+   ],
+   "area": 85,
+   "terrain": "desert"
+  },
+  "13965": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Factory Wastes",
+   "state": 336,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1822.0804597701149,
+    1246.8505747126437
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "13966": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Factory Wastes",
+   "state": 336,
+   "group": 13,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1825.5412844036698,
+    1259.0825688073394
+   ],
+   "area": 109,
+   "terrain": "desert"
+  },
+  "13982": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Factory Wastes",
+   "state": 336,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1815.7076923076922,
+    1251.2153846153847
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "13987": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Northern Coast",
+   "state": 337,
+   "group": 14,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1801.909090909091,
+    1232.4818181818182
+   ],
+   "area": 110,
+   "terrain": "plains"
+  },
+  "13998": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Northern Coast",
+   "state": 337,
+   "group": 14,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1804.7931034482758,
+    1254.5172413793102
+   ],
+   "area": 29,
+   "terrain": "plains"
+  },
+  "14020": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Northern Coast",
+   "state": 337,
+   "group": 14,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1800.0898876404494,
+    1241.4494382022472
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "14028": {
+   "zone": "scrub",
+   "kind": 10,
+   "feature": "Northern Coast",
+   "state": 337,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1810.6875,
+    1238.828125
+   ],
+   "area": 128,
+   "terrain": "plains"
+  },
+  "14029": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "New Tayana",
+   "state": 338,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1842.6911764705883,
+    1227.485294117647
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "14033": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "New Tayana",
+   "state": 338,
+   "group": 15,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1845.1022727272727,
+    1212.8863636363637
+   ],
+   "area": 88,
+   "terrain": "desert"
+  },
+  "14037": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "New Tayana",
+   "state": 338,
+   "group": 15,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1850.3703703703704,
+    1218.3950617283951
+   ],
+   "area": 81,
+   "terrain": "desert"
+  },
+  "14043": {
+   "zone": "ash",
+   "kind": 9,
+   "feature": "New Tayana",
+   "state": 338,
+   "group": 15,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1853.037037037037,
+    1226.320987654321
+   ],
+   "area": 81,
+   "terrain": "desert"
+  },
+  "14055": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Orbital Lift Fields",
+   "state": 339,
+   "group": 16,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1849.5245901639344,
+    1247.6065573770493
+   ],
+   "area": 122,
+   "terrain": "desert"
+  },
+  "14071": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Orbital Lift Fields",
+   "state": 339,
+   "group": 16,
+   "coastal": true,
+   "sea": 18916,
+   "centre": [
+    1855.685393258427,
+    1234.8202247191011
+   ],
+   "area": 89,
+   "terrain": "desert"
+  },
+  "14091": {
+   "zone": "wastes",
+   "kind": 8,
+   "feature": "Orbital Lift Fields",
+   "state": 339,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1845.2586206896551,
+    1239.051724137931
+   ],
+   "area": 58,
+   "terrain": "desert"
+  }
+ }
+}
