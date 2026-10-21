@@ -1178,6 +1178,226 @@ HOD_landmark_ess_togatto = {
 	enable = { always = yes }
 	stability_factor = 0.03
 }
+HOD_landmark_car_academy = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_manpower = 0.05
+	stability_factor = 0.03
+}
+HOD_landmark_car_district = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_car_teeth = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_car_corsairs = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.05
+}
+HOD_landmark_bal_binprime = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+	political_power_factor = 0.05
+}
+HOD_landmark_bal_arms = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	local_factories = 0.1
+}
+HOD_landmark_bal_sobrik = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_bal_bugtown = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}
+HOD_landmark_ald_palace = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.05
+	political_power_factor = 0.1
+}
+HOD_landmark_ald_university = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}
+HOD_landmark_ald_crevasse = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	local_factories = 0.1
+}
+HOD_landmark_ald_sanctuary = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+}
+HOD_landmark_ald_falls = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_tyt_temple = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}
+HOD_landmark_tyt_retreat = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_tyt_banlanding = {
+	icon = GFX_idea_generic_logistics
+	enable = { always = yes }
+	local_supplies = 0.05
+}
+HOD_landmark_fre_incom = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	local_factories = 0.1
+}
+HOD_landmark_fre_arches = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_foe_yards = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.15
+}
+HOD_landmark_foe_hajibar = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+}
+HOD_landmark_foe_works = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	local_factories = 0.1
+}
+HOD_landmark_crl_yards = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.15
+}
+HOD_landmark_crl_coronet = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+	political_power_factor = 0.05
+}
+HOD_landmark_crl_korvella = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_kua_yards = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.15
+}
+HOD_landmark_kua_city = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+}
+HOD_landmark_kua_gardens = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_ren_yards = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.15
+}
+HOD_landmark_ren_hq = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	political_power_factor = 0.05
+}
+HOD_landmark_ren_base = {
+	icon = GFX_idea_generic_army_support
+	enable = { always = yes }
+	local_supplies = 0.1
+}
+HOD_landmark_com_chasin = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+}
+HOD_landmark_com_university = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}
+HOD_landmark_com_arena = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_dur_spacecity = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	state_production_speed_buildings_factor = 0.1
+}
+HOD_landmark_dur_ranadaast = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = -0.02
+}
+HOD_landmark_dur_royalty = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_lor_corp = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	local_factories = 0.1
+}
+HOD_landmark_lor_works = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	local_factories = 0.1
+}
+HOD_landmark_nei_kotosi = {
+	icon = GFX_idea_generic_production_bonus
+	enable = { always = yes }
+	local_factories = 0.1
+	stability_factor = 0.02
+}
+HOD_landmark_nei_hives = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+}
+HOD_landmark_mim_temple = {
+	icon = GFX_idea_generic_research_bonus
+	enable = { always = yes }
+	local_building_slots = 1
+}
+HOD_landmark_mim_village = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.02
+}
+HOD_landmark_mnn_ahto = {
+	icon = GFX_idea_generic_political_support
+	enable = { always = yes }
+	stability_factor = 0.03
+}
 HOD_landmark_cos_senate = {
 	icon = GFX_idea_generic_political_support
 	enable = { always = yes }

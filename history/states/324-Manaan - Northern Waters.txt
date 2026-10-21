@@ -1,0 +1,29 @@
+state={
+	id=324
+	name="STATE_324"
+	# HOD: Manaan (manaan_map.py)
+	provinces={
+		13623 13624 13625 13627 13636
+	}
+	resources={
+		oil=3
+	}
+	history = {
+		victory_points = {
+			13625 1
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 2
+					13623 = {
+				naval_base = 3
+			}
+		}
+		owner = TDF
+		add_core_of = TDF
+	}
+	manpower = 60947
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

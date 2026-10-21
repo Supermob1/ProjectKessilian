@@ -3,7 +3,7 @@ state={
 	name="STATE_125"
 	# HOD: Coruscant (coruscant_map.py)
 	provinces={
-		4111 4143 4158 4265 4544 4630 4634 4658 4673
+		299 4544 4630 4634 4658 4673 4836 4889
 	}
 	resources={
 		# #credits #Credits
@@ -17,7 +17,10 @@ state={
 	}
 	history = {
 		victory_points = {
-			4265 3
+			299 2
+		}
+		victory_points = {
+			4889 3
 		}
 		buildings = {
 
@@ -38,6 +41,9 @@ state={
 			infrastructure = 3 #Infrastructure
 
 			air_base = 1#Small Spaceports
+					299 = {
+				coastal_bunker = 3
+			}
 		}
 		owner = REP
 		add_core_of = REP

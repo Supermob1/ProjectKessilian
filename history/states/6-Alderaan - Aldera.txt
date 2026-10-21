@@ -1,0 +1,40 @@
+state={
+	id=6
+	name="STATE_6"
+	# HOD: Alderaan (alderaan_map.py)
+	provinces={
+		58 300 356 534 610 645 12463 12464 12465 12470 12475 12487 12488
+	}
+	resources={
+		coal=1
+	}
+	history = {
+		victory_points = {
+			58 10
+		}
+		victory_points = {
+			300 20
+		}
+		victory_points = {
+			610 5
+		}
+		victory_points = {
+			645 2
+		}
+		victory_points = {
+			12487 1
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			arms_factory = 5
+			air_base = 4
+		}
+		owner = ALD
+		add_core_of = ALD
+	}
+	manpower = 1200020
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

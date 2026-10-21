@@ -1,0 +1,32 @@
+state={
+	id=23
+	name="STATE_23"
+	# HOD: Rendilli (rendilli_map.py)
+	provinces={
+		822 1091 2173 13282 13301 13308 13309
+	}
+	resources={
+		coal=3
+		oil=2
+	}
+	history = {
+		victory_points = {
+			822 10
+		}
+		victory_points = {
+			2173 5
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 4
+			air_base = 2
+		}
+		owner = REN
+		add_core_of = REN
+	}
+	manpower = 744916
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
