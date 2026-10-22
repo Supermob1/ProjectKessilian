@@ -1,0 +1,31 @@
+state={
+	id=373
+	name="STATE_373"
+	# HOD: Bestine IV (bestine_iv_map.py)
+	provinces={
+		424 15333 15334 15339 15340 15357 15358 15366 15376 15380 15389 15390 15391 15403 15407 15414 15418 15419 15429 15430
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			424 3
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+					15334 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 121554
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

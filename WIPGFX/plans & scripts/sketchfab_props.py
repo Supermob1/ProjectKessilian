@@ -16,6 +16,8 @@ CREDITS (CC BY 4.0, author must be credited):
   Star Wars Moisture Vaporator - gazthing          https://sketchfab.com/gazthing
   Star Wars Sandcrawler (exterior) - tegnemaskin   https://sketchfab.com/tegnemaskin
   Star Wars: X-34 Landspeeder - fccooper           https://sketchfab.com/fccooper
+  Venator-class Star Destroyer (WIPGFX/3d/venator-class-star-destroyer, supplied by the user 2026-10-22) - author and
+    licence still to fill in before release
 """
 import json, os, sys
 
@@ -114,6 +116,12 @@ SPECS.update({
     "pam_invisible_hand": dict(path=f"{_SEP}/Invisible_Hand.stl", kind="building", budget=6400, size=14.0, out=_LM,
                                ao=(198, 182, 150)),   # Separatist tan-grey hull
 })
+# the orbital yards' Venators (arch_kit ALN_YARD_FLEET, FON_YARD_FLEET): the user's Venator-class model (FBX + PBR textures), 1.1 km
+# long, shown 10 map units
+SPECS.update({
+    "aln_venator": dict(path="WIPGFX/3d/venator-class-star-destroyer/source/Venator.fbx", kind="building", budget=6000,
+                        size=10.0, out=_LM),
+})
 
 
 def mesh_name(name):
@@ -151,6 +159,16 @@ def bake(*only):
         src_path = os.path.abspath(s.get("path") or f"{SRC}/{s['src']}/scene.gltf")
         if src_path.lower().endswith(".stl"):
             bpy.ops.wm.stl_import(filepath=src_path)
+        elif src_path.lower().endswith(".fbx"):
+            bpy.ops.import_scene.fbx(filepath=src_path)
+            tex_dir = os.path.join(os.path.dirname(os.path.dirname(src_path)), "textures")   # <model>/source/x.fbx + <model>/textures
+            key = lambda f: os.path.splitext(f)[0].replace("_", "").replace(" ", "").lower()
+            have = {key(f): os.path.join(tex_dir, f) for f in (os.listdir(tex_dir) if os.path.isdir(tex_dir) else [])}
+            for im in bpy.data.images:          # textures the FBX points elsewhere: by file name, "_"/case-blind (BaseColor = Base_Color)
+                cand = have.get(key(os.path.basename(im.filepath.replace("\\", "/"))))
+                if im.source == "FILE" and not os.path.exists(bpy.path.abspath(im.filepath)) and cand:
+                    im.filepath = cand
+                    im.reload()
         else:
             bpy.ops.import_scene.gltf(filepath=src_path)
         meshes = [o for o in bpy.context.scene.objects if o.type == "MESH"]

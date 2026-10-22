@@ -2333,6 +2333,171 @@ def manaan_atlas():
         B_DARK: (12, 12, 12)})
 
 
+def teta_atlas():
+    """hod_teta textures (Empress Teta: bronze plate with lit windows, pale stone paving, amber glass, copper patina, dark iron, bronze roofs, gold, warm gold light, ivory hull, metal, park green, iron-grey stone courses, carbonite blue-grey)."""
+    _atlas_generic("hod_teta", 44, {
+        B_PLATE: ((176, 132, 76), "plates"), B_PLATE_WIN: ((160, 120, 70), "win"), B_CONC: (206, 198, 180),
+        B_CONC_WIN: ((210, 160, 80), "glass"), B_RUST: (80, 150, 130), B_SOOT: ((48, 50, 56), "noise"),
+        B_ROOF: ((150, 100, 50), "plates"), B_HAZARD: ((230, 186, 80), "plates"), B_GLOW: ((255, 210, 130), "glow"),
+        B_PAD: (((206, 198, 180), (230, 186, 80)), "pad"), B_PIPE: (128, 126, 122), B_HULL: ((232, 224, 204), "plates"),
+        B_GIRDER: ((70, 120, 60), "noise"), B_BRICK: ((96, 98, 104), "courses"), B_DUST: (100, 116, 140),
+        B_DARK: (12, 12, 12)})
+
+
+def byss_atlas():
+    """hod_byss textures (Byss: pale stone plate with lit windows, pale sandstone, teal glass, rose clay, dark basalt, slate-teal roofs, yellow, violet Rakatan light, white hull, metal, fern green, weathered grey-violet courses, lichen gold)."""
+    _atlas_generic("hod_byss", 45, {
+        B_PLATE: ((206, 200, 186), "plates"), B_PLATE_WIN: ((190, 184, 172), "win"), B_CONC: (214, 200, 170),
+        B_CONC_WIN: ((90, 160, 160), "glass"), B_RUST: (180, 120, 110), B_SOOT: ((52, 48, 56), "noise"),
+        B_ROOF: ((60, 110, 110), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((190, 140, 255), "glow"),
+        B_PAD: (((214, 200, 170), (60, 110, 110)), "pad"), B_PIPE: (130, 132, 134), B_HULL: ((236, 236, 232), "plates"),
+        B_GIRDER: ((50, 110, 70), "noise"), B_BRICK: ((128, 120, 132), "courses"), B_DUST: (190, 176, 90),
+        B_DARK: (12, 12, 12)})
+
+
+def abregado_atlas():
+    """hod_abregado textures (Abregado-Rae: ochre plaster with lit windows, worn paving, canal green, rust red, grime, terracotta tiles, yellow, cantina neon, freighter grey, metal, hill green, brick courses, gilt gold)."""
+    _atlas_generic("hod_abregado", 46, {
+        B_PLATE: ((206, 170, 110), "plates"), B_PLATE_WIN: ((190, 156, 100), "win"), B_CONC: (176, 168, 150),
+        B_CONC_WIN: ((60, 130, 110), "glass"), B_RUST: (150, 66, 44), B_SOOT: ((70, 62, 54), "noise"),
+        B_ROOF: ((180, 90, 56), "tiles"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((255, 90, 190), "glow"),
+        B_PAD: (((176, 168, 150), (226, 190, 60)), "pad"), B_PIPE: (128, 128, 126), B_HULL: ((160, 162, 160), "plates"),
+        B_GIRDER: ((80, 130, 60), "noise"), B_BRICK: ((150, 96, 70), "courses"), B_DUST: (220, 180, 70),
+        B_DARK: (12, 12, 12)})
+
+
+def fondor_atlas():
+    """hod_fondor textures (Fondor: gunmetal plate with lit windows, grey concrete, cyan glass, rust, soot, purple-grey roofs, yellow, cyan light, ship-grey hull, metal, dark steel, purple-brown courses, purple dust)."""
+    _atlas_generic("hod_fondor", 47, {
+        B_PLATE: ((110, 110, 120), "plates"), B_PLATE_WIN: ((100, 100, 110), "win"), B_CONC: (150, 148, 150),
+        B_CONC_WIN: ((90, 190, 220), "glass"), B_RUST: (140, 76, 46), B_SOOT: ((40, 38, 44), "noise"),
+        B_ROOF: ((100, 80, 120), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((140, 220, 255), "glow"),
+        B_PAD: (((150, 148, 150), (140, 220, 255)), "pad"), B_PIPE: (130, 132, 138), B_HULL: ((200, 204, 210), "plates"),
+        B_GIRDER: ((70, 70, 80), "noise"), B_BRICK: ((110, 84, 110), "courses"), B_DUST: (120, 96, 130),
+        B_DARK: (12, 12, 12)})
+
+
+def cato_atlas():
+    """hod_cato textures (Cato Neimoidia: gilded cream plate with lit windows, pale stone, green-gold glass, burgundy, dark rock, gold, jewel teal, gold light, ivory hull, metal, forest green, rock courses, mossy rock)."""
+    _atlas_generic("hod_cato", 48, {
+        B_PLATE: ((214, 190, 130), "plates"), B_PLATE_WIN: ((200, 176, 120), "win"), B_CONC: (200, 190, 170),
+        B_CONC_WIN: ((150, 170, 110), "glass"), B_RUST: (130, 40, 50), B_SOOT: ((60, 56, 52), "noise"),
+        B_ROOF: ((210, 170, 70), "plates"), B_HAZARD: ((60, 180, 170), "plates"), B_GLOW: ((255, 220, 140), "glow"),
+        B_PAD: (((200, 190, 170), (210, 170, 70)), "pad"), B_PIPE: (130, 128, 122), B_HULL: ((236, 230, 214), "plates"),
+        B_GIRDER: ((50, 90, 50), "noise"), B_BRICK: ((110, 100, 90), "courses"), B_DUST: (100, 110, 80),
+        B_DARK: (12, 12, 12)})
+
+
+def bestine_atlas():
+    """hod_bestine textures (Bestine IV: whitewash with lit windows, chalk, sea-blue glass, terracotta, dark basalt, blue roofs, yellow, warm light, white hull, metal, field green, chalk rock courses, golden wheat)."""
+    _atlas_generic("hod_bestine", 49, {
+        B_PLATE: ((232, 230, 222), "plates"), B_PLATE_WIN: ((222, 220, 212), "win"), B_CONC: (220, 214, 196),
+        B_CONC_WIN: ((90, 160, 190), "glass"), B_RUST: (180, 96, 60), B_SOOT: ((60, 58, 56), "noise"),
+        B_ROOF: ((70, 120, 170), "tiles"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((255, 220, 160), "glow"),
+        B_PAD: (((220, 214, 196), (70, 120, 170)), "pad"), B_PIPE: (130, 132, 134), B_HULL: ((240, 240, 236), "plates"),
+        B_GIRDER: ((90, 140, 60), "noise"), B_BRICK: ((180, 176, 166), "courses"), B_DUST: (210, 180, 90),
+        B_DARK: (12, 12, 12)})
+
+
+def atzerri_atlas():
+    """hod_atzerri textures (Atzerri: grey-green plate with lit windows, mud concrete, teal glass, rust, grime, dull roofs, yellow, magenta neon, freighter grey, metal, swamp wood, grey courses, mud)."""
+    _atlas_generic("hod_atzerri", 50, {
+        B_PLATE: ((120, 130, 120), "plates"), B_PLATE_WIN: ((110, 120, 110), "win"), B_CONC: (130, 124, 110),
+        B_CONC_WIN: ((70, 160, 160), "glass"), B_RUST: (140, 74, 44), B_SOOT: ((50, 50, 46), "noise"),
+        B_ROOF: ((90, 96, 90), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((255, 80, 200), "glow"),
+        B_PAD: (((130, 124, 110), (255, 80, 200)), "pad"), B_PIPE: (128, 128, 126), B_HULL: ((160, 162, 160), "plates"),
+        B_GIRDER: ((90, 76, 54), "noise"), B_BRICK: ((120, 120, 116), "courses"), B_DUST: (96, 84, 66),
+        B_DARK: (12, 12, 12)})
+
+
+def allanteen_atlas():
+    """hod_allanteen textures (Allanteen VI: Republic grey plate with lit windows, pale paving, blue glass, Republic red, dark grey, slate, yellow, white light, Venator hull, metal, dark steel, grey courses, pale dust)."""
+    _atlas_generic("hod_allanteen", 51, {
+        B_PLATE: ((170, 172, 178), "plates"), B_PLATE_WIN: ((156, 158, 164), "win"), B_CONC: (196, 196, 198),
+        B_CONC_WIN: ((110, 150, 200), "glass"), B_RUST: (160, 40, 36), B_SOOT: ((60, 62, 66), "noise"),
+        B_ROOF: ((96, 100, 108), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((240, 240, 255), "glow"),
+        B_PAD: (((196, 196, 198), (160, 40, 36)), "pad"), B_PIPE: (130, 132, 138), B_HULL: ((214, 214, 216), "plates"),
+        B_GIRDER: ((74, 76, 82), "noise"), B_BRICK: ((140, 140, 144), "courses"), B_DUST: (176, 172, 164),
+        B_DARK: (12, 12, 12)})
+
+
+def falleen_atlas():
+    """hod_falleen textures (Falleen: pale stone with lit windows, terrace paving, jade glass, red lacquer, dark stone, jade roof tiles, gold, warm light, white hull, metal, garden green, stone courses, yellow ochre)."""
+    _atlas_generic("hod_falleen", 52, {
+        B_PLATE: ((214, 206, 186), "plates"), B_PLATE_WIN: ((204, 196, 176), "win"), B_CONC: (196, 188, 166),
+        B_CONC_WIN: ((80, 170, 140), "glass"), B_RUST: (170, 40, 40), B_SOOT: ((56, 54, 50), "noise"),
+        B_ROOF: ((40, 130, 100), "tiles"), B_HAZARD: ((220, 180, 60), "plates"), B_GLOW: ((255, 220, 150), "glow"),
+        B_PAD: (((196, 188, 166), (170, 40, 40)), "pad"), B_PIPE: (130, 128, 124), B_HULL: ((236, 234, 228), "plates"),
+        B_GIRDER: ((50, 110, 60), "noise"), B_BRICK: ((150, 140, 120), "courses"), B_DUST: (220, 180, 70),
+        B_DARK: (12, 12, 12)})
+
+
+def bothawui_atlas():
+    """hod_bothawui textures (Bothawui: grey-brown stone plate with lit windows, pale paving, amber glass, clan crimson, dark stone, copper-green roofs, gold, warm light, white hull, metal, forest green, fieldstone courses, savanna gold)."""
+    _atlas_generic("hod_bothawui", 53, {
+        B_PLATE: ((150, 140, 126), "plates"), B_PLATE_WIN: ((140, 130, 116), "win"), B_CONC: (186, 180, 166),
+        B_CONC_WIN: ((210, 160, 80), "glass"), B_RUST: (150, 40, 44), B_SOOT: ((56, 52, 48), "noise"),
+        B_ROOF: ((70, 140, 120), "plates"), B_HAZARD: ((220, 180, 60), "plates"), B_GLOW: ((255, 210, 140), "glow"),
+        B_PAD: (((186, 180, 166), (150, 40, 44)), "pad"), B_PIPE: (130, 128, 124), B_HULL: ((230, 228, 222), "plates"),
+        B_GIRDER: ((50, 100, 60), "noise"), B_BRICK: ((130, 120, 106), "courses"), B_DUST: (200, 180, 100),
+        B_DARK: (12, 12, 12)})
+
+
+def nalhutta_atlas():
+    """hod_nalhutta textures (Nal Hutta: grimy ochre plate, mud concrete, amber glass, rust, grime, bronze domes, amber light, freighter grey, root brown, sandstone courses, bog mud)."""
+    _atlas_generic("hod_nalhutta", 54, {
+        B_PLATE: ((170, 150, 110), "plates"), B_PLATE_WIN: ((158, 138, 98), "win"), B_CONC: (130, 120, 100),
+        B_CONC_WIN: ((210, 160, 80), "glass"), B_RUST: (140, 76, 44), B_SOOT: ((50, 46, 40), "noise"),
+        B_ROOF: ((150, 120, 70), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((255, 200, 110), "glow"),
+        B_PAD: (((130, 120, 100), (140, 76, 44)), "pad"), B_PIPE: (128, 128, 126), B_HULL: ((160, 162, 160), "plates"),
+        B_GIRDER: ((96, 72, 50), "noise"), B_BRICK: ((176, 150, 110), "courses"), B_DUST: (90, 80, 56),
+        B_DARK: (12, 12, 12)})
+
+
+def toydaria_atlas():
+    """hod_toydaria textures (Toydaria: tan stone, pale stone, green glass, royal purple, dark stone, green-bronze, warm light, white hull, swamp wood, stone courses, muck)."""
+    _atlas_generic("hod_toydaria", 55, {
+        B_PLATE: ((190, 170, 130), "plates"), B_PLATE_WIN: ((178, 158, 118), "win"), B_CONC: (206, 196, 170),
+        B_CONC_WIN: ((100, 160, 110), "glass"), B_RUST: (110, 60, 130), B_SOOT: ((60, 56, 50), "noise"),
+        B_ROOF: ((80, 130, 100), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((255, 220, 150), "glow"),
+        B_PAD: (((206, 196, 170), (110, 60, 130)), "pad"), B_PIPE: (128, 128, 126), B_HULL: ((232, 230, 224), "plates"),
+        B_GIRDER: ((90, 76, 54), "noise"), B_BRICK: ((170, 150, 116), "courses"), B_DUST: (90, 96, 60),
+        B_DARK: (12, 12, 12)})
+
+
+def quesh_atlas():
+    """hod_quesh textures (Quesh: stained ochre plate, grimy concrete, sealed green glass, rust, soot, brass domes, acid green light, grey hull, dead wood, stained courses, toxic mud)."""
+    _atlas_generic("hod_quesh", 56, {
+        B_PLATE: ((160, 150, 110), "plates"), B_PLATE_WIN: ((148, 138, 98), "win"), B_CONC: (130, 126, 104),
+        B_CONC_WIN: ((120, 170, 80), "glass"), B_RUST: (140, 80, 40), B_SOOT: ((44, 44, 36), "noise"),
+        B_ROOF: ((160, 140, 80), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((170, 255, 60), "glow"),
+        B_PAD: (((130, 126, 104), (140, 80, 40)), "pad"), B_PIPE: (128, 128, 126), B_HULL: ((150, 152, 150), "plates"),
+        B_GIRDER: ((80, 70, 56), "noise"), B_BRICK: ((140, 130, 96), "courses"), B_DUST: (100, 104, 50),
+        B_DARK: (12, 12, 12)})
+
+
+def nimban_atlas():
+    """hod_nimban textures (Nimban: pale cream plate, pale paving, blue glass, corporate teal, dark grey, slate, blue light, white hull, plains green, cream courses, plains gold)."""
+    _atlas_generic("hod_nimban", 57, {
+        B_PLATE: ((226, 220, 200), "plates"), B_PLATE_WIN: ((214, 208, 188), "win"), B_CONC: (210, 206, 192),
+        B_CONC_WIN: ((110, 160, 210), "glass"), B_RUST: (50, 140, 140), B_SOOT: ((60, 62, 66), "noise"),
+        B_ROOF: ((100, 108, 116), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((170, 220, 255), "glow"),
+        B_PAD: (((210, 206, 192), (50, 140, 140)), "pad"), B_PIPE: (128, 128, 126), B_HULL: ((236, 236, 232), "plates"),
+        B_GIRDER: ((90, 140, 70), "noise"), B_BRICK: ((210, 200, 176), "courses"), B_DUST: (200, 180, 100),
+        B_DARK: (12, 12, 12)})
+
+
+def narshaddaa_atlas():
+    """hod_narshaddaa textures (Nar Shaddaa: grimy grey plate, dark concrete, cyan glass, rust orange, soot, dark roofs, magenta neon, freighter grey, dark steel, grey courses, grime)."""
+    _atlas_generic("hod_narshaddaa", 58, {
+        B_PLATE: ((110, 110, 116), "plates"), B_PLATE_WIN: ((98, 98, 104), "win"), B_CONC: (90, 90, 94),
+        B_CONC_WIN: ((80, 200, 220), "glass"), B_RUST: (190, 90, 40), B_SOOT: ((36, 34, 38), "noise"),
+        B_ROOF: ((60, 60, 66), "plates"), B_HAZARD: ((226, 190, 60), "plates"), B_GLOW: ((255, 70, 190), "glow"),
+        B_PAD: (((90, 90, 94), (190, 90, 40)), "pad"), B_PIPE: (128, 128, 126), B_HULL: ((150, 152, 156), "plates"),
+        B_GIRDER: ((56, 56, 62), "noise"), B_BRICK: ((100, 100, 104), "courses"), B_DUST: (70, 64, 60),
+        B_DARK: (12, 12, 12)})
+
+
 def esseles_atlas():
     """hod_esseles textures (Esseles: cream stone, terracotta, bronze-green and gold domes, garden green)."""
     _atlas_generic("hod_esseles", 139, {
@@ -6590,6 +6755,54 @@ def models(*only):
         build(name, fn, tex="hod_mimban")
     for name, fn in (("hod_mnn_ahto", ak.mnn_ahto), ("hod_mnn_swoop", ak.mnn_swoop)):
         build(name, fn, tex="hod_manaan")
+    for name, fn in (("hod_tet_citadel", ak.tet_citadel), ("hod_tet_core", ak.tet_core), ("hod_tet_library", ak.tet_library),
+                     ("hod_tet_guild", ak.tet_guild), ("hod_tet_monument", ak.tet_monument), ("hod_tet_control", ak.tet_control),
+                     ("hod_tet_spaceworks", ak.tet_spaceworks), ("hod_tet_mine", ak.tet_mine)):
+        build(name, fn, tex="hod_teta")
+    for name, fn in (("hod_bys_landing", ak.bys_landing), ("hod_bys_estates", ak.bys_estates), ("hod_bys_peak", ak.bys_peak),
+                     ("hod_bys_temple", ak.bys_temple), ("hod_bys_ruins", ak.bys_ruins), ("hod_bys_port", ak.bys_port)):
+        build(name, fn, tex="hod_byss")
+    for name, fn in (("hod_abr_spaceport", ak.abr_spaceport), ("hod_abr_cantina", ak.abr_cantina), ("hod_abr_leyer", ak.abr_leyer),
+                     ("hod_abr_gushers", ak.abr_gushers)):
+        build(name, fn, tex="hod_abregado")
+    for name, fn in (("hod_fon_city", ak.fon_city), ("hod_fon_oridin", ak.fon_oridin), ("hod_fon_academy", ak.fon_academy),
+                     ("hod_fon_steam", ak.fon_steam), ("hod_fon_shaft", ak.fon_shaft), ("hod_fon_lift", ak.fon_lift)):
+        build(name, fn, tex="hod_fondor")
+    build("hod_fon_yards", ak.fon_yards, tex="hod_fondor",
+          extra=lambda: place_ships(ak.FON_YARD_FLEET, lambda kind: 1.0, prefix="aln_"))
+    for name, fn in (("hod_cat_zarra", ak.cat_zarra), ("hod_cat_bridge", ak.cat_bridge), ("hod_cat_vaults", ak.cat_vaults),
+                     ("hod_cat_university", ak.cat_university), ("hod_cat_citadel", ak.cat_citadel), ("hod_cat_talon", ak.cat_talon)):
+        build(name, fn, tex="hod_cato")
+    for name, fn in (("hod_bst_bsellis", ak.bst_bsellis), ("hod_bst_jahnae", ak.bst_jahnae), ("hod_bst_barlata", ak.bst_barlata),
+                     ("hod_bst_gasha", ak.bst_gasha), ("hod_bst_spire", ak.bst_spire)):
+        build(name, fn, tex="hod_bestine")
+    for name, fn in (("hod_atz_talos", ak.atz_talos), ("hod_atz_plaza", ak.atz_plaza), ("hod_atz_skreeka", ak.atz_skreeka),
+                     ("hod_atz_cantina", ak.atz_cantina)):
+        build(name, fn, tex="hod_atzerri")
+    for name, fn in (("hod_aln_admiralty", ak.aln_admiralty), ("hod_aln_memorial", ak.aln_memorial)):
+        build(name, fn, tex="hod_allanteen")
+    for name, fn in (("hod_aln_works", ak.aln_works), ("hod_aln_lift", ak.aln_lift)):
+        build(name, fn, tex="hod_allanteen")
+    build("hod_aln_yards", ak.aln_yards, tex="hod_allanteen",
+          extra=lambda: place_ships(ak.ALN_YARD_FLEET, lambda kind: 1.0, prefix="aln_"))
+    for name, fn in (("hod_fal_throne", ak.fal_throne), ("hod_fal_palace", ak.fal_palace), ("hod_fal_yellow", ak.fal_yellow),
+                     ("hod_fal_spaceport", ak.fal_spaceport), ("hod_fal_foundry", ak.fal_foundry)):
+        build(name, fn, tex="hod_falleen")
+    for name, fn in (("hod_bth_drev", ak.bth_drev), ("hod_bth_clans", ak.bth_clans), ("hod_bth_city", ak.bth_city),
+                     ("hod_bth_village", ak.bth_village)):
+        build(name, fn, tex="hod_bothawui")
+    for name, fn in (("hod_htt_bilbousa", ak.htt_bilbousa), ("hod_htt_palace", ak.htt_palace), ("hod_htt_mine", ak.htt_mine),
+                     ("hod_htt_yards", ak.htt_yards)):
+        build(name, fn, tex="hod_nalhutta")
+    for name, fn in (("hod_toy_toydor", ak.toy_toydor), ("hod_toy_palace", ak.toy_palace), ("hod_toy_arnel", ak.toy_arnel),
+                     ("hod_toy_stronghold", ak.toy_stronghold)):
+        build(name, fn, tex="hod_toydaria")
+    for name, fn in (("hod_qsh_palace", ak.qsh_palace), ("hod_qsh_refinery", ak.qsh_refinery)):
+        build(name, fn, tex="hod_quesh")
+    for name, fn in (("hod_nim_hkd", ak.nim_hkd), ("hod_nim_bureau", ak.nim_bureau)):
+        build(name, fn, tex="hod_nimban")
+    for name, fn in (("hod_nsh_hutta", ak.nsh_hutta), ("hod_nsh_palace", ak.nsh_palace), ("hod_nsh_port", ak.nsh_port)):
+        build(name, fn, tex="hod_narshaddaa")
     build("hod_anx_yards", ak.anx_yards, tex="hod_anaxes",
           extra=lambda: place_ships(ak.ANX_YARD_FLEET, lambda kind: ak.OT_SHIP_SCALE if kind == "hammerhead" else 1.0))
     build("hod_dub_capital", ak.dub_capital, tex="hod_dubrillion")
@@ -6640,6 +6853,21 @@ def models(*only):
                          ("hod_nei_town", ak.nei_town, "hod_neimoidia"),
                          ("hod_mim_town", ak.mim_town, "hod_mimban"),
                          ("hod_mnn_town", ak.mnn_town, "hod_manaan"),
+                         ("hod_tet_town", ak.tet_town, "hod_teta"),
+                         ("hod_bys_town", ak.bys_town, "hod_byss"),
+                         ("hod_abr_town", ak.abr_town, "hod_abregado"),
+                         ("hod_fon_town", ak.fon_town, "hod_fondor"),
+                         ("hod_cat_town", ak.cat_town, "hod_cato"),
+                         ("hod_bst_town", ak.bst_town, "hod_bestine"),
+                         ("hod_atz_town", ak.atz_town, "hod_atzerri"),
+                         ("hod_aln_town", ak.aln_town, "hod_allanteen"),
+                         ("hod_fal_town", ak.fal_town, "hod_falleen"),
+                         ("hod_bth_town", ak.bth_town, "hod_bothawui"),
+                         ("hod_htt_town", ak.htt_town, "hod_nalhutta"),
+                         ("hod_toy_town", ak.toy_town, "hod_toydaria"),
+                         ("hod_qsh_town", ak.qsh_town, "hod_quesh"),
+                         ("hod_nim_town", ak.nim_town, "hod_nimban"),
+                         ("hod_nsh_town", ak.nsh_town, "hod_narshaddaa"),
                          ("hod_cos_town", ak.cos_town, "hod_coruscant_lm")):
         for band in range(1, 5):
             for v in range(1, 5):
@@ -7544,5 +7772,5 @@ if __name__ == "__main__":
             "concordia_atlas": concordia_atlas, "bracca_atlas": bracca_atlas,
             "trandosha_atlas": trandosha_atlas, "nyriaan_atlas": nyriaan_atlas,
             "corsin_atlas": corsin_atlas, "kashyyyk_atlas": kashyyyk_atlas, "onderon_atlas": onderon_atlas, "umbara_atlas": umbara_atlas, "colla_atlas": colla_atlas, "ruusan_atlas": ruusan_atlas, "boz_atlas": boz_atlas, "ithor_atlas": ithor_atlas, "ordmantell_atlas": ordmantell_atlas, "garqi_atlas": garqi_atlas, "agamar_atlas": agamar_atlas, "ordtrasi_atlas": ordtrasi_atlas, "dantooine_atlas": dantooine_atlas, "dubrillion_atlas": dubrillion_atlas, "bastion_atlas": bastion_atlas, "kalee_atlas": kalee_atlas, "muunilinst_atlas": muunilinst_atlas, "mygeeto_atlas": mygeeto_atlas, "yagaminor_atlas": yagaminor_atlas, "ansion_atlas": ansion_atlas, "ilum_atlas": ilum_atlas, "dorin_atlas": dorin_atlas, "yinchorr_atlas": yinchorr_atlas, "chandrila_atlas": chandrila_atlas, "corulag_atlas": corulag_atlas,
-            "arkania_atlas": arkania_atlas, "anaxes_atlas": anaxes_atlas, "manaan_atlas": manaan_atlas, "mimban_atlas": mimban_atlas, "neimodia_atlas": neimodia_atlas, "loronar_atlas": loronar_atlas, "duro_atlas": duro_atlas, "commenor_atlas": commenor_atlas, "rendilli_atlas": rendilli_atlas, "kuat_atlas": kuat_atlas, "corellia_atlas": corellia_atlas, "foerost_atlas": foerost_atlas, "fresia_atlas": fresia_atlas, "tython_atlas": tython_atlas, "alderaan_atlas": alderaan_atlas, "balmorra_atlas": balmorra_atlas, "carida_atlas": carida_atlas, "esseles_atlas": esseles_atlas, "coruscant_atlas": coruscant_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
+            "arkania_atlas": arkania_atlas, "anaxes_atlas": anaxes_atlas, "manaan_atlas": manaan_atlas, "teta_atlas": teta_atlas, "fondor_atlas": fondor_atlas, "cato_atlas": cato_atlas, "bestine_atlas": bestine_atlas, "atzerri_atlas": atzerri_atlas, "allanteen_atlas": allanteen_atlas, "falleen_atlas": falleen_atlas, "bothawui_atlas": bothawui_atlas, "nalhutta_atlas": nalhutta_atlas, "toydaria_atlas": toydaria_atlas, "quesh_atlas": quesh_atlas, "nimban_atlas": nimban_atlas, "narshaddaa_atlas": narshaddaa_atlas, "byss_atlas": byss_atlas, "abregado_atlas": abregado_atlas, "mimban_atlas": mimban_atlas, "neimodia_atlas": neimodia_atlas, "loronar_atlas": loronar_atlas, "duro_atlas": duro_atlas, "commenor_atlas": commenor_atlas, "rendilli_atlas": rendilli_atlas, "kuat_atlas": kuat_atlas, "corellia_atlas": corellia_atlas, "foerost_atlas": foerost_atlas, "fresia_atlas": fresia_atlas, "tython_atlas": tython_atlas, "alderaan_atlas": alderaan_atlas, "balmorra_atlas": balmorra_atlas, "carida_atlas": carida_atlas, "esseles_atlas": esseles_atlas, "coruscant_atlas": coruscant_atlas, "etti_atlas": etti_atlas, "ruuria_atlas": ruuria_atlas, "ossus_atlas": ossus_atlas, "lola_atlas": lola_atlas, "ringo_atlas": ringo_atlas, "rhen_atlas": rhen_atlas, "kadavo_atlas": kadavo_atlas, "korriban_place": korriban_place, "florrum_place": florrum_place, "kadavo_place": kadavo_place, "zygerria_place": lambda: place_planet("Zygerria"), "place": place_planet, "models": models,
      "banner_texture": banner_texture, "raxus_alley": raxus_alley}[args[0]](*args[1:])

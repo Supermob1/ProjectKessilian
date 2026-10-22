@@ -392,7 +392,7 @@ FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
             "hod_way_village": LM, "hod_bra_city": LM, "hod_tra_city": LM, "hod_nyr_town": LM,
             "hod_crs_town": LM, "hod_kas_city": LM, "hod_ond_town": LM, "hod_umb_city": LM, "hod_col_city": LM, "hod_rus_city": LM,
             "hod_om_town": LM, "hod_gar_farm": LM, "hod_gar_city": LM, "hod_aga_town": LM, "hod_ot_town": LM,
-            "hod_dan_estate": LM, "hod_dub_city": LM, "hod_bas_town": LM, "hod_kal_town": LM, "hod_muun_town": LM, "hod_myg_town": LM, "hod_yag_town": LM, "hod_ans_town": LM, "hod_dor_town": LM, "hod_yin_town": LM, "hod_cha_town": LM, "hod_cor_town": LM, "hod_ark_town": LM, "hod_anx_town": LM, "hod_ess_town": LM, "hod_cos_town": LM, "hod_car_town": LM, "hod_bal_town": LM, "hod_ald_town": LM, "hod_fre_town": LM, "hod_foe_town": LM, "hod_crl_town": LM, "hod_kua_town": LM, "hod_ren_town": LM, "hod_com_town": LM, "hod_dur_town": LM, "hod_lor_town": LM, "hod_nei_town": LM, "hod_mim_town": LM, "hod_mnn_town": LM}
+            "hod_dan_estate": LM, "hod_dub_city": LM, "hod_bas_town": LM, "hod_kal_town": LM, "hod_muun_town": LM, "hod_myg_town": LM, "hod_yag_town": LM, "hod_ans_town": LM, "hod_dor_town": LM, "hod_yin_town": LM, "hod_cha_town": LM, "hod_cor_town": LM, "hod_ark_town": LM, "hod_anx_town": LM, "hod_ess_town": LM, "hod_cos_town": LM, "hod_car_town": LM, "hod_bal_town": LM, "hod_ald_town": LM, "hod_fre_town": LM, "hod_foe_town": LM, "hod_crl_town": LM, "hod_kua_town": LM, "hod_ren_town": LM, "hod_com_town": LM, "hod_dur_town": LM, "hod_lor_town": LM, "hod_nei_town": LM, "hod_mim_town": LM, "hod_mnn_town": LM, "hod_tet_town": LM, "hod_bys_town": LM, "hod_abr_town": LM, "hod_fon_town": LM, "hod_cat_town": LM, "hod_bst_town": LM, "hod_atz_town": LM, "hod_aln_town": LM, "hod_fal_town": LM, "hod_bth_town": LM, "hod_htt_town": LM, "hod_toy_town": LM, "hod_qsh_town": LM, "hod_nim_town": LM, "hod_nsh_town": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 SCRAP_TOWN = [f"hod_bld_rpt_{n}" for n in ("crates4", "crates5", "crates6", "crates9", "crates1", "huttTower", "fuelCellC")]
 SINGLE.update({n: SW for n in SCRAP_TOWN})  # Raxus Prime scrap towns: Empire at War junk stacks (sketchfab_props.py rpt_*)
@@ -490,7 +490,22 @@ CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]
                92: (0.4, ["hod_lor_town"]),                                             # Loronar: corporate towns
                93: (0.4, ["hod_nei_town"]),                                             # Neimoidia: hooked-crown towns
                94: (0.4, ["hod_mim_town"]),                                             # Mimban: stilt villages
-               95: (0.4, ["hod_mnn_town"])}                                             # Manaan: floating platforms
+               95: (0.4, ["hod_mnn_town"]),                                             # Manaan: floating platforms
+               96: (0.4, ["hod_tet_town"]),                                             # Empress Teta: bronze towers
+               97: (0.4, ["hod_bys_town"]),                                             # Byss: settler stone houses
+               98: (0.4, ["hod_abr_town"]),                                             # Abregado-Rae: canal towns
+               99: (0.4, ["hod_fon_town"]),                                             # Fondor: factories, cooling towers
+               100: (0.4, ["hod_cat_town"]),                                            # Cato Neimoidia: gilded towers
+               101: (0.4, ["hod_bst_town"]),                                            # Bestine IV: whitewashed farm towns
+               102: (0.4, ["hod_atz_town"]),                                            # Atzerri: neon stilt towns
+               103: (0.4, ["hod_aln_town"]),                                            # Allanteen VI: Republic grey blocks
+               104: (0.4, ["hod_fal_town"]),                                            # Falleen: tiered jade towns
+               105: (0.4, ["hod_bth_town"]),                                            # Bothawui: Bothan stone towns
+               106: (0.4, ["hod_htt_town"]),                                            # Nal Hutta: Hutt bulb towns
+               107: (0.4, ["hod_toy_town"]),                                            # Toydaria: round stone towers
+               108: (0.4, ["hod_qsh_town"]),                                            # Quesh: sealed domes
+               109: (0.4, ["hod_nim_town"]),                                            # Nimban: office ziggurats
+               110: (0.4, ["hod_nsh_town"])}                                            # Nar Shaddaa: grimy tower blocks
 
 
 def wire():

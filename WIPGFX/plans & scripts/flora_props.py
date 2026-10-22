@@ -298,6 +298,11 @@ PROCEDURAL = {
     30: "mim_fungus",    # Mimban: pale swamp fungus caps
     31: "nei_tree",      # Neimoidia: a heavy-crowned rainforest tree
     32: "nei_scrub",     # Neimoidia: dry desert scrub
+    33: "bys_fern",      # Byss: ferns (Legends: most of its vegetation ferns and lichens)
+    34: "bys_lichen",    # Byss: lichen mats on the plateaus
+    35: "tet_tree",      # Empress Teta: a park tree of the wildwoods
+    36: "abr_tree",      # Abregado-Rae: a temperate hill tree
+    37: "abr_grass",     # Abregado-Rae: meadow grass
 }
 PROC_MATS = {40: ["hod_dead_tree_trunk_02", "hod_foliage_wroshyr"], 41: ["hod_dead_tree_trunk_02", "hod_foliage_jungle"],
              55: ["hod_adobe"], 58: ["hod_fel_stalk", "hod_fel_cap"], 59: ["hod_fel_bulb"], 60: ["hod_fel_pitcher"],
@@ -379,6 +384,8 @@ PROC_MATS.update({246: ["hod_dead_tree_trunk_02", "hod_foliage_com"], 247: ["hod
 PROC_MATS.update({252: ["hod_mnn_rock"], 253: ["hod_foliage_mnn_kelp"], 254: ["hod_dead_tree_trunk_02", "hod_foliage_mim"],
                   255: ["hod_foliage_mim_reed"], 30: ["hod_mim_fungus"], 31: ["hod_dead_tree_trunk_02", "hod_foliage_nei"],
                   32: ["hod_foliage_nei_scrub"]})
+PROC_MATS.update({33: ["hod_foliage_bys_fern"], 34: ["hod_bys_lichen"], 35: ["hod_dead_tree_trunk_02", "hod_foliage_tet"],
+                  36: ["hod_dead_tree_trunk_02", "hod_foliage_abr"], 37: ["hod_foliage_abr_grass"]})
 PROC_MATS.update({159: ["hod_dead_tree_trunk_02", "hod_foliage_nyr"], 160: ["hod_foliage_nyr_nettle"],
                   161: ["hod_crs_palm", "hod_foliage_crs_palm"], 162: ["hod_foliage_crs_shrub"]})
 PROC_MATS.update({154: ["hod_bra_scrap", "hod_bra_rust"], 155: ["hod_bra_rock"],
@@ -449,7 +456,8 @@ PLANET_SOLID = {"hod_canto_cactus": ((92, 128, 84), "ribs"), "hod_canto_sandston
                 "hod_fre_rock": ((96, 98, 100), "slag"), "hod_foe_metal": ((120, 124, 130), "plates"),
                 "hod_foe_rust": ((136, 80, 50), "plates"), "hod_dur_slag": ((84, 92, 60), "slag"),
                 "hod_dur_rust": ((120, 70, 44), "plates"), "hod_lor_crystal": ((170, 230, 200), "slag"),
-                "hod_mnn_rock": ((96, 104, 108), "slag"), "hod_mim_fungus": ((214, 206, 176), "slag")}
+                "hod_mnn_rock": ((96, 104, 108), "slag"), "hod_mim_fungus": ((214, 206, 176), "slag"),
+                "hod_bys_lichen": ((190, 176, 90), "slag")}
 # planet foliage from Etti IV on: each texture its own random seed (from its name), so adding one leaves the others'
 # textures unchanged (PLANET_FOLIAGE above shares one random stream: never append to it)
 PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),          # Etti IV: deep forest green
@@ -559,7 +567,11 @@ PLANET_FOLIAGE_OWN = {"hod_foliage_etti": ((70, 120, 60), (45, 92, 48)),        
                       "hod_foliage_mim": ((60, 84, 54), (84, 96, 60)),              # Mimban: dark swamp green
                       "hod_foliage_mim_reed": ((104, 112, 70), (86, 98, 60)),       # reeds
                       "hod_foliage_nei": ((70, 104, 44), (96, 116, 50)),            # Neimoidia: rainforest
-                      "hod_foliage_nei_scrub": ((150, 130, 80), (126, 110, 70))}    # desert scrub           # Esseles: palm fronds           # Dorin: kand, olive and amber fruit    # Ansion: plains grass, gold tips             # Bastion: temperate green  # scented bushes, lilac flowers           # Colla IV: tropical green             # Ciutric IV: dark forest green
+                      "hod_foliage_nei_scrub": ((150, 130, 80), (126, 110, 70)),
+                      "hod_foliage_bys_fern": ((40, 120, 90), (60, 140, 96)),       # Byss: fern teal-green
+                      "hod_foliage_tet": ((70, 116, 56), (96, 130, 60)),            # Empress Teta: park green
+                      "hod_foliage_abr": ((86, 140, 50), (110, 156, 60)),           # Abregado-Rae: lime hill green
+                      "hod_foliage_abr_grass": ((130, 160, 70), (150, 170, 80))}    # meadow grass    # desert scrub           # Esseles: palm fronds           # Dorin: kand, olive and amber fruit    # Ansion: plains grass, gold tips             # Bastion: temperate green  # scented bushes, lilac flowers           # Colla IV: tropical green             # Ciutric IV: dark forest green
 
 
 def planet_textures():
@@ -1977,6 +1989,25 @@ def procedural(*only):
                 a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.2)
                 clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, rng.uniform(0.15, 0.3))), rng.uniform(0.2, 0.35),
                       rng.uniform(0.2, 0.3), 6, 0, size=(0.12, 0.3))
+        elif kind == "bys_fern":
+            for i in range(rng.randint(5, 8)):                              # Byss: fern fronds fanning from the ground
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.1)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, rng.uniform(0.25, 0.45))), rng.uniform(0.3, 0.45),
+                      rng.uniform(0.25, 0.4), 6, 0, size=(0.15, 0.45))
+        elif kind == "bys_lichen":
+            for i in range(rng.randint(3, 6)):                              # Byss: low lumpy lichen mats on stone
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.2)
+                c, r = (math.cos(a) * d, math.sin(a) * d), rng.uniform(0.25, 0.5)
+                lathe(bm, uv, c, [(-0.1, r), (0.08, r * 0.9), (0.16, r * 0.5), (0.2, 0.02)], 7, 0)
+        elif kind == "tet_tree":
+            giant(bm, uv, rng.uniform(1.6, 2.2), 0.12, 0, [(1.4, 5, 0.6, 0.7)], 1.9, 300)
+        elif kind == "abr_tree":
+            giant(bm, uv, rng.uniform(2.0, 2.6), 0.14, 2, [(1.6, 5, 0.7, 0.8), (2.2, 3, 0.45, 0.7)], 2.5, 380)
+        elif kind == "abr_grass":
+            for i in range(rng.randint(5, 9)):                              # Abregado-Rae: meadow grass tufts
+                a, d = rng.uniform(0, 6.283), rng.uniform(0.0, 1.2)
+                clump(bm, uv, Vector((math.cos(a) * d, math.sin(a) * d, 0.15)), rng.uniform(0.15, 0.25), 0.15, 5, 0,
+                      size=(0.06, 0.25))
         elif kind == "ess_palm":
             giant(bm, uv, rng.uniform(2.2, 2.8), 0.1, 0, [(2.2, 6, 0.6, 0.5)], 2.6, 300)
         elif kind == "dor_stone":
@@ -2538,7 +2569,7 @@ def procedural(*only):
     for idx, kind in PROCEDURAL.items():
         if only and str(idx) not in only and kind not in only:
             continue
-        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_", "boz_", "ith_", "om_", "gar_", "aga_", "ot_", "dan_", "dub_", "kal_", "muun_", "bas_", "myg_", "yag_", "ans_", "ilu_", "dor_", "yin_", "cha_", "cor_", "ark_", "anx_", "ess_", "car_", "bal_", "ald_", "tyt_", "fre_", "foe_", "kua_", "crl_", "ren_", "com_", "dur_", "lor_", "mnn_", "mim_", "nei_")):
+        if kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_", "boz_", "ith_", "om_", "gar_", "aga_", "ot_", "dan_", "dub_", "kal_", "muun_", "bas_", "myg_", "yag_", "ans_", "ilu_", "dor_", "yin_", "cha_", "cor_", "ark_", "anx_", "ess_", "car_", "bal_", "ald_", "tyt_", "fre_", "foe_", "kua_", "crl_", "ren_", "com_", "dur_", "lor_", "mnn_", "mim_", "nei_", "bys_", "tet_", "abr_")):
             rng.seed(kind)
         bpy.ops.wm.read_factory_settings(use_empty=True)
         me = bpy.data.meshes.new(kind)
@@ -2565,7 +2596,7 @@ def procedural(*only):
         elif kind.startswith("kor_"):
             korriban_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
-        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_", "boz_", "ith_", "om_", "gar_", "aga_", "ot_", "dan_", "dub_", "kal_", "muun_", "bas_", "myg_", "yag_", "ans_", "ilu_", "dor_", "yin_", "cha_", "cor_", "ark_", "anx_", "ess_", "car_", "bal_", "ald_", "tyt_", "fre_", "foe_", "kua_", "crl_", "ren_", "com_", "dur_", "lor_", "mnn_", "mim_", "nei_")):
+        elif kind.startswith(("dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_", "boz_", "ith_", "om_", "gar_", "aga_", "ot_", "dan_", "dub_", "kal_", "muun_", "bas_", "myg_", "yag_", "ans_", "ilu_", "dor_", "yin_", "cha_", "cor_", "ark_", "anx_", "ess_", "car_", "bal_", "ald_", "tyt_", "fre_", "foe_", "kua_", "crl_", "ren_", "com_", "dur_", "lor_", "mnn_", "mim_", "nei_", "bys_", "tet_", "abr_")):
             planet_flora(bm, uv, kind)
             mats = PROC_MATS[idx]
         else:
@@ -2577,7 +2608,7 @@ def procedural(*only):
             me.materials.append(bpy.data.materials.new(m))
         bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
-        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_", "boz_", "ith_", "om_", "gar_", "aga_", "ot_", "dan_", "dub_", "kal_", "muun_", "bas_", "myg_", "yag_", "ans_", "ilu_", "dor_", "yin_", "cha_", "cor_", "ark_", "anx_", "ess_", "car_", "bal_", "ald_", "tyt_", "fre_", "foe_", "kua_", "crl_", "ren_", "com_", "dur_", "lor_", "mnn_", "mim_", "nei_")):   # hard-surface props: Blender unwraps
+        if kind not in ("wroshyr", "jungle_giant") and not kind.startswith(("fel_", "rax_", "rp_heap", "kor_", "dk_", "zyg_", "canto_", "bon_", "etti_", "ruu_", "oss_", "lola_", "rv_", "rh_", "mcl_", "ieg_", "lia_", "jab_", "sal_", "tel_", "ser_", "yav_", "cel_", "bot_", "axx_", "cit_", "ces_", "dat_", "man_", "con_", "tar_", "way_", "bra_", "tra_", "nyr_", "crs_", "kas_", "ond_", "umb_", "col_", "rus_", "boz_", "ith_", "om_", "gar_", "aga_", "ot_", "dan_", "dub_", "kal_", "muun_", "bas_", "myg_", "yag_", "ans_", "ilu_", "dor_", "yin_", "cha_", "cor_", "ark_", "anx_", "ess_", "car_", "bal_", "ald_", "tyt_", "fre_", "foe_", "kua_", "crl_", "ren_", "com_", "dur_", "lor_", "mnn_", "mim_", "nei_", "bys_", "tet_", "abr_")):   # hard-surface props: Blender unwraps
             bpy.ops.object.mode_set(mode="EDIT")
             bpy.ops.mesh.select_all(action="SELECT")
             bpy.ops.uv.smart_project(island_margin=0.02)

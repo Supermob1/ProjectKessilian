@@ -1007,6 +1007,108 @@ LANDMARKS = [
     ("mnn_ahto", ["hod_mnn_ahto", "hod_mnn_swoop"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
      "Ahto City", "The Selkath capital floating alone on Manaan's endless sea, white platforms and domes linked by bridges. Its "
      "swoop track draws racers from across the Slice, and its kolto is sold to anyone.", None),
+    # --- Empress Teta (canon: Cinnagar, the Core District, the Royal District, the Iron Citadel, the Great Library, the
+    # Navigator's Guildhouse; Legends: the monument to lost navigators, Cinnagar Control, the carbonite mines)
+    ("tet_cinnagar", ["hod_tet_core", "hod_tet_citadel", "hod_tet_control", "hod_tet_spaceworks"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.03}, "Cinnagar",
+     "The city that grew until it covered Empress Teta. The Core District glitters with shops and museums; behind it the "
+     "Iron Citadel, where Teta's monarchs ruled until the Krath took it, still stands in the Royal District.", None),
+    ("tet_library", ["hod_tet_library", "hod_tet_guild", "hod_tet_monument"], "GFX_idea_generic_research_bonus",
+     {"local_building_slots": 1}, "Great Library of Cinnagar",
+     "Under its bronze dome lies the learning of the old Deep Core frontier. Across the square the Navigator's Guildhouse "
+     "remembers the scouts who never came back from the routes they went to find.", None),
+    ("tet_mines", ["hod_tet_mine"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1}, "Tetan Carbonite Mines",
+     "Carbonite is the backbone of Teta's wealth. The pits bite deep into the cityscape, and more than once the digging "
+     "has nearly broken the world.", None),
+    # --- Byss (Legends: the Rakatan stronghold, the pre-Expansionist ruins, Desolation Peak, the Emerald Splendor Estates)
+    ("bys_temple", ["hod_bys_temple", "hod_bys_ruins"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Rakatan Stronghold", "A temple fortress the Infinite Empire raised to rule the Deep Core, its stone still lit by a "
+     "light nobody can explain. Older ruins lie among the ferns, from before anyone counted the ages.", None),
+    ("bys_landing", ["hod_bys_landing", "hod_bys_estates", "hod_bys_peak", "hod_bys_port"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.02}, "Byss Landing",
+     "A quiet Republic town on a balmy world of lakes and plateaus. The rich keep villas at the Emerald Splendor Estates, "
+     "and beyond them the white houses of Desolation Peak climb their rock above the lake.", None),
+    # --- Abregado-Rae (canon: the spaceport, the Cantina District; Legends: the canals, the LoBue Cantina, Le Yer, the Gilt Gushers)
+    ("abr_spaceport", ["hod_abr_spaceport", "hod_abr_cantina"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1, "stability_factor": -0.02}, "Abregado-rae Spaceport",
+     "The closest thing the Core has to a smugglers' safe dock. Freighters drop into its sunken bays, barges glide down "
+     "its canals, and in the Old Patch the LoBue Cantina never closes.", None),
+    ("abr_leyer", ["hod_abr_leyer", "hod_abr_gushers"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Le Yer", "A resort on the sea, with hydrobikes out to Phyrstal Island. Inland, the Gilt Gushers bubble up gold "
+     "among the hills.", None),
+    # --- Fondor (Legends: Fondor City, Oridin City, the Academy of Engineering and Design, the steam tubes, the mine shafts)
+    ("fon_city", ["hod_fon_city", "hod_fon_oridin", "hod_fon_lift", "hod_fon_yards"], "GFX_idea_generic_production_bonus", {"local_factories": 0.15},
+     "Fondor City", "A world of factories, cooling towers and barracks under a purple sky, building the hulls the shipyards "
+     "above will finish. Fondor City and Oridin City run the works; the lift fields send them up.", None),
+    ("fon_academy", ["hod_fon_academy", "hod_fon_steam", "hod_fon_shaft"], "GFX_idea_generic_research_bonus",
+     {"local_building_slots": 1}, "Fondor Academy of Engineering and Design",
+     "Kuat Drive Yards and the Techno Union both hire their engineers here. Below the campus run the steam tubes, and the "
+     "shafts go down toward the planet's core.", None),
+    # --- Cato Neimoidia (canon: Zarra, the bridge cities, the Great Vaults, Bride's Talon, the University; Legends: Gunray's citadel)
+    ("cat_zarra", ["hod_cat_zarra", "hod_cat_bridge", "hod_cat_talon"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.03}, "Zarra", "Gilded bridge cities hang between great rock arches above an acid sea, wrapped "
+     "in fog. Zarra is the richest of them, the capital of the Trade Federation's purse world.", None),
+    ("cat_vaults", ["hod_cat_vaults", "hod_cat_university", "hod_cat_citadel"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1}, "Great Vaults of Cato Neimoidia",
+     "Lott Dod's palace keeps the Federation's treasure in its vaults. In the west, Nute Gunray has a citadel of his own, "
+     "in case the Republic ever comes for its money.", None),
+    # --- Bestine IV (canon: Bsellis City, the island spires, Jahnae; Legends: Barlata, Gasha, Tusken)
+    ("bst_bsellis", ["hod_bst_bsellis", "hod_bst_spire"], "GFX_idea_generic_production_bonus", {"local_factories": 0.05},
+     "Bsellis City", "A white market town among golden fields, under chalk cliffs and spires. Its farms feed half the "
+     "Inner Rim, and its gangs take their cut.", None),
+    ("bst_spires", ["hod_bst_jahnae", "hod_bst_barlata", "hod_bst_gasha"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.02}, "Island Spires", "Bestine's people live where they always have: on top of the spires at "
+     "Jahnae, inside the lava tube of Barlata, and on the floating rafts of Gasha.", None),
+    # --- Atzerri (Legends: Talos, the Trader's Plaza, Skreeka, the Freeman Cantina)
+    ("atz_talos", ["hod_atz_talos", "hod_atz_plaza", "hod_atz_skreeka", "hod_atz_cantina"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1, "stability_factor": -0.02}, "Talos",
+     "A spaceport city on stilts over the marsh, where almost anything, legal or not, can be had for a price. Visitors run "
+     "the neon gauntlet of the Trader's Plaza before they find what they came for.", None),
+    # --- Allanteen VI (Legends: the Allanteen Six shipyards, the Navy's restoration, the Venators)
+    ("aln_yards", ["hod_aln_works", "hod_aln_lift", "hod_aln_admiralty", "hod_aln_memorial", "hod_aln_yards"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.15}, "Allanteen Six Shipyards",
+     "Among the oldest yards of the Republic: the Navy was rebuilt here fifteen thousand years ago, and the Venators the "
+     "war needs now are laid down in the same orbital slips, deep inside Separatist space.", None),
+    # --- Falleen (Legends: Falleen Throne, the Yellow District, House Sizhran; canon: the Hocekureem Sea)
+    ("fal_throne", ["hod_fal_throne", "hod_fal_palace", "hod_fal_yellow"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.03}, "Falleen Throne",
+     "The Falleen call their capital, not Coruscant, the true seat of civilization. House Sizhran rules from its palace "
+     "above the jade roofs; below it the Yellow District sells everything the galaxy makes.", None),
+    ("fal_harbour", ["hod_fal_spaceport", "hod_fal_foundry"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Hocekureem Spaceport", "Freighters come down on the terraces by the Hocekureem Sea; inland the Throne Foundries "
+     "smelt the ore of the Ice Crown.", None),
+    # --- Bothawui (Legends: Drev'starn, the Combined Clans Center, Breil, Blee'starn, Fey'starn)
+    ("bth_clans", ["hod_bth_clans", "hod_bth_drev"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Combined Clans Center", "Where the Bothan clans meet under one copper dome, and where every secret in the galaxy "
+     "is eventually for sale.", None),
+    ("bth_cities", ["hod_bth_city", "hod_bth_village"], "GFX_idea_generic_production_bonus", {"local_factories": 0.05},
+     "Cities of the Rhyde'vak", "Breil, Blee'starn on its island, Holm'starn on its peninsula: stone towns under "
+     "copper cones along the Rhyde'vak ocean, and fishing villages like Fey'starn on its shores.", None),
+    # --- Nal Hutta (canon: Bilbousa, the Hutt palaces; Legends: the strip mines, the Guarja Shipyards)
+    ("htt_bilbousa", ["hod_htt_bilbousa", "hod_htt_palace", "hod_htt_yards"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.02}, "Bilbousa", "The Hutts took a lush world and turned it into bogs under greasy rain. Bilbousa "
+     "sprawls under its bulbous domes; the clans keep their palaces on what solid ground is left.", None),
+    ("htt_mines", ["hod_htt_mine"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1}, "Nal Hutta Strip Mines",
+     "Crawlers strip the planet to the bone and ship it all to Nar Shaddaa.", None),
+    # --- Toydaria (canon: Toydor, the Royal City and palace, Arnel, Pashda's stronghold)
+    ("toy_royal", ["hod_toy_palace", "hod_toy_toydor"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Toydarian Royal Palace", "The king of Toydaria rules from his palace on a mountain peak above the fog; Toydor, the "
+     "largest city, rises from the muck below.", None),
+    ("toy_arnel", ["hod_toy_arnel", "hod_toy_stronghold"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Arnel", "Ten rings of water and land in the swamps feed the world; the Hutts' stronghold in the forests watches them.", None),
+    # --- Quesh (Legends: the Three Families Palace, Broga's Palace)
+    ("qsh_palace", ["hod_qsh_palace", "hod_qsh_refinery"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Three Families Palace", "Nobody breathes the air of Quesh without a mask but the Hutts. The Three Families rule from "
+     "their sealed palace and sell what the poisoned world distils.", None),
+    # --- Nimban (Legends: Hoersch-Kessel Drive, the Bureau of Ships and Services, Delban Faxicorp)
+    ("nim_hkd", ["hod_nim_hkd", "hod_nim_bureau"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Hoersch-Kessel Drive", "The gentle Nimbanel keep the Hutts' books, and half the hyperdrives in Hutt Space come from "
+     "the test rings outside Hoersch-Kessel's tower.", None),
+    # --- Nar Shaddaa (canon: Hutta Town, the Palace of Grakkus, the spaceport)
+    ("nsh_hutta", ["hod_nsh_hutta", "hod_nsh_palace", "hod_nsh_port"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1, "stability_factor": -0.03}, "Hutta Town",
+     "The Smugglers' Moon: tower blocks with shanties bolted into every gap, neon over everything, and the Hutts taking "
+     "their cut of all of it.", None),
     # --- Coruscant (canon/Legends: the Senate, the Jedi Temple, the Executive Building, the Courts, the Processional
     # Way, Monument Plaza, 500 Republica, the Galaxies Opera House, the landing rings, the Works, Level 1313)
     ("cos_senate", ["hod_cos_senate", "hod_cos_processional", "hod_cos_courts"], "GFX_idea_generic_political_support",
@@ -1187,7 +1289,7 @@ PLANET_OF = {"raxulon_parliament": "Raxus", "great_alley": "Raxus", "kaas_citade
              **{k: "Korriban" for k in ("sith_academy", "valley_dark_lords", "tomb_ragnos", "tomb_sadow", "tomb_pall",
                                         "tomb_hord", "tomb_kressh")},
              **{k: pl for pre, pl in (("rp_", "Raxus Prime"), ("kadavo_", "Kadavo"), ("hondo_", "Florrum"),
-                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("mnn_", "Manaan"), ("mim_", "Mimban"), ("nei_", "Neimodia"), ("lor_", "Loronar"), ("dur_", "Duro"), ("com_", "Commenor"), ("ren_", "Rendilli"), ("kua_", "Kuat"), ("crl_", "Corellia"), ("foe_", "Foerost"), ("fre_", "Fresia"), ("tyt_", "Tython"), ("ald_", "Alderaan"), ("bal_", "Balmorra"), ("car_", "Carida"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
+                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("mnn_", "Manaan"), ("mim_", "Mimban"), ("tet_", "Empress Teta"), ("bys_", "Byss"), ("abr_", "Abregado-Rae"), ("fon_", "Fondor"), ("cat_", "Cato Neimoidia"), ("bst_", "Bestine IV"), ("atz_", "Atzerri"), ("aln_", "Allanteen VI"), ("fal_", "Falleen"), ("bth_", "Bothawui"), ("htt_", "Nal Hutta"), ("toy_", "Toydaria"), ("qsh_", "Quesh"), ("nim_", "Nimban"), ("nsh_", "Nar Shaddaa"), ("nei_", "Neimodia"), ("lor_", "Loronar"), ("dur_", "Duro"), ("com_", "Commenor"), ("ren_", "Rendilli"), ("kua_", "Kuat"), ("crl_", "Corellia"), ("foe_", "Foerost"), ("fre_", "Fresia"), ("tyt_", "Tython"), ("ald_", "Alderaan"), ("bal_", "Balmorra"), ("car_", "Carida"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
                 for k, *_ in LANDMARKS if k.startswith(pre)}}
 assert {k for k, *_ in LANDMARKS} == set(PLANET_OF), "every landmark needs its planet"
 

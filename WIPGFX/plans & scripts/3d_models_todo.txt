@@ -53,3 +53,10 @@ D. MAP PROPS (trees.bmp objects, planet_terrain_gen.py PROPS)
    Existing: vaporators, sandcrawler, boulders, ship wrecks
    Candidates: AT-AT / AT-TE wrecks (battlefield worlds), crashed starship hulls, moisture farm huts (Tatooine),
    ice crystal spires (Ilum), lava rock arches (Mustafar), droid scrap piles (Raxus Prime)
+
+E. CITY-WORLD TOWN CELLS (ON HOLD, the user 2026-10-22: "much better but still not a fan, not enough diversity")
+   arch_kit.tet_town (Empress Teta, map/cities.txt 96) is now a 3x3 grid of podium blocks with broad stepped towers,
+   street gaps and speeders. Still to do before city worlds look right: more building types per cell (domes, slab
+   arcologies, spires, landing platforms, skybridges, terraced blocks, lower plazas with greenery), varied block
+   sizes / irregular grids, varied heights and roof shapes, more traffic lanes. Then apply the same cell to every city
+   world (Coruscant cos_town 81, Fondor fon_town 99, ...), not just Teta.

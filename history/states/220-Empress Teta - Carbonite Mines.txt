@@ -1,0 +1,29 @@
+state={
+	id=220
+	name="STATE_220"
+	# HOD: Empress Teta (empress_teta_map.py)
+	provinces={
+		2916 2993 3007 3156 3179 3294 3314 3372 3667 3670 3737 13300 13381
+	}
+	resources={
+		chromium=2
+		coal=2
+	}
+	history = {
+		victory_points = {
+			3156 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = GMG
+		add_core_of = GMG
+	}
+	manpower = 860555
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

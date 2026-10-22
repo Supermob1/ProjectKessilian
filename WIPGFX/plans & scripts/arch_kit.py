@@ -12585,3 +12585,1530 @@ MNN_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: (mnn_platform(k, x,
 def mnn_town(k, band, rng):
     # Manaan's floating settlements (map/cities.txt 95): town_cell with Manaan's palette
     town_cell(k, band, rng, MNN_TOWN)
+
+
+# ==================================================================================================== EMPRESS TETA
+# Empress Teta (canon: the city-world Cinnagar; the majestic Core District, the Royal District of the Keto family, the
+# Great Library under its bronze dome, the Hyperspace Navigator's Guildhouse, the Iron Citadel, a massive stone palace;
+# Legends: the monument to lost navigators, Cinnagar Control and its Koros Spaceworks interceptors, the carbonite mines
+# dotting the cityscape). Star Wars vocabulary, a design choice: bronze-and-gold stepped towers, iron-grey stone for the
+# old palace, carbonite blue-grey spoil. Atlas hod_teta (B_ layout): B_PLATE bronze plate, B_PLATE_WIN with lit windows,
+# B_CONC pale stone paving, B_CONC_WIN amber glass, B_RUST copper patina, B_SOOT dark iron, B_ROOF bronze roofs, B_HAZARD
+# gold, B_GLOW warm gold light, B_HULL ivory hull, B_PIPE metal, B_GIRDER park green, B_BRICK iron-grey stone courses,
+# B_DUST carbonite blue-grey.
+def tet_tower(k, x, y, z0, h, r):
+    """a Tetan tower: a bronze drum stepping in twice at gold collars, a bronze crown and a gold needle"""
+    k.lathe([(r, z0), (r, h * 0.6), (r * 0.8, h * 0.62), (r * 0.8, h * 0.84), (r * 0.55, h * 0.86), (r * 0.5, h)],
+            [B_PLATE_WIN, B_HAZARD, B_PLATE_WIN, B_HAZARD, B_ROOF], sides=12, cx=x, cy=y, cap=B_ROOF)
+    k.lathe([(r * 0.18, h), (0.0, h + r * 1.6)], [B_HAZARD], sides=6, cx=x, cy=y)
+
+
+def tet_core(k):
+    # Cinnagar's Core District (canon: the majestic district in the centre of Cinnagar; Legends: endless high-end shops,
+    # restaurants, boutiques and museums): a tall central tower over a round arcade plaza, eight lesser towers round it
+    # tied by skybridges, a ring of domed galleries. ~30
+    tet_tower(k, 0.0, 0.0, -SKIRT, 11.0, 0.9)
+    k.lathe([(2.6, -SKIRT), (2.6, 0.6), (2.3, 0.7)], [B_PLATE_WIN, B_ROOF], sides=24, cap=B_CONC)   # the arcade plaza
+    for i in range(8):
+        a = TAU * i / 8 + 0.2
+        x, y, h = 4.2 * math.cos(a), 4.2 * math.sin(a), (6.0, 8.0, 5.0, 7.0)[i % 4]
+        tet_tower(k, x, y, -SKIRT, h, 0.55)
+        k.tube((0.8 * math.cos(a), 0.8 * math.sin(a), h * 0.55), (x * 0.88, y * 0.88, h * 0.55), 0.1, B_PLATE, sides=5)
+    for i in range(6):
+        a = TAU * i / 6 + 0.45
+        x, y = 2.9 * math.cos(a) * 1.15, 2.9 * math.sin(a) * 1.15
+        dome(k, x, y, -SKIRT, 0.6, SKIRT + 1.0, [B_PLATE, B_PLATE, B_ROOF, B_HAZARD], sides=12)
+
+
+def tet_citadel(k):
+    # the Iron Citadel (canon: a massive stone palace; Legends: at the heart of the Royal District, the seat of Teta's
+    # monarchs, conquered by the Krath): a battered stone podium, a great iron-grey keep in three stepped tiers, four
+    # round corner towers with iron cones, curtain walls between, a gold-lit crown over the throne hall. ~25
+    tbox(k, 0.0, 0.0, -SKIRT, 1.0, 4.2, 3.4, 0.0, B_BRICK, B_CONC, wt=3.9, dt=3.1)
+    for i, (w, d) in enumerate(((2.6, 2.0), (1.9, 1.5), (1.2, 1.0))):
+        z = 1.0 + 1.8 * i
+        tbox(k, 0.0, 0.0, z - 0.1, z + 1.8, w, d, 0.0, B_BRICK, B_SOOT, wt=w * 0.94, dt=d * 0.94)
+    k.lathe([(0.7, 6.4), (0.7, 7.0), (0.0, 8.2)], [B_GLOW, B_SOOT], sides=8)        # the crown over the throne hall
+    for sx, sy in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
+        x, y = sx * 3.6, sy * 2.8
+        k.lathe([(0.7, -SKIRT), (0.62, 4.2), (0.78, 4.4)], [B_BRICK, B_BRICK], sides=12, cx=x, cy=y)
+        k.lathe([(0.8, 4.4), (0.0, 6.0)], [B_SOOT], sides=12, cx=x, cy=y)
+    for i in range(4):                                                               # curtain walls between the towers
+        a = math.pi / 2 * i
+        cx, cy = (3.6 * math.cos(a), 2.8 * math.sin(a))
+        tbox(k, cx, cy, -SKIRT, 2.4, 0.25 if i % 2 == 0 else 3.0, 2.4 if i % 2 == 0 else 0.25, 0.0, B_BRICK, B_SOOT)
+
+
+def tet_library(k):
+    # the Great Library of Cinnagar (canon/Legends: a massive library within a bronze-domed building): a stepped stone
+    # podium, a colonnaded drum, the great bronze dome with a gold lantern, a wide stair to the plaza. ~20
+    tbox(k, 0.0, 0.0, -SKIRT, 0.6, 3.6, 3.6, 0.0, B_CONC, B_CONC, wt=3.3, dt=3.3)
+    tbox(k, 0.0, -3.4, -SKIRT, 0.5, 1.2, 0.8, 0.0, B_CONC, B_CONC, wt=1.2, dt=0.2)   # the stair
+    k.lathe([(2.3, 0.6), (2.3, 2.4), (2.6, 2.5)], [B_CONC_WIN, B_CONC], sides=24, cap=B_CONC)
+    for i in range(20):                                                              # the colonnade
+        a = TAU * i / 20
+        k.lathe([(0.14, 0.6), (0.12, 2.4)], [B_HULL], sides=6, cx=2.75 * math.cos(a), cy=2.75 * math.sin(a))
+    k.lathe([(2.9, 2.4), (2.9, 2.6)], [B_HAZARD], sides=24)
+    dome(k, 0.0, 0.0, 2.6, 2.5, 2.4, [B_ROOF, B_ROOF, B_ROOF, B_ROOF, B_RUST], sides=24, n=5)
+    k.lathe([(0.4, 4.9), (0.4, 5.6), (0.0, 6.2)], [B_GLOW, B_HAZARD], sides=10)
+
+
+def tet_guild(k):
+    # the Hyperspace Navigator's Guildhouse (canon: a guildhouse in Cinnagar, the old headquarters of the Navigator's
+    # Guild): a long hall with bronze roofs and glass fronts, two wings, a navigation spire carrying a ring of star
+    # charts, a beacon on top. ~15
+    tbox(k, 0.0, 0.0, -SKIRT, 1.6, 2.6, 1.2, 0.0, B_PLATE_WIN, B_ROOF, wt=2.4, dt=0.6)
+    for s_ in (-1, 1):
+        tbox(k, s_ * 2.6, 1.4, -SKIRT, 1.1, 0.7, 1.2, 0.0, B_PLATE_WIN, B_ROOF, wt=0.6, dt=0.8)
+    tet_tower(k, 0.0, -1.8, -SKIRT, 6.0, 0.4)
+    for i in range(12):                                                              # the star-chart ring
+        a0, a1 = TAU * i / 12, TAU * (i + 1) / 12
+        k.tube((1.3 * math.cos(a0), -1.8 + 1.3 * math.sin(a0), 4.2), (1.3 * math.cos(a1), -1.8 + 1.3 * math.sin(a1), 4.2),
+               0.08, B_HAZARD, sides=4)
+    k.lathe([(0.2, 6.9), (0.0, 7.3)], [B_GLOW], sides=6, cx=0.0, cy=-1.8)
+
+
+def tet_monument(k):
+    # the monument to lost navigators (Legends: a statue before the Guildhouse, for those lost exploring new hyperspace
+    # routes): a navigator on a tall plinth, one arm raised to the stars, a ring of low stone posts round a gold disc. ~6
+    tbox(k, 0.0, 0.0, -SKIRT, 1.2, 0.6, 0.6, 0.0, B_BRICK, B_CONC, wt=0.5, dt=0.5)
+    k.lathe([(0.25, 1.2), (0.3, 2.0), (0.22, 2.6), (0.0, 2.9)], [B_RUST, B_RUST, B_RUST], sides=8)
+    k.tube((0.15, 0.0, 2.4), (0.45, 0.2, 3.4), 0.06, B_RUST, sides=5)
+    k.lathe([(1.8, 0.02), (1.8, 0.06)], [B_HAZARD], sides=24, cap=B_CONC)
+    for i in range(10):
+        a = TAU * i / 10
+        tbox(k, 2.2 * math.cos(a), 2.2 * math.sin(a), -SKIRT, 0.5, 0.12, 0.12, a, B_BRICK, B_CONC)
+
+
+def tet_control(k):
+    # Cinnagar Control (Legends: directed every ship leaving orbit from the Cinnagar Space Traffic Control tower): a tall
+    # slim tower with a flared control head, round pads on stalks round its foot, low hangars. ~20
+    sw_cap_tower(k, 0.0, 0.0, -SKIRT, 10.0, 0.6, B_PLATE_WIN, B_ROOF, B_GLOW)
+    k.lathe([(0.15, 10.0), (0.0, 12.0)], [B_HAZARD], sides=6)
+    for i in range(5):
+        a = TAU * i / 5 + 0.3
+        sw_pad(k, 3.8 * math.cos(a), 3.8 * math.sin(a), 1.4, 1.1, B_PLATE, B_PLATE, B_PAD)
+    for a in (0.95, 2.2):
+        sw_hangar(k, 2.0 * math.cos(a + math.pi), 2.0 * math.sin(a + math.pi), 1.2, 0.8, 1.0, a, B_PLATE, B_ROOF, B_PLATE)
+
+
+def tet_spaceworks(k):
+    # the Koros Spaceworks (Legends: builder of Cinnagar Control's interceptors): long bronze assembly halls, gantry
+    # cranes over a launch apron, a fuel farm of round tanks, a pad at the apron's end. ~20
+    for i, y in enumerate((-1.6, 0.0, 1.6)):
+        sw_hangar(k, -1.2, y, 2.4, 0.65, 1.3 + 0.2 * i, 0.0, B_PLATE, B_ROOF, B_PLATE)
+    tbox(k, 2.4, 0.0, -SKIRT, 0.1, 1.6, 2.8, 0.0, B_CONC, B_CONC)                    # the apron
+    for y in (-1.8, 0.6):                                                            # gantry cranes
+        legs(k, 2.4, y, 0.1, 2.6, 1.4, 1.2, 4, 0.06, B_RUST)
+        k.tube((1.0, y, 2.6), (3.8, y, 2.6), 0.12, B_HAZARD, sides=4)
+    for x, y in ((-4.0, -2.0), (-4.0, -0.6), (-4.0, 0.8)):
+        k.lathe([(0.55, -SKIRT), (0.55, 1.2)], [B_PIPE], sides=12, cx=x, cy=y)
+        dome(k, x, y, 1.2, 0.55, 0.3, [B_PIPE] * 4, sides=12)
+    sw_pad(k, 2.6, 3.8, 0.8, 1.0, B_PLATE, B_PLATE, B_PAD)
+
+
+def tet_mine(k):
+    # a Tetan carbonite mine (Legends: carbonite mines dotted the surface and the cityscape): a terraced open pit of
+    # blue-grey carbonite spoil, a headframe over the shaft, a conveyor up to a refinery block, stacks of carbonite
+    # blocks lit along their seams. ~20
+    prof, r, z = [], 4.4, 0.25
+    for _ in range(5):                                                               # the terraces, stepping down
+        prof += [(r, z), (r - 0.55, z)]
+        r, z = r - 0.55, z - 0.45
+        prof.append((r, z))
+    k.lathe(prof + [(0.0, z)], [B_DUST if i % 3 else B_SOOT for i in range(len(prof))], sides=20)
+    k.lathe([(4.9, -SKIRT), (4.9, 0.25), (4.4, 0.25)], [B_SOOT, B_DUST], sides=20)
+    legs(k, 0.0, 0.0, z, 4.0, 0.9, 0.3, 4, 0.08, B_RUST)                            # the headframe
+    k.lathe([(0.4, 4.0), (0.4, 4.6)], [B_PLATE], sides=8, cap=B_ROOF)
+    k.tube((0.3, 0.3, 3.8), (4.8, 3.2, 1.6), 0.14, B_PIPE, sides=4)                 # the conveyor
+    tbox(k, 5.4, 3.6, -SKIRT, 2.2, 1.0, 0.8, 0.6, B_PLATE_WIN, B_ROOF)
+    for x, y in ((-5.0, -1.6), (-5.4, 0.0), (-4.8, 1.4)):
+        tbox(k, x, y, -SKIRT, 0.7, 0.4, 0.3, 0.3, B_DUST, B_GLOW)
+
+
+def tet_block_tower(k, x, y, z0, h, w, d, a, rng):
+    """a Cinnagar tower block: a bronze slab with lit windows, one or two setbacks, a gold crown band, sometimes a mast"""
+    z, f = z0, 1.0
+    steps = rng.choice((1, 2, 2, 3))
+    for i in range(steps):
+        z1 = z0 + (h - z0) * (i + 1) / steps
+        tbox(k, x, y, z, z1, w * f, d * f, a, B_PLATE_WIN, B_ROOF)
+        tbox(k, x, y, z1 - (h - z0) * 0.03, z1, w * f * 1.02, d * f * 1.02, a, B_HAZARD, B_ROOF)
+        z, f = z1, f * rng.uniform(0.72, 0.85)
+    if rng.random() < 0.3:
+        k.lathe([(0.008, h), (0.004, h + (h - z0) * 0.25)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW)
+
+
+def tet_town(k, band, rng):
+    # Cinnagar's districts (map/cities.txt 96; the user, 2026-10-22: city blocks of towers, not thin needles): a grid of
+    # 3 x 3 blocks with streets between them; each block a podium carrying one to four broad towers, taller downtown
+    # (band 4) than on the outskirts; speeders with lit undersides hang in the street canyons at several levels.
+    B, G = 0.5, 0.14                                    # block side, street width
+    hb = (0.18, 0.32, 0.55, 0.85)[band - 1]
+    rot = rng.uniform(-0.15, 0.15)
+    centres = [(-(B + G) + (B + G) * i, -(B + G) + (B + G) * j) for i in range(3) for j in range(3)]
+    for bx, by in centres:
+        if rng.random() < 0.08:                         # now and then a plaza instead of a block
+            tbox(k, bx, by, CELL_Z, 0.008, B / 2, B / 2, rot, B_CONC, B_CONC)
+            continue
+        tbox(k, bx, by, CELL_Z, 0.03, B / 2, B / 2, rot, B_PLATE_WIN, B_CONC)          # the podium
+        lay = rng.choice(("one", "two", "four", "four"))
+        if lay == "one":
+            towers = [(0.0, 0.0, B * 0.36, B * 0.3)]
+        elif lay == "two":
+            towers = [(-B * 0.22, 0.0, B * 0.2, B * 0.38), (B * 0.22, 0.0, B * 0.2, B * 0.38)]
+        else:
+            towers = [(sx * B * 0.22, sy * B * 0.22, B * 0.19, B * 0.19) for sx in (-1, 1) for sy in (-1, 1)]
+        for ox, oy, w, d in towers:
+            if lay == "four" and rng.random() < 0.2:
+                continue
+            u, v = turn(bx, by, rot, ox, oy)
+            tet_block_tower(k, u, v, 0.03, hb * rng.uniform(0.55, 1.45), w, d, rot, rng)
+    for _ in range(4 + 3 * band):                       # speeders in the street canyons
+        along, lane = rng.uniform(-0.85, 0.85), rng.choice((-1, 1)) * (B / 2 + G / 2)
+        z = rng.uniform(0.06, hb * 0.7)
+        if rng.random() < 0.5:
+            u, v, a = turn(0.0, 0.0, rot, along, lane) + (rot,)
+        else:
+            u, v, a = turn(0.0, 0.0, rot, lane, along) + (rot + math.pi / 2,)
+        tbox(k, u, v, z, z + 0.012, 0.022, 0.009, a, B_HULL, B_GLOW)
+
+
+# ==================================================================================================== BYSS
+# Byss before the Empire (Legends: chains of lakes and rivers, wind-smoothed plateaus and canyons, ferns and lichens;
+# pre-Expansionist ruins; the Rakatan stronghold, a temple fortress of the Infinite Empire; Desolation Peak, a rock in a
+# lake; the Emerald Splendor Estates, large luxury houses). Star Wars vocabulary, a design choice: pale stone houses with
+# slate-teal roofs for the Republic settlers, angular dark Rakatan stone with violet light (as the Star Forge), weathered
+# grey-violet courses for the ruins. Atlas hod_byss (B_ layout): B_PLATE pale stone plate, B_PLATE_WIN with lit windows,
+# B_CONC pale sandstone, B_CONC_WIN teal glass, B_RUST rose clay, B_SOOT dark basalt, B_ROOF slate-teal roofs, B_HAZARD
+# yellow, B_GLOW violet Rakatan light, B_HULL white hull, B_PIPE metal, B_GIRDER fern green, B_BRICK weathered courses,
+# B_DUST lichen gold.
+def bys_house(k, x, y, z0, w, d, h, a):
+    """a Byss settler house: a pale stone block under a hipped slate-teal roof"""
+    tbox(k, x, y, z0, h, w, d, a, B_PLATE_WIN, B_ROOF)
+    tbox(k, x, y, h, h + min(w, d) * 0.9, w * 1.05, d * 1.05, a, B_ROOF, B_ROOF, wt=w * 0.3, dt=0.01)
+
+
+def bys_landing(k):
+    # Byss Landing (invented: the Republic's town on Byss): a domed assembly hall on a terrace, a comm mast, terraced
+    # stone houses stepping round it, round pads at the edge, fern gardens. ~25
+    import random
+    rng = random.Random("bys_landing")
+    tbox(k, 0.0, 0.0, -SKIRT, 0.5, 2.2, 2.2, 0.0, B_CONC, B_CONC)
+    k.lathe([(1.5, 0.5), (1.5, 1.6)], [B_PLATE_WIN], sides=16)
+    dome(k, 0.0, 0.0, 1.6, 1.55, 1.3, [B_ROOF, B_ROOF, B_ROOF, B_HAZARD], sides=16)
+    k.lathe([(0.08, 2.9), (0.04, 6.0)], [B_PIPE], sides=4, cap=B_GLOW)
+    for _ in range(18):
+        b, d = rng.uniform(0, TAU), rng.uniform(2.8, 5.2)
+        bys_house(k, d * math.cos(b), d * math.sin(b), -SKIRT, rng.uniform(0.35, 0.6), rng.uniform(0.3, 0.45),
+                  rng.uniform(0.6, 1.4), b)
+    for x, y in ((5.6, -1.2), (-5.4, 1.8)):
+        sw_pad(k, x, y, 0.8, 1.0, B_PLATE, B_PLATE, B_PAD)
+    for _ in range(10):
+        b, d = rng.uniform(0, TAU), rng.uniform(2.4, 5.8)
+        _tree(k, d * math.cos(b), d * math.sin(b), 0.0, 0.8, B_GIRDER, trunk=B_SOOT)
+
+
+def bys_estates(k):
+    # the Emerald Splendor Estates (Legends: a set of large luxury houses): four long villas with deep teal roofs and
+    # glass fronts round a garden with a long pool, clipped fern trees, a low wall. ~15
+    for i in range(4):
+        a = math.pi / 2 * i + 0.3
+        x, y = 2.6 * math.cos(a), 2.2 * math.sin(a)
+        bys_house(k, x, y, -SKIRT, 1.1, 0.55, 0.9, a + math.pi / 2)
+        tbox(k, x * 0.72, y * 0.72, -SKIRT, 0.5, 0.5, 0.35, a + math.pi / 2, B_CONC_WIN, B_CONC)
+    tbox(k, 0.0, 0.0, -SKIRT, 0.04, 1.4, 0.4, 0.3, B_CONC, B_CONC_WIN)                # the pool
+    for i in range(14):
+        a = TAU * i / 14
+        _tree(k, 4.0 * math.cos(a), 3.4 * math.sin(a), 0.0, 0.7, B_GIRDER, trunk=B_SOOT)
+
+
+def bys_peak(k):
+    # Desolation Peak (Legends: an outcropping of rock in a lake outside the ruling city; the user, 2026-10-22: a small
+    # Mediterranean-style town): a rocky knoll stepped into terraces, white cube houses with flat roofs along every
+    # terrace, a few teal domes, a chapel with a bell tower on the top, a stone quay with small boats at its foot. ~20
+    import random
+    rng = random.Random("bys_peak")
+    steps = ((3.2, 0.5), (2.4, 1.2), (1.6, 1.9), (0.8, 2.6))
+    for i, (r, z) in enumerate(steps):                                               # the terraces of the knoll
+        k.lathe([(r * 1.04, -SKIRT if i == 0 else steps[i - 1][1]), (r, z)], [B_SOOT], sides=14, cap=B_CONC, jitter=0.06)
+    for i, (r, z) in enumerate(steps[:3]):                                           # houses along each terrace
+        rr = (r + steps[i + 1][0]) / 2 + 0.05
+        n = (14, 10, 7)[i]
+        for j in range(n):
+            b = TAU * j / n + rng.uniform(-0.12, 0.12) + i
+            x, y, w = rr * math.cos(b), rr * math.sin(b), rng.uniform(0.2, 0.28)
+            tbox(k, x, y, z - 0.05, z + rng.uniform(0.3, 0.55), w, w * rng.uniform(0.7, 1.0), b, B_HULL, B_CONC)
+            if rng.random() < 0.18:
+                dome(k, x, y, z + 0.5, w * 0.75, w * 0.7, [B_ROOF] * 4, sides=10)
+    tbox(k, 0.0, 0.0, 2.6, 3.4, 0.4, 0.28, 0.3, B_HULL, B_CONC)                         # the chapel on the top
+    dome(k, 0.0, 0.0, 3.4, 0.34, 0.34, [B_ROOF] * 4, sides=12)
+    tbox(k, 0.45, 0.25, 2.6, 4.2, 0.11, 0.11, 0.3, B_HULL, B_ROOF, wt=0.09, dt=0.09)      # the bell tower
+    tbox(k, 3.7, -0.4, -SKIRT, 0.15, 0.3, 1.4, 0.2, B_BRICK, B_CONC)                    # the quay and its boats
+    for y in (-1.2, 0.0, 1.0):
+        k.tube((4.2, y, 0.02), (4.7, y + 0.1, 0.02), 0.1, B_HULL, sides=6, r1=0.05)
+
+def bys_temple(k):
+    # the Rakatan stronghold (Legends: a temple fortress of the Infinite Empire, its power centre in the Deep Core): a
+    # sharp-edged stepped pyramid of dark stone with violet light in its seams, four leaning angular pylons, a walled
+    # forecourt with a ramp, the beacon crown. ~25
+    for i, w in enumerate((3.6, 2.8, 2.0, 1.2)):
+        z = 1.3 * i
+        tbox(k, 0.0, 0.0, -SKIRT if i == 0 else z - 0.1, z + 1.3, w, w, math.pi / 4, B_SOOT, B_BRICK, wt=w * 0.85, dt=w * 0.85)
+        k.lathe([(w * 1.25, z + 1.26), (w * 1.25, z + 1.32)], [B_GLOW], sides=4)
+    k.lathe([(0.7, 5.2), (0.0, 7.4)], [B_SOOT], sides=4)
+    k.lathe([(0.12, 7.0), (0.0, 7.9)], [B_GLOW], sides=4)
+    for i in range(4):                                                               # the leaning pylons
+        a = math.pi / 2 * i
+        x, y = 4.4 * math.cos(a), 4.4 * math.sin(a)
+        k.tube((x, y, -SKIRT), (x * 0.8, y * 0.8, 5.0), 0.45, B_SOOT, sides=4, r1=0.1)
+        k.tube((x * 0.85, y * 0.85, 3.6), (x * 0.81, y * 0.81, 4.6), 0.16, B_GLOW, sides=4)
+    tbox(k, 0.0, -4.4, -SKIRT, 0.4, 1.0, 1.2, 0.0, B_BRICK, B_BRICK, wt=0.9, dt=0.2)   # the ramp
+
+
+def bys_ruins(k):
+    # the pre-Expansionist ruins (Legends: ruins said to predate the Expansionist Era, untouched for thousands of
+    # years): a ring of broken weathered columns, a fallen arch, scattered blocks, a sunken court overgrown with ferns. ~12
+    import random
+    rng = random.Random("bys_ruins")
+    for i in range(12):
+        a = TAU * i / 12
+        h = rng.uniform(0.4, 2.6) if i % 3 else 0.3
+        k.lathe([(0.24, -SKIRT), (0.2, h)], [B_BRICK], sides=8, cx=3.0 * math.cos(a), cy=3.0 * math.sin(a), cap=B_BRICK)
+    tbox(k, -0.8, 0.0, -SKIRT, 2.8, 0.25, 0.25, 0.0, B_BRICK, B_BRICK)
+    tbox(k, 0.8, 0.0, -SKIRT, 2.8, 0.25, 0.25, 0.0, B_BRICK, B_BRICK)
+    tbox(k, 0.0, 0.0, 2.8, 3.2, 1.1, 0.28, 0.0, B_BRICK, B_BRICK)                     # the arch's lintel
+    k.lathe([(2.0, 0.05), (1.8, -0.2)], [B_BRICK], sides=16, cap=B_DUST)               # the sunken court
+    for _ in range(8):
+        b, d = rng.uniform(0, TAU), rng.uniform(1.5, 4.2)
+        tbox(k, d * math.cos(b), d * math.sin(b), -SKIRT, rng.uniform(0.1, 0.4), 0.35, 0.22, b, B_BRICK, B_DUST)
+    for _ in range(6):
+        b, d = rng.uniform(0, TAU), rng.uniform(3.6, 4.8)
+        _tree(k, d * math.cos(b), d * math.sin(b), 0.0, 0.7, B_GIRDER, trunk=B_SOOT)
+
+
+def bys_port(k):
+    # a Byss landing field (invented: where traffic from the Byss Run and the south comes down): three round pads on
+    # stalks, a hangar, a slim control tower, a fuel tank. ~12
+    for x, y in ((-2.4, -1.2), (0.0, 1.6), (2.4, -1.0)):
+        sw_pad(k, x, y, 0.9, 1.1, B_PLATE, B_PLATE, B_PAD)
+    sw_hangar(k, 0.2, -2.4, 1.3, 0.8, 1.0, 0.0, B_PLATE, B_ROOF, B_PLATE)
+    sw_cap_tower(k, 3.4, 1.8, -SKIRT, 4.0, 0.3, B_PLATE_WIN, B_ROOF, B_GLOW)
+    k.lathe([(0.5, -SKIRT), (0.5, 0.8)], [B_PIPE], sides=10, cx=-3.4, cy=1.6, cap=B_PIPE)
+
+
+BYS_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: bys_house(k, x, y, z0, w, d, h * 0.7, a), 6, (0.04, 0.07),
+                        (0.03, 0.05), (0.05, 0.09))],
+                back=(lambda k, x, y, z0, r, rng: [_tree(k, x, y, z0, rng.uniform(0.12, 0.18), B_GIRDER, trunk=B_SOOT)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: k.lathe([(0.008, z0), (0.006, h * 0.8)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW),
+                prop=lambda k, x, y, z0, rng: _tree(k, x, y, z0, 0.1, B_GIRDER, trunk=B_SOOT),
+                street=0.06, wiggle=0.35)
+
+
+def bys_town(k, band, rng):
+    # Byss's settler towns (map/cities.txt 97): town_cell with Byss's palette
+    town_cell(k, band, rng, BYS_TOWN)
+
+
+# ==================================================================================================== ABREGADO-RAE
+# Abregado-Rae (canon: a lawless world, its spaceport nearly a safe dock for smugglers; the Cantina District; Legends: the
+# capital Abregado-rae Spaceport with its water canals, the LoBue Cantina near the Old Patch, the coastal resort of Le Yer
+# and Phyrstal Island, the Gilt Gushers). Star Wars vocabulary, a design choice: ochre plaster blocks with terracotta
+# roofs along green canals, sunken docking bays like Mos Eisley's, neon over the cantinas, white resort towers.
+# Atlas hod_abregado (B_ layout): B_PLATE ochre plaster, B_PLATE_WIN with lit windows, B_CONC worn paving, B_CONC_WIN
+# canal green, B_RUST rust red, B_SOOT grime, B_ROOF terracotta tiles, B_HAZARD yellow, B_GLOW cantina neon, B_HULL
+# freighter grey, B_PIPE metal, B_GIRDER hill green, B_BRICK brick courses, B_DUST gilt gold.
+def abr_block(k, x, y, z0, w, d, h, a):
+    """an Abregado block: ochre plaster under a low terracotta roof"""
+    tbox(k, x, y, z0, h, w, d, a, B_PLATE_WIN, B_ROOF)
+    tbox(k, x, y, h, h + min(w, d) * 0.5, w * 1.04, d * 1.04, a, B_ROOF, B_ROOF, wt=w * 0.6, dt=d * 0.1)
+
+
+def abr_bay(k, x, y, r):
+    """a sunken docking bay: a round walled pit with a pale floor, a freighter-grey rim"""
+    k.lathe([(r + 0.2, -SKIRT), (r + 0.2, 0.6), (r, 0.6), (r, -0.3)], [B_PLATE, B_HULL, B_PLATE], sides=16, cx=x, cy=y, cap=B_CONC)
+
+
+def abr_spaceport(k):
+    # Abregado-rae Spaceport (Legends: the capital and largest spaceport, its water canals used for transport; canon:
+    # as close to a safe dock for smugglers as the Core had): four sunken docking bays, a control tower, ochre blocks
+    # along two crossing canals with bridges, a freighter in one bay. ~35
+    import random
+    rng = random.Random("abr_spaceport")
+    for x, y in ((-2.6, -2.4), (2.4, -2.6), (-2.8, 2.4), (2.6, 2.2)):
+        abr_bay(k, x, y, 1.3)
+    k.tube((2.0, -2.9, 0.1), (3.0, -2.2, 0.3), 0.5, B_HULL, sides=8, r1=0.3)         # a freighter in its bay
+    sw_cap_tower(k, 0.0, 0.0, -SKIRT, 6.0, 0.5, B_PLATE_WIN, B_ROOF, B_GLOW)
+    for a in (0.1, 0.1 + math.pi / 2):                                               # the canals and their bridges
+        tbox(k, 0.0, 0.0, -SKIRT, 0.02, 6.4, 0.32, a, B_CONC, B_CONC_WIN)
+        for t in (-4.4, 4.4):
+            tbox(k, t * math.cos(a), t * math.sin(a), 0.02, 0.18, 0.12, 0.5, a, B_BRICK, B_CONC)
+    for _ in range(26):
+        b, d = rng.uniform(0, TAU), rng.uniform(4.0, 6.4)
+        x, y = d * math.cos(b), d * math.sin(b)
+        if min(abs(-math.sin(a) * x + math.cos(a) * y) for a in (0.1, 0.1 + math.pi / 2)) > 0.7:   # off the canals
+            abr_block(k, x, y, -SKIRT, rng.uniform(0.35, 0.6), rng.uniform(0.3, 0.5), rng.uniform(0.6, 1.6), rng.uniform(0, 1.5))
+
+
+def abr_cantina(k):
+    # the LoBue Cantina (Legends: a bar and casino near the Old Patch, small outside, big inside) / the Cantina District
+    # (canon: next to the spaceport): a low domed cantina with a neon band, blocks leaning round a little square, a
+    # sign mast. ~10
+    k.lathe([(1.2, -SKIRT), (1.2, 0.6), (1.25, 0.65), (1.25, 0.75)], [B_PLATE, B_GLOW, B_PLATE], sides=16)
+    dome(k, 0.0, 0.0, 0.75, 1.25, 0.8, [B_PLATE, B_PLATE, B_ROOF, B_ROOF], sides=16)
+    for i in range(6):
+        a = TAU * i / 6 + 0.4
+        abr_block(k, 2.5 * math.cos(a), 2.5 * math.sin(a), -SKIRT, 0.6, 0.45, 0.7 + 0.3 * (i % 3), a)
+    k.lathe([(0.05, 0.0), (0.05, 2.4)], [B_PIPE], sides=4, cx=1.4, cy=-1.0, cap=B_GLOW)
+
+
+def abr_leyer(k):
+    # Le Yer (Legends: a popular coastal resort, its extension Phyrstal Island reached by hydrobikes or floatboats): a
+    # crescent of white stepped hotel towers facing the sea, a promenade, piers out over the water with floatboats,
+    # beach shades. ~20
+    pts = []
+    for i in range(7):                                                               # hotel towers on platforms in the sea
+        a = math.pi * (0.15 + 0.7 * i / 6)
+        x, y = 3.4 * math.cos(a) - 0.2, -3.4 * math.sin(a) + 1.6
+        h = (2.4, 3.6, 4.4, 5.0, 4.4, 3.6, 2.4)[i]
+        k.lathe([(0.62, -SKIRT), (0.72, 0.1), (0.68, 0.15)], [B_CONC, B_CONC], sides=14, cx=x, cy=y, cap=B_CONC)
+        for j, f in enumerate((1.0, 0.8, 0.6)):
+            tbox(k, x, y, 0.15 if j == 0 else h * j / 3, h * (j + 1) / 3, 0.5 * f, 0.34 * f, a, B_PLATE_WIN, B_ROOF)
+        pts.append((x, y))
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):                                    # bridges between the platforms
+        k.tube((x0, y0, 0.12), (x1, y1, 0.12), 0.1, B_CONC, sides=4)
+    for x in (-1.6, 0.0, 1.6):                                                       # the piers and the floatboats
+        tbox(k, x, 2.6, -0.3, 0.1, 0.12, 1.2, 0.0, B_BRICK, B_CONC)
+        k.tube((x + 0.3, 3.5, 0.05), (x + 0.3, 4.1, 0.05), 0.12, B_HULL, sides=6, r1=0.06)
+    for i in range(8):
+        x = -2.4 + 0.7 * i
+        k.lathe([(0.02, 0.0), (0.02, 0.5)], [B_PIPE], sides=4, cx=x, cy=1.8)
+        dome(k, x, 1.8, 0.45, 0.28, 0.12, [B_GLOW, B_RUST, B_GLOW, B_RUST], sides=8)
+
+
+def abr_gushers(k):
+    # the Gilt Gushers (Legends: where it occasionally bubbled to the surface): a field of gilded spring cones in
+    # terraced pools, steam-bright jets from two of them, a viewing platform with a rail, a pumping shed. ~12
+    import random
+    rng = random.Random("abr_gushers")
+    for _ in range(7):
+        b, d = rng.uniform(0, TAU), rng.uniform(0.0, 3.6)
+        x, y, r = d * math.cos(b), d * math.sin(b), rng.uniform(0.5, 1.0)
+        k.lathe([(r * 1.6, -0.3), (r * 1.6, 0.1), (r, 0.1 + r * 0.6), (r * 0.35, 0.1 + r * 0.8), (r * 0.25, 0.1 + r * 0.6)],
+                [B_DUST, B_DUST, B_DUST, B_CONC_WIN], sides=12, cx=x, cy=y, cap=B_CONC_WIN)
+    for x, y, h in ((0.0, 0.0, 4.0), (2.0, 1.4, 2.6)):
+        k.lathe([(0.25, 0.6), (0.4, h * 0.6), (0.0, h)], [B_HULL, B_HULL], sides=8, cx=x, cy=y)
+    tbox(k, -3.6, -2.4, -SKIRT, 0.6, 1.2, 0.6, 0.4, B_BRICK, B_CONC)
+    abr_block(k, 3.8, -2.4, -SKIRT, 0.7, 0.5, 0.8, 0.2)
+
+
+ABR_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: abr_block(k, x, y, z0, w, d, h * 0.8, a), 6, (0.04, 0.07),
+                        (0.03, 0.05), (0.05, 0.1))],
+                back=(lambda k, x, y, z0, r, rng: [_tree(k, x, y, z0, rng.uniform(0.12, 0.18), B_GIRDER, trunk=B_SOOT)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: sw_cap_tower(k, x, y, z0, h, 0.03, B_PLATE_WIN, B_ROOF, B_GLOW),
+                plaza=lambda k, x, y, z0, rng: (k.lathe([(0.13, z0), (0.13, 0.01), (0.0, 0.01)], [B_CONC, B_CONC_WIN], sides=10, cx=x, cy=y),),
+                prop=lambda k, x, y, z0, rng: k.lathe([(0.008, z0), (0.008, 0.05)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW),
+                street=0.07, wiggle=0.35)
+
+
+def abr_town(k, band, rng):
+    # Abregado-Rae's canal towns (map/cities.txt 98): town_cell with Abregado-Rae's palette
+    town_cell(k, band, rng, ABR_TOWN)
+
+
+# ==================================================================================================== FONDOR
+# Fondor (canon: a purple surface of bright lines and circles, the shipyards above; Legends: factories, cooling towers,
+# steam tunnels, barracks, mine shafts, Fondor City, Oridin City, the Academy of Engineering and Design). Star Wars
+# vocabulary, a design choice: gunmetal factory halls with sawtooth roofs, hyperboloid cooling towers, fat steam pipes,
+# cyan light bands. Atlas hod_fondor (B_ layout): B_PLATE gunmetal plate, B_PLATE_WIN with lit windows, B_CONC grey
+# concrete, B_CONC_WIN cyan glass, B_RUST rust, B_SOOT soot, B_ROOF purple-grey roofs, B_HAZARD yellow, B_GLOW cyan light,
+# B_HULL ship-grey hull, B_PIPE metal, B_GIRDER dark steel, B_BRICK purple-brown courses, B_DUST purple dust.
+def fon_cooling(k, x, y, z0, h, r):
+    """a cooling tower: a hyperboloid concrete shell, a cyan light band at its lip"""
+    k.lathe([(r, z0), (r * 0.82, z0 + (h - z0) * 0.4), (r * 0.66, z0 + (h - z0) * 0.72), (r * 0.74, h), (r * 0.76, h + 0.03)],
+            [B_CONC, B_CONC, B_CONC, B_GLOW], sides=14, cx=x, cy=y, cap=B_SOOT)
+
+
+def fon_hall(k, x, y, z0, w, d, h, a):
+    """a factory hall: a gunmetal block under a sawtooth roof of north lights"""
+    tbox(k, x, y, z0, h, w, d, a, B_PLATE_WIN, B_ROOF)
+    n = max(2, int(w / 0.25))
+    for i in range(n):
+        t = -w + (2 * w) * (i + 0.5) / n
+        cx, cy = x + t * math.cos(a), y + t * math.sin(a)
+        tbox(k, cx, cy, h, h + min(w, d) * 0.35, w / n, d * 0.98, a, B_ROOF, B_CONC_WIN, wt=0.01, dt=d * 0.98)
+
+
+def fon_tower(k, x, y, z0, h, w):
+    """an office tower: a stepped gunmetal slab with cyan bands"""
+    tbox(k, x, y, z0, h * 0.7, w, w * 0.8, 0.3, B_PLATE_WIN, B_GLOW)
+    tbox(k, x, y, h * 0.7, h, w * 0.75, w * 0.6, 0.3, B_PLATE_WIN, B_ROOF)
+
+
+def fon_city(k):
+    # Fondor City (Legends: the capital): a cluster of stepped office towers round the shipwrights' hall, four cooling
+    # towers, sawtooth factory halls, fat steam pipes between them, cyan light. ~30
+    for x, y, h in ((0.0, 0.0, 9.0), (1.4, 0.6, 7.0), (-1.2, 1.0, 6.0), (0.6, -1.4, 6.5), (-1.0, -1.0, 5.0)):
+        fon_tower(k, x, y, -SKIRT, h, 0.55)
+    for i in range(4):
+        b = TAU * i / 4 + 0.6
+        fon_cooling(k, 4.4 * math.cos(b), 4.4 * math.sin(b), -SKIRT, 3.4, 1.0)
+    for i in range(5):
+        b = TAU * i / 5 + 0.1
+        fon_hall(k, 3.0 * math.cos(b), 3.0 * math.sin(b), -SKIRT, 0.9, 0.5, 1.0, b + math.pi / 2)
+    for i in range(4):
+        b = TAU * i / 4 + 0.6
+        k.tube((0.8 * math.cos(b), 0.8 * math.sin(b), 1.2), (3.6 * math.cos(b), 3.6 * math.sin(b), 1.2), 0.18, B_PIPE, sides=8)
+
+
+def fon_oridin(k):
+    # Oridin City (Legends: a major city, later the capital): a dense block of tall gunmetal towers on a podium, skybridges
+    # between them, a crown of cooling towers on the podium's edge. ~25
+    tbox(k, 0.0, 0.0, -SKIRT, 0.8, 3.0, 2.4, 0.2, B_CONC, B_CONC)
+    pts = [(-1.6, -1.0, 7.0), (0.0, -1.2, 8.5), (1.6, -0.8, 6.0), (-1.2, 0.9, 5.5), (0.6, 1.0, 7.5), (2.0, 1.2, 4.5)]
+    for x, y, h in pts:
+        fon_tower(k, x, y, 0.8, h, 0.5)
+    for (x0, y0, h0), (x1, y1, h1) in zip(pts, pts[1:]):
+        z = min(h0, h1) * 0.55
+        k.tube((x0, y0, z), (x1, y1, z), 0.08, B_PLATE, sides=4)
+    for x, y in ((-3.6, 0.4), (3.6, -0.6), (0.4, 3.2)):
+        fon_cooling(k, x, y, -SKIRT, 2.6, 0.8)
+
+
+def fon_academy(k):
+    # the Fondor Academy of Engineering and Design (Legends: KDY's and the Techno Union's source of recruits): a long hall
+    # of drafting floors with a domed design lab, a test gantry holding a hull section, a pad. ~15
+    tbox(k, 0.0, 0.0, -SKIRT, 1.6, 2.6, 0.9, 0.0, B_PLATE_WIN, B_ROOF)
+    k.lathe([(1.0, 1.6), (1.0, 2.0)], [B_CONC_WIN], sides=16)
+    dome(k, 0.0, 0.0, 2.0, 1.05, 0.9, [B_ROOF, B_ROOF, B_CONC_WIN, B_GLOW], sides=16)
+    legs(k, 0.0, -2.6, -SKIRT, 3.0, 1.4, 1.1, 4, 0.08, B_GIRDER)
+    k.tube((-1.4, -2.6, 2.0), (1.4, -2.6, 2.4), 0.6, B_HULL, sides=10, r1=0.4)     # the hull section in the gantry
+    sw_pad(k, 3.2, 1.2, 0.8, 0.9, B_PLATE, B_PLATE, B_PAD)
+
+
+def fon_steam(k):
+    # Fondor's underground steam tubes (Legends: a huge pipeline network under the surface): a drum valve hall where six
+    # fat tubes surface and dive again, vent stacks with cyan-lit caps. ~12
+    k.lathe([(1.2, -SKIRT), (1.2, 1.4), (0.9, 1.7)], [B_PLATE_WIN, B_ROOF], sides=16, cap=B_ROOF)
+    for i in range(6):
+        b = TAU * i / 6
+        k.tube((1.0 * math.cos(b), 1.0 * math.sin(b), 0.6), (3.2 * math.cos(b), 3.2 * math.sin(b), 0.6), 0.32, B_PIPE, sides=10)
+        k.tube((3.2 * math.cos(b), 3.2 * math.sin(b), 0.6), (3.6 * math.cos(b), 3.6 * math.sin(b), -1.0), 0.32, B_PIPE, sides=10)
+    for x, y in ((1.8, 1.2), (-1.6, 1.6), (0.4, -2.0)):
+        k.lathe([(0.2, -SKIRT), (0.18, 3.0), (0.26, 3.1)], [B_RUST, B_GLOW], sides=8, cx=x, cy=y, cap=B_SOOT)
+
+
+def fon_shaft(k):
+    # a mine shaft into the core (Legends: mine shafts leading deep into the planet's core): a deep stepped shaft, a tall
+    # drill headframe over it, conveyors to ore halls, a cooling tower. ~20
+    prof, r, z = [], 4.0, 0.2
+    for _ in range(5):
+        prof += [(r, z), (r - 0.45, z)]
+        r, z = r - 0.45, z - 0.5
+        prof.append((r, z))
+    k.lathe(prof + [(0.0, z)], [B_DUST if i % 3 else B_SOOT for i in range(len(prof))], sides=20)
+    k.lathe([(4.5, -SKIRT), (4.5, 0.2), (4.0, 0.2)], [B_SOOT, B_DUST], sides=20)
+    legs(k, 0.0, 0.0, z, 5.0, 1.2, 0.35, 4, 0.1, B_GIRDER)
+    k.lathe([(0.5, 5.0), (0.5, 5.6), (0.0, 6.2)], [B_PLATE, B_HAZARD], sides=8)
+    for b in (0.4, 2.6):
+        k.tube((0.4 * math.cos(b), 0.4 * math.sin(b), 4.6), (5.0 * math.cos(b), 5.0 * math.sin(b), 1.4), 0.14, B_PIPE, sides=4)
+        fon_hall(k, 5.4 * math.cos(b), 5.4 * math.sin(b), -SKIRT, 0.8, 0.5, 1.2, b)
+    fon_cooling(k, -4.8, 2.6, -SKIRT, 2.8, 0.8)
+
+
+def fon_lift(k):
+    # a lift field for the shipyards above (design choice: where crews and parts go up to the orbital yards): round pads on
+    # stalks, a big hangar, a slim control tower; the hulls are built in orbit. ~15
+    for x, y in ((-2.6, -1.4), (-2.8, 1.4), (0.0, 2.6), (2.6, 0.6)):
+        sw_pad(k, x, y, 1.0, 1.1, B_PLATE, B_PLATE, B_PAD)
+    sw_hangar(k, 0.6, -2.2, 1.8, 1.0, 1.4, 0.0, B_PLATE, B_ROOF, B_PLATE)
+    sw_cap_tower(k, -0.6, 0.2, -SKIRT, 5.0, 0.35, B_PLATE_WIN, B_ROOF, B_GLOW)
+
+
+FON_YARD_FLEET = [("venator", 7.6, 0.0, 5.6, 0.0, 1.0)]     # a Venator docked at the eastern wheel (aln_venator model)
+
+
+def fon_wheel(k, x, y, zc, r):
+    """a wheel-shaped dockyard: a rim ring of plated segments, a hub drum, six spokes, hangar blocks on the rim"""
+    n = 18
+    for i in range(n):
+        a0, a1 = TAU * i / n, TAU * (i + 1) / n
+        k.tube((x + r * math.cos(a0), y + r * math.sin(a0), zc), (x + r * math.cos(a1), y + r * math.sin(a1), zc), 0.45,
+               B_PLATE_WIN, sides=8)
+    k.lathe([(1.0, zc - 0.8), (1.0, zc + 0.8)], [B_PLATE], sides=12, cx=x, cy=y, cap=B_GLOW)
+    for i in range(6):
+        a = TAU * i / 6
+        k.tube((x + math.cos(a), y + math.sin(a), zc), (x + r * math.cos(a), y + r * math.sin(a), zc), 0.16, B_GIRDER, sides=5)
+        tbox(k, x + r * math.cos(a + 0.26), y + r * math.sin(a + 0.26), zc - 0.6, zc + 0.6, 0.6, 0.45, a + 0.26, B_PLATE, B_ROOF)
+
+
+def fon_yards(k):
+    # the Fondor Shipyards (canon: at least nineteen large, wheel-shaped dockyards with hangars and docking bays), IN
+    # ORBIT beside the disc (the user, 2026-10-22: shipyards are space stations): three wheels joined by trusses, a
+    # Venator docked at one (FON_YARD_FLEET), beacon masts with cyan light. ~40
+    for x, y, zc, r in ((-5.0, -2.6, 5.5, 3.6), (1.0, 3.0, 6.5, 3.2), (3.4, -3.4, 7.0, 2.6)):
+        fon_wheel(k, x, y, zc, r)
+    k.tube((-5.0, -2.6, 5.5), (1.0, 3.0, 6.5), 0.22, B_GIRDER, sides=5)
+    k.tube((1.0, 3.0, 6.5), (3.4, -3.4, 7.0), 0.22, B_GIRDER, sides=5)
+    k.tube((3.4, -3.4, 7.0), (6.4, -0.6, 6.0), 0.22, B_GIRDER, sides=5)
+    for x, y in ((-5.0, -2.6), (1.0, 3.0), (3.4, -3.4)):
+        k.lathe([(0.06, 7.2), (0.04, 9.6)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW)
+
+
+FON_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: fon_hall(k, x, y, z0, w, d, h * 0.5, a), 5, (0.05, 0.08),
+                        (0.03, 0.05), (0.05, 0.1)),
+                       (lambda k, x, y, z0, w, d, h, a, rng: fon_cooling(k, x, y, z0, h * 1.2, min(w, d) * 1.3), 2, (0.04, 0.06),
+                        (0.04, 0.06), (0.08, 0.14))],
+                tower=lambda k, x, y, z0, h, rng: fon_tower(k, x, y, z0, h * 1.3, 0.05),
+                plaza=lambda k, x, y, z0, rng: (k.lathe([(0.13, z0), (0.13, 0.01), (0.0, 0.01)], [B_CONC, B_GLOW], sides=10, cx=x, cy=y),),
+                prop=lambda k, x, y, z0, rng: k.tube((x, y, 0.02), (x + 0.06, y, 0.02), 0.01, B_PIPE, sides=4),
+                street=0.05, wiggle=0.2, curvy=False)
+
+
+def fon_town(k, band, rng):
+    # Fondor's factory blocks (map/cities.txt 99): town_cell with Fondor's palette
+    town_cell(k, band, rng, FON_TOWN)
+
+
+# ==================================================================================================== CATO NEIMOIDIA
+# Cato Neimoidia (canon: fog, an acidic ocean, massive rock arches carrying opulent gilded bridge cities with the jeweled
+# palaces of the Trade Federation; Zarra, Tarko-se and Bride's Talon, the Great Vaults, the University; Legends: Jorra
+# split by a massive bridge, Nute Gunray's citadel). Star Wars vocabulary, a design choice: dark rock arches, gilded
+# Neimoidian towers with hooked crowns standing on the decks and hanging beneath them, gold domes, jewel-teal glass.
+# Atlas hod_cato (B_ layout): B_PLATE gilded cream plate, B_PLATE_WIN with lit windows, B_CONC pale stone, B_CONC_WIN
+# green-gold glass, B_RUST burgundy, B_SOOT dark rock, B_ROOF gold, B_HAZARD jewel teal, B_GLOW gold light, B_HULL ivory,
+# B_PIPE metal, B_GIRDER forest green, B_BRICK rock courses, B_DUST mossy rock.
+def cat_tower(k, x, y, z0, h, r, down=False):
+    """a gilded Neimoidian tower with a hooked crown; down=True hangs it under a bridge deck"""
+    s = -1 if down else 1
+    k.lathe([(r, z0), (r * 0.8, z0 + s * h * 0.75), (r * 1.15, z0 + s * h * 0.82), (r * 0.5, z0 + s * h)],
+            [B_PLATE_WIN, B_ROOF, B_ROOF], sides=10, cx=x, cy=y)
+    k.tube((x, y, z0 + s * h), (x + r * 0.6, y, z0 + s * h * 1.12), r * 0.25, B_ROOF, sides=5, r1=0.02)
+
+
+def cat_arch(k, x0, x1, y, h, r):
+    """a massive rock arch from x0 to x1 (along x at y), rising h above the sea"""
+    curve_tube(k, (x0, y, -SKIRT), (x1, y, -SKIRT), h + SKIRT, r, r * 0.8, B_SOOT, n=8, sides=8)
+
+
+def cat_bridge(k, L=5.0, towers=6, rng_seed="cat_bridge"):
+    # a bridge city (canon: gilded cities on bridges anchored on rock arches, skylines above and below the deck): a
+    # rock arch under a long gilded deck, towers standing on it and hanging beneath it. ~20
+    import random
+    rng = random.Random(rng_seed)
+    cat_arch(k, -L, L, 0.0, 3.0, 0.9)
+    tbox(k, 0.0, 0.0, 2.9, 3.3, L * 0.95, 0.9, 0.0, B_PLATE, B_CONC)
+    for i in range(towers):
+        x = -L * 0.8 + 1.6 * L * i / max(towers - 1, 1)
+        cat_tower(k, x, rng.uniform(-0.4, 0.4), 3.3, rng.uniform(2.0, 4.5), 0.32)
+        if i % 2:
+            cat_tower(k, x + 0.4, 0.0, 2.9, rng.uniform(1.2, 2.2), 0.26, down=True)
+
+
+def cat_zarra(k):
+    # Zarra (canon/Legends: the capital, one of the largest bridge cities): two great arches carrying a broad deck, a
+    # skyline of gilded towers and gold domes on it, more towers hanging beneath, a Trade Federation crown spire. ~35
+    import random
+    rng = random.Random("cat_zarra")
+    cat_arch(k, -6.5, -0.5, -1.0, 3.4, 1.1)
+    cat_arch(k, 0.5, 6.5, 1.0, 3.4, 1.1)
+    tbox(k, 0.0, 0.0, 3.3, 3.8, 6.4, 1.8, 0.0, B_PLATE, B_CONC)
+    for i in range(12):
+        x = -5.6 + 11.2 * i / 11
+        cat_tower(k, x, rng.uniform(-1.2, 1.2), 3.8, rng.uniform(2.5, 6.0), rng.uniform(0.3, 0.45))
+        if i % 3 == 1:
+            cat_tower(k, x, rng.uniform(-0.8, 0.8), 3.3, rng.uniform(1.5, 2.6), 0.3, down=True)
+    for x in (-2.4, 2.8):
+        dome(k, x, 0.6, 3.8, 0.8, 0.8, [B_ROOF, B_ROOF, B_ROOF, B_HAZARD], sides=14)
+    cat_tower(k, 0.2, 0.0, 3.8, 9.0, 0.6)
+
+
+def cat_vaults(k):
+    # the Great Vaults of Cato Neimoidia (canon: Lott Dod's palace, its vaults holding the Trade Federation's treasure):
+    # a jeweled palace on a stepped rock base, a ring of gilded towers, a great gold dome over the vault hall, teal glass. ~20
+    for i, (w, z) in enumerate(((3.0, 0.6), (2.4, 1.4), (1.8, 2.2))):
+        tbox(k, 0.0, 0.0, -SKIRT if i == 0 else z - 0.9, z, w, w * 0.8, 0.0, B_BRICK if i == 0 else B_PLATE_WIN, B_CONC)
+    dome(k, 0.0, 0.0, 2.2, 1.4, 1.6, [B_ROOF, B_ROOF, B_ROOF, B_HAZARD], sides=18)
+    for i in range(6):
+        b = TAU * i / 6 + 0.5
+        cat_tower(k, 2.2 * math.cos(b), 1.8 * math.sin(b), 1.4, 3.6, 0.3)
+
+
+def cat_university(k):
+    # the University of Cato Neimoidia (canon: a university of engineers): domed lecture halls on a terrace round a
+    # court, a gilded observatory tower. ~12
+    tbox(k, 0.0, 0.0, -SKIRT, 0.4, 2.6, 2.0, 0.0, B_CONC, B_CONC)
+    for x, y in ((-1.4, -0.8), (1.4, -0.8), (0.0, 1.0)):
+        k.lathe([(0.7, 0.4), (0.7, 1.1)], [B_PLATE_WIN], sides=14, cx=x, cy=y)
+        dome(k, x, y, 1.1, 0.72, 0.6, [B_ROOF, B_ROOF, B_CONC_WIN, B_HAZARD], sides=14)
+    cat_tower(k, 0.0, -1.2, 0.4, 4.0, 0.3)
+
+
+def cat_citadel(k):
+    # Nute Gunray's citadel (Legends: a large fortress on the western hemisphere, his stronghold and storehouse): dark
+    # battered walls on a cliff top, four squat gilded towers with hooked crowns, a gold-domed keep. ~15
+    tbox(k, 0.0, 0.0, -SKIRT, 1.6, 2.6, 2.2, 0.0, B_BRICK, B_SOOT, wt=2.3, dt=1.9)
+    tbox(k, 0.0, 0.0, 1.6, 3.0, 1.2, 1.0, 0.0, B_PLATE_WIN, B_CONC)
+    dome(k, 0.0, 0.0, 3.0, 0.9, 1.0, [B_ROOF, B_ROOF, B_ROOF, B_HAZARD], sides=14)
+    for sx, sy in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
+        cat_tower(k, sx * 2.4, sy * 2.0, 1.0, 3.0, 0.5)
+
+
+def cat_talon(k):
+    # Bride's Talon (canon: a mountain outside Tarko-se): a great curved fang of dark rock hooking over, mossy at its foot. ~8
+    import random
+    rng = random.Random("cat_talon")
+    rock(k, 0.0, 0.0, -SKIRT, 2.0, 2.6, rng, [B_DUST, B_SOOT], lobes=3, tiers=2)
+    pts = [(0.0, 0.0, 1.0), (0.3, 0.1, 4.0), (1.0, 0.2, 6.5), (2.2, 0.3, 7.6), (3.0, 0.3, 7.0)]
+    for i, (a, b) in enumerate(zip(pts, pts[1:])):
+        k.tube(a, b, 1.4 - 0.32 * i, B_SOOT, sides=8, r1=1.4 - 0.32 * (i + 1) if i < 3 else 0.05)
+
+
+CAT_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: cat_tower(k, x, y, z0, h * 1.4, min(w, d) * 0.9), 5, (0.04, 0.07),
+                        (0.04, 0.07), (0.1, 0.2)),
+                       (lambda k, x, y, z0, w, d, h, a, rng: (k.lathe([(min(w, d), z0), (min(w, d), h * 0.5)], [B_PLATE_WIN], sides=10, cx=x, cy=y),
+                                                              dome(k, x, y, h * 0.5, min(w, d), min(w, d) * 0.8, [B_ROOF, B_ROOF, B_ROOF, B_HAZARD], sides=10)),
+                        3, (0.04, 0.07), (0.04, 0.07), (0.06, 0.12))],
+                back=(lambda k, x, y, z0, r, rng: [_tree(k, x, y, z0, rng.uniform(0.12, 0.18), B_GIRDER, trunk=B_SOOT)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: cat_tower(k, x, y, z0, h * 1.6, 0.06),
+                plaza=lambda k, x, y, z0, rng: (k.lathe([(0.13, z0), (0.13, 0.01), (0.0, 0.01)], [B_CONC, B_ROOF], sides=10, cx=x, cy=y),),
+                prop=lambda k, x, y, z0, rng: _tree(k, x, y, z0, 0.1, B_GIRDER, trunk=B_SOOT),
+                street=0.06, wiggle=0.3)
+
+
+def cat_town(k, band, rng):
+    # Cato Neimoidia's gilded towns (map/cities.txt 100): town_cell with Cato Neimoidia's palette
+    town_cell(k, band, rng, CAT_TOWN)
+
+
+# ==================================================================================================== BESTINE IV
+# Bestine IV (canon: an agricultural world of hills, cliffs, caves, plains and island spires; Bsellis City and its market
+# district; a village on Jahnae; Legends: Jahnae Camp on a rock spire, Gasha floating on the sea, Barlata in an
+# algae-rimmed lava tube, Tusken island). Star Wars vocabulary, a design choice: whitewashed cubic houses with blue roofs,
+# chalk-white rock, golden fields. Atlas hod_bestine (B_ layout): B_PLATE whitewash, B_PLATE_WIN with lit windows, B_CONC
+# chalk, B_CONC_WIN sea-blue glass, B_RUST terracotta, B_SOOT dark basalt, B_ROOF blue roofs, B_HAZARD yellow, B_GLOW warm
+# light, B_HULL white hull, B_PIPE metal, B_GIRDER field green, B_BRICK chalk rock courses, B_DUST golden wheat.
+def bst_house(k, x, y, z0, w, d, h, a):
+    """a Bestine house: a whitewashed block under a low blue hipped roof"""
+    tbox(k, x, y, z0, h, w, d, a, B_PLATE_WIN, B_ROOF)
+    tbox(k, x, y, h, h + min(w, d) * 0.45, w * 1.05, d * 1.05, a, B_ROOF, B_ROOF, wt=w * 0.5, dt=0.02)
+
+
+def bst_village(k, rng, n, rr, z, size=(0.25, 0.4)):
+    for _ in range(n):
+        b, d = rng.uniform(0, TAU), rng.uniform(0.0, rr)
+        w = rng.uniform(*size)
+        bst_house(k, d * math.cos(b), d * math.sin(b), z - 0.4, w, w * rng.uniform(0.7, 1.0), z + rng.uniform(0.35, 0.7), b)
+
+
+def bst_bsellis(k):
+    # Bsellis City (canon: a city with a market district, Blue Garden Homes): a white town on a low chalk shelf, a market
+    # square of striped stall canopies, a tall tenement block, a comm spire, golden fields round the shelf. ~30
+    import random
+    rng = random.Random("bst_bsellis")
+    k.lathe([(4.2, -SKIRT), (4.0, 0.5), (3.8, 0.6)], [B_BRICK, B_CONC], sides=18, cap=B_CONC, jitter=0.05)
+    bst_village(k, rng, 30, 3.4, 0.6)
+    for i in range(8):                                                               # the market's stalls
+        b = TAU * i / 8
+        x, y = 1.0 * math.cos(b) - 0.6, 1.0 * math.sin(b) + 0.4
+        k.lathe([(0.02, 0.6), (0.02, 1.0)], [B_PIPE], sides=4, cx=x, cy=y)
+        dome(k, x, y, 0.95, 0.3, 0.12, [B_RUST, B_HAZARD, B_RUST, B_HAZARD], sides=8)
+    tbox(k, 1.6, -1.2, 0.6, 3.2, 0.6, 0.45, 0.4, B_PLATE_WIN, B_ROOF)                 # Blue Garden Homes' tenement
+    sw_cap_tower(k, -2.0, -1.6, 0.6, 5.0, 0.2, B_PLATE_WIN, B_ROOF, B_GLOW)
+    for i in range(10):                                                              # fields
+        b = TAU * i / 10
+        tbox(k, 5.0 * math.cos(b), 5.0 * math.sin(b), -SKIRT, 0.05, 0.8, 0.5, b, B_DUST, B_DUST)
+
+
+def bst_jahnae(k):
+    # Jahnae (canon: a village on Jahnae, its people on the clifftop; Legends: Jahnae Camp perched on a jutting spire of
+    # rock): a tall chalk spire with a village crowning its flat top, a switchback stair, a pad. ~15
+    import random
+    rng = random.Random("bst_jahnae")
+    rock(k, 0.0, 0.0, -SKIRT, 7.0, 2.2, rng, [B_BRICK, B_CONC, B_BRICK], lobes=4, tiers=3)
+    for _ in range(9):
+        b, d = rng.uniform(0, TAU), rng.uniform(0.0, 0.7)
+        w = rng.uniform(0.18, 0.28)
+        bst_house(k, d * math.cos(b), d * math.sin(b), 6.9, w, w * 0.8, 7.0 + rng.uniform(0.3, 0.5), b)
+    for i in range(6):                                                               # the stair round the spire
+        a0, a1 = TAU * i / 6, TAU * (i + 1) / 6
+        r0, r1 = 2.2 - 0.25 * i, 2.2 - 0.25 * (i + 1)
+        k.tube((r0 * math.cos(a0), r0 * math.sin(a0), 1.1 * i), (r1 * math.cos(a1), r1 * math.sin(a1), 1.1 * (i + 1)), 0.08,
+               B_CONC, sides=4)
+    sw_pad(k, 2.8, -1.6, 0.5, 0.8, B_PLATE, B_PLATE, B_PAD)
+
+
+def bst_barlata(k):
+    # Barlata (Legends: a settlement built inside an algae-rimmed lava tube): a dark basalt hill, the round black mouth of
+    # the lava tube in its face framed by a green algae rim, white houses stepping out of the mouth on terraces, lamps. ~15
+    import random
+    rng = random.Random("bst_barlata")
+    rock(k, 0.0, 1.4, -SKIRT, 3.4, 3.8, rng, [B_SOOT, B_SOOT, B_GIRDER], lobes=4, tiers=3)
+    tbox(k, 0.0, -1.55, -0.3, 2.0, 1.25, 0.12, 0.0, B_DARK, B_DARK)                   # the tube's black mouth
+    curve_tube(k, (-1.45, -1.75, -0.4), (1.45, -1.75, -0.4), 2.7, 0.32, 0.32, B_GIRDER, n=10, sides=6)   # its algae rim
+    for i, (y, z) in enumerate(((-2.2, 0.0), (-3.0, -0.25), (-3.8, -0.5))):         # terraces stepping down from it
+        tbox(k, 0.0, y, -SKIRT, z + 0.1, 1.6 + 0.3 * i, 0.4, 0.0, B_BRICK, B_CONC)
+        for j in range(3 + i):
+            x = -1.2 - 0.3 * i + (2.4 + 0.6 * i) * (j + 0.5) / (3 + i)
+            w = rng.uniform(0.22, 0.3)
+            bst_house(k, x, y, z + 0.05, w, w * 0.8, z + rng.uniform(0.45, 0.75), 0.0)
+    for x in (-0.8, 0.8):
+        k.lathe([(0.02, 0.0), (0.02, 1.4)], [B_PIPE], sides=4, cx=x, cy=-1.9, cap=B_GLOW)
+
+
+def bst_gasha(k):
+    # Gasha (Legends: a settlement floating upon the sea): round raft platforms riding high on pontoons, linked by
+    # walkways, white houses on them, a pier. Kept compact so it stays on the water. ~15
+    import random
+    rng = random.Random("bst_gasha")
+    pts = [(0.0, 0.0, 1.2)] + [(1.75 * math.cos(TAU * i / 5), 1.75 * math.sin(TAU * i / 5), 0.65) for i in range(5)]
+    for x, y, r in pts:
+        k.lathe([(r * 0.85, -0.6), (r, 0.5), (r * 0.96, 0.56)], [B_GIRDER, B_CONC], sides=14, cx=x, cy=y, cap=B_CONC)
+        for _ in range(int(r * 3)):
+            b, d = rng.uniform(0, TAU), rng.uniform(0.0, r * 0.55)
+            w = rng.uniform(0.16, 0.22)
+            bst_house(k, x + d * math.cos(b), y + d * math.sin(b), 0.56, w, w * 0.8, rng.uniform(0.85, 1.05), b)
+    for x, y, _ in pts[1:]:
+        k.tube((0.0, 0.0, 0.5), (x, y, 0.5), 0.07, B_CONC, sides=4)
+
+
+def bst_spire(k):
+    # an island spire (canon: the world's emblem; Legends: Tusken, its people's island homes): a natural sea stack of chalk
+    # rock, leaning and lobed, green farm shelves cut into its flanks, a white hamlet on its top. ~12
+    import random
+    rng = random.Random("bst_spire")
+    rock(k, 0.0, 0.0, -SKIRT, 3.0, 2.8, rng, [B_BRICK, B_CONC], lobes=5, tiers=2)
+    rock(k, 0.3, 0.2, 2.4, 6.2, 1.6, rng, [B_CONC, B_BRICK, B_CONC], lobes=4, tiers=3)
+    for i, (b, z) in enumerate(((0.3, 1.2), (2.2, 2.2), (4.0, 3.2), (1.2, 4.4))):     # farm shelves on the flanks
+        r = (2.5, 2.2, 1.6, 1.3)[i]
+        tbox(k, r * math.cos(b), r * math.sin(b), z - 0.4, z, 0.55, 0.35, b, B_BRICK, B_GIRDER)
+    for _ in range(6):
+        b, d = rng.uniform(0, TAU), rng.uniform(0.0, 0.45)
+        w = rng.uniform(0.16, 0.22)
+        bst_house(k, 0.3 + d * math.cos(b), 0.2 + d * math.sin(b), 6.0, w, w * 0.8, 6.0 + rng.uniform(0.3, 0.45), b)
+
+
+BST_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: bst_house(k, x, y, z0, w, d, h * 0.6, a), 6, (0.04, 0.07),
+                        (0.03, 0.05), (0.05, 0.09))],
+                back=(lambda k, x, y, z0, r, rng: [tbox(k, x, y, z0, 0.01, r, r * 0.7, rng.uniform(0, 3), B_DUST, B_DUST)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: k.lathe([(0.008, z0), (0.006, h * 0.8)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW),
+                prop=lambda k, x, y, z0, rng: _tree(k, x, y, z0, 0.1, B_GIRDER, trunk=B_SOOT),
+                street=0.06, wiggle=0.35)
+
+
+def bst_town(k, band, rng):
+    # Bestine IV's farm towns (map/cities.txt 101): town_cell with Bestine IV's palette
+    town_cell(k, band, rng, BST_TOWN)
+
+
+# ==================================================================================================== ATZERRI
+# Atzerri (Legends: marshes and cities where anything could be had for a price; Talos, a major spaceport, with the
+# Trader's Plaza, a gauntlet of gaudily lit stores; Skreeka, a smaller spaceport; the Freeman Cantina). Star Wars
+# vocabulary, a design choice: weathered grey-green blocks on stilts over the marsh, sunken docking bays, tall towers wrapped
+# in magenta neon. Atlas hod_atzerri (B_ layout): B_PLATE grey-green plate, B_PLATE_WIN with lit windows, B_CONC mud
+# concrete, B_CONC_WIN teal glass, B_RUST rust, B_SOOT grime, B_ROOF dull roofs, B_HAZARD yellow, B_GLOW magenta neon,
+# B_HULL freighter grey, B_PIPE metal, B_GIRDER swamp wood, B_BRICK grey courses, B_DUST mud.
+def atz_block(k, x, y, z0, w, d, h, a):
+    """an Atzerri block: a weathered slab on stilts over the marsh, a neon band under its roof"""
+    for sx, sy in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
+        px, py = x + 0.8 * (sx * w * math.cos(a) - sy * d * math.sin(a)), y + 0.8 * (sx * w * math.sin(a) + sy * d * math.cos(a))
+        k.tube((px, py, z0), (px, py, z0 + 0.3 * (h - z0)), min(w, d) * 0.12, B_GIRDER, sides=4)
+    tbox(k, x, y, z0 + 0.3 * (h - z0), h * 0.94, w, d, a, B_PLATE_WIN, B_GLOW)
+    tbox(k, x, y, h * 0.94, h, w, d, a, B_ROOF, B_ROOF)
+
+
+def atz_neon_tower(k, x, y, z0, h, r):
+    """a gaudy tower: a slim drum ringed with magenta neon bands, a sign mast on top"""
+    prof, rects = [], []
+    for i in range(5):
+        z = z0 + (h - z0) * i / 5
+        prof += [(r, z), (r * 1.05, z + (h - z0) * 0.16)]
+        rects += [B_PLATE_WIN, B_GLOW]
+    k.lathe(prof + [(r * 0.6, h)], rects, sides=10, cx=x, cy=y, cap=B_ROOF)
+    k.lathe([(0.04, h), (0.03, h + (h - z0) * 0.25)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW)
+
+
+def atz_bay(k, x, y, r):
+    """a sunken docking bay"""
+    k.lathe([(r + 0.2, -SKIRT), (r + 0.2, 0.5), (r, 0.5), (r, -0.3)], [B_PLATE, B_HULL, B_PLATE], sides=16, cx=x, cy=y, cap=B_CONC)
+
+
+def atz_talos(k):
+    # Talos (Legends: a major spaceport and city where anything could be had): four sunken docking bays, a ring of neon
+    # towers, stilt blocks crowding the edges, a control tower, a freighter in a bay. ~35
+    import random
+    rng = random.Random("atz_talos")
+    for x, y in ((-2.6, -2.4), (2.6, -2.2), (-2.4, 2.6), (2.4, 2.4)):
+        atz_bay(k, x, y, 1.3)
+    k.tube((2.0, -2.6, 0.1), (3.1, -1.9, 0.3), 0.55, B_HULL, sides=8, r1=0.3)
+    sw_cap_tower(k, 0.0, 0.0, -SKIRT, 7.0, 0.5, B_PLATE_WIN, B_ROOF, B_GLOW)
+    for i in range(6):
+        b = TAU * i / 6 + 0.25
+        atz_neon_tower(k, 4.4 * math.cos(b), 4.4 * math.sin(b), -SKIRT, rng.uniform(3.5, 6.0), 0.4)
+    for _ in range(18):
+        b, d = rng.uniform(0, TAU), rng.uniform(4.8, 6.6)
+        atz_block(k, d * math.cos(b), d * math.sin(b), -SKIRT, rng.uniform(0.35, 0.55), rng.uniform(0.3, 0.45),
+                  rng.uniform(0.8, 1.8), b)
+
+
+def atz_plaza(k):
+    # the Trader's Plaza (Legends: a gauntlet of gaudily lit stores where almost anything could be had): a square of
+    # stalls under bright canopies, neon sign masts, tall store fronts round it. ~15
+    import random
+    rng = random.Random("atz_plaza")
+    for i in range(14):
+        b = TAU * i / 14
+        x, y = 1.8 * math.cos(b), 1.8 * math.sin(b)
+        k.lathe([(0.02, 0.0), (0.02, 0.5)], [B_PIPE], sides=4, cx=x, cy=y)
+        dome(k, x, y, 0.45, 0.32, 0.12, [B_GLOW, B_HAZARD, B_GLOW, B_HAZARD], sides=8)
+    for i in range(8):
+        b = TAU * i / 8 + 0.2
+        atz_block(k, 3.2 * math.cos(b), 3.2 * math.sin(b), -SKIRT, 0.6, 0.45, rng.uniform(1.2, 2.2), b + math.pi / 2)
+    for x, y in ((0.6, 0.4), (-0.6, -0.5)):
+        k.lathe([(0.04, 0.0), (0.03, 2.6)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW)
+
+
+def atz_skreeka(k):
+    # Skreeka (Legends: a spaceport, much smaller than Talos): round pads on stalks over the marsh, a hangar, warehouses
+    # on stilts, a neon tower. ~15
+    import random
+    rng = random.Random("atz_skreeka")
+    for x, y in ((-2.4, -1.2), (0.2, 2.2), (2.6, -0.8)):
+        sw_pad(k, x, y, 1.0, 1.1, B_PLATE, B_PLATE, B_PAD)
+    sw_hangar(k, -0.2, -2.4, 1.5, 0.9, 1.2, 0.1, B_PLATE, B_ROOF, B_PLATE)
+    for _ in range(6):
+        b, d = rng.uniform(0, TAU), rng.uniform(3.4, 4.4)
+        atz_block(k, d * math.cos(b), d * math.sin(b), -SKIRT, 0.5, 0.35, rng.uniform(0.7, 1.2), b)
+    atz_neon_tower(k, 0.4, 0.0, -SKIRT, 4.0, 0.3)
+
+
+def atz_cantina(k):
+    # the Freeman Cantina (Legends: a cantina held by Connor Freeman and Quinny): a domed cantina on stilts with a neon
+    # band, a jetty, a sign mast. ~8
+    for i in range(6):
+        b = TAU * i / 6
+        k.tube((0.9 * math.cos(b), 0.9 * math.sin(b), -SKIRT), (0.9 * math.cos(b), 0.9 * math.sin(b), 0.4), 0.06, B_GIRDER, sides=4)
+    k.lathe([(1.1, 0.4), (1.1, 0.9), (1.15, 0.95), (1.15, 1.05)], [B_PLATE, B_GLOW, B_PLATE], sides=14)
+    dome(k, 0.0, 0.0, 1.05, 1.15, 0.7, [B_PLATE, B_PLATE, B_ROOF, B_ROOF], sides=14)
+    tbox(k, 1.8, 0.0, -SKIRT, 0.35, 0.9, 0.2, 0.0, B_GIRDER, B_GIRDER)
+    k.lathe([(0.03, 0.4), (0.03, 2.2)], [B_PIPE], sides=4, cx=-1.2, cy=0.6, cap=B_GLOW)
+
+
+ATZ_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: atz_block(k, x, y, z0, w, d, h * 0.7, a), 6, (0.04, 0.07),
+                        (0.03, 0.05), (0.06, 0.11)),
+                       (lambda k, x, y, z0, w, d, h, a, rng: atz_neon_tower(k, x, y, z0, h * 1.5, min(w, d) * 0.6), 1, (0.03, 0.05),
+                        (0.03, 0.05), (0.12, 0.2))],
+                tower=lambda k, x, y, z0, h, rng: atz_neon_tower(k, x, y, z0, h * 1.2, 0.04),
+                prop=lambda k, x, y, z0, rng: k.lathe([(0.008, z0), (0.008, 0.05)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW),
+                street=0.06, wiggle=0.4)
+
+
+def atz_town(k, band, rng):
+    # Atzerri's market towns (map/cities.txt 102): town_cell with Atzerri's palette
+    town_cell(k, band, rng, ATZ_TOWN)
+
+
+# ==================================================================================================== ALLANTEEN VI
+# Allanteen VI (canon: a major shipyard; Legends: the Allanteen Six shipyards, among the Republic's oldest, where the Navy's
+# restoration began circa 15,000 BBY, building Venator-class Star Destroyers in the Clone Wars). Star Wars vocabulary, a
+# design choice: Republic grey plate with red bands, a Venator hull in its ground cradle, gantries. Atlas hod_allanteen
+# (B_ layout): B_PLATE Republic grey plate, B_PLATE_WIN with lit windows, B_CONC pale paving, B_CONC_WIN blue glass,
+# B_RUST Republic red, B_SOOT dark grey, B_ROOF slate, B_HAZARD yellow, B_GLOW white light, B_HULL Venator hull, B_PIPE
+# metal, B_GIRDER dark steel, B_BRICK grey courses, B_DUST pale dust.
+def aln_admiralty(k):
+    # the Allanteen Admiralty (invented: the naval hub since the Navy's restoration): a stepped command tower with red
+    # bands, two long wings of fleet offices, a ring of round pads, comm masts. ~25
+    for i, (w, z0, z1) in enumerate(((2.4, -SKIRT, 1.6), (1.6, 1.6, 4.0), (1.0, 4.0, 6.6), (0.6, 6.6, 8.4))):
+        tbox(k, 0.0, 0.0, z0, z1, w, w * 0.8, 0.0, B_PLATE_WIN, B_ROOF)
+        tbox(k, 0.0, 0.0, z1 - 0.25, z1, w * 1.02, w * 0.82, 0.0, B_RUST, B_ROOF)
+    for s_ in (-1, 1):
+        tbox(k, s_ * 3.6, 0.6, -SKIRT, 1.4, 1.4, 0.7, 0.0, B_PLATE_WIN, B_ROOF)
+    for i in range(4):
+        a = TAU * i / 4 + 0.8
+        sw_pad(k, 4.6 * math.cos(a), 4.0 * math.sin(a), 1.0, 0.9, B_PLATE, B_PLATE, B_PAD)
+    for x in (-0.4, 0.4):
+        k.lathe([(0.04, 8.4), (0.03, 10.2)], [B_PIPE], sides=4, cx=x, cy=0.0, cap=B_GLOW)
+
+
+# the user's Venator-class model (sketchfab_props.py aln_venator, 10 map units long), placed in the orbital yards' slips by
+# military_buildings place_ships: (kind, x, y, z, heading, built); unfinished hulls cut at `built`
+ALN_YARD_FLEET = [("venator", 0.0, -4.6, 5.0, 0.0, 1.0), ("venator", 0.0, 0.0, 5.0, 0.0, 0.55),
+                  ("venator", 0.0, 4.6, 5.0, 0.0, 0.85)]
+
+
+def aln_works(k):
+    # the Venator Ground Works (design choice: the assembly halls on the ground that feed the orbital yards): long halls
+    # with red bands, gantry cranes over a parts yard, hull-plate stacks, a lift pad for the shuttles up. ~25
+    tbox(k, 0.0, 0.0, -SKIRT, 0.05, 6.2, 2.4, 0.0, B_CONC, B_CONC)
+    for x in (-4.0, -1.5, 1.0, 3.5):
+        legs(k, x, 0.0, 0.05, 3.2, 2.6, 2.4, 4, 0.08, B_GIRDER)
+        k.tube((x, -2.6, 3.2), (x, 2.6, 3.2), 0.14, B_HAZARD, sides=4)
+    for x, y in ((-3.0, -0.8), (-0.5, 0.6), (2.0, -0.6)):                         # stacks of hull plates
+        for i in range(3):
+            tbox(k, x, y, 0.05 + 0.25 * i, 0.27 + 0.25 * i, 0.9, 0.5, 0.1 * i, B_HULL, B_HULL)
+    for s_ in (-1, 1):
+        for x in (-4.0, -1.0, 2.0):
+            tbox(k, x, s_ * 3.2, -SKIRT, 1.6, 1.3, 0.7, 0.0, B_PLATE_WIN, B_ROOF)
+            tbox(k, x, s_ * 3.2, 1.3, 1.45, 1.32, 0.72, 0.0, B_RUST, B_RUST)
+    sw_pad(k, 6.8, 2.6, 0.8, 0.9, B_PLATE, B_PLATE, B_PAD)
+
+
+def aln_yards(k):
+    # the Allanteen Six Shipyards (Legends: among the oldest of the Republic, building Venators in the Clone Wars), IN
+    # ORBIT beside the disc (the user, 2026-10-22: shipyards are space stations): three open slip frames side by side with
+    # Venators being built in them (ALN_YARD_FLEET), a spine across their sterns with a hab drum, control spires and
+    # beacon lights. ~40
+    zc, L = 6.0, 6.4
+    for y in (-4.6, 0.0, 4.6):                                                      # the slip frames
+        for dy, dz in ((-2.0, -1.6), (2.0, -1.6), (-2.0, 1.8), (2.0, 1.8)):
+            k.tube((-L, y + dy, zc + dz), (L, y + dy, zc + dz), 0.14, B_GIRDER, sides=5)
+        for x in (-L, -L / 2, 0.0, L / 2, L):
+            for (a0, b0), (a1, b1) in (((-2.0, -1.6), (2.0, -1.6)), ((-2.0, 1.8), (2.0, 1.8)), ((-2.0, -1.6), (-2.0, 1.8)),
+                                       ((2.0, -1.6), (2.0, 1.8))):
+                k.tube((x, y + a0, zc + b0), (x, y + a1, zc + b1), 0.09, B_PLATE, sides=4)
+        k.lathe([(0.12, zc + 1.8), (0.12, zc + 2.6)], [B_PIPE], sides=4, cx=L, cy=y + 2.0, cap=B_GLOW)
+    k.tube((-L - 1.2, -7.6, zc), (-L - 1.2, 7.6, zc), 0.7, B_PLATE_WIN, sides=10)    # the spine across the sterns
+    for y in (-4.6, 0.0, 4.6):
+        k.tube((-L - 1.2, y, zc), (-L, y, zc), 0.4, B_PLATE, sides=8)
+    k.lathe([(1.6, zc - 1.0), (1.6, zc + 1.0)], [B_PLATE_WIN], sides=16, cx=-L - 3.4, cy=0.0, cap=B_RUST)   # the hab drum
+    k.tube((-L - 1.8, 0.0, zc), (-L - 3.4, 0.0, zc), 0.5, B_PLATE, sides=8)
+    for y in (-7.6, 7.6):
+        sw_cap_tower(k, -L - 1.2, y, zc - 0.4, zc + 3.0, 0.35, B_PLATE_WIN, B_ROOF, B_GLOW)
+
+
+def aln_memorial(k):
+    # the Navy Restoration Memorial (invented: the Republic Navy was restored here circa 15,000 BBY): an old capital ship's
+    # prow raised on a stone plinth, a ring of red banners, a pale plaza. ~10
+    k.lathe([(2.6, -SKIRT), (2.6, 0.05)], [B_CONC], sides=20, cap=B_CONC)
+    tbox(k, 0.0, 0.0, 0.0, 1.0, 0.9, 0.6, 0.0, B_BRICK, B_CONC)
+    prism_at(k, 0.0, 0.0, 1.0, 0.6, 3.2, [(-0.7, 0.0), (0.0, 0.5), (0.7, 0.0)], B_HULL, end=B_RUST)
+    for i in range(8):
+        a = TAU * i / 8
+        k.lathe([(0.03, 0.0), (0.03, 1.8)], [B_PIPE], sides=4, cx=2.2 * math.cos(a), cy=2.2 * math.sin(a))
+        tbox(k, 2.2 * math.cos(a) + 0.12, 2.2 * math.sin(a), 1.2, 1.75, 0.12, 0.01, a, B_RUST, B_RUST)
+
+
+def aln_lift(k):
+    # a lift field for the orbital yards (design choice: where crews and parts go up): round pads, a hangar, a slim
+    # control tower; the ships themselves stay in orbit. ~15
+    for x, y in ((-2.6, -1.4), (-2.8, 1.4), (0.0, 2.6)):
+        sw_pad(k, x, y, 1.0, 1.1, B_PLATE, B_PLATE, B_PAD)
+    sw_hangar(k, 0.6, -2.2, 1.8, 1.0, 1.4, 0.0, B_PLATE, B_ROOF, B_PLATE)
+    sw_pad(k, 2.8, 0.6, 1.0, 1.1, B_PLATE, B_PLATE, B_PAD)
+    sw_cap_tower(k, -0.6, 0.2, -SKIRT, 5.0, 0.35, B_PLATE_WIN, B_ROOF, B_GLOW)
+
+
+def aln_town(k, band, rng):
+    # Allanteen VI's city blocks (map/cities.txt 103): Empress Teta's block cell in Allanteen's Republic grey (city-world
+    # cells are on hold for more variety: 3d_models_todo.txt section E)
+    tet_town(k, band, rng)
+
+
+# ==================================================================================================== FALLEEN
+# Falleen (canon: the Hocekureem Sea; Legends: jungles, plains, icy mountains, industry; Falleen Throne and its Yellow
+# District; the royal House Sizhran; a people who held their world to be the galaxy's cultural capital). Star Wars
+# vocabulary, a design choice: elegant tiered towers with sweeping jade roofs and gold finials, red lacquer bands, stone
+# terraces and gardens. Atlas hod_falleen (B_ layout): B_PLATE pale stone, B_PLATE_WIN with lit windows, B_CONC terrace
+# paving, B_CONC_WIN jade glass, B_RUST red lacquer, B_SOOT dark stone, B_ROOF jade roof tiles, B_HAZARD gold, B_GLOW warm
+# light, B_HULL white hull, B_PIPE metal, B_GIRDER garden green, B_BRICK stone courses, B_DUST yellow ochre.
+def fal_tier_tower(k, x, y, z0, h, r, tiers=4):
+    """a Falleen tower: stone storeys stepping in, each under a flared jade roof, a gold finial"""
+    z = z0
+    for i in range(tiers):
+        zr = z0 + (h - z0) * (i + 1) / (tiers + 0.5)
+        f = 1.0 - 0.17 * i
+        k.lathe([(r * f, z), (r * f, zr)], [B_PLATE_WIN], sides=8, cx=x, cy=y)
+        k.lathe([(r * f * 1.5, zr), (r * f * 1.2, zr + r * 0.25), (r * f * 0.6, zr + r * 0.45)], [B_ROOF, B_ROOF], sides=8, cx=x, cy=y)
+        z = zr + r * 0.4
+    k.lathe([(r * 0.12, z), (0.0, z + r * 1.6)], [B_HAZARD], sides=6, cx=x, cy=y)
+
+
+def fal_throne(k):
+    # Falleen Throne (Legends: the capital): terraced stone platforms with tiered jade-roofed towers, a tall central
+    # tower, gardens and pools between, red lacquer gateways. ~30
+    import random
+    rng = random.Random("fal_throne")
+    for i, (r, z) in enumerate(((4.6, 0.3), (3.4, 0.8), (2.2, 1.3))):
+        k.lathe([(r, -SKIRT if i == 0 else z - 0.5), (r, z)], [B_BRICK], sides=16, cap=B_CONC)
+    fal_tier_tower(k, 0.0, 0.0, 1.3, 9.0, 0.8, tiers=5)
+    for i in range(6):
+        a = TAU * i / 6 + 0.3
+        fal_tier_tower(k, 2.9 * math.cos(a), 2.9 * math.sin(a), 0.8, rng.uniform(3.6, 5.2), 0.45, tiers=3)
+    for i in range(10):
+        a = TAU * i / 10
+        fal_tier_tower(k, 4.1 * math.cos(a), 4.1 * math.sin(a), 0.3, rng.uniform(1.8, 2.6), 0.32, tiers=2)
+    for a in (0.0, math.pi):                                                       # red gateways
+        x, y = 5.0 * math.cos(a), 5.0 * math.sin(a)
+        for s_ in (-1, 1):
+            tbox(k, x, y + s_ * 0.5, -SKIRT, 1.4, 0.08, 0.08, 0.0, B_RUST, B_RUST)
+        tbox(k, x, y, 1.4, 1.6, 0.15, 0.75, 0.0, B_RUST, B_ROOF)
+
+
+def fal_palace(k):
+    # the palace of House Sizhran (Legends: the royal house of Falleen): a walled palace on a high stone terrace, a great
+    # hall under a double jade roof, four corner towers, a garden court with a long pool. ~20
+    tbox(k, 0.0, 0.0, -SKIRT, 1.2, 3.2, 2.6, 0.0, B_BRICK, B_CONC, wt=3.0, dt=2.4)
+    tbox(k, 0.0, 0.4, 1.2, 2.6, 1.8, 1.0, 0.0, B_PLATE_WIN, B_RUST)
+    tbox(k, 0.0, 0.4, 2.6, 3.4, 2.3, 1.4, 0.0, B_ROOF, B_ROOF, wt=1.4, dt=0.5)
+    tbox(k, 0.0, 0.4, 3.4, 4.2, 1.5, 0.8, 0.0, B_ROOF, B_ROOF, wt=0.6, dt=0.08)
+    for sx, sy in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
+        fal_tier_tower(k, sx * 2.8, sy * 2.2, 1.2, 4.8, 0.4, tiers=3)
+    tbox(k, 0.0, -1.5, 1.2, 1.24, 1.2, 0.25, 0.0, B_CONC_WIN, B_CONC_WIN)          # the pool
+
+
+def fal_yellow(k):
+    # the Yellow District (Legends: a district of Falleen Throne): a market of ochre-awninged stalls round a square, low
+    # tiered shops with jade roofs. ~12
+    for i in range(10):
+        a = TAU * i / 10
+        x, y = 1.6 * math.cos(a), 1.6 * math.sin(a)
+        k.lathe([(0.02, 0.0), (0.02, 0.5)], [B_PIPE], sides=4, cx=x, cy=y)
+        dome(k, x, y, 0.45, 0.32, 0.14, [B_DUST, B_HAZARD, B_DUST, B_HAZARD], sides=8)
+    for i in range(7):
+        a = TAU * i / 7 + 0.2
+        fal_tier_tower(k, 3.0 * math.cos(a), 3.0 * math.sin(a), -SKIRT, 1.6, 0.4, tiers=2)
+
+
+def fal_spaceport(k):
+    # the Hocekureem Spaceport (invented: Falleen Throne's spaceport on the Hocekureem shore): round landing pads on a
+    # stone terrace, hangars, a tiered control tower; no boats (ships are space ships). ~12
+    tbox(k, 0.0, 0.0, -SKIRT, 0.3, 3.4, 2.4, 0.0, B_BRICK, B_CONC)
+    for x, y in ((-2.0, -1.0), (0.0, 1.2), (2.0, -1.0)):
+        sw_pad(k, x, y, 0.9, 0.9, B_PLATE, B_PLATE, B_PAD)
+    for y in (-1.6, 1.6):
+        sw_hangar(k, -3.6, y, 1.0, 0.7, 1.0, 0.0, B_PLATE, B_ROOF, B_PLATE)
+    fal_tier_tower(k, 3.6, 1.6, -SKIRT, 4.0, 0.35, tiers=3)
+
+
+def fal_foundry(k):
+    # the Throne Foundries (Legends: Falleen's industry): long halls under jade-grey roofs, smelter stacks with red
+    # glow, ore conveyors, a tiered office tower. ~15
+    for y in (-1.4, 0.0, 1.4):
+        tbox(k, 0.0, y, -SKIRT, 1.2, 2.2, 0.55, 0.0, B_PLATE_WIN, B_ROOF, wt=2.1, dt=0.2)
+    for x in (-1.4, 0.0, 1.4):
+        k.lathe([(0.25, 1.0), (0.2, 3.4), (0.26, 3.5)], [B_SOOT, B_RUST], sides=8, cx=x, cy=2.6, cap=B_GLOW)
+    k.tube((-2.6, -2.4, 0.6), (2.6, -2.4, 1.4), 0.12, B_PIPE, sides=4)
+    fal_tier_tower(k, 3.2, 1.6, -SKIRT, 3.6, 0.45, tiers=3)
+
+
+FAL_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: fal_tier_tower(k, x, y, z0, h, min(w, d) * 0.8, tiers=2), 5,
+                        (0.04, 0.06), (0.04, 0.06), (0.06, 0.12)),
+                       (lambda k, x, y, z0, w, d, h, a, rng: (tbox(k, x, y, z0, h * 0.6, w, d, a, B_PLATE_WIN, B_ROOF),
+                                                              tbox(k, x, y, h * 0.6, h * 0.85, w * 1.2, d * 1.2, a, B_ROOF, B_ROOF, wt=w * 0.5, dt=0.02)),
+                        3, (0.05, 0.08), (0.03, 0.05), (0.06, 0.1))],
+                back=(lambda k, x, y, z0, r, rng: [_tree(k, x, y, z0, rng.uniform(0.12, 0.18), B_GIRDER, trunk=B_SOOT)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: fal_tier_tower(k, x, y, z0, h * 1.4, 0.06, tiers=4),
+                plaza=lambda k, x, y, z0, rng: (k.lathe([(0.13, z0), (0.13, 0.01), (0.0, 0.01)], [B_CONC, B_CONC_WIN], sides=10, cx=x, cy=y),),
+                prop=lambda k, x, y, z0, rng: _tree(k, x, y, z0, 0.1, B_GIRDER, trunk=B_SOOT),
+                street=0.06, wiggle=0.3)
+
+
+def fal_town(k, band, rng):
+    # Falleen's towns (map/cities.txt 104): town_cell with Falleen's palette
+    town_cell(k, band, rng, FAL_TOWN)
+
+
+# ==================================================================================================== BOTHAWUI
+# Bothawui (Legends: a blue-green world of cities, forests, savannas, ridges and ice caps; Drev'starn the capital with the
+# Combined Clans Center Building and Merchant's Square; Breil, known for its size; Blee'starn on its ocean island;
+# Fey'starn, a fishing village). Star Wars vocabulary, a design choice: grey-brown stone halls and towers, tall green-copper
+# cone roofs and spires, clan banners, warm windows. Atlas hod_bothawui (B_ layout): B_PLATE grey-brown stone plate,
+# B_PLATE_WIN with lit windows, B_CONC pale paving, B_CONC_WIN amber glass, B_RUST clan crimson, B_SOOT dark stone, B_ROOF
+# copper-green roofs, B_HAZARD gold, B_GLOW warm light, B_HULL white hull, B_PIPE metal, B_GIRDER forest green, B_BRICK
+# fieldstone courses, B_DUST savanna gold.
+def bth_tower(k, x, y, z0, h, r):
+    """a Bothan tower: a stone drum with a lit band, a tall green-copper cone roof, a spike"""
+    k.lathe([(r, z0), (r, h * 0.62), (r * 1.08, h * 0.66), (r * 1.08, h * 0.7)], [B_PLATE_WIN, B_BRICK, B_RUST], sides=10, cx=x, cy=y)
+    k.lathe([(r * 1.15, h * 0.7), (0.0, h)], [B_ROOF], sides=10, cx=x, cy=y)
+
+
+def bth_drev(k):
+    # Drev'starn (Legends: the capital of Bothawui): a crowded stone city of cone-roofed towers round a tall central
+    # spire, terraced halls, a ring road with pads. ~30
+    import random
+    rng = random.Random("bth_drev")
+    bth_tower(k, 0.0, 0.0, -SKIRT, 9.5, 0.7)
+    for i in range(14):
+        a, d = rng.uniform(0, TAU), rng.uniform(1.6, 4.6)
+        bth_tower(k, d * math.cos(a), d * math.sin(a), -SKIRT, rng.uniform(2.5, 6.0), rng.uniform(0.35, 0.55))
+    for i in range(6):
+        a = TAU * i / 6 + 0.25
+        tbox(k, 3.0 * math.cos(a), 3.0 * math.sin(a), -SKIRT, 1.2, 0.8, 0.5, a, B_PLATE_WIN, B_ROOF, wt=0.6, dt=0.2)
+    for a in (0.6, 2.8, 4.6):
+        sw_pad(k, 5.4 * math.cos(a), 5.4 * math.sin(a), 0.8, 0.8, B_PLATE, B_PLATE, B_PAD)
+
+
+def bth_clans(k):
+    # the Combined Clans Center Building (Legends: in Drev'starn, where the Bothan clans meet): a great round council hall
+    # under a copper dome, a ring of clan towers each with a crimson banner, a forecourt. ~20
+    k.lathe([(2.2, -SKIRT), (2.2, 1.8), (2.4, 1.9)], [B_PLATE_WIN, B_BRICK], sides=20)
+    dome(k, 0.0, 0.0, 1.9, 2.3, 1.8, [B_ROOF, B_ROOF, B_ROOF, B_HAZARD], sides=20)
+    for i in range(8):
+        a = TAU * i / 8
+        x, y = 3.4 * math.cos(a), 3.4 * math.sin(a)
+        bth_tower(k, x, y, -SKIRT, 4.2, 0.35)
+        tbox(k, x * 0.9, y * 0.9, 1.6, 2.6, 0.12, 0.02, a + math.pi / 2, B_RUST, B_RUST)
+    tbox(k, 0.0, -4.4, -SKIRT, 0.05, 1.2, 0.8, 0.0, B_CONC, B_CONC)
+
+
+def bth_city(k):
+    # a Bothan city (Legends: Breil, known for its size; Blee'starn; Holm'starn): cone-roofed stone towers clustered on a
+    # low rise, halls between, a few pads. ~25
+    import random
+    rng = random.Random("bth_city")
+    for i in range(16):
+        a, d = rng.uniform(0, TAU), rng.uniform(0.0, 4.2)
+        bth_tower(k, d * math.cos(a), d * math.sin(a), -SKIRT, rng.uniform(2.0, 5.5) * (1.3 - d / 8), rng.uniform(0.35, 0.55))
+    for a in (1.0, 4.0):
+        sw_pad(k, 4.8 * math.cos(a), 4.8 * math.sin(a), 0.7, 0.8, B_PLATE, B_PLATE, B_PAD)
+
+
+def bth_village(k):
+    # Fey'starn (Legends: a small fishing village): low cone-roofed huts by the shore, drying racks, a jetty with boats. ~10
+    import random
+    rng = random.Random("bth_village")
+    for _ in range(9):
+        a, d = rng.uniform(0, TAU), rng.uniform(0.6, 2.4)
+        x, y, r = d * math.cos(a), d * math.sin(a), rng.uniform(0.3, 0.45)
+        k.lathe([(r, -SKIRT), (r, 0.4)], [B_BRICK], sides=8, cx=x, cy=y)
+        k.lathe([(r * 1.2, 0.4), (0.0, 1.1)], [B_ROOF], sides=8, cx=x, cy=y)
+    tbox(k, 3.0, 0.0, -SKIRT, 0.2, 1.4, 0.2, 0.0, B_GIRDER, B_GIRDER)
+    for y in (-0.6, 0.6):
+        k.tube((3.4, y, 0.05), (4.2, y, 0.05), 0.16, B_HULL, sides=6, r1=0.06)
+
+
+BTH_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: bth_tower(k, x, y, z0, h, min(w, d) * 0.8), 5, (0.04, 0.07),
+                        (0.04, 0.07), (0.06, 0.14)),
+                       (lambda k, x, y, z0, w, d, h, a, rng: tbox(k, x, y, z0, h * 0.6, w, d, a, B_PLATE_WIN, B_ROOF, wt=w * 0.6, dt=d * 0.3),
+                        3, (0.05, 0.08), (0.03, 0.05), (0.06, 0.1))],
+                back=(lambda k, x, y, z0, r, rng: [_tree(k, x, y, z0, rng.uniform(0.12, 0.18), B_GIRDER, trunk=B_SOOT)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: bth_tower(k, x, y, z0, h * 1.5, 0.06),
+                plaza=lambda k, x, y, z0, rng: (k.lathe([(0.13, z0), (0.13, 0.01), (0.0, 0.01)], [B_CONC, B_RUST], sides=10, cx=x, cy=y),),
+                prop=lambda k, x, y, z0, rng: _tree(k, x, y, z0, 0.1, B_GIRDER, trunk=B_SOOT),
+                street=0.06, wiggle=0.35)
+
+
+def bth_town(k, band, rng):
+    # Bothawui's towns (map/cities.txt 105): town_cell with Bothawui's palette
+    town_cell(k, band, rng, BTH_TOWN)
+
+
+# ==================================================================================================== NAL HUTTA
+# Nal Hutta (canon: bogs; Bilbousa, a sprawling mess covered in arching roots spreading from looming bulbous buildings; the
+# Hutt palaces on what little solid land there is; Legends: strip mines, greasy rain, the Guarja Shipyards). Star Wars
+# vocabulary, a design choice: bulbous ochre-grey domes and squat towers, arching root-like conduits, rust and grime. Atlas
+# hod_nalhutta (B_ layout): B_PLATE grimy ochre plate, B_PLATE_WIN with lit windows, B_CONC mud concrete, B_CONC_WIN
+# amber glass, B_RUST rust, B_SOOT grime, B_ROOF dull bronze domes, B_HAZARD yellow, B_GLOW sickly amber light, B_HULL
+# freighter grey, B_PIPE metal, B_GIRDER root brown, B_BRICK sandstone courses, B_DUST bog mud.
+def htt_bulb(k, x, y, z0, h, r):
+    """a Hutt bulb: a squat drum swelling into a bulbous dome with a stubby spire"""
+    k.lathe([(r * 0.7, z0), (r, z0 + h * 0.35), (r * 1.05, z0 + h * 0.55), (r * 0.7, z0 + h * 0.85), (r * 0.15, z0 + h)],
+            [B_PLATE_WIN, B_ROOF, B_ROOF, B_ROOF], sides=12, cx=x, cy=y)
+    k.lathe([(r * 0.08, z0 + h), (0.0, z0 + h * 1.25)], [B_PIPE], sides=4, cx=x, cy=y)
+
+
+def htt_bilbousa(k):
+    # Bilbousa (canon: the capital, a sprawling mess covered in arching roots spreading from looming bulbous buildings):
+    # a great central bulb, a ring of lesser bulbs, arching root-conduits from the centre over the streets, a pad. ~30
+    import random
+    rng = random.Random("htt_bilbousa")
+    htt_bulb(k, 0.0, 0.0, -SKIRT, 9.0, 2.0)
+    for i in range(10):
+        a, d = TAU * i / 10 + rng.uniform(-0.2, 0.2), rng.uniform(3.2, 5.2)
+        x, y = d * math.cos(a), d * math.sin(a)
+        htt_bulb(k, x, y, -SKIRT, rng.uniform(3.0, 5.5), rng.uniform(0.8, 1.2))
+        curve_tube(k, (1.4 * math.cos(a), 1.4 * math.sin(a), 4.0), (x, y, 1.0), 1.6, 0.32, 0.18, B_GIRDER, n=6, sides=6)
+    sw_pad(k, 5.8, -1.2, 0.8, 0.9, B_PLATE, B_PLATE, B_PAD)
+
+
+def htt_palace(k):
+    # a Hutt palace (canon: Gardulla's, the Wheeta Palace, on the little solid land of the bogs): a fortress drum with
+    # battered walls on a raised mound, a great bulbous throne dome, four bulb towers, a gate with blast doors. ~20
+    k.lathe([(3.2, -SKIRT), (3.0, 0.8), (2.7, 1.0)], [B_BRICK, B_CONC], sides=18, cap=B_CONC)
+    k.lathe([(2.0, 1.0), (2.0, 2.6)], [B_PLATE_WIN], sides=16)
+    htt_bulb(k, 0.0, 0.0, 2.6, 4.2, 1.9)
+    for i in range(4):
+        a = TAU * i / 4 + 0.785
+        htt_bulb(k, 2.6 * math.cos(a), 2.6 * math.sin(a), 0.8, 3.4, 0.6)
+    tbox(k, 0.0, -2.9, -SKIRT, 1.6, 0.8, 0.4, 0.0, B_SOOT, B_RUST)
+
+
+def htt_mine(k):
+    # the strip mines (Legends: raw materials strip-mined and shipped to Nar Shaddaa): a crawler excavator on treads with
+    # a bucket wheel, a conveyor up to a loading tower, spoil heaps. ~15
+    import random
+    rng = random.Random("htt_mine")
+    tbox(k, 0.0, 0.0, 0.0, 1.0, 2.2, 1.2, 0.0, B_RUST, B_PLATE)
+    tbox(k, 0.0, 0.0, 1.0, 2.2, 1.4, 0.9, 0.0, B_PLATE_WIN, B_ROOF)
+    k.tube((1.6, 0.0, 1.8), (4.0, 0.0, 2.6), 0.18, B_GIRDER, sides=5)
+    k.lathe([(1.0, 2.0), (1.0, 2.3)], [B_RUST], sides=12, cx=4.4, cy=0.0, cap=B_HAZARD)
+    k.tube((-1.8, 0.0, 1.6), (-4.4, 1.6, 3.6), 0.14, B_PIPE, sides=4)
+    sw_cap_tower(k, -4.6, 1.8, -SKIRT, 4.2, 0.4, B_PLATE, B_RUST, B_GLOW)
+    for _ in range(4):
+        rock(k, rng.uniform(-3, 3), rng.uniform(2.4, 3.8), -SKIRT, rng.uniform(0.8, 1.6), rng.uniform(0.8, 1.3), rng, [B_DUST, B_SOOT])
+
+
+def htt_yards(k):
+    # the Guarja Shipyards (Legends), IN ORBIT beside the disc (the user, 2026-10-22: shipyards are space stations): a
+    # bulbous Hutt hub with three long docking arms, open berths of girders along them, beacon spires. ~25
+    zc = 6.0
+    htt_bulb(k, 0.0, 0.0, zc - 2.0, 4.0, 1.6)
+    for i in range(3):
+        a = TAU * i / 3 + 0.3
+        x1, y1 = 7.0 * math.cos(a), 7.0 * math.sin(a)
+        k.tube((1.4 * math.cos(a), 1.4 * math.sin(a), zc), (x1, y1, zc), 0.45, B_PLATE_WIN, sides=8)
+        for t in (0.4, 0.6, 0.8):
+            px, py = 7.0 * t * math.cos(a), 7.0 * t * math.sin(a)
+            for s_ in (-1, 1):
+                k.tube((px, py, zc), (px - math.sin(a) * s_ * 1.8, py + math.cos(a) * s_ * 1.8, zc), 0.12, B_GIRDER, sides=4)
+        sw_cap_tower(k, x1, y1, zc - 0.6, zc + 1.8, 0.3, B_PLATE, B_RUST, B_GLOW)
+
+
+HTT_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: htt_bulb(k, x, y, z0, h, min(w, d) * 0.9), 5, (0.04, 0.07),
+                        (0.04, 0.07), (0.06, 0.12)),
+                       (lambda k, x, y, z0, w, d, h, a, rng: tbox(k, x, y, z0, h * 0.6, w, d, a, B_PLATE_WIN, B_ROOF, wt=w * 0.8, dt=d * 0.8),
+                        3, (0.05, 0.08), (0.03, 0.05), (0.06, 0.1))],
+                tower=lambda k, x, y, z0, h, rng: htt_bulb(k, x, y, z0, h * 1.3, 0.08),
+                prop=lambda k, x, y, z0, rng: k.lathe([(0.008, z0), (0.008, 0.05)], [B_PIPE], sides=4, cx=x, cy=y, cap=B_GLOW),
+                street=0.07, wiggle=0.4)
+
+
+def htt_town(k, band, rng):
+    # Nal Hutta's towns (map/cities.txt 106): town_cell with Nal Hutta's palette
+    town_cell(k, band, rng, HTT_TOWN)
+
+
+# ==================================================================================================== TOYDARIA
+# Toydaria (canon: fog, forests, mountains, swamps, muck lakes; Toydor; the Royal City and the Royal Palace on a mountain
+# peak; Arnel, ten rings of water and land; Pashda the Hutt's stronghold, over 100 metres). Star Wars vocabulary after The
+# Clone Wars' "Supply Lines", a design choice: rounded tan stone towers with domed caps and arched windows, green-bronze
+# roofs, wooden walkways over the muck. Atlas hod_toydaria (B_ layout): B_PLATE tan stone, B_PLATE_WIN with lit windows,
+# B_CONC pale stone, B_CONC_WIN green glass, B_RUST royal purple, B_SOOT dark stone, B_ROOF green-bronze, B_HAZARD gold,
+# B_GLOW warm light, B_HULL white hull, B_PIPE metal, B_GIRDER swamp wood, B_BRICK stone courses, B_DUST muck.
+def toy_tower(k, x, y, z0, h, r):
+    """a Toydarian tower: a round tan stone drum flaring at a gallery, a green-bronze dome cap"""
+    k.lathe([(r, z0), (r * 0.9, z0 + (h - z0) * 0.75), (r * 1.2, z0 + (h - z0) * 0.8), (r * 1.2, z0 + (h - z0) * 0.86)],
+            [B_PLATE_WIN, B_BRICK, B_RUST], sides=10, cx=x, cy=y)
+    dome(k, x, y, z0 + (h - z0) * 0.86, r * 1.1, (h - z0) * 0.2, [B_ROOF] * 4, sides=10)
+
+
+def toy_toydor(k):
+    # Toydor (canon: the largest city; Legends: the capital): clustered round stone towers of many heights on stone
+    # platforms over the muck, wooden walkways between them. ~30
+    import random
+    rng = random.Random("toy_toydor")
+    toy_tower(k, 0.0, 0.0, -SKIRT, 8.0, 1.0)
+    pts = []
+    for i in range(12):
+        a, d = rng.uniform(0, TAU), rng.uniform(2.0, 5.0)
+        x, y = d * math.cos(a), d * math.sin(a)
+        toy_tower(k, x, y, -SKIRT, rng.uniform(2.5, 5.5), rng.uniform(0.45, 0.7))
+        pts.append((x, y))
+    for x, y in pts[:7]:
+        k.tube((0.0, 0.0, 1.0), (x, y, 1.0), 0.08, B_GIRDER, sides=4)
+
+
+def toy_palace(k):
+    # the Toydarian Royal Palace (canon: in the Royal City on a mountain peak): a tall stone keep with a broad green
+    # dome, round towers round it, all on a steep rock peak. ~15
+    import random
+    rng = random.Random("toy_palace")
+    rock(k, 0.0, 0.0, -SKIRT, 3.0, 3.2, rng, [B_SOOT, B_BRICK], lobes=4, tiers=2)
+    k.lathe([(1.4, 3.0), (1.4, 5.5)], [B_PLATE_WIN], sides=14)
+    dome(k, 0.0, 0.0, 5.5, 1.5, 1.6, [B_ROOF, B_ROOF, B_ROOF, B_HAZARD], sides=14)
+    for i in range(5):
+        a = TAU * i / 5
+        toy_tower(k, 1.9 * math.cos(a), 1.9 * math.sin(a), 2.6, 6.4, 0.38)
+
+
+def toy_arnel(k):
+    # Arnel (canon: an agri-industrial city of ten rings of alternating water and land in the swamps): concentric rings,
+    # the land rings carrying low halls and towers, the water rings dark, a hub tower. ~20
+    for i in range(10):
+        r0, r1 = 0.6 + 0.48 * i, 0.6 + 0.48 * (i + 1)
+        land = i % 2 == 0
+        k.lathe([(r1, -0.4), (r1, 0.2 if land else 0.02), (r0, 0.2 if land else 0.02)], [B_BRICK, B_CONC if land else B_CONC_WIN],
+                sides=28)
+        if land:
+            for j in range(4 + i):
+                a = TAU * j / (4 + i)
+                rr = (r0 + r1) / 2
+                tbox(k, rr * math.cos(a), rr * math.sin(a), 0.2, 0.55, 0.16, 0.12, a, B_PLATE_WIN, B_ROOF)
+    toy_tower(k, 0.0, 0.0, -SKIRT, 4.0, 0.55)
+
+
+def toy_stronghold(k):
+    # Pashda's stronghold (canon: Pashda the Hutt's, over 100 metres tall, guarded by Toydarian and Gamorrean forces): a
+    # tall tapering dark-stone tower with a bulbous Hutt crown, a walled yard. ~10
+    tbox(k, 0.0, 0.0, -SKIRT, 6.0, 1.0, 1.0, 0.3, B_SOOT, B_RUST, wt=0.6, dt=0.6)
+    dome(k, 0.0, 0.0, 6.0, 1.1, 1.3, [B_ROOF, B_ROOF, B_RUST, B_HAZARD], sides=12)
+    for i in range(4):
+        a = TAU * i / 4 + 0.3
+        tbox(k, 2.4 * math.cos(a), 2.4 * math.sin(a), -SKIRT, 0.8, 1.7, 0.15, a + math.pi / 2, B_BRICK, B_SOOT)
+
+
+TOY_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: toy_tower(k, x, y, z0, h, min(w, d) * 0.8), 6, (0.04, 0.07),
+                        (0.04, 0.07), (0.06, 0.13))],
+                back=(lambda k, x, y, z0, r, rng: [_tree(k, x, y, z0, rng.uniform(0.12, 0.18), B_GIRDER, trunk=B_SOOT)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: toy_tower(k, x, y, z0, h * 1.4, 0.06),
+                prop=lambda k, x, y, z0, rng: _tree(k, x, y, z0, 0.1, B_GIRDER, trunk=B_SOOT),
+                street=0.07, wiggle=0.4)
+
+
+def toy_town(k, band, rng):
+    # Toydaria's towns (map/cities.txt 107): town_cell with Toydaria's palette
+    town_cell(k, band, rng, TOY_TOWN)
+
+
+# ==================================================================================================== QUESH
+# Quesh (Legends: a poisoned swamp world, breath masks needed; the Three Families Palace, Broga's Palace). Star Wars
+# vocabulary, a design choice: sealed squat fortress-palaces with domed air plants, filter stacks, chemical tanks glowing
+# acid green. Atlas hod_quesh (B_ layout): B_PLATE stained ochre plate, B_PLATE_WIN with lit windows, B_CONC grimy
+# concrete, B_CONC_WIN sealed green glass, B_RUST rust, B_SOOT soot, B_ROOF dull brass domes, B_HAZARD yellow, B_GLOW acid
+# green light, B_HULL grey hull, B_PIPE metal, B_GIRDER dead wood, B_BRICK stained courses, B_DUST toxic mud.
+def qsh_palace(k):
+    # a Quesh palace (Legends: the Three Families Palace; Broga's Palace): a squat sealed fortress on a raised base, a
+    # glass air dome over its court, filter stacks with acid-green lights, chemical tanks along a wall. ~20
+    tbox(k, 0.0, 0.0, -SKIRT, 1.8, 3.0, 2.4, 0.0, B_BRICK, B_CONC, wt=2.7, dt=2.1)
+    dome(k, 0.0, 0.0, 1.8, 1.8, 1.4, [B_CONC_WIN, B_CONC_WIN, B_CONC_WIN, B_ROOF], sides=16)
+    for sx, sy in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
+        k.lathe([(0.35, 1.8), (0.28, 4.6), (0.36, 4.8)], [B_SOOT, B_GLOW], sides=8, cx=sx * 2.4, cy=sy * 1.8, cap=B_SOOT)
+    for x in (-2.0, -0.7, 0.6, 1.9):
+        k.lathe([(0.5, -SKIRT), (0.5, 0.9)], [B_PIPE], sides=10, cx=x, cy=-3.4)
+        dome(k, x, -3.4, 0.9, 0.5, 0.3, [B_GLOW, B_PIPE, B_PIPE, B_PIPE], sides=10)
+
+
+def qsh_refinery(k):
+    # the Venom Refineries (a design choice after Quesh's chemistry): rows of glowing chemical tanks, distillation
+    # columns, pipe racks, a flare stack. ~20
+    for i in range(3):
+        for j in range(3):
+            x, y = -2.4 + 1.6 * i, -1.6 + 1.6 * j
+            k.lathe([(0.55, -SKIRT), (0.55, 1.4)], [B_PIPE], sides=12, cx=x, cy=y)
+            dome(k, x, y, 1.4, 0.55, 0.35, [B_GLOW, B_PIPE, B_PIPE, B_PIPE], sides=12)
+    for x in (2.6, 3.4):
+        k.lathe([(0.3, -SKIRT), (0.25, 5.0), (0.35, 5.2)], [B_RUST, B_PIPE], sides=8, cx=x, cy=0.0, cap=B_GLOW)
+    k.tube((-3.2, 2.6, 1.2), (3.6, 2.6, 1.2), 0.15, B_PIPE, sides=5)
+    k.tube((-3.2, -2.8, 1.0), (3.6, -2.8, 1.0), 0.15, B_PIPE, sides=5)
+
+
+QSH_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: (tbox(k, x, y, z0, h * 0.5, w, d, a, B_PLATE_WIN, B_CONC),
+                                                              dome(k, x, y, h * 0.5, min(w, d) * 0.8, min(w, d) * 0.6, [B_CONC_WIN] * 4, sides=8)),
+                        5, (0.04, 0.07), (0.04, 0.06), (0.06, 0.1))],
+                tower=lambda k, x, y, z0, h, rng: k.lathe([(0.02, z0), (0.015, h)], [B_SOOT], sides=6, cx=x, cy=y, cap=B_GLOW),
+                prop=lambda k, x, y, z0, rng: k.lathe([(0.02, z0), (0.02, 0.04)], [B_PIPE], sides=6, cx=x, cy=y, cap=B_GLOW),
+                street=0.07, wiggle=0.35)
+
+
+def qsh_town(k, band, rng):
+    # Quesh's sealed towns (map/cities.txt 108): town_cell with Quesh's palette
+    town_cell(k, band, rng, QSH_TOWN)
+
+
+# ==================================================================================================== NIMBAN
+# Nimban (Legends: gentle plains; the Nimbanel, the Hutts' bureaucrats; Hoersch-Kessel Drive's headquarters, the Bureau of
+# Ships and Services office, Delban Faxicorp). Star Wars vocabulary, a design choice: tidy pale stepped office ziggurats
+# with long window bands, a hyperdrive test ring, garden courts. Atlas hod_nimban (B_ layout): B_PLATE pale cream plate,
+# B_PLATE_WIN with lit windows, B_CONC pale paving, B_CONC_WIN blue glass, B_RUST corporate teal, B_SOOT dark grey, B_ROOF
+# slate, B_HAZARD yellow, B_GLOW blue light, B_HULL white hull, B_PIPE metal, B_GIRDER plains green, B_BRICK cream
+# courses, B_DUST plains gold.
+def nim_ziggurat(k, x, y, z0, w, steps, h):
+    """a Nimbanel office ziggurat: pale stepped tiers with window bands, a teal crown band"""
+    for i in range(steps):
+        f = 1.0 - 0.2 * i
+        tbox(k, x, y, z0 + h * i, z0 + h * (i + 1), w * f, w * f * 0.8, 0.0, B_PLATE_WIN, B_CONC)
+    tbox(k, x, y, z0 + h * steps, z0 + h * steps + 0.2, w * (1 - 0.2 * steps) * 1.05, w * (1 - 0.2 * steps) * 0.85, 0.0, B_RUST, B_ROOF)
+
+
+def nim_hkd(k):
+    # the Hoersch-Kessel Drive, Inc. headquarters (Legends: on Nimban): a tall stepped office tower, a hyperdrive test ring
+    # on pylons glowing blue, engineering halls, a landing pad. ~20
+    nim_ziggurat(k, 0.0, 0.0, -SKIRT, 2.0, 4, 2.0)
+    n = 20
+    for i in range(n):
+        a0, a1 = TAU * i / n, TAU * (i + 1) / n
+        k.tube((3.4 + 2.0 * math.cos(a0), 2.0 * math.sin(a0), 3.0), (3.4 + 2.0 * math.cos(a1), 2.0 * math.sin(a1), 3.0), 0.22,
+               B_GLOW if i % 4 == 0 else B_PLATE, sides=6)
+    for i in range(4):
+        a = TAU * i / 4
+        k.tube((3.4 + 2.0 * math.cos(a), 2.0 * math.sin(a), -SKIRT), (3.4 + 2.0 * math.cos(a), 2.0 * math.sin(a), 3.0), 0.12,
+               B_GIRDER, sides=5)
+    for y in (-2.8, 2.8):
+        tbox(k, -1.6, y, -SKIRT, 1.2, 1.6, 0.6, 0.0, B_PLATE_WIN, B_ROOF)
+    sw_pad(k, -4.2, 0.0, 0.8, 0.9, B_PLATE, B_PLATE, B_PAD)
+
+
+def nim_bureau(k):
+    # the Bureau of Ships and Services office / Delban Faxicorp (Legends: on Nimban): a broad low ziggurat of offices round
+    # a garden court, comm masts. ~12
+    nim_ziggurat(k, 0.0, 0.0, -SKIRT, 2.4, 3, 0.9 + SKIRT / 3)
+    for x in (-1.8, 1.8):
+        k.lathe([(0.04, 2.0), (0.03, 4.4)], [B_PIPE], sides=4, cx=x, cy=0.0, cap=B_GLOW)
+    for i in range(8):
+        a = TAU * i / 8
+        _tree(k, 3.2 * math.cos(a), 2.6 * math.sin(a), 0.0, 0.7, B_GIRDER, trunk=B_SOOT)
+
+
+NIM_TOWN = dict(build=[(lambda k, x, y, z0, w, d, h, a, rng: nim_ziggurat(k, x, y, z0, min(w, d), 2, h * 0.4), 5, (0.04, 0.07),
+                        (0.04, 0.07), (0.06, 0.12))],
+                back=(lambda k, x, y, z0, r, rng: [_tree(k, x, y, z0, rng.uniform(0.12, 0.18), B_GIRDER, trunk=B_SOOT)], (0.06, 0.09)),
+                tower=lambda k, x, y, z0, h, rng: nim_ziggurat(k, x, y, z0, 0.07, 4, h * 0.3),
+                prop=lambda k, x, y, z0, rng: _tree(k, x, y, z0, 0.1, B_GIRDER, trunk=B_SOOT),
+                street=0.07, wiggle=0.25)
+
+
+def nim_town(k, band, rng):
+    # Nimban's office towns (map/cities.txt 109): town_cell with Nimban's palette
+    town_cell(k, band, rng, NIM_TOWN)
+
+
+# ==================================================================================================== NAR SHADDAA
+# Nar Shaddaa (canon: an ecumenopolis; Hutta Town, huge tower blocks with shanty skyslums filling every gap; the Palace of
+# Grakkus the Hutt; the spaceport). Star Wars vocabulary, a design choice: grimy grey tower blocks, magenta and cyan neon,
+# rust-orange shanty boxes bolted between them. Atlas hod_narshaddaa (B_ layout): B_PLATE grimy grey plate, B_PLATE_WIN
+# with lit windows, B_CONC dark concrete, B_CONC_WIN cyan glass, B_RUST rust orange, B_SOOT soot, B_ROOF dark roofs,
+# B_HAZARD yellow, B_GLOW magenta neon, B_HULL freighter grey, B_PIPE metal, B_GIRDER dark steel, B_BRICK grey courses,
+# B_DUST grime.
+def nsh_hutta(k):
+    # Hutta Town (canon: huge tower blocks with skyslums filling every gap): a cluster of tall grey slab towers with
+    # neon bands, rust shanty boxes bolted between them at many heights, skybridges. ~30
+    import random
+    rng = random.Random("nsh_hutta")
+    towers = [(0.0, 0.0, 10.0), (2.4, 0.6, 8.0), (-2.2, 1.0, 7.0), (0.8, -2.4, 7.5), (-1.4, -2.0, 6.0), (2.0, 2.8, 5.5),
+              (-0.6, 2.8, 6.5), (3.4, -1.6, 5.0)]
+    for x, y, h in towers:
+        tbox(k, x, y, -SKIRT, h, 0.75, 0.6, 0.2, B_PLATE_WIN, B_ROOF)
+        for z in (h * 0.3, h * 0.6, h * 0.9):
+            tbox(k, x, y, z, z + 0.15, 0.77, 0.62, 0.2, B_GLOW, B_GLOW)
+    for _ in range(26):                                                                 # the skyslums
+        (x0, y0, h0), (x1, y1, h1) = rng.sample(towers, 2)
+        t, z = rng.uniform(0.35, 0.65), rng.uniform(1.0, min(h0, h1) * 0.85)
+        tbox(k, x0 + (x1 - x0) * t, y0 + (y1 - y0) * t, z, z + rng.uniform(0.3, 0.6), rng.uniform(0.25, 0.45),
+             rng.uniform(0.2, 0.35), rng.uniform(0, 3), B_RUST, B_SOOT)
+
+
+def nsh_palace(k):
+    # the Palace of Grakkus the Hutt (canon): a fortress tower block with a bulbous Hutt crown, blast-door gate, neon. ~12
+    tbox(k, 0.0, 0.0, -SKIRT, 4.0, 1.8, 1.6, 0.0, B_PLATE_WIN, B_SOOT, wt=1.5, dt=1.3)
+    dome(k, 0.0, 0.0, 4.0, 1.5, 1.6, [B_ROOF, B_ROOF, B_RUST, B_GLOW], sides=14)
+    tbox(k, 0.0, -1.7, -SKIRT, 1.4, 0.7, 0.2, 0.0, B_SOOT, B_RUST)
+    for x in (-1.9, 1.9):
+        k.lathe([(0.06, 0.0), (0.05, 5.0)], [B_PIPE], sides=4, cx=x, cy=-1.4, cap=B_GLOW)
+
+
+def nsh_port(k):
+    # the Nar Shaddaa spaceport (canon): docking bays sunk in a grimy platform, landing pads on stalks, a control tower
+    # with neon bands, freighters in the bays. ~20
+    tbox(k, 0.0, 0.0, -SKIRT, 0.4, 4.0, 2.8, 0.0, B_CONC, B_CONC)
+    for x, y in ((-2.2, -1.0), (0.0, 1.0), (2.2, -1.0)):
+        k.lathe([(1.0, -0.4), (1.0, 0.42), (0.9, 0.42), (0.9, -0.2)], [B_PLATE, B_HULL, B_PLATE], sides=14, cx=x, cy=y, cap=B_SOOT)
+    k.tube((-2.6, -1.2, 0.0), (-1.6, -0.6, 0.25), 0.4, B_HULL, sides=8, r1=0.2)
+    sw_cap_tower(k, 3.6, 1.8, -SKIRT, 5.5, 0.35, B_PLATE_WIN, B_ROOF, B_GLOW)
+    for x, y in ((-4.6, 1.8), (4.6, -1.8)):
+        sw_pad(k, x, y, 1.0, 0.9, B_PLATE, B_PLATE, B_PAD)
+
+
+def nsh_town(k, band, rng):
+    # Nar Shaddaa's tower blocks (map/cities.txt 110): Empress Teta's block cell in Nar Shaddaa's grimy palette (city-world
+    # cells are on hold for more variety: 3d_models_todo.txt section E)
+    tet_town(k, band, rng)

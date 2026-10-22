@@ -1,0 +1,28 @@
+state={
+	id=14
+	name="STATE_14"
+	# HOD: Fondor (fondor_map.py)
+	provinces={
+		915 1330 1348 14814 14818 14819 14820 14827 14828 14829 14929 14930
+	}
+	resources={
+		chromium=3#Circuitry
+	}
+	history = {
+		victory_points = {
+			1348 20
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = FON
+		add_core_of = FON
+	}
+	manpower = 2272348
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

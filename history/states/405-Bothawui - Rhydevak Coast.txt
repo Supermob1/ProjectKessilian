@@ -1,0 +1,34 @@
+state={
+	id=405
+	name="STATE_405"
+	# HOD: Bothawui (bothawui_map.py)
+	provinces={
+		2451 2534 15506 15507 15521 15522 15534 15545 15551 15558 15563 15574 15581 15586 15587 15593
+	}
+	resources={
+		rubber=1
+	}
+	history = {
+		victory_points = {
+			2451 3
+		}
+		victory_points = {
+			2534 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			air_base = 1
+			dockyard = 2
+					15521 = {
+				naval_base = 3
+			}
+		}
+		owner = BHO
+		add_core_of = BHO
+	}
+	manpower = 585473
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

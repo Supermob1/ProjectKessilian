@@ -1,0 +1,922 @@
+{
+ "centre": [
+  1751.4136157337368,
+  2427.8653555219366
+ ],
+ "radius": 32.43476797878209,
+ "vp_names": {
+  "784": "Hutta Town",
+  "191": "Palace of Grakkus the Hutt",
+  "2480": "Nar Shaddaa Spaceport",
+  "709": "Slag Pit",
+  "3780": "Corellian Sector",
+  "4319": "Wormstew Town",
+  "4464": "New Vertica",
+  "4930": "Duros Sector",
+  "6162": "Red Light Sector",
+  "13262": "Refugee Sector",
+  "3585": "Upper Industrial Sector"
+ },
+ "provinces": {
+  "191": {
+   "zone": "palace",
+   "kind": 3,
+   "feature": "Palace of Grakkus the Hutt",
+   "state": 66,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1748.9166666666667,
+    2430.9444444444443
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "709": {
+   "zone": "pit",
+   "kind": 4,
+   "feature": "Slag Pit",
+   "state": 625,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.0,
+    2403.90625
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "784": {
+   "zone": "core",
+   "kind": 2,
+   "feature": "Hutta Town",
+   "state": 66,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1750.621951219512,
+    2423.6951219512193
+   ],
+   "area": 82,
+   "terrain": "urban"
+  },
+  "865": {
+   "zone": "core",
+   "kind": 2,
+   "feature": "Hutta Town",
+   "state": 66,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1752.7777777777778,
+    2434.259259259259
+   ],
+   "area": 54,
+   "terrain": "urban"
+  },
+  "887": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Nar Shaddaa Spaceport",
+   "state": 621,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1776.4074074074074,
+    2423.1481481481483
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "1184": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Nar Shaddaa Spaceport",
+   "state": 621,
+   "group": 3,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1778.0344827586207,
+    2413.689655172414
+   ],
+   "area": 29,
+   "terrain": "urban"
+  },
+  "1750": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Nar Shaddaa Spaceport",
+   "state": 621,
+   "group": 3,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1780.4166666666667,
+    2426.8611111111113
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "1905": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Nar Shaddaa Spaceport",
+   "state": 621,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1775.8461538461538,
+    2417.730769230769
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "2480": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Nar Shaddaa Spaceport",
+   "state": 621,
+   "group": 3,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1780.8387096774193,
+    2420.1935483870966
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "3044": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Upper Industrial Sector",
+   "state": 625,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1756.675,
+    2403.0
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "3354": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Upper Industrial Sector",
+   "state": 625,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.5,
+    2401.5
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "3493": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Upper Industrial Sector",
+   "state": 625,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1747.6,
+    2406.133333333333
+   ],
+   "area": 15,
+   "terrain": "urban"
+  },
+  "3585": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Upper Industrial Sector",
+   "state": 625,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.7777777777778,
+    2399.3333333333335
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "3780": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Corellian Sector",
+   "state": 618,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1738.03125,
+    2444.6875
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "4306": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Corellian Sector",
+   "state": 618,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1736.6785714285713,
+    2440.8214285714284
+   ],
+   "area": 28,
+   "terrain": "urban"
+  },
+  "4319": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Wormstew Town",
+   "state": 619,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1763.6333333333334,
+    2447.0
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "4440": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Wormstew Town",
+   "state": 619,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1765.551724137931,
+    2443.2758620689656
+   ],
+   "area": 29,
+   "terrain": "urban"
+  },
+  "4464": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "New Vertica",
+   "state": 620,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1729.054054054054,
+    2424.7837837837837
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "4641": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "New Vertica",
+   "state": 620,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1729.0,
+    2429.655172413793
+   ],
+   "area": 29,
+   "terrain": "urban"
+  },
+  "4930": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Duros Sector",
+   "state": 622,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1735.9574468085107,
+    2411.574468085106
+   ],
+   "area": 47,
+   "terrain": "urban"
+  },
+  "6162": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Red Light Sector",
+   "state": 623,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1748.3030303030303,
+    2454.909090909091
+   ],
+   "area": 33,
+   "terrain": "urban"
+  },
+  "13261": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Red Light Sector",
+   "state": 623,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1752.9444444444443,
+    2454.6666666666665
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "13262": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Refugee Sector",
+   "state": 624,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1767.5925925925926,
+    2409.1111111111113
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "13274": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Refugee Sector",
+   "state": 624,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1769.375,
+    2412.125
+   ],
+   "area": 24,
+   "terrain": "urban"
+  },
+  "13287": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 1",
+   "state": 66,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1743.054054054054,
+    2435.864864864865
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "13292": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 2",
+   "state": 66,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1758.6666666666667,
+    2438.2619047619046
+   ],
+   "area": 42,
+   "terrain": "urban"
+  },
+  "13315": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 3",
+   "state": 66,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1741.68,
+    2426.56
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "13322": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 3",
+   "state": 66,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1735.5,
+    2426.5
+   ],
+   "area": 24,
+   "terrain": "urban"
+  },
+  "13343": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 4",
+   "state": 66,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1743.1463414634147,
+    2418.1951219512193
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "13344": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 5",
+   "state": 66,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1763.0,
+    2416.0
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "13354": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 5",
+   "state": 66,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1757.84,
+    2421.28
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "13358": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 6",
+   "state": 66,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1751.6363636363637,
+    2413.1363636363635
+   ],
+   "area": 44,
+   "terrain": "urban"
+  },
+  "13361": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Hutta Town street 7",
+   "state": 66,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1750.525,
+    2444.125
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "13365": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Nar Shaddaa Spaceport street 8",
+   "state": 621,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1772.7272727272727,
+    2413.909090909091
+   ],
+   "area": 11,
+   "terrain": "urban"
+  },
+  "13378": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Nar Shaddaa Spaceport street 9",
+   "state": 621,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1769.28125,
+    2437.09375
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "13387": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Nar Shaddaa Spaceport street 9",
+   "state": 621,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1773.6875,
+    2430.0
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "13388": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "New Vertica street 10",
+   "state": 620,
+   "group": 20,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1733.4473684210527,
+    2435.0263157894738
+   ],
+   "area": 38,
+   "terrain": "urban"
+  },
+  "13394": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "New Vertica street 11",
+   "state": 620,
+   "group": 21,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1732.344827586207,
+    2418.6206896551726
+   ],
+   "area": 29,
+   "terrain": "urban"
+  },
+  "13398": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1736.641304347826,
+    2451.086956521739
+   ],
+   "area": 92,
+   "terrain": "mountain"
+  },
+  "13402": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1764.1375,
+    2401.8875
+   ],
+   "area": 80,
+   "terrain": "mountain"
+  },
+  "13419": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1728.2376237623762,
+    2411.891089108911
+   ],
+   "area": 101,
+   "terrain": "mountain"
+  },
+  "13423": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1772.1880341880342,
+    2446.777777777778
+   ],
+   "area": 117,
+   "terrain": "mountain"
+  },
+  "13431": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1756.4363636363637,
+    2415.672727272727
+   ],
+   "area": 55,
+   "terrain": "mountain"
+  },
+  "13457": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1724.0098039215686,
+    2434.3333333333335
+   ],
+   "area": 102,
+   "terrain": "mountain"
+  },
+  "13467": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1750.46875,
+    2396.9375
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "13484": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1758.7128205128206,
+    2450.266666666667
+   ],
+   "area": 195,
+   "terrain": "mountain"
+  },
+  "13502": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.775,
+    2442.3125
+   ],
+   "area": 80,
+   "terrain": "mountain"
+  },
+  "13506": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1745.0869565217392,
+    2411.913043478261
+   ],
+   "area": 92,
+   "terrain": "mountain"
+  },
+  "13514": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1777.9586776859503,
+    2435.9586776859505
+   ],
+   "area": 121,
+   "terrain": "mountain"
+  },
+  "13521": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1759.8194444444443,
+    2409.1944444444443
+   ],
+   "area": 72,
+   "terrain": "mountain"
+  },
+  "13529": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1728.9811320754718,
+    2443.4622641509436
+   ],
+   "area": 106,
+   "terrain": "mountain"
+  },
+  "13545": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1723.247311827957,
+    2422.2688172043013
+   ],
+   "area": 93,
+   "terrain": "mountain"
+  },
+  "13550": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1737.5242718446602,
+    2403.242718446602
+   ],
+   "area": 103,
+   "terrain": "mountain"
+  },
+  "13560": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1744.9156626506024,
+    2454.4457831325303
+   ],
+   "area": 83,
+   "terrain": "mountain"
+  },
+  "13564": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Blocks",
+   "state": 1451,
+   "group": 22,
+   "coastal": true,
+   "sea": 18935,
+   "centre": [
+    1773.26,
+    2407.44
+   ],
+   "area": 50,
+   "terrain": "mountain"
+  },
+  "13571": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Vertical Stacks",
+   "state": 1449,
+   "group": 23,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1738.5432098765432,
+    2421.0246913580245
+   ],
+   "area": 81,
+   "terrain": "mountain"
+  },
+  "13597": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Skyslums",
+   "state": 1452,
+   "group": 24,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1739.064935064935,
+    2431.987012987013
+   ],
+   "area": 77,
+   "terrain": "mountain"
+  },
+  "13638": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Undercity Stacks",
+   "state": 1450,
+   "group": 25,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1768.8412698412699,
+    2421.5079365079364
+   ],
+   "area": 126,
+   "terrain": "mountain"
+  },
+  "13642": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Undercity Stacks",
+   "state": 1450,
+   "group": 25,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1764.4020618556701,
+    2433.8453608247423
+   ],
+   "area": 97,
+   "terrain": "mountain"
+  },
+  "13649": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Undercity Stacks",
+   "state": 1450,
+   "group": 25,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1760.6190476190477,
+    2426.9285714285716
+   ],
+   "area": 84,
+   "terrain": "mountain"
+  }
+ }
+}

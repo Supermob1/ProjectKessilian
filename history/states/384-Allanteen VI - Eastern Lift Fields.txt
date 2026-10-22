@@ -1,0 +1,32 @@
+state={
+	id=384
+	name="STATE_384"
+	# HOD: Allanteen VI (allanteen_vi_map.py)
+	provinces={
+		15219 15244 15264 15269 15274 15279 15280 15299 15303 15320
+	}
+	resources={
+		coal=1
+		oil=1
+	}
+	history = {
+		victory_points = {
+			15274 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 2
+			dockyard = 4
+					15219 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 345965
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
