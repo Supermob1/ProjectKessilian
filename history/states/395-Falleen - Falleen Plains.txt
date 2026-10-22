@@ -1,0 +1,33 @@
+state={
+	id=395
+	name="STATE_395"
+	# HOD: Falleen (falleen_map.py)
+	provinces={
+		15921 15924 15925 15934 15935 15936 15940 15941 15942 15944 15945 15946 15950 15951 15959 15967 15968 15971 15972 15976 15977 15980
+	}
+	resources={
+		tungsten=4
+		steel=2
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			15976 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+					15971 = {
+				naval_base = 4
+			}
+		}
+		owner = FAL
+		add_core_of = FAL
+	}
+	manpower = 184411
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

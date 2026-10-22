@@ -1,0 +1,32 @@
+state={
+	id=657
+	name="STATE_657"
+	# HOD: Quesh (quesh_map.py)
+	provinces={
+		12956 12957 12958 12959 12961 12962 12965 12968 12974 12977 12982 12987 12993 12999
+	}
+	resources={
+		tungsten=5
+		steel=3
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			12961 1
+		}
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+			dockyard = 1
+					12957 = {
+				naval_base = 4
+			}
+		}
+		owner = QKJ
+		add_core_of = QKJ
+	}
+	manpower = 96556
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

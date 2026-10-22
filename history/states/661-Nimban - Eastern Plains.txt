@@ -1,0 +1,31 @@
+state={
+	id=661
+	name="STATE_661"
+	# HOD: Nimban (nimban_map.py)
+	provinces={
+		12245 12250 12261 12264 12265 12269 12271 12272 12278 12282 12285 12295 12299 12300 12306 12315 12316
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			12300 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			air_base = 1
+			dockyard = 2
+					12282 = {
+				naval_base = 3
+			}
+		}
+		owner = GKJ
+		add_core_of = GKJ
+	}
+	manpower = 179199
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

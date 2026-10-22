@@ -1,0 +1,32 @@
+state={
+	id=629
+	name="STATE_629"
+	# HOD: Toydaria (toydaria_map.py)
+	provinces={
+		1204 1237 13590 13596 13601 13604 13612 13618 13628 13633
+	}
+	resources={
+		rubber=3
+	}
+	history = {
+		victory_points = {
+			13604 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+			dockyard = 1
+					13596 = {
+				naval_base = 3
+			}
+		}
+		owner = TOY
+		add_core_of = TOY
+	}
+	manpower = 332924
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

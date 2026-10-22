@@ -1,0 +1,33 @@
+state={
+	id=621
+	name="STATE_621"
+	# HOD: Nar Shaddaa (nar_shaddaa_map.py)
+	provinces={
+		887 1184 1750 1905 2480 13365 13378 13387
+	}
+	resources={
+		chromium=3
+		coal=1
+	}
+	history = {
+		victory_points = {
+			2480 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 4
+			air_base = 2
+			dockyard = 9
+					1750 = {
+				naval_base = 4
+			}
+		}
+		owner = HTT
+		add_core_of = HTT
+	}
+	manpower = 1094881
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

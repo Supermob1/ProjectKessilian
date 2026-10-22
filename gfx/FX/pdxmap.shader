@@ -465,6 +465,9 @@ PixelShader =
 				float vGlint = pow( saturate( vGlintN * 1.6f ), 14.0f );
 				float vShallow = saturate( ATNoise( vATPos * 0.04f + 17.0f ) * 1.4f - 0.2f );
 				float3 vWaterCol = lerp( float3( 0.03f, 0.15f, 0.24f ), float3( 0.08f, 0.38f, 0.44f ), vShallow );
+				// HOD: acid seas (Cato Neimoidia): a colormap far greener than blue and red turns the water sickly yellow-green
+				float vAcid = smoothstep( 0.3f, 0.4f, TerrainColor.g - TerrainColor.b ) * step( TerrainColor.r, TerrainColor.g );
+				vWaterCol = lerp( vWaterCol, lerp( float3( 0.16f, 0.22f, 0.03f ), float3( 0.42f, 0.5f, 0.06f ), vShallow ), vAcid );
 				float vBed = 0.25f + 0.75f * ATNoise( vATPos * 0.13f + 43.0f );
 				float3 vUnder = vWaterCol + diffuse.rgb * float3( 0.06f, 0.11f, 0.12f ) * ( 0.5f + vShallow ) * vBed
 				              + vCaustic * float3( 0.05f, 0.10f, 0.11f ) * ( 0.4f + vShallow ) + vGlint * 0.2f;
