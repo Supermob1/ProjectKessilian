@@ -1,0 +1,33 @@
+state={
+	id=365
+	name="STATE_365"
+	# HOD: Cato Neimoidia (cato_neimoidia_map.py)
+	provinces={
+		14533 14536 14537 14538 14543 14545 14546 14550 14551 14552 14553 14554 14555 14557 14561 14562 14563
+	}
+	resources={
+		coal=1
+		oil=1
+	}
+	history = {
+		victory_points = {
+			14543 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 4
+					14533 = {
+				naval_base = 4
+			}
+		}
+		owner = TDF
+		add_core_of = TDF
+	}
+	manpower = 581405
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,32 @@
+state={
+	id=409
+	name="STATE_409"
+	# HOD: Nal Hutta (nal_hutta_map.py)
+	provinces={
+		695 14059 14063 14064 14072 14077 14081 14087 14092 14096 14101 14102 14115 14123
+	}
+	resources={
+		rubber=4
+		oil=1
+	}
+	history = {
+		victory_points = {
+			695 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 4
+					14087 = {
+				naval_base = 3
+			}
+		}
+		owner = HTT
+		add_core_of = HTT
+	}
+	manpower = 445267
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,32 @@
+state={
+	id=235
+	name="STATE_235"
+	# HOD: Byss (byss_map.py)
+	provinces={
+		2245 14331 14334 14335 14343 14347 14348
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			14347 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 5
+			arms_factory = 1
+			air_base = 2
+			dockyard = 4
+					14334 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 1447748
+	state_category = large_planet
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

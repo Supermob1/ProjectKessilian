@@ -1,0 +1,31 @@
+state={
+	id=370
+	name="STATE_370"
+	# HOD: Atzerri (atzerri_map.py)
+	provinces={
+		15505 15517 15518 15519 15525 15526 15532 15538 15542 15543 15547 15548 15559 15560 15568
+	}
+	resources={
+		coal=1
+		oil=2
+	}
+	history = {
+		victory_points = {
+			15532 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			dockyard = 4
+			15568 = {
+				naval_base = 3
+			}
+		}
+		owner = FON
+		add_core_of = FON
+	}
+	manpower = 387494
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1087,6 +1087,110 @@ on_actions = {
 				add_dynamic_modifier = { modifier = HOD_landmark_mnn_ahto }
 			}
 			every_state = {
+				limit = { OR = { state = 11 state = 213 state = 216 state = 224 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tet_cinnagar }
+			}
+			every_state = {
+				limit = { OR = { state = 215 state = 219 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tet_library }
+			}
+			every_state = {
+				limit = { OR = { state = 220 state = 225 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_tet_mines }
+			}
+			every_state = {
+				limit = { OR = { state = 230 state = 237 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bys_temple }
+			}
+			every_state = {
+				limit = { OR = { state = 12 state = 229 state = 235 state = 239 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bys_landing }
+			}
+			every_state = {
+				limit = { OR = { state = 13 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_abr_spaceport }
+			}
+			every_state = {
+				limit = { OR = { state = 301 state = 302 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_abr_leyer }
+			}
+			every_state = {
+				limit = { OR = { state = 14 state = 307 state = 309 state = 310 state = 311 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_fon_city }
+			}
+			every_state = {
+				limit = { OR = { state = 308 state = 312 state = 313 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_fon_academy }
+			}
+			every_state = {
+				limit = { OR = { state = 24 state = 359 state = 361 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cat_zarra }
+			}
+			every_state = {
+				limit = { OR = { state = 360 state = 362 state = 363 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_cat_vaults }
+			}
+			every_state = {
+				limit = { OR = { state = 26 state = 376 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bst_bsellis }
+			}
+			every_state = {
+				limit = { OR = { state = 373 state = 374 state = 375 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bst_spires }
+			}
+			every_state = {
+				limit = { OR = { state = 25 state = 367 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_atz_talos }
+			}
+			every_state = {
+				limit = { OR = { state = 27 state = 380 state = 381 state = 382 state = 383 state = 384 state = 385 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_aln_yards }
+			}
+			every_state = {
+				limit = { OR = { state = 29 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_fal_throne }
+			}
+			every_state = {
+				limit = { OR = { state = 393 state = 399 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_fal_harbour }
+			}
+			every_state = {
+				limit = { OR = { state = 30 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bth_clans }
+			}
+			every_state = {
+				limit = { OR = { state = 400 state = 403 state = 404 state = 406 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_bth_cities }
+			}
+			every_state = {
+				limit = { OR = { state = 31 state = 411 state = 413 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_htt_bilbousa }
+			}
+			every_state = {
+				limit = { OR = { state = 412 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_htt_mines }
+			}
+			every_state = {
+				limit = { OR = { state = 67 state = 626 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_toy_royal }
+			}
+			every_state = {
+				limit = { OR = { state = 627 state = 630 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_toy_arnel }
+			}
+			every_state = {
+				limit = { OR = { state = 71 state = 653 state = 654 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_qsh_palace }
+			}
+			every_state = {
+				limit = { OR = { state = 72 state = 663 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_nim_hkd }
+			}
+			every_state = {
+				limit = { OR = { state = 66 state = 621 } }
+				add_dynamic_modifier = { modifier = HOD_landmark_nsh_hutta }
+			}
+			every_state = {
 				limit = { OR = { state = 1 state = 126 } }
 				add_dynamic_modifier = { modifier = HOD_landmark_cos_senate }
 			}

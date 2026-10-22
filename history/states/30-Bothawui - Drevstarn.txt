@@ -1,0 +1,34 @@
+state={
+	id=30
+	name="STATE_30"
+	# HOD: Bothawui (bothawui_map.py)
+	provinces={
+		56 174 326 348 702 15001 15002 15003 15004 15010 15011 15020 15028 15029 15037 15038 15049 15050
+	}
+	resources={
+		chromium=4#Circuitry
+	}
+	history = {
+		victory_points = {
+			56 10
+		}
+		victory_points = {
+			174 3
+		}
+		victory_points = {
+			702 20
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 6
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = BHO
+		add_core_of = BHO
+	}
+	manpower = 2410432
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
