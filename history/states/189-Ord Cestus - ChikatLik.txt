@@ -3,21 +3,21 @@ state={
 	name="STATE_189"
 	# HOD: Ord Cestus (ord_cestus_map.py)
 	provinces={
-		21483 21484 21487 21488 21567 21572 21574
+		1597 1589 1584 1583 1430 1424 1418
 	}
 	resources={
 		oil=20#Fuel
-		rubber=5#Doonium
-		tungsten=15#Bacta
+		rubber=5#Bacta
+		tungsten=15#Minerals
 		steel=10#Alloys
 		chromium=10#Circuitry
 	}
 	history = {
 		victory_points = {
-			21483 3
+			1597 3
 		}
 		victory_points = {
-			21484 10
+			1589 10
 		}
 		buildings = {
 			infrastructure = 4
@@ -25,7 +25,7 @@ state={
 			arms_factory = 3
 			air_base = 2
 			dockyard = 3
-					21567 = {
+					1430 = {
 				naval_base = 3
 			}
 		}

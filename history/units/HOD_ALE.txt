@@ -1,0 +1,23 @@
+﻿# HOD: ALE (faction_templates.py)
+
+division_template = {
+	name = "Aleena Royal Guard"
+	division_names_group = ALE_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Aleena Royal Guard"
+		location = 16867
+		start_experience_factor = 0.2
+	}
+}

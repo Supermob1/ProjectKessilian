@@ -1,0 +1,27 @@
+state={
+	id=1811
+	name="STATE_1811"
+	# HOD: Bardotta (bardotta_map.py)
+	provinces={
+		16701 16723 16724 16725 16726 16727 16728
+	}
+	resources={
+		rubber=4#Bacta
+		oil=3#Fuel
+		chromium=2#Circuitry
+	}
+	history = {
+		victory_points = {
+			16701 5
+		}
+		buildings = {
+			infrastructure = 2
+		}
+		owner = BDT
+		add_core_of = BDT
+	}
+	manpower = 27500
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

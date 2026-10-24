@@ -1,0 +1,26 @@
+state={
+	id=1725
+	name="STATE_1725"
+	# HOD: Quell (quell_map.py)
+	provinces={
+		17875 17894 17895 17896 17897 17898 17899
+	}
+	resources={
+		oil=3#Fuel
+		steel=3#Alloys
+	}
+	history = {
+		victory_points = {
+			17875 10
+		}
+		buildings = {
+			infrastructure = 2
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 100000
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

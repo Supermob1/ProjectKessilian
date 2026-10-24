@@ -3,21 +3,21 @@ state={
 	name="STATE_193"
 	# HOD: Lola Sayu (lola_sayu_map.py)
 	provinces={
-		21263 21266 21268 21311
+		1939 1933 1930 1890
 	}
 	resources={
 		oil=13#Fuel
-		rubber=12#Doonium
-		tungsten=12#Bacta
+		rubber=12#Bacta
+		tungsten=12#Minerals
 		steel=5#Alloys
 		chromium=2#Circuitry
 	}
 	history = {
 		victory_points = {
-			21263 10
+			1939 10
 		}
 		victory_points = {
-			21268 2
+			1930 2
 		}
 		buildings = {
 			infrastructure = 4
@@ -25,7 +25,7 @@ state={
 			arms_factory = 4
 			air_base = 3
 			dockyard = 2
-					21268 = {
+					1930 = {
 				naval_base = 3
 			}
 		}
