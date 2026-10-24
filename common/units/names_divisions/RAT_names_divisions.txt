@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+RAT_INF_01 = {
+	name = "Rattataki Warband"
+
+	for_countries = { RAT }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Rattataki Warband"
+
+	ordered = {
+	}
+}

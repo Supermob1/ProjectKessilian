@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KIR_INF_01 = {
+	name = "Kiros Colony Guard"
+
+	for_countries = { KIR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Kiros Guard"
+
+	ordered = {
+	}
+}

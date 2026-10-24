@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+NEL_INF_01 = {
+	name = "Nelvaanian Warriors"
+
+	for_countries = { NEL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Nelvaanian Warriors"
+
+	ordered = {
+	}
+}

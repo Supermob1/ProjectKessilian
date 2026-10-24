@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+CLC_INF_01 = {
+	name = "Ming Po Hunters"
+
+	for_countries = { CLC }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Ming Po Hunters"
+
+	ordered = {
+	}
+}
