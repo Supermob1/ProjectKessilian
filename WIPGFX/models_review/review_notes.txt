@@ -12,7 +12,13 @@ Only about 40% meet the bar.
 STYLE BAR (user's pick): Felucia. Not in review.csv (it has no landmark meshes, only the hod_fel_city town set,
 fel_city() in military_buildings.py, and the fel_* flora). What it does right: one strong planet-specific silhouette
 (giant mushroom stalk with stacked hut rings), its own bright atlas (violet cap, orange pods, all well above 100 RGB),
-3+ height levels, props on every level. Use it as the bar when rebuilding the town samples flagged TOWN. Raxus Prime, Kashyyyk, Serenno, Trandosha, Kalee, Chandrila and Ithor are the strongest sets.
+3+ height levels, props on every level. Use it as the bar when rebuilding the town samples flagged TOWN.
+In game (user screenshot): what sells Felucia is the flora carpet, not single buildings. Purple caps, red spiky
+plants and gold bulbs cover the whole disc at several sizes, in one palette, with clouds layered over it. Lessons:
+- Every planet needs a dense planet-specific prop/flora layer; most landmarks elsewhere sit alone on bare ground.
+- Landmarks must be taller than the flora: Felucia's own sites (Commerce Guild HQ, Kway Teow, Nigkoe, Ancient Abyss)
+  can't be picked out at that zoom. Give them a silhouette that rises above the mushroom caps.
+- Dark spiky plants around Ban Nam and Ancient Abyss read near-black: same 100 RGB rule applies to flora. Raxus Prime, Kashyyyk, Serenno, Trandosha, Kalee, Chandrila and Ithor are the strongest sets.
 
 PROBLEMS SEEN ACROSS MANY PLANETS (fixing these in shared code clears most P2s):
 1. Black faces. Dark rock bases, slab skirts and DARK/SOOT swatches render black even in the review renders, so they
