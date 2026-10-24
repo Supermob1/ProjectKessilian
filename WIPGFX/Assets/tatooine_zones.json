@@ -1,0 +1,993 @@
+{
+ "centre": [
+  2766.3112922705313,
+  2339.3644323671497
+ ],
+ "radius": 32.46909827883606,
+ "vp_names": {
+  "9": "Bestine",
+  "368": "Mos Eisley",
+  "17525": "Mos Espa",
+  "1109": "Jabba's Palace",
+  "1197": "Anchorhead",
+  "1883": "Lars Moisture Farm",
+  "2989": "Ben's Mesa"
+ },
+ "provinces": {
+  "9": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2772.0697674418607,
+    2319.2558139534885
+   ],
+   "area": 43,
+   "terrain": "urban"
+  },
+  "368": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2753.346153846154,
+    2342.730769230769
+   ],
+   "area": 52,
+   "terrain": "urban"
+  },
+  "741": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2785.785714285714,
+    2329.5
+   ],
+   "area": 42,
+   "terrain": "urban"
+  },
+  "1109": {
+   "zone": "palace",
+   "kind": 2,
+   "feature": "Jabba's Palace",
+   "state": 423,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2769.0,
+    2359.5
+   ],
+   "area": 30,
+   "terrain": "hills"
+  },
+  "1197": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Anchorhead",
+   "state": 1540,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2750.0,
+    2355.6315789473683
+   ],
+   "area": 19,
+   "terrain": "urban"
+  },
+  "1883": {
+   "zone": "farm",
+   "kind": 3,
+   "feature": "Lars Moisture Farm",
+   "state": 1540,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2756.5,
+    2363.0
+   ],
+   "area": 12,
+   "terrain": "desert"
+  },
+  "2989": {
+   "zone": "mesa",
+   "kind": 4,
+   "feature": "Ben's Mesa",
+   "state": 1541,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2746.457142857143,
+    2327.9142857142856
+   ],
+   "area": 35,
+   "terrain": "hills"
+  },
+  "3575": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2772.233333333333,
+    2339.866666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "4447": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2771.8333333333335,
+    2352.5416666666665
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "5281": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2779.181818181818,
+    2347.5
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "5363": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2768.4242424242425,
+    2344.242424242424
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "5512": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2776.8275862068967,
+    2337.0689655172414
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "5722": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2773.4666666666667,
+    2346.8
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "5731": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2777.0416666666665,
+    2351.3333333333335
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "5733": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2777.4242424242425,
+    2342.3636363636365
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "5973": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Dune Sea",
+   "state": 1542,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2768.714285714286,
+    2349.904761904762
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "6059": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Western Dune Sea",
+   "state": 1543,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2757.6666666666665,
+    2318.3777777777777
+   ],
+   "area": 45,
+   "terrain": "mountain"
+  },
+  "6086": {
+   "zone": "deep",
+   "kind": 8,
+   "feature": "Western Dune Sea",
+   "state": 1543,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2758.2272727272725,
+    2313.5454545454545
+   ],
+   "area": 44,
+   "terrain": "mountain"
+  },
+  "17345": {
+   "zone": "range",
+   "kind": 9,
+   "feature": "Mospic High Range",
+   "state": 1544,
+   "group": 9,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2787.6585365853657,
+    2359.268292682927
+   ],
+   "area": 41,
+   "terrain": "mountain"
+  },
+  "17349": {
+   "zone": "range",
+   "kind": 9,
+   "feature": "Mospic High Range",
+   "state": 1544,
+   "group": 9,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2778.342857142857,
+    2365.342857142857
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "17374": {
+   "zone": "range",
+   "kind": 9,
+   "feature": "Mospic High Range",
+   "state": 1544,
+   "group": 9,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2793.242424242424,
+    2349.6363636363635
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "17384": {
+   "zone": "range",
+   "kind": 9,
+   "feature": "Mospic High Range",
+   "state": 1544,
+   "group": 9,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2783.777777777778,
+    2364.037037037037
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "17390": {
+   "zone": "range",
+   "kind": 9,
+   "feature": "Mospic High Range",
+   "state": 1544,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2781.793103448276,
+    2359.551724137931
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "17407": {
+   "zone": "range",
+   "kind": 9,
+   "feature": "Mospic High Range",
+   "state": 1544,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2788.0,
+    2352.6666666666665
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "17421": {
+   "zone": "range",
+   "kind": 9,
+   "feature": "Mospic High Range",
+   "state": 1544,
+   "group": 9,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2792.1785714285716,
+    2355.285714285714
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17422": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2761.4347826086955,
+    2309.782608695652
+   ],
+   "area": 46,
+   "terrain": "desert"
+  },
+  "17426": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2773.6491228070176,
+    2331.315789473684
+   ],
+   "area": 57,
+   "terrain": "desert"
+  },
+  "17444": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2783.3846153846152,
+    2316.9538461538464
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "17445": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2765.1060606060605,
+    2319.7727272727275
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "17452": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2776.8970588235293,
+    2313.573529411765
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "17457": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2779.214285714286,
+    2324.785714285714
+   ],
+   "area": 84,
+   "terrain": "desert"
+  },
+  "17468": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2768.765625,
+    2326.53125
+   ],
+   "area": 64,
+   "terrain": "desert"
+  },
+  "17477": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Bestine",
+   "state": 36,
+   "group": 10,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2769.3098591549297,
+    2311.0
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "17483": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2760.8333333333335,
+    2331.348484848485
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "17484": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 11,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2738.88,
+    2346.9466666666667
+   ],
+   "area": 75,
+   "terrain": "desert"
+  },
+  "17490": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2748.3260869565215,
+    2347.9347826086955
+   ],
+   "area": 46,
+   "terrain": "desert"
+  },
+  "17496": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2766.439393939394,
+    2336.6363636363635
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "17510": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2746.222222222222,
+    2341.962962962963
+   ],
+   "area": 54,
+   "terrain": "desert"
+  },
+  "17516": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2759.8939393939395,
+    2341.9545454545455
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "17517": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Mos Eisley",
+   "state": 421,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2754.0,
+    2335.0877192982457
+   ],
+   "area": 57,
+   "terrain": "desert"
+  },
+  "17525": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2787.1935483870966,
+    2337.7741935483873
+   ],
+   "area": 62,
+   "terrain": "desert"
+  },
+  "17532": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 12,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2789.222222222222,
+    2322.1428571428573
+   ],
+   "area": 63,
+   "terrain": "desert"
+  },
+  "17544": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 12,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2794.1475409836066,
+    2344.2295081967213
+   ],
+   "area": 61,
+   "terrain": "desert"
+  },
+  "17552": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 12,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2793.0625,
+    2329.15625
+   ],
+   "area": 64,
+   "terrain": "desert"
+  },
+  "17553": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2781.0,
+    2334.5416666666665
+   ],
+   "area": 48,
+   "terrain": "desert"
+  },
+  "17577": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 12,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2794.6315789473683,
+    2336.684210526316
+   ],
+   "area": 57,
+   "terrain": "desert"
+  },
+  "17582": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Mos Espa",
+   "state": 422,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2784.9305555555557,
+    2345.4444444444443
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "17583": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Jabba's Palace",
+   "state": 423,
+   "group": 13,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2763.6206896551726,
+    2367.206896551724
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "17584": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Jabba's Palace",
+   "state": 423,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2781.688888888889,
+    2353.6
+   ],
+   "area": 45,
+   "terrain": "desert"
+  },
+  "17609": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Jabba's Palace",
+   "state": 423,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2763.8846153846152,
+    2349.0384615384614
+   ],
+   "area": 52,
+   "terrain": "desert"
+  },
+  "17610": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Jabba's Palace",
+   "state": 423,
+   "group": 13,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2772.5,
+    2367.323529411765
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "17615": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Jabba's Palace",
+   "state": 423,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2774.7868852459014,
+    2358.3934426229507
+   ],
+   "area": 61,
+   "terrain": "desert"
+  },
+  "17616": {
+   "zone": "dunes",
+   "kind": 6,
+   "feature": "Jabba's Palace",
+   "state": 423,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2763.7611940298507,
+    2357.805970149254
+   ],
+   "area": 67,
+   "terrain": "desert"
+  },
+  "17637": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Anchorhead",
+   "state": 1540,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2756.0384615384614,
+    2351.4871794871797
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "17644": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Anchorhead",
+   "state": 1540,
+   "group": 14,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2743.2597402597403,
+    2354.5064935064934
+   ],
+   "area": 77,
+   "terrain": "desert"
+  },
+  "17647": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Anchorhead",
+   "state": 1540,
+   "group": 14,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2754.725490196078,
+    2366.4313725490197
+   ],
+   "area": 51,
+   "terrain": "desert"
+  },
+  "17648": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Anchorhead",
+   "state": 1540,
+   "group": 14,
+   "coastal": true,
+   "sea": 18711,
+   "centre": [
+    2747.7868852459014,
+    2361.3606557377047
+   ],
+   "area": 61,
+   "terrain": "desert"
+  },
+  "17654": {
+   "zone": "flats",
+   "kind": 5,
+   "feature": "Anchorhead",
+   "state": 1540,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2755.9411764705883,
+    2358.7450980392155
+   ],
+   "area": 51,
+   "terrain": "desert"
+  },
+  "17662": {
+   "zone": "wastes",
+   "kind": 7,
+   "feature": "Jundland Wastes",
+   "state": 1541,
+   "group": 15,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2739.7391304347825,
+    2328.8260869565215
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "17666": {
+   "zone": "wastes",
+   "kind": 7,
+   "feature": "Jundland Wastes",
+   "state": 1541,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2758.809523809524,
+    2324.9285714285716
+   ],
+   "area": 42,
+   "terrain": "hills"
+  },
+  "17678": {
+   "zone": "wastes",
+   "kind": 7,
+   "feature": "Jundland Wastes",
+   "state": 1541,
+   "group": 15,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2750.435483870968,
+    2315.2580645161293
+   ],
+   "area": 62,
+   "terrain": "hills"
+  },
+  "17679": {
+   "zone": "wastes",
+   "kind": 7,
+   "feature": "Jundland Wastes",
+   "state": 1541,
+   "group": 15,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2737.6447368421054,
+    2337.9210526315787
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "17684": {
+   "zone": "wastes",
+   "kind": 7,
+   "feature": "Jundland Wastes",
+   "state": 1541,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2745.6875,
+    2334.6875
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "17689": {
+   "zone": "wastes",
+   "kind": 7,
+   "feature": "Jundland Wastes",
+   "state": 1541,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2752.056338028169,
+    2325.5774647887324
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "17693": {
+   "zone": "wastes",
+   "kind": 7,
+   "feature": "Jundland Wastes",
+   "state": 1541,
+   "group": 15,
+   "coastal": true,
+   "sea": 18706,
+   "centre": [
+    2744.5081967213114,
+    2320.8524590163934
+   ],
+   "area": 61,
+   "terrain": "hills"
+  }
+ }
+}

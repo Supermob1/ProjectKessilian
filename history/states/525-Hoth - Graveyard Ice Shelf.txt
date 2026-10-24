@@ -1,0 +1,31 @@
+state={
+	id=525
+	name="STATE_525"
+	# HOD: Hoth (hoth_map.py)
+	provinces={
+		196 575 18386 18387 18388 18389 18390 18392 18395 18396 18397 18402 18403 18404 18407
+	}
+	resources={
+		tungsten=1
+		coal=2
+	}
+	history = {
+		victory_points = {
+			196 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			dockyard = 2
+			18397 = {
+				naval_base = 4
+			}
+		}
+		owner = NOB
+		add_core_of = NOB
+	}
+	manpower = 344389
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

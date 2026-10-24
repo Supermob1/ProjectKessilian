@@ -1,0 +1,917 @@
+{
+ "centre": [
+  3088.7983014861998,
+  1166.0333636639368
+ ],
+ "radius": 32.39548880242368,
+ "vp_names": {
+  "178": "Sluis Van City",
+  "241": "Orbital Lift Complex",
+  "449": "Sluissi Foundries",
+  "18382": "Northern Barrens",
+  "18408": "Sluissi Heights",
+  "18414": "Ground Defence Base"
+ },
+ "provinces": {
+  "178": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Sluis Van City",
+   "state": 58,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3088.7402597402597,
+    1164.4155844155844
+   ],
+   "area": 77,
+   "terrain": "urban"
+  },
+  "241": {
+   "zone": "lift",
+   "kind": 2,
+   "feature": "Orbital Lift Complex",
+   "state": 564,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3090.5,
+    1187.0
+   ],
+   "area": 42,
+   "terrain": "urban"
+  },
+  "449": {
+   "zone": "foundry",
+   "kind": 3,
+   "feature": "Sluissi Foundries",
+   "state": 566,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3108.0,
+    1161.0
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "471": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3102.4545454545455,
+    1177.8181818181818
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "507": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3078.266666666667,
+    1174.5333333333333
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "554": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3090.214285714286,
+    1177.4285714285713
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "591": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3095.866666666667,
+    1173.2
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "1289": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3084.3571428571427,
+    1173.9285714285713
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "1841": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3081.2,
+    1175.6666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "2665": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3098.3076923076924,
+    1176.3076923076924
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "2951": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3100.6666666666665,
+    1174.0833333333333
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "3665": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3090.8823529411766,
+    1173.6470588235295
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "4330": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3086.6,
+    1176.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "4498": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Crag Wall",
+   "state": 1672,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3093.923076923077,
+    1176.3076923076924
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "4574": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Slag Basin",
+   "state": 1673,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3076.2105263157896,
+    1145.5263157894738
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4621": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Slag Basin",
+   "state": 1673,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3077.7368421052633,
+    1149.9473684210527
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4751": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Slag Basin",
+   "state": 1673,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3072.809523809524,
+    1147.857142857143
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5182": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Slag Basin",
+   "state": 1673,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3080.294117647059,
+    1146.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "5468": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Sluis Canyons",
+   "state": 1674,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3098.0,
+    1151.3809523809523
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5715": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Sluis Canyons",
+   "state": 1674,
+   "group": 5,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3096.56,
+    1139.32
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "5745": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Sluis Canyons",
+   "state": 1674,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3097.0,
+    1145.5
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "5926": {
+   "zone": "crag",
+   "kind": 7,
+   "feature": "Sluis Canyons",
+   "state": 1674,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3099.5,
+    1156.2272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "5957": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Sea",
+   "state": 1675,
+   "group": 6,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3059.0555555555557,
+    1171.7777777777778
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "6240": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Sea",
+   "state": 1675,
+   "group": 6,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3061.5789473684213,
+    1180.7894736842106
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "18328": {
+   "zone": "dust",
+   "kind": 6,
+   "feature": "Dust Sea",
+   "state": 1675,
+   "group": 6,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3060.862068965517,
+    1175.8620689655172
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "18330": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluis Van City",
+   "state": 58,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3084.1954022988507,
+    1157.344827586207
+   ],
+   "area": 87,
+   "terrain": "hills"
+  },
+  "18338": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluis Van City",
+   "state": 58,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3094.8030303030305,
+    1169.030303030303
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "18341": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluis Van City",
+   "state": 58,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3080.901098901099,
+    1168.4065934065934
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "18343": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluis Van City",
+   "state": 58,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3094.9583333333335,
+    1159.8055555555557
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "18346": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Lift Fields",
+   "state": 564,
+   "group": 8,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3086.15625,
+    1193.3229166666667
+   ],
+   "area": 96,
+   "terrain": "plains"
+  },
+  "18353": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Lift Fields",
+   "state": 564,
+   "group": 8,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3096.78021978022,
+    1192.7582417582419
+   ],
+   "area": 91,
+   "terrain": "plains"
+  },
+  "18355": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Lift Fields",
+   "state": 564,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3095.4545454545455,
+    1183.3636363636363
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "18356": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Lift Fields",
+   "state": 564,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3085.12987012987,
+    1182.3506493506493
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "18358": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Northern Barrens",
+   "state": 565,
+   "group": 9,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3060.890410958904,
+    1166.0821917808219
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "18368": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Northern Barrens",
+   "state": 565,
+   "group": 9,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3065.279411764706,
+    1150.3823529411766
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "18369": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Northern Barrens",
+   "state": 565,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3074.5454545454545,
+    1164.1818181818182
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "18372": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Northern Barrens",
+   "state": 565,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3068.5348837209303,
+    1171.6627906976744
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "18375": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Northern Barrens",
+   "state": 565,
+   "group": 9,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3061.3125,
+    1157.09375
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "18382": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Northern Barrens",
+   "state": 565,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3067.78125,
+    1161.359375
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "18383": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Northern Barrens",
+   "state": 565,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3073.7820512820513,
+    1155.0128205128206
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "18384": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3115.6767676767677,
+    1160.3434343434344
+   ],
+   "area": 99,
+   "terrain": "plains"
+  },
+  "18391": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3102.7611940298507,
+    1140.3880597014925
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "18393": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3102.7014925373132,
+    1165.5074626865671
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "18394": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3112.764705882353,
+    1150.4941176470588
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "18398": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3105.0793650793653,
+    1155.4285714285713
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "18399": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3116.8977272727275,
+    1170.0681818181818
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "18400": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3108.059523809524,
+    1170.6190476190477
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "18401": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Foundry Flats",
+   "state": 566,
+   "group": 10,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3104.4146341463415,
+    1147.121951219512
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "18405": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluissi Heights",
+   "state": 567,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3092.056818181818,
+    1149.4431818181818
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "18406": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluissi Heights",
+   "state": 567,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3070.955223880597,
+    1142.9402985074628
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "18408": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluissi Heights",
+   "state": 567,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3080.9545454545455,
+    1139.3181818181818
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "18409": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluissi Heights",
+   "state": 567,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3083.53125,
+    1149.59375
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "18410": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Sluissi Heights",
+   "state": 567,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3090.1717171717173,
+    1138.7575757575758
+   ],
+   "area": 99,
+   "terrain": "hills"
+  },
+  "18411": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Ore Fields",
+   "state": 568,
+   "group": 12,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3106.3176470588237,
+    1188.6470588235295
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "18412": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Ore Fields",
+   "state": 568,
+   "group": 12,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3112.7450980392155,
+    1179.9313725490197
+   ],
+   "area": 102,
+   "terrain": "plains"
+  },
+  "18413": {
+   "zone": "ore",
+   "kind": 5,
+   "feature": "Ore Fields",
+   "state": 568,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3102.6133333333332,
+    1180.4666666666667
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "18414": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Defence Highlands",
+   "state": 569,
+   "group": 13,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3070.718309859155,
+    1187.9859154929577
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "18415": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Defence Highlands",
+   "state": 569,
+   "group": 13,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3077.815789473684,
+    1191.4736842105262
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "18416": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Defence Highlands",
+   "state": 569,
+   "group": 13,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3067.306666666667,
+    1180.5733333333333
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "18417": {
+   "zone": "rocky",
+   "kind": 4,
+   "feature": "Defence Highlands",
+   "state": 569,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3076.1758241758243,
+    1180.2747252747254
+   ],
+   "area": 91,
+   "terrain": "hills"
+  }
+ }
+}

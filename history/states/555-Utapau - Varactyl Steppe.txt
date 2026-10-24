@@ -1,0 +1,27 @@
+state={
+	id=555
+	name="STATE_555"
+	# HOD: Utapau (utapau_map.py)
+	provinces={
+		18568 18572 18574 18576
+	}
+	resources={
+		oil=2
+	}
+	history = {
+		victory_points = {
+			18576 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			air_base = 1
+		}
+		owner = UTA
+		add_core_of = UTA
+	}
+	manpower = 53216
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

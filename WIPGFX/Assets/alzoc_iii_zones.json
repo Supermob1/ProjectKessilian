@@ -1,0 +1,991 @@
+{
+ "centre": [
+  3154.6537647414575,
+  1756.1626852131842
+ ],
+ "radius": 32.44458034263651,
+ "vp_names": {
+  "577": "Alzoc III Base",
+  "1498": "Alzoc III Mines",
+  "3502": "Superweapon Cache",
+  "18457": "Talz Snowfields",
+  "18467": "Fir Woods"
+ },
+ "provinces": {
+  "577": {
+   "zone": "base",
+   "kind": 1,
+   "feature": "Alzoc III Base",
+   "state": 42,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3164.5,
+    1769.0
+   ],
+   "area": 54,
+   "terrain": "urban"
+  },
+  "1104": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Base Perimeter",
+   "state": 42,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3167.122807017544,
+    1767.6666666666667
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "1145": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Base Perimeter",
+   "state": 42,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3159.0898876404494,
+    1772.2359550561798
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "1498": {
+   "zone": "mine",
+   "kind": 2,
+   "feature": "Alzoc III Mines",
+   "state": 458,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3145.0,
+    1743.0
+   ],
+   "area": 63,
+   "terrain": "hills"
+  },
+  "1674": {
+   "zone": "mine",
+   "kind": 2,
+   "feature": "Mine Workings",
+   "state": 458,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3145.2727272727275,
+    1738.7454545454545
+   ],
+   "area": 55,
+   "terrain": "hills"
+  },
+  "2181": {
+   "zone": "mine",
+   "kind": 2,
+   "feature": "Mine Workings",
+   "state": 458,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3144.7368421052633,
+    1747.3859649122808
+   ],
+   "area": 57,
+   "terrain": "hills"
+  },
+  "2611": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3143.9594594594596,
+    1772.918918918919
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "3075": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3169.8863636363635,
+    1732.8636363636363
+   ],
+   "area": 44,
+   "terrain": "plains"
+  },
+  "3502": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3157.9764705882353,
+    1753.2588235294118
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "3526": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3159.730769230769,
+    1744.628205128205
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "3686": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3155.5913978494623,
+    1760.3763440860216
+   ],
+   "area": 93,
+   "terrain": "plains"
+  },
+  "4003": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": true,
+   "sea": 19040,
+   "centre": [
+    3138.3636363636365,
+    1779.4025974025974
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "4331": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3150.6,
+    1767.2941176470588
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "4802": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3164.1060606060605,
+    1738.5
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "5738": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Valley of Blizzards",
+   "state": 459,
+   "group": 4,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3165.222222222222,
+    1730.2666666666667
+   ],
+   "area": 45,
+   "terrain": "plains"
+  },
+  "5903": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Western Ice Ridge",
+   "state": 1585,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3156.5882352941176,
+    1737.8823529411766
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "6118": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Western Ice Ridge",
+   "state": 1585,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3150.375,
+    1735.75
+   ],
+   "area": 8,
+   "terrain": "mountain"
+  },
+  "6125": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Western Ice Ridge",
+   "state": 1585,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3159.153846153846,
+    1734.3846153846155
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "18418": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Western Ice Ridge",
+   "state": 1585,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3155.8,
+    1734.0
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "18419": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Western Ice Ridge",
+   "state": 1585,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3152.6363636363635,
+    1738.909090909091
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "18420": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Western Ice Ridge",
+   "state": 1585,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3153.0833333333335,
+    1735.6666666666667
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "18421": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Eastern Ice Ridge",
+   "state": 1586,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3155.478260869565,
+    1775.5652173913043
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "18422": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Eastern Ice Ridge",
+   "state": 1586,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3149.8695652173915,
+    1777.391304347826
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "18423": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Eastern Ice Ridge",
+   "state": 1586,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3153.6,
+    1779.4
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "18424": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Southern Glacier",
+   "state": 1587,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3179.6296296296296,
+    1749.037037037037
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "18425": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Southern Glacier",
+   "state": 1587,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3180.5,
+    1766.25
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18426": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Southern Glacier",
+   "state": 1587,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3178.6666666666665,
+    1758.7619047619048
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "18427": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Southern Glacier",
+   "state": 1587,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3181.222222222222,
+    1753.8333333333333
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "18428": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Southern Glacier",
+   "state": 1587,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3181.777777777778,
+    1761.1666666666667
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "18429": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Southern Glacier",
+   "state": 1587,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3177.9375,
+    1753.8125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18430": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Southern Glacier",
+   "state": 1587,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3178.769230769231,
+    1763.6153846153845
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "18431": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Northern Glacier",
+   "state": 1588,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3126.842105263158,
+    1755.4736842105262
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "18432": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Northern Glacier",
+   "state": 1588,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3128.6,
+    1764.1
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "18433": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Northern Glacier",
+   "state": 1588,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3131.2631578947367,
+    1759.2631578947369
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "18434": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Northern Glacier",
+   "state": 1588,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3130.214285714286,
+    1750.2857142857142
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "18436": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Northern Glacier",
+   "state": 1588,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3127.5625,
+    1759.5625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18437": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Northern Glacier",
+   "state": 1588,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3127.214285714286,
+    1751.857142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "18438": {
+   "zone": "ice",
+   "kind": 6,
+   "feature": "Northern Glacier",
+   "state": 1588,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3131.1875,
+    1754.0625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18439": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Mine Approaches",
+   "state": 460,
+   "group": 9,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3150.475,
+    1728.9625
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "18440": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Mine Approaches",
+   "state": 460,
+   "group": 9,
+   "coastal": true,
+   "sea": 18697,
+   "centre": [
+    3127.078431372549,
+    1745.9607843137255
+   ],
+   "area": 51,
+   "terrain": "plains"
+  },
+  "18442": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Mine Approaches",
+   "state": 460,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3135.8253968253966,
+    1746.4285714285713
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "18443": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Mine Approaches",
+   "state": 460,
+   "group": 9,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3136.695652173913,
+    1734.6811594202898
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "18446": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Mine Approaches",
+   "state": 460,
+   "group": 9,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3158.608108108108,
+    1728.0
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "18447": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Mine Approaches",
+   "state": 460,
+   "group": 9,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3131.3389830508477,
+    1739.7796610169491
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "18448": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Mine Approaches",
+   "state": 460,
+   "group": 9,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3143.1846153846154,
+    1730.5846153846153
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "18451": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Talz Snowfields",
+   "state": 461,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3138.4077669902913,
+    1765.116504854369
+   ],
+   "area": 103,
+   "terrain": "plains"
+  },
+  "18453": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Talz Snowfields",
+   "state": 461,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3152.3584905660377,
+    1747.0943396226414
+   ],
+   "area": 53,
+   "terrain": "plains"
+  },
+  "18454": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Talz Snowfields",
+   "state": 461,
+   "group": 10,
+   "coastal": true,
+   "sea": 18697,
+   "centre": [
+    3123.9032258064517,
+    1755.2903225806451
+   ],
+   "area": 31,
+   "terrain": "plains"
+  },
+  "18457": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Talz Snowfields",
+   "state": 461,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3137.264367816092,
+    1755.103448275862
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "18459": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Talz Snowfields",
+   "state": 461,
+   "group": 10,
+   "coastal": true,
+   "sea": 19040,
+   "centre": [
+    3127.163636363636,
+    1766.1454545454546
+   ],
+   "area": 55,
+   "terrain": "plains"
+  },
+  "18461": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Talz Snowfields",
+   "state": 461,
+   "group": 10,
+   "coastal": true,
+   "sea": 19040,
+   "centre": [
+    3132.4375,
+    1772.9
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "18462": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Talz Snowfields",
+   "state": 461,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3145.7708333333335,
+    1757.3854166666667
+   ],
+   "area": 96,
+   "terrain": "plains"
+  },
+  "18463": {
+   "zone": "woods",
+   "kind": 5,
+   "feature": "Fir Woods",
+   "state": 462,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3173.4520547945203,
+    1759.150684931507
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "18464": {
+   "zone": "woods",
+   "kind": 5,
+   "feature": "Fir Woods",
+   "state": 462,
+   "group": 11,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3175.837837837838,
+    1736.6081081081081
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "18465": {
+   "zone": "woods",
+   "kind": 5,
+   "feature": "Fir Woods",
+   "state": 462,
+   "group": 11,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3181.7903225806454,
+    1745.1451612903227
+   ],
+   "area": 62,
+   "terrain": "forest"
+  },
+  "18467": {
+   "zone": "woods",
+   "kind": 5,
+   "feature": "Fir Woods",
+   "state": 462,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3168.912087912088,
+    1750.4725274725274
+   ],
+   "area": 91,
+   "terrain": "forest"
+  },
+  "18468": {
+   "zone": "woods",
+   "kind": 5,
+   "feature": "Fir Woods",
+   "state": 462,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3166.3166666666666,
+    1758.4833333333333
+   ],
+   "area": 60,
+   "terrain": "forest"
+  },
+  "18471": {
+   "zone": "woods",
+   "kind": 5,
+   "feature": "Fir Woods",
+   "state": 462,
+   "group": 11,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3184.983870967742,
+    1757.8870967741937
+   ],
+   "area": 62,
+   "terrain": "forest"
+  },
+  "18472": {
+   "zone": "woods",
+   "kind": 5,
+   "feature": "Fir Woods",
+   "state": 462,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3172.0886075949365,
+    1743.7848101265822
+   ],
+   "area": 79,
+   "terrain": "forest"
+  },
+  "18476": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Eastern Ice Shelf",
+   "state": 463,
+   "group": 12,
+   "coastal": true,
+   "sea": 19040,
+   "centre": [
+    3171.3626373626375,
+    1778.7582417582419
+   ],
+   "area": 91,
+   "terrain": "plains"
+  },
+  "18478": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Eastern Ice Shelf",
+   "state": 463,
+   "group": 12,
+   "coastal": true,
+   "sea": 19040,
+   "centre": [
+    3154.476923076923,
+    1785.0307692307692
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "18479": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Eastern Ice Shelf",
+   "state": 463,
+   "group": 12,
+   "coastal": true,
+   "sea": 19019,
+   "centre": [
+    3179.6507936507937,
+    1772.126984126984
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "18482": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Eastern Ice Shelf",
+   "state": 463,
+   "group": 12,
+   "coastal": true,
+   "sea": 19040,
+   "centre": [
+    3162.609195402299,
+    1782.2758620689656
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "18484": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Eastern Ice Shelf",
+   "state": 463,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3173.948275862069,
+    1768.655172413793
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "18486": {
+   "zone": "snow",
+   "kind": 3,
+   "feature": "Eastern Ice Shelf",
+   "state": 463,
+   "group": 12,
+   "coastal": true,
+   "sea": 19040,
+   "centre": [
+    3146.1,
+    1782.5714285714287
+   ],
+   "area": 70,
+   "terrain": "plains"
+  }
+ }
+}

@@ -1,0 +1,31 @@
+﻿# HOD: THY (faction_templates.py)
+
+division_template = {
+	name = "Vratix Hive Guard"
+	division_names_group = THY_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Vratix Hive Guard"
+		location = 14
+		start_experience_factor = 0.2
+	}
+	division = {
+		division_template = "Vratix Hive Guard"
+		location = 2144
+		start_experience_factor = 0.2
+	}
+}

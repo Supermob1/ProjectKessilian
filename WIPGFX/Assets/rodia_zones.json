@@ -1,0 +1,920 @@
+{
+ "centre": [
+  2609.3968589549986,
+  2190.3044397463004
+ ],
+ "radius": 32.46419617293074,
+ "vp_names": {
+  "730": "Iskaayuma",
+  "1302": "Senatorial Palace",
+  "1327": "Equator City",
+  "1624": "Yusk",
+  "16776": "Matza",
+  "16637": "Chekkoo Enclave",
+  "16680": "Sika Peninsula",
+  "16787": "Toopil",
+  "16833": "An'yettu Islands"
+ },
+ "provinces": {
+  "730": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Iskaayuma",
+   "state": 38,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2609.3518518518517,
+    2177.9074074074074
+   ],
+   "area": 54,
+   "terrain": "urban"
+  },
+  "1302": {
+   "zone": "palace",
+   "kind": 2,
+   "feature": "Senatorial Palace",
+   "state": 38,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2601.5,
+    2176.5
+   ],
+   "area": 16,
+   "terrain": "urban"
+  },
+  "1327": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Equator City",
+   "state": 432,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2613.6428571428573,
+    2188.2321428571427
+   ],
+   "area": 112,
+   "terrain": "urban"
+  },
+  "1332": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Equator City",
+   "state": 432,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2605.0789473684213,
+    2183.7894736842104
+   ],
+   "area": 38,
+   "terrain": "urban"
+  },
+  "1624": {
+   "zone": "farm",
+   "kind": 3,
+   "feature": "Yusk",
+   "state": 434,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2589.8571428571427,
+    2180.0476190476193
+   ],
+   "area": 21,
+   "terrain": "plains"
+  },
+  "1810": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Matza",
+   "state": 436,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2624.0,
+    2208.0
+   ],
+   "area": 23,
+   "terrain": "urban"
+  },
+  "1817": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Wesessa Sea",
+   "state": 1552,
+   "group": 5,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2624.5454545454545,
+    2164.969696969697
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "1851": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Wesessa Sea",
+   "state": 1552,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2606.4324324324325,
+    2163.4324324324325
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "2024": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Wesessa Sea",
+   "state": 1552,
+   "group": 5,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2613.212121212121,
+    2160.818181818182
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "2123": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Wesessa Sea",
+   "state": 1552,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2617.9142857142856,
+    2166.8285714285716
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "3013": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Wesessa Sea",
+   "state": 1552,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2611.2758620689656,
+    2165.1724137931033
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "3195": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Wesessa Sea",
+   "state": 1552,
+   "group": 5,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2619.3793103448274,
+    2161.9310344827586
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "3488": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Northern Ioliu Sea",
+   "state": 1553,
+   "group": 6,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2579.0243902439024,
+    2191.8048780487807
+   ],
+   "area": 41,
+   "terrain": "mountain"
+  },
+  "3728": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Northern Ioliu Sea",
+   "state": 1553,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2605.4210526315787,
+    2188.8947368421054
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "3742": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Northern Ioliu Sea",
+   "state": 1553,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2594.829268292683,
+    2189.878048780488
+   ],
+   "area": 41,
+   "terrain": "mountain"
+  },
+  "3765": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Northern Ioliu Sea",
+   "state": 1553,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2589.897435897436,
+    2192.4358974358975
+   ],
+   "area": 39,
+   "terrain": "mountain"
+  },
+  "3833": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Northern Ioliu Sea",
+   "state": 1553,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2600.2093023255816,
+    2189.6744186046512
+   ],
+   "area": 43,
+   "terrain": "mountain"
+  },
+  "4211": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Northern Ioliu Sea",
+   "state": 1553,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2584.3333333333335,
+    2191.5833333333335
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "4230": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Southern Ioliu Sea",
+   "state": 1554,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2621.8333333333335,
+    2194.5333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "5226": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Southern Ioliu Sea",
+   "state": 1554,
+   "group": 7,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2638.4545454545455,
+    2191.7272727272725
+   ],
+   "area": 44,
+   "terrain": "mountain"
+  },
+  "5515": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Southern Ioliu Sea",
+   "state": 1554,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2628.8813559322034,
+    2192.2033898305085
+   ],
+   "area": 59,
+   "terrain": "mountain"
+  },
+  "6030": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Southern Ioliu Sea",
+   "state": 1554,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2634.9,
+    2195.05
+   ],
+   "area": 40,
+   "terrain": "mountain"
+  },
+  "6222": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Southern Ioliu Sea",
+   "state": 1554,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2620.1071428571427,
+    2190.5714285714284
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "16591": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Southern Ioliu Sea",
+   "state": 1554,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2615.78125,
+    2194.28125
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "16592": {
+   "zone": "mire",
+   "kind": 7,
+   "feature": "Great Mire",
+   "state": 1555,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2605.96875,
+    2207.375
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "16595": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Iskaayuma",
+   "state": 38,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2617.7671232876714,
+    2179.904109589041
+   ],
+   "area": 73,
+   "terrain": "jungle"
+  },
+  "16596": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Iskaayuma",
+   "state": 38,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2607.9,
+    2170.5833333333335
+   ],
+   "area": 60,
+   "terrain": "jungle"
+  },
+  "16606": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Iskaayuma",
+   "state": 38,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2617.2083333333335,
+    2172.652777777778
+   ],
+   "area": 72,
+   "terrain": "jungle"
+  },
+  "16607": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Iskaayuma",
+   "state": 38,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2603.1666666666665,
+    2177.214285714286
+   ],
+   "area": 42,
+   "terrain": "jungle"
+  },
+  "16611": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Equator City",
+   "state": 432,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2604.2105263157896,
+    2198.1184210526317
+   ],
+   "area": 76,
+   "terrain": "marsh"
+  },
+  "16621": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Equator City",
+   "state": 432,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2611.521739130435,
+    2200.014492753623
+   ],
+   "area": 69,
+   "terrain": "marsh"
+  },
+  "16623": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Chekkoo Enclave",
+   "state": 433,
+   "group": 11,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2636.543209876543,
+    2184.395061728395
+   ],
+   "area": 81,
+   "terrain": "marsh"
+  },
+  "16624": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Chekkoo Enclave",
+   "state": 433,
+   "group": 11,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2628.0135135135133,
+    2170.1486486486488
+   ],
+   "area": 74,
+   "terrain": "marsh"
+  },
+  "16637": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Chekkoo Enclave",
+   "state": 433,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2626.5238095238096,
+    2177.7301587301586
+   ],
+   "area": 63,
+   "terrain": "marsh"
+  },
+  "16638": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Chekkoo Enclave",
+   "state": 433,
+   "group": 11,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2634.573529411765,
+    2176.235294117647
+   ],
+   "area": 68,
+   "terrain": "marsh"
+  },
+  "16639": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Chekkoo Enclave",
+   "state": 433,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2626.720588235294,
+    2185.1617647058824
+   ],
+   "area": 68,
+   "terrain": "marsh"
+  },
+  "16646": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Yusk",
+   "state": 434,
+   "group": 12,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2582.8088235294117,
+    2185.264705882353
+   ],
+   "area": 68,
+   "terrain": "jungle"
+  },
+  "16654": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Yusk",
+   "state": 434,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2595.769230769231,
+    2176.6153846153848
+   ],
+   "area": 65,
+   "terrain": "jungle"
+  },
+  "16658": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Yusk",
+   "state": 434,
+   "group": 12,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2587.7846153846153,
+    2173.0615384615385
+   ],
+   "area": 65,
+   "terrain": "jungle"
+  },
+  "16663": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Yusk",
+   "state": 434,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2594.0158730158732,
+    2184.0
+   ],
+   "area": 63,
+   "terrain": "jungle"
+  },
+  "16676": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Yusk",
+   "state": 434,
+   "group": 12,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2583.3728813559323,
+    2178.9322033898306
+   ],
+   "area": 59,
+   "terrain": "jungle"
+  },
+  "16680": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2597.112676056338,
+    2205.2676056338028
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "16696": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": true,
+   "sea": 18917,
+   "centre": [
+    2582.5079365079364,
+    2198.6825396825398
+   ],
+   "area": 63,
+   "terrain": "jungle"
+  },
+  "16702": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": true,
+   "sea": 18917,
+   "centre": [
+    2601.315789473684,
+    2218.1052631578946
+   ],
+   "area": 57,
+   "terrain": "jungle"
+  },
+  "16715": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": true,
+   "sea": 18917,
+   "centre": [
+    2588.5967741935483,
+    2209.532258064516
+   ],
+   "area": 62,
+   "terrain": "jungle"
+  },
+  "16719": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2595.1428571428573,
+    2197.883116883117
+   ],
+   "area": 77,
+   "terrain": "jungle"
+  },
+  "16721": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2602.2280701754385,
+    2211.3684210526317
+   ],
+   "area": 57,
+   "terrain": "jungle"
+  },
+  "16734": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": true,
+   "sea": 18917,
+   "centre": [
+    2594.1774193548385,
+    2214.4193548387098
+   ],
+   "area": 62,
+   "terrain": "jungle"
+  },
+  "16735": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Sika Peninsula",
+   "state": 435,
+   "group": 13,
+   "coastal": true,
+   "sea": 18917,
+   "centre": [
+    2586.7462686567164,
+    2203.1492537313434
+   ],
+   "area": 67,
+   "terrain": "jungle"
+  },
+  "16744": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Matza",
+   "state": 436,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2613.4767441860463,
+    2208.3953488372094
+   ],
+   "area": 86,
+   "terrain": "marsh"
+  },
+  "16747": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Matza",
+   "state": 436,
+   "group": 14,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2629.2258064516127,
+    2209.6129032258063
+   ],
+   "area": 62,
+   "terrain": "marsh"
+  },
+  "16752": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Matza",
+   "state": 436,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2620.5384615384614,
+    2203.371794871795
+   ],
+   "area": 78,
+   "terrain": "marsh"
+  },
+  "16755": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Matza",
+   "state": 436,
+   "group": 14,
+   "coastal": true,
+   "sea": 18917,
+   "centre": [
+    2617.203125,
+    2217.53125
+   ],
+   "area": 64,
+   "terrain": "marsh"
+  },
+  "16762": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Matza",
+   "state": 436,
+   "group": 14,
+   "coastal": true,
+   "sea": 18917,
+   "centre": [
+    2609.4805194805194,
+    2217.7402597402597
+   ],
+   "area": 77,
+   "terrain": "marsh"
+  },
+  "16776": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "Matza",
+   "state": 436,
+   "group": 14,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2623.3880597014927,
+    2214.4477611940297
+   ],
+   "area": 67,
+   "terrain": "marsh"
+  },
+  "16787": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Toopil",
+   "state": 437,
+   "group": 15,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2635.05,
+    2203.15
+   ],
+   "area": 100,
+   "terrain": "jungle"
+  },
+  "16794": {
+   "zone": "jungle",
+   "kind": 4,
+   "feature": "Toopil",
+   "state": 437,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2626.296296296296,
+    2199.0185185185187
+   ],
+   "area": 54,
+   "terrain": "jungle"
+  },
+  "16799": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "An'yettu Islands",
+   "state": 438,
+   "group": 16,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2592.5223880597014,
+    2167.4477611940297
+   ],
+   "area": 67,
+   "terrain": "marsh"
+  },
+  "16817": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "An'yettu Islands",
+   "state": 438,
+   "group": 16,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2606.0,
+    2159.25
+   ],
+   "area": 28,
+   "terrain": "marsh"
+  },
+  "16833": {
+   "zone": "swamp",
+   "kind": 5,
+   "feature": "An'yettu Islands",
+   "state": 438,
+   "group": 16,
+   "coastal": true,
+   "sea": 18889,
+   "centre": [
+    2599.6506024096384,
+    2165.89156626506
+   ],
+   "area": 83,
+   "terrain": "marsh"
+  }
+ }
+}

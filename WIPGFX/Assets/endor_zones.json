@@ -1,0 +1,2989 @@
+{
+ "centre": [
+  2723.0201395636427,
+  428.1822277183994
+ ],
+ "radius": 60.029877740061195,
+ "vp_names": {
+  "143": "Bright Tree Village",
+  "272": "Lake Sui Villages",
+  "276": "Hanging Moss Village",
+  "342": "Terak's Keep",
+  "519": "Mount Krana",
+  "17248": "Salma Sands",
+  "17056": "Redwood Highlands",
+  "17570": "Lake Marudi"
+ },
+ "provinces": {
+  "143": {
+   "zone": "village",
+   "kind": 1,
+   "feature": "Bright Tree Village",
+   "state": 61,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2720.640776699029,
+    428.43689320388347
+   ],
+   "area": 103,
+   "terrain": "forest"
+  },
+  "272": {
+   "zone": "village",
+   "kind": 1,
+   "feature": "Lake Sui Villages",
+   "state": 585,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2704.3432835820895,
+    409.23880597014926
+   ],
+   "area": 67,
+   "terrain": "forest"
+  },
+  "276": {
+   "zone": "village",
+   "kind": 1,
+   "feature": "Hanging Moss Village",
+   "state": 589,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2724.671875,
+    386.421875
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "342": {
+   "zone": "keep",
+   "kind": 2,
+   "feature": "Terak's Keep",
+   "state": 588,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2717.0666666666666,
+    469.01666666666665
+   ],
+   "area": 60,
+   "terrain": "hills"
+  },
+  "411": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Mount Krana",
+   "state": 587,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2764.5138888888887,
+    457.75
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "519": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Mount Krana",
+   "state": 587,
+   "group": 4,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2764.725490196078,
+    464.88235294117646
+   ],
+   "area": 51,
+   "terrain": "desert"
+  },
+  "764": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2696.8260869565215,
+    393.2608695652174
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "1065": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2689.5,
+    400.0
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "1092": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2690.0666666666666,
+    386.73333333333335
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "1120": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2696.6,
+    402.6
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "1182": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2692.0,
+    395.4347826086956
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "1422": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2696.1739130434785,
+    398.0
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "1513": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2693.25,
+    389.875
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "1768": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2692.8888888888887,
+    401.44444444444446
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "1856": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Sui",
+   "state": 1648,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2690.133333333333,
+    390.73333333333335
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "1963": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Marudi",
+   "state": 1649,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2752.185185185185,
+    409.85185185185185
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "2063": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Marudi",
+   "state": 1649,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2754.9583333333335,
+    396.5
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "2066": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Marudi",
+   "state": 1649,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2751.074074074074,
+    399.2962962962963
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "2237": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Marudi",
+   "state": 1649,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2757.56,
+    405.56
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "2309": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Marudi",
+   "state": 1649,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2756.3333333333335,
+    411.0416666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "2345": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Marudi",
+   "state": 1649,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2753.423076923077,
+    404.11538461538464
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "2487": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Lake Marudi",
+   "state": 1649,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2757.6666666666665,
+    400.25
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "2523": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2688.542857142857,
+    420.2
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "2729": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2690.470588235294,
+    466.6470588235294
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2773": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2678.714285714286,
+    445.85714285714283
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "2838": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2695.0,
+    452.3333333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "2917": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2686.6129032258063,
+    433.4193548387097
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "2945": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2684.84,
+    455.6
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3109": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2677.8,
+    421.32
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3155": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2688.1428571428573,
+    448.6666666666667
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "3563": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2685.764705882353,
+    413.94117647058823
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "3614": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2691.6785714285716,
+    457.75
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "3645": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2683.6785714285716,
+    428.82142857142856
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "3804": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2681.733333333333,
+    435.06666666666666
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "3882": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2688.46875,
+    426.65625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "3935": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2682.5,
+    418.0357142857143
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "4189": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2680.6521739130435,
+    451.4782608695652
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "4431": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2690.0833333333335,
+    453.2916666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "4459": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2682.8275862068967,
+    440.7586206896552
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "4522": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2691.12,
+    462.12
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "4575": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2693.1923076923076,
+    448.0
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "4593": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2678.9166666666665,
+    425.875
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "4617": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2683.0,
+    446.11538461538464
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "4628": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2683.4074074074074,
+    422.9259259259259
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "4770": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Campalan Mountains",
+   "state": 1646,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2684.8571428571427,
+    451.3333333333333
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4792": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Krana Massif",
+   "state": 1647,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2770.862068965517,
+    453.0
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "4801": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Krana Massif",
+   "state": 1647,
+   "group": 8,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2778.2903225806454,
+    443.6774193548387
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "4840": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Krana Massif",
+   "state": 1647,
+   "group": 8,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2769.842105263158,
+    463.57894736842104
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4865": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Krana Massif",
+   "state": 1647,
+   "group": 8,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2775.4411764705883,
+    448.0
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "4929": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Krana Massif",
+   "state": 1647,
+   "group": 8,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2772.259259259259,
+    458.18518518518516
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "4947": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Krana Massif",
+   "state": 1647,
+   "group": 8,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2775.8,
+    453.12
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "5121": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2669.9666666666667,
+    428.6333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "5140": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18909,
+   "centre": [
+    2667.8571428571427,
+    450.14285714285717
+   ],
+   "area": 7,
+   "terrain": "mountain"
+  },
+  "5161": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2668.3809523809523,
+    409.23809523809524
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5176": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2667.0,
+    438.9117647058824
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "5279": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2665.4,
+    420.1333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "5380": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2664.970588235294,
+    426.97058823529414
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "5397": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2669.782608695652,
+    416.5652173913044
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "5434": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2669.8333333333335,
+    434.0
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "5508": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2669.5555555555557,
+    422.81481481481484
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "5517": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18909,
+   "centre": [
+    2667.2083333333335,
+    444.0416666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "5613": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2666.8636363636365,
+    413.77272727272725
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "5690": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Endor Sea",
+   "state": 1650,
+   "group": 9,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2665.0,
+    433.32142857142856
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "5734": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2751.5925925925926,
+    427.0
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "5776": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2734.1428571428573,
+    414.57142857142856
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5789": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2764.25,
+    440.125
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "5804": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2740.25,
+    422.15625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "5819": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2762.2,
+    435.93333333333334
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "5829": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2740.5,
+    416.5
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "5867": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2746.344827586207,
+    422.2758620689655
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "5884": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2736.7,
+    418.75
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "6008": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Dulok Gorge",
+   "state": 1651,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2756.090909090909,
+    432.3636363636364
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "6044": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2709.1724137931033,
+    449.37931034482756
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "6082": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2699.12,
+    453.88
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "6229": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2703.4615384615386,
+    441.7307692307692
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "16940": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2715.8928571428573,
+    440.92857142857144
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "16941": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2701.8275862068967,
+    449.1034482758621
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "16943": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2708.88,
+    440.68
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "16945": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2704.5333333333333,
+    453.56666666666666
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "16948": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2716.0,
+    446.4230769230769
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "16963": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2705.9615384615386,
+    445.5769230769231
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "16964": {
+   "zone": "thicket",
+   "kind": 8,
+   "feature": "Great Thicket",
+   "state": 1652,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2711.730769230769,
+    444.53846153846155
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "16966": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2723.8859649122805,
+    445.93859649122805
+   ],
+   "area": 114,
+   "terrain": "forest"
+  },
+  "16997": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2739.5,
+    412.3382352941176
+   ],
+   "area": 68,
+   "terrain": "forest"
+  },
+  "17002": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2720.169811320755,
+    419.54716981132077
+   ],
+   "area": 53,
+   "terrain": "forest"
+  },
+  "17003": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2734.904255319149,
+    430.24468085106383
+   ],
+   "area": 94,
+   "terrain": "forest"
+  },
+  "17007": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2714.080459770115,
+    432.9080459770115
+   ],
+   "area": 87,
+   "terrain": "forest"
+  },
+  "17016": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2727.3763440860216,
+    412.21505376344084
+   ],
+   "area": 93,
+   "terrain": "forest"
+  },
+  "17017": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2725.1973684210525,
+    433.7894736842105
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "17027": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2729.8365384615386,
+    422.27884615384613
+   ],
+   "area": 104,
+   "terrain": "forest"
+  },
+  "17028": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2741.4117647058824,
+    425.70588235294116
+   ],
+   "area": 17,
+   "terrain": "forest"
+  },
+  "17048": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Happy Grove",
+   "state": 61,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2730.4225352112676,
+    439.6056338028169
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "17049": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2677.3,
+    413.4714285714286
+   ],
+   "area": 70,
+   "terrain": "forest"
+  },
+  "17055": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": true,
+   "sea": 18909,
+   "centre": [
+    2684.75641025641,
+    469.53846153846155
+   ],
+   "area": 78,
+   "terrain": "forest"
+  },
+  "17056": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2674.3023255813955,
+    441.48837209302326
+   ],
+   "area": 86,
+   "terrain": "forest"
+  },
+  "17061": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2676.1973684210525,
+    431.94736842105266
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "17062": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": true,
+   "sea": 18909,
+   "centre": [
+    2677.060975609756,
+    460.3048780487805
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "17065": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2684.516129032258,
+    461.5806451612903
+   ],
+   "area": 62,
+   "terrain": "forest"
+  },
+  "17080": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2673.829268292683,
+    420.9512195121951
+   ],
+   "area": 41,
+   "terrain": "forest"
+  },
+  "17081": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Redwood Highlands",
+   "state": 584,
+   "group": 13,
+   "coastal": true,
+   "sea": 18909,
+   "centre": [
+    2673.2842105263157,
+    451.58947368421053
+   ],
+   "area": 95,
+   "terrain": "forest"
+  },
+  "17092": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2681.449275362319,
+    390.0869565217391
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17093": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2697.2903225806454,
+    443.85483870967744
+   ],
+   "area": 62,
+   "terrain": "forest"
+  },
+  "17097": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2720.2375,
+    407.4375
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "17098": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2697.2755102040815,
+    417.1020408163265
+   ],
+   "area": 98,
+   "terrain": "forest"
+  },
+  "17099": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2704.8058252427186,
+    396.0485436893204
+   ],
+   "area": 103,
+   "terrain": "forest"
+  },
+  "17100": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2672.8082191780823,
+    406.3835616438356
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "17104": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2706.722891566265,
+    433.0120481927711
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "17113": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2692.6065573770493,
+    433.2295081967213
+   ],
+   "area": 61,
+   "terrain": "forest"
+  },
+  "17118": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2714.178947368421,
+    416.58947368421053
+   ],
+   "area": 95,
+   "terrain": "forest"
+  },
+  "17126": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2687.2985074626868,
+    406.5223880597015
+   ],
+   "area": 67,
+   "terrain": "forest"
+  },
+  "17127": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2687.156862745098,
+    383.62745098039215
+   ],
+   "area": 51,
+   "terrain": "forest"
+  },
+  "17133": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2705.375,
+    404.46875
+   ],
+   "area": 32,
+   "terrain": "forest"
+  },
+  "17134": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": true,
+   "sea": 18812,
+   "centre": [
+    2675.5555555555557,
+    397.80555555555554
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "17135": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2689.25,
+    441.5138888888889
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "17143": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2712.0114942528735,
+    405.86206896551727
+   ],
+   "area": 87,
+   "terrain": "forest"
+  },
+  "17144": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2697.0760869565215,
+    425.79347826086956
+   ],
+   "area": 92,
+   "terrain": "forest"
+  },
+  "17145": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2699.5652173913045,
+    435.69565217391306
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17150": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2685.2676056338028,
+    396.23943661971833
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "17163": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2707.089285714286,
+    421.91964285714283
+   ],
+   "area": 112,
+   "terrain": "forest"
+  },
+  "17164": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2680.2923076923075,
+    404.6
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "17172": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Sui Lakeshore",
+   "state": 585,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2695.276785714286,
+    409.0625
+   ],
+   "area": 112,
+   "terrain": "forest"
+  },
+  "17173": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2761.9777777777776,
+    428.44444444444446
+   ],
+   "area": 90,
+   "terrain": "desert"
+  },
+  "17186": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2741.8205128205127,
+    461.88461538461536
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "17187": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2760.670588235294,
+    450.4470588235294
+   ],
+   "area": 85,
+   "terrain": "desert"
+  },
+  "17188": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2738.8082191780823,
+    442.64383561643837
+   ],
+   "area": 73,
+   "terrain": "desert"
+  },
+  "17192": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2777.7,
+    437.1375
+   ],
+   "area": 80,
+   "terrain": "desert"
+  },
+  "17205": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2748.9895833333335,
+    447.0520833333333
+   ],
+   "area": 96,
+   "terrain": "desert"
+  },
+  "17216": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2769.8777777777777,
+    432.7
+   ],
+   "area": 90,
+   "terrain": "desert"
+  },
+  "17217": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2745.6710526315787,
+    429.86842105263156
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "17218": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2752.190476190476,
+    437.04761904761904
+   ],
+   "area": 84,
+   "terrain": "desert"
+  },
+  "17221": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2734.0461538461536,
+    448.61538461538464
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "17226": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2750.5777777777776,
+    457.03333333333336
+   ],
+   "area": 90,
+   "terrain": "desert"
+  },
+  "17232": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2779.102564102564,
+    428.6025641025641
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "17233": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2752.483870967742,
+    423.3225806451613
+   ],
+   "area": 31,
+   "terrain": "desert"
+  },
+  "17248": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2758.0810810810813,
+    442.9594594594595
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "17249": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2769.1505376344085,
+    444.4623655913978
+   ],
+   "area": 93,
+   "terrain": "desert"
+  },
+  "17253": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2742.8,
+    437.1333333333333
+   ],
+   "area": 75,
+   "terrain": "desert"
+  },
+  "17254": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Salma Sands",
+   "state": 586,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2741.409638554217,
+    453.0240963855422
+   ],
+   "area": 83,
+   "terrain": "desert"
+  },
+  "17261": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Krana Foothills",
+   "state": 587,
+   "group": 16,
+   "coastal": true,
+   "sea": 18893,
+   "centre": [
+    2744.5897435897436,
+    479.2692307692308
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "17262": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Krana Foothills",
+   "state": 587,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2756.8732394366198,
+    460.4788732394366
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "17263": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Krana Foothills",
+   "state": 587,
+   "group": 16,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2758.822222222222,
+    469.7888888888889
+   ],
+   "area": 90,
+   "terrain": "desert"
+  },
+  "17280": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Krana Foothills",
+   "state": 587,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2746.3917525773195,
+    468.4742268041237
+   ],
+   "area": 97,
+   "terrain": "desert"
+  },
+  "17284": {
+   "zone": "sands",
+   "kind": 5,
+   "feature": "Krana Foothills",
+   "state": 587,
+   "group": 16,
+   "coastal": true,
+   "sea": 18893,
+   "centre": [
+    2752.3684210526317,
+    475.32894736842104
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "17285": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2706.987012987013,
+    459.72727272727275
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "17291": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": true,
+   "sea": 18893,
+   "centre": [
+    2735.1139240506327,
+    483.2911392405063
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "17292": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": true,
+   "sea": 18893,
+   "centre": [
+    2712.0,
+    483.5921052631579
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17298": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2732.551724137931,
+    457.7471264367816
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "17308": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": true,
+   "sea": 18909,
+   "centre": [
+    2693.2758620689656,
+    475.37931034482756
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "17309": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2723.753424657534,
+    473.3424657534247
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "17310": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2723.7733333333335,
+    455.0933333333333
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "17315": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2704.0281690140846,
+    473.77464788732397
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17320": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2738.027777777778,
+    474.1111111111111
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "17329": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": true,
+   "sea": 18893,
+   "centre": [
+    2723.244680851064,
+    483.4574468085106
+   ],
+   "area": 94,
+   "terrain": "plains"
+  },
+  "17341": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2697.6951219512193,
+    467.4634146341463
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "17350": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2716.0597014925374,
+    460.82089552238807
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "17351": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": true,
+   "sea": 18893,
+   "centre": [
+    2702.507042253521,
+    480.6478873239437
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17364": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2730.121212121212,
+    477.04545454545456
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "17365": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2714.3896103896104,
+    476.7142857142857
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "17368": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2724.4533333333334,
+    464.05333333333334
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "17375": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2708.917808219178,
+    467.9178082191781
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "17380": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2714.4647887323945,
+    453.16901408450707
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17385": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2732.775,
+    467.3
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "17392": {
+   "zone": "savanna",
+   "kind": 4,
+   "feature": "Marauder Savanna",
+   "state": 588,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2698.2833333333333,
+    459.8333333333333
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "17398": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2721.337837837838,
+    390.3783783783784
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "17401": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2695.84,
+    379.0933333333333
+   ],
+   "area": 75,
+   "terrain": "forest"
+  },
+  "17402": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2744.1304347826085,
+    378.27536231884056
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17408": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2713.25,
+    373.4583333333333
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "17423": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2741.2345679012346,
+    394.1111111111111
+   ],
+   "area": 81,
+   "terrain": "forest"
+  },
+  "17427": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2705.6341463414633,
+    386.3536585365854
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "17437": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2730.516853932584,
+    382.0561797752809
+   ],
+   "area": 89,
+   "terrain": "forest"
+  },
+  "17438": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2733.602564102564,
+    401.12820512820514
+   ],
+   "area": 78,
+   "terrain": "forest"
+  },
+  "17453": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2704.8829787234044,
+    376.40425531914894
+   ],
+   "area": 94,
+   "terrain": "forest"
+  },
+  "17458": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2715.182926829268,
+    381.9268292682927
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "17462": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2732.5476190476193,
+    391.76190476190476
+   ],
+   "area": 84,
+   "terrain": "forest"
+  },
+  "17469": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2740.9285714285716,
+    385.2738095238095
+   ],
+   "area": 84,
+   "terrain": "forest"
+  },
+  "17470": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2729.1739130434785,
+    372.8985507246377
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17485": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2715.082191780822,
+    397.6849315068493
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "17486": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2697.536231884058,
+    386.536231884058
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17491": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2725.2183908045977,
+    400.7011494252874
+   ],
+   "area": 87,
+   "terrain": "forest"
+  },
+  "17492": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2721.679012345679,
+    373.85185185185185
+   ],
+   "area": 81,
+   "terrain": "forest"
+  },
+  "17503": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2737.175675675676,
+    374.8243243243243
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "17504": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Hanging Moss Woods",
+   "state": 589,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2713.409836065574,
+    389.8360655737705
+   ],
+   "area": 61,
+   "terrain": "forest"
+  },
+  "17505": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2751.060606060606,
+    390.1313131313131
+   ],
+   "area": 99,
+   "terrain": "forest"
+  },
+  "17506": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2778.451219512195,
+    419.4756097560976
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "17521": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2758.5348837209303,
+    420.5581395348837
+   ],
+   "area": 86,
+   "terrain": "forest"
+  },
+  "17526": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2771.806818181818,
+    400.47727272727275
+   ],
+   "area": 88,
+   "terrain": "forest"
+  },
+  "17527": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2738.8518518518517,
+    405.68518518518516
+   ],
+   "area": 54,
+   "terrain": "forest"
+  },
+  "17533": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2751.2266666666665,
+    379.2
+   ],
+   "area": 75,
+   "terrain": "forest"
+  },
+  "17536": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2769.246753246753,
+    412.2857142857143
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "17537": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2746.6349206349205,
+    407.57142857142856
+   ],
+   "area": 63,
+   "terrain": "forest"
+  },
+  "17566": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2764.285714285714,
+    392.8095238095238
+   ],
+   "area": 105,
+   "terrain": "forest"
+  },
+  "17567": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2759.0,
+    385.71084337349396
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "17570": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2763.939024390244,
+    402.8780487804878
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "17585": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": true,
+   "sea": 18897,
+   "centre": [
+    2776.364864864865,
+    409.6756756756757
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "17594": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2745.719298245614,
+    399.719298245614
+   ],
+   "area": 57,
+   "terrain": "forest"
+  },
+  "17599": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2770.1609195402298,
+    421.8965517241379
+   ],
+   "area": 87,
+   "terrain": "forest"
+  },
+  "17611": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2761.7083333333335,
+    412.9583333333333
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "17617": {
+   "zone": "forest",
+   "kind": 3,
+   "feature": "Marudi Shore",
+   "state": 590,
+   "group": 19,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2749.828125,
+    415.734375
+   ],
+   "area": 64,
+   "terrain": "forest"
+  }
+ }
+}

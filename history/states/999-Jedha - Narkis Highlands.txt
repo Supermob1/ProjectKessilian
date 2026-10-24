@@ -1,0 +1,29 @@
+state={
+	id=999
+	name="STATE_999"
+	# HOD: Jedha (jedha_map.py)
+	provinces={
+		20477 20481 20484
+	}
+	resources={
+		coal=3
+		oil=1
+	}
+	history = {
+		victory_points = {
+			20484 1
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 253272
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

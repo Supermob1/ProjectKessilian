@@ -1,0 +1,962 @@
+{
+ "centre": [
+  1188.3941671677692,
+  250.34876728803368
+ ],
+ "radius": 32.53765021397962,
+ "vp_names": {
+  "20864": "Xodlak Spire",
+  "20882": "Cioral Spaceport",
+  "20905": "Syndic Quarter",
+  "20915": "Merchant Ring",
+  "20933": "Foundry District",
+  "20935": "Southern Terraces"
+ },
+ "provinces": {
+  "20864": {
+   "zone": "spire",
+   "kind": 3,
+   "feature": "Xodlak Spire",
+   "state": 182,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1186.6216216216217,
+    250.24324324324326
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "20865": {
+   "zone": "core",
+   "kind": 2,
+   "feature": "Xodlak Plaza",
+   "state": 182,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1188.8846153846155,
+    245.65384615384616
+   ],
+   "area": 52,
+   "terrain": "urban"
+  },
+  "20869": {
+   "zone": "core",
+   "kind": 2,
+   "feature": "Xodlak Plaza",
+   "state": 182,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1188.877192982456,
+    255.19298245614036
+   ],
+   "area": 57,
+   "terrain": "urban"
+  },
+  "20870": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Cioral Spaceport",
+   "state": 972,
+   "group": 2,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1198.896551724138,
+    222.55172413793105
+   ],
+   "area": 29,
+   "terrain": "urban"
+  },
+  "20875": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Cioral Spaceport",
+   "state": 972,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1190.5833333333333,
+    227.08333333333334
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "20882": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Cioral Spaceport",
+   "state": 972,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1196.45,
+    228.55
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "20893": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Cioral Spaceport",
+   "state": 972,
+   "group": 2,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1193.611111111111,
+    222.02777777777777
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "20904": {
+   "zone": "port",
+   "kind": 6,
+   "feature": "Cioral Spaceport",
+   "state": 972,
+   "group": 2,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1202.774193548387,
+    225.29032258064515
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "20905": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Syndic Quarter",
+   "state": 973,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1165.025641025641,
+    254.2051282051282
+   ],
+   "area": 39,
+   "terrain": "urban"
+  },
+  "20914": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Syndic Quarter",
+   "state": 973,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1164.7714285714285,
+    249.02857142857144
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "20915": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Merchant Ring",
+   "state": 974,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1183.7333333333333,
+    271.8666666666667
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "20920": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Merchant Ring",
+   "state": 974,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1179.4864864864865,
+    275.8918918918919
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "20924": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Merchant Ring",
+   "state": 974,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1185.735294117647,
+    276.0
+   ],
+   "area": 34,
+   "terrain": "urban"
+  },
+  "20933": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Foundry District",
+   "state": 975,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1206.53125,
+    264.5
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "20934": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Foundry District",
+   "state": 975,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1204.4666666666667,
+    268.1
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "20935": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Southern Terraces",
+   "state": 976,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1213.5,
+    247.15
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "20940": {
+   "zone": "plaza",
+   "kind": 1,
+   "feature": "Southern Terraces",
+   "state": 976,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1213.4285714285713,
+    242.22857142857143
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "20941": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 1",
+   "state": 182,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1178.2592592592594,
+    251.25925925925927
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "20944": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 1",
+   "state": 182,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1172.0,
+    253.55102040816325
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "20945": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 2",
+   "state": 182,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1185.6304347826087,
+    263.7608695652174
+   ],
+   "area": 46,
+   "terrain": "urban"
+  },
+  "20959": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 3",
+   "state": 182,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1198.18,
+    258.34
+   ],
+   "area": 50,
+   "terrain": "urban"
+  },
+  "20968": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 4",
+   "state": 182,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1197.4705882352941,
+    251.11764705882354
+   ],
+   "area": 51,
+   "terrain": "urban"
+  },
+  "20969": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 4",
+   "state": 182,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1202.3142857142857,
+    239.37142857142857
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "20970": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 4",
+   "state": 182,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1206.7567567567567,
+    244.35135135135135
+   ],
+   "area": 37,
+   "terrain": "urban"
+  },
+  "20973": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 4",
+   "state": 182,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1201.3823529411766,
+    245.88235294117646
+   ],
+   "area": 34,
+   "terrain": "urban"
+  },
+  "20979": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 5",
+   "state": 182,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1192.2978723404256,
+    237.61702127659575
+   ],
+   "area": 47,
+   "terrain": "urban"
+  },
+  "20980": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 6",
+   "state": 973,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1173.6,
+    234.75555555555556
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "20984": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 6",
+   "state": 973,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1183.3488372093022,
+    230.41860465116278
+   ],
+   "area": 43,
+   "terrain": "urban"
+  },
+  "20985": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 6",
+   "state": 973,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1168.9473684210527,
+    242.81578947368422
+   ],
+   "area": 38,
+   "terrain": "urban"
+  },
+  "20986": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Merchant Ring street 7",
+   "state": 974,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1194.862745098039,
+    269.84313725490193
+   ],
+   "area": 51,
+   "terrain": "urban"
+  },
+  "20988": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Southern Terraces street 8",
+   "state": 976,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1207.3333333333333,
+    237.72727272727272
+   ],
+   "area": 33,
+   "terrain": "urban"
+  },
+  "20993": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Southern Terraces street 8",
+   "state": 976,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1202.2962962962963,
+    232.59259259259258
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "20996": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 9",
+   "state": 973,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1176.9,
+    267.3
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "21001": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 9",
+   "state": 973,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1171.8260869565217,
+    259.95652173913044
+   ],
+   "area": 46,
+   "terrain": "urban"
+  },
+  "21002": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 9",
+   "state": 973,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1177.7096774193549,
+    255.8709677419355
+   ],
+   "area": 31,
+   "terrain": "urban"
+  },
+  "21003": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Foundry District street 10",
+   "state": 975,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1209.0384615384614,
+    255.8846153846154
+   ],
+   "area": 52,
+   "terrain": "urban"
+  },
+  "21012": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 11",
+   "state": 973,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1183.2285714285715,
+    243.68571428571428
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "21013": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Syndic Quarter street 11",
+   "state": 973,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1179.6785714285713,
+    236.71428571428572
+   ],
+   "area": 28,
+   "terrain": "urban"
+  },
+  "21014": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 12",
+   "state": 182,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1193.3720930232557,
+    260.3720930232558
+   ],
+   "area": 43,
+   "terrain": "urban"
+  },
+  "21015": {
+   "zone": "street",
+   "kind": 7,
+   "feature": "Xodlak Spire street 12",
+   "state": 182,
+   "group": 18,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1189.4411764705883,
+    266.29411764705884
+   ],
+   "area": 34,
+   "terrain": "urban"
+  },
+  "21018": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1218.5945945945946,
+    244.8108108108108
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "21019": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18836,
+   "centre": [
+    1162.3953488372092,
+    260.83720930232556
+   ],
+   "area": 86,
+   "terrain": "mountain"
+  },
+  "21020": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18836,
+   "centre": [
+    1172.679487179487,
+    226.83333333333334
+   ],
+   "area": 78,
+   "terrain": "mountain"
+  },
+  "21023": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1197.4545454545455,
+    276.35353535353534
+   ],
+   "area": 99,
+   "terrain": "mountain"
+  },
+  "21024": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1213.469135802469,
+    264.2098765432099
+   ],
+   "area": 81,
+   "terrain": "mountain"
+  },
+  "21033": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1174.0759493670887,
+    275.2278481012658
+   ],
+   "area": 79,
+   "terrain": "mountain"
+  },
+  "21038": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18836,
+   "centre": [
+    1161.9764705882353,
+    241.30588235294118
+   ],
+   "area": 85,
+   "terrain": "mountain"
+  },
+  "21040": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1207.421875,
+    229.1875
+   ],
+   "area": 64,
+   "terrain": "mountain"
+  },
+  "21041": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1187.3090909090909,
+    220.6909090909091
+   ],
+   "area": 55,
+   "terrain": "mountain"
+  },
+  "21042": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18836,
+   "centre": [
+    1167.938775510204,
+    267.9795918367347
+   ],
+   "area": 98,
+   "terrain": "mountain"
+  },
+  "21044": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18836,
+   "centre": [
+    1166.0875,
+    233.3
+   ],
+   "area": 80,
+   "terrain": "mountain"
+  },
+  "21045": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1216.0833333333333,
+    255.25
+   ],
+   "area": 84,
+   "terrain": "mountain"
+  },
+  "21046": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1206.5833333333333,
+    273.15277777777777
+   ],
+   "area": 72,
+   "terrain": "mountain"
+  },
+  "21049": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18836,
+   "centre": [
+    1158.3650793650793,
+    250.76190476190476
+   ],
+   "area": 63,
+   "terrain": "mountain"
+  },
+  "21054": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1188.3030303030303,
+    279.5151515151515
+   ],
+   "area": 66,
+   "terrain": "mountain"
+  },
+  "21055": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1213.2307692307693,
+    235.27692307692308
+   ],
+   "area": 65,
+   "terrain": "mountain"
+  },
+  "21058": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Outer Tower Ring",
+   "state": 1497,
+   "group": 19,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1180.4683544303798,
+    224.2405063291139
+   ],
+   "area": 79,
+   "terrain": "mountain"
+  },
+  "21062": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Csapla Stacks",
+   "state": 1498,
+   "group": 20,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1175.8699186991869,
+    244.03252032520325
+   ],
+   "area": 123,
+   "terrain": "mountain"
+  },
+  "21063": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Merchant Stacks",
+   "state": 1502,
+   "group": 21,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1181.1460674157304,
+    261.0
+   ],
+   "area": 89,
+   "terrain": "mountain"
+  },
+  "21067": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Syndic Blocks",
+   "state": 1499,
+   "group": 22,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1186.6891891891892,
+    235.21621621621622
+   ],
+   "area": 74,
+   "terrain": "mountain"
+  },
+  "21069": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Foundry Stacks",
+   "state": 1503,
+   "group": 23,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1196.439024390244,
+    265.1707317073171
+   ],
+   "area": 41,
+   "terrain": "mountain"
+  },
+  "21070": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Port Towers",
+   "state": 1500,
+   "group": 24,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1196.5934065934066,
+    239.65934065934067
+   ],
+   "area": 91,
+   "terrain": "mountain"
+  },
+  "21071": {
+   "zone": "blocks",
+   "kind": 10,
+   "feature": "Terrace Blocks",
+   "state": 1501,
+   "group": 25,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1204.4941176470588,
+    253.74117647058824
+   ],
+   "area": 85,
+   "terrain": "mountain"
+  }
+ }
+}

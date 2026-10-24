@@ -1,0 +1,32 @@
+state={
+	id=1103
+	name="STATE_1103"
+	# HOD: Cerea (cerea_map.py)
+	provinces={
+		19560 19664 19665 19666 19667 19668 19669 19670 19671 19672 19673
+	}
+	resources={
+		coal=1
+		oil=2
+	}
+	history = {
+		victory_points = {
+			19669 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			dockyard = 3
+					19666 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 395880
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

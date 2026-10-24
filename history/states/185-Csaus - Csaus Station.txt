@@ -1,0 +1,32 @@
+state={
+	id=185
+	name="STATE_185"
+	# HOD: Csaus (csaus_map.py)
+	provinces={
+		20470 20471 20515 20516 20517 20518 20519
+	}
+	resources={
+		oil=18#Fuel
+		rubber=26#Doonium
+		tungsten=20#Bacta
+		steel=15#Alloys
+		chromium=20#Circuitry
+	}
+	history = {
+		victory_points = {
+			20471 15
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 4
+			arms_factory = 5
+			air_base = 3
+		}
+		owner = CHS
+		add_core_of = CHS
+	}
+	manpower = 1592172
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -64,6 +64,13 @@ START_ALD = {
     "Alderaanian Royal Army": T("ALD_INF_01", [[(I, 3)], [(I, 3)]], ["engineer", "recon", "signal_company", "field_hospital"],
                                 [("fire_support", 0), ("anti_air_battery", 1)], [OLD_TROOPER]),
 }
+# Thyferra (the user, 2026-10-23): the Vratix hive guard and the two bacta corporations' security droids
+THY_START = {
+    "THY": {"Vratix Hive Guard": T("THY_INF_01", [[(I, 3)], [(I, 3)]], ["recon", "engineer"])},
+    "UTA": {"Utapaun Guard": T("UTA_INF_01", [[(I, 3)], [(I, 3)]], ["recon", "engineer"])},
+    "XUC": {"Xucphra Security Force": T("XUC_SEC_01", [[(D, 3)], [(D, 3)]], ["military_police", "recon"])},
+    "ZAL": {"Zaltin Security Force": T("ZAL_SEC_01", [[(D, 3)], [(D, 3)]], ["military_police", "recon"])},
+}
 START_CIS = {
     "Local Planetary Garrison": T("CIS_GAR_01", [[(D, 2)]], ["military_police"], extra=["is_locked = yes"]),
     "CIS Droid Battalion": T("CIS_INF_01", [[(D, 3)], [(D, 3)], [(D, 3)], [(B2, 3)], [(D, 1)]], DROID_SUPPORT,
@@ -243,6 +250,12 @@ FLT_NAMES = {
     "FLT_INF_01": ("Felucian Warbands", "%dth Warband", ["Nui Da Voi Warband", "Ancient Abyss Rancor Riders", "Ban Nam Stalkers",
                                                           "Rung Tham Hunters", "Suong Mu Shadow Band", "Thach Lam Warband"]),
 }
+THY_NAMES = {
+    "THY": {"THY_INF_01": ("Vratix Hive Guard", "%dth Hive Guard", ["Xozhixi Hive Guard", "Vrelnid Hive Guard"])},
+    "UTA": {"UTA_INF_01": ("Utapaun Guard", "%dth Utapaun Guard", ["Pau City Guard", "Dactillion Riders"])},
+    "XUC": {"XUC_SEC_01": ("Xucphra Security", "%dth Xucphra Security Force", ["Xucphra City Security", "Bacta Vats Security"])},
+    "ZAL": {"ZAL_SEC_01": ("Zaltin Security", "%dth Zaltin Security Force", ["Zalxuc Docks Security"])},
+}
 ALD_NAMES = {
     "ALD_GAR_01": ("Alderaanian Planetary Guard", "%dth Planetary Guard", ["Aldera Guard", "Apalis Coast Guard", "Castle Lands Guard"]),
     "ALD_INF_01": ("Royal Alderaanian Army", "%dth Royal Regiment", ["House Organa Regiment", "House Antilles Regiment"]),
@@ -258,6 +271,9 @@ def write_names():
         "# HOD: Felucian tribes (faction_templates.py)\n" + "".join(names_group(k, t, ("FLT",), f, n) for k, (t, f, n) in FLT_NAMES.items()))
     open("common/units/names_divisions/ALD_names_divisions.txt", "w", encoding="utf-8-sig", newline="\n").write(
         "# HOD: Alderaan (faction_templates.py)\n" + "".join(names_group(k, t, ("ALD",), f, n) for k, (t, f, n) in ALD_NAMES.items()))
+    for tag, groups in THY_NAMES.items():
+        open(f"common/units/names_divisions/{tag}_names_divisions.txt", "w", encoding="utf-8-sig", newline="\n").write(
+            "# HOD: Thyferra (faction_templates.py)\n" + "".join(names_group(k, t, (tag,), f, n) for k, (t, f, n) in groups.items()))
     p = "common/units/names_divisions/CIS_names_divisions.txt"
     s = open(p, encoding="utf-8-sig").read()
     if "CIS_ARM_01" in s:
@@ -293,11 +309,16 @@ ARMIES = {
     "CIS": ("history/units/HOD_CIS.txt", {
         "Raxus": [(GAR, 1), (BAT, 2), ("AAT Armoured Division", 1)],
         "Serenno": [(BAT, 1), ("Octuptarra Strike Group", 1)],
-        "Geonosis": [(BAT, 1)], "Thyferria": [(BAT, 1)], "Boz Pity": [(BAT, 1)]}),
+        "Geonosis": [(BAT, 1)]}),
+    "THY": ("history/units/HOD_THY.txt", {"Thyferria": [("Vratix Hive Guard", 2)]}),
+    "UTA": ("history/units/HOD_UTA.txt", {"Utapau": [("Utapaun Guard", 2)]}),
+    "XUC": ("history/units/HOD_XUC.txt", {"Thyferria": [("Xucphra Security Force", 2)]}),
+    "ZAL": ("history/units/HOD_ZAL.txt", {"Thyferria": [("Zaltin Security Force", 1)]}),
     "TDF": ("history/units/HOD_TDF.txt", {
         "Cato Neimoidia": [(GAR, 1), (BAT, 2), ("AAT Armoured Division", 1)], "Neimodia": [(BAT, 1)], "Colla IV": [(BAT, 1)]}),
     "TCU": ("history/units/HOD_TCU.txt", {
-        "Foerost": [(BAT, 1), ("Octuptarra Strike Group", 1)], "Balmorra": [(BAT, 1)], "Mechis": [(BAT, 1)]}),
+        "Foerost": [(BAT, 1), ("Octuptarra Strike Group", 1)], "Balmorra": [(BAT, 1)], "Mechis": [(BAT, 1)],
+                 "Boz Pity": [(BAT, 1)]}),   # Boz Pity is TCU's (its map script)
     "CMG": ("history/units/HOD_CMG.txt", {"Felucia": [(BAT, 1)], "Sullust": [(BAT, 1)], "Dromund Kaas": [(BAT, 1)]}),
     "IBC": ("history/units/HOD_IBC.txt", {"Muunilinst": [(GAR, 1), (BAT, 1)], "Mygeeto": [(BAT, 1)], "Kalee": [(BAT, 1)]}),
 }
@@ -465,6 +486,10 @@ if __name__ == "__main__":
     if not os.path.exists("history/units/HOD_ALD.txt"):
         open("history/units/HOD_ALD.txt", "w", encoding="utf-8-sig", newline="\n").write("# HOD: Alderaan (faction_templates.py)\n")
     write_start("history/units/HOD_ALD.txt", START_ALD)
+    for tag, start in THY_START.items():
+        if not os.path.exists(f"history/units/HOD_{tag}.txt"):
+            open(f"history/units/HOD_{tag}.txt", "w", encoding="utf-8-sig", newline="\n").write(f"# HOD: {tag} (faction_templates.py)\n")
+        write_start(f"history/units/HOD_{tag}.txt", start)
     write_armies()
     write_designs()
     write_unlocks()

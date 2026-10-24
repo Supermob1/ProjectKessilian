@@ -1,0 +1,962 @@
+{
+ "centre": [
+  2962.1670203091844,
+  573.2303728402546
+ ],
+ "radius": 32.40531306005738,
+ "vp_names": {
+  "225": "Anoat City",
+  "246": "Jedi Shrine",
+  "401": "Anoat Refineries",
+  "18109": "Northern Ruins",
+  "18137": "Sludge Flats",
+  "18226": "Western Slums"
+ },
+ "provinces": {
+  "225": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Anoat City",
+   "state": 52,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2962.5,
+    573.5
+   ],
+   "area": 80,
+   "terrain": "urban"
+  },
+  "246": {
+   "zone": "shrine",
+   "kind": 5,
+   "feature": "Jedi Shrine",
+   "state": 526,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2946.222222222222,
+    556.2777777777778
+   ],
+   "area": 54,
+   "terrain": "hills"
+  },
+  "401": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Anoat Refineries",
+   "state": 529,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2964.0,
+    589.5
+   ],
+   "area": 56,
+   "terrain": "urban"
+  },
+  "927": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sludge Sea",
+   "state": 1660,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2990.266666666667,
+    571.8
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "1372": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sludge Sea",
+   "state": 1660,
+   "group": 3,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2990.529411764706,
+    585.6470588235294
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2924": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sludge Sea",
+   "state": 1660,
+   "group": 3,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2991.090909090909,
+    563.6363636363636
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "3247": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sludge Sea",
+   "state": 1660,
+   "group": 3,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2992.3076923076924,
+    580.1538461538462
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "4036": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sludge Sea",
+   "state": 1660,
+   "group": 3,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2991.2,
+    567.4
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "4375": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sludge Sea",
+   "state": 1660,
+   "group": 3,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2992.705882352941,
+    575.1176470588235
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "4735": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sludge Sea",
+   "state": 1660,
+   "group": 3,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2993.090909090909,
+    570.3636363636364
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "4813": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Collapsed Megablocks",
+   "state": 1661,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2965.6666666666665,
+    565.4333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "4831": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Collapsed Megablocks",
+   "state": 1661,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2978.277777777778,
+    554.9444444444445
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "4906": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Collapsed Megablocks",
+   "state": 1661,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2972.0,
+    556.6842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "5322": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Collapsed Megablocks",
+   "state": 1661,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2970.277777777778,
+    561.7222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "5327": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Collapsed Megablocks",
+   "state": 1661,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2975.0,
+    557.9444444444445
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "5890": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Collapsed Megablocks",
+   "state": 1661,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2967.722222222222,
+    559.5
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "6135": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Smog Chasm",
+   "state": 1662,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2950.285714285714,
+    578.7142857142857
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "18004": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Smog Chasm",
+   "state": 1662,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2941.875,
+    593.3125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18008": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Smog Chasm",
+   "state": 1662,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2946.4761904761904,
+    586.0952380952381
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "18016": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Smog Chasm",
+   "state": 1662,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2953.5,
+    575.7272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "18020": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Smog Chasm",
+   "state": 1662,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2944.6470588235293,
+    589.9411764705883
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "18021": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Smog Chasm",
+   "state": 1662,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2947.608695652174,
+    582.1739130434783
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "18027": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Slag Heaps",
+   "state": 1663,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2979.714285714286,
+    594.5238095238095
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "18033": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Slag Heaps",
+   "state": 1663,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2974.277777777778,
+    597.1111111111111
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "18040": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Slag Heaps",
+   "state": 1663,
+   "group": 6,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2978.2608695652175,
+    599.0869565217391
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "18048": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Slag Heaps",
+   "state": 1663,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2975.764705882353,
+    593.5882352941177
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "18049": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Anoat City",
+   "state": 52,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2968.5684210526315,
+    576.4421052631579
+   ],
+   "area": 95,
+   "terrain": "urban"
+  },
+  "18065": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Anoat City",
+   "state": 52,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2956.9506172839506,
+    567.9506172839506
+   ],
+   "area": 81,
+   "terrain": "urban"
+  },
+  "18070": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Anoat City",
+   "state": 52,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2958.1162790697676,
+    578.7209302325581
+   ],
+   "area": 43,
+   "terrain": "urban"
+  },
+  "18072": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Shrine Wastes",
+   "state": 526,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2950.548387096774,
+    562.7096774193549
+   ],
+   "area": 62,
+   "terrain": "hills"
+  },
+  "18080": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Shrine Wastes",
+   "state": 526,
+   "group": 8,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2952.1944444444443,
+    547.0833333333334
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "18090": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Shrine Wastes",
+   "state": 526,
+   "group": 8,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2943.823529411765,
+    549.9215686274509
+   ],
+   "area": 51,
+   "terrain": "hills"
+  },
+  "18092": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Shrine Wastes",
+   "state": 526,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2952.3,
+    555.2
+   ],
+   "area": 50,
+   "terrain": "hills"
+  },
+  "18094": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Shrine Wastes",
+   "state": 526,
+   "group": 8,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2938.858695652174,
+    558.4891304347826
+   ],
+   "area": 92,
+   "terrain": "hills"
+  },
+  "18095": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Northern Ruins",
+   "state": 527,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2942.0125,
+    578.7375
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "18104": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Northern Ruins",
+   "state": 527,
+   "group": 9,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2933.8630136986303,
+    567.6575342465753
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "18108": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Northern Ruins",
+   "state": 527,
+   "group": 9,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2933.9887640449438,
+    577.8202247191011
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "18109": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Northern Ruins",
+   "state": 527,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2941.230769230769,
+    568.0384615384615
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "18120": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Northern Ruins",
+   "state": 527,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2948.281690140845,
+    571.3943661971831
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "18137": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2983.8133333333335,
+    571.12
+   ],
+   "area": 75,
+   "terrain": "marsh"
+  },
+  "18140": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2985.155172413793,
+    556.5689655172414
+   ],
+   "area": 58,
+   "terrain": "marsh"
+  },
+  "18141": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2976.232558139535,
+    583.8255813953489
+   ],
+   "area": 86,
+   "terrain": "marsh"
+  },
+  "18145": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2973.8507462686566,
+    567.0597014925373
+   ],
+   "area": 67,
+   "terrain": "marsh"
+  },
+  "18149": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2985.082191780822,
+    588.2739726027397
+   ],
+   "area": 73,
+   "terrain": "marsh"
+  },
+  "18153": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2979.3283582089553,
+    562.4179104477612
+   ],
+   "area": 67,
+   "terrain": "marsh"
+  },
+  "18163": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2976.3698630136987,
+    575.6164383561644
+   ],
+   "area": 73,
+   "terrain": "marsh"
+  },
+  "18167": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2987.4464285714284,
+    563.0714285714286
+   ],
+   "area": 56,
+   "terrain": "marsh"
+  },
+  "18171": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Sludge Flats",
+   "state": 528,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2986.294117647059,
+    579.4588235294118
+   ],
+   "area": 85,
+   "terrain": "marsh"
+  },
+  "18177": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Refinery District",
+   "state": 529,
+   "group": 11,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2954.5479452054797,
+    600.6164383561644
+   ],
+   "area": 73,
+   "terrain": "urban"
+  },
+  "18178": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Refinery District",
+   "state": 529,
+   "group": 11,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2982.4,
+    593.6285714285714
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "18185": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Refinery District",
+   "state": 529,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2957.211111111111,
+    584.4111111111112
+   ],
+   "area": 90,
+   "terrain": "urban"
+  },
+  "18191": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Refinery District",
+   "state": 529,
+   "group": 11,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2970.507462686567,
+    600.7014925373135
+   ],
+   "area": 67,
+   "terrain": "urban"
+  },
+  "18192": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Refinery District",
+   "state": 529,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2954.925925925926,
+    592.4691358024692
+   ],
+   "area": 81,
+   "terrain": "urban"
+  },
+  "18198": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Refinery District",
+   "state": 529,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2970.72,
+    590.0
+   ],
+   "area": 75,
+   "terrain": "urban"
+  },
+  "18199": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Refinery District",
+   "state": 529,
+   "group": 11,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2962.879120879121,
+    599.2527472527472
+   ],
+   "area": 91,
+   "terrain": "urban"
+  },
+  "18204": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Ashen Heights",
+   "state": 530,
+   "group": 12,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2946.8924731182797,
+    595.2150537634409
+   ],
+   "area": 93,
+   "terrain": "hills"
+  },
+  "18208": {
+   "zone": "waste",
+   "kind": 3,
+   "feature": "Ashen Heights",
+   "state": 530,
+   "group": 12,
+   "coastal": true,
+   "sea": 18828,
+   "centre": [
+    2938.3764705882354,
+    587.9882352941177
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "18210": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Western Slums",
+   "state": 531,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2960.0,
+    558.4516129032259
+   ],
+   "area": 93,
+   "terrain": "marsh"
+  },
+  "18214": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Western Slums",
+   "state": 531,
+   "group": 13,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2980.6862745098038,
+    550.3333333333334
+   ],
+   "area": 51,
+   "terrain": "marsh"
+  },
+  "18216": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Western Slums",
+   "state": 531,
+   "group": 13,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2966.864406779661,
+    544.4915254237288
+   ],
+   "area": 59,
+   "terrain": "marsh"
+  },
+  "18226": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Western Slums",
+   "state": 531,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2966.2083333333335,
+    552.8611111111111
+   ],
+   "area": 72,
+   "terrain": "marsh"
+  },
+  "18231": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Western Slums",
+   "state": 531,
+   "group": 13,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2959.4050632911394,
+    546.3164556962025
+   ],
+   "area": 79,
+   "terrain": "marsh"
+  },
+  "18235": {
+   "zone": "flats",
+   "kind": 4,
+   "feature": "Western Slums",
+   "state": 531,
+   "group": 13,
+   "coastal": true,
+   "sea": 18908,
+   "centre": [
+    2973.753623188406,
+    548.5942028985507
+   ],
+   "area": 69,
+   "terrain": "marsh"
+  }
+ }
+}

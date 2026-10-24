@@ -1,0 +1,17 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ZAL_SEC_01 = {
+	name = "Zaltin Security"
+
+	for_countries = { ZAL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Zaltin Security Force"
+
+	ordered = {
+		1 = { "1st Zalxuc Docks Security" }
+	}
+}

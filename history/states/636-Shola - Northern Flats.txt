@@ -1,0 +1,33 @@
+state={
+	id=636
+	name="STATE_636"
+	# HOD: Shola (shola_map.py)
+	provinces={
+		15022 15031 15032 15033 15042 15043 15069 15073 15074 15078 15085 15086 15090 15091 15119 15120 15125 15142 15143 15150 15163
+	}
+	resources={
+		tungsten=4
+		steel=3
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			15163 1
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+					15031 = {
+				naval_base = 4
+			}
+		}
+		owner = BKJ
+		add_core_of = BKJ
+	}
+	manpower = 153900
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

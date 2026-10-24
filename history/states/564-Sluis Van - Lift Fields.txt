@@ -1,0 +1,31 @@
+state={
+	id=564
+	name="STATE_564"
+	# HOD: Sluis Van (sluis_van_map.py)
+	provinces={
+		241 18346 18353 18355 18356
+	}
+	resources={
+		oil=4
+	}
+	history = {
+		victory_points = {
+			241 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			dockyard = 2
+					18346 = {
+				naval_base = 3
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 62856
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

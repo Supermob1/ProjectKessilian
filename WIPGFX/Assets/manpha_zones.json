@@ -1,0 +1,902 @@
+{
+ "centre": [
+  3282.9185588858613,
+  794.2306993642144
+ ],
+ "radius": 32.42495264553305,
+ "vp_names": {
+  "52": "Shanpan",
+  "115": "Shanpan Fisheries",
+  "18600": "Swamp Grass Flats",
+  "18625": "Reed Delta",
+  "18650": "Mud Hills",
+  "18642": "Eastern Bogs"
+ },
+ "provinces": {
+  "52": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Shanpan",
+   "state": 54,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3281.5,
+    794.5
+   ],
+   "area": 80,
+   "terrain": "urban"
+  },
+  "115": {
+   "zone": "harbour",
+   "kind": 2,
+   "feature": "Shanpan Fisheries",
+   "state": 540,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3302.0,
+    796.0
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "937": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Deep Swamp",
+   "state": 1680,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3267.5,
+    778.0
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "1379": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Deep Swamp",
+   "state": 1680,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3274.3529411764707,
+    778.4117647058823
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "1575": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Deep Swamp",
+   "state": 1680,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3269.6470588235293,
+    781.6470588235294
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "1607": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Deep Swamp",
+   "state": 1680,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3272.75,
+    774.4375
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "1652": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Deep Swamp",
+   "state": 1680,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3268.6315789473683,
+    773.1578947368421
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "2295": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Deep Swamp",
+   "state": 1680,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3271.0,
+    778.0
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "2562": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Shallow Sea",
+   "state": 1681,
+   "group": 3,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3312.4285714285716,
+    789.3571428571429
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "3162": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Shallow Sea",
+   "state": 1681,
+   "group": 3,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3312.6666666666665,
+    801.1904761904761
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "3387": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Shallow Sea",
+   "state": 1681,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3310.25,
+    796.5833333333334
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "3637": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Shallow Sea",
+   "state": 1681,
+   "group": 3,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3313.56,
+    794.64
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3878": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3277.44,
+    806.64
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "3908": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3290.9565217391305,
+    821.9130434782609
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "4069": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3286.3571428571427,
+    813.8214285714286
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "4104": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3281.56,
+    812.64
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "4825": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3273.78125,
+    804.125
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "5166": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3286.7,
+    818.6
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "5172": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3290.95,
+    817.25
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "5499": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Black Mire",
+   "state": 1682,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3282.777777777778,
+    808.3333333333334
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "6126": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Peat Bog",
+   "state": 1683,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3291.9032258064517,
+    782.0322580645161
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "18578": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Peat Bog",
+   "state": 1683,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3301.576923076923,
+    790.1923076923077
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "18579": {
+   "zone": "bog",
+   "kind": 7,
+   "feature": "Peat Bog",
+   "state": 1683,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3298.24,
+    786.44
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "18583": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Shanpan",
+   "state": 54,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3273.7820512820513,
+    787.6410256410256
+   ],
+   "area": 78,
+   "terrain": "marsh"
+  },
+  "18584": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Shanpan",
+   "state": 54,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3290.753086419753,
+    788.5555555555555
+   ],
+   "area": 81,
+   "terrain": "marsh"
+  },
+  "18591": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Shanpan",
+   "state": 54,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3284.1917808219177,
+    802.945205479452
+   ],
+   "area": 73,
+   "terrain": "marsh"
+  },
+  "18592": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Shanpan",
+   "state": 54,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3281.6491228070176,
+    786.0
+   ],
+   "area": 57,
+   "terrain": "marsh"
+  },
+  "18596": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Shanpan",
+   "state": 54,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3290.246753246753,
+    796.7532467532468
+   ],
+   "area": 77,
+   "terrain": "marsh"
+  },
+  "18599": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Shanpan",
+   "state": 54,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3274.123076923077,
+    796.7692307692307
+   ],
+   "area": 65,
+   "terrain": "marsh"
+  },
+  "18600": {
+   "zone": "grass",
+   "kind": 4,
+   "feature": "Swamp Grass Flats",
+   "state": 539,
+   "group": 7,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3282.6835443037976,
+    766.1772151898734
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "18602": {
+   "zone": "grass",
+   "kind": 4,
+   "feature": "Swamp Grass Flats",
+   "state": 539,
+   "group": 7,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3267.1458333333335,
+    769.5833333333334
+   ],
+   "area": 48,
+   "terrain": "plains"
+  },
+  "18607": {
+   "zone": "grass",
+   "kind": 4,
+   "feature": "Swamp Grass Flats",
+   "state": 539,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3286.6835443037976,
+    777.8227848101266
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "18608": {
+   "zone": "grass",
+   "kind": 4,
+   "feature": "Swamp Grass Flats",
+   "state": 539,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3279.518987341772,
+    777.1898734177215
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "18609": {
+   "zone": "grass",
+   "kind": 4,
+   "feature": "Swamp Grass Flats",
+   "state": 539,
+   "group": 7,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3290.1625,
+    767.975
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "18610": {
+   "zone": "grass",
+   "kind": 4,
+   "feature": "Swamp Grass Flats",
+   "state": 539,
+   "group": 7,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3275.0526315789475,
+    767.9342105263158
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "18613": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Fishing Marshes",
+   "state": 540,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3305.975,
+    803.0375
+   ],
+   "area": 80,
+   "terrain": "marsh"
+  },
+  "18616": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Fishing Marshes",
+   "state": 540,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3297.285714285714,
+    799.3469387755102
+   ],
+   "area": 98,
+   "terrain": "marsh"
+  },
+  "18617": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Fishing Marshes",
+   "state": 540,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3306.897435897436,
+    792.8461538461538
+   ],
+   "area": 39,
+   "terrain": "marsh"
+  },
+  "18618": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Reed Delta",
+   "state": 541,
+   "group": 9,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3293.730769230769,
+    821.5961538461538
+   ],
+   "area": 52,
+   "terrain": "marsh"
+  },
+  "18622": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Reed Delta",
+   "state": 541,
+   "group": 9,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3306.760563380282,
+    810.056338028169
+   ],
+   "area": 71,
+   "terrain": "marsh"
+  },
+  "18624": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Reed Delta",
+   "state": 541,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3292.5339805825242,
+    809.2718446601941
+   ],
+   "area": 103,
+   "terrain": "marsh"
+  },
+  "18625": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Reed Delta",
+   "state": 541,
+   "group": 9,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3300.287356321839,
+    815.3793103448276
+   ],
+   "area": 87,
+   "terrain": "marsh"
+  },
+  "18627": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Eastern Bogs",
+   "state": 542,
+   "group": 10,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3281.448275862069,
+    821.9540229885057
+   ],
+   "area": 87,
+   "terrain": "marsh"
+  },
+  "18629": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Eastern Bogs",
+   "state": 542,
+   "group": 10,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3259.246376811594,
+    809.6666666666666
+   ],
+   "area": 69,
+   "terrain": "marsh"
+  },
+  "18631": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Eastern Bogs",
+   "state": 542,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3268.04,
+    806.04
+   ],
+   "area": 75,
+   "terrain": "marsh"
+  },
+  "18635": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Eastern Bogs",
+   "state": 542,
+   "group": 10,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3272.042857142857,
+    821.1142857142858
+   ],
+   "area": 70,
+   "terrain": "marsh"
+  },
+  "18636": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Eastern Bogs",
+   "state": 542,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3275.1923076923076,
+    813.3846153846154
+   ],
+   "area": 78,
+   "terrain": "marsh"
+  },
+  "18642": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Eastern Bogs",
+   "state": 542,
+   "group": 10,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3265.185185185185,
+    815.5925925925926
+   ],
+   "area": 81,
+   "terrain": "marsh"
+  },
+  "18644": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Mud Hills",
+   "state": 543,
+   "group": 11,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3257.0138888888887,
+    802.9027777777778
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "18648": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Mud Hills",
+   "state": 543,
+   "group": 11,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3261.7936507936506,
+    775.4285714285714
+   ],
+   "area": 63,
+   "terrain": "hills"
+  },
+  "18649": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Mud Hills",
+   "state": 543,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3265.67816091954,
+    786.919540229885
+   ],
+   "area": 87,
+   "terrain": "hills"
+  },
+  "18650": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Mud Hills",
+   "state": 543,
+   "group": 11,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3256.402777777778,
+    788.9166666666666
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "18653": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Mud Hills",
+   "state": 543,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3264.9473684210525,
+    797.2631578947369
+   ],
+   "area": 95,
+   "terrain": "hills"
+  },
+  "18655": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Mud Hills",
+   "state": 543,
+   "group": 11,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3254.731343283582,
+    795.7462686567164
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "18656": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Mud Hills",
+   "state": 543,
+   "group": 11,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3257.68115942029,
+    781.4202898550725
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "18660": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Southern Fens",
+   "state": 544,
+   "group": 12,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3305.472972972973,
+    776.9324324324324
+   ],
+   "area": 74,
+   "terrain": "marsh"
+  },
+  "18661": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Southern Fens",
+   "state": 544,
+   "group": 12,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3298.278481012658,
+    770.3037974683544
+   ],
+   "area": 79,
+   "terrain": "marsh"
+  },
+  "18666": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Southern Fens",
+   "state": 544,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3296.8271604938273,
+    778.7283950617284
+   ],
+   "area": 81,
+   "terrain": "marsh"
+  },
+  "18669": {
+   "zone": "marsh",
+   "kind": 3,
+   "feature": "Southern Fens",
+   "state": 544,
+   "group": 12,
+   "coastal": true,
+   "sea": 18964,
+   "centre": [
+    3307.1724137931033,
+    784.471264367816
+   ],
+   "area": 87,
+   "terrain": "marsh"
+  }
+ }
+}

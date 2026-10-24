@@ -1,0 +1,28 @@
+state={
+	id=463
+	name="STATE_463"
+	# HOD: Alzoc III (alzoc_iii_map.py)
+	provinces={
+		18476 18478 18479 18482 18484 18486
+	}
+	resources={
+		oil=3
+	}
+	history = {
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 2
+			18476 = {
+				naval_base = 3
+			}
+		}
+		owner = DKJ
+		add_core_of = DKJ
+	}
+	manpower = 76289
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

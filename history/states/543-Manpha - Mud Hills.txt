@@ -1,0 +1,31 @@
+state={
+	id=543
+	name="STATE_543"
+	# HOD: Manpha (manpha_map.py)
+	provinces={
+		18644 18648 18649 18650 18653 18655 18656
+	}
+	resources={
+		oil=2
+	}
+	history = {
+		victory_points = {
+			18650 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			dockyard = 1
+			18650 = {
+				naval_base = 3
+			}
+		}
+		owner = BKJ
+		add_core_of = BKJ
+	}
+	manpower = 56584
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

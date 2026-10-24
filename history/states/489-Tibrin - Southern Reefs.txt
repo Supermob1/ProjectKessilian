@@ -1,0 +1,31 @@
+state={
+	id=489
+	name="STATE_489"
+	# HOD: Tibrin (tibrin_map.py)
+	provinces={
+		6025 6122 6169 16467 16468 16469 16471 16474 16478 16480 16481 16482 16483 16484 16486 16489 16492 16495 16496 16497
+	}
+	resources={
+		oil=2
+	}
+	history = {
+		victory_points = {
+			16489 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
+			6122 = {
+				naval_base = 4
+			}
+		}
+		owner = TBR
+		add_core_of = TBR
+	}
+	manpower = 183953
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

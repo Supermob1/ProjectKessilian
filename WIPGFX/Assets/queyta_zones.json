@@ -1,0 +1,932 @@
+{
+ "centre": [
+  3182.310794420861,
+  1182.5139478471801
+ ],
+ "radius": 32.40040130359718,
+ "vp_names": {
+  "214": "Queyta Foundry City",
+  "399": "Geothermal Forge",
+  "18469": "Ashfall Plains",
+  "18477": "Obsidian Fields",
+  "18504": "Basalt Highlands",
+  "18514": "Southern Vents"
+ },
+ "provinces": {
+  "214": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Queyta Foundry City",
+   "state": 57,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3184.0,
+    1181.0
+   ],
+   "area": 63,
+   "terrain": "urban"
+  },
+  "399": {
+   "zone": "forge",
+   "kind": 2,
+   "feature": "Geothermal Forge",
+   "state": 561,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3179.0,
+    1200.5
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "851": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Great Caldera",
+   "state": 1668,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3171.181818181818,
+    1172.2727272727273
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "995": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Great Caldera",
+   "state": 1668,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3166.5,
+    1164.2222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "1203": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Great Caldera",
+   "state": 1668,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3162.7619047619046,
+    1173.2380952380952
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "2329": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Great Caldera",
+   "state": 1668,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3166.8888888888887,
+    1170.4444444444443
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "2434": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Great Caldera",
+   "state": 1668,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3169.7,
+    1167.25
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "2488": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Great Caldera",
+   "state": 1668,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3167.157894736842,
+    1174.6842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "2545": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Great Caldera",
+   "state": 1668,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3164.0588235294117,
+    1167.9411764705883
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2701": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Fire Range",
+   "state": 1669,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3167.214285714286,
+    1193.857142857143
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "2832": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Fire Range",
+   "state": 1669,
+   "group": 3,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3161.3809523809523,
+    1202.2380952380952
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "3010": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Fire Range",
+   "state": 1669,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3174.1304347826085,
+    1187.2173913043478
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "3842": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Fire Range",
+   "state": 1669,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3163.1290322580644,
+    1197.6774193548388
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "4637": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Fire Range",
+   "state": 1669,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3171.5,
+    1191.0
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "4682": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Lava Sea",
+   "state": 1670,
+   "group": 4,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3208.470588235294,
+    1196.0588235294117
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "4853": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Lava Sea",
+   "state": 1670,
+   "group": 4,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3211.9615384615386,
+    1177.2307692307693
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "4996": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Lava Sea",
+   "state": 1670,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3208.3333333333335,
+    1185.7407407407406
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "5024": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Lava Sea",
+   "state": 1670,
+   "group": 4,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3210.6944444444443,
+    1190.75
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "5564": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Lava Sea",
+   "state": 1670,
+   "group": 4,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3212.576923076923,
+    1183.8846153846155
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "18435": {
+   "zone": "lava",
+   "kind": 7,
+   "feature": "Lava Sea",
+   "state": 1670,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3208.375,
+    1180.2083333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "18441": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Cinder Cones",
+   "state": 1671,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3194.8695652173915,
+    1169.2608695652175
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "18444": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Cinder Cones",
+   "state": 1671,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3190.5333333333333,
+    1155.9333333333334
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "18445": {
+   "zone": "peak",
+   "kind": 8,
+   "feature": "Cinder Cones",
+   "state": 1671,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3193.733333333333,
+    1161.7333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "18449": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Queyta Foundry City",
+   "state": 57,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3192.9775280898875,
+    1184.7191011235955
+   ],
+   "area": 89,
+   "terrain": "desert"
+  },
+  "18450": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Queyta Foundry City",
+   "state": 57,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3180.1111111111113,
+    1173.4920634920634
+   ],
+   "area": 63,
+   "terrain": "desert"
+  },
+  "18452": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Queyta Foundry City",
+   "state": 57,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3179.655737704918,
+    1189.672131147541
+   ],
+   "area": 61,
+   "terrain": "desert"
+  },
+  "18455": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Queyta Foundry City",
+   "state": 57,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3189.547368421053,
+    1173.7052631578947
+   ],
+   "area": 95,
+   "terrain": "desert"
+  },
+  "18456": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Queyta Foundry City",
+   "state": 57,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3187.208955223881,
+    1190.2985074626865
+   ],
+   "area": 67,
+   "terrain": "desert"
+  },
+  "18458": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Queyta Foundry City",
+   "state": 57,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3177.46,
+    1181.16
+   ],
+   "area": 50,
+   "terrain": "desert"
+  },
+  "18460": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Plains",
+   "state": 559,
+   "group": 7,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3165.9142857142856,
+    1159.2285714285715
+   ],
+   "area": 70,
+   "terrain": "desert"
+  },
+  "18466": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Plains",
+   "state": 559,
+   "group": 7,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3190.96875,
+    1152.84375
+   ],
+   "area": 32,
+   "terrain": "desert"
+  },
+  "18469": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Plains",
+   "state": 559,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3180.9692307692308,
+    1163.9538461538461
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "18470": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Plains",
+   "state": 559,
+   "group": 7,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3182.320987654321,
+    1155.148148148148
+   ],
+   "area": 81,
+   "terrain": "desert"
+  },
+  "18473": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Plains",
+   "state": 559,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3188.2027027027025,
+    1163.918918918919
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "18474": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Plains",
+   "state": 559,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3174.830985915493,
+    1166.9718309859154
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "18475": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Plains",
+   "state": 559,
+   "group": 7,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3173.6951219512193,
+    1156.0731707317073
+   ],
+   "area": 82,
+   "terrain": "desert"
+  },
+  "18477": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3160.830985915493,
+    1180.056338028169
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "18480": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3156.421875,
+    1196.703125
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "18481": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3158.957142857143,
+    1166.142857142857
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "18483": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3170.735294117647,
+    1179.4705882352941
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "18485": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3166.7903225806454,
+    1185.8225806451612
+   ],
+   "area": 62,
+   "terrain": "hills"
+  },
+  "18487": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3153.4268292682927,
+    1185.121951219512
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "18488": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3154.8734177215188,
+    1174.5949367088608
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "18489": {
+   "zone": "obsidian",
+   "kind": 4,
+   "feature": "Obsidian Fields",
+   "state": 560,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3160.5373134328356,
+    1190.3432835820895
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "18490": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Steam Valleys",
+   "state": 561,
+   "group": 9,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3173.2337662337663,
+    1208.7532467532467
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "18491": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Steam Valleys",
+   "state": 561,
+   "group": 9,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3188.2432432432433,
+    1209.7432432432433
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "18492": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Steam Valleys",
+   "state": 561,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3183.557142857143,
+    1198.8285714285714
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "18493": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Steam Valleys",
+   "state": 561,
+   "group": 9,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3166.3552631578946,
+    1204.9736842105262
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "18494": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Steam Valleys",
+   "state": 561,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3173.1686746987953,
+    1198.0240963855422
+   ],
+   "area": 83,
+   "terrain": "plains"
+  },
+  "18495": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Steam Valleys",
+   "state": 561,
+   "group": 9,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3180.625,
+    1209.375
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "18496": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Basalt Highlands",
+   "state": 562,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3201.7671232876714,
+    1192.3561643835617
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "18499": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Basalt Highlands",
+   "state": 562,
+   "group": 10,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3196.529411764706,
+    1207.4558823529412
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "18501": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Basalt Highlands",
+   "state": 562,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3193.657142857143,
+    1194.9571428571428
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "18502": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Basalt Highlands",
+   "state": 562,
+   "group": 10,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3203.0722891566265,
+    1201.3253012048192
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "18504": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Basalt Highlands",
+   "state": 562,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3191.90625,
+    1201.59375
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "18506": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Southern Vents",
+   "state": 563,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3202.3285714285716,
+    1183.9285714285713
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "18510": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Southern Vents",
+   "state": 563,
+   "group": 11,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3199.125,
+    1159.0625
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "18511": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Southern Vents",
+   "state": 563,
+   "group": 11,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3207.68,
+    1172.8
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "18514": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Southern Vents",
+   "state": 563,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3199.4406779661017,
+    1167.9322033898304
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "18520": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Southern Vents",
+   "state": 563,
+   "group": 11,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3205.754385964912,
+    1165.0877192982457
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "18521": {
+   "zone": "valley",
+   "kind": 6,
+   "feature": "Southern Vents",
+   "state": 563,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3198.7272727272725,
+    1177.064935064935
+   ],
+   "area": 77,
+   "terrain": "plains"
+  }
+ }
+}

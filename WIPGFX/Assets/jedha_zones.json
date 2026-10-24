@@ -1,0 +1,964 @@
+{
+ "centre": [
+  1439.3941671677692,
+  637.3487672880336
+ ],
+ "radius": 32.53765021397962,
+ "vp_names": {
+  "20351": "Jedha City",
+  "20352": "Catacombs of Cadera",
+  "20356": "Temple of Central Isopter",
+  "20357": "Kyber Mines",
+  "20359": "Kyber Mirrors",
+  "20361": "Valley of the Fallen Statues",
+  "20484": "Narkis Highlands",
+  "20485": "Desiccated Tablelands"
+ },
+ "provinces": {
+  "20351": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Jedha City",
+   "state": 186,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1439.3595505617977,
+    635.7528089887641
+   ],
+   "area": 89,
+   "terrain": "urban"
+  },
+  "20352": {
+   "zone": "ruins",
+   "kind": 3,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1438.0,
+    617.0
+   ],
+   "area": 25,
+   "terrain": "hills"
+  },
+  "20356": {
+   "zone": "temple",
+   "kind": 2,
+   "feature": "Temple of Central Isopter",
+   "state": 996,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1440.0,
+    652.0
+   ],
+   "area": 9,
+   "terrain": "hills"
+  },
+  "20357": {
+   "zone": "mine",
+   "kind": 4,
+   "feature": "Kyber Mines",
+   "state": 997,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1419.0,
+    637.5
+   ],
+   "area": 30,
+   "terrain": "hills"
+  },
+  "20359": {
+   "zone": "ruins",
+   "kind": 3,
+   "feature": "Kyber Mirrors",
+   "state": 998,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1457.5,
+    652.0
+   ],
+   "area": 20,
+   "terrain": "hills"
+  },
+  "20361": {
+   "zone": "ruins",
+   "kind": 3,
+   "feature": "Fallen Statues",
+   "state": 1001,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1459.5652173913043,
+    635.6086956521739
+   ],
+   "area": 23,
+   "terrain": "hills"
+  },
+  "20362": {
+   "zone": "crater",
+   "kind": 7,
+   "feature": "Great Crater",
+   "state": 1565,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1434.9565217391305,
+    657.5652173913044
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "20375": {
+   "zone": "crater",
+   "kind": 7,
+   "feature": "Great Crater",
+   "state": 1565,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1443.1904761904761,
+    661.4285714285714
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "20376": {
+   "zone": "crater",
+   "kind": 7,
+   "feature": "Great Crater",
+   "state": 1565,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1430.2173913043478,
+    659.695652173913
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "20379": {
+   "zone": "crater",
+   "kind": 7,
+   "feature": "Great Crater",
+   "state": 1565,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1439.0,
+    663.5
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "20380": {
+   "zone": "crater",
+   "kind": 7,
+   "feature": "Great Crater",
+   "state": 1565,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1441.3529411764705,
+    657.4117647058823
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "20384": {
+   "zone": "crater",
+   "kind": 7,
+   "feature": "Great Crater",
+   "state": 1565,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1433.8181818181818,
+    662.3181818181819
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "20387": {
+   "zone": "crater",
+   "kind": 7,
+   "feature": "Great Crater",
+   "state": 1565,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1438.625,
+    659.5625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "20388": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Narkis Mesas",
+   "state": 1566,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1429.2962962962963,
+    647.7407407407408
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "20391": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Narkis Mesas",
+   "state": 1566,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1420.111111111111,
+    651.2222222222222
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "20396": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Narkis Mesas",
+   "state": 1566,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1425.1363636363637,
+    651.7272727272727
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "20397": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Narkis Mesas",
+   "state": 1566,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1428.5,
+    642.8928571428571
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "20400": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Narkis Mesas",
+   "state": 1566,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1424.1,
+    647.7
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "20401": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Shattered Tablelands",
+   "state": 1567,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1453.1764705882354,
+    619.1470588235294
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "20405": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Shattered Tablelands",
+   "state": 1567,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1449.75,
+    624.96875
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "20409": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Shattered Tablelands",
+   "state": 1567,
+   "group": 8,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1456.0333333333333,
+    613.0
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "20410": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Dustbowl Ridges",
+   "state": 1568,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1424.4074074074074,
+    623.074074074074
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "20414": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Dustbowl Ridges",
+   "state": 1568,
+   "group": 9,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1417.0689655172414,
+    618.4137931034483
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "20418": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Dustbowl Ridges",
+   "state": 1568,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1420.1923076923076,
+    621.2307692307693
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "20419": {
+   "zone": "mesa",
+   "kind": 6,
+   "feature": "Dustbowl Ridges",
+   "state": 1568,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1428.7307692307693,
+    625.2307692307693
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "20423": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Jedha City",
+   "state": 186,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1433.7101449275362,
+    640.8405797101449
+   ],
+   "area": 69,
+   "terrain": "desert"
+  },
+  "20424": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Jedha City",
+   "state": 186,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1444.75,
+    630.5735294117648
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "20425": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Jedha City",
+   "state": 186,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1432.0229885057472,
+    631.0344827586207
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "20426": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Jedha City",
+   "state": 186,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1445.2307692307693,
+    640.5846153846154
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "20432": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1445.2911392405063,
+    619.7088607594936
+   ],
+   "area": 79,
+   "terrain": "desert"
+  },
+  "20433": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1422.6923076923076,
+    614.5538461538462
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "20437": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1435.9855072463768,
+    609.4057971014493
+   ],
+   "area": 69,
+   "terrain": "desert"
+  },
+  "20440": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1431.1408450704225,
+    619.0140845070423
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "20441": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1450.1323529411766,
+    611.75
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "20442": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1428.9661016949153,
+    610.9661016949152
+   ],
+   "area": 59,
+   "terrain": "desert"
+  },
+  "20443": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1443.0277777777778,
+    609.5555555555555
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "20446": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Catacombs of Cadera",
+   "state": 995,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1438.3709677419354,
+    623.4032258064516
+   ],
+   "area": 62,
+   "terrain": "desert"
+  },
+  "20451": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Temple of Central Isopter",
+   "state": 996,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1444.8559322033898,
+    650.7033898305085
+   ],
+   "area": 118,
+   "terrain": "desert"
+  },
+  "20452": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Temple of Central Isopter",
+   "state": 996,
+   "group": 12,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1435.658536585366,
+    666.9512195121952
+   ],
+   "area": 41,
+   "terrain": "desert"
+  },
+  "20453": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Temple of Central Isopter",
+   "state": 996,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1434.9761904761904,
+    650.8809523809524
+   ],
+   "area": 84,
+   "terrain": "desert"
+  },
+  "20457": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Temple of Central Isopter",
+   "state": 996,
+   "group": 12,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1444.2954545454545,
+    665.3636363636364
+   ],
+   "area": 44,
+   "terrain": "desert"
+  },
+  "20458": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mines",
+   "state": 997,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1424.3508771929824,
+    638.8947368421053
+   ],
+   "area": 57,
+   "terrain": "desert"
+  },
+  "20459": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mines",
+   "state": 997,
+   "group": 13,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1413.7397260273972,
+    624.7123287671233
+   ],
+   "area": 73,
+   "terrain": "desert"
+  },
+  "20461": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mines",
+   "state": 997,
+   "group": 13,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1410.1746031746031,
+    642.6666666666666
+   ],
+   "area": 63,
+   "terrain": "desert"
+  },
+  "20463": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mines",
+   "state": 997,
+   "group": 13,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1411.7816091954023,
+    633.5862068965517
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "20464": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mines",
+   "state": 997,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1421.7882352941176,
+    629.9176470588235
+   ],
+   "area": 85,
+   "terrain": "desert"
+  },
+  "20465": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mines",
+   "state": 997,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1416.862745098039,
+    642.6666666666666
+   ],
+   "area": 51,
+   "terrain": "desert"
+  },
+  "20466": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mirrors",
+   "state": 998,
+   "group": 14,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1450.8023255813953,
+    662.8604651162791
+   ],
+   "area": 86,
+   "terrain": "desert"
+  },
+  "20467": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mirrors",
+   "state": 998,
+   "group": 14,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1464.5416666666667,
+    651.6111111111111
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "20472": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mirrors",
+   "state": 998,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1452.6666666666667,
+    650.9710144927536
+   ],
+   "area": 69,
+   "terrain": "desert"
+  },
+  "20473": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Kyber Mirrors",
+   "state": 998,
+   "group": 14,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1458.4666666666667,
+    658.7333333333333
+   ],
+   "area": 75,
+   "terrain": "desert"
+  },
+  "20477": {
+   "zone": "mine",
+   "kind": 4,
+   "feature": "Narkis Highlands",
+   "state": 999,
+   "group": 15,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1427.0566037735848,
+    664.7924528301887
+   ],
+   "area": 53,
+   "terrain": "hills"
+  },
+  "20481": {
+   "zone": "mine",
+   "kind": 4,
+   "feature": "Narkis Highlands",
+   "state": 999,
+   "group": 15,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1415.7826086956522,
+    650.9891304347826
+   ],
+   "area": 92,
+   "terrain": "hills"
+  },
+  "20484": {
+   "zone": "mine",
+   "kind": 4,
+   "feature": "Narkis Highlands",
+   "state": 999,
+   "group": 15,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1423.5204081632653,
+    657.5816326530612
+   ],
+   "area": 98,
+   "terrain": "hills"
+  },
+  "20485": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Desiccated Tablelands",
+   "state": 1000,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1457.1666666666667,
+    624.7666666666667
+   ],
+   "area": 60,
+   "terrain": "desert"
+  },
+  "20486": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Desiccated Tablelands",
+   "state": 1000,
+   "group": 16,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1460.8360655737704,
+    617.7868852459017
+   ],
+   "area": 61,
+   "terrain": "desert"
+  },
+  "20488": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Desiccated Tablelands",
+   "state": 1000,
+   "group": 16,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1465.6333333333334,
+    624.9333333333333
+   ],
+   "area": 60,
+   "terrain": "desert"
+  },
+  "20489": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Valley of the Fallen Statues",
+   "state": 1001,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1461.2297297297298,
+    644.3108108108108
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "20492": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Valley of the Fallen Statues",
+   "state": 1001,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1453.4507042253522,
+    632.056338028169
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "20495": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Valley of the Fallen Statues",
+   "state": 1001,
+   "group": 17,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1467.9454545454546,
+    632.5636363636364
+   ],
+   "area": 55,
+   "terrain": "desert"
+  },
+  "20496": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Valley of the Fallen Statues",
+   "state": 1001,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1453.5925925925926,
+    641.1234567901234
+   ],
+   "area": 81,
+   "terrain": "desert"
+  },
+  "20499": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Valley of the Fallen Statues",
+   "state": 1001,
+   "group": 17,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1461.6222222222223,
+    632.2222222222222
+   ],
+   "area": 45,
+   "terrain": "desert"
+  },
+  "20500": {
+   "zone": "dust",
+   "kind": 5,
+   "feature": "Valley of the Fallen Statues",
+   "state": 1001,
+   "group": 17,
+   "coastal": true,
+   "sea": 18720,
+   "centre": [
+    1467.7397260273972,
+    641.1917808219179
+   ],
+   "area": 73,
+   "terrain": "desert"
+  }
+ }
+}

@@ -1,0 +1,917 @@
+{
+ "centre": [
+  3234.295220810647,
+  1287.2952208106474
+ ],
+ "radius": 32.439674531715205,
+ "vp_names": {
+  "116": "Pau City",
+  "252": "Taqual Racing Pit",
+  "416": "Sinkhole Crassnah",
+  "1029": "Killik Mounds",
+  "18550": "Amani Plains",
+  "18576": "Varactyl Steppe"
+ },
+ "provinces": {
+  "116": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Pau City",
+   "state": 56,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3234.141025641026,
+    1287.2948717948718
+   ],
+   "area": 78,
+   "terrain": "urban"
+  },
+  "252": {
+   "zone": "pit",
+   "kind": 2,
+   "feature": "Taqual Racing Pit",
+   "state": 551,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3236.4883720930234,
+    1305.8139534883721
+   ],
+   "area": 43,
+   "terrain": "hills"
+  },
+  "416": {
+   "zone": "pit",
+   "kind": 2,
+   "feature": "Sinkhole Crassnah",
+   "state": 552,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3217.0714285714284,
+    1270.6190476190477
+   ],
+   "area": 42,
+   "terrain": "hills"
+  },
+  "1029": {
+   "zone": "mound",
+   "kind": 6,
+   "feature": "Killik Mounds",
+   "state": 558,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3254.4772727272725,
+    1287.6136363636363
+   ],
+   "area": 44,
+   "terrain": "hills"
+  },
+  "1305": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3248.3888888888887,
+    1273.7222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "1515": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3236.6153846153848,
+    1278.8461538461538
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "1602": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3251.6470588235293,
+    1267.6470588235295
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "1770": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3240.9333333333334,
+    1274.2
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "1821": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3243.0714285714284,
+    1278.7142857142858
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "2108": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3247.25,
+    1269.375
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "2124": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3251.214285714286,
+    1271.2142857142858
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "2528": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3239.5,
+    1277.8125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "2753": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3243.764705882353,
+    1271.2941176470588
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2884": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1664,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3245.0588235294117,
+    1275.764705882353
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "3062": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Deep Sinkhole Field",
+   "state": 1665,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3213.2272727272725,
+    1297.8181818181818
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "4924": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Deep Sinkhole Field",
+   "state": 1665,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3219.5925925925926,
+    1305.4074074074074
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "4998": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Deep Sinkhole Field",
+   "state": 1665,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3218.576923076923,
+    1299.7692307692307
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "5094": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Deep Sinkhole Field",
+   "state": 1665,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3215.6,
+    1303.3
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "5101": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Deep Sinkhole Field",
+   "state": 1665,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3211.6111111111113,
+    1301.111111111111
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "5659": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Wind Mesas",
+   "state": 1666,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3245.12,
+    1305.44
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "5889": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Wind Mesas",
+   "state": 1666,
+   "group": 6,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3246.7894736842104,
+    1315.6842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "6070": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Wind Mesas",
+   "state": 1666,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3247.0434782608695,
+    1310.7391304347825
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "18507": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Wind Mesas",
+   "state": 1666,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3245.36,
+    1300.12
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "18508": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Western Chasm",
+   "state": 1667,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3234.8636363636365,
+    1266.909090909091
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "18512": {
+   "zone": "chasm",
+   "kind": 7,
+   "feature": "Western Chasm",
+   "state": 1667,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3233.5263157894738,
+    1261.842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "18517": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Pau City",
+   "state": 56,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3242.7391304347825,
+    1285.1521739130435
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "18518": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Pau City",
+   "state": 56,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3228.1509433962265,
+    1280.4528301886792
+   ],
+   "area": 53,
+   "terrain": "plains"
+  },
+  "18522": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Pau City",
+   "state": 56,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3239.0095238095237,
+    1294.9619047619049
+   ],
+   "area": 105,
+   "terrain": "plains"
+  },
+  "18525": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Pau City",
+   "state": 56,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3233.285714285714,
+    1276.7142857142858
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "18526": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Taqual Pit",
+   "state": 551,
+   "group": 9,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3221.956043956044,
+    1312.9120879120878
+   ],
+   "area": 91,
+   "terrain": "plains"
+  },
+  "18528": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Taqual Pit",
+   "state": 551,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3237.94,
+    1302.24
+   ],
+   "area": 50,
+   "terrain": "plains"
+  },
+  "18529": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Taqual Pit",
+   "state": 551,
+   "group": 9,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3231.8602150537636,
+    1314.4301075268818
+   ],
+   "area": 93,
+   "terrain": "plains"
+  },
+  "18530": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Taqual Pit",
+   "state": 551,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3227.931818181818,
+    1305.1818181818182
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "18534": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Taqual Pit",
+   "state": 551,
+   "group": 9,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3240.6222222222223,
+    1313.4333333333334
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "18536": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Crassnah",
+   "state": 552,
+   "group": 10,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3224.6911764705883,
+    1260.5882352941176
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "18537": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Crassnah",
+   "state": 552,
+   "group": 10,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3210.025641025641,
+    1272.1666666666667
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "18538": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Crassnah",
+   "state": 552,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3227.064935064935,
+    1268.974025974026
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "18540": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Crassnah",
+   "state": 552,
+   "group": 10,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3217.544117647059,
+    1264.5441176470588
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "18542": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Crassnah",
+   "state": 552,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3222.4464285714284,
+    1275.3392857142858
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "18545": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Amani Plains",
+   "state": 553,
+   "group": 11,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3205.8536585365855,
+    1293.0365853658536
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "18546": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Amani Plains",
+   "state": 553,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3215.890243902439,
+    1279.9512195121952
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "18547": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Amani Plains",
+   "state": 553,
+   "group": 11,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3206.267441860465,
+    1282.0581395348838
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "18550": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Amani Plains",
+   "state": 553,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3212.8285714285716,
+    1287.8285714285714
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "18556": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Windward Rim",
+   "state": 554,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3217.112676056338,
+    1293.5352112676057
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "18562": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Windward Rim",
+   "state": 554,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3224.011111111111,
+    1286.7666666666667
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "18565": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Windward Rim",
+   "state": 554,
+   "group": 12,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3211.5641025641025,
+    1305.8076923076924
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "18566": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Windward Rim",
+   "state": 554,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3226.73,
+    1296.5
+   ],
+   "area": 100,
+   "terrain": "plains"
+  },
+  "18568": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Varactyl Steppe",
+   "state": 555,
+   "group": 13,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3232.5,
+    1258.5806451612902
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "18572": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Varactyl Steppe",
+   "state": 555,
+   "group": 13,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3248.842105263158,
+    1263.3684210526317
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "18574": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Varactyl Steppe",
+   "state": 555,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3237.7,
+    1269.3
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "18576": {
+   "zone": "steppe",
+   "kind": 4,
+   "feature": "Varactyl Steppe",
+   "state": 555,
+   "group": 13,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3241.061728395062,
+    1260.1975308641975
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "18577": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Southern Scrublands",
+   "state": 556,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3252.240506329114,
+    1278.5696202531647
+   ],
+   "area": 79,
+   "terrain": "desert"
+  },
+  "18580": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Southern Scrublands",
+   "state": 556,
+   "group": 14,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3257.337837837838,
+    1270.2702702702702
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "18585": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Southern Scrublands",
+   "state": 556,
+   "group": 14,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3261.943661971831,
+    1278.5774647887324
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "18586": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Eastern Savanna",
+   "state": 557,
+   "group": 15,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3252.2025316455697,
+    1308.8481012658228
+   ],
+   "area": 79,
+   "terrain": "desert"
+  },
+  "18588": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Eastern Savanna",
+   "state": 557,
+   "group": 15,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3255.5851063829787,
+    1302.468085106383
+   ],
+   "area": 94,
+   "terrain": "desert"
+  },
+  "18590": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Killik Mounds",
+   "state": 558,
+   "group": 16,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3260.4712643678163,
+    1295.8275862068965
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "18595": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Killik Mounds",
+   "state": 558,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3250.217391304348,
+    1285.7826086956522
+   ],
+   "area": 46,
+   "terrain": "desert"
+  },
+  "18597": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Killik Mounds",
+   "state": 558,
+   "group": 16,
+   "coastal": true,
+   "sea": 18912,
+   "centre": [
+    3261.6875,
+    1287.3
+   ],
+   "area": 80,
+   "terrain": "desert"
+  },
+  "18601": {
+   "zone": "scrub",
+   "kind": 5,
+   "feature": "Killik Mounds",
+   "state": 558,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3250.3972602739727,
+    1294.6712328767123
+   ],
+   "area": 73,
+   "terrain": "desert"
+  }
+ }
+}

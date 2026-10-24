@@ -1,0 +1,28 @@
+state={
+	id=501
+	name="STATE_501"
+	# HOD: Mechis (mechis_map.py)
+	provinces={
+		15891 15899 15900 15910 15912
+	}
+	resources={
+		oil=1
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			15910 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			air_base = 1
+		}
+		owner = TCU
+		add_core_of = TCU
+	}
+	manpower = 81991
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

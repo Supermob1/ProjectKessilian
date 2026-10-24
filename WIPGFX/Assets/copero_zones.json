@@ -1,0 +1,963 @@
+{
+ "centre": [
+  1355.3941671677692,
+  171.34876728803368
+ ],
+ "radius": 32.53765021397962,
+ "vp_names": {
+  "20533": "Copero City",
+  "20534": "Erighal Holdfast",
+  "20535": "Ancient Ruins",
+  "20536": "Nyix Prospect",
+  "20587": "Northern Passes",
+  "20601": "Western Valleys",
+  "20608": "Southern Peaks"
+ },
+ "provinces": {
+  "20532": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Copero City",
+   "state": 184,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1357.5,
+    175.36111111111111
+   ],
+   "area": 36,
+   "terrain": "urban"
+  },
+  "20533": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Copero City",
+   "state": 184,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1356.5882352941176,
+    170.55882352941177
+   ],
+   "area": 34,
+   "terrain": "urban"
+  },
+  "20534": {
+   "zone": "hold",
+   "kind": 2,
+   "feature": "Erighal Holdfast",
+   "state": 986,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1369.9666666666667,
+    189.23333333333332
+   ],
+   "area": 30,
+   "terrain": "hills"
+  },
+  "20535": {
+   "zone": "ruins",
+   "kind": 3,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1341.5806451612902,
+    189.16129032258064
+   ],
+   "area": 31,
+   "terrain": "hills"
+  },
+  "20536": {
+   "zone": "mine",
+   "kind": 4,
+   "feature": "Nyix Prospect",
+   "state": 989,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1371.0645161290322,
+    157.7741935483871
+   ],
+   "area": 31,
+   "terrain": "hills"
+  },
+  "20537": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1347.7307692307693,
+    153.6153846153846
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "20538": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1343.55,
+    168.45
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "20546": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1349.2,
+    145.85
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "20549": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1343.1764705882354,
+    162.64705882352942
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "20551": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1345.8125,
+    165.1875
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "20552": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1350.6842105263158,
+    150.1578947368421
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "20553": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1346.4705882352941,
+    148.47058823529412
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "20557": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1345.9166666666667,
+    160.33333333333334
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "20558": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Whitefang Range",
+   "state": 1489,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1345.3157894736842,
+    157.10526315789474
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "20560": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Copero Massif",
+   "state": 1490,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1356.8709677419354,
+    181.96774193548387
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "20561": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Copero Massif",
+   "state": 1490,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1362.71875,
+    190.53125
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "20562": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Copero Massif",
+   "state": 1490,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1362.3333333333333,
+    185.16666666666666
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "20564": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Copero Massif",
+   "state": 1490,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1358.6190476190477,
+    187.28571428571428
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "20565": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Copero Massif",
+   "state": 1490,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1352.3214285714287,
+    179.0
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "20566": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Ginx Crags",
+   "state": 1491,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1370.3666666666666,
+    171.1
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "20570": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Ginx Crags",
+   "state": 1491,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1364.4444444444443,
+    161.4814814814815
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "20571": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Ginx Crags",
+   "state": 1491,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1374.4516129032259,
+    175.25806451612902
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "20572": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Ginx Crags",
+   "state": 1491,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1366.8181818181818,
+    166.57575757575756
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "20573": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Ginx Crags",
+   "state": 1491,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1376.423076923077,
+    170.92307692307693
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "20574": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Orobird Spires",
+   "state": 1492,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1338.2285714285715,
+    175.97142857142856
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "20575": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Orobird Spires",
+   "state": 1492,
+   "group": 7,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1326.0,
+    177.35294117647058
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "20576": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Orobird Spires",
+   "state": 1492,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1331.5,
+    174.35714285714286
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "20577": {
+   "zone": "range",
+   "kind": 7,
+   "feature": "Orobird Spires",
+   "state": 1492,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1330.7826086956522,
+    178.56521739130434
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "20578": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Copero City",
+   "state": 184,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1363.5384615384614,
+    175.71428571428572
+   ],
+   "area": 91,
+   "terrain": "mountain"
+  },
+  "20579": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Copero City",
+   "state": 184,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1353.1515151515152,
+    158.5909090909091
+   ],
+   "area": 66,
+   "terrain": "mountain"
+  },
+  "20580": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Copero City",
+   "state": 184,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1348.3428571428572,
+    173.17142857142858
+   ],
+   "area": 70,
+   "terrain": "mountain"
+  },
+  "20581": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Copero City",
+   "state": 184,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1359.7222222222222,
+    163.76388888888889
+   ],
+   "area": 72,
+   "terrain": "mountain"
+  },
+  "20582": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Copero City",
+   "state": 184,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1351.3833333333334,
+    165.68333333333334
+   ],
+   "area": 60,
+   "terrain": "mountain"
+  },
+  "20583": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Northern Passes",
+   "state": 984,
+   "group": 9,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1332.7014925373135,
+    153.7462686567164
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "20584": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Northern Passes",
+   "state": 984,
+   "group": 9,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1326.948717948718,
+    169.55128205128204
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "20585": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Northern Passes",
+   "state": 984,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1337.5421686746988,
+    169.15662650602408
+   ],
+   "area": 83,
+   "terrain": "plains"
+  },
+  "20586": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Northern Passes",
+   "state": 984,
+   "group": 9,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1329.2763157894738,
+    161.67105263157896
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "20587": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Northern Passes",
+   "state": 984,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1338.48,
+    159.58666666666667
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "20588": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Northern Passes",
+   "state": 984,
+   "group": 9,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1339.8255813953488,
+    149.46511627906978
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "20589": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1330.1492537313434,
+    184.73134328358208
+   ],
+   "area": 67,
+   "terrain": "mountain"
+  },
+  "20590": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1352.7439024390244,
+    199.35365853658536
+   ],
+   "area": 82,
+   "terrain": "mountain"
+  },
+  "20591": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1343.164383561644,
+    197.6164383561644
+   ],
+   "area": 73,
+   "terrain": "mountain"
+  },
+  "20592": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1353.7464788732395,
+    188.73239436619718
+   ],
+   "area": 71,
+   "terrain": "mountain"
+  },
+  "20593": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1335.4927536231885,
+    191.8985507246377
+   ],
+   "area": 69,
+   "terrain": "mountain"
+  },
+  "20594": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1345.85,
+    181.2625
+   ],
+   "area": 80,
+   "terrain": "mountain"
+  },
+  "20595": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1347.6451612903227,
+    191.32258064516128
+   ],
+   "area": 62,
+   "terrain": "mountain"
+  },
+  "20596": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Ancient Ruins",
+   "state": 985,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1337.9420289855072,
+    182.63768115942028
+   ],
+   "area": 69,
+   "terrain": "mountain"
+  },
+  "20597": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Erighal Holdfast",
+   "state": 986,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1368.9864864864865,
+    183.44594594594594
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "20598": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Erighal Holdfast",
+   "state": 986,
+   "group": 11,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1360.662162162162,
+    198.16216216216216
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "20599": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Erighal Holdfast",
+   "state": 986,
+   "group": 11,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1375.1,
+    192.61666666666667
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "20600": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Erighal Holdfast",
+   "state": 986,
+   "group": 11,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1367.837837837838,
+    196.3783783783784
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "20601": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Western Valleys",
+   "state": 987,
+   "group": 12,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1356.723404255319,
+    142.98936170212767
+   ],
+   "area": 94,
+   "terrain": "plains"
+  },
+  "20602": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Western Valleys",
+   "state": 987,
+   "group": 12,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1346.0,
+    142.9814814814815
+   ],
+   "area": 54,
+   "terrain": "plains"
+  },
+  "20603": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Western Valleys",
+   "state": 987,
+   "group": 12,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1366.469387755102,
+    146.3265306122449
+   ],
+   "area": 98,
+   "terrain": "plains"
+  },
+  "20604": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Western Valleys",
+   "state": 987,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1358.5567010309278,
+    152.16494845360825
+   ],
+   "area": 97,
+   "terrain": "plains"
+  },
+  "20605": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Southern Peaks",
+   "state": 988,
+   "group": 13,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1379.9295774647887,
+    186.04225352112675
+   ],
+   "area": 71,
+   "terrain": "mountain"
+  },
+  "20606": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Southern Peaks",
+   "state": 988,
+   "group": 13,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1382.4166666666667,
+    169.55555555555554
+   ],
+   "area": 72,
+   "terrain": "mountain"
+  },
+  "20607": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Southern Peaks",
+   "state": 988,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1373.7,
+    179.2
+   ],
+   "area": 50,
+   "terrain": "mountain"
+  },
+  "20608": {
+   "zone": "highland",
+   "kind": 6,
+   "feature": "Southern Peaks",
+   "state": 988,
+   "group": 13,
+   "coastal": true,
+   "sea": 18817,
+   "centre": [
+    1383.078947368421,
+    177.81578947368422
+   ],
+   "area": 76,
+   "terrain": "mountain"
+  },
+  "20609": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Nyix Prospect",
+   "state": 989,
+   "group": 14,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1381.9462365591398,
+    160.8494623655914
+   ],
+   "area": 93,
+   "terrain": "plains"
+  },
+  "20610": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Nyix Prospect",
+   "state": 989,
+   "group": 14,
+   "coastal": true,
+   "sea": 19013,
+   "centre": [
+    1375.2574257425742,
+    151.4851485148515
+   ],
+   "area": 101,
+   "terrain": "plains"
+  },
+  "20611": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Nyix Prospect",
+   "state": 989,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1366.7435897435898,
+    156.87179487179486
+   ],
+   "area": 39,
+   "terrain": "plains"
+  },
+  "20612": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Nyix Prospect",
+   "state": 989,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1373.7605633802816,
+    163.59154929577466
+   ],
+   "area": 71,
+   "terrain": "plains"
+  }
+ }
+}

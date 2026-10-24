@@ -1,0 +1,37 @@
+state={
+	id=62
+	name="STATE_62"
+	# HOD: Bakura (bakura_map.py)
+	provinces={
+		42 104 129 162 164 451 546 608 723 802 886 933 1019 1069 16909 16910 16911 16922 16926 16931 16936 16939 16942
+	}
+	resources={
+		tungsten=1
+		aluminium=2
+		steel=3
+		chromium=1
+	}
+	history = {
+		victory_points = {
+			933 15
+		}
+		victory_points = {
+			1019 3
+		}
+		victory_points = {
+			1069 5
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 6
+			arms_factory = 3
+			air_base = 2
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 2253268
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -392,7 +392,7 @@ FAMILIES = {"hod_cor_cluster": OUT, "hod_town": OUT, "hod_chr_cluster": SW,
             "hod_way_village": LM, "hod_bra_city": LM, "hod_tra_city": LM, "hod_nyr_town": LM,
             "hod_crs_town": LM, "hod_kas_city": LM, "hod_ond_town": LM, "hod_umb_city": LM, "hod_col_city": LM, "hod_rus_city": LM,
             "hod_om_town": LM, "hod_gar_farm": LM, "hod_gar_city": LM, "hod_aga_town": LM, "hod_ot_town": LM,
-            "hod_dan_estate": LM, "hod_dub_city": LM, "hod_bas_town": LM, "hod_kal_town": LM, "hod_muun_town": LM, "hod_myg_town": LM, "hod_yag_town": LM, "hod_ans_town": LM, "hod_dor_town": LM, "hod_yin_town": LM, "hod_cha_town": LM, "hod_cor_town": LM, "hod_ark_town": LM, "hod_anx_town": LM, "hod_ess_town": LM, "hod_cos_town": LM, "hod_car_town": LM, "hod_bal_town": LM, "hod_ald_town": LM, "hod_fre_town": LM, "hod_foe_town": LM, "hod_crl_town": LM, "hod_kua_town": LM, "hod_ren_town": LM, "hod_com_town": LM, "hod_dur_town": LM, "hod_lor_town": LM, "hod_nei_town": LM, "hod_mim_town": LM, "hod_mnn_town": LM, "hod_tet_town": LM, "hod_bys_town": LM, "hod_abr_town": LM, "hod_fon_town": LM, "hod_cat_town": LM, "hod_bst_town": LM, "hod_atz_town": LM, "hod_aln_town": LM, "hod_fal_town": LM, "hod_bth_town": LM, "hod_htt_town": LM, "hod_toy_town": LM, "hod_qsh_town": LM, "hod_nim_town": LM, "hod_nsh_town": LM}
+            "hod_dan_estate": LM, "hod_dub_city": LM, "hod_bas_town": LM, "hod_kal_town": LM, "hod_muun_town": LM, "hod_myg_town": LM, "hod_yag_town": LM, "hod_ans_town": LM, "hod_dor_town": LM, "hod_yin_town": LM, "hod_cha_town": LM, "hod_cor_town": LM, "hod_ark_town": LM, "hod_anx_town": LM, "hod_ess_town": LM, "hod_cos_town": LM, "hod_car_town": LM, "hod_bal_town": LM, "hod_ald_town": LM, "hod_fre_town": LM, "hod_foe_town": LM, "hod_crl_town": LM, "hod_kua_town": LM, "hod_ren_town": LM, "hod_com_town": LM, "hod_dur_town": LM, "hod_lor_town": LM, "hod_nei_town": LM, "hod_mim_town": LM, "hod_mnn_town": LM, "hod_tet_town": LM, "hod_bys_town": LM, "hod_abr_town": LM, "hod_fon_town": LM, "hod_cat_town": LM, "hod_bst_town": LM, "hod_atz_town": LM, "hod_aln_town": LM, "hod_fal_town": LM, "hod_bth_town": LM, "hod_htt_town": LM, "hod_toy_town": LM, "hod_qsh_town": LM, "hod_nim_town": LM, "hod_nsh_town": LM, "hod_oba_town": LM, "hod_kes_town": LM, "hod_hon_town": LM, "hod_tth_town": LM, "hod_gho_town": LM, "hod_ydh_town": LM, "hod_mec_town": LM, "hod_tak_town": LM, "hod_thy_town": LM, "hod_csi_town": LM, "hod_cop_town": LM, "hod_csa_town": LM, "hod_cio_town": LM, "hod_sho_town": LM, "hod_rot_town": LM, "hod_hyp_town": LM, "hod_ris_town": LM, "hod_gns_town": LM, "hod_tat_town": LM, "hod_ryl_town": LM, "hod_rod_town": LM, "hod_jed_town": LM, "hod_leh_town": LM, "hod_fst_town": LM, "hod_voh_town": LM, "hod_pan_town": LM, "hod_mal_town": LM, "hod_hrk_town": LM, "hod_sul_town": LM, "hod_phe_town": LM, "hod_eri_town": LM, "hod_tib_town": LM, "hod_cer_town": LM, "hod_btu_town": LM, "hod_bak_town": LM, "hod_end_town": LM, "hod_ano_town": LM, "hod_uta_town": LM, "hod_que_town": LM, "hod_slv_town": LM, "hod_mus_town": LM, "hod_mph_town": LM, "hod_ter_town": LM, "hod_bel_town": LM, "hod_kar_town": LM}
 SINGLE = {"hod_bld_jasperio": SW}          # one mesh used for every band (Ewok-style treehouse village)
 SCRAP_TOWN = [f"hod_bld_rpt_{n}" for n in ("crates4", "crates5", "crates6", "crates9", "crates1", "huttTower", "fuelCellC")]
 SINGLE.update({n: SW for n in SCRAP_TOWN})  # Raxus Prime scrap towns: Empire at War junk stacks (sketchfab_props.py rpt_*)
@@ -505,7 +505,44 @@ CITY_GROUPS = {15: (0.35, ["hod_cor_cluster"]), 0: (0.00001, ["hod_cor_cluster"]
                107: (0.4, ["hod_toy_town"]),                                            # Toydaria: round stone towers
                108: (0.4, ["hod_qsh_town"]),                                            # Quesh: sealed domes
                109: (0.4, ["hod_nim_town"]),                                            # Nimban: office ziggurats
-               110: (0.4, ["hod_nsh_town"])}                                            # Nar Shaddaa: grimy tower blocks
+               110: (0.4, ["hod_nsh_town"]),                                            # Nar Shaddaa: grimy tower blocks
+               111: (0.4, ["hod_oba_town"]),                                            # Oba Diah: Pyke shard towers
+               112: (0.4, ["hod_kes_town"]),                                            # Kessel: domed mining blocks
+               113: (0.4, ["hod_hon_town"]),                                            # Honoghr: Noghri clan halls
+               114: (0.4, ["hod_tth_town"]),
+               115: (0.4, ["hod_gho_town"]),                                            # Ghorman: pale stone gables
+               116: (0.4, ["hod_ydh_town"]),                                            # Yag'Dhul: Givin sealed shells
+               117: (0.4, ["hod_mec_town"]),                                            # Mechis: droid plant blocks
+               118: (0.4, ["hod_tak_town"]),                                            # Takodana: stone houses in the woods
+               119: (0.4, ["hod_thy_town"]),
+               120: (0.4, ["hod_csi_town"]),                                            # Csilla: sunken Chiss towers
+               121: (0.4, ["hod_cop_town"]),                                            # Copero: Chiss mountain terraces
+               122: (0.4, ["hod_csa_town"]),                                            # Csaus: frontier snow domes
+               123: (0.4, ["hod_cio_town"]),
+               124: (0.4, ["hod_sho_town"]),                                            # Shola: Hutt mining domes
+               125: (0.4, ["hod_rot_town"]),                                            # Rothana: factory blocks in the snow
+               126: (0.4, ["hod_hyp_town"]),                                            # Hypori: Separatist droid works
+               127: (0.4, ["hod_ris_town"]),
+               128: (0.4, ["hod_gns_town"]),                                            # Geonosis: hive spires
+               129: (0.4, ["hod_tat_town"]),                                            # Tatooine: adobe domes
+               130: (0.4, ["hod_ryl_town"]),                                            # Ryloth: sandstone towers
+               131: (0.4, ["hod_rod_town"]),
+               132: (0.4, ["hod_jed_town"]),                                            # Jedha: the Holy City's stone blocks
+               133: (0.3, ["hod_leh_town"]),                                            # Teth: B'omarr drums
+               134: (0.4, ["hod_fst_town"]),                                            # Farstine: prefab trade towns
+               135: (0.4, ["hod_voh_town"]),                                            # Vohai: works and garden towns
+               136: (0.4, ["hod_pan_town"]),
+               137: (0.4, ["hod_mal_town"]),
+               138: (0.4, ["hod_hrk_town"]),
+               139: (0.4, ["hod_sul_town"]),
+               140: (0.4, ["hod_phe_town"]),
+               141: (0.4, ["hod_eri_town"]),
+               142: (0.4, ["hod_tib_town"]),
+               143: (0.35, ["hod_cer_town"]), 144: (0.4, ["hod_btu_town"]), 145: (0.4, ["hod_bak_town"]),
+               146: (0.3, ["hod_end_town"]), 147: (0.4, ["hod_ano_town"]),
+               148: (0.4, ["hod_uta_town"]), 149: (0.4, ["hod_que_town"]), 150: (0.4, ["hod_slv_town"]), 151: (0.35, ["hod_mus_town"]),
+               152: (0.3, ["hod_mph_town"]), 153: (0.5, ["hod_ter_town"]),
+               154: (0.35, ["hod_bel_town"]), 155: (0.4, ["hod_kar_town"])}                                            # Pantora: white blue-crowned towers
 
 
 def wire():

@@ -1,0 +1,963 @@
+{
+ "centre": [
+  2970.394167167769,
+  1247.3487672880337
+ ],
+ "radius": 32.53765021397962,
+ "vp_names": {
+  "19246": "Port Tarkin",
+  "19280": "Port Tarkin Starport",
+  "19285": "Phelarion Academy",
+  "19290": "Academy Ranges",
+  "19297": "Tarkin Landing Fields",
+  "19302": "Eastern Heath",
+  "19307": "Western Shore"
+ },
+ "provinces": {
+  "19246": {
+   "zone": "port",
+   "kind": 1,
+   "feature": "Port Tarkin",
+   "state": 201,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2983.5,
+    1247.5
+   ],
+   "area": 60,
+   "terrain": "urban"
+  },
+  "19247": {
+   "zone": "port",
+   "kind": 1,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2976.5,
+    1261.0
+   ],
+   "area": 42,
+   "terrain": "urban"
+  },
+  "19248": {
+   "zone": "academy",
+   "kind": 2,
+   "feature": "Phelarion Academy",
+   "state": 1085,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2954.0,
+    1245.5
+   ],
+   "area": 56,
+   "terrain": "urban"
+  },
+  "19249": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2997.277777777778,
+    1240.388888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "19250": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2997.222222222222,
+    1258.1666666666667
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "19251": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2989.4210526315787,
+    1247.7894736842106
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "19252": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3000.75,
+    1249.85
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "19253": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2992.0,
+    1242.0869565217392
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "19254": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2995.809523809524,
+    1251.6190476190477
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "19255": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3000.7391304347825,
+    1243.0869565217392
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "19256": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2996.0,
+    1244.1764705882354
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "19257": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2999.818181818182,
+    1254.6818181818182
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "19258": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2999.5263157894738,
+    1236.578947368421
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "19259": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2991.15,
+    1252.2
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "19260": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2992.9473684210525,
+    1247.157894736842
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "19261": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2995.2105263157896,
+    1237.0526315789473
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "19262": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2994.0,
+    1255.6470588235295
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "19263": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Tarkin Bay",
+   "state": 1613,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2997.8888888888887,
+    1247.611111111111
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "19264": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Western Sea Cliffs",
+   "state": 1614,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2973.0,
+    1223.24
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "19265": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Western Sea Cliffs",
+   "state": 1614,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2969.904761904762,
+    1234.095238095238
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "19266": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Western Sea Cliffs",
+   "state": 1614,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2971.964285714286,
+    1229.2142857142858
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "19267": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Western Sea Cliffs",
+   "state": 1614,
+   "group": 4,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2976.5,
+    1218.3333333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "19268": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Northern Sea Cliffs",
+   "state": 1615,
+   "group": 5,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2942.2916666666665,
+    1257.1666666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "19269": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Northern Sea Cliffs",
+   "state": 1615,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2954.5714285714284,
+    1271.142857142857
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "19270": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Northern Sea Cliffs",
+   "state": 1615,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2950.0526315789475,
+    1265.7894736842106
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "19271": {
+   "zone": "cliff",
+   "kind": 7,
+   "feature": "Northern Sea Cliffs",
+   "state": 1615,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2946.3888888888887,
+    1261.388888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "19272": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin",
+   "state": 201,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2984.0138888888887,
+    1242.0555555555557
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "19273": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin",
+   "state": 201,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2984.28125,
+    1253.1875
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "19274": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 7,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2993.784090909091,
+    1262.8522727272727
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "19275": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2972.081632653061,
+    1259.8163265306123
+   ],
+   "area": 49,
+   "terrain": "plains"
+  },
+  "19276": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 7,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2978.7368421052633,
+    1275.0394736842106
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "19277": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2983.6451612903224,
+    1258.274193548387
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "19278": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2974.6875,
+    1268.1875
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "19279": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 7,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2988.0,
+    1270.8115942028985
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "19280": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Port Tarkin Starport",
+   "state": 1084,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2983.4347826086955,
+    1265.3623188405797
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "19281": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Phelarion Academy",
+   "state": 1085,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2951.395061728395,
+    1258.5061728395062
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "19282": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Phelarion Academy",
+   "state": 1085,
+   "group": 8,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2944.6382978723404,
+    1241.0425531914893
+   ],
+   "area": 94,
+   "terrain": "hills"
+  },
+  "19283": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Phelarion Academy",
+   "state": 1085,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2956.923076923077,
+    1240.4923076923078
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "19284": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Phelarion Academy",
+   "state": 1085,
+   "group": 8,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2940.9714285714285,
+    1249.6571428571428
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "19285": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Phelarion Academy",
+   "state": 1085,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2947.927536231884,
+    1250.2608695652175
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "19286": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Phelarion Academy",
+   "state": 1085,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2957.439393939394,
+    1251.409090909091
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "19287": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Academy Ranges",
+   "state": 1086,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2955.3670886075947,
+    1232.6455696202531
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "19288": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Academy Ranges",
+   "state": 1086,
+   "group": 9,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2969.175675675676,
+    1218.054054054054
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "19289": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Academy Ranges",
+   "state": 1086,
+   "group": 9,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2945.769230769231,
+    1232.7820512820513
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "19290": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Academy Ranges",
+   "state": 1086,
+   "group": 9,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2959.733333333333,
+    1221.2133333333334
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "19291": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Academy Ranges",
+   "state": 1086,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2965.5694444444443,
+    1226.513888888889
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "19292": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Academy Ranges",
+   "state": 1086,
+   "group": 9,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2952.0985915492956,
+    1225.225352112676
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "19293": {
+   "zone": "range",
+   "kind": 4,
+   "feature": "Academy Ranges",
+   "state": 1086,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2963.2608695652175,
+    1234.2898550724638
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "19294": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Tarkin Landing Fields",
+   "state": 1087,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2972.4931506849316,
+    1241.3013698630136
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "19295": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Tarkin Landing Fields",
+   "state": 1087,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2965.2272727272725,
+    1254.4431818181818
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "19296": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Tarkin Landing Fields",
+   "state": 1087,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2973.5,
+    1250.4375
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "19297": {
+   "zone": "field",
+   "kind": 3,
+   "feature": "Tarkin Landing Fields",
+   "state": 1087,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2965.5128205128203,
+    1244.3974358974358
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "19298": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Eastern Heath",
+   "state": 1088,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2960.25641025641,
+    1273.9871794871794
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "19299": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Eastern Heath",
+   "state": 1088,
+   "group": 11,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2945.978723404255,
+    1265.8297872340424
+   ],
+   "area": 47,
+   "terrain": "plains"
+  },
+  "19300": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Eastern Heath",
+   "state": 1088,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2968.8478260869565,
+    1274.3695652173913
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "19301": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Eastern Heath",
+   "state": 1088,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2964.4470588235295,
+    1263.5294117647059
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "19302": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Eastern Heath",
+   "state": 1088,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2957.150684931507,
+    1264.2191780821918
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "19303": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Western Shore",
+   "state": 1089,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2976.9444444444443,
+    1235.138888888889
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "19304": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Western Shore",
+   "state": 1089,
+   "group": 12,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2994.0307692307692,
+    1231.8153846153846
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "19305": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Western Shore",
+   "state": 1089,
+   "group": 12,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2982.155172413793,
+    1220.948275862069
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "19306": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Western Shore",
+   "state": 1089,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2985.7837837837837,
+    1234.8513513513512
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "19307": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Western Shore",
+   "state": 1089,
+   "group": 12,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2988.445945945946,
+    1226.027027027027
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "19308": {
+   "zone": "heath",
+   "kind": 5,
+   "feature": "Western Shore",
+   "state": 1089,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2978.75,
+    1227.2058823529412
+   ],
+   "area": 68,
+   "terrain": "plains"
+  }
+ }
+}

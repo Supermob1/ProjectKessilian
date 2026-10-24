@@ -1,0 +1,32 @@
+state={
+	id=53
+	name="STATE_53"
+	# HOD: Mustafar (mustafar_map.py)
+	provinces={
+		322 18513 18515 18516 18519 18523 18524 18527
+	}
+	resources={
+		aluminium=6#Minerals
+	}
+	history = {
+		victory_points = {
+			322 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 4
+			air_base = 3
+			dockyard = 2
+					18516 = {
+				naval_base = 3
+			}
+		}
+		owner = TCU
+		add_core_of = TCU
+	}
+	manpower = 963263
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

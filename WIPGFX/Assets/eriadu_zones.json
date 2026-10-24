@@ -1,0 +1,994 @@
+{
+ "centre": [
+  2974.270548983925,
+  1159.9805884137095
+ ],
+ "radius": 32.39548880242368,
+ "vp_names": {
+  "419": "Eriadu City",
+  "541": "Phelar Port",
+  "987": "Bri-Phrang City",
+  "1001": "Jova Tarkin's Cabin",
+  "1257": "Mount Veermok",
+  "18225": "Orrineswa Valley",
+  "552": "Old Town Factoryville",
+  "18243": "Western Jungles"
+ },
+ "provinces": {
+  "419": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Eriadu City",
+   "state": 59,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2976.0,
+    1160.0
+   ],
+   "area": 63,
+   "terrain": "urban"
+  },
+  "541": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Phelar",
+   "state": 570,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2989.0,
+    1146.5
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "552": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Old Town Factoryville",
+   "state": 575,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2976.0,
+    1178.0
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "987": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2993.5,
+    1173.0
+   ],
+   "area": 20,
+   "terrain": "urban"
+  },
+  "1001": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Jova Tarkin's Cabin",
+   "state": 572,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2960.8333333333335,
+    1142.6666666666667
+   ],
+   "area": 12,
+   "terrain": "hills"
+  },
+  "1257": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Mount Veermok",
+   "state": 573,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2951.470588235294,
+    1165.6764705882354
+   ],
+   "area": 34,
+   "terrain": "hills"
+  },
+  "1386": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2995.714285714286,
+    1143.2142857142858
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "1606": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3002.090909090909,
+    1145.8181818181818
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "1623": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2993.0,
+    1135.75
+   ],
+   "area": 8,
+   "terrain": "mountain"
+  },
+  "2086": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2997.0,
+    1139.6666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "2231": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2992.0,
+    1139.0
+   ],
+   "area": 9,
+   "terrain": "mountain"
+  },
+  "2242": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2999.4117647058824,
+    1143.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2492": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2992.3636363636365,
+    1141.909090909091
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "2546": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Ja-Phelar Bay",
+   "state": 1616,
+   "group": 6,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2994.8888888888887,
+    1137.6666666666667
+   ],
+   "area": 9,
+   "terrain": "mountain"
+  },
+  "2602": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Carrion Peaks",
+   "state": 1617,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2947.9375,
+    1158.3125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "3393": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Carrion Peaks",
+   "state": 1617,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2949.1052631578946,
+    1150.421052631579
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4710": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Carrion Peaks",
+   "state": 1617,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2951.9285714285716,
+    1157.142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "5572": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Carrion Peaks",
+   "state": 1617,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2947.6666666666665,
+    1154.4666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "6277": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Carrion Peaks",
+   "state": 1617,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2951.1666666666665,
+    1153.4166666666667
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "18041": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Orrineswa Gorge",
+   "state": 1618,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2964.1052631578946,
+    1153.421052631579
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "18046": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Orrineswa Gorge",
+   "state": 1618,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2961.3076923076924,
+    1164.5384615384614
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "18053": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Orrineswa Gorge",
+   "state": 1618,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2967.25,
+    1147.9166666666667
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "18063": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Orrineswa Gorge",
+   "state": 1618,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2963.1428571428573,
+    1161.0
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "18066": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Orrineswa Gorge",
+   "state": 1618,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2964.785714285714,
+    1149.857142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "18074": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Orrineswa Gorge",
+   "state": 1618,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2964.714285714286,
+    1157.4285714285713
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "18077": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Eriadu City",
+   "state": 59,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2977.409638554217,
+    1151.5903614457832
+   ],
+   "area": 83,
+   "terrain": "urban"
+  },
+  "18086": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Eriadu City",
+   "state": 59,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2975.8194444444443,
+    1167.5416666666667
+   ],
+   "area": 72,
+   "terrain": "urban"
+  },
+  "18087": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Eriadu City",
+   "state": 59,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2983.688888888889,
+    1161.2333333333333
+   ],
+   "area": 90,
+   "terrain": "urban"
+  },
+  "18088": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Eriadu City",
+   "state": 59,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2969.710144927536,
+    1157.7971014492753
+   ],
+   "area": 69,
+   "terrain": "urban"
+  },
+  "18091": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Phelar",
+   "state": 570,
+   "group": 10,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2987.805194805195,
+    1137.5974025974026
+   ],
+   "area": 77,
+   "terrain": "jungle"
+  },
+  "18102": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Phelar",
+   "state": 570,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2990.1348314606744,
+    1155.685393258427
+   ],
+   "area": 89,
+   "terrain": "jungle"
+  },
+  "18106": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Phelar",
+   "state": 570,
+   "group": 10,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3000.9285714285716,
+    1151.8142857142857
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "18111": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Phelar",
+   "state": 570,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2982.309523809524,
+    1145.9285714285713
+   ],
+   "area": 84,
+   "terrain": "jungle"
+  },
+  "18112": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Phelar",
+   "state": 570,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2994.491525423729,
+    1148.5593220338983
+   ],
+   "area": 59,
+   "terrain": "jungle"
+  },
+  "18113": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3002.5,
+    1159.9615384615386
+   ],
+   "area": 78,
+   "terrain": "jungle"
+  },
+  "18115": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2989.8970588235293,
+    1183.3823529411766
+   ],
+   "area": 68,
+   "terrain": "jungle"
+  },
+  "18119": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2989.2,
+    1168.1857142857143
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "18125": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    3000.6746987951806,
+    1170.301204819277
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  },
+  "18126": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2985.5061728395062,
+    1175.3456790123457
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "18132": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2995.597014925373,
+    1163.089552238806
+   ],
+   "area": 67,
+   "terrain": "jungle"
+  },
+  "18133": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Bri-Phrang City",
+   "state": 571,
+   "group": 11,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2996.217391304348,
+    1178.2898550724638
+   ],
+   "area": 69,
+   "terrain": "jungle"
+  },
+  "18139": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Plateau",
+   "state": 572,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2969.8727272727274,
+    1146.9636363636364
+   ],
+   "area": 55,
+   "terrain": "hills"
+  },
+  "18148": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Plateau",
+   "state": 572,
+   "group": 12,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2948.377358490566,
+    1146.5471698113208
+   ],
+   "area": 53,
+   "terrain": "hills"
+  },
+  "18151": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Plateau",
+   "state": 572,
+   "group": 12,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2959.1746031746034,
+    1135.0
+   ],
+   "area": 63,
+   "terrain": "hills"
+  },
+  "18161": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Plateau",
+   "state": 572,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2958.5604395604396,
+    1150.3296703296703
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "18168": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Plateau",
+   "state": 572,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2964.7727272727275,
+    1140.6060606060605
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "18169": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Plateau",
+   "state": 572,
+   "group": 12,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2954.162162162162,
+    1141.6891891891892
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "18173": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Spike",
+   "state": 573,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2955.730769230769,
+    1168.0192307692307
+   ],
+   "area": 52,
+   "terrain": "hills"
+  },
+  "18174": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Spike",
+   "state": 573,
+   "group": 13,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2944.0222222222224,
+    1157.1333333333334
+   ],
+   "area": 45,
+   "terrain": "hills"
+  },
+  "18189": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Spike",
+   "state": 573,
+   "group": 13,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2950.788235294118,
+    1176.0
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "18193": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Spike",
+   "state": 573,
+   "group": 13,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2946.1267605633802,
+    1166.1267605633802
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "18201": {
+   "zone": "plateau",
+   "kind": 4,
+   "feature": "Carrion Spike",
+   "state": 573,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2956.397435897436,
+    1158.8846153846155
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "18206": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Orrineswa Valley",
+   "state": 574,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2966.507462686567,
+    1166.865671641791
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "18207": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Orrineswa Valley",
+   "state": 574,
+   "group": 14,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2958.5172413793102,
+    1182.2298850574712
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "18225": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Orrineswa Valley",
+   "state": 574,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2965.8070175438597,
+    1175.1052631578948
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "18227": {
+   "zone": "valley",
+   "kind": 5,
+   "feature": "Orrineswa Valley",
+   "state": 574,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2959.655737704918,
+    1172.639344262295
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "18228": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Old Town Factoryville",
+   "state": 575,
+   "group": 15,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2974.3928571428573,
+    1188.0714285714287
+   ],
+   "area": 84,
+   "terrain": "urban"
+  },
+  "18232": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Old Town Factoryville",
+   "state": 575,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2977.288888888889,
+    1173.2
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "18233": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Old Town Factoryville",
+   "state": 575,
+   "group": 15,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2964.9841269841268,
+    1187.3492063492063
+   ],
+   "area": 63,
+   "terrain": "urban"
+  },
+  "18238": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Old Town Factoryville",
+   "state": 575,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2969.71875,
+    1180.0625
+   ],
+   "area": 64,
+   "terrain": "urban"
+  },
+  "18240": {
+   "zone": "industry",
+   "kind": 2,
+   "feature": "Old Town Factoryville",
+   "state": 575,
+   "group": 15,
+   "coastal": true,
+   "sea": 18886,
+   "centre": [
+    2982.258426966292,
+    1185.4831460674156
+   ],
+   "area": 89,
+   "terrain": "urban"
+  },
+  "18243": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Western Jungles",
+   "state": 576,
+   "group": 16,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2975.063492063492,
+    1131.2539682539682
+   ],
+   "area": 63,
+   "terrain": "jungle"
+  },
+  "18249": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Western Jungles",
+   "state": 576,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2975.0722891566265,
+    1139.7710843373493
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  },
+  "18259": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Western Jungles",
+   "state": 576,
+   "group": 16,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2982.712121212121,
+    1133.1515151515152
+   ],
+   "area": 66,
+   "terrain": "jungle"
+  },
+  "18260": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Western Jungles",
+   "state": 576,
+   "group": 16,
+   "coastal": true,
+   "sea": 18690,
+   "centre": [
+    2967.6612903225805,
+    1132.6935483870968
+   ],
+   "area": 62,
+   "terrain": "jungle"
+  }
+ }
+}

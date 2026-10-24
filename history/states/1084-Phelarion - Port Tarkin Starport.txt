@@ -1,0 +1,31 @@
+state={
+	id=1084
+	name="STATE_1084"
+	# HOD: Phelarion (phelarion_map.py)
+	provinces={
+		19247 19274 19275 19276 19277 19278 19279 19280
+	}
+	resources={
+		oil=2
+	}
+	history = {
+		victory_points = {
+			19280 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+			19274 = {
+				naval_base = 3
+			}
+		}
+		owner = GSW
+		add_core_of = GSW
+	}
+	manpower = 105879
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

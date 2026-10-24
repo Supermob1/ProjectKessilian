@@ -1,0 +1,18 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+XUC_SEC_01 = {
+	name = "Xucphra Security"
+
+	for_countries = { XUC }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Xucphra Security Force"
+
+	ordered = {
+		1 = { "1st Xucphra City Security" }
+		2 = { "2nd Bacta Vats Security" }
+	}
+}

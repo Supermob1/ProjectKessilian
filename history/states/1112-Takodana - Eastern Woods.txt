@@ -1,0 +1,33 @@
+state={
+	id=1112
+	name="STATE_1112"
+	# HOD: Takodana (takodana_map.py)
+	provinces={
+		19798 19799 19800 19801
+	}
+	resources={
+		coal=3
+		oil=2
+	}
+	history = {
+		victory_points = {
+			19798 1
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			arms_factory = 2
+			air_base = 1
+			dockyard = 2
+					19799 = {
+				naval_base = 4
+			}
+		}
+		owner = FON
+		add_core_of = FON
+	}
+	manpower = 429538
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1104,6 +1104,280 @@ LANDMARKS = [
     ("nim_hkd", ["hod_nim_hkd", "hod_nim_bureau"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
      "Hoersch-Kessel Drive", "The gentle Nimbanel keep the Hutts' books, and half the hyperdrives in Hutt Space come from "
      "the test rings outside Hoersch-Kessel's tower.", None),
+    # --- Oba Diah (canon: the Pyke Palace, the loading docks)
+    ("oba_palace", ["hod_oba_palace", "hod_oba_docks", "hod_oba_works"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1, "stability_factor": -0.03}, "Pyke Palace",
+     "The high fortress of the Pyke Syndicate stands on the obsidian crags of Oba Diah; every load of Kessel spice that "
+     "leaves the docks below pays the Pykes first.", None),
+    # --- Kessel (canon: Kessel Castle, the spice mines)
+    ("kes_castle", ["hod_kes_castle", "hod_kes_mine"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.1},
+     "Kessel Castle", "Kessel is two worlds: the Yaruba kings hold court in their castle on the green side, while the "
+     "barren side is dug hollow by the spice mines the Pykes run.", None),
+    # --- Honoghr (Legends: Nystao, the Rakatan temple, the Sith academy)
+    ("hon_nystao", ["hod_hon_nystao", "hod_hon_temple", "hod_hon_academy"], "GFX_idea_generic_research_bonus",
+     {"local_building_slots": 1}, "Nystao",
+     "The Noghri clans meet in the great halls of Nystao. Older stones stand in the rainforest: a temple of the "
+     "Infinite Empire and the broken academy of the Sith.", None),
+    # --- Teth (canon: the B'omarr Monastery, the Hutt palace, the Tomb of Ziro's father)
+    ("tth_monastery", ["hod_tth_monastery", "hod_tth_palace", "hod_tth_tomb"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1}, "B'omarr Monastery",
+     "High on a mesa above the mauve jungle, the B'omarr monks keep their monastery; the Hutts keep everything else on "
+     "Teth.", None),
+    # --- Ghorman (canon: Palmo and its capital square, the Beldoni webberies, the spaceport)
+    ("gho_palmo", ["hod_gho_palmo", "hod_gho_webbery", "hod_gho_port"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1, "stability_factor": 0.03}, "Palmo",
+     "Buyers and designers from across the galaxy tour Palmo's showrooms and twilleries; the silk comes down from the "
+     "webberies of the Great Valleys.", None),
+    # --- Yag'Dhul (Legends: Dodecapolis, the Senatorial Tesseract, the First Temple of Prime, the orbital shipyards)
+    ("ydh_dodecapolis", ["hod_ydh_dodecapolis", "hod_ydh_tesseract", "hod_ydh_temple", "hod_ydh_yards"],
+     "GFX_idea_generic_research_bonus", {"local_building_slots": 1}, "Dodecapolis",
+     "When the moons pull the air away, the Givin seal their shells and wait; nothing on Yag'Dhul is built without first "
+     "being calculated.", None),
+    # --- Mechis III (Legends: the droid factory world)
+    ("mec_city", ["hod_mec_city", "hod_mec_foundry"], "GFX_idea_generic_production_bonus", {"local_factories": 0.15},
+     "Mechis City", "The galaxy's droid makers do not build their droids: Mechis does, in plants that run themselves on a "
+     "world of ash and volcanoes.", None),
+    # --- Takodana (canon: Takodana Castle on Nymeve Lake)
+    ("tak_castle", ["hod_tak_castle"], "GFX_idea_generic_production_bonus", {"stability_factor": 0.03},
+     "Takodana Castle", "Smugglers, pirates and worse fly their flags before Maz Kanata's castle on Nymeve Lake; inside, "
+     "nobody draws a blaster.", None),
+    # --- Thyferra (Legends: Xozhixi, the bacta corporations)
+    ("thy_xozhixi", ["hod_thy_xozhixi", "hod_thy_vats", "hod_thy_corp"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1, "local_resources_factor": 0.1}, "Xozhixi",
+     "Without the Vratix there is no bacta, and without bacta half the galaxy's wounded die. Xozhixi has its old name back; "
+     "the corporations still own the vats.", None),
+    # --- Csilla (canon: Csaplar, the Assembly Cupola, the Defense Force headquarters; Legends: the Expeditionary Library)
+    ("csi_csaplar", ["hod_csi_csaplar", "hod_csi_cupola", "hod_csi_hq", "hod_csi_library"], "GFX_idea_generic_research_bonus",
+     {"local_building_slots": 1, "stability_factor": 0.03}, "Csaplar",
+     "The ice took Csilla's surface long ago; the Chiss live beneath it. In Csaplar the Syndicure argues under the Assembly "
+     "Cupola while the fleets that guard the Ascendancy are commanded from the halls around it.", None),
+    # --- Copero (Legends: Copero City, the ancient ruins, the shipyard; canon: the Erighal family)
+    ("cop_city", ["hod_cop_city", "hod_cop_ruins", "hod_cop_hold", "hod_cop_yards"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.1}, "Copero City",
+     "A mountain world of the Ascendancy: Chiss terraces climb its basins, its yards build cruisers in orbit, and in the "
+     "snow stand ruins older than the Chiss.", None),
+    # --- Csaus (canon: the Tahmie and Droc families fought here)
+    ("csa_station", ["hod_csa_station", "hod_csa_hold"], "GFX_idea_generic_production_bonus", {"stability_factor": -0.03},
+     "Csaus Station", "A cold frontier where two of the Ascendancy's families keep holdings in sight of each other, and "
+     "their armed freighters do not always stay in orbit.", None),
+    # --- Cioral (canon: the Xodlak family; Legends: an urban world)
+    ("cio_spire", ["hod_cio_spire", "hod_cio_port"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Xodlak Spire", "Cioral is a city from pole to pole, and the Xodlak family's spire is the highest thing on it.", None),
+    # --- Shola (Legends: volcanic, mining shafts, ruins of an extinct species)
+    ("sho_station", ["hod_sho_station", "hod_sho_ruins", "hod_sho_mine"], "GFX_idea_generic_production_bonus",
+     {"local_resources_factor": 0.1, "stability_factor": -0.03}, "Ashfall Station",
+     "Ash falls on Shola all year and magma runs in its rivers; the Besadii dig its shafts anyway, among the ruins of a "
+     "people the planet already killed once.", None),
+    # --- Rothana (canon: Rothana Heavy Engineering's underground factories and orbital yards)
+    ("rot_works", ["hod_rot_works", "hod_rot_foundry", "hod_rot_yards"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.15}, "Rothana Heavy Engineering",
+     "Under Rothana's ice, Kuat's subsidiary builds what the Republic will need if it ever goes to war: assault ships "
+     "and six-legged walkers, finished in the honeycomb yards in orbit.", None),
+    # --- Hypori (canon: the Baktoid droid factory, the Battle of Hypori)
+    ("hyp_factory", ["hod_hyp_factory", "hod_hyp_crash"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Baktoid Droid Factory", "Wat Tambor's foundry pours battle droids onto a grey, rain-beaten world that nobody else "
+     "wants.", None),
+    # --- Rishi (Legends: Raider's Cove, the islands)
+    ("ris_cove", ["hod_ris_cove", "hod_ris_post"], "GFX_idea_generic_production_bonus", {"stability_factor": 0.03},
+     "Raider's Cove", "Traders and smugglers drop into Raider's Cove from every island of Rishi, and the Republic listens "
+     "to all of it from its post in the south.", None),
+    # --- Kamino (canon: Tipoca City, the cloning stations)
+    ("kam_tipoca", ["hod_kam_tipoca", "hod_kam_station"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Tipoca City", "Above the endless storm-sea the Kaminoans keep their stilt cities, and in them the finest cloning "
+     "science in the galaxy.", None),
+    # --- Geonosis (canon: the Stalgasin hive spires, the Petranaki Arena, the droid foundries, the Progate Temple)
+    ("gns_spires", ["hod_gns_spires", "hod_gns_arena", "hod_gns_foundry", "hod_gns_temple"], "GFX_idea_generic_production_bonus",
+     {"local_factories": 0.15}, "Stalgasin Hive Spires",
+     "The hives of Geonosis build the Separatists' armies in foundries under the rock and watch their prisoners die in "
+     "the Petranaki Arena.", None),
+    # --- Tatooine (canon: Bestine, Mos Eisley, Mos Espa, Jabba's palace, the Lars moisture farm)
+    ("tat_eisley", ["hod_tat_eisley", "hod_tat_palace", "hod_tat_homestead"], "GFX_idea_generic_production_bonus",
+     {"stability_factor": -0.03, "local_resources_factor": 0.05}, "Mos Eisley",
+     "Under the twin suns the Hutts own the water, the ports and the law. You will never find a more wretched hive of "
+     "scum and villainy.", None),
+    # --- Ryloth (canon: Lessu City, Kala'uun)
+    ("ryl_lessu", ["hod_ryl_lessu", "hod_ryl_port"], "GFX_idea_generic_production_bonus", {"stability_factor": 0.03},
+     "Lessu City", "The Twi'leks' capital stands on its rock above the plains; its towers have outlasted every master who "
+     "tried to own Ryloth.", None),
+    # --- Rodia (canon: Iskaayuma, Equator City, the Senatorial Palace)
+    ("rod_city", ["hod_rod_city", "hod_rod_palace"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Iskaayuma", "Rodia's cities stand on its waterways under great green domes, keeping the jungle and its hunters out.", None),
+    # --- Christophsis (canon: Chaleydonia, the Separatist tower, the Republic base)
+    ("cph_tower", ["hod_cph_tower", "hod_cph_base"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Chaleydonia", "The Crystal City rises among forests of turquoise spires; whoever holds its towers holds the Outer Rim "
+     "road to the Core.", None),
+    # --- Jedha (canon: the Holy City, the kyber temple, the fallen statues)
+    ("jed_city", ["hod_jed_city", "hod_jed_statue"], "GFX_idea_generic_research_bonus", {"stability_factor": 0.05},
+     "Jedha City", "Pilgrims of a hundred faiths climb to the Holy City, and under it lies the kyber that every Jedi blade "
+     "is built around.", None),
+    # --- Lehon / Rakata Prime (Legends: the Temple of the Ancients, the Rakatan villages)
+    ("leh_temple", ["hod_leh_temple", "hod_leh_village"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "Temple of the Ancients", "The last Rakata live in huts on the beaches of the world that once ruled the Infinite "
+     "Empire; above them the temple still keeps its secrets.", None),
+    # --- Farstine (Legends: the Battle of Farstine; the port and wreck are design choices)
+    ("fst_landing", ["hod_fst_landing", "hod_fst_wreck"], "GFX_idea_generic_production_bonus",
+     {"state_production_speed_buildings_factor": 0.1}, "Farstine Landing",
+     "Freighters on the Five Veils run put down on Farstine's windswept pads to take on water and pay the Republic's "
+     "tolls; out on the downs lie the bones of ships that fought over the route before.", None),
+    # --- Vohai (Legends: the Vohai Unirail, Sensyno Station)
+    ("voh_station", ["hod_voh_station", "hod_voh_pylon"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.2},
+     "Vohai Unirail", "Kuat Drive Yards' monorail girdles the whole world; at Sensyno Station its trains glide in "
+     "between garden terraces, and whoever holds the stations holds every road on Vohai.", None),
+    ("voh_foundry", ["hod_voh_foundry"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Vohai Foundries", "The smelters south of the line never cool; their stacks stain the gardens grey when the wind "
+     "turns, and the Unirail carries their plate to every yard on the planet.", None),
+    # --- Alzoc III (Legends: the Alzoc III Base, the mines)
+    ("alz_base", ["hod_alz_base", "hod_alz_mine"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.1},
+     "Alzoc III Mines", "Under the Valley of Blizzards the mines cut deep into the ice; the outpost's towers watch the "
+     "pad and the Talz who work the shafts. Separatist agents came here hunting a weapon, and some say they found it.", None),
+    # --- Pantora (canon: Pantoran City, Ro Station, the southern maintenance tower)
+    ("pan_city", ["hod_pan_city", "hod_pan_ro", "hod_pan_tower"], "GFX_idea_generic_political_support",
+     {"stability_factor": 0.05, "political_power_factor": 0.05}, "Pantoran City",
+     "The Chairman's government sits in white towers above the frozen plain; Pantora sends its senator to Coruscant and "
+     "its tea parlors keep the secrets senators trade.", None),
+    # --- Naboo (canon: Theed, Otoh Gunga, the Gungan Sentry Post)
+    ("nab_theed", ["hod_nab_theed"], "GFX_idea_generic_political_support", {"stability_factor": 0.05, "political_power_factor": 0.1},
+     "Theed Royal Palace", "Above the Solleu falls the elected monarch rules from green-domed halls; the Battle of Naboo "
+     "was won here, and Naboo has sent a Chancellor to the Republic.", None),
+    ("nab_gunga", ["hod_nab_gunga", "hod_nab_sentry"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Otoh Gunga", "The Gungans' bubble city glows under the swamp lake; since the battle on the Great Grass Plains the "
+     "Grand Army of the Gungans stands beside the Naboo, and the old sentry heads keep watch again.", None),
+    # --- Malastare (canon: the Doge's Palace, the Battle of Malastare's crater, the Narrows)
+    ("mal_palace", ["hod_mal_palace"], "GFX_idea_generic_political_support", {"stability_factor": 0.05},
+     "Doge's Palace", "The Dug Council sits under the spiked crown of Pixelito's palace, and the Republic pays well for "
+     "Malastare's fuel and its loyalty.", None),
+    ("mal_crater", ["hod_mal_crater", "hod_mal_podarena"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Electro-Proton Crater", "The Republic's new bomb broke the droid army here and opened the ground beneath it; what "
+     "climbed out of the crater is still spoken of in whispers at the Narrows' podrace stands.", None),
+    # --- Haruun Kal (canon: Pelek Baw; Legends: the Korunnal Highland, the Korun guerrillas)
+    ("hrk_pelekbaw", ["hod_hrk_pelekbaw", "hod_hrk_camp"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Pelek Baw", "Balawai prospectors hold the capital on the plateau's edge; up in the highland jungle the Korun fight them, "
+     "and a Jedi Master has gone into the jungle and not come back.", None),
+    # --- Sullust (canon: Pinyumb, SoroSuub's refineries)
+    ("sul_pinyumb", ["hod_sul_pinyumb", "hod_sul_refinery"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "SoroSuub Corporation", "Under Inyusu Tor the cavern city of Pinyumb runs on SoroSuub's refineries, and the corporation "
+     "runs everything else.", None),
+    # --- Phelarion (Legends: Port Tarkin; canon: the academy)
+    ("phe_port", ["hod_phe_port", "hod_phe_academy"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Phelarion Academy", "Port Tarkin's bays serve the Seswenna sector's patrols, and the academy above it sends young "
+     "officers out to the Outer Rim.", None),
+    # --- Eriadu (canon: Eriadu City, the Tarkin compound; Legends: Old Town Factoryville)
+    ("eri_tarkin", ["hod_eri_tarkin"], "GFX_idea_generic_political_support", {"political_power_factor": 0.05},
+     "Tarkin Family Compound", "The Tarkins rule Eriadu's affairs from their walled house in the capital, and the Seswenna "
+     "sector follows Eriadu.", None),
+    ("eri_factory", ["hod_eri_factory"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Old Town Factoryville", "The stacks of Eriadu's foundries hang a black pall over the jungle; the Outer Rim's warships "
+     "are built from what they pour.", None),
+    # --- Tibrin (canon: Tibrina, the reefs; Legends: Suribran Tu's palace)
+    ("tib_city", ["hod_tib_city", "hod_tib_palace"], "GFX_idea_generic_political_support", {"stability_factor": -0.03, "local_manpower": 0.05},
+     "Tibrina", "The Ishi Tib raise their capital out of living coral above the glowing sea; Suribran Tu rules it from his "
+     "reef fortress, and his revolution has taken Tibrin over to the Confederacy.", None),
+    # --- Cerea (canon: Asphodar 3; Legends: Outsider Citadels, the Shyarn-Ado Training Schools)
+    ("cer_vale", ["hod_cer_vale"], "GFX_idea_generic_political_support", {"stability_factor": 0.05},
+     "Mundi's Vale", "Cerea's elders keep their world green and unhurried, and leave machines and starships to the "
+     "offworlders behind their citadel walls.", None),
+    ("cer_citadel", ["hod_cer_citadel"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Asphodar 3", "The offworlders' citadel holds what little industry Cerea tolerates, walled off from the farms "
+     "around it.", None),
+    ("cer_schools", ["hod_cer_schools"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Shyarn-Ado Training Schools", "Most Cerean young are sent to the Shyarn-Ado schools to learn to fight; "
+     "Ki-Adi-Mundi's people do not come to war untrained.", None),
+    # --- Batuu (canon: Black Spire Outpost, the Black Spire Ruins, the Batuu Jedi temple)
+    ("btu_outpost", ["hod_btu_outpost"], "GFX_idea_generic_logistics", {"local_supplies": 0.1},
+     "Black Spire Outpost", "The last trading post before Wild Space, built among the petrified spires of giant trees; "
+     "smugglers, traders and the Hutts' agents all pass through its market.", None),
+    ("btu_ruins", ["hod_btu_ruins", "hod_btu_temple"], "GFX_idea_generic_research_bonus", {"local_building_slots": 1},
+     "The Old Post", "Older than the outpost, the ruined post and the Jedi temple in the Wilds keep records of the "
+     "frontier no one else bothered to write down.", None),
+    # --- Bakura (canon + Legends: Salis D'aar; Legends: the Bakur Complex, D'aarmont, the volcano power station)
+    ("bak_salis", ["hod_bak_salis"], "GFX_idea_generic_political_support", {"political_power_factor": 0.05},
+     "Bakur Memorial Building", "Bakura's government sits in the Bakur Complex between the West and East rivers; the "
+     "Separatist attack of 22 BBY killed the Ruling Synod in it.", None),
+    ("bak_port", ["hod_bak_port", "hod_bak_power"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "D'aarmont Spaceport", "Namana exports leave Bakura from the spaceport on the quartz outcrop of D'aarmont, powered "
+     "by the station on the dormant volcano.", None),
+    # --- Endor (canon: Bright Tree Village, Lake Sui; Legends: Terak's Keep)
+    ("end_brighttree", ["hod_end_brighttree", "hod_end_sui"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Bright Tree Village", "The Ewoks of the Happy Grove live high in the redwoods; anyone who fights in their forest "
+     "fights the forest too.", None),
+    ("end_keep", ["hod_end_keep"], "GFX_idea_generic_oppression", {"local_resources_factor": 0.05},
+     "Terak's Keep", "King Terak's Sanyassan Marauders raid the forest from their stone stronghold on the savanna.", None),
+    # --- Hoth (canon: Outpost Beta, Wampa Mountain; Legends: the Galactic War wrecks)
+    ("hth_outpost", ["hod_hth_outpost", "hod_hth_cave"], "GFX_idea_generic_radar", {"local_supplies": -0.1},
+     "Outpost Beta", "A handful of prefab huts and gun towers on the Icefall Plains watch an empty ice world; the "
+     "wampas take more sentries than any enemy has.", None),
+    ("hth_graveyard", ["hod_hth_graveyard"], "GFX_idea_generic_exploit_mines", {"local_resources_factor": 0.1},
+     "Starship Graveyard", "Warships of an older war lie frozen in Hoth's glaciers, and salvage crews still cut metal "
+     "out of the ice.", None),
+    # --- Anoat (canon: an urban, toxic world with a Jedi shrine; Legends: Anoat City)
+    ("ano_city", ["hod_ano_city"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Anoat City", "Anoat City's towers stand in a yellow haze from its own refineries; the sector's industry runs "
+     "through it.", None),
+    ("ano_shrine", ["hod_ano_shrine"], "GFX_idea_generic_research_bonus", {"stability_factor": 0.03},
+     "Jedi Shrine of Anoat", "An old Jedi shrine stands out in the poisoned waste, kept by the Order through the "
+     "Clone Wars.", None),
+    # --- Utapau (canon: Pau City in its sinkhole, the Taqual racing pit; Legends: the Killik mounds)
+    ("uta_pau", ["hod_uta_pau"], "GFX_idea_generic_political_support", {"stability_factor": 0.05, "local_supplies": 0.2},
+     "Pau City", "Pau City is cut into the walls of a great sinkhole, ledge upon ledge, its landing platforms jutting over "
+     "the drop; the Pau'an elders have governed Utapau from there for millennia.", None),
+    ("uta_pit", ["hod_uta_pit"], "GFX_idea_generic_political_support", {"political_power_factor": 0.05},
+     "Taqual Racing Pit", "In a minor sinkhole the Utapauns race round the pit floor while the crowds watch from the "
+     "lip.", None),
+    ("uta_mounds", ["hod_uta_mounds"], "GFX_idea_generic_research_bonus", {"local_resources_factor": 0.1},
+     "Killik Mounds", "Hive mounds of the long-vanished Killiks still stand on the plains, honeycombed with tunnels "
+     "nobody fully mapped.", None),
+    # --- Queyta (Legends: volcanic; the foundry city and forge are a design choice)
+    ("que_city", ["hod_que_city"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1},
+     "Queyta Foundry City", "Techno Union foundries terrace the flank of a dead volcano, their spires rising over the "
+     "smoke.", None),
+    ("que_forge", ["hod_que_forge"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.15},
+     "Geothermal Forge", "A forge deck stands on legs over a lava lake, drawing its heat straight from the planet.", None),
+    # --- Sluis Van (Legends: the Sluissi shipwrights; the lift to the orbital yards; the surface is a design choice)
+    ("slv_city", ["hod_slv_city"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Sluis Van City", "The Sluissi have built ships for the galaxy for centuries; their capital winds its spiral towers "
+     "round a great domed assembly hall.", None),
+    ("slv_lift", ["hod_slv_lift"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1, "local_supplies": 0.2},
+     "Orbital Lift Complex", "The cargo lift feeds the orbital shipyards above Sluis Van with ore and parts from the "
+     "surface.", None),
+    # --- Mustafar (canon: the Klegger Corp facility, Fralideja, Zitontown)
+    ("mus_klegger", ["hod_mus_klegger"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.2},
+     "Klegger Corp Mining Facility", "The Klegger Corp's collector arms reach out over the lava river, skimming "
+     "minerals from the flow for the Techno Union.", None),
+    ("mus_fralideja", ["hod_mus_fralideja"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Fralideja", "The Mustafarians' capital stands on a black rock shelf, mushroom towers ringed by a lava channel.",
+     None),
+    ("mus_ziton", ["hod_mus_ziton"], "GFX_idea_generic_production_bonus", {"local_factories": 0.05},
+     "Zitontown", "A mining town on a ledge high over a lava river, its ore chutes running down to the flow.", None),
+    # --- Manpha (Legends: Shanpan, swamp grass and fish; the fishery is a design choice)
+    ("mph_shanpan", ["hod_mph_shanpan"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Shanpan", "Manpha's capital stands on pilings over the swamp, its huts joined by plank walkways.", None),
+    ("mph_fishery", ["hod_mph_fishery"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.3},
+     "Shanpan Fisheries", "The fisheries' long piers and drying racks feed Shanpan from the shallow sea.", None),
+    # --- Terminus (Legends: an urban world at the end of the Hydian Way; the rest is a design choice)
+    ("ter_spire", ["hod_ter_spire"], "GFX_idea_generic_political_support", {"stability_factor": 0.03,
+     "political_power_factor": 0.05}, "Terminus Spire", "The great spire marks the end of the Hydian Way, where the "
+     "trade of half the Outer Rim is counted.", None),
+    ("ter_port", ["hod_ter_port"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.3},
+     "Hydian Spaceport", "Freighters from the length of the Hydian Way land at the spaceport on the city's rim.", None),
+    # --- Belsavis (Legends: Plett's Well in the Plawal Rift, Bot-Un, the Tomb of the Infinite Empire)
+    ("bel_plawal", ["hod_bel_plawal"], "GFX_idea_generic_political_support", {"stability_factor": 0.05, "local_supplies": 0.2},
+     "Plett's Well", "In the Plawal Rift, warmed by volcanic vents between red-black cliffs, the Jedi Master Plett founded a "
+     "quiet refuge; the town that grew round his house still keeps the jungle in the ice.", None),
+    ("bel_botun", ["hod_bel_botun"], "GFX_idea_generic_production_bonus", {"local_factories": 0.05, "local_supplies": 0.2},
+     "Bot-Un", "Bot-Un's great dome spans a rift valley, holding its warm air against the glaciers above.", None),
+    ("bel_tomb", ["hod_bel_tomb"], "GFX_idea_generic_research_bonus", {"local_resources_factor": 0.1, "stability_factor": -0.02},
+     "The Tomb", "East of the Scar the Infinite Empire built its Deep Prison into the ice; what the Rakata locked away there "
+     "has never been fully counted.", None),
+    # --- Karfeddion (Legends: the spaceport, House Vandron, the Skull Crackers; the keep and arena names are invented)
+    ("kar_port", ["hod_kar_port"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.3, "local_factories": 0.05},
+     "Karfeddion Spaceport", "Hangars, repair yards and shady cantinas: the spaceport is where half the Western Reaches' "
+     "freighters stop for parts and the other half for work nobody asks about.", None),
+    ("kar_vandron", ["hod_kar_vandron"], "GFX_idea_generic_political_support", {"political_power_factor": 0.05},
+     "Vandron Keep", "The seat of House Vandron, one of the noble houses of the Senex sector, ruling its estates from "
+     "behind old walls.", None),
+    ("kar_arena", ["hod_kar_arena"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Skull Crackers Arena", "Karfeddion's smashball fans follow the Skull Crackers with a devotion the Senate never "
+     "earned.", None),
     # --- Nar Shaddaa (canon: Hutta Town, the Palace of Grakkus, the spaceport)
     ("nsh_hutta", ["hod_nsh_hutta", "hod_nsh_palace", "hod_nsh_port"], "GFX_idea_generic_production_bonus",
      {"local_factories": 0.1, "stability_factor": -0.03}, "Hutta Town",
@@ -1289,7 +1563,7 @@ PLANET_OF = {"raxulon_parliament": "Raxus", "great_alley": "Raxus", "kaas_citade
              **{k: "Korriban" for k in ("sith_academy", "valley_dark_lords", "tomb_ragnos", "tomb_sadow", "tomb_pall",
                                         "tomb_hord", "tomb_kressh")},
              **{k: pl for pre, pl in (("rp_", "Raxus Prime"), ("kadavo_", "Kadavo"), ("hondo_", "Florrum"),
-                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("mnn_", "Manaan"), ("mim_", "Mimban"), ("tet_", "Empress Teta"), ("bys_", "Byss"), ("abr_", "Abregado-Rae"), ("fon_", "Fondor"), ("cat_", "Cato Neimoidia"), ("bst_", "Bestine IV"), ("atz_", "Atzerri"), ("aln_", "Allanteen VI"), ("fal_", "Falleen"), ("bth_", "Bothawui"), ("htt_", "Nal Hutta"), ("toy_", "Toydaria"), ("qsh_", "Quesh"), ("nim_", "Nimban"), ("nsh_", "Nar Shaddaa"), ("nei_", "Neimodia"), ("lor_", "Loronar"), ("dur_", "Duro"), ("com_", "Commenor"), ("ren_", "Rendilli"), ("kua_", "Kuat"), ("crl_", "Corellia"), ("foe_", "Foerost"), ("fre_", "Fresia"), ("tyt_", "Tython"), ("ald_", "Alderaan"), ("bal_", "Balmorra"), ("car_", "Carida"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
+                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("mnn_", "Manaan"), ("mim_", "Mimban"), ("tet_", "Empress Teta"), ("bys_", "Byss"), ("abr_", "Abregado-Rae"), ("fon_", "Fondor"), ("cat_", "Cato Neimoidia"), ("bst_", "Bestine IV"), ("atz_", "Atzerri"), ("aln_", "Allanteen VI"), ("fal_", "Falleen"), ("bth_", "Bothawui"), ("htt_", "Nal Hutta"), ("toy_", "Toydaria"), ("qsh_", "Quesh"), ("nim_", "Nimban"), ("nsh_", "Nar Shaddaa"), ("oba_", "Oba Diah"), ("kes_", "Kessel"), ("hon_", "Honoghr"), ("tth_", "Teth"), ("gho_", "Ghorman"), ("ydh_", "Yag'Dhul"), ("mec_", "Mechis"), ("tak_", "Takodana"), ("thy_", "Thyferria"), ("csi_", "Csilla"), ("cop_", "Copero"), ("csa_", "Csaus"), ("cio_", "Cioral"), ("sho_", "Shola"), ("rot_", "Rothana"), ("hyp_", "Hypori"), ("ris_", "Rishi"), ("kam_", "Kamino"), ("gns_", "Geonosis"), ("tat_", "Tatooine"), ("ryl_", "Ryloth"), ("rod_", "Rodia"), ("cph_", "Christophsis"), ("jed_", "Jedha"), ("leh_", "Rakata Prime"), ("fst_", "Farstine"), ("voh_", "Vohai"), ("alz_", "Alzoc III"), ("pan_", "Pantora"), ("nab_", "Naboo"), ("mal_", "Malastare"), ("hrk_", "Haruun Kal"), ("sul_", "Sullust"), ("phe_", "Phelarion"), ("eri_", "Eriadu"), ("tib_", "Tibrin"), ("cer_", "Cerea"), ("btu_", "Batuu"), ("bak_", "Bakura"), ("end_", "Endor"), ("hth_", "Hoth"), ("ano_", "Anoat"), ("uta_", "Utapau"), ("que_", "Queyta"), ("slv_", "Sluis Van"), ("mus_", "Mustafar"), ("mph_", "Manpha"), ("ter_", "Terminus"), ("bel_", "Belsavis"), ("kar_", "Karfeddion"), ("nei_", "Neimodia"), ("lor_", "Loronar"), ("dur_", "Duro"), ("com_", "Commenor"), ("ren_", "Rendilli"), ("kua_", "Kuat"), ("crl_", "Corellia"), ("foe_", "Foerost"), ("fre_", "Fresia"), ("tyt_", "Tython"), ("ald_", "Alderaan"), ("bal_", "Balmorra"), ("car_", "Carida"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
                 for k, *_ in LANDMARKS if k.startswith(pre)}}
 assert {k for k, *_ in LANDMARKS} == set(PLANET_OF), "every landmark needs its planet"
 

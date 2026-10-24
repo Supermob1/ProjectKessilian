@@ -1,0 +1,888 @@
+{
+ "centre": [
+  2365.0561286407765,
+  1082.9114077669904
+ ],
+ "radius": 32.390575556198044,
+ "vp_names": {
+  "188": "Mechis City",
+  "1183": "Droid Foundry",
+  "1681": "Assembly Lines",
+  "15858": "Fabricator Plateau",
+  "15910": "Cinder Flats",
+  "15928": "Slag Basin",
+  "15975": "Southern Calderas"
+ },
+ "provinces": {
+  "188": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Mechis City",
+   "state": 48,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2363.875,
+    1085.425
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "286": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Mechis City",
+   "state": 48,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2362.975,
+    1080.375
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "1183": {
+   "zone": "factory",
+   "kind": 2,
+   "feature": "Droid Foundry",
+   "state": 504,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2352.086956521739,
+    1100.7608695652175
+   ],
+   "area": 46,
+   "terrain": "urban"
+  },
+  "1681": {
+   "zone": "factory",
+   "kind": 2,
+   "feature": "Assembly Lines",
+   "state": 500,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2380.5555555555557,
+    1066.6666666666667
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "1780": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2381.25,
+    1094.05
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "2020": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2374.909090909091,
+    1088.9545454545455
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "2113": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2374.625,
+    1098.5625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "2136": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2380.3529411764707,
+    1101.8235294117646
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2248": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2385.1176470588234,
+    1098.8823529411766
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "2341": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2378.9,
+    1090.8
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "2358": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2374.9615384615386,
+    1094.1153846153845
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "2504": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2378.0526315789475,
+    1098.2631578947369
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "2552": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2384.9333333333334,
+    1094.5333333333333
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "2991": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Mechis Volcanoes",
+   "state": 1471,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2381.9285714285716,
+    1098.7142857142858
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "3423": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2368.090909090909,
+    1070.5
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "3539": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2358.5714285714284,
+    1057.3809523809523
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "4030": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2374.814814814815,
+    1077.7407407407406
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "4257": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2366.375,
+    1061.0
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "4276": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2361.3684210526317,
+    1061.7368421052631
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "4472": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2373.0,
+    1072.5833333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "4829": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2370.5238095238096,
+    1076.047619047619
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5042": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2369.7619047619046,
+    1066.7619047619048
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "5338": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2362.65,
+    1057.25
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "6003": {
+   "zone": "lava",
+   "kind": 5,
+   "feature": "Black Ash Cones",
+   "state": 1472,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2365.08,
+    1065.36
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "15805": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Mechis City",
+   "state": 48,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2362.6363636363635,
+    1072.9431818181818
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "15809": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Mechis City",
+   "state": 48,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2367.641975308642,
+    1092.0864197530864
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "15821": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Mechis City",
+   "state": 48,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2358.5925925925926,
+    1088.0740740740741
+   ],
+   "area": 54,
+   "terrain": "hills"
+  },
+  "15823": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Mechis City",
+   "state": 48,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2371.3521126760565,
+    1083.2535211267605
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "15824": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Mechis City",
+   "state": 48,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2355.6438356164385,
+    1078.849315068493
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "15828": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Fabricator Plateau",
+   "state": 499,
+   "group": 6,
+   "coastal": true,
+   "sea": 19010,
+   "centre": [
+    2339.0246913580245,
+    1090.5802469135801
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "15834": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Fabricator Plateau",
+   "state": 499,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2347.3380281690143,
+    1077.718309859155
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "15843": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Fabricator Plateau",
+   "state": 499,
+   "group": 6,
+   "coastal": true,
+   "sea": 19010,
+   "centre": [
+    2339.0641025641025,
+    1073.7692307692307
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "15848": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Fabricator Plateau",
+   "state": 499,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2346.815789473684,
+    1085.3947368421052
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "15858": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Fabricator Plateau",
+   "state": 499,
+   "group": 6,
+   "coastal": true,
+   "sea": 19010,
+   "centre": [
+    2336.9518072289156,
+    1082.1927710843374
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "15859": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Foundries",
+   "state": 500,
+   "group": 7,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2381.141176470588,
+    1058.8235294117646
+   ],
+   "area": 85,
+   "terrain": "desert"
+  },
+  "15865": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Foundries",
+   "state": 500,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2380.1666666666665,
+    1072.9242424242425
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "15874": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Foundries",
+   "state": 500,
+   "group": 7,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2370.0232558139537,
+    1055.0232558139535
+   ],
+   "area": 86,
+   "terrain": "desert"
+  },
+  "15875": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Foundries",
+   "state": 500,
+   "group": 7,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2388.9052631578948,
+    1067.7157894736843
+   ],
+   "area": 95,
+   "terrain": "desert"
+  },
+  "15879": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Ashfall Foundries",
+   "state": 500,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2373.943661971831,
+    1063.5915492957747
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "15891": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Cinder Flats",
+   "state": 501,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2354.3451327433627,
+    1068.0442477876106
+   ],
+   "area": 113,
+   "terrain": "desert"
+  },
+  "15899": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Cinder Flats",
+   "state": 501,
+   "group": 8,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2360.6875,
+    1052.9375
+   ],
+   "area": 32,
+   "terrain": "desert"
+  },
+  "15900": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Cinder Flats",
+   "state": 501,
+   "group": 8,
+   "coastal": true,
+   "sea": 19010,
+   "centre": [
+    2343.1875,
+    1067.85
+   ],
+   "area": 80,
+   "terrain": "desert"
+  },
+  "15910": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Cinder Flats",
+   "state": 501,
+   "group": 8,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2353.310810810811,
+    1057.7837837837837
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "15912": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Cinder Flats",
+   "state": 501,
+   "group": 8,
+   "coastal": true,
+   "sea": 19010,
+   "centre": [
+    2346.705882352941,
+    1061.485294117647
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "15916": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Slag Basin",
+   "state": 502,
+   "group": 9,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2379.468085106383,
+    1107.159574468085
+   ],
+   "area": 94,
+   "terrain": "desert"
+  },
+  "15917": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Slag Basin",
+   "state": 502,
+   "group": 9,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2358.373493975904,
+    1110.4578313253012
+   ],
+   "area": 83,
+   "terrain": "desert"
+  },
+  "15919": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Slag Basin",
+   "state": 502,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2362.9857142857145,
+    1103.3857142857144
+   ],
+   "area": 70,
+   "terrain": "desert"
+  },
+  "15928": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Slag Basin",
+   "state": 502,
+   "group": 9,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2368.9887640449438,
+    1111.0224719101125
+   ],
+   "area": 89,
+   "terrain": "desert"
+  },
+  "15929": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Slag Basin",
+   "state": 502,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2370.3815789473683,
+    1101.5263157894738
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "15933": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Southern Calderas",
+   "state": 503,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2381.2608695652175,
+    1081.6521739130435
+   ],
+   "area": 92,
+   "terrain": "hills"
+  },
+  "15943": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Southern Calderas",
+   "state": 503,
+   "group": 10,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2389.5714285714284,
+    1099.2727272727273
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "15953": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Southern Calderas",
+   "state": 503,
+   "group": 10,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2391.3584905660377,
+    1077.6132075471698
+   ],
+   "area": 106,
+   "terrain": "hills"
+  },
+  "15963": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Southern Calderas",
+   "state": 503,
+   "group": 10,
+   "coastal": true,
+   "sea": 18940,
+   "centre": [
+    2393.45,
+    1087.6125
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "15975": {
+   "zone": "rock",
+   "kind": 4,
+   "feature": "Southern Calderas",
+   "state": 503,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2385.9066666666668,
+    1088.44
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "15992": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Automaton Works",
+   "state": 504,
+   "group": 11,
+   "coastal": true,
+   "sea": 19010,
+   "centre": [
+    2349.1466666666665,
+    1106.84
+   ],
+   "area": 75,
+   "terrain": "desert"
+  },
+  "16000": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Automaton Works",
+   "state": 504,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2351.303370786517,
+    1091.741573033708
+   ],
+   "area": 89,
+   "terrain": "desert"
+  },
+  "16004": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Automaton Works",
+   "state": 504,
+   "group": 11,
+   "coastal": true,
+   "sea": 19010,
+   "centre": [
+    2342.647619047619,
+    1098.8
+   ],
+   "area": 105,
+   "terrain": "desert"
+  },
+  "16019": {
+   "zone": "ash",
+   "kind": 3,
+   "feature": "Automaton Works",
+   "state": 504,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2358.628205128205,
+    1097.5
+   ],
+   "area": 78,
+   "terrain": "desert"
+  }
+ }
+}

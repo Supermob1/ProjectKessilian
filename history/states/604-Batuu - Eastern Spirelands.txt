@@ -1,0 +1,32 @@
+state={
+	id=604
+	name="STATE_604"
+	# HOD: Batuu (batuu_map.py)
+	provinces={
+		16507 16508 16509 16512 16516 16518 16521 16522 16523 16524 16527 16530
+	}
+	resources={
+		tungsten=5
+		steel=1
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			16530 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			dockyard = 2
+			16530 = {
+				naval_base = 4
+			}
+		}
+		owner = HTT
+		add_core_of = HTT
+	}
+	manpower = 139206
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
