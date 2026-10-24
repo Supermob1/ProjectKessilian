@@ -8,7 +8,11 @@ OVERALL VERDICT: not good enough yet. 767 meshes reviewed (every row in review.c
   P2 359  (right idea, too plain/small/dark)
   P3 299  (good, polish only)
   ok   1  (hod_raxus_senate)
-Only about 40% meet the bar. Raxus Prime, Kashyyyk, Serenno, Trandosha, Kalee, Chandrila and Ithor are the strongest sets.
+Only about 40% meet the bar.
+STYLE BAR (user's pick): Felucia. Not in review.csv (it has no landmark meshes, only the hod_fel_city town set,
+fel_city() in military_buildings.py, and the fel_* flora). What it does right: one strong planet-specific silhouette
+(giant mushroom stalk with stacked hut rings), its own bright atlas (violet cap, orange pods, all well above 100 RGB),
+3+ height levels, props on every level. Use it as the bar when rebuilding the town samples flagged TOWN. Raxus Prime, Kashyyyk, Serenno, Trandosha, Kalee, Chandrila and Ithor are the strongest sets.
 
 PROBLEMS SEEN ACROSS MANY PLANETS (fixing these in shared code clears most P2s):
 1. Black faces. Dark rock bases, slab skirts and DARK/SOOT swatches render black even in the review renders, so they
