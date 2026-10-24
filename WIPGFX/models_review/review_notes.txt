@@ -1,0 +1,1161 @@
+MODEL REVIEW NOTES  (from sheets/*.png, judged against MODEL_GUIDE.md checklist and rules)
+Grades use the guide's scale: P1 = wrong/broken, P2 = right idea but too plain/small, P3 = good, polish only, ok = leave alone.
+Title column = lore group, so shared titles are fine; the site name is in review.csv `where`.
+Judged from the oblique sheet renders only; in-game lighting/scale not checked.
+
+OVERALL VERDICT: not good enough yet. 767 meshes reviewed (every row in review.csv).
+  P1 108  (wrong/broken: rebuild)
+  P2 359  (right idea, too plain/small/dark)
+  P3 299  (good, polish only)
+  ok   1  (hod_raxus_senate)
+Only about 40% meet the bar. Raxus Prime, Kashyyyk, Serenno, Trandosha, Kalee, Chandrila and Ithor are the strongest sets.
+
+PROBLEMS SEEN ACROSS MANY PLANETS (fixing these in shared code clears most P2s):
+1. Black faces. Dark rock bases, slab skirts and DARK/SOOT swatches render black even in the review renders, so they
+   will be black in game. Worst planets: Oba Diah, Dorin, Nar Shaddaa, Umbara, Yavin IV, Iego, Corellia (Bottoms), Shola.
+   Raise the dark B_* swatches above 100 RGB in each planet atlas.
+2. Town samples: at least 85 of 128 town samples have one or two very tall needle towers/poles that dwarf the town,
+   and many are a sparse scatter of thin slivers with no ground. That is a town_cell issue, not a per-planet one.
+   Cap tower height relative to the block, add more and wider blocks.
+3. Floating parts: pads on poles, flags, discs, rails and boxes hover with no link to the base.
+4. -y side blocked: low walls, slabs or hangars in front hide the main building (rule: tall parts at +y).
+5. Reused kits: the "drums with ring pads" spaceport/dock and the "drum arena with floodlights" repeat on many planets
+   (Commenor, Karfeddion, Nyriaan, Rattatak, Foerost, Loronar, Rendilli, Skako...). Rule: custom per planet.
+6. Shipyards on the ground: many *_yards / *_works with ships sit on ground slabs. Rule: naval = orbital.
+   Confirm their PLACEMENT puts them beside the disc; the ones built as ground frames need to become stations.
+7. Halo rings and flat discs still appear (Ilum Tonvarr, Tibrin city, Wasskah lodge pad, Alderaan sanctuary).
+8. Lone boxes under ~40 KB: almost every mesh under 40 KB is a P1 (one block, an obelisk, a plain pyramid).
+
+WORST PLANET SETS (most P1s or key canon sites failing):
+- Coruscant: Jedi Temple, Senate and most districts are small plain boxes. Most important planet, weakest set.
+- Yavin IV: Great Temple is a 17 KB block; all three meshes black or plain.
+- Kadavo: apart from the facility, everything is 16 to 21 KB boxes.
+- Korriban: tombs are near-identical red cubes; obelisks are 10 KB.
+- Oba Diah: whole set renders black.
+- Florrum, Eriadu, Zygerria, Phelarion: small generic boxes.
+
+MISSING TOWN SETS TO CHECK (populated worlds with no town sample): Axxila, Bonadan, Botajef, Cantonica, Celanon, Christophsis,
+Ciutric, Dantooine, Etti IV, Jabiim, Lianna, Mandalore, Mon Calamari, Naboo, Ord Cestus, Pammant, Raxus, Ruuria, Saleucami,
+Serenno, Telos, Tython, Zygerria. (Rule: cities get their own sets; only abandoned/uninhabited worlds skip towns.)
+
+PER-MESH NOTES BELOW. The grade in each line can go straight into review.csv `priority`.
+
+== Aargonar ==
+hod_aar_arches     P3  Sandstone arches + spires read as Vondar Canyon. Add a few boulders/scrub on the base.
+hod_aar_firebase   P2  Walled pad with comm mast is right, but the core is three grey boxes and a red cube. Needs prefab barracks, turrets, a gunship on the pads.
+
+== Abafar ==
+hod_aba_mine       P2  Derrick, silos and pipes work. Base skirt renders black (dark swatch under 100 RGB?). Rocks look like crumpled paper.
+hod_aba_ponsora    P1  Generic box pile on a flat slab. Pons Ora needs its domed/rounded shanty look and the fuel-pipe tangle.
+hod_aba_town_44    P1  Scattered thin pillars and posts, no readable buildings. Reads as noise at map scale.
+
+== Abregado-Rae ==
+hod_abr_cantina    P2  Dome ringed by apartment slabs, reads as a block of flats more than a cantina district. No street props.
+hod_abr_gushers    P1  Loose parts: brick box, yellow domes, a slab, with no shared ground or links. Looks unfinished.
+hod_abr_leyer      P3  Ring wall with towers reads as a city. Ground props would help.
+hod_abr_spaceport  P2  Ring pits + towers, but no landing pads or ships, so it doesn't read as a spaceport.
+hod_abr_town_44    P2  Two matchstick towers dwarf a sparse block cluster. Thicken or cut the needles.
+
+== Agamar ==
+hod_aga_bridges    P1  Near copy of Aargonar's arches (same brown rock, same arch shapes): reused look. Make the bridges worked stone spans.
+hod_aga_calna      P3  Dense and detailed, best on the sheet.
+hod_aga_ranch      P3  Domes and corral rails read right. Could use livestock/fence posts.
+hod_aga_ruins      P1  Almost entirely black faces (atlas swatch too dark). Shape is OK under the colour.
+hod_aga_university P3  Domed hall reads well.
+hod_aga_town_44    P3  Good, varied heights.
+
+== Alderaan ==
+hod_ald_aldera     P3  White spires with blue domes and trees. Canon Aldera sits on an island plateau: a rock base would sell it.
+hod_ald_crevasse   P1  Flat grid of grey boxes with no crevasse. Crevasse City is built into canyon walls; needs the rock cleft.
+hod_ald_killik     P2  Killik mound towers are a good idea. Black square holes on the walls and two floating white panels on the right.
+hod_ald_palace     P2  Stepped brick plinth with a domed top. Canon palace is white towers, not a ziggurat.
+hod_ald_sanctuary  P2  Discs on stilts read OK, but the end platforms have flat halo rings (guide says no rings). Too thin to read at map scale.
+hod_ald_university P2  Big flat box with an oversized dome cylinder stuck to the front. Needs more height steps and Alderaanian spires.
+hod_ald_town_44    P2  Two very tall needle spires dwarf the town. Blocks sparse.
+
+== Aleen ==
+hod_ale_chapter    P3  Stone tower on a mesa with trees, reads fine.
+hod_ale_seal       P3  Ring of standing stones around the seal reads well.
+hod_ale_village    P3  Tree canopy on a mesa. Huge bare trunk on the side looks detached.
+hod_ale_town_44    P1  Only poles and palms, no buildings. Reads as nothing.
+
+== Allanteen VI ==
+hod_aln_admiralty  P2  Stepped office block with pads on poles. Plain grey boxes, little to say "admiralty".
+hod_aln_lift       P2  Tower + four pads on stilts + a quonset hut. Sparse, parts unconnected; no ground slab.
+hod_aln_memorial   P2  Big flat drum with a tilted roof and flags. Drum dominates; memorial itself is tiny.
+hod_aln_works      P2  Boxes under a gantry frame, OK idea but plain.
+hod_aln_yards      P3  Detailed slips with hulls. Rule check: shipyards must be orbital, beside the disc; confirm placement.
+hod_aln_town_44    P3  Dense tower blocks, good.
+
+== Alzoc III ==
+hod_alz_base       P2  Castle-like block with four turrets and a dish. Alzoc is an ice world: no snow/ice props at all.
+hod_alz_mine       P1  Pit ring, a derrick, a box and a pylon with nothing tying them together. Too small and sparse; no ice.
+
+== Anaxes ==
+hod_anx_citadel    P3  Stepped citadel with mast, props on terraces. Good.
+hod_anx_college    P2  Two slabs flanking a hall, OK but plain.
+hod_anx_fort       P1  Huge red tent-like hull over a grey slab; does not read as a fort.
+hod_anx_hydro      P2  Silos and lattice towers, reads industrial. Plain.
+hod_anx_works      P2  Box, rocket tower, silos, no shared ground.
+hod_anx_yards      P3  Slips with hulls, good detail. Confirm it is placed in orbit (naval = space).
+hod_anx_town_44    P2  Two very tall smokestacks dwarf a thin town.
+
+== Anoat ==
+hod_ano_city       P2  Crowded towers on a dark slab, OK. Very dark brown palette; check swatches are above 100 RGB.
+hod_ano_shrine     P3  Domed shrine on a rock with pillars, reads well.
+hod_ano_town_44    P1  Two tall posts and a few slivers. Reads as nothing.
+
+== Ansion ==
+hod_ans_borokii    P3  Yurt camp with corral. Good.
+hod_ans_cuipernam  P3  Walled city on a mesa with domed palace. Good.
+hod_ans_dashbalar  P3  Walled town with pads. Good, a bit low.
+hod_ans_town_44    P2  One very tall column dominates; otherwise fine.
+
+== Arkania ==
+hod_ark_adascopolis P2 Crystal spires are right. Base skirt is near-black; check the DARK swatch.
+hod_ark_mines      P2  Black pit ring with three derricks. Ring renders black; crystal props good but few.
+hod_ark_novania    P3  Walled towers, pads with ships. Good.
+hod_ark_praxeum    P2  Brick block with a dome and pillar fence. Plain plinth.
+hod_ark_veeshas    P1  Black stepped pyramid on a rock, 29 KB. Black faces, too simple.
+hod_ark_town_44    P2  One huge spire dwarfs a sparse cluster.
+
+== Atzerri ==
+hod_atz_cantina    P1  40 KB: a dome on stilts next to a plain brown box. Too small and plain for a landmark.
+hod_atz_plaza      P2  Ring of slabs on stilts around small pads. Good idea; slabs are identical boxes.
+hod_atz_skreeka    P2  Pink-banded tower with pads and slabs, sparse.
+hod_atz_talos      P3  Capital: banded towers, rings, slabs. Reads as a trade city. Very dark green-grey palette; check 100 RGB.
+hod_atz_town_44    P2  One tall banded tower dwarfs a thin scatter of tiny blocks.
+
+== Axxila ==
+hod_axx_capital    P2  Tower cluster on a rock knob, OK but small. Rocks are blocky.
+hod_axx_fossfog    P1  37 KB: one boxy building with a black door hole and two signs. Lone box.
+hod_axx_oreport    P3  Silos, pipe bridge and a round pad. Reads as an ore terminal.
+
+== Bakura ==
+hod_bak_port       P2  Blue spikes and a tower on a pale rock, three white boxes in front. Front boxes block the view (-y side) and look unrelated.
+hod_bak_power      P1  Dark faceted rock with three cooling stacks; reads as a lump. Rock faces render near-black.
+hod_bak_salis      P2  Blue crystal spires around a small temple front; flat side walls look like floating cards.
+hod_bak_town_44    P1  One tall pillar and a few slivers. Reads as nothing.
+
+== Balmorra ==
+hod_bal_arms       P2  Floating disc with buildings, held up on short legs. Reads as a hovering platform, not a factory; long arms poke out.
+hod_bal_binprime   P3  Dense city around a domed hall with a spire. Good.
+hod_bal_bugtown    P2  Walled ring with two domes. Big plain wall; interior hidden.
+hod_bal_market     P2  Row of identical boxes and a silo. Plain.
+hod_bal_outpost    P2  Low grid of blue boxes around a pad. Flat, one height level.
+hod_bal_port       P2  Two silos, a tower and a hangar, disconnected parts on no ground.
+hod_bal_sobrik     P3  Dense blocks with stacks and twin water towers. Good.
+hod_bal_town_44    P3  Good industrial town.
+
+== Bardotta ==
+hod_bdt_palace     P3  Pagoda palace on a stone plinth. Good.
+hod_bdt_port       P3  Pads on a stone terrace with pagoda roofs and tower. Good.
+hod_bdt_temple     P2  Huge plain rock with a small door and pillars; rock top reads as a grey cap. Needs more temple and less boulder.
+hod_bdt_town_44    P2  Sparse pagoda houses, no ground or streets.
+
+== Bastion ==
+hod_bas_customs    P2  Disc hub with a ship and cargo dots, very spread out with lots of tiny loose bits.
+hod_bas_ravelin    P3  Fortress cluster with spire. Good.
+hod_bas_sartinaynian P3 Dense block grid with dome, landing apron with ships. Good.
+hod_bas_town_44    P2  Two needle towers dwarf the town.
+
+== Batuu ==
+hod_btu_outpost    P3  Petrified black spires around a tight town. Matches Black Spire Outpost.
+hod_btu_ruins      P2  Spire, arch and wall fragments, scattered. Some stumps render near-black.
+hod_btu_temple     P2  30 KB: stepped block with a pyramid roof. Plain for its size; no Batuu spires around it.
+hod_btu_town_44    P3  Spires plus houses, on-theme. Spires are very tall.
+
+== Belsavis ==
+hod_bel_botun      P3  Glass dome in a green rift between ice shelves. Good.
+hod_bel_plawal     P3  Jungle rift with a small dome. Good, but the settlement is tiny under the trees.
+hod_bel_tomb       P2  37 KB: dark stepped pyramid with posts. Dark faces close to black; the prison-vault canon look (huge sealed cylinder/blocks in ice) is missing.
+hod_bel_town_44    P2  Two very tall pillars dwarf a thin scatter.
+
+== Bestine IV ==
+hod_bst_barlata    P2  Wall of houses in front of a mossy dark cave rock. Rock sides render near-black.
+hod_bst_bsellis    P3  Domed city drum with gold blocks around. Good.
+hod_bst_gasha      P3  Green-sided island discs with houses and bridges. Good, reads as island spires.
+hod_bst_jahnae     P2  Single tall rock with a pad on a pole. Lone spire, few props.
+hod_bst_spire      P2  Single rock spire with a few green tufts. Same issue; near copy of jahnae.
+hod_bst_town_44    P2  Sparse blocks with lamp posts and two long bare poles.
+
+== Bonadan ==   (no town sample; Bonadan is a populated industrial world, check that it should have a town set)
+hod_bon_shipyard   P2  5.4 MB but renders as a thin curved arc, tiny at map scale. Fine if it is the orbital piece; needs bulk.
+hod_bon_spaceport  P2  Silos, sawtooth roofs, stacks. Reads as a factory, not a spaceport: no pads or ships.
+hod_bon_weather    P3  Stepped plinth with lattice masts. Good.
+
+== Botajef ==   (no town sample)
+hod_bot_elevator   P2  Thin tether on a small base. Reads at map scale only as a line; base too small.
+hod_bot_northbase  P3  Domes, dish and pad on an ice slab. Good.
+hod_bot_palace     P1  34 KB: dark plinth with one tower and a box front. Plain; plinth very dark.
+hod_bot_southbase  P2  Near copy of northbase (same domes on the same ice slab). Make it distinct.
+hod_bot_yards      P1  Shipyard on a ground slab with a hull in a gantry. Rule: naval = orbital station beside the disc, never on the ground.
+
+== Bothawui ==
+hod_bth_city       P3  Green-roofed round towers with pads. Good.
+hod_bth_clans      P2  Domed hall in towers, but a big plain grey cube sits in front (-y side) hiding it.
+hod_bth_drev       P3  Dense tower cluster with pads. Good, very close to hod_bth_city in look.
+hod_bth_village    P1  38 KB: a few towers and a flat green wall slab with two white fins. Wall reads as a floating card.
+hod_bth_town_44    P2  One very tall tower dwarfs a thin scatter.
+
+== Boz Pity ==
+hod_boz_base       P3  Geonosian-style spires among rock mounds. Good.
+hod_boz_foundry    P3  Spire, molten pool and pods on a mesa. Good.
+hod_boz_headstones P2  Monolith with scattered slabs; reads as ruins, OK. A bit sparse.
+hod_boz_ruins      P3  Walled temple complex with spires. Good. Dark moat edge, check colour.
+hod_boz_skeletons  P3  Huge beast skeleton. Distinctive, good.
+
+== Bracca ==
+hod_bra_platform   P2  Platform on legs with two gantry cranes. OK, sparse.
+hod_bra_rail       P2  Rail bridge on legs with scrap. Thin, will read as a line at map scale.
+hod_bra_tower      P3  Control tower with scrap at its base. Good.
+hod_bra_town       P3  Dense scrapper town on a slab. Slab sides dark.
+hod_bra_yards      P2  Gantries over a scrap field, close copy of hod_bra_platform. Slab sides render black.
+hod_bra_city_44    P2  Curved walls with stacks and scrap; loose, no ground.
+
+== Brentaal IV ==
+hod_bre_cormond    P3  Blue-capped tower cluster on a slab. Good.
+hod_bre_oradin     P2  Pads on a slab with one tower and four bare light poles. Flat, one height level.
+hod_bre_stadium    P3  Big glazed bowl with ribs. Reads as a stadium at map scale.
+hod_bre_town_44    P2  Two tall towers dwarf a thin scatter.
+
+== Byss ==
+hod_bys_estates    P3  Gabled manor blocks with trees. Good.
+hod_bys_landing    P3  Domed hall with towers and pads. Good.
+hod_bys_peak       P2  Terraced city on a big black drum. Drum sides are pure black.
+hod_bys_port       P1  Pads on stilts, a tower, a lone cylinder and a box, with no ground and no link. Unfinished look.
+hod_bys_ruins      P3  Stone pillars round a gold disc. OK as ruins.
+hod_bys_temple     P1  26 KB: black stepped pyramid with purple trim. Faces render black, too plain.
+hod_bys_town_44    P2  Sparse houses with lamp posts and two long bare needles.
+
+== Cantonica ==   (no town sample, yet Canto Bight is a big resort city; check the town set)
+hod_cant_westhill  P3  Domed palace on rock terraces with pad. Good. Only one landmark for the planet: the casino/racetrack is missing.
+
+== Carida ==
+hod_car_academy    P3  Walled academy with stepped tower. Good.
+hod_car_corsairs   P1  28 KB: dark rock lump with a red tube and two grey slabs. Reads as a rock, not a base.
+hod_car_district   P2  Row of identical blocks. Plain.
+hod_car_field      P2  Pads and two huts on a big plain slab. Slab dominates.
+hod_car_survival   P1  46 KB: tents, a water tower and a quonset scattered on no ground. Too small.
+hod_car_teeth      P2  Block, rock, pole with flags: loose parts. Tarkin's Teeth needs the rock teeth.
+hod_car_valor      P2  Ring track with ships around it. Very flat; thin ring vanishes at map scale.
+hod_car_town_44    P2  Two very tall stacks dwarf a thin town.
+
+== Carlac ==
+hod_clc_dwcamp     P3  Snowy pine slab with blue shelters. Good.
+hod_clc_mingpo     P3  Pink-canopy trees over snowy cabins. Distinctive, good.
+hod_clc_yarkora    P2  Blue slab with mounds, an obelisk and two flat walls. Walls look like floating boards.
+hod_clc_town_44    P2  Two clumps of log cabins and a few pines, sparse.
+
+== Cato Neimoidia ==
+hod_cat_bridge     P3  Arch bridge with spires. Right canon idea (bridge cities). Arch is near-black.
+hod_cat_citadel    P2  Dark brick pyramid with towers. Brick near-black on two faces.
+hod_cat_talon      P1  28 KB: one black claw spire on a green base. Black faces, too plain.
+hod_cat_university P2  Domes on a plain grey cube. Cube dominates.
+hod_cat_vaults     P2  Domed block on a dark brick base. Base near-black.
+hod_cat_zarra      P3  Double arch bridge city. Good. Arch near-black.
+hod_cat_town_44    P2  Two very tall spires dwarf a thin town.
+
+== Celanon ==   (no town sample, though Celanon City is a big trade city)
+hod_cel_city       P3  Walled spire city with domes. Good.
+hod_cel_control    P2  Control tower over small drums. Thin.
+hod_cel_gularg     P2  Two domes with flat wall slabs and a black doorway. Walls look like boards.
+hod_cel_hospital   P3  Two wings with glass link and pad. Good.
+
+== Cerea ==
+hod_cer_citadel    P2  52 KB: walled tower with glass blocks. Small, few props.
+hod_cer_schools    P1  64 KB: two plain gabled halls and a chimney. Generic box pile.
+hod_cer_vale       P3  Terraced green temple among tall trees. Good.
+hod_cer_town_44    P2  Trees and scattered blocks; tall trees dwarf the houses.
+
+== Chandrila ==
+hod_cha_brionelle  P2  Hall with obelisk, silos and quonsets; parts unrelated. Water tower on the left floats off the base.
+hod_cha_canyons    P2  Crystal clusters on dark plinths. Plinth row reads as a black bar; crystals float above it.
+hod_cha_emita      P3  Towers, ring pads, glass hall and crane. Good.
+hod_cha_hanna      P3  Domed capital on a terraced mesa. Very good.
+hod_cha_nayli      P3  Walled city on a brick plinth with ring pads. Good.
+hod_cha_town_44    P2  Two very tall needles dwarf the town.
+
+== Christophsis ==   (no town sample; Christophsis has big crystal cities in canon)
+hod_cph_base       P1  37 KB: grey box ring around a red-roofed block, a pad and a mast. Generic. Needs the crystal look.
+hod_cph_tower      P2  Teal crystal skyscraper with spikes. Right idea, but a lone tower; canon Chaleydonia is a forest of crystal towers.
+
+== Cioral ==
+hod_cio_port       P2  Three dark drums and a dark tower. Very dark palette, close to black.
+hod_cio_spire      P2  Dark tall spire, good shape. Dark palette close to black.
+hod_cio_town_44    P3  Dense dark tower blocks. Good, check palette brightness in game.
+
+== Ciutric ==
+hod_cit_daplona    P3  Towers round a domed hub with a wall. Good.
+hod_cit_mansion    P1  17 KB: black gabled block. Black faces, one box.
+hod_cit_prison     P2  Walled block on a black rock. Rock renders black.
+hod_cit_training   P2  Blocks on a slab with a tower and a red lattice tower; plain.
+
+== Colla IV ==
+hod_col_hive       P3  Termite-mound spires on a rock base. Good.
+hod_col_nest       P3  Spires with racks of pods on a mesa. Good.
+hod_col_spawn      P3  Pools under arches with spires. Distinctive.
+hod_col_city_44    P2  Spires and a curved ramp with pods; ramp reads as a floating board.
+
+== Commenor ==
+hod_com_arena      P2  Plain drum stadium with floodlights. OK; plain wall. (Rule: no reused arenas; check it is not shared with another planet.)
+hod_com_chasin     P3  Disc-level towers with greenery and pads. Distinctive.
+hod_com_munto      P2  Flat rows of tiny drums on beams. Too flat for map scale.
+hod_com_port       P3  Drums, dome, tower and a ship. Good.
+hod_com_university P3  Dome between two drums on a plaza with trees. Good.
+hod_com_town_44    P1  Mostly poles and lamps; almost no buildings.
+
+== Concordia ==
+hod_con_city       P3  Walled city on a green mound with silos. Good.
+hod_con_hideout    P2  Dark rock dome on stilts with flags. Rock near-black; stilts make it look like it floats.
+hod_con_mines      P3  Rock with buildings, derrick and silos. Good. Rock dark.
+hod_con_town_44    P2  Blocks, silos and a curved wall; sparse.
+
+== Copero ==
+hod_cop_city       P3  Stepped dark tower city with pads. Good. Dark palette.
+hod_cop_hold       P1  42 KB: one tower on a black rock. Black faces, lone box.
+hod_cop_ruins      P2  40 KB: pillars around a black dome with a ramp. OK ruin idea, sparse.
+hod_cop_yards      P2  Hull in a frame. Shape suits an orbital yard; confirm it is in orbit. Small.
+hod_cop_town_44    P2  Two tall needles dwarf a thin town.
+
+== Corellia ==
+hod_crl_bottoms    P1  Black drums and black stacks: almost every face renders black. Shape is fine under the colour.
+hod_crl_coronet    P3  Corellian domed-cap towers with pads. Good.
+hod_crl_corsec     P2  Stepped tower in a drum wall, OK. Plain.
+hod_crl_den        P2  Green mound huts with black doors, low and small.
+hod_crl_korvella   P3  Tower cluster with trees and pads. Good.
+hod_crl_shiprow    P3  Raised deck with ships on drum legs. Distinctive.
+hod_crl_yards      P2  Slips with ships on a ground frame. Rule: naval = orbital; confirm it is in orbit. Frame is thin.
+hod_crl_town_44    P2  Two very tall needles dwarf the town.
+
+== Corsin ==
+hod_crs_port       P3  Hill town with dome and pads. Good.
+hod_crs_resort     P3  Domed hall on an island disc, huts and pool. Good.
+hod_crs_retreat    P3  Domed manor on a rock. Good. Rock dark.
+hod_crs_station    P2  Stilt deck with domes, tower and a bent blue slab; slab looks broken.
+hod_crs_town_44    P3  Varied blocks on a curved street. Good.
+
+== Corulag ==
+hod_cor_academy    P2  Tower plus loose blocks and a quonset; parts don't share a base.
+hod_cor_crullov    P2  Blue towers behind a curved strip wall; strip and gantries look unfinished.
+hod_cor_curamelle  P3  Dense spire city on a slab. Good.
+hod_cor_sienar     P3  Walled research site with runway. Good.
+hod_cor_tasjon     P1  44 KB: three slabs, a few boxes and a tower inside a flat ring. Plain and flat.
+hod_cor_town_44    P2  One tall needle dwarfs a thin town.
+
+== Coruscant ==   (weakest sheet so far relative to its importance: 12 of 15 meshes under 70 KB)
+hod_cos_compor     P1  38 KB: black stepped box. Black faces, one box.
+hod_cos_courts     P2  Temple front with two spires on a plinth. Plain.
+hod_cos_diner      P1  30 KB: drum with a black slab and a sign. Generic.
+hod_cos_exchange   P1  Flat wall, striped drum and a box. Box pile; black stripes.
+hod_cos_executive  P1  22 KB: single rounded tower on a cube.
+hod_cos_level1313  P2  Black pit between gothic spires. Black interior; good concept.
+hod_cos_monument   P1  38 KB: black cone on a big plain slab.
+hod_cos_opera      P3  Galaxies Opera House drum with radial wings. Good, recognisable.
+hod_cos_outlander  P1  27 KB: one tower slab with a balcony.
+hod_cos_processional P1 67 KB: low wall with flags, reads as a line at map scale.
+hod_cos_republica  P2  Single tall needle: right silhouette for 500 Republica but tiny footprint, no base.
+hod_cos_senate     P2  Senate mushroom dome on blocks. Recognisable; needs the plaza, statues, and to be much bigger (guide wants Raxus-senate scale).
+hod_cos_temple     P1  40 KB: black stepped tower on a stepped plinth. Canon Jedi Temple: wide ziggurat with five spires, central tallest. Rebuild.
+hod_cos_works      P2  Lattice towers, stacks and silos, loose. Black blocks.
+hod_cos_town_44    P2  A few grey towers; Coruscant should read as dense ecumenopolis (use the etti/arco kit).
+
+== Csaus ==
+hod_csa_hold       P2  Dark walled block with a tower. Walls near-black.
+hod_csa_station    P3  Tower ringed by domed drums with pads. Good.
+hod_csa_town_44    P2  Needle spikes and tiny drums, sparse.
+
+== Csilla ==   (ice world: no snow or ice props on any mesh)
+hod_csi_csaplar    P3  Dark towers among ice rocks. Good.
+hod_csi_cupola     P2  Big dome with slabs, very dark, white ramp at front.
+hod_csi_hq         P2  47 KB: dark block, tower and pads. Plain.
+hod_csi_library    P2  Glass cube with dark spikes and a grey slab in front (-y) hiding it.
+hod_csi_town_44    P2  Dark slivers and two tall needles; sparse.
+
+== Dagobah ==   (no town: right, Dagobah is uninhabited)
+hod_dag_cave       P3  Gnarled tree over the cave with a pool. Good.
+hod_dag_dagger     P3  Rock spire with trees. Good.
+
+== Dantooine ==   (no town sample; Dantooine has Khoonda/settlers, check)
+hod_dan_cave       P2  Mossy black rock with a glowing door and a few huts. Rock sides black.
+hod_dan_enclave    P3  Domed enclave with wings. Recognisable.
+hod_dan_grove      P3  Great tree on a green mound. Good.
+hod_dan_khoonda    P3  Walled domed hall with turrets. Good.
+hod_dan_matale     P2  Walled estate with a house and turbine, sparse inside.
+hod_dan_rakatan    P2  Dark box on a mossy mound with pillars; box near-black.
+hod_dan_sandral    P2  41 KB: walled manor, flat. OK idea, needs height.
+
+== Dathomir ==   (no town: fine for clan villages, the villages are landmarks)
+hod_dat_arena      P2  Ring wall with rock spires. Reads as a stadium; very dark red-brown, check 100 RGB.
+hod_dat_lair       P3  Rock spires with webbing and a green pool. Good.
+hod_dat_nardithi   P2  Mass of dark posts on a drum: reads as a pincushion. Near-black tops.
+hod_dat_singing    P3  Mountain fortress with gate. Good.
+hod_dat_village    P3  Nightbrother spire huts on a rock. Good.
+
+== Devaron ==
+hod_dev_eedit      P3  Twin-spire temple in jungle on a rock. Good.
+hod_dev_parting    P3  Gothic arch ruin with pillars. Good.
+hod_dev_serat      P3  Stepped temple with horn finials and spires. Very good.
+hod_dev_town_44    P2  Thin slivers and palms; houses barely visible.
+
+== Dorin ==
+hod_dor_barando    P2  Black stepped mound with small towers. Faces near-black.
+hod_dor_caverns    P1  Black block with a ramp and two doors. Black faces, box.
+hod_dor_dorgalk    P3  Towers and domes on a slab. Good. Towers dark.
+hod_dor_dorshan    P3  Dense black spire city. Good, dark.
+hod_dor_enclave    P2  Dome with dark wings and a tower; plain.
+hod_dor_town_44    P2  Dark towers and two needles.
+(Dorin overall: atlas very dark; the whole planet risks rendering black in game. Raise the dark swatches.)
+
+== Dromund Kaas ==   (no town: OK if abandoned in this era)
+hod_dk_citadel     P2  Ruined citadel tower on a plinth. Shape is right; dark blue-grey faces near-black.
+hod_dk_dark_temple P3  Temple gate with horn arches and steps. Good.
+
+== Drongar ==
+hod_dro_bota       P3  Bota fields, silos and a tower in a jungle plot. Good.
+hod_dro_rimsoo     P3  Medical domes with red pads and trees. Good, recognisable as Rimsoo Seven.
+
+== Dubrillion ==
+hod_dub_capital    P3  Tower cluster with pads. Good.
+hod_dub_resort     P3  Curved terraced hotel with palms. Good.
+hod_dub_city_44    P2  Two tall needles and lamp posts dominate.
+
+== Duro ==
+hod_dur_factory    P2  Dark tanks and stacks. Near-black.
+hod_dur_lift       P1  Three drums with long green rods; reads as unfinished poles.
+hod_dur_newtayana  P3  Disc with domed towers. Good.
+hod_dur_ranadaast  P2  Towers around a domed block with rocks. OK; dark.
+hod_dur_spacecity  P2  Disc with domed towers. Canon Duros space cities are orbital: check it is placed off the disc. Close copy of newtayana.
+hod_dur_tayana     P2  Drums inside a ring of wall slabs; walls look like boards.
+hod_dur_tombs      P1  38 KB: stepped brick block with dark fins. Plain.
+hod_dur_town_44    P2  One black needle dwarfs the town; green slab "signs" float.
+
+== Empress Teta ==
+hod_tet_citadel    P1  51 KB: black castle block with four cone towers. Black faces.
+hod_tet_control    P2  Tower with pads on poles; thin.
+hod_tet_core       P3  Spire cluster around a drum. Good.
+hod_tet_guild      P2  44 KB: boxy block with a ring-topped tower. Plain.
+hod_tet_library    P3  Domed library on a plinth. Good.
+hod_tet_mine       P2  Pit with a derrick and a block. Pit rim near-black.
+hod_tet_monument   P2  Green obelisk on a disc held up by black posts. Posts black; floats.
+hod_tet_spaceworks P2  Slab with silos and a scaffold. Plain.
+hod_tet_town_44    P3  Dense copper blocks. Good.
+
+== Endor ==
+hod_end_brighttree P3  Dense redwood grove with hut rings. Very good.
+hod_end_keep       P2  Castle tower on a rock; walls dark, rock brown/black. Plain for 64 KB.
+hod_end_sui        P2  Huts on stilt platforms between two trees; huts should be up in the trees (Ewok canon).
+hod_end_town_44    P2  Tall trees with tiny huts at the foot; huts unreadable.
+
+== Eriadu ==   (Tarkin homeworld, big industrial city; everything here is under 50 KB)
+hod_eri_factory    P1  44 KB: black stacks, sawtooth roofs and a floating tan board in front (-y).
+hod_eri_tarkin     P2  Tower cluster with a small dome. Plain grey blocks.
+hod_eri_town_44    P1  39 KB: thin slivers and posts.
+
+== Esseles ==
+hod_ess_calamar    P3  Walled city with minarets and canals. Very good.
+hod_ess_esprix     P3  Domed estate on a brick plinth. Good.
+hod_ess_nurrale    P3  Dense town with dome and curved road. Good.
+hod_ess_starport   P2  Two drums with a ship, a tower; plain.
+hod_ess_togatto    P2  Oval stadium with a ramp; grey blocks stuck to the front (-y).
+hod_ess_town_44    P2  Two very tall minarets dwarf the town.
+
+== Etti IV ==   (no town sample)
+hod_etti_arcoplex  P2  Stepped ring with tower; good shape, very dark blue faces.
+hod_etti_dancedome P3  Dome with arch and twin spires. Good.
+hod_etti_spaceport P3  Drums, pads and curved terminal. Good.
+
+== Falleen ==
+hod_fal_foundry    P1  47 KB: three flat tilted boards, black stacks and a pagoda tower. Boards float.
+hod_fal_palace     P2  Pyramid roof on a big brick plinth with towers. Plinth dominates.
+hod_fal_spaceport  P2  Pads on a plain brick slab. Box.
+hod_fal_throne     P3  Tiered pagoda-tower city on a drum. Good.
+hod_fal_yellow     P2  Pagoda towers with yellow parasols, no ground or link.
+hod_fal_town_44    P2  Two very tall needles dwarf the town.
+
+== Farstine ==
+hod_fst_landing    P3  Drums with pads and a tower. Good.
+hod_fst_wreck      P3  Crashed ship ringed by scavenger huts. Good, distinctive.
+hod_fst_town_44    P1  47 KB: slivers and two needle posts.
+
+== Florrum ==   (pirate base world; no town sample is fine)
+hod_flo_complex    P2  Ring deck on a dark drum with spike. Recognisable Hondo look; drum near-black.
+hod_flo_outpost_a  P1  28 KB: drum with two horns and a silo.
+hod_flo_outpost_b  P1  12 KB: single tapered block with horns. Smallest mesh so far.
+hod_flo_refinery   P1  43 KB: three silos and a box with a lattice. Florrum's sulfur geysers/rock missing.
+hod_flo_vault_r5   P1  21 KB: red rock lump and a silo.
+
+== Foerost ==
+hod_foe_foundry    P3  Domed drum with stacks and pad. Good.
+hod_foe_hajibar    P3  Spire city. Good.
+hod_foe_hullworks  P2  Drums and pads with ships floating above. Rule: naval works orbital.
+hod_foe_launch     P2  Drums with pads, OK, plain; close copy of corellian/fondor drum sets.
+hod_foe_oldyards   P2  Ring frame with a hull; thin, reads as a wireframe. Should be orbital.
+hod_foe_refinery   P3  Tall tanks with pad. Good, dark.
+hod_foe_tower      P1  44 KB: lattice pylon on a block. Lone pylon.
+hod_foe_yards      P2  Slips with hulls (2.7 MB). Orbital per rules; thin frames.
+hod_foe_town_44    P2  Dark blocks and two needles.
+
+== Fondor ==   (whole planet in a dark purple-grey atlas; check 100 RGB)
+hod_fon_academy    P2  Block with dome and a hut on stilts in front (-y), pad on a post. Plain.
+hod_fon_city       P3  Towers with cooling stacks. Good.
+hod_fon_lift       P2  Tower with pads on posts and a quonset in front (-y). Sparse.
+hod_fon_oridin     P2  Towers on a plain slab with stacks. Slab dominates.
+hod_fon_shaft      P2  Dark pit with a tripod, tower block beside. OK, dark.
+hod_fon_steam      P2  Hub with radial pipes and stacks; OK, plain.
+hod_fon_yards      P2  Ring stations with a ship, flat. Should be orbital; flat at ground scale.
+hod_fon_town_44    P2  Two very tall needles.
+
+== Fresia ==
+hod_fre_arches     P1  Black arches: all faces render black.
+hod_fre_incom      P3  Domed hub with pads and pods. Good.
+hod_fre_range      P2  Pads on posts, a tower and a quonset. Sparse, no ground.
+hod_fre_warehouse  P2  Three domes and a pad; few, loose.
+hod_fre_town_44    P1  Mostly posts and a few tiny pods.
+
+== Gaftikar ==
+hod_gaf_assembly   P3  Domed assembly hall with towers on a plinth. Good. Purple slab sides dark.
+hod_gaf_nests      P3  Termite towers in a jungle crater. Good.
+hod_gaf_town_44    P2  Thin slivers and palms.
+
+== Garqi ==
+hod_gar_combine    P3  Silos, barn, fields and pad. Good.
+hod_gar_pesktda    P3  Dense city with purple trees and domes. Very good.
+hod_gar_university P3  Gothic hall with greenhouses and tower. Good.
+hod_gar_vlassy     P2  Grey rocks with purple caps and trees; rock sides near-black.
+hod_gar_city_44    P3  Varied blocks with purple trees. Good; two needles tall.
+
+== Geonosis ==
+hod_gns_arena      P3  Petranaki arena look with spires. Good. Door slab is black.
+hod_gns_foundry    P2  Dome hive with spires; plain sides, dark doorway box.
+hod_gns_spires     P2  Spire cluster on dark base. Good shape; base near-black.
+hod_gns_temple     P2  Single spire; lone, thin. Canon Geonosian structures are wide mesas of spires.
+hod_gns_town_44    P2  Thin spikes, sparse.
+
+== Ghorman ==
+hod_gho_palmo      P3  Walled star-fort city on a mesa. Very good.
+hod_gho_port       P2  Drums with pads and a tower. Plain, same drum-pad kit as many planets.
+hod_gho_webbery    P1  Box pile: two plain blocks, a glass sheet stack and green cones. Floating panels.
+hod_gho_town_44    P2  Two very tall needles.
+
+== Haruun Kal ==
+hod_hrk_camp       P2  Trees with huts hidden below the canopy. Huts unreadable.
+hod_hrk_pelekbaw   P2  Stilt huts and drum behind a row of trees; town hidden by trees on the -y side.
+hod_hrk_town_44    P1  Posts and scattered slivers.
+
+== Honoghr ==
+hod_hon_academy    P2  Red blocks with dome and stack; dark red near 100 RGB.
+hod_hon_nystao     P3  Walled stone town with tower and roofs. Good.
+hod_hon_temple     P1  20 KB: black pointed block. Black faces, lone box.
+hod_hon_town_44    P2  Houses with two needles; sparse.
+
+== Hoth ==   (no town: right, uninhabited)
+hod_hth_cave       P2  Ice mound with a door and ice spikes. Lower sides black.
+hod_hth_graveyard  P2  Hull block with a tall slab and ice shards; doesn't read as many wrecked ships.
+hod_hth_outpost    P3  Ring wall with dish and towers. Reads as Echo-style outpost.
+
+== Hypori ==   (no town sample would be right; Hypori is a droid-factory world)
+hod_hyp_crash      P1  26 KB: crashed hull on block legs. Too small, floats.
+hod_hyp_factory    P3  Domed factory with towers. Good. Black door box.
+hod_hyp_town_44    P2  Rows of drums and two needles. Check if Hypori should have towns at all.
+
+== Iego ==
+hod_ieg_boneyard   P3  Huge skeleton. Good.
+hod_ieg_choir      P1  Black spires in a black mass: nearly all faces black.
+hod_ieg_cliffhold  P1  Black organ-pipe wall with platforms; wall black.
+hod_ieg_laserweb   P3  Hub with radial arms. Distinctive. Should it be orbital (defence station)?
+
+== Ilum ==   (no town: right)
+hod_ilu_circle     P3  Ruined ring with crystals and snow rocks. Good.
+hod_ilu_ruins      P3  Pillars on an ice plinth with crystals. Good.
+hod_ilu_temple     P3  Temple gate in an ice mountain. Good, lower sides black.
+hod_ilu_tonvarr    P2  Broken walls and two flat discs (halo-like); rule says no flat discs.
+
+== Ithor ==
+hod_ith_cloudmother P3 Floating island city with dome. Very good.
+hod_ith_falls      P3  Waterfall gorge. Good; rock sides black.
+hod_ith_tafanda    P3  Herd-ship deck. Good.
+hod_ith_tarintha   P3  Great tree on a deck. Good.
+
+== Jabiim ==   (no town sample; Jabiim has settlements, check)
+hod_jab_aurek      P2  Tall tower on stilts with tents; tents float.
+hod_jab_bore       P3  Mining bore machine. Distinctive.
+hod_jab_choal      P3  Town on a dark plinth with towers. Good.
+hod_jab_cobalt     P3  Domed base on a cliff with guns. Good.
+hod_jab_shear      P2  Domes on a mesa, sparse. Small flags float.
+hod_jab_shelter    P3  Stepped bunker in a curved wall. Good.
+
+== Jedha ==
+hod_jed_city       P3  Walled holy city with dome. Good.
+hod_jed_statue     P1  Black-fronted dome and a flat slab; the fallen Jedi statue is unreadable.
+hod_jed_town_44    P1  74 KB: slivers and two poles.
+
+== Kadavo ==   (guide cites Kadavo as the size bar, but the rest of the set is the weakest so far)
+hod_kad_camp       P1  16 KB: four plain boxes and one floating box.
+hod_kad_dock       P1  21 KB: two drums and a block.
+hod_kad_facility   P3  The reference model. Good.
+hod_kad_mine       P1  16 KB: a floating brown board on a post and a rock.
+
+== Kalee ==
+hod_kal_abesmi     P2  Rock pillar with spiral ramp; rock near-black.
+hod_kal_kaleela    P3  Cliff city with bone arches. Good; cliffs dark.
+hod_kal_shrupak    P3  Bone-arch fortress drum. Very good.
+hod_kal_warruzan   P3  Bone-arched halls in a cliff. Good; cliff black.
+hod_kal_town_44    P3  Bone-ringed towers. On-theme.
+
+== Kamino ==   (no town: Tipoca is the city, fine)
+hod_kam_station    P2  Three domes on stilts and a pad. Close copy of tipoca at smaller scale.
+hod_kam_tipoca     P3  Domes on stilts with links and pad. Recognisable Tipoca. Stilts are black.
+
+== Karfeddion ==
+hod_kar_arena      P1  56 KB: plain drum with floodlights and banners. Generic, and the drum-arena look repeats Commenor/Esseles (rule: no reused arenas).
+hod_kar_port       P2  Pads, gantries and tower on a slab. Plain.
+hod_kar_vandron    P3  Castle on a hill. Good.
+hod_kar_town_44    P2  Two tall towers dwarf the town.
+
+== Kashyyyk ==
+hod_kas_caverns    P1  Black rock dome with black bent spikes. All black.
+hod_kas_kachirho   P3  Great wroshyr tree city. Very good.
+hod_kas_refinery   P3  Tanks between trees on a rock. Good; rock black.
+hod_kas_rwookrrorro P3 Tree cluster with platforms. Good.
+hod_kas_wartaki    P3  Base among trees on a rock. Good.
+hod_kas_city_44    P3  Tree town with walkways. On-theme.
+
+== Kessel ==
+hod_kes_castle     P3  Castle on a black rock. Good; rock black.
+hod_kes_mine       P2  Pit, block, tower and pad with an orange rock; pieces loose.
+hod_kes_town_44    P2  Two very tall needles and posts.
+
+== Kiros ==
+hod_kir_colony     P3  Spire colony on a slab with canals. Good.
+hod_kir_falls      P2  Big waterfall cliff block: reads as a flat box with a glass front. Cliff sides dark.
+hod_kir_town_44    P1  Rows of posts and two needles.
+
+== Korriban ==   (no town: right)
+hod_kor_academy_r2 P2  Stepped pyramid with ramp. Right idea, but the guide cites the academy as a size reference; it reads as a plain red ziggurat. Canon: tall gated façade in a cliff.
+hod_kor_obelisks   P1  10 KB: three plain obelisks. Smallest landmark; no Valley props.
+hod_kor_ragnos_r0  P3  Statue-fronted tomb with pillars. Good.
+hod_kor_tomb_a_r5  P1  Plain red cube with a wing-shaped scrap. Box.
+hod_kor_tomb_a_r7  P2  Cube with door, statue and ramp. Box with props.
+hod_kor_tomb_b_r4  P1  Plain red cube. Box.
+hod_kor_tomb_d_r1  P2  Cube with mask and ramp. Box with props.
+hod_kor_twins_r1   P3  Twin statues on a block. Good.
+(Korriban tombs: three of five are near-identical red cubes; each tomb needs its own canon silhouette.)
+
+== Kuat ==
+hod_kua_city       P3  Spire city with arches and pads. Very good.
+hod_kua_estate     P3  Walled estate with dome. Good.
+hod_kua_gardens    P3  Garden drums with domes. Good.
+hod_kua_works      P2  Domed drums with pads; ships floating above. Naval works orbital per rules.
+hod_kua_yards      P2  Curved slip with ships; must be orbital. Flat.
+hod_kua_town_44    P2  One very tall needle dominates.
+
+== Lianna ==   (no town sample)
+hod_lia_academy    P3  Domed hall between towers. Good.
+hod_lia_hq         P3  Tall tower with glass vaults and pads. Good.
+hod_lia_shipyard   P3  Hex orbital frame. Right for "naval = space"; thin, check map-scale visibility.
+hod_lia_skycity    P3  Floating platform with towers. Good.
+
+== Lola Sayu ==
+hod_lola_chunk_a0  P2  Lava-cracked rock chunk with debris. Right idea; mostly black.
+hod_lola_citadel   P2  Citadel tower with arms; good silhouette, mostly black faces.
+
+== Loronar ==
+hod_lor_city       P3  Green-glass spires with pads. Good.
+hod_lor_crystal    P2  Two domes behind a row of drums; drums on the -y side hide the domes.
+hod_lor_hq         P2  Tower on a brick slab, plain.
+hod_lor_labs       P2  Dome with satellite pods and floating lamp posts.
+hod_lor_port       P2  Drum pads with ships; same drum-pad kit again.
+hod_lor_town_44    P2  Two very tall spires dominate.
+
+== Lotho Minor ==
+hod_ltm_lair       P2  Big rock cone with a door and tripod. Plain.
+hod_ltm_warren     P3  Junk pile among rock cones with crane. Good.
+hod_ltm_town_44    P2  Scattered stumps and posts.
+
+== Malastare ==
+hod_mal_crater     P2  Rock-rim crater with a black interior. Black faces.
+hod_mal_palace     P3  Round palace with cone turrets. Good.
+hod_mal_podarena   P1  31 KB: two brick slabs with cone towers. Pod-race arena unrecognisable.
+hod_mal_town_44    P2  Slivers and two needles.
+
+== Manaan ==
+hod_mnn_ahto       P3  Domed hub with satellite domes on discs. Recognisable Ahto City.
+hod_mnn_swoop      P2  Disc with a ring and a wall. Plain.
+hod_mnn_town_44    P2  Drums and two very tall needles.
+
+== Mandalore ==   (no town sample; Mandalore has Keldabe, Sundari: check)
+hod_man_beskar     P3  Open-pit mine with tower and derrick. Good.
+hod_man_cityofbone P3  Skeleton city. Distinctive.
+hod_man_dwcamp     P3  Camp in rock pillars with pad. Good.
+hod_man_keldabe    P3  Fortress town on a rock with tower. Good.
+hod_man_norgbral   P3  Hill fort town. Good.
+hod_man_sundari    P2  Black dome: right canon shape, but the whole dome renders black. Raise the swatch.
+
+== Manpha ==
+hod_mph_fishery    P3  Stilt docks with sheds. Good.
+hod_mph_shanpan    P3  Stilt village with domed huts. Good.
+hod_mph_town_44    P1  Two very tall posts and tiny huts.
+
+== Maridun ==
+hod_mrd_outpost    P3  Quonset base with silos and mast on grass. Good.
+hod_mrd_tree       P3  Giant trees with pool. Good.
+hod_mrd_village    P3  Lurmen huts under a great tree. Good.
+hod_mrd_town_44    P2  Log towers, sparse.
+
+== Mechis ==
+hod_mec_city       P2  Dark tower cluster; near-black.
+hod_mec_foundry    P2  Big block with domes and a stack; block front is a plain grey wall with a row of pipes.
+hod_mec_town_44    P2  Two needles and dark slivers.
+
+== Mimban ==
+hod_mim_mine       P2  Pit domes and vats on a block; block dominates.
+hod_mim_oubliette  P1  38 KB: dark tapered block with posts. Near-black, plain.
+hod_mim_temple     P2  Dark stepped pyramid. Good shape; near-black faces.
+hod_mim_village    P3  Stilt hut village. Good.
+hod_mim_wells      P1  Black rings and black posts floating. All black.
+hod_mim_town_44    P2  Huts and posts, sparse.
+
+== Mon Calamari ==   (no town sample; Mon Cala is a major populated world)
+hod_mcl_coral_city P3  Coral spires and dome on a reef. Very good.
+hod_mcl_drome      P2  Sail-like walls on a sand slab; walls read as thin boards.
+hod_mcl_quarren_hq P2  Tower with spikes on a black base. Black faces.
+
+== Mustafar ==
+hod_mus_fralideja  P3  Mushroom towers on a lava rock. Good.
+hod_mus_klegger    P2  Spires over a collector frame. Good idea; dark base.
+hod_mus_ziton      P3  Mushroom towers on a rock with lava. Good.
+hod_mus_town_44    P1  Two very tall needles over tiny mushrooms.
+
+== Muunilinst ==
+hod_muun_harnaidan P3  Spire cluster. Good, thin.
+hod_muun_highport  P3  Disc port with spires and ship. Good.
+hod_muun_mariunhus P2  Spire-ringed drum on a black base; base black.
+hod_muun_pilaan    P2  Spires around a white slab; slab reads plain. Podrace course needs a track.
+hod_muun_town_44   P3  Spire town. On-theme.
+
+== Mygeeto ==
+hod_myg_city       P3  Dark crystal spire city. Very good.
+hod_myg_hammertong P2  Brown cones and a dark drum; loose parts.
+hod_myg_jygat      P3  City in an ice cliff. Good.
+hod_myg_mesas      P3  Spires on snowy mesas. Good.
+hod_myg_mines      P3  Crystal ice mountain with mine. Good.
+hod_myg_town_44    P2  Two very tall spires.
+
+== Naboo ==   (no town sample; Naboo needs Theed/Gungan town sets)
+hod_nab_gunga      P2  Bubble domes on stalks; nice, but no water or base.
+hod_nab_sentry     P1  Big egg-shaped pod with a black slot and small stubs: unreadable.
+hod_nab_theed      P3  Domed palace on a plinth with towers. Recognisable. Front drums block the plinth (-y).
+
+== Nal Hutta ==
+hod_htt_bilbousa   P3  Hutt onion domes with arches. Good.
+hod_htt_mine       P2  Block on a black rock with a tower; rock black.
+hod_htt_palace     P2  Onion dome palace; black door slab dominates the front.
+hod_htt_yards      P2  Dome with radial arms; naval should be orbital.
+hod_htt_town_44    P1  One huge spike and tiny pods.
+
+== Nar Shaddaa ==   (whole planet atlas very dark: ecumenopolis should glow, not go black)
+hod_nsh_hutta      P2  Dark tower cluster with pink bands; near-black.
+hod_nsh_palace     P2  Dark block with dome; near-black.
+hod_nsh_port       P1  Plain dark slab with pads and a tower.
+hod_nsh_town_44    P3  Dense tower grid, good; dark.
+
+== Neimodia ==
+hod_nei_docks      P2  Drums with arches; same drum-pad kit.
+hod_nei_farms      P1  Discs on posts and floating dots; unreadable.
+hod_nei_hives      P3  Domed hives. Good.
+hod_nei_kaantay    P2  Hooked towers with pads; sparse.
+hod_nei_kotosi     P3  Hooked-tower city around a dome. Good.
+hod_nei_town_44    P2  Thin spikes.
+
+== Nelvaan ==
+hod_nel_lab        P2  Factory with tanks on a snow slab. OK; plain.
+hod_nel_rokrul     P3  Village under a snowy peak. Good.
+hod_nel_town_44    P2  Stakes and a few trees; no huts.
+
+== Nimban ==
+hod_nim_bureau     P2  Stepped block with trees; plain.
+hod_nim_hkd        P2  Blocks with a ring on green posts; ring floats.
+hod_nim_town_44    P2  Needles and posts.
+
+== Nyriaan ==
+hod_nyr_arena      P2  Drum arena with floodlights; same arena template as Karfeddion/Commenor.
+hod_nyr_finalrest  P2  Huge rock mesa with tiny domes on top; rock dominates, near-black.
+hod_nyr_locus      P3  Town on a mesa slab. Good.
+hod_nyr_prosperity P3  Open-pit mine with tower. Good.
+hod_nyr_town_44    P2  Curved wall with stilt huts; OK, sparse.
+
+== Oba Diah ==   (whole planet black)
+hod_oba_docks      P1  Black rock with pads: almost all black.
+hod_oba_palace     P1  Black spires on a black rock.
+hod_oba_works      P1  Black stacks and tanks.
+hod_oba_town_44    P1  43 KB: black spikes.
+
+== Onderon ==
+hod_ond_camp       P2  Camp in a rock between trees; rock near-black.
+hod_ond_iziz       P3  Walled city on rock with tower. Very good.
+hod_ond_kira       P3  Fortress on a rock. Good.
+hod_ond_lodge      P2  Block with trees and a watchtower; block plain.
+hod_ond_nest       P3  Stockade on a rock spire. Good.
+hod_ond_town_44    P3  Domed towers. Good.
+
+== Ord Cestus ==   (no town sample)
+hod_ces_chikatlik  P3  Hive spires on a red mesa. Good.
+hod_ces_cybernetics P3 Tower and factory on a slab. Good.
+hod_ces_droidworks P2  Factory on a slab; slab dominates.
+hod_ces_fungus     P2  Fungus vats and tubes; loose, no ground.
+hod_ces_jantos     P3  Hive-spire city on a mesa. Good.
+hod_ces_penitentiary P2 Block on a rock with cooling towers; parts disconnected.
+
+== Ord Mantell ==
+hod_om_city        P3  Dense city with domes and pads. Good.
+hod_om_garnik      P1  Fort in a black rock dome; rock black.
+hod_om_junkyard    P2  Hull scrap with cranes; black heaps.
+hod_om_oldcity     P3  Ruined city with dome. Good.
+hod_om_worlport    P2  Blocks with a glass front behind a floating bar on the -y side.
+hod_om_town_44     P2  Two needles; otherwise OK.
+
+== Ord Radama ==
+hod_ord_raido      P2  64 KB: tower with small blocks on a slab. Plain.
+hod_ord_ruins      P3  Ruined tower and walls on a slab. Good.
+hod_ord_town_44    P1  56 KB: two needles and slivers.
+
+== Ord Trasi ==
+hod_ot_depot       P3  Fort with turrets. Good.
+hod_ot_orbital     P3  Orbital yard station. Good, matches naval rule.
+hod_ot_salvage     P2  Hull and scrap domes; black lumps.
+hod_ot_yards       P2  Hull frame on a ground slab. Naval = orbital.
+hod_ot_town_44     P2  Two lattice needles; sparse.
+
+== Orto Plutonia ==
+hod_ort_beetles    P3  Twin domes on snow. Good.
+hod_ort_glid       P3  Ice-spire station. Good.
+hod_ort_talz       P2  Ice shelves with huts between; black holes on the shelf face.
+hod_ort_town_44    P2  Ice shards and posts; sparse.
+
+== Ossus ==   (no town: right, ruined)
+hod_oss_agorn      P2  Cone with ramp rings; reads OK, dark.
+hod_oss_knossa     P3  Domed ruins on a drum. Good.
+hod_oss_library    P3  Ruined library on a mesa. Good.
+hod_oss_temple     P3  Ruined temple with stairs. Good.
+
+== Pammant ==   (no town sample)
+hod_pam_colony     P3  Pod towers on a drum. Good.
+hod_pam_docks      P3  Orbital ring dock. Good for naval rule (4.9 MB though; check perf).
+hod_pam_liftport   P2  Slab with sheds and floating pods above; pods float.
+
+== Pantora ==
+hod_pan_city       P3  Spire ring on a drum. Good.
+hod_pan_ro         P2  Dome with boxes on stilts; boxes float.
+hod_pan_tower      P1  28 KB: lone tower on a cube.
+hod_pan_town_44    P2  Needles and slivers.
+
+== Phelarion ==
+hod_phe_academy    P1  15 KB: grey office block with a glass cube in front (-y). Generic box pile.
+hod_phe_port       P2  Block with drums behind a plain wall on the -y side.
+hod_phe_town_44    P1  35 KB: slivers and two needles.
+
+== Praesitlyn ==
+hod_prs_center     P3  Big dish and masts on a walled slab. Recognisable comms center.
+hod_prs_redoubt    P3  Ring fort with domed turrets. Good.
+hod_prs_town_44    P2  Slivers with a lattice mast.
+
+== Qiilura ==
+hod_qii_imbraani   P3  Water tower town on a field slab. Good.
+hod_qii_teklet     P2  Discs on a mast over a paved slab; discs float.
+hod_qii_town_44    P2  Blocks and palms, sparse.
+
+== Quell ==
+hod_qul_base       P2  Walled field with brown spheres outside the wall; spheres float/unrelated.
+hod_qul_spheres    P2  Giant brown sphere cluster on rocks; reads as a blob. Plain.
+hod_qul_town_44    P2  Needles and slivers, floating dots.
+
+== Quesh ==
+hod_qsh_palace     P2  Green dome on a brick block with black stacks; stacks black.
+hod_qsh_refinery   P2  Rows of tanks with two rails and two stacks; rails float.
+hod_qsh_town_44    P2  Two very tall black poles.
+
+== Queyta ==
+hod_que_city       P2  Spires on a black rock; black.
+hod_que_forge      P3  Cooling towers on a lava rock. Good.
+hod_que_town_44    P2  Two needles.
+
+== Rakata Prime ==
+hod_leh_temple     P1  24 KB: black stepped pyramid with spikes. Canon Temple of the Ancients is a huge stepped stone pyramid; needs scale and stone colour.
+hod_leh_village    P2  Cone-roofed towers; dark walls.
+hod_leh_town_44    P1  Stumps and posts with one needle.
+
+== Rattatak ==
+hod_rat_barterus   P2  Huts on stilts around a ring on a sand slab; sparse.
+hod_rat_castle     P3  Spiky castle on a rock. Recognisable Ventress castle.
+hod_rat_cauldron   P2  Arena drum with torches; same arena template, plus a block dropped in.
+hod_rat_town_44    P1  34 KB: slivers and spikes.
+
+== Raxus ==   (no town sample)
+hod_rax_alley_62   P3  Autumn tree prop. Fine as an alley tree.
+hod_rax_alley_63   P3  Twin autumn trees. Fine.
+hod_raxus_senate   ok  Parliament bowl with spires. The reference model; leave alone.
+
+== Raxus Prime ==   (no town: right, junk world)
+hod_bld_rp_derriphan_bow   P3  Imported wreck, textured. Good.
+hod_bld_rp_derriphan_stern P3  Good.
+hod_bld_rp_droidworks      P3  Rusty factory drum with pipes. Good.
+hod_bld_rp_factory         P3  Refinery deck. Good.
+hod_bld_rp_hammerhead_bow  P3  Good.
+hod_bld_rp_hammerhead_stern P3 Good.
+hod_bld_rp_lethisk         P3  Good.
+(Raxus Prime uses real textures and is the best-looking set; a style bar for the rest.)
+
+== Rendilli ==
+hod_ren_base       P2  Drum pads with ships; same drum-pad kit.
+hod_ren_city       P3  Spire city with pads. Good.
+hod_ren_hq         P2  48 KB: tower with ring and slabs. Plain.
+hod_ren_works      P1  Black dishes and silver cones floating round a block.
+hod_ren_yards      P2  Slips on the ground; naval = orbital.
+hod_ren_town_44    P2  Two dark needles.
+
+== Rhen Var ==   (no town: right if abandoned)
+hod_rh_bravo       P2  Walled base on snow with a floating dish above.
+hod_rh_citadel     P3  Citadel on an ice rock. Good.
+hod_rh_harbor      P2  Towers and a dock on a split slab; plain.
+hod_rh_mekhis      P2  Dark fortress on an ice drum; dark.
+hod_rh_monument    P2  Obelisk on a stepped plinth with stones. Plain.
+hod_rh_rakata      P2  Black stepped pyramid with green bands; near-black.
+
+== Ringo Vinda ==   (no town: OK, station world)
+hod_rv_archcity    P3  Arch towers with domed town. Good.
+hod_rv_lift        P3  Tiered tower with rings. Good.
+hod_rv_ring        P2  Thin ring; reads as a line at map scale. Must be orbital.
+
+== Rishi ==
+hod_ris_cove       P3  Green-roofed town with pads. Good.
+hod_ris_post       P2  51 KB: block with a mast and dishes. Rishi Moon listening post should be bigger with a comms dish.
+hod_ris_town_44    P2  Needles and lamps.
+
+== Rodia ==
+hod_rod_city       P3  Green domes. Good.
+hod_rod_palace     P2  Tiered drum tower. Plain.
+hod_rod_town_44    P2  Two very tall poles.
+
+== Rothana ==
+hod_rot_foundry    P1  14 KB: block with yellow beams. Plain.
+hod_rot_works      P2  Block with stacks and pipes poking out; pipes float.
+hod_rot_yards      P2  Hex frame; good orbital idea, check placement.
+hod_rot_town_44    P2  Slivers and two needles.
+
+== Rugosa ==   (no town: OK)
+hod_rug_cavern     P3  Coral-topped rock with cave door. Good.
+hod_rug_kingcoral  P3  Coral grove on a sand slab. Good.
+
+== Ruuria ==   (no town sample)
+hod_ruu_great_hive P3  Hive dome with pods on a grass drum. Good.
+hod_ruu_university P3  Campus with spire and trees. Good.
+
+== Ruusan ==
+hod_rus_camp       P2  Ring bank with an obelisk, tents and tiny huts; floating banners.
+hod_rus_cave       P2  Cave in brown rock; top is black.
+hod_rus_fort       P3  Walled fort with domes and pad. Good.
+hod_rus_mausoleum  P3  Domed mausoleum with spires. Very good.
+hod_rus_olmondo    P3  Walled town with dome. Good.
+hod_rus_city_44    P2  Curved wall and towers; 54 KB, sparse.
+
+== Ryloth ==
+hod_ryl_lessu      P3  Spire town on a mesa. Good.
+hod_ryl_port       P2  Big tent dome with pads on posts; plain.
+hod_ryl_town_44    P2  Two very tall needles.
+
+== Saleucami ==   (no town sample)
+hod_sal_cloning    P1  Black rock with doors: almost all black.
+hod_sal_lawquane   P2  Silos, barn and pad; loose.
+hod_sal_spaceport  P2  Black lattice cage around pads; cage black, floating crates.
+hod_sal_taleucema  P3  Spire city on a mesa. Good.
+
+== Scipio ==
+hod_sci_clovis     P2  Dome and pavilion on a snow rock; plain.
+hod_sci_vault      P3  Spire citadel on a snow rock. Good. Canon Banking Clan vault is a big domed hall; fine.
+hod_sci_town_44    P2  Two needles.
+
+== Serenno ==   (no town sample; Serenno is populated, Carannia is a city)
+hod_ser_assembly   P3  Domed assembly hall. Very good.
+hod_ser_borgin     P3  Castle on a rock. Good.
+hod_ser_carannia   P3  Gothic town. Good.
+hod_ser_castle     P3  Castle with pad. Good.
+hod_ser_spike      P2  Fort with turrets; dark red doors float in front (-y).
+
+== Shili ==
+hod_shi_corvala    P3  Striped spire with huts and horns. Good.
+hod_shi_village    P3  Huts and trees on a red slab. Good.
+hod_shi_town_44    P2  Two striped needles.
+
+== Shola ==
+hod_sho_mine       P2  Black pit with lava and posts; floating disc roof. Black.
+hod_sho_ruins      P1  40 KB: dark pillars around a lava bowl. Near-black.
+hod_sho_station    P2  Domes on a black rock; rock black.
+hod_sho_town_44    P2  Dark drums and two needles.
+
+== Skako ==
+hod_sko_foundry    P2  61 KB: shed with stacks on a slab. Plain.
+hod_sko_mounds     P3  Hive mounds with ring. Good.
+hod_sko_port       P2  Pads on posts and domes on a slab; same drum-pad kit.
+hod_sko_town_44    P2  Two needles and slivers.
+
+== Skako Minor ==
+hod_skm_purkoll    P3  Spire city with mushroom trees on a rock. Good.
+hod_skm_village    P3  Huts on rock pillars with ropes. Good, matches Poletec canon.
+hod_skm_workshop   P2  Block between rocks with a crane. OK.
+hod_skm_town_44    P2  Two needles.
+
+== Sluis Van ==
+hod_slv_city       P3  Spire ring round a dome. Good.
+hod_slv_lift       P2  Lattice lift tower on a slab; OK, thin.
+hod_slv_town_44    P1  Two needles and a few slivers. Sluis Van is famous for its orbital shipyards: no yard station on this sheet.
+
+== Sullust ==
+hod_sul_pinyumb    P2  City in a cave of black rock; rock black.
+hod_sul_refinery   P2  Dark stacks and a dome; dark.
+hod_sul_town_44    P2  Two orange poles.
+
+== Takodana ==
+hod_tak_castle     P2  Stepped tower on a black rock with poles around; canon Maz's castle is a low stone castle, not a skyscraper. Rock black.
+hod_tak_town_44    P2  Two tall towers and lamps.
+
+== Taris ==
+hod_tar_jedi       P2  Tower on a slab beside a walled block; plain.
+hod_tar_pit        P3  Undercity pit ring. Good.
+hod_tar_spires     P3  Upper City tower cluster. Good.
+hod_tar_swoop      P3  Oval swoop track with stands. Good.
+hod_tar_ruin_44    P2  Ruined towers and spikes. Right idea for ruined Taris; sparse.
+
+== Tatooine ==
+hod_tat_eisley     P3  Domed adobe ring with tower. Good.
+hod_tat_homestead  P2  Drum with spindly vaporators; vaporators read as needles. Lars homestead is a sunken pit courtyard.
+hod_tat_palace     P2  Dome with tower; plain. Canon Jabba's palace: dome plus tall round tower with gate. Close; needs gate and bulk.
+hod_tat_town_44    P3  Adobe blocks. Good.
+
+== Telos ==   (no town sample)
+hod_tel_academy    P2  Ice mound with towers; black vertical slab on the side.
+hod_tel_caverns    P1  Rock mound with black boxes stuck on the face and a floating slab.
+hod_tel_rz         P2  Walled ring with blue hangar in front (-y) hiding the ring.
+hod_tel_terminal   P2  Blue hangar with pads; plain, near copy of the rz hangar.
+hod_tel_thani      P3  Banded tower city with bridges. Good.
+
+== Terminus ==
+hod_ter_port       P2  Tower and drums on a slab; plain.
+hod_ter_spire      P2  47 KB: spire with slabs; OK silhouette, small.
+hod_ter_town_44    P2  Two needles; 44 KB.
+
+== Teth ==
+hod_tth_monastery  P2  Towers on a slab; canon B'omarr monastery sits on a tall jungle mesa. No mesa or jungle.
+hod_tth_palace     P2  Dome and towers; plain block front.
+hod_tth_tomb       P1  Block with a big black doorway; black face dominates.
+hod_tth_town_44    P2  Two very tall pillars.
+
+== Thyferria ==
+hod_thy_corp       P2  Tall slab with drums and pad; loose parts.
+hod_thy_vats       P3  Bacta vats with pipe links and block. Good.
+hod_thy_xozhixi    P3  Termite spire cluster. Good.
+hod_thy_town_44    P2  Two red-capped needles.
+
+== Tibrin ==
+hod_tib_city       P2  Spike towers inside a flat gold ring (the ring renders as a halo; guide says no rings).
+hod_tib_palace     P3  Castle with turrets and horn finial. Good.
+hod_tib_town_44    P2  Two very tall needles.
+
+== Toydaria ==
+hod_toy_arnel      P3  Concentric ring city. Distinctive.
+hod_toy_palace     P2  Domed palace on a black rock; rock black.
+hod_toy_stronghold P1  23 KB: black obelisk in two wall slabs.
+hod_toy_toydor     P3  Domed tower cluster. Good.
+hod_toy_town_44    P2  Two tall needles.
+
+== Trandosha ==
+hod_tra_forak      P3  Pagoda fortress on a mound. Good.
+hod_tra_lodge      P3  Hunting lodge on a rock. Good.
+hod_tra_market     P3  Market with arena pit. Good.
+hod_tra_shrine     P3  Pagoda shrine on a rock. Good.
+hod_tra_city_44    P2  Curved wall with pagoda towers; sparse.
+
+== Tython ==   (no town sample)
+hod_tyt_banlanding P2  Ruined walled town, the long front wall (-y) hides it.
+hod_tyt_henge      P1  36 KB: dark slabs leaning around a small dome; near-black.
+hod_tyt_retreat    P3  Domed drum with columns. Good.
+hod_tyt_temple     P3  Stepped temple with ruins. Good.
+hod_tyt_thoyor     P2  Dark stepped cone inside a ruined ring; cone near-black.
+
+== Umbara ==   (Umbara is canonically dark, but the in-game black cutoff still applies: lift base swatches over 100 RGB and let the cyan trim carry the mood)
+hod_umb_academy    P1  Black stepped block on a black rock. Unreadable.
+hod_umb_airbase    P2  Dark slab with pads and hangars; cyan trim saves it. Dark.
+hod_umb_bunker     P2  Black mound with a purple door; plain.
+hod_umb_capital    P3  Cyan-lit spire city. Good.
+hod_umb_city_44    P3  Spires and towers with cyan bands. Good, dark.
+
+== Utapau ==
+hod_uta_mounds     P3  Killik mounds on rock. Good.
+hod_uta_pau        P3  Sinkhole city with towers. Good.
+hod_uta_pit        P2  Near copy of hod_uta_pau with scattered panels. Make the racing pit distinct.
+hod_uta_town_44    P2  Two poles and stumps.
+
+== Vanqor ==   (no town: right)
+hod_vnq_crystals   P3  Crystal spires on red rock. Good.
+hod_vnq_station    P3  Dishes on red rock with mast. Good.
+hod_vnq_wreck      P2  Red rock with two hangars; canon gunship wreck needs a crashed LAAT, not quonsets.
+
+== Vassek ==   (no town: right)
+hod_vsk_field      P3  Pad in a jungle of stilt trees. Good.
+hod_vsk_lair       P3  Grievous's tower in jungle. Recognisable.
+
+== Vjun ==
+hod_vju_bitter     P2  Grey block cluster with spires and a tower on a slab. Plain.
+hod_vju_chateau    P2  62 KB: chateau on a rock in water; small. Canon Chateau Malreaux is a big gothic manor.
+hod_vju_town_44    P2  Slivers.
+
+== Vohai ==
+hod_voh_foundry    P2  Black stacks and tanks; stacks black.
+hod_voh_pylon      P1  30 KB: block with rail beams on legs. Unrelated pieces.
+hod_voh_station    P2  Hall with rails; plain.
+hod_voh_town_44    P2  Two tall pillars.
+
+== Wasskah ==   (no town: right)
+hod_was_lodge      P3  Trandoshan lodge on a rock with trees. Good. Halo ring for the pad floats in the air.
+hod_was_rocks      P3  Rock spires with trees. Good.
+
+== Wayland ==
+hod_way_colony     P3  Walled town with tower and pad. Good.
+hod_way_council    P2  Domes and huts on a dirt slab; flat.
+hod_way_tantiss    P3  Mount Tantiss with gate. Good.
+hod_way_town_44    P1  39 KB: a few slabs.
+hod_way_village_44 P2  Stilt huts and silos; sparse.
+
+== Yag'Dhul ==
+hod_ydh_dodecapolis P3 Domed hive towers. Good.
+hod_ydh_temple     P1  19 KB: stepped block with a teal cone and two obelisks.
+hod_ydh_tesseract  P2  Cube in a lattice frame; distinctive but thin.
+hod_ydh_yards      P3  Orbital hex station with arms. Good, matches naval rule.
+hod_ydh_town_44    P2  Two needles and drums.
+
+== Yaga Minor ==
+hod_yag_center     P2  Glass block and a tube in a rail frame; flat.
+hod_yag_hive       P3  Termite hive mountain. Good.
+hod_yag_spaceport  P3  Drum pads with ships and tower. Good.
+hod_yag_works      P2  Long hall with stacks and a floating bar above.
+hod_yag_yards      P3  Orbital arms with ships. Good.
+hod_yag_town_44    P2  Spikes and huts, sparse.
+
+== Yavin IV ==   (no town: right)
+hod_yav_borundi    P1  Black rock cone with a small door. Black.
+hod_yav_exarkun    P1  15 KB: black stepped pyramid. Black.
+hod_yav_temple     P1  17 KB: Great Temple as a plain stepped block. Canon Great Temple (Massassi) is a huge stepped pyramid in jungle with a hangar mouth; this needs a full rebuild, big, with jungle around it.
+
+== Yinchorr ==
+hod_yin_daacorp    P3  Open-pit mine on a mesa with derricks. Good.
+hod_yin_depot      P2  Blocks, gantries and pads in a black rail ring.
+hod_yin_garrison   P3  Walled garrison with turrets and dish. Good.
+hod_yin_tolkachorn P3  Spiked fortress city. Very good.
+hod_yin_zerpen     P2  Mesa with derricks and a sand slab in front (-y) hiding them.
+hod_yin_town_44    P2  Two needles; floating red dots.
+
+== Zygerria ==   (no town sample; Zygerria is populated)
+hod_zyg_arena      P2  48 KB: blue walled box with a black gate. Royal arena should be a bigger open bowl.
+hod_zyg_fortress   P2  45 KB: block with turrets. Plain.
+hod_zyg_landing    P1  26 KB: two flat slabs on posts with a tower and a gallows-like pole.
+hod_zyg_palace     P3  Stepped palace with dome. Good.
