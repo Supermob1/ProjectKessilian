@@ -1,0 +1,29 @@
+state={
+	id=483
+	name="STATE_483"
+	# HOD: Malastare (malastare_map.py)
+	provinces={
+		17286 17293 17299 17300 17305 17311 17312 17321 17322 17330 17331
+	}
+	resources={
+		oil=4
+	}
+	history = {
+		victory_points = {
+			17331 1
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 3
+			17299 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 97847
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

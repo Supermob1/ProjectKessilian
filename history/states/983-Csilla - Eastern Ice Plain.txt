@@ -1,0 +1,31 @@
+state={
+	id=983
+	name="STATE_983"
+	# HOD: Csilla (csilla_map.py)
+	provinces={
+		20958 20966 20967 20971 20972 20978 20983 20991 20992 21000 21007 21011
+	}
+	resources={
+		coal=2
+	}
+	history = {
+		victory_points = {
+			20991 1
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			air_base = 1
+			dockyard = 4
+					20958 = {
+				naval_base = 3
+			}
+		}
+		owner = CHS
+		add_core_of = CHS
+	}
+	manpower = 320883
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

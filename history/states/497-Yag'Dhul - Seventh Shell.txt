@@ -1,0 +1,33 @@
+state={
+	id=497
+	name="STATE_497"
+	# HOD: Yag'Dhul (yag'dhul_map.py)
+	provinces={
+		882 16323 16324 16329 16332 16334 16335 16340 16342 16348 16353 16354 16355 16356 16357 16361
+	}
+	resources={
+		tungsten=2
+		steel=1
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			16323 2
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			air_base = 1
+			dockyard = 1
+					16329 = {
+				naval_base = 4
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 132833
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

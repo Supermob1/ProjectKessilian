@@ -1,0 +1,28 @@
+state={
+	id=255
+	name="STATE_255"
+	# HOD: Hypori (hypori_map.py)
+	provinces={
+		16668 16669 16670 16671 16681 16682 16683 16688
+	}
+	resources={
+		tungsten=3
+		steel=2
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			16668 1
+		}
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+		}
+		owner = TDF
+		add_core_of = TDF
+	}
+	manpower = 60028
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

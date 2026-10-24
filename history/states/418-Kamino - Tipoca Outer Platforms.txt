@@ -1,0 +1,31 @@
+state={
+	id=418
+	name="STATE_418"
+	# HOD: Kamino (kamino_map.py)
+	provinces={
+		2078 2278 2475 2503 2668 2738 2840 3063
+	}
+	resources={
+		oil=1
+	}
+	history = {
+		victory_points = {
+			2475 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+					2278 = {
+				naval_base = 3
+			}
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 168698
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

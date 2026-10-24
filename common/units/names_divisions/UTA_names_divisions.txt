@@ -1,0 +1,18 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+UTA_INF_01 = {
+	name = "Utapaun Guard"
+
+	for_countries = { UTA }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Utapaun Guard"
+
+	ordered = {
+		1 = { "1st Pau City Guard" }
+		2 = { "2nd Dactillion Riders" }
+	}
+}

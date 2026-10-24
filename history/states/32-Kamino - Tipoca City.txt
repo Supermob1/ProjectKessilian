@@ -1,0 +1,30 @@
+state={
+	id=32
+	name="STATE_32"
+	# HOD: Kamino (kamino_map.py)
+	provinces={
+		11 233 254 513 795 871 953
+	}
+	resources={
+		tungsten=5#Bacta
+		chromium=5#Circuitry
+		coal=15
+	}
+	history = {
+		victory_points = {
+			871 15
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 761300
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,33 @@
+state={
+	id=467
+	name="STATE_467"
+	# HOD: Rothana (rothana_map.py)
+	provinces={
+		963 1047 16336 16341 16343 16349 16350 16358 16359 16362 16363 16364 16368 16369 16370 16378 16379 16384 16385 16386 16388 16389 16390
+	}
+	resources={
+		oil=1
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			16363 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+					16341 = {
+				naval_base = 3
+			}
+		}
+		owner = KUA
+		add_core_of = KUA
+	}
+	manpower = 167747
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

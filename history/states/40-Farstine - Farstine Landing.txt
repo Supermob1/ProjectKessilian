@@ -1,0 +1,28 @@
+state={
+	id=40
+	name="STATE_40"
+	# HOD: Farstine (farstine_map.py)
+	provinces={
+		31 89 92 157 209 284 382 560 658 805 811 951 1103 1246
+	}
+	resources={
+		oil=2#Fuel
+	}
+	history = {
+		victory_points = {
+			31 15
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 1591840
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

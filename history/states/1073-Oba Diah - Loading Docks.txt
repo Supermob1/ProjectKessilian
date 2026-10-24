@@ -1,0 +1,32 @@
+state={
+	id=1073
+	name="STATE_1073"
+	# HOD: Oba Diah (oba_diah_map.py)
+	provinces={
+		20027 20028 20137 20138 20139 20140 20141 20142 20143 20144 20145 20146 20147 20148 20149 20150 20151
+	}
+	resources={
+		coal=3
+		oil=2
+	}
+	history = {
+		victory_points = {
+			20145 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 3
+					20138 = {
+				naval_base = 3
+			}
+		}
+		owner = PYK
+		add_core_of = PYK
+	}
+	manpower = 362901
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,33 @@
+state={
+	id=591
+	name="STATE_591"
+	# HOD: Bakura (bakura_map.py)
+	provinces={
+		16954 16955 16959 16962 16969 16970 16971 16977 16982 16983 16984 16995 16996
+	}
+	resources={
+		tungsten=5
+		steel=3
+		aluminium=2
+	}
+	history = {
+		victory_points = {
+			16954 1
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+			16959 = {
+				naval_base = 3
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 175225
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

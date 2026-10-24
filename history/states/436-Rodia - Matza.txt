@@ -1,0 +1,32 @@
+state={
+	id=436
+	name="STATE_436"
+	# HOD: Rodia (rodia_map.py)
+	provinces={
+		1810 16744 16747 16752 16755 16762 16776
+	}
+	resources={
+		rubber=2
+	}
+	history = {
+		victory_points = {
+			16776 5
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+					16762 = {
+				naval_base = 3
+			}
+		}
+		owner = ROD
+		add_core_of = ROD
+	}
+	manpower = 543902
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

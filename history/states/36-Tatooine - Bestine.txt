@@ -1,0 +1,29 @@
+state={
+	id=36
+	name="STATE_36"
+	# HOD: Tatooine (tatooine_map.py)
+	provinces={
+		9 17422 17426 17444 17445 17452 17457 17468 17477
+	}
+	resources={
+		oil=1#Fuel
+		aluminium=2#Minerals
+	}
+	history = {
+		victory_points = {
+			9 15
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 3
+		}
+		owner = DKJ
+		add_core_of = DKJ
+	}
+	manpower = 2142110
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

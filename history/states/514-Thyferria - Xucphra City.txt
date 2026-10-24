@@ -1,0 +1,32 @@
+state={
+	id=514
+	name="STATE_514"
+	# HOD: Thyferria (thyferria_map.py)
+	provinces={
+		376 629 15742 15745 15748 15751 15752
+	}
+	resources={
+		coal=1
+		oil=1
+	}
+	history = {
+		victory_points = {
+			629 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			air_base = 1
+			dockyard = 3
+					15745 = {
+				naval_base = 4
+			}
+		}
+		owner = XUC
+		add_core_of = XUC
+	}
+	manpower = 536232
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

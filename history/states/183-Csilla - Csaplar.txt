@@ -1,0 +1,38 @@
+state={
+	id=183
+	name="STATE_183"
+	# HOD: Csilla (csilla_map.py)
+	provinces={
+		20613 20614 20615 20616 20617 20618 20736 20737 20738 20739 20741 20742 20746 20747 20748 20749 20750 20751 20755 20759 20760 20761 20764
+	}
+	resources={
+		oil=30#Fuel
+		rubber=25#Doonium
+		tungsten=10#Bacta
+		steel=16#Alloys
+		chromium=24#Circuitry
+	}
+	history = {
+		victory_points = {
+			20616 15
+		}
+		victory_points = {
+			20617 5
+		}
+		victory_points = {
+			20618 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 6
+			arms_factory = 5
+			air_base = 3
+		}
+		owner = CHS
+		add_core_of = CHS
+	}
+	manpower = 1231120
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

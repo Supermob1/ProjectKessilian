@@ -1,0 +1,31 @@
+state={
+	id=649
+	name="STATE_649"
+	# HOD: Honoghr (honoghr_map.py)
+	provinces={
+		12504 12507 12509 12513 12515 12522 12523 12527 12530 12531 12547 12551 12552 12553 12559 12568 12574 12575
+	}
+	resources={
+		coal=2
+	}
+	history = {
+		victory_points = {
+			12530 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 2
+					12553 = {
+				naval_base = 3
+			}
+		}
+		owner = DKJ
+		add_core_of = DKJ
+	}
+	manpower = 410318
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

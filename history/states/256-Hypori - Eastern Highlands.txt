@@ -1,0 +1,29 @@
+state={
+	id=256
+	name="STATE_256"
+	# HOD: Hypori (hypori_map.py)
+	provinces={
+		16763 16764 16765 16771 16780 16785 16788 16789 16790 16791 16796 16803 16810 16814 16821 16822
+	}
+	resources={
+		tungsten=2#Minerals
+	}
+	history = {
+		victory_points = {
+			16789 1
+		}
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+					16788 = {
+				naval_base = 3
+			}
+		}
+		owner = TCU
+		add_core_of = TCU
+	}
+	manpower = 73868
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

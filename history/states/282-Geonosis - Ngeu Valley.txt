@@ -1,0 +1,50 @@
+state={
+	id=282
+	name="STATE_282"
+	# HOD: Geonosis (geonosis_map.py)
+	provinces={
+		17101 17107 17124 17125 17132 17140 17141 17171 17181
+	}
+	resources={
+		# chromium = 10 #Circuitry
+		# steel = 5 #Alloys
+		tungsten = 2 #Minerals
+		# rubber = 10 #Bacta
+		# aluminium = 1 #Doonium
+		# oil = 30 #Fuel
+		# coal = 30 #Credits
+	}
+	history = {
+		victory_points = {
+			17132 1
+		}
+		buildings = {
+
+			# radar_station = #Tracking Station
+
+			# #credits_building = 4#Trading Hubs
+
+			# minerals_refinery = #Mineral Refinery
+
+			# synthetic_refinery = #Tibanna Refinery
+
+			# anti_air_building = 1#Planetary Shields
+
+			# industrial_complex = 3#Civilian Factories
+
+			# arms_factory = 2#Military Factories
+
+			# dockyard = #Shipyard
+
+			infrastructure = 2 #Infrastructure
+
+			air_base = 1#Small Spaceports
+		}
+		owner = GEO
+		add_core_of = GEO
+	}
+	manpower = 123344
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

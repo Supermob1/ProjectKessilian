@@ -1,0 +1,30 @@
+state={
+	id=52
+	name="STATE_52"
+	# HOD: Anoat (anoat_map.py)
+	provinces={
+		225 18049 18065 18070
+	}
+	resources={
+		rubber=1#Doonium
+		steel=1#Alloys
+		chromium=1#Circuitry
+	}
+	history = {
+		victory_points = {
+			225 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 6
+			arms_factory = 4
+			air_base = 3
+		}
+		owner = NOB
+		add_core_of = NOB
+	}
+	manpower = 727500
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

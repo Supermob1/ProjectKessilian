@@ -1,0 +1,29 @@
+state={
+	id=1090
+	name="STATE_1090"
+	# HOD: Haruun Kal (haruun_kal_map.py)
+	provinces={
+		19404 19408 19413 19418 19419 19420 19425
+	}
+	resources={
+		tungsten=4
+		steel=1
+	}
+	history = {
+		victory_points = {
+			19425 2
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 185194
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
