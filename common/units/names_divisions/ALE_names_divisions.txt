@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ALE_INF_01 = {
+	name = "Aleena Royal Guard"
+
+	for_countries = { ALE }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Aleena Guard"
+
+	ordered = {
+	}
+}

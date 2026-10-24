@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+BDT_INF_01 = {
+	name = "Bardottan Guard"
+
+	for_countries = { BDT }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Bardottan Guard"
+
+	ordered = {
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ABA_INF_01 = {
+	name = "Pons Ora Militia"
+
+	for_countries = { ABA }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Pons Ora Militia"
+
+	ordered = {
+	}
+}

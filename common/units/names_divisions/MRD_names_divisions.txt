@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+MRD_INF_01 = {
+	name = "Lurmen Village Watch"
+
+	for_countries = { MRD }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Lurmen Watch"
+
+	ordered = {
+	}
+}
