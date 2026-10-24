@@ -1,0 +1,27 @@
+state={
+	id=1711
+	name="STATE_1711"
+	# HOD: Brentaal IV (brentaal_iv_map.py)
+	provinces={
+		17091 17111 17112 17113 17114 17115
+	}
+	resources={
+		steel=3#Alloys
+		chromium=4#Circuitry
+		oil=2#Fuel
+	}
+	history = {
+		victory_points = {
+			17091 15
+		}
+		buildings = {
+			infrastructure = 2
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 100000
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

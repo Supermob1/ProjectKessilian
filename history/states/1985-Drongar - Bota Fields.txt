@@ -1,0 +1,25 @@
+state={
+	id=1985
+	name="STATE_1985"
+	# HOD: Drongar (drongar_map.py)
+	provinces={
+		18100 18142 18143 18144 18145 18146 18147
+	}
+	resources={
+		rubber=10#Bacta
+	}
+	history = {
+		victory_points = {
+			18100 5
+		}
+		buildings = {
+			infrastructure = 1
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 2200
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

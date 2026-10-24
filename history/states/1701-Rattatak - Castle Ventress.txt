@@ -1,0 +1,26 @@
+state={
+	id=1701
+	name="STATE_1701"
+	# HOD: Rattatak (rattatak_map.py)
+	provinces={
+		16531 16549 16550 16551 16552
+	}
+	resources={
+		steel=3#Alloys
+		tungsten=2#Minerals
+	}
+	history = {
+		victory_points = {
+			16531 10
+		}
+		buildings = {
+			infrastructure = 2
+		}
+		owner = RAT
+		add_core_of = RAT
+	}
+	manpower = 100000
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

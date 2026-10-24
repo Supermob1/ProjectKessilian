@@ -3,18 +3,18 @@ state={
 	name="STATE_202"
 	# HOD: Haruun Kal (haruun_kal_map.py)
 	provinces={
-		19323 19397 19398 19399 19403
+		4279 4254 4251 4250 4247
 	}
 	resources={
 		oil=1#Fuel
-		rubber=10#Doonium
-		tungsten=2#Bacta
+		rubber=10#Bacta
+		tungsten=2#Minerals
 		steel=5#Alloys
 		chromium=7#Circuitry
 	}
 	history = {
 		victory_points = {
-			19397 15
+			4254 15
 		}
 		buildings = {
 			infrastructure = 4
@@ -22,7 +22,7 @@ state={
 			arms_factory = 5
 			air_base = 2
 			dockyard = 2
-					19398 = {
+					4251 = {
 				naval_base = 3
 			}
 		}
