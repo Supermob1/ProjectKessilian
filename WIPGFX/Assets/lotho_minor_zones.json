@@ -1,0 +1,857 @@
+{
+ "centre": [
+  2840.0,
+  536.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "16643": "Junker Warren",
+  "16644": "Maul's Lair",
+  "16681": "Burning Heaps",
+  "16683": "Southern Scrap Plains",
+  "16693": "Junk Mountains",
+  "16697": "Eastern Scrapfields"
+ },
+ "provinces": {
+  "16643": {
+   "zone": "warren",
+   "kind": 1,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2841.2295081967213,
+    537.1967213114754
+   ],
+   "area": 61,
+   "terrain": "urban"
+  },
+  "16644": {
+   "zone": "lair",
+   "kind": 2,
+   "feature": "Maul's Lair",
+   "state": 1802,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2823.9655172413795,
+    551.9655172413793
+   ],
+   "area": 29,
+   "terrain": "hills"
+  },
+  "16645": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2825.3571428571427,
+    526.2142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "16646": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2816.4615384615386,
+    516.8461538461538
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "16647": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2822.8125,
+    519.8125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "16648": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2831.3846153846152,
+    525.8461538461538
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "16649": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2827.277777777778,
+    523.2222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "16650": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2827.5,
+    530.3333333333334
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "16651": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2818.818181818182,
+    519.4545454545455
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "16652": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2822.2,
+    523.0666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "16653": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2820.3333333333335,
+    516.8888888888889
+   ],
+   "area": 9,
+   "terrain": "mountain"
+  },
+  "16654": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Burning Peaks",
+   "state": 1807,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2829.214285714286,
+    527.8571428571429
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "16655": {
+   "zone": "acid",
+   "kind": 6,
+   "feature": "Acid Pools",
+   "state": 1808,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2842.65,
+    556.25
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "16656": {
+   "zone": "acid",
+   "kind": 6,
+   "feature": "Acid Pools",
+   "state": 1808,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2843.92,
+    552.24
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "16657": {
+   "zone": "acid",
+   "kind": 6,
+   "feature": "Collapsed Tunnels",
+   "state": 1809,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2854.15,
+    519.3
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "16658": {
+   "zone": "acid",
+   "kind": 6,
+   "feature": "Collapsed Tunnels",
+   "state": 1809,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2854.2272727272725,
+    523.7727272727273
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "16659": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Wreck Mountains",
+   "state": 1810,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2853.904761904762,
+    547.952380952381
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "16660": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Wreck Mountains",
+   "state": 1810,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2856.2727272727275,
+    553.5454545454545
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "16661": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Wreck Mountains",
+   "state": 1810,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2852.4117647058824,
+    541.0
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16662": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2833.2162162162163,
+    542.3783783783783
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "16663": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2847.0394736842104,
+    525.9736842105264
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "16664": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2847.8333333333335,
+    542.9333333333333
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "16665": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2837.7567567567567,
+    528.9864864864865
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "16666": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2848.575,
+    533.8625
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "16667": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2840.8805970149256,
+    546.3880597014926
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "16668": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Junker Warren",
+   "state": 1703,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2831.6,
+    535.1375
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "16669": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Maul's Lair",
+   "state": 1802,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2830.0,
+    551.6567164179105
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "16670": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Maul's Lair",
+   "state": 1802,
+   "group": 7,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2816.929411764706,
+    550.9882352941177
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "16671": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Maul's Lair",
+   "state": 1802,
+   "group": 7,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2832.6813186813188,
+    562.3846153846154
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "16672": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Maul's Lair",
+   "state": 1802,
+   "group": 7,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2823.306666666667,
+    559.0133333333333
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "16673": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Maul's Lair",
+   "state": 1802,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2824.78,
+    546.24
+   ],
+   "area": 50,
+   "terrain": "hills"
+  },
+  "16674": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Maul's Lair",
+   "state": 1802,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2835.8070175438597,
+    553.6666666666666
+   ],
+   "area": 57,
+   "terrain": "hills"
+  },
+  "16675": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2833.0243902439024,
+    520.6585365853658
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "16676": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": true,
+   "sea": 5105,
+   "centre": [
+    2854.6184210526317,
+    512.6447368421053
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "16677": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2838.7868852459014,
+    507.672131147541
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "16678": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2823.7012987012986,
+    514.0649350649351
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "16679": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2845.675,
+    518.9
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "16680": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2830.6493506493507,
+    510.16883116883116
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "16681": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2838.6376811594205,
+    515.5942028985507
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "16682": {
+   "zone": "burning",
+   "kind": 5,
+   "feature": "Burning Heaps",
+   "state": 1803,
+   "group": 8,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2847.133333333333,
+    509.4
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "16683": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Southern Scrap Plains",
+   "state": 1804,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2858.1785714285716,
+    535.9285714285714
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "16684": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Southern Scrap Plains",
+   "state": 1804,
+   "group": 9,
+   "coastal": true,
+   "sea": 5105,
+   "centre": [
+    2861.6853932584268,
+    518.7415730337078
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "16685": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Southern Scrap Plains",
+   "state": 1804,
+   "group": 9,
+   "coastal": true,
+   "sea": 4887,
+   "centre": [
+    2866.154929577465,
+    546.3380281690141
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "16686": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Southern Scrap Plains",
+   "state": 1804,
+   "group": 9,
+   "coastal": true,
+   "sea": 5105,
+   "centre": [
+    2866.731707317073,
+    527.719512195122
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "16687": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Southern Scrap Plains",
+   "state": 1804,
+   "group": 9,
+   "coastal": true,
+   "sea": 4887,
+   "centre": [
+    2867.3253012048194,
+    537.3373493975904
+   ],
+   "area": 83,
+   "terrain": "plains"
+  },
+  "16688": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Southern Scrap Plains",
+   "state": 1804,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2858.527027027027,
+    544.8783783783783
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "16689": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Southern Scrap Plains",
+   "state": 1804,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2857.7162162162163,
+    527.6081081081081
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "16690": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Junk Mountains",
+   "state": 1805,
+   "group": 10,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2814.9887640449438,
+    524.370786516854
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "16691": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Junk Mountains",
+   "state": 1805,
+   "group": 10,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2812.7671232876714,
+    542.972602739726
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "16692": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Junk Mountains",
+   "state": 1805,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2821.7012987012986,
+    531.1298701298701
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "16693": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Junk Mountains",
+   "state": 1805,
+   "group": 10,
+   "coastal": true,
+   "sea": 4793,
+   "centre": [
+    2812.6785714285716,
+    533.7619047619048
+   ],
+   "area": 84,
+   "terrain": "hills"
+  },
+  "16694": {
+   "zone": "heap",
+   "kind": 4,
+   "feature": "Junk Mountains",
+   "state": 1805,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2821.843373493976,
+    539.8192771084338
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "16695": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Eastern Scrapfields",
+   "state": 1806,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2849.657142857143,
+    552.2571428571429
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "16696": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Eastern Scrapfields",
+   "state": 1806,
+   "group": 11,
+   "coastal": true,
+   "sea": 4748,
+   "centre": [
+    2842.1619047619047,
+    562.0857142857143
+   ],
+   "area": 105,
+   "terrain": "plains"
+  },
+  "16697": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Eastern Scrapfields",
+   "state": 1806,
+   "group": 11,
+   "coastal": true,
+   "sea": 4748,
+   "centre": [
+    2852.4105263157894,
+    560.8421052631579
+   ],
+   "area": 95,
+   "terrain": "plains"
+  },
+  "16698": {
+   "zone": "scrap",
+   "kind": 3,
+   "feature": "Eastern Scrapfields",
+   "state": 1806,
+   "group": 11,
+   "coastal": true,
+   "sea": 4887,
+   "centre": [
+    2861.521126760563,
+    554.6478873239437
+   ],
+   "area": 71,
+   "terrain": "plains"
+  }
+ }
+}

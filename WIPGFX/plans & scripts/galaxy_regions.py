@@ -116,6 +116,59 @@ NEIGHBOURS = 6        # nearest planets that decide whether a planet sits in its
 DEEP_HEART = 130.0     # map units: radius of the Deep Core's own zone round its planets' centre (less if a Core world is near)
 LABEL_SIZE = {"Deep Core": 14, "Core Worlds": 16, "Colonies": 18, "Inner Rim": 20, "Expansion Region": 22, "Mid Rim": 26,
               "Outer Rim": 30, "Hutt Space": 18, "Wild Space": 24, "Unknown Regions": 24}   # texels (2 map units)
+REGION_SMOOTH = 14.0   # texels: majority smoothing of the region borders (the user, 2026-10-24: calmer, continuous bands)
+CODE = {**{r: i for i, r in enumerate(RINGS)}, "Wild Space": 7, "Unknown Regions": 8, "Hutt Space": 9}   # chart region ids
+
+
+def smooth_regions(region, ps, reg, X, Z):
+    """calm, connected regions: each texel takes its neighbourhood's majority region, every planet keeps its disc, then
+    each region is cut down to one piece: a piece without planets joins the region round it, and so does a piece
+    whose planets are cut off from the rest of their region, its planets with it (reg updated in place)"""
+    from scipy import ndimage as ndi
+    name = {i: n for n, i in CODE.items()}
+    beyond = (region == CODE["Wild Space"]) | (region == CODE["Unknown Regions"])   # thin edge strips: not smoothed away
+    region = np.where(beyond, region,
+                      np.stack([ndi.gaussian_filter((region == i).astype(np.float32), REGION_SMOOTH) for i in range(10)]).argmax(0))
+    disc = {p: np.hypot(X - x, Z - z) < r + 6.0 for p, (x, z, r) in ps.items()}
+    region[(region == CODE["Wild Space"]) & (X < X.mean())] = CODE["Unknown Regions"]   # the Unknown Regions lie west
+    for p, m in disc.items():
+        region[m] = CODE[reg[p]]
+    discs = np.any(list(disc.values()), 0)
+    for _round in range(20):
+        moved = False
+        for i in range(10):
+            lab, n = ndi.label(region == i)
+            if n <= 1:
+                continue
+            members = {c: [p for p in ps if CODE[reg[p]] == i and lab[disc[p]].max() == c] for c in range(1, n + 1)}
+            sizes = ndi.sum(np.ones_like(lab), lab, range(1, n + 1))
+            main = max(range(1, n + 1), key=lambda c: (len(members[c]) >= 2, sizes[c - 1]))   # a lone planet's pocket never outranks the band
+            for c in range(1, n + 1):
+                if c == main:
+                    continue
+                piece = lab == c
+                if len(members[c]) >= 2:                                    # a cut-off stretch of the ring: bridged
+                    d, (iy, ix) = ndi.distance_transform_edt(lab != main, return_indices=True)
+                    py, px = np.unravel_index(np.where(piece, d, np.inf).argmin(), d.shape)
+                    for t in np.linspace(0, 1, int(d[py, px]) + 2):
+                        cy, cx = py + t * (iy[py, px] - py), px + t * (ix[py, px] - px)
+                        yy, xx = np.ogrid[:region.shape[0], :region.shape[1]]
+                        region[((yy - cy) ** 2 + (xx - cx) ** 2 < 36) & ~discs] = i
+                    moved = True
+                    continue
+                ring = ndi.binary_dilation(piece, iterations=2) & ~piece
+                around = np.bincount(region[ring], minlength=10).argmax() if ring.any() else CODE["Outer Rim"]
+                region[piece] = around
+                for p in members[c]:
+                    reg[p] = name[around]
+                moved = True
+        if not moved:
+            break
+    for i in np.unique(region):                                             # self-check: one piece per region,
+        assert ndi.label(region == i)[1] == 1, f"{name[i]} in pieces"
+    for p, m in disc.items():                                               # every planet inside its region
+        assert (region[m] == CODE[reg[p]]).all(), f"{p} outside {reg[p]}"
+    return region
 
 
 def level_field(ps, reg, X, Z, plateau=True):
@@ -234,10 +287,7 @@ def chart():
                     moved += 1
         if not moved:
             break
-    for p in data:
-        data[p]["chart_region"] = shown.get(p, data[p]["region"])
-    json.dump(data, open(OUT_JSON, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-    changed = {p: f"{reg[p]} -> {shown[p]}" for p in ps if shown[p] != reg[p]}
+    canon = reg
     reg = shown
     L, hutt, bad, core = level_field(fit, dict(reg, _heart="Deep Core"), X, Z)
     lev = np.clip(np.floor(L + 0.5), 0, 8).astype(int)
@@ -247,7 +297,13 @@ def chart():
     for p, (x, z, r) in ps.items():                                         # no other region's planet swallowed
         if reg[p] != "Hutt Space":
             hm &= np.hypot(X - x, Z - z) > r + MARGIN
-    region = np.where(hm, 9, lev)                                           # 9 = Hutt Space
+    region = smooth_regions(np.where(hm, 9, lev), ps, reg, X, Z)            # 9 = Hutt Space
+    for p in data:
+        data[p]["chart_region"] = shown.get(p, data[p]["region"])
+    json.dump(data, open(OUT_JSON, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    changed = {p: f"{canon[p]} -> {shown[p]}" for p in ps if shown[p] != canon[p]}
+    hm = region == 9
+    L = ndi.gaussian_filter(np.where(hm, 6, region).astype(np.float32), 5.0)   # the glow follows the smoothed bands
     fills = np.array(FILLS)                                                 # brighter toward the core, as the old chart
     k0 = np.clip(np.floor(L), 0, 7).astype(int)
     fill = fills[k0] + (fills[np.minimum(k0 + 1, 8)] - fills[k0]) * (L - k0)

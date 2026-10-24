@@ -1,0 +1,857 @@
+{
+ "centre": [
+  1342.0,
+  1253.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17147": "Power Mounds of the Elders",
+  "17148": "Techno Union Foundries",
+  "17149": "Southern Spaceport",
+  "17186": "Vine Districts",
+  "17192": "Pressure Towers",
+  "17195": "Eastern Rim Docks"
+ },
+ "provinces": {
+  "17147": {
+   "zone": "mounds",
+   "kind": 1,
+   "feature": "Power Mounds of the Elders",
+   "state": 1712,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1342.0,
+    1253.0
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "17148": {
+   "zone": "foundry",
+   "kind": 5,
+   "feature": "Techno Union Foundries",
+   "state": 1883,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1339.1923076923076,
+    1272.0
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "17149": {
+   "zone": "port",
+   "kind": 2,
+   "feature": "Southern Spaceport",
+   "state": 1887,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1368.0,
+    1256.5
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "17150": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Tambor Block",
+   "state": 1888,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1331.857142857143,
+    1244.0
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17151": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Tambor Block",
+   "state": 1888,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1327.8,
+    1239.9
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "17152": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Tambor Block",
+   "state": 1888,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1329.3636363636363,
+    1246.090909090909
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "17153": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Tambor Block",
+   "state": 1888,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1331.1,
+    1239.8
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "17154": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Tambor Block",
+   "state": 1888,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1328.3636363636363,
+    1242.909090909091
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "17155": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Pressure Block",
+   "state": 1889,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1326.0625,
+    1261.3125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "17156": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Pressure Block",
+   "state": 1889,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1329.5,
+    1260.2857142857142
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17157": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Pressure Block",
+   "state": 1889,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1329.0714285714287,
+    1264.857142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17158": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Pressure Block",
+   "state": 1889,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1325.6363636363637,
+    1265.090909090909
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "17159": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Foundry Block",
+   "state": 1890,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1349.2941176470588,
+    1265.3529411764705
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17160": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Foundry Block",
+   "state": 1890,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1353.8125,
+    1267.75
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "17161": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Foundry Block",
+   "state": 1890,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1352.857142857143,
+    1264.0
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17162": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Foundry Block",
+   "state": 1890,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1350.25,
+    1269.25
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "17163": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Vine Block",
+   "state": 1891,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1353.1538461538462,
+    1237.4615384615386
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "17164": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Vine Block",
+   "state": 1891,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1355.0,
+    1242.923076923077
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "17165": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Vine Block",
+   "state": 1891,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1352.2857142857142,
+    1241.357142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17166": {
+   "zone": "block",
+   "kind": 7,
+   "feature": "Vine Block",
+   "state": 1891,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1356.4285714285713,
+    1238.642857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17167": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Clouds of Cormelish",
+   "state": 1712,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1343.9014084507041,
+    1260.6760563380283
+   ],
+   "area": 71,
+   "terrain": "urban"
+  },
+  "17168": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Clouds of Cormelish",
+   "state": 1712,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1337.9868421052631,
+    1247.3815789473683
+   ],
+   "area": 76,
+   "terrain": "urban"
+  },
+  "17169": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Clouds of Cormelish",
+   "state": 1712,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1348.6263736263736,
+    1247.6593406593406
+   ],
+   "area": 91,
+   "terrain": "urban"
+  },
+  "17170": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Clouds of Cormelish",
+   "state": 1712,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1334.825,
+    1256.3625
+   ],
+   "area": 80,
+   "terrain": "urban"
+  },
+  "17171": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Clouds of Cormelish",
+   "state": 1712,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1351.3333333333333,
+    1257.0238095238096
+   ],
+   "area": 84,
+   "terrain": "urban"
+  },
+  "17172": {
+   "zone": "foundry",
+   "kind": 5,
+   "feature": "Techno Union Foundries",
+   "state": 1883,
+   "group": 8,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1324.8383838383838,
+    1273.959595959596
+   ],
+   "area": 99,
+   "terrain": "urban"
+  },
+  "17173": {
+   "zone": "foundry",
+   "kind": 5,
+   "feature": "Techno Union Foundries",
+   "state": 1883,
+   "group": 8,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1342.764705882353,
+    1281.514705882353
+   ],
+   "area": 68,
+   "terrain": "urban"
+  },
+  "17174": {
+   "zone": "foundry",
+   "kind": 5,
+   "feature": "Techno Union Foundries",
+   "state": 1883,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1343.0689655172414,
+    1267.2758620689656
+   ],
+   "area": 58,
+   "terrain": "urban"
+  },
+  "17175": {
+   "zone": "foundry",
+   "kind": 5,
+   "feature": "Techno Union Foundries",
+   "state": 1883,
+   "group": 8,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1333.4019607843138,
+    1278.362745098039
+   ],
+   "area": 102,
+   "terrain": "urban"
+  },
+  "17176": {
+   "zone": "foundry",
+   "kind": 5,
+   "feature": "Techno Union Foundries",
+   "state": 1883,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1333.659574468085,
+    1267.0106382978724
+   ],
+   "area": 94,
+   "terrain": "urban"
+  },
+  "17177": {
+   "zone": "foundry",
+   "kind": 5,
+   "feature": "Techno Union Foundries",
+   "state": 1883,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1344.704918032787,
+    1274.9180327868853
+   ],
+   "area": 61,
+   "terrain": "urban"
+  },
+  "17178": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1352.4431818181818,
+    1228.3863636363637
+   ],
+   "area": 88,
+   "terrain": "urban"
+  },
+  "17179": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1325.4605263157894,
+    1230.671052631579
+   ],
+   "area": 76,
+   "terrain": "urban"
+  },
+  "17180": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1337.4520547945206,
+    1240.013698630137
+   ],
+   "area": 73,
+   "terrain": "urban"
+  },
+  "17181": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1334.5555555555557,
+    1225.9876543209878
+   ],
+   "area": 81,
+   "terrain": "urban"
+  },
+  "17182": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1359.6125,
+    1232.0375
+   ],
+   "area": 80,
+   "terrain": "urban"
+  },
+  "17183": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1331.3823529411766,
+    1234.485294117647
+   ],
+   "area": 68,
+   "terrain": "urban"
+  },
+  "17184": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1347.3417721518988,
+    1238.0
+   ],
+   "area": 79,
+   "terrain": "urban"
+  },
+  "17185": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1344.5142857142857,
+    1224.942857142857
+   ],
+   "area": 70,
+   "terrain": "urban"
+  },
+  "17186": {
+   "zone": "vines",
+   "kind": 4,
+   "feature": "Vine Districts",
+   "state": 1884,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1341.5857142857142,
+    1232.2142857142858
+   ],
+   "area": 70,
+   "terrain": "urban"
+  },
+  "17187": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Pressure Towers",
+   "state": 1885,
+   "group": 10,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1318.989247311828,
+    1267.0
+   ],
+   "area": 93,
+   "terrain": "urban"
+  },
+  "17188": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Pressure Towers",
+   "state": 1885,
+   "group": 10,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1318.2911392405063,
+    1236.9493670886077
+   ],
+   "area": 79,
+   "terrain": "urban"
+  },
+  "17189": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Pressure Towers",
+   "state": 1885,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1326.9333333333334,
+    1251.04
+   ],
+   "area": 75,
+   "terrain": "urban"
+  },
+  "17190": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Pressure Towers",
+   "state": 1885,
+   "group": 10,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1314.9270833333333,
+    1248.2916666666667
+   ],
+   "area": 96,
+   "terrain": "urban"
+  },
+  "17191": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Pressure Towers",
+   "state": 1885,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1322.5068493150684,
+    1243.4520547945206
+   ],
+   "area": 73,
+   "terrain": "urban"
+  },
+  "17192": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Pressure Towers",
+   "state": 1885,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1322.6933333333334,
+    1257.0666666666666
+   ],
+   "area": 75,
+   "terrain": "urban"
+  },
+  "17193": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Pressure Towers",
+   "state": 1885,
+   "group": 10,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1314.5696202531647,
+    1258.5696202531647
+   ],
+   "area": 79,
+   "terrain": "urban"
+  },
+  "17194": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Eastern Rim Docks",
+   "state": 1886,
+   "group": 11,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1353.404958677686,
+    1277.0826446280992
+   ],
+   "area": 121,
+   "terrain": "urban"
+  },
+  "17195": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Eastern Rim Docks",
+   "state": 1886,
+   "group": 11,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1363.5432098765432,
+    1271.8148148148148
+   ],
+   "area": 81,
+   "terrain": "urban"
+  },
+  "17196": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Eastern Rim Docks",
+   "state": 1886,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1358.878787878788,
+    1266.9242424242425
+   ],
+   "area": 66,
+   "terrain": "urban"
+  },
+  "17197": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Southern Spaceport",
+   "state": 1887,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1360.3,
+    1257.06
+   ],
+   "area": 100,
+   "terrain": "urban"
+  },
+  "17198": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Southern Spaceport",
+   "state": 1887,
+   "group": 12,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1364.4835164835165,
+    1238.5824175824175
+   ],
+   "area": 91,
+   "terrain": "urban"
+  },
+  "17199": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Southern Spaceport",
+   "state": 1887,
+   "group": 12,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1368.0819672131147,
+    1263.2459016393443
+   ],
+   "area": 61,
+   "terrain": "urban"
+  },
+  "17200": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Southern Spaceport",
+   "state": 1887,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1358.752808988764,
+    1247.2921348314608
+   ],
+   "area": 89,
+   "terrain": "urban"
+  },
+  "17201": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Southern Spaceport",
+   "state": 1887,
+   "group": 12,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1368.175,
+    1246.25
+   ],
+   "area": 80,
+   "terrain": "urban"
+  },
+  "17202": {
+   "zone": "district",
+   "kind": 3,
+   "feature": "Southern Spaceport",
+   "state": 1887,
+   "group": 12,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1371.1904761904761,
+    1253.3809523809523
+   ],
+   "area": 42,
+   "terrain": "urban"
+  }
+ }
+}

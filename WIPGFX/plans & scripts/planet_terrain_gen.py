@@ -1657,6 +1657,85 @@ def save_dxt1_mips(rgb, path):
         f.write(bytes(hdr) + b"".join(l[128:] for l in levels))
 
 
+def globe_alpha(lab_h):
+    """colormap alpha: distance from each planet's centre (0 .. 1 at the rim, 1 in space); pdxmap.shader rebuilds the
+    zoomed-out globe's sphere normal from it, so a planet left at 1 renders as a dark rim"""
+    rr = np.ones(lab_h.shape, np.float32)
+    for lab, sl in enumerate(ndi.find_objects(lab_h), 1):
+        if sl is None:
+            continue
+        m = lab_h[sl] == lab
+        ys, xs = np.nonzero(m)
+        d = np.hypot(ys - ys.mean(), xs - xs.mean())
+        rr[sl][m] = np.clip(d / max(np.percentile(d, 99), 1), 0, 1)
+    return rr
+
+
+def atmosphere_glow(land_h, lab_h, n, names, arch, planet_rgb, radius, rng):
+    """atmospheres on black, half map resolution (galaxy itself is procedural in gfx/FX/pdxwater.shader)"""
+    dist_h, (iy, ix) = ndi.distance_transform_edt(~land_h, return_indices=True)
+    owner = lab_h[iy, ix]
+    col = np.zeros((n + 1, 3), np.float32)
+    thick = np.zeros(n + 1, np.float32)
+    for lab in range(1, n + 1):
+        base_c, th = ARCH[arch[lab]]["atmo"]
+        if names[lab].split(" - ")[0] == FELUCIA:
+            base_c, th = FELUCIA_ATMO, th * 1.3
+        col[lab] = np.array(base_c) * 0.8 + planet_rgb[lab] / max(planet_rgb[lab].max(), 1e-3) * 0.2
+        thick[lab] = th * np.clip(radius[lab] / 45, 0.35, 1.2)
+    d = dist_h / np.clip(radius[owner] / 120, 0.5, 1.4)
+    wisp = noise(land_h.shape, 12, rng, 3)
+    amt = thick[owner] * (0.6 * np.exp(-d / 1.5) + 0.4 * np.exp(-d / 5.0)) * (0.65 + 0.7 * wisp) * (owner > 0) * ~land_h
+    return np.clip(col[owner] * amt[..., None], 0, 1)
+
+
+def water_with_glow(glow, src_dir):
+    """colormap_water_{0,1,2} (from src_dir) with the glow as RGB, alpha kept"""
+    water_out = []
+    for lvl in range(3):
+        src = np.array(load(f"{src_dir}/colormap_water_{lvl}.dds").convert("RGBA")).astype(np.float32) / 255
+        g = glow if lvl == 0 else np.array(Image.fromarray((glow * 255).astype(np.uint8)).resize(
+            (src.shape[1], src.shape[0]), Image.BILINEAR)) / 255.0
+        out = src.copy()
+        out[..., :3] = g
+        water_out.append(np.rint(out * 255).astype(np.uint8))
+    return water_out
+
+
+def rewrite_atmospheres():
+    """only the atmospheres, for every planet as the map stands now (planets added after the last full --write had
+    none): biome from the canon table, else from the current colormap colour"""
+    land, _, pid = load_provinces()
+    labels, n = ndi.label(land, np.ones((3, 3)))
+    names = planet_names(labels, n, pid)
+    radius = np.sqrt(np.bincount(labels.ravel()) / np.pi)
+    cm = np.array(load(f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds").convert("RGB")).astype(np.float32) / 255
+    land_h, lab_h = land[::2, ::2][:cm.shape[0], :cm.shape[1]], labels[::2, ::2][:cm.shape[0], :cm.shape[1]]
+    planet_rgb = np.stack([per_label(lab_h, n, cm[..., c] * land_h) for c in range(3)], -1)
+    arch = {lab: (planet_mix(names[lab]) or ("", [(fallback_archetype(planet_rgb[lab]), 1.0)]))[1][0][0]
+            for lab in range(1, n + 1)}
+    glow = atmosphere_glow(land_h, lab_h, n, names, arch, planet_rgb, radius, np.random.default_rng(SEED))
+    for lvl, w in enumerate(water_with_glow(glow, f"{MAP}/terrain")):
+        p = f"{MAP}/terrain/colormap_water_{lvl}.dds"
+        save_bgra_dds(p, w, p)
+    shutil.copyfile(f"{MAP}/terrain/colormap_water_0.dds", f"{MAP}/terrain/ice_diffuse.dds")
+    import galaxy_regions                                                 # its alpha holds the galaxy chart's regions
+    galaxy_regions.reinject()
+    print(f"atmospheres rewritten for {n} bodies")
+
+
+def rewrite_globe_alpha():
+    """only the colormap alpha, for planets added after the last full --write (new_planet_make.py)"""
+    land, _, _ = load_provinces()
+    labels, _ = ndi.label(land, np.ones((3, 3)))
+    cmp = f"{MAP}/terrain/colormap_rgb_cityemissivemask_a.dds"
+    cm = np.array(load(cmp).convert("RGBA"))
+    lab_h = labels[::2, ::2][:cm.shape[0], :cm.shape[1]]
+    cm[..., 3] = np.rint(globe_alpha(lab_h) * 255).astype(np.uint8)
+    save_bgra_dds(cmp, cm, cmp)
+    print("colormap alpha (globe radius) rewritten")
+
+
 def globe_texture():
     """map/terrain/mud_diffuse_rgb_gloss_a_{0,1,2}.dds: painted planet colours (written colormap, Lanczos upscaled)
     times the luminance pattern of the terrain tile under each pixel, at the scale the close-up terrain uses."""
@@ -1754,6 +1833,8 @@ def main():
     ap.add_argument("--carve-cities", action="store_true", help="only clear map/cities.bmp along province borders")
     ap.add_argument("--city-styles", action="store_true", help="only reapply per-world city styles (cities.bmp)")
     ap.add_argument("--globe-texture", action="store_true", help="only rebake the sharp globe texture (mud slot)")
+    ap.add_argument("--globe-alpha", action="store_true", help="only rewrite the colormap alpha (zoomed-out globe radius)")
+    ap.add_argument("--atmospheres", action="store_true", help="only rebake the planet atmospheres (water colormaps, ice slot)")
     ap.add_argument("--round-coasts", action="store_true", help="only round the planet coastlines in heightmap.bmp")
     ap.add_argument("--world-tweaks", action="store_true", help="only apply CITY_DISTRICTS, RED_WORLDS, DENSE_TREE_WORLDS")
     ap.add_argument("--felucia", action="store_true", help="only repaint Felucia (flora, ground, atmosphere); then --globe-texture")
@@ -1839,6 +1920,10 @@ def main():
         for w, path in zip(water, wps):
             save_bgra_dds(path, np.rint(np.clip(w, 0, 1) * 255).astype(np.uint8), path)
         return save_bgra_dds(cmp, np.rint(np.clip(cm, 0, 1) * 255).astype(np.uint8), cmp)
+    if a.globe_alpha:
+        return rewrite_globe_alpha()
+    if a.atmospheres:
+        return rewrite_atmospheres()
     if a.globe_texture:
         return globe_texture()
     if a.round_coasts:
@@ -2136,39 +2221,10 @@ def main():
     from planet_clean import clean_planets
     cm = cm_half.copy()
     cm[..., :3] = clean_planets(cm_flat, lab_h)[..., :3]
-    rr = np.ones(land_h.shape, np.float32)
-    for lab, sl in enumerate(ndi.find_objects(lab_h), 1):
-        if sl is None:
-            continue
-        m = lab_h[sl] == lab
-        ys, xs = np.nonzero(m)
-        d = np.hypot(ys - ys.mean(), xs - xs.mean())
-        rr[sl][m] = np.clip(d / max(np.percentile(d, 99), 1), 0, 1)
-    cm[..., 3] = rr
+    cm[..., 3] = globe_alpha(lab_h)
 
-    # --- atmospheres on black (galaxy itself is procedural in gfx/FX/pdxwater.shader)
-    dist_h, (iy, ix) = ndi.distance_transform_edt(~land_h, return_indices=True)
-    owner = lab_h[iy, ix]
-    col = np.zeros((n + 1, 3), np.float32)
-    thick = np.zeros(n + 1, np.float32)
-    for lab in range(1, n + 1):
-        base_c, th = ARCH[arch[lab]]["atmo"]
-        if names[lab].split(" - ")[0] == FELUCIA:
-            base_c, th = FELUCIA_ATMO, th * 1.3
-        col[lab] = np.array(base_c) * 0.8 + planet_rgb[lab] / max(planet_rgb[lab].max(), 1e-3) * 0.2
-        thick[lab] = th * np.clip(radius[lab] / 45, 0.35, 1.2)
-    d = dist_h / np.clip(radius[owner] / 120, 0.5, 1.4)
-    wisp = noise(land_h.shape, 12, rng, 3)
-    amt = thick[owner] * (0.6 * np.exp(-d / 1.5) + 0.4 * np.exp(-d / 5.0)) * (0.65 + 0.7 * wisp) * (owner > 0) * ~land_h
-    glow = np.clip(col[owner] * amt[..., None], 0, 1)
-    water_out = []
-    for lvl in range(3):
-        src = np.array(load(f"{BASE}/colormap_water_{lvl}.dds").convert("RGBA")).astype(np.float32) / 255
-        g = glow if lvl == 0 else np.array(Image.fromarray((glow * 255).astype(np.uint8)).resize(
-            (src.shape[1], src.shape[0]), Image.BILINEAR)) / 255.0
-        out = src.copy()
-        out[..., :3] = g
-        water_out.append(np.rint(out * 255).astype(np.uint8))
+    glow = atmosphere_glow(land_h, lab_h, n, names, arch, planet_rgb, radius, rng)
+    water_out = water_with_glow(glow, BASE)
 
     if a.preview:
         os.makedirs(a.preview, exist_ok=True)

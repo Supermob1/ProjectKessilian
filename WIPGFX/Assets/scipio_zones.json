@@ -1,0 +1,857 @@
+{
+ "centre": [
+  634.0,
+  844.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "16755": "Main Vault",
+  "16756": "Clovis' Residence",
+  "16758": "Frigia Canyons",
+  "16800": "Southern Snow Hills",
+  "16804": "Northern Heights",
+  "16810": "Eastern Snowfields"
+ },
+ "provinces": {
+  "16755": {
+   "zone": "vault",
+   "kind": 1,
+   "feature": "Main Vault",
+   "state": 1705,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    634.0,
+    844.0
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "16756": {
+   "zone": "estate",
+   "kind": 2,
+   "feature": "Clovis' Residence",
+   "state": 1820,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    630.8636363636364,
+    863.8181818181819
+   ],
+   "area": 22,
+   "terrain": "urban"
+  },
+  "16757": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    640.1166666666667,
+    822.3166666666667
+   ],
+   "area": 60,
+   "terrain": "mountain"
+  },
+  "16758": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    629.6666666666666,
+    825.0833333333334
+   ],
+   "area": 60,
+   "terrain": "mountain"
+  },
+  "16759": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    610.25,
+    847.0
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "16760": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    621.0,
+    836.0
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "16761": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    615.9047619047619,
+    842.4285714285714
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "16762": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    614.9,
+    852.2
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "16763": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    611.7777777777778,
+    843.2777777777778
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "16764": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    614.2,
+    847.0666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "16765": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    611.125,
+    850.75
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "16766": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Frigia Mountains",
+   "state": 1825,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    618.8,
+    839.2
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "16767": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Peaks",
+   "state": 1826,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    640.6296296296297,
+    855.074074074074
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "16768": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Peaks",
+   "state": 1826,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    646.2857142857143,
+    866.1904761904761
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "16769": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Peaks",
+   "state": 1826,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    643.8181818181819,
+    860.9545454545455
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "16770": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Scipio Glacier",
+   "state": 1827,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    653.1739130434783,
+    830.695652173913
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "16771": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Scipio Glacier",
+   "state": 1827,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    655.1764705882352,
+    826.3529411764706
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16772": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Scipio Glacier",
+   "state": 1827,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    657.6538461538462,
+    832.7307692307693
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "16773": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Scipio Glacier",
+   "state": 1827,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    652.0,
+    826.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "16774": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Frozen Lake",
+   "state": 1828,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    618.3,
+    862.2
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "16775": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Main Vault",
+   "state": 1705,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    628.3604651162791,
+    850.2441860465116
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "16776": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Main Vault",
+   "state": 1705,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    642.010989010989,
+    839.0
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "16777": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Main Vault",
+   "state": 1705,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    625.4731182795699,
+    840.6129032258065
+   ],
+   "area": 93,
+   "terrain": "hills"
+  },
+  "16778": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Main Vault",
+   "state": 1705,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    638.1733333333333,
+    849.44
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "16779": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Main Vault",
+   "state": 1705,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    633.327868852459,
+    836.8196721311475
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "16780": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Clovis' Residence",
+   "state": 1820,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    626.9885057471264,
+    858.9770114942529
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "16781": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Clovis' Residence",
+   "state": 1820,
+   "group": 8,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    637.0133333333333,
+    869.8533333333334
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "16782": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Clovis' Residence",
+   "state": 1820,
+   "group": 8,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    622.6363636363636,
+    868.1948051948052
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "16783": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Clovis' Residence",
+   "state": 1820,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    637.0930232558139,
+    860.8139534883721
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "16784": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Clovis' Residence",
+   "state": 1820,
+   "group": 8,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    615.046511627907,
+    866.8139534883721
+   ],
+   "area": 43,
+   "terrain": "plains"
+  },
+  "16785": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Clovis' Residence",
+   "state": 1820,
+   "group": 8,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    629.5571428571428,
+    871.3142857142857
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "16786": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    632.6962025316456,
+    816.4556962025316
+   ],
+   "area": 79,
+   "terrain": "mountain"
+  },
+  "16787": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    650.5540540540541,
+    821.0675675675676
+   ],
+   "area": 74,
+   "terrain": "mountain"
+  },
+  "16788": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": true,
+   "sea": 4783,
+   "centre": [
+    616.0897435897435,
+    822.5897435897435
+   ],
+   "area": 78,
+   "terrain": "mountain"
+  },
+  "16789": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    634.4567901234568,
+    829.9753086419753
+   ],
+   "area": 81,
+   "terrain": "mountain"
+  },
+  "16790": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    644.5238095238095,
+    828.8690476190476
+   ],
+   "area": 84,
+   "terrain": "mountain"
+  },
+  "16791": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    624.0229885057471,
+    818.7701149425287
+   ],
+   "area": 87,
+   "terrain": "mountain"
+  },
+  "16792": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    641.9655172413793,
+    816.1896551724138
+   ],
+   "area": 58,
+   "terrain": "mountain"
+  },
+  "16793": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Frigia Canyons",
+   "state": 1821,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    623.0428571428571,
+    829.7285714285714
+   ],
+   "area": 70,
+   "terrain": "mountain"
+  },
+  "16794": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Southern Snow Hills",
+   "state": 1822,
+   "group": 10,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    661.4,
+    851.364705882353
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "16795": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Southern Snow Hills",
+   "state": 1822,
+   "group": 10,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    660.1860465116279,
+    829.1627906976744
+   ],
+   "area": 43,
+   "terrain": "hills"
+  },
+  "16796": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Southern Snow Hills",
+   "state": 1822,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    646.3466666666667,
+    849.5333333333333
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "16797": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Southern Snow Hills",
+   "state": 1822,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    650.3488372093024,
+    836.9883720930233
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "16798": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Southern Snow Hills",
+   "state": 1822,
+   "group": 10,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    661.2584269662922,
+    839.9325842696629
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "16799": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Southern Snow Hills",
+   "state": 1822,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    654.0149253731344,
+    853.1343283582089
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "16800": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Southern Snow Hills",
+   "state": 1822,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    653.8904109589041,
+    844.3972602739726
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "16801": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Northern Heights",
+   "state": 1823,
+   "group": 11,
+   "coastal": true,
+   "sea": 4783,
+   "centre": [
+    610.0845070422536,
+    829.1830985915493
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "16802": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Northern Heights",
+   "state": 1823,
+   "group": 11,
+   "coastal": true,
+   "sea": 4783,
+   "centre": [
+    610.1573033707865,
+    858.3033707865169
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "16803": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Northern Heights",
+   "state": 1823,
+   "group": 11,
+   "coastal": true,
+   "sea": 4783,
+   "centre": [
+    605.53125,
+    848.71875
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "16804": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Northern Heights",
+   "state": 1823,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    619.6724137931035,
+    847.7068965517242
+   ],
+   "area": 58,
+   "terrain": "hills"
+  },
+  "16805": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Northern Heights",
+   "state": 1823,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    615.5068493150685,
+    834.3287671232877
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "16806": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Northern Heights",
+   "state": 1823,
+   "group": 11,
+   "coastal": true,
+   "sea": 4783,
+   "centre": [
+    606.9885057471264,
+    838.448275862069
+   ],
+   "area": 87,
+   "terrain": "hills"
+  },
+  "16807": {
+   "zone": "hill",
+   "kind": 3,
+   "feature": "Northern Heights",
+   "state": 1823,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    618.7413793103449,
+    855.9137931034483
+   ],
+   "area": 58,
+   "terrain": "hills"
+  },
+  "16808": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Eastern Snowfields",
+   "state": 1824,
+   "group": 12,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    645.2837837837837,
+    870.4324324324324
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "16809": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Eastern Snowfields",
+   "state": 1824,
+   "group": 12,
+   "coastal": true,
+   "sea": 5119,
+   "centre": [
+    655.3820224719101,
+    862.7078651685393
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "16810": {
+   "zone": "plain",
+   "kind": 5,
+   "feature": "Eastern Snowfields",
+   "state": 1824,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    648.3333333333334,
+    858.9242424242424
+   ],
+   "area": 66,
+   "terrain": "plains"
+  }
+ }
+}

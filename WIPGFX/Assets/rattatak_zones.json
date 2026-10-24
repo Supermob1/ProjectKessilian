@@ -1,0 +1,857 @@
+{
+ "centre": [
+  2779.0,
+  285.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "16531": "Castle Ventress",
+  "16532": "The Cauldron",
+  "16533": "Velenki",
+  "16534": "Barterus",
+  "16575": "Northern Highlands",
+  "16585": "Warlord Badlands"
+ },
+ "provinces": {
+  "16531": {
+   "zone": "castle",
+   "kind": 1,
+   "feature": "Castle Ventress",
+   "state": 1701,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2777.7567567567567,
+    283.86486486486484
+   ],
+   "area": 37,
+   "terrain": "mountain"
+  },
+  "16532": {
+   "zone": "arena",
+   "kind": 2,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2777.5,
+    304.0
+   ],
+   "area": 42,
+   "terrain": "urban"
+  },
+  "16533": {
+   "zone": "arena",
+   "kind": 2,
+   "feature": "Velenki",
+   "state": 1785,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2778.823529411765,
+    265.2352941176471
+   ],
+   "area": 17,
+   "terrain": "urban"
+  },
+  "16534": {
+   "zone": "arena",
+   "kind": 2,
+   "feature": "Barterus",
+   "state": 1786,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2799.777777777778,
+    286.5
+   ],
+   "area": 18,
+   "terrain": "urban"
+  },
+  "16535": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Red Mountains",
+   "state": 1789,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2761.3529411764707,
+    269.0
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16536": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Red Mountains",
+   "state": 1789,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2767.529411764706,
+    279.3529411764706
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16537": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Red Mountains",
+   "state": 1789,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2762.6666666666665,
+    273.8
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "16538": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Red Mountains",
+   "state": 1789,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2764.6153846153848,
+    271.3076923076923
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "16539": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Red Mountains",
+   "state": 1789,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2758.785714285714,
+    266.35714285714283
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "16540": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Red Mountains",
+   "state": 1789,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2765.176470588235,
+    276.7647058823529
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16541": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Deep Canyons",
+   "state": 1790,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2760.8333333333335,
+    303.46666666666664
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "16542": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Deep Canyons",
+   "state": 1790,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2765.121212121212,
+    295.45454545454544
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "16543": {
+   "zone": "flat",
+   "kind": 6,
+   "feature": "Ash Mesas",
+   "state": 1791,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2793.344827586207,
+    271.2758620689655
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "16544": {
+   "zone": "flat",
+   "kind": 6,
+   "feature": "Ash Mesas",
+   "state": 1791,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2795.913043478261,
+    275.2608695652174
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "16545": {
+   "zone": "flat",
+   "kind": 6,
+   "feature": "Salt Flats",
+   "state": 1792,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2797.346153846154,
+    299.9230769230769
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "16546": {
+   "zone": "flat",
+   "kind": 6,
+   "feature": "Salt Flats",
+   "state": 1792,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2790.5,
+    306.6111111111111
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "16547": {
+   "zone": "flat",
+   "kind": 6,
+   "feature": "Salt Flats",
+   "state": 1792,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2793.0454545454545,
+    299.09090909090907
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "16548": {
+   "zone": "flat",
+   "kind": 6,
+   "feature": "Salt Flats",
+   "state": 1792,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2793.4,
+    303.64
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "16549": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Castle Ventress",
+   "state": 1701,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2781.5882352941176,
+    282.9117647058824
+   ],
+   "area": 34,
+   "terrain": "hills"
+  },
+  "16550": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Castle Ventress",
+   "state": 1701,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2769.5178571428573,
+    287.51785714285717
+   ],
+   "area": 112,
+   "terrain": "hills"
+  },
+  "16551": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Castle Ventress",
+   "state": 1701,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2774.2903225806454,
+    276.81720430107526
+   ],
+   "area": 93,
+   "terrain": "hills"
+  },
+  "16552": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Castle Ventress",
+   "state": 1701,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2779.0476190476193,
+    291.4047619047619
+   ],
+   "area": 84,
+   "terrain": "hills"
+  },
+  "16553": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2769.6129032258063,
+    300.5806451612903
+   ],
+   "area": 93,
+   "terrain": "desert"
+  },
+  "16554": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": true,
+   "sea": 4788,
+   "centre": [
+    2794.203125,
+    309.671875
+   ],
+   "area": 64,
+   "terrain": "desert"
+  },
+  "16555": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": true,
+   "sea": 4788,
+   "centre": [
+    2783.5757575757575,
+    313.56060606060606
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "16556": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2786.5625,
+    299.75
+   ],
+   "area": 64,
+   "terrain": "desert"
+  },
+  "16557": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": true,
+   "sea": 4788,
+   "centre": [
+    2764.5875,
+    308.575
+   ],
+   "area": 80,
+   "terrain": "desert"
+  },
+  "16558": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": true,
+   "sea": 4788,
+   "centre": [
+    2773.2903225806454,
+    311.51612903225805
+   ],
+   "area": 93,
+   "terrain": "desert"
+  },
+  "16559": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2783.723076923077,
+    307.04615384615386
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "16560": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "The Cauldron",
+   "state": 1784,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2778.1296296296296,
+    297.68518518518516
+   ],
+   "area": 54,
+   "terrain": "desert"
+  },
+  "16561": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": true,
+   "sea": 5101,
+   "centre": [
+    2792.443181818182,
+    260.6818181818182
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "16562": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": true,
+   "sea": 4649,
+   "centre": [
+    2762.0,
+    261.46774193548384
+   ],
+   "area": 62,
+   "terrain": "hills"
+  },
+  "16563": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2771.0,
+    270.63793103448273
+   ],
+   "area": 58,
+   "terrain": "hills"
+  },
+  "16564": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": true,
+   "sea": 4649,
+   "centre": [
+    2772.453488372093,
+    257.95348837209303
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "16565": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2787.253164556962,
+    267.6835443037975
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "16566": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2778.5,
+    266.4516129032258
+   ],
+   "area": 62,
+   "terrain": "hills"
+  },
+  "16567": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2767.8852459016393,
+    265.0
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "16568": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Velenki Canyons",
+   "state": 1785,
+   "group": 10,
+   "coastal": true,
+   "sea": 4649,
+   "centre": [
+    2782.733333333333,
+    257.8222222222222
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "16569": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Barterus",
+   "state": 1786,
+   "group": 11,
+   "coastal": true,
+   "sea": 5101,
+   "centre": [
+    2804.5652173913045,
+    279.9673913043478
+   ],
+   "area": 92,
+   "terrain": "desert"
+  },
+  "16570": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Barterus",
+   "state": 1786,
+   "group": 11,
+   "coastal": true,
+   "sea": 5101,
+   "centre": [
+    2801.705882352941,
+    303.27450980392155
+   ],
+   "area": 51,
+   "terrain": "desert"
+  },
+  "16571": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Barterus",
+   "state": 1786,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2795.25,
+    292.8157894736842
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "16572": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Barterus",
+   "state": 1786,
+   "group": 11,
+   "coastal": true,
+   "sea": 5101,
+   "centre": [
+    2806.364864864865,
+    287.8378378378378
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "16573": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Barterus",
+   "state": 1786,
+   "group": 11,
+   "coastal": true,
+   "sea": 5101,
+   "centre": [
+    2804.264705882353,
+    270.7647058823529
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "16574": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Barterus",
+   "state": 1786,
+   "group": 11,
+   "coastal": true,
+   "sea": 5101,
+   "centre": [
+    2804.266666666667,
+    295.56
+   ],
+   "area": 75,
+   "terrain": "desert"
+  },
+  "16575": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Northern Highlands",
+   "state": 1787,
+   "group": 12,
+   "coastal": true,
+   "sea": 4649,
+   "centre": [
+    2751.958904109589,
+    286.47945205479454
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "16576": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Northern Highlands",
+   "state": 1787,
+   "group": 12,
+   "coastal": true,
+   "sea": 4649,
+   "centre": [
+    2755.493670886076,
+    270.69620253164555
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "16577": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Northern Highlands",
+   "state": 1787,
+   "group": 12,
+   "coastal": true,
+   "sea": 4788,
+   "centre": [
+    2756.4117647058824,
+    301.5882352941176
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "16578": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Northern Highlands",
+   "state": 1787,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2760.529411764706,
+    281.4470588235294
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "16579": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Northern Highlands",
+   "state": 1787,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2760.1466666666665,
+    291.48
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "16580": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Northern Highlands",
+   "state": 1787,
+   "group": 12,
+   "coastal": true,
+   "sea": 4649,
+   "centre": [
+    2752.0945945945946,
+    278.18918918918916
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "16581": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Northern Highlands",
+   "state": 1787,
+   "group": 12,
+   "coastal": true,
+   "sea": 4649,
+   "centre": [
+    2752.353846153846,
+    294.55384615384617
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "16582": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Warlord Badlands",
+   "state": 1788,
+   "group": 13,
+   "coastal": true,
+   "sea": 5101,
+   "centre": [
+    2798.705882352941,
+    267.6029411764706
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "16583": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Warlord Badlands",
+   "state": 1788,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2788.788732394366,
+    289.9577464788732
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "16584": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Warlord Badlands",
+   "state": 1788,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2785.2533333333336,
+    275.16
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "16585": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Warlord Badlands",
+   "state": 1788,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2795.1139240506327,
+    281.1898734177215
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "16586": {
+   "zone": "canyon",
+   "kind": 3,
+   "feature": "Warlord Badlands",
+   "state": 1788,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2787.45,
+    282.18333333333334
+   ],
+   "area": 60,
+   "terrain": "hills"
+  }
+ }
+}

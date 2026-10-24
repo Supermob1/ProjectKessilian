@@ -1,0 +1,857 @@
+{
+ "centre": [
+  1342.0,
+  1371.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17203": "Purkoll",
+  "17204": "Wat Tambor's Workshop",
+  "17234": "Poletec Village",
+  "17244": "Western Fungal Forests",
+  "17254": "Southern Canyons",
+  "17257": "Eastern Fungal Forests"
+ },
+ "provinces": {
+  "17203": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Purkoll",
+   "state": 1713,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1342.0,
+    1371.0
+   ],
+   "area": 41,
+   "terrain": "urban"
+  },
+  "17204": {
+   "zone": "works",
+   "kind": 2,
+   "feature": "Wat Tambor's Workshop",
+   "state": 1892,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1339.4347826086957,
+    1390.8260869565217
+   ],
+   "area": 23,
+   "terrain": "urban"
+  },
+  "17205": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1897,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1353.642857142857,
+    1378.2142857142858
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17206": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1897,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1361.3333333333333,
+    1388.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "17207": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1897,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1348.5294117647059,
+    1372.764705882353
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17208": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1897,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1355.090909090909,
+    1385.3636363636363
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "17209": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1897,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1358.25,
+    1385.5
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "17210": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1897,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1351.0625,
+    1375.25
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "17211": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Great Canyon",
+   "state": 1897,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1354.9375,
+    1381.8125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "17212": {
+   "zone": "crater",
+   "kind": 6,
+   "feature": "Misty Crater",
+   "state": 1898,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1352.2916666666667,
+    1355.6666666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17213": {
+   "zone": "crater",
+   "kind": 6,
+   "feature": "Misty Crater",
+   "state": 1898,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1350.0588235294117,
+    1353.4705882352941
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17214": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cavern Mountains",
+   "state": 1899,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1323.2941176470588,
+    1387.7058823529412
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17215": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cavern Mountains",
+   "state": 1899,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1328.764705882353,
+    1363.0
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17216": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cavern Mountains",
+   "state": 1899,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1328.0833333333333,
+    1375.125
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17217": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cavern Mountains",
+   "state": 1899,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1327.52,
+    1369.8
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "17218": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cavern Mountains",
+   "state": 1899,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1326.6521739130435,
+    1379.3478260869565
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17219": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cavern Mountains",
+   "state": 1899,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1329.5555555555557,
+    1365.8333333333333
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "17220": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cavern Mountains",
+   "state": 1899,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1323.5882352941176,
+    1383.2941176470588
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17221": {
+   "zone": "crater",
+   "kind": 6,
+   "feature": "Northern Crater",
+   "state": 1900,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1328.578947368421,
+    1352.657894736842
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "17222": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Purkoll",
+   "state": 1713,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1335.9848484848485,
+    1367.3939393939395
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "17223": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Purkoll",
+   "state": 1713,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1350.776595744681,
+    1366.0851063829787
+   ],
+   "area": 94,
+   "terrain": "forest"
+  },
+  "17224": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Purkoll",
+   "state": 1713,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1343.7375,
+    1378.325
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "17225": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Purkoll",
+   "state": 1713,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1334.3243243243244,
+    1375.0405405405406
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "17226": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Purkoll",
+   "state": 1713,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1335.2698412698412,
+    1360.111111111111
+   ],
+   "area": 63,
+   "terrain": "forest"
+  },
+  "17227": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Purkoll",
+   "state": 1713,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1344.7228915662652,
+    1361.55421686747
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "17228": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Tambor's Canyons",
+   "state": 1892,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1329.4657534246576,
+    1386.3287671232877
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "17229": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Tambor's Canyons",
+   "state": 1892,
+   "group": 7,
+   "coastal": true,
+   "sea": 4786,
+   "centre": [
+    1341.8823529411766,
+    1398.0941176470587
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "17230": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Tambor's Canyons",
+   "state": 1892,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1344.0,
+    1388.0735294117646
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17231": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Tambor's Canyons",
+   "state": 1892,
+   "group": 7,
+   "coastal": true,
+   "sea": 4786,
+   "centre": [
+    1332.9278350515465,
+    1396.2886597938145
+   ],
+   "area": 97,
+   "terrain": "hills"
+  },
+  "17232": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Tambor's Canyons",
+   "state": 1892,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1335.9054054054054,
+    1383.9864864864865
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "17233": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Tambor's Canyons",
+   "state": 1892,
+   "group": 7,
+   "coastal": true,
+   "sea": 4786,
+   "centre": [
+    1323.7464788732395,
+    1393.112676056338
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "17234": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Poletec Highlands",
+   "state": 1893,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1321.2142857142858,
+    1368.1857142857143
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "17235": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Poletec Highlands",
+   "state": 1893,
+   "group": 8,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1319.6216216216217,
+    1353.2297297297298
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "17236": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Poletec Highlands",
+   "state": 1893,
+   "group": 8,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1317.012048192771,
+    1384.0963855421687
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "17237": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Poletec Highlands",
+   "state": 1893,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1324.7916666666667,
+    1359.486111111111
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "17238": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Poletec Highlands",
+   "state": 1893,
+   "group": 8,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1315.1518987341772,
+    1362.506329113924
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "17239": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Poletec Highlands",
+   "state": 1893,
+   "group": 8,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1313.7763157894738,
+    1373.3684210526317
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "17240": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Poletec Highlands",
+   "state": 1893,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1321.1451612903227,
+    1376.5
+   ],
+   "area": 62,
+   "terrain": "hills"
+  },
+  "17241": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Western Fungal Forests",
+   "state": 1894,
+   "group": 9,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1352.0,
+    1345.6279069767443
+   ],
+   "area": 86,
+   "terrain": "forest"
+  },
+  "17242": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Western Fungal Forests",
+   "state": 1894,
+   "group": 9,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1326.9354838709678,
+    1346.983870967742
+   ],
+   "area": 62,
+   "terrain": "forest"
+  },
+  "17243": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Western Fungal Forests",
+   "state": 1894,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1335.7391304347825,
+    1353.304347826087
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17244": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Western Fungal Forests",
+   "state": 1894,
+   "group": 9,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1343.155844155844,
+    1343.4935064935064
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "17245": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Western Fungal Forests",
+   "state": 1894,
+   "group": 9,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1359.5974025974026,
+    1349.5844155844156
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "17246": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Western Fungal Forests",
+   "state": 1894,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1344.4177215189873,
+    1352.4556962025317
+   ],
+   "area": 79,
+   "terrain": "forest"
+  },
+  "17247": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Western Fungal Forests",
+   "state": 1894,
+   "group": 9,
+   "coastal": true,
+   "sea": 4926,
+   "centre": [
+    1334.7027027027027,
+    1344.3648648648648
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "17248": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Southern Canyons",
+   "state": 1895,
+   "group": 10,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1366.911111111111,
+    1357.611111111111
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "17249": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Southern Canyons",
+   "state": 1895,
+   "group": 10,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1368.9375,
+    1379.6875
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "17250": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Southern Canyons",
+   "state": 1895,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1356.8059701492537,
+    1372.1044776119404
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "17251": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Southern Canyons",
+   "state": 1895,
+   "group": 10,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1369.5824175824175,
+    1369.142857142857
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "17252": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Southern Canyons",
+   "state": 1895,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1358.078947368421,
+    1358.1184210526317
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "17253": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Southern Canyons",
+   "state": 1895,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1361.3544303797469,
+    1378.5189873417721
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "17254": {
+   "zone": "canyon",
+   "kind": 4,
+   "feature": "Southern Canyons",
+   "state": 1895,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1362.0266666666666,
+    1366.1733333333334
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "17255": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Eastern Fungal Forests",
+   "state": 1896,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1350.3164556962026,
+    1385.3037974683543
+   ],
+   "area": 79,
+   "terrain": "forest"
+  },
+  "17256": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Eastern Fungal Forests",
+   "state": 1896,
+   "group": 11,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1364.7454545454545,
+    1388.0363636363636
+   ],
+   "area": 55,
+   "terrain": "forest"
+  },
+  "17257": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Eastern Fungal Forests",
+   "state": 1896,
+   "group": 11,
+   "coastal": true,
+   "sea": 4728,
+   "centre": [
+    1357.6506024096386,
+    1393.301204819277
+   ],
+   "area": 83,
+   "terrain": "forest"
+  },
+  "17258": {
+   "zone": "fungal",
+   "kind": 3,
+   "feature": "Eastern Fungal Forests",
+   "state": 1896,
+   "group": 11,
+   "coastal": true,
+   "sea": 4786,
+   "centre": [
+    1350.3636363636363,
+    1397.1818181818182
+   ],
+   "area": 77,
+   "terrain": "forest"
+  }
+ }
+}

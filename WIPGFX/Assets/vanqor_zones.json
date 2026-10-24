@@ -1,0 +1,857 @@
+{
+ "centre": [
+  627.0,
+  2090.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "18043": "Listening Station",
+  "18046": "Gunship Wreck",
+  "18044": "Gundark Caves",
+  "18045": "Crystal Fields",
+  "18084": "Red Canyons",
+  "18090": "Eastern Highlands"
+ },
+ "provinces": {
+  "18043": {
+   "zone": "station",
+   "kind": 1,
+   "feature": "Listening Station",
+   "state": 1728,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    625.0,
+    2090.0
+   ],
+   "area": 25,
+   "terrain": "urban"
+  },
+  "18044": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    604.655737704918,
+    2090.1803278688526
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "18045": {
+   "zone": "crystal",
+   "kind": 2,
+   "feature": "Crystal Fields",
+   "state": 1767,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    626.5,
+    2109.771739130435
+   ],
+   "area": 92,
+   "terrain": "hills"
+  },
+  "18046": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Gunship Wreck",
+   "state": 1770,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    645.375,
+    2094.25
+   ],
+   "area": 8,
+   "terrain": "desert"
+  },
+  "18047": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Crystal Spires",
+   "state": 1771,
+   "group": 4,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    608.0,
+    2111.8571428571427
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "18048": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Crystal Spires",
+   "state": 1771,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    620.3125,
+    2100.75
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18049": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Crystal Spires",
+   "state": 1771,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    614.4736842105264,
+    2105.6315789473683
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "18050": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Crystal Spires",
+   "state": 1771,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    616.8421052631579,
+    2101.4736842105262
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "18051": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Crystal Spires",
+   "state": 1771,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    609.375,
+    2107.6875
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18052": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Crystal Spires",
+   "state": 1771,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    611.7333333333333,
+    2110.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "18053": {
+   "zone": "chasm",
+   "kind": 6,
+   "feature": "Great Chasm",
+   "state": 1772,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    637.6666666666666,
+    2098.4814814814813
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "18054": {
+   "zone": "chasm",
+   "kind": 6,
+   "feature": "Great Chasm",
+   "state": 1772,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    634.5294117647059,
+    2083.3529411764707
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "18055": {
+   "zone": "chasm",
+   "kind": 6,
+   "feature": "Great Chasm",
+   "state": 1772,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    637.5483870967741,
+    2089.1290322580644
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "18056": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Red Mesas",
+   "state": 1773,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    643.8518518518518,
+    2068.6666666666665
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "18057": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Red Mesas",
+   "state": 1773,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    640.6969696969697,
+    2075.121212121212
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "18058": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Red Mesas",
+   "state": 1773,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    645.08,
+    2073.84
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "18059": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Red Mesas",
+   "state": 1773,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    639.4166666666666,
+    2068.25
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "18060": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cave Mountains",
+   "state": 1774,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    612.4827586206897,
+    2067.4827586206898
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "18061": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cave Mountains",
+   "state": 1774,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    614.5555555555555,
+    2073.6666666666665
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "18062": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Cave Mountains",
+   "state": 1774,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    617.4333333333333,
+    2077.1666666666665
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "18063": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Listening Station",
+   "state": 1728,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    617.9222222222222,
+    2092.8444444444444
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "18064": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Listening Station",
+   "state": 1728,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    627.4054054054054,
+    2083.0405405405404
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "18065": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Listening Station",
+   "state": 1728,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    632.0266666666666,
+    2091.8133333333335
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "18066": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Listening Station",
+   "state": 1728,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    619.314606741573,
+    2083.0224719101125
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "18067": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Listening Station",
+   "state": 1728,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    626.6575342465753,
+    2097.301369863014
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "18068": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    609.6164383561644,
+    2080.205479452055
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "18069": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    604.3650793650794,
+    2106.968253968254
+   ],
+   "area": 63,
+   "terrain": "hills"
+  },
+  "18070": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    598.0754716981132,
+    2092.056603773585
+   ],
+   "area": 53,
+   "terrain": "hills"
+  },
+  "18071": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    610.4111111111112,
+    2098.9555555555557
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "18072": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    604.5925925925926,
+    2073.938271604938
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "18073": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    600.3086419753087,
+    2082.5555555555557
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "18074": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    601.4864864864865,
+    2099.5
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "18075": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gundark Caves",
+   "state": 1766,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    610.7307692307693,
+    2088.4615384615386
+   ],
+   "area": 52,
+   "terrain": "hills"
+  },
+  "18076": {
+   "zone": "crystal",
+   "kind": 2,
+   "feature": "Crystal Fields",
+   "state": 1767,
+   "group": 10,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    614.9767441860465,
+    2114.5
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "18077": {
+   "zone": "crystal",
+   "kind": 2,
+   "feature": "Crystal Fields",
+   "state": 1767,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    632.0333333333333,
+    2103.6666666666665
+   ],
+   "area": 60,
+   "terrain": "hills"
+  },
+  "18078": {
+   "zone": "crystal",
+   "kind": 2,
+   "feature": "Crystal Fields",
+   "state": 1767,
+   "group": 10,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    623.027397260274,
+    2117.671232876712
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "18079": {
+   "zone": "crystal",
+   "kind": 2,
+   "feature": "Crystal Fields",
+   "state": 1767,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    621.1818181818181,
+    2105.1272727272726
+   ],
+   "area": 55,
+   "terrain": "hills"
+  },
+  "18080": {
+   "zone": "crystal",
+   "kind": 2,
+   "feature": "Crystal Fields",
+   "state": 1767,
+   "group": 10,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    632.0555555555555,
+    2116.2638888888887
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "18081": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Red Canyons",
+   "state": 1768,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    633.4225352112676,
+    2069.3521126760565
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "18082": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Red Canyons",
+   "state": 1768,
+   "group": 11,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    609.3,
+    2067.62
+   ],
+   "area": 50,
+   "terrain": "desert"
+  },
+  "18083": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Red Canyons",
+   "state": 1768,
+   "group": 11,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    619.6632653061224,
+    2063.387755102041
+   ],
+   "area": 98,
+   "terrain": "desert"
+  },
+  "18084": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Red Canyons",
+   "state": 1768,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    623.0526315789474,
+    2071.3368421052633
+   ],
+   "area": 95,
+   "terrain": "desert"
+  },
+  "18085": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Red Canyons",
+   "state": 1768,
+   "group": 11,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    643.156862745098,
+    2064.823529411765
+   ],
+   "area": 51,
+   "terrain": "desert"
+  },
+  "18086": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Red Canyons",
+   "state": 1768,
+   "group": 11,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    630.8690476190476,
+    2062.2261904761904
+   ],
+   "area": 84,
+   "terrain": "desert"
+  },
+  "18087": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Red Canyons",
+   "state": 1768,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    632.6794871794872,
+    2076.5384615384614
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "18088": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Eastern Highlands",
+   "state": 1769,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    643.2241379310345,
+    2100.9137931034484
+   ],
+   "area": 58,
+   "terrain": "hills"
+  },
+  "18089": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Eastern Highlands",
+   "state": 1769,
+   "group": 12,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    639.4558823529412,
+    2115.6323529411766
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "18090": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Eastern Highlands",
+   "state": 1769,
+   "group": 12,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    646.75,
+    2109.875
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "18091": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Eastern Highlands",
+   "state": 1769,
+   "group": 12,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    651.7916666666666,
+    2102.902777777778
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "18092": {
+   "zone": "rock",
+   "kind": 3,
+   "feature": "Eastern Highlands",
+   "state": 1769,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    638.4477611940298,
+    2106.373134328358
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "18093": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Southern Desert",
+   "state": 1770,
+   "group": 13,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    653.2258064516129,
+    2094.7311827956987
+   ],
+   "area": 93,
+   "terrain": "desert"
+  },
+  "18094": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Southern Desert",
+   "state": 1770,
+   "group": 13,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    650.8352941176471,
+    2075.635294117647
+   ],
+   "area": 85,
+   "terrain": "desert"
+  },
+  "18095": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Southern Desert",
+   "state": 1770,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    642.0147058823529,
+    2082.0882352941176
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "18096": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Southern Desert",
+   "state": 1770,
+   "group": 13,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    655.2647058823529,
+    2084.794117647059
+   ],
+   "area": 68,
+   "terrain": "desert"
+  },
+  "18097": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Southern Desert",
+   "state": 1770,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    643.0,
+    2092.6901408450703
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "18098": {
+   "zone": "desert",
+   "kind": 4,
+   "feature": "Southern Desert",
+   "state": 1770,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    648.3432835820895,
+    2086.089552238806
+   ],
+   "area": 67,
+   "terrain": "desert"
+  }
+ }
+}

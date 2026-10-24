@@ -1,0 +1,857 @@
+{
+ "centre": [
+  839.0,
+  1912.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17931": "Chateau Malreaux",
+  "17932": "Bitter End",
+  "17961": "Northern Acid Desert",
+  "17970": "Western Moors",
+  "17982": "Southern Acid Desert",
+  "17986": "Eastern Wastes"
+ },
+ "provinces": {
+  "17931": {
+   "zone": "chateau",
+   "kind": 1,
+   "feature": "Chateau Malreaux",
+   "state": 1726,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    837.3333333333334,
+    1910.4
+   ],
+   "area": 30,
+   "terrain": "hills"
+  },
+  "17932": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Bitter End",
+   "state": 1964,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    843.8529411764706,
+    1931.8235294117646
+   ],
+   "area": 34,
+   "terrain": "urban"
+  },
+  "17933": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    846.6666666666666,
+    1924.9444444444443
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "17934": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    837.0,
+    1919.3076923076924
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "17935": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    838.25,
+    1926.625
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "17936": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    843.1538461538462,
+    1920.0
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "17937": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    839.1111111111111,
+    1922.888888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "17938": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    842.7058823529412,
+    1926.7058823529412
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17939": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    843.7142857142857,
+    1923.0714285714287
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17940": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Bay of Tears",
+   "state": 1969,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    840.1333333333333,
+    1918.2666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "17941": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Acid Crags",
+   "state": 1970,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    823.7826086956521,
+    1896.304347826087
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17942": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Acid Crags",
+   "state": 1970,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    826.56,
+    1906.2
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "17943": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Acid Crags",
+   "state": 1970,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    824.05,
+    1891.1
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17944": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Acid Crags",
+   "state": 1970,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    825.25,
+    1901.5833333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17945": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Shoal Flats",
+   "state": 1971,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    858.9285714285714,
+    1925.7857142857142
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17946": {
+   "zone": "bay",
+   "kind": 6,
+   "feature": "Shoal Flats",
+   "state": 1971,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    855.0666666666667,
+    1925.2333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "17947": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Black Ridge",
+   "state": 1972,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    850.2,
+    1903.25
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17948": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Black Ridge",
+   "state": 1972,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    855.2142857142857,
+    1892.857142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17949": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Black Ridge",
+   "state": 1972,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    852.5,
+    1898.7727272727273
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17950": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Black Ridge",
+   "state": 1972,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    847.0,
+    1901.5217391304348
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17951": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Malreaux Estate",
+   "state": 1726,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    844.7317073170732,
+    1910.0
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "17952": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Malreaux Estate",
+   "state": 1726,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    832.1931818181819,
+    1901.8522727272727
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "17953": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Malreaux Estate",
+   "state": 1726,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    831.7636363636364,
+    1913.6818181818182
+   ],
+   "area": 110,
+   "terrain": "plains"
+  },
+  "17954": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Malreaux Estate",
+   "state": 1726,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    846.5,
+    1917.3275862068965
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "17955": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Malreaux Estate",
+   "state": 1726,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    840.6266666666667,
+    1902.6
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "17956": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Bitter End",
+   "state": 1964,
+   "group": 7,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    844.9887640449438,
+    1939.191011235955
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "17957": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Bitter End",
+   "state": 1964,
+   "group": 7,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    855.5625,
+    1935.2125
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "17958": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Bitter End",
+   "state": 1964,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    850.1666666666666,
+    1929.8484848484848
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "17959": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Bitter End",
+   "state": 1964,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    836.8169014084507,
+    1932.2394366197184
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "17960": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Bitter End",
+   "state": 1964,
+   "group": 7,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    834.4459459459459,
+    1939.7837837837837
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "17961": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Northern Acid Desert",
+   "state": 1965,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    820.9605263157895,
+    1910.3947368421052
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "17962": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Northern Acid Desert",
+   "state": 1965,
+   "group": 8,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    813.9078947368421,
+    1922.1184210526317
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "17963": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Northern Acid Desert",
+   "state": 1965,
+   "group": 8,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    815.1538461538462,
+    1896.7230769230769
+   ],
+   "area": 65,
+   "terrain": "desert"
+  },
+  "17964": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Northern Acid Desert",
+   "state": 1965,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    822.1538461538462,
+    1918.5641025641025
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "17965": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Northern Acid Desert",
+   "state": 1965,
+   "group": 8,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    811.829268292683,
+    1914.0731707317073
+   ],
+   "area": 82,
+   "terrain": "desert"
+  },
+  "17966": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Northern Acid Desert",
+   "state": 1965,
+   "group": 8,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    811.8,
+    1905.3142857142857
+   ],
+   "area": 70,
+   "terrain": "desert"
+  },
+  "17967": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Northern Acid Desert",
+   "state": 1965,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    819.4655172413793,
+    1902.2413793103449
+   ],
+   "area": 58,
+   "terrain": "desert"
+  },
+  "17968": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Western Moors",
+   "state": 1966,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    832.1052631578947,
+    1893.4105263157894
+   ],
+   "area": 95,
+   "terrain": "plains"
+  },
+  "17969": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Western Moors",
+   "state": 1966,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    854.4142857142857,
+    1889.142857142857
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17970": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Western Moors",
+   "state": 1966,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    839.0449438202247,
+    1885.3820224719102
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "17971": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Western Moors",
+   "state": 1966,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    844.66,
+    1894.45
+   ],
+   "area": 100,
+   "terrain": "plains"
+  },
+  "17972": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Western Moors",
+   "state": 1966,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    820.1481481481482,
+    1889.7407407407406
+   ],
+   "area": 54,
+   "terrain": "plains"
+  },
+  "17973": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Western Moors",
+   "state": 1966,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    829.6923076923077,
+    1885.371794871795
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "17974": {
+   "zone": "moor",
+   "kind": 4,
+   "feature": "Western Moors",
+   "state": 1966,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    847.4571428571429,
+    1885.4
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17975": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    865.563829787234,
+    1918.2978723404256
+   ],
+   "area": 94,
+   "terrain": "desert"
+  },
+  "17976": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    861.620253164557,
+    1895.2025316455697
+   ],
+   "area": 79,
+   "terrain": "desert"
+  },
+  "17977": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    853.6969696969697,
+    1908.4848484848485
+   ],
+   "area": 66,
+   "terrain": "desert"
+  },
+  "17978": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    866.7093023255813,
+    1906.1162790697674
+   ],
+   "area": 86,
+   "terrain": "desert"
+  },
+  "17979": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    854.0119047619048,
+    1918.4285714285713
+   ],
+   "area": 84,
+   "terrain": "desert"
+  },
+  "17980": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    863.2857142857143,
+    1927.6349206349207
+   ],
+   "area": 63,
+   "terrain": "desert"
+  },
+  "17981": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    858.4861111111111,
+    1901.5416666666667
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "17982": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Southern Acid Desert",
+   "state": 1967,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    860.7164179104477,
+    1911.8358208955224
+   ],
+   "area": 67,
+   "terrain": "desert"
+  },
+  "17983": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Eastern Wastes",
+   "state": 1968,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    829.9338842975206,
+    1924.5619834710744
+   ],
+   "area": 121,
+   "terrain": "desert"
+  },
+  "17984": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Eastern Wastes",
+   "state": 1968,
+   "group": 11,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    816.6065573770492,
+    1928.5737704918033
+   ],
+   "area": 61,
+   "terrain": "desert"
+  },
+  "17985": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Eastern Wastes",
+   "state": 1968,
+   "group": 11,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    827.1780821917808,
+    1936.13698630137
+   ],
+   "area": 73,
+   "terrain": "desert"
+  },
+  "17986": {
+   "zone": "desert",
+   "kind": 3,
+   "feature": "Eastern Wastes",
+   "state": 1968,
+   "group": 11,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    821.9305555555555,
+    1932.0972222222222
+   ],
+   "area": 72,
+   "terrain": "desert"
+  }
+ }
+}

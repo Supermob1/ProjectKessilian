@@ -1,0 +1,25 @@
+state={
+	id=1983
+	name="STATE_1983"
+	# HOD: Drongar (drongar_map.py)
+	provinces={
+		18133 18134 18135 18136
+	}
+	resources={
+		oil=1#Fuel
+	}
+	history = {
+		victory_points = {
+			18136 1
+		}
+		buildings = {
+			infrastructure = 1
+		}
+		owner = REP
+		add_core_of = REP
+	}
+	manpower = 1300
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

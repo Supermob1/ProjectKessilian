@@ -1,0 +1,857 @@
+{
+ "centre": [
+  1142.0,
+  865.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17035": "Corvala",
+  "17036": "Togruta Village",
+  "17073": "Turu-Grass Savanna",
+  "17078": "Northern Pine Forests",
+  "17086": "Rainforest Valleys",
+  "17090": "Eastern Pine Forests"
+ },
+ "provinces": {
+  "17035": {
+   "zone": "city",
+   "kind": 1,
+   "feature": "Corvala",
+   "state": 1710,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1142.0,
+    865.0
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "17036": {
+   "zone": "village",
+   "kind": 2,
+   "feature": "Togruta Village",
+   "state": 1865,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1142.4285714285713,
+    885.1428571428571
+   ],
+   "area": 21,
+   "terrain": "plains"
+  },
+  "17037": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Shili Mountains",
+   "state": 1870,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1125.090909090909,
+    865.0909090909091
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17038": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Shili Mountains",
+   "state": 1870,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1131.4347826086957,
+    859.2173913043479
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17039": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Shili Mountains",
+   "state": 1870,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1123.578947368421,
+    873.3157894736842
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17040": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Shili Mountains",
+   "state": 1870,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1127.4736842105262,
+    860.4736842105264
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17041": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Shili Mountains",
+   "state": 1870,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1129.55,
+    864.35
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17042": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Shili Mountains",
+   "state": 1870,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1122.7222222222222,
+    869.2222222222222
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "17043": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Shili Mountains",
+   "state": 1870,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1126.6842105263158,
+    870.1578947368421
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17044": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Inland Sea",
+   "state": 1871,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1155.125,
+    847.40625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "17045": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Inland Sea",
+   "state": 1871,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1153.3636363636363,
+    841.5
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17046": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Inland Sea",
+   "state": 1871,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1149.625,
+    846.875
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17047": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Inland Sea",
+   "state": 1871,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1150.157894736842,
+    842.8421052631579
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17048": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Pine Ridge",
+   "state": 1872,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1131.0714285714287,
+    883.5714285714286
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17049": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Pine Ridge",
+   "state": 1872,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1135.1739130434783,
+    876.9130434782609
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17050": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Pine Ridge",
+   "state": 1872,
+   "group": 4,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1129.3939393939395,
+    889.6969696969697
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "17051": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Southern Hills",
+   "state": 1873,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1161.0740740740741,
+    878.925925925926
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "17052": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Southern Hills",
+   "state": 1873,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1157.5,
+    874.3214285714286
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17053": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Southern Hills",
+   "state": 1873,
+   "group": 5,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1164.607142857143,
+    882.3571428571429
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17054": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Corvala",
+   "state": 1710,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1149.3521126760563,
+    855.4647887323944
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17055": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Corvala",
+   "state": 1710,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1133.9746835443038,
+    868.2025316455696
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "17056": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Corvala",
+   "state": 1710,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1150.0,
+    870.68
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "17057": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Corvala",
+   "state": 1710,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1139.2205882352941,
+    859.3235294117648
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "17058": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Corvala",
+   "state": 1710,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1150.328947368421,
+    862.7894736842105
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17059": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Corvala",
+   "state": 1710,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1141.3396226415093,
+    871.5849056603773
+   ],
+   "area": 53,
+   "terrain": "plains"
+  },
+  "17060": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Togruta Grasslands",
+   "state": 1865,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1146.0394736842106,
+    879.25
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17061": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Togruta Grasslands",
+   "state": 1865,
+   "group": 7,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1134.5277777777778,
+    891.6527777777778
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "17062": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Togruta Grasslands",
+   "state": 1865,
+   "group": 7,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1159.6027397260275,
+    887.2054794520548
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "17063": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Togruta Grasslands",
+   "state": 1865,
+   "group": 7,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1151.1363636363637,
+    890.3977272727273
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "17064": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Togruta Grasslands",
+   "state": 1865,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1137.9610389610389,
+    881.5844155844156
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "17065": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Togruta Grasslands",
+   "state": 1865,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1153.7466666666667,
+    880.52
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "17066": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Togruta Grasslands",
+   "state": 1865,
+   "group": 7,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1143.047619047619,
+    891.8095238095239
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "17067": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1157.9285714285713,
+    854.2142857142857
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17068": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1167.358208955224,
+    876.6716417910447
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "17069": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": true,
+   "sea": 5017,
+   "centre": [
+    1169.873015873016,
+    862.031746031746
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "17070": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1159.125,
+    869.921875
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "17071": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": true,
+   "sea": 5017,
+   "centre": [
+    1163.642857142857,
+    847.2857142857143
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17072": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": true,
+   "sea": 5017,
+   "centre": [
+    1167.3972602739725,
+    854.5753424657535
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "17073": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1160.576923076923,
+    862.1025641025641
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "17074": {
+   "zone": "grass",
+   "kind": 3,
+   "feature": "Turu-Grass Savanna",
+   "state": 1866,
+   "group": 8,
+   "coastal": true,
+   "sea": 5017,
+   "centre": [
+    1168.5211267605634,
+    869.4507042253521
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17075": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Northern Pine Forests",
+   "state": 1867,
+   "group": 9,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1115.9375,
+    864.9625
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "17076": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Northern Pine Forests",
+   "state": 1867,
+   "group": 9,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1118.7887323943662,
+    849.3661971830986
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "17077": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Northern Pine Forests",
+   "state": 1867,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1122.5890410958905,
+    858.0410958904109
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "17078": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Northern Pine Forests",
+   "state": 1867,
+   "group": 9,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1114.5714285714287,
+    857.0
+   ],
+   "area": 63,
+   "terrain": "forest"
+  },
+  "17079": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Northern Pine Forests",
+   "state": 1867,
+   "group": 9,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1115.6617647058824,
+    871.9558823529412
+   ],
+   "area": 68,
+   "terrain": "forest"
+  },
+  "17080": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1128.8192771084337,
+    850.5903614457832
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  },
+  "17081": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": true,
+   "sea": 5017,
+   "centre": [
+    1157.6290322580646,
+    840.5322580645161
+   ],
+   "area": 62,
+   "terrain": "jungle"
+  },
+  "17082": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": true,
+   "sea": 5017,
+   "centre": [
+    1145.6063829787233,
+    837.531914893617
+   ],
+   "area": 94,
+   "terrain": "jungle"
+  },
+  "17083": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1144.8028169014085,
+    849.6056338028169
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "17084": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": true,
+   "sea": 5017,
+   "centre": [
+    1133.8875,
+    837.975
+   ],
+   "area": 80,
+   "terrain": "jungle"
+  },
+  "17085": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1125.3529411764705,
+    842.8705882352941
+   ],
+   "area": 85,
+   "terrain": "jungle"
+  },
+  "17086": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1138.448717948718,
+    844.025641025641
+   ],
+   "area": 78,
+   "terrain": "jungle"
+  },
+  "17087": {
+   "zone": "rain",
+   "kind": 5,
+   "feature": "Rainforest Valleys",
+   "state": 1868,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1136.2394366197184,
+    852.830985915493
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "17088": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Eastern Pine Forests",
+   "state": 1869,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1128.8076923076924,
+    876.5512820512821
+   ],
+   "area": 78,
+   "terrain": "forest"
+  },
+  "17089": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Eastern Pine Forests",
+   "state": 1869,
+   "group": 11,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1118.3625,
+    879.0625
+   ],
+   "area": 80,
+   "terrain": "forest"
+  },
+  "17090": {
+   "zone": "pine",
+   "kind": 4,
+   "feature": "Eastern Pine Forests",
+   "state": 1869,
+   "group": 11,
+   "coastal": true,
+   "sea": 4916,
+   "centre": [
+    1123.6962025316457,
+    885.8101265822785
+   ],
+   "area": 79,
+   "terrain": "forest"
+  }
+ }
+}

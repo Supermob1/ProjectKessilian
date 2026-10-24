@@ -1,0 +1,857 @@
+{
+ "centre": [
+  1085.0,
+  1094.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "16979": "Artisan Colony",
+  "16980": "Great Falls",
+  "17012": "River Meadows",
+  "17021": "Eastern Valleys",
+  "17030": "Southern Meadows",
+  "17034": "Eastern Heights"
+ },
+ "provinces": {
+  "16979": {
+   "zone": "colony",
+   "kind": 1,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1086.65,
+    1094.0
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "16980": {
+   "zone": "falls",
+   "kind": 2,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1064.090909090909,
+    1096.5454545454545
+   ],
+   "area": 11,
+   "terrain": "hills"
+  },
+  "16981": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Escarpment",
+   "state": 1861,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1069.5454545454545,
+    1100.7272727272727
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "16982": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Escarpment",
+   "state": 1861,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1073.0,
+    1082.0714285714287
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "16983": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Escarpment",
+   "state": 1861,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1070.7058823529412,
+    1090.4705882352941
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16984": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Escarpment",
+   "state": 1861,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1071.3846153846155,
+    1106.0
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "16985": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Escarpment",
+   "state": 1861,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1069.642857142857,
+    1096.142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "16986": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Escarpment",
+   "state": 1861,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1071.55,
+    1085.9
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "16987": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "River Gorge",
+   "state": 1862,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1099.1666666666667,
+    1077.2777777777778
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "16988": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "River Gorge",
+   "state": 1862,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1091.0,
+    1082.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16989": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "River Gorge",
+   "state": 1862,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1104.7058823529412,
+    1075.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16990": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "River Gorge",
+   "state": 1862,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1094.7727272727273,
+    1080.0
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "16991": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Valley Lake",
+   "state": 1863,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1088.3636363636363,
+    1109.8636363636363
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "16992": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Valley Lake",
+   "state": 1863,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1091.3157894736842,
+    1112.9473684210527
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "16993": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "High Ridges",
+   "state": 1864,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1104.5555555555557,
+    1110.388888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "16994": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "High Ridges",
+   "state": 1864,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1099.4705882352941,
+    1101.1176470588234
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "16995": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "High Ridges",
+   "state": 1864,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1101.6666666666667,
+    1105.888888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "16996": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1079.24,
+    1085.2266666666667
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "16997": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1090.9,
+    1102.075
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "16998": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1074.9142857142858,
+    1100.3857142857144
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "16999": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1093.5657894736842,
+    1091.7105263157894
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17000": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1083.0405405405406,
+    1101.4054054054054
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "17001": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1077.6235294117646,
+    1092.8588235294117
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "17002": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Artisan Colony",
+   "state": 1709,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1087.8815789473683,
+    1085.7894736842106
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17003": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 7,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1057.6046511627908,
+    1098.5697674418604
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "17004": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 7,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1060.9,
+    1078.5285714285715
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "17005": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1065.3538461538462,
+    1091.8153846153846
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "17006": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 7,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1057.6125,
+    1088.325
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "17007": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 7,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1060.8783783783783,
+    1108.7837837837837
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "17008": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1065.3529411764705,
+    1103.014705882353
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17009": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Great Falls",
+   "state": 1856,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1066.1363636363637,
+    1083.030303030303
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "17010": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1068.060975609756,
+    1071.8292682926829
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "17011": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1102.34375,
+    1071.375
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "17012": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1084.0853658536585,
+    1076.3292682926829
+   ],
+   "area": 82,
+   "terrain": "plains"
+  },
+  "17013": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1085.8974358974358,
+    1066.7435897435898
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "17014": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1074.7848101265822,
+    1077.1772151898733
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "17015": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1076.9651162790697,
+    1067.6046511627908
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "17016": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1092.1714285714286,
+    1074.642857142857
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17017": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "River Meadows",
+   "state": 1857,
+   "group": 8,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1094.7076923076922,
+    1067.2769230769231
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "17018": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Eastern Valleys",
+   "state": 1858,
+   "group": 9,
+   "coastal": true,
+   "sea": 4811,
+   "centre": [
+    1085.8970588235295,
+    1122.485294117647
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "17019": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Eastern Valleys",
+   "state": 1858,
+   "group": 9,
+   "coastal": true,
+   "sea": 4811,
+   "centre": [
+    1066.9571428571428,
+    1115.9285714285713
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17020": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Eastern Valleys",
+   "state": 1858,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1080.7972972972973,
+    1109.837837837838
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "17021": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Eastern Valleys",
+   "state": 1858,
+   "group": 9,
+   "coastal": true,
+   "sea": 4811,
+   "centre": [
+    1075.808988764045,
+    1119.9775280898875
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "17022": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Eastern Valleys",
+   "state": 1858,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1072.5492957746478,
+    1110.1549295774648
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17023": {
+   "zone": "valley",
+   "kind": 3,
+   "feature": "Eastern Valleys",
+   "state": 1858,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1084.96875,
+    1115.9375
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "17024": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "Southern Meadows",
+   "state": 1859,
+   "group": 10,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1109.5869565217392,
+    1080.695652173913
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "17025": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "Southern Meadows",
+   "state": 1859,
+   "group": 10,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1112.3880597014925,
+    1102.44776119403
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "17026": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "Southern Meadows",
+   "state": 1859,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1099.5774647887324,
+    1095.5915492957747
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17027": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "Southern Meadows",
+   "state": 1859,
+   "group": 10,
+   "coastal": true,
+   "sea": 4706,
+   "centre": [
+    1112.9277108433735,
+    1092.0481927710844
+   ],
+   "area": 83,
+   "terrain": "plains"
+  },
+  "17028": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "Southern Meadows",
+   "state": 1859,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1100.530864197531,
+    1083.4074074074074
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "17029": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "Southern Meadows",
+   "state": 1859,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1105.835616438356,
+    1100.6164383561643
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "17030": {
+   "zone": "meadow",
+   "kind": 4,
+   "feature": "Southern Meadows",
+   "state": 1859,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1105.8840579710145,
+    1089.3623188405797
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "17031": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eastern Heights",
+   "state": 1860,
+   "group": 11,
+   "coastal": true,
+   "sea": 4811,
+   "centre": [
+    1094.841463414634,
+    1119.4634146341464
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "17032": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eastern Heights",
+   "state": 1860,
+   "group": 11,
+   "coastal": true,
+   "sea": 4811,
+   "centre": [
+    1108.875,
+    1110.3333333333333
+   ],
+   "area": 48,
+   "terrain": "hills"
+  },
+  "17033": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eastern Heights",
+   "state": 1860,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1096.3066666666666,
+    1108.4
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "17034": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eastern Heights",
+   "state": 1860,
+   "group": 11,
+   "coastal": true,
+   "sea": 4811,
+   "centre": [
+    1102.0821917808219,
+    1115.6986301369864
+   ],
+   "area": 73,
+   "terrain": "hills"
+  }
+ }
+}

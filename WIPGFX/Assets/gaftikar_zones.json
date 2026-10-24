@@ -1,0 +1,857 @@
+{
+ "centre": [
+  485.0,
+  1861.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17595": "Eyat",
+  "17625": "Eastern Heathlands",
+  "17629": "Northern Forests",
+  "17635": "Western Hills",
+  "17642": "Southern Heathlands",
+  "17596": "Marit Nests"
+ },
+ "provinces": {
+  "17595": {
+   "zone": "capital",
+   "kind": 1,
+   "feature": "Eyat",
+   "state": 1720,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    485.0,
+    1861.0
+   ],
+   "area": 49,
+   "terrain": "urban"
+  },
+  "17596": {
+   "zone": "camp",
+   "kind": 2,
+   "feature": "Marit Nests",
+   "state": 1932,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    469.25,
+    1843.3333333333333
+   ],
+   "area": 12,
+   "terrain": "forest"
+  },
+  "17597": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Highmoor Ridge",
+   "state": 1933,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    476.0,
+    1868.6470588235295
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17598": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Highmoor Ridge",
+   "state": 1933,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    465.1666666666667,
+    1881.0833333333333
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "17599": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Highmoor Ridge",
+   "state": 1933,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    471.2105263157895,
+    1875.842105263158
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17600": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Highmoor Ridge",
+   "state": 1933,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    473.23809523809524,
+    1871.904761904762
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17601": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Highmoor Ridge",
+   "state": 1933,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    477.73333333333335,
+    1865.0666666666666
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "17602": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Highmoor Ridge",
+   "state": 1933,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    468.94117647058823,
+    1879.6470588235295
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17603": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Grey Lake",
+   "state": 1934,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    494.5,
+    1850.392857142857
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17604": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Grey Lake",
+   "state": 1934,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    489.22727272727275,
+    1843.5454545454545
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17605": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Grey Lake",
+   "state": 1934,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    488.68,
+    1847.8
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "17606": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Grey Lake",
+   "state": 1934,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    493.60869565217394,
+    1845.9565217391305
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17607": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Forest Scarp",
+   "state": 1935,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    499.47222222222223,
+    1881.4444444444443
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "17608": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Forest Scarp",
+   "state": 1935,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    493.88461538461536,
+    1874.576923076923
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "17609": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Southern Fells",
+   "state": 1936,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    501.85,
+    1852.05
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17610": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Southern Fells",
+   "state": 1936,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    508.56,
+    1863.32
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "17611": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Southern Fells",
+   "state": 1936,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    503.85714285714283,
+    1859.0714285714287
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17612": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Southern Fells",
+   "state": 1936,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    509.0,
+    1860.0
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "17613": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eyat",
+   "state": 1720,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    477.8936170212766,
+    1854.9574468085107
+   ],
+   "area": 94,
+   "terrain": "plains"
+  },
+  "17614": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eyat",
+   "state": 1720,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    496.6,
+    1857.2428571428572
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17615": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eyat",
+   "state": 1720,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    487.5735294117647,
+    1869.7058823529412
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "17616": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eyat",
+   "state": 1720,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    487.2857142857143,
+    1854.0
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "17617": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eyat",
+   "state": 1720,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    493.2763157894737,
+    1864.078947368421
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17618": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eyat",
+   "state": 1720,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    480.66,
+    1865.44
+   ],
+   "area": 50,
+   "terrain": "plains"
+  },
+  "17619": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eastern Heathlands",
+   "state": 1928,
+   "group": 7,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    493.70652173913044,
+    1887.5652173913043
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "17620": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eastern Heathlands",
+   "state": 1928,
+   "group": 7,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    468.33870967741933,
+    1885.2096774193549
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "17621": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eastern Heathlands",
+   "state": 1928,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    479.9746835443038,
+    1875.1645569620252
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "17622": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eastern Heathlands",
+   "state": 1928,
+   "group": 7,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    480.2957746478873,
+    1889.5211267605634
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17623": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eastern Heathlands",
+   "state": 1928,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    490.59493670886076,
+    1878.5443037974683
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "17624": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eastern Heathlands",
+   "state": 1928,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    475.5405405405405,
+    1882.1216216216217
+   ],
+   "area": 74,
+   "terrain": "plains"
+  },
+  "17625": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Eastern Heathlands",
+   "state": 1928,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    485.125,
+    1884.0555555555557
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "17626": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Northern Forests",
+   "state": 1929,
+   "group": 8,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    463.125,
+    1876.3333333333333
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "17627": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Northern Forests",
+   "state": 1929,
+   "group": 8,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    458.027397260274,
+    1854.0958904109589
+   ],
+   "area": 73,
+   "terrain": "forest"
+  },
+  "17628": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Northern Forests",
+   "state": 1929,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    471.75757575757575,
+    1862.560606060606
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "17629": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Northern Forests",
+   "state": 1929,
+   "group": 8,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    458.2207792207792,
+    1862.5324675324675
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "17630": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Northern Forests",
+   "state": 1929,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    466.28205128205127,
+    1856.7692307692307
+   ],
+   "area": 78,
+   "terrain": "forest"
+  },
+  "17631": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Northern Forests",
+   "state": 1929,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    467.038961038961,
+    1868.4285714285713
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "17632": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Northern Forests",
+   "state": 1929,
+   "group": 8,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    458.3125,
+    1870.34375
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "17633": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Western Hills",
+   "state": 1930,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    481.3333333333333,
+    1844.4408602150538
+   ],
+   "area": 93,
+   "terrain": "hills"
+  },
+  "17634": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Western Hills",
+   "state": 1930,
+   "group": 9,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    506.7464788732394,
+    1843.2112676056338
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "17635": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Western Hills",
+   "state": 1930,
+   "group": 9,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    493.04938271604937,
+    1835.358024691358
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "17636": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Western Hills",
+   "state": 1930,
+   "group": 9,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    477.3690476190476,
+    1835.0714285714287
+   ],
+   "area": 84,
+   "terrain": "hills"
+  },
+  "17637": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Western Hills",
+   "state": 1930,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    499.6296296296296,
+    1847.648148148148
+   ],
+   "area": 54,
+   "terrain": "hills"
+  },
+  "17638": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Western Hills",
+   "state": 1930,
+   "group": 9,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    499.57142857142856,
+    1838.6785714285713
+   ],
+   "area": 84,
+   "terrain": "hills"
+  },
+  "17639": {
+   "zone": "hills",
+   "kind": 5,
+   "feature": "Western Hills",
+   "state": 1930,
+   "group": 9,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    485.6629213483146,
+    1834.9662921348315
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "17640": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Southern Heathlands",
+   "state": 1931,
+   "group": 10,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    505.1190476190476,
+    1881.1190476190477
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "17641": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Southern Heathlands",
+   "state": 1931,
+   "group": 10,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    512.1016949152543,
+    1850.5254237288136
+   ],
+   "area": 59,
+   "terrain": "plains"
+  },
+  "17642": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Southern Heathlands",
+   "state": 1931,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    502.3787878787879,
+    1865.6969696969697
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "17643": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Southern Heathlands",
+   "state": 1931,
+   "group": 10,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    510.58762886597935,
+    1871.3298969072166
+   ],
+   "area": 97,
+   "terrain": "plains"
+  },
+  "17644": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Southern Heathlands",
+   "state": 1931,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    499.8375,
+    1872.7
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "17645": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Southern Heathlands",
+   "state": 1931,
+   "group": 10,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    513.9655172413793,
+    1860.8275862068965
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "17646": {
+   "zone": "heath",
+   "kind": 3,
+   "feature": "Southern Heathlands",
+   "state": 1931,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    506.9298245614035,
+    1853.719298245614
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "17647": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Marit Woods",
+   "state": 1932,
+   "group": 11,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    461.55384615384617,
+    1847.4923076923078
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "17648": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Marit Woods",
+   "state": 1932,
+   "group": 11,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    470.5625,
+    1837.515625
+   ],
+   "area": 64,
+   "terrain": "forest"
+  },
+  "17649": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Marit Woods",
+   "state": 1932,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    471.65555555555557,
+    1848.2777777777778
+   ],
+   "area": 90,
+   "terrain": "forest"
+  },
+  "17650": {
+   "zone": "forest",
+   "kind": 4,
+   "feature": "Marit Woods",
+   "state": 1932,
+   "group": 11,
+   "coastal": true,
+   "sea": 4845,
+   "centre": [
+    464.21153846153845,
+    1841.2884615384614
+   ],
+   "area": 52,
+   "terrain": "forest"
+  }
+ }
+}

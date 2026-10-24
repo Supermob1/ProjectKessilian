@@ -1,0 +1,62 @@
+3D MODELS TODO (prepared 2026-10-10)
+=====================================
+Built the same way as the landmarks: procedural in Blender (military_buildings.py models), shapes and colours taken
+from Wookieepedia reference images, reviewed as renders before they go in.
+
+A. MAP BUILDINGS STILL USING VANILLA WWII MODELS (gfx/entities/buildings.asset)
+   Already Star Wars: air base (launch pads), naval base (space dock), anti-air (ion cannon), civ + mil factories
+   (Christophsis towers). Ordered by how often they show on the map:
+   1. bunker / stronghold_network (forts, on every border)  -> deflector-shield bunker / blast-door hardpoint
+   2. supply_node                                            -> supply depot: cargo pad, containers, small tower
+   3. synthetic_refinery                                     -> tibanna / fuel refinery: tanks, gas spheres, flare stack
+   4. dockyard 1-3                                           -> orbital drydock frame with a hull inside (KDY style)
+   5. radar_station                                          -> sensor array / comm dish
+   6. coastal_bunker                                         -> planetary turbolaser turret
+   7. rocket_site                                            -> missile / torpedo silo pad
+   8. naval_supply_hub, naval_headquarters                   -> fleet command post, cargo lighter pad
+   9. nuclear_reactor (+ commercial)                         -> hypermatter / fusion reactor dome
+  10. special project facilities (air, land, naval, electronics, rocket, nuclear) -> research labs, one look per type
+  11. mega_gun_emplacement                                   -> heavy turbolaser battery
+   Not needed: dams, Kiel / Panama canals (vanilla map features), vanilla city entities (unused by our cities.txt)
+
+B. CITY STYLES (map/cities.txt; most worlds still use the generic "towns" set)
+   Done: Coruscant megacity, Christophsis, treehouse villages, ocean-world stilt domes, Mandalore, Geonosis, Naboo
+   Candidates:
+   - Tatooine           adobe domes, moisture farms, low walls (Mos Eisley / Mos Espa)
+   - Alderaan           white elegant towers on cliffs (Aldera)
+   - Corellia           industrial blocks, shipyard gantries (Coronet City)
+   - Ryloth             cliff-side dwellings, stone towers (Lessu)
+   - Mon Calamari       organic coral towers (stilt-floating like Kamino)
+   - Cato Neimoidia     bridge cities hanging under rock arches (needs a usable reference image)
+   - Ice worlds         buried domes, heat vents (Hoth / Ilum / Mygeeto: Mygeeto crystal towers)
+   - Lava / mining      mining rigs, collector arms (Mustafar)
+   - Desert generic     domes and towers for the other desert worlds
+
+C. LANDMARKS STILL OPEN
+   Rejected, needs a redo:  Pau City (Utapau)
+   Skipped, no reference:   Cato Neimoidia bridge city, Republic Executive Building (Coruscant)
+   New candidates (place on a victory point; check with HoD before placing):
+   - Alderaan     Royal Palace of Aldera
+   - Mustafar     Klegger Corp mining facility / lava collector
+   - Kessel       spice mines + Kessel shield / prison
+   - Hoth         Echo Base shield generator + hangar
+   - Mygeeto      crystal-city towers
+   - Dathomir     Nightsister fortress
+   - Ryloth       Lessu cliff city
+   - Mon Calamari Dac coral city
+   - Kuat         Kuat Drive Yards orbital ring (on the planet's edge, over space)
+   - Ossus / Tython / Arkania   Jedi temple ruins / enclave (VPs "Old Ossus", "Tython Jedi Temple Ruins",
+                                "Arkania Jedi Enclave")
+   - Corulag      Corulag Academy (VP)
+
+D. MAP PROPS (trees.bmp objects, planet_terrain_gen.py PROPS)
+   Existing: vaporators, sandcrawler, boulders, ship wrecks
+   Candidates: AT-AT / AT-TE wrecks (battlefield worlds), crashed starship hulls, moisture farm huts (Tatooine),
+   ice crystal spires (Ilum), lava rock arches (Mustafar), droid scrap piles (Raxus Prime)
+
+E. CITY-WORLD TOWN CELLS (ON HOLD, the user 2026-10-22: "much better but still not a fan, not enough diversity")
+   arch_kit.tet_town (Empress Teta, map/cities.txt 96) is now a 3x3 grid of podium blocks with broad stepped towers,
+   street gaps and speeders. Still to do before city worlds look right: more building types per cell (domes, slab
+   arcologies, spires, landing platforms, skybridges, terraced blocks, lower plazas with greenery), varied block
+   sizes / irregular grids, varied heights and roof shapes, more traffic lanes. Then apply the same cell to every city
+   world (Coruscant cos_town 81, Fondor fon_town 99, ...), not just Teta.

@@ -1,0 +1,857 @@
+{
+ "centre": [
+  1308.0,
+  863.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17091": "Cormond",
+  "17092": "Vuultin",
+  "17129": "Oradin",
+  "17094": "Curovao",
+  "17095": "Votrad",
+  "17143": "Gravaal Highlands"
+ },
+ "provinces": {
+  "17091": {
+   "zone": "capital",
+   "kind": 1,
+   "feature": "Cormond",
+   "state": 1711,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1308.0,
+    863.0
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "17092": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Vuultin",
+   "state": 1874,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1309.6818181818182,
+    882.9090909090909
+   ],
+   "area": 22,
+   "terrain": "urban"
+  },
+  "17093": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1309.6923076923076,
+    843.1153846153846
+   ],
+   "area": 26,
+   "terrain": "urban"
+  },
+  "17094": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Curovao",
+   "state": 1876,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1290.5294117647059,
+    850.3529411764706
+   ],
+   "area": 17,
+   "terrain": "urban"
+  },
+  "17095": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Votrad",
+   "state": 1877,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1327.0625,
+    877.3125
+   ],
+   "area": 16,
+   "terrain": "urban"
+  },
+  "17096": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1879,
+   "group": 5,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1280.0294117647059,
+    869.7941176470588
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "17097": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1879,
+   "group": 5,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1277.909090909091,
+    856.0909090909091
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "17098": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1879,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1281.7894736842106,
+    862.7894736842105
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17099": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1879,
+   "group": 5,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1278.3636363636363,
+    865.1818181818181
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17100": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1879,
+   "group": 5,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1278.95,
+    860.0
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17101": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Gravaal Mountains",
+   "state": 1880,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1293.0,
+    873.1290322580645
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "17102": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Gravaal Mountains",
+   "state": 1880,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1298.9285714285713,
+    862.5
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17103": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Gravaal Mountains",
+   "state": 1880,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1290.0,
+    879.5172413793103
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "17104": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Gravaal Mountains",
+   "state": 1880,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1295.1764705882354,
+    866.6470588235294
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "17105": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Suporro Sea",
+   "state": 1881,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1323.909090909091,
+    865.0
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "17106": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Suporro Sea",
+   "state": 1881,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1321.1666666666667,
+    854.2666666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "17107": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Suporro Sea",
+   "state": 1881,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1322.3714285714286,
+    859.6
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "17108": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Southern Ice Cap",
+   "state": 1882,
+   "group": 8,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1337.0833333333333,
+    863.0
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "17109": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Southern Ice Cap",
+   "state": 1882,
+   "group": 8,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1337.3703703703704,
+    870.1481481481482
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "17110": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Southern Ice Cap",
+   "state": 1882,
+   "group": 8,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1337.2142857142858,
+    856.1785714285714
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17111": {
+   "zone": "flat",
+   "kind": 3,
+   "feature": "Cormond",
+   "state": 1711,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1316.8846153846155,
+    867.3974358974359
+   ],
+   "area": 78,
+   "terrain": "plains"
+  },
+  "17112": {
+   "zone": "flat",
+   "kind": 3,
+   "feature": "Cormond",
+   "state": 1711,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1300.987012987013,
+    870.2597402597403
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "17113": {
+   "zone": "flat",
+   "kind": 3,
+   "feature": "Cormond",
+   "state": 1711,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1304.642857142857,
+    857.9285714285714
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17114": {
+   "zone": "flat",
+   "kind": 3,
+   "feature": "Cormond",
+   "state": 1711,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1314.1375,
+    858.95
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "17115": {
+   "zone": "flat",
+   "kind": 3,
+   "feature": "Cormond",
+   "state": 1711,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1308.642857142857,
+    870.1714285714286
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17116": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Vuultin",
+   "state": 1874,
+   "group": 10,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1308.9876543209878,
+    890.2469135802469
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "17117": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Vuultin",
+   "state": 1874,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1298.6571428571428,
+    880.7857142857143
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17118": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Vuultin",
+   "state": 1874,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1314.7283950617284,
+    877.8765432098766
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "17119": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Vuultin",
+   "state": 1874,
+   "group": 10,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1300.2289156626507,
+    889.289156626506
+   ],
+   "area": 83,
+   "terrain": "plains"
+  },
+  "17120": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Vuultin",
+   "state": 1874,
+   "group": 10,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1317.2222222222222,
+    888.0222222222222
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "17121": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Vuultin",
+   "state": 1874,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1305.9705882352941,
+    879.1029411764706
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "17122": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1300.4782608695652,
+    836.9782608695652
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "17123": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1332.5,
+    849.1212121212121
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "17124": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1312.0875,
+    851.025
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "17125": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1319.557142857143,
+    837.0285714285715
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "17126": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1302.5333333333333,
+    846.5714285714286
+   ],
+   "area": 105,
+   "terrain": "plains"
+  },
+  "17127": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1327.8360655737704,
+    855.0983606557377
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "17128": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1322.0,
+    848.0923076923077
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "17129": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1315.72131147541,
+    843.5409836065573
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "17130": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1309.7790697674418,
+    835.6046511627907
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "17131": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Oradin",
+   "state": 1875,
+   "group": 11,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1327.1911764705883,
+    842.2058823529412
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "17132": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Curovao",
+   "state": 1876,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1296.1818181818182,
+    851.4090909090909
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "17133": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Curovao",
+   "state": 1876,
+   "group": 12,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1282.1515151515152,
+    852.2424242424242
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "17134": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Curovao",
+   "state": 1876,
+   "group": 12,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1292.6184210526317,
+    840.421052631579
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17135": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Curovao",
+   "state": 1876,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1287.3623188405797,
+    857.304347826087
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "17136": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Curovao",
+   "state": 1876,
+   "group": 12,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1286.638888888889,
+    845.3611111111111
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "17137": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Curovao",
+   "state": 1876,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1295.1803278688524,
+    858.344262295082
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "17138": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Votrad",
+   "state": 1877,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1331.877192982456,
+    859.8070175438596
+   ],
+   "area": 57,
+   "terrain": "plains"
+  },
+  "17139": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Votrad",
+   "state": 1877,
+   "group": 13,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1325.4565217391305,
+    884.4239130434783
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "17140": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Votrad",
+   "state": 1877,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1322.4125,
+    874.55
+   ],
+   "area": 80,
+   "terrain": "plains"
+  },
+  "17141": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Votrad",
+   "state": 1877,
+   "group": 13,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1332.4788732394366,
+    876.9718309859155
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17142": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Votrad",
+   "state": 1877,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1330.4556962025317,
+    868.5569620253165
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "17143": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gravaal Highlands",
+   "state": 1878,
+   "group": 14,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1284.125,
+    876.4895833333334
+   ],
+   "area": 96,
+   "terrain": "hills"
+  },
+  "17144": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gravaal Highlands",
+   "state": 1878,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1287.9574468085107,
+    866.7340425531914
+   ],
+   "area": 94,
+   "terrain": "hills"
+  },
+  "17145": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gravaal Highlands",
+   "state": 1878,
+   "group": 14,
+   "coastal": true,
+   "sea": 4932,
+   "centre": [
+    1290.7428571428572,
+    886.2285714285714
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "17146": {
+   "zone": "highland",
+   "kind": 5,
+   "feature": "Gravaal Highlands",
+   "state": 1878,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    1294.52,
+    877.64
+   ],
+   "area": 25,
+   "terrain": "hills"
+  }
+ }
+}

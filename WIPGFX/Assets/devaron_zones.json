@@ -1,0 +1,857 @@
+{
+ "centre": [
+  2068.0,
+  1185.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17259": "Montellian Serat",
+  "17260": "Plaeree",
+  "17261": "Assarda",
+  "17298": "Tikaroo",
+  "17307": "Ton-biri",
+  "17314": "Temple of Eedit"
+ },
+ "provinces": {
+  "17259": {
+   "zone": "capital",
+   "kind": 1,
+   "feature": "Montellian Serat",
+   "state": 1714,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2068.0,
+    1185.0
+   ],
+   "area": 45,
+   "terrain": "urban"
+  },
+  "17260": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Plaeree",
+   "state": 1901,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2071.8636363636365,
+    1204.8181818181818
+   ],
+   "area": 22,
+   "terrain": "urban"
+  },
+  "17261": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Assarda",
+   "state": 1902,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2068.0588235294117,
+    1165.1176470588234
+   ],
+   "area": 17,
+   "terrain": "urban"
+  },
+  "17262": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2089.0625,
+    1186.6875
+   ],
+   "area": 16,
+   "terrain": "urban"
+  },
+  "17263": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2060.4285714285716,
+    1181.142857142857
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17264": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2056.7272727272725,
+    1200.1818181818182
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17265": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2056.266666666667,
+    1192.4666666666667
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "17266": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2061.55,
+    1186.35
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17267": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2058.5882352941176,
+    1195.8823529411766
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17268": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2054.0,
+    1196.4285714285713
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17269": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2058.266666666667,
+    1184.0666666666666
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "17270": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Blue Mountains",
+   "state": 1906,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2059.6666666666665,
+    1190.388888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "17271": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Karatokai Mountains",
+   "state": 1907,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2074.95,
+    1177.3
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17272": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Karatokai Mountains",
+   "state": 1907,
+   "group": 5,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2085.3333333333335,
+    1163.1515151515152
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "17273": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Karatokai Mountains",
+   "state": 1907,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2079.3125,
+    1167.40625
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "17274": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Karatokai Mountains",
+   "state": 1907,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2076.5142857142855,
+    1171.5428571428572
+   ],
+   "area": 35,
+   "terrain": "mountain"
+  },
+  "17275": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Sunken River",
+   "state": 1908,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2085.8333333333335,
+    1202.361111111111
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "17276": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Sunken River",
+   "state": 1908,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2086.78125,
+    1196.0
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "17277": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Sunken River",
+   "state": 1908,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2082.76,
+    1198.12
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "17278": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Eastern Heights",
+   "state": 1909,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2064.7741935483873,
+    1210.1935483870968
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "17279": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Montellian Serat",
+   "state": 1714,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2064.088888888889,
+    1176.4777777777779
+   ],
+   "area": 90,
+   "terrain": "forest"
+  },
+  "17280": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Montellian Serat",
+   "state": 1714,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2074.860465116279,
+    1188.8255813953488
+   ],
+   "area": 86,
+   "terrain": "forest"
+  },
+  "17281": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Montellian Serat",
+   "state": 1714,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2065.7391304347825,
+    1191.9130434782608
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17282": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Montellian Serat",
+   "state": 1714,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2072.8055555555557,
+    1178.5
+   ],
+   "area": 72,
+   "terrain": "forest"
+  },
+  "17283": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Montellian Serat",
+   "state": 1714,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2056.2380952380954,
+    1183.4761904761904
+   ],
+   "area": 21,
+   "terrain": "forest"
+  },
+  "17284": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Plaeree",
+   "state": 1901,
+   "group": 9,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2072.68,
+    1211.84
+   ],
+   "area": 75,
+   "terrain": "jungle"
+  },
+  "17285": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Plaeree",
+   "state": 1901,
+   "group": 9,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2087.5777777777776,
+    1207.2444444444445
+   ],
+   "area": 45,
+   "terrain": "jungle"
+  },
+  "17286": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Plaeree",
+   "state": 1901,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2075.89,
+    1198.45
+   ],
+   "area": 100,
+   "terrain": "jungle"
+  },
+  "17287": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Plaeree",
+   "state": 1901,
+   "group": 9,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2063.0,
+    1213.6545454545455
+   ],
+   "area": 55,
+   "terrain": "jungle"
+  },
+  "17288": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Plaeree",
+   "state": 1901,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2065.605504587156,
+    1202.211009174312
+   ],
+   "area": 109,
+   "terrain": "jungle"
+  },
+  "17289": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Plaeree",
+   "state": 1901,
+   "group": 9,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2079.741176470588,
+    1208.5764705882352
+   ],
+   "area": 85,
+   "terrain": "jungle"
+  },
+  "17290": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Assarda",
+   "state": 1902,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2071.7619047619046,
+    1167.1587301587301
+   ],
+   "area": 63,
+   "terrain": "jungle"
+  },
+  "17291": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Assarda",
+   "state": 1902,
+   "group": 10,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2060.05,
+    1158.475
+   ],
+   "area": 80,
+   "terrain": "jungle"
+  },
+  "17292": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Assarda",
+   "state": 1902,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2062.684210526316,
+    1166.842105263158
+   ],
+   "area": 76,
+   "terrain": "jungle"
+  },
+  "17293": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Assarda",
+   "state": 1902,
+   "group": 10,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2069.568181818182,
+    1157.659090909091
+   ],
+   "area": 88,
+   "terrain": "jungle"
+  },
+  "17294": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Assarda",
+   "state": 1902,
+   "group": 10,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2079.2272727272725,
+    1159.7386363636363
+   ],
+   "area": 88,
+   "terrain": "jungle"
+  },
+  "17295": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Wanderer's Path",
+   "state": 1903,
+   "group": 11,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2043.4252873563219,
+    1196.4367816091954
+   ],
+   "area": 87,
+   "terrain": "jungle"
+  },
+  "17296": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Wanderer's Path",
+   "state": 1903,
+   "group": 11,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2054.4473684210525,
+    1209.5394736842106
+   ],
+   "area": 76,
+   "terrain": "jungle"
+  },
+  "17297": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Wanderer's Path",
+   "state": 1903,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2058.731707317073,
+    1201.3902439024391
+   ],
+   "area": 41,
+   "terrain": "jungle"
+  },
+  "17298": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Wanderer's Path",
+   "state": 1903,
+   "group": 11,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2048.3152173913045,
+    1203.0
+   ],
+   "area": 92,
+   "terrain": "jungle"
+  },
+  "17299": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Wanderer's Path",
+   "state": 1903,
+   "group": 11,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2040.925,
+    1188.2125
+   ],
+   "area": 80,
+   "terrain": "jungle"
+  },
+  "17300": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Wanderer's Path",
+   "state": 1903,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2050.967032967033,
+    1189.4505494505495
+   ],
+   "area": 91,
+   "terrain": "jungle"
+  },
+  "17301": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2095.0266666666666,
+    1176.0533333333333
+   ],
+   "area": 75,
+   "terrain": "forest"
+  },
+  "17302": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2093.4805194805194,
+    1198.025974025974
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "17303": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2081.9605263157896,
+    1185.7236842105262
+   ],
+   "area": 76,
+   "terrain": "forest"
+  },
+  "17304": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2095.9146341463415,
+    1187.219512195122
+   ],
+   "area": 82,
+   "terrain": "forest"
+  },
+  "17305": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2082.864197530864,
+    1175.1604938271605
+   ],
+   "area": 81,
+   "terrain": "forest"
+  },
+  "17306": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2087.4545454545455,
+    1191.3272727272727
+   ],
+   "area": 55,
+   "terrain": "forest"
+  },
+  "17307": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2089.242424242424,
+    1180.4848484848485
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "17308": {
+   "zone": "valley",
+   "kind": 4,
+   "feature": "Ton-biri",
+   "state": 1904,
+   "group": 12,
+   "coastal": true,
+   "sea": 4829,
+   "centre": [
+    2089.534090909091,
+    1168.1022727272727
+   ],
+   "area": 88,
+   "terrain": "forest"
+  },
+  "17309": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eedit Highlands",
+   "state": 1905,
+   "group": 13,
+   "coastal": true,
+   "sea": 4946,
+   "centre": [
+    2046.7794117647059,
+    1167.0294117647059
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17310": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eedit Highlands",
+   "state": 1905,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2050.5,
+    1179.9651162790697
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "17311": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eedit Highlands",
+   "state": 1905,
+   "group": 13,
+   "coastal": true,
+   "sea": 4946,
+   "centre": [
+    2040.9850746268658,
+    1180.4179104477612
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "17312": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eedit Highlands",
+   "state": 1905,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2055.1511627906975,
+    1172.0697674418604
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "17313": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eedit Highlands",
+   "state": 1905,
+   "group": 13,
+   "coastal": true,
+   "sea": 4946,
+   "centre": [
+    2052.614285714286,
+    1162.1571428571428
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "17314": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Eedit Highlands",
+   "state": 1905,
+   "group": 13,
+   "coastal": true,
+   "sea": 4946,
+   "centre": [
+    2043.3428571428572,
+    1173.3857142857144
+   ],
+   "area": 70,
+   "terrain": "hills"
+  }
+ }
+}

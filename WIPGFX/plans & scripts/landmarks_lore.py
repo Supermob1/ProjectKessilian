@@ -1378,6 +1378,236 @@ LANDMARKS = [
     ("kar_arena", ["hod_kar_arena"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
      "Skull Crackers Arena", "Karfeddion's smashball fans follow the Skull Crackers with a devotion the Senate never "
      "earned.", None),
+    # --- Maridun (canon: the Lurmen village, the giant seed-pod trees, Lok Durd's Separatist outpost; grove name invented)
+    ("mrd_village", ["hod_mrd_village"], "GFX_idea_generic_political_support", {"stability_factor": 0.05, "war_support_factor": -0.05},
+     "Lurmen Village", "The Lurmen came to Maridun's grasslands from Mygeeto to escape the wars of others; under Tee Watt "
+     "Kaa their village keeps one rule above all: no one here takes up arms.", None),
+    ("mrd_outpost", ["hod_mrd_outpost"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.2},
+     "Separatist Outpost", "A Separatist landing craft set down in the tall grass, far from any front: a quiet field "
+     "where new weapons can be tested where no one will see.", None),
+    ("mrd_tree", ["hod_mrd_tree"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.1},
+     "Giant Tree Groves", "Where water runs close under the plains, Maridun's great trees rise over the grass, their seed "
+     "pods drifting for kilometres on the wind each season.", None),
+    # --- Orto Plutonia (canon: Glid Station in an ice spire, the Talz villages, the Separatist beetle-transport outpost)
+    ("ort_glid", ["hod_ort_glid"], "GFX_idea_generic_army_support", {"local_supplies": 0.2, "stability_factor": 0.02},
+     "Glid Station", "Pantora claims Orto Plutonia, and the Republic hollowed an outpost into one of its great ice spires "
+     "to watch the frozen plains, though few expected anything to be there to watch.", None),
+    ("ort_talz", ["hod_ort_talz"], "GFX_idea_generic_political_support", {"stability_factor": 0.04},
+     "Talz Village", "The Talz carved their homes into the canyon walls long before anyone in Pantora thought to draw "
+     "the planet on a map; their chieftains answer to no one beyond the ice.", None),
+    ("ort_beetles", ["hod_ort_beetles"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Separatist Outpost", "Two Separatist beetle transports set down on the ice, a forward post on a world neither "
+     "side had any good reason to want.", None),
+    # --- Rugosa (canon: the coral forests, the caverns; the Meeting Grounds name is invented)
+    ("rug_kingcoral", ["hod_rug_kingcoral"], "GFX_idea_generic_political_support", {"political_power_factor": 0.03},
+     "Meeting Grounds", "When Rugosa's seas boiled away they left forests of coral skeletons standing in the sand; Toydaria "
+     "keeps the moon as neutral ground where envoys can meet away from the Hutts' ears.", None),
+    ("rug_cavern", ["hod_rug_cavern"], "GFX_idea_generic_army_support", {"local_supplies": 0.1},
+     "Coral Caverns", "The old sea floor is riddled with caverns, dry since the oceans went; smugglers and patrols alike "
+     "have used them to hide.", None),
+    # --- Quell (canon: brown terrain and spherical formations; the landing field is invented)
+    ("qul_base", ["hod_qul_base"], "GFX_idea_generic_army_support", {"local_supplies": 0.2, "local_building_slots": 1},
+     "Quell Landing Field", "A Republic garrison on the brown plains of a quiet Outer Rim world, built to guard the "
+     "hyperlanes past it rather than the world itself.", None),
+    ("qul_spheres", ["hod_qul_spheres"], "GFX_idea_generic_research_bonus", {"local_resources_factor": 0.1},
+     "Sphere Fields", "Nobody has a good account of how Quell's great stone spheres grew out of the ground; surveyors "
+     "mapped them, shrugged, and moved on.", None),
+    # --- Vanqor (canon: the Separatist listening station, the crystal formations, Mace Windu's crash; wreck name invented)
+    ("vnq_station", ["hod_vnq_station"], "GFX_idea_generic_research_bonus", {"local_supplies": 0.1},
+     "Listening Station", "A lonely Separatist sensor post among Vanqor's rocks, listening to the hyperlanes that run "
+     "past Florrum.", None),
+    ("vnq_crystals", ["hod_vnq_crystals"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.1},
+     "Crystal Fields", "Crystals split the red rock of Vanqor's highlands, and the caves beneath belong to the gundarks; "
+     "few prospectors come back for a second look.", None),
+    ("vnq_wreck", ["hod_vnq_wreck"], "GFX_idea_generic_army_support", {"war_support_factor": 0.02},
+     "Gunship Wreck", "Older wrecks than this one litter the gullies: Vanqor sits close to the pirate lanes, and not "
+     "every ship that falls here is ever looked for.", None),
+    # --- Abafar (canon: Pons Ora, the rhydonium mining installation, Power Sliders)
+    ("aba_ponsora", ["hod_aba_ponsora"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Pons Ora", "One of the few settlements on the white plains of the Void, Pons Ora lives on rhydonium, and on the "
+     "regulars at Power Sliders who never seem to leave.", None),
+    ("aba_mine", ["hod_aba_mine"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.15, "local_supplies": 0.1},
+     "Rhydonium Mining Installation", "Abafar's rhydonium is among the most refined fuel in the galaxy; the refinery at "
+     "Pons Ora ships it to whoever pays, and every navy pays.", None),
+    # --- Rattatak (Legends: Castle Ventress, the Cauldron; canon: Barterus)
+    ("rat_castle", ["hod_rat_castle"], "GFX_idea_generic_army_support", {"war_support_factor": 0.05, "local_supplies": 0.2},
+     "Castle Ventress", "A black citadel on a red rock spur, raised by a warlord and taken by a stronger one; on Rattatak "
+     "every castle changes hands the same way.", None),
+    ("rat_cauldron", ["hod_rat_cauldron"], "GFX_idea_generic_political_support", {"stability_factor": 0.03, "war_support_factor": 0.03},
+     "The Cauldron", "The great pit where Rattatak's warlords settle their feuds in blood, cheered on by the crowds on the "
+     "stone tiers; champions of the Cauldron are worth more than armies.", None),
+    ("rat_barterus", ["hod_rat_barterus"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Barterus", "A fighting ring in a warlord's camp where slaves and volunteers alike fight for their keep.", None),
+    # --- Vassek (canon: Grievous's fortress on Vassek 3; the landing field is invented)
+    ("vsk_lair", ["hod_vsk_lair"], "GFX_idea_generic_army_support", {"local_supplies": 0.2, "stability_factor": 0.02},
+     "Grievous's Lair", "On a pinnacle above the mists of Vassek's third moon stands a castle far from any lane worth "
+     "watching, which is exactly why it was chosen.", None),
+    ("vsk_field", ["hod_vsk_field"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.2},
+     "Droid Landing Field", "A deck on stilts above the swamp, where supply shuttles touch down and droids keep watch over "
+     "a moon with nothing to watch but fog.", None),
+    # --- Lotho Minor (canon: Maul's lair, the Junkers; the warren name is invented)
+    ("ltm_warren", ["hod_ltm_warren"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.1, "local_supplies": 0.1},
+     "Junker Warren", "The galaxy has dumped its refuse on Lotho Minor for generations; the Junkers who live among the "
+     "burning heaps sort, salvage and sell whatever still works.", None),
+    ("ltm_lair", ["hod_ltm_lair"], "GFX_idea_generic_research_bonus", {"stability_factor": -0.03},
+     "The Lair", "Tunnels run deep under the junk mountains, and the Junkers tell of something in them that feeds on "
+     "whatever wanders in.", None),
+    # --- Bardotta (canon: the capital and the Royal Palace, the Frangawl Temple, Jour-un)
+    ("bdt_palace", ["hod_bdt_palace"], "GFX_idea_generic_political_support", {"stability_factor": 0.05, "political_power_factor": 0.03},
+     "Bardottan Royal Palace", "Bardotta's queens rule from the palace on the highland terraces, its seat of both crown "
+     "and faith; the Dagoyan Masters counsel from its halls and keep the old texts.", None),
+    ("bdt_temple", ["hod_bdt_temple"], "GFX_idea_generic_research_bonus", {"stability_factor": -0.02},
+     "Frangawl Temple", "The Frangawl Cult's ancient stronghold, carved into the mountains when the cult still ruled; it has "
+     "stood empty for centuries, or so Bardotta believes.", None),
+    ("bdt_port", ["hod_bdt_port"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.3, "local_factories": 0.05},
+     "Jour-un", "Bardotta's great port and trading hub, where offworld freighters meet the caravans down from the highlands.", None),
+    # --- Scipio (canon: the Main Vault, Clovis's residence)
+    ("sci_vault", ["hod_sci_vault"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1, "political_power_factor": 0.05},
+     "Main Vault", "On an icy peak above the capital the InterGalactic Banking Clan keeps its Main Vault: the records and "
+     "wealth that every government in the galaxy, Republic and Confederacy alike, owes money to.", None),
+    ("sci_clovis", ["hod_sci_clovis"], "GFX_idea_generic_political_support", {"political_power_factor": 0.03},
+     "Clovis' Residence", "A banker-senator's villa on a snowy ledge, where Rush Clovis entertains those who want the "
+     "Banking Clan's ear.", None),
+    # --- Carlac (canon: Ming Po Town, the Death Watch camp, the Yarkora colony)
+    ("clc_mingpo", ["hod_clc_mingpo"], "GFX_idea_generic_political_support", {"stability_factor": 0.04},
+     "Ming Po Town", "The Ming Po live quietly among the snowy forests; their queens are rumoured to have been chosen by the "
+     "spirits of the trees as long as the town has stood.", None),
+    ("clc_dwcamp", ["hod_clc_dwcamp"], "GFX_idea_generic_army_support", {"war_support_factor": 0.05, "local_supplies": 0.2},
+     "Death Watch Camp", "Exiled from Mandalore, Death Watch drills in hidden camps on cold worlds nobody watches, waiting for "
+     "the day the pacifist Duchess falls.", None),
+    ("clc_yarkora", ["hod_clc_yarkora"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.05},
+     "Yarkora Colony", "For more than a century a Yarkora colony has kept to itself in the cold blue sands of Carlac's "
+     "equator.", None),
+    # --- Aleen (canon: the Aleena village, the Great Seal, the Jedi chapter house)
+    ("ale_village", ["hod_ale_village"], "GFX_idea_generic_political_support", {"stability_factor": 0.04},
+     "Aleena Village", "The Aleena build their villages on the mesa tops among the arbozoic trees, whose roots hang over "
+     "the cliffs; the hollowed trunks of the dead ones, the colossi, are kept as monuments.", None),
+    ("ale_seal", ["hod_ale_seal"], "GFX_idea_generic_research_bonus", {"stability_factor": 0.02},
+     "The Great Seal", "In the distant past the Aleena forged a golden disk to mark the parting of the surface from the "
+     "Underworld below, and swore that neither world would cross it again.", None),
+    ("ale_chapter", ["hod_ale_chapter"], "GFX_idea_generic_research_bonus", {"stability_factor": 0.02, "compliance_gain": 0.02},
+     "Jedi Chapter House", "Long before the war the Jedi kept a chapter house on Aleen, the centre of the Order's work on "
+     "the planet.", None),
+    # --- Qiilura (Legends: Imbraani, Teklet)
+    ("qii_imbraani", ["hod_qii_imbraani"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.1, "stability_factor": -0.03},
+     "Imbraani", "Qiilura's farming capital, where a Neimoidian governor collects the harvests and the farmers keep their "
+     "opinions of him to themselves.", None),
+    ("qii_teklet", ["hod_qii_teklet"], "GFX_idea_generic_research_bonus", {"local_supplies": 0.1},
+     "Teklet", "The town's great dishes carry every message in and out of Qiilura.", None),
+    # --- Kiros (canon: the artisan colony; the falls are invented)
+    ("kir_colony", ["hod_kir_colony"], "GFX_idea_generic_political_support", {"stability_factor": 0.05, "political_power_factor": 0.02},
+     "Artisan Colony", "Fifty thousand Togruta made Kiros a colony of artists, and their sculpted towers stand among the "
+     "valleys like a gallery under the sky.", None),
+    ("kir_falls", ["hod_kir_falls"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Great Falls", "The colony's founders chose the valley for its waterfalls, and the falls still draw painters from "
+     "across the sector.", None),
+    # --- Shili (Legends: Corvala; canon: the Togruta village)
+    ("shi_corvala", ["hod_shi_corvala"], "GFX_idea_generic_political_support", {"stability_factor": 0.04, "political_power_factor": 0.03},
+     "Corvala", "The capital of the Togruta homeworld, its striped towers rising over the turu-grass like the montrals of "
+     "the people who built them.", None),
+    ("shi_village", ["hod_shi_village"], "GFX_idea_generic_army_support", {"local_manpower": 0.05},
+     "Togruta Village", "In the villages of the colourful grasslands, Togruta still hunt in packs as their ancestors did, "
+     "and the Jedi still come looking for gifted children.", None),
+    # --- Brentaal IV (Legends: Cormond and its museum, Oradin's spaceport, Votrad Stadium)
+    ("bre_cormond", ["hod_bre_cormond"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1, "political_power_factor": 0.03},
+     "Cormond", "On the salt flats between the Suporro Sea and the Gravaal Mountains the Brentaal Houses built their "
+     "capital, and through it runs the trade of two of the galaxy's busiest hyperlanes.", None),
+    ("bre_oradin", ["hod_bre_oradin"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.3},
+     "Oradin Spaceport", "West of Vuultin lies one of the largest spaceports on the Perlemian Trade Route's crossroads.", None),
+    ("bre_stadium", ["hod_bre_stadium"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Votrad Stadium", "The stadium at Votrad hosts the games and the great performances of the Houses.", None),
+    # --- Skako (Legends: the Power Mounds of the Elders in the Clouds of Cormelish; the foundries and port are invented)
+    ("sko_mounds", ["hod_sko_mounds"], "GFX_idea_generic_political_support", {"political_power_factor": 0.05},
+     "Power Mounds of the Elders", "In the Clouds of Cormelish the Skakoan Elders gather in their Power Mounds, where no "
+     "outsider has ever been invited; the Techno Union's decisions are made there.", None),
+    ("sko_foundry", ["hod_sko_foundry"], "GFX_idea_generic_production_bonus", {"local_factories": 0.15},
+     "Techno Union Foundries", "Skako's foundries have built the Techno Union's wealth for generations, under an atmosphere "
+     "that would crush any visitor without a suit.", None),
+    ("sko_port", ["hod_sko_port"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.3},
+     "Southern Spaceport", "Pressure-sealed terminals on the rim, where offworld freighters dock without ever opening to "
+     "Skako's air.", None),
+    # --- Skako Minor (canon: Purkoll, Wat Tambor's workshop, the Poletec village)
+    ("skm_purkoll", ["hod_skm_purkoll"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1, "political_power_factor": 0.03},
+     "Purkoll", "The Techno Union keeps its headquarters on Skako Minor, where its executives can breathe without the "
+     "pressure suits their homeworld forces on them; Purkoll's spires rise out of the mist over the fungal forests.", None),
+    ("skm_workshop", ["hod_skm_workshop"], "GFX_idea_generic_research_bonus", {"local_factories": 0.05, "local_supplies": 0.1},
+     "Wat Tambor's Workshop", "In a canyon outside Purkoll the Techno Union's foreman keeps a private workshop, where new "
+     "droid designs are built and tested far from rivals' eyes.", None),
+    ("skm_village", ["hod_skm_village"], "GFX_idea_generic_army_support", {"local_manpower": 0.05, "stability_factor": -0.02},
+     "Poletec Village", "The Poletecs build their huts on the tops of the rock pillars near Purkoll and ride keeradaks "
+     "between them; their chief has little love for the offworld industrialists in the valley below.", None),
+    # --- Devaron (canon + Legends: Montellian Serat, the Point of Parting, the Temple of Eedit)
+    ("dev_serat", ["hod_dev_serat"], "GFX_idea_generic_political_support", {"stability_factor": 0.05, "political_power_factor": 0.03},
+     "Montellian Serat", "Devaron's capital is as old as Galactic City on Coruscant, its terraces climbing a hill beneath "
+     "the Blue Mountains; Devaronian men wander the stars while its women govern at home.", None),
+    ("dev_parting", ["hod_dev_parting"], "GFX_idea_generic_political_support", {"stability_factor": 0.03},
+     "Point of Parting", "In ancient Plaeree stands the Point of Parting, where Devaronian travellers have taken leave of "
+     "their families for as long as the city has existed.", None),
+    ("dev_eedit", ["hod_dev_eedit"], "GFX_idea_generic_research_bonus", {"stability_factor": 0.02, "compliance_gain": 0.02},
+     "Temple of Eedit", "Deep in the vine jungles the Jedi keep the Temple of Eedit, a place of rebirth and contemplation; "
+     "the Devaronians count it among the oldest buildings on the planet.", None),
+    # --- Dagobah (canon: the Cave of Evil, Mount Dagger)
+    ("dag_cave", ["hod_dag_cave"], "GFX_idea_generic_research_bonus", {"stability_factor": -0.05, "compliance_gain": -0.02},
+     "Cave of Evil", "Under a colossal gnarltree a cave breathes the cold of the dark side; the swamp's creatures give it a "
+     "wide berth, and the few who have gone in came out changed.", None),
+    ("dag_dagger", ["hod_dag_dagger"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.1},
+     "Mount Dagger", "An ancient shield volcano worn down by ages of rain, the only high dry ground in the endless bogs.", None),
+    # --- Praesitlyn (Legends: the Intergalactic Communications Center, the redoubts of the Freedom's Sons)
+    ("prs_center", ["hod_prs_center"], "GFX_idea_generic_research_bonus", {"local_supplies": 0.2, "political_power_factor": 0.05},
+     "Intergalactic Communications Center", "Praesitlyn's great relay carries the messages of half the galaxy across the "
+     "Core and the Mid Rim; whoever holds it hears everything and can silence anyone.", None),
+    ("prs_redoubt", ["hod_prs_redoubt"], "GFX_idea_generic_army_support", {"war_support_factor": 0.03, "local_supplies": 0.1},
+     "Redoubts of the Freedom's Sons", "Generations ago the Freedom's Sons dug five massive strongpoints round the Center, "
+     "and the militia still drill in their trenches.", None),
+    # --- Gaftikar (Legends: Eyat and its Assembly House, the Marits)
+    ("gaf_assembly", ["hod_gaf_assembly"], "GFX_idea_generic_political_support", {"political_power_factor": 0.03, "stability_factor": -0.02},
+     "Assembly House", "From the domed Assembly House in Eyat the human colonists govern Gaftikar, and the reptilian Marits, "
+     "the majority of its people, have never been given a seat in it.", None),
+    ("gaf_nests", ["hod_gaf_nests"], "GFX_idea_generic_army_support", {"local_manpower": 0.05, "war_support_factor": 0.03},
+     "Marit Nests", "In the woods beyond the heath the reptilian Marits raise their earthwork towns, and talk of driving the "
+     "colonists into the sea grows louder each year.", None),
+    # --- Wasskah (canon: the Trandoshan hunters' lodge, Island Four)
+    ("was_lodge", ["hod_was_lodge"], "GFX_idea_generic_army_support", {"war_support_factor": 0.05, "local_supplies": 0.2},
+     "Hunting Lodge", "On a crag above the sea the Trandoshan hunters keep their lodge, its walls hung with the trophies of "
+     "the prey they have released into Wasskah's forests and run down for sport.", None),
+    ("was_rocks", ["hod_was_rocks"], "GFX_idea_generic_army_support", {"local_supplies": -0.1},
+     "Island Four", "One of the moon's hunting grounds: pointed rock towers over thorn forest where the hunted hide, and "
+     "where the hunters' best trophies have been taken.", None),
+    # --- Nelvaan (Legends: Rokrul, the Techno Union laboratory)
+    ("nel_rokrul", ["hod_nel_rokrul"], "GFX_idea_generic_army_support", {"local_manpower": 0.05, "stability_factor": 0.03},
+     "Rokrul", "The Nelvaanians of Rokrul live by the hunt among the frozen pines, and their shamans read the future in the "
+     "paintings on their cave walls.", None),
+    ("nel_lab", ["hod_nel_lab"], "GFX_idea_generic_research_bonus", {"stability_factor": -0.05, "local_factories": 0.05},
+     "Techno Union Laboratory", "Behind an ice cliff the Techno Union has built a laboratory nobody on Nelvaan was asked "
+     "about; the village's young warriors who go near it do not come back.", None),
+    # --- Ord Radama (Legends: New Raido, the ruins of Livien Magnus)
+    ("ord_raido", ["hod_ord_raido"], "GFX_idea_generic_production_bonus", {"local_factories": 0.1, "political_power_factor": 0.02},
+     "New Raido", "Ord Radama's capital rose after the old one fell, its grey-marble towers built where the canals meet the "
+     "fens.", None),
+    ("ord_ruins", ["hod_ord_ruins"], "GFX_idea_generic_political_support", {"stability_factor": 0.02},
+     "Ruins of Livien Magnus", "Thousands of years ago the Republic and the Sith Empire fought over Livien Magnus until "
+     "nothing was left standing; the marble shell of its palace and a fallen colossus still lie in the marsh.", None),
+    # --- Vjun (Legends: the Chateau Malreaux, Bitter End)
+    ("vju_chateau", ["hod_vju_chateau"], "GFX_idea_generic_political_support", {"political_power_factor": 0.03, "stability_factor": -0.03},
+     "Chateau Malreaux", "The Malreaux family's chateau broods over the Bay of Tears, its cream and crimson walls stained "
+     "by the acid rain; whatever drove Vjun's nobility mad began within these walls.", None),
+    ("vju_bitter", ["hod_vju_bitter"], "GFX_idea_generic_production_bonus", {"local_supplies": 0.2, "stability_factor": -0.02},
+     "Bitter End", "Across the bay lies Bitter End, a harbour city whose people keep indoors when the rain comes and do not "
+     "talk about the chateau.", None),
+    # --- Aargonar (Legends: Vondar Canyon; the firebase is invented)
+    ("aar_firebase", ["hod_aar_firebase"], "GFX_idea_generic_army_support", {"local_supplies": 0.2},
+     "Republic Firebase", "A prefab outpost on the dunes, all the Republic keeps on a dry world that was once covered in "
+     "water.", None),
+    ("aar_arches", ["hod_aar_arches"], "GFX_idea_generic_army_support", {"war_support_factor": 0.02},
+     "Vondar Canyon", "Rock arches and stone spires stand over the dry riverbed of Vondar Canyon, the last trace of the "
+     "rivers that once ran across Aargonar.", None),
+    # --- Drongar (Legends: Rimsoo Seven, the bota fields)
+    ("dro_rimsoo", ["hod_dro_rimsoo"], "GFX_idea_generic_army_support", {"local_manpower": 0.03, "local_supplies": 0.1},
+     "Rimsoo Seven", "Prefab wards in a jungle clearing of the Jasserak Lowlands, where the Republic's surgeons work in "
+     "ninety percent humidity among fungi that rot everything they touch.", None),
+    ("dro_bota", ["hod_dro_bota"], "GFX_idea_generic_production_bonus", {"local_resources_factor": 0.15},
+     "Bota Fields", "Bota grows nowhere but Drongar and spoils within days of harvest: an adaptogen worth more than any "
+     "other crop in the galaxy, and the reason anyone comes to this steaming world at all.", None),
     # --- Nar Shaddaa (canon: Hutta Town, the Palace of Grakkus, the spaceport)
     ("nsh_hutta", ["hod_nsh_hutta", "hod_nsh_palace", "hod_nsh_port"], "GFX_idea_generic_production_bonus",
      {"local_factories": 0.1, "stability_factor": -0.03}, "Hutta Town",
@@ -1563,7 +1793,7 @@ PLANET_OF = {"raxulon_parliament": "Raxus", "great_alley": "Raxus", "kaas_citade
              **{k: "Korriban" for k in ("sith_academy", "valley_dark_lords", "tomb_ragnos", "tomb_sadow", "tomb_pall",
                                         "tomb_hord", "tomb_kressh")},
              **{k: pl for pre, pl in (("rp_", "Raxus Prime"), ("kadavo_", "Kadavo"), ("hondo_", "Florrum"),
-                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("mnn_", "Manaan"), ("mim_", "Mimban"), ("tet_", "Empress Teta"), ("bys_", "Byss"), ("abr_", "Abregado-Rae"), ("fon_", "Fondor"), ("cat_", "Cato Neimoidia"), ("bst_", "Bestine IV"), ("atz_", "Atzerri"), ("aln_", "Allanteen VI"), ("fal_", "Falleen"), ("bth_", "Bothawui"), ("htt_", "Nal Hutta"), ("toy_", "Toydaria"), ("qsh_", "Quesh"), ("nim_", "Nimban"), ("nsh_", "Nar Shaddaa"), ("oba_", "Oba Diah"), ("kes_", "Kessel"), ("hon_", "Honoghr"), ("tth_", "Teth"), ("gho_", "Ghorman"), ("ydh_", "Yag'Dhul"), ("mec_", "Mechis"), ("tak_", "Takodana"), ("thy_", "Thyferria"), ("csi_", "Csilla"), ("cop_", "Copero"), ("csa_", "Csaus"), ("cio_", "Cioral"), ("sho_", "Shola"), ("rot_", "Rothana"), ("hyp_", "Hypori"), ("ris_", "Rishi"), ("kam_", "Kamino"), ("gns_", "Geonosis"), ("tat_", "Tatooine"), ("ryl_", "Ryloth"), ("rod_", "Rodia"), ("cph_", "Christophsis"), ("jed_", "Jedha"), ("leh_", "Rakata Prime"), ("fst_", "Farstine"), ("voh_", "Vohai"), ("alz_", "Alzoc III"), ("pan_", "Pantora"), ("nab_", "Naboo"), ("mal_", "Malastare"), ("hrk_", "Haruun Kal"), ("sul_", "Sullust"), ("phe_", "Phelarion"), ("eri_", "Eriadu"), ("tib_", "Tibrin"), ("cer_", "Cerea"), ("btu_", "Batuu"), ("bak_", "Bakura"), ("end_", "Endor"), ("hth_", "Hoth"), ("ano_", "Anoat"), ("uta_", "Utapau"), ("que_", "Queyta"), ("slv_", "Sluis Van"), ("mus_", "Mustafar"), ("mph_", "Manpha"), ("ter_", "Terminus"), ("bel_", "Belsavis"), ("kar_", "Karfeddion"), ("nei_", "Neimodia"), ("lor_", "Loronar"), ("dur_", "Duro"), ("com_", "Commenor"), ("ren_", "Rendilli"), ("kua_", "Kuat"), ("crl_", "Corellia"), ("foe_", "Foerost"), ("fre_", "Fresia"), ("tyt_", "Tython"), ("ald_", "Alderaan"), ("bal_", "Balmorra"), ("car_", "Carida"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
+                                      ("florrum_", "Florrum"), ("zyg_", "Zygerria"), ("bonadan_", "Bonadan"), ("pammant_", "Pammant"), ("mcl_", "Mon Calamari"), ("ieg_", "Iego"), ("lia_", "Lianna"), ("jab_", "Jabiim"), ("sal_", "Saleucami"), ("tel_", "Telos"), ("ser_", "Serenno"), ("yav_", "Yavin IV"), ("cel_", "Celanon"), ("bot_", "Botajef"), ("axx_", "Axxila"), ("cit_", "Ciutric"), ("ces_", "Ord Cestus"), ("dat_", "Dathomir"), ("man_", "Mandalore"), ("tar_", "Taris"), ("way_", "Wayland"), ("con_", "Concordia"), ("bra_", "Bracca"), ("tra_", "Trandosha"), ("nyr_", "Nyriaan"), ("crs_", "Corsin"), ("kas_", "Kashyyyk"), ("ond_", "Onderon"), ("umb_", "Umbara"), ("col_", "Colla IV"), ("rus_", "Ruusan"), ("boz_", "Boz Pity"), ("aga_", "Agamar"), ("ot_", "Ord Trasi"), ("dan_", "Dantooine"), ("dub_", "Dubrillion"), ("bas_", "Bastion"), ("kal_", "Kalee"), ("muun_", "Muunilinst"), ("myg_", "Mygeeto"), ("yag_", "Yaga Minor"), ("ans_", "Ansion"), ("ilu_", "Ilum"), ("dor_", "Dorin"), ("yin_", "Yinchorr"), ("cha_", "Chandrila"), ("cor_", "Corulag"), ("ark_", "Arkania"), ("anx_", "Anaxes"), ("ess_", "Esseles"), ("mnn_", "Manaan"), ("mim_", "Mimban"), ("tet_", "Empress Teta"), ("bys_", "Byss"), ("abr_", "Abregado-Rae"), ("fon_", "Fondor"), ("cat_", "Cato Neimoidia"), ("bst_", "Bestine IV"), ("atz_", "Atzerri"), ("aln_", "Allanteen VI"), ("fal_", "Falleen"), ("bth_", "Bothawui"), ("htt_", "Nal Hutta"), ("toy_", "Toydaria"), ("qsh_", "Quesh"), ("nim_", "Nimban"), ("nsh_", "Nar Shaddaa"), ("oba_", "Oba Diah"), ("kes_", "Kessel"), ("hon_", "Honoghr"), ("tth_", "Teth"), ("gho_", "Ghorman"), ("ydh_", "Yag'Dhul"), ("mec_", "Mechis"), ("tak_", "Takodana"), ("thy_", "Thyferria"), ("csi_", "Csilla"), ("cop_", "Copero"), ("csa_", "Csaus"), ("cio_", "Cioral"), ("sho_", "Shola"), ("rot_", "Rothana"), ("hyp_", "Hypori"), ("ris_", "Rishi"), ("kam_", "Kamino"), ("gns_", "Geonosis"), ("tat_", "Tatooine"), ("ryl_", "Ryloth"), ("rod_", "Rodia"), ("cph_", "Christophsis"), ("jed_", "Jedha"), ("leh_", "Rakata Prime"), ("fst_", "Farstine"), ("voh_", "Vohai"), ("alz_", "Alzoc III"), ("pan_", "Pantora"), ("nab_", "Naboo"), ("mal_", "Malastare"), ("hrk_", "Haruun Kal"), ("sul_", "Sullust"), ("phe_", "Phelarion"), ("eri_", "Eriadu"), ("tib_", "Tibrin"), ("cer_", "Cerea"), ("btu_", "Batuu"), ("bak_", "Bakura"), ("end_", "Endor"), ("hth_", "Hoth"), ("ano_", "Anoat"), ("uta_", "Utapau"), ("que_", "Queyta"), ("slv_", "Sluis Van"), ("mus_", "Mustafar"), ("mph_", "Manpha"), ("ter_", "Terminus"), ("bel_", "Belsavis"), ("kar_", "Karfeddion"), ("mrd_", "Maridun"), ("ort_", "Orto Plutonia"), ("rug_", "Rugosa"), ("qul_", "Quell"), ("vnq_", "Vanqor"), ("aba_", "Abafar"), ("rat_", "Rattatak"), ("vsk_", "Vassek"), ("ltm_", "Lotho Minor"), ("bdt_", "Bardotta"), ("sci_", "Scipio"), ("clc_", "Carlac"), ("ale_", "Aleen"), ("qii_", "Qiilura"), ("kir_", "Kiros"), ("shi_", "Shili"), ("bre_", "Brentaal IV"), ("sko_", "Skako"), ("skm_", "Skako Minor"), ("dev_", "Devaron"), ("dag_", "Dagobah"), ("prs_", "Praesitlyn"), ("gaf_", "Gaftikar"), ("was_", "Wasskah"), ("nel_", "Nelvaan"), ("ord_", "Ord Radama"), ("vju_", "Vjun"), ("aar_", "Aargonar"), ("dro_", "Drongar"), ("nei_", "Neimodia"), ("lor_", "Loronar"), ("dur_", "Duro"), ("com_", "Commenor"), ("ren_", "Rendilli"), ("kua_", "Kuat"), ("crl_", "Corellia"), ("foe_", "Foerost"), ("fre_", "Fresia"), ("tyt_", "Tython"), ("ald_", "Alderaan"), ("bal_", "Balmorra"), ("car_", "Carida"), ("cos_", "Coruscant"), ("gar_", "Garqi"), ("om_", "Ord Mantell"), ("ith_", "Ithor"))
                 for k, *_ in LANDMARKS if k.startswith(pre)}}
 assert {k for k, *_ in LANDMARKS} == set(PLANET_OF), "every landmark needs its planet"
 

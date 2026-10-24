@@ -13,7 +13,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage as ndi
 
-MIN_PX, TARGET_PX, SPARE = 8, 9, 10      # the game's minimum; grow to TARGET; a giver must keep >= SPARE - 1 px
+MIN_PX, TARGET_PX, SPARE = 9, 10, 11     # the game rejects exactly 8 ("has only 8 ... at least 8"); grow to TARGET; a giver keeps >= SPARE - 1 px
 
 
 def main():
@@ -62,7 +62,7 @@ def main():
         fixed = 0
         for r0, c0 in xs.tolist():
             block = [(r0, c0), (r0, c0 + 1), (r0 + 1, c0), (r0 + 1, c0 + 1)]
-            if not all(int(pid[r, c]) in land for r, c in block):
+            if not any(int(pid[r, c]) in land for r, c in block):     # coasts too: the game flags those as well
                 continue
             done = False
             for r, c in block:

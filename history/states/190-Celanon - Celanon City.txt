@@ -3,27 +3,27 @@ state={
 	name="STATE_190"
 	# HOD: Celanon (celanon_map.py)
 	provinces={
-		21626 21627 21628 21629 21630 21631 21668 21669 21671 21673 21676
+		1266 1263 1261 1260 1258 1256 1203 1202 1195 1194 1190
 	}
 	resources={
 		oil=20#Fuel
-		rubber=15#Doonium
-		tungsten=15#Bacta
+		rubber=15#Bacta
+		tungsten=15#Minerals
 		steel=10#Alloys
 		chromium=10#Circuitry
 	}
 	history = {
 		victory_points = {
-			21626 3
+			1266 3
 		}
 		victory_points = {
-			21627 1
+			1263 1
 		}
 		victory_points = {
-			21628 1
+			1261 1
 		}
 		victory_points = {
-			21630 10
+			1258 10
 		}
 		buildings = {
 			infrastructure = 4
@@ -31,7 +31,7 @@ state={
 			arms_factory = 5
 			air_base = 3
 			dockyard = 4
-					21669 = {
+					1202 = {
 				naval_base = 4
 			}
 		}

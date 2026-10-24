@@ -1,5 +1,5 @@
 # Vanqor: research dossier
-Generated 2026-10-19 by research_planet.py from 3 Wookieepedia pages (CC BY-SA 3.0 (Wookieepedia text; attribute the page URL)). Canon first; Legends only where labelled; the two are never merged. Every line is sourced; the only inferences are in the section marked INFERENCE.
+Generated 2026-10-24 by research_planet.py from 3 Wookieepedia pages (CC BY-SA 3.0 (Wookieepedia text; attribute the page URL)). Canon first; Legends only where labelled; the two are never merged. Every line is sourced; the only inferences are in the section marked INFERENCE.
 
 ## At a glance (infoboxes)
 | field | canon | Legends |

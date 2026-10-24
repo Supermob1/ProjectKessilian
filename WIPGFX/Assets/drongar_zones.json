@@ -1,0 +1,857 @@
+{
+ "centre": [
+  450.0,
+  2613.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "18099": "Rimsoo Seven",
+  "18131": "Jasserak Highlands",
+  "18136": "Qarohan Steppes",
+  "18140": "Poptree Forest",
+  "18100": "Bota Fields",
+  "18154": "Tanlassa Rainforest"
+ },
+ "provinces": {
+  "18099": {
+   "zone": "rimsoo",
+   "kind": 1,
+   "feature": "Rimsoo Seven",
+   "state": 1729,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    450.0,
+    2613.0
+   ],
+   "area": 29,
+   "terrain": "plains"
+  },
+  "18100": {
+   "zone": "bota",
+   "kind": 2,
+   "feature": "Bota Fields",
+   "state": 1985,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    454.8529411764706,
+    2593.823529411765
+   ],
+   "area": 34,
+   "terrain": "plains"
+  },
+  "18101": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Kondrus Sea",
+   "state": 1987,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    465.1666666666667,
+    2608.6666666666665
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "18102": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Kondrus Sea",
+   "state": 1987,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    467.0833333333333,
+    2618.0833333333335
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "18103": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Kondrus Sea",
+   "state": 1987,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    463.2,
+    2615.0
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "18104": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Kondrus Sea",
+   "state": 1987,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    466.25,
+    2613.0833333333335
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "18105": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Kondrus Sea",
+   "state": 1987,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    464.7,
+    2617.4
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "18106": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Kondrus Sea",
+   "state": 1987,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    463.8,
+    2611.5
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "18107": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sea of Sponges",
+   "state": 1988,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    468.75,
+    2634.25
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "18108": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sea of Sponges",
+   "state": 1988,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    465.42857142857144,
+    2630.4285714285716
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "18109": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Sea of Sponges",
+   "state": 1988,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    466.09090909090907,
+    2633.818181818182
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "18110": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Great Jasserak Swamp",
+   "state": 1989,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    436.38461538461536,
+    2597.3846153846152
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "18111": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Great Jasserak Swamp",
+   "state": 1989,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    437.54545454545456,
+    2590.818181818182
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "18112": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Great Jasserak Swamp",
+   "state": 1989,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    441.6923076923077,
+    2602.769230769231
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "18113": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Great Jasserak Swamp",
+   "state": 1989,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    434.5,
+    2592.8571428571427
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "18114": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Great Jasserak Swamp",
+   "state": 1989,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    437.7692307692308,
+    2594.3846153846152
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "18115": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Great Jasserak Swamp",
+   "state": 1989,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    439.6,
+    2599.0666666666666
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "18116": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Stingwort Mire",
+   "state": 1990,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    470.52941176470586,
+    2597.6470588235293
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "18117": {
+   "zone": "swamp",
+   "kind": 7,
+   "feature": "Stingwort Mire",
+   "state": 1990,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    468.1875,
+    2594.8125
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "18118": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Jasserak Lowlands",
+   "state": 1729,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    440.8659793814433,
+    2614.237113402062
+   ],
+   "area": 97,
+   "terrain": "jungle"
+  },
+  "18119": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Jasserak Lowlands",
+   "state": 1729,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    458.15492957746477,
+    2621.0
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  },
+  "18120": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Jasserak Lowlands",
+   "state": 1729,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    459.67164179104475,
+    2606.179104477612
+   ],
+   "area": 67,
+   "terrain": "jungle"
+  },
+  "18121": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Jasserak Lowlands",
+   "state": 1729,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    444.4189189189189,
+    2604.9864864864867
+   ],
+   "area": 74,
+   "terrain": "jungle"
+  },
+  "18122": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Jasserak Lowlands",
+   "state": 1729,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    447.1219512195122,
+    2619.7926829268295
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "18123": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Jasserak Lowlands",
+   "state": 1729,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    456.74285714285713,
+    2613.7714285714287
+   ],
+   "area": 70,
+   "terrain": "jungle"
+  },
+  "18124": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Jasserak Lowlands",
+   "state": 1729,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    451.3731343283582,
+    2605.7014925373132
+   ],
+   "area": 67,
+   "terrain": "jungle"
+  },
+  "18125": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    456.9313725490196,
+    2628.705882352941
+   ],
+   "area": 102,
+   "terrain": "hills"
+  },
+  "18126": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    436.16883116883116,
+    2636.064935064935
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "18127": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    443.4878048780488,
+    2627.0853658536585
+   ],
+   "area": 82,
+   "terrain": "hills"
+  },
+  "18128": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    450.0689655172414,
+    2640.862068965517
+   ],
+   "area": 58,
+   "terrain": "hills"
+  },
+  "18129": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    463.76190476190476,
+    2637.3333333333335
+   ],
+   "area": 63,
+   "terrain": "hills"
+  },
+  "18130": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    456.92537313432837,
+    2639.3582089552237
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "18131": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    448.8157894736842,
+    2632.3552631578946
+   ],
+   "area": 76,
+   "terrain": "hills"
+  },
+  "18132": {
+   "zone": "highland",
+   "kind": 4,
+   "feature": "Jasserak Highlands",
+   "state": 1982,
+   "group": 7,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    442.51428571428573,
+    2639.6428571428573
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "18133": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Qarohan Steppes",
+   "state": 1983,
+   "group": 8,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    428.06666666666666,
+    2630.688888888889
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "18134": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Qarohan Steppes",
+   "state": 1983,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    432.1518987341772,
+    2617.3670886075947
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "18135": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Qarohan Steppes",
+   "state": 1983,
+   "group": 8,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    423.25,
+    2620.4583333333335
+   ],
+   "area": 96,
+   "terrain": "plains"
+  },
+  "18136": {
+   "zone": "steppe",
+   "kind": 5,
+   "feature": "Qarohan Steppes",
+   "state": 1983,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    434.5357142857143,
+    2625.7976190476193
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "18137": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Poptree Forest",
+   "state": 1984,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    434.9594594594595,
+    2602.6216216216217
+   ],
+   "area": 74,
+   "terrain": "jungle"
+  },
+  "18138": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Poptree Forest",
+   "state": 1984,
+   "group": 9,
+   "coastal": true,
+   "sea": 4742,
+   "centre": [
+    422.5232558139535,
+    2609.720930232558
+   ],
+   "area": 86,
+   "terrain": "jungle"
+  },
+  "18139": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Poptree Forest",
+   "state": 1984,
+   "group": 9,
+   "coastal": true,
+   "sea": 4742,
+   "centre": [
+    433.4756097560976,
+    2590.5731707317073
+   ],
+   "area": 82,
+   "terrain": "jungle"
+  },
+  "18140": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Poptree Forest",
+   "state": 1984,
+   "group": 9,
+   "coastal": true,
+   "sea": 4742,
+   "centre": [
+    425.8979591836735,
+    2599.2448979591836
+   ],
+   "area": 98,
+   "terrain": "jungle"
+  },
+  "18141": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Poptree Forest",
+   "state": 1984,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    430.8888888888889,
+    2609.2098765432097
+   ],
+   "area": 81,
+   "terrain": "jungle"
+  },
+  "18142": {
+   "zone": "bota",
+   "kind": 2,
+   "feature": "Bota Fields",
+   "state": 1985,
+   "group": 10,
+   "coastal": true,
+   "sea": 4742,
+   "centre": [
+    459.9047619047619,
+    2587.654761904762
+   ],
+   "area": 84,
+   "terrain": "plains"
+  },
+  "18143": {
+   "zone": "bota",
+   "kind": 2,
+   "feature": "Bota Fields",
+   "state": 1985,
+   "group": 10,
+   "coastal": true,
+   "sea": 4742,
+   "centre": [
+    442.4,
+    2586.4133333333334
+   ],
+   "area": 75,
+   "terrain": "plains"
+  },
+  "18144": {
+   "zone": "bota",
+   "kind": 2,
+   "feature": "Bota Fields",
+   "state": 1985,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    447.25,
+    2595.41
+   ],
+   "area": 100,
+   "terrain": "plains"
+  },
+  "18145": {
+   "zone": "bota",
+   "kind": 2,
+   "feature": "Bota Fields",
+   "state": 1985,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    459.9340659340659,
+    2598.4615384615386
+   ],
+   "area": 91,
+   "terrain": "plains"
+  },
+  "18146": {
+   "zone": "bota",
+   "kind": 2,
+   "feature": "Bota Fields",
+   "state": 1985,
+   "group": 10,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    467.7878787878788,
+    2590.8333333333335
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "18147": {
+   "zone": "bota",
+   "kind": 2,
+   "feature": "Bota Fields",
+   "state": 1985,
+   "group": 10,
+   "coastal": true,
+   "sea": 4742,
+   "centre": [
+    451.1764705882353,
+    2585.858823529412
+   ],
+   "area": 85,
+   "terrain": "plains"
+  },
+  "18148": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Tanlassa Rainforest",
+   "state": 1986,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    466.9868421052632,
+    2623.407894736842
+   ],
+   "area": 76,
+   "terrain": "jungle"
+  },
+  "18149": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Tanlassa Rainforest",
+   "state": 1986,
+   "group": 11,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    475.39130434782606,
+    2599.463768115942
+   ],
+   "area": 69,
+   "terrain": "jungle"
+  },
+  "18150": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Tanlassa Rainforest",
+   "state": 1986,
+   "group": 11,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    477.94871794871796,
+    2609.4358974358975
+   ],
+   "area": 78,
+   "terrain": "jungle"
+  },
+  "18151": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Tanlassa Rainforest",
+   "state": 1986,
+   "group": 11,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    472.89473684210526,
+    2629.9210526315787
+   ],
+   "area": 76,
+   "terrain": "jungle"
+  },
+  "18152": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Tanlassa Rainforest",
+   "state": 1986,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    468.7402597402597,
+    2603.974025974026
+   ],
+   "area": 77,
+   "terrain": "jungle"
+  },
+  "18153": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Tanlassa Rainforest",
+   "state": 1986,
+   "group": 11,
+   "coastal": true,
+   "sea": 4757,
+   "centre": [
+    476.8433734939759,
+    2620.6626506024095
+   ],
+   "area": 83,
+   "terrain": "jungle"
+  },
+  "18154": {
+   "zone": "jungle",
+   "kind": 3,
+   "feature": "Tanlassa Rainforest",
+   "state": 1986,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    471.5774647887324,
+    2613.6901408450703
+   ],
+   "area": 71,
+   "terrain": "jungle"
+  }
+ }
+}

@@ -4,4 +4,8 @@ spriteTypes = {
 		name = "GFX_terrain_clouds"
 		textureFile = "gfx/interface/terrains/terrain_clouds.dds"
 	}
+	spriteType = {	# vanilla has a _winter sprite per terrain category; clouds look the same in winter
+		name = "GFX_terrain_clouds_winter"
+		textureFile = "gfx/interface/terrains/terrain_clouds.dds"
+	}
 }

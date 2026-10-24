@@ -146,6 +146,14 @@ def main():
         rw(f, lambda s: "".join(l for l in s.splitlines(True)
                                 if not (re.match(r"\s*VICTORY_POINTS_(\d+):", l) and int(re.match(r"\s*VICTORY_POINTS_(\d+):", l).group(1)) in dropped)))
         rw(f, lambda s: re.sub(r"(VICTORY_POINTS_)(\d+)(:)", lambda m_: m_.group(1) + ren(m_.group(2)) + m_.group(3), s))
+    # the planets' zones (terrain / placement read them by province id)
+    import json
+    for f in glob.glob("WIPGFX/Assets/*_zones.json"):
+        z = json.load(open(f, encoding="utf-8"))
+        new = {k: {ren(p): v for p, v in z.get(k, {}).items() if int(p) not in dropped} for k in ("vp_names", "provinces")}
+        if any(new[k] != z.get(k, {}) for k in new):
+            z.update(new)
+            json.dump(z, open(f, "w"), indent=1)
     print(f"dropped {len(drop)} provinces, moved {len(move)} ids down: {min(move, default=0)}..{max(move, default=0)}")
     return move
 

@@ -1,0 +1,188 @@
+HOD MILITARY REWORK — DESIGN PROPOSAL (2026-10-10)
+==================================================
+Option B: a custom Star Wars military, structured like Old World Blues (workshop 2265420196). Nothing below is built
+yet; this is the plan to agree on first.
+
+CURRENT STATE
+  ~95% vanilla WWII: 125/132 unit types, 308/321 equipment, 535/612 techs. HoD additions: 7 droid/clone units,
+  13 equipment lines, 3 tech files (cis_droid_military, republic_military, special_forces_doctrine).
+  descriptor.mod already replaces common/units and common/units/equipment; common/technologies is NOT replaced
+  (vanilla tech files still load where the mod has no copy) — the rework adds replace_path for technologies and
+  doctrines, like OWB.
+
+WHAT WE TAKE FROM OWB
+  1. Replace every WWII line; few equipment lines, named by role: inf_, veh_, wlk_, air_, ship_, sup_.
+  2. Branching tiers instead of +5% ladders: a line forks at tier 2-3 (e.g. blaster vs slugthrower vs ion).
+  3. Hidden ACCESS techs (can't be researched, granted by focus / event / starting history) gate faction and
+     species content: clone production, droid foundries, beskar, Force users, Wookiee warriors...
+  4. TECH LEVELS per domain gate tiers: a Rim backwater and a Core power feel different.
+  5. Vehicles and warships through the designers (custom upgrades / modules); warships as hull SIZE classes.
+  6. HQ unit per army type (works with the new deployed-HQ / capture / duel system).
+
+LAND — UNITS (sub-units)                                       equipment
+  Infantry      trooper (generic soldiers)                     inf_blaster_eq   (blaster / slugthrower / ion branches)
+                heavy trooper (repeaters, rocket launchers)    inf_heavy_eq
+                planetary militia (cheap, defensive)           inf_blaster_eq (older tiers)
+  Clones        clone trooper, ARC trooper, clone commando     inf_clone_armor_eq      [access: Kamino cloning]
+  Droids        B1 battle droid (mass, cheap), B2 super        drd_battle_eq / drd_super_eq [access: droid foundry]
+                battle droid, BX commando, droideka (support)
+  Elite         Mandalorian clan warriors (jetpacks)           inf_beskar_eq           [access: Mandalorian clans]
+                Jedi / Sith strike team (support company)      —  needs Force-user generals [access: Order / Sith]
+  Species       Wookiee warriors, Geonosian warriors,          own equipment line each [access: species]
+                Gungan Grand Army, Trandoshan hunters (start with 3-4, more later)
+  Fast          speeder troops (BARC / STAP / swoops)          veh_speeder_eq  (= motorized / recon)
+  Armour        light walker (AT-RT, spider droid)             tank designer, 3 chassis:
+                medium: hover tank (TX-130, AAT)                 repulsor  (fast, light armour, hovers)
+                heavy walker (AT-TE, Octuptarra)                 walker    (all terrain, slow, high armour)
+                                                                  tracked   (cheap, Rim factions)
+  Super-heavy   Juggernaut / AT-AT era walkers (OWB "behemoth": rare, decisive, expensive)
+  Artillery     SPHA / droid artillery (support + line)          sup_artillery_eq
+  Support       recon, engineers, bacta medics, logistics, maintenance, comms (holonet), anti-air (flak),
+                anti-armour, military police
+  HQ            hq_trooper, hq_clone, hq_droid, hq_armour — the new Army HQ battalions themed per army
+
+AIR (inside planetary atmosphere, the map's land)
+  starfighter (V-wing, ARC-170 / Vulture, tri-fighter) — air designer
+  bomber (Y-wing / Hyena), gunship = CAS (LAAT/i, droid gunship), transport (LAAT/c, C-9979), scout
+SPACE NAVY (the map's sea is space) — ship designer, 4 hull sizes, OWB style
+  light   corvette (CR90, Munificent-class escorts)          screens, raiding
+  medium  frigate / cruiser (Pelta, Munificent, Recusant)    line of battle
+  heavy   Star Destroyer (Venator, Acclamator, Providence)   capital; hangar modules make it a carrier (Venator)
+  super   dreadnought (Malevolence, Mandator, Subjugator)    one-off flagships, huge cost
+  modules: turbolasers, ion cannons, proton torpedoes, deflector shields, armour, hangar bays, hyperdrive class,
+           tractor beams, troop bays (invasions)
+
+TECH TREES (replace vanilla files)
+  tech_access.txt        hidden access + visibility techs (OWB pattern)
+  tech_levels.txt        per domain: Rim -> Mid Rim -> Core -> Prototype (gates tiers)
+  tech_infantry.txt      small arms branches, armour, training
+  tech_clones / tech_droids / tech_species   faction and species lines (behind access techs)
+  tech_vehicles.txt      speeders, repulsor / walker / tracked chassis, super-heavies
+  tech_air.txt           starfighters, bombers, gunships, transports
+  tech_navy.txt          hulls by size, modules
+  tech_industry.txt      production, construction, holonet/electronics (adapted from vanilla, rethemed)
+  doctrines              land: Clone combined arms (REP), Droid swarm (CIS), Clan warfare (MAN), Mercenary (Hutts);
+                         space: Line of battle / Carrier strike / Raiders
+
+WHAT A REPLACEMENT TOUCHES (beyond units / equipment / techs)
+  history/units (every country's starting OOB and templates), common/ai_templates, common/ai_equipment,
+  starting techs in history/countries, focuses / events / ideas that grant vanilla techs or equipment,
+  production lines, unit icons and names (common/units/names*), localisation. This is the bulk of the work.
+
+SUGGESTED PHASES (each one playable and tested before the next)
+  1. Land core: tech levels + access techs, infantry / clone / droid / speeder / armour / support / HQ lines,
+     land techs, starting OOBs + AI templates for the main factions (REP, CIS) first, then the rest.
+  2. Space navy + air: hull classes, modules, fighters / bombers / gunships, their techs, starting fleets.
+  3. Doctrines, species and elite units, Force strike teams (tie in with duels).
+  4. Industry tree retheme, balancing pass, icons and loc polish.
+
+DECISIONS (HoD, 2026-10-10)
+  - Tech levels are ERAS, per domain: Pre-war -> Clone Wars -> Late war -> Imperial.
+  - Infantry weapons branch by ROLE at higher tiers: standard rifles / heavy (repeaters, launchers: soft attack)
+    / precision (long-range marksmen: breakthrough). Blaster vs slugthrower vs ion is flavour, not a branch.
+  - Phase 1 = land core for REP + CIS first. Other countries keep working through a generic fallback (their
+    current templates mapped onto the new generic trooper / speeder / armour lines), then get converted.
+
+STILL OPEN
+  - Which factions get which access techs at start (Kamino clones: REP; droid foundries: CIS + corporate
+    members; beskar: Mandalore; species: their homeworlds)? Proposed as listed; confirm when phase 1 starts.
+
+PHASE 1 SPEC — LAND CORE (REP + CIS)
+=====================================
+Starting point (audit): REP/CIS start with division templates only (Clone Legion = 9 vanilla infantry, CIS Droid
+Battalion = 13 vanilla infantry, garrisons = 2 motorized, commandos = marines + engineer); the mod's clone/droid
+sub-units are not used. Fleets are vanilla WWII ships (phase 2). Starting techs are mostly WWII.
+
+ERAS (tech_levels.txt; researchable, expensive; the Clone Wars era is also granted by the war-start event)
+  per domain: infantry, vehicles, support
+  era_prewar (both start here) -> era_clone_wars -> era_late_war -> era_imperial
+  each era unlocks the next tier of every line in its domain
+
+ACCESS (tech_access.txt; hidden, never researchable; set in history or by focus / event)
+  access_kamino_cloning   REP          clone troopers, ARC, clone commandos
+  access_droid_foundries  CIS + members (TCU, IBC, CMG, TDF...)   B1, B2, BX commando, droideka
+  access_beskar           Mandalore    (phase 3 units)
+  access_force_order / access_sith      (phase 3 strike teams)
+
+INFANTRY
+  trooper            generic soldiers (every country)        inf_trooper_eq: T0 old blaster, T1 standard, then per
+  heavy_trooper      repeaters + launchers                     era three branches: standard / heavy / precision
+  militia            planetary defence, cheap, defensive     (heavy = soft attack + defence, precision =
+                                                               breakthrough + piercing)
+  clone_trooper      REP (access)        clone armour line: phase I -> phase II -> phase II improved
+  arc_trooper        REP elite           (reuses phase_I / phase_II / rep_arc_trooper equipment already in the mod)
+  b1_battle_droid    CIS mass, cheap, low org       existing cis_infantry_droid_equipment_1..3
+  b2_super_droid     CIS heavy line                  new drd_super_eq T1-T3
+  bx_commando_droid  CIS elite                       existing commando_droid unit
+  droideka           CIS support company             existing droideka unit
+
+VEHICLES
+  speeder_troops     fast / recon line (BARC, STAP)   veh_speeder_eq T1-T3
+  armour             the tank designer, chassis = size, propulsion = a drive module:
+                       chassis: light / medium / heavy / super-heavy   (rethemed vanilla chassis, designer kept)
+                       drive modules: repulsorlift (fast, light) / walker legs (all-terrain, armoured) /
+                                      tracks (cheap, Rim factions)
+                     canon presets for AI and history: AT-RT, spider droid (light walker); TX-130, AAT (medium
+                     repulsor); AT-TE, Octuptarra (heavy walker); Juggernaut (super-heavy)
+
+SUPPORT + HQ
+  artillery (SPHA / droid artillery), anti-armour, anti-air (flak), recon (speeder scouts), engineers,
+  bacta medics, logistics, maintenance, holonet comms, military police
+  HQ battalions: the new vanilla hq_support units rethemed + hq_droid (CIS) and hq_clone (REP) variants
+
+STARTING SETUP
+  REP: era_prewar, access_kamino_cloning, Clone Legion = clone_trooper x9 + support; garrisons = militia
+  CIS: era_prewar, access_droid_foundries, Droid Battalion = b1 x10 + b2 x3 + droideka company; garrisons = militia
+  AI templates + ai_equipment presets for both
+
+GENERIC FALLBACK (everyone else, until converted)
+  vanilla land units stay in place but rethemed in localisation (infantry -> Troopers, motorized -> Speeder
+  Troops, light/medium/heavy armour -> walkers / hover tanks...) so other countries keep working and read as
+  Star Wars; they get converted country by country after phase 1 is tested.
+
+ROUGH SIZE: ~25 equipment entries, ~12 sub-units, ~60 techs, 2 OOBs, AI templates, localisation + unit icons.
+
+FULL TECH TREE (HoD, 2026-10-10: the whole tree first, every domain custom, no OOBs yet)
+=======================================================================================
+replace_path common/technologies (+ technology_tags rewritten); no vanilla tech survives. Every tab uses the four
+era columns already in the Republic tab: Old Republic | Battle of Geonosis | Late War | Imperial Era.
+Faction tabs open by ACCESS tech (not by tag), so CIS members with droid foundries see the droid tab too.
+
+TAB                CONTENTS                                                                   ~TECHS
+Infantry           blaster rifles (4 eras) + heavy / precision branches from the Clone Wars era,   35
+                   body armour, training, field gear (rations, med-kits), militia, mountain /
+                   jungle / urban specialists, jetpack troopers
+Support            recon, engineers, bacta medics, logistics, maintenance, holonet comms, military  40
+                   police, artillery (field, rocket, SPHA), anti-armour, flak, fortifications
+                   (bunkers, planetary shield generators)
+Vehicles           speeders; tank-designer chassis (light / medium / heavy / super-heavy per era);   40
+                   drive modules (repulsorlift / walker / tracks); weapon modules (blaster, laser,
+                   ion, missile, mass-driver); armour and special modules
+Starfighters       fighters, interceptors, bombers, gunships (CAS: LAAT), transports, scouts;        35
+                   air-designer modules (laser cannons, proton torpedoes, shields, hyperdrive rings,
+                   astromechs)
+Fleet              4 hull sizes x eras (corvette, frigate / cruiser, Star Destroyer, dreadnought);   45
+                   ship-designer modules (turbolasers L/M/H, ion cannons, torpedoes, point defence,
+                   deflector shields, armour, hangars, hyperdrive class, sensors, tractor beams,
+                   troop bays); freighters (convoys), space mines
+Industry           production lines -> droid-automated foundries, construction (prefab), mining      35
+                   (durasteel, excavation), tibanna / fuel refining (synthetic fuel), fuel storage,
+                   hyperlane logistics (supply), industrial dispersal
+Engineering        computing (droid brains, slicing = decryption / encryption), sensors (radar),      35
+                   holonet, planetary shields, bacta + cybernetics (manpower / recovery), hyperdrive
+                   theory, superweapons (orbital bombardment -> superlaser, the nuclear-equivalent)
+Clone (REP access) Kamino cloning: clone armour phases, ARC, commandos, growth acceleration,         15
+                   flash training
+Droid (CIS access) foundries: B1, B2, BX, droidekas, tactical droids, droid production speed        15
+                                                                                       total ~295
+Plus (hidden, OWB style): era techs per domain (4 x 6 = 24) and access techs (6).
+
+ALSO NEEDED SO THE GAME STILL WORKS (no OOBs yet, but references must point at real techs)
+  - new equipment + sub-units for everything the tree unlocks (replace the vanilla ones the tree drops)
+  - history/countries set_technology for every country (313 refs): mapped to the new tree by era
+  - common/special_projects (143 refs): retargeted or disabled until a Star Wars special-projects pass
+  - units, buildings, doctrines, MIOs, factions, scripted triggers / effects, ai_* refs (~150): retargeted
+  - localisation, tech icons (placeholders first; reuse goal_unknown-style icons until art exists)
+
+BUILD ORDER: tags + eras + access + GUI tabs -> Industry + Engineering (no unit dependencies) -> Infantry +
+Support (+ their equipment / units) -> Vehicles -> Starfighters -> Fleet -> Clone + Droid tabs -> references.

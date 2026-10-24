@@ -1,0 +1,858 @@
+{
+ "centre": [
+  2165.0,
+  735.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "16699": "Bardotta Capital City",
+  "16700": "Bardottan Royal Palace",
+  "16701": "Jour-un",
+  "16702": "Nan-gau",
+  "16703": "Feng-gau",
+  "16704": "Shun-go",
+  "16705": "Frangawl Temple"
+ },
+ "provinces": {
+  "16699": {
+   "zone": "capital",
+   "kind": 1,
+   "feature": "Bardotta Capital City",
+   "state": 1704,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2165.075,
+    733.425
+   ],
+   "area": 40,
+   "terrain": "urban"
+  },
+  "16700": {
+   "zone": "capital",
+   "kind": 1,
+   "feature": "Bardottan Royal Palace",
+   "state": 1704,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2162.5,
+    739.0
+   ],
+   "area": 10,
+   "terrain": "urban"
+  },
+  "16701": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Jour-un",
+   "state": 1811,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2166.5,
+    759.0
+   ],
+   "area": 20,
+   "terrain": "urban"
+  },
+  "16702": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2185.818181818182,
+    739.5909090909091
+   ],
+   "area": 22,
+   "terrain": "urban"
+  },
+  "16703": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2153.8695652173915,
+    715.6521739130435
+   ],
+   "area": 23,
+   "terrain": "urban"
+  },
+  "16704": {
+   "zone": "city",
+   "kind": 2,
+   "feature": "Shun-go",
+   "state": 1814,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2177.5882352941176,
+    715.7058823529412
+   ],
+   "area": 17,
+   "terrain": "urban"
+  },
+  "16705": {
+   "zone": "temple",
+   "kind": 5,
+   "feature": "Frangawl Temple",
+   "state": 1815,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2145.366666666667,
+    742.9333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "16706": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1816,
+   "group": 7,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2135.92,
+    740.04
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "16707": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1816,
+   "group": 7,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2137.1428571428573,
+    723.7619047619048
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "16708": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1816,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2138.5,
+    731.7
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "16709": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1816,
+   "group": 7,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2136.346153846154,
+    728.4230769230769
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "16710": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Northern Ice Cap",
+   "state": 1816,
+   "group": 7,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2136.0,
+    735.0344827586207
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "16711": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Dagoyan Peaks",
+   "state": 1817,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2154.0208333333335,
+    756.375
+   ],
+   "area": 48,
+   "terrain": "mountain"
+  },
+  "16712": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Dagoyan Peaks",
+   "state": 1817,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2157.923076923077,
+    748.025641025641
+   ],
+   "area": 39,
+   "terrain": "mountain"
+  },
+  "16713": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Halsoun Lake",
+   "state": 1818,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2167.153846153846,
+    722.7948717948718
+   ],
+   "area": 39,
+   "terrain": "mountain"
+  },
+  "16714": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Halsoun Lake",
+   "state": 1818,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2171.6206896551726,
+    727.4827586206897
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "16715": {
+   "zone": "lake",
+   "kind": 6,
+   "feature": "Halsoun Lake",
+   "state": 1818,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2173.3571428571427,
+    723.4285714285714
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "16716": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Glacier Ridge",
+   "state": 1819,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2175.8611111111113,
+    748.9722222222222
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "16717": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Glacier Ridge",
+   "state": 1819,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2181.8947368421054,
+    754.3421052631579
+   ],
+   "area": 38,
+   "terrain": "mountain"
+  },
+  "16718": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Bardotta Capital City",
+   "state": 1704,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2173.364864864865,
+    732.4459459459459
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "16719": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Bardotta Capital City",
+   "state": 1704,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2156.602409638554,
+    732.7469879518072
+   ],
+   "area": 83,
+   "terrain": "hills"
+  },
+  "16720": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Bardotta Capital City",
+   "state": 1704,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2161.5774647887324,
+    740.943661971831
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "16721": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Bardotta Capital City",
+   "state": 1704,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2171.068493150685,
+    740.2465753424658
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "16722": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Bardotta Capital City",
+   "state": 1704,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2162.322033898305,
+    727.1525423728814
+   ],
+   "area": 59,
+   "terrain": "hills"
+  },
+  "16723": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Jour-un",
+   "state": 1811,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2169.588888888889,
+    749.7333333333333
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "16724": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Jour-un",
+   "state": 1811,
+   "group": 12,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2156.0151515151515,
+    761.8939393939394
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "16725": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Jour-un",
+   "state": 1811,
+   "group": 12,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2164.5079365079364,
+    763.2857142857143
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "16726": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Jour-un",
+   "state": 1811,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2162.3373493975905,
+    752.8795180722891
+   ],
+   "area": 83,
+   "terrain": "plains"
+  },
+  "16727": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Jour-un",
+   "state": 1811,
+   "group": 12,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2181.8275862068967,
+    758.2413793103449
+   ],
+   "area": 58,
+   "terrain": "plains"
+  },
+  "16728": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Jour-un",
+   "state": 1811,
+   "group": 12,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2173.3958333333335,
+    760.1041666666666
+   ],
+   "area": 96,
+   "terrain": "plains"
+  },
+  "16729": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 13,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2189.746987951807,
+    748.8192771084338
+   ],
+   "area": 83,
+   "terrain": "plains"
+  },
+  "16730": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 13,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2192.9523809523807,
+    728.5238095238095
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "16731": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2181.742424242424,
+    733.4545454545455
+   ],
+   "area": 66,
+   "terrain": "plains"
+  },
+  "16732": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2182.75,
+    747.046875
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "16733": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 13,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2192.177777777778,
+    738.6111111111111
+   ],
+   "area": 90,
+   "terrain": "plains"
+  },
+  "16734": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2186.7833333333333,
+    729.0833333333334
+   ],
+   "area": 60,
+   "terrain": "plains"
+  },
+  "16735": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Nan-gau",
+   "state": 1812,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2179.1147540983607,
+    741.2131147540983
+   ],
+   "area": 61,
+   "terrain": "plains"
+  },
+  "16736": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 14,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2153.2985074626868,
+    709.4029850746268
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "16737": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 14,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2141.720588235294,
+    721.1617647058823
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "16738": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2162.4814814814813,
+    716.679012345679
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "16739": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 14,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2146.5696202531644,
+    714.6708860759494
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "16740": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2155.710144927536,
+    721.8405797101449
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "16741": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 14,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2161.0281690140846,
+    708.112676056338
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "16742": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Feng-gau",
+   "state": 1813,
+   "group": 14,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2148.590909090909,
+    724.6060606060606
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "16743": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Shun-go",
+   "state": 1814,
+   "group": 15,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2183.8970588235293,
+    714.3529411764706
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "16744": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Shun-go",
+   "state": 1814,
+   "group": 15,
+   "coastal": true,
+   "sea": 4700,
+   "centre": [
+    2168.8823529411766,
+    707.4117647058823
+   ],
+   "area": 68,
+   "terrain": "plains"
+  },
+  "16745": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Shun-go",
+   "state": 1814,
+   "group": 15,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2189.032258064516,
+    720.3548387096774
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "16746": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Shun-go",
+   "state": 1814,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2171.6,
+    716.1142857142858
+   ],
+   "area": 70,
+   "terrain": "plains"
+  },
+  "16747": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Shun-go",
+   "state": 1814,
+   "group": 15,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2177.046875,
+    709.28125
+   ],
+   "area": 64,
+   "terrain": "plains"
+  },
+  "16748": {
+   "zone": "plain",
+   "kind": 4,
+   "feature": "Shun-go",
+   "state": 1814,
+   "group": 15,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2180.0,
+    722.9367088607595
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "16749": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Frangawl Highlands",
+   "state": 1815,
+   "group": 16,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2148.2077922077924,
+    755.5454545454545
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "16750": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Frangawl Highlands",
+   "state": 1815,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2147.0697674418607,
+    731.9069767441861
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "16751": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Frangawl Highlands",
+   "state": 1815,
+   "group": 16,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2138.9491525423728,
+    745.3220338983051
+   ],
+   "area": 59,
+   "terrain": "hills"
+  },
+  "16752": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Frangawl Highlands",
+   "state": 1815,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2151.9607843137255,
+    743.7647058823529
+   ],
+   "area": 102,
+   "terrain": "hills"
+  },
+  "16753": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Frangawl Highlands",
+   "state": 1815,
+   "group": 16,
+   "coastal": true,
+   "sea": 4906,
+   "centre": [
+    2143.0142857142855,
+    751.1571428571428
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "16754": {
+   "zone": "highland",
+   "kind": 3,
+   "feature": "Frangawl Highlands",
+   "state": 1815,
+   "group": 16,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2143.1,
+    737.15
+   ],
+   "area": 60,
+   "terrain": "hills"
+  }
+ }
+}

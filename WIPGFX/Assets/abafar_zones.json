@@ -1,0 +1,857 @@
+{
+ "centre": [
+  827.0,
+  1788.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17483": "Pons Ora",
+  "17484": "Power Sliders",
+  "17485": "Rhydonium Mining Installation",
+  "17515": "Northern Void",
+  "17523": "Eastern Void",
+  "17532": "Southern Void"
+ },
+ "provinces": {
+  "17483": {
+   "zone": "town",
+   "kind": 1,
+   "feature": "Pons Ora",
+   "state": 1718,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    827.0,
+    1786.5
+   ],
+   "area": 30,
+   "terrain": "urban"
+  },
+  "17484": {
+   "zone": "town",
+   "kind": 1,
+   "feature": "Power Sliders",
+   "state": 1718,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    831.0,
+    1781.5
+   ],
+   "area": 6,
+   "terrain": "urban"
+  },
+  "17485": {
+   "zone": "mine",
+   "kind": 2,
+   "feature": "Rhydonium Mining Installation",
+   "state": 1775,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    828.53125,
+    1805.59375
+   ],
+   "area": 32,
+   "terrain": "urban"
+  },
+  "17486": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Chalk Ridges",
+   "state": 1780,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    809.304347826087,
+    1802.9130434782608
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17487": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Chalk Ridges",
+   "state": 1780,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    816.125,
+    1796.0
+   ],
+   "area": 16,
+   "terrain": "mountain"
+  },
+  "17488": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Chalk Ridges",
+   "state": 1780,
+   "group": 3,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    806.3809523809524,
+    1808.1904761904761
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17489": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Chalk Ridges",
+   "state": 1780,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    805.7647058823529,
+    1804.4705882352941
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17490": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Chalk Ridges",
+   "state": 1780,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    812.4,
+    1799.6
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17491": {
+   "zone": "flat",
+   "kind": 5,
+   "feature": "Sink Flats",
+   "state": 1781,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    815.2758620689655,
+    1771.7931034482758
+   ],
+   "area": 29,
+   "terrain": "mountain"
+  },
+  "17492": {
+   "zone": "flat",
+   "kind": 5,
+   "feature": "Sink Flats",
+   "state": 1781,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    812.6190476190476,
+    1767.0
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17493": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Regolith Cliffs",
+   "state": 1782,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    838.1666666666666,
+    1778.7666666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "17494": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Regolith Cliffs",
+   "state": 1782,
+   "group": 5,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    842.2272727272727,
+    1763.2727272727273
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17495": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Regolith Cliffs",
+   "state": 1782,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    839.421052631579,
+    1769.0
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17496": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Regolith Cliffs",
+   "state": 1782,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    834.7272727272727,
+    1774.0
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17497": {
+   "zone": "cliff",
+   "kind": 6,
+   "feature": "Regolith Cliffs",
+   "state": 1782,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    838.5,
+    1774.0
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17498": {
+   "zone": "flat",
+   "kind": 5,
+   "feature": "Deep Void",
+   "state": 1783,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    849.8461538461538,
+    1801.8076923076924
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "17499": {
+   "zone": "flat",
+   "kind": 5,
+   "feature": "Deep Void",
+   "state": 1783,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    843.7272727272727,
+    1808.0454545454545
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17500": {
+   "zone": "flat",
+   "kind": 5,
+   "feature": "Deep Void",
+   "state": 1783,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    849.3928571428571,
+    1797.3214285714287
+   ],
+   "area": 28,
+   "terrain": "mountain"
+  },
+  "17501": {
+   "zone": "flat",
+   "kind": 5,
+   "feature": "Deep Void",
+   "state": 1783,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    844.7083333333334,
+    1803.2083333333333
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17502": {
+   "zone": "flat",
+   "kind": 5,
+   "feature": "Deep Void",
+   "state": 1783,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    848.3,
+    1806.25
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17503": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Pons Ora",
+   "state": 1718,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    827.75,
+    1780.2166666666667
+   ],
+   "area": 60,
+   "terrain": "desert"
+  },
+  "17504": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Pons Ora",
+   "state": 1718,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    836.8730158730159,
+    1792.7619047619048
+   ],
+   "area": 63,
+   "terrain": "desert"
+  },
+  "17505": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Pons Ora",
+   "state": 1718,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    820.2045454545455,
+    1791.0568181818182
+   ],
+   "area": 88,
+   "terrain": "desert"
+  },
+  "17506": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Pons Ora",
+   "state": 1718,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    819.0666666666667,
+    1780.8555555555556
+   ],
+   "area": 90,
+   "terrain": "desert"
+  },
+  "17507": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Pons Ora",
+   "state": 1718,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    835.4875,
+    1784.6875
+   ],
+   "area": 80,
+   "terrain": "desert"
+  },
+  "17508": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Pons Ora",
+   "state": 1718,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    827.6849315068494,
+    1793.5342465753424
+   ],
+   "area": 73,
+   "terrain": "desert"
+  },
+  "17509": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Rhydonium Fields",
+   "state": 1775,
+   "group": 8,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    844.2222222222222,
+    1811.9074074074074
+   ],
+   "area": 54,
+   "terrain": "desert"
+  },
+  "17510": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Rhydonium Fields",
+   "state": 1775,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    823.1590909090909,
+    1801.8863636363637
+   ],
+   "area": 88,
+   "terrain": "desert"
+  },
+  "17511": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Rhydonium Fields",
+   "state": 1775,
+   "group": 8,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    826.5056179775281,
+    1813.3820224719102
+   ],
+   "area": 89,
+   "terrain": "desert"
+  },
+  "17512": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Rhydonium Fields",
+   "state": 1775,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    836.1063829787234,
+    1799.968085106383
+   ],
+   "area": 94,
+   "terrain": "desert"
+  },
+  "17513": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Rhydonium Fields",
+   "state": 1775,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    836.2162162162163,
+    1807.1486486486488
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "17514": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Rhydonium Fields",
+   "state": 1775,
+   "group": 8,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    834.6527777777778,
+    1815.263888888889
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "17515": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    809.6206896551724,
+    1785.448275862069
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "17516": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    802.3134328358209,
+    1801.6268656716418
+   ],
+   "area": 67,
+   "terrain": "desert"
+  },
+  "17517": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    806.0281690140845,
+    1769.4507042253522
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "17518": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    800.4567901234568,
+    1793.6049382716049
+   ],
+   "area": 81,
+   "terrain": "desert"
+  },
+  "17519": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    810.1219512195122,
+    1793.7317073170732
+   ],
+   "area": 82,
+   "terrain": "desert"
+  },
+  "17520": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    811.2297297297297,
+    1776.972972972973
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "17521": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    801.6794871794872,
+    1776.948717948718
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "17522": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Northern Void",
+   "state": 1776,
+   "group": 9,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    799.8076923076923,
+    1785.2435897435898
+   ],
+   "area": 78,
+   "terrain": "desert"
+  },
+  "17523": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Eastern Void",
+   "state": 1777,
+   "group": 10,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    811.234375,
+    1811.609375
+   ],
+   "area": 64,
+   "terrain": "hills"
+  },
+  "17524": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Eastern Void",
+   "state": 1777,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    816.0555555555555,
+    1805.2222222222222
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "17525": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Eastern Void",
+   "state": 1777,
+   "group": 10,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    819.1527777777778,
+    1814.7222222222222
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "17526": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Southern Void",
+   "state": 1778,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    844.5753424657535,
+    1793.6438356164383
+   ],
+   "area": 73,
+   "terrain": "desert"
+  },
+  "17527": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Southern Void",
+   "state": 1778,
+   "group": 11,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    847.3218390804598,
+    1768.5172413793102
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "17528": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Southern Void",
+   "state": 1778,
+   "group": 11,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    853.5934065934066,
+    1778.978021978022
+   ],
+   "area": 91,
+   "terrain": "desert"
+  },
+  "17529": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Southern Void",
+   "state": 1778,
+   "group": 11,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    854.2045454545455,
+    1800.590909090909
+   ],
+   "area": 44,
+   "terrain": "desert"
+  },
+  "17530": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Southern Void",
+   "state": 1778,
+   "group": 11,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    854.2765957446809,
+    1790.0106382978724
+   ],
+   "area": 94,
+   "terrain": "desert"
+  },
+  "17531": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Southern Void",
+   "state": 1778,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    844.9459459459459,
+    1775.8783783783783
+   ],
+   "area": 74,
+   "terrain": "desert"
+  },
+  "17532": {
+   "zone": "void",
+   "kind": 3,
+   "feature": "Southern Void",
+   "state": 1778,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    845.4470588235295,
+    1785.1764705882354
+   ],
+   "area": 85,
+   "terrain": "desert"
+  },
+  "17533": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Western Void",
+   "state": 1779,
+   "group": 12,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    835.6179775280899,
+    1761.6629213483145
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "17534": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Western Void",
+   "state": 1779,
+   "group": 12,
+   "coastal": true,
+   "sea": 4816,
+   "centre": [
+    813.7428571428571,
+    1762.357142857143
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "17535": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Western Void",
+   "state": 1779,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    824.9411764705883,
+    1773.2941176470588
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17536": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Western Void",
+   "state": 1779,
+   "group": 12,
+   "coastal": true,
+   "sea": 4760,
+   "centre": [
+    825.2906976744187,
+    1760.3488372093022
+   ],
+   "area": 86,
+   "terrain": "hills"
+  },
+  "17537": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Western Void",
+   "state": 1779,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    831.5822784810126,
+    1769.4430379746836
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "17538": {
+   "zone": "chalk",
+   "kind": 4,
+   "feature": "Western Void",
+   "state": 1779,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    820.4428571428572,
+    1767.0
+   ],
+   "area": 70,
+   "terrain": "hills"
+  }
+ }
+}

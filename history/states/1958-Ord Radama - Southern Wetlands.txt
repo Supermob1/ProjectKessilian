@@ -1,0 +1,26 @@
+state={
+	id=1958
+	name="STATE_1958"
+	# HOD: Ord Radama (ord_radama_map.py)
+	provinces={
+		17809 17810 17811 17812 17813 17814
+	}
+	resources={
+		oil=2#Fuel
+		chromium=3#Circuitry
+	}
+	history = {
+		victory_points = {
+			17809 1
+		}
+		buildings = {
+			infrastructure = 2
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 31000
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

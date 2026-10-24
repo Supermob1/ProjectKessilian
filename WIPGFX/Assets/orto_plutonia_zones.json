@@ -1,0 +1,857 @@
+{
+ "centre": [
+  3159.0,
+  1994.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17539": "Glid Station",
+  "17540": "Talz Village",
+  "17542": "Separatist Outpost",
+  "17576": "Tor Fields",
+  "17577": "Northern Ice Plains",
+  "17591": "Western Wastes"
+ },
+ "provinces": {
+  "17539": {
+   "zone": "station",
+   "kind": 1,
+   "feature": "Glid Station",
+   "state": 1719,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3159.0,
+    1994.0
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "17540": {
+   "zone": "village",
+   "kind": 2,
+   "feature": "Talz Village",
+   "state": 1739,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3163.2272727272725,
+    2012.8636363636363
+   ],
+   "area": 22,
+   "terrain": "hills"
+  },
+  "17541": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3155.0153846153844,
+    2008.9692307692308
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "17542": {
+   "zone": "station",
+   "kind": 1,
+   "feature": "Separatist Outpost",
+   "state": 1742,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3144.625,
+    1976.375
+   ],
+   "area": 24,
+   "terrain": "urban"
+  },
+  "17543": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Spires",
+   "state": 1744,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3137.1739130434785,
+    1999.2608695652175
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17544": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Spires",
+   "state": 1744,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3151.3636363636365,
+    1997.909090909091
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "17545": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Spires",
+   "state": 1744,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3144.9285714285716,
+    2001.142857142857
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17546": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Spires",
+   "state": 1744,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3133.7,
+    2002.0
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17547": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Spires",
+   "state": 1744,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3140.9285714285716,
+    2001.857142857143
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17548": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Spires",
+   "state": 1744,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3141.8571428571427,
+    1998.7142857142858
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17549": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Ice Spires",
+   "state": 1744,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3147.5714285714284,
+    1998.5714285714287
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17550": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Frozen Sea",
+   "state": 1745,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3164.8636363636365,
+    1976.8636363636363
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17551": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Frozen Sea",
+   "state": 1745,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3161.25,
+    1974.0
+   ],
+   "area": 20,
+   "terrain": "mountain"
+  },
+  "17552": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Frozen Sea",
+   "state": 1745,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3164.2631578947367,
+    1980.421052631579
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17553": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Glacier Wall",
+   "state": 1746,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3177.8888888888887,
+    2006.888888888889
+   ],
+   "area": 18,
+   "terrain": "mountain"
+  },
+  "17554": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Glacier Wall",
+   "state": 1746,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3169.7894736842104,
+    1988.5263157894738
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17555": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Glacier Wall",
+   "state": 1746,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3174.695652173913,
+    1997.4782608695652
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17556": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Glacier Wall",
+   "state": 1746,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3172.6190476190477,
+    1992.5714285714287
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17557": {
+   "zone": "peak",
+   "kind": 7,
+   "feature": "Glacier Wall",
+   "state": 1746,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3176.076923076923,
+    2001.9615384615386
+   ],
+   "area": 26,
+   "terrain": "mountain"
+  },
+  "17558": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Crevasse Fields",
+   "state": 1747,
+   "group": 7,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3138.970588235294,
+    2016.0294117647059
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "17559": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Glid Station",
+   "state": 1719,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3150.735632183908,
+    1993.1954022988505
+   ],
+   "area": 87,
+   "terrain": "plains"
+  },
+  "17560": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Glid Station",
+   "state": 1719,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3166.7551020408164,
+    1997.3877551020407
+   ],
+   "area": 98,
+   "terrain": "plains"
+  },
+  "17561": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Glid Station",
+   "state": 1719,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3162.4021739130435,
+    1987.7065217391305
+   ],
+   "area": 92,
+   "terrain": "plains"
+  },
+  "17562": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Glid Station",
+   "state": 1719,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3148.1875,
+    2002.6875
+   ],
+   "area": 32,
+   "terrain": "plains"
+  },
+  "17563": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Glid Station",
+   "state": 1719,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3157.5138888888887,
+    2000.9027777777778
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "17564": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3172.846153846154,
+    2016.3076923076924
+   ],
+   "area": 104,
+   "terrain": "hills"
+  },
+  "17565": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3140.240506329114,
+    2010.1898734177216
+   ],
+   "area": 79,
+   "terrain": "hills"
+  },
+  "17566": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3154.573529411765,
+    2022.1911764705883
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17567": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3150.375,
+    2007.8392857142858
+   ],
+   "area": 56,
+   "terrain": "hills"
+  },
+  "17568": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3146.659090909091,
+    2017.75
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "17569": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3166.1894736842105,
+    2007.5157894736842
+   ],
+   "area": 95,
+   "terrain": "hills"
+  },
+  "17570": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3164.784090909091,
+    2020.9204545454545
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "17571": {
+   "zone": "canyon",
+   "kind": 5,
+   "feature": "Talz Canyons",
+   "state": 1739,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3156.686567164179,
+    2015.358208955224
+   ],
+   "area": 67,
+   "terrain": "hills"
+  },
+  "17572": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Tor Fields",
+   "state": 1740,
+   "group": 10,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3186.4615384615386,
+    1992.2637362637363
+   ],
+   "area": 91,
+   "terrain": "hills"
+  },
+  "17573": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Tor Fields",
+   "state": 1740,
+   "group": 10,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3181.0779220779223,
+    2011.935064935065
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "17574": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Tor Fields",
+   "state": 1740,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3173.054054054054,
+    2004.5405405405406
+   ],
+   "area": 37,
+   "terrain": "hills"
+  },
+  "17575": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Tor Fields",
+   "state": 1740,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3177.85393258427,
+    1990.8651685393259
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "17576": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Tor Fields",
+   "state": 1740,
+   "group": 10,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3184.189189189189,
+    2002.1081081081081
+   ],
+   "area": 111,
+   "terrain": "hills"
+  },
+  "17577": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Northern Ice Plains",
+   "state": 1741,
+   "group": 11,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3132.4415584415583,
+    1987.5974025974026
+   ],
+   "area": 77,
+   "terrain": "plains"
+  },
+  "17578": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Northern Ice Plains",
+   "state": 1741,
+   "group": 11,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3134.283582089552,
+    2006.1791044776119
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "17579": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Northern Ice Plains",
+   "state": 1741,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3140.340909090909,
+    1991.5795454545455
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "17580": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Northern Ice Plains",
+   "state": 1741,
+   "group": 11,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3131.123287671233,
+    1996.3013698630136
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "17581": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Northern Ice Plains",
+   "state": 1741,
+   "group": 11,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3134.3387096774195,
+    1980.016129032258
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "17582": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Separatist Landing",
+   "state": 1742,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3149.285714285714,
+    1978.4107142857142
+   ],
+   "area": 56,
+   "terrain": "plains"
+  },
+  "17583": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Separatist Landing",
+   "state": 1742,
+   "group": 12,
+   "coastal": true,
+   "sea": 4599,
+   "centre": [
+    3155.7301587301586,
+    1965.5396825396826
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "17584": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Separatist Landing",
+   "state": 1742,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3156.3289473684213,
+    1982.078947368421
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17585": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Separatist Landing",
+   "state": 1742,
+   "group": 12,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3146.7283950617284,
+    1968.9382716049383
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "17586": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Separatist Landing",
+   "state": 1742,
+   "group": 12,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3139.5263157894738,
+    1975.342105263158
+   ],
+   "area": 76,
+   "terrain": "plains"
+  },
+  "17587": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Separatist Landing",
+   "state": 1742,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3146.2359550561796,
+    1985.4719101123596
+   ],
+   "area": 89,
+   "terrain": "plains"
+  },
+  "17588": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Separatist Landing",
+   "state": 1742,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3155.3333333333335,
+    1973.6190476190477
+   ],
+   "area": 63,
+   "terrain": "plains"
+  },
+  "17589": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Western Wastes",
+   "state": 1743,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3169.821917808219,
+    1979.849315068493
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "17590": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Western Wastes",
+   "state": 1743,
+   "group": 13,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3184.8611111111113,
+    1982.4166666666667
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "17591": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Western Wastes",
+   "state": 1743,
+   "group": 13,
+   "coastal": true,
+   "sea": 4774,
+   "centre": [
+    3179.1688311688313,
+    1974.6883116883116
+   ],
+   "area": 77,
+   "terrain": "hills"
+  },
+  "17592": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Western Wastes",
+   "state": 1743,
+   "group": 13,
+   "coastal": true,
+   "sea": 4599,
+   "centre": [
+    3163.752941176471,
+    1968.070588235294
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "17593": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Western Wastes",
+   "state": 1743,
+   "group": 13,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    3176.383333333333,
+    1982.7333333333333
+   ],
+   "area": 60,
+   "terrain": "hills"
+  },
+  "17594": {
+   "zone": "tor",
+   "kind": 4,
+   "feature": "Western Wastes",
+   "state": 1743,
+   "group": 13,
+   "coastal": true,
+   "sea": 4599,
+   "centre": [
+    3171.8536585365855,
+    1969.621951219512
+   ],
+   "area": 82,
+   "terrain": "hills"
+  }
+ }
+}

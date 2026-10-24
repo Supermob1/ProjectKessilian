@@ -1,0 +1,857 @@
+{
+ "centre": [
+  750.0,
+  2128.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17875": "Quell Landing Field",
+  "17876": "Garrison Town",
+  "17900": "Northern Sphere Fields",
+  "17913": "Eastern Sphere Fields",
+  "17918": "Western Mesas",
+  "17930": "Southern Badlands"
+ },
+ "provinces": {
+  "17875": {
+   "zone": "base",
+   "kind": 1,
+   "feature": "Quell Landing Field",
+   "state": 1725,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    750.0,
+    2128.0
+   ],
+   "area": 35,
+   "terrain": "urban"
+  },
+  "17876": {
+   "zone": "town",
+   "kind": 2,
+   "feature": "Garrison Town",
+   "state": 1760,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    764.4074074074074,
+    2111.962962962963
+   ],
+   "area": 27,
+   "terrain": "urban"
+  },
+  "17877": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Giant Spheres",
+   "state": 1762,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    738.3571428571429,
+    2141.285714285714
+   ],
+   "area": 14,
+   "terrain": "mountain"
+  },
+  "17878": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Giant Spheres",
+   "state": 1762,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    739.3076923076923,
+    2144.4615384615386
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "17879": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Giant Spheres",
+   "state": 1762,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    741.7272727272727,
+    2141.2727272727275
+   ],
+   "area": 11,
+   "terrain": "mountain"
+  },
+  "17880": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Giant Spheres",
+   "state": 1762,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    738.4444444444445,
+    2138.3333333333335
+   ],
+   "area": 9,
+   "terrain": "mountain"
+  },
+  "17881": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Cerulean Sea",
+   "state": 1763,
+   "group": 3,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    778.1470588235294,
+    2136.9411764705883
+   ],
+   "area": 34,
+   "terrain": "mountain"
+  },
+  "17882": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Cerulean Sea",
+   "state": 1763,
+   "group": 3,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    778.2857142857143,
+    2118.095238095238
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17883": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Cerulean Sea",
+   "state": 1763,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    774.4193548387096,
+    2127.5806451612902
+   ],
+   "area": 31,
+   "terrain": "mountain"
+  },
+  "17884": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Cerulean Sea",
+   "state": 1763,
+   "group": 3,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    779.2727272727273,
+    2130.0
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "17885": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Cerulean Sea",
+   "state": 1763,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    774.0909090909091,
+    2133.6363636363635
+   ],
+   "area": 33,
+   "terrain": "mountain"
+  },
+  "17886": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Cerulean Sea",
+   "state": 1763,
+   "group": 3,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    779.2222222222222,
+    2123.5555555555557
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "17887": {
+   "zone": "sea",
+   "kind": 6,
+   "feature": "Cerulean Sea",
+   "state": 1763,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    774.8181818181819,
+    2121.909090909091
+   ],
+   "area": 22,
+   "terrain": "mountain"
+  },
+  "17888": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Brown Ridge",
+   "state": 1764,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    739.8333333333334,
+    2118.0833333333335
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "17889": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Brown Ridge",
+   "state": 1764,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    736.7407407407408,
+    2106.5555555555557
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "17890": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Brown Ridge",
+   "state": 1764,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    738.4722222222222,
+    2112.222222222222
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "17891": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Quell Canyon",
+   "state": 1765,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    764.3888888888889,
+    2150.1388888888887
+   ],
+   "area": 36,
+   "terrain": "mountain"
+  },
+  "17892": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Quell Canyon",
+   "state": 1765,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    755.8125,
+    2140.28125
+   ],
+   "area": 32,
+   "terrain": "mountain"
+  },
+  "17893": {
+   "zone": "ridge",
+   "kind": 7,
+   "feature": "Quell Canyon",
+   "state": 1765,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    759.8,
+    2145.366666666667
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "17894": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Quell Landing Field",
+   "state": 1725,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    741.1604938271605,
+    2125.1111111111113
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "17895": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Quell Landing Field",
+   "state": 1725,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    758.887323943662,
+    2126.8732394366198
+   ],
+   "area": 71,
+   "terrain": "plains"
+  },
+  "17896": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Quell Landing Field",
+   "state": 1725,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    749.5846153846154,
+    2136.492307692308
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "17897": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Quell Landing Field",
+   "state": 1725,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    750.4727272727273,
+    2122.9454545454546
+   ],
+   "area": 55,
+   "terrain": "plains"
+  },
+  "17898": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Quell Landing Field",
+   "state": 1725,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    743.2465753424658,
+    2133.8630136986303
+   ],
+   "area": 73,
+   "terrain": "plains"
+  },
+  "17899": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Quell Landing Field",
+   "state": 1725,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    757.2307692307693,
+    2133.9384615384615
+   ],
+   "area": 65,
+   "terrain": "plains"
+  },
+  "17900": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    724.0,
+    2132.0555555555557
+   ],
+   "area": 90,
+   "terrain": "hills"
+  },
+  "17901": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    725.7764705882353,
+    2114.7764705882355
+   ],
+   "area": 85,
+   "terrain": "hills"
+  },
+  "17902": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    729.8333333333334,
+    2147.848484848485
+   ],
+   "area": 66,
+   "terrain": "hills"
+  },
+  "17903": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    731.1666666666666,
+    2122.8928571428573
+   ],
+   "area": 84,
+   "terrain": "hills"
+  },
+  "17904": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    722.4133333333333,
+    2123.6133333333332
+   ],
+   "area": 75,
+   "terrain": "hills"
+  },
+  "17905": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    724.3230769230769,
+    2140.6153846153848
+   ],
+   "area": 65,
+   "terrain": "hills"
+  },
+  "17906": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    734.6375,
+    2131.7625
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "17907": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Northern Sphere Fields",
+   "state": 1757,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    732.1159420289855,
+    2139.289855072464
+   ],
+   "area": 69,
+   "terrain": "hills"
+  },
+  "17908": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Eastern Sphere Fields",
+   "state": 1758,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    750.75,
+    2145.65625
+   ],
+   "area": 96,
+   "terrain": "hills"
+  },
+  "17909": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Eastern Sphere Fields",
+   "state": 1758,
+   "group": 8,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    736.4754098360655,
+    2153.065573770492
+   ],
+   "area": 61,
+   "terrain": "hills"
+  },
+  "17910": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Eastern Sphere Fields",
+   "state": 1758,
+   "group": 8,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    759.35,
+    2153.575
+   ],
+   "area": 80,
+   "terrain": "hills"
+  },
+  "17911": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Eastern Sphere Fields",
+   "state": 1758,
+   "group": 8,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    751.8823529411765,
+    2155.4411764705883
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17912": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Eastern Sphere Fields",
+   "state": 1758,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    740.5882352941177,
+    2146.3970588235293
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17913": {
+   "zone": "spheres",
+   "kind": 4,
+   "feature": "Eastern Sphere Fields",
+   "state": 1758,
+   "group": 8,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    744.4383561643835,
+    2154.5342465753424
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "17914": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Western Mesas",
+   "state": 1759,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    730.9852941176471,
+    2106.8088235294117
+   ],
+   "area": 68,
+   "terrain": "hills"
+  },
+  "17915": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Western Mesas",
+   "state": 1759,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    752.0674157303371,
+    2100.4157303370785
+   ],
+   "area": 89,
+   "terrain": "hills"
+  },
+  "17916": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Western Mesas",
+   "state": 1759,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    747.3055555555555,
+    2116.5416666666665
+   ],
+   "area": 72,
+   "terrain": "hills"
+  },
+  "17917": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Western Mesas",
+   "state": 1759,
+   "group": 9,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    740.9382716049382,
+    2101.074074074074
+   ],
+   "area": 81,
+   "terrain": "hills"
+  },
+  "17918": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Western Mesas",
+   "state": 1759,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    745.0945945945946,
+    2107.972972972973
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "17919": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Western Mesas",
+   "state": 1759,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    733.85,
+    2115.0
+   ],
+   "area": 40,
+   "terrain": "hills"
+  },
+  "17920": {
+   "zone": "upland",
+   "kind": 5,
+   "feature": "Western Mesas",
+   "state": 1759,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    752.9857142857143,
+    2110.614285714286
+   ],
+   "area": 70,
+   "terrain": "hills"
+  },
+  "17921": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Garrison Plains",
+   "state": 1760,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    759.1518987341772,
+    2118.481012658228
+   ],
+   "area": 79,
+   "terrain": "plains"
+  },
+  "17922": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Garrison Plains",
+   "state": 1760,
+   "group": 10,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    761.0869565217391,
+    2102.3333333333335
+   ],
+   "area": 69,
+   "terrain": "plains"
+  },
+  "17923": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Garrison Plains",
+   "state": 1760,
+   "group": 10,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    772.8139534883721,
+    2114.093023255814
+   ],
+   "area": 86,
+   "terrain": "plains"
+  },
+  "17924": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Garrison Plains",
+   "state": 1760,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    767.6704545454545,
+    2121.875
+   ],
+   "area": 88,
+   "terrain": "plains"
+  },
+  "17925": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Garrison Plains",
+   "state": 1760,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    759.6545454545454,
+    2109.818181818182
+   ],
+   "area": 55,
+   "terrain": "plains"
+  },
+  "17926": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Garrison Plains",
+   "state": 1760,
+   "group": 10,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    768.8507462686567,
+    2106.8805970149256
+   ],
+   "area": 67,
+   "terrain": "plains"
+  },
+  "17927": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Southern Badlands",
+   "state": 1761,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    767.2962962962963,
+    2131.567901234568
+   ],
+   "area": 81,
+   "terrain": "plains"
+  },
+  "17928": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Southern Badlands",
+   "state": 1761,
+   "group": 11,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    769.4354838709677,
+    2148.6290322580644
+   ],
+   "area": 62,
+   "terrain": "plains"
+  },
+  "17929": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Southern Badlands",
+   "state": 1761,
+   "group": 11,
+   "coastal": true,
+   "sea": 5052,
+   "centre": [
+    773.3611111111111,
+    2141.8611111111113
+   ],
+   "area": 72,
+   "terrain": "plains"
+  },
+  "17930": {
+   "zone": "plain",
+   "kind": 3,
+   "feature": "Southern Badlands",
+   "state": 1761,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    764.4303797468355,
+    2139.9367088607596
+   ],
+   "area": 79,
+   "terrain": "plains"
+  }
+ }
+}

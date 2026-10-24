@@ -1,0 +1,857 @@
+{
+ "centre": [
+  2905.0,
+  1653.0
+ ],
+ "radius": 31.960231926001168,
+ "vp_names": {
+  "17427": "Meeting Grounds",
+  "17430": "Coral Caverns",
+  "17457": "Trident Coral Groves",
+  "17459": "Western Sea Bed",
+  "17478": "Southern Sea Bed",
+  "17482": "Bleached Reefs"
+ },
+ "provinces": {
+  "17427": {
+   "zone": "grounds",
+   "kind": 1,
+   "feature": "Meeting Grounds",
+   "state": 1717,
+   "group": 0,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2905.75,
+    1652.6875
+   ],
+   "area": 16,
+   "terrain": "plains"
+  },
+  "17428": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "King Coral Forest",
+   "state": 1717,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2907.5522388059703,
+    1649.910447761194
+   ],
+   "area": 67,
+   "terrain": "forest"
+  },
+  "17429": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "King Coral Forest",
+   "state": 1717,
+   "group": 1,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2906.0,
+    1657.1935483870968
+   ],
+   "area": 62,
+   "terrain": "forest"
+  },
+  "17430": {
+   "zone": "cavern",
+   "kind": 4,
+   "feature": "Coral Caverns",
+   "state": 1750,
+   "group": 2,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2906.821917808219,
+    1672.041095890411
+   ],
+   "area": 73,
+   "terrain": "hills"
+  },
+  "17431": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Great Reef Wall",
+   "state": 1753,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2895.5789473684213,
+    1643.1052631578948
+   ],
+   "area": 19,
+   "terrain": "mountain"
+  },
+  "17432": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Great Reef Wall",
+   "state": 1753,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2890.3,
+    1663.9
+   ],
+   "area": 10,
+   "terrain": "mountain"
+  },
+  "17433": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Great Reef Wall",
+   "state": 1753,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2895.3333333333335,
+    1655.9166666666667
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "17434": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Great Reef Wall",
+   "state": 1753,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2894.5882352941176,
+    1648.0588235294117
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17435": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Great Reef Wall",
+   "state": 1753,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2893.4,
+    1658.0666666666666
+   ],
+   "area": 15,
+   "terrain": "mountain"
+  },
+  "17436": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Great Reef Wall",
+   "state": 1753,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2894.846153846154,
+    1652.6153846153845
+   ],
+   "area": 13,
+   "terrain": "mountain"
+  },
+  "17437": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Great Reef Wall",
+   "state": 1753,
+   "group": 3,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2892.25,
+    1661.3333333333333
+   ],
+   "area": 12,
+   "terrain": "mountain"
+  },
+  "17438": {
+   "zone": "lagoon",
+   "kind": 5,
+   "feature": "Sinkhole Field",
+   "state": 1754,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2922.9583333333335,
+    1671.4166666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17439": {
+   "zone": "lagoon",
+   "kind": 5,
+   "feature": "Sinkhole Field",
+   "state": 1754,
+   "group": 4,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2922.1,
+    1667.5333333333333
+   ],
+   "area": 30,
+   "terrain": "mountain"
+  },
+  "17440": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Coral Spires",
+   "state": 1755,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2913.25,
+    1641.25
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17441": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Coral Spires",
+   "state": 1755,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2928.0,
+    1644.4705882352941
+   ],
+   "area": 17,
+   "terrain": "mountain"
+  },
+  "17442": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Coral Spires",
+   "state": 1755,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2919.5833333333335,
+    1642.0416666666667
+   ],
+   "area": 24,
+   "terrain": "mountain"
+  },
+  "17443": {
+   "zone": "reef",
+   "kind": 6,
+   "feature": "Coral Spires",
+   "state": 1755,
+   "group": 5,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2924.913043478261,
+    1641.9565217391305
+   ],
+   "area": 23,
+   "terrain": "mountain"
+  },
+  "17444": {
+   "zone": "lagoon",
+   "kind": 5,
+   "feature": "Dead Lagoon",
+   "state": 1756,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2897.5555555555557,
+    1633.0
+   ],
+   "area": 27,
+   "terrain": "mountain"
+  },
+  "17445": {
+   "zone": "lagoon",
+   "kind": 5,
+   "feature": "Dead Lagoon",
+   "state": 1756,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2893.24,
+    1630.04
+   ],
+   "area": 25,
+   "terrain": "mountain"
+  },
+  "17446": {
+   "zone": "lagoon",
+   "kind": 5,
+   "feature": "Dead Lagoon",
+   "state": 1756,
+   "group": 6,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2897.095238095238,
+    1628.142857142857
+   ],
+   "area": 21,
+   "terrain": "mountain"
+  },
+  "17447": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "King Coral Forest",
+   "state": 1717,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2900.612244897959,
+    1643.9285714285713
+   ],
+   "area": 98,
+   "terrain": "forest"
+  },
+  "17448": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "King Coral Forest",
+   "state": 1717,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2913.073529411765,
+    1660.5
+   ],
+   "area": 68,
+   "terrain": "forest"
+  },
+  "17449": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "King Coral Forest",
+   "state": 1717,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2899.5409836065573,
+    1657.1639344262296
+   ],
+   "area": 61,
+   "terrain": "forest"
+  },
+  "17450": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "King Coral Forest",
+   "state": 1717,
+   "group": 7,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2913.742424242424,
+    1648.1969696969697
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "17451": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2879.259259259259,
+    1642.3950617283951
+   ],
+   "area": 81,
+   "terrain": "forest"
+  },
+  "17452": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2877.8840579710145,
+    1660.9710144927535
+   ],
+   "area": 69,
+   "terrain": "forest"
+  },
+  "17453": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2888.712121212121,
+    1651.6363636363637
+   ],
+   "area": 66,
+   "terrain": "forest"
+  },
+  "17454": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2890.9538461538464,
+    1637.4307692307693
+   ],
+   "area": 65,
+   "terrain": "forest"
+  },
+  "17455": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2877.9887640449438,
+    1651.5505617977528
+   ],
+   "area": 89,
+   "terrain": "forest"
+  },
+  "17456": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2884.103896103896,
+    1633.7922077922078
+   ],
+   "area": 77,
+   "terrain": "forest"
+  },
+  "17457": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2887.7972972972975,
+    1644.4864864864865
+   ],
+   "area": 74,
+   "terrain": "forest"
+  },
+  "17458": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Trident Coral Groves",
+   "state": 1748,
+   "group": 8,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2885.5915492957747,
+    1658.2535211267605
+   ],
+   "area": 71,
+   "terrain": "forest"
+  },
+  "17459": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Western Sea Bed",
+   "state": 1749,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2909.120481927711,
+    1637.1566265060242
+   ],
+   "area": 83,
+   "terrain": "desert"
+  },
+  "17460": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Western Sea Bed",
+   "state": 1749,
+   "group": 9,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2891.6,
+    1626.4666666666667
+   ],
+   "area": 45,
+   "terrain": "desert"
+  },
+  "17461": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Western Sea Bed",
+   "state": 1749,
+   "group": 9,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2924.710843373494,
+    1632.7710843373493
+   ],
+   "area": 83,
+   "terrain": "desert"
+  },
+  "17462": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Western Sea Bed",
+   "state": 1749,
+   "group": 9,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2914.366336633663,
+    1627.1683168316831
+   ],
+   "area": 101,
+   "terrain": "desert"
+  },
+  "17463": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Western Sea Bed",
+   "state": 1749,
+   "group": 9,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2903.8,
+    1625.74
+   ],
+   "area": 100,
+   "terrain": "desert"
+  },
+  "17464": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Western Sea Bed",
+   "state": 1749,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2901.967741935484,
+    1635.2096774193549
+   ],
+   "area": 62,
+   "terrain": "desert"
+  },
+  "17465": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Western Sea Bed",
+   "state": 1749,
+   "group": 9,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2918.1388888888887,
+    1636.0
+   ],
+   "area": 72,
+   "terrain": "desert"
+  },
+  "17466": {
+   "zone": "cavern",
+   "kind": 4,
+   "feature": "Cavern Fields",
+   "state": 1750,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2906.7115384615386,
+    1665.3076923076924
+   ],
+   "area": 52,
+   "terrain": "hills"
+  },
+  "17467": {
+   "zone": "cavern",
+   "kind": 4,
+   "feature": "Cavern Fields",
+   "state": 1750,
+   "group": 10,
+   "coastal": true,
+   "sea": 4667,
+   "centre": [
+    2920.972972972973,
+    1676.7972972972973
+   ],
+   "area": 74,
+   "terrain": "hills"
+  },
+  "17468": {
+   "zone": "cavern",
+   "kind": 4,
+   "feature": "Cavern Fields",
+   "state": 1750,
+   "group": 10,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2900.2830188679245,
+    1679.2264150943397
+   ],
+   "area": 106,
+   "terrain": "hills"
+  },
+  "17469": {
+   "zone": "cavern",
+   "kind": 4,
+   "feature": "Cavern Fields",
+   "state": 1750,
+   "group": 10,
+   "coastal": true,
+   "sea": 4667,
+   "centre": [
+    2910.875,
+    1680.159090909091
+   ],
+   "area": 88,
+   "terrain": "hills"
+  },
+  "17470": {
+   "zone": "cavern",
+   "kind": 4,
+   "feature": "Cavern Fields",
+   "state": 1750,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2898.6153846153848,
+    1668.371794871795
+   ],
+   "area": 78,
+   "terrain": "hills"
+  },
+  "17471": {
+   "zone": "cavern",
+   "kind": 4,
+   "feature": "Cavern Fields",
+   "state": 1750,
+   "group": 10,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2914.9718309859154,
+    1670.3098591549297
+   ],
+   "area": 71,
+   "terrain": "hills"
+  },
+  "17472": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Southern Sea Bed",
+   "state": 1751,
+   "group": 11,
+   "coastal": true,
+   "sea": 4667,
+   "centre": [
+    2932.1267605633802,
+    1660.4647887323943
+   ],
+   "area": 71,
+   "terrain": "desert"
+  },
+  "17473": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Southern Sea Bed",
+   "state": 1751,
+   "group": 11,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2931.0862068965516,
+    1640.3103448275863
+   ],
+   "area": 58,
+   "terrain": "desert"
+  },
+  "17474": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Southern Sea Bed",
+   "state": 1751,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2921.390804597701,
+    1648.9655172413793
+   ],
+   "area": 87,
+   "terrain": "desert"
+  },
+  "17475": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Southern Sea Bed",
+   "state": 1751,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2920.6195652173915,
+    1660.2065217391305
+   ],
+   "area": 92,
+   "terrain": "desert"
+  },
+  "17476": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Southern Sea Bed",
+   "state": 1751,
+   "group": 11,
+   "coastal": true,
+   "sea": 4667,
+   "centre": [
+    2932.7894736842104,
+    1649.8684210526317
+   ],
+   "area": 76,
+   "terrain": "desert"
+  },
+  "17477": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Southern Sea Bed",
+   "state": 1751,
+   "group": 11,
+   "coastal": true,
+   "sea": 4667,
+   "centre": [
+    2928.96875,
+    1668.4375
+   ],
+   "area": 64,
+   "terrain": "desert"
+  },
+  "17478": {
+   "zone": "seabed",
+   "kind": 3,
+   "feature": "Southern Sea Bed",
+   "state": 1751,
+   "group": 11,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2926.9523809523807,
+    1655.142857142857
+   ],
+   "area": 63,
+   "terrain": "desert"
+  },
+  "17479": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Bleached Reefs",
+   "state": 1752,
+   "group": 12,
+   "coastal": false,
+   "sea": 0,
+   "centre": [
+    2891.871794871795,
+    1666.3076923076924
+   ],
+   "area": 78,
+   "terrain": "forest"
+  },
+  "17480": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Bleached Reefs",
+   "state": 1752,
+   "group": 12,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2891.830508474576,
+    1678.0677966101696
+   ],
+   "area": 59,
+   "terrain": "forest"
+  },
+  "17481": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Bleached Reefs",
+   "state": 1752,
+   "group": 12,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2882.044117647059,
+    1667.8088235294117
+   ],
+   "area": 68,
+   "terrain": "forest"
+  },
+  "17482": {
+   "zone": "coral",
+   "kind": 2,
+   "feature": "Bleached Reefs",
+   "state": 1752,
+   "group": 12,
+   "coastal": true,
+   "sea": 4769,
+   "centre": [
+    2886.2741935483873,
+    1673.5645161290322
+   ],
+   "area": 62,
+   "terrain": "forest"
+  }
+ }
+}

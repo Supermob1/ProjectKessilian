@@ -320,6 +320,9 @@ def main(name):
     # definition.csv: coastal flag (a 4-neighbour pixel of a sea province) and terrain
     sea = np.isin(sub, [p for p, r in rows.items() if r["type"] == "sea"])
     cats = set(re.findall(r"^\t(\w+)\s*=\s*\{", block("\n" + read("common/terrain/00_terrain.txt"), "categories"), re.M))
+    from check_terrain_definition import palette_types
+    ter_types = palette_types()
+    ter_sub = np.asarray(Image.open("map/terrain.bmp"))[sl]
     zones = {}
     zpath = f"WIPGFX/Assets/{slug}_zones.json"
     if os.path.exists(zpath):
@@ -336,8 +339,10 @@ def main(name):
             warn(where, f"province {p} coastal={str(r['coastal']).lower()}, pixels say {str(coastal).lower()}")
         if r["terrain"] not in cats:
             err(where, f"province {p} terrain '{r['terrain']}' is not a category in common/terrain/00_terrain.txt")
-        elif p in zones and zones[p].get("terrain") and zones[p]["terrain"] != r["terrain"]:
-            warn(where, f"province {p} terrain {r['terrain']}, {zpath} says {zones[p]['terrain']}")
+        elif r["type"] == "land" and not sts[pst[p]]["impassable"]:
+            want = ter_types.get(int(np.bincount(ter_sub[m]).argmax()))     # terrain.bmp prevails (user, 2026-10-24)
+            if want and want != "ocean" and want != r["terrain"]:
+                warn(where, f"province {p} terrain {r['terrain']}, terrain.bmp says {want} (check_terrain_definition.py --fix)")
 
     # units based on the planet
     impassable = {p for p in pids if sts[pst[p]]["impassable"]}
