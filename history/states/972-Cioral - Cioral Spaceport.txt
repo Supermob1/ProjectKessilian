@@ -1,0 +1,32 @@
+state={
+	id=972
+	name="STATE_972"
+	# HOD: Cioral (cioral_map.py)
+	provinces={
+		20870 20875 20882 20893 20904
+	}
+	resources={
+		coal=2
+		oil=1
+	}
+	history = {
+		victory_points = {
+			20882 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 2
+			dockyard = 3
+					20904 = {
+				naval_base = 4
+			}
+		}
+		owner = CHS
+		add_core_of = CHS
+	}
+	manpower = 394124
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

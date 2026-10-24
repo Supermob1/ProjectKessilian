@@ -1,0 +1,30 @@
+state={
+	id=56
+	name="STATE_56"
+	# HOD: Utapau (utapau_map.py)
+	provinces={
+		116 18517 18518 18522 18525
+	}
+	resources={
+		rubber=2#Doonium
+		aluminium=3#Minerals
+		steel=3#Alloys
+	}
+	history = {
+		victory_points = {
+			116 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 7
+			arms_factory = 3
+			air_base = 3
+		}
+		owner = UTA
+		add_core_of = UTA
+	}
+	manpower = 1012330
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

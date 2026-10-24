@@ -1,0 +1,32 @@
+state={
+	id=608
+	name="STATE_608"
+	# HOD: Rakata Prime (rakata_prime_map.py)
+	provinces={
+		5865 5894 5962 13379 13380 13391 13399 13403 13424 13440 13605
+	}
+	resources={
+		rubber=4
+	}
+	history = {
+		victory_points = {
+			13391 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 1
+			dockyard = 6
+					5894 = {
+				naval_base = 3
+			}
+		}
+		owner = CHS
+		add_core_of = CHS
+	}
+	manpower = 401968
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

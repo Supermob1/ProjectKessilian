@@ -1,0 +1,38 @@
+state={
+	id=206
+	name="STATE_206"
+	# HOD: Ghorman (ghorman_map.py)
+	provinces={
+		19821 19822 19823 19824 19825 19826 19827 19915 19916 19917 19918 19919 19920 19921 19922 19923 19924 19925 19926 19927 19928 19929 19930 19931 19932 19933
+	}
+	resources={
+		oil=1#Fuel
+		rubber=2#Doonium
+		tungsten=1#Bacta
+		steel=1#Alloys
+		chromium=2#Circuitry
+	}
+	history = {
+		victory_points = {
+			19822 15
+		}
+		victory_points = {
+			19826 5
+		}
+		victory_points = {
+			19827 2
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = FON
+		add_core_of = FON
+	}
+	manpower = 2418397
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

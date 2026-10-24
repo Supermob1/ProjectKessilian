@@ -1,0 +1,32 @@
+state={
+	id=426
+	name="STATE_426"
+	# HOD: Ryloth (ryloth_map.py)
+	provinces={
+		384 17723 17726 17731 17732 17734 17739 17742 17743 17745 17746 17747 17748 17749 17752 17754 17755
+	}
+	resources={
+		oil=3
+		aluminium=1
+	}
+	history = {
+		victory_points = {
+			384 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
+					17732 = {
+				naval_base = 3
+			}
+		}
+		owner = RYL
+		add_core_of = RYL
+	}
+	manpower = 132385
+	state_category = wasteland_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

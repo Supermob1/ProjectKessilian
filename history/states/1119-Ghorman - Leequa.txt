@@ -1,0 +1,32 @@
+state={
+	id=1119
+	name="STATE_1119"
+	# HOD: Ghorman (ghorman_map.py)
+	provinces={
+		19834 19961 19962 19963 19964 19965 19966 19967 19968 19969 19970
+	}
+	resources={
+		coal=2
+		oil=2
+	}
+	history = {
+		victory_points = {
+			19834 3
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 2
+			dockyard = 2
+					19961 = {
+				naval_base = 3
+			}
+		}
+		owner = FON
+		add_core_of = FON
+	}
+	manpower = 463390
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

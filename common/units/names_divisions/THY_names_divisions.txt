@@ -1,0 +1,18 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+THY_INF_01 = {
+	name = "Vratix Hive Guard"
+
+	for_countries = { THY }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Hive Guard"
+
+	ordered = {
+		1 = { "1st Xozhixi Hive Guard" }
+		2 = { "2nd Vrelnid Hive Guard" }
+	}
+}

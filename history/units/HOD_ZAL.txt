@@ -1,0 +1,26 @@
+﻿# HOD: ZAL (faction_templates.py)
+
+division_template = {
+	name = "Zaltin Security Force"
+	division_names_group = ZAL_SEC_01
+	regiments = {
+		infantry_droid = { x = 0 y = 0 }
+		infantry_droid = { x = 0 y = 1 }
+		infantry_droid = { x = 0 y = 2 }
+		infantry_droid = { x = 1 y = 0 }
+		infantry_droid = { x = 1 y = 1 }
+		infantry_droid = { x = 1 y = 2 }
+	}
+	support = {
+		military_police = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Zaltin Security Force"
+		location = 855
+		start_experience_factor = 0.2
+	}
+}

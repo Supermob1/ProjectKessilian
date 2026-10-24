@@ -1,0 +1,31 @@
+state={
+	id=585
+	name="STATE_585"
+	# HOD: Endor (endor_map.py)
+	provinces={
+		272 17092 17093 17097 17098 17099 17100 17104 17113 17118 17126 17127 17133 17134 17135 17143 17144 17145 17150 17163 17164 17172
+	}
+	resources={
+		rubber=4
+	}
+	history = {
+		victory_points = {
+			272 3
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 5
+			17100 = {
+				naval_base = 3
+			}
+		}
+		owner = COR
+		add_core_of = COR
+	}
+	manpower = 382624
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

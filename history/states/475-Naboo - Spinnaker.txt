@@ -1,0 +1,32 @@
+state={
+	id=475
+	name="STATE_475"
+	# HOD: Naboo (naboo_map.py)
+	provinces={
+		1436 17620 17624 17625 17633 17634 17635 17649 17650 17655 17656
+	}
+	resources={
+		coal=2
+		oil=2
+	}
+	history = {
+		victory_points = {
+			17633 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 3
+					17656 = {
+				naval_base = 3
+			}
+		}
+		owner = RNB
+		add_core_of = RNB
+	}
+	manpower = 529564
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

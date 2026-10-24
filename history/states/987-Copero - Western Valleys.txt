@@ -1,0 +1,32 @@
+state={
+	id=987
+	name="STATE_987"
+	# HOD: Copero (copero_map.py)
+	provinces={
+		20601 20602 20603 20604
+	}
+	resources={
+		coal=3
+	}
+	history = {
+		victory_points = {
+			20601 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 5
+					20603 = {
+				naval_base = 4
+			}
+		}
+		owner = CHS
+		add_core_of = CHS
+	}
+	manpower = 261043
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

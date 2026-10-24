@@ -1,0 +1,31 @@
+state={
+	id=644
+	name="STATE_644"
+	# HOD: Teth (teth_map.py)
+	provinces={
+		14195 14199 14207 14208 14216 14217 14227 14228 14232
+	}
+	resources={
+		coal=1
+		oil=2
+	}
+	history = {
+		victory_points = {
+			14217 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 4
+					14199 = {
+				naval_base = 3
+			}
+		}
+		owner = DKJ
+		add_core_of = DKJ
+	}
+	manpower = 168404
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,32 @@
+state={
+	id=1070
+	name="STATE_1070"
+	# HOD: Kessel (kessel_map.py)
+	provinces={
+		20232 20430 20431 20434 20435 20436 20438 20439 20444 20445 20447 20448 20449 20450 20454
+	}
+	resources={
+		coal=1
+		oil=1
+	}
+	history = {
+		victory_points = {
+			20448 3
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			air_base = 1
+			dockyard = 5
+					20434 = {
+				naval_base = 4
+			}
+		}
+		owner = PYK
+		add_core_of = PYK
+	}
+	manpower = 399428
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

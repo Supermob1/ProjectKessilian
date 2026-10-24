@@ -1,0 +1,33 @@
+state={
+	id=1099
+	name="STATE_1099"
+	# HOD: Karfeddion (karfeddion_map.py)
+	provinces={
+		19506 19507 19508 19509 19510 19511 19512 19513 19514 19515 19516 19517 19518 19519 19520 19521
+	}
+	resources={
+		coal=2
+		oil=2
+	}
+	history = {
+		victory_points = {
+			19515 1
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 1
+			dockyard = 2
+			19518 = {
+				naval_base = 3
+			}
+		}
+		owner = SJX
+		add_core_of = SJX
+	}
+	manpower = 394203
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

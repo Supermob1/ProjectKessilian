@@ -1,0 +1,32 @@
+state={
+	id=1083
+	name="STATE_1083"
+	# HOD: Pantora (pantora_map.py)
+	provinces={
+		19221 19222 19223 19224 19225 19226 19227 19228 19229 19230 19231 19232 19233 19234 19235 19236 19237 19238 19239 19240 19241 19242 19243 19244 19245
+	}
+	resources={
+		tungsten=1
+		coal=2
+	}
+	history = {
+		victory_points = {
+			19227 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			dockyard = 4
+			19232 = {
+				naval_base = 4
+			}
+		}
+		owner = PAN
+		add_core_of = PAN
+	}
+	manpower = 359888
+	state_category = agricultural_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

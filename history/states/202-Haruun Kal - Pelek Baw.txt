@@ -1,0 +1,36 @@
+state={
+	id=202
+	name="STATE_202"
+	# HOD: Haruun Kal (haruun_kal_map.py)
+	provinces={
+		19323 19397 19398 19399 19403
+	}
+	resources={
+		oil=1#Fuel
+		rubber=10#Doonium
+		tungsten=2#Bacta
+		steel=5#Alloys
+		chromium=7#Circuitry
+	}
+	history = {
+		victory_points = {
+			19397 15
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 2
+			dockyard = 2
+					19398 = {
+				naval_base = 3
+			}
+		}
+		owner = CIS
+		add_core_of = CIS
+	}
+	manpower = 895372
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

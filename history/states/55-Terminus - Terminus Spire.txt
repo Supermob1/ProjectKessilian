@@ -1,0 +1,30 @@
+state={
+	id=55
+	name="STATE_55"
+	# HOD: Terminus (terminus_map.py)
+	provinces={
+		505 18615 18619 18620 18621
+	}
+	resources={
+		oil=1#Fuel
+		steel=1#Alloys
+		chromium=1#Circuitry
+	}
+	history = {
+		victory_points = {
+			505 10
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 5
+			arms_factory = 5
+			air_base = 2
+		}
+		owner = DKJ
+		add_core_of = DKJ
+	}
+	manpower = 1273213
+	state_category = capital_sector
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
