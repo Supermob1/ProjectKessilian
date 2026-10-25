@@ -397,3 +397,7 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
 - Lanes: ends never in an impassable state (user: 85 lanes ended in one). lane_network.py only uses coast pixels of
   provinces in passable states; Through falls back to the nearest space pixel when the way out is land. 288 lanes,
   0 touching impassable states, fix_lanes --dry clean, gen_hyperlanes rerun.
+- Minimap redrawn (user: better minimap.dds, 268x291): `minimap_art.py` renders it from the map at 4x: navy space
+  with the galaxy chart's regions as soft light, faint stars, the hyperlanes (adjacencies.csv, edge to edge), every
+  planet a small lit globe in its own colours with a thin rim. Uncompressed A8R8G8B8 like vanilla. Rerun after the
+  lanes or planets change. Preview WIPGFX/Assets/minimap_preview.png. NOT verified in game.
