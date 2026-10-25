@@ -331,79 +331,6 @@ PixelShader =
 			return vCol * vWisps * 0.45f * ( 1.0f - 0.6f * vChart );
 		}
 
-		// Saturn-like ring round a planet disc, in map units: a tilted ellipse of bands with a dark gap. The planet's land
-		// covers the inner part, so the ring passes behind the disc on both sides. Returns rgb and coverage in a.
-		float4 PlanetRing( float2 vPos, float2 vCentre, float fRadius, float fAngle, float fTilt, float3 vTint )
-		{
-			float2 d = vPos - vCentre;
-			float s = sin( fAngle );
-			float c = cos( fAngle );
-			float2 e = float2( d.x * c + d.y * s, ( d.y * c - d.x * s ) / fTilt );
-			float k = length( e ) / fRadius;
-			float vCover = smoothstep( 1.30f, 1.38f, k ) * ( 1.0f - smoothstep( 2.10f, 2.25f, k ) );
-			vCover *= 1.0f - 0.85f * exp( -( k - 1.80f ) * ( k - 1.80f ) / 0.0012f );                           // Cassini-style gap
-			vCover *= 0.55f + 0.45f * SpaceNoise( float2( k * 45.0f, 3.0f ) );                                       // banding
-			float vFar = e.y > 0.0f ? 0.7f : 1.0f;                                                                  // far half dimmer
-			return float4( vTint * vFar * ( 0.75f + 0.25f * SpaceNoise( float2( k * 9.0f, 8.0f ) ) ), vCover * 0.8f );
-		}
-
-		float3 ApplyRing( float3 vColor, float4 vRing )
-		{
-			return lerp( vColor, vRing.rgb, saturate( vRing.a ) );
-		}
-
-		// Asteroid belt: a wide tilted band of rock specks (one per jittered cell, ~40% lit), well outside the planet
-		float4 AsteroidBelt( float2 vPos, float2 vCentre, float fRadius, float fTilt, float3 vTint, float fSize )
-		{
-			float2 e = float2( vPos.x - vCentre.x, ( vPos.y - vCentre.y ) / fTilt );
-			float k = length( e ) / fRadius;
-			float vBand = smoothstep( 2.2f, 2.4f, k ) * ( 1.0f - smoothstep( 2.9f, 3.2f, k ) );
-			float2 vCell = floor( e / 3.0f );
-			float vRnd = SpaceHash( vCell + 91.0f );
-			float2 vOff = float2( SpaceHash( vCell + 3.1f ), SpaceHash( vCell + 5.7f ) ) - 0.5f;
-			float vDist = length( frac( e / 3.0f ) - 0.5f - vOff * 0.6f ) * 3.0f;
-			float vRock = step( 0.6f, vRnd ) * saturate( 1.0f - vDist / max( 0.6f + vRnd, fSize * 1.5f ) );
-			float vDust = 0.12f * vBand;                                                                            // faint dust lane
-			return float4( vTint * ( 0.6f + 0.4f * vRnd ), saturate( vBand * vRock + vDust ) );
-		}
-
-		// Hyperspace lane from A to B: a thin glowing line with pulses running along it (zoomed-out chart)
-		float LaneGlow( float2 vPos, float2 vA, float2 vB, float fTime )
-		{
-			float2 ab = vB - vA;
-			float h = saturate( dot( vPos - vA, ab ) / dot( ab, ab ) );
-			float d = length( vPos - vA - ab * h );
-			float w = max( 2.0f, vCamPos.y * 0.0015f );
-			float vCore = exp( -( d / w ) * ( d / w ) );
-			float vHalo = exp( -( d / ( w * 5.0f ) ) * ( d / ( w * 5.0f ) ) ) * 0.25f;
-			float s = h * length( ab );
-			float vPulse = pow( saturate( 0.5f + 0.5f * cos( ( s / 90.0f - fTime * 0.12f ) * 6.2832f ) ), 8.0f );
-			return vCore * ( 0.25f + 0.75f * vPulse ) * 0.55f + vHalo * 0.3f;
-		}
-
-		// A dying or unstable star's light round a planet: a halo beyond its edge that swells and fades
-		float StarPulse( float2 vPos, float2 vCentre, float fRadius, float fTime, float fPeriod )
-		{
-			float k = length( vPos - vCentre ) / fRadius;
-			float vBeat = 0.55f + 0.45f * sin( 6.2832f * fTime / fPeriod );
-			return exp( -max( k - 1.0f, 0.0f ) * 1.2f ) * vBeat * 0.6f;
-		}
-
-		// A comet on a slow elliptical orbit round vCentre: bright head, tail trailing behind its motion
-		float Comet( float2 vPos, float2 vCentre, float2 vAxes, float fPeriod, float fPhase, float fTime )
-		{
-			float a = 6.2832f * fTime / fPeriod + fPhase;
-			float2 vHead = vCentre + float2( vAxes.x * cos( a ), vAxes.y * sin( a ) );
-			float2 vBack = -normalize( float2( -vAxes.x * sin( a ), vAxes.y * cos( a ) ) );
-			float2 rel = vPos - vHead;
-			float along = dot( rel, vBack );
-			float perp = length( rel - vBack * along );
-			float w = max( 2.5f, vCamPos.y * 0.0015f );
-			float vHeadGlow = exp( -dot( rel, rel ) / ( w * w * 4.0f ) );
-			float vTail = step( 0.0f, along ) * exp( -along / 160.0f ) * exp( -( perp / ( w + along * 0.05f ) ) * ( perp / ( w + along * 0.05f ) ) );
-			return vHeadGlow * 1.2f + vTail * 0.55f;
-		}
-
 		// One star layer: one jittered star per grid cell, ~fDensity of cells lit
 		float StarLayer( float2 p, float fCell, float fDensity, float fSize, float fTime )
 		{
@@ -459,52 +386,6 @@ PixelShader =
 			static const float STAR_INTENSITY = 0.3f;
 			float vStarFade = lerp( 1.0f, 0.35f, saturate( ( vCamPos.y - 300.0f ) / 1500.0f ) );
 			vColor = lerp( vColor, vColor + vStarColor * vStars, STAR_INTENSITY * vStarFade * ( 0.5f + vArmMask ) );
-
-			// --- rings, asteroid belts (every zoom), lanes and star glow (zoomed out): calls written by
-			// WIPGFX/plans & scripts/space_fx.py from the planets' positions; edit the lists there, not here
-			// space_fx near begin
-			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 1818.20f, 2696.08f ), 60.05f, 0.35f, 0.38f, float3( 0.80f, 0.66f, 0.48f ) ) );   // Yavin IV
-			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 428.18f, 603.98f ), 60.03f, -0.25f, 0.42f, float3( 0.62f, 0.70f, 0.78f ) ) );   // Endor
-			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 2686.45f, 2374.56f ), 60.02f, 0.15f, 0.34f, float3( 0.70f, 0.60f, 0.72f ) ) );   // Iego
-			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 2396.20f, 1461.08f ), 60.05f, -0.40f, 0.40f, float3( 0.72f, 0.70f, 0.50f ) ) );   // Nal Hutta
-			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 2466.42f, 2171.86f ), 60.05f, 0.55f, 0.36f, float3( 0.78f, 0.74f, 0.66f ) ) );   // Saleucami
-			vColor = ApplyRing( vColor, AsteroidBelt( vPos, float2( 650.82f, 281.57f ), 60.00f, 0.55f, float3( 0.62f, 0.66f, 0.72f ), vStarSize ) );   // Hoth
-			vColor = ApplyRing( vColor, AsteroidBelt( vPos, float2( 2899.20f, 1848.07f ), 60.06f, 0.50f, float3( 0.66f, 0.55f, 0.46f ), vStarSize ) );   // Kessel
-			vColor = ApplyRing( vColor, AsteroidBelt( vPos, float2( 2277.45f, 660.28f ), 60.03f, 0.45f, float3( 0.72f, 0.52f, 0.36f ), vStarSize ) );   // Geonosis			// space_fx near end
-			if ( vGalaxyFade > 0.0f )
-			{
-				float3 vLane = float3( 0.0f, 0.0f, 0.0f );
-				// space_fx far begin
-				vLane += float3( 1.00f, 0.80f, 0.40f ) * LaneGlow( vPos, float2( 812.87f, 1796.51f ), float2( 863.00f, 2019.00f ), vTime );   // Perlemian Trade Route: Coruscant - Brentaal IV
-				vLane += float3( 1.00f, 0.80f, 0.40f ) * LaneGlow( vPos, float2( 863.00f, 2019.00f ), float2( 1001.20f, 2116.07f ), vTime );   // Perlemian Trade Route: Brentaal IV - Chandrila
-				vLane += float3( 1.00f, 0.80f, 0.40f ) * LaneGlow( vPos, float2( 1001.20f, 2116.07f ), float2( 1355.42f, 2273.11f ), vTime );   // Perlemian Trade Route: Chandrila - Corsin
-				vLane += float3( 1.00f, 0.80f, 0.40f ) * LaneGlow( vPos, float2( 1355.42f, 2273.11f ), float2( 1578.35f, 2644.61f ), vTime );   // Perlemian Trade Route: Corsin - Ord Cestus
-				vLane += float3( 1.00f, 0.80f, 0.40f ) * LaneGlow( vPos, float2( 1578.35f, 2644.61f ), float2( 2441.35f, 2555.61f ), vTime );   // Perlemian Trade Route: Ord Cestus - Ossus
-				vLane += float3( 1.00f, 0.80f, 0.40f ) * LaneGlow( vPos, float2( 2441.35f, 2555.61f ), float2( 2517.15f, 2447.82f ), vTime );   // Perlemian Trade Route: Ossus - Lianna
-				vLane += float3( 1.00f, 0.80f, 0.40f ) * LaneGlow( vPos, float2( 2517.15f, 2447.82f ), float2( 2656.35f, 2758.61f ), vTime );   // Perlemian Trade Route: Lianna - Raxus Prime
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 2506.32f, 3143.29f ), float2( 1355.42f, 2273.11f ), vTime );   // Hydian Way: Bonadan - Corsin
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 1355.42f, 2273.11f ), float2( 863.00f, 2019.00f ), vTime );   // Hydian Way: Corsin - Brentaal IV
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 863.00f, 2019.00f ), float2( 786.40f, 1906.61f ), vTime );   // Hydian Way: Brentaal IV - Esseles
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 786.40f, 1906.61f ), float2( 744.47f, 1571.09f ), vTime );   // Hydian Way: Esseles - Empress Teta
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 744.47f, 1571.09f ), float2( 821.56f, 1286.93f ), vTime );   // Hydian Way: Empress Teta - Abregado-Rae
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 821.56f, 1286.93f ), float2( 963.26f, 1023.37f ), vTime );   // Hydian Way: Abregado-Rae - Thyferria
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 963.26f, 1023.37f ), float2( 1159.98f, 352.73f ), vTime );   // Hydian Way: Thyferria - Eriadu
-				vLane += float3( 0.40f, 0.85f, 1.00f ) * LaneGlow( vPos, float2( 1159.98f, 352.73f ), float2( 705.92f, 33.77f ), vTime );   // Hydian Way: Eriadu - Terminus
-				vLane += float3( 1.00f, 0.45f, 0.30f ) * LaneGlow( vPos, float2( 812.87f, 1796.51f ), float2( 1104.62f, 1489.74f ), vTime );   // Corellian Run: Coruscant - Corellia
-				vLane += float3( 1.00f, 0.45f, 0.30f ) * LaneGlow( vPos, float2( 1104.62f, 1489.74f ), float2( 1330.32f, 629.08f ), vTime );   // Corellian Run: Corellia - Malastare
-				vLane += float3( 1.00f, 0.45f, 0.30f ) * LaneGlow( vPos, float2( 1330.32f, 629.08f ), float2( 2123.65f, 603.09f ), vTime );   // Corellian Run: Malastare - Christophsis
-				vLane += float3( 1.00f, 0.45f, 0.30f ) * LaneGlow( vPos, float2( 2123.65f, 603.09f ), float2( 2202.03f, 519.04f ), vTime );   // Corellian Run: Christophsis - Ryloth
-				vLane += float3( 0.50f, 1.00f, 0.55f ) * LaneGlow( vPos, float2( 821.56f, 1286.93f ), float2( 963.26f, 1023.37f ), vTime );   // Rimma Trade Route: Abregado-Rae - Thyferria
-				vLane += float3( 0.50f, 1.00f, 0.55f ) * LaneGlow( vPos, float2( 963.26f, 1023.37f ), float2( 995.70f, 895.12f ), vTime );   // Rimma Trade Route: Thyferria - Yag'Dhul
-				vLane += float3( 0.50f, 1.00f, 0.55f ) * LaneGlow( vPos, float2( 995.70f, 895.12f ), float2( 1153.96f, 477.39f ), vTime );   // Rimma Trade Route: Yag'Dhul - Sullust
-				vLane += float3( 0.50f, 1.00f, 0.55f ) * LaneGlow( vPos, float2( 1153.96f, 477.39f ), float2( 1159.98f, 352.73f ), vTime );   // Rimma Trade Route: Sullust - Eriadu
-				vLane += float3( 1.00f, 0.30f, 0.10f ) * StarPulse( vPos, float2( 889.65f, 99.62f ), 32.50f, vTime, 6.00f );   // Mustafar				// space_fx far end
-				// comets on slow orbits round the galactic core (periods in seconds)
-				vLane += float3( 0.75f, 0.90f, 1.00f ) * Comet( vPos, GALAXY_CORE, float2( 1350.0f, 1050.0f ), 420.0f, 0.0f, vTime );
-				vLane += float3( 0.80f, 1.00f, 0.90f ) * Comet( vPos, GALAXY_CORE, float2( 1100.0f, 1500.0f ), 610.0f, 2.1f, vTime );
-				vLane += float3( 1.00f, 0.90f, 0.75f ) * Comet( vPos, GALAXY_CORE + float2( 600.0f, 300.0f ), float2( 900.0f, 700.0f ), 350.0f, 4.0f, vTime );
-				vColor += vLane * vGalaxyFade;
-			}
 
 			float vBloomAlpha = 0.0f;
 			gradient_border_apply( vColor, normal, Input.uv,
