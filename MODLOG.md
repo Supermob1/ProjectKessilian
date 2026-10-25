@@ -387,3 +387,10 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   so the band now fills all of it (LANE_WIDTH 1.0) and glows stronger zoomed out (LANE_BASE_FAR 0.20). LANE_DEBUG = 1
   shows the strip's uv.x / uv.y and the unused uv.zw: if the engine sends a side direction there, the vertex shader
   can push the strip wider than the engine draws it.
+- Hyperlanes redrawn (user: planets well connected). `lane_network.py` (plan/write): planets = land bodies; links
+  shortest gap first, kept only if crossing no kept link and passing no other planet closer than 12 px: Gabriel
+  neighbours up to 110 px (max 5 per planet), then a 2nd link for dead ends (up to 275 px), then the network joined.
+  249 lanes -> 288; links per planet 1:2, 2:46, 3:57, 4:44, 5:27 (was 31 dead ends, lanes over planets, 700 px lanes);
+  one network. From/To = provinces at the two nearest coast pixels (in a state), Through = the space province off the
+  From coast. gen_hyperlanes.py rerun (288 rules); fix_lanes.py --dry: 0 to re-anchor. Preview
+  WIPGFX/Assets/lane_network_preview.png. NOT verified in game (error.log: adjacency / THROUGH warnings).
