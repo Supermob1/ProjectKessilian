@@ -401,3 +401,4 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   with the galaxy chart's regions as soft light, faint stars, the hyperlanes (adjacencies.csv, edge to edge), every
   planet a small lit globe in its own colours with a thin rim. Uncompressed A8R8G8B8 like vanilla. Rerun after the
   lanes or planets change. Preview WIPGFX/Assets/minimap_preview.png. NOT verified in game.
+- minimap.gui: window moved to x=-465 y=-231 so the 268x291 map keeps vanilla's bottom-right corner (it ran off the screen bottom); border scale 0.99 -> 1.82 to frame it. NOT verified in game.

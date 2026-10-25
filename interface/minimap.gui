@@ -18,7 +18,7 @@ guiTypes = {
 
 	containerWindowType =  {
 		name = "mini_map_interface"
-		position = { x=-343 y=-98 }	
+		position = { x=-465 y=-231 }	# HOD: 268x291 minimap, same bottom-right corner as vanilla's 146x158	
 		Orientation = LOWER_RIGHT
 
 		
@@ -134,7 +134,7 @@ guiTypes = {
 			quadTextureSprite = "GFX_minimap_border"
 			position = { x=0 y=-65 }
 			Orientation = "UPPER_LEFT"
-			scale = 0.99
+			scale = 1.82	# HOD: border.dds (150x171) stretched over the 268x291 minimap
 			alwaystransparent = yes
 		}
 		
