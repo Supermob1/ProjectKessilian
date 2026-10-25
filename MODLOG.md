@@ -371,3 +371,9 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   SpaceTerritory function and the 6 lines after the stars in main.
 - Space territory test removed (user: only shows in some map modes, and ugly: pale washed-out halos with lacy
   edges in game). pdxwater.shader back to nebulae only.
+- Curved hyperlanes (user: improve the straits, curved lanes). The engine draws each strait as a straight strip of
+  map/terrain/strait.dds (no shader can bend it), so `hyperlane_art.py` paints one curve per sea adjacency, from the
+  nearest coast pixels of its From and To provinces, bent 18% of its length to the side crossing fewer planets, a thin
+  pale-blue thread + soft glow, into ice_diffuse.dds rgb (added to space at every zoom, x0.3). strait.dds made
+  transparent. galaxy_regions.reinject() re-adds the lanes (hyperlanes_rgb.npy) after planet_terrain_gen.py rewrites
+  the atmospheres. Rerun after adding or moving lanes. Preview WIPGFX/Assets/hyperlanes_preview.png. NOT verified in game.
