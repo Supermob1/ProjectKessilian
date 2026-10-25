@@ -359,3 +359,7 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   new ak.slv_yards + sluis_van_map orbit hook (needs Blender build + `military_buildings.py place Sluis Van` on the
   user's machine). Malachor is not on the map, so no green glow. Previews space_fx_preview.png, space_belt_preview.png,
   galaxy_chart_sectors_preview.png. NOT verified in game.
+- User review: only the moving nebulae are good. Reverted everything else from 2026-10-25 to the state before it:
+  space provinces (provinces.bmp), space strategic regions + names, weather points, unitstacks, naval base spawns,
+  chart (ice_diffuse.dds), rings/belts/lanes/comets/star glow, sector labels, Sluis Van yards and the three new
+  scripts. Kept: NebulaColor in pdxwater.shader, and the review_notes correction (most shipyards were already in orbit).
