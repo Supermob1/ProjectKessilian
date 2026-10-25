@@ -341,3 +341,12 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   Yavin IV, Endor, Iego, Nal Hutta, Saleucami (drawn in the space pass, so it shows behind the globe on both sides).
   Numpy twin previews: WIPGFX/Assets/space_fx_preview.png, space_ring_preview.png.
 - NOT verified in game: watch error.log for pdxwater.shader compile errors and the strategic region load.
+- User: space provinces redrawn smooth and fitted to the galaxy chart. galaxy_regions.py chart now also saves the
+  region raster (WIPGFX/Assets/galaxy_region_labels.npy; the run here stopped at the Windows label font, after the
+  raster; chart alpha unchanged). `space_provinces.py` (preview/write): shore band (6 px) keeps old provinces, orbit
+  zone (45 px, clipped to the planet's chart region) goes to the nearest shore province, deep space = Lloyd-relaxed
+  Voronoi cells per chart region (the 151 open provinces shared out by area). Same 365 ids/colours; every coastal
+  land province still coastal; 142 land-sea pairs moved to a neighbour -> 147 naval_base_spawn re-pointed; sea
+  unitstacks rebuilt (vanilla layout, 0/21 at the inner point, 1-8 / 11-18 toward neighbours). Lanes whose Through
+  province doesn't touch both ends: 128 of 249 (was 116; the game accepted those). space_sectors.py rerun, sectors
+  now stay inside their chart region. NOT verified in game: check error.log for province/unitstack warnings.
