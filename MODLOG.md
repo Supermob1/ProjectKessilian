@@ -363,3 +363,9 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   space provinces (provinces.bmp), space strategic regions + names, weather points, unitstacks, naval base spawns,
   chart (ice_diffuse.dds), rings/belts/lanes/comets/star glow, sector labels, Sluis Van yards and the three new
   scripts. Kept: NebulaColor in pdxwater.shader, and the review_notes correction (most shipyards were already in orbit).
+- Space territory TEST (user asked): pdxwater.shader SpaceTerritory, visual only. Owner colour from the gradient
+  border texture (as the globes read it) at 3 rings x 12 taps round each space pixel, fill out to 80 map px, an
+  outline where the fill ends and a light line where two owners' space meets; faded in from camera 250-700.
+  Numpy twin with the bookmark owners: WIPGFX/Assets/space_territory_preview.png (country-country lines come out
+  lacy). Unknown until tested: what the texture holds over space and in other map modes. To remove: delete the
+  SpaceTerritory function and the 6 lines after the stars in main.
