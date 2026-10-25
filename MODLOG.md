@@ -377,3 +377,9 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   pale-blue thread + soft glow, into ice_diffuse.dds rgb (added to space at every zoom, x0.3). strait.dds made
   transparent. galaxy_regions.reinject() re-adds the lanes (hyperlanes_rgb.npy) after planet_terrain_gen.py rewrites
   the atmospheres. Rerun after adding or moving lanes. Preview WIPGFX/Assets/hyperlanes_preview.png. NOT verified in game.
+- User preferred the engine's straight strait strips, animated: painted curves removed (ice_diffuse.dds,
+  galaxy_regions.py back, hyperlane_art.py deleted), strait.dds back to the original. New gfx/FX/strait.shader (vanilla
+  copy, pixel shader rewritten): a wide soft band (LANE_WIDTH of the strip; vanilla's line was ~3% of it) with 9 tracks
+  of thin light streaks rushing along the lane both ways (vGlobalTime), see-through (max alpha 0.38, band 0.07),
+  calmer zoomed far out. uv.y scale along the strip is unknown: if streaks come out too few/many, tune LANE_DENSITY.
+  NOT verified in game.
