@@ -24,6 +24,7 @@ Three panels: the country list (flag, tag, number of states, `required / recomme
   - It saves the base or an ideology flag in all 3 sizes HOI4 needs (82x52, 41x26, 10x7).
 - **National ideas**, **OOB**: the starting national spirits, and divisions or ships per unit file.
 - **Edit files**: the raw history, country, character and OOB files. Press **Save (Ctrl+S)** after editing.
+- **Events & decisions...** opens the separate event and decision editor for the selected country. Create or edit English localization for event titles, descriptions and choices, and choose event artwork from the mod's registered GFX sprites. The preview uses the mod's event-window frame, picture clip and option-button sprites, and renders localization line breaks and color codes. Decisions have editable title/description localization and selectable GFX icons with a preview. Event chains are included. The event editor's top bar links to the country, focus-tree and technology editors. Advanced Clausewitz script remains editable in the script pane.
 
 **Export missing report** writes a text file for all countries. From the command line: `python hoi4_country_editor.py <mod folder> --report`.
 
@@ -95,3 +96,7 @@ Edits change only the lines they touch, so comments and formatting are kept. Mov
 - **New file...**, **Save** (Ctrl+S), **Undo** (Ctrl+Z), **Redo** (Ctrl+Y), **Auto names**, **Edit file text...**: as in the focus editor.
 
 To check every tech file without the GUI: `python hoi4_tech_editor.py <mod folder> --check`.
+
+# HOI4 Event Editor
+
+`HOI4EventEditor.exe` (or `python hoi4_event_editor.py`) is built by the same GitHub Action and `build_exe.bat`. It can also be opened from the **Events & decisions...** button in HOI4 Country Editor. It creates and edits events, links delayed follow-up events, displays event chains, and creates/edits decisions. Pass a mod folder on the command line when the editor is not stored inside the mod.

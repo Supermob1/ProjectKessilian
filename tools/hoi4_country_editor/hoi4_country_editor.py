@@ -1133,6 +1133,23 @@ def run_gui(mod_root):
     head_flag.pack(side='left')
     head_name = ttk.Label(head, font=('Segoe UI', 14, 'bold'))
     head_name.pack(side='left', padx=10)
+
+    def open_event_decision_editor():
+        from hoi4_event_editor import run_editor
+        selected = state['country'].tag if state['country'] else 'REP'
+        run_editor(mod.root, root, selected)
+
+    def open_focus_editor():
+        from hoi4_focus_editor import run_gui
+        run_gui(mod.root)
+
+    def open_tech_editor():
+        from hoi4_tech_editor import run_gui
+        run_gui(mod.root)
+
+    ttk.Button(head, text='Events & decisions...', command=open_event_decision_editor).pack(side='right', padx=4)
+    ttk.Button(head, text='Technology', command=open_tech_editor).pack(side='right', padx=4)
+    ttk.Button(head, text='Focus tree', command=open_focus_editor).pack(side='right', padx=4)
     head_info = ttk.Label(right, foreground='#555')
     head_info.pack(fill='x', padx=6)
 

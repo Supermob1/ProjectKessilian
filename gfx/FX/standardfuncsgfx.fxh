@@ -910,12 +910,12 @@ PixelShader =
 		
 		float vAlpha1 = gradient_border_process_channel( vGradMix, vColor, vGBCamDistCh1, vNormal, vUV, TexCh1, TexCh2, vOutlineMult, vOutlineCutoff.x, GB_STRENGTH_CH1 );
 		// Now mix, the resultat with background
-		float TranspA = tex2D( TexCh2, vUV ).g;		
+		float TranspA = pow( saturate( tex2D( TexCh2, vUV ).g ), 0.55f );		
 		vColor = lerp( vColor, vGradMix, ( GB_OPACITY_NEAR + ( 1.0f - vGBCamDist ) * ( GB_OPACITY_FAR - GB_OPACITY_NEAR ) ) * TranspA );
 		
 		
 		float vAlpha2 = gradient_border_process_channel( vGradMix, vColor, vGBCamDistCh2, vNormal, vUV2, TexCh1, TexCh2, vOutlineMult, vOutlineCutoff.y, (1.0 - vAlpha1 * GB_STRENGTH_CH1 * GB_FIRST_LAYER_PRIORITY) * GB_STRENGTH_CH2 );
-		float TranspB = tex2D( TexCh2, vUV2 ).g;
+		float TranspB = pow( saturate( tex2D( TexCh2, vUV2 ).g ), 0.55f );
 		vColor = lerp( vColor, vGradMix, ( GB_OPACITY_NEAR + ( 1.0f - vGBCamDist ) * ( GB_OPACITY_FAR - GB_OPACITY_NEAR ) ) * TranspB );
 		
 	//vColor = GetOverlay( vColor, ToLinear(vGradMix), 0.80);

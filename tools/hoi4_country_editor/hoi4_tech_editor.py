@@ -457,6 +457,22 @@ def run_gui(mod_root):
     ttk.Label(bar, text=' Folder').pack(side='left')
     folder_pick = ttk.Combobox(bar, state='readonly', width=24)
     folder_pick.pack(side='left', padx=2)
+
+    def open_events_editor():
+        from hoi4_event_editor import run_editor
+        run_editor(mod.root, root, 'REP')
+
+    def open_focus_editor():
+        from hoi4_focus_editor import run_gui
+        run_gui(mod.root)
+
+    def open_country_editor():
+        from hoi4_country_editor import run_gui
+        run_gui(mod.root)
+
+    ttk.Button(bar, text='Events & decisions', command=open_events_editor).pack(side='right', padx=2)
+    ttk.Button(bar, text='Focus tree', command=open_focus_editor).pack(side='right', padx=2)
+    ttk.Button(bar, text='Country', command=open_country_editor).pack(side='right', padx=2)
     status = ttk.Label(root, anchor='w')
     status.pack(side='bottom', fill='x')
 

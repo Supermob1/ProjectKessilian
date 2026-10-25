@@ -30,37 +30,18 @@ generic_debug = {
 			}
 		}
 	}
-
-	# ---- HOD operation system: test helpers ----
-	# Debug: CIS and the Republic go to war (if they are not already), to test the lane and the fleet
-	HOD_debug_test_war = {
+	# Debug: start a duel now between a random duelist of ours and an enemy one (HOD_duel_fight), anywhere on the map.
+	HOD_debug_clone_war = {
 		cost = 0
 		fire_only_once = no
-		icon = generic_operation
-		available = { CIS = { NOT = { has_war_with = REP } } }
-		complete_effect = {
-			CIS = { declare_war_on = { target = REP type = annex_everything } }
+		visible = {
+			is_debug = yes
 		}
-	}
-	# Debug: park a Republic garrison fleet in space next to Coruscant (Coruscant Sector), to test if it blocks invasions
-	HOD_debug_spawn_garrison_fleet = {
-		cost = 0
-		fire_only_once = no
-		icon = generic_operation
-		complete_effect = { REP = { load_oob = "HOD_test_space_garrison" } }
-	}
-	# Debug: white peace between the two sides, however many allies joined:
-	# every country on the Republic side makes peace with every country it is at war with
-	HOD_debug_test_peace = {
-		cost = 0
-		fire_only_once = no
-		icon = generic_operation
-		available = { CIS = { has_war_with = REP } }
+		available = {
+		}
+		icon = generic_spy
 		complete_effect = {
-			every_country = {
-				limit = { OR = { tag = REP is_in_faction_with = REP } }
-				every_enemy_country = { white_peace = PREV }
-			}
+			Clone_wars_start = yes
 		}
 	}
 }
