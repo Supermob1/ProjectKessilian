@@ -350,3 +350,12 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   unitstacks rebuilt (vanilla layout, 0/21 at the inner point, 1-8 / 11-18 toward neighbours). Lanes whose Through
   province doesn't touch both ends: 128 of 249 (was 116; the game accepted those). space_sectors.py rerun, sectors
   now stay inside their chart region. NOT verified in game: check error.log for province/unitstack warnings.
+- User approved the 6 extras. pdxwater.shader: AsteroidBelt (Hoth, Kessel, Geonosis), LaneGlow (Perlemian Trade Route,
+  Hydian Way, Corellian Run, Rimma Trade Route through the canon stops on this map, pulses running along them,
+  zoomed out), StarPulse (Mustafar's star, 6 s beat), 3 Comets on slow orbits round the galactic core. The per-planet
+  calls (rings too) are written by `space_fx.py` between the "space_fx near/far" markers from galaxy_planets.json.
+  Sector names baked faintly into the chart: `space_sectors.py labels` (additive, clear of planets and region names;
+  base copy WIPGFX/Assets/galaxy_chart_alpha_base.npy, deleted by galaxy_regions.py chart). Sluis Van Shipyards:
+  new ak.slv_yards + sluis_van_map orbit hook (needs Blender build + `military_buildings.py place Sluis Van` on the
+  user's machine). Malachor is not on the map, so no green glow. Previews space_fx_preview.png, space_belt_preview.png,
+  galaxy_chart_sectors_preview.png. NOT verified in game.
