@@ -331,41 +331,6 @@ PixelShader =
 			return vCol * vWisps * 0.45f * ( 1.0f - 0.6f * vChart );
 		}
 
-		// Space territory (test, the user 2026-10-25): Stellaris-like owner colour spread into the space round owned
-		// planets, visual only. Reads the map mode colours the engine puts in the gradient border texture (top half;
-		// GradientBorderChannel2.g = owned, as the zoomed-out globes in pdxmap.shader use them) at 3 rings x 12 taps
-		// round the pixel; the nearest owned taps win the colour, the fill fades out to TERRITORY_REACH map px.
-		static const float TERRITORY_REACH = 80.0f;     // map px of space a planet's owner colour reaches
-		static const float TERRITORY_FILL = 0.28f;      // fill strength
-		static const float TERRITORY_EDGE = 0.75f;      // outline strength (territory edge and country-country border)
-
-		float4 SpaceTerritory( float2 vUV )
-		{
-			float vGBHalfPix = 0.5f / GB_TextureHeight;
-			float2 vPx = float2( MAP_POW2_X / MAP_SIZE_X, MAP_POW2_Y / MAP_SIZE_Y );   // one map px in uv
-			float3 vSum = float3( 0.0f, 0.0f, 0.0f );
-			float vW = 0.0f;
-			float vFill = 0.0f;
-			for ( int r = 0; r < 3; ++r )
-			{
-				float fR = TERRITORY_REACH * ( 0.22f + 0.36f * r );                 // 18, 46, 75 px
-				float fNear = exp( -fR / 12.0f );                                  // nearer rings dominate the colour
-				for ( int i = 0; i < 12; ++i )
-				{
-					float a = 6.2832f * ( i + 0.5f * r ) / 12.0f;
-					float2 vTap = vUV + float2( cos( a ), sin( a ) ) * fR * vPx;
-					float2 vGB = float2( vTap.x, vTap.y * ( 0.5f - vGBHalfPix ) );
-					float vOwned = saturate( tex2Dlod( GradientBorderChannel2, float4( vGB, 0.0f, 0.0f ) ).g );
-					float3 vCol = tex2Dlod( GradientBorderChannel1, float4( vGB, 0.0f, 0.0f ) ).rgb;
-					vSum += vCol * vOwned * fNear;
-					vW += vOwned * fNear;
-					vFill = max( vFill, vOwned * ( 1.0f - fR / TERRITORY_REACH ) );
-				}
-			}
-			float3 vOwner = vW > 0.0f ? vSum / vW : float3( 0.0f, 0.0f, 0.0f );
-			return float4( vOwner, smoothstep( 0.0f, 0.35f, vFill ) );
-		}
-
 		// One star layer: one jittered star per grid cell, ~fDensity of cells lit
 		float StarLayer( float2 p, float fCell, float fDensity, float fSize, float fTime )
 		{
@@ -421,15 +386,6 @@ PixelShader =
 			static const float STAR_INTENSITY = 0.3f;
 			float vStarFade = lerp( 1.0f, 0.35f, saturate( ( vCamPos.y - 300.0f ) / 1500.0f ) );
 			vColor = lerp( vColor, vColor + vStarColor * vStars, STAR_INTENSITY * vStarFade * ( 0.5f + vArmMask ) );
-
-			// --- space territory (test): owner colour fill round owned planets, an outline at its edge, a line where two
-			// owners' space meets. Taps and fwidth stay outside any branch (they need uniform control flow)
-			float4 vTer = SpaceTerritory( Input.uv );
-			float vTerFade = smoothstep( 250.0f, 700.0f, vCamPos.y );
-			float vTerEdge = 1.0f - saturate( abs( vTer.a - 0.5f ) / ( fwidth( vTer.a ) * 1.5f + 0.0001f ) );
-			float vOwnerEdge = saturate( length( fwidth( vTer.rgb ) ) * 6.0f ) * step( 0.5f, vTer.a );
-			vColor += vTer.rgb * ( vTer.a * TERRITORY_FILL + vTerEdge * TERRITORY_EDGE ) * vTerFade;
-			vColor += float3( 0.85f, 0.85f, 0.85f ) * vOwnerEdge * TERRITORY_EDGE * 0.5f * vTerFade;
 
 			float vBloomAlpha = 0.0f;
 			gradient_border_apply( vColor, normal, Input.uv,
