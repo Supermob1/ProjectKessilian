@@ -307,6 +307,51 @@ PixelShader =
 			return vCol + float3( 0.003f, 0.005f, 0.012f );
 		}
 
+		// Drifting nebulae over the zoomed-out chart: one slowly flowing, domain-warped cloud field, coloured and
+		// concentrated in a few canon nebulae (centres = the planets' positions in WIPGFX/Assets/galaxy_planets.json)
+		float NebulaBlob( float2 vPos, float2 vCentre, float fRadius )
+		{
+			float2 d = ( vPos - vCentre ) / fRadius;
+			return exp( -dot( d, d ) );
+		}
+
+		float3 NebulaColor( float2 vPos, float vTime, float vChart )
+		{
+			float t = vTime * 0.01f;
+			float2 q = vPos * 0.0022f;
+			float2 w = float2( SpaceFbm( q + float2( t, 0.3f * t ) ), SpaceFbm( q + float2( 5.2f, 1.3f ) - 0.8f * t ) );
+			float n = SpaceFbm( q + 1.8f * w + float2( 0.0f, 0.5f * t ) );
+			float vWisps = smoothstep( 0.42f, 0.85f, n ) * ( 0.6f + 0.4f * w.x );
+
+			float3 vCol = float3( 0.10f, 0.16f, 0.30f ) * 0.35f;                                                  // faint everywhere
+			vCol += float3( 0.45f, 0.40f, 0.85f ) * NebulaBlob( vPos, float2( 1690.0f, 1887.0f ), 260.0f );   // Ghost Nebula (Umbara)
+			vCol += float3( 1.00f, 0.45f, 0.15f ) * NebulaBlob( vPos, float2( 2899.0f, 1848.0f ), 240.0f );   // the Maw (Kessel)
+			vCol += float3( 0.15f, 0.75f, 0.70f ) * NebulaBlob( vPos, float2( 2475.0f, 1045.0f ), 280.0f );   // Rishi Maze (Rishi, Kamino)
+			vCol += float3( 0.60f, 0.20f, 0.70f ) * NebulaBlob( vPos, float2( 250.0f, 1500.0f ), 420.0f );    // Unknown Regions
+			return vCol * vWisps * 0.45f * ( 1.0f - 0.6f * vChart );
+		}
+
+		// Saturn-like ring round a planet disc, in map units: a tilted ellipse of bands with a dark gap. The planet's land
+		// covers the inner part, so the ring passes behind the disc on both sides. Returns rgb and coverage in a.
+		float4 PlanetRing( float2 vPos, float2 vCentre, float fRadius, float fAngle, float fTilt, float3 vTint )
+		{
+			float2 d = vPos - vCentre;
+			float s = sin( fAngle );
+			float c = cos( fAngle );
+			float2 e = float2( d.x * c + d.y * s, ( d.y * c - d.x * s ) / fTilt );
+			float k = length( e ) / fRadius;
+			float vCover = smoothstep( 1.30f, 1.38f, k ) * ( 1.0f - smoothstep( 2.10f, 2.25f, k ) );
+			vCover *= 1.0f - 0.85f * exp( -( k - 1.80f ) * ( k - 1.80f ) / 0.0012f );                           // Cassini-style gap
+			vCover *= 0.55f + 0.45f * SpaceNoise( float2( k * 45.0f, 3.0f ) );                                       // banding
+			float vFar = e.y > 0.0f ? 0.7f : 1.0f;                                                                  // far half dimmer
+			return float4( vTint * vFar * ( 0.75f + 0.25f * SpaceNoise( float2( k * 9.0f, 8.0f ) ) ), vCover * 0.8f );
+		}
+
+		float3 ApplyRing( float3 vColor, float4 vRing )
+		{
+			return lerp( vColor, vRing.rgb, saturate( vRing.a ) );
+		}
+
 		// One star layer: one jittered star per grid cell, ~fDensity of cells lit
 		float StarLayer( float2 p, float fCell, float fDensity, float fSize, float fTime )
 		{
@@ -340,7 +385,7 @@ PixelShader =
 			float4 vIce = tex2D( IceDiffuse, Input.uv );   // rgb: the planets' atmospheres, a: the region chart
 			if ( vGalaxyFade > 0.0f )
 			{
-				vColor = lerp( vColor, GalaxyColor( vPos, vIce.a, vArmMask ) * GALAXY_BRIGHTNESS, vGalaxyFade );
+				vColor = lerp( vColor, ( GalaxyColor( vPos, vIce.a, vArmMask ) + NebulaColor( vPos, vTime, vIce.a ) ) * GALAXY_BRIGHTNESS, vGalaxyFade );
 				vArmMask *= vGalaxyFade;
 			}
 			// per-planet atmospheres: colormap_water_0.dds (black elsewhere) copied to map/terrain/ice_diffuse.dds by
@@ -362,6 +407,13 @@ PixelShader =
 			static const float STAR_INTENSITY = 0.3f;
 			float vStarFade = lerp( 1.0f, 0.35f, saturate( ( vCamPos.y - 300.0f ) / 1500.0f ) );
 			vColor = lerp( vColor, vColor + vStarColor * vStars, STAR_INTENSITY * vStarFade * ( 0.5f + vArmMask ) );
+
+			// --- planetary rings (centre and radius from WIPGFX/Assets/galaxy_planets.json; angle in radians, tilt = minor/major)
+			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 1818.0f, 2696.0f ), 60.0f, 0.35f, 0.38f, float3( 0.80f, 0.66f, 0.48f ) ) );  // Yavin IV (gas giant Yavin's moon)
+			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 428.0f, 604.0f ), 60.0f, -0.25f, 0.42f, float3( 0.62f, 0.70f, 0.78f ) ) );   // Endor (gas giant Endor's moon)
+			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 2686.0f, 2375.0f ), 60.0f, 0.15f, 0.34f, float3( 0.70f, 0.60f, 0.72f ) ) );  // Iego
+			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 2396.0f, 1461.0f ), 60.0f, -0.40f, 0.40f, float3( 0.72f, 0.70f, 0.50f ) ) ); // Nal Hutta
+			vColor = ApplyRing( vColor, PlanetRing( vPos, float2( 2466.0f, 2172.0f ), 60.0f, 0.55f, 0.36f, float3( 0.78f, 0.74f, 0.66f ) ) );  // Saleucami
 
 			float vBloomAlpha = 0.0f;
 			gradient_border_apply( vColor, normal, Input.uv,

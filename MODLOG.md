@@ -328,3 +328,16 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   asin(r)/(pi/2) of the radius along the rim direction -> features squeeze to the limb), light =
   lerp(PLANET_AMBIENT 0.28, PLANET_DAY 1.3, lambert^0.8) x limb darkening (PLANET_LIMB 0.3) + sun glint
   (PLANET_SPECULAR 0.18). Cloud code deleted. Numpy sim reads as lit 3D spheres.
+
+## Space sectors, nebulae, rings (2026-10-25)
+- User: space strategic regions redrawn as the canon sector map. `WIPGFX/plans & scripts/space_sectors.py`
+  (plan/write): planet sector from the cached infobox (research/<planet>/facts.json, SECTOR_FIX for gaps), each
+  sea province to the nearest planet's sector, split pieces merged into the neighbour they touch most, squeezed-out
+  sectors keep their nearest province. 60 old space regions -> 111 sector regions (ids 1..288, contiguous; old ids
+  reused). Land regions untouched (Haruun Kal / Wild Space lost their stray sea province). Preview
+  WIPGFX/Assets/space_sectors_preview.png. 23 planets have no canon sector found: their space joins neighbours.
+- pdxwater.shader: NebulaColor (domain-warped fbm drifting with time, zoomed-out only): Ghost Nebula (Umbara), the
+  Maw (Kessel), Rishi Maze, Unknown Regions + faint wisps everywhere. PlanetRing: tilted banded ring with a gap on
+  Yavin IV, Endor, Iego, Nal Hutta, Saleucami (drawn in the space pass, so it shows behind the globe on both sides).
+  Numpy twin previews: WIPGFX/Assets/space_fx_preview.png, space_ring_preview.png.
+- NOT verified in game: watch error.log for pdxwater.shader compile errors and the strategic region load.
