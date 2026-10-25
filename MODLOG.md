@@ -369,3 +369,5 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   Numpy twin with the bookmark owners: WIPGFX/Assets/space_territory_preview.png (country-country lines come out
   lacy). Unknown until tested: what the texture holds over space and in other map modes. To remove: delete the
   SpaceTerritory function and the 6 lines after the stars in main.
+- Space territory test removed (user: only shows in some map modes, and ugly: pale washed-out halos with lacy
+  edges in game). pdxwater.shader back to nebulae only.
