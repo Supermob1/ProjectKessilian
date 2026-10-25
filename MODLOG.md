@@ -394,3 +394,6 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   one network. From/To = provinces at the two nearest coast pixels (in a state), Through = the space province off the
   From coast. gen_hyperlanes.py rerun (288 rules); fix_lanes.py --dry: 0 to re-anchor. Preview
   WIPGFX/Assets/lane_network_preview.png. NOT verified in game (error.log: adjacency / THROUGH warnings).
+- Lanes: ends never in an impassable state (user: 85 lanes ended in one). lane_network.py only uses coast pixels of
+  provinces in passable states; Through falls back to the nearest space pixel when the way out is land. 288 lanes,
+  0 touching impassable states, fix_lanes --dry clean, gen_hyperlanes rerun.
