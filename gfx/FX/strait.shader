@@ -49,6 +49,7 @@ VertexStruct VS_OUTPUT
     float4  vPosition 	: PDX_POSITION;
     float2	vUV		  	: TEXCOORD0;
 	float3	vPos		: TEXCOORD1;
+	float2	vUVExtra	: TEXCOORD2;   // the engine's uv.zw (unused by vanilla; shown by LANE_DEBUG)
 };
 
 VertexShader =
@@ -68,6 +69,7 @@ VertexShader =
 			Out.vPosition.z = vNewZ;
 
 		   	Out.vUV = v.vUV.xy;
+			Out.vUVExtra = v.vUV.zw;
 			Out.vPos = vPos.rgb;
 
 			return Out;
@@ -85,7 +87,11 @@ PixelShader =
 		// hyperspace streaks seen from above: thin light lines rushing along the lane, both ways, over a faint glowing
 		// band. strait.dds is no longer read. uv.x runs across the strip (vanilla's line sat in its middle: the strip is
 		// much wider than the old line), uv.y along it (tiles).
-		static const float LANE_WIDTH     = 0.55f;   // share of the strip's width the band fills (vanilla line ~0.03)
+		// The strip's width is set by the engine (no define found); the band can fill all of it, not more.
+		static const float LANE_WIDTH     = 1.0f;    // share of the strip's width the band fills (vanilla line ~0.03)
+		static const float LANE_BASE_FAR  = 0.20f;   // the band's glow when zoomed fully out (readable on the chart)
+		static const int   LANE_DEBUG     = 0;       // 1: show what the engine sends (red = uv.x across, green = uv.y
+		                                             // along, blue = |uv.z|, white stripes = uv.w), to plan wider bands
 		static const float LANE_LANES     = 9.0f;    // streak tracks across the band
 		static const float LANE_SPEED     = 3.0f;    // streak speed, uv.y units per second
 		static const float LANE_DENSITY   = 0.35f;   // streak repeats per uv.y unit
@@ -120,13 +126,19 @@ PixelShader =
 			vStreak = vStreak * vStreak * step( vCycle, LANE_STREAK );
 			float vLine = vThin * vStreak * ( 0.5f + 0.5f * vRnd );
 
-			// zoomed far out the streaks shrink to a few pixels: let the calm band carry the lane there
-			float vFar = saturate( ( vCamPos.y - 600.0f ) / 1400.0f );
-			vLine *= 1.0f - 0.6f * vFar;
+			// zoomed out: a stronger band so the lanes read clearly on the chart, streaks a little calmer
+			float vFar = saturate( ( vCamPos.y - 500.0f ) / 1200.0f );
+			vLine *= 1.0f - 0.3f * vFar;
+			float vBase = lerp( LANE_BASE, LANE_BASE_FAR, vFar );
 
 			float3 vColor = lerp( LANE_COLOR, LANE_CORE, saturate( vLine * 1.5f ) );
-			float vAlpha = ( LANE_BASE * vBand + LANE_ALPHA * vLine ) * vEdge;
+			float vAlpha = ( vBase * vBand + LANE_ALPHA * vLine ) * vEdge;
 			vColor = ApplyDistanceFog( vColor, v.vPos );
+			if ( LANE_DEBUG == 1 )
+			{
+				float vStripe = step( 0.5f, frac( v.vUVExtra.y * 4.0f ) );
+				return float4( lerp( float3( frac( v.vUV.x ), frac( v.vUV.y ), saturate( abs( v.vUVExtra.x ) ) ), vec3( 1.0f ), vStripe * 0.5f ), 1.0f );
+			}
 			return float4( vColor, saturate( vAlpha ) );
 		}
 

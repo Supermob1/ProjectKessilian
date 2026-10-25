@@ -383,3 +383,7 @@ All map outputs are git-tracked: `git checkout -- map/` restores the originals. 
   of thin light streaks rushing along the lane both ways (vGlobalTime), see-through (max alpha 0.38, band 0.07),
   calmer zoomed far out. uv.y scale along the strip is unknown: if streaks come out too few/many, tune LANE_DENSITY.
   NOT verified in game.
+- Straits wider (user: much wider, readable zoomed out): the strip's width is the engine's (no define for it found),
+  so the band now fills all of it (LANE_WIDTH 1.0) and glows stronger zoomed out (LANE_BASE_FAR 0.20). LANE_DEBUG = 1
+  shows the strip's uv.x / uv.y and the unused uv.zw: if the engine sends a side direction there, the vertex shader
+  can push the strip wider than the engine draws it.
