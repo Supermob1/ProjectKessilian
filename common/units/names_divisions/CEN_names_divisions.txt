@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+CEN_INF_01 = {
+	name = "Cestus Security"
+
+	for_countries = { CEN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Cestus Security"
+
+	ordered = {
+	}
+}

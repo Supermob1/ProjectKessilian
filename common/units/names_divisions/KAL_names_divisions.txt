@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KAL_INF_01 = {
+	name = "Kaleesh Warriors"
+
+	for_countries = { KAL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Kaleesh Warriors"
+
+	ordered = {
+	}
+}

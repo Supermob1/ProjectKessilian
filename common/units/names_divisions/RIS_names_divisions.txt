@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+RIS_INF_01 = {
+	name = "Rishii Flock Guard"
+
+	for_countries = { RIS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Rishii Flock Guard"
+
+	ordered = {
+	}
+}

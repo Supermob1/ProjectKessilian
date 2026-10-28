@@ -59,3 +59,14 @@ guarantee_threat_reduction_40 = {
 		add_stability = -0.1
 	}
 }
+
+# HOD early war: nobody can be called into a war until HOD_total_war
+call_to_war_rule_total_war_only = {
+	type = call_to_war_rules
+	trigger = {
+		has_global_flag = HOD_total_war
+	}
+	ai_will_do = {
+		base = 0
+	}
+}

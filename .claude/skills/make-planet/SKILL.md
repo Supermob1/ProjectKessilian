@@ -88,12 +88,12 @@ the legend with X), victory points ringed in gold. Wait for the user's OK before
 | Stage | Command | When |
 |---|---|---|
 | Terrain | `python -B "$S/planet_terrain_gen.py" --<planet>` | planet has a repaint fn + flag (`--kadavo`, `--florrum`, `--korriban`, `--raxus`, `--raxus-prime`, `--felucia`). New planet: add `def <planet>(t, trees, city, h, labels, names, pid, rng)` + flag by copying the nearest one, `repaint_planet()` does the writing |
-| Models | `"F:/blender-4.2.23-windows-x64/blender.exe" -b --factory-startup --python "$S/military_buildings.py" -- models <prefix>` then `python -B "$S/military_buildings.py" <planet>_atlas` if one exists | only for new or changed landmark models; preview with `blender ... --python "$S/render_mesh.py" -- OUT.png a.mesh` |
+| Models | `"F:/Blender Foundation/Blender 5.2/blender.exe" -b --factory-startup --python "$S/military_buildings.py" -- models <prefix>` then `python -B "$S/military_buildings.py" <planet>_atlas` if one exists | only for new or changed landmark models; preview with `blender ... --python "$S/render_mesh.py" -- OUT.png a.mesh` |
 | Placement | `python -B "$S/military_buildings.py" <planet>_place` | the planet has one (korriban, florrum, kadavo) and the map changed |
 | FX | `python -B "$S/<planet>_fx.py"` (`kadavo_fx.py`, `florrum_fx.py`, `felucia_mist.py`) | exists and the map changed |
 | Globe | `python -B "$S/planet_terrain_gen.py" --globe-texture` | once, last, after any terrain/colour change |
 
-Blender gotchas: `export PYTHONPATH="$APPDATA/Blender Foundation/Blender/4.2/extensions/user_default"` (io_pdx_mesh),
+Blender gotchas: the scripts find io_pdx_mesh (STNH fork) in Blender 5.2's user extensions folder themselves,
 and Blender exits 0 even on a Python traceback: grep its output for `Traceback`. `render_mesh.py -- OUT.png a.mesh`
 writes OUT_oblique.png and OUT_top.png. Reused models (another planet's entities) must not be defined again: the
 planet's own .gfx/.asset list only its new meshes (PLACEMENT new_models).

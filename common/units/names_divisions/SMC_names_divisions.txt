@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+SMC_INF_01 = {
+	name = "Singing Mountain Riders"
+
+	for_countries = { SMC }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Singing Mountain Riders"
+
+	ordered = {
+	}
+}

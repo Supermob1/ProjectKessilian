@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+JDO_INF_01 = {
+	name = "Ossus Temple Guard"
+
+	for_countries = { JDO }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Ossus Temple Guard"
+
+	ordered = {
+	}
+}

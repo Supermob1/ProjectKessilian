@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+NBR_INF_01 = {
+	name = "Nightbrother Warriors"
+
+	for_countries = { NBR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Nightbrother Warriors"
+
+	ordered = {
+	}
+}

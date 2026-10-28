@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ICC_INF_01 = {
+	name = "Communications Center Guard"
+
+	for_countries = { ICC }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Communications Center Guard"
+
+	ordered = {
+	}
+}

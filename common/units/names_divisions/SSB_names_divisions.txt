@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+SSB_INF_01 = {
+	name = "SoroSuub Security"
+
+	for_countries = { SSB }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth SoroSuub Security"
+
+	ordered = {
+	}
+}

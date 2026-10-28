@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+CER_INF_01 = {
+	name = "Cerean Guard"
+
+	for_countries = { CER }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Cerean Guard"
+
+	ordered = {
+	}
+}

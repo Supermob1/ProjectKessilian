@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+BLW_INF_01 = {
+	name = "Balawai Militia"
+
+	for_countries = { BLW }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Balawai Militia"
+
+	ordered = {
+	}
+}

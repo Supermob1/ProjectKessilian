@@ -19,6 +19,7 @@ rule_group_ideology = {
 	rules = {
 		joining_rule_same_ideology
 		joining_rule_support_percentage
+		joining_rule_puppets_only
 	}
 }
 
@@ -113,6 +114,7 @@ rule_group_call_to_war = {
 		call_to_war_rule_faction_leader_only
 		call_to_war_rule_major_only
 		call_to_war_rule_independent_only
+		call_to_war_rule_total_war_only
 	}
 }
 

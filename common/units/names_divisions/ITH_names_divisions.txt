@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ITH_INF_01 = {
+	name = "Herd Ship Guard"
+
+	for_countries = { ITH }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Herd Ship Guard"
+
+	ordered = {
+	}
+}

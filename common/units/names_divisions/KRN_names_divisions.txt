@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KRN_INF_01 = {
+	name = "Hive Warriors"
+
+	for_countries = { KRN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Hive Warriors"
+
+	ordered = {
+	}
+}

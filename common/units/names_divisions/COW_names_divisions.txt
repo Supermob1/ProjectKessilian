@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+COW_INF_01 = {
+	name = "Coway Warriors"
+
+	for_countries = { COW }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Coway Warriors"
+
+	ordered = {
+	}
+}

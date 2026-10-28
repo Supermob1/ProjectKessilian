@@ -1,0 +1,23 @@
+﻿# HOD: SSB (faction_templates.py)
+
+division_template = {
+	name = "SoroSuub Security"
+	division_names_group = SSB_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "SoroSuub Security"
+		location = 6362
+		start_experience_factor = 0.2
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+NOG_INF_01 = {
+	name = "Noghri Death Commandos"
+
+	for_countries = { NOG }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Noghri Death Commandos"
+
+	ordered = {
+	}
+}

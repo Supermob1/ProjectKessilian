@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+TLZ_INF_01 = {
+	name = "Talz Warriors"
+
+	for_countries = { TLZ }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Talz Warriors"
+
+	ordered = {
+	}
+}

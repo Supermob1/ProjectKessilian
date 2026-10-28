@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+DUG_INF_01 = {
+	name = "Dug Clan Warriors"
+
+	for_countries = { DUG }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Dug Clan Warriors"
+
+	ordered = {
+	}
+}

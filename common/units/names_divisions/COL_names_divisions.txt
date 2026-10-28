@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+COL_INF_01 = {
+	name = "Colicoid Nest Guard"
+
+	for_countries = { COL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Colicoid Nest Guard"
+
+	ordered = {
+	}
+}

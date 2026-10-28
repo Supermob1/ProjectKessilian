@@ -1,0 +1,23 @@
+﻿# HOD: UTP (faction_templates.py)
+
+division_template = {
+	name = "Utai Sinkhole Guard"
+	division_names_group = UTP_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Utai Sinkhole Guard"
+		location = 252
+		start_experience_factor = 0.2
+	}
+}

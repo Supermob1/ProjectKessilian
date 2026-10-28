@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+LOR_INF_01 = {
+	name = "Loronar Security"
+
+	for_countries = { LOR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Loronar Security"
+
+	ordered = {
+	}
+}

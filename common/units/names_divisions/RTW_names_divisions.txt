@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+RTW_INF_01 = {
+	name = "Kirske's Warband"
+
+	for_countries = { RTW }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Kirske's Warband"
+
+	ordered = {
+	}
+}

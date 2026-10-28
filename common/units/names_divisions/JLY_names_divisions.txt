@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+JLY_INF_01 = {
+	name = "Loyalist Militia"
+
+	for_countries = { JLY }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Loyalist Militia"
+
+	ordered = {
+	}
+}

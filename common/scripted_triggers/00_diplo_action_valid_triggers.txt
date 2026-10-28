@@ -1,0 +1,35 @@
+
+# is_diplomatic_action_valid_TOKEN can be used for diplo action validity checks. if not valid it won't appear
+# scope is target country
+# from is action initatior country
+
+is_diplomatic_action_valid_stage_coup = {
+	NOT = { has_dlc = "La Resistance" }
+}
+
+is_diplomatic_action_valid_boost_party_popularity = {
+	NOT = { has_dlc = "La Resistance" }
+}
+
+# HOD early war (until the global flag HOD_total_war): wars stay one against one, help only goes in as volunteers / lend-lease
+is_diplomatic_action_valid_generate_wargoal = {
+	HOD_can_be_attacked = yes
+}
+
+is_diplomatic_action_valid_declare_war = {
+	HOD_can_be_attacked = yes
+}
+
+is_diplomatic_action_valid_guarantee = {
+	has_global_flag = HOD_total_war
+}
+
+is_diplomatic_action_valid_join_faction = {
+	OR = {
+		has_global_flag = HOD_total_war
+		AND = {
+			has_war = no
+			FROM = { has_war = no }
+		}
+	}
+}

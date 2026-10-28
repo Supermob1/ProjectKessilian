@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KHO_INF_01 = {
+	name = "Khoonda Militia"
+
+	for_countries = { KHO }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Khoonda Militia"
+
+	ordered = {
+	}
+}

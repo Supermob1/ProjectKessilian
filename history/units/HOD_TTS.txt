@@ -1,0 +1,23 @@
+﻿# HOD: TTS (faction_templates.py)
+
+division_template = {
+	name = "Tetsu Hunters"
+	division_names_group = TTS_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Tetsu Hunters"
+		location = 13974
+		start_experience_factor = 0.2
+	}
+}

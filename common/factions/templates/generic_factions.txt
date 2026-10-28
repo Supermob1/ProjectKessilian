@@ -20,6 +20,7 @@ faction_template_generic_dominance = {
 	}
 
 	default_rules = {
+		call_to_war_rule_total_war_only
 		joining_rule_same_continent_only
 		generate_wargoal_threat_reduction_20
 	}
@@ -51,6 +52,7 @@ faction_template_industrial_focus = {
 	}
 
 	default_rules = {
+		call_to_war_rule_total_war_only
 		joining_rule_same_ideology
 		joining_rule_same_continent_only
 		joining_rule_has_no_war

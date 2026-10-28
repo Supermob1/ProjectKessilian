@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+GIV_INF_01 = {
+	name = "Dodecapolis Guard"
+
+	for_countries = { GIV }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Dodecapolis Guard"
+
+	ordered = {
+	}
+}

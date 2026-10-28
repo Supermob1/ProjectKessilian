@@ -1,0 +1,23 @@
+﻿# HOD: TUS (faction_templates.py)
+
+division_template = {
+	name = "Tusken Raiders"
+	division_names_group = TUS_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Tusken Raiders"
+		location = 2989
+		start_experience_factor = 0.2
+	}
+}

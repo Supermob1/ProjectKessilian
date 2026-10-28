@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KUQ_INF_01 = {
+	name = "Kuati House Guard"
+
+	for_countries = { KUQ }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Kuati House Guard"
+
+	ordered = {
+	}
+}

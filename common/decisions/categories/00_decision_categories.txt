@@ -30,3 +30,10 @@ CIS_separatist_council_category = {
 CIS_Sidious_Suspicions = {
 	icon = generic_political_actions
 }
+# HOD early war test decisions (common/decisions/HOD_early_war_tests.txt), human players only: delete when done testing
+HOD_early_war_tests = {
+	icon = generic_political_actions
+	visible = {
+		is_ai = no
+	}
+}

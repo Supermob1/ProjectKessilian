@@ -1,0 +1,66 @@
+﻿capital = 853
+
+oob = "HOD_BHH"
+
+set_research_slots = 2
+set_stability = 0.6
+set_war_support = 0.02
+
+######CHARACTERS######
+
+
+set_technology = {
+	infantry_weapons = 1
+	support_weapons = 1
+	tech_support = 1
+	tech_trucks = 1
+	basic_train = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_signal_company = 1
+	tech_logistics_company = 1
+	tech_maintenance_company = 1
+	tech_field_hospital = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	interwar_antitank = 1
+	early_fighter = 1
+	transport = 1
+	old_republic_equipment = 1
+}
+
+set_popularities = {
+	akaanadocrat = 20
+	unitist = 0
+	corist = 80
+	distributionist = 0
+	corporate_consortium = 0
+	trade_democrat = 0
+	ruusanist = 0
+	inclusivist = 0
+	force_magocracy = 0
+}
+set_politics = {
+	ruling_party = corist
+	last_election = "999.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 2000
+	producer = BHH
+}
+
+# HOD: new leaders (WIPGFX/portraits_research/add_leaders.py)
+recruit_character = BHH_george
+recruit_character = BHH_riot_mar
+recruit_character = BHH_noggox
+recruit_character = BHH_zingo_gabnit
+recruit_character = BHH_rav
+recruit_character = BHH_seleno_chandro
+recruit_character = BHH_t_onga
+recruit_character = BHH_losha_tarkon
+recruit_character = BHH_vail_tormin

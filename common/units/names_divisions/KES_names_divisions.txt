@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KES_INF_01 = {
+	name = "Kessel Royal Guard"
+
+	for_countries = { KES }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Kessel Royal Guard"
+
+	ordered = {
+	}
+}

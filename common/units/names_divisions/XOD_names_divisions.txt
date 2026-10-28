@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+XOD_INF_01 = {
+	name = "Xodlak Family Guard"
+
+	for_countries = { XOD }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Xodlak Family Guard"
+
+	ordered = {
+	}
+}

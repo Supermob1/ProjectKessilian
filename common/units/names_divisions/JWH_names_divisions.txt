@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+JWH_INF_01 = {
+	name = "Guardians of the Whills"
+
+	for_countries = { JWH }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Guardians of the Whills"
+
+	ordered = {
+	}
+}

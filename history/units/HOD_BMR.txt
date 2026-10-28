@@ -1,0 +1,23 @@
+﻿# HOD: BMR (faction_templates.py)
+
+division_template = {
+	name = "Monastery Guard"
+	division_names_group = BMR_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Monastery Guard"
+		location = 386
+		start_experience_factor = 0.2
+	}
+}

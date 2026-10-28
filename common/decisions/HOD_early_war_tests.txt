@@ -1,0 +1,87 @@
+# HOD early war: test decisions for the local-war system (events/HOD_early_war.txt). Human players only, free, repeatable.
+# Delete this file and the HOD_early_war_tests category when done testing.
+HOD_early_war_tests = {
+
+	# 1. what phase are we in, and which local wars are running (one message per war, one after the other)
+	HOD_ewt_report = {
+		cost = 0
+		fire_only_once = no
+		icon = generic_spy
+		ai_will_do = { base = 0 }
+		complete_effect = {
+			country_event = HOD_early_war.10
+		}
+	}
+
+	# 2. attack a random country that can be attacked in the early war (not at war, no faction, no overlord)
+	HOD_ewt_attack = {
+		cost = 0
+		fire_only_once = no
+		icon = generic_spy
+		ai_will_do = { base = 0 }
+		complete_effect = {
+			if = {
+				limit = { any_neighbor_country = { HOD_can_be_attacked = yes NOT = { tag = ROOT } } }
+				random_neighbor_country = {
+					limit = { HOD_can_be_attacked = yes NOT = { tag = ROOT } }
+					ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+				}
+			}
+			else = {
+				random_country = {
+					limit = { HOD_can_be_attacked = yes NOT = { tag = ROOT } }
+					ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+				}
+			}
+		}
+	}
+
+	# 3. as if the attacked worlds capitulated now: the attacker's bloc annexes them
+	HOD_ewt_attacker_wins = {
+		cost = 0
+		fire_only_once = no
+		icon = generic_spy
+		ai_will_do = { base = 0 }
+		available = { any_country = { has_country_flag = HOD_proxy_target } }
+		complete_effect = {
+			every_country = {
+				limit = { has_country_flag = HOD_proxy_target }
+				HOD_proxy_attacker_wins = yes
+			}
+		}
+	}
+
+	# 4. jump the local wars to the 3-month mark: the attacker fails, white peace, the other bloc annexes
+	HOD_ewt_skip_three_months = {
+		cost = 0
+		fire_only_once = no
+		icon = generic_spy
+		ai_will_do = { base = 0 }
+		available = { any_country = { has_country_flag = HOD_proxy_target } }
+		complete_effect = {
+			every_country = {
+				limit = { has_country_flag = HOD_proxy_target }
+				set_variable = { HOD_proxy_days = 90 }
+				country_event = HOD_early_war.1
+			}
+		}
+	}
+
+	# 5. switch total war on (every lock lifted) or back off
+	HOD_ewt_total_war_on = {
+		cost = 0
+		fire_only_once = no
+		icon = generic_spy
+		ai_will_do = { base = 0 }
+		visible = { NOT = { has_global_flag = HOD_total_war } }
+		complete_effect = { set_global_flag = HOD_total_war }
+	}
+	HOD_ewt_total_war_off = {
+		cost = 0
+		fire_only_once = no
+		icon = generic_spy
+		ai_will_do = { base = 0 }
+		visible = { has_global_flag = HOD_total_war }
+		complete_effect = { clr_global_flag = HOD_total_war }
+	}
+}

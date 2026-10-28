@@ -1,0 +1,12 @@
+# HOD early war: before HOD_total_war a country can only be attacked if nobody else would be dragged in
+# (no war already going on, no faction or overlord to call)
+HOD_can_be_attacked = {
+	OR = {
+		has_global_flag = HOD_total_war
+		AND = {
+			has_war = no
+			is_in_faction = no
+			is_subject = no
+		}
+	}
+}

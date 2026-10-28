@@ -1,0 +1,23 @@
+﻿# HOD: CER (faction_templates.py)
+
+division_template = {
+	name = "Cerean Guard"
+	division_names_group = CER_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Cerean Guard"
+		location = 4033
+		start_experience_factor = 0.2
+	}
+}

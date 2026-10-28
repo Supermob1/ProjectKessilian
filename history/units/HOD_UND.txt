@@ -1,0 +1,23 @@
+﻿# HOD: UND (faction_templates.py)
+
+division_template = {
+	name = "Level 1313 Gang"
+	division_names_group = UND_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Level 1313 Gang"
+		location = 12454
+		start_experience_factor = 0.2
+	}
+}

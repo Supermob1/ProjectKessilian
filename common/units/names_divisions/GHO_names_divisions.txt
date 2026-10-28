@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+GHO_INF_01 = {
+	name = "Ghorman Guild Guard"
+
+	for_countries = { GHO }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Ghorman Guild Guard"
+
+	ordered = {
+	}
+}

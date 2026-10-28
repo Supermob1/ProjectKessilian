@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+DLK_INF_01 = {
+	name = "Dulok Raiders"
+
+	for_countries = { DLK }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Dulok Raiders"
+
+	ordered = {
+	}
+}

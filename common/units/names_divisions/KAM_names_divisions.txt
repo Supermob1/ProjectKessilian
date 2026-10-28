@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KAM_INF_01 = {
+	name = "Kaminoan Guard"
+
+	for_countries = { KAM }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Kaminoan Guard"
+
+	ordered = {
+	}
+}

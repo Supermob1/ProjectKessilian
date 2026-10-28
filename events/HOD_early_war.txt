@@ -1,0 +1,136 @@
+add_namespace = HOD_early_war
+
+# monthly check on an attacked world (HOD_start_proxy_war)
+country_event = {
+	id = HOD_early_war.1
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = HOD_total_war
+					NOT = { has_country_flag = HOD_proxy_target }
+					NOT = { var:HOD_proxy_attacker = { has_war_with = PREV } }
+				}
+			}
+			HOD_clear_proxy_war = yes
+		}
+		else = {
+			add_to_variable = { HOD_proxy_days = 30 }
+			if = {
+				limit = {
+					OR = {
+						check_variable = { HOD_proxy_days > 89 }
+						all_owned_state = { is_controlled_by = ROOT }
+					}
+				}
+				HOD_proxy_attacker_fails = yes
+			}
+			else = {
+				country_event = { id = HOD_early_war.1 days = 30 }
+			}
+		}
+	}
+}
+
+# the early war ends: alliances, guarantees and calls to arms work again (scheduled by confederacy.1)
+country_event = {
+	id = HOD_early_war.2
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = HOD_total_war
+	}
+}
+
+# --- report (test decision HOD_ewt_report): header, then one message per local war, one after the other
+country_event = {
+	id = HOD_early_war.10
+	title = HOD_early_war.10.t
+	desc = {
+		text = HOD_early_war.10.d_total
+		trigger = { has_global_flag = HOD_total_war }
+	}
+	desc = {
+		text = HOD_early_war.10.d_early
+		trigger = { NOT = { has_global_flag = HOD_total_war } }
+	}
+	picture = GFX_country_event_raxus_address
+	is_triggered_only = yes
+	option = {
+		name = HOD_early_war.ok
+		if = {
+			limit = { any_country = { has_country_flag = HOD_proxy_target } }
+			country_event = HOD_early_war.11
+		}
+	}
+}
+
+country_event = {
+	id = HOD_early_war.11
+	title = HOD_early_war.11.t
+	desc = {
+		text = HOD_early_war.11.d_rep
+		trigger = { event_target:HOD_ew_world = { has_country_flag = HOD_proxy_rep_attacks } }
+	}
+	desc = {
+		text = HOD_early_war.11.d_cis
+		trigger = { event_target:HOD_ew_world = { has_country_flag = HOD_proxy_cis_attacks } }
+	}
+	desc = {
+		text = HOD_early_war.11.d_other
+		trigger = { event_target:HOD_ew_world = { NOT = { has_country_flag = HOD_proxy_rep_attacks has_country_flag = HOD_proxy_cis_attacks } } }
+	}
+	picture = GFX_country_event_raxus_address
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = { has_country_flag = HOD_proxy_target NOT = { has_country_flag = HOD_ewt_reported } }
+			set_country_flag = HOD_ewt_reported
+			save_event_target_as = HOD_ew_world
+			var:HOD_proxy_attacker = { save_event_target_as = HOD_ew_attacker }
+			ROOT = { set_variable = { HOD_ewt_days = PREV.HOD_proxy_days } }
+		}
+	}
+	option = {
+		name = HOD_early_war.ok
+		if = {
+			limit = { any_country = { has_country_flag = HOD_proxy_target NOT = { has_country_flag = HOD_ewt_reported } } }
+			country_event = HOD_early_war.11
+		}
+		else = {
+			every_country = { clr_country_flag = HOD_ewt_reported }
+		}
+	}
+}
+
+# --- outcomes, shown to human players (HOD_early_war_effects.txt)
+country_event = {
+	id = HOD_early_war.20
+	title = HOD_early_war.20.t
+	desc = HOD_early_war.20.d
+	picture = GFX_country_event_raxus_address
+	is_triggered_only = yes
+	option = { name = HOD_early_war.ok }
+}
+
+country_event = {
+	id = HOD_early_war.21
+	title = HOD_early_war.21.t
+	desc = HOD_early_war.21.d
+	picture = GFX_country_event_raxus_address
+	is_triggered_only = yes
+	option = { name = HOD_early_war.ok }
+}
+
+country_event = {
+	id = HOD_early_war.22
+	title = HOD_early_war.22.t
+	desc = HOD_early_war.22.d
+	picture = GFX_country_event_raxus_address
+	is_triggered_only = yes
+	option = { name = HOD_early_war.ok }
+}

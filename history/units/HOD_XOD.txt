@@ -1,0 +1,23 @@
+﻿# HOD: XOD (faction_templates.py)
+
+division_template = {
+	name = "Xodlak Family Guard"
+	division_names_group = XOD_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Xodlak Family Guard"
+		location = 2603
+		start_experience_factor = 0.2
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KOR_INF_01 = {
+	name = "Korunnai Partisans"
+
+	for_countries = { KOR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Korunnai Partisans"
+
+	ordered = {
+	}
+}

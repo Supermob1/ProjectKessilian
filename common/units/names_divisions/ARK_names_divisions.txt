@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ARK_INF_01 = {
+	name = "Arkanian Guard"
+
+	for_countries = { ARK }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Arkanian Guard"
+
+	ordered = {
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+DIA_INF_01 = {
+	name = "Diathim Wardens"
+
+	for_countries = { DIA }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Diathim Wardens"
+
+	ordered = {
+	}
+}

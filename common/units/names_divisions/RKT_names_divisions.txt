@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+RKT_INF_01 = {
+	name = "Rakatan Warriors"
+
+	for_countries = { RKT }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Rakatan Warriors"
+
+	ordered = {
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+SLV_INF_01 = {
+	name = "Sluissi Yard Guard"
+
+	for_countries = { SLV }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Sluissi Yard Guard"
+
+	ordered = {
+	}
+}

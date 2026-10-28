@@ -122,8 +122,8 @@ REP_the_Grand_Army = {
 			}
 		}
 		cancel_trigger = {
-			NOT = { 
-				controls_state = 32
+			NOT = {
+				32 = { controller = { OR = { tag = REP is_in_faction_with = REP } } }	# HOD: Kamino is KAM's, in the Republic's faction
 			}
 		}
 		icon = mission_icon     # For GFX_decision_mission_icon

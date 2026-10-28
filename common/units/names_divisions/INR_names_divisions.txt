@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+INR_INF_01 = {
+	name = "Inrokini Family Guard"
+
+	for_countries = { INR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Inrokini Family Guard"
+
+	ordered = {
+	}
+}

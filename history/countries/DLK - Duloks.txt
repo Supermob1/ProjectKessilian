@@ -1,0 +1,65 @@
+﻿capital = 587
+
+oob = "HOD_DLK"
+
+set_research_slots = 2
+set_stability = 0.6
+set_war_support = 0.02
+
+######CHARACTERS######
+recruit_character = DLK_gorneesh
+
+set_technology = {
+	infantry_weapons = 1
+	support_weapons = 1
+	tech_support = 1
+	tech_trucks = 1
+	basic_train = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_signal_company = 1
+	tech_logistics_company = 1
+	tech_maintenance_company = 1
+	tech_field_hospital = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	interwar_antitank = 1
+	early_fighter = 1
+	transport = 1
+	old_republic_equipment = 1
+}
+
+set_popularities = {
+	akaanadocrat = 80
+	unitist = 0
+	corist = 0
+	distributionist = 20
+	corporate_consortium = 0
+	trade_democrat = 0
+	ruusanist = 0
+	inclusivist = 0
+	force_magocracy = 0
+}
+set_politics = {
+	ruling_party = akaanadocrat
+	last_election = "999.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 2000
+	producer = DLK
+}
+
+# HOD: new leaders (WIPGFX/portraits_research/add_leaders.py)
+recruit_character = DLK_marlox
+recruit_character = DLK_noa_briqualon
+recruit_character = DLK_vulgarr
+recruit_character = DLK_dracos
+recruit_character = DLK_ulgo
+recruit_character = DLK_feena_d_asta
+recruit_character = DLK_ragez_d_asta
+recruit_character = DLK_ars_dangor

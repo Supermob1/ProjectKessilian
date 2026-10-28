@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+MAH_INF_01 = {
+	name = "Mandal Security"
+
+	for_countries = { MAH }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Mandal Security"
+
+	ordered = {
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+TUS_INF_01 = {
+	name = "Tusken Raiders"
+
+	for_countries = { TUS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Tusken Raiders"
+
+	ordered = {
+	}
+}

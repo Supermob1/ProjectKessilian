@@ -24,6 +24,20 @@ country_event = { # The Raxus Address
 			add_to_faction = TDF
 			add_to_faction = TCU
 			add_to_faction = ZGY
+			# HOD: new tags that side with the Confederacy (SSB and GIV leave the Corporate Alliance / Neutral Systems first)
+			every_country = {
+				limit = {
+					OR = {
+						tag = SSB  tag = KAL  tag = GIV  tag = COL  tag = SKK
+						tag = BTK  tag = BLW  tag = GAF  tag = GEO
+					}
+					NOT = { is_in_faction_with = ROOT }
+				}
+				if = { limit = { is_in_faction = yes } leave_faction = yes }
+				ROOT = { add_to_faction = PREV }
+			}
+			# HOD early war: one year of local wars before full alliances (events/HOD_early_war.txt)
+			country_event = { id = HOD_early_war.2 days = 365 }
 			
 
 		}

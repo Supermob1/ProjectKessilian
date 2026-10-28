@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+MAR_INF_01 = {
+	name = "Marit Rebels"
+
+	for_countries = { MAR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Marit Rebels"
+
+	ordered = {
+	}
+}

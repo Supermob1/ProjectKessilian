@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+EWK_INF_01 = {
+	name = "Bright Tree Warriors"
+
+	for_countries = { EWK }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Bright Tree Warriors"
+
+	ordered = {
+	}
+}

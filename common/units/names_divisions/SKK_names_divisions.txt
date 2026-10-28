@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+SKK_INF_01 = {
+	name = "Skakoan Pressure Guard"
+
+	for_countries = { SKK }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Skakoan Pressure Guard"
+
+	ordered = {
+	}
+}

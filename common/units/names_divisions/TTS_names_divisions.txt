@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+TTS_INF_01 = {
+	name = "Tetsu Hunters"
+
+	for_countries = { TTS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Tetsu Hunters"
+
+	ordered = {
+	}
+}

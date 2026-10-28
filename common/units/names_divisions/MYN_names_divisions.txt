@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+MYN_INF_01 = {
+	name = "Myneyrsh Archers"
+
+	for_countries = { MYN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Myneyrsh Archers"
+
+	ordered = {
+	}
+}

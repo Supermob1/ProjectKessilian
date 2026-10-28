@@ -1,0 +1,27 @@
+on_actions = {
+	# ROOT is the declarer, FROM is the war target
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = HOD_total_war }
+					FROM = { NOT = { has_country_flag = HOD_proxy_target } }
+				}
+				FROM = { HOD_start_proxy_war = yes }
+			}
+		}
+	}
+
+	# ROOT is the capitulated country, FROM is the winner
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = HOD_proxy_target
+					NOT = { has_global_flag = HOD_total_war }
+				}
+				HOD_proxy_attacker_wins = yes
+			}
+		}
+	}
+}

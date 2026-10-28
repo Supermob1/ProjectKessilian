@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+DEV_INF_01 = {
+	name = "Devaronian Guard"
+
+	for_countries = { DEV }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Devaronian Guard"
+
+	ordered = {
+	}
+}

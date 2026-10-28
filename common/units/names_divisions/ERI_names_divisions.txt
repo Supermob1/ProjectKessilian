@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ERI_INF_01 = {
+	name = "Erighal Family Guard"
+
+	for_countries = { ERI }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Erighal Family Guard"
+
+	ordered = {
+	}
+}

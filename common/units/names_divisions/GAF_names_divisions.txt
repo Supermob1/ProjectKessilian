@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+GAF_INF_01 = {
+	name = "Colonial Militia"
+
+	for_countries = { GAF }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Colonial Militia"
+
+	ordered = {
+	}
+}

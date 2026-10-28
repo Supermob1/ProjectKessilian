@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+BTK_INF_01 = {
+	name = "Baktoid Security Droids"
+
+	for_countries = { BTK }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Baktoid Security Droids"
+
+	ordered = {
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+SLK_INF_01 = {
+	name = "Ahto City Guard"
+
+	for_countries = { SLK }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Ahto City Guard"
+
+	ordered = {
+	}
+}

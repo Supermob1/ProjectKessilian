@@ -143,6 +143,17 @@ add_equipment_to_stockpile = {
 	producer = TCU
 }
 
+add_to_faction = KAM   # HOD: member world with its own government (new_tags.py)
+add_to_faction = DEV   # HOD: member world with its own government (new_tags.py)
+add_to_faction = GRN   # HOD: member world with its own government (new_tags.py)
+add_to_faction = KDR   # HOD: member world with its own government (new_tags.py)
+add_to_faction = DUR   # HOD: member world with its own government (new_tags.py)
+add_to_faction = JLY   # HOD: member world with its own government (new_tags.py)
+add_to_faction = SHI   # HOD: member world with its own government (new_tags.py)
+add_to_faction = ARK   # HOD: member world with its own government (new_tags.py)
+add_to_faction = TRH   # HOD: member world with its own government (new_tags.py)
+add_to_faction = ICC   # HOD: member world with its own government (new_tags.py)
+
 # HOD: starting walker / tank designs (faction_templates.py)
 if = {
 	limit = { has_dlc = "No Step Back" }
@@ -176,3 +187,13 @@ if = {
 	}
 }
 # HOD: end of starting designs
+
+# HOD: start-date faction, member worlds of the Senate
+add_to_faction = RNB
+add_to_faction = MNC
+add_to_faction = KAS
+add_to_faction = PAN
+add_to_faction = ROD
+add_to_faction = RYL
+add_to_faction = TAR
+add_to_faction = ESS

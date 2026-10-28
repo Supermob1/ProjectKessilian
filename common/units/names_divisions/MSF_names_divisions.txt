@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+MSF_INF_01 = {
+	name = "Mustafarian Nest Guard"
+
+	for_countries = { MSF }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Mustafarian Nest Guard"
+
+	ordered = {
+	}
+}

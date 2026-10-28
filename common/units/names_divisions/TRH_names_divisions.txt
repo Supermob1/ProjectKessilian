@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+TRH_INF_01 = {
+	name = "Trade House Guard"
+
+	for_countries = { TRH }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Trade House Guard"
+
+	ordered = {
+	}
+}

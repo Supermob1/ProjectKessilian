@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+KDR_INF_01 = {
+	name = "Dorin Guard"
+
+	for_countries = { KDR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Dorin Guard"
+
+	ordered = {
+	}
+}

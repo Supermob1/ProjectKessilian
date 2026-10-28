@@ -1,0 +1,23 @@
+﻿# HOD: JWH (faction_templates.py)
+
+division_template = {
+	name = "Guardians of the Whills"
+	division_names_group = JWH_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Guardians of the Whills"
+		location = 3178
+		start_experience_factor = 0.2
+	}
+}

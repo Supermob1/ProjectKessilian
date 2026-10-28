@@ -1,0 +1,66 @@
+﻿capital = 1711
+
+oob = "HOD_TRH"
+
+set_research_slots = 2
+set_stability = 0.6
+set_war_support = 0.02
+
+######CHARACTERS######
+
+
+set_technology = {
+	infantry_weapons = 1
+	support_weapons = 1
+	tech_support = 1
+	tech_trucks = 1
+	basic_train = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_signal_company = 1
+	tech_logistics_company = 1
+	tech_maintenance_company = 1
+	tech_field_hospital = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	interwar_antitank = 1
+	early_fighter = 1
+	transport = 1
+	old_republic_equipment = 1
+}
+
+set_popularities = {
+	akaanadocrat = 0
+	unitist = 0
+	corist = 0
+	distributionist = 0
+	corporate_consortium = 30
+	trade_democrat = 70
+	ruusanist = 0
+	inclusivist = 0
+	force_magocracy = 0
+}
+set_politics = {
+	ruling_party = trade_democrat
+	last_election = "999.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment
+	amount = 2000
+	producer = TRH
+}
+
+# HOD: new leaders (WIPGFX/portraits_research/add_leaders.py)
+recruit_character = TRH_armitage_hux
+recruit_character = TRH_wicket_wystri_warrick
+recruit_character = TRH_platt_okeefe
+recruit_character = TRH_vila
+recruit_character = TRH_satele_shan
+recruit_character = TRH_tofen_vane
+recruit_character = TRH_za
+recruit_character = TRH_zelor
+recruit_character = TRH_jin_rio_akabi

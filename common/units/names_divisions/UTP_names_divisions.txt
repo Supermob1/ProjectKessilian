@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+UTP_INF_01 = {
+	name = "Utai Sinkhole Guard"
+
+	for_countries = { UTP }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Utai Sinkhole Guard"
+
+	ordered = {
+	}
+}

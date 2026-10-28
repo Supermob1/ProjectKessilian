@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+ALW_INF_01 = {
+	name = "Alwari Riders"
+
+	for_countries = { ALW }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Alwari Riders"
+
+	ordered = {
+	}
+}

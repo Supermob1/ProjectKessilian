@@ -2,7 +2,7 @@ faction_hutt_cartel = {
 	name = hutt_cartel_name
 	manifest = faction_manifest_regional_expansionism
 	can_leader_join_other_factions = no
-	icon = GFX_faction_logo_generic_15
+	icon = GFX_faction_logo_generic_9
 	visible = {
 		always = no 
 	}
@@ -19,7 +19,9 @@ faction_hutt_cartel = {
 	}
 
 	default_rules = {
-		joining_rule_same_continent_only
+		call_to_war_rule_total_war_only
+		joining_rule_puppets_only
+		change_leader_rule_never
 		generate_wargoal_threat_reduction_20
 	}
 

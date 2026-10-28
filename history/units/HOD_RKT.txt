@@ -1,0 +1,23 @@
+﻿# HOD: RKT (faction_templates.py)
+
+division_template = {
+	name = "Rakatan Warriors"
+	division_names_group = RKT_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_template = "Rakatan Warriors"
+		location = 154
+		start_experience_factor = 0.2
+	}
+}

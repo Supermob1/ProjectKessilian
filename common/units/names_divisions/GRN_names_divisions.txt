@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+GRN_INF_01 = {
+	name = "Gran Protectorate Guard"
+
+	for_countries = { GRN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Gran Protectorate Guard"
+
+	ordered = {
+	}
+}

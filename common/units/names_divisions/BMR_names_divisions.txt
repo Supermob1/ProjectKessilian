@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+BMR_INF_01 = {
+	name = "Monastery Guard"
+
+	for_countries = { BMR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Monastery Guard"
+
+	ordered = {
+	}
+}

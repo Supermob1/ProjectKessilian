@@ -1,0 +1,36 @@
+add_namespace = HOD_Ep_II
+
+country_event = {
+	id = HOD_Ep_II.1
+	title = HOD_Ep_II.1.t
+	desc = HOD_Ep_II.1.d
+	is_triggered_only = yes
+	option = {
+		name = HOD_Ep_II.1.a
+		REP = { country_event = { id = HOD_Ep_II.1 days = 1 } }
+	}
+	option = {
+		name = HOD_Ep_II.1.b
+		REP = { country_event = { id = HOD_Ep_II.2 days = 1 } }
+	}
+}
+
+news_event = {
+	id = HOD_Ep_II.2
+	title = HOD_Ep_II.2.t
+	desc = HOD_Ep_II.2.d
+	is_triggered_only = yes
+	option = {
+		name = HOD_Ep_II.2.a
+	}
+}
+
+news_event = {
+	id = HOD_Ep_II.3
+	title = HOD_Ep_II.3.t
+	desc = HOD_Ep_II.3.d
+	is_triggered_only = yes
+	option = {
+		name = HOD_Ep_II.3.a
+	}
+}

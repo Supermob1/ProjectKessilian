@@ -1,0 +1,76 @@
+# HOD early war: local wars over a world decide who integrates it.
+# The attacked country (THIS) remembers its attacker and which bloc the attacker fights for.
+# Attacker wins (capitulation): the attacker's bloc annexes the world.
+# Attacker fails (90 days without capitulation, or no state held after 30 days): white peace and the other bloc annexes it.
+# Human players get a message for each outcome (events/HOD_early_war.txt .20 .21 .22).
+
+# scope: attacked country, ROOT: attacker (on_declare_war)
+HOD_start_proxy_war = {
+	set_country_flag = HOD_proxy_target
+	set_variable = { HOD_proxy_attacker = ROOT }
+	set_variable = { HOD_proxy_days = 0 }
+	if = {
+		limit = { ROOT = { OR = { tag = REP is_in_faction_with = REP } } }
+		set_country_flag = HOD_proxy_rep_attacks
+	}
+	else_if = {
+		limit = { ROOT = { OR = { tag = CIS is_in_faction_with = CIS } } }
+		set_country_flag = HOD_proxy_cis_attacks
+	}
+	country_event = { id = HOD_early_war.1 days = 30 }
+}
+
+HOD_clear_proxy_war = {
+	clr_country_flag = HOD_proxy_target
+	clr_country_flag = HOD_proxy_rep_attacks
+	clr_country_flag = HOD_proxy_cis_attacks
+	clear_variable = HOD_proxy_attacker
+	clear_variable = HOD_proxy_days
+}
+
+# scope: capitulated attacked country
+HOD_proxy_attacker_wins = {
+	save_event_target_as = HOD_ew_world
+	var:HOD_proxy_attacker = {
+		save_event_target_as = HOD_ew_attacker
+		save_event_target_as = HOD_ew_bloc
+	}
+	if = {
+		limit = { has_country_flag = HOD_proxy_rep_attacks country_exists = REP }
+		REP = { save_event_target_as = HOD_ew_bloc }
+	}
+	else_if = {
+		limit = { has_country_flag = HOD_proxy_cis_attacks country_exists = CIS }
+		CIS = { save_event_target_as = HOD_ew_bloc }
+	}
+	HOD_clear_proxy_war = yes
+	every_country = { limit = { is_ai = no } country_event = HOD_early_war.20 }
+	event_target:HOD_ew_bloc = { annex_country = { target = PREV transfer_troops = yes } }
+}
+
+# scope: attacked country that held out
+HOD_proxy_attacker_fails = {
+	save_event_target_as = HOD_ew_world
+	var:HOD_proxy_attacker = {
+		save_event_target_as = HOD_ew_attacker
+		white_peace = PREV
+	}
+	if = {
+		limit = { has_country_flag = HOD_proxy_rep_attacks country_exists = CIS }
+		CIS = { save_event_target_as = HOD_ew_bloc }
+		HOD_clear_proxy_war = yes
+		every_country = { limit = { is_ai = no } country_event = HOD_early_war.21 }
+		CIS = { annex_country = { target = PREV transfer_troops = yes } }
+	}
+	else_if = {
+		limit = { has_country_flag = HOD_proxy_cis_attacks country_exists = REP }
+		REP = { save_event_target_as = HOD_ew_bloc }
+		HOD_clear_proxy_war = yes
+		every_country = { limit = { is_ai = no } country_event = HOD_early_war.21 }
+		REP = { annex_country = { target = PREV transfer_troops = yes } }
+	}
+	else = {
+		HOD_clear_proxy_war = yes
+		every_country = { limit = { is_ai = no } country_event = HOD_early_war.22 }
+	}
+}

@@ -1,0 +1,16 @@
+﻿# HOD: Thyferra (faction_templates.py)
+
+POL_INF_01 = {
+	name = "Keeradak Riders"
+
+	for_countries = { POL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%dth Keeradak Riders"
+
+	ordered = {
+	}
+}
