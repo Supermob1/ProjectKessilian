@@ -6,17 +6,3 @@
 6. check if there's missing terrain or if terrains code of definition.csv match the terrain code on the terrain.bmp (terrain.bmp prevail over definition.csv)
 7. fix text, textures and picture of all the new added terrains and think of potential new ones
 8. review states ressources and see if ti's balanced
-
-Yes, you need to create it on GitHub first. I can't do that from here. In your browser:
-
-1. Go to github.com/new.
-2. Set Repository name to ProjectKessilian-WIP, exactly that.
-3. Pick Private or Public. Private is probably best, since these are your work files.
-4. Leave every "Initialize" option unticked: no README, no .gitignore, no licence. The repo must be completely empty or the push will be rejected.
-5. Click Create repository.
-
-Then paste this here and it will upload WIPGFX 10 commits at a time:
-
-! cd "F:/Documents/Paradox Interactive/Hearts of Iron IV/mod/ProjectKessilian/WIPGFX" && for c in $(git rev-list --reverse master | awk 'NR%10==0'); do git push origin "$c:refs/heads/master" || break; done && git push -u origin master
-
-There's about 4.9 GB to upload, so expect it to take a while. After that, the ProjectKessilian force-push and old-branch delete from before still need running too.
