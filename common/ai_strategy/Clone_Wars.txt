@@ -307,6 +307,11 @@ Clone_Wars_Global_REP = {
 		value = 200
 	}
 
+	ai_strategy = {
+		type = prepare_for_war
+		id = CIS
+		value = 200
+	}
 }
 
 Clone_Wars_Global_CIS = {
@@ -320,10 +325,15 @@ Clone_Wars_Global_CIS = {
 		value = 200
 	}
 
+	ai_strategy = {
+		type = prepare_for_war
+		id = REP
+		value = 200
+	}
 }
 Clone_Wars_First_Offensive_CIS = {
 	allowed = { original_tag = CIS }
-	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
+	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
 	abort_when_not_enabled = yes
 
 	# HARD focus south
@@ -380,7 +390,7 @@ Clone_Wars_First_Offensive_CIS = {
 }
 Clone_Wars_Southern_Offensive_REP = {
 	allowed = { original_tag = REP }
-	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
+	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
 	abort_when_not_enabled = yes
 
 	# DEFEND south heavily
@@ -410,7 +420,7 @@ Clone_Wars_Southern_Offensive_REP = {
 }
 Clone_Wars_Assault_Kamino_CIS = {
 	allowed = { original_tag = CIS }
-	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
+	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -432,7 +442,7 @@ Clone_Wars_Assault_Kamino_CIS = {
 }
 Clone_Wars_Assault_Kamino_REP = {
 	allowed = { original_tag = REP }
-	enable = { has_global_flag = HOD_op_active has_global_flag = HOD_op_kamino NOT = { has_global_flag = The_Defense_of_Kamino } }  # HOD operations: Kamino operation only (none yet)
+	enable = { NOT = { has_global_flag = The_Defense_of_Kamino } }
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
@@ -449,70 +459,19 @@ Clone_Wars_Assault_Kamino_REP = {
 	}
 }
 
-############################################################################################
-# HOD operations: AI per operation. Buildup blocks run before their operation, the others while it runs.
-############################################################################################
-
-# ---- Before the war: both sides gather their armies around Geonosis ----
-# Republic: stage at both hyperlanes into Geonosis: Christophsis (state 444) and Rishi (state 262)
-HOD_op_geonosis_buildup_REP = {
+# Story Mode, Battle of Geonosis (proxy war, Clone_wars_start): the Republic invades Geonosian Industries...
+HOD_story_geonosis_REP = {
 	allowed = { original_tag = REP }
-	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = put_unit_buffers
-		ratio = 0.5
-		states = { 444 262 39 33 }
-		subtract_fronts_from_need = no
-	}
-	ai_strategy = {
-		type = area_priority
-		id = HOD_Geonosis_theater
-		value = 400
-	}
-}
-# Confederacy: garrison both lane ends on Geonosis (278 faces Christophsis, 282 faces Rishi) and the hidden base on Rishi (268).
-# Geonosis is GEO's until Clone_wars_start annexes it, so before the war only 268 is reachable; the battle
-# itself starts with the droid army of history/units/HOD_op_geonosis_defence.txt on Geonosis.
-HOD_op_geonosis_buildup_CIS = {
-	allowed = { original_tag = CIS }
-	enable = { NOT = { has_global_flag = HOD_op_geonosis } }
-	abort_when_not_enabled = yes
-	ai_strategy = {
-		type = put_unit_buffers
-		ratio = 0.2  # one small state: half the army would not fit its supply
-		states = { 268 }
-		subtract_fronts_from_need = no
-	}
-	ai_strategy = {
-		type = area_priority
-		id = HOD_Geonosis_theater
-		value = 400
-	}
-}
-
-# ---- During the battle ----
-# Republic: everything into the theater, push across the Christophsis and Rishi lanes into Geonosis
-HOD_op_geonosis_attack_REP = {
-	allowed = { original_tag = REP }
-	enable = { has_global_flag = HOD_op_active check_variable = { global.HOD_op_number = 1 } }  # HOD_op_geonosis stays set after the battle
+	enable = { has_war_with = GEO }
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = area_priority
-		id = HOD_Geonosis_theater
-		value = 800
-	}
-	ai_strategy = {
-		type = front_control
-		area = HOD_Geonosis_theater
-		ratio = 1.0
-		priority = 500
-		ordertype = front
-		execution_type = balanced  # rush threw the landing into attacks it could not win
+		id = Geonosis_Sector
+		value = 500
 	}
 	ai_strategy = {
 		type = naval_invasion_focus
-		value = 300
+		value = 400
 	}
 	ai_strategy = {
 		type = invasion_unit_request
@@ -525,28 +484,14 @@ HOD_op_geonosis_attack_REP = {
 		value = 500
 	}
 }
-# Confederacy: hold Geonosis, every state of it is an objective
-HOD_op_geonosis_defend_CIS = {
+# ...and the Confederacy can only help with volunteers
+HOD_story_geonosis_CIS = {
 	allowed = { original_tag = CIS }
-	enable = { has_global_flag = HOD_op_active check_variable = { global.HOD_op_number = 1 } }  # HOD_op_geonosis stays set after the battle
+	enable = { GEO = { has_war_with = REP } }
 	abort_when_not_enabled = yes
 	ai_strategy = {
-		type = area_priority
-		id = HOD_Geonosis_theater
-		value = 800
-	}
-	ai_strategy = {
-		type = put_unit_buffers
-		ratio = 0.6
-		states = { 278 282 35 273 }
-		subtract_fronts_from_need = yes
-	}
-	ai_strategy = {
-		type = front_control
-		area = HOD_Geonosis_theater
-		ratio = 1.0
-		priority = 500
-		ordertype = front
-		execution_type = careful
+		type = send_volunteers_desire
+		id = GEO
+		value = 500
 	}
 }

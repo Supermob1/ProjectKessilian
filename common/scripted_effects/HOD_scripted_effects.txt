@@ -1,18 +1,21 @@
 Clone_wars_start = {
 	CIS = { 
-		# the war is now declared by the first operation (HOD_operation_geonosis_start, below)
+		# the war is declared below, by game mode
 		set_cosmetic_tag = CIS_Confderation_of_Independent_Systems
 		# load_oob = "HOD_Droid_Army"
 
-		GEO = {
-			every_owned_state = {
-				add_core_of = CIS
-					
+		# Story Mode: GEO stays a country, the Battle of Geonosis is a proxy war over it (below)
+		if = {
+			limit = { has_game_rule = { rule = HOD_game_mode option = TOTAL_WAR } }
+			GEO = {
+				every_owned_state = {
+					add_core_of = CIS
+				}
 			}
-		}
-		annex_country = {
-			target = GEO
-			transfer_troops = yes
+			annex_country = {
+				target = GEO
+				transfer_troops = yes
+			}
 		}
 		REP = { 
 			# load_oob = "HOD_Grande_Armee"
@@ -25,7 +28,7 @@ Clone_wars_start = {
 					idea = Unitism_drift
 					days = 180
 				}
-				# REP_unexpected_attack (-50% army for 90 days) removed: the Republic is now the attacker at Geonosis (70 days)
+				# REP_unexpected_attack (-50% army for 90 days) removed: the Republic is the attacker at Geonosis
 			}
 			add_country_leader_role = {
 				character = REP_sheev_palpatine
@@ -40,4 +43,15 @@ Clone_wars_start = {
 		# load_oob = "HOD_CIS_naval"
 	}
 	# REP = { load_oob = "HOD_REP_naval" }
+
+	# game mode (rule HOD_game_mode): Total War = one open war; Story = proxy wars (early war system, HOD_early_war_effects.txt),
+	# starting with Geonosis: the Republic strikes Geonosian Industries, the Confederacy can only send volunteers
+	if = {
+		limit = { has_game_rule = { rule = HOD_game_mode option = TOTAL_WAR } }
+		set_global_flag = HOD_total_war
+		CIS = { declare_war_on = { target = REP type = annex_everything } }
+	}
+	else = {
+		REP = { declare_war_on = { target = GEO type = annex_everything } }
+	}
 }

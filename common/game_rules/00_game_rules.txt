@@ -596,3 +596,19 @@ REP_ai_behavior = {
 		desc = "RULE_OPTION_RANDOM_AI_DESC"
 	}
 }
+# HOD game mode: read by Clone_wars_start (common/scripted_effects/HOD_scripted_effects.txt)
+HOD_game_mode = {
+	name = "RULE_HOD_GAME_MODE"
+	group = "RULE_GROUP_HOD"
+	default = {
+		name = STORY
+		text = "RULE_OPTION_HOD_STORY"
+		desc = "RULE_OPTION_HOD_STORY_DESC"
+	}
+	option = {
+		name = TOTAL_WAR
+		text = "RULE_OPTION_HOD_TOTAL_WAR"
+		desc = "RULE_OPTION_HOD_TOTAL_WAR_DESC"
+		allow_achievements = yes
+	}
+}
