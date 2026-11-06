@@ -42,3 +42,12 @@ recruit_character = FON_fon_workers_bloc
 recruit_character = FON_fon_merchants_syndicate
 recruit_character = FON_fon_elder_delegate
 recruit_character = FON_fon_dark_patron
+
+# HOD battle royale (game_mode_history.py)
+976.1.2 = {
+	oob = "HOD_BR_basic"  # only the basic template: no units, ships, planes or starting templates
+	add_ideas = HOD_br_every_world_for_itself
+	if = { limit = { is_faction_leader = yes } dismantle_faction = yes }
+	every_other_country = { limit = { is_subject_of = ROOT } ROOT = { end_puppet = PREV } }
+	set_cosmetic_tag = HOD_BR_130
+}

@@ -20,6 +20,20 @@ state={
 		}
 		owner = COL
 		add_core_of = COL
+		# HOD total war (game_mode_history.py)
+		976.1.1 = {
+			owner = CIS
+			controller = CIS
+			add_core_of = CIS
+		}
+		# HOD battle royale (game_mode_history.py)
+		976.1.2 = {
+			owner = COL
+			controller = COL
+			add_core_of = COL
+			set_state_category = capital_sector
+			buildings = { infrastructure = 4 industrial_complex = 4 arms_factory = 3 dockyard = 1 air_base = 2 synthetic_refinery = 0 fuel_silo = 0 rocket_site = 0 nuclear_reactor = 0 radar_station = 0 anti_air_building = 0 }
+		}
 	}
 	manpower = 1923778
 	state_category = capital_sector

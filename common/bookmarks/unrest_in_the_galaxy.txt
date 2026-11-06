@@ -64,6 +64,32 @@ bookmarks = {
 			#123 = { rain_light = yes }
 		}
 	}
+	# Battle Royale: every planet its own country (history blocks dated 976.1.2, plans & scripts/game_mode_history.py)
+	bookmark = {
+		name = "HOD_BR_BOOKMARK_NAME"
+		desc = "HOD_BR_BOOKMARK_DESC"
+		date = 976.1.2.1
+		picture = "GFX_select_date_battle_royale"
+		default_country = "COT"
+		"COT" = {
+			history = "HOD_BR_CORUSCANT_DESC"
+			ideology = corist
+			ideas = { HOD_br_every_world_for_itself }
+			focuses = {}
+		}
+		"RAX" = {
+			history = "HOD_BR_RAXUS_DESC"
+			ideology = trade_democrat
+			ideas = { HOD_br_every_world_for_itself }
+			focuses = {}
+		}
+		"---" = {
+			history = "HOD_BR_BOOKMARK_DESC"
+		}
+		effect = {
+			randomize_weather = 22345
+		}
+	}
 	bookmark = {
 		name = ""
 		desc = ""

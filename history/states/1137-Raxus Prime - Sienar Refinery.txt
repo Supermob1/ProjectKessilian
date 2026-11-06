@@ -15,6 +15,13 @@ state={
 		}
 		owner = CIS
 		add_core_of = CIS
+		# HOD battle royale (game_mode_history.py)
+		976.1.2 = {
+			owner = RAE
+			controller = RAE
+			add_core_of = RAE
+			buildings = { industrial_complex = 0 arms_factory = 0 dockyard = 0 synthetic_refinery = 0 fuel_silo = 0 rocket_site = 0 nuclear_reactor = 0 radar_station = 0 anti_air_building = 0 air_base = 0 }
+		}
 	}
 	manpower = 2000
 	state_category = wasteland_sector

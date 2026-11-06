@@ -4,9 +4,9 @@ Clone_wars_start = {
 		set_cosmetic_tag = CIS_Confderation_of_Independent_Systems
 		# load_oob = "HOD_Droid_Army"
 
-		# Story Mode: GEO stays a country, the Battle of Geonosis is a proxy war over it (below)
+		# Geonosis is normally the Confederacy's from the start (game_mode_history.py); this catches a released GEO
 		if = {
-			limit = { has_game_rule = { rule = HOD_game_mode option = TOTAL_WAR } }
+			limit = { country_exists = GEO NOT = { has_global_flag = HOD_battle_royale } }
 			GEO = {
 				every_owned_state = {
 					add_core_of = CIS
@@ -44,14 +44,9 @@ Clone_wars_start = {
 	}
 	# REP = { load_oob = "HOD_REP_naval" }
 
-	# game mode (rule HOD_game_mode): Total War = one open war; Story = proxy wars (early war system, HOD_early_war_effects.txt),
-	# starting with Geonosis: the Republic strikes Geonosian Industries, the Confederacy can only send volunteers
+	# Total War: one open war to capitulation; Battle Royale: no Republic-Confederacy war, every planet fights alone
 	if = {
-		limit = { has_game_rule = { rule = HOD_game_mode option = TOTAL_WAR } }
-		set_global_flag = HOD_total_war
+		limit = { NOT = { has_global_flag = HOD_battle_royale } }
 		CIS = { declare_war_on = { target = REP type = annex_everything } }
-	}
-	else = {
-		REP = { declare_war_on = { target = GEO type = annex_everything } }
 	}
 }

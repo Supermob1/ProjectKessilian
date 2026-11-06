@@ -17,17 +17,15 @@ country_event = { # The Raxus Address
 		if = {
 			limit = {
 				original_tag = CIS
+				NOT = { has_global_flag = HOD_battle_royale }
 			}
 			create_faction_from_template = faction_template_cis
-			add_to_faction = CMG
-			add_to_faction = IBC
-			add_to_faction = TDF
-			add_to_faction = TCU
-			add_to_faction = ZGY
-			# HOD: new tags that side with the Confederacy (SSB and GIV leave the Corporate Alliance / Neutral Systems first)
+			# HOD: the Confederacy's worlds (SSB and GIV leave the Corporate Alliance / Neutral Systems first);
+			# in Total War they are already the Confederacy's from the start (history), so only the ones still around join
 			every_country = {
 				limit = {
 					OR = {
+						tag = CMG  tag = IBC  tag = TDF  tag = TCU  tag = ZGY
 						tag = SSB  tag = KAL  tag = GIV  tag = COL  tag = SKK
 						tag = BTK  tag = BLW  tag = GAF  tag = GEO
 					}
@@ -36,8 +34,6 @@ country_event = { # The Raxus Address
 				if = { limit = { is_in_faction = yes } leave_faction = yes }
 				ROOT = { add_to_faction = PREV }
 			}
-			# HOD early war: one year of local wars before full alliances (events/HOD_early_war.txt)
-			country_event = { id = HOD_early_war.2 days = 365 }
 			
 
 		}

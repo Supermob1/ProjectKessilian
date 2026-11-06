@@ -108,8 +108,35 @@ def bar_fill(px):
     return out
 
 
+ONLY = None    # --only FILE: exactly these textures (hand-picked from audit sheets), past the name / detail filters
+OUTLINE = set()
+
+
+def outline(px):
+    """Mostly see-through chrome (thin frames, divider lines, rings, highlights): same shape, flat house colour -
+    gold for selection / highlight pieces, steel otherwise."""
+    out = px.copy()
+    out[..., :3] = GOLD if OUTLINE_GOLD.search(CUR) else STEEL
+    return out
+
+
+OUTLINE_GOLD = re.compile(r"select|_hl\b|_hl\.|gold|highlight", re.I)
+CUR = ""
+
+
 def candidates():
     written = set(open(LOG).read().splitlines()) if os.path.exists(LOG) else set()
+    if ONLY is not None:
+        sprites = vanilla_sprites()
+        for path in ONLY:
+            src = find(VANILLA, path)
+            if src and not (find(MOD, path) and path not in written):
+                px = np.array(Image.open(src).convert("RGBA"))
+                frames = sprites.get(path, (1, False))[0]
+                if (px[..., 3] > 127).mean() < 0.35:
+                    OUTLINE.add(path)
+                yield path, px, frames
+        return
     for path, (frames, cornered) in sorted(vanilla_sprites().items()):
         bar = BAR.search(os.path.basename(path)) and not FX.search(path)
         if not path.startswith("gfx/interface/"):
@@ -207,6 +234,10 @@ def draw(px, accent, state, cornered=False):
 
 
 def restyle(path, px, frames):
+    global CUR
+    CUR = path
+    if path in OUTLINE:
+        return outline(px)
     fw = px.shape[1] // max(frames, 1)
     if path in BARS and not re.search(r"bg|back|frame|border|empty", path):
         return bar_fill(px)
@@ -236,7 +267,11 @@ def preview(items, out, cell=150):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--preview"); ap.add_argument("--write", action="store_true"); ap.add_argument("--undo", action="store_true")
+    ap.add_argument("--only", help="file listing texture paths to restyle (added to the log, the rest of it kept)")
     a = ap.parse_args()
+    global ONLY
+    if a.only:
+        ONLY = [l.strip().lower() for l in open(a.only) if l.strip()]
     if a.undo:
         for path in open(LOG).read().splitlines():
             p = find(MOD, path)
@@ -248,13 +283,16 @@ def main():
     if a.preview:
         preview(items, a.preview)
     if a.write:
-        with open(LOG, "w") as log:
+        old = set(open(LOG).read().splitlines()) if ONLY is not None and os.path.exists(LOG) else set()
+        with open(LOG, "a" if ONLY is not None else "w") as log:   # --only adds to the existing log
             for path, px, frames in items:
                 dst = os.path.join(MOD, path)
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
                 buf = io.BytesIO()
                 Image.fromarray(restyle(path, px, frames)).save(buf, "DDS" if dst.lower().endswith(".dds") else "TGA")
-                open(dst, "wb").write(buf.getvalue()); log.write(path + "\n")
+                open(dst, "wb").write(buf.getvalue())
+                if path not in old:
+                    log.write(path + "\n")
         print("wrote", len(items), "->", LOG)
 
 

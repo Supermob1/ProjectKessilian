@@ -19,7 +19,6 @@ faction_template_neutral_systems = {
 	}
 
 	default_rules = {
-		call_to_war_rule_total_war_only
 		joining_rule_has_no_offensive_war
 		war_declaration_rule_faction_leader_only
 		faction_peace_rule_no_puppeting
@@ -45,7 +44,6 @@ faction_template_corporate_alliance = {
 	}
 
 	default_rules = {
-		call_to_war_rule_total_war_only
 		joining_rule_has_no_war
 		change_leader_rule_industry
 	}
@@ -70,7 +68,6 @@ faction_template_chiss_ascendancy = {
 	}
 
 	default_rules = {
-		call_to_war_rule_total_war_only
 		joining_rule_puppets_only
 		change_leader_rule_never
 	}

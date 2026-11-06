@@ -1,0 +1,14 @@
+# HOD game modes. The setups themselves live in the history (plans & scripts/game_mode_history.py):
+# Total War = the main bookmark, Battle Royale = its own bookmark (global flag HOD_battle_royale).
+on_actions = {
+	# Battle Royale: a capitulated world is annexed on the spot by the one who beat it, no peace conference
+	# (ROOT = capitulated country, FROM = winner)
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = { has_global_flag = HOD_battle_royale }
+				FROM = { annex_country = { target = ROOT transfer_troops = no } }
+			}
+		}
+	}
+}

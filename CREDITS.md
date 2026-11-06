@@ -36,3 +36,6 @@ namaqualand boulder, mossy rocks, boulder, island tree leaves and bark.
 
 ## Terrain textures
 Terrain atlas from the Revolution Realized mod (used with the author's permission).
+
+## Fonts (SIL Open Font License 1.1)
+- "Exo 2" by Natanael Gama - https://github.com/google/fonts/tree/main/ofl/exo2 (baked into gfx/fonts by plans & scripts/make_fonts.py; licence in plans & scripts/fonts/Exo2-OFL.txt)

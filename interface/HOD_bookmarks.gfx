@@ -1,0 +1,13 @@
+spriteTypes = {
+	# half-width bookmark tile frame (cyan / selected green) so two bookmarks fit side by side in the scenario window
+	spriteType = {
+		name = "GFX_bookmark_entry_half_bg"
+		texturefile = "gfx/interface/bookmark_entry_half_bg.dds"
+		noOfFrames = 2
+	}
+	# Battle Royale bookmark picture (crop of loadingscreens/load_2, Geonosis)
+	spriteType = {
+		name = "GFX_select_date_battle_royale"
+		texturefile = "gfx/interface/select_date_battle_royale.dds"
+	}
+}

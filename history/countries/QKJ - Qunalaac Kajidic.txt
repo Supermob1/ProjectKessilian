@@ -45,3 +45,12 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
+
+# HOD battle royale (game_mode_history.py)
+976.1.2 = {
+	oob = "HOD_BR_basic"  # only the basic template: no units, ships, planes or starting templates
+	add_ideas = HOD_br_every_world_for_itself
+	if = { limit = { is_faction_leader = yes } dismantle_faction = yes }
+	every_other_country = { limit = { is_subject_of = ROOT } ROOT = { end_puppet = PREV } }
+	set_cosmetic_tag = HOD_BR_100
+}
