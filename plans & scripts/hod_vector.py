@@ -4,6 +4,9 @@ grey disabled), detail as cut-outs, no shading.
 
   python -B hod_vector.py --sheet OUT.png       every pictogram on one sheet
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "cwic_icons"))
+import cwic_library
 import argparse, math
 from PIL import Image, ImageDraw
 
@@ -1235,6 +1238,9 @@ DETAIL_MIN = 28     # px: below this the simple silhouette reads better than the
 
 def render(name, w, h, pad=0.0, simple=False):
     """-> 'L' coverage image of w x h with the pictogram fitted (aspect kept) and centred."""
+    cov = cwic_library.coverage(name, w, h, pad)   # canon CWIC source wins when the library has one
+    if cov is not None:
+        return cov
     p = Pen()
     fn = None if simple or min(w, h) * (1 - pad) < DETAIL_MIN else DETAIL.get(name)   # drawn size decides
     (fn or ICONS[name])(p)

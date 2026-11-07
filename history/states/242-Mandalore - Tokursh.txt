@@ -10,6 +10,7 @@ state={
 		chromium=1
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_man_beskar }	# HOD:landmark
 		victory_points = {
 			1311 3
 		}
@@ -19,7 +20,8 @@ state={
 			arms_factory = 2
 			air_base = 1
 		}
-		owner = MAH
+		owner = MAN
+		add_core_of = MAN
 		add_core_of = MAH
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

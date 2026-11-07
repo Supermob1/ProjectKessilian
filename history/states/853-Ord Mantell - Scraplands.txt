@@ -9,6 +9,7 @@ state={
 		oil=2
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_om_junkyard }	# HOD:landmark
 		victory_points = {
 			815 2
 		}
@@ -21,7 +22,8 @@ state={
 			arms_factory = 1
 			air_base = 1
 		}
-		owner = BHH
+		owner = REP
+		add_core_of = REP
 		add_core_of = BHH
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

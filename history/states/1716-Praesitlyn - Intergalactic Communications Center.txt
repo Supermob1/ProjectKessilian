@@ -8,13 +8,15 @@ state={
 	resources={
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_prs_center }	# HOD:landmark
 		victory_points = {
 			17371 15
 		}
 		buildings = {
 			infrastructure = 2
 		}
-		owner = ICC
+		owner = REP
+		add_core_of = REP
 		add_core_of = ICC
 		# HOD total war (game_mode_history.py)
 		976.1.1 = {

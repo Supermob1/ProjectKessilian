@@ -4,6 +4,7 @@ technologies = {
 	@rocket_artillery = 3
 
 	gw_artillery = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			artillery_equipment_1
@@ -86,6 +87,7 @@ technologies = {
 	}
 
 	interwar_artillery = {
+		allow = { always = no }	# HOD: disabled
 
 		artillery = {
 			soft_attack = 0.1
@@ -161,6 +163,7 @@ technologies = {
 	}
 
 	artillery1 = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			artillery_equipment_2
@@ -229,6 +232,7 @@ technologies = {
 	}
 
 	artillery2 = {
+		allow = { always = no }	# HOD: disabled
 
 		artillery = {
 			soft_attack = 0.1
@@ -293,6 +297,7 @@ technologies = {
 	}
 
 	artillery3 = {
+		allow = { always = no }	# HOD: disabled
 
 		artillery = {
 			soft_attack = 0.1
@@ -350,6 +355,7 @@ technologies = {
 	}
 
 	artillery4 = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			artillery_equipment_3
@@ -405,6 +411,7 @@ technologies = {
 	}
 
 	artillery5 = {
+		allow = { always = no }	# HOD: disabled
 
 		artillery = {
 			soft_attack = 0.1
@@ -463,6 +470,7 @@ technologies = {
 	}
 
 	mountain_gun = {
+		allow = { always = no }	# HOD: disabled
 
 		research_cost = 1
 
@@ -487,6 +495,7 @@ technologies = {
 	}
 
 	rocket_artillery = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			rocket_artillery_equipment_1
@@ -534,6 +543,7 @@ technologies = {
 	}
 
 	rocket_artillery2 = {
+		allow = { always = no }	# HOD: disabled
 
 		category_rocket_artillery = {
 			soft_attack = 0.15
@@ -574,6 +584,7 @@ technologies = {
 	}
 
 	rocket_artillery3 = {
+		allow = { always = no }	# HOD: disabled
 
 		category_rocket_artillery = {
 			soft_attack = 0.15
@@ -613,6 +624,7 @@ technologies = {
 	}
 
 	rocket_artillery4 = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			rocket_artillery_equipment_2
@@ -649,6 +661,7 @@ technologies = {
 	}
 
 	interwar_antiair = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			anti_air_equipment_1
@@ -730,6 +743,7 @@ technologies = {
 	}
 
 	antiair1 = {
+		allow = { always = no }	# HOD: disabled
 
 		category_anti_air = { #THIS CATEGORY NOW INCLUDES FOLLOWING COMMENTED OUT UNITS
 			air_attack = 0.1
@@ -775,6 +789,7 @@ technologies = {
 	}
 
 	antiair2 = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			anti_air_equipment_2
@@ -823,6 +838,7 @@ technologies = {
 	}
 
 	antiair3 = {
+		allow = { always = no }	# HOD: disabled
 
 		category_anti_air = {	#THIS CATEGORY NOW INCLUDES FOLLOWING COMMENTED OUT UNITS
 			air_attack = 0.1
@@ -872,6 +888,7 @@ technologies = {
 	}
 
 	antiair4 = {
+		allow = { always = no }	# HOD: disabled
 
 		category_anti_air = { #THIS CATEGORY NOW INCLUDES FOLLOWING COMMENTED OUT UNITS
 			air_attack = 0.1
@@ -918,6 +935,7 @@ technologies = {
 	}
 
 	antiair5 = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			anti_air_equipment_3
@@ -957,6 +975,7 @@ technologies = {
 	}
 
 	interwar_antitank = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			anti_tank_equipment_1
@@ -1045,6 +1064,7 @@ technologies = {
 	}
 
 	antitank1 = {
+		allow = { always = no }	# HOD: disabled
 
 		category_anti_tank = {
 			hard_attack = 0.1
@@ -1110,6 +1130,7 @@ technologies = {
 	}
 
 	antitank2 = {
+		allow = { always = no }	# HOD: disabled
 
 		mot_anti_tank_brigade = {
 			hard_attack = 0.1
@@ -1176,6 +1197,7 @@ technologies = {
 	}
 
 	antitank3 = {
+		allow = { always = no }	# HOD: disabled
 		enable_equipment_modules = {
 			tank_medium_cannon_2
 		}
@@ -1259,6 +1281,7 @@ technologies = {
 	}
 
 	antitank4 = {
+		allow = { always = no }	# HOD: disabled
 		enable_equipment_modules = {
 			tank_high_velocity_cannon_2
 		}
@@ -1332,6 +1355,7 @@ technologies = {
 	}
 
 	antitank5 = {
+		allow = { always = no }	# HOD: disabled
 
 		enable_equipments = {
 			anti_tank_equipment_3
@@ -1445,6 +1469,7 @@ technologies = {
 	### SPECIAL PROJECTS ###
 
 	sp_artillery_rocket_assisted_projectiles_tech = {
+		allow = { always = no }	# HOD: disabled
 
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
@@ -1498,6 +1523,7 @@ technologies = {
 
 
 	sp_artillery_purpose_built_gun_motor_carriages_tech = {
+		allow = { always = no }	# HOD: disabled
 		
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
@@ -1551,6 +1577,7 @@ technologies = {
 	}
 
 	sp_shock_hardening_techniques = {
+		allow = { always = no }	# HOD: disabled
 		
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
@@ -1589,6 +1616,7 @@ technologies = {
 	}
 
 	sp_variable_time_fuze_shells = {
+		allow = { always = no }	# HOD: disabled
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
 		}
@@ -1636,6 +1664,7 @@ technologies = {
 
 	# HOD vanilla_sync: added from vanilla
 	the_thunder_at_our_gates_artillery = {
+		allow = { always = no }	# HOD: disabled
 
 		artillery_brigade = {
 			combat_width = -0.1
@@ -1643,6 +1672,7 @@ technologies = {
 
 	}
 	sp_land_large_caliber_kinetic_energy_sabot_gd_tech = {
+		allow = { always = no }	# HOD: disabled
 		#HIDDEN EFFECT FOR THE LARGE CALIBER KINETIC ENERGY PENETRATOR 
 		
 		research_cost = 1
@@ -1697,6 +1727,7 @@ technologies = {
 		}
 	}
 	sp_land_large_caliber_kinetic_energy_sabot_no_gd_tech = {
+		allow = { always = no }	# HOD: disabled
 		#HIDDEN EFFECT FOR THE LARGE CALIBER KINETIC ENERGY PENETRATOR
 		
 		research_cost = 1
@@ -1737,7 +1768,8 @@ technologies = {
 			always = no
 		}
 	}
-	sp_advance_sabot_shells = { 
+	sp_advance_sabot_shells = {
+		allow = { always = no }	# HOD: disabled 
 		allow_branch = {
 			has_dlc = "Peace For Our Time"
 		}

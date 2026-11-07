@@ -10,6 +10,7 @@ state={
 		oil=1
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_nab_gunga }	# HOD:landmark
 		victory_points = {
 			476 10
 		}
@@ -21,7 +22,8 @@ state={
 			industrial_complex = 3
 			air_base = 1
 		}
-		owner = GNG
+		owner = RNB
+		add_core_of = RNB
 		add_core_of = GNG
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

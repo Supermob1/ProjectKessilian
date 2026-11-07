@@ -10,6 +10,7 @@ state={
 		coal=10#Credits
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_gns_spires }	# HOD:landmark
 		victory_points = {
 			13836 10
 		}
@@ -18,7 +19,8 @@ state={
 			arms_factory = 6
 			air_base = 1
 		}
-		owner = CIS
+		owner = GEO
+		add_core_of = GEO
 		add_core_of = CIS
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

@@ -494,31 +494,22 @@ add_equipment_to_stockpile = {{
 """)
     write("common/dynamic_modifiers/HOD_felucia_dynamic_modifiers.txt",
           "# HOD: Felucia's endless jungle war (felucia_tribes.py)\nHOD_felucian_jungle_war = {\n"
-          "\ticon = GFX_idea_HOD_felucian_tribes\n\tenable = { always = yes }\n"
+          "\ticon = GFX_modifiers_HOD_landmark\n\tenable = { always = yes }\n"
           + "".join(f"\t{k} = {v}\n" for k, v in JUNGLE_WAR.items()) + "}\n")
     write("common/opinion_modifiers/HOD_felucia_opinion_modifiers.txt",
           "opinion_modifiers = {\n\t# HOD: no one from beyond the sky deals with the Felucian tribes, nor they with anyone\n"
           "\tHOD_felucian_hostility = {\n\t\tvalue = -200\n\t}\n}\n")
-    write("common/on_actions/HOD_felucia_on_actions.txt", f"""# HOD: the Felucian jungle war (felucia_tribes.py)
-on_actions = {{
-	on_startup = {{
-		effect = {{
-			every_state = {{
-				limit = {{ {in_felucia} }}
-				add_dynamic_modifier = {{ modifier = HOD_felucian_jungle_war }}
-			}}
-			if = {{
-				limit = {{ country_exists = {TRIBES} }}
-				every_country = {{
-					limit = {{ NOT = {{ tag = {TRIBES} }} }}
-					add_opinion_modifier = {{ target = {TRIBES} modifier = HOD_felucian_hostility }}
-					reverse_add_opinion_modifier = {{ target = {TRIBES} modifier = HOD_felucian_hostility }}
-				}}
-			}}
-		}}
-	}}
-}}
-""")
+    # the jungle war and the tribes' hostility live in the history files (no on_startup)
+    import history_inject as hi
+    hi.clear("felucia", "states")
+    for s in states:
+        hi.set_state(s, "felucia", ["add_dynamic_modifier = { modifier = HOD_felucian_jungle_war }"])
+    hi.set_country(TRIBES, "felucia", [
+        f"every_country = {{ limit = {{ NOT = {{ tag = {TRIBES} }} }} "
+        f"add_opinion_modifier = {{ target = {TRIBES} modifier = HOD_felucian_hostility }} "
+        f"reverse_add_opinion_modifier = {{ target = {TRIBES} modifier = HOD_felucian_hostility }} }}"])
+    if os.path.exists("common/on_actions/HOD_felucia_on_actions.txt"):
+        os.remove("common/on_actions/HOD_felucia_on_actions.txt")
     bw = lambda ev: (f"on_win = hod_felucia.{ev[0]}\n\t\t\t\ton_lose = hod_felucia.{ev[1]}\n\t\t\t\t"
                      f"on_cancel = hod_felucia.{ev[1]}")
     write("events/HOD_felucia_events.txt", f"""# HOD: the Felucian tribes' border wars on the Guild's frontier (felucia_tribes.py)

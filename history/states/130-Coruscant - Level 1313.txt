@@ -10,13 +10,15 @@ state={
 		coal=3
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_cos_underworld }	# HOD:landmark
 		victory_points = {
 			1239 3
 		}
 		buildings = {
 			infrastructure = 2
 		}
-		owner = UND
+		owner = REP
+		add_core_of = REP
 		add_core_of = UND
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

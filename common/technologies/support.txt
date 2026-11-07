@@ -18,6 +18,14 @@ technologies = {
 
 
 	tech_support = {
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 0 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 0 }
+		}
 
 		enable_equipments = {
 			support_equipment_1
@@ -56,10 +64,6 @@ technologies = {
 		}
 		research_cost = 1.0
 		start_year = 960
-		folder = {
-			name = support_folder
-			position = { x = 0 y = @960 }
-		}
 
 		categories = {
 			support_tech
@@ -87,6 +91,7 @@ technologies = {
 
 
 	tech_engineers = {
+		allow = { always = no }	# HOD: support company removed
 
 		enable_subunits = {
 			engineer
@@ -165,6 +170,7 @@ technologies = {
 	}
 
 	tech_engineers2 = {
+		allow = { always = no }	# HOD: support company removed
 
 		engineer = {
 			entrenchment = 0.50
@@ -255,6 +261,7 @@ technologies = {
 	}
 
 	tech_engineers3 = {
+		allow = { always = no }	# HOD: support company removed
 
 		enable_equipment_modules = {
 			lc_obstacle_clearance_gear #Module for Land Cruiser
@@ -351,6 +358,7 @@ technologies = {
 	}
 
 	tech_engineers4 = {
+		allow = { always = no }	# HOD: support company removed
 
 		engineer = {
 			entrenchment = 0.50
@@ -437,10 +445,17 @@ technologies = {
 	}
 
 	tech_recon = {
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 12 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 12 }
+		}
+		path = { leads_to_tech = sp_armored_engineer_tech research_cost_coeff = 1 }	# HOD
 
 		enable_subunits = {
-			recon
-			mot_recon
 			armored_car_recon
 			light_tank_recon
 
@@ -462,10 +477,6 @@ technologies = {
 
 		research_cost = 1.25
 		start_year = 976
-		folder = {
-			name = support_folder
-			position = { x = 2 y = @976 }
-		}
 
 		categories = {
 			support_tech
@@ -502,6 +513,7 @@ technologies = {
 	}
 
 	tech_recon2 = {
+		allow = { always = no }	# HOD: support company removed
 
 		category_recon = {
 			recon = 2
@@ -549,6 +561,7 @@ technologies = {
 	}
 
 	tech_recon3 = {
+		allow = { always = no }	# HOD: support company removed
 
 		category_recon = {
 			recon = 2
@@ -599,6 +612,7 @@ technologies = {
 		}
 	}
 	tech_recon4 = {
+		allow = { always = no }	# HOD: support company removed
 
 		category_recon = {
 			recon = 2
@@ -641,6 +655,7 @@ technologies = {
 	}
 
 	tech_military_police = {
+		allow = { always = no }	# HOD: support company removed
 
 		enable_subunits = {
 			military_police
@@ -682,6 +697,7 @@ technologies = {
 	}
 
 	tech_military_police2 = {
+		allow = { always = no }	# HOD: support company removed
 
 		military_police = {
 			suppression_factor = 0.1
@@ -723,6 +739,7 @@ technologies = {
 	}
 
 	tech_military_police3 = {
+		allow = { always = no }	# HOD: support company removed
 
 		military_police = {
 			suppression_factor = 0.1
@@ -763,6 +780,7 @@ technologies = {
 		}
 	}
 	tech_military_police4 = {
+		allow = { always = no }	# HOD: support company removed
 
 		military_police = {
 			suppression_factor = 0.1
@@ -813,6 +831,7 @@ technologies = {
 	}
 
 	tech_maintenance_company = {
+		allow = { always = no }	# HOD: support company removed
 
 		enable_subunits = {
 			maintenance_company
@@ -861,6 +880,7 @@ technologies = {
 	}
 
 	tech_maintenance_company2 = {
+		allow = { always = no }	# HOD: support company removed
 
 		maintenance_company = {
 			reliability_factor = 0.05
@@ -916,6 +936,7 @@ technologies = {
 	}
 
 	tech_maintenance_company3 = {
+		allow = { always = no }	# HOD: support company removed
 
 		maintenance_company = {
 			reliability_factor = 0.05
@@ -979,6 +1000,7 @@ technologies = {
 		}
 	}
 	tech_maintenance_company4 = {
+		allow = { always = no }	# HOD: support company removed
 
 		maintenance_company = {
 			reliability_factor = 0.05
@@ -1024,6 +1046,7 @@ technologies = {
 	}
 
 	tech_field_hospital = {
+		allow = { always = no }	# HOD: support company removed
 
 		enable_subunits = {
 			field_hospital
@@ -1085,6 +1108,7 @@ technologies = {
 	}
 
 	tech_field_hospital2 = {
+		allow = { always = no }	# HOD: support company removed
 
 		field_hospital = {
 			casualty_trickleback = 0.10
@@ -1141,6 +1165,7 @@ technologies = {
 	}
 
 	tech_field_hospital3 = {
+		allow = { always = no }	# HOD: support company removed
 
 		field_hospital = {
 			casualty_trickleback = 0.1
@@ -1206,6 +1231,7 @@ technologies = {
 		}
 	}
 	tech_field_hospital4 = {
+		allow = { always = no }	# HOD: support company removed
 
 		field_hospital = {
 			casualty_trickleback = 0.1
@@ -1275,6 +1301,7 @@ technologies = {
 	}
 
 	tech_logistics_company = {
+		allow = { always = no }	# HOD: support company removed
 
 		enable_subunits = {
 			logistics_company
@@ -1333,6 +1360,7 @@ technologies = {
 	}
 
 	tech_logistics_company2 = {
+		allow = { always = no }	# HOD: support company removed
 
 		logistics_company = {
 			supply_consumption_factor = -0.1
@@ -1384,6 +1412,7 @@ technologies = {
 	}
 
 	tech_logistics_company3 = {
+		allow = { always = no }	# HOD: support company removed
 
 		logistics_company = {
 			supply_consumption_factor = -0.1
@@ -1437,6 +1466,7 @@ technologies = {
 		}
 	}
 	tech_logistics_company4 = {
+		allow = { always = no }	# HOD: support company removed
 
 		logistics_company = {
 			supply_consumption_factor = -0.1
@@ -1483,6 +1513,7 @@ technologies = {
 
 
 	tech_signal_company = {
+		allow = { always = no }	# HOD: support company removed
 
 		enable_subunits = {
 			signal_company
@@ -1531,6 +1562,7 @@ technologies = {
 	}
 
 	tech_signal_company2 = {
+		allow = { always = no }	# HOD: support company removed
 
 		signal_company = {
 			initiative = 0.12
@@ -1583,6 +1615,7 @@ technologies = {
 	}
 
 	tech_signal_company3 = {
+		allow = { always = no }	# HOD: support company removed
 
 		signal_company = {
 			initiative = 0.12
@@ -1634,6 +1667,7 @@ technologies = {
 		}
 	}
 	tech_signal_company4 = {
+		allow = { always = no }	# HOD: support company removed
 
 		signal_company = {
 			initiative = 0.12
@@ -1682,16 +1716,20 @@ technologies = {
 	}
 
 	basic_train = {
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 0 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 0 }
+		}
 		enable_equipments = {
 			train_equipment_1
 		}
 
 		research_cost = 1.5
 		start_year = 960
-		folder = {
-			name = support_folder
-			position = { x = 0 y = @960 }
-		}
 
 		path = {
 			leads_to_tech = wartime_train
@@ -1731,6 +1769,14 @@ technologies = {
 	}
 
 	railway_gun = {
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 15 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 15 }
+		}
 		enable_equipments = {
 			railway_gun_equipment_1
 		}
@@ -1748,10 +1794,6 @@ technologies = {
 
 		research_cost = 1.5
 		start_year = 976
-		folder = {
-			name = support_folder
-			position = { x = 4 y = 3 }
-		}
 
 		categories = {
 			train_tech
@@ -1769,16 +1811,20 @@ technologies = {
 	}
 
 	wartime_train = {
+		folder = {
+			name = republic_folder
+			position = { x = 1 y = 21 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 1 y = 21 }
+		}
 		enable_equipments = {
 			train_equipment_2
 		}
 
 		research_cost = 1.5
 		start_year = 979
-		folder = {
-			name = support_folder
-			position = { x = 0 y = @979 }
-		}
 
 		categories = {
 			train_tech
@@ -1809,6 +1855,14 @@ technologies = {
 	}
 
 	armored_train = {
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 12 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 12 }
+		}
 		enable_equipments = {
 			train_equipment_3
 		}
@@ -1824,10 +1878,6 @@ technologies = {
 
 		research_cost = 1.5
 		start_year = 976
-		folder = {
-			name = support_folder
-			position = { x = 2 y = 3 }
-		}
 
 		categories = {
 			train_tech
@@ -1880,20 +1930,19 @@ technologies = {
 	### SPECIAL PROJECTS ###
 
 	sp_armored_engineer_tech = {
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_land_military_engineering_vehicles
-			}
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 15 }
 		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 15 }
+		}
+		path = { leads_to_tech = sp_armored_motorized_military_police_tech research_cost_coeff = 1 }	# HOD
 
-		is_special_project_tech = yes
 
 		research_cost = 2.0
 		start_year = 978
-		folder = {
-			name = support_folder
-			position = { x = 1 y = @978 }
-		}
 
 		categories = {
 			support_tech
@@ -1934,20 +1983,19 @@ technologies = {
 	}
 
 	sp_armored_maintenance_tech = {
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_land_military_engineering_vehicles
-			}
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 21 }
 		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 21 }
+		}
+		path = { leads_to_tech = sp_armored_signal_tech research_cost_coeff = 1 }	# HOD
 
-		is_special_project_tech = yes
 
 		research_cost = 2.0
 		start_year = 978
-		folder = {
-			name = support_folder
-			position = { x = 7 y = @978 }
-		}
 
 		categories = {
 			support_tech
@@ -1988,20 +2036,18 @@ technologies = {
 	}
 
 	sp_armored_signal_tech = {
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_land_military_engineering_vehicles
-			}
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 24 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 24 }
 		}
 
-		is_special_project_tech = yes
 
 		research_cost = 2.0
 		start_year = 978
-		folder = {
-			name = support_folder
-			position = { x = 15 y = @978 }
-		}
 
 		categories = {
 			support_tech
@@ -2047,15 +2093,11 @@ technologies = {
 	}
 
 	sp_helicopter_transport_pods_tech = {
+		allow = { always = no }	# HOD: support company removed
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
 		}
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_air_helicopter
-			}
-		}
 
 		is_special_project_tech = yes
 
@@ -2092,15 +2134,11 @@ technologies = {
 	}
 
 	sp_helicopter_artillery_observers_tech = {
+		allow = { always = no }	# HOD: support company removed
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
 		}
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_air_helicopter
-			}
-		}
 
 		is_special_project_tech = yes
 
@@ -2142,15 +2180,11 @@ technologies = {
 	}
 
 	sp_helicopter_med_evac_tech = {
+		allow = { always = no }	# HOD: support company removed
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
 		}
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_air_helicopter
-			}
-		}
 
 		is_special_project_tech = yes
 
@@ -2197,27 +2231,26 @@ technologies = {
 	}
 
 	sp_armored_motorized_military_police_tech = {
+		folder = {
+			name = republic_folder
+			position = { x = 0 y = 18 }
+		}
+		folder = {
+			name = droid_folder
+			position = { x = 0 y = 18 }
+		}
+		path = { leads_to_tech = sp_armored_maintenance_tech research_cost_coeff = 1 }	# HOD
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
 		}
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_land_military_engineering_vehicles
-			}
-		}
 
-		is_special_project_tech = yes
 
 		force_use_small_tech_layout = yes
 		show_equipment_icon = yes
 
 		research_cost = 2.0
 		start_year = 978
-		folder = {
-			name = support_folder
-			position = { x = 5 y = @978 }
-		}
 
 		categories = {
 			support_tech

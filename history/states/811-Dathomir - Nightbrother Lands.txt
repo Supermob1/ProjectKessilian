@@ -9,6 +9,8 @@ state={
 		rubber=1
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_dat_village }	# HOD:landmark
+		add_dynamic_modifier = { modifier = HOD_landmark_dat_arena }	# HOD:landmark
 		victory_points = {
 			487 3
 		}
@@ -21,7 +23,8 @@ state={
 			arms_factory = 2
 			air_base = 1
 		}
-		owner = NBR
+		owner = DHT
+		add_core_of = DHT
 		add_core_of = NBR
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

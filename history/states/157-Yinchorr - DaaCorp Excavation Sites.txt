@@ -10,13 +10,14 @@ state={
 		oil=75#Fuel
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_yin_mines }	# HOD:landmark
 		victory_points = {
 			958 3
 		}
 		buildings = {
 			infrastructure = 1
 		}
-		owner = REP
+		owner = YIN
 		add_core_of = YIN
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

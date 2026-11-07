@@ -9,6 +9,7 @@ state={
 		oil=3
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_ond_camp }	# HOD:landmark
 		victory_points = {
 			1803 2
 		}
@@ -17,7 +18,8 @@ state={
 			industrial_complex = 1
 			arms_factory = 1
 		}
-		owner = ONR
+		owner = OND
+		add_core_of = OND
 		add_core_of = ONR
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

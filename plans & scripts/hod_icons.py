@@ -7,21 +7,26 @@ medallions become a ring badge. Vanilla art is only read for its size and silhou
   python -B hod_icons.py --write          every path goes to hod_icons_written.txt
   python -B hod_icons.py --undo
 """
-import argparse, io, os, re, sys
+import argparse, functools, io, os, re, sys
 import numpy as np
 from PIL import Image, ImageDraw
 from scipy import ndimage
 import hod_ui, hod_vector
+import cwic_library   # on sys.path via hod_vector
 
 LOG = os.path.join(os.path.dirname(__file__), "hod_icons_written.txt")
-EXCL = re.compile(r"(goals/|ideas/|portrait|leader_|flag|event_pictures|loadingscreen|pdx_online|logo|topview|images/|"
-                  r"counters/|anim|progress|fill|meter|gauge|glow|shine|highlight|mask|shadow|selection|terrain|weather|"
-                  r"technologies/|mapicons/|bookmark|frontend|main_menu|cursor|achievement|trophies|_bg\.|background|"
-                  r"overlay|line_|_line|scroll|marker|_frame|picture|medal|ribbon|profile|blueprint|equipmentdesigner/.*/|"
+EXCL = re.compile(r"(goals/|portrait|leader_|flag|event_pictures|loadingscreen|pdx_online|logo|topview|images/|"
+                  r"anim|progress|fill|meter|gauge|glow|shine|highlight|mask|shadow|selection|terrain|weather|"
+                  r"mapicons/|bookmark|frontend|main_menu|cursor|achievement|trophies|_bg\.|background|"
+                  r"overlay|line_|(?<!add_prod_naval)(?<!_aircraft)(?<!d_armour)(?<!_inf_art)_line|scroll|marker|_frame|picture|medal|ribbon|profile|blueprint|equipmentdesigner/.*/|"
                   r"strip|piechart|dot\.|texticon)", re.I)
 
 # name -> pictogram, first match wins: UI glyphs, then concepts, then unit types, then economy
 RULES = [(re.compile(r, re.I), n) for r, n in [
+    (r"add_prod_naval", "capital"), (r"add_prod_aircraft", "fighter"), (r"add_prod_armour", "walker"),
+    (r"add_prod_inf_art", "blaster"),
+    (r"military_factor|mapicon_arms|production_output|production_efficiency|attach_manufacturer|industrial_manufacturer",
+     "milfactory"),                                      # military factories: own colour (dark green)                    # "new production line" buttons: what the line makes
     (r"unlock", "unlock"), (r"lock", "lock"),
     (r"close|cancel|dismiss|btn_x|exit|decline|reject|refuse|deny|(^|_)ban(_|$)|kick", "x"),
     (r"speedup|speed_up|faster", "plus"), (r"speeddown|speed_down|slower", "minus"),
@@ -49,7 +54,7 @@ RULES = [(re.compile(r, re.I), n) for r, n in [
     (r"captur|prison|pow\b|arrest|interrogat", "handcuffs"),
     (r"para|airborne|airdrop|glider", "parachute"),
     (r"mountain", "mountain"),
-    (r"marine|amphib|invasion|landing|raid", "drop"),
+    (r"(?<!sub)marine|amphib|invasion|landing|raid", "drop"),
     (r"recon|scout|binocular|observ", "binoculars"),
     (r"engineer|repair|maintenance|wrench|bridge|reliab", "wrench"),
     (r"construct|build_|_build", "construction"),
@@ -100,17 +105,105 @@ RULES = [(re.compile(r, re.I), n) for r, n in [
     (r"factory|industr|production|mio|organization|concern|manufactur|department", "factory"),
     (r"decision", "republic"),
     (r"time|clock|day\b|date|duration", "clock"),
+    # tech-tree names that match nothing above
+    (r"(^|_)art_\d|howitzer|(^|_)shell", "artillery"), (r"(^|_)at_\d|anti_tank", "cannon"),
+    (r"(^|_)cas\d?|dive_bomb|close_air", "bomber"), (r"fire_control|targeting|gunsight", "target"),
+    (r"comput|c3i|cryptolog|electronic", "holocron"), (r"machine_tool|conversion", "wrench"),
+    (r"depth_charge|degauss|sonar|asw", "torpedo"), (r"excavat|firebase|fortif|delay|flexible_line|dispersed", "construction"),
+    (r"helicopter", "drop"), (r"floating_harbor|harbor|port", "station"), (r"central_planning|planning", "map"),
+    # abilities, laws, rules and status icons that match nothing above
+    (r"dig_in|last_stand|isolation|smoke_gen", "shield"), (r"supplies|consumer_goods|in_stock|seized", "crate"),
+    (r"overrun|war_declaration|call_to_war|diplo_war|backhand", "sabers"), (r"tension", "tension"),
+    (r"reserves|participants|all_adults|scraping|service_by|exercise|rangers|guerilla|lotta", "trooper"),
+    (r"secret_police|subvert", "eye"), (r"oppression", "handcuffs"), (r"conference|minor_democracies", "accord"),
+    (r"agrarian|unification|pan_asian", "planet"), (r"disarmed|surrender", "skull"), (r"ability_default|ongoing_focus", "star"),
+    (r"expedi|redeploy", "drop"), (r"equipment_icon|kivaar", "blaster"), (r"wargoal", "target"),
+    (r"refinery", "fuel"), (r"silo", "missile"), (r"producing|projects_factories", "factory"),
+    (r"magnetic_detonator", "mine"), (r"suicide_craft", "bomb"), (r"subtech_aa", "antiair"), (r"subtech_art", "artillery"),
+    (r"subtech_td", "cannon"), (r"mud|snow|flooded|impassable|great_wall|forest|river", "mountain"),
 ]]
 
 
 def pick(path):
     name = path[len("gfx/interface/"):-4]
     base = name.split("/")[-1]
+    content = CONTENT.search(path)
     for text in (base, name):                         # the file name first, the folder only as a fallback
         for rx, n in RULES:
-            if rx.search(text):
+            if rx.search(text) and not (content and n in GLYPHS):   # "nationalist" is not a list button
                 return n
     return None
+
+
+# picture-like content (tech, spirits, traits...): names are concepts, never UI controls; tiers shown as pips
+CONTENT = re.compile(r"technologies/|ideas/|traits/|decisions/|modifiers/|doctrines/|operations/|special_project|"
+                     r"military_industrial|archetypes/|abilitylist/|officer_corp/|military_raids/", re.I)
+
+
+# level words, each list in rising order; a word only counts when a sibling file has another word of the same list
+LEVEL_WORDS = [["basic", "improved", "advanced", "modern"], ["light", "medium", "heavy", "super_heavy"],
+               ["small", "medium", "large"], ["low", "medium", "high"], ["weak", "strong"], ["minor", "major"],
+               ["early", "late"]]
+ROMAN = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5}
+
+
+def level_key(path):
+    """-> (stem with the level token replaced, level value) or None. art_2 / cas3 / _iii / heavy_ / advanced_ ..."""
+    d, base = os.path.split(os.path.splitext(path)[0])
+    m = re.match(r"(.*?)(\d+)$", base)
+    if m:
+        return f"{d}/{m.group(1)}#", int(m.group(2))
+    m = re.match(r"(.*?_)(\d)(_.*)$", base)             # aa_1_allies, tank_2_medium
+    if m:
+        return f"{d}/{m.group(1)}#{m.group(3)}", int(m.group(2))
+    m = re.match(r"(.*_)(i|ii|iii|iv|v)$", base)
+    if m:
+        return f"{d}/{m.group(1)}#r", ROMAN[m.group(2)]
+    for k, words in enumerate(LEVEL_WORDS):
+        for v, w in sorted(enumerate(words), key=lambda x: -len(x[1])):
+            if re.search(rf"(^|_){w}(_|$)", base):
+                return f"{d}/" + re.sub(rf"(^|_){w}(_|$)", rf"\1#{k}\2", base, count=1), v
+    return None
+
+
+@functools.lru_cache(None)
+def levels():
+    """path -> level 1..5 for files that have siblings at other levels (so a lone 'heavy_x' gets nothing)."""
+    groups = {}
+    for p in hod_ui.vanilla_sprites():
+        k = level_key(p)
+        if k:
+            groups.setdefault(k[0], {}).setdefault(k[1], []).append(p)
+    for p in hod_ui.vanilla_sprites():                 # maintenance_company + maintenance_company2..4: bare name = level 1
+        stem = os.path.splitext(p)[0] + "#"
+        if stem in groups and 1 not in groups[stem] and min(groups[stem]) >= 2:
+            groups[stem][1] = [p]
+    out = {}
+    for stem, g in groups.items():
+        if len(g) >= 2:
+            words = re.search(r"#\d", stem)            # level words: rank order; numbers: the number itself (0-based +1)
+            base = 0 if words else (1 if min(g) == 0 else 0)
+            for rank, v in enumerate(sorted(g), 1):
+                for p in g[v]:
+                    out[p] = max(1, min(rank if words else v + base, 5))
+    return out
+
+
+def tier(path):
+    return levels().get(path, 0)
+
+
+def pips(out, n):
+    """n gold level pips with a dark rim, bottom-left (replaces vanilla's baked-in I / II / III, 1-3 dots ...)."""
+    h, w = out.shape[:2]
+    s = max(2, min(h, w) // 8)
+    for i in range(n):
+        x0, y0 = 1 + i * (s + 2), h - s - 2
+        if x0 + s + 1 >= w:
+            break
+        out[y0 - 1:y0 + s + 1, x0 - 1:x0 + s + 1] = (0, 0, 0, 255)
+        out[y0:y0 + s, x0:x0 + s] = (*hod_ui.GOLD, 255)
+    return out
 
 
 def shape(px):
@@ -133,14 +226,21 @@ def candidates():
     done = set(open(hod_ui.LOG).read().splitlines()) if os.path.exists(hod_ui.LOG) else set()
     mine = set(open(LOG).read().splitlines()) if os.path.exists(LOG) else set()
     for path, (frames, cornered) in sorted(hod_ui.vanilla_sprites().items()):
+        if path in hod_strips.STRIPS and path not in LAW_ICONS and path not in done and (not hod_ui.find(hod_ui.MOD, path) or path in mine):
+            src = hod_ui.find(hod_ui.VANILLA, path)    # multi-icon strip: a subject per frame (hod_strips)
+            if src:
+                yield path, np.array(Image.open(src).convert("RGBA")), frames, "strip"
+            continue
         if not path.startswith("gfx/interface/") or path in done or cornered or EXCL.search(path):
             continue
-        if hod_ui.find(hod_ui.MOD, path) and path not in mine:
-            continue                                   # the mod's own art
+        if hod_ui.find(hod_ui.MOD, path) and path not in mine or path in LAW_ICONS:
+            continue                                   # the mod's own art / law series (cwic_icons/law_icons.py)
         subject = pick(path)
         checkbox = "checkbox" in path
         if not subject and not checkbox:
             continue
+        if not (path in USED or subject in GLYPHS or checkbox or "generic_mio_department_icon" in path):
+            continue                                   # never shown in this mod (vanilla country / DLC-only content)
         src = hod_ui.find(hod_ui.VANILLA, path)
         if not src:
             continue
@@ -162,13 +262,22 @@ def candidates():
         yield path, px, frames, subject
 
 
+import used_sprites, hod_strips, law_icons
+LAW_ICONS = {law_icons.paths(l) for l in law_icons.LAWS}
+import counter_icons
+LAW_ICONS |= set(counter_icons.COUNTERS)               # unit counters: walker-counter look (cwic_icons/counter_icons.py)
+USED = used_sprites.used_textures()
+# plain UI controls the engine wires up itself: always restyled
+GLYPHS = {"x", "plus", "minus", "tick", "arrow_l", "arrow_r", "arrow_u", "arrow_d", "play", "pause", "stop", "next", "prev",
+          "refresh", "search", "list", "lock", "unlock", "copy", "merge", "split", "trash", "question", "exclaim", "chevrons"}
+
 COL = {0: hod_ui.CYAN, 1: hod_ui.GOLD, 2: hod_ui.GOLD, 3: hod_ui.GREY}
 
 
 def frame(px, subject, state, checkbox, on):
     h, w = px.shape[:2]
     kind, m = shape(px)
-    col = COL[state]
+    col = cwic_library.colour(subject) if state == 0 and subject else COL[state]   # domain colour; hover stays gold
     out = np.zeros((h, w, 4), float)
     if kind == "plate":
         flat = px.copy()
@@ -205,9 +314,43 @@ def frame(px, subject, state, checkbox, on):
             t = max(6, min(h, w) // 3)
             cov[h - t - 1:h - 1, w - t - 1:w - 1] = np.maximum(cov[h - t - 1:h - 1, w - t - 1:w - 1],
                                                                 np.array(hod_vector.render("tick", t, t)) / 255.0)
+        if kind == "free":                             # CWIC look: soft glow and 1px dark offset shadow under the glyph
+            glow = ndimage.gaussian_filter(cov, 0.8 + min(h, w) / 40) * 0.6
+            shadow = np.roll(np.roll(cov, 1, 0), 1, 1) * 0.8
+            for c, a in ((col, glow), ((0, 0, 0), shadow)):
+                out[..., :3] = out[..., :3] * (1 - a[..., None]) + np.array(c) * a[..., None]
+                out[..., 3] = np.maximum(out[..., 3], a * 255)
         out[..., :3] = out[..., :3] * (1 - cov[..., None]) + col * cov[..., None]
         out[..., 3] = np.maximum(out[..., 3], cov * 255)
     return np.clip(out, 0, 255).astype(np.uint8)
+
+
+def strip_frame(px, subject, alert, tier_index=0):
+    """One strip frame. Alert tiles: pictogram on the left 3/4, the vanilla "!" redrawn on the right in its own
+    colour (red = urgent, green = info), sampled from the original frame."""
+    out = frame(px, subject, 0, False, False)
+    if tier_index:
+        out = pips(out, tier_index)
+    if not alert:
+        return out
+    h, w = px.shape[:2]
+    right = px[:, int(w * 0.62):].reshape(-1, 4).astype(int)
+    red = ((right[:, 0] > 170) & (right[:, 1] < 90) & (right[:, 3] > 127)).sum()
+    green = ((right[:, 1] > 140) & (right[:, 0] < 130) & (right[:, 3] > 127)).sum()
+    if max(red, green) < 6:
+        return out
+    col = np.array((230, 50, 40) if red >= green else (60, 200, 90))
+    # shrink the pictogram to the left part, then put "!" on the right
+    plate = frame(px, None, 0, False, False).astype(float)
+    pw = int(w * 0.68)
+    cov = np.zeros((h, w))
+    cov[2:h - 2, 2:pw] = np.array(hod_vector.render(subject, pw - 2, h - 4, 0.25)) / 255.0
+    ex = np.zeros((h, w))
+    ex[3:h - 3, pw - 2:w - 3] = np.array(hod_vector.render("exclaim", w - pw - 1, h - 6, 0.1)) / 255.0
+    for c, a in ((np.array(cwic_library.colour(subject)), cov), (col, ex)):
+        plate[..., :3] = plate[..., :3] * (1 - a[..., None]) + c * a[..., None]
+        plate[..., 3] = np.maximum(plate[..., 3], a * 255)
+    return np.clip(plate, 0, 255).astype(np.uint8)
 
 
 def restyle(path, px, frames, subject):
@@ -216,7 +359,16 @@ def restyle(path, px, frames, subject):
     checkbox = "checkbox" in path
     # 2 frames: off / on (on = gold); 3-4 frames: normal / hover / pressed / disabled
     states = list(range(n)) if n in (3, 4) else ([0, 1] if n == 2 else [0] * n)
-    out = np.hstack([frame(px[:, k * fw:(k + 1) * fw], subject, states[k], checkbox, n == 2 and k == 1)
+    if subject == "strip":                             # each frame its own pictogram; alerts keep their coloured "!"
+        subs = hod_strips.subjects(path)
+        out = np.hstack([px[:, k * fw:(k + 1) * fw] if subs[min(k, len(subs) - 1)] is None else
+                         strip_frame(px[:, k * fw:(k + 1) * fw], subs[min(k, len(subs) - 1)], path in hod_strips.ALERTS,
+                                     min(k + 1, 5) if path in hod_strips.TIERS else 0)
+                         for k in range(n)])
+        return np.hstack([out, np.zeros((px.shape[0], px.shape[1] - out.shape[1], 4), np.uint8)]) \
+            if out.shape[1] < px.shape[1] else out
+    t = tier(path)
+    out = np.hstack([pips(frame(px[:, k * fw:(k + 1) * fw], subject, states[k], checkbox, n == 2 and k == 1), t)
                      for k in range(n)])
     if out.shape[1] < px.shape[1]:
         out = np.hstack([out, np.zeros((px.shape[0], px.shape[1] - out.shape[1], 4), np.uint8)])

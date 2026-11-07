@@ -51,7 +51,8 @@ def vanilla_sprites():
             if t:
                 n = re.search(r"noOfFrames\s*=\s*(\d+)", m.group(1), re.I)
                 key = re.sub(r"/+", "/", t.group(1).replace("\\", "/")).lower()
-                out[key] = (int(n.group(1)) if n else 1, "cornered" in m.group(0)[:40].lower() or out.get(key, (0, False))[1])
+                old = out.get(key, (0, False))           # several definitions of one texture: keep the real frame count
+                out[key] = (max(int(n.group(1)) if n else 1, old[0]), "cornered" in m.group(0)[:40].lower() or old[1])
     root = VANILLA + "/gfx/interface"
     for d, _, fs in os.walk(root):                     # textures no .gfx references still ship with the game
         for f in fs:
@@ -227,6 +228,8 @@ def draw(px, accent, state, cornered=False):
     lum = px[..., :3].astype(float) @ [0.299, 0.587, 0.114]
     inner = ndimage.binary_erosion(m, iterations=4)
     struct = lines(lum, inner, 0) | lines(lum, inner, 1)
+    if min(h, w) <= 40:                                # small bars: vanilla stripes are markers, not layout
+        struct[:] = False
     rgb[struct] = STEEL if state != 3 else GREY
     edge = m & ~ndimage.binary_erosion(m, iterations=2 if min(h, w) >= 20 else 1)
     rgb[edge] = col
@@ -241,8 +244,13 @@ def restyle(path, px, frames):
     fw = px.shape[1] // max(frames, 1)
     if path in BARS and not re.search(r"bg|back|frame|border|empty", path):
         return bar_fill(px)
-    parts = [draw(px[:, k * fw:(k + 1) * fw], None, (k if frames in (3, 4) else 0) if frames > 1 else 0, path in CORNERED)
-             for k in range(max(frames, 1))]
+    states = [k if frames in (3, 4) else 0 for k in range(max(frames, 1))]
+    if frames == 2:                                    # on/off pair: the more colourful vanilla frame is the "on" one
+        sat = [np.percentile(np.ptp(px[:, k * fw:(k + 1) * fw, :3].astype(float), -1)[px[:, k * fw:(k + 1) * fw, 3] > 127], 98)
+               for k in range(2)]                      # 98th pct: the coloured marker is small
+        if abs(sat[0] - sat[1]) > 20:
+            states[int(np.argmax(sat))] = 1
+    parts = [draw(px[:, k * fw:(k + 1) * fw], None, states[k], path in CORNERED) for k in range(max(frames, 1))]
     out = np.hstack(parts)
     if out.shape[1] < px.shape[1]:                     # leftover columns when width isn't a multiple of frames
         out = np.hstack([out, np.zeros((px.shape[0], px.shape[1] - out.shape[1], 4), np.uint8)])

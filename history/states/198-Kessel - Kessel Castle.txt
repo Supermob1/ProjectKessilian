@@ -13,6 +13,7 @@ state={
 		chromium=20#Circuitry
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_kes_castle }	# HOD:landmark
 		victory_points = {
 			3246 15
 		}
@@ -22,7 +23,8 @@ state={
 			arms_factory = 5
 			air_base = 3
 		}
-		owner = KES
+		owner = PYK
+		add_core_of = PYK
 		add_core_of = KES
 		# HOD battle royale (game_mode_history.py)
 		976.1.2 = {

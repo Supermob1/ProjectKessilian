@@ -13,7 +13,6 @@ set_technology = {
 	infantry_weapons = 1
 	tech_support = 1
 	tech_recon = 1
-	tech_engineers = 1
 }
 
 set_popularities = {
@@ -69,3 +68,6 @@ recruit_character = FLT_geratt
 	if = { limit = { is_faction_leader = yes } dismantle_faction = yes }
 	every_other_country = { limit = { is_subject_of = ROOT } ROOT = { end_puppet = PREV } }
 }
+every_country = { limit = { NOT = { tag = FLT } } add_opinion_modifier = { target = FLT modifier = HOD_felucian_hostility } reverse_add_opinion_modifier = { target = FLT modifier = HOD_felucian_hostility } }	# HOD:felucia
+add_relation_rule_override = { can_access_market = no trigger = HOD_market_disabled usage_desc = HOD_market_disabled_tt }	# HOD:no_market
+set_technology = { tech_support = 1 tech_recon = 1 sp_armored_engineer_tech = 1 sp_armored_motorized_military_police_tech = 1 sp_armored_maintenance_tech = 1 sp_armored_signal_tech = 1 popup = no }	# HOD:support_techs

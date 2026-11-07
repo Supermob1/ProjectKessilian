@@ -56,7 +56,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = {
-					width = 2610 height = 840
+					width = 2610 height = 980
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -165,11 +165,49 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+				# HOD: armoured support + trains rows
+				instantTextBoxType = {
+					name = "republic_folder_row_hod0"
+					position = { x = 20 y = 712 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "HOD_TECHROW_ARMOURED_SUPPORT"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "republic_folder_row_hod1"
+					position = { x = 20 y = 852 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "HOD_TECHROW_TRAINS"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
 			}
 
 			gridboxtype = {
 				name = "old_republic_equipment_tree"
 				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			# HOD: armoured support + trains
+			gridboxtype = {
+				name = "tech_support_tree"
+				position = { x = 300 y = 700 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "basic_train_tree"
+				position = { x = 300 y = 840 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
@@ -3624,7 +3662,7 @@ guiTypes = {
 				name = "size_filler"
 				position = { x=0 y=0 }
 				size = {
-					width = 1650 height = 1000
+					width = 3100 height = 1100
 					min = { width = 100%% height = 100%% }
 				}
 
@@ -3832,6 +3870,19 @@ guiTypes = {
 
 			}
 
+			
+				# HOD: engineering tree (merged into industry)
+				iconType = {
+					name ="engineering_techtree_bg"
+					spriteType = "GFX_engineering_techtree_bg"
+					position = { x=1650 y=0 }
+				}
+				iconType = {
+					name ="wonderweapons_bg"
+					spriteType = "GFX_wonderweapons_bg"
+					position = { x=2565 y=0 }
+					alwaystransparent = yes
+				}
 			}
 
 
@@ -3927,49 +3978,11 @@ guiTypes = {
 				hide = yes
 				alwaystransparent = yes
 			}
-		}
-
-		containerWindowType = {
-			name = "electronics_folder"
-			position = { x=0 y=47 }
-			size = { width = 100%% height = 100%% }
-			margin = { top = 13 left = 13 bottom = 24 right = 25}
-			drag_scroll = { left middle }
-			verticalScrollbar = "right_vertical_slider"
-			horizontalScrollbar = "bottom_horizontal_slider"
-			scroll_wheel_factor = 40
-
-			background = {
-				name = "Background"
-				quadTextureSprite ="GFX_tiled_window_2b_border"
-			}
-
-			containerWindowType = {
-				name = "size_filler"
-				position = { x=0 y=0 }
-				size = {
-					width = 710 height = 1100
-					min = { width= 100%% height = 100%% }
-				}
-
-				iconType = {
-					name ="engineering_techtree_bg"
-					spriteType = "GFX_engineering_techtree_bg"
-					position = { x=0 y=0 }
-				}
-
-				iconType = {
-					name ="wonderweapons_bg"
-					spriteType = "GFX_wonderweapons_bg"
-					position = { x=915 y=0 }
-					alwaystransparent = yes
-				}
-
-			}
-
+		
+			# HOD: engineering tree (merged into industry)
 			containerWindowType = {
 				name = "wonderweapon_year"
-				position = { x=950 y=40 }
+				position = { x=2600 y=40 }
 				size = { width = 130 height = 100% }
 				orientation = upper_left
 
@@ -4104,10 +4117,9 @@ guiTypes = {
 #				}
 
 			}
-
 			containerWindowType = {
 				name = "engineering_year_right"
-				position = { x=50 y=40 }
+				position = { x=1700 y=40 }
 				size = { width = 130 height = 100% }
 				orientation = upper_left
 
@@ -4255,10 +4267,9 @@ guiTypes = {
 				}
 
 			}
-
 				instantTextBoxType = {
 					name = "electronic_eng_subtitle"
-					position = { x = 190 y = 100 }
+					position = { x = 1840 y = 100 }
 					font = "hoi_22tech"
 					borderSize = {x = 0 y = 4}
 					text = "TITLE_ELECTRONIC_SUBTITLE"
@@ -4267,10 +4278,9 @@ guiTypes = {
 					format = center
 					Orientation = "UPPER_LEFT"
 				}
-
 				instantTextBoxType = {
 					name = "fortification_eng_subtitle"
-					position = { x = 670 y = 100 }
+					position = { x = 2320 y = 100 }
 					font = "hoi_22tech"
 					borderSize = {x = 0 y = 4}
 					text = "TITLE_FORTIFICATION_SUBTITLE"
@@ -4279,22 +4289,9 @@ guiTypes = {
 					format = center
 					Orientation = "UPPER_LEFT"
 				}
-
-				instantTextBoxType = {
-					name = "experimental_rockets_subtitle"
-					position = { x = 1200 y = 230 }
-					font = "hoi_22tech"
-					borderSize = {x = 0 y = 4}
-					text = "TITLE_EXP_ROCKETS_SUBTITLE"
-					maxWidth = 200
-					maxHeight = 122
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
-
 				instantTextBoxType = {
 					name = "atomic_research_subtitle"
-					position = { x = 1000 y = 100 }
+					position = { x = 2650 y = 100 }
 					font = "hoi_22tech"
 					borderSize = {x = 0 y = 4}
 					text = "TITLE_ATOMIC_RESEARCH_SUBTITLE"
@@ -4303,74 +4300,37 @@ guiTypes = {
 					format = center
 					Orientation = "UPPER_LEFT"
 				}
-
 			gridboxtype = {
 				name = "electronic_mechanical_engineering_tree"
-				position = { x=0 y=172 }
+				position = { x=1650 y=172 }
 				size = { width = 680 height = 800 }
 				slotsize = { width=60 height= 60 }
 				format = "UP"
 			}
-
 			iconType = {
 				name = "highlight_engineering_1"
 				spriteType = "GFX_tutorial_research_small_item_icon_glow"
-				position = { x=245 y=172}
+				position = { x=1895 y=172}
 				hide = yes
 				alwaystransparent = yes
 			}
-
 			gridboxtype = {
 				name = "basic_fortification_tech_tree"
-				position = { x=400 y=172 }
+				position = { x=2050 y=172 }
 				size = { width = 680 height = 800 }
 				slotsize = { width=60 height= 60 }
 				format = "UP"
 			}
-
-
-			gridboxtype = {
-				name = "experimental_rockets_tree"
-				position = { x=1050 y=172 }
-				size = { width = 480 height = 650 }
-				slotsize = { width=60 height= 60 }
-				format = "UP"
-			}
-
-			#gridboxtype = {
-			#	name = "sp_rockets_improved_guidance_tree" 
-			#	position = { x=980 y=172 }
-			#	size = { width = 480 height = 650 }
-			#	slotsize = { width=60 height= 60 }
-			#	format = "UP"
-			#}
-
-			#gridboxtype = {
-			#	name = "sp_rockets_rocket_bomber_tree" 
-			#	position = { x=980 y=172 }
-			#	size = { width = 480 height = 650 }
-			#	slotsize = { width=60 height= 60 }
-			#	format = "UP"
-			#} 
-
-			#gridboxtype = {
-			#	name = "sp_rockets_glide_bombs_tree" 
-			#	position = { x=980 y=172 }
-			#	size = { width = 480 height = 650 }
-			#	slotsize = { width=60 height= 60 }
-			#	format = "UP"
-			#}  
-
 			gridboxtype = {
 				name = "atomic_research_tree"
-				position = { x=750 y=172 }
+				position = { x=2400 y=172 }
 				size = { width = 680 height = 500 }
 				slotsize = { width=60 height= 60 }
 				format = "UP"
 
 			}
-
 		}
+
 
 		containerWindowType = {
 			name = "droid_folder"
@@ -4391,7 +4351,7 @@ guiTypes = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = {
-					width = 2610 height = 1120
+					width = 2610 height = 1260
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -4524,11 +4484,49 @@ guiTypes = {
 					format = left
 					Orientation = "UPPER_LEFT"
 				}
+				# HOD: armoured support + trains rows
+				instantTextBoxType = {
+					name = "droid_folder_row_hod0"
+					position = { x = 20 y = 992 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "HOD_TECHROW_ARMOURED_SUPPORT"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "droid_folder_row_hod1"
+					position = { x = 20 y = 1132 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = { x = 0 y = 0}
+					text = "HOD_TECHROW_TRAINS"
+					maxWidth = 260
+					maxHeight = 62
+					format = left
+					Orientation = "UPPER_LEFT"
+				}
 			}
 
 			gridboxtype = {
 				name = "early_droid_infantry_tree"
 				position = { x = 300 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			# HOD: armoured support + trains
+			gridboxtype = {
+				name = "tech_support_tree"
+				position = { x = 300 y = 980 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+			}
+			gridboxtype = {
+				name = "basic_train_tree"
+				position = { x = 300 y = 1120 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
 			}
@@ -4571,7 +4569,7 @@ guiTypes = {
 			}
 			buttonType = {
 				name = "armour_folder_tab"
-				position = { x = 200 y = 0 }
+				position = { x = 111 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
@@ -4579,21 +4577,21 @@ guiTypes = {
 
 			buttonType = {
 				name = "nsb_armour_folder_tab"
-				position = { x = 200 y = 0 }
+				position = { x = 111 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
 			}
 			buttonType = {
 				name = "hod_cis_armour_folder_tab"
-				position = { x = 200 y = 0 }
+				position = { x = 111 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
 			}
 			buttonType = {
 				name = "hod_rep_armour_folder_tab"
-				position = { x = 200 y = 0 }
+				position = { x = 111 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
@@ -4601,7 +4599,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "artillery_folder_tab"
-				position = { x = 289 y = 0 }
+				position = { x = 200 y = 0 }
 				quadTextureSprite = "GFX_artillery_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_artillery
@@ -4609,45 +4607,38 @@ guiTypes = {
 
 			buttonType = {
 				name = "naval_folder_tab"
-				position = { x = 378 y = 0 }
+				position = { x = 200 y = 0 }
 				quadTextureSprite = "GFX_naval_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "mtgnavalfolder_tab"
-				position = { x = 378 y = 0 }
+				position = { x = 200 y = 0 }
 				quadTextureSprite = "GFX_naval_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "mtgnavalsupportfolder_tab"
-				position = { x = 467 y = 0 }
+				position = { x = 289 y = 0 }
 				quadTextureSprite = "GFX_naval_support_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "air_techs_folder_tab"
-				position = { x = 556 y = 0 }
+				position = { x = 378 y = 0 }
 				quadTextureSprite = "GFX_air_techs_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_air
 			}
 			buttonType = {
 				name = "bba_air_techs_folder_tab"
-				position = { x = 556 y = 0 }
+				position = { x = 378 y = 0 }
 				quadTextureSprite = "GFX_air_techs_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_air
-			}
-			buttonType = {
-				position = { x = 645 y = 0 }
-				name = "electronics_folder_tab"
-				quadTextureSprite = "GFX_techtree_engineering_tab"
-				frame = 1
-				clicksound = ui_research_tab_engineering
 			}
 			buttonType = {
 				position = { x = 22 y = 0 }
@@ -4660,13 +4651,13 @@ guiTypes = {
 			iconType = {
 				name = "highlight_engineering_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=645 y=0}
+				position = { x=467 y=0}
 				hide = yes
 				alwaystransparent = yes
 			}
 
 			buttonType = {
-				position = { x = 734 y = 0 }
+				position = { x = 467 y = 0 }
 				name = "industry_folder_tab"
 				quadTextureSprite = "GFX_industry_folder_tab"
 				frame = 1
@@ -4676,7 +4667,7 @@ guiTypes = {
 			iconType = {
 				name = "highlight_industry_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=734 y=0}
+				position = { x=467 y=0}
 				hide = yes
 				alwaystransparent = yes
 			}

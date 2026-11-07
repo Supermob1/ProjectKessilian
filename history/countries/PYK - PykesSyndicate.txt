@@ -21,7 +21,6 @@ recruit_character = PYK_pyke_dark_patron
 
 set_technology = {
 infantry_weapons = 1
-gw_artillery = 1
 tech_trucks = 1
 }
 
@@ -45,7 +44,6 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 	}
-puppet = KES   # HOD: new_tags.py
 
 # HOD battle royale (game_mode_history.py)
 976.1.2 = {
@@ -55,3 +53,5 @@ puppet = KES   # HOD: new_tags.py
 	every_other_country = { limit = { is_subject_of = ROOT } ROOT = { end_puppet = PREV } }
 	set_cosmetic_tag = HOD_BR_197
 }
+add_relation_rule_override = { can_access_market = no trigger = HOD_market_disabled usage_desc = HOD_market_disabled_tt }	# HOD:no_market
+set_technology = { tech_support = 1 tech_recon = 1 sp_armored_engineer_tech = 1 sp_armored_motorized_military_police_tech = 1 sp_armored_maintenance_tech = 1 sp_armored_signal_tech = 1 popup = no }	# HOD:support_techs

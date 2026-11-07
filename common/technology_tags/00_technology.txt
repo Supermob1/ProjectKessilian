@@ -176,6 +176,7 @@ technology_folders = {
 		ledger = army
 	}
 	support_folder = {
+		available = { always = no }	# HOD: support moved into the Republic/CIS tabs
 		ledger = army
 	}
 	armour_folder = {
@@ -198,6 +199,7 @@ technology_folders = {
 		ledger = army
 	}
 	artillery_folder = {
+		available = { always = no }	# HOD: artillery tree disabled
 		ledger = army
 	}
 	air_techs_folder = {
@@ -242,9 +244,6 @@ technology_folders = {
 		}
 		ledger = hidden #For now
 		doctrine = yes
-	}
-	electronics_folder = {
-		ledger = civilian
 	}
 }
 

@@ -15,16 +15,7 @@ set_technology = {
 	tech_support = 1
 	tech_trucks = 1
 	basic_train = 1
-	tech_engineers = 1
 	tech_recon = 1
-	tech_signal_company = 1
-	tech_logistics_company = 1
-	tech_maintenance_company = 1
-	tech_field_hospital = 1
-	tech_military_police = 1
-	gw_artillery = 1
-	interwar_antiair = 1
-	interwar_antitank = 1
 	early_fighter = 1
 	transport = 1
 	old_republic_equipment = 1
@@ -73,3 +64,5 @@ recruit_character = SHI_risa
 	every_other_country = { limit = { is_subject_of = ROOT } ROOT = { end_puppet = PREV } }
 	set_cosmetic_tag = HOD_BR_216
 }
+add_relation_rule_override = { can_access_market = no trigger = HOD_market_disabled usage_desc = HOD_market_disabled_tt }	# HOD:no_market
+set_technology = { tech_support = 1 tech_recon = 1 sp_armored_engineer_tech = 1 sp_armored_motorized_military_police_tech = 1 sp_armored_maintenance_tech = 1 sp_armored_signal_tech = 1 popup = no }	# HOD:support_techs

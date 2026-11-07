@@ -9,6 +9,7 @@ state={
 		coal=2
 	}
 	history = {
+		add_dynamic_modifier = { modifier = HOD_landmark_foe_works }	# HOD:landmark
 		victory_points = {
 			2004 3
 		}
@@ -18,7 +19,8 @@ state={
 			arms_factory = 2
 			air_base = 1
 		}
-		owner = BTK
+		owner = TCU
+		add_core_of = TCU
 		add_core_of = BTK
 		# HOD total war (game_mode_history.py)
 		976.1.1 = {

@@ -1828,22 +1828,25 @@ def main():
         sts = {pin} if pin else found
         assert sts, f"{key}: {meshes} stand in no province; pin a state"
         mid = f"HOD_landmark_{key}"
-        mods.append(f"{mid} = {{\n\ticon = {icon}\n\tenable = {{ always = yes }}\n"
+        mods.append(f"{mid} = {{\n\ticon = GFX_modifiers_HOD_landmark\n\tenable = {{ always = yes }}\n"
                     + "".join(f"\t{k} = {v}\n" for k, v in effects.items()) + "}\n")
         apply_[mid] = sorted(sts)
         q = lambda t: t.replace('"', '\\"')
         loc += [f' {mid}:0 "{q(name)}"\n', f' {mid}_desc:0 "{q(desc)}"\n']
-    on = ["# HOD: landmark lore (landmarks_lore.py): each landmark's state gets its dynamic modifier at the start\n",
-          "on_actions = {\n\ton_startup = {\n\t\teffect = {\n"]
-    for mid, sts in apply_.items():
-        lim = " ".join(f"state = {s}" for s in sts)
-        on.append(f"\t\t\tevery_state = {{\n\t\t\t\tlimit = {{ OR = {{ {lim} }} }}\n"
-                  f"\t\t\t\tadd_dynamic_modifier = {{ modifier = {mid} }}\n\t\t\t}}\n")
-    on.append("\t\t}\n\t}\n}\n")
     w = lambda path, lines, enc="utf-8": open(path, "w", encoding=enc, newline="\n").write("".join(lines))
     w(MODS, mods)
-    w(ONACT, on)
     w(LOC, loc)
+    # each landmark's state gets its dynamic modifier in its own state history (no on_startup)
+    import history_inject as hi
+    per_state = {}
+    for mid, sts in apply_.items():
+        for st in sts:
+            per_state.setdefault(st, []).append(f"add_dynamic_modifier = {{ modifier = {mid} }}")
+    hi.clear("landmark", "states")
+    for st, lines in sorted(per_state.items()):
+        hi.set_state(st, "landmark", lines)
+    if os.path.exists(ONACT):
+        os.remove(ONACT)
     for mid, sts in apply_.items():
         print(f"{mid:40} states {sts}")
 
