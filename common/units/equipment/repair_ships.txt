@@ -80,24 +80,4 @@ equipments = {
 		naval_dominance_factor = 0
 	}
 	
-	repair_ship_2 = {
-		abbreviation = "ZZZ"
-		year = 1936
-		parent = repair_ship_1
-		archetype = repair_ship_hull
-		priority = 2000
-		model = repair_ship
-		modifier_stat = {
-			modifier = naval_repair_support 
-			value = 150
-			type = naval_support
-		}
-		
-		module_slots = inherit
-		max_strength = 40
-		naval_range = 5000
-		build_cost_ic = 162.5
-		manpower = 350
-		naval_dominance_factor = 0
-	}
 }

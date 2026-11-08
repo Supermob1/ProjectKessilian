@@ -1,0 +1,19 @@
+equipments = {
+	guided_missile_equipment_4 = {
+		year = 2096
+
+		archetype = guided_missile_equipment
+		parent = guided_missile_equipment_3
+		is_buildable = yes
+		one_use_only = yes
+		sprite = missile_default
+		
+		air_range = 40000
+		maximum_speed = 20000
+		air_agility = 20
+		air_bombing = 1200
+		
+		# build_cost_ic = 11
+	}
+
+}

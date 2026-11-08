@@ -598,6 +598,8 @@ def write_templates():
 
 
 if __name__ == "__main__":
+    raise SystemExit("OBSOLETE (2026-11-08): the old walker/vanilla techs, units and equipment it writes were deleted; "
+                     "use sw_tree/executor_oob.py")
     write_techs()
     write_tags()
     write_gui()

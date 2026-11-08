@@ -1,0 +1,62 @@
+objectTypes = {
+    pdxmesh = {
+        name = "IMP_infantry_rifle_mesh"
+        file = "gfx/models/units/stormtrooper_mesh.mesh"
+
+        # Animation IDs aligned to BOTH mg-style (original mod) AND
+        # rifle-style (referenced by vanilla infantry_rifle_entity, which
+        # IMP_infantry_entity clones from). Mapping the rifle IDs to the
+        # same anim files as mg-style so the cloned state-machine's
+        # 'charge_rifle' / 'charge_rifle_shoot' / 'guard_rifle' resolve.
+        animation = { id = "idle"               type = "GER_infantry_mg_idle_animation" }
+        animation = { id = "attack"             type = "GER_infantry_mg_attack_animation" }
+        animation = { id = "support_attack"     type = "GER_infantry_mg_support_attack_animation" }
+        animation = { id = "charge_mg"          type = "GER_infantry_mg_charge_animation" }
+        animation = { id = "charge_mg_shoot"    type = "GER_infantry_mg_charge_shoot_animation" }
+        animation = { id = "charge_rifle"       type = "GER_infantry_mg_charge_animation" }
+        animation = { id = "charge_rifle_shoot" type = "GER_infantry_mg_charge_shoot_animation" }
+        animation = { id = "move"               type = "GER_infantry_mg_moving_animation" }
+        animation = { id = "march_move"         type = "GER_infantry_mg_march_animation" }
+        animation = { id = "retreat"            type = "GER_infantry_mg_retreat_animation" }
+        animation = { id = "death"              type = "GER_infantry_mg_death_animation" }
+        animation = { id = "long_idle01"        type = "GER_infantry_mg_long_idle_01_animation" }
+        animation = { id = "long_idle02"        type = "GER_infantry_mg_long_idle_02_animation" }
+        animation = { id = "long_idle03"        type = "GER_infantry_mg_long_idle_03_animation" }
+        animation = { id = "long_idle04"        type = "GER_infantry_mg_long_idle_04_animation" }
+        animation = { id = "long_idle05"        type = "GER_infantry_mg_long_idle_05_animation" }
+        animation = { id = "cavalry_idle"       type = "GER_infantry_cavalry_rider_mg_idle_animation" }
+        animation = { id = "cavalry_move"       type = "GER_infantry_cavalry_rider_mg_moving_animation" }
+        animation = { id = "training"           type = "GER_infantry_idle_training_animation" }
+        animation = { id = "jumping_jacks"      type = "GER_infantry_jumping_jacks_animation" }
+        animation = { id = "pushup"             type = "GER_infantry_pushup_animation" }
+        animation = { id = "guard_rifle"        type = "GER_infantry_mg_idle_animation" }
+        animation = { id = "aim_exercise"       type = "GER_infantry_aim_exercise_animation" }
+    }
+
+    pdxmesh = {
+      name = "E11_mixamo_mg_mesh"
+      file = "gfx/models/units/guns/mixamo_E11.mesh"
+    }
+
+    pdxmesh = {
+  		name = "tie_mesh"
+  		file = "gfx/models/units/planes/tie_mesh.mesh"
+  		animation = { id = "idle" type = "fighter_default_idle_animation" }
+  	}
+
+    # defender_mesh removed: mesh file was never shipped with the mod
+    # (referenced gfx/models/units/planes/defender_mesh.mesh did not exist),
+    # causing test_object.mesh fallback + animation-joint mismatch crashes.
+    # IMP_jet_plane_entity now uses tie_mesh directly (see units_empire.asset).
+
+    pdxmesh = {
+  		name = "IMP_armor_mesh"
+      file = "gfx/models/units/tanks/IMP_tank.mesh"
+
+  		animation = { id = "idle"				type = "IMP_amphibious_armor_idle_animation" }
+  		animation = { id = "move"				type = "IMP_amphibious_armor_moving_animation" }
+  		animation = { id = "amphibious_move"	type = "IMP_amphibious_armor_amphibious_moving_animation" }
+  		animation = { id = "attack"				type = "IMP_amphibious_armor_attack_animation" }
+  		animation = { id = "amphibious_attack"	type = "IMP_amphibious_armor_amphibious_attack_animation" }
+  	}
+}

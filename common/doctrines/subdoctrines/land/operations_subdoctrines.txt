@@ -175,28 +175,8 @@ infiltration_tactics = {
         terrain_and_situation_assessment = {
         #4
             
-            recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.1
-                }
-                battalion_mult = {
-                    category = category_cavalry
-                    soft_attack = 0.1
-                }
 
-            }
-            mot_recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.1
-                }
-                battalion_mult = {
-                    category = category_cavalry
-                    soft_attack = 0.1
-                }
 
-            }
             light_tank_recon = {
                 battalion_mult = {
                     category = category_light_infantry
@@ -256,12 +236,7 @@ grand_assault = {
             
             max_command_power = 30
 
-            logistics_company = {
-                battalion_mult = {
-                    category = category_all_infantry
-                    defense = 0.05
-                }
-            }
+
         }
         multiple_attack_directions = {
         #2
@@ -277,18 +252,11 @@ grand_assault = {
                 max_organisation = 4
             }
 
-            anti_air = {
-                air_attack = 0.1
-            }
+
         }
         forward_command_posts = {
        #4
-            logistics_company = {
-                battalion_mult = {
-                    category = category_all_infantry 
-                    supply_consumption = -0.05
-                }
-            }
+
             category_recon = {
                recon = 0.1
             }
@@ -343,20 +311,8 @@ deep_battle = {
     rewards = {
         bounding_overwatch = {
         #1
-            recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.05
-                    defense = 0.05
-                }
-            }
-            mot_recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.05
-                    defense = 0.05
-                }
-            }
+
+
             light_tank_recon = {
                 battalion_mult = {
                     category = category_light_infantry
@@ -374,9 +330,7 @@ deep_battle = {
             category_tanks = {
                 max_organisation = 4
             }
-            armored_car = {
-                max_organisation = 4
-            }
+
             land_reinforce_rate = 0.05
         }
         maskirovka = {
@@ -400,21 +354,13 @@ deep_battle = {
             category_all_armor = {
                 default_morale = 0.1
             }
-            armored_car = {
-                max_organisation = 4
-            }
+
         }
         operational_depth_control = {
         #5
             org_loss_when_moving = -0.1
             land_reinforce_rate = 0.05
-            armored_car_recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    max_organisation = 10
-                    add = yes
-                }
-            }
+
             light_tank_recon = {
                 battalion_mult = {
                     category = category_light_infantry
@@ -466,20 +412,8 @@ deep_battle_no_lar = {
     rewards = {
         bounding_overwatch = {
         #1
-            recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.05
-                    defense = 0.05
-                }
-            }
-            mot_recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.05
-                    defense = 0.05
-                }
-            }
+
+
             light_tank_recon = {
                 battalion_mult = {
                     category = category_light_infantry
@@ -497,9 +431,7 @@ deep_battle_no_lar = {
             category_tanks = {
                 max_organisation = 4
             }
-            mechanized = {
-                max_organisation = 10
-            }
+
             land_reinforce_rate = 0.05
         }
         maskirovka = {
@@ -523,21 +455,13 @@ deep_battle_no_lar = {
             category_all_armor = {
                 default_morale = 0.1
             }
-            mechanized = {
-                breakthrough = 0.1
-            }
+
         }
         operational_depth_control = {
         #5
             org_loss_when_moving = -0.1
             land_reinforce_rate = 0.05
-            recon = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    max_organisation = 10
-                    add = yes
-                }
-            }
+
             light_tank_recon = {
                 battalion_mult = {
                     category = category_light_infantry
@@ -588,14 +512,8 @@ guerilla_war = {
 
     # EFFECTS
     enable_tactic = tactic_guerrilla_tactics
-    irregular_infantry = {
-        soft_attack = 0.1
-        defense = 0.2
-    }
-    militia = {
-        soft_attack = 0.1
-        defense = 0.2
-    }
+
+
 
     rewards = {
         catch_and_seize = {
@@ -637,18 +555,8 @@ guerilla_war = {
         
         urban_assaults = {
         #4
-            militia = {
-                urban = {
-                    attack = 0.10
-                    defence = 0.10
-                }
-            }
-            infantry = {
-                urban = {
-                    attack = 0.10
-                    defence = 0.10
-                }
-            }
+
+
 
   
         }
@@ -735,12 +643,7 @@ rapid_domination = {
         }
         centralized_fire_control = {
         #3
-            signal_company = {
-                battalion_mult = {
-                    category = category_artillery
-                    soft_attack = 0.1
-                }
-            }
+
 
 
         }

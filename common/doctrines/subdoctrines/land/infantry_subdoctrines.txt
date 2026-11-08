@@ -157,9 +157,7 @@ large_unit_tactics = {
         flexible_division_structures = {
         #2
            unit_infantry_design_cost_factor = -1
-           infantry = {
-                combat_width = -0.3
-            }
+
         }
         unit_knowledge_sharing = {
         #3
@@ -220,32 +218,20 @@ assault_infantry = {
     # EFFECTS
 
     #OTHER BASE REWARDS
-    artillery = {   
-        soft_attack = 0.1
-    }
+
 
     rewards = {
         low_echelon_fire_support = {
         #1
-            artillery = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.2
-                }
-            }
+
         }
         organic_battalion_fire_support = {
         #2
             category_support_artillery = {
                 soft_attack = 0.05
             }
-            anti_tank = {
-                ap_attack = 0.1
-                hard_attack = 0.1
-            }
-            anti_air = {
-                air_attack = 0.1
-            }
+
+
 
         }
 
@@ -271,18 +257,7 @@ assault_infantry = {
                     add = yes
                 }
             }
-            mot_recon = {
-                max_organisation = 20
-                battalion_mult = {
-                    category = category_all_infantry
-                    breakthrough = 0.1
-                }
-                battalion_mult = {
-                    category = category_all_infantry
-                    max_organisation = 5
-                    add = yes
-                }
-            }
+
 
 
         }
@@ -364,20 +339,7 @@ mounted_infantry = {
             }
         }
         mounted_skirmish_groups = {
-            recon = {
-                max_organisation = 10
-                soft_attack = 0.2
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.1
-                    defense = 0.1
-                }
-                battalion_mult = {
-                    category = category_light_infantry
-                    max_organisation = 5
-                    add = yes
-                }
-            } 
+ 
             category_cavalry = {
                 max_organisation = 5
             }
@@ -394,23 +356,13 @@ mounted_infantry = {
                 maximum_speed = 0.5 
                 max_strength = 0.05 
             }
-            recon = {
-                maximum_speed = 0.5
-            }
+
         }
         limbered_combat_support = {
-            artillery_brigade = {
-                maximum_speed = 0.5
-            }
-            anti_tank_brigade = {
-                maximum_speed = 0.5
-            }
-            anti_air_brigade = {
-                maximum_speed = 0.5
-            }
-            rocket_artillery_brigade = {
-                maximum_speed = 0.5
-            }
+
+
+
+
         }
 
     }
@@ -436,13 +388,7 @@ commandos = {
     ai_will_do = { base = 0 }
     enable_tactic = tactic_infantry_charge
     
-    logistics_company = {
-        battalion_mult = {
-            category = category_light_infantry
-            max_strength = 5
-            add = yes
-        }
-    }
+
 
     # EFFECTS
 
@@ -452,32 +398,17 @@ commandos = {
                 supply_consumption = -0.01
                 reliability = 0.05
             }
-            field_hospital = {
-                casualty_trickleback = 0.05
-            }
+
             helicopter_brigade = {
                 casualty_trickleback = 0.05
             }
-             helicopter_field_hospital = {
-                casualty_trickleback = 0.05
-            }           
+           
 
         }
         security_zone_operations = {
 
-            signal_company = {
-                battalion_mult = {
-                    category = category_all_infantry
-                    defense = 0.1
-                }
-            }
-            logistics_company = {
-                battalion_mult = {
-                 category = category_vehicle_infantry
-                 max_strength = 5
-                 add = yes
-                }
-            }
+
+
             category_vehicle_infantry = {
                 reliability = 0.05
                 breakthrough = 0.1
@@ -485,18 +416,8 @@ commandos = {
             
         }
         rigorous_training_regimen = {
-            recon = {
-                battalion_mult = {
-                    category = category_all_infantry
-                    soft_attack = 0.1
-                }
-            }
-            mot_recon = {
-                battalion_mult = {
-                    category = category_all_infantry
-                    soft_attack = 0.1
-                }
-            }
+
+
             light_tank_recon = {
                 battalion_mult = {
                     category = category_all_infantry
@@ -504,20 +425,7 @@ commandos = {
                 }
             }
             
-            infantry = {
-                desert = {
-                    attack = 0.05
-                    movement = 0.1
-                }
-                jungle = {
-                    attack = 0.05
-                    movement = 0.1
-                }
-                hills = {
-                    attack = 0.05
-                    movement = 0.1
-                }
-            }
+
         }
 
         field_intel_retrieval = {
@@ -568,14 +476,8 @@ irregulars = {
             }
         }
     }
-    irregular_infantry = {
-        defense = 0.1
-        supply_consumption = -0.05
-    }
-    militia = {
-        defense = 0.1
-        supply_consumption = -0.01
-    }
+
+
 
     # EFFECTS
 
@@ -584,12 +486,8 @@ irregulars = {
             mobilization_speed = 0.05
         }
         partisan_regiments = {
-            irregular_infantry = {
-                combat_width = -0.4
-            }
-            militia = {
-                combat_width = -0.4
-            }
+
+
             category_light_infantry = {
                 defense = 0.1
             }
@@ -662,19 +560,13 @@ peoples_war = {
     # EFFECTS
     enable_tactic = tactic_guerrilla_tactics
 
-    militia = {
-        soft_attack = 0.1
-        defense = 0.2
-    }
+
 
     rewards = {
         revolutionary_base_area = {
         #1
             mastery = 50
-            militia = {
-                defense = 0.1
-                supply_consumption = -0.02
-            }
+
             category_light_infantry = {
                 max_organisation = 5
             }
@@ -686,17 +578,11 @@ peoples_war = {
             category_light_infantry = {
                 default_morale = 0.1
             }
-            militia = {
-                equipment_capture_factor = 0.01
-            }
+
         }
         quick_decision_offensive_warfare = {
         #3
-            militia = {
-               initiative = 0.01
-               max_organisation = 10
-               breakthrough = 0.2
-            }
+
             
 
 
@@ -746,31 +632,17 @@ great_war_infantry = {
     rewards = {
         traverse_digging = {
             dig_in_speed_factor = 0.05
-            engineer = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    entrenchment = 0.05
-                }
-            }
+
             
         }
         sapping_operations = {
             category_light_infantry = {
                 defense = 0.1
             }
-            field_hospital = {
-                casualty_trickleback = 0.1
-            }
+
         }
         centralized_artillery_control = {
-            artillery = {
-                soft_attack = 0.1
-                battalion_mult = {
-                    category = category_light_infantry
-                    soft_attack = 0.1
-                    breakthrough = 0.05
-                }
-            }
+
         }
         field_fortification_emphasis = {
             category_light_infantry = {

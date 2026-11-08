@@ -1,0 +1,250 @@
+spriteTypes = {
+
+# ================================================================
+# Imperial naval tech icons (hulls) - 18 sprites
+# Format expected by HoI4: GFX_<tech_name>_medium
+# ================================================================
+
+	spriteType = {
+		name = "GFX_imp_tech_dd_1_medium"
+		texturefile = "gfx/interface/technologies/hod_render/foray_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_dd_2_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_dd_1940.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_dd_3_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_dd_1944.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_cl_1_medium"
+		texturefile = "gfx/interface/technologies/hod_render/hammerhead_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_cl_2_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_cl_1940.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_cl_3_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_cl_1944.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_ca_1_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_ca_1936.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_ca_2_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_ca_1940.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_ca_3_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_ca_1944.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_bb_1_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_bb_1936.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_bb_2_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_bb_1940.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_bb_3_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_bb_1944.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_cv_1_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_cv_1936.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_cv_2_medium"
+		texturefile = "gfx/interface/technologies/hod_render/venator_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_cv_3_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_cv_1944.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_ss_1_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_ss_1936.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_ss_2_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_ss_1940.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_ss_3_medium"
+		texturefile = "gfx/interface/technologies/imperial_naval/imp_ss_1944.dds"
+	}
+
+# ================================================================
+# Imperial naval module tech icons - reuse vanilla DDS via direct path
+# ================================================================
+
+	spriteType = {
+		name = "GFX_imp_tech_artillery_1_medium"
+		texturefile = "gfx/interface/technologies/basic_light_battery.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_artillery_2_medium"
+		texturefile = "gfx/interface/technologies/improved_light_battery.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_artillery_3_medium"
+		texturefile = "gfx/interface/technologies/advanced_light_battery.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_armor_1_medium"
+		texturefile = "gfx/interface/technologies/basic_cruiser_armor_scheme.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_armor_2_medium"
+		texturefile = "gfx/interface/technologies/improved_cruiser_armor_scheme.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_armor_3_medium"
+		texturefile = "gfx/interface/technologies/advanced_cruiser_armor_scheme.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_fire_control_1_medium"
+		texturefile = "gfx/interface/technologies/basic_fire_control_system.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_fire_control_2_medium"
+		texturefile = "gfx/interface/technologies/improved_fire_control_system.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_fire_control_3_medium"
+		texturefile = "gfx/interface/technologies/advanced_fire_control_system.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_torpedo_1_medium"
+		texturefile = "gfx/interface/technologies/basic_torpedo.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_torpedo_2_medium"
+		texturefile = "gfx/interface/technologies/improved_torpedo_launcher.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_aa_1_medium"
+		texturefile = "gfx/interface/technologies/anti_air_equipment.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_aa_2_medium"
+		texturefile = "gfx/interface/technologies/anti_air_equipment.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_secondaries_1_medium"
+		texturefile = "gfx/interface/technologies/basic_secondary_battery.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_secondaries_2_medium"
+		texturefile = "gfx/interface/technologies/improved_secondary_battery.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_engine_1_medium"
+		texturefile = "gfx/interface/technologies/nsb_engine_tech_1.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_engine_2_medium"
+		texturefile = "gfx/interface/technologies/nsb_engine_tech_2.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_engine_3_medium"
+		texturefile = "gfx/interface/technologies/nsb_engine_tech_3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_sonar_1_medium"
+		texturefile = "gfx/interface/technologies/sonar.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_sonar_2_medium"
+		texturefile = "gfx/interface/technologies/improved_sonar.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_deflector_1_medium"
+		texturefile = "gfx/interface/technologies/nsb_armor_tech_3.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_deflector_2_medium"
+		texturefile = "gfx/interface/technologies/nsb_armor_tech_4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_radar_3_medium"
+		texturefile = "gfx/interface/technologies/advanced_centimetric_radar.dds"
+	}
+
+# ================================================================
+# Tech folder tab button - reuse vanilla naval tab artwork for MVP
+# ================================================================
+
+	spriteType = {
+		name = "GFX_swnaval_folder_tab"
+		texturefile = "gfx/interface/techtree/techtree_naval_tab.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_swnaval_support_folder_tab"
+		texturefile = "gfx/interface/techtree/techtree_naval_support_tab.dds"
+		noOfFrames = 2
+	}
+
+# ================================================================
+# Folder-specific tech-item backgrounds. HoI4 builds the box sprite name from
+# the folder name: GFX_technology_<folder>_<state>_item_bg. Without these the
+# swnaval folders fell back to the generic 183x84 box (narrow/tall/wrong colour).
+# Point them at vanilla's WIDE naval box art (tech_naval_*, 332x69) so the hull
+# boxes render wide+thin exactly like the vanilla naval tree; module/small items
+# use the 72x72 doctrine box (this also shrinks the oversized module boxes).
+# ================================================================
+	spriteType = { name = "GFX_technology_swnaval_folder_available_item_bg"                 texturefile = "gfx/interface/techtree/tech_naval_available_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_folder_unavailable_item_bg"               texturefile = "gfx/interface/techtree/tech_naval_unavailable_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_folder_researched_item_bg"                texturefile = "gfx/interface/techtree/tech_naval_researched_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_folder_currently_researching_item_bg"     texturefile = "gfx/interface/techtree/tech_naval_researched_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_folder_small_available_item_bg"           texturefile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_folder_small_unavailable_item_bg"         texturefile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_folder_small_researched_item_bg"          texturefile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_folder_small_currently_researching_item_bg" texturefile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds" }
+
+	spriteType = { name = "GFX_technology_swnaval_support_folder_available_item_bg"                 texturefile = "gfx/interface/techtree/tech_naval_available_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_support_folder_unavailable_item_bg"               texturefile = "gfx/interface/techtree/tech_naval_unavailable_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_support_folder_researched_item_bg"                texturefile = "gfx/interface/techtree/tech_naval_researched_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_support_folder_currently_researching_item_bg"     texturefile = "gfx/interface/techtree/tech_naval_researched_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_support_folder_small_available_item_bg"           texturefile = "gfx/interface/techtree/tech_doctrine_available_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_support_folder_small_unavailable_item_bg"         texturefile = "gfx/interface/techtree/tech_doctrine_unavailable_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_support_folder_small_researched_item_bg"          texturefile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds" }
+	spriteType = { name = "GFX_technology_swnaval_support_folder_small_currently_researching_item_bg" texturefile = "gfx/interface/techtree/tech_landdoctrine_researched_item_bg.dds" }
+
+# ================================================================
+# Transport / landing chain tech icons - reuse vanilla naval transport art
+# ================================================================
+	spriteType = {
+		name = "GFX_imp_tech_transport_1_medium"
+		texturefile = "gfx/interface/technologies/transport.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_transport_2_medium"
+		texturefile = "gfx/interface/technologies/landing_craft.dds"
+	}
+	spriteType = {
+		name = "GFX_imp_tech_transport_3_medium"
+		texturefile = "gfx/interface/technologies/tank_landing_craft.dds"
+	}
+
+}

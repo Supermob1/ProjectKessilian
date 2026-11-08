@@ -20,24 +20,6 @@ recruit_character = IBC_ibc_elder_muun
 recruit_character = IBC_hego_damask
 # recruit_character = CSA_exec
 
-set_technology = {
-	infantry_weapons = 1
-	tech_trucks = 1
-	basic_train = 1
-	early_droid_infantry = 1
-	high_republic_infantry_droids = 1
-	late_republic_infantry_droids = 1
-	high_republic_heavy_droids = 1
-	late_republic_heavy_droids = 1
-	cis_aat = 1
-	cis_octuptarra = 1
-	cis_hailfire = 1
-	cis_repulsor_1 = 1
-	cis_foundry_1 = 1
-	tech_support = 1
-	tech_recon = 1
-	support_weapons = 1
-}
 
 set_popularities = {
 		akaanadocrat = 1
@@ -71,53 +53,6 @@ add_equipment_to_stockpile = {
 	producer = TCU
 }
 
-# HOD: starting walker / tank designs (faction_templates.py)
-if = {
-	limit = { has_dlc = "No Step Back" }
-	create_equipment_variant = {
-		name = "AAT"
-		type = medium_tank_chassis_1
-		parent_version = 0
-		modules = {
-			turret_type_slot = tank_medium_two_man_tank_turret
-			main_armament_slot = tank_small_cannon
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
-		}
-		upgrades = { tank_nsb_engine_upgrade = 1 tank_nsb_armor_upgrade = 1 }
-		model = IBC_medium_armor_entity
-	}
-	create_equipment_variant = {
-		name = "Octuptarra Tri-Droid"
-		type = light_tank_chassis_1
-		parent_version = 0
-		modules = {
-			turret_type_slot = tank_light_one_man_tank_turret
-			main_armament_slot = tank_heavy_machine_gun
-			suspension_type_slot = tank_christie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
-		}
-		upgrades = { tank_nsb_engine_upgrade = 1 tank_nsb_armor_upgrade = 1 }
-		model = IBC_light_armor_entity
-	}
-	create_equipment_variant = {
-		name = "Octuptarra AA Tri-Droid"
-		type = light_tank_aa_chassis_1
-		parent_version = 0
-		modules = {
-			turret_type_slot = tank_light_one_man_tank_turret
-			main_armament_slot = tank_anti_air_cannon
-			suspension_type_slot = tank_christie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
-		}
-		upgrades = { tank_nsb_engine_upgrade = 1 tank_nsb_armor_upgrade = 1 }
-		model = IBC_light_armor_entity
-	}
-}
-# HOD: end of starting designs
 
 # HOD battle royale (game_mode_history.py)
 976.1.2 = {
@@ -128,4 +63,4 @@ if = {
 	set_cosmetic_tag = HOD_BR_47
 }
 add_relation_rule_override = { can_access_market = no trigger = HOD_market_disabled usage_desc = HOD_market_disabled_tt }	# HOD:no_market
-set_technology = { tech_support = 1 tech_recon = 1 sp_armored_engineer_tech = 1 sp_armored_motorized_military_police_tech = 1 sp_armored_maintenance_tech = 1 sp_armored_signal_tech = 1 popup = no }	# HOD:support_techs
+set_technology = { laat = 1 torrent = 1 y-wing = 1 v_wing = 1 republic_weapon1 = 1 small_repeater1 = 1 republic_tank = 1 atrt = 1 atte = 1 atot = 1 isp = 1 basic_train = 1 popup = no }	# HOD:sw_tree

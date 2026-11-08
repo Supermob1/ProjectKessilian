@@ -32,13 +32,13 @@ sp_nuclear_reactor = {
 						has_country_flag = nuclear_reactor_heavy_water_flag
 					}
 					set_technology = {
-						nuclear_reactor_heavy_water = 1
+
 						popup = no
 					}
 				}
 				ELSE = {
 					set_technology = {
-						nuclear_reactor = 1
+
 						popup = no
 					}
 				}
@@ -142,7 +142,7 @@ sp_nuclear_reactor = {
 					country_effects = {
 						hidden_effect = {
 							set_technology = {
-								isotope_separation_centrifugal = 1
+
 								popup = no
 							}
 						}
@@ -291,7 +291,7 @@ sp_commercial_nuclear_reactor = {
 					ICON_FRAME = 27
 				}
 				set_technology = {
-					commercial_nuclear_reactor_tech = 1
+
 					popup = no
 				}
 			}
@@ -484,7 +484,7 @@ sp_nuclear_bomb = {
 			custom_effect_tooltip = sp_nuclear_bomb_tt
 			hidden_effect = {
 				set_technology = {
-					nukes = 1
+
 					popup = no
 				}
 				if = {
@@ -712,7 +712,7 @@ sp_thermo_nuclear_bomb = {
 			custom_effect_tooltip = sp_thermo_nuclear_bomb_tt
 			hidden_effect = {
 				set_technology = {
-					thermonuclear_bombs = 1
+
 					popup = no
 				}
 			}

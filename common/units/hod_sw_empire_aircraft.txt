@@ -1,0 +1,62 @@
+sub_units = {
+	tie_fighter = {
+		sprite = light_plane
+		priority = 1
+		active = yes
+		type = fighter
+		need = { imp_fighter_equipment = 1 }
+		categories = { category_fighter }
+		land_air_wing_size = 100
+	}
+
+	tie_heavy_fighter = { #defender - multi-role: CAS, naval strike, port strike, interception
+		sprite = jet_plane
+		priority = 1
+		active = yes
+		type = tactical_bomber
+		need = { imp_defender_equipment = 1 }
+		categories = { category_tac_bomber }
+		land_air_wing_size = 100
+	}
+
+	tie_interceptor = {
+		sprite = light_plane
+		priority = 1
+		active = yes
+		type = interceptor
+		need = { imp_interceptor_equipment = 1 }
+		land_air_wing_size = 100
+	}
+
+	tie_bomber = {
+		sprite = medium_plane
+		priority = 2
+		active = yes
+		type = strategic_bomber
+		need = { imp_bomber_equipment = 1 }
+		categories = { category_strat_bomber }
+		land_air_wing_size = 100
+	}
+
+	space_transport = {
+		sprite = heavy_plane
+		priority = 6
+		active = yes
+		type = air_transport
+		need = { imperial_transport_plane_equipment = 1 }
+		land_air_wing_size = 100
+	}
+
+	# SWX-036: THE gunship subunit. Its absence (the gunship equipment existed since v0.5
+	# but no sub_unit ever mapped to it) is what crashed the game on hovering/selecting a
+	# gunship - the equipment->subunit lookup returned null. Mirrors the vanilla cas subunit.
+	tie_gunship = { #gunship - dedicated close air support
+		sprite = medium_plane
+		priority = 1
+		active = yes
+		type = cas
+		need = { imp_gunship_equipment = 1 }
+		categories = { category_cas }
+		land_air_wing_size = 100
+	}
+}

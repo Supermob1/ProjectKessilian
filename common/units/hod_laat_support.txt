@@ -1,0 +1,211 @@
+# HOD 2026-11-08: LAAT gunship support companies ("helicopter-like"), unlocked by the gunship variants (sub-technologies)
+# of the Air transport techs (hod_sw_imperial_aircraft.txt): LAAT/i -> air assault, LAAT/le -> recon, Nu-class -> medevac,
+# Theta -> supply lift. The gunships are helicopter_equipment (helicopter_equipment_1, enabled by every gunship variant).
+sub_units = {
+	laat_assault_company = {
+		abbreviation = "LAAS"
+		sprite = helicopter_brigade
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		type = {
+			infantry
+			support
+		}
+		group = support
+		categories = {
+			category_support_battalions
+			category_divisional_support_battalions
+			category_army
+			category_helicopter_support_companies
+		}
+		regimental = no
+		combat_width = 0
+
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		weight = 0.1
+		supply_consumption = 0.07
+		can_be_parachuted = no
+		recon = 1
+		# gunships drop a reserve platoon where the line bends and lift the wounded out
+		breakthrough = 2
+		casualty_trickleback = 0.1
+		experience_loss_factor = -0.05
+		battalion_mult = {
+			category = category_all_infantry
+			max_strength = 0.03
+		}
+		essential = {
+			imperial_support_equipment
+			helicopter_equipment
+		}
+		need = {
+			imperial_equipment = 20
+			imperial_support_equipment = 10
+			helicopter_equipment = 15
+		}
+		same_support_type = laat_assault_company
+	}
+
+	laat_recon_company = {
+		abbreviation = "LARC"
+		sprite = helicopter_brigade
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		type = {
+			support
+		}
+		group = support
+		categories = {
+			category_support_battalions
+			category_divisional_support_battalions
+			category_army
+			category_recon
+			category_helicopter_support_companies
+		}
+		battalion_mult = {
+			category = category_artillery
+			soft_attack = 0.1
+		}
+		regimental = no
+		combat_width = 0
+
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		weight = 0.1
+		supply_consumption = 0.07
+		recon = 3
+		can_be_parachuted = no
+		essential = {
+			imperial_equipment
+			imperial_support_equipment
+			helicopter_equipment
+		}
+		need = {
+			imperial_equipment = 20
+			imperial_support_equipment = 10
+			helicopter_equipment = 20
+		}
+		forest = { movement = 0.15 }
+		hills = { movement = 0.1 }
+		mountain = { movement = 0.1 }
+		jungle = { movement = 0.15 }
+		marsh = { movement = 0.15 }
+		plains = { movement = 0.15 }
+		desert = { movement = 0.15 }
+		river = { movement = 0.15 }
+		same_support_type = laat_recon_company
+	}
+
+	laat_medevac_company = {
+		abbreviation = "LAMD"
+		sprite = helicopter_brigade
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		type = {
+			infantry
+			support
+		}
+		group = support
+		categories = {
+			category_support_battalions
+			category_divisional_support_battalions
+			category_army
+			category_helicopter_support_companies
+		}
+		regimental = no
+		combat_width = 0
+
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		weight = 0.1
+		supply_consumption = 0.07
+		can_be_parachuted = no
+		casualty_trickleback = 0.25
+		experience_loss_factor = -0.10
+		battalion_mult = {
+			category = category_all_infantry
+			max_strength = 0.05
+			default_morale = 0.1
+		}
+		essential = {
+			imperial_support_equipment
+			helicopter_equipment
+		}
+		need = {
+			imperial_support_equipment = 30
+			helicopter_equipment = 15
+		}
+		same_support_type = laat_medevac_company
+	}
+
+	laat_supply_company = {
+		abbreviation = "LASL"
+		sprite = helicopter_brigade
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		type = {
+			support
+		}
+		regimental = no
+		group = support
+		categories = {
+			category_support_battalions
+			category_divisional_support_battalions
+			category_army
+			category_helicopter_support_companies
+		}
+		combat_width = 0
+
+		max_strength = 1
+		max_organisation = 12
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		weight = 0.1
+		can_be_parachuted = no
+		supply_consumption_factor = -0.15
+		essential = {
+			imperial_support_equipment
+			helicopter_equipment
+		}
+		need = {
+			imperial_support_equipment = 20
+			helicopter_equipment = 10
+		}
+		forest = { movement = 0.05 }
+		hills = { movement = 0.05 }
+		mountain = { movement = 0.05 }
+		jungle = { movement = 0.05 }
+		marsh = { movement = 0.05 }
+		plains = { movement = 0.05 }
+		desert = { movement = 0.05 }
+		river = { movement = 0.05 }
+		same_support_type = laat_supply_company
+	}
+}

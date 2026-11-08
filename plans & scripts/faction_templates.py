@@ -1,4 +1,5 @@
-"""Division templates for the Republic and the Separatists, built from the faction techs and units.
+"""NOTE (2026-11-07): the templates are now the Executor tree's; run "plans & scripts/sw_tree/executor_oob.py" after this.
+Division templates for the Republic and the Separatists, built from the faction techs and units.
 
     python "WIPGFX/plans & scripts/faction_templates.py"
 
@@ -500,6 +501,8 @@ def write_ai():
 
 
 if __name__ == "__main__":
+    raise SystemExit("OBSOLETE (2026-11-08): the old walker/vanilla techs, units and equipment it writes were deleted; "
+                     "use sw_tree/executor_oob.py")
     write_names()
     write_start_techs()
     write_start("history/units/HOD_REP.txt", START_REP, REMOVED_REP)

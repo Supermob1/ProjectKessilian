@@ -58,7 +58,8 @@ def vanilla_sprites():
         for f in fs:
             if f.lower().endswith((".dds", ".tga", ".png")):
                 key = ("gfx/interface/" + os.path.relpath(os.path.join(d, f), root).replace(os.sep, "/")).lower()
-                out.setdefault(key, (1, False))
+                stem = os.path.splitext(key)[0]          # .gfx may name x.png while the game ships x.dds
+                out.setdefault(key, next((out[stem + e] for e in (".png", ".dds", ".tga") if stem + e in out), (1, False)))
     return out
 
 
@@ -251,6 +252,16 @@ def restyle(path, px, frames):
         if abs(sat[0] - sat[1]) > 20:
             states[int(np.argmax(sat))] = 1
     parts = [draw(px[:, k * fw:(k + 1) * fw], None, states[k], path in CORNERED) for k in range(max(frames, 1))]
+    if path.endswith("divisiondesigner/2d_3d.dds"):    # 2D|3D toggle: labels back on, the active side in gold
+        from PIL import ImageFont
+        font = ImageFont.truetype("arialbd.ttf", 13)
+        for k, part in enumerate(parts):
+            im = Image.fromarray(part); d = ImageDraw.Draw(im); h = part.shape[0]
+            d.line([(fw // 2, 5), (fw // 2, h - 6)], fill=tuple(STEEL.astype(int)))
+            for j, txt in enumerate(("2D", "3D")):
+                d.text((fw // 4 + j * fw // 2, h // 2), txt, font=font, anchor="mm",
+                       fill=tuple((GOLD if j == k else GREY * 1.6).clip(0, 255).astype(int)))
+            parts[k] = np.array(im)
     out = np.hstack(parts)
     if out.shape[1] < px.shape[1]:                     # leftover columns when width isn't a multiple of frames
         out = np.hstack([out, np.zeros((px.shape[0], px.shape[1] - out.shape[1], 4), np.uint8)])

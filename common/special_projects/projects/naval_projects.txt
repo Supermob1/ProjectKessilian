@@ -36,10 +36,10 @@ sp_naval_cruiser_submarine = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = early_ship_hull_submarine
+				always = no
 			}
 			else = {
-				has_tech = early_submarine
+				always = no
 			}
 
 		}
@@ -126,9 +126,6 @@ sp_naval_cruiser_submarine = {
 							add_equipment_bonus = {
 								name = sp_cruiser_submarine_eq_bonus_range
 								bonus = {
-									cruiser_submarine = {
-										naval_range = 0.1
-									}
 								}
 							}
 						}
@@ -155,9 +152,6 @@ sp_naval_cruiser_submarine = {
 							add_equipment_bonus = {
 								name = sp_cruiser_submarine_eq_bonus_raiding
 								bonus = {
-									cruiser_submarine = {
-										torpedo_attack = 0.1
-									}
 								}
 							}
 						}
@@ -200,10 +194,10 @@ sp_naval_fleet_submarine = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = improved_ship_hull_submarine
+				always = no
 			}
 			else = {
-				has_tech = improved_submarine 
+				always = no 
 			}
 
 		}
@@ -311,11 +305,6 @@ sp_naval_fleet_submarine = {
 							add_equipment_bonus = {
 								name = sp_fleet_submarine_eq_bonus_attack
 								bonus = {
-									fleet_submarine = {
-										naval_speed = 0.05
-										torpedo_attack = 0.05
-										sub_visibility = -0.03										
-									}
 								}
 							}						
 						}
@@ -345,11 +334,6 @@ sp_naval_fleet_submarine = {
 							add_equipment_bonus = {
 								name = sp_fleet_submarine_eq_bonus_reliability
 								bonus = {
-									fleet_submarine = {
-										reliability = 0.05
-										max_strength = 0.05
-										naval_weather_penalty_factor = -0.1									
-									}
 								}
 							}						
 						}
@@ -485,12 +469,6 @@ sp_naval_nuclear_submarine = {
 							add_equipment_bonus = {
 								name = sp_nuclear_submarine_eq_bonus_ic_reduction
 								bonus = {
-									nuclear_submarine = {
-										build_cost_ic = -0.1
-										reliability = -0.05
-										sub_visibility = 0.1
-										naval_range = -0.1
-									}
 								}
 							}						
 						}
@@ -532,12 +510,6 @@ sp_naval_nuclear_submarine = {
 							add_equipment_bonus = {
 								name = sp_nuclear_submarine_eq_bonus_quality
 								bonus = {
-									nuclear_submarine = {
-										build_cost_ic = 0.1
-										max_strength = 0.1
-										reliability = 0.05
-										sub_visibility = -0.05
-									}
 								}
 							}						
 						}
@@ -661,11 +633,6 @@ sp_naval_rocket_launching_submarine = {
 							add_equipment_bonus = {
 								name = sp_rocket_submarine_eq_bonus_range_increase
 								bonus = {
-									rocket_submarine = {
-										naval_range = 0.15
-										sub_visibility = 0.05
-										build_cost_ic = 0.1
-									}
 								}
 							}						
 						}
@@ -693,9 +660,6 @@ sp_naval_rocket_launching_submarine = {
 							add_equipment_bonus = {
 								name = sp_rocket_submarine_eq_bonus_reliability
 								bonus = {
-									rocket_submarine = {
-										reliability = 0.05
-									}
 								}
 							}						
 						}
@@ -728,11 +692,6 @@ sp_naval_rocket_launching_submarine = {
 							add_equipment_bonus = {
 								name = sp_rocket_submarine_eq_bonus_stealth
 								bonus = {
-									rocket_submarine = {
-										sub_visibility = -0.15
-										naval_range = -0.05
-										build_cost_ic = 0.1
-									}
 								}
 							}						
 						}
@@ -860,11 +819,6 @@ sp_naval_nuclear_missile_submarine = {
 							add_equipment_bonus = {
 								name = sp_nuclear_missile_submarine_eq_bonus_stealth
 								bonus = {
-									nuclear_missile_submarine = {
-										sub_visibility = -0.1
-										surface_detection = 0.05
-										build_cost_ic = 0.1
-									}
 								}
 							}						
 						}
@@ -905,11 +859,6 @@ sp_naval_nuclear_missile_submarine = {
 							add_equipment_bonus = {
 								name = sp_nuclear_missile_submarine_eq_bonus_strength
 								bonus = {
-									nuclear_missile_submarine = {
-										max_strength = 0.05
-										naval_weather_penalty_factor = -0.2
-										build_cost_ic = 0.1
-									}
 								}
 							}						
 						}
@@ -954,7 +903,7 @@ sp_naval_nuclear_torpedo = {
 	}
 	
 	available = {
-		FROM = { has_tech = modern_ship_torpedo_launcher }
+		FROM = { always = no }
 	}
 
 	special_project_parent = {
@@ -1079,10 +1028,10 @@ sp_naval_midget_submarine = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = early_ship_hull_submarine
+				always = no
 			}
 			else = {
-				has_tech = early_submarine
+				always = no
 			}
 
 		}
@@ -1181,10 +1130,6 @@ sp_naval_midget_submarine = {
 							add_equipment_bonus = {
 								name = sp_midget_submarine_eq_bonus_stealth
 								bonus = {
-									midget_submarine = {
-										naval_range = -0.2
-										sub_visibility = -0.1									
-									}
 								}
 							}						
 						}
@@ -1213,9 +1158,6 @@ sp_naval_midget_submarine = {
 							add_equipment_bonus = {
 								name = sp_midget_submarine_eq_bonus_reliability
 								bonus = {
-									midget_submarine = {
-										reliability	= 0.1									
-									}
 								}
 							}						
 						}
@@ -1245,10 +1187,6 @@ sp_naval_midget_submarine = {
 							add_equipment_bonus = {
 								name = sp_midget_submarine_eq_bonus_range
 								bonus = {
-									midget_submarine = {
-										naval_range = 0.2
-										sub_visibility = 0.1										
-									}
 								}
 							}						
 						}
@@ -1289,10 +1227,10 @@ sp_naval_aip_engine = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = basic_ship_hull_submarine
+				always = no
 			}
 			else = {
-				has_tech = basic_submarine 
+				always = no 
 			}
 
 		}
@@ -1452,10 +1390,10 @@ sp_naval_anechoic_tiles = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = basic_ship_hull_submarine
+				always = no
 			}
 			else = {
-				has_tech = basic_submarine 
+				always = no 
 			}
 
 		}
@@ -1609,12 +1547,12 @@ specialization = specialization_naval
 				limit = { 
 					has_dlc = "Man the Guns"
 				}
-			has_tech = basic_ship_hull_carrier
-			has_tech = improved_ship_hull_submarine				
+			always = no
+			always = no				
 			}
 			else = {
-				has_tech = basic_carrier
-				has_tech = improved_submarine
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1764,10 +1702,10 @@ sp_naval_torpedo_cruiser = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = early_ship_hull_cruiser
+				always = no
 			}
 			else = {
-				has_tech = early_light_cruiser
+				always = no
 			}
 
 		}
@@ -1886,10 +1824,6 @@ sp_naval_torpedo_cruiser = {
 							add_equipment_bonus = {
 								name = sp_torpedo_cruiser_eq_bonus_torpedo
 								bonus = {
-									torpedo_cruiser = {
-										naval_torpedo_hit_chance_factor = 0.1
-										torpedo_attack = 0.15									
-									}
 								}
 							}						
 						}
@@ -1920,11 +1854,6 @@ sp_naval_torpedo_cruiser = {
 							add_equipment_bonus = {
 								name = sp_torpedo_cruiser_eq_bonus_light_attack
 								bonus = {
-									torpedo_cruiser = {
-										naval_light_gun_hit_chance_factor = 0.15
-										lg_attack = 0.1
-										lg_armor_piercing = 0.1										
-									}
 								}
 							}						
 						}
@@ -1963,10 +1892,10 @@ sp_naval_super_heavy_battleship = {
 				limit = { 
 					has_dlc = "Man the Guns"
 				}
-				has_tech = early_ship_hull_heavy
+				always = no
 			}
 			else = {
-				has_tech = early_battleship
+				always = no
 			}
 		}
 	}
@@ -2089,11 +2018,6 @@ sp_naval_super_heavy_battleship = {
 							add_equipment_bonus = {
 								name = sp_super_heavy_battleship_eq_bonus_heavy_attack
 								bonus = {
-									SH_battleship_1 = {
-										naval_heavy_gun_hit_chance_factor = 0.15
-										hg_attack = 0.15
-										hg_armor_piercing = 0.1										
-									}
 								}
 							}						
 						}
@@ -2125,11 +2049,6 @@ sp_naval_super_heavy_battleship = {
 							add_equipment_bonus = {
 								name = sp_super_heavy_battleship_eq_bonus_speed
 								bonus = {
-									SH_battleship_1 = {
-										naval_speed = 0.1
-										surface_detection = 0.15
-										surface_visibility = -0.05									
-									}
 								}
 							}						
 						}
@@ -2160,11 +2079,6 @@ sp_naval_super_heavy_battleship = {
 							add_equipment_bonus = {
 								name = sp_super_heavy_battleship_eq_bonus_light_attack
 								bonus = {
-									SH_battleship_1 = {
-										naval_light_gun_hit_chance_factor = 0.1
-										lg_attack = 0.1
-										lg_armor_piercing = 0.1								
-									}
 								}
 							}						
 						}
@@ -2208,10 +2122,6 @@ sp_naval_super_heavy_battleship = {
 							add_equipment_bonus = {
 								name = sp_super_heavy_battleship_eq_bonus_armor
 								bonus = {
-									SH_battleship_1 = {
-										armor_value = 0.1
-										max_strength = 0.1 						
-									}
 								}
 							}						
 						}
@@ -2242,10 +2152,6 @@ sp_naval_super_heavy_battleship = {
 							add_equipment_bonus = {
 								name = sp_super_heavy_battleship_eq_bonus_anti_air
 								bonus = {
-									SH_battleship_1 = {
-										anti_air_attack = 0.25
-										reliability = 0.05						
-									}
 								}
 							}						
 						}
@@ -2275,10 +2181,6 @@ sp_naval_super_heavy_battleship = {
 							add_equipment_bonus = {
 								name = sp_super_heavy_battleship_eq_bonus_anti_torpedo
 								bonus = {
-									SH_battleship_1 = {
-										naval_torpedo_enemy_critical_chance_factor = 0.15
-										naval_torpedo_damage_reduction_factor = 0.15					
-									}
 								}
 							}						
 						}
@@ -2313,11 +2215,11 @@ sp_naval_modern_battleship = {
 				limit = { 
 					has_dlc = "Man the Guns"
 					}
-			has_tech = advanced_ship_hull_heavy
+			always = no
 				
 			}
 			else = {
-				has_tech = advanced_battleship
+				always = no
 			}
 		}
 	}
@@ -2433,11 +2335,6 @@ sp_naval_modern_battleship = {
 							add_equipment_bonus = {
 								name = sp_modern_battleship_eq_bonus_heavy_attack
 								bonus = {
-									modern_battleship = {
-										naval_heavy_gun_hit_chance_factor = 0.2
-										hg_attack = 0.15
-										hg_armor_piercing = 0.15									
-									}
 								}
 							}						
 						}
@@ -2469,11 +2366,6 @@ sp_naval_modern_battleship = {
 							add_equipment_bonus = {
 								name = sp_modern_battleship_eq_bonus_speed
 								bonus = {
-									modern_battleship = {
-										naval_speed = 0.1
-										surface_detection = 0.15
-										surface_visibility = -0.07									
-									}
 								}
 							}						
 						}
@@ -2504,11 +2396,6 @@ sp_naval_modern_battleship = {
 							add_equipment_bonus = {
 								name = sp_modern_battleship_eq_bonus_light_attack
 								bonus = {
-									modern_battleship = {
-										naval_light_gun_hit_chance_factor = 0.1
-										lg_attack = 0.1
-										lg_armor_piercing = 0.15									
-									}
 								}
 							}						
 						}
@@ -2552,10 +2439,6 @@ sp_naval_modern_battleship = {
 							add_equipment_bonus = {
 								name = sp_modern_battleship_eq_bonus_armor
 								bonus = {
-									modern_battleship = {
-										armor_value = 0.15
-										max_strength = 0.1 									
-									}
 								}
 							}						
 						}
@@ -2585,10 +2468,6 @@ sp_naval_modern_battleship = {
 							add_equipment_bonus = {
 								name = sp_modern_battleship_eq_bonus_anti_air
 								bonus = {
-									modern_battleship = {
-										anti_air_attack = 0.25
-										reliability = 0.07									
-									}
 								}
 							}						
 						}
@@ -2618,10 +2497,6 @@ sp_naval_modern_battleship = {
 							add_equipment_bonus = {
 								name = sp_modern_battleship_eq_bonus_anti_torpedo
 								bonus = {
-									modern_battleship = {
-										naval_torpedo_enemy_critical_chance_factor = 0.15
-										naval_torpedo_damage_reduction_factor = 0.2									
-									}
 								}
 							}						
 						}
@@ -2655,10 +2530,10 @@ sp_naval_modern_carrier = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = advanced_ship_hull_carrier
+				always = no
 			}
 			else = {
-				has_tech = advanced_carrier
+				always = no
 			}
 
 		}
@@ -2771,10 +2646,6 @@ unique_prototype_rewards = {
 							add_equipment_bonus = {
 								name = sp_modern_carrier_eq_bonus_detection
 								bonus = {
-									modern_carrier = {
-										surface_detection = 0.2
-										sub_detection = 0.2						 
-									}
 								}
 							}						
 						}
@@ -2804,10 +2675,6 @@ unique_prototype_rewards = {
 							add_equipment_bonus = {
 								name = sp_modern_carrier_eq_bonus_speed
 								bonus = {
-									modern_carrier = {
-										naval_speed = 0.1
-										naval_weather_penalty_factor = -0.25					 
-									}
 								}
 							}						
 						}
@@ -2838,11 +2705,6 @@ unique_prototype_rewards = {
 							add_equipment_bonus = {
 								name = sp_modern_carrier_eq_bonus_light_attack
 								bonus = {
-									modern_carrier = {
-										naval_light_gun_hit_chance_factor = 0.1
-										lg_attack = 0.15
-										lg_armor_piercing = 0.15					 
-									}
 								}
 							}						
 						}
@@ -2886,10 +2748,6 @@ unique_prototype_rewards = {
 							add_equipment_bonus = {
 								name = sp_modern_carrier_eq_bonus_armor
 								bonus = {
-									modern_carrier = {
-										armor_value = 0.15
-										max_strength = 0.1 					 
-									}
 								}
 							}						
 						}
@@ -2919,10 +2777,6 @@ unique_prototype_rewards = {
 							add_equipment_bonus = {
 								name = sp_modern_carrier_eq_bonus_anti_air
 								bonus = {
-									modern_carrier = {
-										anti_air_attack = 0.25
-										reliability = 0.07					 
-									}
 								}
 							}						
 						}
@@ -2952,10 +2806,6 @@ unique_prototype_rewards = {
 							add_equipment_bonus = {
 								name = sp_modern_carrier_eq_bonus_anti_torpedo
 								bonus = {
-									modern_carrier = {
-										naval_torpedo_enemy_critical_chance_factor = 0.15
-										naval_torpedo_damage_reduction_factor = 0.2					 
-									}
 								}
 							}						
 						}
@@ -2990,10 +2840,10 @@ sp_naval_ice_carrier = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}  
-				has_tech = improved_ship_hull_carrier
+				always = no
 			}
 			else = {
-				has_tech = improved_carrier
+				always = no
 			}
 
 		}
@@ -3270,7 +3120,6 @@ sp_naval_underway_replenishment = {
 						custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_a
 						hidden_effect = {
 							set_technology = {
-								sp_naval_underway_replenishment_pick_a = 1
 								popup = no
 							}
 						}
@@ -3297,7 +3146,6 @@ sp_naval_underway_replenishment = {
 						custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_b
 						hidden_effect = {
 							set_technology = {
-								sp_naval_underway_replenishment_pick_b = 1
 								popup = no
 							}
 						}
@@ -3353,7 +3201,6 @@ sp_naval_proximity_fuze = {
 			custom_effect_tooltip = tech_effect|sp_naval_proximity_fuze_tech
 			hidden_effect = {
 				set_technology = {
-					sp_naval_proximity_fuze_tech = 1
 					popup = no
 				}
 			}
@@ -3402,10 +3249,6 @@ sp_naval_proximity_fuze = {
 					}
 
 					equipment_bonus = {
-						anti_air_equipment = {
-							build_cost_ic = -0.05
-							instant = yes
-						}
 
 					}
 
@@ -3420,11 +3263,6 @@ sp_naval_proximity_fuze = {
 						
 					}
 					equipment_bonus = {			
-						anti_air_equipment = {
-							air_attack = 0.15
-							build_cost_ic = 0.05
-							instant = yes
-						}
 					}					 
 
 				}
@@ -3452,10 +3290,10 @@ sp_naval_support_ships = {
 				limit = { 
 					has_dlc = "Man the Guns"
 				}
-			has_tech = mtg_transport				
+			always = no				
 			}
 			else = {
-				has_tech = transport
+				always = no
 			}
 		}
 	}
@@ -3525,7 +3363,6 @@ sp_naval_support_ships = {
 						custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_a
 						hidden_effect = {
 							set_technology = {
-								sp_naval_support_ships_pick_a = 1
 								popup = no
 							}
 						}
@@ -3541,7 +3378,6 @@ sp_naval_support_ships = {
 						custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_b
 						hidden_effect = {
 							set_technology = {
-								sp_naval_support_ships_pick_b = 1
 								popup = no
 							}
 						}
@@ -3557,7 +3393,6 @@ sp_naval_support_ships = {
 						custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_c
 						hidden_effect = {
 							set_technology = {
-								sp_naval_support_ships_pick_c = 1
 								popup = no
 							}
 						}
@@ -3587,7 +3422,6 @@ sp_naval_support_ships = {
 						custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_a
 						hidden_effect = {
 							set_technology = {
-								sp_naval_repair_ships_pick_a = 1
 								popup = no
 							}
 						}
@@ -3603,7 +3437,6 @@ sp_naval_support_ships = {
 						custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_b
 						hidden_effect = {
 							set_technology = {
-								sp_naval_repair_ships_pick_b = 1
 								popup = no
 							}
 						}
@@ -3619,7 +3452,6 @@ sp_naval_support_ships = {
 						custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_c
 						hidden_effect = {
 							set_technology = {
-								sp_naval_repair_ships_pick_c = 1
 								popup = no
 							}
 						}
@@ -3651,10 +3483,10 @@ specialization = specialization_naval
 				limit = { 
 					has_dlc = "Man the Guns"
 				}
-			has_tech = basic_ship_hull_carrier				
+			always = no				
 			}
 			else = {
-				has_tech = basic_carrier
+				always = no
 			}
 		}
 	}

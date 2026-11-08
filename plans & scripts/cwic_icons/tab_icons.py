@@ -26,14 +26,20 @@ TABS = {   # texture -> (subject, colour or None = domain colour)
     'techtree_airdoctrine_tab.dds': ('bomber', None),
     'techtree_landdoctrine_tab_large.dds': ('trooper', None), 'techtree_airdoctrine_tab_large.dds': ('fighter', None),
     'techtree_navaldoctrine_tab_large.dds': ('capital', None), 'techtree_specialforcesdoctrine_tab_large.dds': ('drop', None),
+    # SW Executor tree tabs (2026-11-07): their grey vanilla-style plates -> house style
+    'techtree_swinfantry_tab.dds': ('trooper', None), 'techtree_swsupport_tab.dds': ('wrench', None),
+    'techtree_swarmour_tab.dds': ('walker', None), 'techtree_swartillery_tab.dds': ('artillery', None),
+    'techtree_swair_tab.dds': ('fighter', None), 'techtree_imperial_tab.dds': ('superweapon', None),
 }
+SW_TABS = {'techtree_swinfantry_tab.dds', 'techtree_swsupport_tab.dds', 'techtree_swarmour_tab.dds',
+           'techtree_swartillery_tab.dds', 'techtree_swair_tab.dds', 'techtree_imperial_tab.dds'}
 TABS = {T + k: v for k, v in TABS.items()}
 
 
 def source(path):
     """Vanilla texture for the size / silhouette; the mod's own clone / droid tabs have none."""
     p = hod_ui.find(hod_ui.VANILLA, path)
-    if path in (T + 'techtree_clone_tab.dds', T + 'techtree_droid_tab.dds') or not p:
+    if path in (T + 'techtree_clone_tab.dds', T + 'techtree_droid_tab.dds') or os.path.basename(path) in SW_TABS or not p:
         keep = os.path.join(D, 'tab_originals', os.path.basename(path) + '.orig.png')
         if not os.path.exists(keep):                   # first run: keep the mod's original art
             Image.open(os.path.join(MOD, path)).save(keep)

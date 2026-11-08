@@ -1,0 +1,95 @@
+# HOD 2026-11-08 (user): Separatist special droid battalions, CIS bloc only (techs in hod_cis_special_droids.txt)
+sub_units = {
+	cis_b2_droid = {
+		sprite = cis_b2_droid   # model: CIS_cis_b2_droid_entity (sw_tree/unit_models_sw.py)
+		map_icon_category = infantry
+		priority = 650
+		ai_priority = 200
+		active = no
+		type = { infantry }
+		group = infantry
+		categories = {
+			category_blaster_infantry
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		combat_width = 2
+		max_strength = 40
+		defense = 0.4
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 1000
+		training_time = 110
+		suppression = 2
+		weight = 0.8
+		breakthrough = 0.6
+		supply_consumption = 0.12
+		need = {
+			imperial_equipment = 140
+		}
+		urban = { attack = 0.15 }
+	}
+	cis_droideka = {
+		sprite = cis_droideka   # model: CIS_cis_droideka_entity (sw_tree/unit_models_sw.py)
+		map_icon_category = infantry
+		priority = 650
+		ai_priority = 200
+		active = no
+		type = { infantry }
+		group = infantry
+		categories = {
+			category_blaster_infantry
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		combat_width = 2
+		max_strength = 30
+		defense = 0.8
+		max_organisation = 70
+		default_morale = 0.3
+		manpower = 1000
+		training_time = 120
+		suppression = 2
+		weight = 0.8
+		breakthrough = 0.9
+		supply_consumption = 0.14
+		need = {
+			imperial_equipment = 120
+		}
+		plains = { attack = 0.1 }
+		urban = { defence = 0.2 }
+	}
+	cis_b3_droid = {
+		sprite = cis_b3_droid   # model: CIS_cis_b3_droid_entity (sw_tree/unit_models_sw.py)
+		map_icon_category = infantry
+		priority = 650
+		ai_priority = 200
+		active = no
+		type = { infantry }
+		group = infantry
+		categories = {
+			category_blaster_infantry
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		combat_width = 2
+		max_strength = 50
+		defense = 0.5
+		max_organisation = 60
+		default_morale = 0.3
+		manpower = 1000
+		training_time = 140
+		suppression = 2
+		weight = 0.8
+		breakthrough = 1.0
+		supply_consumption = 0.18
+		need = {
+			imperial_equipment = 180
+		}
+		mountain = { movement = 0.2 }
+		hills = { attack = 0.15 }
+	}
+}

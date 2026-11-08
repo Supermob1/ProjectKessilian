@@ -22,10 +22,941 @@ objectTypes = {
 		animation = { id = "attack" type = "hod_atrt_attack_animation" }
 	}
 	pdxmesh = {
+		name = "hod_rep_hover_fightertank_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_hover_fightertank.mesh"
+		animation = { id = "idle" type = "hod_rep_hover_fightertank_idle_animation" }
+		animation = { id = "move" type = "hod_rep_hover_fightertank_move_animation" }
+		animation = { id = "attack" type = "hod_rep_hover_fightertank_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_hover_fightertank_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_hover_fightertank.mesh"
+		animation = { id = "idle" type = "hod_imp_hover_fightertank_idle_animation" }
+		animation = { id = "move" type = "hod_imp_hover_fightertank_move_animation" }
+		animation = { id = "attack" type = "hod_imp_hover_fightertank_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_tread_tank_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_tread_tank.mesh"
+		animation = { id = "idle" type = "hod_cis_tread_tank_idle_animation" }
+		animation = { id = "move" type = "hod_cis_tread_tank_move_animation" }
+		animation = { id = "attack" type = "hod_cis_tread_tank_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_tread_hailfire_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_tread_hailfire.mesh"
+		animation = { id = "idle" type = "hod_cis_tread_hailfire_idle_animation" }
+		animation = { id = "move" type = "hod_cis_tread_hailfire_move_animation" }
+		animation = { id = "attack" type = "hod_cis_tread_hailfire_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_hover_barcspeeder_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_hover_barcspeeder.mesh"
+		animation = { id = "idle" type = "hod_rep_hover_barcspeeder_idle_animation" }
+		animation = { id = "move" type = "hod_rep_hover_barcspeeder_move_animation" }
+		animation = { id = "attack" type = "hod_rep_hover_barcspeeder_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_hover_speederbike_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_hover_speederbike.mesh"
+		animation = { id = "idle" type = "hod_rep_hover_speederbike_idle_animation" }
+		animation = { id = "move" type = "hod_rep_hover_speederbike_move_animation" }
+		animation = { id = "attack" type = "hod_rep_hover_speederbike_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_hover_stap_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_hover_stap.mesh"
+		animation = { id = "idle" type = "hod_cis_hover_stap_idle_animation" }
+		animation = { id = "move" type = "hod_cis_hover_stap_move_animation" }
+		animation = { id = "attack" type = "hod_cis_hover_stap_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_fly_arc170fighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_fly_arc170fighter.mesh"
+		animation = { id = "idle" type = "hod_rep_fly_arc170fighter_idle_animation" }
+		animation = { id = "move" type = "hod_rep_fly_arc170fighter_move_animation" }
+		animation = { id = "attack" type = "hod_rep_fly_arc170fighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_fly_vwing_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_fly_vwing.mesh"
+		animation = { id = "idle" type = "hod_rep_fly_vwing_idle_animation" }
+		animation = { id = "move" type = "hod_rep_fly_vwing_move_animation" }
+		animation = { id = "attack" type = "hod_rep_fly_vwing_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_fly_anakinstarfighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_fly_anakinstarfighter.mesh"
+		animation = { id = "idle" type = "hod_rep_fly_anakinstarfighter_idle_animation" }
+		animation = { id = "move" type = "hod_rep_fly_anakinstarfighter_move_animation" }
+		animation = { id = "attack" type = "hod_rep_fly_anakinstarfighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_all_la_at_gunship_mesh"
+		file = "gfx/models/units/hod_walkers/hod_all_la_at_gunship.mesh"
+		animation = { id = "idle" type = "hod_all_la_at_gunship_idle_animation" }
+		animation = { id = "move" type = "hod_all_la_at_gunship_move_animation" }
+		animation = { id = "attack" type = "hod_all_la_at_gunship_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_fly_droidfighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_fly_droidfighter.mesh"
+		animation = { id = "idle" type = "hod_cis_fly_droidfighter_idle_animation" }
+		animation = { id = "move" type = "hod_cis_fly_droidfighter_move_animation" }
+		animation = { id = "attack" type = "hod_cis_fly_droidfighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_fly_tridroidfighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_fly_tridroidfighter.mesh"
+		animation = { id = "idle" type = "hod_cis_fly_tridroidfighter_idle_animation" }
+		animation = { id = "move" type = "hod_cis_fly_tridroidfighter_move_animation" }
+		animation = { id = "attack" type = "hod_cis_fly_tridroidfighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_fly_droidgunship_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_fly_droidgunship.mesh"
+		animation = { id = "idle" type = "hod_cis_fly_droidgunship_idle_animation" }
+		animation = { id = "move" type = "hod_cis_fly_droidgunship_move_animation" }
+		animation = { id = "attack" type = "hod_cis_fly_droidgunship_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_fly_maf_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_fly_maf.mesh"
+		animation = { id = "idle" type = "hod_cis_fly_maf_idle_animation" }
+		animation = { id = "move" type = "hod_cis_fly_maf_move_animation" }
+		animation = { id = "attack" type = "hod_cis_fly_maf_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_fly_greviousfighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_fly_greviousfighter.mesh"
+		animation = { id = "idle" type = "hod_cis_fly_greviousfighter_idle_animation" }
+		animation = { id = "move" type = "hod_cis_fly_greviousfighter_move_animation" }
+		animation = { id = "attack" type = "hod_cis_fly_greviousfighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_fly_trooptrans_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_fly_trooptrans.mesh"
+		animation = { id = "idle" type = "hod_imp_fly_trooptrans_idle_animation" }
+		animation = { id = "move" type = "hod_imp_fly_trooptrans_move_animation" }
+		animation = { id = "attack" type = "hod_imp_fly_trooptrans_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_all_fly_ywing_mesh"
+		file = "gfx/models/units/hod_walkers/hod_all_fly_ywing.mesh"
+		animation = { id = "idle" type = "hod_all_fly_ywing_idle_animation" }
+		animation = { id = "move" type = "hod_all_fly_ywing_move_animation" }
+		animation = { id = "attack" type = "hod_all_fly_ywing_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_fly_tiefighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_fly_tiefighter.mesh"
+		animation = { id = "idle" type = "hod_imp_fly_tiefighter_idle_animation" }
+		animation = { id = "move" type = "hod_imp_fly_tiefighter_move_animation" }
+		animation = { id = "attack" type = "hod_imp_fly_tiefighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_fly_tiebomber_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_fly_tiebomber.mesh"
+		animation = { id = "idle" type = "hod_imp_fly_tiebomber_idle_animation" }
+		animation = { id = "move" type = "hod_imp_fly_tiebomber_move_animation" }
+		animation = { id = "attack" type = "hod_imp_fly_tiebomber_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_fly_tieinterceptor_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_fly_tieinterceptor.mesh"
+		animation = { id = "idle" type = "hod_imp_fly_tieinterceptor_idle_animation" }
+		animation = { id = "move" type = "hod_imp_fly_tieinterceptor_move_animation" }
+		animation = { id = "attack" type = "hod_imp_fly_tieinterceptor_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_walk_sphat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_walk_sphat.mesh"
+		animation = { id = "idle" type = "hod_rep_walk_sphat_idle_animation" }
+		animation = { id = "move" type = "hod_rep_walk_sphat_move_animation" }
+		animation = { id = "attack" type = "hod_rep_walk_sphat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_hover_mtt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_hover_mtt.mesh"
+		animation = { id = "idle" type = "hod_cis_hover_mtt_idle_animation" }
+		animation = { id = "move" type = "hod_cis_hover_mtt_move_animation" }
+		animation = { id = "attack" type = "hod_cis_hover_mtt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_hover_gat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_hover_gat.mesh"
+		animation = { id = "idle" type = "hod_cis_hover_gat_idle_animation" }
+		animation = { id = "move" type = "hod_cis_hover_gat_move_animation" }
+		animation = { id = "attack" type = "hod_cis_hover_gat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_hover_hag_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_hover_hag.mesh"
+		animation = { id = "idle" type = "hod_cis_hover_hag_idle_animation" }
+		animation = { id = "move" type = "hod_cis_hover_hag_move_animation" }
+		animation = { id = "attack" type = "hod_cis_hover_hag_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_hover_swampspeeder_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_hover_swampspeeder.mesh"
+		animation = { id = "idle" type = "hod_rep_hover_swampspeeder_idle_animation" }
+		animation = { id = "move" type = "hod_rep_hover_swampspeeder_move_animation" }
+		animation = { id = "attack" type = "hod_rep_hover_swampspeeder_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_orp_hover_speederbike_mesh"
+		file = "gfx/models/units/hod_walkers/hod_orp_hover_speederbike.mesh"
+		animation = { id = "idle" type = "hod_orp_hover_speederbike_idle_animation" }
+		animation = { id = "move" type = "hod_orp_hover_speederbike_move_animation" }
+		animation = { id = "attack" type = "hod_orp_hover_speederbike_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_fly_v19_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_fly_v19.mesh"
+		animation = { id = "idle" type = "hod_rep_fly_v19_idle_animation" }
+		animation = { id = "move" type = "hod_rep_fly_v19_move_animation" }
+		animation = { id = "attack" type = "hod_rep_fly_v19_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_fly_jedifighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_fly_jedifighter.mesh"
+		animation = { id = "idle" type = "hod_rep_fly_jedifighter_idle_animation" }
+		animation = { id = "move" type = "hod_rep_fly_jedifighter_move_animation" }
+		animation = { id = "attack" type = "hod_rep_fly_jedifighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_fly_shuttleproto_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_fly_shuttleproto.mesh"
+		animation = { id = "idle" type = "hod_imp_fly_shuttleproto_idle_animation" }
+		animation = { id = "move" type = "hod_imp_fly_shuttleproto_move_animation" }
+		animation = { id = "attack" type = "hod_imp_fly_shuttleproto_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_fly_geofighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_fly_geofighter.mesh"
+		animation = { id = "idle" type = "hod_cis_fly_geofighter_idle_animation" }
+		animation = { id = "move" type = "hod_cis_fly_geofighter_move_animation" }
+		animation = { id = "attack" type = "hod_cis_fly_geofighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_fly_scarab_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_fly_scarab.mesh"
+		animation = { id = "idle" type = "hod_cis_fly_scarab_idle_animation" }
+		animation = { id = "move" type = "hod_cis_fly_scarab_move_animation" }
+		animation = { id = "attack" type = "hod_cis_fly_scarab_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_arc_la_at_gunship_mesh"
+		file = "gfx/models/units/hod_walkers/hod_arc_la_at_gunship.mesh"
+		animation = { id = "idle" type = "hod_arc_la_at_gunship_idle_animation" }
+		animation = { id = "move" type = "hod_arc_la_at_gunship_move_animation" }
+		animation = { id = "attack" type = "hod_arc_la_at_gunship_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_fly_ywing_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_fly_ywing.mesh"
+		animation = { id = "idle" type = "hod_rep_fly_ywing_idle_animation" }
+		animation = { id = "move" type = "hod_rep_fly_ywing_move_animation" }
+		animation = { id = "attack" type = "hod_rep_fly_ywing_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_all_bf3_hover_tank_mesh"
+		file = "gfx/models/units/hod_walkers/hod_all_bf3_hover_tank.mesh"
+		animation = { id = "idle" type = "hod_all_bf3_hover_tank_idle_animation" }
+		animation = { id = "move" type = "hod_all_bf3_hover_tank_move_animation" }
+		animation = { id = "attack" type = "hod_all_bf3_hover_tank_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_hover_fightertank_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_hover_fightertank.mesh"
+		animation = { id = "idle" type = "hod_cis_hover_fightertank_idle_animation" }
+		animation = { id = "move" type = "hod_cis_hover_fightertank_move_animation" }
+		animation = { id = "attack" type = "hod_cis_hover_fightertank_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_hover_speederbike_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_hover_speederbike.mesh"
+		animation = { id = "idle" type = "hod_imp_hover_speederbike_idle_animation" }
+		animation = { id = "move" type = "hod_imp_hover_speederbike_move_animation" }
+		animation = { id = "attack" type = "hod_imp_hover_speederbike_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_tx130s_mesh"
+		file = "gfx/models/units/hod_walkers/hod_tx130s.mesh"
+		animation = { id = "idle" type = "hod_tx130s_idle_animation" }
+		animation = { id = "move" type = "hod_tx130s_move_animation" }
+		animation = { id = "attack" type = "hod_tx130s_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_saber2m_mesh"
+		file = "gfx/models/units/hod_walkers/hod_saber2m.mesh"
+		animation = { id = "idle" type = "hod_saber2m_idle_animation" }
+		animation = { id = "move" type = "hod_saber2m_move_animation" }
+		animation = { id = "attack" type = "hod_saber2m_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_atot_mesh"
+		file = "gfx/models/units/hod_walkers/hod_atot.mesh"
+		animation = { id = "idle" type = "hod_atot_idle_animation" }
+		animation = { id = "move" type = "hod_atot_move_animation" }
+		animation = { id = "attack" type = "hod_atot_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_itt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_itt.mesh"
+		animation = { id = "idle" type = "hod_itt_idle_animation" }
+		animation = { id = "move" type = "hod_itt_move_animation" }
+		animation = { id = "attack" type = "hod_itt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rev_atte_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rev_atte.mesh"
+		animation = { id = "idle" type = "hod_rev_atte_idle_animation" }
+		animation = { id = "move" type = "hod_rev_atte_move_animation" }
+		animation = { id = "attack" type = "hod_rev_atte_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rev_atrt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rev_atrt.mesh"
+		animation = { id = "idle" type = "hod_rev_atrt_idle_animation" }
+		animation = { id = "move" type = "hod_rev_atrt_move_animation" }
+		animation = { id = "attack" type = "hod_rev_atrt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rev_sabertank_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rev_sabertank.mesh"
+		animation = { id = "idle" type = "hod_rev_sabertank_idle_animation" }
+		animation = { id = "move" type = "hod_rev_sabertank_move_animation" }
+		animation = { id = "attack" type = "hod_rev_sabertank_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rev_juggernaut_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rev_juggernaut.mesh"
+		animation = { id = "idle" type = "hod_rev_juggernaut_idle_animation" }
+		animation = { id = "move" type = "hod_rev_juggernaut_move_animation" }
+		animation = { id = "attack" type = "hod_rev_juggernaut_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rev_utat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rev_utat.mesh"
+		animation = { id = "idle" type = "hod_rev_utat_idle_animation" }
+		animation = { id = "move" type = "hod_rev_utat_move_animation" }
+		animation = { id = "attack" type = "hod_rev_utat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rev_barc_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rev_barc.mesh"
+		animation = { id = "idle" type = "hod_rev_barc_idle_animation" }
+		animation = { id = "move" type = "hod_rev_barc_move_animation" }
+		animation = { id = "attack" type = "hod_rev_barc_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_walk_atst_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_walk_atst.mesh"
+		animation = { id = "idle" type = "hod_imp_walk_atst_idle_animation" }
+		animation = { id = "move" type = "hod_imp_walk_atst_move_animation" }
+		animation = { id = "attack" type = "hod_imp_walk_atst_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_walk_atxt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_walk_atxt.mesh"
+		animation = { id = "idle" type = "hod_rep_walk_atxt_idle_animation" }
+		animation = { id = "move" type = "hod_rep_walk_atxt_move_animation" }
+		animation = { id = "attack" type = "hod_rep_walk_atxt_attack_animation" }
+	}
+	pdxmesh = {
 		name = "hod_lance_walker_mesh"
 		file = "gfx/models/units/hod_walkers/hod_lance_walker.mesh"
 		animation = { id = "idle" type = "hod_lance_walker_idle_animation" }
 		animation = { id = "move" type = "hod_lance_walker_move_animation" }
 		animation = { id = "attack" type = "hod_lance_walker_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_walk_spider_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_walk_spider.mesh"
+		animation = { id = "idle" type = "hod_cis_walk_spider_idle_animation" }
+		animation = { id = "move" type = "hod_cis_walk_spider_move_animation" }
+		animation = { id = "attack" type = "hod_cis_walk_spider_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_walk_dwarfspider_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_walk_dwarfspider.mesh"
+		animation = { id = "idle" type = "hod_cis_walk_dwarfspider_idle_animation" }
+		animation = { id = "move" type = "hod_cis_walk_dwarfspider_move_animation" }
+		animation = { id = "attack" type = "hod_cis_walk_dwarfspider_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cis_walk_droideka_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cis_walk_droideka.mesh"
+		animation = { id = "idle" type = "hod_cis_walk_droideka_idle_animation" }
+		animation = { id = "move" type = "hod_cis_walk_droideka_move_animation" }
+		animation = { id = "attack" type = "hod_cis_walk_droideka_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rep_walk_oneman_atst_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rep_walk_oneman_atst.mesh"
+		animation = { id = "idle" type = "hod_rep_walk_oneman_atst_idle_animation" }
+		animation = { id = "move" type = "hod_rep_walk_oneman_atst_move_animation" }
+		animation = { id = "attack" type = "hod_rep_walk_oneman_atst_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_imp_walk_atat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_imp_walk_atat.mesh"
+		animation = { id = "idle" type = "hod_imp_walk_atat_idle_animation" }
+		animation = { id = "move" type = "hod_imp_walk_atat_move_animation" }
+		animation = { id = "attack" type = "hod_imp_walk_atat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_cw_atat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_cw_atat.mesh"
+		animation = { id = "idle" type = "hod_cw_atat_idle_animation" }
+		animation = { id = "move" type = "hod_cw_atat_move_animation" }
+		animation = { id = "attack" type = "hod_cw_atat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_t4b_mesh"
+		file = "gfx/models/units/hod_walkers/hod_t4b.mesh"
+		animation = { id = "idle" type = "hod_t4b_idle_animation" }
+		animation = { id = "move" type = "hod_t4b_move_animation" }
+		animation = { id = "attack" type = "hod_t4b_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_t16_mesh"
+		file = "gfx/models/units/hod_walkers/hod_t16.mesh"
+		animation = { id = "idle" type = "hod_t16_idle_animation" }
+		animation = { id = "move" type = "hod_t16_move_animation" }
+		animation = { id = "attack" type = "hod_t16_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_tr_atrt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_tr_atrt.mesh"
+		animation = { id = "idle" type = "hod_tr_atrt_idle_animation" }
+		animation = { id = "move" type = "hod_tr_atrt_move_animation" }
+		animation = { id = "attack" type = "hod_tr_atrt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_tr_itt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_tr_itt.mesh"
+		animation = { id = "idle" type = "hod_tr_itt_idle_animation" }
+		animation = { id = "move" type = "hod_tr_itt_move_animation" }
+		animation = { id = "attack" type = "hod_tr_itt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_tr_idt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_tr_idt.mesh"
+		animation = { id = "idle" type = "hod_tr_idt_idle_animation" }
+		animation = { id = "move" type = "hod_tr_idt_move_animation" }
+		animation = { id = "attack" type = "hod_tr_idt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_tr_ataa_mesh"
+		file = "gfx/models/units/hod_walkers/hod_tr_ataa.mesh"
+		animation = { id = "idle" type = "hod_tr_ataa_idle_animation" }
+		animation = { id = "move" type = "hod_tr_ataa_move_animation" }
+		animation = { id = "attack" type = "hod_tr_ataa_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_tr_spmat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_tr_spmat.mesh"
+		animation = { id = "idle" type = "hod_tr_spmat_idle_animation" }
+		animation = { id = "move" type = "hod_tr_spmat_move_animation" }
+		animation = { id = "attack" type = "hod_tr_spmat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_tr_theta_mesh"
+		file = "gfx/models/units/hod_walkers/hod_tr_theta.mesh"
+		animation = { id = "idle" type = "hod_tr_theta_idle_animation" }
+		animation = { id = "move" type = "hod_tr_theta_move_animation" }
+		animation = { id = "attack" type = "hod_tr_theta_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_atact_mesh"
+		file = "gfx/models/units/hod_walkers/hod_atact.mesh"
+		animation = { id = "idle" type = "hod_atact_idle_animation" }
+		animation = { id = "move" type = "hod_atact_move_animation" }
+		animation = { id = "attack" type = "hod_atact_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_attc_mesh"
+		file = "gfx/models/units/hod_walkers/hod_attc.mesh"
+		animation = { id = "idle" type = "hod_attc_idle_animation" }
+		animation = { id = "move" type = "hod_attc_move_animation" }
+		animation = { id = "attack" type = "hod_attc_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_ihrt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_ihrt.mesh"
+		animation = { id = "idle" type = "hod_ihrt_idle_animation" }
+		animation = { id = "move" type = "hod_ihrt_move_animation" }
+		animation = { id = "attack" type = "hod_ihrt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_rm09_mesh"
+		file = "gfx/models/units/hod_walkers/hod_rm09.mesh"
+		animation = { id = "idle" type = "hod_rm09_idle_animation" }
+		animation = { id = "move" type = "hod_rm09_move_animation" }
+		animation = { id = "attack" type = "hod_rm09_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_atot_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_atot.mesh"
+		animation = { id = "idle" type = "hod_fotr_atot_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_atot_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_atot_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_av7_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_av7.mesh"
+		animation = { id = "idle" type = "hod_fotr_av7_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_av7_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_av7_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_utaa_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_utaa.mesh"
+		animation = { id = "idle" type = "hod_fotr_utaa_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_utaa_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_utaa_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_sphat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_sphat.mesh"
+		animation = { id = "idle" type = "hod_fotr_sphat_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_sphat_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_sphat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_aat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_aat.mesh"
+		animation = { id = "idle" type = "hod_fotr_aat_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_aat_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_aat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_persuader_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_persuader.mesh"
+		animation = { id = "idle" type = "hod_fotr_persuader_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_persuader_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_persuader_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_hagm_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_hagm.mesh"
+		animation = { id = "idle" type = "hod_fotr_hagm_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_hagm_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_hagm_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_supertank_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_supertank.mesh"
+		animation = { id = "idle" type = "hod_fotr_supertank_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_supertank_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_supertank_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_gat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_gat.mesh"
+		animation = { id = "idle" type = "hod_fotr_gat_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_gat_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_gat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_hailfire_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_hailfire.mesh"
+		animation = { id = "idle" type = "hod_fotr_hailfire_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_hailfire_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_hailfire_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_v19_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_v19.mesh"
+		animation = { id = "idle" type = "hod_fotr_v19_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_v19_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_v19_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_btlb_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_btlb.mesh"
+		animation = { id = "idle" type = "hod_fotr_btlb_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_btlb_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_btlb_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_arc170_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_arc170.mesh"
+		animation = { id = "idle" type = "hod_fotr_arc170_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_arc170_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_arc170_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_laat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_laat.mesh"
+		animation = { id = "idle" type = "hod_fotr_laat_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_laat_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_laat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_hmp_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_hmp.mesh"
+		animation = { id = "idle" type = "hod_fotr_hmp_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_hmp_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_hmp_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_utat_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_utat.mesh"
+		animation = { id = "idle" type = "hod_fotr_utat_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_utat_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_utat_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_spha_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_spha.mesh"
+		animation = { id = "idle" type = "hod_fotr_spha_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_spha_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_spha_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_j1_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_j1.mesh"
+		animation = { id = "idle" type = "hod_fotr_j1_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_j1_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_j1_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_crab_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_crab.mesh"
+		animation = { id = "idle" type = "hod_fotr_crab_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_crab_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_crab_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_og9_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_og9.mesh"
+		animation = { id = "idle" type = "hod_fotr_og9_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_og9_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_og9_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_supertank2_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_supertank2.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_supertank2_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_supertank2_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_supertank2_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_protodeka_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_protodeka.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_protodeka_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_protodeka_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_protodeka_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_haml_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_haml.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_haml_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_haml_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_haml_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_ca_artillery_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_ca_artillery.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_ca_artillery_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_ca_artillery_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_ca_artillery_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_advestap_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_advestap.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_advestap_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_advestap_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_advestap_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_stap_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_stap.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_stap_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_stap_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_stap_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_transport_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_transport.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_transport_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_transport_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_transport_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_mtt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_mtt.mesh"
+		animation = { id = "idle" type = "hod_fotr_mtt_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_mtt_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_mtt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_mtt_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_mtt.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_mtt_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_mtt_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_mtt_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_dsd_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_dsd.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_dsd_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_dsd_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_dsd_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_lr57_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_lr57.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_lr57_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_lr57_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_lr57_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_hagm_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_hagm.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_hagm_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_hagm_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_hagm_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_tridroid_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_tridroid.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_tridroid_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_tridroid_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_tridroid_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_b1_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_b1.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_b1_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_b1_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_b1_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_b2_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_b2.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_b2_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_b2_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_b2_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_fotr_cis_bx_mesh"
+		file = "gfx/models/units/hod_walkers/hod_fotr_cis_bx.mesh"
+		animation = { id = "idle" type = "hod_fotr_cis_bx_idle_animation" }
+		animation = { id = "move" type = "hod_fotr_cis_bx_move_animation" }
+		animation = { id = "attack" type = "hod_fotr_cis_bx_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_cis_maf_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_cis_maf.mesh"
+		animation = { id = "idle" type = "hod_x_cis_maf_idle_animation" }
+		animation = { id = "move" type = "hod_x_cis_maf_move_animation" }
+		animation = { id = "attack" type = "hod_x_cis_maf_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_tf_maf_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_tf_maf.mesh"
+		animation = { id = "idle" type = "hod_x_tf_maf_idle_animation" }
+		animation = { id = "move" type = "hod_x_tf_maf_move_animation" }
+		animation = { id = "attack" type = "hod_x_tf_maf_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_csa_c1_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_csa_c1.mesh"
+		animation = { id = "idle" type = "hod_x_csa_c1_idle_animation" }
+		animation = { id = "move" type = "hod_x_csa_c1_move_animation" }
+		animation = { id = "attack" type = "hod_x_csa_c1_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_hailfire_riot_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_hailfire_riot.mesh"
+		animation = { id = "idle" type = "hod_x_hailfire_riot_idle_animation" }
+		animation = { id = "move" type = "hod_x_hailfire_riot_move_animation" }
+		animation = { id = "attack" type = "hod_x_hailfire_riot_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_c9979_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_c9979.mesh"
+		animation = { id = "idle" type = "hod_x_c9979_idle_animation" }
+		animation = { id = "move" type = "hod_x_c9979_move_animation" }
+		animation = { id = "attack" type = "hod_x_c9979_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_sheathipede_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_sheathipede.mesh"
+		animation = { id = "idle" type = "hod_x_sheathipede_idle_animation" }
+		animation = { id = "move" type = "hod_x_sheathipede_move_animation" }
+		animation = { id = "attack" type = "hod_x_sheathipede_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_vulture_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_vulture.mesh"
+		animation = { id = "idle" type = "hod_x_vulture_idle_animation" }
+		animation = { id = "move" type = "hod_x_vulture_move_animation" }
+		animation = { id = "attack" type = "hod_x_vulture_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_belb22_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_belb22.mesh"
+		animation = { id = "idle" type = "hod_x_belb22_idle_animation" }
+		animation = { id = "move" type = "hod_x_belb22_move_animation" }
+		animation = { id = "attack" type = "hod_x_belb22_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_belb24_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_belb24.mesh"
+		animation = { id = "idle" type = "hod_x_belb24_idle_animation" }
+		animation = { id = "move" type = "hod_x_belb24_move_animation" }
+		animation = { id = "attack" type = "hod_x_belb24_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_trifighter_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_trifighter.mesh"
+		animation = { id = "idle" type = "hod_x_trifighter_idle_animation" }
+		animation = { id = "move" type = "hod_x_trifighter_move_animation" }
+		animation = { id = "attack" type = "hod_x_trifighter_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_nantex_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_nantex.mesh"
+		animation = { id = "idle" type = "hod_x_nantex_idle_animation" }
+		animation = { id = "move" type = "hod_x_nantex_move_animation" }
+		animation = { id = "attack" type = "hod_x_nantex_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_hyena_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_hyena.mesh"
+		animation = { id = "idle" type = "hod_x_hyena_idle_animation" }
+		animation = { id = "move" type = "hod_x_hyena_move_animation" }
+		animation = { id = "attack" type = "hod_x_hyena_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_hyena_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_hyena.mesh"
+		animation = { id = "idle" type = "hod_x_raw_hyena_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_hyena_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_hyena_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_droidbomber_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_droidbomber.mesh"
+		animation = { id = "idle" type = "hod_x_raw_droidbomber_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_droidbomber_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_droidbomber_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_ginivex_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_ginivex.mesh"
+		animation = { id = "idle" type = "hod_x_raw_ginivex_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_ginivex_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_ginivex_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_vulture_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_vulture.mesh"
+		animation = { id = "idle" type = "hod_x_raw_vulture_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_vulture_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_vulture_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_hmp_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_hmp.mesh"
+		animation = { id = "idle" type = "hod_x_raw_hmp_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_hmp_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_hmp_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_droideka_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_droideka.mesh"
+		animation = { id = "idle" type = "hod_x_droideka_idle_animation" }
+		animation = { id = "move" type = "hod_x_droideka_move_animation" }
+		animation = { id = "attack" type = "hod_x_droideka_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_dwarf_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_dwarf.mesh"
+		animation = { id = "idle" type = "hod_x_raw_dwarf_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_dwarf_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_dwarf_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_crab_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_crab.mesh"
+		animation = { id = "idle" type = "hod_x_raw_crab_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_crab_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_crab_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_blue_stap_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_blue_stap.mesh"
+		animation = { id = "idle" type = "hod_x_blue_stap_idle_animation" }
+		animation = { id = "move" type = "hod_x_blue_stap_move_animation" }
+		animation = { id = "attack" type = "hod_x_blue_stap_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_ibeam_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_ibeam.mesh"
+		animation = { id = "idle" type = "hod_x_ibeam_idle_animation" }
+		animation = { id = "move" type = "hod_x_ibeam_move_animation" }
+		animation = { id = "attack" type = "hod_x_ibeam_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_sabaoth_bomber_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_sabaoth_bomber.mesh"
+		animation = { id = "idle" type = "hod_x_sabaoth_bomber_idle_animation" }
+		animation = { id = "move" type = "hod_x_sabaoth_bomber_move_animation" }
+		animation = { id = "attack" type = "hod_x_sabaoth_bomber_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_raw_b1_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_raw_b1.mesh"
+		animation = { id = "idle" type = "hod_x_raw_b1_idle_animation" }
+		animation = { id = "move" type = "hod_x_raw_b1_move_animation" }
+		animation = { id = "attack" type = "hod_x_raw_b1_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_repcom_b1_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_repcom_b1.mesh"
+		animation = { id = "idle" type = "hod_x_repcom_b1_idle_animation" }
+		animation = { id = "move" type = "hod_x_repcom_b1_move_animation" }
+		animation = { id = "attack" type = "hod_x_repcom_b1_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_b3_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_b3.mesh"
+		animation = { id = "idle" type = "hod_x_b3_idle_animation" }
+		animation = { id = "move" type = "hod_x_b3_move_animation" }
+		animation = { id = "attack" type = "hod_x_b3_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_espo_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_espo.mesh"
+		animation = { id = "idle" type = "hod_x_espo_idle_animation" }
+		animation = { id = "move" type = "hod_x_espo_move_animation" }
+		animation = { id = "attack" type = "hod_x_espo_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_x_vulture_walk_mesh"
+		file = "gfx/models/units/hod_walkers/hod_x_vulture_walk.mesh"
+		animation = { id = "idle" type = "hod_x_vulture_walk_idle_animation" }
+		animation = { id = "move" type = "hod_x_vulture_walk_move_animation" }
+		animation = { id = "attack" type = "hod_x_vulture_walk_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_atap_mesh"
+		file = "gfx/models/units/hod_walkers/hod_atap.mesh"
+		animation = { id = "idle" type = "hod_atap_idle_animation" }
+		animation = { id = "move" type = "hod_atap_move_animation" }
+		animation = { id = "attack" type = "hod_atap_attack_animation" }
+	}
+	pdxmesh = {
+		name = "hod_juggernaut_mesh"
+		file = "gfx/models/units/hod_walkers/hod_juggernaut.mesh"
+		animation = { id = "idle" type = "hod_juggernaut_idle_animation" }
+		animation = { id = "move" type = "hod_juggernaut_move_animation" }
+		animation = { id = "attack" type = "hod_juggernaut_attack_animation" }
 	}
 }

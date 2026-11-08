@@ -1,0 +1,486 @@
+sub_units = {
+	armored_scout = {
+		abbreviation = "ASC"
+		sprite = assault_vehicle # HOD 2026-11-08: armoured scouts drive scout tanks (assault_equipment)
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+
+		battalion_mult = {
+			category = category_all_armor
+			hard_attack = 0.10
+		}
+
+		group = support
+
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_divisional_support_battalions
+			category_army
+			category_all_armor
+			category_recon
+		}
+
+		regimental = no
+		combat_width = 0
+
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 300
+		training_time = 120
+
+		weight = 0.1
+		supply_consumption = 0.02
+		recon = 2
+		can_be_parachuted = no
+
+		defense = -0.6
+		breakthrough = -0.6
+		soft_attack = -0.6
+		hard_attack = -0.6
+		armor_value = -0.6
+
+		essential = {
+			assault_equipment
+		}
+
+		need = {
+			assault_equipment = 10
+		}
+	}
+
+	imp_recon = {
+		sprite = speeder
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		recon = 2
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.3
+		breakthrough = -0.3
+		soft_attack = -0.5
+		hard_attack = -0.7
+		
+		essential = {
+			speeder_equipment
+			imperial_equipment
+		}
+
+		need = {	# HOD 2026-11-08: armoured version, vehicle first (its model)
+			speeder_equipment = 10
+			imperial_equipment = 20
+		}
+
+		forest = {
+			movement = 0.1
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.1
+		}
+		desert = {
+			movement = 0.1
+		}
+		river = {
+			movement = 0.1
+		}
+	}
+	
+	imp_engineer = {
+		sprite = assault_vehicle
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 3
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 300
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		
+		entrenchment  = 6
+
+				
+		defense = 0.2
+		breakthrough = 0.6
+
+		# Support nerfs to combat abilities
+		soft_attack = -0.5
+
+		essential = {
+			assault_equipment
+			imperial_support_equipment
+		}
+
+		need = {	# HOD 2026-11-08: armoured version, vehicle first (its model)
+			assault_equipment = 8
+			imperial_support_equipment = 20
+		}
+
+		can_be_parachuted = yes
+
+		forest = {
+			defence = 0.25
+			movement = 0.05
+		}
+
+		hills = {
+			defence = 0.1
+		}
+
+		jungle = {
+			defence = 0.25
+		}
+
+		marsh = {
+			defence = 0.25
+			movement = 0.2
+		}
+
+		fort = {
+			attack = 0.1
+			defence = 0.25
+		}
+
+		river = {
+			defence = 0.25
+			movement = 0.25
+		}
+
+		amphibious = {
+			attack = 0.25
+		}
+	}
+	
+	imp_military_police = {
+		sprite = speeder
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 0	
+		default_morale = 0.3
+		manpower = 500
+		training_time = 180
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		
+		# Important Ability
+		suppression_factor = 0.25
+
+		essential = {
+			speeder_equipment
+			imperial_equipment
+		}
+		
+		need = {	# HOD 2026-11-08: armoured version, vehicle first (its model)
+			speeder_equipment = 8
+			imperial_equipment = 20
+		}
+
+	}
+	
+	imp_maintenance_company = {
+		sprite = armored_troop_transport
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 20	
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.03
+		can_be_parachuted = yes
+		
+		# Important Ability
+		reliability_factor = 0.07
+		equipment_capture_factor = 0.07
+		
+		essential = {
+			troop_transport_equipment
+			imperial_support_equipment
+		}
+		
+		need = {	# HOD 2026-11-08: armoured version, vehicle first (its model)
+			troop_transport_equipment = 8
+			imperial_support_equipment = 15
+		}
+
+	}
+	
+	imp_field_hospital = {
+		sprite = armored_troop_transport
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.05
+		can_be_parachuted = yes
+
+		# Important Ability
+		casualty_trickleback = 0.25
+		experience_loss_factor = -0.15
+
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+
+		essential = {
+			troop_transport_equipment
+			imperial_support_equipment
+		}
+		
+		need = {	# HOD 2026-11-08: armoured version, vehicle first (its model)
+			troop_transport_equipment = 20
+			imperial_support_equipment = 30
+		}
+	}
+	
+	imp_logistics_company = {
+		sprite = armored_troop_transport
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 10	
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		can_be_parachuted = yes
+
+		# Important Ability
+		supply_consumption_factor = -0.15
+		fuel_consumption_factor = -0.07
+
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+		
+		essential = {
+			troop_transport_equipment
+			imperial_support_equipment
+		}
+
+		need = {	# HOD 2026-11-08: armoured version, vehicle first (its model)
+			troop_transport_equipment = 12
+			imperial_support_equipment = 10
+		}
+
+	}
+	
+	imp_signal_company = {
+		sprite = light_vehicle
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		
+		# Important Ability
+		initiative = 0.20
+		
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+		
+		essential = {
+			light_equipment
+			imperial_support_equipment
+		}
+
+		need = {	# HOD 2026-11-08: armoured version, vehicle first (its model)
+			light_equipment = 6
+			imperial_support_equipment = 15
+		}
+
+	}
+	
+	
+	
+}

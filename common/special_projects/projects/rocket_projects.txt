@@ -36,7 +36,7 @@ sp_rockets_flying_bomb = {
 		}
 		modifier = {
 			factor = 0.5 # Play a bit safe until we have radar
-			ROOT = { NOT = { has_tech = radio_detection } }
+			ROOT = { NOT = { always = no } }
 		}
 	}
 
@@ -362,7 +362,7 @@ sp_rockets_ballistic_missile = {
 		}
 		modifier = {
 			factor = 0.5 # Play a bit safe until we have radar
-			ROOT = { NOT = { has_tech = radio_detection } }
+			ROOT = { NOT = { always = no } }
 		}
 	}
 	
@@ -521,9 +521,6 @@ sp_rockets_ballistic_missile = {
 				iteration_output = {
 					country_effects = { set_country_flag = rocket_guidance_system_picked }
 					equipment_bonus = {
-						ballistic_missile_equipment = {
-							build_cost_ic = -0.1
-						}
 					}
 				}
 			}
@@ -533,10 +530,6 @@ sp_rockets_ballistic_missile = {
 				iteration_output = {
 					country_effects = { set_country_flag = rocket_guidance_system_picked }
 					equipment_bonus = {
-						ballistic_missile_equipment = {
-							air_bombing = 0.05
-							build_cost_ic = 0.1
-						}
 					}
 				}
 			}

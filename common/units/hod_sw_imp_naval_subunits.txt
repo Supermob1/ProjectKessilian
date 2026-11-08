@@ -1,0 +1,108 @@
+sub_units = {
+
+# ================================================================
+# IMPERIAL NAVAL SUB-UNITS
+# Each imperial hull archetype needs its own sub-unit so the game
+# registers it as a modular ship type and opens the Man the Guns
+# ship designer for it. Cloned from the matching vanilla ship
+# sub-unit; only the name and the need (hull archetype) change.
+# Sprites/map icons reuse vanilla (imperial ships have no 3D model).
+# ================================================================
+
+	imp_destroyer = {
+		sprite = destroyer
+		map_icon_category = ship
+		priority = 3
+		active = yes
+		type = { screen_ship }
+		need = { ship_hull_light_imp = 1 }
+
+		max_organisation = 35
+		supply_consumption = 0.04
+
+		critical_parts = { destroyed_ammo_storage broken_propeller on_fire rudder_jammed }
+		critical_part_damage_chance_mult = 1
+		hit_profile_mult = 1.0
+	}
+
+	imp_light_cruiser = {
+		sprite = light_cruiser
+		map_icon_category = ship
+		priority = 5
+		active = yes
+		type = { screen_ship }
+		need = { ship_hull_cruiser_light_imp = 1 }
+
+		max_organisation = 40
+		supply_consumption = 0.16
+
+		critical_parts = { rudder_jammed destroyed_ammo_storage broken_propeller on_fire }
+		critical_part_damage_chance_mult = 1
+		hit_profile_mult = 1.0
+	}
+
+	imp_heavy_cruiser = {
+		sprite = heavy_cruiser
+		map_icon_category = ship
+		priority = 6
+		active = yes
+		type = { capital_ship }
+		need = { ship_hull_cruiser_heavy_imp = 1 }
+
+		max_organisation = 40
+		supply_consumption = 0.24
+
+		critical_parts = { rudder_jammed destroyed_ammo_storage broken_propeller on_fire }
+		critical_part_damage_chance_mult = 1
+		hit_profile_mult = 1.0
+	}
+
+	imp_battleship = {
+		sprite = battleship
+		map_icon_category = ship
+		priority = 9
+		active = yes
+		type = { capital_ship }
+		need = { ship_hull_heavy_imp = 1 }
+
+		max_organisation = 50
+		supply_consumption = 0.56
+
+		critical_parts = { rudder_jammed destroyed_ammo_storage broken_propeller on_fire }
+		critical_part_damage_chance_mult = 1
+		hit_profile_mult = 1.0
+	}
+
+	imp_carrier = {
+		sprite = carrier
+		map_icon_category = ship
+		priority = 10
+		active = yes
+		type = { carrier }
+		need = { ship_hull_carrier_imp = 1 }
+
+		max_organisation = 40
+		supply_consumption = 0.8
+
+		critical_parts = { destroyed_ammo_storage broken_propeller on_fire damaged_flight_deck }
+		critical_part_damage_chance_mult = 1
+		hit_profile_mult = 1.0
+	}
+
+	imp_submarine = {
+		sprite = submarine
+		map_icon_category = ship
+		priority = 2
+		active = yes
+		type = { submarine }
+		need = { ship_hull_submarine_imp = 1 }
+
+		max_organisation = 30
+		supply_consumption = 0.04
+
+		critical_parts = { destroyed_ammo_storage broken_propeller on_fire rudder_jammed ballast_tanks_inoperable leaking_pressure_hull battery_leak }
+		critical_part_damage_chance_mult = 1
+		hit_profile_mult = 1.0
+	}
+
+}

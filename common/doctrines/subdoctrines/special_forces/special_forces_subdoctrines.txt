@@ -18,7 +18,7 @@ mountaineers_1 = {
     }
 
     available = {
-    	has_tech = tech_mountaineers
+    	always = no
     }
 
     visible = {
@@ -63,9 +63,7 @@ mountaineers_1 = {
 			category_mountaineers = {
 				defense = 0.10
 			}
-			mountaineers = {
-				combat_width = -0.2
-			}	  		
+	  		
 		}
 		reward_4 = {
 			mastery = 60
@@ -101,7 +99,7 @@ mountaineers_2 = {
     }
 
     available = {
-    	has_tech = tech_mountaineers
+    	always = no
     }
 
     visible = {
@@ -130,20 +128,7 @@ mountaineers_2 = {
 			mastery = 60
 			acclimatization_hot_climate_gain_factor = 0.10
 			acclimatization_cold_climate_gain_factor = 0.10
-			mountaineers = {
-				forest = {
-					movement = 0.05
-				}
-				hills = {
-					movement = 0.05
-				}
-				mountain = {
-					movement = 0.05
-				}
-				desert = {
-					movement = 0.05
-				}
-			}		   
+		   
 		}
 		reward_2 = {
 			mastery = 60
@@ -155,12 +140,7 @@ mountaineers_2 = {
 		}
 		reward_3 = {
 			mastery = 60
-			artillery = {
-				battalion_mult = {
-					category = category_mountaineers
-					breakthrough = 0.15
-				}
-			}		
+		
 			rangers_support = {
 				battalion_mult = {
 					category = category_line_artillery
@@ -202,7 +182,7 @@ marines_1 = {
     }
 
     available = {
-    	has_tech = marines
+    	always = no
     }
 
     visible = {
@@ -240,9 +220,6 @@ marines_1 = {
 		reward_2 = {
 			mastery = 60
 			unit_marine_design_cost_factor = -0.50
-			marine = {
-				max_organisation = 5
-			}
 		}
 		reward_3 = {			
 			mastery = 60
@@ -264,11 +241,6 @@ marines_1 = {
 				add_ideas = GEN_cheaper_amphib
 			}
 
-			amphibious_mechanized = {
-				 soft_attack = 0.1
-				 breakthrough = 0.1
-				 max_organisation = 5
-			}
 			
 			pioneer_support = {
 				battalion_mult = {
@@ -300,7 +272,7 @@ marines_2 = {
     }
 
     available = {
-    	has_tech = marines
+    	always = no
     }
 
     visible = {
@@ -344,33 +316,12 @@ marines_2 = {
 					add = yes
 				}
 			}
-		    artillery = {
-				 battalion_mult = {
-					category = category_marines
-					defense = 0.05				
-				}
-			}
 		
-			anti_air = {
-				 battalion_mult = {
-					category = category_marines
-					defense = 0.05
-				}
-			}
 			
-			anti_tank = {
-				 battalion_mult = {
-					category = category_marines
-					defense = 0.05					
-				}
-			}			
+			
 		}
 		reward_3 = {
 			mastery = 60
-			marine = {
-				max_organisation = 5
-				soft_attack = 0.05
-			}
 			extra_marine_supply_grace = 36			
 		}
 		reward_4 = {
@@ -405,7 +356,7 @@ paratroopers_1 = {
     }
 
     available = {
-    	has_tech = paratroopers
+    	always = no
     }
 
     visible = {
@@ -420,20 +371,12 @@ paratroopers_1 = {
 		unlock_subunit = airborne_light_armor
 	}
 	paratroopers_special_forces_contribution_factor = -0.25
-	signal_company = {
-		battalion_mult = {
-			category = category_paratroopers
-			defense = 0.15
-		}
-	}
 	extra_paratrooper_supply_grace = 48
 
     rewards = {
 		reward_1 = {
 			mastery = 60
-			transport_plane = {
-				air_defence = 0.20
-			}			
+			
 			effect = {
 				# Display only — real effect fires in on_units_paradropped_in_state (00_on_actions.txt), gated on has_mastery_level of paratroopers_1
 				custom_effect_tooltip = SF_PARAS_sabotage_effect_tt
@@ -458,12 +401,6 @@ paratroopers_1 = {
 		    mastery = 60
 		    category_paratroopers = {
 				default_morale = 0.15
-			}
-			signal_company = {
-				battalion_mult = {
-					category = category_paratroopers
-					max_strength = 0.1
-				}
 			}
 		}
 		reward_5 = {
@@ -496,7 +433,7 @@ paratroopers_2 = {
     }
 
     available = {
-    	has_tech = paratroopers
+    	always = no
     }
 
     visible = {
@@ -512,12 +449,6 @@ paratroopers_2 = {
 		unlock_subunit = airborne_light_armor
 	}
 	paratroopers_special_forces_contribution_factor = -0.25
-	field_hospital = {
-		battalion_mult = {
-				category = category_paratroopers
-				default_morale = 0.15
-		}
-	}
 	paradrop_organization_factor = 0.5
     
     rewards = {
@@ -535,13 +466,6 @@ paratroopers_2 = {
 		}
 		reward_3 = {
 			mastery = 60
-			field_hospital = {
-				battalion_mult = {
-					category = category_paratroopers
-					max_organisation = 5
-					add = yes
-				}
-			}
 		}
 		reward_4 = {
 	    	mastery = 60
@@ -574,7 +498,7 @@ rangers_1 = {
     }
 
     available = {
-    	has_tech = rangers_tech
+    	always = no
     }
 
     visible = {
@@ -590,14 +514,6 @@ rangers_1 = {
 			unlock_subunit = rangers_support
 		}
 		rangers_special_forces_contribution_factor = -0.25
-	    ranger_battalion = {
-			acclimatization_cold_climate_gain_factor = 0.25
-			forest = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
-		}
 
     rewards = {
 		reward_1 = {
@@ -618,13 +534,6 @@ rangers_1 = {
 		}
 		reward_3 = {
 			mastery = 60
-			artillery = {
-				battalion_mult = {
-					category = category_rangers
-					defense = 0.05
-					breakthrough = 0.05
-				}
-			}
 			rangers_support = {
 				battalion_mult = {
 					category = category_line_artillery
@@ -640,21 +549,9 @@ rangers_1 = {
 			supply_consumption = -0.02		
 		}
 
-		ranger_battalion = {	
-			urban = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
-		}
 	}
 	reward_5 = {
 	    mastery = 60
-	    ranger_battalion = {
-			max_organisation = 10
-			soft_attack = 0.1
-			breakthrough = 0.1
-		}
 	}
     }
 }
@@ -678,7 +575,7 @@ rangers_2 = {
     }
 
     available = {
-    	has_tech = rangers_tech
+    	always = no
     }
 
     visible = {
@@ -694,14 +591,7 @@ rangers_2 = {
 		unlock_subunit = rangers_support
 	}
 	rangers_special_forces_contribution_factor = -0.25
-	ranger_battalion = {
-		acclimatization_hot_climate_gain_factor = 0.25
-		jungle = {
-			attack = 0.1
-			defence = 0.1
-			movement = 0.05
-		}
-	}		
+		
 
     rewards = {
 		reward_1 = {
@@ -729,9 +619,6 @@ rangers_2 = {
 		}
 		reward_3 = {
 			mastery = 60
-			ranger_battalion = {
-				supply_consumption = -0.03
-			}
 			special_forces_no_supply_grace = 36
 		}
 		reward_4 = {

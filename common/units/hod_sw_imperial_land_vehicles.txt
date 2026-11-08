@@ -1,0 +1,500 @@
+sub_units = {
+	
+	mobile_artillery = {
+		sprite = mobile_artillery # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = armored
+		priority = 1796
+		ai_priority = 100
+		active = yes
+		
+		type = {
+			armor
+			artillery
+		}
+		
+		group = armor
+
+		categories = {
+			category_all_armor
+			category_army
+			category_assault_vehicle
+			category_artillery
+			category_front_line
+		}		
+		
+		combat_width = 3
+
+		need = {
+			mobile_art_equipment = 50
+		}
+		manpower = 500
+		max_organisation = 15
+		max_strength = 2
+		default_morale = 0.4
+		training_time = 180
+		weight = 1.00
+		supply_consumption = 0.15
+
+		#Tanks are awesome
+		# soft_attack = 0.5
+
+		forest = {
+		    attack = -0.2
+			movement = -0.3
+		}
+		mountain = 	{
+		    attack = -0.1
+		}
+		jungle = {
+		    attack = -0.25
+			movement = -0.3
+		}
+		marsh = {
+			movement = -0.1
+		}
+		urban = {
+			attack = -0.25
+			defence = -0.1
+		}
+		river = { 
+			attack = -0.1
+			movement = -0.2
+		}
+		amphibious = { 
+			attack = -0.6
+		}
+	}
+	
+	
+	
+	mobile_anti_air = {
+		sprite = mobile_anti_air # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = armored
+		priority = 1796
+		ai_priority = 100
+		active = yes
+		
+		type = {
+			armor
+			artillery
+		}
+		
+		group = armor
+
+		categories = {
+			category_all_armor
+			category_army
+			category_assault_vehicle
+			category_front_line
+		}		
+		
+		combat_width = 3
+
+		need = {
+			mobile_aa_equipment = 50
+		}
+		
+		manpower = 500
+		max_organisation = 15
+		max_strength = 2
+		default_morale = 0.4
+		training_time = 180
+		weight = 1.00
+		supply_consumption = 0.15
+
+		#Tanks are awesome
+		# soft_attack = 0.5
+
+		forest = {
+		    attack = -0.2
+			movement = -0.3
+		}
+		mountain = 	{
+		    attack = -0.1
+		}
+		jungle = {
+		    attack = -0.25
+			movement = -0.3
+		}
+		marsh = {
+			movement = -0.1
+		}
+		urban = {
+			attack = -0.25
+			defence = -0.1
+		}
+		river = { 
+			attack = -0.1
+			movement = -0.2
+		}
+		amphibious = { 
+			attack = -0.6
+		}
+	}
+
+
+	armored_troop_transport = {
+		sprite = armored_troop_transport # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = infantry
+
+		priority = 599
+		ai_priority = 200
+		active = no
+
+		type = {
+			motorized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+			category_imperial_armored_transport
+		}
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_strength = 30
+		max_organisation = 64
+		default_morale = 0.35
+		manpower = 1200
+		soft_attack = 0.1
+
+		#Misc Abilities
+		training_time = 90
+		suppression = 1
+		weight = 0.75
+		supply_consumption = 0.10
+	
+		# this is what moves us and sets speed
+		transport = troop_transport_equipment
+	
+		need = {
+			troop_transport_equipment = 50
+			imperial_equipment = 100
+		}
+
+		forest = {
+			attack = -0.1
+			movement = -0.5
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.2
+			movement = -0.5
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.3
+		}
+		urban = {
+			attack = -0.1
+		}
+		river = {
+			attack = -0.1
+			movement = -0.1
+		}
+		amphibious = {
+			attack = -0.2
+		}
+	}
+
+
+	heavy_armored_troop_transport = {
+		sprite = heavy_armored_troop_transport # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = infantry
+
+		priority = 599
+		ai_priority = 200
+		active = no
+
+		type = {
+			motorized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+			category_imperial_armored_transport
+		}
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_strength = 120
+		max_organisation = 80
+		default_morale = 0.5
+		manpower = 4800
+
+		#Misc Abilities
+		training_time = 360
+		suppression = 1
+		weight = 0.75
+		supply_consumption = 0.10
+	
+		# this is what moves us and sets speed
+		transport = heavy_troop_transport_equipment
+	
+		need = {
+			imperial_equipment = 400
+			heavy_troop_transport_equipment = 16
+		}
+
+		forest = {
+			attack = -0.1
+			movement = -0.4
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.2
+			movement = -0.4
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.2
+		}
+		urban = {
+			attack = -0.1
+		}
+		river = {
+			attack = -0.1
+		}
+		amphibious = {
+			attack = -0.2
+		}
+	}
+	
+	speeder = {
+		sprite = speeder # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = other
+		priority = 599
+		ai_priority = 200
+		active = no
+		can_be_parachuted = yes
+
+		type = { infantry }
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_army
+			category_speeder_vehicle
+			category_light_vehicle
+		}
+
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_organisation = 20
+		max_strength = 32
+		default_morale = 0.3
+		manpower = 1000
+
+		#Misc Abilities
+		training_time = 120		
+		weight = 0.5
+		
+		supply_consumption = 0.12
+
+		#Offensive Abilities
+		suppression = 2
+	
+		need = {
+			speeder_equipment = 100
+			imperial_equipment = 100
+		}
+	}
+	
+	scoutwalker = {
+		sprite = scoutwalker # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = armored
+		priority = 2500
+		ai_priority = 1500
+		active = no
+
+		type = {
+			armor
+		}
+
+		group = armor
+
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_light_vehicle
+		}
+
+		combat_width = 1
+
+		need = {
+			extra_light_equipment = 40
+		}
+		manpower = 300
+		max_organisation = 35
+		default_morale = 0.3
+		training_time = 120
+		max_strength = 2
+		weight = 0.3
+		supply_consumption = 0.15
+	}
+
+	light_vehicle = {
+		sprite = light_vehicle # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = armored
+		priority = 2501
+		ai_priority = 2000
+		active = yes
+		
+		type = {
+			armor
+		}
+		
+		group = armor
+		
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_light_vehicle
+		}
+
+
+		combat_width = 2
+
+		need = {
+			light_equipment = 60
+		}
+		manpower = 500
+		max_organisation = 30
+		default_morale = 0.3
+		training_time = 180
+		max_strength = 2
+		weight = 0.5
+		supply_consumption = 0.3
+
+		#Tanks are awesome
+		# soft_attack = 0.5			
+	}
+	
+	assault_vehicle = {
+		sprite = assault_vehicle # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = armored
+		priority = 2502
+		ai_priority = 3500
+		active = yes
+		
+		type = {
+			armor
+		}
+		
+		group = armor
+		
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_assault_vehicle
+		}
+
+		combat_width = 3
+
+		need = {
+			assault_equipment = 50
+		}
+		manpower = 500
+		max_organisation = 15
+		max_strength = 2
+		default_morale = 0.4
+		training_time = 180
+		weight = 1.00
+		supply_consumption = 0.15
+
+		#Tanks are awesome
+		# soft_attack = 0.5
+
+		forest = {
+		    attack = -0.2
+			movement = -0.3
+		}
+		mountain = 	{
+		    attack = -0.1
+		}
+		jungle = {
+		    attack = -0.25
+			movement = -0.3
+		}
+		marsh = {
+			movement = -0.1
+		}
+		urban = {
+			attack = -0.25
+			defence = -0.1
+		}
+		river = { 
+			attack = -0.1
+			movement = -0.2
+		}
+		amphibious = { 
+			attack = -0.6
+		}
+	}
+	
+	heavy_vehicle = {
+		sprite = heavy_vehicle # HOD 2026-11-08: own sprite = 3D model lookup TAG_<sprite>_<visual level>_entity (zz_hod_sw_unit_models.asset)
+		map_icon_category = armored
+		priority = 2520
+		ai_priority = 2520
+		active = yes
+
+		type = {
+			armor
+		}
+		
+		group = armor
+
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_heavy_vehicle
+		}
+
+		combat_width = 4
+
+		need = {
+			heavy_equipment = 16
+		}
+
+		manpower = 720
+		max_organisation = 30
+		default_morale = 1.0
+		max_strength = 20
+		training_time = 180
+		weight = 10.00
+		
+		supply_consumption = 0.2
+
+		fort = {
+			attack = 0.5
+		}
+	}
+	
+	
+}

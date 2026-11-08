@@ -1,0 +1,1068 @@
+technologies = {
+		##FOCUS ONLY ##
+
+	#hidden tech, required for stormtrooper unit
+	stormtrooper_tech = {
+		land_night_attack = 0.10
+		enable_subunits = {
+			stormtrooper
+		}
+		allow = {
+			tag = IMP
+		}
+		
+		research_cost = 4
+		start_year = 977
+		# No folder block: this is a hidden, focus/history-granted tech (IMP & REP start with it).
+		# It must NOT render in the tech tree, or the engine logs "no grid box for tech stormtrooper_tech".
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+	}
+	
+
+	stormtrooper_mountain = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+		
+		stormtrooper = {
+			mountain = {
+				attack = 0.2
+				movement = 0.1
+			}
+			hills = {
+				attack = 0.1
+				movement = 0.1
+			}
+		}
+	}
+	
+	stormtrooper_marine = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+		
+		stormtrooper = {
+			marsh = {
+				attack = 0.1
+				movement = 0.1
+			}
+			river = {
+				attack = 0.1
+			}
+			amphibious = {
+				attack = 0.5
+				movement = 0.2
+			}
+		}
+	}
+	
+	stormtrooper_paratrooper = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+		
+		stormtrooper = {
+			urban = {
+				attack = 0.1
+				movement = 0.1
+				defence = 0.1
+			}
+			supply_consumption = -0.04
+		}
+	}
+		
+		
+		#END OF FOCUS##
+	republic_weapon1 = {
+		land_night_attack = 0.05
+		enable_equipments = {
+			republic_equipment_1
+		}	
+		
+		enable_subunits = {
+			blaster_infantry
+		}
+		
+		
+		path = {
+			leads_to_tech = imperial_weapons
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 4
+		start_year = 976
+		folder = {
+			name = swinfantry_folder
+			position = { x = 0 y = 0 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			republic_weapon1_hospital
+		}
+
+		ai_will_do = {
+			factor = 4000
+		}
+		
+	
+	}
+		
+	imperial_weapons = {
+		land_night_attack = 0.05
+		enable_equipments = {
+			imperial_equipment_1
+		}	
+		
+		path = {
+			leads_to_tech = blaster_efficiency1
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = imperial_thermal_detonator
+			research_cost_coeff = 1
+		}	
+
+		research_cost = 4
+		start_year = 977
+		folder = {
+			name = swinfantry_folder
+			position = { x = 0 y = 2 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			imperial_weapons_hospital
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 4000
+				date > 977.01.01
+			}
+		}
+		
+	}
+
+	imperial_thermal_detonator = {
+		
+		blaster_infantry = {
+			hard_attack = 1.0
+			ap_attack = 0.2
+		}
+		stormtrooper = {
+			hard_attack = 1.0
+			ap_attack = 0.2
+		}
+		speeder = {
+			hard_attack = 1.0
+			ap_attack = 0.2
+		}
+		armored_troop_transport = {
+			hard_attack = 1.0
+			ap_attack = 0.2
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 1.0
+			ap_attack = 0.2
+		}
+		
+		
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swinfantry_folder
+			position = { x = 2 y = 4 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	
+	
+	blaster_efficiency1 = {
+		
+		blaster_infantry = {
+			soft_attack = 0.05
+		}
+		stormtrooper = {
+			soft_attack = 0.05
+		}
+		speeder = {
+			soft_attack = 0.05
+		}
+		armored_troop_transport = {
+			soft_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+		    soft_attack = 0.05
+		}
+
+		
+				
+		path = {
+			leads_to_tech = imperial_weapons2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swinfantry_folder
+			position = { x = 0 y = 4 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	imperial_weapons2 = {
+		enable_equipments = {
+			imperial_equipment_2
+		}
+		
+		
+		path = {
+			leads_to_tech = imperial_anti_tank
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = blaster_efficiency2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 4
+		start_year = 979
+		folder = {
+			name = swinfantry_folder
+			position = { x = 0 y = 6 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			imperial_weapons2_hospital
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	
+	}
+	
+	blaster_efficiency2 = {
+		
+		blaster_infantry = {
+			soft_attack = 0.05
+		}
+		stormtrooper = {
+			soft_attack = 0.05
+		}
+		speeder = {
+			soft_attack = 0.05
+		}
+		armored_troop_transport = {
+			soft_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+		    soft_attack = 0.05
+		}
+		
+
+		path = {
+			leads_to_tech = firstorder_weapons
+			research_cost_coeff = 1
+		}	
+
+		research_cost = 2
+		start_year = 981
+		folder = {
+			name = swinfantry_folder
+			position = { x = 0 y = 8 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	
+	imperial_anti_tank = {
+		
+		blaster_infantry = {
+			hard_attack = 0.5
+			ap_attack = 1.2
+		}
+		stormtrooper = {
+			hard_attack = 0.5
+			ap_attack = 1.2
+		}
+		speeder = {
+			hard_attack = 0.5
+			ap_attack = 1.2
+		}
+		armored_troop_transport = {
+			hard_attack = 0.5
+			ap_attack = 1.2
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 0.5
+			ap_attack = 1.2
+		}
+		
+		research_cost = 2
+		start_year = 981
+		folder = {
+			name = swinfantry_folder
+			position = { x = 2 y = 8 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	firstorder_weapons = {
+		land_night_attack = 0.05
+		enable_equipments = {
+			imperial_equipment_3
+		}
+		
+		path = {
+			leads_to_tech = blaster_efficiency3
+			research_cost_coeff = 1
+		}		
+
+		research_cost = 2
+		start_year = 990
+		folder = {
+			name = swinfantry_folder
+			position = { x = 0 y = 12 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			firstorder_weapons_hospital
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	
+	blaster_efficiency3 = {	
+	
+		blaster_infantry = {
+			soft_attack = 0.05
+		}
+		stormtrooper = {
+			soft_attack = 0.05
+		}
+		speeder = {
+			soft_attack = 0.05
+		}
+		armored_troop_transport = {
+			soft_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+		    soft_attack = 0.05
+		}
+		
+		research_cost = 2
+		start_year = 990
+		folder = {
+			name = swinfantry_folder
+			position = { x = 3 y = 12 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	small_repeater1 = {
+	
+		blaster_infantry = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		
+		stormtrooper = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		speeder = {
+			defense = 0.04
+			breakthrough = 0.04
+		}
+		armored_troop_transport = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 0.04
+			ap_attack = 0.04
+		}
+		path = {
+			leads_to_tech = small_repeater2
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 2
+		start_year = 976
+		folder = {
+			name = swinfantry_folder
+			position = { x = 4 y = 0 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	
+	}
+	
+	small_repeater2 = {
+	
+		blaster_infantry = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		stormtrooper = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		speeder = {
+			defense = 0.04
+			breakthrough = 0.04
+		}
+		armored_troop_transport = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 0.04
+			ap_attack = 0.04
+		}
+		land_night_attack = 0.10
+		
+		path = {
+			leads_to_tech = medium_repeater1
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swinfantry_folder
+			position = { x = 4 y = 2 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	
+	}
+	
+	medium_repeater1 = {
+	
+		blaster_infantry = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		stormtrooper = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		speeder = {
+			defense = 0.04
+			breakthrough = 0.04
+		}
+		armored_troop_transport = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 0.04
+			ap_attack = 0.04
+		}
+		
+		path = {
+			leads_to_tech = medium_repeater2
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swinfantry_folder
+			position = { x = 4 y = 4 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	
+	}
+	
+	medium_repeater2 = {
+	
+		blaster_infantry = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		stormtrooper = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		speeder = {
+			defense = 0.04
+			breakthrough = 0.04
+		}
+		armored_troop_transport = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 0.04
+			ap_attack = 0.04
+		}
+		
+		land_night_attack = 0.20
+		
+		path = {
+			leads_to_tech = heavy_repeater1
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 2
+		start_year = 979
+		folder = {
+			name = swinfantry_folder
+			position = { x = 4 y = 6 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	
+	}
+	
+	heavy_repeater1 = {
+	
+		blaster_infantry = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		stormtrooper = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		speeder = {
+			defense = 0.04
+			breakthrough = 0.04
+		}
+		armored_troop_transport = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 0.04
+			ap_attack = 0.04
+		}
+		
+		path = {
+			leads_to_tech = heavy_repeater2
+			research_cost_coeff = 1
+		}	
+		
+		research_cost = 2
+		start_year = 981
+		folder = {
+			name = swinfantry_folder
+			position = { x = 4 y = 8 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	
+	}
+	
+	heavy_repeater2 = {
+	
+		blaster_infantry = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		stormtrooper = {
+			defense = 0.07
+			breakthrough = 0.07
+		}
+		speeder = {
+			defense = 0.04
+			breakthrough = 0.04
+		}
+		armored_troop_transport = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		heavy_armored_troop_transport = {
+			hard_attack = 0.04
+			ap_attack = 0.04
+		}
+		
+		research_cost = 2
+		start_year = 985
+		folder = {
+			name = swinfantry_folder
+			position = { x = 4 y = 10 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	
+	}
+	
+	special_training = {
+	
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.10
+			acclimatization_cold_climate_gain_factor = 0.10
+		}
+		path = {
+			leads_to_tech = advanced_special_training
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = improved_special_training
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swinfantry_folder
+			position = { x = 19 y = 2 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}	
+		ai_will_do = {
+			factor = 2
+		}
+	
+	}
+	
+	advanced_special_training = {
+		xor={
+			improved_special_training
+		}
+
+		category_special_forces = {
+			max_organisation = 7
+			defense = 0.07
+		}
+
+		special_forces_training_time_factor = 0.10
+		
+		path = {
+			leads_to_tech = advanced_special_training2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swinfantry_folder
+			position = { x = 21 y = 4 }
+		}
+		
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	improved_special_training = {
+		xor={
+			advanced_special_training
+		}
+
+		special_forces_cap = 0.07
+		special_forces_training_time_factor = -0.10
+		
+		path = {
+			leads_to_tech = improved_special_training2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swinfantry_folder
+			position = { x = 17 y = 4 }
+		}
+		
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	advanced_special_training2 = {
+
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.70
+			acclimatization_cold_climate_gain_factor = 0.70
+		}
+		
+		special_forces_no_supply_grace = 72
+		special_forces_training_time_factor = 0.12
+		
+		path = {
+			leads_to_tech = elite_troopers
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 979
+		folder = {
+			name = swinfantry_folder
+			position = { x = 21 y = 6 }
+		}
+		
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	improved_special_training2 = {
+
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.35
+			acclimatization_cold_climate_gain_factor = 0.35
+		}
+		
+		special_forces_out_of_supply_factor = -0.15
+		
+		path = {
+			leads_to_tech = elite_troopers
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 979
+		folder = {
+			name = swinfantry_folder
+			position = { x = 17 y = 6 }
+		}
+		
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+	elite_troopers = {
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.30
+			acclimatization_cold_climate_gain_factor = 0.30
+			max_organisation = 10
+			soft_attack = 0.10
+		}
+		
+		special_forces_no_supply_grace = 72
+
+		research_cost = 2
+		start_year = 981
+		folder = {
+			name = swinfantry_folder
+			position = { x = 19 y = 8 }
+		}
+		
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+
+
+
+	republic_weapon1_hospital = {	# HOD 2026-11-08: Field Hospital variant of republic_weapon1 (was imp_tech_field_hospital in the support tab)
+
+		enable_subunits = {
+			imp_field_hospital
+		}
+
+		research_cost = 1
+		start_year = 976
+		categories = {
+			support_tech
+			hospital_tech
+			imperial_support
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 7
+
+			modifier = {
+				factor = 10
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 10
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 10
+				date > "978.1.1"
+			}
+		}
+	}
+
+	imperial_weapons_hospital = {	# HOD 2026-11-08: Field Hospital variant of imperial_weapons (was imp_tech_field_hospital2 in the support tab)
+		allow = { has_tech = republic_weapon1_hospital }
+
+		imp_field_hospital = {
+			casualty_trickleback = 0.15
+			experience_loss_factor = -0.15
+		}
+
+		research_cost = 1
+		start_year = 977
+		categories = {
+			support_tech
+			hospital_tech
+			imperial_support
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "978.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "979.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	imperial_weapons2_hospital = {	# HOD 2026-11-08: Field Hospital variant of imperial_weapons2 (was imp_tech_field_hospital3 in the support tab)
+		allow = { has_tech = imperial_weapons_hospital }
+
+		imp_field_hospital = {
+			casualty_trickleback = 0.15
+			experience_loss_factor = -0.15
+		}
+		research_cost = 1
+		start_year = 979
+		categories = {
+			support_tech
+			hospital_tech
+			imperial_support
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "980.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "981.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "983.1.1"
+			}
+		}
+	}
+
+	firstorder_weapons_hospital = {	# HOD 2026-11-08: Field Hospital variant of firstorder_weapons (was imp_tech_field_hospital4 in the support tab)
+		allow = { has_tech = imperial_weapons2_hospital }
+
+		imp_field_hospital = {
+			casualty_trickleback = 0.15
+			experience_loss_factor = -0.15
+		}
+
+		research_cost = 1
+		start_year = 990
+		categories = {
+			support_tech
+			hospital_tech
+			imperial_support
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "985.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "987.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "990.1.1"
+			}
+		}
+	}
+
+	imp_support_eq = {	# HOD 2026-11-08: moved from the support tab (removed) to the infantry tab
+
+		enable_equipments = {
+			imperial_support_equipment_1
+		}
+
+		dependencies = {
+			republic_weapon1 = 1
+		}
+
+		research_cost = 1.0
+		start_year = 976
+		folder = {
+			name = swinfantry_folder
+			position = { x = 6 y = 0 }
+		}
+
+		categories = {
+			imperial_support
+		}
+
+		ai_will_do = {
+			factor = 3
+
+			modifier = {
+				factor = 7
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 7
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 7
+				date > "978.1.1"
+			}
+		}
+	}
+}

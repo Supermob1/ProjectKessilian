@@ -126,7 +126,7 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 		if = {
 			limit = {
 				ROOT = {
-					has_tech = radio_detection
+					always = no
 					NOT = {
 						has_tech = cavity_magnatron
 					}
@@ -134,7 +134,7 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 			}
 			FROM = {
 				OR = {
-					has_tech = radio_detection
+					always = no
 					has_tech = cavity_magnatron
 				}
 			}
@@ -416,13 +416,13 @@ has_any_tank_tech = {
 			has_dlc = "No Step Back"
 		}
 		OR = {
-			has_tech = basic_light_tank_chassis
-			has_tech = basic_medium_tank_chassis
-			has_tech = basic_heavy_tank_chassis
+			always = no
+			always = no
+			always = no
 		}
 	}
 	else = {
-		has_tech = gwtank
+		always = no
 	}
 }
 

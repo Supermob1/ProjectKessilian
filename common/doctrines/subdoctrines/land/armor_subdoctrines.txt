@@ -42,10 +42,7 @@ armored_spearhead = {
         }
         local_reserves = {
         #3
-            armored_car = {
-                default_morale = 0.1
-                max_organisation = 7
-            }
+
             light_armor = {
                 default_morale = 0.1
                 max_organisation = 3
@@ -59,11 +56,7 @@ armored_spearhead = {
         }
         assault_detachments = {
         #5
-            armored_car = {
-                default_morale = 0.2
-                max_organisation = 3
-                breakthrough = 0.2
-            }
+
              category_tanks= {
                 max_organisation = 3
                 breakthrough = 0.2
@@ -118,9 +111,7 @@ armored_spearhead_no_lar = {
         }
         local_reserves = {
         #3
-            recon = {
-                max_organisation = 10
-            }
+
 
             light_armor = {
                 default_morale = 0.1
@@ -201,13 +192,7 @@ armored_infantry_support = {
         }
         maintenance_routines = {
         #3
-            armored_maintenance = {
-                battalion_mult = {
-                    category = category_all_armor
-                    max_strength = 0.15
-                    add = yes
-                }
-            }
+
         }
         fuel_rationing = {
         #4
@@ -267,21 +252,13 @@ streamlined_deployment = {
 
         }
         mechanized_wave = {
-            mechanized = {
-                max_organisation = 5
-                default_morale = 0.1
-            }
+
             category_all_armor = {
                 default_morale = 0.05
             }
         }
         tank_desant = {
-            armored_signal = {
-                battalion_mult = {
-                    category = category_light_infantry
-                    maximum_speed = 0.05
-                }
-            }
+
             light_tank_recon = {
                 battalion_mult = {
                     category = category_light_infantry
@@ -338,12 +315,7 @@ mobile_defense = {
 
     }
 
-    armored_engineer = {
-        battalion_mult = {
-            category = category_all_armor
-            entrenchment = 0.02
-        }
-    }
+
     category_all_armor = {
         defense = 0.1
     }
@@ -351,10 +323,7 @@ mobile_defense = {
     rewards = {
 
         mechanized_offensive = {
-            mechanized = {
-                defense = 0.1
-                soft_attack = 0.1
-            }
+
         }
         advance_under_fire = {
             light_armor = {
@@ -370,23 +339,12 @@ mobile_defense = {
             assault_engineer = {
                 max_organisation = 10
             }
-            armored_engineer = {
-                max_organisation = 10
-            }
-            armored_signal = {
-                max_organisation = 10
-            }
+
+
 
         }
         combined_anti_armor = {
-            anti_tank = {
-                battalion_mult = {
-                    category = category_all_armor
-                    hard_attack = 0.05
-                    ap_attack = 0.05
 
-                }
-            }
 
         }
         tank_on_tank_engagement = {
@@ -431,14 +389,8 @@ armored_cavalry = {
 
     }
 
-    armored_car = {
-        max_organisation = 5
-        defense = 0.1
-    }
-    mechanized =  {
-        max_organisation = 5
-        defense = 0.05
-    }
+
+
     # EFFECTS
     rewards = {
         cruiser_tanks = {
@@ -449,65 +401,34 @@ armored_cavalry = {
             }
         }
         quick_response_force = {
-            motorized_military_police = {
-                    battalion_mult = {
-                        category = category_vehicle_infantry
-                        suppression_factor = 0.05
-                    }
-    
-            }
-            armored_car = {
-                suppression_factor = 0.2
-            }
+
+
         }
         speed_as_armour = {
             light_armor = {
                 maximum_speed = 0.05
                 breakthrough = 0.05
             }
-            armored_car = {
-                maximum_speed = 0.05
-                breakthrough = 0.1
-                soft_attack = 0.1
-    
-            }
-            mechanized = {
-                maximum_speed = 0.05
-                breakthrough = 0.05
-            }
+
+
         }
         fighting_reconnaissance = {
-            armored_car_recon = {
-                max_organisation = 3
-                 soft_attack = 0.05
-            }
+
             light_tank_recon = {
                 max_organisation = 2
                 soft_attack = 0.05
             }
         }
         sustained_deployments = {
-            armored_car = {
-                max_organisation = 5
-                soft_attack = 0.05
-                default_morale = 0.2
-            }
+
             light_armor = {
                 max_organisation = 5
                 soft_attack = 0.05
                 hard_attack = 0.1
                 default_morale = 0.15
             }
-            mechanized = {
-                max_organisation = 5
-                soft_attack = 0.05
-                default_morale = 0.1 
-            }
-            motorized = {
-                max_organisation = 5
-                soft_attack = 0.05
-                default_morale = 0.1 
-            }
+
+
         }
     }
 }
@@ -544,14 +465,8 @@ armored_cavalry_no_lar = {
 
     }
 
-    motorized = {
-        max_organisation = 5
-        defense = 0.1
-    }
-    mechanized =  {
-        max_organisation = 5
-        defense = 0.05
-    }
+
+
     # EFFECTS
     rewards = {
         cruiser_tanks = {
@@ -562,13 +477,7 @@ armored_cavalry_no_lar = {
             }
         }
         quick_response_force = {
-            motorized_military_police = {
-                    battalion_mult = {
-                        category = category_vehicle_infantry
-                        suppression_factor = 0.05
-                    }
-    
-            }
+
             
         }
         speed_as_armour = {
@@ -576,20 +485,11 @@ armored_cavalry_no_lar = {
                 maximum_speed = 0.05
                 breakthrough = 0.05
             }
-            motorized = {
-                maximum_speed = 0.05
-    
-            }
-            mechanized = {
-                maximum_speed = 0.05
-                breakthrough = 0.05
-            }
+
+
         }
         fighting_reconnaissance = {
-            recon = {
-                max_organisation = 3
-                 soft_attack = 0.05
-            }
+
             light_tank_recon = {
                 max_organisation = 2
                 soft_attack = 0.05
@@ -602,16 +502,8 @@ armored_cavalry_no_lar = {
                 hard_attack = 0.1
                 default_morale = 0.15
             }
-            mechanized = {
-                max_organisation = 5
-                soft_attack = 0.05
-                default_morale = 0.1 
-            }
-            motorized = {
-                max_organisation = 5
-                soft_attack = 0.05
-                default_morale = 0.1 
-            }
+
+
         }
     }
 }
@@ -643,14 +535,7 @@ tank_destroyer_force = {
 
     rewards = {
 
-        mobile_anti_tank = {
-            mot_anti_tank_brigade = {
-                max_organisation = 8
-                hard_attack = 0.1
-                ap_attack = 0.1
-            }
 
-        }
         committed_operational_units = {
             assault_engineer = {
                 battalion_mult = {
@@ -676,14 +561,7 @@ tank_destroyer_force = {
         }
 
         selfsufficient_battalion = {
-            armored_signal = {
-                battalion_mult = {
-                    category = category_tank_destroyers
-                    hard_attack = 0.1
-                    ap_attack = 0.2
 
-                }
-            }
         }
 
 

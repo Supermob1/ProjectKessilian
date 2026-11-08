@@ -6,12 +6,12 @@ technologies = {
 	@firecontrol = 4
 	@encryption_x = 1
 	@decryption_x = 5
-	@rockets_980 = 0
-	@rockets_982 = 2
-	@rockets_983 = 4
-	@rockets_984 = 6
-	@rockets_985 = 8
-	@rockets_986 = 10
+	@rockets_1940 = 0
+	@rockets_1942 = 2
+	@rockets_1943 = 4
+	@rockets_1944 = 6
+	@rockets_1945 = 8
+	@rockets_1946 = 10
 
 	electronic_mechanical_engineering = {
 
@@ -41,7 +41,7 @@ technologies = {
 		research_cost = 1
 		start_year = 976
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = -1 y = 0 }
 		}
 		
@@ -85,7 +85,7 @@ technologies = {
 		research_cost = 2
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @radio y = 2 }
 		}
 		folder = {
@@ -137,7 +137,7 @@ technologies = {
 		research_cost = 2
 		start_year = 978
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @radio y = 6 }
 		}
 		
@@ -182,7 +182,7 @@ technologies = {
 		research_cost = 2
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @radio y = 12 }
 		}
 		
@@ -204,7 +204,7 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > "979.8.1"
+				date > "982.3.1"
 			}
 		}
 		
@@ -215,43 +215,6 @@ technologies = {
 		special_project_specialization = { specialization_air }
 	}
 	
-	radio_detection = {
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_air_radar
-			}
-		}
-
-		enable_building = {
-			building = radar_station
-			level = 1
-		}
-		coordination_bonus = 0.01
-		path = {
-			leads_to_tech = cavity_magnatron 
-			research_cost_coeff = 1
-		}
-		#enable_equipment_modules = {
-		#	ship_radar_1
-		#	radio_navigation_1
-		#}
-		research_cost = 1.75
-		
-		#folder = {
-		#	name = industry_folder
-		#	position = { x = @radar y = 2 }
-		#}
-		
-		ai_will_do = {
-			factor = 0
-		}
-		
-		categories = {
-			electronics
-			radar_tech
-		}
-
-	}
 	
 	cavity_magnatron = { #was decimetric radar
 
@@ -273,7 +236,7 @@ technologies = {
 		}
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @radar y = 6 }
 		}
 
@@ -288,14 +251,28 @@ technologies = {
 			factor = 1
 			modifier = {
 				OR = {
-					#tag = ENG
-					#tag = USA
+					tag = ENG
 				}
-				factor = 5
+				factor = 10
+			}
+			modifier = {
+				OR = {
+					tag = USA
+					date > "979.6.1"
+				}
+				factor = 10
 			}
 			modifier = {
 				date < "978.1.1"
-				factor = 0.5
+				factor = 0.1
+			}
+			modifier = {
+				date > "979.6.1"
+				factor = 2
+			}
+			modifier = {
+				date > "980.6.1"
+				factor = 2
 			}
 		}
 		
@@ -331,7 +308,7 @@ technologies = {
 	#	start_year = 979
 	#	
 	#	folder = {
-	#		name = industry_folder
+	#		name = electronics_folder
 	#		position = { x = 0 y = 8 }
 	#	}
 	#	
@@ -339,8 +316,8 @@ technologies = {
 	#		factor = 1
 	#		modifier = {
 	#			OR = {
-	#				#tag = ENG
-	#				#tag = USA
+	#				tag = ENG
+	#				tag = USA
 	#			}
 	#			factor = 5
 	#		}
@@ -387,7 +364,7 @@ technologies = {
 		start_year = 980
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @radar y = 10 }
 		}
 		
@@ -396,12 +373,12 @@ technologies = {
 			modifier = {
 				factor = 4
 				OR = {
-					#tag = ENG
-					#tag = USA
+					tag = ENG
+					tag = USA
 				}
 			}
 			modifier = {
-				factor = 0.5
+				factor = 0.1
 				date < "980.1.1"
 			}
 		}
@@ -443,7 +420,7 @@ technologies = {
 		start_year = 981
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @radar y = 12 }
 		}
 		
@@ -451,8 +428,8 @@ technologies = {
 			factor = 1
 			modifier = {
 				OR = {
-					#tag = ENG
-					#tag = USA
+					tag = ENG
+					tag = USA
 				}
 				factor = 4
 			}
@@ -494,7 +471,7 @@ technologies = {
 		start_year = 982
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @radar y = 14 }
 		}
 		
@@ -502,8 +479,8 @@ technologies = {
 			factor = 1
 			modifier = {
 				OR = {
-					#tag = ENG
-					#tag = USA
+					tag = ENG
+					tag = USA
 				}
 				factor = 5
 			}
@@ -536,7 +513,7 @@ technologies = {
 		research_cost = 2.5
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = 3 y = 2 }
 		}
 		
@@ -577,7 +554,7 @@ technologies = {
 		start_year = 978
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @computing y = 6 }
 		}
 		
@@ -634,7 +611,7 @@ technologies = {
 		start_year = 980
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @computing y = 10 }
 		}
 		
@@ -653,7 +630,7 @@ technologies = {
 
 			modifier = {
 				factor = 2
-				#tag = GER
+				tag = GER
 			}
 		}
 		
@@ -684,7 +661,7 @@ technologies = {
 		start_year = 982
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @computing y = 14 }
 		}
 		
@@ -722,7 +699,7 @@ technologies = {
 			NOT = { has_dlc = "La Resistance" }
 		}
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @encryption_x y = 6 }
 		}
 		
@@ -739,12 +716,12 @@ technologies = {
 			modifier = {
 				factor = 3
 
-				#tag = GER
+				tag = GER
 			}
 			modifier = {
 				factor = 3
 
-				#tag = SOV
+				tag = SOV
 			}
 		}
 		
@@ -765,7 +742,7 @@ technologies = {
 		start_year = 980
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @encryption_x y = 10 }
 		}
 		
@@ -782,12 +759,12 @@ technologies = {
 			modifier = {
 				factor = 3
 
-				#tag = GER
+				tag = GER
 			}
 			modifier = {
 				factor = 3
 
-				#tag = SOV
+				tag = SOV
 			}
 		}
 		
@@ -808,7 +785,7 @@ technologies = {
 		start_year = 982
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @encryption_x y = 14 }
 		}
 		
@@ -825,12 +802,12 @@ technologies = {
 			modifier = {
 				factor = 3
 
-				#tag = GER
+				tag = GER
 			}
 			modifier = {
 				factor = 3
 
-				#tag = SOV
+				tag = SOV
 			}
 		}
 		
@@ -851,7 +828,7 @@ technologies = {
 		start_year = 978
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @decryption_x y = 6 }
 		}
 		
@@ -864,12 +841,12 @@ technologies = {
 			modifier = {
 				factor = 3
 
-				#tag = GER
+				tag = GER
 			}
 			modifier = {
 				factor = 3
 
-				#tag = SOV
+				tag = SOV
 			}
 		}
 		
@@ -890,7 +867,7 @@ technologies = {
 		start_year = 980
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @decryption_x y = 10 }
 		}
 		
@@ -903,12 +880,12 @@ technologies = {
 			modifier = {
 				factor = 3
 
-				#tag = GER
+				tag = GER
 			}
 			modifier = {
 				factor = 3
 
-				#tag = SOV
+				tag = SOV
 			}
 		}
 		
@@ -929,7 +906,7 @@ technologies = {
 		start_year = 982
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @decryption_x y = 14 }
 		}
 		
@@ -942,12 +919,12 @@ technologies = {
 			modifier = {
 				factor = 3
 
-				#tag = GER
+				tag = GER
 			}
 			modifier = {
 				factor = 3
 
-				#tag = SOV
+				tag = SOV
 			}
 		}
 		
@@ -970,7 +947,7 @@ technologies = {
 		research_cost = 1
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @firecontrol y = 4 }
 		}
 		
@@ -978,9 +955,9 @@ technologies = {
 			factor = 0.75
 			modifier = {
 				OR = {
-					#tag = ENG
-					#tag = USA
-					#tag = JAP
+					tag = ENG
+					tag = USA
+					tag = JAP
 				}
 				factor = 3
 			}
@@ -1007,11 +984,12 @@ technologies = {
 		}
 		
 		research_cost = 1
+		start_year = 979
 		allow_branch = {
 			has_dlc = "Man the Guns"
 		}
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @firecontrol y = 8 }
 		}
 		
@@ -1019,9 +997,9 @@ technologies = {
 			factor = 0.75
 			modifier = {
 				OR = {
-					#tag = ENG
-					#tag = USA
-					#tag = JAP
+					tag = ENG
+					tag = USA
+					tag = JAP
 				}
 				factor = 3
 			}
@@ -1051,9 +1029,9 @@ technologies = {
 		}
 		
 		research_cost = 1
-		
+		start_year = 981
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = @firecontrol y = 12 }
 		}
 		
@@ -1061,9 +1039,9 @@ technologies = {
 			factor = 0.75
 			modifier = {
 				OR = {
-					#tag = ENG
-					#tag = USA
-					#tag = JAP
+					tag = ENG
+					tag = USA
+					tag = JAP
 				}
 				factor = 3
 			}
@@ -1113,7 +1091,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 976
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = 1 y = 0 }
 		}
 		
@@ -1144,7 +1122,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 978
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = 0 y = 6 }
 		}
 		
@@ -1166,7 +1144,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 980
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = 0 y = 10 }
 		}
 		
@@ -1195,7 +1173,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 976
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = 2 y = 2 }
 		}
 		
@@ -1217,7 +1195,7 @@ technologies = {
 		research_cost = 1.5
 		start_year = 980
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = 2 y = 10 }
 		}
 		
@@ -1269,8 +1247,8 @@ technologies = {
 		start_year = 982
 		
 		folder = {
-			name = industry_folder
-			position = { x = 0 y = @rockets_982 }
+			name = electronics_folder
+			position = { x = 0 y = @rockets_1942 }
 		}
 
 		on_research_complete = {
@@ -1308,66 +1286,6 @@ technologies = {
 		special_project_specialization = { specialization_air }
 	}
 	
-	rocket_engines = {
-		allow = { always = no }	# HOD: disabled
-
-		show_equipment_icon = yes
-
-		# can build v1s/rocket planes
-		enable_equipments = {
-			limit = {
-				NOT = { has_dlc = "By Blood Alone" }
-			}
-			rocket_interceptor_equipment_1
-		}
-		#enable_equipments = {
-		#	guided_missile_equipment_1
-		#}
-
-		enable_equipment_modules = {
-			rocket_engine_1
-		}
-		
-		#rocket_artillery = { # Effects moved to the next rocket tech
-		#	soft_attack = 0.05
-		#}
-		#rocket_artillery_brigade = {
-		#	soft_attack = 0.05
-		#}
-		#mot_rocket_artillery_brigade = {
-		#	soft_attack = 0.05
-		#}
-		#motorized_rocket_brigade = {
-		#	soft_attack = 0.05
-		#}
-		
-	#	path = {
-	#		leads_to_tech = improved_rocket_engines 
-	#		research_cost_coeff = 1
-	#	}
-	#	path = {
-	#		leads_to_tech = jet_engines 
-	#		research_cost_coeff = 1
-	#	}
-		
-		research_cost = 2
-		start_year = 984
-		
-	#	folder = {
-	#		name = industry_folder
-	#		position = { x = 0 y = 2 }
-	#	}
-		
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			rocketry
-		}		
-	}
-
 	sp_rockets_improved_guidance = {
 		allow = { always = no }	# HOD: disabled
 		allow = {
@@ -1391,25 +1309,28 @@ technologies = {
 			air_range = 0.25
 		}
 
-		rocket_artillery = {
+		#rocket_artillery = {
+		#	soft_attack = 0.1
+		#}
+		#rocket_artillery_brigade = {
+		#	soft_attack = 0.1
+		#}
+		#mot_rocket_artillery_brigade = {
+		#	soft_attack = 0.1
+		#}
+		#motorized_rocket_brigade = {
+		#	soft_attack = 0.1
+		#}
+		category_rocket_artillery = {
 			soft_attack = 0.1
 		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.1
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.1
-		}
-		
+
 		research_cost = 1
 		start_year = 983
 		
 		folder = {
-			name = industry_folder
-			position = { x = 0 y = @rockets_983 }
+			name = electronics_folder
+			position = { x = 0 y = @rockets_1943 }
 		}
 		
 		ai_will_do = {
@@ -1449,8 +1370,8 @@ technologies = {
 		start_year = 984
 		
 		folder = {
-			name = industry_folder
-			position = { x = 2 y = @rockets_984 }
+			name = electronics_folder
+			position = { x = 2 y = @rockets_1944 }
 		}
 		
 		ai_will_do = {
@@ -1482,8 +1403,8 @@ technologies = {
 		start_year = 985
 		
 		folder = {
-			name = industry_folder
-			position = { x = 2 y = @rockets_985 }
+			name = electronics_folder
+			position = { x = 2 y = @rockets_1945 }
 		}
 		
 		ai_will_do = {
@@ -1495,153 +1416,8 @@ technologies = {
 		}
 	}
 	
-	improved_rocket_engines = {
-		allow = { always = no }	# HOD: disabled
-
-		show_equipment_icon = yes
-		
-		# can build v2s
-		
-		enable_equipments = {
-			limit = {
-				NOT = { has_dlc = "By Blood Alone" }
-			}
-			rocket_interceptor_equipment_2
-		}
-		enable_equipments = {
-			#guided_missile_equipment_2
-		}
-
-		enable_equipment_modules = {
-			rocket_engine_2
-		}
-		
-		rocket_artillery = {
-			soft_attack = 0.05
-		}
-		rocket_artillery_brigade = {
-			soft_attack = 0.05
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.05
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.05
-		}
-		
-	#	path = {
-	#		leads_to_tech = advanced_rocket_engines 
-	#		research_cost_coeff = 1
-	#	}
-		
-		research_cost = 1.5
-		start_year = 985
-		
-	#	folder = {
-	#		name = industry_folder
-	#		position = { x = 0 y = 4 }
-	#	}
-	#	
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			rocketry
-		}
-	}
 	
-	advanced_rocket_engines = {
-		allow = { always = no }	# HOD: disabled
-
-		show_equipment_icon = yes
-
-		# can build ICBMs?
-		
-		enable_equipments = {
-			limit = {
-				NOT = { has_dlc = "By Blood Alone" }
-			}
-			rocket_interceptor_equipment_3
-		}
-		enable_equipments = {
-			#guided_missile_equipment_3
-		}
-
-		enable_equipment_modules = {
-			rocket_engine_3
-			guided_anti_ship_missile
-		}
-		
-		rocket_artillery_brigade = {
-			soft_attack = 0.05
-		}
-		mot_rocket_artillery_brigade = {
-			soft_attack = 0.05
-		}
-		motorized_rocket_brigade = {
-			soft_attack = 0.05
-		}
-		
-		research_cost = 1.5
-		start_year = 986
-		
-	#	folder = {
-	#		name = industry_folder
-	#		position = { x = 0 y = 6 }
-	#	}
-	#	
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			rocketry
-		}
-	}
 	
-	jet_engines = {
-	
-	#	folder = {
-	#		name = industry_folder
-	#		position = { x = 2 y = 2 }
-	#	}
-	#	
-		start_year = 984
-		research_cost = 2
-		enable_equipment_modules = {
-			tank_gas_turbine_engine
-			jet_engine_1x
-			jet_engine_2x
-			jet_engine_3x
-			jet_engine_4x
-			jet_engine_6x
-		}
-	#	folder = {
-	#		name = air_techs_folder
-	#		position = { x = 2 y = 11 }
-	#	}
-
-	#	folder = {
-	#		name = bba_air_techs_folder
-	#		position = { x = -1 y = 11 }
-	#	}
-		
-		desc = "JET_ENGINES_SPECIAL"
-
-		on_research_complete = {
-			custom_effect_tooltip = JET_ENGINES_RESEARCHED
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			rocketry
-			jet_technology
-		}
-	}
 	
 	atomic_research = {
 
@@ -1656,7 +1432,7 @@ technologies = {
 		research_cost = 5
 		
 		folder = {
-			name = industry_folder
+			name = electronics_folder
 			position = { x = 0 y = 0 }
 		}
 		
@@ -1686,7 +1462,13 @@ technologies = {
 
 			modifier = {
 				factor = 4
-				#tag = USA
+				tag = USA
+			}
+
+			modifier = {
+				add = 50
+				PHI_SEA = yes
+				has_completed_focus = PHI_weapons_of_war
 			}
 		}
 		
@@ -1714,7 +1496,7 @@ technologies = {
 						add_to_variable = { global.atomic_research_race = 1 }
 						if = {
 							limit = {
-								#original_tag = UTI
+								original_tag = ITA
 								NOT = { has_country_flag = ITA_pioneer_in_atomic_research_flag }
 							}
 							set_country_flag = ITA_pioneer_in_atomic_research_flag
@@ -1724,14 +1506,14 @@ technologies = {
 								check_variable = { global.atomic_research_race = 3 }
 								NOT = {
 									any_country = {
-										#original_tag = UTI
+										original_tag = ITA
 										has_country_flag = ITA_pioneer_in_atomic_research_flag
 									}
 								}
 							}
 							random_country = {
 								limit = {
-									#original_tag = UTI
+									original_tag = ITA
 								}
 								set_country_flag = ITA_late_to_the_atomic_party_flag
 							}
@@ -1742,119 +1524,6 @@ technologies = {
 		}
 	}
 	
-	nuclear_reactor = {
-
-		# can build reactors
-		
-		start_year = 983
-		research_cost = 5
-		
-		#folder = {
-		#	name = industry_folder
-		#	position = { x = 0 y = 2 }
-		#}
-
-		#path = {
-		#	leads_to_tech = nukes 
-		#	research_cost_coeff = 1
-		#}
-		
-		ai_will_do = {
-			factor = 3
-			modifier = {
-				#tag = USA
-				factor = 2
-			}
-		}
-		
-		categories = {
-			nuclear
-		}
-
-		special_project_specialization = { specialization_nuclear }
-		
-		enable_building = {
-			building = nuclear_reactor
-			level = 1
-		}
-	}
-
-	nuclear_reactor_heavy_water = {
-
-		# can build reactors
-		
-		start_year = 983
-		research_cost = 5
-		
-		#folder = {
-		#	name = industry_folder
-		#	position = { x = 0 y = 2 }
-		#}
-
-		#path = {
-		#	leads_to_tech = nukes 
-		#	research_cost_coeff = 1
-		#}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			nuclear
-		}
-
-		special_project_specialization = { specialization_nuclear }
-		
-		enable_building = {
-			building = nuclear_reactor_heavy_water
-			level = 1
-		}
-	}
-
-	nukes = {
-	
-		start_year = 985
-		research_cost = 5
-		
-		#folder = {
-		#	name = industry_folder
-		#	position = { x = 0 y = 6 }
-		#}
-		
-		ai_will_do = {
-			factor = 10
-		}
-		
-		nuclear_production = 0.5
-		on_research_complete = {
-		}
-		categories = {
-			nuclear
-		}
-		special_project_specialization = { specialization_nuclear }
-	}
-
-	lar_decryption_bonus_tech = {
-				
-		research_cost = 1.5 #Carrier Variant
-		start_year = 984
-
-		# only from focus!!! #####
-		allow = {
-			always = no
-		}
-		decryption_power = 10
-
-		
-		ai_will_do = {
-			factor = 0
-		}
-		################
-	}
-
-
-
 	########## SPECIAL PROJECTS ##########
 
 	#############################
@@ -1893,8 +1562,8 @@ technologies = {
 		start_year = 984
 		
 		folder = {
-			name = industry_folder
-			position = { x = -2 y = @rockets_984 }
+			name = electronics_folder
+			position = { x = -2 y = @rockets_1944 }
 		}
 
 		ai_will_do = {
@@ -1934,8 +1603,8 @@ technologies = {
 		start_year = 986
 		
 		folder = {
-			name = industry_folder
-			position = { x = -2 y = @rockets_986 }
+			name = electronics_folder
+			position = { x = -2 y = @rockets_1946 }
 		}
 
 		ai_will_do = {

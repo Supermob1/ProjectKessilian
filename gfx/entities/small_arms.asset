@@ -16,17 +16,20 @@ entity = {
 
 	state = {
 	name = "attack"	animation = "attack"
-	event = { time = 1.15 node="muzzle2" particle = "rifle_muzzle_particle"  keep_particle = yes light = "muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 1.15 node="muzzle2" particle = "hosw_muzzleblue_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 1.15 node="muzzle2" particle = "hosw_blue_blastershot_mg"  keep_particle = yes }
 	}
 
 	state = {
 	name = "defend"
-	event = { time = 0 node="muzzle2" particle = "rifle_muzzle_particle"  keep_particle = yes light = "muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_muzzleblue_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_blue_blastershot_mg"  keep_particle = yes }
 	}
 
 	state = {
 	name = "support_attack"	animation = "support_attack"
-	event = { time = 0 node="muzzle2" particle = "rifle_muzzle_particle"  keep_particle = yes light = "muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_muzzleblue_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_blue_blastershot_mg"  keep_particle = yes }
 	}
 }
 #E5
@@ -41,16 +44,50 @@ entity = {
 
 	state = {
 	name = "attack"	animation = "attack"
-	event = { time = 1.15 node="muzzle2" particle = "rifle_muzzle_particle"  keep_particle = yes light = "muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 1.15 node="muzzle2" particle = "hosw_muzzlered_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 1.15 node="muzzle2" particle = "hosw_red_blastershot_mg"  keep_particle = yes }
 	}
 
 	state = {
 	name = "defend"
-	event = { time = 0 node="muzzle2" particle = "rifle_muzzle_particle"  keep_particle = yes light = "muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_muzzlered_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_red_blastershot_mg"  keep_particle = yes }
 	}
 
 	state = {
 	name = "support_attack"	animation = "support_attack"
-	event = { time = 0 node="muzzle2" particle = "rifle_muzzle_particle"  keep_particle = yes light = "muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_muzzlered_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_red_blastershot_mg"  keep_particle = yes }
+	}
+}
+# per-level Republic rifles (plans & scripts/weapon_models.py): same states as the DC-15S, other mesh
+entity = { name = "REP_infantry_weapon_DC15A_entity" clone = "REP_infantry_weapon_DC15_entity" pdxmesh = "infantry_weapon_DC15A_mesh" }
+entity = { name = "REP_infantry_weapon_DC15X_entity" clone = "REP_infantry_weapon_DC15_entity" pdxmesh = "infantry_weapon_DC15X_mesh" }
+# E-11: Imperial red bolts
+entity = {
+	name = "REP_infantry_weapon_E11_entity"
+	pdxmesh = "infantry_weapon_E11_mesh"
+
+	get_state_from_parent = yes
+	default_state = "idle"
+	state = { name = "idle" }
+	state = { name = "move"	}
+
+	state = {
+	name = "attack"	animation = "attack"
+	event = { time = 1.15 node="muzzle2" particle = "hosw_muzzlered_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 1.15 node="muzzle2" particle = "hosw_red_blastershot_mg"  keep_particle = yes }
+	}
+
+	state = {
+	name = "defend"
+	event = { time = 0 node="muzzle2" particle = "hosw_muzzlered_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_red_blastershot_mg"  keep_particle = yes }
+	}
+
+	state = {
+	name = "support_attack"	animation = "support_attack"
+	event = { time = 0 node="muzzle2" particle = "hosw_muzzlered_mg"  keep_particle = yes light = "mg_muzzle_flash" sound = { soundeffect = infantry_blaster_attack } }
+	event = { time = 0 node="muzzle2" particle = "hosw_red_blastershot_mg"  keep_particle = yes }
 	}
 }

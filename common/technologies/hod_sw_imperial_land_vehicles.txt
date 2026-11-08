@@ -1,0 +1,2403 @@
+technologies = {
+	republic_tank = {
+
+		enable_equipments = {
+			republictank
+		}
+
+
+		dependencies = {
+            		republic_weapon1 = 1
+			
+       		}
+
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_assault"
+			}
+
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		path = {
+			leads_to_tech = tx130t
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = rx
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 976
+		folder = {
+			name = swarmour_folder
+			position = { x = 0 y = 0 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			republic_tank_engineers
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	tx130t = {
+
+		assault_vehicle = {
+			soft_attack = 0.2
+			hard_attack = 0.2
+			ap_attack = 0.5
+			armor_value = 0.25
+			defense = 0.25
+			breakthrough = 0.1
+		}
+
+		path = {
+			leads_to_tech = repulsor
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swarmour_folder
+			position = { x = 0 y = 2 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	repulsor = {
+
+		enable_equipments = {
+			repulsor_equipment
+		}
+
+
+		path = {
+			leads_to_tech = mauler
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = px
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = h_repulsor
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swarmour_folder
+			position = { x = 0 y = 4 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			repulsor_engineers
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	px = {	# HOD 2026-11-08: AAC-1 swapped with the T4-B
+		enable_equipments = {
+			px_equipment
+		}
+
+		research_cost = 1.5
+		start_year = 978
+		folder = {
+			name = swarmour_folder
+			position = { x = 3 y = 4 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	h_repulsor = {	# HOD 2026-11-08: T4-B swapped with the AAC-1
+		enable_equipments = {
+			h_repulsor_equipment
+		}
+
+		path = {
+			leads_to_tech = ihrt
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 981
+		folder = {
+			name = swarmour_folder
+			position = { x = 3 y = 8 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	ihrt = {	# HOD 2026-11-08: Imperial heavy repulsortank, under the T4-B
+		enable_equipments = {
+			ihrt_equipment
+		}
+
+		research_cost = 2
+		start_year = 985
+		folder = {
+			name = swarmour_folder
+			position = { x = 3 y = 10 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			ihrt_engineers
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	mauler = {
+
+		assault_vehicle = {
+			maximum_speed = 0.1
+			soft_attack = 0.1
+			breakthrough = 0.05
+		}
+
+		enable_subunits = {
+			armored_scout
+		}
+
+
+		path = {
+			leads_to_tech = crawler
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.5
+		start_year = 979
+		folder = {
+			name = swarmour_folder
+			position = { x = 0 y = 6 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	crawler = {	# 2026-11-08: the 2-M Saber (was the TIE/ca crawler)
+		enable_equipments = {
+			imperialtank
+		}
+
+
+		path = {
+			leads_to_tech = imperial_tank
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.5
+		start_year = 981
+		folder = {
+			name = swarmour_folder
+			position = { x = 0 y = 8 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			crawler_engineers
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	imperial_tank = {	# 2026-11-08: refit of the 2-M Saber (upgrade only)
+		assault_vehicle = {
+			soft_attack = 0.1
+			hard_attack = 0.15
+			ap_attack = 0.1
+			armor_value = 0.1
+			maximum_speed = 0.05
+		}
+
+		research_cost = 2.5
+		start_year = 985
+		folder = {
+			name = swarmour_folder
+			position = { x = 0 y = 10 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_assault_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+	atrt = {
+		enable_equipments = {
+			atrt_equipment
+		}
+
+		dependencies = {
+            republic_weapon1 = 1
+        }
+
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_light"
+			}
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+
+		}
+
+		path = {
+			leads_to_tech = atpt
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = atat_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = atrct
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 976
+		folder = {
+			name = swarmour_folder
+			position = { x = 6 y = 0 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			atrt_signal
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	atrct = {
+		enable_equipments = {
+			atrct_equipment
+		}
+
+		enable_subunits = {
+			scoutwalker
+		}
+
+
+		path = {
+			leads_to_tech = atrt2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1
+		start_year = 976
+		folder = {
+			name = swarmour_folder
+			position = { x = 9 y = 0 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+	atrt2 = {	# HOD 2026-11-08: late-war AT-RT
+		enable_equipments = {
+			atrt2_equipment
+		}
+
+		research_cost = 1.5
+		start_year = 979
+		folder = {
+			name = swarmour_folder
+			position = { x = 9 y = 5 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+
+	atpt = {
+		enable_equipments = {
+			atpt_equipment
+		}
+
+		path = {
+			leads_to_tech = atdp
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swarmour_folder
+			position = { x = 6 y = 3 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			atpt_signal
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	atdp = {
+		enable_equipments = {
+			atdp_equipment
+		}
+
+		path = {
+			leads_to_tech = atap_art_refit
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = atap_art_range
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = atap_art_mobility
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 979
+		folder = {
+			name = swarmour_folder
+			position = { x = 6 y = 5 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: AT-AP artillery variant
+			atdp_signal
+			atpt_artillery
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	atst = {
+		enable_equipments = {
+			atst_equipment
+		}
+
+		research_cost = 2.5
+		start_year = 985
+		folder = {
+			name = swarmour_folder
+			position = { x = 6 y = 10 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variant
+			atst_signal
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+
+	atte = {
+		enable_equipments = {
+			atte_equipment
+		}
+		path = {
+			leads_to_tech = spha
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = atat_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = atpt
+			research_cost_coeff = 1
+		}
+
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_heavy"
+			}
+
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 2.5
+		start_year = 976
+		folder = {
+			name = swarmour_folder
+			position = { x = 12 y = 0 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+			imperial_heavy_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+
+	atat_tech = {
+		enable_equipments = {
+			atat_equipment
+		}
+
+
+
+
+		path = {
+			leads_to_tech = elite_atat_tech
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2.5
+		start_year = 978
+		folder = {
+			name = swarmour_folder
+			position = { x = 12 y = 3 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+			imperial_heavy_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	elite_atat_tech = {
+		enable_equipments = {
+			elite_atat_equipment
+		}
+
+		path = {
+			leads_to_tech = fo_atat_tech
+			research_cost_coeff = 1
+		}
+		research_cost = 10
+		start_year = 980
+		folder = {
+			name = swarmour_folder
+			position = { x = 12 y = 7 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+			imperial_heavy_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	fo_atat_tech = {	# HOD 2026-11-08: AT-ACT, right of the AT-AT (AT-AT heavy assault walker tech removed)
+		enable_equipments = {
+			fo_atat_equipment
+		}
+
+
+		research_cost = 3
+		start_year = 980
+		folder = {
+			name = swarmour_folder
+			position = { x = 15 y = 7 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+			imperial_heavy_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+
+	# Motorized
+
+	atot = {
+		enable_equipments = {
+			atot_equipment
+		}
+
+		enable_subunits = {
+			armored_troop_transport
+		}
+
+
+		path = {
+			leads_to_tech = itt
+			research_cost_coeff = 1
+		}
+
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_troop_transport"
+			}
+
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
+
+		research_cost = 1.5
+		start_year = 976
+		folder = {
+			name = swinfantry_folder
+			position = { x = 14 y = 0 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_motor_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			atot_logistics
+			atot_maintenance
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	# basic_hovercrafts (Repulsor Transports) removed 2026-11-08: replaced by the LAAT support line (Support tab)
+
+
+	itt = {	# HOD 2026-11-08: transport line = AT-OT -> AT-TC -> K79-S80 (Republic troop transport tech removed)
+		enable_equipments = {
+			itt_equipment
+		}
+
+		path = {
+			leads_to_tech = itc
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swinfantry_folder
+			position = { x = 14 y = 4 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_motor_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			itt_logistics
+			itt_maintenance
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	itc = {	# HOD 2026-11-08: transport line = AT-OT -> AT-TC -> K79-S80 (Republic troop transport tech removed)
+		enable_equipments = {
+			itc_equipment
+		}
+
+		path = {
+			leads_to_tech = juggernaut
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 985
+		folder = {
+			name = swinfantry_folder
+			position = { x = 14 y = 10 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_motor_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			itc_logistics
+			itc_maintenance
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+	juggernaut = {
+		enable_equipments = {
+			juggernaut_equipment
+		}
+
+		enable_subunits = {
+			heavy_armored_troop_transport
+		}
+
+		research_cost = 2.5
+		start_year = 985
+		folder = {
+			name = swinfantry_folder
+			position = { x = 18 y = 10 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_motor_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			juggernaut_logistics
+			juggernaut_maintenance
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	#Speeders
+
+	isp = { #isorrowproductions
+
+		enable_equipments = {
+			infantry_support_platform
+		}
+
+		enable_subunits = {
+			speeder
+		}
+
+		path = {
+			leads_to_tech = barc
+			research_cost_coeff = 1
+		}
+
+		on_research_complete = {
+			hidden_effect = {
+				load_oob = "unlock_speeder"
+				custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+			}
+		}
+
+		research_cost = 1.5
+		start_year = 976
+		folder = {
+			name = swinfantry_folder
+			position = { x = 9 y = 0 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_speeder_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			isp_scout
+			isp_mp
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+	barc = {
+
+		enable_equipments = {
+			barc_equipment
+		}
+		path = {
+			leads_to_tech = ava
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 978
+
+		folder = {
+			name = swinfantry_folder
+			position = { x = 9 y = 4 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_speeder_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			barc_scout
+			barc_mp
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+
+	ava = {
+
+		enable_equipments = {
+			ava_equipment
+		}
+		path = {
+			leads_to_tech = z_speeder
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.5
+		start_year = 979
+
+		folder = {
+			name = swinfantry_folder
+			position = { x = 9 y = 6 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_speeder_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			ava_scout
+			ava_mp
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+
+	z_speeder = {
+
+		enable_equipments = {
+			z_speeder_equipment
+		}
+
+		research_cost = 2
+		start_year = 985
+
+		folder = {
+			name = swinfantry_folder
+			position = { x = 9 y = 10 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_speeder_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: support-company variants (slot 0 scout/logistics, slot 1 MP/maintenance)
+			z_speeder_scout
+			z_speeder_mp
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+
+
+
+	rx = {	# HOD 2026-11-08: anti-air line moved to the hover tank tree (one vehicle + 3 refits)
+
+		enable_equipments = {
+			rx_equipment
+		}
+
+		path = {
+			leads_to_tech = air_upgrade1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 977
+		enable_equipment_modules = {
+			ship_anti_air_3
+		}	
+		static_anti_air_damage_factor = 0.2
+		folder = {
+			name = swarmour_folder
+			position = { x = -3 y = 2 }
+		}
+
+		enable_building = {
+			building = anti_air_building
+			level = 5
+		}
+
+		
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_anti_air
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+	air_upgrade1 = {
+
+		mobile_anti_air = {
+			air_attack = 0.12
+		}
+
+		static_anti_air_hit_chance_factor = 0.03
+
+		path = {
+			leads_to_tech = ataa
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+
+		folder = {
+			name = swarmour_folder
+			position = { x = -3 y = 4 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_anti_air
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+
+	air_upgrade3 = {
+
+		mobile_anti_air = {
+			air_attack = 0.12
+		}
+
+		static_anti_air_hit_chance_factor = 0.03
+
+		research_cost = 2
+		start_year = 983
+
+		folder = {
+			name = swarmour_folder
+			position = { x = -3 y = 9 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_anti_air
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+	atpt_artillery = {	# HOD 2026-11-08: AT-AP artillery variant (sub-technology of atdp), for the mobile artillery battalions
+		enable_equipments = {
+			atpt_art_equipment
+		}
+
+		research_cost = 1.5
+		start_year = 979
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	atap_art_range = {	# HOD 2026-11-08: AT-AP artillery improvements, under the AT-AP
+		allow = { has_tech = atpt_artillery }	# improves the AT-AP artillery variant
+
+		mobile_artillery = {
+			soft_attack = 0.1
+			ap_attack = 0.1
+		}
+
+		research_cost = 1.5
+		start_year = 980
+		folder = {
+			name = swarmour_folder
+			position = { x = 4 y = 7 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	atap_art_refit = {	# HOD 2026-11-08: AT-AP artillery improvements, under the AT-AP
+		mobile_artillery = {
+			soft_attack = 0.05
+			breakthrough = 0.1
+			defense = 0.1
+		}
+
+		path = {
+			leads_to_tech = atst
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 1.5
+		start_year = 980
+		folder = {
+			name = swarmour_folder
+			position = { x = 6 y = 7 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	atap_art_mobility = {	# HOD 2026-11-08: AT-AP artillery improvements, under the AT-AP
+		allow = { has_tech = atpt_artillery }	# improves the AT-AP artillery variant
+
+		mobile_artillery = {
+			maximum_speed = 0.1
+			reliability = 0.05
+		}
+
+		research_cost = 1.5
+		start_year = 980
+		folder = {
+			name = swarmour_folder
+			position = { x = 8 y = 7 }
+		}
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_light_tech
+		}
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	spha = {	# HOD 2026-11-08: mobile artillery line, right of the AT-TE (replaces the UT-AT tech)
+
+		enable_equipments = {
+			spha_equipment
+		}
+
+		path = {
+			leads_to_tech = utat_art
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = art_upgrade1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 977
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 15 y = 0 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+		}
+
+		ai_will_do = {
+			factor = 6
+		}
+
+	}
+
+	utat_art = {	# HOD 2026-11-08: UT-AT artillery (FotR unstable_terrain_artillery_transport model)
+		enable_equipments = {
+			utat_art_equipment
+		}
+		path = {
+			leads_to_tech = spma
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 15 y = 3 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+
+	spma = {
+		enable_equipments = {
+			spma_equipment
+		}
+
+		research_cost = 2
+		start_year = 979
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 15 y = 5 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+	}
+
+	art_upgrade1 = {
+		mobile_artillery = {
+			soft_attack = 0.12
+		}
+
+		path = {
+			leads_to_tech = art_upgrade2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = target_system1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 977
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 17 y = 2 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+		}
+
+		ai_will_do = {
+			factor = 4
+		}
+
+	}
+
+	art_upgrade2 = {
+		mobile_artillery = {
+			soft_attack = 0.12
+		}
+
+		path = {
+			leads_to_tech = art_upgrade3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 979
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 17 y = 5 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+		}
+
+		ai_will_do = {
+			factor = 4
+		}
+
+	}
+
+	art_upgrade3 = {
+		mobile_artillery = {
+			soft_attack = 0.12
+		}
+
+		research_cost = 2
+		start_year = 980
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 17 y = 7 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+		}
+
+		ai_will_do = {
+			factor = 4
+		}
+
+	}
+
+	target_system1 = {
+
+		static_anti_air_hit_chance_factor = 0.01
+		mobile_anti_air = {
+			air_attack = 0.07
+		}
+		mobile_artillery = {
+			soft_attack = 0.05
+		}
+
+		path = {
+			leads_to_tech = target_system2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 19 y = 3 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+			imperial_mobile_anti_air
+		}
+
+		ai_will_do = {
+			factor = 4
+		}
+
+	}
+
+	target_system2 = {
+		static_anti_air_hit_chance_factor = 0.01
+		mobile_anti_air = {
+			air_attack = 0.07
+		}
+		mobile_artillery = {
+			soft_attack = 0.05
+		}
+
+		path = {
+			leads_to_tech = target_system3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 979
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 19 y = 5 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+			imperial_mobile_anti_air
+		}
+
+		ai_will_do = {
+			factor = 4
+		}
+
+	}
+
+	target_system3 = {
+		static_anti_air_hit_chance_factor = 0.01
+		mobile_anti_air = {
+			air_attack = 0.07
+		}
+		mobile_artillery = {
+			soft_attack = 0.05
+		}
+
+		path = {
+			leads_to_tech = ammo_improvement2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 980
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 19 y = 7 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_artillery
+			imperial_mobile_anti_air
+		}
+
+		ai_will_do = {
+			factor = 4
+		}
+
+	}
+
+	ammo_improvement2 = {
+		mobile_artillery = {
+			soft_attack = 0.05
+			hard_attack = 0.02
+		}
+
+		path = {
+			leads_to_tech = ammo_improvement3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 980
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 21 y = 7 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_anti_tank
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	ammo_improvement3 = {
+		mobile_artillery = {
+			soft_attack = 0.05
+			hard_attack = 0.02
+		}
+
+		research_cost = 2
+		start_year = 983
+
+		folder = {
+			name = swarmour_folder
+			position = { x = 21 y = 9 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_anti_tank
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	ataa = {	# HOD 2026-11-08 (user): AT-AA walker replaces Anti-Air Upgrade II
+		enable_equipments = {
+			ataa_equipment
+		}
+		path = {
+			leads_to_tech = air_upgrade3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 979
+
+		folder = {
+			name = swarmour_folder
+			position = { x = -3 y = 6 }
+		}
+
+		categories = {
+			imperial_land_vehicle_tech
+			imperial_tech
+			imperial_vehicles_tech
+			imperial_mobile_anti_air
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+
+	isp_scout = {	# HOD 2026-11-08: Scout Company variant of isp (was imp_tech_recon in the support tab)
+
+		enable_subunits = {
+			imp_recon
+		}
+
+		research_cost = 1
+		start_year = 976
+
+		categories = {
+			support_tech
+			imperial_support
+			recon_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				is_major = yes
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "978.1.1"
+			}
+			modifier = {
+				factor = 10
+				date > "978.1.1"
+			}
+		}
+	}
+
+	barc_scout = {	# HOD 2026-11-08: Scout Company variant of barc (was imp_tech_recon2 in the support tab)
+		allow = { has_tech = isp_scout }
+
+		imp_recon = {
+			recon = 3
+		}
+
+		research_cost = 1
+		start_year = 978
+
+		categories = {
+			support_tech
+			recon_tech
+			imperial_support
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "978.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	ava_scout = {	# HOD 2026-11-08: Scout Company variant of ava (was imp_tech_recon3 in the support tab)
+		allow = { has_tech = barc_scout }
+
+		imp_recon = {
+			recon = 3
+		}
+		research_cost = 1
+		start_year = 979
+
+		categories = {
+			support_tech
+			imperial_support
+			recon_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "980.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "981.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "983.1.1"
+			}
+		}
+	}
+
+	z_speeder_scout = {	# HOD 2026-11-08: Scout Company variant of z_speeder (was imp_tech_recon4 in the support tab)
+		allow = { has_tech = ava_scout }
+
+		imp_recon = {
+			recon = 3
+		}
+
+		research_cost = 1
+		start_year = 985
+
+		categories = {
+			support_tech
+			imperial_support
+			recon_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "985.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "987.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "990.1.1"
+			}
+		}
+	}
+
+	isp_mp = {	# HOD 2026-11-08: Military Police variant of isp (was imp_tech_military_police in the support tab)
+
+		enable_subunits = {
+			imp_military_police
+		}
+
+		research_cost = 1
+		start_year = 976
+
+		categories = {
+			support_tech
+			imperial_support
+			military_police_tech
+		}
+
+		ai_will_do = {
+			factor = 0.5
+
+
+
+
+
+
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	barc_mp = {	# HOD 2026-11-08: Military Police variant of barc (was imp_tech_military_police2 in the support tab)
+		allow = { has_tech = isp_mp }
+
+		imp_military_police = {
+			suppression_factor = 0.15
+		}
+
+
+		research_cost = 1
+		start_year = 978
+
+		categories = {
+			support_tech
+			imperial_support
+			military_police_tech
+		}
+
+		ai_will_do = {
+			factor = 0.5
+
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	ava_mp = {	# HOD 2026-11-08: Military Police variant of ava (was imp_tech_military_police3 in the support tab)
+		allow = { has_tech = barc_mp }
+
+		imp_military_police = {
+			suppression_factor = 0.15
+		}
+		research_cost = 1
+		start_year = 979
+
+		categories = {
+			support_tech
+			imperial_support
+			military_police_tech
+		}
+
+		ai_will_do = {
+			factor = 0.5
+
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	z_speeder_mp = {	# HOD 2026-11-08: Military Police variant of z_speeder (was imp_tech_military_police4 in the support tab)
+		allow = { has_tech = ava_mp }
+
+		imp_military_police = {
+			suppression_factor = 0.1
+		}
+
+		research_cost = 1
+		start_year = 985
+
+		categories = {
+			support_tech
+			imperial_support
+			military_police_tech
+		}
+
+		ai_will_do = {
+			factor = 0.5
+
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	atot_logistics = {	# HOD 2026-11-08: Logistics Company variant of atot (was imp_tech_logistics_company in the support tab)
+
+		enable_subunits = {
+			imp_logistics_company
+		}
+
+		dependencies = {
+			atot = 1
+		}
+
+		research_cost = 1
+		start_year = 976
+
+		categories = {
+			support_tech
+			imperial_support
+			logistics_tech
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "978.1.1"
+			}
+			modifier = {
+				factor = 5
+				date > "978.1.1"
+			}
+		}
+	}
+
+	itt_logistics = {	# HOD 2026-11-08: Logistics Company variant of itt (was imp_tech_logistics_company2 in the support tab)
+		allow = { has_tech = atot_logistics }
+
+		imp_logistics_company = {
+			supply_consumption_factor = -0.15
+			fuel_consumption_factor = -0.07
+		}
+
+
+		research_cost = 1
+		start_year = 978
+
+		categories = {
+			support_tech
+			logistics_tech
+			imperial_support
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "978.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+
+		}
+	}
+
+	itc_logistics = {	# HOD 2026-11-08: Logistics Company variant of itc (was imp_tech_logistics_company3 in the support tab)
+		allow = { has_tech = itt_logistics }
+
+		imp_logistics_company = {
+			supply_consumption_factor = -0.15
+			fuel_consumption_factor = -0.07
+		}
+		research_cost = 1
+		start_year = 985
+
+		categories = {
+			support_tech
+			logistics_tech
+			imperial_support
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "980.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "981.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "983.1.1"
+			}
+		}
+	}
+
+	juggernaut_logistics = {	# HOD 2026-11-08: Logistics Company variant of juggernaut (was imp_tech_logistics_company4 in the support tab)
+		allow = { has_tech = itc_logistics }
+
+		imp_logistics_company = {
+			supply_consumption_factor = -0.15
+			fuel_consumption_factor = -0.07
+		}
+
+		research_cost = 1
+		start_year = 985
+
+		categories = {
+			support_tech
+			logistics_tech
+			imperial_support
+			imperial_motor_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "985.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "987.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "990.1.1"
+			}
+		}
+	}
+
+	atot_maintenance = {	# HOD 2026-11-08: Maintenance Company variant of atot (was imp_tech_maintenance_company in the support tab)
+
+		enable_subunits = {
+			imp_maintenance_company
+		}
+
+		research_cost = 1
+		start_year = 976
+
+		categories = {
+			support_tech
+			imperial_support
+			maintenance_company_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+
+			modifier = {
+				factor = 7
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 7
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 7
+				date > "978.1.1"
+			}
+		}
+	}
+
+	itt_maintenance = {	# HOD 2026-11-08: Maintenance Company variant of itt (was imp_tech_maintenance_company2 in the support tab)
+		allow = { has_tech = atot_maintenance }
+
+		imp_maintenance_company = {
+			reliability_factor = 0.07
+			equipment_capture_factor = 0.07
+		}
+
+
+		research_cost = 1
+		start_year = 978
+
+		categories = {
+			support_tech
+			imperial_support
+			maintenance_company_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "978.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "979.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	itc_maintenance = {	# HOD 2026-11-08: Maintenance Company variant of itc (was imp_tech_maintenance_company3 in the support tab)
+		allow = { has_tech = itt_maintenance }
+
+		imp_maintenance_company = {
+			reliability_factor = 0.07
+			equipment_capture_factor = 0.07
+		}
+		research_cost = 1
+		start_year = 985
+
+		categories = {
+			support_tech
+			imperial_support
+			maintenance_company_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "980.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "981.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "983.1.1"
+			}
+		}
+	}
+
+	juggernaut_maintenance = {	# HOD 2026-11-08: Maintenance Company variant of juggernaut (was imp_tech_maintenance_company4 in the support tab)
+		allow = { has_tech = itc_maintenance }
+
+		imp_maintenance_company = {
+			reliability_factor = 0.07
+			equipment_capture_factor = 0.07
+		}
+
+		research_cost = 1
+		start_year = 985
+
+		categories = {
+			support_tech
+			imperial_support
+			maintenance_company_tech
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "985.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "987.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "990.1.1"
+			}
+		}
+	}
+
+	atrt_signal = {	# HOD 2026-11-08: Communications Corps variant of atrt (was imp_tech_signal_company in the support tab)
+
+		enable_subunits = {
+			imp_signal_company
+		}
+
+		research_cost = 1
+		start_year = 976
+		categories = {
+			support_tech
+			imperial_support
+			signal_company_tech
+			electronics
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 5
+				is_major = yes
+				date > "978.1.1"
+			}
+		}
+	}
+
+	atpt_signal = {	# HOD 2026-11-08: Communications Corps variant of atpt (was imp_tech_signal_company2 in the support tab)
+		allow = { has_tech = atrt_signal }
+
+		imp_signal_company = {
+			initiative = 0.17
+		}
+
+
+		research_cost = 1
+		start_year = 978
+		categories = {
+			support_tech
+			imperial_support
+			signal_company_tech
+			electronics
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "978.1.1"
+			}
+		}
+	}
+
+	atdp_signal = {	# HOD 2026-11-08: Communications Corps variant of atdp (was imp_tech_signal_company3 in the support tab)
+		allow = { has_tech = atpt_signal }
+
+		imp_signal_company = {
+			initiative = 0.17
+		}
+
+		research_cost = 1
+		start_year = 979
+		categories = {
+			support_tech
+			imperial_support
+			signal_company_tech
+			electronics
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "980.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "981.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "983.1.1"
+			}
+		}
+	}
+
+	atst_signal = {	# HOD 2026-11-08: Communications Corps variant of atst (was imp_tech_signal_company4 in the support tab)
+		allow = { has_tech = atdp_signal }
+
+		imp_signal_company = {
+			initiative = 0.17
+		}
+
+		research_cost = 1
+		start_year = 985
+		categories = {
+			support_tech
+			imperial_support
+			signal_company_tech
+			electronics
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.2
+				date > "985.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "987.1.1"
+			}
+
+			modifier = {
+				factor = 1.2
+				date > "990.1.1"
+			}
+		}
+	}
+
+	republic_tank_engineers = {	# HOD 2026-11-08: Combat Engineers variant of republic_tank (was imp_tech_engineers in the support tab)
+
+		enable_subunits = {
+			imp_engineer
+		}
+
+		research_cost = 1
+		start_year = 976
+		categories = {
+			support_tech
+			imperial_support
+			engineers_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+
+			modifier = {
+				factor = 7
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 7
+				date > "977.1.1"
+			}
+
+			modifier = {
+				factor = 7
+				date > "978.1.1"
+			}
+		}
+	}
+
+	repulsor_engineers = {	# HOD 2026-11-08: Combat Engineers variant of repulsor (was imp_tech_engineers2 in the support tab)
+		allow = { has_tech = republic_tank_engineers }
+
+		imp_engineer = {
+			entrenchment  = 3
+
+			fort = {
+				defence = 0.10
+				attack = 0.10
+			}
+		}
+
+
+		research_cost = 1
+		start_year = 978
+		categories = {
+			support_tech
+			imperial_support
+			engineers_tech
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 1.2
+				date > "978.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "979.1.1"
+			}
+		}
+	}
+
+	crawler_engineers = {	# HOD 2026-11-08: Combat Engineers variant of crawler (was imp_tech_engineers3 in the support tab)
+		allow = { has_tech = repulsor_engineers }
+
+		imp_engineer = {
+			entrenchment  = 3
+			river = {
+				attack = 0.1
+				defence = 0.10
+			}
+		}
+		research_cost = 1
+		start_year = 981
+		categories = {
+			support_tech
+			imperial_support
+			engineers_tech
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 1.2
+				date > "980.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "981.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "983.1.1"
+			}
+		}
+	}
+
+	ihrt_engineers = {	# HOD 2026-11-08: Combat Engineers variant of ihrt (was imp_tech_engineers4 in the support tab)
+		allow = { has_tech = crawler_engineers }
+
+		imp_engineer = {
+			entrenchment  = 3
+			urban = {
+				attack = 0.1
+				defence = 0.1
+			}
+		}
+
+		research_cost = 1
+		start_year = 985
+		categories = {
+			support_tech
+			engineers_tech
+			imperial_support
+		}
+
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 1.2
+				date > "985.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "987.1.1"
+			}
+
+			modifier = {
+				factor = 2
+				date > "990.1.1"
+			}
+		}
+	}
+}

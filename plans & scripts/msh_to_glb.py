@@ -44,7 +44,9 @@ def texture(path, name):
         return None
     root = os.path.dirname(path)
     for d in (root, os.path.dirname(root)):
-        hits = [h for h in glob.glob(os.path.join(d, "**", "*"), recursive=True) if os.path.basename(h).lower() == name.lower()]
+        files = glob.glob(os.path.join(d, "**", "*"), recursive=True)
+        stem = os.path.splitext(name)[0].lower()     # the .msh may name a .dds the mod ships only as .tga
+        hits = [h for h in files if os.path.basename(h).lower() == name.lower()] or                [h for h in files if os.path.splitext(os.path.basename(h))[0].lower() == stem and h.lower().endswith((".tga", ".dds", ".png"))]
         if hits:
             return hits[0]
     return None

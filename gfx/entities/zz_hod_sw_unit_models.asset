@@ -1,0 +1,1067 @@
+# HOD: Executor-tree units -> our unit models (plans & scripts/sw_tree/unit_models_sw.py)
+entity = { name = "REP_blaster_infantry_entity" clone = "REP_old_trooper_entity" }
+entity = { name = "REP_blaster_infantry_3_entity" clone = "REP_old_trooper_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15A_entity" } }
+entity = { name = "REP_blaster_infantry_4_entity" clone = "REP_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15_entity" } }
+entity = { name = "REP_blaster_infantry_5_entity" clone = "REP_PHASE_II_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15X_entity" } }
+entity = { name = "REP_blaster_infantry_6_entity" clone = "REP_GLE_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_E11_entity" } }
+entity = { name = "REP_stormtrooper_entity" clone = "REP_infantry_entity" }
+entity = { name = "REP_stormtrooper_3_entity" clone = "REP_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15A_entity" } }
+entity = { name = "REP_stormtrooper_4_entity" clone = "REP_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15_entity" } }
+entity = { name = "REP_stormtrooper_5_entity" clone = "REP_PHASE_II_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15X_entity" } }
+entity = { name = "REP_stormtrooper_6_entity" clone = "REP_GLE_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_E11_entity" } }
+entity = { name = "REP_light_vehicle_entity" clone = "hod_lance_walker_entity" scale = 0.9 }
+entity = { name = "REP_light_vehicle_0_entity" clone = "hod_lance_walker_entity" scale = 0.9 }
+entity = { name = "REP_light_vehicle_2_entity" clone = "hod_rep_walk_atxt_entity" scale = 1.0 }
+entity = { name = "REP_light_vehicle_3_entity" clone = "hod_atap_entity" scale = 0.75 }
+entity = { name = "REP_light_vehicle_4_entity" clone = "hod_imp_walk_atst_entity" scale = 1.0 }
+entity = { name = "REP_light_vehicle_5_entity" clone = "hod_imp_walk_atst_entity" scale = 1.15 }
+entity = { name = "REP_scoutwalker_0_entity" clone = "hod_rev_atrt_entity" scale = 1.0 }
+entity = { name = "REP_scoutwalker_entity" clone = "hod_tr_atrt_entity" scale = 1.0 }
+entity = { name = "REP_assault_vehicle_entity" clone = "hod_rev_sabertank_entity" scale = 1.0 }
+entity = { name = "REP_assault_vehicle_0_entity" clone = "hod_rev_sabertank_entity" scale = 1.0 }
+entity = { name = "REP_assault_vehicle_2_entity" clone = "hod_tx130s_entity" scale = 1.15 }
+entity = { name = "REP_assault_vehicle_3_entity" clone = "hod_t4b_entity" scale = 1.0 }
+entity = { name = "REP_assault_vehicle_4_entity" clone = "hod_ihrt_entity" scale = 1.0 }
+entity = { name = "REP_assault_vehicle_5_entity" clone = "hod_all_bf3_hover_tank_entity" scale = 1.0 }
+entity = { name = "REP_assault_vehicle_7_entity" clone = "hod_saber2m_entity" scale = 1.3 }
+entity = { name = "REP_heavy_vehicle_0_entity" clone = "hod_rev_atte_entity" scale = 1.0 }
+entity = { name = "REP_heavy_vehicle_entity" clone = "hod_rev_utat_entity" scale = 1.0 }
+entity = { name = "REP_heavy_vehicle_2_entity" clone = "hod_cw_atat_entity" scale = 1.0 }
+entity = { name = "REP_heavy_vehicle_3_entity" clone = "hod_imp_walk_atat_entity" scale = 1.0 }
+entity = { name = "REP_heavy_vehicle_4_entity" clone = "hod_atact_entity" scale = 1.0 }
+entity = { name = "REP_super_heavy_vehicle_entity" clone = "hod_imp_walk_atat_entity" scale = 1.25 }
+entity = { name = "REP_armored_troop_transport_0_entity" clone = "hod_rep_hover_swampspeeder_entity" scale = 1.0 }
+entity = { name = "REP_armored_troop_transport_entity" clone = "hod_fotr_atot_entity" scale = 1.0 }
+entity = { name = "REP_armored_troop_transport_2_entity" clone = "hod_fotr_atot_entity" scale = 1.1 }
+entity = { name = "REP_armored_troop_transport_3_entity" clone = "hod_attc_entity" scale = 1.0 }
+entity = { name = "REP_armored_troop_transport_4_entity" clone = "hod_tr_itt_entity" scale = 1.0 }
+entity = { name = "REP_heavy_armored_troop_transport_entity" clone = "hod_rev_juggernaut_entity" scale = 1.0 }
+entity = { name = "REP_mobile_artillery_0_entity" clone = "hod_fotr_spha_entity" scale = 1.0 }
+entity = { name = "REP_mobile_artillery_entity" clone = "hod_tr_spmat_entity" scale = 1.0 }
+entity = { name = "REP_mobile_artillery_2_entity" clone = "hod_fotr_j1_entity" scale = 1.1 }
+entity = { name = "REP_mobile_artillery_3_entity" clone = "hod_atap_entity" scale = 0.75 }
+entity = { name = "REP_mobile_artillery_4_entity" clone = "hod_fotr_utat_entity" scale = 1.0 }
+entity = { name = "REP_mobile_anti_tank_0_entity" clone = "hod_atap_entity" scale = 0.7 }
+entity = { name = "REP_mobile_anti_tank_entity" clone = "hod_fotr_av7_entity" scale = 1.0 }
+entity = { name = "REP_mobile_anti_tank_2_entity" clone = "hod_fotr_av7_entity" scale = 1.15 }
+entity = { name = "REP_mobile_anti_air_0_entity" clone = "hod_fotr_utaa_entity" scale = 1.0 }
+entity = { name = "REP_mobile_anti_air_entity" clone = "hod_tr_ataa_entity" scale = 1.0 }
+entity = { name = "REP_mobile_anti_air_2_entity" clone = "hod_fotr_utaa_entity" scale = 1.1 }
+entity = { name = "REP_speeder_0_entity" clone = "hod_orp_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "REP_speeder_entity" clone = "hod_rev_barc_entity" scale = 1.5 }
+entity = { name = "REP_speeder_2_entity" clone = "hod_rep_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "REP_speeder_3_entity" clone = "hod_imp_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "REP_helicopter_brigade_entity" clone = "hod_fotr_laat_entity" scale = 1.0 }
+entity = { name = "ALD_blaster_infantry_entity" clone = "REP_old_trooper_entity" }
+entity = { name = "ALD_blaster_infantry_3_entity" clone = "REP_old_trooper_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15A_entity" } }
+entity = { name = "ALD_blaster_infantry_4_entity" clone = "REP_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15_entity" } }
+entity = { name = "ALD_blaster_infantry_5_entity" clone = "REP_PHASE_II_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15X_entity" } }
+entity = { name = "ALD_blaster_infantry_6_entity" clone = "REP_GLE_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_E11_entity" } }
+entity = { name = "ALD_stormtrooper_entity" clone = "REP_infantry_entity" }
+entity = { name = "ALD_stormtrooper_3_entity" clone = "REP_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15A_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15A_entity" } }
+entity = { name = "ALD_stormtrooper_4_entity" clone = "REP_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15_entity" } }
+entity = { name = "ALD_stormtrooper_5_entity" clone = "REP_PHASE_II_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_DC15X_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_DC15X_entity" } }
+entity = { name = "ALD_stormtrooper_6_entity" clone = "REP_GLE_infantry_entity" attach = { name = "rifle1" Right_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle2" Left_Hand_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle3" mid_back_node = "REP_infantry_weapon_E11_entity" } attach = { name = "rifle4" Root_node_2 = "REP_infantry_weapon_E11_entity" } }
+entity = { name = "ALD_light_vehicle_entity" clone = "hod_lance_walker_entity" scale = 0.9 }
+entity = { name = "ALD_light_vehicle_0_entity" clone = "hod_lance_walker_entity" scale = 0.9 }
+entity = { name = "ALD_light_vehicle_2_entity" clone = "hod_rep_walk_atxt_entity" scale = 1.0 }
+entity = { name = "ALD_light_vehicle_3_entity" clone = "hod_atap_entity" scale = 0.75 }
+entity = { name = "ALD_light_vehicle_4_entity" clone = "hod_imp_walk_atst_entity" scale = 1.0 }
+entity = { name = "ALD_light_vehicle_5_entity" clone = "hod_imp_walk_atst_entity" scale = 1.15 }
+entity = { name = "ALD_scoutwalker_0_entity" clone = "hod_rev_atrt_entity" scale = 1.0 }
+entity = { name = "ALD_scoutwalker_entity" clone = "hod_tr_atrt_entity" scale = 1.0 }
+entity = { name = "ALD_assault_vehicle_entity" clone = "hod_rev_sabertank_entity" scale = 1.0 }
+entity = { name = "ALD_assault_vehicle_0_entity" clone = "hod_rev_sabertank_entity" scale = 1.0 }
+entity = { name = "ALD_assault_vehicle_2_entity" clone = "hod_tx130s_entity" scale = 1.15 }
+entity = { name = "ALD_assault_vehicle_3_entity" clone = "hod_t4b_entity" scale = 1.0 }
+entity = { name = "ALD_assault_vehicle_4_entity" clone = "hod_ihrt_entity" scale = 1.0 }
+entity = { name = "ALD_assault_vehicle_5_entity" clone = "hod_all_bf3_hover_tank_entity" scale = 1.0 }
+entity = { name = "ALD_assault_vehicle_7_entity" clone = "hod_saber2m_entity" scale = 1.3 }
+entity = { name = "ALD_heavy_vehicle_0_entity" clone = "hod_rev_atte_entity" scale = 1.0 }
+entity = { name = "ALD_heavy_vehicle_entity" clone = "hod_rev_utat_entity" scale = 1.0 }
+entity = { name = "ALD_heavy_vehicle_2_entity" clone = "hod_cw_atat_entity" scale = 1.0 }
+entity = { name = "ALD_heavy_vehicle_3_entity" clone = "hod_imp_walk_atat_entity" scale = 1.0 }
+entity = { name = "ALD_heavy_vehicle_4_entity" clone = "hod_atact_entity" scale = 1.0 }
+entity = { name = "ALD_super_heavy_vehicle_entity" clone = "hod_imp_walk_atat_entity" scale = 1.25 }
+entity = { name = "ALD_armored_troop_transport_0_entity" clone = "hod_rep_hover_swampspeeder_entity" scale = 1.0 }
+entity = { name = "ALD_armored_troop_transport_entity" clone = "hod_fotr_atot_entity" scale = 1.0 }
+entity = { name = "ALD_armored_troop_transport_2_entity" clone = "hod_fotr_atot_entity" scale = 1.1 }
+entity = { name = "ALD_armored_troop_transport_3_entity" clone = "hod_attc_entity" scale = 1.0 }
+entity = { name = "ALD_armored_troop_transport_4_entity" clone = "hod_tr_itt_entity" scale = 1.0 }
+entity = { name = "ALD_heavy_armored_troop_transport_entity" clone = "hod_rev_juggernaut_entity" scale = 1.0 }
+entity = { name = "ALD_mobile_artillery_0_entity" clone = "hod_fotr_spha_entity" scale = 1.0 }
+entity = { name = "ALD_mobile_artillery_entity" clone = "hod_tr_spmat_entity" scale = 1.0 }
+entity = { name = "ALD_mobile_artillery_2_entity" clone = "hod_fotr_j1_entity" scale = 1.1 }
+entity = { name = "ALD_mobile_artillery_3_entity" clone = "hod_atap_entity" scale = 0.75 }
+entity = { name = "ALD_mobile_artillery_4_entity" clone = "hod_fotr_utat_entity" scale = 1.0 }
+entity = { name = "ALD_mobile_anti_tank_0_entity" clone = "hod_atap_entity" scale = 0.7 }
+entity = { name = "ALD_mobile_anti_tank_entity" clone = "hod_fotr_av7_entity" scale = 1.0 }
+entity = { name = "ALD_mobile_anti_tank_2_entity" clone = "hod_fotr_av7_entity" scale = 1.15 }
+entity = { name = "ALD_mobile_anti_air_0_entity" clone = "hod_fotr_utaa_entity" scale = 1.0 }
+entity = { name = "ALD_mobile_anti_air_entity" clone = "hod_tr_ataa_entity" scale = 1.0 }
+entity = { name = "ALD_mobile_anti_air_2_entity" clone = "hod_fotr_utaa_entity" scale = 1.1 }
+entity = { name = "ALD_speeder_0_entity" clone = "hod_orp_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "ALD_speeder_entity" clone = "hod_rev_barc_entity" scale = 1.5 }
+entity = { name = "ALD_speeder_2_entity" clone = "hod_rep_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "ALD_speeder_3_entity" clone = "hod_imp_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "ALD_helicopter_brigade_entity" clone = "hod_fotr_laat_entity" scale = 1.0 }
+entity = { name = "CIS_blaster_infantry_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CIS_blaster_infantry_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CIS_blaster_infantry_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "CIS_blaster_infantry_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "CIS_blaster_infantry_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "CIS_stormtrooper_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CIS_stormtrooper_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CIS_stormtrooper_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "CIS_stormtrooper_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "CIS_stormtrooper_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "CIS_cis_b2_droid_entity" clone = "hod_fotr_cis_b2_entity" }
+entity = { name = "CIS_cis_droideka_entity" clone = "hod_x_droideka_entity" scale = 1.0 }
+entity = { name = "CIS_cis_b3_droid_entity" clone = "hod_x_b3_entity" }
+entity = { name = "CIS_scoutwalker_0_entity" clone = "hod_fotr_crab_entity" scale = 0.9 }
+entity = { name = "CIS_scoutwalker_entity" clone = "hod_x_raw_crab_entity" scale = 1.0 }
+entity = { name = "CIS_light_vehicle_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "CIS_light_vehicle_0_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "CIS_light_vehicle_2_entity" clone = "hod_x_espo_entity" scale = 1.0 }
+entity = { name = "CIS_light_vehicle_3_entity" clone = "hod_x_vulture_walk_entity" scale = 1.0 }
+entity = { name = "CIS_light_vehicle_4_entity" clone = "hod_fotr_cis_lr57_entity" scale = 1.0 }
+entity = { name = "CIS_assault_vehicle_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "CIS_assault_vehicle_0_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "CIS_assault_vehicle_2_entity" clone = "hod_fotr_persuader_entity" scale = 1.0 }
+entity = { name = "CIS_assault_vehicle_3_entity" clone = "hod_fotr_cis_supertank2_entity" scale = 1.0 }
+entity = { name = "CIS_assault_vehicle_4_entity" clone = "hod_fotr_supertank_entity" scale = 1.0 }
+entity = { name = "CIS_assault_vehicle_5_entity" clone = "hod_fotr_gat_entity" scale = 1.0 }
+entity = { name = "CIS_assault_vehicle_7_entity" clone = "hod_cis_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "CIS_heavy_vehicle_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "CIS_heavy_vehicle_0_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "CIS_heavy_vehicle_2_entity" clone = "hod_fotr_cis_tridroid_entity" scale = 1.7 }
+entity = { name = "CIS_heavy_vehicle_3_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.0 }
+entity = { name = "CIS_heavy_vehicle_4_entity" clone = "hod_x_csa_c1_entity" scale = 1.0 }
+entity = { name = "CIS_super_heavy_vehicle_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.4 }
+entity = { name = "CIS_armored_troop_transport_entity" clone = "hod_fotr_mtt_entity" scale = 1.0 }
+entity = { name = "CIS_armored_troop_transport_3_entity" clone = "hod_fotr_cis_mtt_entity" scale = 1.0 }
+entity = { name = "CIS_armored_troop_transport_4_entity" clone = "hod_fotr_cis_transport_entity" scale = 1.0 }
+entity = { name = "CIS_heavy_armored_troop_transport_entity" clone = "hod_cis_hover_mtt_entity" scale = 1.15 }
+entity = { name = "CIS_mobile_artillery_0_entity" clone = "hod_cis_hover_hag_entity" scale = 1.0 }
+entity = { name = "CIS_mobile_artillery_entity" clone = "hod_fotr_cis_ca_artillery_entity" scale = 1.0 }
+entity = { name = "CIS_mobile_artillery_3_entity" clone = "hod_fotr_cis_hagm_entity" scale = 1.0 }
+entity = { name = "CIS_mobile_artillery_4_entity" clone = "hod_fotr_cis_haml_entity" scale = 1.0 }
+entity = { name = "CIS_mobile_anti_air_0_entity" clone = "hod_fotr_hailfire_entity" scale = 1.0 }
+entity = { name = "CIS_mobile_anti_air_entity" clone = "hod_x_hailfire_riot_entity" scale = 1.0 }
+entity = { name = "CIS_speeder_0_entity" clone = "hod_cis_hover_stap_entity" scale = 1.5 }
+entity = { name = "CIS_speeder_entity" clone = "hod_fotr_cis_stap_entity" scale = 1.5 }
+entity = { name = "CIS_speeder_2_entity" clone = "hod_x_blue_stap_entity" scale = 1.5 }
+entity = { name = "CIS_speeder_3_entity" clone = "hod_fotr_cis_advestap_entity" scale = 1.2 }
+entity = { name = "CIS_helicopter_brigade_entity" clone = "hod_fotr_hmp_entity" scale = 1.0 }
+entity = { name = "CMG_blaster_infantry_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CMG_blaster_infantry_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CMG_blaster_infantry_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "CMG_blaster_infantry_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "CMG_blaster_infantry_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "CMG_stormtrooper_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CMG_stormtrooper_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "CMG_stormtrooper_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "CMG_stormtrooper_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "CMG_stormtrooper_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "CMG_cis_b2_droid_entity" clone = "hod_fotr_cis_b2_entity" }
+entity = { name = "CMG_cis_droideka_entity" clone = "hod_x_droideka_entity" scale = 1.0 }
+entity = { name = "CMG_cis_b3_droid_entity" clone = "hod_x_b3_entity" }
+entity = { name = "CMG_scoutwalker_0_entity" clone = "hod_fotr_crab_entity" scale = 0.9 }
+entity = { name = "CMG_scoutwalker_entity" clone = "hod_x_raw_crab_entity" scale = 1.0 }
+entity = { name = "CMG_light_vehicle_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "CMG_light_vehicle_0_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "CMG_light_vehicle_2_entity" clone = "hod_x_espo_entity" scale = 1.0 }
+entity = { name = "CMG_light_vehicle_3_entity" clone = "hod_x_vulture_walk_entity" scale = 1.0 }
+entity = { name = "CMG_light_vehicle_4_entity" clone = "hod_fotr_cis_lr57_entity" scale = 1.0 }
+entity = { name = "CMG_assault_vehicle_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "CMG_assault_vehicle_0_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "CMG_assault_vehicle_2_entity" clone = "hod_fotr_persuader_entity" scale = 1.0 }
+entity = { name = "CMG_assault_vehicle_3_entity" clone = "hod_fotr_cis_supertank2_entity" scale = 1.0 }
+entity = { name = "CMG_assault_vehicle_4_entity" clone = "hod_fotr_supertank_entity" scale = 1.0 }
+entity = { name = "CMG_assault_vehicle_5_entity" clone = "hod_fotr_gat_entity" scale = 1.0 }
+entity = { name = "CMG_assault_vehicle_7_entity" clone = "hod_cis_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "CMG_heavy_vehicle_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "CMG_heavy_vehicle_0_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "CMG_heavy_vehicle_2_entity" clone = "hod_fotr_cis_tridroid_entity" scale = 1.7 }
+entity = { name = "CMG_heavy_vehicle_3_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.0 }
+entity = { name = "CMG_heavy_vehicle_4_entity" clone = "hod_x_csa_c1_entity" scale = 1.0 }
+entity = { name = "CMG_super_heavy_vehicle_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.4 }
+entity = { name = "CMG_armored_troop_transport_entity" clone = "hod_fotr_mtt_entity" scale = 1.0 }
+entity = { name = "CMG_armored_troop_transport_3_entity" clone = "hod_fotr_cis_mtt_entity" scale = 1.0 }
+entity = { name = "CMG_armored_troop_transport_4_entity" clone = "hod_fotr_cis_transport_entity" scale = 1.0 }
+entity = { name = "CMG_heavy_armored_troop_transport_entity" clone = "hod_cis_hover_mtt_entity" scale = 1.15 }
+entity = { name = "CMG_mobile_artillery_0_entity" clone = "hod_cis_hover_hag_entity" scale = 1.0 }
+entity = { name = "CMG_mobile_artillery_entity" clone = "hod_fotr_cis_ca_artillery_entity" scale = 1.0 }
+entity = { name = "CMG_mobile_artillery_3_entity" clone = "hod_fotr_cis_hagm_entity" scale = 1.0 }
+entity = { name = "CMG_mobile_artillery_4_entity" clone = "hod_fotr_cis_haml_entity" scale = 1.0 }
+entity = { name = "CMG_mobile_anti_air_0_entity" clone = "hod_fotr_hailfire_entity" scale = 1.0 }
+entity = { name = "CMG_mobile_anti_air_entity" clone = "hod_x_hailfire_riot_entity" scale = 1.0 }
+entity = { name = "CMG_speeder_0_entity" clone = "hod_cis_hover_stap_entity" scale = 1.5 }
+entity = { name = "CMG_speeder_entity" clone = "hod_fotr_cis_stap_entity" scale = 1.5 }
+entity = { name = "CMG_speeder_2_entity" clone = "hod_x_blue_stap_entity" scale = 1.5 }
+entity = { name = "CMG_speeder_3_entity" clone = "hod_fotr_cis_advestap_entity" scale = 1.2 }
+entity = { name = "CMG_helicopter_brigade_entity" clone = "hod_fotr_hmp_entity" scale = 1.0 }
+entity = { name = "IBC_blaster_infantry_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "IBC_blaster_infantry_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "IBC_blaster_infantry_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "IBC_blaster_infantry_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "IBC_blaster_infantry_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "IBC_stormtrooper_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "IBC_stormtrooper_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "IBC_stormtrooper_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "IBC_stormtrooper_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "IBC_stormtrooper_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "IBC_cis_b2_droid_entity" clone = "hod_fotr_cis_b2_entity" }
+entity = { name = "IBC_cis_droideka_entity" clone = "hod_x_droideka_entity" scale = 1.0 }
+entity = { name = "IBC_cis_b3_droid_entity" clone = "hod_x_b3_entity" }
+entity = { name = "IBC_scoutwalker_0_entity" clone = "hod_fotr_crab_entity" scale = 0.9 }
+entity = { name = "IBC_scoutwalker_entity" clone = "hod_x_raw_crab_entity" scale = 1.0 }
+entity = { name = "IBC_light_vehicle_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "IBC_light_vehicle_0_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "IBC_light_vehicle_2_entity" clone = "hod_x_espo_entity" scale = 1.0 }
+entity = { name = "IBC_light_vehicle_3_entity" clone = "hod_x_vulture_walk_entity" scale = 1.0 }
+entity = { name = "IBC_light_vehicle_4_entity" clone = "hod_fotr_cis_lr57_entity" scale = 1.0 }
+entity = { name = "IBC_assault_vehicle_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "IBC_assault_vehicle_0_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "IBC_assault_vehicle_2_entity" clone = "hod_fotr_persuader_entity" scale = 1.0 }
+entity = { name = "IBC_assault_vehicle_3_entity" clone = "hod_fotr_cis_supertank2_entity" scale = 1.0 }
+entity = { name = "IBC_assault_vehicle_4_entity" clone = "hod_fotr_supertank_entity" scale = 1.0 }
+entity = { name = "IBC_assault_vehicle_5_entity" clone = "hod_fotr_gat_entity" scale = 1.0 }
+entity = { name = "IBC_assault_vehicle_7_entity" clone = "hod_cis_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "IBC_heavy_vehicle_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "IBC_heavy_vehicle_0_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "IBC_heavy_vehicle_2_entity" clone = "hod_fotr_cis_tridroid_entity" scale = 1.7 }
+entity = { name = "IBC_heavy_vehicle_3_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.0 }
+entity = { name = "IBC_heavy_vehicle_4_entity" clone = "hod_x_csa_c1_entity" scale = 1.0 }
+entity = { name = "IBC_super_heavy_vehicle_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.4 }
+entity = { name = "IBC_armored_troop_transport_entity" clone = "hod_fotr_mtt_entity" scale = 1.0 }
+entity = { name = "IBC_armored_troop_transport_3_entity" clone = "hod_fotr_cis_mtt_entity" scale = 1.0 }
+entity = { name = "IBC_armored_troop_transport_4_entity" clone = "hod_fotr_cis_transport_entity" scale = 1.0 }
+entity = { name = "IBC_heavy_armored_troop_transport_entity" clone = "hod_cis_hover_mtt_entity" scale = 1.15 }
+entity = { name = "IBC_mobile_artillery_0_entity" clone = "hod_cis_hover_hag_entity" scale = 1.0 }
+entity = { name = "IBC_mobile_artillery_entity" clone = "hod_fotr_cis_ca_artillery_entity" scale = 1.0 }
+entity = { name = "IBC_mobile_artillery_3_entity" clone = "hod_fotr_cis_hagm_entity" scale = 1.0 }
+entity = { name = "IBC_mobile_artillery_4_entity" clone = "hod_fotr_cis_haml_entity" scale = 1.0 }
+entity = { name = "IBC_mobile_anti_air_0_entity" clone = "hod_fotr_hailfire_entity" scale = 1.0 }
+entity = { name = "IBC_mobile_anti_air_entity" clone = "hod_x_hailfire_riot_entity" scale = 1.0 }
+entity = { name = "IBC_speeder_0_entity" clone = "hod_cis_hover_stap_entity" scale = 1.5 }
+entity = { name = "IBC_speeder_entity" clone = "hod_fotr_cis_stap_entity" scale = 1.5 }
+entity = { name = "IBC_speeder_2_entity" clone = "hod_x_blue_stap_entity" scale = 1.5 }
+entity = { name = "IBC_speeder_3_entity" clone = "hod_fotr_cis_advestap_entity" scale = 1.2 }
+entity = { name = "IBC_helicopter_brigade_entity" clone = "hod_fotr_hmp_entity" scale = 1.0 }
+entity = { name = "TCU_blaster_infantry_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TCU_blaster_infantry_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TCU_blaster_infantry_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "TCU_blaster_infantry_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "TCU_blaster_infantry_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "TCU_stormtrooper_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TCU_stormtrooper_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TCU_stormtrooper_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "TCU_stormtrooper_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "TCU_stormtrooper_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "TCU_cis_b2_droid_entity" clone = "hod_fotr_cis_b2_entity" }
+entity = { name = "TCU_cis_droideka_entity" clone = "hod_x_droideka_entity" scale = 1.0 }
+entity = { name = "TCU_cis_b3_droid_entity" clone = "hod_x_b3_entity" }
+entity = { name = "TCU_scoutwalker_0_entity" clone = "hod_fotr_crab_entity" scale = 0.9 }
+entity = { name = "TCU_scoutwalker_entity" clone = "hod_x_raw_crab_entity" scale = 1.0 }
+entity = { name = "TCU_light_vehicle_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "TCU_light_vehicle_0_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "TCU_light_vehicle_2_entity" clone = "hod_x_espo_entity" scale = 1.0 }
+entity = { name = "TCU_light_vehicle_3_entity" clone = "hod_x_vulture_walk_entity" scale = 1.0 }
+entity = { name = "TCU_light_vehicle_4_entity" clone = "hod_fotr_cis_lr57_entity" scale = 1.0 }
+entity = { name = "TCU_assault_vehicle_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "TCU_assault_vehicle_0_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "TCU_assault_vehicle_2_entity" clone = "hod_fotr_persuader_entity" scale = 1.0 }
+entity = { name = "TCU_assault_vehicle_3_entity" clone = "hod_fotr_cis_supertank2_entity" scale = 1.0 }
+entity = { name = "TCU_assault_vehicle_4_entity" clone = "hod_fotr_supertank_entity" scale = 1.0 }
+entity = { name = "TCU_assault_vehicle_5_entity" clone = "hod_fotr_gat_entity" scale = 1.0 }
+entity = { name = "TCU_assault_vehicle_7_entity" clone = "hod_cis_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "TCU_heavy_vehicle_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "TCU_heavy_vehicle_0_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "TCU_heavy_vehicle_2_entity" clone = "hod_fotr_cis_tridroid_entity" scale = 1.7 }
+entity = { name = "TCU_heavy_vehicle_3_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.0 }
+entity = { name = "TCU_heavy_vehicle_4_entity" clone = "hod_x_csa_c1_entity" scale = 1.0 }
+entity = { name = "TCU_super_heavy_vehicle_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.4 }
+entity = { name = "TCU_armored_troop_transport_entity" clone = "hod_fotr_mtt_entity" scale = 1.0 }
+entity = { name = "TCU_armored_troop_transport_3_entity" clone = "hod_fotr_cis_mtt_entity" scale = 1.0 }
+entity = { name = "TCU_armored_troop_transport_4_entity" clone = "hod_fotr_cis_transport_entity" scale = 1.0 }
+entity = { name = "TCU_heavy_armored_troop_transport_entity" clone = "hod_cis_hover_mtt_entity" scale = 1.15 }
+entity = { name = "TCU_mobile_artillery_0_entity" clone = "hod_cis_hover_hag_entity" scale = 1.0 }
+entity = { name = "TCU_mobile_artillery_entity" clone = "hod_fotr_cis_ca_artillery_entity" scale = 1.0 }
+entity = { name = "TCU_mobile_artillery_3_entity" clone = "hod_fotr_cis_hagm_entity" scale = 1.0 }
+entity = { name = "TCU_mobile_artillery_4_entity" clone = "hod_fotr_cis_haml_entity" scale = 1.0 }
+entity = { name = "TCU_mobile_anti_air_0_entity" clone = "hod_fotr_hailfire_entity" scale = 1.0 }
+entity = { name = "TCU_mobile_anti_air_entity" clone = "hod_x_hailfire_riot_entity" scale = 1.0 }
+entity = { name = "TCU_speeder_0_entity" clone = "hod_cis_hover_stap_entity" scale = 1.5 }
+entity = { name = "TCU_speeder_entity" clone = "hod_fotr_cis_stap_entity" scale = 1.5 }
+entity = { name = "TCU_speeder_2_entity" clone = "hod_x_blue_stap_entity" scale = 1.5 }
+entity = { name = "TCU_speeder_3_entity" clone = "hod_fotr_cis_advestap_entity" scale = 1.2 }
+entity = { name = "TCU_helicopter_brigade_entity" clone = "hod_fotr_hmp_entity" scale = 1.0 }
+entity = { name = "TDF_blaster_infantry_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TDF_blaster_infantry_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TDF_blaster_infantry_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "TDF_blaster_infantry_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "TDF_blaster_infantry_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "TDF_stormtrooper_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TDF_stormtrooper_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "TDF_stormtrooper_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "TDF_stormtrooper_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "TDF_stormtrooper_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "TDF_cis_b2_droid_entity" clone = "hod_fotr_cis_b2_entity" }
+entity = { name = "TDF_cis_droideka_entity" clone = "hod_x_droideka_entity" scale = 1.0 }
+entity = { name = "TDF_cis_b3_droid_entity" clone = "hod_x_b3_entity" }
+entity = { name = "TDF_scoutwalker_0_entity" clone = "hod_fotr_crab_entity" scale = 0.9 }
+entity = { name = "TDF_scoutwalker_entity" clone = "hod_x_raw_crab_entity" scale = 1.0 }
+entity = { name = "TDF_light_vehicle_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "TDF_light_vehicle_0_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "TDF_light_vehicle_2_entity" clone = "hod_x_espo_entity" scale = 1.0 }
+entity = { name = "TDF_light_vehicle_3_entity" clone = "hod_x_vulture_walk_entity" scale = 1.0 }
+entity = { name = "TDF_light_vehicle_4_entity" clone = "hod_fotr_cis_lr57_entity" scale = 1.0 }
+entity = { name = "TDF_assault_vehicle_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "TDF_assault_vehicle_0_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "TDF_assault_vehicle_2_entity" clone = "hod_fotr_persuader_entity" scale = 1.0 }
+entity = { name = "TDF_assault_vehicle_3_entity" clone = "hod_fotr_cis_supertank2_entity" scale = 1.0 }
+entity = { name = "TDF_assault_vehicle_4_entity" clone = "hod_fotr_supertank_entity" scale = 1.0 }
+entity = { name = "TDF_assault_vehicle_5_entity" clone = "hod_fotr_gat_entity" scale = 1.0 }
+entity = { name = "TDF_assault_vehicle_7_entity" clone = "hod_cis_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "TDF_heavy_vehicle_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "TDF_heavy_vehicle_0_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "TDF_heavy_vehicle_2_entity" clone = "hod_fotr_cis_tridroid_entity" scale = 1.7 }
+entity = { name = "TDF_heavy_vehicle_3_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.0 }
+entity = { name = "TDF_heavy_vehicle_4_entity" clone = "hod_x_csa_c1_entity" scale = 1.0 }
+entity = { name = "TDF_super_heavy_vehicle_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.4 }
+entity = { name = "TDF_armored_troop_transport_entity" clone = "hod_fotr_mtt_entity" scale = 1.0 }
+entity = { name = "TDF_armored_troop_transport_3_entity" clone = "hod_fotr_cis_mtt_entity" scale = 1.0 }
+entity = { name = "TDF_armored_troop_transport_4_entity" clone = "hod_fotr_cis_transport_entity" scale = 1.0 }
+entity = { name = "TDF_heavy_armored_troop_transport_entity" clone = "hod_cis_hover_mtt_entity" scale = 1.15 }
+entity = { name = "TDF_mobile_artillery_0_entity" clone = "hod_cis_hover_hag_entity" scale = 1.0 }
+entity = { name = "TDF_mobile_artillery_entity" clone = "hod_fotr_cis_ca_artillery_entity" scale = 1.0 }
+entity = { name = "TDF_mobile_artillery_3_entity" clone = "hod_fotr_cis_hagm_entity" scale = 1.0 }
+entity = { name = "TDF_mobile_artillery_4_entity" clone = "hod_fotr_cis_haml_entity" scale = 1.0 }
+entity = { name = "TDF_mobile_anti_air_0_entity" clone = "hod_fotr_hailfire_entity" scale = 1.0 }
+entity = { name = "TDF_mobile_anti_air_entity" clone = "hod_x_hailfire_riot_entity" scale = 1.0 }
+entity = { name = "TDF_speeder_0_entity" clone = "hod_cis_hover_stap_entity" scale = 1.5 }
+entity = { name = "TDF_speeder_entity" clone = "hod_fotr_cis_stap_entity" scale = 1.5 }
+entity = { name = "TDF_speeder_2_entity" clone = "hod_x_blue_stap_entity" scale = 1.5 }
+entity = { name = "TDF_speeder_3_entity" clone = "hod_fotr_cis_advestap_entity" scale = 1.2 }
+entity = { name = "TDF_helicopter_brigade_entity" clone = "hod_fotr_hmp_entity" scale = 1.0 }
+entity = { name = "XUC_blaster_infantry_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "XUC_blaster_infantry_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "XUC_blaster_infantry_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "XUC_blaster_infantry_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "XUC_blaster_infantry_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "XUC_stormtrooper_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "XUC_stormtrooper_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "XUC_stormtrooper_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "XUC_stormtrooper_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "XUC_stormtrooper_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "XUC_cis_b2_droid_entity" clone = "hod_fotr_cis_b2_entity" }
+entity = { name = "XUC_cis_droideka_entity" clone = "hod_x_droideka_entity" scale = 1.0 }
+entity = { name = "XUC_cis_b3_droid_entity" clone = "hod_x_b3_entity" }
+entity = { name = "XUC_scoutwalker_0_entity" clone = "hod_fotr_crab_entity" scale = 0.9 }
+entity = { name = "XUC_scoutwalker_entity" clone = "hod_x_raw_crab_entity" scale = 1.0 }
+entity = { name = "XUC_light_vehicle_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "XUC_light_vehicle_0_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "XUC_light_vehicle_2_entity" clone = "hod_x_espo_entity" scale = 1.0 }
+entity = { name = "XUC_light_vehicle_3_entity" clone = "hod_x_vulture_walk_entity" scale = 1.0 }
+entity = { name = "XUC_light_vehicle_4_entity" clone = "hod_fotr_cis_lr57_entity" scale = 1.0 }
+entity = { name = "XUC_assault_vehicle_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "XUC_assault_vehicle_0_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "XUC_assault_vehicle_2_entity" clone = "hod_fotr_persuader_entity" scale = 1.0 }
+entity = { name = "XUC_assault_vehicle_3_entity" clone = "hod_fotr_cis_supertank2_entity" scale = 1.0 }
+entity = { name = "XUC_assault_vehicle_4_entity" clone = "hod_fotr_supertank_entity" scale = 1.0 }
+entity = { name = "XUC_assault_vehicle_5_entity" clone = "hod_fotr_gat_entity" scale = 1.0 }
+entity = { name = "XUC_assault_vehicle_7_entity" clone = "hod_cis_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "XUC_heavy_vehicle_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "XUC_heavy_vehicle_0_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "XUC_heavy_vehicle_2_entity" clone = "hod_fotr_cis_tridroid_entity" scale = 1.7 }
+entity = { name = "XUC_heavy_vehicle_3_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.0 }
+entity = { name = "XUC_heavy_vehicle_4_entity" clone = "hod_x_csa_c1_entity" scale = 1.0 }
+entity = { name = "XUC_super_heavy_vehicle_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.4 }
+entity = { name = "XUC_armored_troop_transport_entity" clone = "hod_fotr_mtt_entity" scale = 1.0 }
+entity = { name = "XUC_armored_troop_transport_3_entity" clone = "hod_fotr_cis_mtt_entity" scale = 1.0 }
+entity = { name = "XUC_armored_troop_transport_4_entity" clone = "hod_fotr_cis_transport_entity" scale = 1.0 }
+entity = { name = "XUC_heavy_armored_troop_transport_entity" clone = "hod_cis_hover_mtt_entity" scale = 1.15 }
+entity = { name = "XUC_mobile_artillery_0_entity" clone = "hod_cis_hover_hag_entity" scale = 1.0 }
+entity = { name = "XUC_mobile_artillery_entity" clone = "hod_fotr_cis_ca_artillery_entity" scale = 1.0 }
+entity = { name = "XUC_mobile_artillery_3_entity" clone = "hod_fotr_cis_hagm_entity" scale = 1.0 }
+entity = { name = "XUC_mobile_artillery_4_entity" clone = "hod_fotr_cis_haml_entity" scale = 1.0 }
+entity = { name = "XUC_mobile_anti_air_0_entity" clone = "hod_fotr_hailfire_entity" scale = 1.0 }
+entity = { name = "XUC_mobile_anti_air_entity" clone = "hod_x_hailfire_riot_entity" scale = 1.0 }
+entity = { name = "XUC_speeder_0_entity" clone = "hod_cis_hover_stap_entity" scale = 1.5 }
+entity = { name = "XUC_speeder_entity" clone = "hod_fotr_cis_stap_entity" scale = 1.5 }
+entity = { name = "XUC_speeder_2_entity" clone = "hod_x_blue_stap_entity" scale = 1.5 }
+entity = { name = "XUC_speeder_3_entity" clone = "hod_fotr_cis_advestap_entity" scale = 1.2 }
+entity = { name = "XUC_helicopter_brigade_entity" clone = "hod_fotr_hmp_entity" scale = 1.0 }
+entity = { name = "ZAL_blaster_infantry_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "ZAL_blaster_infantry_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "ZAL_blaster_infantry_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "ZAL_blaster_infantry_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "ZAL_blaster_infantry_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "ZAL_stormtrooper_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "ZAL_stormtrooper_3_entity" clone = "hod_x_raw_b1_entity" }
+entity = { name = "ZAL_stormtrooper_4_entity" clone = "hod_fotr_cis_b1_entity" }
+entity = { name = "ZAL_stormtrooper_5_entity" clone = "hod_x_repcom_b1_entity" }
+entity = { name = "ZAL_stormtrooper_6_entity" clone = "hod_fotr_cis_bx_entity" }
+entity = { name = "ZAL_cis_b2_droid_entity" clone = "hod_fotr_cis_b2_entity" }
+entity = { name = "ZAL_cis_droideka_entity" clone = "hod_x_droideka_entity" scale = 1.0 }
+entity = { name = "ZAL_cis_b3_droid_entity" clone = "hod_x_b3_entity" }
+entity = { name = "ZAL_scoutwalker_0_entity" clone = "hod_fotr_crab_entity" scale = 0.9 }
+entity = { name = "ZAL_scoutwalker_entity" clone = "hod_x_raw_crab_entity" scale = 1.0 }
+entity = { name = "ZAL_light_vehicle_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "ZAL_light_vehicle_0_entity" clone = "hod_fotr_cis_dsd_entity" scale = 1.0 }
+entity = { name = "ZAL_light_vehicle_2_entity" clone = "hod_x_espo_entity" scale = 1.0 }
+entity = { name = "ZAL_light_vehicle_3_entity" clone = "hod_x_vulture_walk_entity" scale = 1.0 }
+entity = { name = "ZAL_light_vehicle_4_entity" clone = "hod_fotr_cis_lr57_entity" scale = 1.0 }
+entity = { name = "ZAL_assault_vehicle_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "ZAL_assault_vehicle_0_entity" clone = "hod_fotr_aat_entity" scale = 1.0 }
+entity = { name = "ZAL_assault_vehicle_2_entity" clone = "hod_fotr_persuader_entity" scale = 1.0 }
+entity = { name = "ZAL_assault_vehicle_3_entity" clone = "hod_fotr_cis_supertank2_entity" scale = 1.0 }
+entity = { name = "ZAL_assault_vehicle_4_entity" clone = "hod_fotr_supertank_entity" scale = 1.0 }
+entity = { name = "ZAL_assault_vehicle_5_entity" clone = "hod_fotr_gat_entity" scale = 1.0 }
+entity = { name = "ZAL_assault_vehicle_7_entity" clone = "hod_cis_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "ZAL_heavy_vehicle_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "ZAL_heavy_vehicle_0_entity" clone = "hod_fotr_og9_entity" scale = 1.0 }
+entity = { name = "ZAL_heavy_vehicle_2_entity" clone = "hod_fotr_cis_tridroid_entity" scale = 1.7 }
+entity = { name = "ZAL_heavy_vehicle_3_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.0 }
+entity = { name = "ZAL_heavy_vehicle_4_entity" clone = "hod_x_csa_c1_entity" scale = 1.0 }
+entity = { name = "ZAL_super_heavy_vehicle_entity" clone = "hod_fotr_cis_protodeka_entity" scale = 1.4 }
+entity = { name = "ZAL_armored_troop_transport_entity" clone = "hod_fotr_mtt_entity" scale = 1.0 }
+entity = { name = "ZAL_armored_troop_transport_3_entity" clone = "hod_fotr_cis_mtt_entity" scale = 1.0 }
+entity = { name = "ZAL_armored_troop_transport_4_entity" clone = "hod_fotr_cis_transport_entity" scale = 1.0 }
+entity = { name = "ZAL_heavy_armored_troop_transport_entity" clone = "hod_cis_hover_mtt_entity" scale = 1.15 }
+entity = { name = "ZAL_mobile_artillery_0_entity" clone = "hod_cis_hover_hag_entity" scale = 1.0 }
+entity = { name = "ZAL_mobile_artillery_entity" clone = "hod_fotr_cis_ca_artillery_entity" scale = 1.0 }
+entity = { name = "ZAL_mobile_artillery_3_entity" clone = "hod_fotr_cis_hagm_entity" scale = 1.0 }
+entity = { name = "ZAL_mobile_artillery_4_entity" clone = "hod_fotr_cis_haml_entity" scale = 1.0 }
+entity = { name = "ZAL_mobile_anti_air_0_entity" clone = "hod_fotr_hailfire_entity" scale = 1.0 }
+entity = { name = "ZAL_mobile_anti_air_entity" clone = "hod_x_hailfire_riot_entity" scale = 1.0 }
+entity = { name = "ZAL_speeder_0_entity" clone = "hod_cis_hover_stap_entity" scale = 1.5 }
+entity = { name = "ZAL_speeder_entity" clone = "hod_fotr_cis_stap_entity" scale = 1.5 }
+entity = { name = "ZAL_speeder_2_entity" clone = "hod_x_blue_stap_entity" scale = 1.5 }
+entity = { name = "ZAL_speeder_3_entity" clone = "hod_fotr_cis_advestap_entity" scale = 1.2 }
+entity = { name = "ZAL_helicopter_brigade_entity" clone = "hod_fotr_hmp_entity" scale = 1.0 }
+entity = { name = "FLT_blaster_infantry_entity" clone = "FLT_infantry_entity" }
+entity = { name = "FLT_stormtrooper_entity" clone = "FLT_infantry_entity" }
+entity = { name = "FLT_light_vehicle_0_entity" clone = "hod_lance_walker_entity" scale = 0.9 }
+entity = { name = "FLT_light_vehicle_entity" clone = "hod_lance_walker_entity" scale = 1.0 }
+entity = { name = "FLT_light_vehicle_2_entity" clone = "hod_lance_walker_entity" scale = 1.05 }
+entity = { name = "FLT_light_vehicle_3_entity" clone = "hod_lance_walker_entity" scale = 1.1 }
+entity = { name = "FLT_light_vehicle_4_entity" clone = "hod_imp_walk_atst_entity" scale = 1.0 }
+entity = { name = "FLT_light_vehicle_5_entity" clone = "hod_imp_walk_atst_entity" scale = 1.15 }
+entity = { name = "FLT_scoutwalker_0_entity" clone = "hod_rev_atrt_entity" scale = 1.0 }
+entity = { name = "FLT_scoutwalker_entity" clone = "hod_tr_atrt_entity" scale = 1.0 }
+entity = { name = "FLT_assault_vehicle_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "FLT_assault_vehicle_0_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "FLT_assault_vehicle_2_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.15 }
+entity = { name = "FLT_assault_vehicle_4_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.2 }
+entity = { name = "FLT_assault_vehicle_7_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.3 }
+entity = { name = "FLT_heavy_vehicle_0_entity" clone = "hod_rev_atte_entity" scale = 1.0 }
+entity = { name = "FLT_heavy_vehicle_entity" clone = "hod_rev_utat_entity" scale = 1.0 }
+entity = { name = "FLT_heavy_vehicle_2_entity" clone = "hod_cw_atat_entity" scale = 1.0 }
+entity = { name = "FLT_heavy_vehicle_3_entity" clone = "hod_imp_walk_atat_entity" scale = 1.0 }
+entity = { name = "FLT_heavy_vehicle_4_entity" clone = "hod_atact_entity" scale = 1.0 }
+entity = { name = "FLT_super_heavy_vehicle_entity" clone = "hod_imp_walk_atat_entity" scale = 1.25 }
+entity = { name = "FLT_armored_troop_transport_0_entity" clone = "hod_rep_hover_swampspeeder_entity" scale = 1.0 }
+entity = { name = "FLT_armored_troop_transport_entity" clone = "hod_fotr_atot_entity" scale = 1.0 }
+entity = { name = "FLT_armored_troop_transport_2_entity" clone = "hod_fotr_atot_entity" scale = 1.1 }
+entity = { name = "FLT_armored_troop_transport_3_entity" clone = "hod_attc_entity" scale = 1.0 }
+entity = { name = "FLT_armored_troop_transport_4_entity" clone = "hod_tr_itt_entity" scale = 1.0 }
+entity = { name = "FLT_heavy_armored_troop_transport_entity" clone = "hod_rev_juggernaut_entity" scale = 1.0 }
+entity = { name = "FLT_mobile_artillery_0_entity" clone = "hod_fotr_spha_entity" scale = 1.0 }
+entity = { name = "FLT_mobile_artillery_entity" clone = "hod_tr_spmat_entity" scale = 1.0 }
+entity = { name = "FLT_mobile_artillery_2_entity" clone = "hod_fotr_j1_entity" scale = 1.1 }
+entity = { name = "FLT_mobile_artillery_3_entity" clone = "hod_atap_entity" scale = 0.75 }
+entity = { name = "FLT_mobile_artillery_4_entity" clone = "hod_fotr_utat_entity" scale = 1.0 }
+entity = { name = "FLT_mobile_anti_tank_0_entity" clone = "hod_atap_entity" scale = 0.7 }
+entity = { name = "FLT_mobile_anti_tank_entity" clone = "hod_fotr_av7_entity" scale = 1.0 }
+entity = { name = "FLT_mobile_anti_tank_2_entity" clone = "hod_fotr_av7_entity" scale = 1.15 }
+entity = { name = "FLT_mobile_anti_air_0_entity" clone = "hod_fotr_utaa_entity" scale = 1.0 }
+entity = { name = "FLT_mobile_anti_air_entity" clone = "hod_tr_ataa_entity" scale = 1.0 }
+entity = { name = "FLT_mobile_anti_air_2_entity" clone = "hod_fotr_utaa_entity" scale = 1.1 }
+entity = { name = "FLT_speeder_entity" clone = "FLT_infantry_entity" }
+entity = { name = "FLT_helicopter_brigade_entity" clone = "hod_fotr_laat_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_blaster_infantry_entity" clone = "REP_old_trooper_entity" }
+entity = { name = "western_european_gfx_stormtrooper_entity" clone = "REP_old_trooper_entity" }
+entity = { name = "western_european_gfx_light_vehicle_0_entity" clone = "hod_lance_walker_entity" scale = 0.9 }
+entity = { name = "western_european_gfx_light_vehicle_entity" clone = "hod_lance_walker_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_light_vehicle_2_entity" clone = "hod_lance_walker_entity" scale = 1.05 }
+entity = { name = "western_european_gfx_light_vehicle_3_entity" clone = "hod_lance_walker_entity" scale = 1.1 }
+entity = { name = "western_european_gfx_light_vehicle_4_entity" clone = "hod_imp_walk_atst_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_light_vehicle_5_entity" clone = "hod_imp_walk_atst_entity" scale = 1.15 }
+entity = { name = "western_european_gfx_scoutwalker_0_entity" clone = "hod_rev_atrt_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_scoutwalker_entity" clone = "hod_tr_atrt_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_assault_vehicle_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_assault_vehicle_0_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_assault_vehicle_2_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.15 }
+entity = { name = "western_european_gfx_assault_vehicle_4_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.2 }
+entity = { name = "western_european_gfx_assault_vehicle_7_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.3 }
+entity = { name = "western_european_gfx_heavy_vehicle_0_entity" clone = "hod_rev_atte_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_heavy_vehicle_entity" clone = "hod_rev_utat_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_heavy_vehicle_2_entity" clone = "hod_cw_atat_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_heavy_vehicle_3_entity" clone = "hod_imp_walk_atat_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_heavy_vehicle_4_entity" clone = "hod_atact_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_super_heavy_vehicle_entity" clone = "hod_imp_walk_atat_entity" scale = 1.25 }
+entity = { name = "western_european_gfx_armored_troop_transport_0_entity" clone = "hod_rep_hover_swampspeeder_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_armored_troop_transport_entity" clone = "hod_fotr_atot_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_armored_troop_transport_2_entity" clone = "hod_fotr_atot_entity" scale = 1.1 }
+entity = { name = "western_european_gfx_armored_troop_transport_3_entity" clone = "hod_attc_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_armored_troop_transport_4_entity" clone = "hod_tr_itt_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_heavy_armored_troop_transport_entity" clone = "hod_rev_juggernaut_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_mobile_artillery_0_entity" clone = "hod_fotr_spha_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_mobile_artillery_entity" clone = "hod_tr_spmat_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_mobile_artillery_2_entity" clone = "hod_fotr_j1_entity" scale = 1.1 }
+entity = { name = "western_european_gfx_mobile_artillery_3_entity" clone = "hod_atap_entity" scale = 0.75 }
+entity = { name = "western_european_gfx_mobile_artillery_4_entity" clone = "hod_fotr_utat_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_mobile_anti_tank_0_entity" clone = "hod_atap_entity" scale = 0.7 }
+entity = { name = "western_european_gfx_mobile_anti_tank_entity" clone = "hod_fotr_av7_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_mobile_anti_tank_2_entity" clone = "hod_fotr_av7_entity" scale = 1.15 }
+entity = { name = "western_european_gfx_mobile_anti_air_0_entity" clone = "hod_fotr_utaa_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_mobile_anti_air_entity" clone = "hod_tr_ataa_entity" scale = 1.0 }
+entity = { name = "western_european_gfx_mobile_anti_air_2_entity" clone = "hod_fotr_utaa_entity" scale = 1.1 }
+entity = { name = "western_european_gfx_speeder_entity" clone = "hod_rep_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "western_european_gfx_helicopter_brigade_entity" clone = "hod_fotr_laat_entity" scale = 1.0 }
+entity = { name = "african_gfx_blaster_infantry_entity" clone = "REP_old_trooper_entity" }
+entity = { name = "african_gfx_stormtrooper_entity" clone = "REP_old_trooper_entity" }
+entity = { name = "african_gfx_light_vehicle_0_entity" clone = "hod_lance_walker_entity" scale = 0.9 }
+entity = { name = "african_gfx_light_vehicle_entity" clone = "hod_lance_walker_entity" scale = 1.0 }
+entity = { name = "african_gfx_light_vehicle_2_entity" clone = "hod_lance_walker_entity" scale = 1.05 }
+entity = { name = "african_gfx_light_vehicle_3_entity" clone = "hod_lance_walker_entity" scale = 1.1 }
+entity = { name = "african_gfx_light_vehicle_4_entity" clone = "hod_imp_walk_atst_entity" scale = 1.0 }
+entity = { name = "african_gfx_light_vehicle_5_entity" clone = "hod_imp_walk_atst_entity" scale = 1.15 }
+entity = { name = "african_gfx_scoutwalker_0_entity" clone = "hod_rev_atrt_entity" scale = 1.0 }
+entity = { name = "african_gfx_scoutwalker_entity" clone = "hod_tr_atrt_entity" scale = 1.0 }
+entity = { name = "african_gfx_assault_vehicle_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "african_gfx_assault_vehicle_0_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.0 }
+entity = { name = "african_gfx_assault_vehicle_2_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.15 }
+entity = { name = "african_gfx_assault_vehicle_4_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.2 }
+entity = { name = "african_gfx_assault_vehicle_7_entity" clone = "hod_imp_hover_fightertank_entity" scale = 1.3 }
+entity = { name = "african_gfx_heavy_vehicle_0_entity" clone = "hod_rev_atte_entity" scale = 1.0 }
+entity = { name = "african_gfx_heavy_vehicle_entity" clone = "hod_rev_utat_entity" scale = 1.0 }
+entity = { name = "african_gfx_heavy_vehicle_2_entity" clone = "hod_cw_atat_entity" scale = 1.0 }
+entity = { name = "african_gfx_heavy_vehicle_3_entity" clone = "hod_imp_walk_atat_entity" scale = 1.0 }
+entity = { name = "african_gfx_heavy_vehicle_4_entity" clone = "hod_atact_entity" scale = 1.0 }
+entity = { name = "african_gfx_super_heavy_vehicle_entity" clone = "hod_imp_walk_atat_entity" scale = 1.25 }
+entity = { name = "african_gfx_armored_troop_transport_0_entity" clone = "hod_rep_hover_swampspeeder_entity" scale = 1.0 }
+entity = { name = "african_gfx_armored_troop_transport_entity" clone = "hod_fotr_atot_entity" scale = 1.0 }
+entity = { name = "african_gfx_armored_troop_transport_2_entity" clone = "hod_fotr_atot_entity" scale = 1.1 }
+entity = { name = "african_gfx_armored_troop_transport_3_entity" clone = "hod_attc_entity" scale = 1.0 }
+entity = { name = "african_gfx_armored_troop_transport_4_entity" clone = "hod_tr_itt_entity" scale = 1.0 }
+entity = { name = "african_gfx_heavy_armored_troop_transport_entity" clone = "hod_rev_juggernaut_entity" scale = 1.0 }
+entity = { name = "african_gfx_mobile_artillery_0_entity" clone = "hod_fotr_spha_entity" scale = 1.0 }
+entity = { name = "african_gfx_mobile_artillery_entity" clone = "hod_tr_spmat_entity" scale = 1.0 }
+entity = { name = "african_gfx_mobile_artillery_2_entity" clone = "hod_fotr_j1_entity" scale = 1.1 }
+entity = { name = "african_gfx_mobile_artillery_3_entity" clone = "hod_atap_entity" scale = 0.75 }
+entity = { name = "african_gfx_mobile_artillery_4_entity" clone = "hod_fotr_utat_entity" scale = 1.0 }
+entity = { name = "african_gfx_mobile_anti_tank_0_entity" clone = "hod_atap_entity" scale = 0.7 }
+entity = { name = "african_gfx_mobile_anti_tank_entity" clone = "hod_fotr_av7_entity" scale = 1.0 }
+entity = { name = "african_gfx_mobile_anti_tank_2_entity" clone = "hod_fotr_av7_entity" scale = 1.15 }
+entity = { name = "african_gfx_mobile_anti_air_0_entity" clone = "hod_fotr_utaa_entity" scale = 1.0 }
+entity = { name = "african_gfx_mobile_anti_air_entity" clone = "hod_tr_ataa_entity" scale = 1.0 }
+entity = { name = "african_gfx_mobile_anti_air_2_entity" clone = "hod_fotr_utaa_entity" scale = 1.1 }
+entity = { name = "african_gfx_speeder_entity" clone = "hod_rep_hover_speederbike_entity" scale = 1.5 }
+entity = { name = "african_gfx_helicopter_brigade_entity" clone = "hod_fotr_laat_entity" scale = 1.0 }
+entity = { name = "REP_laat_equipment_entity" clone = "hod_rm09_entity" }
+entity = { name = "REP_laati_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "REP_maat_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "REP_maat_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "REP_idt_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "REP_idt_gunship_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "REP_tie-rp_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "REP_tie-rp_gunship_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "REP_aal_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "REP_aal_gunship_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "REP_torrent_equipment_entity" clone = "hod_t16_entity" }
+entity = { name = "REP_z-95_equipment_entity" clone = "hod_fotr_v19_entity" }
+entity = { name = "REP_tie-rb_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "REP_tie_fighter_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "REP_tie-sf_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "REP_v_wing_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "REP_tie-in_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "REP_tie-sk_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "REP_tie-vn_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "REP_tie-ba_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "REP_arc-170_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "REP_tie_defender_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "REP_y-wing_equipment_entity" clone = "hod_fotr_btlb_entity" }
+entity = { name = "REP_skipray_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "REP_tie_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "REP_scimitar_equipment_entity" clone = "hod_imp_fly_tiebomber_entity" }
+entity = { name = "REP_imp_fighter_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "REP_imp_defender_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "REP_imp_interceptor_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "REP_imp_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "REP_imperial_transport_plane_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "REP_imp_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "REP_tie_fighter_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "REP_tie_heavy_fighter_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "REP_tie_interceptor_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "REP_tie_bomber_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "REP_space_transport_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "REP_tie_gunship_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "REP_light_plane_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "REP_jet_plane_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "REP_medium_plane_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "REP_heavy_plane_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_laat_equipment_entity" clone = "hod_rm09_entity" }
+entity = { name = "ALD_laati_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_maat_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_maat_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_idt_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "ALD_idt_gunship_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "ALD_tie-rp_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "ALD_tie-rp_gunship_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "ALD_aal_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "ALD_aal_gunship_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "ALD_torrent_equipment_entity" clone = "hod_t16_entity" }
+entity = { name = "ALD_z-95_equipment_entity" clone = "hod_fotr_v19_entity" }
+entity = { name = "ALD_tie-rb_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "ALD_tie_fighter_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "ALD_tie-sf_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "ALD_v_wing_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "ALD_tie-in_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "ALD_tie-sk_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "ALD_tie-vn_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "ALD_tie-ba_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "ALD_arc-170_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "ALD_tie_defender_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "ALD_y-wing_equipment_entity" clone = "hod_fotr_btlb_entity" }
+entity = { name = "ALD_skipray_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "ALD_tie_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "ALD_scimitar_equipment_entity" clone = "hod_imp_fly_tiebomber_entity" }
+entity = { name = "ALD_imp_fighter_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "ALD_imp_defender_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "ALD_imp_interceptor_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "ALD_imp_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "ALD_imperial_transport_plane_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_imp_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_tie_fighter_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "ALD_tie_heavy_fighter_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "ALD_tie_interceptor_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "ALD_tie_bomber_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "ALD_space_transport_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_tie_gunship_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "ALD_light_plane_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "ALD_jet_plane_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "ALD_medium_plane_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "ALD_heavy_plane_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "CIS_laat_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CIS_laati_equipment_entity" clone = "hod_x_raw_hmp_entity" }
+entity = { name = "CIS_maat_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "CIS_maat_gunship_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "CIS_idt_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "CIS_idt_gunship_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "CIS_tie-rp_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "CIS_tie-rp_gunship_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "CIS_aal_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "CIS_aal_gunship_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "CIS_torrent_equipment_entity" clone = "hod_x_vulture_entity" }
+entity = { name = "CIS_z-95_equipment_entity" clone = "hod_x_belb22_entity" }
+entity = { name = "CIS_tie-rb_equipment_entity" clone = "hod_x_trifighter_entity" }
+entity = { name = "CIS_tie_fighter_equipment_entity" clone = "hod_x_ibeam_entity" }
+entity = { name = "CIS_tie-sf_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CIS_v_wing_equipment_entity" clone = "hod_x_nantex_entity" }
+entity = { name = "CIS_tie-in_equipment_entity" clone = "hod_x_raw_ginivex_entity" }
+entity = { name = "CIS_tie-sk_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "CIS_tie-vn_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "CIS_tie-ba_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "CIS_arc-170_equipment_entity" clone = "hod_x_belb24_entity" }
+entity = { name = "CIS_tie_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CIS_y-wing_equipment_entity" clone = "hod_x_hyena_entity" }
+entity = { name = "CIS_skipray_equipment_entity" clone = "hod_x_sabaoth_bomber_entity" }
+entity = { name = "CIS_tie_bomber_equipment_entity" clone = "hod_x_raw_hyena_entity" }
+entity = { name = "CIS_scimitar_equipment_entity" clone = "hod_x_raw_droidbomber_entity" }
+entity = { name = "CIS_imp_fighter_equipment_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "CIS_imp_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CIS_imp_interceptor_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "CIS_imp_bomber_equipment_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "CIS_imperial_transport_plane_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CIS_imp_gunship_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CIS_tie_fighter_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "CIS_tie_heavy_fighter_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CIS_tie_interceptor_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "CIS_tie_bomber_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "CIS_space_transport_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CIS_tie_gunship_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CIS_light_plane_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "CIS_jet_plane_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CIS_medium_plane_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "CIS_heavy_plane_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CMG_laat_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CMG_laati_equipment_entity" clone = "hod_x_raw_hmp_entity" }
+entity = { name = "CMG_maat_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "CMG_maat_gunship_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "CMG_idt_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "CMG_idt_gunship_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "CMG_tie-rp_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "CMG_tie-rp_gunship_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "CMG_aal_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "CMG_aal_gunship_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "CMG_torrent_equipment_entity" clone = "hod_x_vulture_entity" }
+entity = { name = "CMG_z-95_equipment_entity" clone = "hod_x_belb22_entity" }
+entity = { name = "CMG_tie-rb_equipment_entity" clone = "hod_x_trifighter_entity" }
+entity = { name = "CMG_tie_fighter_equipment_entity" clone = "hod_x_ibeam_entity" }
+entity = { name = "CMG_tie-sf_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CMG_v_wing_equipment_entity" clone = "hod_x_nantex_entity" }
+entity = { name = "CMG_tie-in_equipment_entity" clone = "hod_x_raw_ginivex_entity" }
+entity = { name = "CMG_tie-sk_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "CMG_tie-vn_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "CMG_tie-ba_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "CMG_arc-170_equipment_entity" clone = "hod_x_belb24_entity" }
+entity = { name = "CMG_tie_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CMG_y-wing_equipment_entity" clone = "hod_x_hyena_entity" }
+entity = { name = "CMG_skipray_equipment_entity" clone = "hod_x_sabaoth_bomber_entity" }
+entity = { name = "CMG_tie_bomber_equipment_entity" clone = "hod_x_raw_hyena_entity" }
+entity = { name = "CMG_scimitar_equipment_entity" clone = "hod_x_raw_droidbomber_entity" }
+entity = { name = "CMG_imp_fighter_equipment_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "CMG_imp_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CMG_imp_interceptor_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "CMG_imp_bomber_equipment_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "CMG_imperial_transport_plane_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CMG_imp_gunship_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CMG_tie_fighter_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "CMG_tie_heavy_fighter_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CMG_tie_interceptor_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "CMG_tie_bomber_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "CMG_space_transport_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CMG_tie_gunship_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "CMG_light_plane_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "CMG_jet_plane_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "CMG_medium_plane_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "CMG_heavy_plane_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "IBC_laat_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "IBC_laati_equipment_entity" clone = "hod_x_raw_hmp_entity" }
+entity = { name = "IBC_maat_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "IBC_maat_gunship_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "IBC_idt_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "IBC_idt_gunship_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "IBC_tie-rp_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "IBC_tie-rp_gunship_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "IBC_aal_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "IBC_aal_gunship_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "IBC_torrent_equipment_entity" clone = "hod_x_vulture_entity" }
+entity = { name = "IBC_z-95_equipment_entity" clone = "hod_x_belb22_entity" }
+entity = { name = "IBC_tie-rb_equipment_entity" clone = "hod_x_trifighter_entity" }
+entity = { name = "IBC_tie_fighter_equipment_entity" clone = "hod_x_ibeam_entity" }
+entity = { name = "IBC_tie-sf_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "IBC_v_wing_equipment_entity" clone = "hod_x_nantex_entity" }
+entity = { name = "IBC_tie-in_equipment_entity" clone = "hod_x_raw_ginivex_entity" }
+entity = { name = "IBC_tie-sk_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "IBC_tie-vn_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "IBC_tie-ba_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "IBC_arc-170_equipment_entity" clone = "hod_x_belb24_entity" }
+entity = { name = "IBC_tie_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "IBC_y-wing_equipment_entity" clone = "hod_x_hyena_entity" }
+entity = { name = "IBC_skipray_equipment_entity" clone = "hod_x_sabaoth_bomber_entity" }
+entity = { name = "IBC_tie_bomber_equipment_entity" clone = "hod_x_raw_hyena_entity" }
+entity = { name = "IBC_scimitar_equipment_entity" clone = "hod_x_raw_droidbomber_entity" }
+entity = { name = "IBC_imp_fighter_equipment_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "IBC_imp_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "IBC_imp_interceptor_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "IBC_imp_bomber_equipment_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "IBC_imperial_transport_plane_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "IBC_imp_gunship_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "IBC_tie_fighter_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "IBC_tie_heavy_fighter_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "IBC_tie_interceptor_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "IBC_tie_bomber_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "IBC_space_transport_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "IBC_tie_gunship_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "IBC_light_plane_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "IBC_jet_plane_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "IBC_medium_plane_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "IBC_heavy_plane_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TCU_laat_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TCU_laati_equipment_entity" clone = "hod_x_raw_hmp_entity" }
+entity = { name = "TCU_maat_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "TCU_maat_gunship_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "TCU_idt_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "TCU_idt_gunship_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "TCU_tie-rp_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "TCU_tie-rp_gunship_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "TCU_aal_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "TCU_aal_gunship_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "TCU_torrent_equipment_entity" clone = "hod_x_vulture_entity" }
+entity = { name = "TCU_z-95_equipment_entity" clone = "hod_x_belb22_entity" }
+entity = { name = "TCU_tie-rb_equipment_entity" clone = "hod_x_trifighter_entity" }
+entity = { name = "TCU_tie_fighter_equipment_entity" clone = "hod_x_ibeam_entity" }
+entity = { name = "TCU_tie-sf_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TCU_v_wing_equipment_entity" clone = "hod_x_nantex_entity" }
+entity = { name = "TCU_tie-in_equipment_entity" clone = "hod_x_raw_ginivex_entity" }
+entity = { name = "TCU_tie-sk_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "TCU_tie-vn_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "TCU_tie-ba_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "TCU_arc-170_equipment_entity" clone = "hod_x_belb24_entity" }
+entity = { name = "TCU_tie_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TCU_y-wing_equipment_entity" clone = "hod_x_hyena_entity" }
+entity = { name = "TCU_skipray_equipment_entity" clone = "hod_x_sabaoth_bomber_entity" }
+entity = { name = "TCU_tie_bomber_equipment_entity" clone = "hod_x_raw_hyena_entity" }
+entity = { name = "TCU_scimitar_equipment_entity" clone = "hod_x_raw_droidbomber_entity" }
+entity = { name = "TCU_imp_fighter_equipment_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "TCU_imp_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TCU_imp_interceptor_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "TCU_imp_bomber_equipment_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "TCU_imperial_transport_plane_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TCU_imp_gunship_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TCU_tie_fighter_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "TCU_tie_heavy_fighter_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TCU_tie_interceptor_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "TCU_tie_bomber_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "TCU_space_transport_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TCU_tie_gunship_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TCU_light_plane_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "TCU_jet_plane_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TCU_medium_plane_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "TCU_heavy_plane_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TDF_laat_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TDF_laati_equipment_entity" clone = "hod_x_raw_hmp_entity" }
+entity = { name = "TDF_maat_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "TDF_maat_gunship_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "TDF_idt_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "TDF_idt_gunship_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "TDF_tie-rp_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "TDF_tie-rp_gunship_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "TDF_aal_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "TDF_aal_gunship_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "TDF_torrent_equipment_entity" clone = "hod_x_vulture_entity" }
+entity = { name = "TDF_z-95_equipment_entity" clone = "hod_x_belb22_entity" }
+entity = { name = "TDF_tie-rb_equipment_entity" clone = "hod_x_trifighter_entity" }
+entity = { name = "TDF_tie_fighter_equipment_entity" clone = "hod_x_ibeam_entity" }
+entity = { name = "TDF_tie-sf_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TDF_v_wing_equipment_entity" clone = "hod_x_nantex_entity" }
+entity = { name = "TDF_tie-in_equipment_entity" clone = "hod_x_raw_ginivex_entity" }
+entity = { name = "TDF_tie-sk_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "TDF_tie-vn_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "TDF_tie-ba_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "TDF_arc-170_equipment_entity" clone = "hod_x_belb24_entity" }
+entity = { name = "TDF_tie_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TDF_y-wing_equipment_entity" clone = "hod_x_hyena_entity" }
+entity = { name = "TDF_skipray_equipment_entity" clone = "hod_x_sabaoth_bomber_entity" }
+entity = { name = "TDF_tie_bomber_equipment_entity" clone = "hod_x_raw_hyena_entity" }
+entity = { name = "TDF_scimitar_equipment_entity" clone = "hod_x_raw_droidbomber_entity" }
+entity = { name = "TDF_imp_fighter_equipment_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "TDF_imp_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TDF_imp_interceptor_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "TDF_imp_bomber_equipment_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "TDF_imperial_transport_plane_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TDF_imp_gunship_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TDF_tie_fighter_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "TDF_tie_heavy_fighter_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TDF_tie_interceptor_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "TDF_tie_bomber_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "TDF_space_transport_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TDF_tie_gunship_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "TDF_light_plane_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "TDF_jet_plane_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "TDF_medium_plane_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "TDF_heavy_plane_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "XUC_laat_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "XUC_laati_equipment_entity" clone = "hod_x_raw_hmp_entity" }
+entity = { name = "XUC_maat_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "XUC_maat_gunship_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "XUC_idt_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "XUC_idt_gunship_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "XUC_tie-rp_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "XUC_tie-rp_gunship_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "XUC_aal_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "XUC_aal_gunship_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "XUC_torrent_equipment_entity" clone = "hod_x_vulture_entity" }
+entity = { name = "XUC_z-95_equipment_entity" clone = "hod_x_belb22_entity" }
+entity = { name = "XUC_tie-rb_equipment_entity" clone = "hod_x_trifighter_entity" }
+entity = { name = "XUC_tie_fighter_equipment_entity" clone = "hod_x_ibeam_entity" }
+entity = { name = "XUC_tie-sf_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "XUC_v_wing_equipment_entity" clone = "hod_x_nantex_entity" }
+entity = { name = "XUC_tie-in_equipment_entity" clone = "hod_x_raw_ginivex_entity" }
+entity = { name = "XUC_tie-sk_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "XUC_tie-vn_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "XUC_tie-ba_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "XUC_arc-170_equipment_entity" clone = "hod_x_belb24_entity" }
+entity = { name = "XUC_tie_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "XUC_y-wing_equipment_entity" clone = "hod_x_hyena_entity" }
+entity = { name = "XUC_skipray_equipment_entity" clone = "hod_x_sabaoth_bomber_entity" }
+entity = { name = "XUC_tie_bomber_equipment_entity" clone = "hod_x_raw_hyena_entity" }
+entity = { name = "XUC_scimitar_equipment_entity" clone = "hod_x_raw_droidbomber_entity" }
+entity = { name = "XUC_imp_fighter_equipment_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "XUC_imp_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "XUC_imp_interceptor_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "XUC_imp_bomber_equipment_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "XUC_imperial_transport_plane_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "XUC_imp_gunship_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "XUC_tie_fighter_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "XUC_tie_heavy_fighter_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "XUC_tie_interceptor_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "XUC_tie_bomber_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "XUC_space_transport_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "XUC_tie_gunship_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "XUC_light_plane_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "XUC_jet_plane_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "XUC_medium_plane_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "XUC_heavy_plane_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "ZAL_laat_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "ZAL_laati_equipment_entity" clone = "hod_x_raw_hmp_entity" }
+entity = { name = "ZAL_maat_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "ZAL_maat_gunship_equipment_entity" clone = "hod_x_c9979_entity" }
+entity = { name = "ZAL_idt_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "ZAL_idt_gunship_equipment_entity" clone = "hod_x_sheathipede_entity" }
+entity = { name = "ZAL_tie-rp_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "ZAL_tie-rp_gunship_equipment_entity" clone = "hod_x_tf_maf_entity" }
+entity = { name = "ZAL_aal_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "ZAL_aal_gunship_equipment_entity" clone = "hod_x_cis_maf_entity" }
+entity = { name = "ZAL_torrent_equipment_entity" clone = "hod_x_vulture_entity" }
+entity = { name = "ZAL_z-95_equipment_entity" clone = "hod_x_belb22_entity" }
+entity = { name = "ZAL_tie-rb_equipment_entity" clone = "hod_x_trifighter_entity" }
+entity = { name = "ZAL_tie_fighter_equipment_entity" clone = "hod_x_ibeam_entity" }
+entity = { name = "ZAL_tie-sf_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "ZAL_v_wing_equipment_entity" clone = "hod_x_nantex_entity" }
+entity = { name = "ZAL_tie-in_equipment_entity" clone = "hod_x_raw_ginivex_entity" }
+entity = { name = "ZAL_tie-sk_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "ZAL_tie-vn_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "ZAL_tie-ba_equipment_entity" clone = "hod_cis_fly_scarab_entity" }
+entity = { name = "ZAL_arc-170_equipment_entity" clone = "hod_x_belb24_entity" }
+entity = { name = "ZAL_tie_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "ZAL_y-wing_equipment_entity" clone = "hod_x_hyena_entity" }
+entity = { name = "ZAL_skipray_equipment_entity" clone = "hod_x_sabaoth_bomber_entity" }
+entity = { name = "ZAL_tie_bomber_equipment_entity" clone = "hod_x_raw_hyena_entity" }
+entity = { name = "ZAL_scimitar_equipment_entity" clone = "hod_x_raw_droidbomber_entity" }
+entity = { name = "ZAL_imp_fighter_equipment_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "ZAL_imp_defender_equipment_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "ZAL_imp_interceptor_equipment_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "ZAL_imp_bomber_equipment_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "ZAL_imperial_transport_plane_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "ZAL_imp_gunship_equipment_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "ZAL_tie_fighter_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "ZAL_tie_heavy_fighter_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "ZAL_tie_interceptor_entity" clone = "hod_cis_fly_tridroidfighter_entity" }
+entity = { name = "ZAL_tie_bomber_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "ZAL_space_transport_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "ZAL_tie_gunship_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "ZAL_light_plane_entity" clone = "hod_cis_fly_droidfighter_entity" }
+entity = { name = "ZAL_jet_plane_entity" clone = "hod_cis_fly_greviousfighter_entity" }
+entity = { name = "ZAL_medium_plane_entity" clone = "hod_cis_fly_maf_entity" }
+entity = { name = "ZAL_heavy_plane_entity" clone = "hod_fotr_hmp_entity" }
+entity = { name = "FLT_laat_equipment_entity" clone = "hod_rm09_entity" }
+entity = { name = "FLT_laati_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "FLT_maat_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "FLT_maat_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "FLT_idt_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "FLT_idt_gunship_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "FLT_tie-rp_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "FLT_tie-rp_gunship_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "FLT_aal_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "FLT_aal_gunship_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "FLT_torrent_equipment_entity" clone = "hod_t16_entity" }
+entity = { name = "FLT_z-95_equipment_entity" clone = "hod_fotr_v19_entity" }
+entity = { name = "FLT_tie-rb_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "FLT_tie_fighter_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "FLT_tie-sf_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "FLT_v_wing_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "FLT_tie-in_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "FLT_tie-sk_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "FLT_tie-vn_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "FLT_tie-ba_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "FLT_arc-170_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "FLT_tie_defender_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "FLT_y-wing_equipment_entity" clone = "hod_fotr_btlb_entity" }
+entity = { name = "FLT_skipray_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "FLT_tie_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "FLT_scimitar_equipment_entity" clone = "hod_imp_fly_tiebomber_entity" }
+entity = { name = "FLT_imp_fighter_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "FLT_imp_defender_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "FLT_imp_interceptor_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "FLT_imp_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "FLT_imperial_transport_plane_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "FLT_imp_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "FLT_tie_fighter_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "FLT_tie_heavy_fighter_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "FLT_tie_interceptor_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "FLT_tie_bomber_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "FLT_space_transport_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "FLT_tie_gunship_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "FLT_light_plane_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "FLT_jet_plane_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "FLT_medium_plane_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "FLT_heavy_plane_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_laat_equipment_entity" clone = "hod_rm09_entity" }
+entity = { name = "western_european_gfx_laati_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_maat_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_maat_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_idt_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "western_european_gfx_idt_gunship_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "western_european_gfx_tie-rp_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "western_european_gfx_tie-rp_gunship_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "western_european_gfx_aal_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "western_european_gfx_aal_gunship_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "western_european_gfx_torrent_equipment_entity" clone = "hod_t16_entity" }
+entity = { name = "western_european_gfx_z-95_equipment_entity" clone = "hod_fotr_v19_entity" }
+entity = { name = "western_european_gfx_tie-rb_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "western_european_gfx_tie_fighter_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "western_european_gfx_tie-sf_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "western_european_gfx_v_wing_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "western_european_gfx_tie-in_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "western_european_gfx_tie-sk_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "western_european_gfx_tie-vn_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "western_european_gfx_tie-ba_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "western_european_gfx_arc-170_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "western_european_gfx_tie_defender_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "western_european_gfx_y-wing_equipment_entity" clone = "hod_fotr_btlb_entity" }
+entity = { name = "western_european_gfx_skipray_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "western_european_gfx_tie_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "western_european_gfx_scimitar_equipment_entity" clone = "hod_imp_fly_tiebomber_entity" }
+entity = { name = "western_european_gfx_imp_fighter_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "western_european_gfx_imp_defender_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "western_european_gfx_imp_interceptor_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "western_european_gfx_imp_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "western_european_gfx_imperial_transport_plane_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_imp_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_tie_fighter_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "western_european_gfx_tie_heavy_fighter_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "western_european_gfx_tie_interceptor_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "western_european_gfx_tie_bomber_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "western_european_gfx_space_transport_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_tie_gunship_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "western_european_gfx_light_plane_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "western_european_gfx_jet_plane_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "western_european_gfx_medium_plane_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "western_european_gfx_heavy_plane_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_laat_equipment_entity" clone = "hod_rm09_entity" }
+entity = { name = "african_gfx_laati_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_maat_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_maat_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_idt_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "african_gfx_idt_gunship_equipment_entity" clone = "hod_tr_idt_entity" }
+entity = { name = "african_gfx_tie-rp_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "african_gfx_tie-rp_gunship_equipment_entity" clone = "hod_tr_theta_entity" }
+entity = { name = "african_gfx_aal_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "african_gfx_aal_gunship_equipment_entity" clone = "hod_imp_fly_trooptrans_entity" }
+entity = { name = "african_gfx_torrent_equipment_entity" clone = "hod_t16_entity" }
+entity = { name = "african_gfx_z-95_equipment_entity" clone = "hod_fotr_v19_entity" }
+entity = { name = "african_gfx_tie-rb_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "african_gfx_tie_fighter_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "african_gfx_tie-sf_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "african_gfx_v_wing_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "african_gfx_tie-in_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "african_gfx_tie-sk_equipment_entity" clone = "hod_rep_fly_jedifighter_entity" }
+entity = { name = "african_gfx_tie-vn_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "african_gfx_tie-ba_equipment_entity" clone = "hod_imp_fly_tiefighter_entity" }
+entity = { name = "african_gfx_arc-170_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "african_gfx_tie_defender_equipment_entity" clone = "hod_imp_fly_tieinterceptor_entity" }
+entity = { name = "african_gfx_y-wing_equipment_entity" clone = "hod_fotr_btlb_entity" }
+entity = { name = "african_gfx_skipray_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "african_gfx_tie_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "african_gfx_scimitar_equipment_entity" clone = "hod_imp_fly_tiebomber_entity" }
+entity = { name = "african_gfx_imp_fighter_equipment_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "african_gfx_imp_defender_equipment_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "african_gfx_imp_interceptor_equipment_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "african_gfx_imp_bomber_equipment_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "african_gfx_imperial_transport_plane_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_imp_gunship_equipment_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_tie_fighter_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "african_gfx_tie_heavy_fighter_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "african_gfx_tie_interceptor_entity" clone = "hod_rep_fly_anakinstarfighter_entity" }
+entity = { name = "african_gfx_tie_bomber_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "african_gfx_space_transport_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_tie_gunship_entity" clone = "hod_fotr_laat_entity" }
+entity = { name = "african_gfx_light_plane_entity" clone = "hod_rep_fly_vwing_entity" }
+entity = { name = "african_gfx_jet_plane_entity" clone = "hod_fotr_arc170_entity" }
+entity = { name = "african_gfx_medium_plane_entity" clone = "hod_all_fly_ywing_entity" }
+entity = { name = "african_gfx_heavy_plane_entity" clone = "hod_fotr_laat_entity" }

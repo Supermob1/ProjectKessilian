@@ -98,6 +98,54 @@ def strips(idx):
     return tris
 
 
+_T = []
+for _c in range(256):
+    _r = _c << 24
+    for _ in range(8):
+        _r = ((_r << 1) ^ 0x04C11DB7) & 0xFFFFFFFF if _r & 0x80000000 else (_r << 1) & 0xFFFFFFFF
+    _T.append(_r)
+
+
+def crc(name):
+    """ZeroEngine bone id: MSB-first CRC-32 (poly 04C11DB7) of the lower-case name"""
+    r = 0xFFFFFFFF
+    for ch in name.lower().encode("latin1"):
+        r = ((r << 8) & 0xFFFFFFFF) ^ _T[((r >> 24) ^ ch) & 0xFF]
+    return r ^ 0xFFFFFFFF
+
+
+def read_anim(path):
+    """animation .msh (BF2 mod tools Animations/...): -> dict(cycles=[(name, fps, first, last)],
+    bones={bone name: dict(t=[(frame, (x, y, z))], r=[(frame, (x, y, z, w))])}) - keys are parent-relative (as TRAN)"""
+    b = open(path, "rb").read()
+    names = {crc(m["name"]): m["name"] for m in read(path)["models"]}
+    out = dict(cycles=[], bones={})
+    def walk(i, end):
+        for tag, s, e in chunks(b, i, end):
+            if tag in ("HEDR", "MSH2", "ANM2"):
+                walk(s, e)
+            elif tag == "CYCL":
+                for k in range(struct.unpack_from("<I", b, s)[0]):
+                    o = s + 4 + 80 * k
+                    fps, _, f0, f1 = struct.unpack_from("<fIII", b, o + 64)
+                    out["cycles"].append((cstr(b, o, o + 64), fps, f0, f1))
+            elif tag == "KFR3":
+                o = s + 4
+                for _ in range(struct.unpack_from("<I", b, s)[0]):
+                    c, _, nt, nr = struct.unpack_from("<4I", b, o)
+                    o += 16
+                    t = [(struct.unpack_from("<I", b, o + 16 * k)[0], struct.unpack_from("<3f", b, o + 16 * k + 4)) for k in range(nt)]
+                    o += 16 * nt
+                    r = [(struct.unpack_from("<I", b, o + 20 * k)[0], struct.unpack_from("<4f", b, o + 20 * k + 4)) for k in range(nr)]
+                    o += 20 * nr
+                    out["bones"][names.get(c, "%08x" % c)] = dict(t=t, r=r)
+    walk(0, len(b))
+    return out
+
+
+assert crc("bone_root") == crc("BONE_ROOT") and isinstance(crc("x"), int)
+
+
 if __name__ == "__main__":
     d = read(sys.argv[1])
     print("materials:", d["materials"])

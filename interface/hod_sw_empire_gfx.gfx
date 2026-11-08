@@ -1,0 +1,1212 @@
+spriteTypes = {
+	#event pic
+	spriteType = {
+		name = "GFX_survey_team"
+		texturefile = "gfx/event_pictures/survey_team.dds"
+	}
+
+	spriteType = {
+		name = "GFX_introduction"
+		texturefile = "gfx/event_pictures/introduction.dds"
+	}
+	spriteType = {
+		name = "GFX_tarkin_choice"
+		texturefile = "gfx/event_pictures/tarkin_choice.dds"
+	}
+	spriteType = {
+		name = "GFX_vader_choice"
+		texturefile = "gfx/event_pictures/vader_choice.dds"
+	}
+	spriteType = {
+		name = "GFX_crashed_executor"
+		texturefile = "gfx/event_pictures/crashed_executor.dds"
+	}
+	spriteType = {
+		name = "GFX_thrawn_bacta"
+		texturefile = "gfx/event_pictures/thrawn_bacta.dds"
+	}
+	spriteType = {
+		name = "GFX_executor_on_earth"
+		texturefile = "gfx/event_pictures/executor_on_earth.dds"
+	}
+
+	spriteType = {
+		name = "GFX_AT-AT"
+		texturefile = "gfx/event_pictures/AT-AT.dds"
+	}
+	#tech
+	spriteType = {
+		name = "GFX_unit_stormtrooper_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_stormtrooper_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_speeder_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_speeder_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_stormtrooper_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_stormtrooper_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		 name = "GFX_unit_speeder_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_speeder_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_blaster_infantry_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_blasters_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_blaster_infantry_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_blasters_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_light_vehicle_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_scoutwalker_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_light_vehicle_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_scoutwalker_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_scoutwalker_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_scoutwalker_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_scoutwalker_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_scoutwalker_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_unit_armored_scout_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_armored_recon_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_assault_vehicle_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_imperial_tank_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_assault_vehicle_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_imperial_tank_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_armored_troop_transport_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_motor_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_armored_troop_transport_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_motor_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_heavy_vehicle_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_atat_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_heavy_vehicle_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_atat_icon.dds"
+		 noOfFrames = 2
+    }
+	#support Units#
+		spriteType = {
+		name = "GFX_unit_imp_field_hospital_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_imp_field_hospital_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+		spriteType = {
+		name = "GFX_unit_imp_logistics_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_imp_logistics_company_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_imp_maintenance_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_imp_maintenance_company_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+		spriteType = {
+		name = "GFX_unit_imp_military_police_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_imp_military_police_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+		spriteType = {
+		name = "GFX_unit_imp_signal_company_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/support_unit_imp_signal_company_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+		spriteType = {
+		name = "GFX_unit_imp_engineer_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_imp_engineer_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+		spriteType = {
+		name = "GFX_unit_imp_recon_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_imp_recon_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+	#end of support units#
+
+	spriteType = {
+		name = "GFX_unit_super_heavy_vehicle_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_super_heavy_vehicle_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_super_heavy_vehicle_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_super_heavy_vehicle_icon.dds"
+		 noOfFrames = 2
+    }
+	spriteType = {
+		name = "GFX_unit_mobile_artillery_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_mobile_artillery_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_mobile_artillery_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_mobile_artillery_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_mobile_anti_tank_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_mobile_anti_tank_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_mobile_anti_tank_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_mobile_anti_tank_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_mobile_anti_air_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_mobile_anti_air_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_mobile_anti_air_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_mobile_anti_air_icon.dds"
+		 noOfFrames = 2
+    }
+
+	spriteType = {
+		name = "GFX_unit_heavy_armored_troop_transport_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_heavy_armored_troop_transport_icon.dds"  ## Thats the paradox shepe, but you can use any path and file naming you want
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		 name = "GFX_unit_heavy_armored_troop_transport_icon_medium_white"
+		 textureFile = "gfx/interface/counters/divisions_small/onmap_unit_heavy_armored_troop_transport_icon.dds"
+		 noOfFrames = 2
+    }
+
+	#aircraft
+
+	spriteType = {
+		name = "GFX_v_wing_medium"
+		texturefile = "gfx/interface/technologies/hod_render/delta7_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_twin_ion_engine_medium"
+		texturefile = "gfx/interface/technologies/twin_ion_engine.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie_fighter_medium"
+		texturefile = "gfx/interface/technologies/tie_fighter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie_advanced_x1_medium"
+		texturefile = "gfx/interface/technologies/advanced_x1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie-in_medium"
+		texturefile = "gfx/interface/technologies/v_wing.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie-ba_medium"
+		texturefile = "gfx/interface/technologies/tie-sk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie-sa_medium"
+		texturefile = "gfx/interface/technologies/tie_bomber.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie_defender_medium"
+		texturefile = "gfx/interface/technologies/tie_avenger.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie_avenger_medium"
+		texturefile = "gfx/interface/technologies/tie_avenger.dds"
+	}
+
+
+	#vehicles
+	spriteType = {
+		name = "GFX_advanced_aa_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_utaa_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_advanced_spg_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_j1_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_advanced_at_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_av7_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_mortar_medium"
+		texturefile = "gfx/interface/technologies/mortar.dds"
+	}
+
+	spriteType = {
+		name = "GFX_special_training_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_night_vision_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_improved_special_training_medium"
+		texturefile = "gfx/interface/technologies/kamino_standardization_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_improved_special_training2_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_support_weapons3_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_advanced_special_training_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_support_weapons2_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_advanced_special_training2_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_support_weapons2_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_elite_troopers_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_support_weapons4_medium.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_republic_weapon1_medium"
+		texturefile = "gfx/interface/technologies/republic_weapon1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imperial_techtree_bg"
+		texturefile = "gfx/interface/imperial_techtree_bg.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_swarmour_techtree_bg"
+		texturefile = "gfx/interface/swarmour_techtree_bg.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_swsupport_techtree_bg"
+		texturefile = "gfx/interface/supportweapons_techtree_bg.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_swartillery_techtree_bg"
+		texturefile = "gfx/interface/swartillery_techtree_bg.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_imperial_armor_bg"
+		texturefile = "gfx/interface/imperial_armor_bg.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_imperial_air_bg"
+		texturefile = "gfx/interface/imperial_air_bg.dds"
+		alwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_medium_repeater1_medium"
+		texturefile = "gfx/interface/technologies/medium_repeater1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_heavy_repeater1_medium"
+		texturefile = "gfx/interface/technologies/large_repeater1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ammo_improvement1_medium"
+		texturefile = "gfx/interface/technologies/ammo_improvement1.dds"
+	}
+	spriteType = {
+		name = "GFX_ammo_improvement2_medium"
+		texturefile = "gfx/interface/technologies/ammo_improvement2.dds"
+	}
+	spriteType = {
+		name = "GFX_ammo_improvement3_medium"
+		texturefile = "gfx/interface/technologies/ammo_improvement3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_target_system1_medium"
+		texturefile = "gfx/interface/technologies/target_system1.dds"
+	}
+	spriteType = {
+		name = "GFX_target_system2_medium"
+		texturefile = "gfx/interface/technologies/target_system2.dds"
+	}
+	spriteType = {
+		name = "GFX_target_system3_medium"
+		texturefile = "gfx/interface/technologies/target_system3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_at_upgrade1_medium"
+		texturefile = "gfx/interface/technologies/at_upgrade1.dds"
+	}
+	spriteType = {
+		name = "GFX_at_upgrade2_medium"
+		texturefile = "gfx/interface/technologies/at_upgrade2.dds"
+	}
+	spriteType = {
+		name = "GFX_at_upgrade3_medium"
+		texturefile = "gfx/interface/technologies/at_upgrade3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_art_upgrade1_medium"
+		texturefile = "gfx/interface/technologies/art_upgrade1.dds"
+	}
+	spriteType = {
+		name = "GFX_art_upgrade2_medium"
+		texturefile = "gfx/interface/technologies/art_upgrade2.dds"
+	}
+	spriteType = {
+		name = "GFX_art_upgrade3_medium"
+		texturefile = "gfx/interface/technologies/art_upgrade3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_air_upgrade1_medium"
+		texturefile = "gfx/interface/technologies/air_upgrade1.dds"
+	}
+	spriteType = {
+		name = "GFX_air_upgrade2_medium"
+		texturefile = "gfx/interface/technologies/air_upgrade2.dds"
+	}
+	spriteType = {
+		name = "GFX_air_upgrade3_medium"
+		texturefile = "gfx/interface/technologies/air_upgrade2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imperial_thermal_detonator_medium"
+		texturefile = "gfx/interface/technologies/thermal_detonator.dds"
+	}
+
+	spriteType = {
+		name = "GFX_heavy_repeater2_medium"
+		texturefile = "gfx/interface/technologies/large_repeater2.dds"
+	}
+	spriteType = {
+		name = "GFX_small_repeater1_medium"
+		texturefile = "gfx/interface/technologies/small_repeater1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imperial_weapons_medium"
+		texturefile = "gfx/interface/technologies/phase_I_equipment_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_small_repeater2_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_night_vision_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_medium_repeater2_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_night_vision2_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_republic_tank_medium"
+		texturefile = "gfx/interface/technologies/hod_render/tx130_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atrt_medium"
+		texturefile = "gfx/interface/technologies/hod_render/lance_medium.dds"
+	}
+	# SUPPORT
+	spriteType = {
+		name = "GFX_imp_tech_engineers_medium"
+		texturefile = "gfx/interface/technologies/imp_engineers1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_engineers2_medium"
+		texturefile = "gfx/interface/technologies/imp_engineers2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_engineers3_medium"
+		texturefile = "gfx/interface/technologies/imp_engineers3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_engineers4_medium"
+		texturefile = "gfx/interface/technologies/imp_engineers4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_recon_medium"
+		texturefile = "gfx/interface/technologies/imp_recon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_recon2_medium"
+		texturefile = "gfx/interface/technologies/imp_recon2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_recon3_medium"
+		texturefile = "gfx/interface/technologies/imp_recon3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_recon4_medium"
+		texturefile = "gfx/interface/technologies/imp_recon4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_field_hospital_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_field_hospital.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_field_hospital2_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_field_hospital2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_field_hospital3_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_field_hospital3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_field_hospital4_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_field_hospital4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_logistics_company_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_logistics_company.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_logistics_company2_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_logistics_company2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_logistics_company3_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_logistics_company3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_logistics_company4_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_logistics_company4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_military_police_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_military_police.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_military_police2_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_military_police2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_military_police3_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_military_police3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_military_police4_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_military_police4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_signal_company_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_signal_company.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_signal_company2_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_signal_company2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_signal_company3_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_signal_company3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_signal_company4_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_signal_company4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_maintenance_company_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_maintenance_company.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_maintenance_company2_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_maintenance_company2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_maintenance_company3_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_maintenance_company3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_tech_maintenance_company4_medium"
+		texturefile = "gfx/interface/technologies/imp_tech_maintenance_company4.dds"
+	}
+	# SUPPORT END
+	#AIR
+
+	spriteType = {
+		name = "GFX_laat_medium"
+		texturefile = "gfx/interface/technologies/hod_render/rm09_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_maat_medium"
+		texturefile = "gfx/interface/technologies/maat.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idt_medium"
+		texturefile = "gfx/interface/technologies/hod_render/tr_idt_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tie-rp_medium"
+		texturefile = "gfx/interface/technologies/hod_render/tr_theta_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_aal_medium"
+		texturefile = "gfx/interface/technologies/aal.dds"
+	}
+	spriteType = {
+		name = "GFX_tie-rb_medium"
+		texturefile = "gfx/interface/technologies/hod_render/eta2_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_torrent_medium"
+		texturefile = "gfx/interface/technologies/hod_render/t16_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_z-95_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_v19_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_tie-sf_medium"
+		texturefile = "gfx/interface/technologies/tie-rb.dds"
+	}
+	spriteType = {
+		name = "GFX_y-wing_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_btlb_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_skipray_medium"
+		texturefile = "gfx/interface/technologies/hod_render/btla4_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_scimitar_medium"
+		texturefile = "gfx/interface/technologies/tie_bomber.dds"
+	}
+	spriteType = {
+		name = "GFX_tie-sk_medium"
+		texturefile = "gfx/interface/technologies/hod_render/delta7_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_tie-vn_medium"
+		texturefile = "gfx/interface/technologies/tie_interceptor.dds"
+	}
+	spriteType = {
+		name = "GFX_arc-170_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_arc170_medium.dds"
+	}
+	#AIR END
+
+	spriteType = {
+		name = "GFX_atat_tech_medium"
+		texturefile = "gfx/interface/technologies/hod_render/cw_atat_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_foatst_medium"
+		texturefile = "gfx/interface/technologies/foatst.dds"
+	}
+
+	spriteType = {
+		name = "GFX_utat_tech_medium"
+		texturefile = "gfx/interface/technologies/utat.dds"
+	}
+
+	spriteType = {
+		name = "GFX_spma_medium"
+		texturefile = "gfx/interface/technologies/hod_render/tr_spmat_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_spha_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_spha_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_isp_medium"
+		texturefile = "gfx/interface/technologies/hod_render/isp_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_barc_medium"
+		texturefile = "gfx/interface/technologies/hod_render/barc_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ava_medium"
+		texturefile = "gfx/interface/technologies/hod_render/ava_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_z_speeder_medium"
+		texturefile = "gfx/interface/technologies/hod_render/z_speeder_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atrct_medium"
+		texturefile = "gfx/interface/technologies/hod_render/atrt_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_px_medium"
+		texturefile = "gfx/interface/technologies/hod_render/aac1_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_av7_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_av7_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atot_medium"
+		texturefile = "gfx/interface/technologies/hod_render/atot_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_basic_hovercrafts_medium"
+		texturefile = "gfx/interface/technologies/hod_render/hovercraft_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_hovercraft_equipment_medium"
+		texturefile = "gfx/interface/technologies/hovercraft_equipment.dds"
+	}
+
+	spriteType = {
+		name = "GFX_bullet_train_medium"
+		texturefile = "gfx/interface/technologies/bullet_train.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rtt_medium"
+		texturefile = "gfx/interface/technologies/hod_render/atot_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_itt_medium"
+		texturefile = "gfx/interface/technologies/hod_render/attc_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_itc_medium"
+		texturefile = "gfx/interface/technologies/hod_render/k79_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_mauler_medium"
+		texturefile = "gfx/interface/technologies/hod_render/saber2m_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atm6_medium"
+		texturefile = "gfx/interface/technologies/atm6.dds"
+	}
+
+	spriteType = {
+		name = "GFX_crawler_medium"
+		texturefile = "gfx/interface/technologies/hod_render/saber2m_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_juggernaut_medium"
+		texturefile = "gfx/interface/technologies/hod_render/juggernaut_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atat_tech_medium"
+		texturefile = "gfx/interface/technologies/hod_render/cw_atat_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rx_medium"
+		texturefile = "gfx/interface/technologies/hod_render/fotr_utaa_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ataa_medium"
+		texturefile = "gfx/interface/technologies/hod_render/tr_ataa_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_h_repulsor_medium"
+		texturefile = "gfx/interface/technologies/hod_render/t4b_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imp_support_eq_medium"
+		texturefile = "gfx/interface/technologies/imp_support_equipment_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_elite_atat_tech_medium"
+		texturefile = "gfx/interface/technologies/elite_atat.dds"
+	}
+
+	spriteType = {
+		name = "GFX_fo_atat_tech_medium"
+		texturefile = "gfx/interface/technologies/hod_render/atact_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atpt_medium"
+		texturefile = "gfx/interface/technologies/hod_render/atxt_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tx130t_medium"
+		texturefile = "gfx/interface/technologies/hod_render/tx130t_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_repulsor_medium"
+		texturefile = "gfx/interface/technologies/hod_render/tx130s_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atdp_medium"
+		texturefile = "gfx/interface/technologies/hod_render/atap_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atdt_medium"
+		texturefile = "gfx/interface/technologies/atdt.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atte_medium"
+		texturefile = "gfx/interface/technologies/hod_render/atte_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atap_medium"
+		texturefile = "gfx/interface/technologies/atap.dds"
+	}
+
+	spriteType = {
+		name = "GFX_atst_medium"
+		texturefile = "gfx/interface/technologies/atst.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imperial_tank_medium"
+		texturefile = "gfx/interface/technologies/hod_render/saber2m_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_blaster_efficiency1_medium"
+		texturefile = "gfx/interface/technologies/blaster_efficiency1.dds"
+	}
+	spriteType = {
+		name = "GFX_blaster_efficiency2_medium"
+		texturefile = "gfx/interface/technologies/blaster_efficiency2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_blaster_efficiency3_medium"
+		texturefile = "gfx/interface/technologies/blaster_efficiency3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imperial_anti_tank_medium"
+		texturefile = "gfx/interface/technologies/Republic Equipment/REP_infantry_at_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_imperial_weapons2_medium"
+		texturefile = "gfx/interface/technologies/phase_II_equipment_medium.dds"
+	}
+
+	spriteType = {
+		name = "GFX_firstorder_weapons_medium"
+		texturefile = "gfx/interface/technologies/Imperial_equipment_medium.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_executor_rocket_engines_medium"
+		texturefile = "gfx/interface/technologies/experimental_rockets.dds"
+	}
+
+	#ideas
+	spriteType = {
+		name = "GFX_idea_unification_war"
+		texturefile = "gfx/interface/ideas/idea_unification_war.tga"
+		}
+	spriteType = {
+		name = "GFX_idea_more_weapon"
+		texturefile = "gfx/interface/ideas/idea_droid.tga"
+		}
+		spriteType = {
+			name = "GFX_idea_more_droid"
+			texturefile = "gfx/interface/ideas/idea_droid.tga"
+			}
+
+			spriteType = {
+				name = "GFX_idea_general_anouncement"
+				texturefile = "gfx/interface/ideas/idea_general_anouncement.tga"
+				}
+
+			spriteType = {
+		name = "GFX_idea_no_industry"
+		texturefile = "gfx/interface/ideas/idea_no_factory.tga"
+	}
+
+			spriteType = {
+		name = "GFX_idea_oil_company"
+		texturefile = "gfx/interface/ideas/idea_generic_refining_concern_1.tga"
+	}
+
+			spriteType = {
+		name = "GFX_idea_small_industry"
+		texturefile = "gfx/interface/ideas/idea_small_industry.tga"
+	}
+			spriteType = {
+		name = "GFX_idea_medium_industry"
+		texturefile = "gfx/interface/ideas/idea_medium_industry.tga"
+	}
+			spriteType = {
+		name = "GFX_idea_large_industry"
+		texturefile = "gfx/interface/ideas/idea_large_industry.tga"
+	}
+			spriteType = {
+		name = "GFX_idea_concentrated_industry"
+		texturefile = "gfx/interface/ideas/idea_concentrated_industry.tga"
+	}
+
+
+			spriteType = {
+		name = "GFX_idea_imperial_victory"
+		texturefile = "gfx/interface/ideas/idea_imperial_victory.tga"
+	}
+
+		spriteType = {
+		name = "GFX_idea_soviet_defectors"
+		texturefile = "gfx/interface/ideas/idea_soviet_defectors.tga"
+	}
+
+		spriteType = {
+		name = "GFX_idea_the_plan"
+		texturefile = "gfx/interface/ideas/idea_the_plan.tga"
+	}
+
+		spriteType = {
+		name = "GFX_idea_imp_great_depression"
+		texturefile = "gfx/interface/ideas/idea_imp_great_depression.tga"
+	}
+
+		spriteType = {
+		name = "GFX_idea_hidden_truth"
+		texturefile = "gfx/interface/ideas/idea_hidden_truth.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fighter"
+		texturefile = "gfx/interface/ideas/idea_fighter.tga"
+	}
+	spriteType = {
+		name = "GFX_idea_stormtrooper_squad"
+		texturefile = "gfx/interface/ideas/idea_stormtrooper_squad.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_special"
+		texturefile = "gfx/interface/ideas/idea_special.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_tank"
+		texturefile = "gfx/interface/ideas/idea_tank.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_kuat"
+		texturefile = "gfx/interface/ideas/idea_kuat.tga"
+	}
+
+		spriteType = {
+		name = "GFX_idea_auxiliary"
+		texturefile = "gfx/interface/ideas/idea_auxiliary.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_gunturret"
+		texturefile = "gfx/interface/ideas/idea_gunturret.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_structure"
+		texturefile = "gfx/interface/ideas/idea_structure.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_rothana"
+		texturefile = "gfx/interface/ideas/idea_rothana.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_blastech"
+		texturefile = "gfx/interface/ideas/idea_blastech.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_firmus_piett"
+		texturefile = "gfx/interface/ideas/idea_firmus_piett.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_tiaan_jerjerrod"
+		texturefile = "gfx/interface/ideas/idea_tiaan_jerjerrod.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_kendal_ozzel"
+		texturefile = "gfx/interface/ideas/idea_kendal_ozzel.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_maximillian_veers"
+		texturefile = "gfx/interface/ideas/idea_maximillian_veers.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_officer1"
+		texturefile = "gfx/interface/ideas/idea_officer1.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_officer2"
+		texturefile = "gfx/interface/ideas/idea_officer2.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_officer3"
+		texturefile = "gfx/interface/ideas/idea_officer3.tga"
+	}
+
+
+	spriteType = {
+		name = "GFX_idea_officer4"
+		texturefile = "gfx/interface/ideas/idea_officer4.tga"
+	}
+
+	spriteType = {
+		name = "GFX_rebel_symbol"
+		texturefile = "gfx/event_pictures/rebel_symbol.tga"
+	}
+
+	spriteType = {
+		name = "GFX_military_organization"
+		texturefile = "gfx/event_pictures/military_organization.tga"
+	}
+
+	spriteType = {
+		name = "GFX_imperial_news"
+		texturefile = "gfx/event_pictures/imperial_news.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_moradmin_bast"
+		texturefile = "gfx/interface/ideas/idea_officer5.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_conan_antonio_motti"
+		texturefile = "gfx/interface/ideas/idea_conan_antonio_motti.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_cassio_tagge"
+		texturefile = "gfx/interface/ideas/idea_cassio_tagge.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_hurst_romodi"
+		texturefile = "gfx/interface/ideas/idea_hurst_romodi.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_wulf_yularen"
+		texturefile = "gfx/interface/ideas/idea_wulf_yularen.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_trech_molock"
+		texturefile = "gfx/interface/ideas/idea_trech_molock.tga"
+	}
+
+	## IMPERIAL IDEAS ##
+	spriteType = {
+		name = "GFX_idea_tarkin_general"
+		texturefile = "gfx/interface/ideas/idea_tarkin_general.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_darth_vader"
+		# 65x67 advisor-size head crop (the full 156x210 leader portrait used to
+		# overflow the High Command card)
+		texturefile = "gfx/interface/ideas/idea_darth_vader.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_ruined_ship"
+		texturefile = "gfx/interface/ideas/idea_ruined_ship.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_damaged_ship"
+		texturefile = "gfx/interface/ideas/idea_damaged_ship.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_partial_ship"
+		texturefile = "gfx/interface/ideas/idea_partial_ship.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_half_functional_ship"
+		texturefile = "gfx/interface/ideas/idea_half_functional_ship.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_functional_ship"
+		texturefile = "gfx/interface/ideas/idea_functional_ship.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fully_repaired_ship"
+		texturefile = "gfx/interface/ideas/idea_fully_repaired_ship.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_stranded"
+		texturefile = "gfx/interface/ideas/idea_stranded.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_imperial_conquest"
+		texturefile = "gfx/interface/ideas/idea_imperial_conquest.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_sith_pic"
+		texturefile = "gfx/interface/ideas/idea_sith_pic.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_tie_fighter"
+		texturefile = "gfx/interface/ideas/idea_tie_fighter.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_squad"
+		texturefile = "gfx/interface/ideas/idea_squad.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_tarkin_doctrine"
+		texturefile = "gfx/interface/ideas/idea_tarkin_doctrine.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_sith_might"
+		texturefile = "gfx/interface/ideas/idea_sith_might.tga"
+	}
+
+	spriteType = {
+		name = "GFX_idea_imperial_military"
+		texturefile = "gfx/interface/ideas/idea_imperial_military.tga"
+	}
+
+}

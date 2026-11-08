@@ -231,16 +231,6 @@ coastal_defence_fleet = {
 
     # EFFECTS
 	effect = {
-		IF = {
-			limit = {
-				NOT = {
-					has_tech = coastal_defense_ships
-				}
-			}
-			set_technology = { 
-				coastal_defense_ships = 1 
-			}
-		}
 	}
 	naval_supply_consumption_factor = -0.15
 	navy_max_range_factor = -0.10
@@ -252,11 +242,6 @@ coastal_defence_fleet = {
         }
         casemate_upgrades = {
             equipment_bonus = {
-                ship_hull_cruiser_coastal_defense_ship = {
-                    anti_air_attack = 0.15
-                    lg_attack = 0.05
-                    instant = yes
-                }
             }
         }
         escort_duties= {

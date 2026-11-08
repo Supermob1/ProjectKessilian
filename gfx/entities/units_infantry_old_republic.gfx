@@ -3,20 +3,20 @@ objectTypes = {
 	pdxmesh = {
 		name = "REP_old_trooper_mesh"
 		file = "gfx/models/units/old_republic/REP_old_trooper.mesh"
-		animation = { id = "idle" type = "GER_infantry_mg_idle_animation" }
-		animation = { id = "attack" type = "GER_infantry_mg_attack_animation" }
-		animation = { id = "support_attack" type = "GER_infantry_mg_support_attack_animation" }
-		animation = { id = "charge_rifle" type = "GER_infantry_rifle_charge_animation" }
-		animation = { id = "charge_rifle_shoot" type = "GER_infantry_rifle_charge_shoot_animation" }
-		animation = { id = "move" type = "GER_infantry_mg_moving_animation" }
-		animation = { id = "march_move" type = "GER_infantry_mg_march_animation" }
-		animation = { id = "retreat" type = "GER_infantry_mg_retreat_animation" }
-		animation = { id = "death" type = "GER_infantry_mg_death_animation" }
-		animation = { id = "long_idle01" type = "GER_infantry_mg_long_idle_01_animation" }
-		animation = { id = "long_idle02" type = "GER_infantry_mg_long_idle_02_animation" }
-		animation = { id = "long_idle03" type = "GER_infantry_mg_long_idle_03_animation" }
-		animation = { id = "long_idle04" type = "GER_infantry_mg_long_idle_04_animation" }
-		animation = { id = "long_idle05" type = "GER_infantry_mg_long_idle_05_animation" }
+		animation = { id = "idle" type = "REP_bf2_REP_old_trooper_idle_animation" }
+		animation = { id = "attack" type = "REP_bf2_REP_old_trooper_crouchshoot_animation" }
+		animation = { id = "support_attack" type = "REP_bf2_REP_old_trooper_shoot_animation" }
+		animation = { id = "charge_rifle" type = "REP_bf2_REP_old_trooper_run_animation" }
+		animation = { id = "charge_rifle_shoot" type = "REP_bf2_REP_old_trooper_shoot_animation" }
+		animation = { id = "move" type = "REP_bf2_REP_old_trooper_walk_animation" }
+		animation = { id = "march_move" type = "REP_bf2_REP_old_trooper_walk_animation" }
+		animation = { id = "retreat" type = "REP_bf2_REP_old_trooper_run_animation" }
+		animation = { id = "death" type = "REP_bf2_REP_old_trooper_death_animation" }
+		animation = { id = "long_idle01" type = "REP_bf2_REP_old_trooper_look_animation" }
+		animation = { id = "long_idle02" type = "REP_bf2_REP_old_trooper_check_animation" }
+		animation = { id = "long_idle03" type = "REP_bf2_REP_old_trooper_idle_animation" }
+		animation = { id = "long_idle04" type = "REP_bf2_REP_old_trooper_look_animation" }
+		animation = { id = "long_idle05" type = "REP_bf2_REP_old_trooper_check_animation" }
 		animation = { id = "cavalry_idle" type = "GER_infantry_cavalry_rider_mg_idle_animation" }
 		animation = { id = "cavalry_move" type = "GER_infantry_cavalry_rider_mg_moving_animation" }
 		animation = { id = "training" type = "GER_infantry_idle_training_animation" }

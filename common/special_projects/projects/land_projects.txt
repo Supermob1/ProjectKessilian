@@ -24,7 +24,7 @@ sp_land_flamethrower_tank = {
 	
 	available = {
 		FROM = {
-			has_tech = tech_engineers
+			always = no
 		}
 	}
 
@@ -117,7 +117,7 @@ sp_land_military_engineering_vehicles = {
 	
 	available = {
 		FROM = {
-			has_tech = tech_engineers
+			always = no
 		}
 	}
 	
@@ -215,12 +215,12 @@ sp_land_land_cruiser = {
 				has_dlc = "No Step Back"
 			}
 			FROM = {
-				has_tech = super_heavy_tank_chassis
+				always = no
 			}
 		}
 		else = {
 			FROM = {
-				has_tech = super_heavy_tank
+				always = no
 			}
 		}
 	}
@@ -928,7 +928,7 @@ sp_land_super_heavy_howitzer = {
 	
 	available = {
 		FROM = {
-			has_tech = gw_artillery
+			always = no
 		}
 	}
 	
@@ -1192,7 +1192,7 @@ sp_land_super_heavy_railway_gun = {
 
 	available = {
 		FROM = {
-			has_tech = railway_gun
+			always = no
 		}
 	}
 
@@ -1314,7 +1314,6 @@ sp_land_multi_charge_large_caliber_gun = {
 				#	}
 				#}
 				set_technology = {
-					land_multi_charge_large_caliber_gun_tech = 1
 					popup = no
 				}
 			}
@@ -1544,7 +1543,6 @@ sp_land_stronghold_network = {
 					ICON_FRAME = 23
 				}
 				set_technology = {
-					stronghold_network_tech = 1
 					popup = no
 				}
 			}
@@ -2092,7 +2090,7 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 
 	available = {
 		FROM = {
-			has_tech = interwar_antitank
+			always = no
 		}	
 	}
 
@@ -2121,7 +2119,6 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 					custom_effect_tooltip = tech_effect|sp_land_large_caliber_kinetic_energy_sabot_gd_tech
 					hidden_effect = {
 						set_technology = {
-							sp_land_large_caliber_kinetic_energy_sabot_gd_tech = 1
 							popup = no
 						}
 					}
@@ -2135,7 +2132,6 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 				custom_effect_tooltip = tech_effect|sp_land_large_caliber_kinetic_energy_sabot_no_gd_tech
 				hidden_effect = {
 					set_technology = {
-						sp_land_large_caliber_kinetic_energy_sabot_no_gd_tech = 1
 						popup = no
 					}
 				}

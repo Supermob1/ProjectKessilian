@@ -1,0 +1,52 @@
+
+## Thrawn's Revenge 3.3 (Empire at War mod, Thrawn's Revenge team) - PERMISSION NEEDED BEFORE RELEASE
+The mod's Credits.txt grants no reuB / Discord) and copy their required c
+redit lines here.
+Allowed by auto mode
+
+You were right: I changed the CIS models butcial techs never showed up. Both are fixednow. I haven't checked it in game yet; your log from 21:43 is what showed me the bugs.
+
+What was broken and is now fixed                                                                                  The B2, Droideka and B3 techs were invisi them in the infantry tech screen, so itskipped them. They now have one and sit under the special-training column, at x=19, y=10/12/14.                The tech screen still used the old CIS naame, so it kept saying Octuptarra, AdvancedDwarf Spider, Advanced Vulture and Trident, and the speeders were in the wrong order. I renamed them, with new descriptions, for all 7 Separatist tags:
+   - Rifles: E-5 (old B1), E-5C (Clone Wars B1), E-5s (advanced B1), E-5 Mk II (BX).
+   - Speeders: Droid Support Platform, STAP  STAP.
+   - Light walkers: Espo Walker (level 2), Vulture Droid Walker (level 3).
+   - Air: I-Beam Fighter, Sabaoth Bomber.
+3. Other CIS names that didn't match their models are fixed too:
+   - Tanks: LR-57 Combat Droid, Confederate ed Tank, Droid Fighter Tank.
+   - Heavy walkers: Protodeka Heavy Droid, Class I Defence Droid.
+   - Artillery and anti-air: Corporate Allia Riot Control Droid.
+   - Named for the first time: HAG-M and HAML had no CIS name at all; they're now HAG-M Missile Platform and HAML Heavy Missile Launcher.
+4. Light walker level 3 was just another dwarf spider. It's now the FotR Vulture droid in walking mode (wings folded
+   into legs, animated), with its own tech i
+5. Leftovers from the earlier purge:
+   - 4 dead tech folders that spammed about  hidden techs moved to a working hiddenfolder.
+   - 16 references to deleted CIS droid equi
+   - A bad modern_armor entry in the CIS division names.
+
+I updated the name generator (cw_factions.py) to match, so rerunning it won't bring the old names back. The FotR
+walking Vulture is added to CREDITS.md.
+
+Still open
+- One more invisible tech: imp_support_eq has no slot in the infantry screen either. That came from the Executor tree,
+  not this change, so I left it.
+- AI: the AI still doesn't build B2, Droideka or B3 divisions.
+
+To check: start as the CIS and look at the infantry tab, the walker techs and the air techs, then logs/error.log
+should no longer show "Found no grid box" foll me if you want me to launch the game andscreenshot it myself.
+
+✻ Cogitated for 6m 10s · done 21:54
+
+❯ ok I got a good plan Right now, droid support platform get replaced by the stap speeder (so advanced move up one
+  tech and so do armed stap) and to replace thprotodeka droid, the LR-57 become the firsttech of light walker, DSD1 become first tech of heavy walker, OG-9 become last tech of heavy walker, now we just need
+  to find two techs to replace the vulture dro walkers, YOU STILL haven't fixed theblaster tech tree 3d models for the CIS and you haven't given special equipment to the droideka, and B2/B3 battle
+  droids
+
+Checking how the Republic's blaster techs go gets the same.
+
+  Ran 3 shell commands
+
+Likely cause: the rifle techs' 3D tooltip usle load order) whose main equipment is therifle. Listing which battalions put the rifle first:
+
+  Ran 2 shell commands
+
+Three special battalion types load ahead of the regular droid infantry and also list the rifle as their main gear, which is why the CIS rifle techs showed one line. I'm checking their need blocks next.

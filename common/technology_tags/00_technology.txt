@@ -141,89 +141,51 @@ technology_categories = {
 }
 
 technology_folders = {
-	# Country-specific folders first: the game selects the first AVAILABLE
-	# folder in this list as the default tab, so CIS opens on the droid tree
-	# and REP on the republic tree (mirroring vanilla's infantry_folder).
-	droid_folder = {
-		available = {
-			# HOD: the Confederacy, its member corporations and any successor that keeps droid foundries
-			OR = {
-				original_tag = CIS
-				has_tech = early_droid_infantry
-			}
-		}
-		ledger = army
-	}
-	republic_folder = {
-		available = {
-			# HOD: the Republic and its successors (Empire, breakaway states that keep the clone programme)
-			OR = {
-				original_tag = REP
-				has_tech = kamino_standardization
-			}
-		}
-		ledger = army #For now
-	}
+	# HOD: army/air/naval research = SW tree (00_hod_sw_tech_tags.txt); old tabs hidden, techs kept for history/AI
 	infantry_folder = {
-		available = {
-			NOT = { 
-				OR = { 
-					tag = CIS 
-					tag = REP
-				}
-			}
-		}
+		available = { always = no }
 		ledger = army
 	}
 	support_folder = {
-		available = { always = no }	# HOD: support moved into the Republic/CIS tabs
+		available = { always = no }
 		ledger = army
 	}
 	armour_folder = {
-		available = {
-			always = no
-		}
-		ledger = army
-	}
-	hod_rep_armour_folder = {
-		available = { OR = { original_tag = REP has_tech = rep_walker_atpt } }
-		ledger = army
-	}
-	hod_cis_armour_folder = {
-		available = { OR = { original_tag = CIS has_tech = cis_aat } }
+		available = { always = no }
 		ledger = army
 	}
 	nsb_armour_folder = {
-		# HOD: Republic and Separatist lineages use their own armour tabs
-		available = { NOT = { OR = { OR = { original_tag = REP has_tech = rep_walker_atpt } OR = { original_tag = CIS has_tech = cis_aat } } } }
+		available = { always = no }
 		ledger = army
 	}
 	artillery_folder = {
-		available = { always = no }	# HOD: artillery tree disabled
+		available = { always = no }
 		ledger = army
 	}
 	air_techs_folder = {
-		available = {
-			always = no
-		}
+		available = { always = no }
 		ledger = air
 	}
 	bba_air_techs_folder = {
+		available = { always = no }
 		ledger = air
 	}
 	naval_folder = {
-		available = {
-			always = no
-		}
+		available = { always = no }
 		ledger = navy
 	}
 	mtgnavalfolder = {
+		available = { always = no }
 		ledger = navy
 	}
 	mtgnavalsupportfolder = {
+		available = { always = no }
 		ledger = navy
 	}
 	industry_folder = {
+		ledger = civilian
+	}
+	electronics_folder = {
 		ledger = civilian
 	}
 	land_doctrine_folder = {
@@ -246,5 +208,3 @@ technology_folders = {
 		doctrine = yes
 	}
 }
-
- 

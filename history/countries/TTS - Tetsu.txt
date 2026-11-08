@@ -9,17 +9,6 @@ set_war_support = 0.02
 ######CHARACTERS######
 
 
-set_technology = {
-	infantry_weapons = 1
-	support_weapons = 1
-	tech_support = 1
-	tech_trucks = 1
-	basic_train = 1
-	tech_recon = 1
-	early_fighter = 1
-	transport = 1
-	old_republic_equipment = 1
-}
 
 set_popularities = {
 	akaanadocrat = 70
@@ -40,7 +29,7 @@ set_politics = {
 }
 
 add_equipment_to_stockpile = {
-	type = infantry_equipment
+	type = republic_equipment_1
 	amount = 2000
 	producer = TTS
 }
@@ -64,4 +53,4 @@ recruit_character = TTS_eikkel
 	every_other_country = { limit = { is_subject_of = ROOT } ROOT = { end_puppet = PREV } }
 }
 add_relation_rule_override = { can_access_market = no trigger = HOD_market_disabled usage_desc = HOD_market_disabled_tt }	# HOD:no_market
-set_technology = { tech_support = 1 tech_recon = 1 sp_armored_engineer_tech = 1 sp_armored_motorized_military_police_tech = 1 sp_armored_maintenance_tech = 1 sp_armored_signal_tech = 1 popup = no }	# HOD:support_techs
+set_technology = { laat = 1 torrent = 1 y-wing = 1 v_wing = 1 republic_weapon1 = 1 small_repeater1 = 1 republic_tank = 1 atrt = 1 atte = 1 atot = 1 isp = 1 basic_train = 1 popup = no }	# HOD:sw_tree

@@ -3,11 +3,8 @@ division_template = {
 	division_names_group = CIS_GAR_01
 	is_locked = yes
 	regiments = {
-		infantry_droid = { x = 0 y = 0 }
-		infantry_droid = { x = 0 y = 1 }
-	}
-	support = {
-		military_police = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 1 }
 	}
 }
 
@@ -15,52 +12,25 @@ division_template = {
 	name = "CIS Droid Battalion"
 	division_names_group = CIS_INF_01
 	regiments = {
-		infantry_droid = { x = 0 y = 0 }
-		infantry_droid = { x = 0 y = 1 }
-		infantry_droid = { x = 0 y = 2 }
-		infantry_droid = { x = 1 y = 0 }
-		infantry_droid = { x = 1 y = 1 }
-		infantry_droid = { x = 1 y = 2 }
-		infantry_droid = { x = 2 y = 0 }
-		infantry_droid = { x = 2 y = 1 }
-		infantry_droid = { x = 2 y = 2 }
-		heavy_droid = { x = 3 y = 0 }
-		heavy_droid = { x = 3 y = 1 }
-		heavy_droid = { x = 3 y = 2 }
-		infantry_droid = { x = 4 y = 0 }
-	}
-	regimental_support = {
-		fire_support = { x = 0 y = 0 }
-		fire_support = { x = 1 y = 0 }
-		anti_tank_battery = { x = 2 y = 0 }
-		anti_air_battery = { x = 3 y = 0 }
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-		recon = { x = 0 y = 1 }
-		signal_company = { x = 0 y = 2 }
-		logistics_company = { x = 0 y = 3 }
-		maintenance_company = { x = 0 y = 4 }
+		blaster_infantry = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 1 }
+		blaster_infantry = { x = 0 y = 2 }
+		blaster_infantry = { x = 1 y = 0 }
+		blaster_infantry = { x = 1 y = 1 }
+		blaster_infantry = { x = 1 y = 2 }
+		blaster_infantry = { x = 2 y = 0 }
+		blaster_infantry = { x = 2 y = 1 }
+		blaster_infantry = { x = 2 y = 2 }
 	}
 }
 division_template = {
 	name = "CIS Droid Commando"
 	division_names_group = CIS_INF_01
 	regiments = {
-		commando_droid = { x = 0 y = 0 }
-		commando_droid = { x = 0 y = 1 }
-		commando_droid = { x = 0 y = 2 }
-		commando_droid = { x = 1 y = 0 }
-		commando_droid = { x = 1 y = 1 }
-		commando_droid = { x = 1 y = 2 }
-	}
-	regimental_support = {
-		fire_support = { x = 0 y = 0 }
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-		recon = { x = 0 y = 1 }
-		signal_company = { x = 0 y = 2 }
+		blaster_infantry = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 1 }
+		blaster_infantry = { x = 0 y = 2 }
+		blaster_infantry = { x = 0 y = 3 }
 	}
 }
 
@@ -68,28 +38,12 @@ division_template = {
 	name = "AAT Armoured Division"
 	division_names_group = CIS_ARM_01
 	regiments = {
-		medium_armor = { x = 0 y = 0 }
-		medium_armor = { x = 0 y = 1 }
-		medium_armor = { x = 1 y = 0 }
-		medium_armor = { x = 1 y = 1 }
-		infantry_droid = { x = 2 y = 0 }
-		infantry_droid = { x = 2 y = 1 }
-		infantry_droid = { x = 2 y = 2 }
-		infantry_droid = { x = 3 y = 0 }
-		infantry_droid = { x = 3 y = 1 }
-		infantry_droid = { x = 3 y = 2 }
-	}
-	regimental_support = {
-		light_sp_anti_air_support = { x = 0 y = 0 }
-		light_sp_anti_air_support = { x = 1 y = 0 }
-		anti_tank_battery = { x = 2 y = 0 }
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-		recon = { x = 0 y = 1 }
-		signal_company = { x = 0 y = 2 }
-		logistics_company = { x = 0 y = 3 }
-		maintenance_company = { x = 0 y = 4 }
+		blaster_infantry = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 1 }
+		blaster_infantry = { x = 0 y = 2 }
+		assault_vehicle = { x = 1 y = 0 }
+		assault_vehicle = { x = 1 y = 1 }
+		assault_vehicle = { x = 1 y = 2 }
 	}
 }
 
@@ -97,21 +51,12 @@ division_template = {
 	name = "Octuptarra Strike Group"
 	division_names_group = CIS_ARM_01
 	regiments = {
-		light_armor = { x = 0 y = 0 }
-		light_armor = { x = 0 y = 1 }
-		light_armor = { x = 0 y = 2 }
-		infantry_droid = { x = 1 y = 0 }
-		infantry_droid = { x = 1 y = 1 }
-		infantry_droid = { x = 1 y = 2 }
-	}
-	regimental_support = {
-		light_sp_anti_air_support = { x = 0 y = 0 }
-		fire_support = { x = 1 y = 0 }
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-		recon = { x = 0 y = 1 }
-		maintenance_company = { x = 0 y = 2 }
+		blaster_infantry = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 1 }
+		light_vehicle = { x = 1 y = 0 }
+		light_vehicle = { x = 1 y = 1 }
+		light_vehicle = { x = 1 y = 2 }
+		light_vehicle = { x = 1 y = 3 }
 	}
 }
 
@@ -119,25 +64,15 @@ division_template = {
 	name = "Hailfire Artillery Group"
 	division_names_group = CIS_INF_01
 	regiments = {
-		infantry_droid = { x = 0 y = 0 }
-		infantry_droid = { x = 0 y = 1 }
-		infantry_droid = { x = 0 y = 2 }
-		infantry_droid = { x = 1 y = 0 }
-		infantry_droid = { x = 1 y = 1 }
-		infantry_droid = { x = 1 y = 2 }
-		light_sp_artillery_brigade = { x = 2 y = 0 }
-		light_sp_artillery_brigade = { x = 2 y = 1 }
-	}
-	regimental_support = {
-		anti_air_battery = { x = 0 y = 0 }
-		anti_tank_battery = { x = 1 y = 0 }
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-		recon = { x = 0 y = 1 }
-		signal_company = { x = 0 y = 2 }
-		logistics_company = { x = 0 y = 3 }
-		maintenance_company = { x = 0 y = 4 }
+		blaster_infantry = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 1 }
+		blaster_infantry = { x = 0 y = 2 }
+		blaster_infantry = { x = 1 y = 0 }
+		blaster_infantry = { x = 1 y = 1 }
+		blaster_infantry = { x = 1 y = 2 }
+		blaster_infantry = { x = 2 y = 0 }
+		blaster_infantry = { x = 2 y = 1 }
+		blaster_infantry = { x = 2 y = 2 }
 	}
 }
 
@@ -183,7 +118,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = cis_infantry_droid_equipment_2
+			type = republic_equipment_1
 			creator = CMG
 		}
 		requested_factories = 3

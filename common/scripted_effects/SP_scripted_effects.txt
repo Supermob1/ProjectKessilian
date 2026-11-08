@@ -76,7 +76,7 @@ SP_create_variant_based_on_country_armored_signal = {
 SP_create_variant_based_on_country_improved_small_airframe_rocket_engine = {
 		if = {
 			limit = {
-				has_tech = aa_lmg
+				always = no
 			}
 			create_equipment_variant = {
 			 	name = "Rocket Interceptor"
@@ -112,9 +112,9 @@ SP_create_variant_based_on_country_improved_small_airframe_rocket_engine = {
 SP_create_variant_of_habakkuk_for_production_line = {
 		if = {
 			limit = {
-				has_tech = antiair2
+				always = no
 				has_tech = cavity_magnatron
-				has_tech = improved_heavy_armor_scheme
+				always = no
 			}
 			create_equipment_variant = {
 				name = "Habakkuk"
@@ -136,9 +136,9 @@ SP_create_variant_of_habakkuk_for_production_line = {
 		}
 		else_if = {
 			limit = {
-				has_tech = antiair2
+				always = no
 				is_special_project_completed = sp:sp_air_radar
-				has_tech = improved_heavy_armor_scheme
+				always = no
 			}
 			create_equipment_variant = {
 				name = "Habakkuk"
@@ -160,7 +160,7 @@ SP_create_variant_of_habakkuk_for_production_line = {
 		}		
 		else_if = {
 			limit = {
-				has_tech = antiair2
+				always = no
 				has_tech = cavity_magnatron
 			}
 			create_equipment_variant = {
@@ -183,8 +183,8 @@ SP_create_variant_of_habakkuk_for_production_line = {
 		}
 		else_if = {
 			limit = {
-				has_tech = antiair2
-				has_tech = improved_heavy_armor_scheme
+				always = no
+				always = no
 			}
 			create_equipment_variant = {
 				name = "Habakkuk"
@@ -207,7 +207,7 @@ SP_create_variant_of_habakkuk_for_production_line = {
 		else_if = {
 			limit = {
 				has_tech = cavity_magnatron
-				has_tech = improved_heavy_armor_scheme
+				always = no
 			}
 			create_equipment_variant = {
 				name = "Habakkuk"
@@ -251,7 +251,7 @@ SP_create_variant_of_habakkuk_for_production_line = {
 		}
 		else_if = {
 			limit = {
-				has_tech = antiair2
+				always = no
 			}
 			create_equipment_variant = {
 				name = "Habakkuk"
@@ -273,7 +273,7 @@ SP_create_variant_of_habakkuk_for_production_line = {
 		}
 		else_if = {
 			limit = {
-				has_tech = improved_heavy_armor_scheme
+				always = no
 			}
 			create_equipment_variant = {
 				name = "Habakkuk"

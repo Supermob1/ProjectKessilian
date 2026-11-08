@@ -1,0 +1,45 @@
+objectTypes = {
+
+#INFANTRY
+	pdxparticle = {
+		name = "hosw_red_blastershot_mg"
+		type = "hosw_red_blastershot_mg_file"
+		scale = 1
+	}
+	pdxparticle = {
+		name = "hosw_muzzlered_mg"
+		type = "hosw_muzzlered_mg_file"
+		scale = 1
+	}
+#HOD: clone (blue) bolts, vehicle-size bolts (unit_models.py walker states)
+	pdxparticle = {
+		name = "hosw_blue_blastershot_mg"
+		type = "hosw_blue_blastershot_mg_file"
+		scale = 1
+	}
+	pdxparticle = {
+		name = "hosw_muzzleblue_mg"
+		type = "hosw_muzzleblue_mg_file"
+		scale = 1
+	}
+	pdxparticle = {
+		name = "hosw_red_blastershot_vehicle"
+		type = "hosw_red_blastershot_mg_file"
+		scale = 2.5
+	}
+	pdxparticle = {
+		name = "hosw_muzzlered_vehicle"
+		type = "hosw_muzzlered_mg_file"
+		scale = 2.5
+	}
+	pdxparticle = {
+		name = "hosw_blue_blastershot_vehicle"
+		type = "hosw_blue_blastershot_mg_file"
+		scale = 2.5
+	}
+	pdxparticle = {
+		name = "hosw_muzzleblue_vehicle"
+		type = "hosw_muzzleblue_mg_file"
+		scale = 2.5
+	}
+}

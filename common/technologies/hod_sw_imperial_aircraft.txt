@@ -1,0 +1,652 @@
+technologies = {
+	#hidden rocket tech
+	executor_rocket_engines = {
+		allow = {
+			always = no
+		}
+		show_equipment_icon = yes
+		# can build ICBMs?
+		enable_equipments = {
+			guided_missile_equipment_4
+		}
+		research_cost = 1.0
+	}
+# &&&&&&&&&&
+
+	laat = {
+
+		dependencies = {
+            republic_weapon1 = 1
+        }
+
+		enable_equipments = {
+			laat_equipment
+		}
+
+		path = {
+			leads_to_tech = maat
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 2
+		start_year = 976
+		folder = {
+			name = swair_folder
+			position = { x = 10 y = 0 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: gunship variant (+ its LAAT support company)
+			laat_gunship
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	maat = {
+
+		enable_equipments = {
+			maat_equipment
+		}
+
+		path = {
+			leads_to_tech = idt
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swair_folder
+			position = { x = 10 y = 2 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: gunship variant (+ its LAAT support company)
+			maat_gunship
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	idt = {
+
+		enable_equipments = {
+			idt_equipment
+		}
+
+		path = {
+			leads_to_tech = tie-rp
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 979
+		folder = {
+			name = swair_folder
+			position = { x = 10 y = 6 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: gunship variant (+ its LAAT support company)
+			idt_gunship
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	tie-rb = {
+
+		dependencies = {	# HOD 2026-11-08: needs the V-wing AND the T-16 Skyhopper
+			v_wing = 1
+			torrent = 1
+		}
+
+		enable_equipments = {
+			tie-rb_equipment
+		}
+
+
+
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swair_folder
+			position = { x = 2 y = 2 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	tie-rp = {
+
+		enable_equipments = {
+			tie-rp_equipment
+		}
+
+		path = {
+			leads_to_tech = aal
+			research_cost_coeff = 1
+		}
+
+
+
+		research_cost = 2
+		start_year = 985
+		folder = {
+			name = swair_folder
+			position = { x = 10 y = 10 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: gunship variant (+ its LAAT support company)
+			tie-rp_gunship
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	aal = {
+
+		enable_equipments = {
+			aal_equipment
+		}
+
+		research_cost = 2
+		start_year = 990
+		folder = {
+			name = swair_folder
+			position = { x = 10 y = 12 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		sub_technologies = {	# HOD 2026-11-08: gunship variant (+ its LAAT support company)
+			aal_gunship
+		}
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	torrent = {
+
+		enable_equipments = {
+			torrent_equipment
+		}
+
+		path = {
+			leads_to_tech = z-95
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = tie-rb
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = arc-170
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 976
+		folder = {
+			name = swair_folder
+			position = { x = 4 y = 0 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_starfighter_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	z-95 = {
+
+		enable_equipments = {
+			z-95_equipment
+		}
+
+		path = {
+			leads_to_tech = tie_fighter
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swair_folder
+			position = { x = 4 y = 4 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_starfighter_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+
+	tie_fighter = {
+
+		enable_equipments = {
+			tie_fighter_equipment
+		}
+
+
+
+		research_cost = 2
+		start_year = 985
+		folder = {
+			name = swair_folder
+			position = { x = 4 y = 10 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_starfighter_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 4000
+		}
+
+	}
+
+
+	y-wing = {
+
+		dependencies = {
+            republic_weapon1 = 1
+        }
+
+		enable_equipments = {
+			y-wing_equipment
+		}
+
+		path = {
+			leads_to_tech = skipray
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 976
+		folder = {
+			name = swair_folder
+			position = { x = 14 y = 0 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_bomber_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+
+	skipray = {
+
+		enable_equipments = {
+			skipray_equipment
+		}
+
+		path = {
+			leads_to_tech = scimitar
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swair_folder
+			position = { x = 14 y = 2 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_bomber_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+
+	scimitar = {
+
+		enable_equipments = {
+			scimitar_equipment
+		}
+		research_cost = 2
+		start_year = 981
+		folder = {
+			name = swair_folder
+			position = { x = 14 y = 8 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_bomber_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+
+	v_wing = {
+
+		dependencies = {
+            republic_weapon1 = 1
+        }
+
+		enable_equipments = {
+			v_wing_equipment
+		}
+
+		path = {
+			leads_to_tech = tie-in
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = tie-rb
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 976
+		folder = {
+			name = swair_folder
+			position = { x = 0 y = 0 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_interceptor_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+	tie-in = {
+
+		enable_equipments = {
+			tie-in_equipment
+		}
+
+		path = {
+			leads_to_tech = tie-vn
+			research_cost_coeff = 1
+		}
+
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swair_folder
+			position = { x = 0 y = 4 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_interceptor_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+
+
+
+	tie-vn = {
+
+		enable_equipments = {
+			tie-vn_equipment
+		}
+
+
+
+		research_cost = 2
+		start_year = 985
+		folder = {
+			name = swair_folder
+			position = { x = 0 y = 10}
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_interceptor_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+	}
+
+
+	arc-170 = {	# HOD 2026-11-08: single tech off the T-16 (TIE Advanced follow-up removed)
+
+		enable_equipments = {
+			arc-170_equipment
+		}
+
+
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swair_folder
+			position = { x = 7 y = 2 }
+		}
+		categories = {
+			imperial_aircraft_tech
+			imperial_defender_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+
+
+
+
+	# HOD 2026-11-08: gunship column (branches off the LAAT/i), the column beside it is transports only
+
+
+
+
+
+	laat_gunship = {	# HOD 2026-11-08: gunship variant of laat (was a separate column + the Support helicopter branch)
+		enable_equipments = {
+			laati_equipment
+			helicopter_equipment_1
+		}
+		enable_subunits = {
+			laat_assault_company
+		}
+
+		research_cost = 1.5
+		start_year = 976
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	maat_gunship = {	# HOD 2026-11-08: gunship variant of maat (was a separate column + the Support helicopter branch)
+		enable_equipments = {
+			maat_gunship_equipment
+			helicopter_equipment_1
+		}
+		enable_subunits = {
+			laat_recon_company
+		}
+
+		research_cost = 1.5
+		start_year = 977
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	idt_gunship = {	# HOD 2026-11-08: gunship variant of idt (was a separate column + the Support helicopter branch)
+		enable_equipments = {
+			idt_gunship_equipment
+			helicopter_equipment_1
+		}
+		enable_subunits = {
+			laat_medevac_company
+		}
+
+		research_cost = 1.5
+		start_year = 979
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	tie-rp_gunship = {	# HOD 2026-11-08: gunship variant of tie-rp (was a separate column + the Support helicopter branch)
+		enable_equipments = {
+			tie-rp_gunship_equipment
+			helicopter_equipment_1
+		}
+		enable_subunits = {
+			laat_supply_company
+		}
+		category_helicopter_support_companies = {
+			maximum_speed = 0.1
+			defense = 0.05
+			breakthrough = 0.05
+		}
+
+		research_cost = 1.5
+		start_year = 979
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+
+	aal_gunship = {	# HOD 2026-11-08: gunship variant of aal (was a separate column + the Support helicopter branch)
+		enable_equipments = {
+			aal_gunship_equipment
+			helicopter_equipment_1
+		}
+
+		research_cost = 1.5
+		start_year = 990
+		categories = {
+			imperial_aircraft_tech
+			imperial_transport_tech
+			imperial_tech
+			imperial_vehicles_tech
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+}

@@ -1,0 +1,49 @@
+equipments = {
+
+	# Dedicated Imperial support equipment archetype.
+	# Previously imperial_support_equipment_1 was bolted onto the vanilla
+	# support_equipment archetype (archetype = support_equipment, parent =
+	# support_equipment_1), which forced Imperial support companies to draw from
+	# the shared vanilla Support Equipment pool and required researching/producing
+	# regular Support Equipment before the Imperial variant could replace it.
+	imperial_support_equipment = {
+		year = 1918
+
+		is_archetype = yes
+		picture = archetype_support_equipment
+		is_buildable = no
+		type = {
+			infantry
+			motorized
+			support
+		}
+		group_by = archetype
+
+		interface_category = interface_category_land
+
+		reliability = 0.8
+
+		#Space taken in convoy
+		lend_lease_cost = 1
+
+		build_cost_ic = 1
+		resources = {
+			aluminium = 1
+			steel = 2
+		}
+	}
+
+	imperial_support_equipment_1 = {
+		year = 1918
+		visual_level = 1
+
+		archetype = imperial_support_equipment
+
+		reliability = 0.9
+
+		build_cost_ic = 0.875
+
+		priority = 20
+	}
+
+}

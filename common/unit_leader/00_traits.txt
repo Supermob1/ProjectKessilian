@@ -1300,27 +1300,7 @@ leader_traits = {
 		#gui_row = 10
 	}
 	
-	paratrooper = { 
-		type = corps_commander
-		gain_xp = {
-			always = no # not gainable
-		}
-		cost = 500
-		modifier = {
-			extra_paratrooper_supply_grace = 240
-		}
-		
-		enable_ability = glider_planes
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		trait_type = assignable_trait
-		any_parent = { commando }
-		
-		#gui_row = 11
-	}
+
 	
 	
 	camouflage_expert = { 
@@ -1955,10 +1935,7 @@ leader_traits = {
 	dive_bomber = { 
 		type = navy
 		sub_unit_modifiers = {
-			cv_cas = {
-				ground_attack_factor = 0.1
-				air_cas_efficiency = 0.1
-			}
+
 		}	
 		ai_will_do = {
 			factor = 0
@@ -1981,11 +1958,7 @@ leader_traits = {
 	torpedo_bomber = { 
 		type = navy
 		sub_unit_modifiers = {
-			cv_nav_bomber = {
-				naval_strike_attack_factor = 0.1
-				air_nav_efficiency = 0.1
-				naval_strike_targetting_factor = 0.05
-			}
+
 		}	
 
 		slot = high_command

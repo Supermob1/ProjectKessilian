@@ -45,7 +45,7 @@ technologies = {
 		
 		allow = {
 			AND = {
-				has_tech = tech_mountaineers
+				always = no
 				can_unlock_new_special_forces_tree = yes
 			}
 		}
@@ -222,9 +222,6 @@ technologies = {
 		category_mountaineers = {
 			defense = 0.10
 		}
-		mountaineers = {
-			combat_width = -0.2
-		}
 		
 		path = {
 			leads_to_tech = mountaineers_combat_3
@@ -268,12 +265,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		artillery = {
-			battalion_mult = {
-				category = category_mountaineers
-				breakthrough = 0.15
-			}
-		}
 		
 		rangers_support = {
 			battalion_mult = {
@@ -446,7 +437,7 @@ technologies = {
 		
 		allow = { 
 			AND = {
-				has_tech = marines
+				always = no
 				can_unlock_new_special_forces_tree = yes
 			}
 		}
@@ -616,9 +607,6 @@ technologies = {
 		
 		unit_marine_design_cost_factor = -0.50
 
-		marine = {
-			max_organisation = 5
-		}
 			
 		doctrine = yes	
 		research_cost = 2.25
@@ -835,11 +823,6 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 
-		amphibious_mechanized = {
-			 soft_attack = 0.1
-			 breakthrough = 0.1
-			 max_organisation = 5
-		}
 		
 		pioneer_support = {
 			battalion_mult = {
@@ -885,26 +868,8 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 		
-		artillery = {
-			 battalion_mult = {
-				category = category_marines
-				defense = 0.05
-			}
-		}
 		
-		anti_air = {
-			 battalion_mult = {
-				category = category_marines
-				defense = 0.05
-			}
-		}
 		
-		anti_tank = {
-			 battalion_mult = {
-				category = category_marines
-				defense = 0.05
-			}
-		}
 
 		extra_marine_supply_grace = 24
 		naval_invasion_prep_days = -5
@@ -951,9 +916,6 @@ technologies = {
 		#xor = { special_forces_mountaineers special_forces_marines } 
 	
 		paratroopers_special_forces_contribution_factor = -0.10
-		transport_plane = {
-			air_defence = 0.20
-		}
 		category_special_forces = {
 			max_organisation = 5
 			soft_attack = 0.05
@@ -961,7 +923,7 @@ technologies = {
 		
 		allow = { 
 			AND = {
-				has_tech = paratroopers 
+				always = no 
 				can_unlock_new_special_forces_tree = yes
 			}
 		}
@@ -1153,12 +1115,6 @@ technologies = {
 		
 		xor = { paras_combat_2 }
 		
-		signal_company = {
-			battalion_mult = {
-				category = category_paratroopers
-				defense = 0.15
-			}
-		}
 			
 		doctrine = yes	
 		research_cost = 2.25
@@ -1196,12 +1152,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		field_hospital = {
-			battalion_mult = {
-				category = category_paratroopers
-				default_morale = 0.15
-			}
-		}
 		
 		xor = { paras_combat_1 }
 		
@@ -1429,7 +1379,7 @@ technologies = {
 
 		allow = {
 			AND = {
-				has_tech = rangers_tech
+				always = no
 				can_unlock_new_special_forces_tree = yes
 			}
 		}
@@ -1455,14 +1405,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		ranger_battalion = {
-			acclimatization_cold_climate_gain_factor = 0.25
-			forest = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
-		}
 		
 		doctrine = yes	
 		research_cost = 2.25
@@ -1493,14 +1435,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		ranger_battalion = {
-			acclimatization_hot_climate_gain_factor = 0.25
-			jungle = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
-		}
 		
 		doctrine = yes	
 		research_cost = 2.25
@@ -1613,13 +1547,6 @@ technologies = {
 			cat_rangers_doctrine
 		}
 
-		artillery = {
-			battalion_mult = {
-				category = category_rangers
-				defense = 0.05
-				breakthrough = 0.05
-			}
-		}
 		rangers_support = {
 			battalion_mult = {
 				category = category_line_artillery
@@ -1657,13 +1584,6 @@ technologies = {
 			supply_consumption = -0.02		
 		}
 
-		ranger_battalion = {	
-			urban = {
-				attack = 0.1
-				defence = 0.1
-				movement = 0.05
-			}
-		}
 
 		categories = {
 			special_forces_doctrine
@@ -1685,11 +1605,6 @@ technologies = {
 		
 		force_use_small_tech_layout = yes
 
-		ranger_battalion = {
-			max_organisation = 10
-			soft_attack = 0.1
-			breakthrough = 0.1
-		}
 		rangers_special_forces_contribution_factor = -0.1
 		
 		xor = { rangers_backbone_doctrine }
