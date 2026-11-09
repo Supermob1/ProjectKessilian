@@ -8,6 +8,7 @@
 
 
 sp_rockets_flying_bomb = {
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	specialization = specialization_air 
 	icon = GFX_sp_rockets_flying_bomb
 
@@ -44,7 +45,7 @@ sp_rockets_flying_bomb = {
 
 	available = { 
 		FROM = {
-			has_tech = experimental_rockets
+			always = no  # HOD: rocket tech tree removed
 		}
 	}
 
@@ -329,6 +330,7 @@ sp_rockets_flying_bomb = {
 
 # Ballistic Missiles - The V2 programme
 sp_rockets_ballistic_missile = {
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	specialization = specialization_air 
 	breakthrough_cost = {
 		specialization_air = 3
@@ -350,7 +352,7 @@ sp_rockets_ballistic_missile = {
 
 	available = { 
 		FROM = {
-			has_tech = experimental_rockets
+			always = no  # HOD: rocket tech tree removed
 		}
 	}
 
@@ -540,6 +542,7 @@ sp_rockets_ballistic_missile = {
 
 # Medium range Missiles
 sp_rockets_medium_range_ballistic_missile = {
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	specialization = specialization_air 
 	
 	icon = GFX_sp_rockets_medium_range_ballistic_missiles
@@ -708,9 +711,7 @@ sp_rockets_long_range_ballistic_missile = {
 			chromium = 12
 		}
 	}
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		sp_rockets_medium_range_ballistic_missile
@@ -871,9 +872,7 @@ sp_rockets_ground_to_air_missile = {
 	}	
 	complexity = sp_complexity.large 
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		sp_rockets_ballistic_missile
@@ -881,7 +880,7 @@ sp_rockets_ground_to_air_missile = {
 
 	available = { 
 		FROM = {
-			has_tech = experimental_rockets
+			always = no  # HOD: rocket tech tree removed
 		}
 	}
 	
@@ -1053,6 +1052,7 @@ sp_rockets_ground_to_air_missile = {
 
 
 sp_rocket_interceptor = {
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	specialization = specialization_air 
 	
 	icon = GFX_sp_rockets_rocket_interceptor 
@@ -1072,7 +1072,7 @@ sp_rocket_interceptor = {
 
 	available = { 
 		FROM = {
-			has_tech = experimental_rockets
+			always = no  # HOD: rocket tech tree removed
 		}
 	}
 

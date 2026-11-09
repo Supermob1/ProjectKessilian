@@ -26,7 +26,7 @@ sub_units = {
 		breakthrough = 0.6
 		supply_consumption = 0.12
 		need = {
-			imperial_equipment = 140
+			cis_b2_equipment = 100
 		}
 		urban = { attack = 0.15 }
 	}
@@ -56,7 +56,7 @@ sub_units = {
 		breakthrough = 0.9
 		supply_consumption = 0.14
 		need = {
-			imperial_equipment = 120
+			cis_droideka_equipment = 60
 		}
 		plains = { attack = 0.1 }
 		urban = { defence = 0.2 }
@@ -87,9 +87,36 @@ sub_units = {
 		breakthrough = 1.0
 		supply_consumption = 0.18
 		need = {
-			imperial_equipment = 180
+			cis_b3_equipment = 80
 		}
 		mountain = { movement = 0.2 }
 		hills = { attack = 0.15 }
+	}
+	# 2026-11-09 (user): IG-227 hailfire droids, a CIS special armour battalion (was a light walker tech)
+	cis_hailfire_droid = {
+		sprite = cis_hailfire_droid   # model: CIS_cis_hailfire_droid_entity (sw_tree/unit_models_sw.py)
+		map_icon_category = armored
+		priority = 2500
+		ai_priority = 200
+		active = no
+		type = { armor }
+		group = armor
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+		}
+		combat_width = 2
+		need = {
+			cis_hailfire_equipment = 50
+		}
+		manpower = 300
+		max_organisation = 30
+		default_morale = 0.3
+		training_time = 180
+		max_strength = 2
+		weight = 0.5
+		supply_consumption = 0.3
 	}
 }

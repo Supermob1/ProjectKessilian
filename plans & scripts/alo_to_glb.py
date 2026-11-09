@@ -20,8 +20,8 @@ import io_alamo_tools  # noqa: E402
 io_alamo_tools.register()
 IMPORT = getattr(bpy.ops, "import")          # operator id is "import.alo"
 
-SKIP = re.compile(r"collision|shadow|shields up|muzzle|flash|light|glow|engine|_lod[1-9]|^p_|^c_|hp_|proxy|goblin|bone", re.I)
-AUX = re.compile(r"(_?b|_?g|_?gloss|_?spec|_?normal|_?n|_?bump|td|tb|glow|black)$", re.I)   # not the diffuse map
+SKIP = re.compile(r"collision|shadow|shields up|muzzle|flash|light|glow|engine|_lod[1-9]|^p_|^c_|hp_|proxy|goblin|bone|girder|_alt[1-9]", re.I)   # girder = build-up scaffold, _ALTn = damage states
+AUX = re.compile(r"(_?b|_?g|_?gloss|_?spec|_?normal|_?n|_?bump\w*|td|tb|glow|black|_bc(_d\d)?)$", re.I)   # not the diffuse map (_BC = EaW structure normal map)
 
 
 def diffuse(mat):

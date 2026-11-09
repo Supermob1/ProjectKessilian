@@ -26,15 +26,10 @@ technology_categories = {
 }
 
 technology_folders = {
-	imperial_folder = {
+	# the game opens the research screen on the FIRST AVAILABLE folder of this list: keep the leftmost tab (infantry) first
+	swinfantry_folder = {
 		available = {
-			always = no
-		}
-		ledger = army
-	}
-	swsupport_folder = {	# HOD 2026-11-08: empty, support equipment moved to the infantry tab
-		available = {
-			always = no
+			always = yes
 		}
 		ledger = army
 	}
@@ -44,23 +39,11 @@ technology_folders = {
 		}
 		ledger = army
 	}
-	swartillery_folder = {	# HOD 2026-11-08: empty, artillery moved to the armour tab
-		available = {
-			always = no
-		}
-		ledger = army
-	}
 	swair_folder = {
 		available = {
 			always = yes
 		}
 		ledger = air
-	}
-	swinfantry_folder = {
-		available = {
-			always = yes
-		}
-		ledger = army
 	}
 	# Re-enabled after fixing the fire_range/hit_profile parse errors in the fire-control
 	# and radar modules. Gated to the Empire like the other SW tech folders.
@@ -75,6 +58,24 @@ technology_folders = {
 			always = yes
 		}
 		ledger = navy
+	}
+	imperial_folder = {
+		available = {
+			always = no
+		}
+		ledger = army
+	}
+	swsupport_folder = {	# HOD 2026-11-08: empty, support equipment moved to the infantry tab
+		available = {
+			always = no
+		}
+		ledger = army
+	}
+	swartillery_folder = {	# HOD 2026-11-08: empty, artillery moved to the armour tab
+		available = {
+			always = no
+		}
+		ledger = army
 	}
 	#secret_weapons_folder
 }

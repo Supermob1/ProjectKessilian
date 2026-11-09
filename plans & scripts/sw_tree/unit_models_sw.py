@@ -63,9 +63,9 @@ REP = {
     # TX-130 Saber, TX-130S (repulsor tech), T4-B heavy tank (heavy repulsor tech), AAC-1 (px tech), 2-M Saber (crawler
     # tech since 2026-11-08; the TIE crawler is gone)
     "assault_vehicle": lv((None, (R_TX130, 1.0)), (0, (R_TX130, 1.0)), (2, (TX130S, 1.15)), (3, (T4B, 1.0)),
-                          (4, (IHRT, 1.0)), (5, (AAC1, 1.0)), (7, (SABER2M, 1.3))),   # 4 = Imperial heavy repulsortank (under the T4-B)
+                          (4, (B("x_mow_clone_hovertank"), 1.0)), (5, (AAC1, 1.0)), (7, (SABER2M, 1.3))),   # 4 = heavy repulsortank: clone hover tank (Men of War mod, user 2026-11-09)
     # AT-TE, UT-AT, AT-AT prototype, AT-AT, AT-ACT
-    "heavy_vehicle": lv((None, (R_ATTE, 1.0)), (0, (R_ATTE, 1.0)), (1, (R_UTAT, 1.0)), (2, (CWATAT, 1.0)), (3, (ATAT, 1.0)), (4, (ATACT, 1.0))),   # 4 = AT-ACT
+    "heavy_vehicle": lv((None, (R_ATTE, 1.0)), (0, (R_ATTE, 1.0)), (1, (R_UTAT, 1.0)), (2, (CWATAT, 1.0)), (3, (ATAT, 1.0)), (4, (ATACT, 1.0))),   # 2 = AT-AT prototype (BF3 CW AT-AT, gunmetal repaint 2026-11-09)   # 4 = AT-ACT
     "super_heavy_vehicle": lv((None, (ATAT, 1.25))),
     # hovercraft, AT-OT, Republic troop transport, K79-S80, Imperial troop carrier (no RTT / hovercraft model yet: AT-OT)
     "armored_troop_transport": lv((None, (FOTR_ATOT, 1.0)), (0, (SWAMP, 1.0)), (1, (FOTR_ATOT, 1.0)), (2, (FOTR_ATOT, 1.1)),   # AT-OT: Fall of the Republic (2026-11-08)
@@ -85,6 +85,9 @@ F_HAGM2, F_HAML, F_CAART, F_CONFED = B("fotr_cis_hagm"), B("fotr_cis_haml"), B("
 F_STAP, F_ADVSTAP, F_CISMTT, F_DTRANS = B("fotr_cis_stap"), B("fotr_cis_advestap"), B("fotr_cis_mtt"), B("fotr_cis_transport")
 X = lambda n: B("x_" + n)   # 2026-11-08 second pass (unit_models.py hod_x_*: FotR + Republic at War extras)
 DEKA2, RAW_DWARF, RAW_CRAB, CSA_C1, HAIL_RIOT = X("droideka"), X("raw_dwarf"), X("raw_crab"), X("csa_c1"), X("hailfire_riot")
+# Republic-only elite battalions (common/units/hod_rep_special_troopers.txt, 2026-11-09): RaW ARC / commando, BF2 clone shock trooper / black JKA Katarn commando
+REP.update({"rep_arc_trooper": lv((None, (X("raw_arc"), None))), "rep_clone_commando": lv((None, (X("raw_commando"), None))),
+            "rep_shock_trooper": lv((None, (X("imp_shock"), None))), "rep_imperial_commando": lv((None, (X("imp_commando"), None)))})
 # one model per CIS equipment (user 2026-11-08: "you reuse a bit too much of the same ones"); names = the CIS localisation
 CIS = {
     # E-5 / E-5C / E-5s: B1 battle droids; E-5 Mk II: BX commando droids (user 2026-11-08)
@@ -92,25 +95,26 @@ CIS = {
     "blaster_infantry": lv((None, (X("raw_b1"), None)), (3, (X("raw_b1"), None)), (4, (F_B1, None)), (5, (X("repcom_b1"), None)), (6, (F_BX, None))),
     "stormtrooper": lv((None, (X("raw_b1"), None)), (3, (X("raw_b1"), None)), (4, (F_B1, None)), (5, (X("repcom_b1"), None)), (6, (F_BX, None))),
     # CIS-only special battalions (common/units/hod_cis_special_droids.txt, techs in the infantry folder)
-    "cis_b2_droid": lv((None, (F_B2, None))), "cis_droideka": lv((None, (DEKA2, 1.0))), "cis_b3_droid": lv((None, (X("b3"), None))),
-    "scoutwalker": lv((None, (F_CRAB, 0.9)), (0, (F_CRAB, 0.9)), (1, (RAW_CRAB, 1.0))),   # LM-432 crab, crab Mk II (RaW)
-    # DSD1 dwarf spider, Espo walker, Vulture droid (walking mode), droid patrol walker (LR-57)
-    "light_vehicle": lv((None, (F_DSD, 1.0)), (0, (F_DSD, 1.0)), (2, (X("espo"), 1.0)), (3, (X("vulture_walk"), 1.0)), (4, (F_LR57, 1.0))),   # 2 = CSA Espo walker, 3 = Vulture droid in walking mode
-    # AAT, NR-N99 Persuader, heavy tank droid, super tank droid, droid assault tank (GAT), heavy repulsor tank droid
-    "assault_vehicle": lv((None, (F_AAT, 1.0)), (0, (F_AAT, 1.0)), (2, (F_PERS, 1.0)), (3, (F_CONFED, 1.0)),
-                          (4, (F_SUPER, 1.0)), (5, (F_GAT, 1.0)), (7, (CISFT, 1.0))),
-    # OG-9 homing spider, Octuptarra Magna (the combat tri-droid's mesh, x1.7), droid siege walker (Protodeka),
-    # heavy droid walker (FotR C1 defence walker)
-    "heavy_vehicle": lv((None, (F_OG9, 1.0)), (0, (F_OG9, 1.0)), (2, (F_TRI, 1.7)), (3, (F_PROTO, 1.0)), (4, (CSA_C1, 1.0))),
+    "cis_b2_droid": lv((None, (F_B2, None))), "cis_droideka": lv((None, (X("raw_deka"), 1.0)), (0, (X("raw_deka"), 1.0)), (2, (X("foc_deka2"), 1.0))),
+    "cis_b3_droid": lv((None, (X("mow_b3"), None))),   # 2026-11-09: Men of War mod B3   # droideka: Mk I (RaW), Mk II (Forces of Corruption UI_DROIDEKA)
+    "cis_hailfire_droid": lv((None, (F_HAIL, 1.0))),
+    "scoutwalker": lv((None, (F_LR57, 1.0)), (0, (F_LR57, 1.0)), (1, (X("espo"), 1.0))),   # user 2026-11-09: LR-57, Espo walker (swapped with the light walkers)
+    # user 2026-11-09: LR-57, Espo walker, dwarf spider (BF2), A-DSD (RaW dwarf repainted); the hailfire is a CIS special unit
+    "light_vehicle": lv((None, (F_CRAB, 0.9)), (0, (F_CRAB, 0.9)), (2, (RAW_CRAB, 1.0)), (3, (X("umbaran_hmc"), 1.0)), (4, (X("mow_scorpenek"), 1.0))),   # 2026-11-09: LM-432, LM-432 Mk II, Umbaran MHC, Scorpenek (both Men of War mod)
+    # user 2026-11-09: AAT, CIS-colour AAT (RaW), Confederate super tank, TF super tank, NR-N99 Persuader, Imperial-service AAT (green camo repaint)
+    "assault_vehicle": lv((None, (F_AAT, 1.0)), (0, (F_AAT, 1.0)), (2, (X("raw_aat_cis"), 1.0)), (3, (F_SUPER, 1.0)),
+                          (4, (F_CONFED, 1.0)), (5, (F_PERS, 1.0)), (7, (X("mow_umbaran_hovertank"), 1.0))),   # user 2026-11-09: blue-grey RaW AAT, Super Tank Mk I (TF) / Mk II (Confederate), Umbaran hover tank (MoW)
+    # user 2026-11-09: DSD1 dwarf spider first, OG-9 last; Class I moved to 3 (the Protodeka went to the speeder line)
+    "heavy_vehicle": lv((None, (F_DSD, 1.3)), (0, (F_DSD, 1.3)), (2, (X("rc_adsd"), 1.3)), (3, (X("raw_octuptarra"), 1.7)), (4, (F_OG9, 1.0))),   # 2026-11-09: DSD1, A-DSD (Republic Commando), Octuptarra, OG-9
     "super_heavy_vehicle": lv((None, (F_PROTO, 1.4))),
     # MTT, heavy MTT, droid troop carrier Mk II; Corporate Alliance troop hauler = BF2 MTT
     "armored_troop_transport": lv((None, (F_MTT, 1.0)), (1, (F_MTT, 1.0)), (3, (F_CISMTT, 1.0)), (4, (F_DTRANS, 1.0))),
     "heavy_armored_troop_transport": lv((None, (MTT, 1.15))),
     # HAG (BF2), Octuptarra artillery (C/A artillery), HAG-M, HAML
     "mobile_artillery": lv((None, (HAG, 1.0)), (0, (HAG, 1.0)), (1, (F_CAART, 1.0)), (3, (F_HAGM2, 1.0)), (4, (F_HAML, 1.0))),
-    "mobile_anti_air": lv((None, (F_HAIL, 1.0)), (0, (F_HAIL, 1.0)), (1, (HAIL_RIOT, 1.0))),   # droid AA battery, Octuptarra AA
-    # STAP + old-pattern droid (BF2), STAP + Clone Wars B1 (FotR), STAP + advanced droid (FotR blue STAP), armed STAP (FotR AdvESTAP)
-    "speeder": lv((None, (STAP, 1.5)), (0, (STAP, 1.5)), (1, (F_STAP, 1.5)), (2, (X("blue_stap"), 1.5)), (3, (F_ADVSTAP, 1.2))),
+    "mobile_anti_air": lv((None, (CISFT, 1.0)), (0, (CISFT, 1.0)), (1, (F_GAT, 1.0))),   # user 2026-11-09: GAT Mk I (camo), GAT Mk II (blue)
+    # user 2026-11-09: STAP, advanced (blue) STAP, armed STAP (AdvESTAP), Protodeka
+    "speeder": lv((None, (F_STAP, 1.5)), (0, (F_STAP, 1.5)), (1, (X("blue_stap"), 1.5)), (2, (F_ADVSTAP, 1.2)), (3, (F_PROTO, 1.0))),
 }
 IND = dict(REP, blaster_infantry=lv((None, (OLD, None))), stormtrooper=lv((None, (OLD, None))),
            light_vehicle=lv((None, (LANCE, 0.9)), (0, (LANCE, 0.9)), (1, (LANCE, 1.0)), (2, (LANCE, 1.05)), (3, (LANCE, 1.1)),
@@ -131,17 +135,18 @@ LAAT, HMP, ARC, V19, REPYWING = B("fotr_laat"), B("fotr_hmp"), B("fotr_arc170"),
 # 2026-11-08 (user): the LAAT gunship companies (helicopter_brigade sprite, helicopter_equipment) fly the gunships
 for _d, _m in ((REP, LAAT), (IND, LAAT), (FLT, LAAT), (CIS, HMP)):
     _d["helicopter_brigade"] = lv((None, (_m, 1.0)))
-PLANES = {   # equipment: (Republic, Separatist). Republic side unchanged; Separatist side one model per plane (2026-11-08, CIS names)
-    "laat_equipment": (RM09, HMP), "laati_equipment": (LAAT, X("raw_hmp")),                         # CIS: HMP dropship / HMP gunship
-    "maat_equipment": (LAAT, X("c9979")), "maat_gunship_equipment": (LAAT, X("c9979")),             # C-9979
-    "idt_equipment": (TR_IDT, X("sheathipede")), "idt_gunship_equipment": (TR_IDT, X("sheathipede")),
-    "tie-rp_equipment": (TR_THETA, X("tf_maf")), "tie-rp_gunship_equipment": (TR_THETA, X("tf_maf")),   # Droch-class: no model, TF lander
-    "aal_equipment": (SHUT, X("cis_maf")), "aal_gunship_equipment": (SHUT, X("cis_maf")),               # heavy droid lander
-    "torrent_equipment": (T16, X("vulture")), "z-95_equipment": (V19, X("belb22")), "tie-rb_equipment": (ETA, X("trifighter")),   # T-16, then the V-19 (was the clone Z-95)
-    "tie_fighter_equipment": (TIE, X("ibeam")), "tie-sf_equipment": (TIE, BELB), "v_wing_equipment": (DELTA, X("nantex")),
-    "tie-in_equipment": (VWING, X("raw_ginivex")), "tie-sk_equipment": (DELTA, SCARAB), "tie-vn_equipment": (TIEI, TRI), "tie-ba_equipment": (TIE, SCARAB),
+PLANES = {   # 2026-11-09 user, CIS: Sheathipede, Droch, HMP, C-9979 (+ heavy lander); I-Beam, Vulture, Vulture Mk II (RaW); Sabaoth, Hyena, strike bomber
+    # equipment: (Republic, Separatist). Republic side unchanged; Separatist side one model per plane (2026-11-08, CIS names)
+    "laat_equipment": (RM09, X("sheathipede")), "laati_equipment": (LAAT, X("sheathipede")),                         # CIS: HMP dropship / HMP gunship
+    "maat_equipment": (LAAT, X("cis_maf")), "maat_gunship_equipment": (LAAT, X("cis_maf")),   # user 2026-11-09: heavy droid lander <-> Droch             # C-9979
+    "idt_equipment": (TR_IDT, HMP), "idt_gunship_equipment": (TR_IDT, X("raw_hmp")),
+    "tie-rp_equipment": (TR_THETA, X("c9979")), "tie-rp_gunship_equipment": (TR_THETA, X("c9979")),   # Droch-class: no model, TF lander
+    "aal_equipment": (SHUT, X("droch")), "aal_gunship_equipment": (SHUT, X("droch")),               # heavy droid lander
+    "torrent_equipment": (X("clone_z95"), X("ibeam")), "z-95_equipment": (V19, X("vulture")), "tie-rb_equipment": (ETA, X("trifighter")),   # clone Z-95 (2026-11-09, was the T-16), then the V-19
+    "tie_fighter_equipment": (TIE, X("raw_vulture")), "tie-sf_equipment": (TIE, BELB), "v_wing_equipment": (DELTA, X("nantex")),
+    "tie-in_equipment": (VWING, X("vulture_interceptor")), "tie-sk_equipment": (DELTA, SCARAB), "tie-vn_equipment": (TIEI, X("tie_droid")), "tie-ba_equipment": (TIE, SCARAB),
     "arc-170_equipment": (ARC, X("belb24")), "tie_defender_equipment": (TIEI, BELB),
-    "y-wing_equipment": (REPYWING, X("hyena")), "skipray_equipment": (YWING, X("sabaoth_bomber")), "tie_bomber_equipment": (YWING, X("raw_hyena")),   # BTL-B, then the BTL-A4 (was the GAT-12)
+    "y-wing_equipment": (REPYWING, X("sabaoth_bomber")), "skipray_equipment": (X("ntb630"), X("hyena")), "tie_bomber_equipment": (YWING, X("raw_hyena")),   # BTL-B, then the NTB-630 (2026-11-09, was the BTL-A4)
     "scimitar_equipment": (TIEB, X("raw_droidbomber")),
 }
 # fallbacks the engine may ask for: archetypes, subunits, sprites

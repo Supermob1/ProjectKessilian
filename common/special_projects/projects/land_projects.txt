@@ -18,9 +18,7 @@ sp_land_flamethrower_tank = {
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "No Step Back"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = {
 		FROM = {
@@ -111,6 +109,7 @@ sp_land_flamethrower_tank = {
                                                                                                                                                                                                 
 
 sp_land_military_engineering_vehicles = {
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	specialization = specialization_land
 
 	project_tags = sp_tag_tank
@@ -205,9 +204,7 @@ sp_land_land_cruiser = {
 
 	project_tags = sp_tag_tank
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		if = {
@@ -922,9 +919,7 @@ sp_land_super_heavy_howitzer = {
 
 	project_tags = sp_tag_artillery
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = {
 		FROM = {
@@ -1058,9 +1053,7 @@ sp_land_self_propelled_super_heavy_howitzer = {
 	project_tags = sp_tag_artillery
 
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		sp_land_military_engineering_vehicles
@@ -1186,9 +1179,7 @@ sp_land_super_heavy_railway_gun = {
 
 	project_tags = sp_tag_artillery
 
-	allowed = {
-		has_dlc = "No Step Back"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		FROM = {
@@ -1264,9 +1255,7 @@ sp_land_multi_charge_large_caliber_gun = {
 
 	project_tags = sp_tag_artillery
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		sp_land_super_heavy_howitzer
@@ -2084,9 +2073,7 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 		# }
 	}
 
-	allowed = {
-		has_dlc = "Peace For Our Time"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		FROM = {

@@ -7,9 +7,25 @@ spriteTypes = {
 	spriteType = { name = "GFX_unit_cis_b3_droid_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_stormtrooper_icon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_cis_b3_droid_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_unit_stormtrooper_icon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_cis_b2_program_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_b2_medium.dds" }
-	spriteType = { name = "GFX_cis_droideka_program_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_droideka2_medium.dds" }
-	spriteType = { name = "GFX_cis_b3_program_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_b3_medium.dds" }
+	spriteType = { name = "GFX_cis_droideka_program_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_raw_deka_medium.dds" }
+	spriteType = { name = "GFX_cis_b3_program_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_mow_b3_medium.dds" }
 	spriteType = { name = "GFX_unit_cis_b2_droid_icon_small" texturefile = "gfx/texticons/unit_stormtrooper_icon_small.dds" legacy_lazy_load = no noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_cis_droideka_icon_small" texturefile = "gfx/texticons/unit_stormtrooper_icon_small.dds" legacy_lazy_load = no noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_cis_b3_droid_icon_small" texturefile = "gfx/texticons/unit_stormtrooper_icon_small.dds" legacy_lazy_load = no noOfFrames = 2 }
+	# equipment icons (production / designer), 2026-11-09
+	spriteType = { name = "GFX_cis_b2_equipment_1_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_b2_medium.dds" }
+	spriteType = { name = "GFX_archetype_cis_b2_equipment_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_b2_medium.dds" }
+	spriteType = { name = "GFX_cis_droideka_equipment_1_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_raw_deka_medium.dds" }
+	spriteType = { name = "GFX_archetype_cis_droideka_equipment_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_foc_deka2_medium.dds" }
+	spriteType = { name = "GFX_cis_b3_equipment_1_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_mow_b3_medium.dds" }
+	spriteType = { name = "GFX_archetype_cis_b3_equipment_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_mow_b3_medium.dds" }
+	# IG-227 hailfire special unit (2026-11-09): scout walker counters
+	spriteType = { name = "GFX_unit_cis_hailfire_droid_icon_medium" textureFile = "gfx/interface/counters/divisions_large/unit_scoutwalker_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_cis_hailfire_droid_icon_medium_white" textureFile = "gfx/interface/counters/divisions_small/onmap_unit_scoutwalker_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_cis_hailfire_droid_icon_small" texturefile = "gfx/texticons/unit_scoutwalker_icon_small.dds" legacy_lazy_load = no noOfFrames = 2 }
+	spriteType = { name = "GFX_cis_hailfire_program_medium" texturefile = "gfx/interface/technologies/hod_render/cis_hailfire_medium.dds" }
+	spriteType = { name = "GFX_cis_hailfire_equipment_1_medium" texturefile = "gfx/interface/technologies/hod_render/cis_hailfire_medium.dds" }
+	spriteType = { name = "GFX_archetype_cis_hailfire_equipment_medium" texturefile = "gfx/interface/technologies/hod_render/cis_hailfire_medium.dds" }
+	spriteType = { name = "GFX_cis_droideka_mk2_program_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_foc_deka2_medium.dds" }
+	spriteType = { name = "GFX_cis_droideka_equipment_2_medium" texturefile = "gfx/interface/technologies/hod_render/cis_x_foc_deka2_medium.dds" }
 }

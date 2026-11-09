@@ -2,13 +2,14 @@
 technologies = {
 	cis_b2_program = {
 		enable_subunits = { cis_b2_droid }
-		path = { leads_to_tech = cis_droideka_program research_cost_coeff = 1 }
+		enable_equipments = { cis_b2_equipment_1 }
+		path = { leads_to_tech = cis_b3_program research_cost_coeff = 1 }
 		allow_branch = { OR = { original_tag = CIS original_tag = CMG original_tag = IBC original_tag = TCU original_tag = TDF original_tag = XUC original_tag = ZAL } }   # the Separatists only: hidden for everyone else
 		research_cost = 2
 		start_year = 977
 		folder = {
 			name = swinfantry_folder
-			position = { x = 19 y = 10 }
+			position = { x = 24 y = 0 }
 		}
 		categories = {
 			imperial_tech
@@ -20,13 +21,14 @@ technologies = {
 	}
 	cis_droideka_program = {
 		enable_subunits = { cis_droideka }
-		path = { leads_to_tech = cis_b3_program research_cost_coeff = 1 }
+		enable_equipments = { cis_droideka_equipment_1 }
+		path = { leads_to_tech = cis_droideka_mk2_program research_cost_coeff = 1 }
 		allow_branch = { OR = { original_tag = CIS original_tag = CMG original_tag = IBC original_tag = TCU original_tag = TDF original_tag = XUC original_tag = ZAL } }   # the Separatists only: hidden for everyone else
 		research_cost = 2.5
 		start_year = 979
 		folder = {
 			name = swinfantry_folder
-			position = { x = 19 y = 12 }
+			position = { x = 24 y = 2 }
 		}
 		categories = {
 			imperial_tech
@@ -38,12 +40,47 @@ technologies = {
 	}
 	cis_b3_program = {
 		enable_subunits = { cis_b3_droid }
+		enable_equipments = { cis_b3_equipment_1 }
 		allow_branch = { OR = { original_tag = CIS original_tag = CMG original_tag = IBC original_tag = TCU original_tag = TDF original_tag = XUC original_tag = ZAL } }   # the Separatists only: hidden for everyone else
 		research_cost = 3
 		start_year = 985
 		folder = {
 			name = swinfantry_folder
-			position = { x = 19 y = 14 }
+			position = { x = 28 y = 0 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	cis_hailfire_program = {
+		enable_subunits = { cis_hailfire_droid }
+		enable_equipments = { cis_hailfire_equipment_1 }
+		allow_branch = { OR = { original_tag = CIS original_tag = CMG original_tag = IBC original_tag = TCU original_tag = TDF original_tag = XUC original_tag = ZAL } }   # the Separatists only: hidden for everyone else
+		research_cost = 2
+		start_year = 978
+		folder = {
+			name = swinfantry_folder
+			position = { x = 24 y = 4 }
+		}
+		categories = {
+			imperial_tech
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	cis_droideka_mk2_program = {
+		enable_equipments = { cis_droideka_equipment_2 }
+		allow_branch = { OR = { original_tag = CIS original_tag = CMG original_tag = IBC original_tag = TCU original_tag = TDF original_tag = XUC original_tag = ZAL } }   # the Separatists only: hidden for everyone else
+		research_cost = 2.5
+		start_year = 983
+		folder = {
+			name = swinfantry_folder
+			position = { x = 28 y = 2 }
 		}
 		categories = {
 			imperial_tech

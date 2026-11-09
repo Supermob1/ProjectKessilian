@@ -296,6 +296,35 @@ guiTypes = {
 				format = "UP"
 			}
 
+			gridboxtype = {
+				name = "cis_hailfire_program_tree"
+				position = { x = 340 y = 180}
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+
+			gridboxtype = {
+				name = "cis_droideka_program_tree"
+				position = { x = 340 y = 180}
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+
+			# HOD: Republic-only elite clone techs (common/technologies/hod_rep_special_troopers.txt), same cells as the CIS ones
+			gridboxtype = {
+				name = "rep_arc_program_tree"
+				position = { x = 340 y = 180}
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+
+			gridboxtype = {
+				name = "rep_commando_program_tree"
+				position = { x = 340 y = 180}
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+
 
 
 		}
@@ -4447,13 +4476,6 @@ guiTypes = {
 				format = "UP"
 			}
 
-			gridboxtype = {
-				name = "experimental_rockets_tree"
-				position = { x = 540 y = 0 }
-				size = { width = 400 height = 400 }
-				slotsize = { width = 70 height = 70 }
-				format = "UP"
-			}
 		}
 
 
@@ -4805,13 +4827,6 @@ guiTypes = {
 				format = "UP"
 			}
 
-			gridboxtype = {
-				name = "experimental_rockets_tree"
-				position = { x = 540 y = 0 }
-				size = { width = 400 height = 400 }
-				slotsize = { width = 70 height = 70 }
-				format = "UP"
-			}
 		}
 
 		containerWindowType = {
@@ -5490,17 +5505,6 @@ guiTypes = {
 					Orientation = "UPPER_LEFT"
 				}
 
-				instantTextBoxType = {
-					name = "experimental_rockets_subtitle"
-					position = { x = 1200 y = 230 }
-					font = "hoi_22tech"
-					borderSize = {x = 0 y = 4}
-					text = "TITLE_EXP_ROCKETS_SUBTITLE"
-					maxWidth = 200
-					maxHeight = 122
-					format = center
-					Orientation = "UPPER_LEFT"
-				}
 
 				instantTextBoxType = {
 					name = "atomic_research_subtitle"
@@ -5539,37 +5543,9 @@ guiTypes = {
 			}
 
 
-			gridboxtype = {
-				name = "experimental_rockets_tree"
-				position = { x=1050 y=172 }
-				size = { width = 480 height = 650 }
-				slotsize = { width=60 height= 60 }
-				format = "UP"
-			}
 
-			#gridboxtype = {
-			#	name = "sp_rockets_improved_guidance_tree" 
-			#	position = { x=980 y=172 }
-			#	size = { width = 480 height = 650 }
-			#	slotsize = { width=60 height= 60 }
-			#	format = "UP"
-			#}
 
-			#gridboxtype = {
-			#	name = "sp_rockets_rocket_bomber_tree" 
-			#	position = { x=980 y=172 }
-			#	size = { width = 480 height = 650 }
-			#	slotsize = { width=60 height= 60 }
-			#	format = "UP"
-			#} 
 
-			#gridboxtype = {
-			#	name = "sp_rockets_glide_bombs_tree" 
-			#	position = { x=980 y=172 }
-			#	size = { width = 480 height = 650 }
-			#	slotsize = { width=60 height= 60 }
-			#	format = "UP"
-			#}  
 
 			gridboxtype = {
 				name = "atomic_research_tree"
@@ -5599,49 +5575,49 @@ guiTypes = {
 			}
 			buttonType = {
 				name = "swsupport_folder_tab"
-				position = { x = 111 y = 0 }
+				position = { x = 645 y = 0 }
 				quadTextureSprite = "GFX_swsupport_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_support
 			}
 			buttonType = {
 				name = "swarmour_folder_tab"
-				position = { x = 200 y = 0 }
+				position = { x = 111 y = 0 }
 				quadTextureSprite = "GFX_swarmour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
 			}
 			buttonType = {
 				name = "swartillery_folder_tab"
-				position = { x = 289 y = 0 }
+				position = { x = 734 y = 0 }
 				quadTextureSprite = "GFX_swartillery_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_artillery
 			}
 			buttonType = {
 				name = "swair_folder_tab"
-				position = { x = 378 y = 0 }
+				position = { x = 200 y = 0 }
 				quadTextureSprite = "GFX_swair_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_air
 			}
 			buttonType = {
 				name = "swnaval_folder_tab"
-				position = { x = 467 y = 0 }
+				position = { x = 289 y = 0 }
 				quadTextureSprite = "GFX_swnaval_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "swnaval_support_folder_tab"
-				position = { x = 556 y = 0 }
+				position = { x = 378 y = 0 }
 				quadTextureSprite = "GFX_swnaval_support_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "imperial_folder_tab"
-				position = { x = 645 y = 0 }
+				position = { x = 823 y = 0 }
 				quadTextureSprite = "GFX_imperial_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_engineering
@@ -5650,7 +5626,7 @@ guiTypes = {
 			# === Vanilla tabs (shifted right by 712 = 8 × 89 to make room for Empire tabs) ===
 			buttonType = {
 				name = "infantry_folder_tab"
-				position = { x = 734 y = 0 }
+				position = { x = 912 y = 0 }
 				quadTextureSprite = "GFX_infantry_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_infantry
@@ -5659,21 +5635,21 @@ guiTypes = {
 			iconType = {
 				name = "highlight_infantry_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=734 y=-5}
+				position = { x = 912 y = -5 }
 				hide = yes
 				alwaystransparent = yes
 			}
 
 			buttonType = {
 				name = "support_folder_tab"
-				position = { x = 823 y = 0 }
+				position = { x = 1001 y = 0 }
 				quadTextureSprite = "GFX_support_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_support
 			}
 			buttonType = {
 				name = "armour_folder_tab"
-				position = { x = 912 y = 0 }
+				position = { x = 1090 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
@@ -5681,7 +5657,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "nsb_armour_folder_tab"
-				position = { x = 912 y = 0 }
+				position = { x = 1090 y = 0 }
 				quadTextureSprite = "GFX_armour_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
@@ -5689,7 +5665,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "artillery_folder_tab"
-				position = { x = 1001 y = 0 }
+				position = { x = 1179 y = 0 }
 				quadTextureSprite = "GFX_artillery_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_artillery
@@ -5697,41 +5673,41 @@ guiTypes = {
 
 			buttonType = {
 				name = "naval_folder_tab"
-				position = { x = 1090 y = 0 }
+				position = { x = 1268 y = 0 }
 				quadTextureSprite = "GFX_naval_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "mtgnavalfolder_tab"
-				position = { x = 1090 y = 0 }
+				position = { x = 1268 y = 0 }
 				quadTextureSprite = "GFX_naval_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "mtgnavalsupportfolder_tab"
-				position = { x = 1179 y = 0 }
+				position = { x = 1357 y = 0 }
 				quadTextureSprite = "GFX_naval_support_tab"
 				frame = 1
 				clicksound = ui_research_tab_naval
 			}
 			buttonType = {
 				name = "air_techs_folder_tab"
-				position = { x = 1268 y = 0 }
+				position = { x = 1446 y = 0 }
 				quadTextureSprite = "GFX_air_techs_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_air
 			}
 			buttonType = {
 				name = "bba_air_techs_folder_tab"
-				position = { x = 1268 y = 0 }
+				position = { x = 1446 y = 0 }
 				quadTextureSprite = "GFX_air_techs_folder_tab"
 				frame = 1
 				clicksound = ui_research_tab_air
 			}
 			buttonType = {
-				position = { x = 1357 y = 0 }
+				position = { x = 467 y = 0 }
 				name = "electronics_folder_tab"
 				quadTextureSprite = "GFX_techtree_engineering_tab"
 				frame = 1
@@ -5741,13 +5717,13 @@ guiTypes = {
 			iconType = {
 				name = "highlight_engineering_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=1357 y=0}
+				position = { x = 467 y = 0 }
 				hide = yes
 				alwaystransparent = yes
 			}
 
 			buttonType = {
-				position = { x = 1446 y = 0 }
+				position = { x = 556 y = 0 }
 				name = "industry_folder_tab"
 				quadTextureSprite = "GFX_industry_folder_tab"
 				frame = 1
@@ -5757,7 +5733,7 @@ guiTypes = {
 			iconType = {
 				name = "highlight_industry_folder"
 				spriteType = "GFX_tutorial_research_folder_icon_glow"
-				position = { x=1446 y=0}
+				position = { x = 556 y = 0 }
 				hide = yes
 				alwaystransparent = yes
 			}

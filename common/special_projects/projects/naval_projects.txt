@@ -22,9 +22,7 @@ sp_naval_cruiser_submarine = {
 
 	complexity = sp_complexity.medium
 	prototype_time = sp_time.prototype.medium 
-	allowed = {
-		#FREE PROJECT
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		
@@ -181,9 +179,7 @@ sp_naval_fleet_submarine = {
 		base = 1
 	}
 
-	allowed = {
-		#FREE PROJECT
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	complexity = sp_complexity.medium
 	prototype_time = sp_time.prototype.long
@@ -360,9 +356,7 @@ sp_naval_nuclear_submarine = {
 
 	complexity = sp_complexity.insane
 	prototype_time = sp_time.prototype.long	
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		sp_naval_fleet_submarine
@@ -542,9 +536,7 @@ sp_naval_rocket_launching_submarine = {
 	}	
 	complexity = sp_complexity.medium 
 	prototype_time = sp_time.prototype.long
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		sp_naval_fleet_submarine
@@ -724,9 +716,7 @@ sp_naval_nuclear_missile_submarine = {
 	}	
 	complexity = sp_complexity.large 
 	prototype_time = sp_time.prototype.very_long 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	special_project_parent = {
 		sp_naval_nuclear_submarine
@@ -895,12 +885,7 @@ sp_naval_nuclear_torpedo = {
 	complexity = sp_complexity.large
 	prototype_time = sp_time.prototype.long
 
-	allowed = {
-		AND = {
-			has_dlc= "Gotterdammerung"
-			has_dlc = "Man the Guns"
-		}
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = {
 		FROM = { always = no }
@@ -1018,9 +1003,7 @@ sp_naval_midget_submarine = {
 		base = 1
 	}
 
-	allowed = {
-		#FREE
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = { 
 		FROM = {
@@ -1217,9 +1200,7 @@ sp_naval_aip_engine = {
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = { 
 		FROM = {
@@ -1380,9 +1361,7 @@ sp_naval_anechoic_tiles = {
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = { 
 		FROM = {
@@ -1537,9 +1516,7 @@ specialization = specialization_naval
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "No Compromise, No Surrender"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		FROM = {
@@ -1693,9 +1670,7 @@ sp_naval_torpedo_cruiser = {
 		base = 1
 	}
 
-	allowed = {
-		#FREE
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	available = {
 		FROM = {
 			if = {
@@ -1882,9 +1857,7 @@ sp_naval_super_heavy_battleship = {
 		}
 	}
 
-	allowed = {
-		#FREE
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		FROM = {
@@ -2205,9 +2178,7 @@ sp_naval_modern_battleship = {
 		base = 1
 	}
 
-	allowed = {
-	has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = {
 		FROM = {
@@ -2520,9 +2491,7 @@ sp_naval_modern_carrier = {
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = {
 		FROM = {
@@ -2830,9 +2799,7 @@ sp_naval_ice_carrier = {
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	
 	available = {
 				FROM = {
@@ -3171,9 +3138,7 @@ sp_naval_proximity_fuze = {
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		FROM = {
@@ -3280,9 +3245,7 @@ sp_naval_support_ships = {
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "No Compromise, No Surrender"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		FROM = {
@@ -3473,9 +3436,7 @@ specialization = specialization_naval
 		base = 1
 	}
 
-	allowed = {
-		has_dlc = "No Compromise, No Surrender"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 
 	available = {
 		FROM = {

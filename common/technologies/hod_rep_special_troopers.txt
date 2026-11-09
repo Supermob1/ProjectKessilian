@@ -1,0 +1,78 @@
+# HOD 2026-11-09 (user): Republic-only infantry techs for the elite clone battalions (ARC troopers, clone commandos) and their
+# Imperial successors. Same cells as the CIS special droids (hod_cis_special_droids.txt): allow_branch hides the other side.
+technologies = {
+	rep_arc_program = {
+		enable_subunits = { rep_arc_trooper }
+		enable_equipments = { rep_arc_equipment_1 }
+		path = { leads_to_tech = rep_shock_program research_cost_coeff = 1 }
+		allow_branch = { OR = { original_tag = REP original_tag = ALD } }   # the Republic only: hidden for everyone else
+		research_cost = 2
+		start_year = 977
+		folder = {
+			name = swinfantry_folder
+			position = { x = 24 y = 0 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	rep_commando_program = {
+		enable_subunits = { rep_clone_commando }
+		enable_equipments = { rep_commando_equipment_1 }
+		path = { leads_to_tech = rep_imperial_commando_program research_cost_coeff = 1 }
+		allow_branch = { OR = { original_tag = REP original_tag = ALD } }
+		research_cost = 2.5
+		start_year = 979
+		folder = {
+			name = swinfantry_folder
+			position = { x = 24 y = 2 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	rep_shock_program = {
+		enable_subunits = { rep_shock_trooper }
+		enable_equipments = { rep_shock_equipment_1 }
+		allow_branch = { OR = { original_tag = REP original_tag = ALD } }
+		research_cost = 3
+		start_year = 985
+		folder = {
+			name = swinfantry_folder
+			position = { x = 28 y = 0 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	rep_imperial_commando_program = {
+		enable_subunits = { rep_imperial_commando }
+		enable_equipments = { rep_imperial_commando_equipment_1 }
+		allow_branch = { OR = { original_tag = REP original_tag = ALD } }
+		research_cost = 3
+		start_year = 985
+		folder = {
+			name = swinfantry_folder
+			position = { x = 28 y = 2 }
+		}
+		categories = {
+			imperial_tech
+			imperial_weapons_tech
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+}

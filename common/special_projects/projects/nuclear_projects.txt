@@ -416,9 +416,7 @@ sp_nuclear_engines = {
 	special_project_parent = {
 		sp_commercial_nuclear_reactor
 	}
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	available = { 
 		
 	}
@@ -471,9 +469,7 @@ sp_nuclear_bomb = {
 	special_project_parent = {
 		sp_nuclear_reactor
 	}
-	allowed = {
-		
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	available = { 
 		
 	}
@@ -700,9 +696,7 @@ sp_thermo_nuclear_bomb = {
 	special_project_parent = {
 		sp_nuclear_bomb
 	}
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	available = { 
 		
 	}
@@ -803,9 +797,7 @@ sp_nuclear_warheads = {
 		# Country must have Medium range ballistic missiles to be able to start this project
 		sp_rockets_medium_range_ballistic_missile
 	}
-	allowed = {
-		has_dlc = "Gotterdammerung"
-	}
+	allowed = { always = no }   # HOD: WW2 project, not used in the Star Wars setting
 	available = {
 	}
 	

@@ -138,10 +138,11 @@ SPECS["hod_imp_walk_atat"] = dict(src=BF2A + "/imp_walk_atat.glb", mode="bake", 
                                   keep=r"(bone_\w+|aimer_\w+|barrel_[LR]cannon)$",
                                   gun="barrel_Lcannon", forward="aimer_head", back="bone_root", anims=_WALK)
 # AT-AT prototype: SWBF3 Clone Wars AT-AT (BF2 community port, WIP/3d/swbf3 clone wars atat) walking with the BF2 AT-AT clips
-SPECS["hod_cw_atat"] = dict(SPECS["hod_imp_walk_atat"], src=BF2A + "/swbf3_cw_atat.glb", height=10.5)
+SPECS["hod_cw_atat"] = dict(SPECS["hod_imp_walk_atat"], src=BF2A + "/swbf3_cw_atat.glb", height=10.5,
+                          tint=(128, 130, 134), tint_dark=(78, 80, 86), tint_cut=0.75)   # user 2026-11-09: gunmetal like the Men of War AT-AT Rep
 # New Order Mod (EaW) free assets, CC BY-NC-SA 2.0, model/texture Du}{, rigging/edits Sudno (alo_to_glb.py, static):
 # T4-B heavy tank = the heavy repulsor tank slot, T-16 Skyhopper = first Republic fighter (2026-11-08, user)
-SPECS["hod_t4b"] = dict(src=WIP + "/3d/_glb/eaw/rv_t4btank.glb", mode="glb_static", tris=6000, tex_px=1024, length=6.5)
+SPECS["hod_t4b"] = dict(src=WIP + "/3d/_glb/eaw/rv_t4btank.glb", mode="glb_static", tris=6000, tex_px=1024, length=6.5, turrets=[r"Turret_00|Barrel_0"])
 SPECS["hod_t16"] = dict(src=WIP + "/3d/_glb/eaw/reb_t16.glb", mode="glb_static", tris=4000, tex_px=1024, length=3.0, plane=True)
 # Thrawn's Revenge 3.3 (EaW mod, user's copy C:/Users/steve/Desktop/ThrawnsRevenge33; permission needed before release, see
 # CREDITS.md): Rebels-era AT-RT (animated, 979 light walker tech), K79-S80 troop transport, Imperial drop transport, Theta shuttle
@@ -151,8 +152,8 @@ SPECS["hod_tr_atrt"] = dict(src=RAW + "/at-rt.glb", mode="bake", height=6.0, tri
                             gun="Barrel_00", forward="Barrel_00", back="centre", anims=_RAW_A("Idle_00", "Move_00"))
 SPECS["hod_tr_itt"] = dict(src=TR + "/imperialtrooptransport.glb", mode="glb_static", tris=5000, tex_px=1024, length=5.5, hover=True)
 SPECS["hod_tr_idt"] = dict(src=TR + "/imperial_dropship_transport.glb", mode="glb_static", tris=5000, tex_px=1024, length=4.5, plane=True)
-SPECS["hod_tr_ataa"] = dict(src=TR + "/ev_at-aa.glb", mode="glb_static", tris=5000, tex_px=1024, height=3.5)   # AT-AA (vanilla EaW unit; texture = TR EV_AT-AA_D1)
-SPECS["hod_tr_spmat"] = dict(src=TR + "/ev_spmat.glb", mode="glb_static", tris=6000, tex_px=1024, length=7.5)   # SPMA-T (2026-11-08)
+SPECS["hod_tr_ataa"] = dict(src=WIP + "/3d/_glb/eaw_vanilla/ev_at-aa.glb", mode="glb_static", tris=5000, tex_px=1024, height=3.5, legs=dict(n=4, top=0.4, swing=12))   # 2026-11-09 procedural legs: its EaW clips are the old base-EaW .ala format the importer cannot read. AT-AA (vanilla EaW EV_AT-AA.ALO + its real EV_AT-AA.DDS from the game .meg, 2026-11-09; was TR + damage texture)
+SPECS["hod_tr_spmat"] = dict(src=TR + "/ev_spmat.glb", mode="glb_static", tris=6000, tex_px=1024, length=7.5, legs=dict(n=6, top=0.35, swing=10))   # SPMA-T (2026-11-08), procedural legs 2026-11-09
 SPECS["hod_tr_theta"] = dict(src=TR + "/theta-class_t-2c_shuttle_land.glb", mode="glb_static", tris=5000, tex_px=1024, length=4.5, plane=True)
 # 2026-11-08 (user, WIP/3d/b; EaW mod assets, credits in CREDITS.md): AT-ACT (Star Wars Pinball model, rig Warper243, animated),
 # AT-TC troop carrier (kubli), Imperial heavy repulsortank (kubli), RM-09 shuttle. alo_to_glb.py from WIP/3d/b/_staged (EaW MODELS/TEXTURES layout)
@@ -160,7 +161,7 @@ EAW2 = WIP + "/3d/_glb/eaw2"
 SPECS["hod_atact"] = dict(src=RAW + "/ev_imperial_construction_atat_walker.glb", mode="bake", height=12.0, tris=7000, protect=r"Barrel|Turret",
                           keep=r"(B_Body|B_(Hip|Thigh|Shin|Leg|Foot|Toes)_[LR]0\d|B_Turret(_0\d)?|B_Head|B_Barrel_0\d)$",
                           gun="B_Barrel_00", forward="B_Head", back="B_Body", anims=_RAW_A("idle_00", "move_00"))
-SPECS["hod_attc"] = dict(src=EAW2 + "/ev_at_tc.glb", mode="glb_static", tris=6000, tex_px=1024, length=6.5)
+SPECS["hod_attc"] = dict(src=EAW2 + "/ev_at_tc.glb", mode="glb_static", tris=6000, tex_px=1024, length=6.5, turrets=[r"(Turret|Barrel)_L", r"(Turret|Barrel)_R"])
 SPECS["hod_ihrt"] = dict(src=EAW2 + "/ev_heavy_repulsortank.glb", mode="glb_static", tris=7000, tex_px=1024, length=6.5, hover=True)
 SPECS["hod_rm09"] = dict(src=EAW2 + "/rv_rm-09_transport.glb", mode="glb_static", tris=4000, tex_px=1024, length=4.5, plane=True)
 # Fall of the Republic 1.4 (EaW mod, user's copy C:/Users/steve/Desktop/FotR14; permission/credits: see CREDITS.md):
@@ -170,15 +171,17 @@ SPECS["hod_fotr_atot"] = dict(src=RAW + "/rep_atot.glb", mode="bake", length=8.0
                               gun="GunF.L", forward="Head", back="Body", anims=_RAW_A("Idle_00", "Move_00"))
 # Fall of the Republic 1.4 batch (2026-11-08, user: "convert them all" except heavy transports). Static: alo_to_glb.py -> 3d/_glb/fotr
 FOTR = WIP + "/3d/_glb/fotr"
-for _n, _f, _kw in (("av7", "av7_antivehicle_cannon", dict(length=5.0)), ("utaa", "rep_utaa", dict(length=7.0)),
+# glb_static turrets (2026-11-09): procedural turret bones, the main gun and the two artillery tops of the super tanks
+_SUPER = [r"^(Turret|Barrel)_baked", r"(Turret|Barrel)\.002", r"ArtilleryTop_low_baked", r"ArtilleryTop_low\.002"]
+for _n, _f, _kw in (("av7", "av7_antivehicle_cannon", dict(length=5.0, turrets=[r"barrel|console|body"])), ("utaa", "rep_utaa", dict(length=7.0, turrets=[r"UTAA\.00[23]"])),
                     ("sphat", "spha-t", dict(length=9.0)), ("aat", "armored_assault_tank", dict(length=6.5, hover=True)),
-                    ("persuader", "cis_persuadertank", dict(length=7.0)), ("hagm", "cis_hagm", dict(length=6.0, hover=True)),
-                    ("supertank", "tradefed_super_tank", dict(length=8.0)), ("gat", "cis_gat", dict(length=5.0, hover=True)),
+                    ("persuader", "cis_persuadertank", dict(length=7.0)), ("hagm", "cis_hagm", dict(length=6.0, hover=True)),   # persuader: no turret, its top is the drive wheel
+                    ("supertank", "tradefed_super_tank", dict(length=8.0, turrets=_SUPER)), ("gat", "cis_gat", dict(length=5.0, hover=True)),
                     ("hailfire", "hailfire", dict(length=5.0)),
                     ("v19", "pa_torrent", dict(length=3.0, plane=True)), ("btlb", "btl-b_y-wing", dict(length=4.0, plane=True)),
                     ("arc170", "arc-170_starfighter", dict(length=4.0, plane=True)), ("laat", "low_altitude_assault_transport", dict(length=4.5, plane=True)),
                     ("hmp", "hmp_lander", dict(length=4.5, plane=True)),
-                    ("utat", "unstable_terrain_artillery_transport", dict(length=7.5))):   # UT-AT artillery (2026-11-08)
+                    ("utat", "unstable_terrain_artillery_transport", dict(length=7.5, turrets=["mount"]))):   # UT-AT artillery (2026-11-08)
     SPECS["hod_fotr_" + _n] = dict(src=f"{FOTR}/{_f}.glb", mode="glb_static", tris=6000, tex_px=1024, **_kw)
 # animated (alo_to_glb.py --anim -> raw_anim)
 # SPHA: body + its SPHA-T turbolaser part on Attach_00 (FotR HP_SPHAT_Main): --anim raw_anim Self_Propelled_Heavy_Artillery.alo+Attach_00=SPHA-T.alo, then fix_spha_gun.py (gun on the hull top)
@@ -195,9 +198,9 @@ SPECS["hod_fotr_og9"] = dict(src=RAW + "/cis_og-9_homing_spider_droid.glb", mode
                              keep=r"((Hip|Thigh|Calf|Foot)_[\w.]+|Attach_0\d)$", gun="Attach_00", forward="Hip_FR.R", back="Hip_BR.R",
                              anims=_RAW_A("idle_00", "move_00"))
 # 2026-11-08 (user: "the CIS are a mess"): Separatist set from Fall of the Republic 1.4 (permission needed, see CREDITS.md)
-for _n, _f, _kw in (("cis_supertank2", "confederate_super_tank", dict(length=8.0)),   # +Attach_00/01/02 = Top/Left/Right turrets
-                    ("cis_protodeka", "cis_protodeka", dict(length=9.0)), ("cis_haml", "cis_haml", dict(length=6.0, hover=True)),
-                    ("cis_ca_artillery", "cis_ca_artillery", dict(length=7.0)), ("cis_advestap", "cis_advestap", dict(height=4.5, hover=True)),
+for _n, _f, _kw in (("cis_supertank2", "confederate_super_tank", dict(length=8.0, turrets=_SUPER)),   # +Attach_00/01/02 = Top/Left/Right turrets
+                    ("cis_protodeka", "cis_protodeka", dict(length=9.0, hover=True)), ("cis_haml", "cis_haml", dict(length=6.0, hover=True)),
+                    ("cis_ca_artillery", "cis_ca_artillery", dict(length=7.0, turrets=[0.68])), ("cis_advestap", "cis_advestap", dict(height=4.5, hover=True)),
                     ("cis_stap", "cis_stap", dict(height=4.5, hover=True)), ("cis_transport", "cis_transport_land", dict(length=8.0, hover=True))):
     SPECS["hod_fotr_" + _n] = dict(src=f"{FOTR}/{_f}.glb", mode="glb_static", tris=6000, tex_px=1024, **_kw)
 # MTTs (2026-11-08, user: "the MTT is open"): rigged, posed on the Idle clip = rack stowed, hatches shut; the 30k-face droid
@@ -218,6 +221,10 @@ SPECS["hod_fotr_cis_hagm"] = dict(src=RAW + "/cis_hagm.glb", mode="bake", length
 SPECS["hod_fotr_cis_tridroid"] = dict(src=RAW + "/cis_tridroid.glb", mode="bake", height=7.0, tris=6000,
                                       keep=r"(centre|Head|MuzzleA_0\d|(pelvis|hip|thigh|calf|foot)\d)$",
                                       gun="MuzzleA_00", forward="MuzzleA_00", back="centre", anims=_RAW_A("idle_00", "move_00"))
+# 2026-11-09: hailfire animated (FotR hailfire.alo + its idle / move clips; was static)
+SPECS["hod_fotr_hailfire"] = dict(src=RAW + "/hailfire.glb", mode="bake", length=5.0, tris=6000, drop=r"Icosphere",
+                                  keep=r"(hull|wheel_[lr]|MuzzleA_00|MuzzleB_00)$", gun="MuzzleA_00", forward="MuzzleA_00", back="hull",
+                                  anims=_RAW_A("idle_00", "Move_00"))
 _DROID = r"(Pelvis|Chest|Neck|Head|Backpack|B_Attach_Gun|MuzzleA_00|(Shoulder|Bicep|Forearm|Hand|Hip|Thigh|Calf|Foot)\.[LR])$"
 for _n, _f, _h in (("cis_b1", "b1_battledroid", 6.2), ("cis_b2", "cis_b2_sbd", 6.8), ("cis_bx", "bx_commando_droid", 6.4)):
     SPECS["hod_fotr_" + _n] = dict(src=f"{RAW}/{_f}.glb", mode="bake", height=_h, tris=4000, keep=_DROID, infantry=True,
@@ -240,6 +247,11 @@ for _n, _f, _kw in (("cis_maf", f"{FOTR}/cis_maf", dict(length=4.5, plane=True))
 SPECS["hod_x_droideka"] = dict(src=RAW + "/ui_deka.glb", mode="bake", height=5.5, tris=4000, drop=r"Sphere", norm_action="IDLE_00",   # Sphere02 = shield bubble
                                keep=r"(?!IK Chain|Point01|MuzzleA_0\d_Flash|.*\.\d{3}$)[\w ]+$",
                                gun="MuzzleA_00", forward="MuzzleA_00", back="Dummy01", anims=_RAW_A("IDLE_00", "MOVE_00", "ATTACKIDLE_00"))
+# Droideka Mk II (2026-11-09, user): Forces of Corruption UI_DROIDEKA (scorpion tail gun), from corruption/Data/models.meg
+# (eaw_meg.py) + Patch.meg UI_DROIDEKA.DDS, alo_to_glb.py --anim
+SPECS["hod_x_foc_deka2"] = dict(src=RAW + "/ui_droideka.glb", mode="bake", height=5.5, tris=4000, drop=r"(Sphere|Icosphere|collision)", norm_action="ATTACKIDLE_00",
+                                keep=r"(?!Camera|collision|Sphere01|p_droideka|H$|.*\.\d{3}$)[\w ]+$",
+                                gun="MuzzleA_00", forward="MuzzleA_00", back="b_hip", anims=_RAW_A("ATTACKIDLE_00", "WALK_00", "ATTACK_00"))   # IDLE_00 = rolled-up ball
 SPECS["hod_x_raw_dwarf"] = dict(src=RAW + "/sev_dwarf_spider.glb", mode="bake", height=4.0, tris=4000,
                                 keep=r"(B_body|B_Base|B_(Thigh|Shin|Foot|Toes)_[LR][RF]|MuzzleA_00)$",
                                 gun="MuzzleA_00", forward="MuzzleA_00", back="B_body", anims=_RAW_A("idle_00", "move_00"))
@@ -249,8 +261,57 @@ SPECS["hod_x_raw_crab"] = dict(src=RAW + "/sev_crabdroid.glb", mode="bake", leng
 # 2026-11-08 CIS round 3 (user): old-pattern B1 (E-5), Republic Commando B1 (E-5s), hypothetical B3 (CIS special unit: FotR's black
 # shoulder-launcher B2, cis_b2_sbd_ptl, on the B2 clips, scaled up), Espo walker (light walker), blue STAP (advanced droid rider), I-beam fighter, Sabaoth bomber
 for _n, _f, _kw in (("blue_stap", f"{FOTR}/cis_blue_stap", dict(height=4.5, hover=True)), ("ibeam", f"{FOTR}/if_i_beam_fighter", dict(length=3.2, plane=True)),
-                    ("sabaoth_bomber", f"{FOTR}/sabaoth_bomber", dict(length=4.2, plane=True))):
+                    ("sabaoth_bomber", f"{FOTR}/sabaoth_bomber", dict(length=4.2, plane=True)),
+                    ("raw_aat_blue", f"{RAWS}/sev_aat_blue", dict(length=6.5, hover=True)),
+                    ("clone_z95", f"{FOTR}/rep_clone_z95", dict(length=3.2, plane=True)), ("ntb630", f"{FOTR}/rep_ntb", dict(length=4.6, plane=True))):   # 2026-11-09 user: REP T-16 -> clone Z-95, BTL-A4 -> NTB-630   # 2026-11-09: CIS-colour AAT (RaW), hover tank 2
     SPECS["hod_x_" + _n] = dict(src=_f + ".glb", mode="glb_static", tris=5000, tex_px=1024, **_kw)
+# Imperial-service AAT (user ref: green camo, rust): the FotR AAT repainted by camo() in textures()
+SPECS["hod_x_imp_aat"] = dict(SPECS["hod_fotr_aat"], camo=True)
+# Vulture Interceptor (GMod workshop "[LVS] Vulture Interceptor", cl_peregrine.mdl via source_mdl_to_obj.py; facing per model: the TIE droid and A-DSD needed yaw=-90)
+SPECS["hod_x_vulture_interceptor"] = dict(src=WIP + "/3d/_glb/gmod/cis_vulture_interceptor.glb", mode="glb_static", tris=5000, tex_px=1024, length=3.0, plane=True, yaw=90, gain=1.5)
+# Droid TIE (GMod workshop 1655057679 "[LFS] Mega Ship Pack", sfp_tiedroid.mdl via source_mdl_to_obj.py): CIS droid interceptor, 2026-11-09
+SPECS["hod_x_tie_droid"] = dict(src=WIP + "/3d/_glb/gmod/cis_tie_droid.glb", mode="glb_static", tris=5000, tex_px=1024, length=3.2, plane=True, yaw=-90, gain=2.0,
+                                tint=(112, 120, 136), tint_dark=(58, 92, 168), tint_cut=0.6,   # CIS repaint (user 2026-11-09): blue-grey hull, Separatist-blue panels
+                                decal=WIP + "/3d/_glb/gmod/cis_tie_droid_decal.png")   # CIS emblem on the pod top: uv_decal.py sfp_tiedroid.obj OUT 1024 -64.5 0 22 100
+# A-DSD (Star Wars: Republic Commando, Droid.ukx DwarfSpiderDroid + DroidTextures.utx, own UE2 reader rc_export.py; static, procedural legs)
+SPECS["hod_x_rc_adsd"] = dict(src=WIP + "/3d/_glb/rc/rc_adsd.glb", mode="glb_static", tris=4000, tex_px=1024, height=5.0, yaw=-90, gain=1.4,
+                              legs=dict(n=4, top=0.45, swing=12))
+# Scorpenek annihilator droid stand-in (user 2026-11-09, light walker tech 4): no Scorpenek model exists in any source (FotR's own
+# campaign uses a droideka for them too), so the Republic Commando droideka (Droid.ukx Droideka, deployed bind pose), big and gunmetal
+SPECS["hod_x_rc_scorpenek"] = dict(src=WIP + "/3d/_glb/rc/rc_droideka.glb", mode="glb_static", tris=4000, tex_px=1024, height=7.5, yaw=-90,
+                                   tint=(116, 118, 126), legs=dict(n=3, top=0.4, swing=10))
+# user 2026-11-09 (full Republic at War, workshop 1129810972): Scorpenek (light walker 4, replaces the RC stand-in),
+# Octuptarra in CIS blue/white (SeV_Octuptarra_Rocket, heavy walker 3), blue-grey Confederate AAT (SeV_AAT_CIS, hover tank 2)
+SPECS["hod_x_raw_scorpenek"] = dict(src=RAW + "/sev_scorpenek.glb", mode="bake", height=7.5, tris=5000, drop=r"(Sphere|Icosphere|COL)",
+                                    keep=r"(Body|b_barrel_00|Eyecap|cannon_0\d|muzzleA_0\d|(Leg|Joint|Shin|foot)_(FR|FL|BR|BL))$",
+                                    gun="muzzleA_00", forward="muzzleA_00", back="Body", anims=_RAW_A("idle_00", "move_00", "attack_00"))
+SPECS["hod_x_raw_octuptarra"] = dict(src=RAW + "/sev_octuptarra_rocket.glb", mode="bake", height=7.0, tris=6000, drop=r"Icosphere",
+                                     keep=r"(Body|Head|GUNS|Barrel|MuzzleA_00|MuzzleB_00|(Hip|Leg|Shin|New_Foot)_0\d)$",
+                                     gun="MuzzleA_00", forward="MuzzleA_00", back="Body", anims=_RAW_A("idle_00", "Move_00", "attack_00"))
+SPECS["hod_x_raw_aat_cis"] = dict(src=RAWS + "/sev_aat_cis.glb", mode="glb_static", tris=5000, tex_px=1024, length=6.5, hover=True)
+# TIE Mauler (vanilla EaW EV_TIECRAWLER.ALO = the game's "TIE Mauler"), hover tank 3 (crawler tech), Confederate blue-grey/white repaint
+SPECS["hod_x_tie_mauler"] = dict(src=RAWS + "/ev_tiecrawler.glb", mode="glb_static", tris=5000, tex_px=1024, length=5.5,
+                                 tint=(178, 184, 196), tint_dark=(58, 92, 168), tint_cut=0.7)
+# Umbaran Mobile Heavy Cannon (user 2026-11-09: light walker tech 3, replaces the Class I): Men of War AS2 mod "ASV Star Wars"
+# (workshop 244450/2608842652, usw_vehicles.pak con umbaran_hmc via mow_ply.py; static, procedural six legs) - PERMISSION NEEDED
+SPECS["hod_x_umbaran_hmc"] = dict(src=WIP + "/3d/_glb/mow/con_umbaran_hmc.glb", mode="glb_static", yaw=-90, tris=5000, tex_px=1024, height=5.0,
+                                  legs=dict(n=6, top=0.35, swing=10))
+# user 2026-11-09, more from the Men of War "ASV Star Wars" mod (mow_ply.py, static, procedural legs) - PERMISSION NEEDED:
+# B3 (CIS special), Scorpenek (light walker 4), Umbaran hover tank (hover tank 3, replaces the TIE Mauler);
+# Republic: clone hover tank (heavy repulsortank slot), AT-AT Rep (AT-AT prototype slot). Men of War models face +X: yaw=-90 (turns +X to the -Y nose)
+_MOW = WIP + "/3d/_glb/mow/"
+SPECS["hod_x_mow_b3"] = dict(src=_MOW + "con_b3_droid.glb", mode="glb_static", yaw=-90, tris=45000, tex_px=1024, height=8.5, gain=1.4, legs=dict(n=2, top=0.45, swing=14))
+SPECS["hod_x_mow_scorpenek"] = dict(src=_MOW + "con_scorpenek_droid.glb", mode="glb_static", yaw=-90, tris=40000, tex_px=1024, height=7.5, legs=dict(n=4, top=0.5, swing=12))
+SPECS["hod_x_mow_umbaran_hovertank"] = dict(src=_MOW + "con_umbaran_hovertank.glb", mode="glb_static", yaw=-90, tris=5000, tex_px=1024, length=6.0, hover=True)
+SPECS["hod_x_mow_clone_hovertank"] = dict(src=_MOW + "rep_clone_hovertank.glb", mode="glb_static", yaw=-90, tris=5000, tex_px=1024, length=6.5, hover=True)
+SPECS["hod_x_mow_at_at_rep"] = dict(src=_MOW + "rep_at_at_rep.glb", mode="glb_static", yaw=-90, tris=7000, tex_px=1024, height=10.5, legs=dict(n=4, top=0.5, swing=12))
+SPECS["hod_x_droch"] =dict(src=FOTR + "/droch-class_boarding_ship.glb", mode="glb_static", tris=5000, tex_px=1024, length=4.5, plane=True)   # 2026-11-09: real Droch (was the TF MAF stand-in)
+# A-DSD advanced dwarf spider (no model anywhere, 2026-11-09): the RaW dwarf spider, bigger, repainted gunmetal blue
+SPECS["hod_x_adsd"] = dict(SPECS["hod_x_raw_dwarf"], height=5.0, tint=(118, 128, 150))
+# Droideka Mk I (RaW SeV_droidekka_mk1, user 2026-11-09: Droideka -> Droideka Mk II special techs); walks on walk_00 (move_00 = rolled ball)
+SPECS["hod_x_raw_deka"] = dict(src=RAW + "/sev_droidekka_mk1.glb", mode="bake", height=5.0, tris=3000, drop=r"Sphere", norm_action="attackidle_00",
+                               keep=r"(?!COL_MAIN|Sphere01|MUZZLEA_0\d_FLASH)[\w\-]+$",
+                               gun="MUZZLEA_00", forward="MUZZLEA_00", back="B_BACK", anims=_RAW_A("attackidle_00", "walk_00", "attack_00"))   # idle_00 = curled up
 SPECS["hod_x_raw_b1"] = dict(src=RAW + "/sei_battledroid.glb", mode="bake", height=6.2, tris=4000, infantry=True,
                              keep=r"(B_Pelvis|B_Chest|B_Head|B_Backpack|B_Gun|MuzzleA_00|B_(Bicep|FArm|Hand|Thigh|Calf|Foot)_[RL])$",
                              gun="MuzzleA_00", forward="B_Chest", back="B_Backpack", anims=_RAW_A("IDLE_00", "MOVE_00", "ATTACKIDLE_00"))
@@ -258,7 +319,24 @@ SPECS["hod_x_repcom_b1"] = dict(src=RAW + "/b1_battledroid_repcom.glb", mode="ba
                                 gun="MuzzleA_00", forward="MuzzleA_00", back="Pelvis", anims=_RAW_A("Idle_00", "Move_00", "AttackIdle_00"))
 SPECS["hod_x_b3"] = dict(src=RAW + "/cis_b2_sbd_ptl.glb", mode="bake", height=8.5, tris=4000, infantry=True, keep=_DROID,
                          gun="MuzzleA_00", forward="MuzzleA_00", back="Pelvis", anims=_RAW_A("Idle_00", "Move_00", "AttackIdle_00"))
-SPECS["hod_x_espo"] = dict(src=RAW + "/csa_espo_walker.glb", mode="bake", height=5.5, tris=3000,
+# 2026-11-09 (user): Republic special battalions, RaW 1.2.1 clones (alo_to_glb.py --anim): ARC trooper (Phase I),
+# clone commando
+_CLONE = r"(B_Pelvis|B_Chest|B_Neck|B_Head|B_helmet|B_Backpack|B_Gun|MuzzleA_00|B_(Clav|Bicep|FArm|Hand|Thigh|Calf|Foot)_[RL])$"
+for _n, _f, _h in (("raw_arc", "rei_arc_trooper", 6.0), ("raw_commando", "rei_clonecommando", 6.2)):
+    SPECS["hod_x_" + _n] = dict(src=f"{RAW}/{_f}.glb", mode="bake", height=_h, tris=4000, infantry=True, keep=_CLONE,
+                               gun="MuzzleA_00", forward="B_Chest", back="B_Backpack", anims=_RAW_A("idle_00", "move_00", "attackidle_00"))
+# Imperial successors (user 2026-11-09: real models, no repaints): Battlefront II clone shock trooper (DATA SIDE/rep146th.lvl,
+# red Coruscant Guard markings = the first Imperial shock troopers) and the black JKA clone commando (LGD SIDE/rep.lvl,
+# imp_inf_JKA_Clone_Commando = Katarn armour in Imperial black). swbf-unmunge -> msh_anim_to_glb.py with the BF2
+# human_rifle idle / walk / shoot clips, skel=basepose.msh, attach=hp_weapons:rep_weap_inf_rifle.msh (BF2 soldiers carry no
+# gun of their own). Oriented on the aiming pose: at rest (T-pose) the gun hand is out to the side. tris high: low-poly
+# sources, decimating them faceted the armour.
+for _n, _f in (("imp_shock", "rep_inf_shocktrooper"), ("imp_commando", "imp_inf_jka_clone_commando")):
+    SPECS["hod_x_" + _n] = dict(src=f"{BF2A}/{_f}.glb", mode="bake", height=6.0, tris=12000, infantry=True, norm_action="shoot",
+                               keep=r"(?!DummyRoot)\w+$", gun="hp_weapons", forward="hp_weapons", back="bone_ribcage",
+                               anims={"idle": ("idle", 0, None), "move": ("walk", 0, None), "attack": ("shoot", 0, None)})
+SPECS["hod_x_imp_commando"]["gain"] = 1.6   # black armour: atlas colours < ~100 RGB render black in game
+SPECS["hod_x_espo"] =dict(src=RAW + "/csa_espo_walker.glb", mode="bake", height=5.5, tris=3000,
                            keep=r"(Dummy01|Bone0[1-8]|Turret_00|gun_[rl]|MuzzleA_0[0-2])$",
                            gun="MuzzleA_00", forward="Turret_00", back="Dummy01", anims=_RAW_A("IDLE_00", "Move_00"))
 # Vulture droid in walking mode (FotR CIS_Vulture_Ground): light walker level 3, in place of the advanced dwarf spider (user 2026-11-08)
@@ -343,6 +421,17 @@ def convert(*only):
             mesh.vertex_groups.remove(mesh.vertex_groups["_protect"])
         bpy.ops.object.vertex_group_limit_total(limit=3)   # vanilla rigs: 3 influences
         bpy.ops.object.vertex_group_normalize_all(lock_active=False)
+        bpy.ops.object.material_slot_remove_unused()   # decimation can empty a small material: an empty sub-mesh breaks the .mesh
+        me = mesh.data   # the game indexes a sub-mesh with 16 bits: past 65535 vertices the rest is not drawn -> split big ones
+        for i in range(len(me.materials)):
+            new, count = None, 0
+            for p in [p for p in me.polygons if p.material_index == i]:
+                count += p.loop_total
+                if count > 60000:
+                    me.materials.append(me.materials[i])
+                    new, count = len(me.materials) - 1, p.loop_total
+                if new is not None:
+                    p.material_index = new
         side[name] = []
         for i, slot in enumerate(mesh.material_slots):
             stem = f"{name}_{i}" if len(mesh.material_slots) > 1 else name
@@ -753,10 +842,28 @@ def convert(*only):
         for i, lg in enumerate(legs):
             e = rig.data.edit_bones.new(f"leg_{i}")
             e.head, e.tail, e.parent = lg["hip"], lg["foot"], b
+        # turrets: each entry = object-name regex (the part's own meshes) or a float (every vertex above that fraction
+        # of the height, for one-piece models); each gets a bone at the foot of its centre that yaws and recoils
+        H = hi[2] - lo[2]
+        tur = []
+        for sel in s.get("turrets", []):
+            vs = [(o, v.index, o.matrix_world @ v.co) for o in meshes for v in o.data.vertices
+                  if (re.search(sel, o.name) if isinstance(sel, str) else (o.matrix_world @ v.co).z > lo[2] + sel * H)]
+            assert vs, (name, sel)
+            c = sum((p for _, _, p in vs), Vector()) / len(vs)
+            piv = Vector((c.x, c.y, min(p.z for _, _, p in vs)))
+            e = rig.data.edit_bones.new(f"turret_{len(tur)}")
+            e.head, e.tail, e.parent = piv, piv + Vector((0, 0, 0.3 * H)), b
+            tur.append(dict(vs=vs, piv=piv, muzzle=min((p for _, _, p in vs), key=lambda p: p.y)))
+        assert not (legs and tur), name
         bpy.ops.object.mode_set(mode="OBJECT")
         for o in meshes:
             o.vertex_groups.new(name="root").add(range(len(o.data.vertices)), 1.0, "REPLACE")
             o.modifiers.new("rig", "ARMATURE").object = rig
+        for i, t in enumerate(tur):
+            for o, vi, _ in t["vs"]:
+                o.vertex_groups["root"].remove([vi])
+                (o.vertex_groups.get(f"turret_{i}") or o.vertex_groups.new(name=f"turret_{i}")).add([vi], 1.0, "REPLACE")
         if legs:
             skin_legs(meshes, legs)
         rig.animation_data_create()
@@ -775,9 +882,35 @@ def convert(*only):
                     lb.keyframe_insert("rotation_quaternion", frame=f)
         else:
             hover_sway(pb, hi[2] - lo[2], 0, 48, hover=bool(s.get("hover")))
-        locs = [add_locator("barrel", rig, "root", Vector((0, lo[1], (lo[2] + hi[2]) / 2))),
+        if tur:
+            def pose_turret(i, f, yaw, kick):   # yaw about the bone's foot, kick = recoil back along +Y (nose is -Y)
+                tb = rig.pose.bones[f"turret_{i}"]
+                tb.rotation_mode = "QUATERNION"
+                Rl, p = rig.data.bones[tb.name].matrix_local, tur[i]["piv"]
+                tb.matrix_basis = Rl.inverted() @ (Matrix.Translation(p + Vector((0, kick, 0))) @ Matrix.Rotation(yaw, 4, "Z") @ Matrix.Translation(-p)) @ Rl
+                tb.keyframe_insert("location", frame=f)
+                tb.keyframe_insert("rotation_quaternion", frame=f)
+            for i in range(len(tur)):            # move: turrets locked forward
+                for f in (0, 48):
+                    pose_turret(i, f, 0, 0)
+            rig.animation_data.action = bpy.data.actions.new("idle")      # idle: slow scan, turrets out of step
+            hover_sway(pb, H, 0, 96, hover=bool(s.get("hover")))
+            for i in range(len(tur)):
+                for f in range(0, 97, 4):
+                    pose_turret(i, f, math.radians(s.get("scan", 20)) * math.sin(2 * math.pi * f / 96 + i * 2.1), 0)
+            rig.animation_data.action = bpy.data.actions.new("attack")    # attack: aim ahead, two shots with recoil
+            hover_sway(pb, H, 0, 48, hover=bool(s.get("hover")))
+            back = 0.06 * (hi[1] - lo[1])
+            for i in range(len(tur)):
+                for f in range(49):
+                    k = (f + 6 * i) % 24                                   # several turrets fire in turn
+                    pose_turret(i, f, 0, back * (k / 2 if k < 2 else max(0.0, 1 - (k - 2) / 12)))
+        locs = [add_locator("barrel", rig, "turret_0" if tur else "root", tur[0]["muzzle"] if tur else Vector((0, lo[1], (lo[2] + hi[2]) / 2))),
                 add_locator("smoke", rig, "root", Vector((0, hi[1], (lo[2] + hi[2]) / 2)))]
         stand = "idle" if legs else "main"
+        if tur:
+            finish(name, meshes, rig, locs, {"idle": ("idle", 0, 96), "move": ("main", 0, 48), "attack": ("attack", 0, 48)})
+            return
         finish(name, meshes, rig, locs, {"idle": (stand, 0, 48), "move": ("main", 0, 48), "attack": (stand, 0, 48)})
 
     for name, s in SPECS.items():
@@ -1077,6 +1210,30 @@ def convert(*only):
 
 
 # ─────────────────────────────── textures ───────────────────────────────
+def camo(base, seed=7):
+    """Repaint an RGB texture (float 0-255) in weathered olive / dark green / brown camo with rust in the dark
+    creases, keeping the original's light and panel detail (Imperial AAT, user ref tanks-encyclopedia 2026-11-09)."""
+    import numpy as np
+    from PIL import Image, ImageFilter
+    h, w = base.shape[:2]
+    rng = np.random.default_rng(seed)
+    lum = base.mean(axis=2, keepdims=True) / 255
+    detail = np.clip(lum / max(float(lum.mean()), 1e-3), 0.6, 1.35)          # panel lines, dirt, highlights
+    def blobs(cells, blur):   # smooth random field 0..1
+        n = Image.fromarray((rng.random((cells, cells)) * 255).astype(np.uint8)).resize((w, h), Image.BICUBIC)
+        return np.asarray(n.filter(ImageFilter.GaussianBlur(blur)), np.float32)[..., None] / 255
+    a, b = blobs(10, w / 60), blobs(14, w / 70)
+    col = np.where(a > 0.58, (96, 116, 62), (138, 150, 86))                   # dark green patches on olive (< ~100 RGB renders black)
+    col = np.where((b > 0.66) & (a <= 0.58), (132, 112, 76), col).astype(np.float32)   # brown patches
+    out = col * detail
+    rust = np.clip((0.45 - lum) * 2.5, 0, 1) * blobs(40, 2) * 0.7            # rust in the dark creases
+    out = out * (1 - rust) + np.array((150, 96, 56), np.float32) * detail * rust
+    wear = (blobs(90, 1) > 0.8) * np.clip(lum - 0.45, 0, 1) * 1.6            # chipped paint on raised edges
+    out = out * (1 - wear) + np.array((150, 150, 140), np.float32) * wear
+    assert out.shape == base.shape
+    return np.clip(out, 0, 255)
+
+
 def textures(*only):
     import numpy as np
     from PIL import Image
@@ -1093,6 +1250,21 @@ def textures(*only):
         for m in mats:
             base = (np.asarray(Image.open(m["base"]).convert("RGB").resize((px, px), Image.LANCZOS)).astype(np.float32)
                     if m.get("base") else np.dstack([full(150)] * 3))     # untextured part: plain grey
+            if SPECS.get(name, {}).get("camo"):
+                base = camo(base)
+            if SPECS.get(name, {}).get("gain"):   # dark sources: atlas colours < ~100 RGB render black in game
+                base = np.clip(base * SPECS[name]["gain"], 0, 255)
+            if SPECS.get(name, {}).get("tint"):   # one-colour repaint that keeps the light / panel detail
+                lum = base.mean(axis=2, keepdims=True)
+                base = np.clip(np.array(SPECS[name]["tint"], np.float32) * np.clip(lum / max(float(lum.mean()), 1e-3), 0.6, 1.35), 0, 255)
+                if SPECS[name].get("tint_dark"):   # two-tone: the darkest areas (panels, plating) take the second colour
+                    rel = lum / max(float(lum.mean()), 1e-3)
+                    cut = SPECS[name].get("tint_cut", 0.75)
+                    dark = np.array(SPECS[name]["tint_dark"], np.float32) * np.clip(rel / cut, 0.85, 1.2)
+                    base = np.where(rel < cut, dark, base)
+            if SPECS.get(name, {}).get("decal"):   # logo painted in UV space (uv_decal.py), laid over after the tint
+                ov = np.asarray(Image.open(SPECS[name]["decal"]).convert("RGBA").resize(base.shape[1::-1], Image.LANCZOS), np.float32) / 255.0
+                base = base * (1 - ov[..., 3:]) + ov[..., :3] * 255.0 * ov[..., 3:]
             save_dxt5_mips(np.dstack([base, full(255)]), f"{OUT}/{m['stem']}_diffuse.dds")
             # normal: flat (the walker mod's layout); spec: R 0, G specular, B metal, A gloss from glTF metallic-roughness
             save_dxt5_mips(np.dstack([full(132, 64), full(130, 64), full(0, 64), full(128, 64)]), f"{OUT}/{m['stem']}_normal.dds")   # flat: tiny

@@ -1,7 +1,7 @@
 """Blender 4.2: Battlefront II (ZeroEngine) model .msh + its animation .msh files -> rigged .glb with one action per clip,
 for unit_models.py "bake" mode (which rebuilds a small game rig from it).
 
-  blender -b --factory-startup --python "plans & scripts/msh_anim_to_glb.py" -- OUT.glb model.msh clip=a.msh[+b.msh ...] ... [skel=clip_skeleton.msh]
+  blender -b --factory-startup --python "plans & scripts/msh_anim_to_glb.py" -- OUT.glb model.msh clip=a.msh[+b.msh ...] ... [skel=clip_skeleton.msh] [attach=BONE:gun.msh]
 
 Every MODL node becomes a bone at its TRAN rest; geometry: skinned segments (WGHT -> envelope) keep their weights,
 rigid parts go 100 % to their own node. Animation keys (KFR3) are parent-relative like TRAN; a clip of several files
@@ -23,7 +23,7 @@ def tran(pos, rot):
     return Matrix.Translation(pos) @ Quaternion((w, x, y, z)).to_matrix().to_4x4()
 
 
-def convert(out, model, clips, skel=None):
+def convert(out, model, clips, skel=None, attach=()):
     bpy.ops.wm.read_factory_settings(use_empty=True)
     model = os.path.abspath(model)
     d = swbf_msh.read(model)
@@ -44,57 +44,68 @@ def convert(out, model, clips, skel=None):
         if m["parent"] in by:
             arm.data.edit_bones[n].parent = arm.data.edit_bones[m["parent"]]
     bpy.ops.object.mode_set(mode="OBJECT")
-    # geometry
-    mats, by_tex = [], {}
-    for name, texs in d["materials"]:
-        tex = texture(model, texs[0] if texs else "")
-        if tex in by_tex:                        # one material per texture: each becomes its own set of game DDS files
-            mats.append(by_tex[tex])
-            continue
-        mt = by_tex[tex] = bpy.data.materials.new(name or "mat")
-        mt.use_nodes = True
-        if tex:
-            node = mt.node_tree.nodes.new("ShaderNodeTexImage")
-            node.image = bpy.data.images.load(tex)
-            mt.node_tree.links.new(node.outputs["Color"], mt.node_tree.nodes["Principled BSDF"].inputs["Base Color"])
-        mats.append(mt)
-    parts = 0
-    for mdl in d["models"]:
-        low = mdl["name"].lower()
-        if mdl["hidden"] or not mdl["segments"] or low.startswith(SKIP_START) or any(w in low for w in SKIP_IN):
-            continue
-        M = YUP @ world(mdl["name"])
-        for k, seg in enumerate(mdl["segments"]):
-            if not seg["tris"] or not seg["pos"]:
+    # geometry; attach = [(bone, gun.msh)]: a BF2 weapon model welded to its hardpoint bone (soldier .msh files carry no
+    # gun: the game attaches it at hp_weapons, in that node's frame)
+    def add(dd, path, M_of, bone_of):
+        by_idx = {m["index"]: m["name"] for m in dd["models"]}
+        mats, by_tex, parts = [], {}, 0
+        for name, texs in dd["materials"]:
+            tex = texture(path, texs[0] if texs else "")
+            if tex in by_tex:                        # one material per texture: each becomes its own set of game DDS files
+                mats.append(by_tex[tex])
                 continue
-            me = bpy.data.meshes.new(f"{mdl['name']}_{k}")
-            me.from_pydata([tuple(M @ Vector(p)) for p in seg["pos"]], [], list(seg["tris"]))
-            if seg["uv"]:
-                uv = me.uv_layers.new(name="UVMap")
-                for poly in me.polygons:
-                    for li in poly.loop_indices:
-                        uv.data[li].uv = seg["uv"][me.loops[li].vertex_index]
-            if 0 <= seg["mat"] < len(mats):
-                me.materials.append(mats[seg["mat"]])
-            me.validate()
-            o = bpy.data.objects.new(me.name, me)
-            bpy.context.scene.collection.objects.link(o)
-            groups = {}
-            if seg["weights"] and mdl["envelope"]:
-                for vi, ws in enumerate(seg["weights"]):
-                    for idx, w in ws:
-                        if w > 0 and idx < len(mdl["envelope"]):
-                            groups.setdefault(by_index[mdl["envelope"][idx]], []).append((vi, w))
-            else:
-                bone = by_index[mdl["envelope"][0]] if mdl["envelope"] else mdl["name"]
-                groups[bone] = [(vi, 1.0) for vi in range(len(seg["pos"]))]
-            for bone, vw in groups.items():
-                g = o.vertex_groups.get(bone) or o.vertex_groups.new(name=bone)
-                for vi, w in vw:
-                    g.add([vi], w, "ADD")
-            o.parent = arm
-            o.modifiers.new("rig", "ARMATURE").object = arm
-            parts += 1
+            mt = by_tex[tex] = bpy.data.materials.new(name or "mat")
+            mt.use_nodes = True
+            if tex:
+                node = mt.node_tree.nodes.new("ShaderNodeTexImage")
+                node.image = bpy.data.images.load(tex)
+                mt.node_tree.links.new(node.outputs["Color"], mt.node_tree.nodes["Principled BSDF"].inputs["Base Color"])
+            mats.append(mt)
+        for mdl in dd["models"]:
+            low = mdl["name"].lower()
+            if mdl["hidden"] or not mdl["segments"] or low.startswith(SKIP_START) or any(w in low for w in SKIP_IN):
+                continue
+            M = M_of(mdl["name"])
+            for k, seg in enumerate(mdl["segments"]):
+                if not seg["tris"] or not seg["pos"]:
+                    continue
+                me = bpy.data.meshes.new(f"{mdl['name']}_{k}")
+                me.from_pydata([tuple(M @ Vector(p)) for p in seg["pos"]], [], list(seg["tris"]))
+                if seg["uv"]:
+                    uv = me.uv_layers.new(name="UVMap")
+                    for poly in me.polygons:
+                        for li in poly.loop_indices:
+                            uv.data[li].uv = seg["uv"][me.loops[li].vertex_index]
+                if 0 <= seg["mat"] < len(mats):
+                    me.materials.append(mats[seg["mat"]])
+                me.validate()
+                o = bpy.data.objects.new(me.name, me)
+                bpy.context.scene.collection.objects.link(o)
+                groups = {}
+                if bone_of:
+                    groups[bone_of] = [(vi, 1.0) for vi in range(len(seg["pos"]))]
+                elif seg["weights"] and mdl["envelope"]:
+                    for vi, ws in enumerate(seg["weights"]):
+                        for idx, w in ws:
+                            if w > 0 and idx < len(mdl["envelope"]):
+                                groups.setdefault(by_idx[mdl["envelope"][idx]], []).append((vi, w))
+                else:
+                    bone = by_idx[mdl["envelope"][0]] if mdl["envelope"] else mdl["name"]
+                    groups[bone] = [(vi, 1.0) for vi in range(len(seg["pos"]))]
+                for bone, vw in groups.items():
+                    g = o.vertex_groups.get(bone) or o.vertex_groups.new(name=bone)
+                    for vi, w in vw:
+                        g.add([vi], w, "ADD")
+                o.parent = arm
+                o.modifiers.new("rig", "ARMATURE").object = arm
+                parts += 1
+        return parts
+    parts = 0
+    parts += add(d, model, lambda n: YUP @ world(n), None)
+    for bone, gun in attach:
+        gd = swbf_msh.read(os.path.abspath(gun))
+        gw = world_of(gd["models"])
+        parts += add(gd, os.path.abspath(gun), lambda n, gw=gw, bone=bone: YUP @ world(bone) @ gw(n), bone)
     # animations, retargeted through world space: the clip moves the skeleton it was made for (skel=, default the model
     # itself); each target bone gets that bone's world delta. Munged models (Conversion Pack AT-XT) lack the root_*
     # helper nodes the AT-ST clips key, so parent-relative keys can't be copied over.
@@ -185,4 +196,5 @@ def convert(out, model, clips, skel=None):
 if __name__ == "__main__":
     a = sys.argv[sys.argv.index("--") + 1:]
     sk = next((x[5:] for x in a if x.startswith("skel=")), None)
-    convert(a[0], a[1], [x for x in a[2:] if not x.startswith("skel=")], sk)
+    att = [tuple(x[7:].split(":", 1)) for x in a if x.startswith("attach=")]   # attach=hp_weapons:gun.msh
+    convert(a[0], a[1], [x for x in a[2:] if not x.startswith(("skel=", "attach="))], sk, att)
