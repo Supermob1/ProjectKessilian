@@ -25,3 +25,13 @@ NDefines.NMarket.REQUEST_AUTOMATION_AUTO_ACCEPT_MARKET_ACCESS_DEFAULT = false
 NDefines.NMarket.REQUEST_AUTOMATION_AUTO_SEND_MARKET_ACCESS_DEFAULT = false
 NDefines.NMarket.REQUEST_AUTOMATION_AUTO_ACCEPT_PURCHASE_DEFAULT = false
 NDefines.NAI.EQUIPMENT_MARKET_UPDATE_FREQUENCY_DAYS = 100000
+
+-- HOD 2026-11-10 fast fleets (Clone Wars: big fleets built fast, big battles often; see plans & scripts/sw_tree/naval_tree.py)
+NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 15	-- vanilla 10
+NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 15	-- vanilla 5: a shipyard world finishes a Star Destroyer in ~2 months
+NDefines.NBuildings.NAVALBASE_REPAIR_MULT = 0.15	-- vanilla 0.05: damaged fleets fight again within weeks
+NDefines.NNavy.COMBAT_BASE_HIT_CHANCE = 0.14	-- vanilla 0.1: short, bloody battles
+NDefines.NNavy.COMBAT_MIN_DURATION = 12	-- vanilla 8: a losing fleet loses ships before it can retreat
+NDefines.NNavy.BASE_SPOTTING = 3	-- vanilla 1: fleets on the same hyperlane find each other fast
+NDefines.NNavy.HIGHER_SHIP_RATIO_POSITIONING_PENALTY_FACTOR = 0.1	-- vanilla 0.25: big fleets are normal
+NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO = 0.3	-- vanilla 0.75

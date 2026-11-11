@@ -6,11 +6,11 @@
 		task_force = {
 			name = "Royal Diplomatic Squadron"
 			location = 12734
-			ship = { name = "Tantive" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ALD } } }
-			ship = { name = "Alderaan's Grace" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ALD } } }
-			ship = { name = "Aldera Sentinel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ALD } } }
-			ship = { name = "Juran Sentinel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ALD } } }
-			ship = { name = "Apalis Sentinel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Tantive" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Alderaan's Grace" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Aldera Sentinel" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Juran Sentinel" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = ALD } } }
+			ship = { name = "Apalis Sentinel" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = ALD } } }
 		}
 	}
 }

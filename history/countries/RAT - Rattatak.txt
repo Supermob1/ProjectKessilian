@@ -54,3 +54,7 @@ recruit_character = RAT_korin_aphra
 }
 add_relation_rule_override = { can_access_market = no trigger = HOD_market_disabled usage_desc = HOD_market_disabled_tt }	# HOD:no_market
 set_technology = { laat = 1 torrent = 1 y-wing = 1 v_wing = 1 republic_weapon1 = 1 small_repeater1 = 1 republic_tank = 1 atrt = 1 atte = 1 atot = 1 isp = 1 basic_train = 1 popup = no }	# HOD:sw_tree
+add_dynamic_modifier = { modifier = hod_assault_fleet_1 }	# HOD:assault_fleet
+add_dynamic_modifier = { modifier = hod_assault_fleet_2 }	# HOD:assault_fleet
+add_dynamic_modifier = { modifier = hod_assault_fleet_3 }	# HOD:assault_fleet
+set_technology = { imp_tech_dd_1 = 1 imp_tech_cl_1 = 1 imp_tech_ca_1 = 1 imp_tech_as_1 = 1 imp_tech_bb_1 = 1 popup = no }	# HOD:naval_start

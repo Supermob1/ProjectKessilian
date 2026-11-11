@@ -38,7 +38,7 @@ CIS_INF_01 = {
 
     can_use = { always = yes }
 
-    division_types = { "infantry" }
+    division_types = { "blaster_infantry" }
 
     fallback_name = "%dth Battle Droid Battalion"
 
@@ -103,7 +103,7 @@ CIS_GAR_01 = {
 
     can_use = { always = yes }
 
-    division_types = { "infantry" }
+    division_types = { "blaster_infantry" }
 
     fallback_name = "%dth Garrison Detachment"
 
@@ -168,7 +168,7 @@ CIS_ARM_01 = {
 
 	can_use = { always = yes }
 
-	division_types = { "light_armor" "medium_armor" "heavy_armor" "super_heavy_armor" }
+	division_types = { "light_armor" "medium_armor" "heavy_armor" }
 
 	fallback_name = "%dth Droid Armour Division"
 

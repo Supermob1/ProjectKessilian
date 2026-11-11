@@ -426,33 +426,12 @@ has_any_tank_tech = {
 	}
 }
 
-has_any_tanks = {
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		OR = {
-			has_equipment = { light_tank_chassis_0 > 0}
-			has_equipment = { medium_tank_chassis > 0 }
-			has_equipment = { light_tank_chassis > 0 }
-			has_equipment = { heavy_tank_chassis > 0 }
-		}
-	}
-	else = {
-		OR = {
-			has_equipment = { gw_tank_equipment > 0	}
-			has_equipment = { light_tank_equipment_1 > 0	}
-			has_equipment = { light_tank_equipment_2 > 0	}
-			has_equipment = { light_tank_equipment_3 > 0	}
-			has_equipment = { medium_tank_equipment_1 > 0	}
-			has_equipment = { medium_tank_equipment_2 > 0	}
-			has_equipment = { medium_tank_equipment_3 > 0	}
-			has_equipment = { modern_tank_equipment_1 > 0	}
-			has_equipment = { heavy_tank_equipment_1 > 0	}
-			has_equipment = { heavy_tank_equipment_2 > 0	}
-			has_equipment = { heavy_tank_equipment_3 > 0	}
-			has_equipment = { super_heavy_tank_equipment_1 > 0	}
-		}
+has_any_tanks = {	# HOD 2026-11-10: the mod's walker / tank archetypes (vanilla tanks are deleted)
+	OR = {
+		has_equipment = { extra_light_equipment > 0 }
+		has_equipment = { light_equipment > 0 }
+		has_equipment = { assault_equipment > 0 }
+		has_equipment = { heavy_equipment > 0 }
 	}
 }
 

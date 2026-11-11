@@ -8314,7 +8314,7 @@ def landmarks():
                     _, x, z = min(ok)
                     q[2], q[4] = f"{x:.2f}", f"{z:.2f}"
         lines.append(";".join(q) + end)
-    open("map/buildings.txt", "w", encoding="utf-8", newline="").write("".join(lines))
+    open("map/buildings.txt", "w", encoding="utf-8", newline="").write("".join(lines).rstrip("\r\n"))  # no newline at EOF, like vanilla (else error.log "invalid arguments count")
     tout = Image.fromarray(tidx, "P")
     tout.putpalette(terr.getpalette())
     tout.save("map/terrain.bmp")

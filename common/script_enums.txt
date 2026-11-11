@@ -134,6 +134,19 @@ script_enum_equipment_category = {
 	rocket
 	flame
 	land_cruiser
+	anti_air	# HOD 2026-11-10
+	anti_tank	# HOD 2026-11-10
+	artillery	# HOD 2026-11-10
+	ballistic_missile	# HOD 2026-11-10
+	cas	# HOD 2026-11-10
+	heavy_fighter	# HOD 2026-11-10
+	infantry	# HOD 2026-11-10
+	maritime_patrol_plane	# HOD 2026-11-10
+	mechanized	# HOD 2026-11-10
+	motorized	# HOD 2026-11-10
+	railway_gun	# HOD 2026-11-10
+	scout_plane	# HOD 2026-11-10
+	support_ship	# HOD 2026-11-10
 }
 
 script_enum_equipment_bonus_type = {
@@ -197,8 +210,6 @@ script_enum_equipment_bonus_type = {
 	mothership_equipment_0
 	strat_bomber_intercontinental_equipment
 	strat_bomber_intercontinental_equipment_1
-	motorbike_equipment
-	motorbike_equipment_1
 
 	# Equipment archetypes & types
 	land_cruiser_chassis
@@ -207,30 +218,6 @@ script_enum_equipment_bonus_type = {
 	destroyer
 	infantry_equipment
 	artillery_equipment
-	anti_tank_equipment
-	amphibious_mechanized_equipment
-	amphibious_mechanized_equipment_1
-	amphibious_mechanized_equipment_2
-	anti_air_equipment
-	anti_air_equipment_1
-	anti_air_equipment_2
-	anti_air_equipment_3
-	anti_tank_equipment_1
-	anti_tank_equipment_2
-	anti_tank_equipment_3
-	armored_car_equipment
-	gw_armored_car_equipment
-	armored_car_equipment_1
-	armored_car_equipment_2
-	armored_car_at_equipment
-	artillery_equipment_1
-	artillery_equipment_2
-	artillery_equipment_3
-	rocket_artillery_equipment
-	rocket_artillery_equipment_1
-	rocket_artillery_equipment_2
-	motorized_rocket_equipment
-	motorized_rocket_equipment_1
 	convoy_1
 	floating_harbor_equipment
 	floating_harbor_equipment_1
@@ -240,10 +227,6 @@ script_enum_equipment_bonus_type = {
 	guided_missile_equipment_3
 	explosive_ammo_equipment
 	explosive_ammo_equipment_1
-	ballistic_missile_equipment
-	ballistic_missile_equipment_1
-	ballistic_missile_equipment_2
-	ballistic_missile_equipment_3
 	nuclear_missile_equipment
 	nuclear_missile_equipment_1
 	nuclear_missile_equipment_2
@@ -251,52 +234,19 @@ script_enum_equipment_bonus_type = {
 	sam_missile_equipment_1
 	support_ship_hull
 	support_ship_1
-	support_ship_2
 	repair_ship_hull
 	repair_ship_1
-	repair_ship_2
-	infantry_equipment_0
-	infantry_equipment_1
-	infantry_equipment_2
-	infantry_equipment_3
-	mechanized_equipment
-	mechanized_equipment_1
-	mechanized_equipment_2
-	mechanized_equipment_3
 	motorized_equipment
-	motorized_equipment_0
-	motorized_equipment_1
 	small_plane_airframe
-	cv_small_plane_airframe
 	small_plane_airframe_0
 	small_plane_airframe_1
 	small_plane_airframe_2
 	small_plane_airframe_3
 	small_plane_airframe_4
 	small_plane_airframe_5
-	cv_small_plane_airframe_0
-	cv_small_plane_airframe_1
-	cv_small_plane_airframe_2
-	cv_small_plane_airframe_3
-	cv_small_plane_airframe_4
 	medium_plane_airframe
-	medium_plane_airframe_0
-	medium_plane_airframe_1
-	medium_plane_airframe_2
-	medium_plane_airframe_3
-	medium_plane_airframe_4
 	large_plane_airframe
-	large_plane_airframe_0
-	large_plane_airframe_1
-	large_plane_airframe_2
-	large_plane_airframe_3
-	large_plane_airframe_4
 	transport_plane_equipment
-	transport_plane_equipment_1
-	transport_plane_equipment_2
-	transport_plane_equipment_3
-	railway_gun_equipment
-	railway_gun_equipment_1
 	super_heavy_railway_gun_equipment
 	super_heavy_railway_gun_equipment_1
 	ship_hull_carrier
@@ -305,35 +255,14 @@ script_enum_equipment_bonus_type = {
 	ship_hull_carrier_3
 	ship_hull_mega_carrier
 	ship_hull_carrier_modern
-	ship_hull_carrier_conversion_bb
-	ship_hull_carrier_conversion_ca
 	ship_hull_escort_carrier
 	carrier_1
-	carrier_2
-	carrier_3
-	carrier_4
-	modern_carrier
 	mega_carrier
-	escort_carrier
 	ship_hull_cruiser
 	light_cruiser
-	ship_hull_cruiser_1
-	ship_hull_cruiser_2
-	ship_hull_cruiser_3
-	ship_hull_cruiser_4
 	light_cruiser_1
-	light_cruiser_2
-	light_cruiser_3
-	light_cruiser_4
 	heavy_cruiser_1
-	heavy_cruiser_2
-	heavy_cruiser_3
-	heavy_cruiser_4
-	torpedo_cruiser
-	ship_hull_cruiser_modern_aa
 	ship_hull_torpedo_cruiser
-	ship_hull_cruiser_panzerschiff
-	ship_hull_cruiser_coastal_defense_ship
 	ship_hull_heavy
 	ship_hull_pre_dreadnought
 	ship_hull_heavy_1
@@ -343,323 +272,163 @@ script_enum_equipment_bonus_type = {
 	ship_hull_super_heavy_1
 	ship_hull_heavy_modern
 	battleship_1
-	battleship_2
-	battleship_3
-	battleship_4
-	SH_battleship_1
-	SH_battleship_2
-	modern_battleship
 	battle_cruiser_1
-	battle_cruiser_2
 	ship_hull_light
-	ship_hull_light_1
-	ship_hull_light_2
-	ship_hull_light_3
-	ship_hull_light_4
 	destroyer_1
-	destroyer_2
-	destroyer_3
-	destroyer_4
 	ship_hull_submarine
-	ship_hull_submarine_1
-	ship_hull_submarine_2
-	ship_hull_submarine_3
-	ship_hull_submarine_4
 	ship_hull_carrier_submarine
-	cruiser_submarine
-	fleet_submarine
-	midget_submarine
-	nuclear_submarine
-	nuclear_missile_submarine
-	rocket_submarine
 	ship_hull_cruiser_submarine
 	ship_hull_midget_submarine
 	ship_hull_nuclear_submarine
 	ship_hull_fleet_submarine
 	submarine_1
-	submarine_2
-	submarine_3
-	submarine_4
 	support_equipment
-	support_equipment_1
 	light_tank_chassis
-	light_tank_chassis_0
-	light_tank_chassis_1
-	light_tank_chassis_2
-	light_tank_chassis_3
 	medium_tank_chassis
-	medium_tank_chassis_0
-	medium_tank_chassis_1
-	medium_tank_chassis_2
-	medium_tank_chassis_3
 	heavy_tank_chassis
-	heavy_tank_chassis_0
-	heavy_tank_chassis_1
-	heavy_tank_chassis_2
-	heavy_tank_chassis_3
-	modern_tank_chassis
-	modern_tank_chassis_1
-	super_heavy_tank_chassis
-	super_heavy_tank_chassis_1
-	amphibious_tank_chassis
-	amphibious_tank_chassis_1
 	train_equipment
 	train_equipment_1
 	train_equipment_2
 	train_equipment_3
 	small_plane_cas_airframe
-	cv_small_plane_cas_airframe
 	small_plane_naval_bomber_airframe
-	cv_small_plane_naval_bomber_airframe
-	small_plane_suicide_airframe
-	cv_small_plane_suicide_airframe
 	medium_plane_fighter_airframe
 	medium_plane_scout_plane_airframe
 	large_plane_maritime_patrol_plane_airframe
-	jet_fighter_equipment
-	rocket_interceptor_equipment
-	jet_tac_bomber_equipment
-	jet_strat_bomber_equipment
 	small_plane_cas_airframe_0
 	small_plane_cas_airframe_1
 	small_plane_cas_airframe_2
 	small_plane_cas_airframe_3
 	small_plane_cas_airframe_4
 	small_plane_cas_airframe_5
-	cv_small_plane_cas_airframe_0
-	cv_small_plane_cas_airframe_1
-	cv_small_plane_cas_airframe_2
-	cv_small_plane_cas_airframe_3
-	cv_small_plane_cas_airframe_4
 	small_plane_naval_bomber_airframe_0
 	small_plane_naval_bomber_airframe_1
 	small_plane_naval_bomber_airframe_2
 	small_plane_naval_bomber_airframe_3
 	small_plane_naval_bomber_airframe_4
 	small_plane_naval_bomber_airframe_5
-	cv_small_plane_naval_bomber_airframe_0
-	cv_small_plane_naval_bomber_airframe_1
-	cv_small_plane_naval_bomber_airframe_2
-	cv_small_plane_naval_bomber_airframe_3
-	cv_small_plane_naval_bomber_airframe_4
 	
-	small_plane_suicide_airframe_0
-	small_plane_suicide_airframe_1
-	small_plane_suicide_airframe_2
-	small_plane_suicide_airframe_3
-	small_plane_suicide_airframe_4
-	small_plane_suicide_airframe_5
-	cv_small_plane_suicide_airframe_0
-	cv_small_plane_suicide_airframe_1
-	cv_small_plane_suicide_airframe_2
-	cv_small_plane_suicide_airframe_3
-	cv_small_plane_suicide_airframe_4
-	medium_plane_fighter_airframe_0
-	medium_plane_fighter_airframe_1
-	medium_plane_fighter_airframe_2
-	medium_plane_fighter_airframe_3
-	medium_plane_fighter_airframe_4
-	medium_plane_scout_plane_airframe_0
-	medium_plane_scout_plane_airframe_1
-	medium_plane_scout_plane_airframe_2
-	medium_plane_scout_plane_airframe_3
-	medium_plane_scout_plane_airframe_4
-	large_plane_maritime_patrol_plane_airframe_0
-	large_plane_maritime_patrol_plane_airframe_1
-	large_plane_maritime_patrol_plane_airframe_2
-	large_plane_maritime_patrol_plane_airframe_3
-	large_plane_maritime_patrol_plane_airframe_4
 	fighter_equipment_0
-	fighter_equipment_1
-	fighter_equipment_2
-	fighter_equipment_3
-	jet_fighter_equipment_1
-	jet_fighter_equipment_2
-	cv_fighter_equipment_0
-	cv_fighter_equipment_1
-	cv_fighter_equipment_2
-	cv_fighter_equipment_3
-	CAS_equipment_1
-	CAS_equipment_2
-	CAS_equipment_3
-	cv_CAS_equipment_1
-	cv_CAS_equipment_2
-	cv_CAS_equipment_3
-	nav_bomber_equipment_1
-	nav_bomber_equipment_2
-	nav_bomber_equipment_3
-	cv_nav_bomber_equipment_1
-	cv_nav_bomber_equipment_2
-	cv_nav_bomber_equipment_3
-	rocket_interceptor_equipment_1
-	rocket_interceptor_equipment_2
-	rocket_interceptor_equipment_3
-	rocket_suicide_equipment_1
-	tac_bomber_equipment_0
-	tac_bomber_equipment_1
-	tac_bomber_equipment_2
-	tac_bomber_equipment_3
-	jet_tac_bomber_equipment_1
-	jet_tac_bomber_equipment_2
-	heavy_fighter_equipment_1
-	heavy_fighter_equipment_2
-	heavy_fighter_equipment_3
-	scout_plane_equipment_1
-	scout_plane_equipment_2
-	strat_bomber_equipment_1
-	strat_bomber_equipment_2
-	strat_bomber_equipment_3
-	jet_strat_bomber_equipment_1
-	light_tank_aa_chassis
-	light_tank_artillery_chassis
-	light_tank_destroyer_chassis
-	light_tank_amphibious_chassis
 	light_tank_flame_chassis
-	medium_tank_aa_chassis
-	medium_tank_artillery_chassis
-	medium_tank_destroyer_chassis
-	medium_tank_amphibious_chassis
 	medium_tank_flame_chassis
-	heavy_tank_aa_chassis
-	heavy_tank_artillery_chassis
-	heavy_tank_destroyer_chassis
-	heavy_tank_amphibious_chassis
 	heavy_tank_flame_chassis
-	super_heavy_tank_aa_chassis
-	super_heavy_tank_artillery_chassis
-	super_heavy_tank_destroyer_chassis
-	modern_tank_aa_chassis
-	modern_tank_artillery_chassis
-	modern_tank_destroyer_chassis
-	light_tank_aa_chassis_0
-	light_tank_aa_chassis_1
-	light_tank_aa_chassis_2
-	light_tank_aa_chassis_3
-	light_tank_artillery_chassis_0
-	light_tank_artillery_chassis_1
-	light_tank_artillery_chassis_2
-	light_tank_artillery_chassis_3
-	light_tank_destroyer_chassis_0
-	light_tank_destroyer_chassis_1
-	light_tank_destroyer_chassis_2
-	light_tank_destroyer_chassis_3
-	light_tank_amphibious_chassis_0
-	light_tank_amphibious_chassis_1
-	light_tank_amphibious_chassis_2
-	light_tank_amphibious_chassis_3
-	light_tank_flame_chassis_0
-	light_tank_flame_chassis_1
-	light_tank_flame_chassis_2
-	light_tank_flame_chassis_3
-	medium_tank_aa_chassis_0
-	medium_tank_aa_chassis_1
-	medium_tank_aa_chassis_2
-	medium_tank_aa_chassis_3
-	medium_tank_artillery_chassis_0
-	medium_tank_artillery_chassis_1
-	medium_tank_artillery_chassis_2
-	medium_tank_artillery_chassis_3
-	medium_tank_destroyer_chassis_0
-	medium_tank_destroyer_chassis_1
-	medium_tank_destroyer_chassis_2
-	medium_tank_destroyer_chassis_3
-	medium_tank_amphibious_chassis_0
-	medium_tank_amphibious_chassis_1
-	medium_tank_amphibious_chassis_2
-	medium_tank_amphibious_chassis_3
-	medium_tank_flame_chassis_0
-	medium_tank_flame_chassis_1
-	medium_tank_flame_chassis_2
-	medium_tank_flame_chassis_3
-	heavy_tank_aa_chassis_0
-	heavy_tank_aa_chassis_1
-	heavy_tank_aa_chassis_2
-	heavy_tank_aa_chassis_3
-	heavy_tank_artillery_chassis_0
-	heavy_tank_artillery_chassis_1
-	heavy_tank_artillery_chassis_2
-	heavy_tank_artillery_chassis_3
-	heavy_tank_destroyer_chassis_0
-	heavy_tank_destroyer_chassis_1
-	heavy_tank_destroyer_chassis_2
-	heavy_tank_destroyer_chassis_3
-	heavy_tank_amphibious_chassis_0
-	heavy_tank_amphibious_chassis_1
-	heavy_tank_amphibious_chassis_2
-	heavy_tank_amphibious_chassis_3
-	heavy_tank_flame_chassis_0
-	heavy_tank_flame_chassis_1
-	heavy_tank_flame_chassis_2
-	heavy_tank_flame_chassis_3
-	super_heavy_tank_aa_chassis_1
-	super_heavy_tank_artillery_chassis_1
-	super_heavy_tank_destroyer_chassis_1
-	modern_tank_aa_chassis_1
-	modern_tank_artillery_chassis_1
-	modern_tank_destroyer_chassis_1
-	gw_tank_equipment
-	light_tank_equipment_1
-	light_tank_equipment_2
-	light_tank_equipment_3
-	light_tank_artillery_equipment_1
-	light_tank_artillery_equipment_2
-	light_tank_artillery_equipment_3
-	light_tank_destroyer_equipment_1
-	light_tank_destroyer_equipment_2
-	light_tank_destroyer_equipment_3
-	light_tank_aa_equipment_1
-	light_tank_aa_equipment_2
-	light_tank_aa_equipment_3
-	medium_tank_equipment_1
-	medium_tank_equipment_2
-	medium_tank_equipment_3
-	medium_tank_artillery_equipment_1
-	medium_tank_artillery_equipment_2
-	medium_tank_artillery_equipment_3
-	medium_tank_destroyer_equipment_1
-	medium_tank_destroyer_equipment_2
-	medium_tank_destroyer_equipment_3
-	medium_tank_aa_equipment_1
-	medium_tank_aa_equipment_2
-	medium_tank_aa_equipment_3
-	heavy_tank_equipment_1
-	heavy_tank_equipment_2
-	heavy_tank_equipment_3
-	heavy_tank_artillery_equipment_1
-	heavy_tank_artillery_equipment_2
-	heavy_tank_artillery_equipment_3
-	heavy_tank_destroyer_equipment_1
-	heavy_tank_destroyer_equipment_2
-	heavy_tank_destroyer_equipment_3
-	heavy_tank_aa_equipment_1
-	heavy_tank_aa_equipment_2
-	heavy_tank_aa_equipment_3
-	modern_tank_equipment_1
-	modern_tank_artillery_equipment_1
-	modern_tank_destroyer_equipment_1
-	modern_tank_aa_equipment_1
-	super_heavy_tank_equipment_1
-	super_heavy_tank_artillery_equipment_1
-	super_heavy_tank_destroyer_equipment_1
-	super_heavy_tank_aa_equipment_1
-	amphibious_tank_equipment_1
-	amphibious_tank_equipment_2
-	supersonic_fighter_equipment_1
 	
 	
 	#HOD  #still relevant?
-	old_republic_equipments
-	phase_I_equipments
-	phase_II_equipments
-	Imperial_equipments
-	laat_equipments
-	maat_equipments
-	rep_arc_trooper_equipment
-	rep_arc_trooper_equipment_1
-	rep_arc_trooper_equipment_2
 	# HOD: walkers (walker_import.py) and repulsor tanks
-	repulsor_tank_equipment
-	repulsor_tank_equipment_1
-	repulsor_tank_equipment_2
-	repulsor_tank_equipment_3
+
+	aal_equipment	# HOD 2026-11-10
+	aal_gunship_equipment	# HOD 2026-11-10
+	arc-170_equipment	# HOD 2026-11-10
+	assault_equipment	# HOD 2026-11-10
+	ataa_equipment	# HOD 2026-11-10
+	atat_equipment	# HOD 2026-11-10
+	atdp_equipment	# HOD 2026-11-10
+	atot_equipment	# HOD 2026-11-10
+	atpt_art_equipment	# HOD 2026-11-10
+	atpt_equipment	# HOD 2026-11-10
+	atrct_equipment	# HOD 2026-11-10
+	atrt2_equipment	# HOD 2026-11-10
+	atrt_equipment	# HOD 2026-11-10
+	atst_equipment	# HOD 2026-11-10
+	atte_equipment	# HOD 2026-11-10
+	ava_equipment	# HOD 2026-11-10
+	barc_equipment	# HOD 2026-11-10
+	cis_b2_equipment	# HOD 2026-11-10
+	cis_b2_equipment_1	# HOD 2026-11-10
+	cis_b3_equipment	# HOD 2026-11-10
+	cis_b3_equipment_1	# HOD 2026-11-10
+	cis_droideka_equipment	# HOD 2026-11-10
+	cis_droideka_equipment_1	# HOD 2026-11-10
+	cis_droideka_equipment_2	# HOD 2026-11-10
+	cis_hailfire_equipment	# HOD 2026-11-10
+	cis_hailfire_equipment_1	# HOD 2026-11-10
+	elite_atat_equipment	# HOD 2026-11-10
+	extra_light_equipment	# HOD 2026-11-10
+	fo_atat_equipment	# HOD 2026-11-10
+	guided_missile_equipment_4	# HOD 2026-11-10
+	h_repulsor_equipment	# HOD 2026-11-10
+	heavy_equipment	# HOD 2026-11-10
+	heavy_troop_transport_equipment	# HOD 2026-11-10
+	idt_equipment	# HOD 2026-11-10
+	idt_gunship_equipment	# HOD 2026-11-10
+	ihrt_equipment	# HOD 2026-11-10
+	imp_bomber_equipment	# HOD 2026-11-10
+	imp_defender_equipment	# HOD 2026-11-10
+	imp_fighter_equipment	# HOD 2026-11-10
+	imp_gunship_equipment	# HOD 2026-11-10
+	imp_interceptor_equipment	# HOD 2026-11-10
+	imperial_equipment	# HOD 2026-11-10
+	imperial_equipment_1	# HOD 2026-11-10
+	imperial_equipment_2	# HOD 2026-11-10
+	imperial_equipment_3	# HOD 2026-11-10
+	imperial_support_equipment	# HOD 2026-11-10
+	imperial_support_equipment_1	# HOD 2026-11-10
+	imperial_transport_plane_equipment	# HOD 2026-11-10
+	imperialtank	# HOD 2026-11-10
+	infantry_support_platform	# HOD 2026-11-10
+	itc_equipment	# HOD 2026-11-10
+	itt_equipment	# HOD 2026-11-10
+	juggernaut_equipment	# HOD 2026-11-10
+	laat_equipment	# HOD 2026-11-10
+	laati_equipment	# HOD 2026-11-10
+	light_equipment	# HOD 2026-11-10
+	maat_equipment	# HOD 2026-11-10
+	maat_gunship_equipment	# HOD 2026-11-10
+	mobile_aa_equipment	# HOD 2026-11-10
+	mobile_art_equipment	# HOD 2026-11-10
+	px_equipment	# HOD 2026-11-10
+	rep_arc_equipment	# HOD 2026-11-10
+	rep_arc_equipment_1	# HOD 2026-11-10
+	rep_commando_equipment	# HOD 2026-11-10
+	rep_commando_equipment_1	# HOD 2026-11-10
+	rep_imperial_commando_equipment	# HOD 2026-11-10
+	rep_imperial_commando_equipment_1	# HOD 2026-11-10
+	rep_shock_equipment	# HOD 2026-11-10
+	rep_shock_equipment_1	# HOD 2026-11-10
+	republic_equipment_1	# HOD 2026-11-10
+	republictank	# HOD 2026-11-10
+	repulsor_equipment	# HOD 2026-11-10
+	rx_equipment	# HOD 2026-11-10
+	scimitar_equipment	# HOD 2026-11-10
+	ship_hull_assault_imp	# HOD 2026-11-10
+	ship_hull_assault_imp_1	# HOD 2026-11-10
+	ship_hull_assault_imp_2	# HOD 2026-11-10
+	ship_hull_carrier_imp	# HOD 2026-11-10
+	ship_hull_carrier_imp_1	# HOD 2026-11-10
+	ship_hull_carrier_imp_2	# HOD 2026-11-10
+	ship_hull_cruiser_heavy_imp	# HOD 2026-11-10
+	ship_hull_cruiser_heavy_imp_1	# HOD 2026-11-10
+	ship_hull_cruiser_heavy_imp_2	# HOD 2026-11-10
+	ship_hull_cruiser_heavy_imp_3	# HOD 2026-11-10
+	ship_hull_cruiser_light_imp	# HOD 2026-11-10
+	ship_hull_cruiser_light_imp_1	# HOD 2026-11-10
+	ship_hull_cruiser_light_imp_2	# HOD 2026-11-10
+	ship_hull_cruiser_light_imp_3	# HOD 2026-11-10
+	ship_hull_heavy_imp	# HOD 2026-11-10
+	ship_hull_heavy_imp_1	# HOD 2026-11-10
+	ship_hull_heavy_imp_2	# HOD 2026-11-10
+	ship_hull_light_imp	# HOD 2026-11-10
+	ship_hull_light_imp_1	# HOD 2026-11-10
+	ship_hull_light_imp_2	# HOD 2026-11-10
+	ship_hull_light_imp_3	# HOD 2026-11-10
+	skipray_equipment	# HOD 2026-11-10
+	speeder_equipment	# HOD 2026-11-10
+	spha_equipment	# HOD 2026-11-10
+	spma_equipment	# HOD 2026-11-10
+	tie-in_equipment	# HOD 2026-11-10
+	tie-rb_equipment	# HOD 2026-11-10
+	tie-rp_equipment	# HOD 2026-11-10
+	tie-rp_gunship_equipment	# HOD 2026-11-10
+	tie-sk_equipment	# HOD 2026-11-10
+	tie-vn_equipment	# HOD 2026-11-10
+	tie_bomber_equipment	# HOD 2026-11-10
+	tie_fighter_equipment	# HOD 2026-11-10
+	torrent_equipment	# HOD 2026-11-10
+	troop_transport_equipment	# HOD 2026-11-10
+	utat_art_equipment	# HOD 2026-11-10
+	v_wing_equipment	# HOD 2026-11-10
+	y-wing_equipment	# HOD 2026-11-10
+	z-95_equipment	# HOD 2026-11-10
+	z_speeder_equipment	# HOD 2026-11-10
 }

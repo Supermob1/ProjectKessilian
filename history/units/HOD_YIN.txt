@@ -1,0 +1,26 @@
+# HOD: Yinchorri's forces (2026-11-10: the country history named this OOB but the file never existed - error.log).
+# A warrior garrison holding Tol-Kachorn, the capital.
+
+division_template = {
+	name = "Yinchorri Warriors"
+	regiments = {
+		blaster_infantry = { x = 0 y = 0 }
+		blaster_infantry = { x = 0 y = 1 }
+		blaster_infantry = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "1st Yinchorri Warriors"
+		location = 446
+		division_template = "Yinchorri Warriors"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2nd Yinchorri Warriors"
+		location = 446
+		division_template = "Yinchorri Warriors"
+		start_experience_factor = 0.3
+	}
+}

@@ -60,12 +60,6 @@ sp_naval_cruiser_submarine = {
 			}
 			ship_hull_cruiser_submarine
 		}
-		enable_equipments = {	
-			limit = {
-				not = { has_dlc = "Man the Guns" }
-			}
-			cruiser_submarine
-		}
 		
 		country_effects = {
 			if = {
@@ -240,13 +234,7 @@ sp_naval_fleet_submarine = {
 				has_dlc = "Man the Guns"
 			}
 			ship_hull_fleet_submarine
-		}
-		enable_equipments = {	
-			limit = {
-				not = { has_dlc = "Man the Guns" }
-			}
-			fleet_submarine
-		}				
+		}				
 	}
 
 	generic_prototype_rewards = {
@@ -403,12 +391,6 @@ sp_naval_nuclear_submarine = {
 			limit = { has_dlc = "Man the Guns"}
 			ship_hull_nuclear_submarine
 		}
-		enable_equipments = {
-			limit = { 
-				not = { has_dlc = "Man the Guns" }
-			}
-			nuclear_submarine
-		}
 	}
 
 	generic_prototype_rewards = {
@@ -562,12 +544,6 @@ sp_naval_rocket_launching_submarine = {
 		}
 		scientist_effects = {
 			
-		}
-		enable_equipments = {
-			limit = { 
-				not = {has_dlc = "Man the Guns"}
-			}
-			rocket_submarine
 		}
 
 		enable_equipment_modules = {
@@ -742,12 +718,6 @@ sp_naval_nuclear_missile_submarine = {
 		}
 		scientist_effects = {
 			
-		}
-		enable_equipments = {
-			limit = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-			nuclear_missile_submarine
 		}
 		enable_equipment_modules = {
 			limit = {
@@ -1039,12 +1009,6 @@ sp_naval_midget_submarine = {
 				has_dlc = "Man the Guns"
 			}
 			ship_hull_midget_submarine
-		}
-		enable_equipments = {	
-			limit = {
-				not = {has_dlc = "Man the Guns"}
-			}
-			midget_submarine
 		}
 
 		country_effects = {
@@ -1725,13 +1689,7 @@ sp_naval_torpedo_cruiser = {
 			ship_hull_torpedo_cruiser
 		}	
 			
-
-		enable_equipments = {	
-			limit = {
-				not = {has_dlc = "Man the Guns"}
-			}
-				torpedo_cruiser			
-			}	
+	
 		
 		enable_equipment_modules = {
 			 
@@ -1915,12 +1873,6 @@ sp_naval_super_heavy_battleship = {
 				has_dlc = "Man the Guns"
 			}
 			ship_hull_super_heavy_1
-		}
-		enable_equipments = {
-			limit = {
-				not = {has_dlc = "Man the Guns"}
-			}
-			SH_battleship_1
 		}
 
 		enable_equipment_modules = {	
@@ -2232,12 +2184,6 @@ sp_naval_modern_battleship = {
 			}
 				ship_hull_heavy_modern
 		}
-		enable_equipments = {	
-			limit = {
-				not = {has_dlc = "Man the Guns"}
-			}
-				modern_battleship
-		}
 		enable_equipment_modules = {
 			 
 		}
@@ -2546,12 +2492,6 @@ sp_naval_modern_carrier = {
 			ship_hull_carrier_modern
 		}
 
-		enable_equipments = {
-			limit = {
-				not = {has_dlc = "Man the Guns"}
-			}
-			modern_carrier
-		}
 
 		enable_equipment_modules = {
 			 
@@ -3084,7 +3024,6 @@ sp_naval_underway_replenishment = {
 				
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_a
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3110,7 +3049,6 @@ sp_naval_underway_replenishment = {
 				
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_underway_replenishment_pick_b
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3163,7 +3101,6 @@ sp_naval_proximity_fuze = {
 
 	project_output = {
 		country_effects = {
-			custom_effect_tooltip = tech_effect|sp_naval_proximity_fuze_tech
 			hidden_effect = {
 				set_technology = {
 					popup = no
@@ -3323,7 +3260,6 @@ sp_naval_support_ships = {
 				
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_a
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3338,7 +3274,6 @@ sp_naval_support_ships = {
 				default = yes
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_b
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3353,7 +3288,6 @@ sp_naval_support_ships = {
 				
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_support_ships_pick_c
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3382,7 +3316,6 @@ sp_naval_support_ships = {
 				
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_a
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3397,7 +3330,6 @@ sp_naval_support_ships = {
 				default = yes
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_b
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3412,7 +3344,6 @@ sp_naval_support_ships = {
 				
 				iteration_output = {
 					country_effects = {
-						custom_effect_tooltip = tech_effect|sp_naval_repair_ships_pick_c
 						hidden_effect = {
 							set_technology = {
 								popup = no
@@ -3479,12 +3410,6 @@ specialization = specialization_naval
 				has_dlc = "Man the Guns"
 			}
 			ship_hull_escort_carrier
-		}
-		enable_equipments = {
-			limit = {
-				not = {has_dlc = "Man the Guns"}
-			}
-			escort_carrier
 		}
 		enable_equipment_modules = {
 			 ship_escort_deck_space

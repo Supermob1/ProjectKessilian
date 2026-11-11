@@ -2103,7 +2103,6 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 					limit = {
 						has_dlc = "Gotterdammerung"
 					}
-					custom_effect_tooltip = tech_effect|sp_land_large_caliber_kinetic_energy_sabot_gd_tech
 					hidden_effect = {
 						set_technology = {
 							popup = no
@@ -2116,7 +2115,6 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 				}
 			}
 			else = {
-				custom_effect_tooltip = tech_effect|sp_land_large_caliber_kinetic_energy_sabot_no_gd_tech
 				hidden_effect = {
 					set_technology = {
 						popup = no

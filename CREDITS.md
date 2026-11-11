@@ -82,13 +82,87 @@ Mesh-Evillejedi/Warbnull | Texture-Evillejedi/Warbnull | Rigging-Evillejedi/Warb
 Vulture Droid:
 Mesh-Evillejedi | Texture-Codeuser\z3r0x | Rigging-z3r0x
 
+RV_LAAT-C_Space (LAAT/c carrier, Republic transport tech 1, 2026-11-10)
+LAAT/c:
+Mesh:Pysch0fred/z3r0x/Warbnull | Textures-pysch0fred/Warbnull | Animations-Warbnull | Rigging-Warbnull (Also we would like to thank Nomada Firefox for obtaining this mesh and permission to use it)
+
 (2026-11-08: also SeV_fanblade_fighter (Ginivex-class fighter) - no line for it in credits.txt; TODO ask the RaW team.)
+(2026-11-10: the Ginivex / Fanblade line is in the workshop release's credits.md, see the next section.)
 (2026-11-09: also SeV_AAT_Blue (CIS-colour AAT, covered by the AAT line) and SeV_Droidekka_MK1 (droideka Mk I, textured with
 FotR's Ui_droideka.dds) - no line for the droideka in credits.txt; TODO ask the RaW team.)
+(2026-11-11: also CSV_Escort_Carrier (Separatist escort carrier, variant-picker alternate) from the full workshop version - no line for it in credits.md; TODO ask the RaW team.)
+
+Starship tech icons (2026-11-10, rendered from the static models; Starfleet tab):
+Acclamator:
+Mesh-Evillejedi | Texture-Evillejedi/z3r0x | Rigging-z3r0x
+
+Centax:
+Mesh:Evillejedi | Texture-Evillejedi | Rigging-z3r0x
+
+Dreadnaught:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-z3r0x\Bryant\Warbnull
+
+Light Assault Cruiser:
+Mesh-Warbnull | Texture-Warbnull\z3r0x | Rigging-Warbnull
+
+Light Frigate:
+Mesh-Warbnull | Texture-Warbnull | Rigging-Warbnull
+
+Mandator/Pride of the Core:
+Mesh-Evillejedi | Texture:z3r0x | Rigging-Warbnull
+
+Venator:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-z3r0x
+
+Victory Class:
+Mesh-Evillejedi | Texture-Evillejedi\Warbnull | Rigging-Warbnull
+
+Bulwark:
+Mesh-Evillejedi | Texture-Evillejedi | Animation-Warbnull | Rigging-Bryant
+
+CIS Carrier:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-z3r0x\Warbnull
+
+Hardcell:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-z3r0x
+
+Lucrehulk:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-Warbnull
+
+Munificent:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-z3r0x
+
+Patrol Frigate:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-z3r0x
+
+Providence:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-Warbnull
+
+Recusant:
+Mesh-Evillejedi | Texture-Evillejedi | Rigging-z3r0x
+
+Malevolence:
+Mesh-Evillejedi | Texture-Arvis Taljik | Rigging-Warbnull
+
+Wavecrest Frigate:
+Mesh-Warbnull | Texture-Warbnull | Rigging-Warbnull
+
+Arquitens-class light cruiser:
+Mesh-Warbnull | Texture-Warbnull | Rigging-Warbnull
+
+Pelta Frigate:
+Mesh-Warbnull | Texture-Warbnull | Rigging-Warbnull
+
+(2026-11-10: also SeV_Invisible_Hand (Providence carrier, covered by the Providence line?) and SeV_SupplyShip (Lucrehulk core ship) -
+no line for them in credits.txt; TODO ask the RaW team.)
 
 ## Republic at War (current Steam Workshop release 1129810972, credits.md lines copied exactly)
 SeV_Scorpenek (Scorpenek, light walker tech 4), SeV_Octuptarra_Rocket (Octuptarra in CIS colours, heavy walker tech 3; which of the
 two Octuptarra lines covers this variant is not stated, both given), SeV_AAT_CIS (blue-grey Confederate AAT, hover tank tech 2).
+
+SeV_fanblade_fighter (Ginivex-class Fanblade, CIS V-wing counterpart, 2026-11-10)
+Asajj Ventress's Fanblade `Commissioned`
+Mesh-The Farseer | Textures-The Farseer | Rigging-The Farseer | Coding-z3r0x | Commissioner-z3r0x
 
 Scorpanek Annihilator Droid `Commissioned`
 Mesh-The Farseer | Textures-The Farseer | Rigging-The Farseer/z3r0x | Coding-SerbComrade/z3r0x | Commissioner-z3r0x
@@ -111,10 +185,83 @@ Original Mesh-Mars Marshall(NeoMarz) | Low Poly Mesh Re-build- Codeuser/z3r0x | 
 Boss:
 Mesh-Tijil | Animations-Petroglyph | Texture-z3r0x/Master Windu | Rigging-z3r0x
 
+SeV_DIAMOND_CIS_REFIT (Diamond-class cruiser, CIS escort tech 1, 2026-11-10)
+Diamond-Class Cruiser
+Mesh-Kalani6342 | Texture-Kalani6342 | Rigging-Kalani6342 | Coding-JPJones
+
+EV_StarDestroyer_MKI (Imperial I-class Star Destroyer, Republic Star Destroyer tech 3, 2026-11-10)
+Star Destroyer:
+Mesh-EvilleJedi | Texture-Evillejedi | Rigging-Warbnull
+
 ## New Order Mod free assets (CC BY-NC-SA 2.0, https://creativecommons.org/licenses/by-nc-sa/2.0/legalcode)
 New Order Mod team - https://www.moddb.com/mods/new-order-mod. Converted from Empire at War .alo (alo_to_glb.py + unit_models.py).
 - T4-B heavy tank - Original design: Petroglyph, LucasArts | Model, texture: Du}{ | Rigging, edits: Sudno
 - T-16 skyhopper - Original design: Colin Cantwell | Model, texture: Du}{ | Rigging, edits, engine texture: Sudno
+
+Variant picker alternates (2026-11-11, user picks): REV_NTB_630, NV_Sabaoth_Bomber, REV_Rothana_Destroyer, REV_Z95, CSV_T-62_Convor,
+REV_Delta7b_Anakin, SeV_p38, REV_ARC170_Razor, REV_Vwing, SeV_Scarab, Nv_Umbaran_Fighter, NV_Z95_I3, SeV_Commerce_Guild_Light_Cruiser,
+REV_Gladiator, REV_Arquitens_Cruiser, NV_A_A3_Truck_M56_JAN, Nv_CLL_M2, REV_CPW, REV_LAAT_1, NV_Lance_Walker, REV_StunTank.
+SeV_p38 (Porax-38) has no line in credits.md; TODO ask the RaW team.
+
+Arquitens-class Light Cruiser
+Mesh-Lucasarts/z3r0x | Texture-Lucasarts/z3r0x | Rigging-z3r0x | Coding-z3r0x
+
+Civilian Z-95 Headhunter
+Mesh-Kubli | Textures-Kubli | Rigging-Kubli | Coding-JPJones
+
+V-wing `Commissioned`
+Mesh-The Farseer | Textures-The Farseer | Rigging-The Farseer | Coding-z3r0x | Commissioner-JPJones
+
+T-62 Convor
+Mesh-Zespo | Textures-Kalani/V.Perriens | Rigging-Zespo | Coding-Jezero
+
+CLL-M2 Binary Loadlifter (AotR)
+Mesh-Kubli | Textures-Kubli | Rigging-Kubli | Coding-SerbComrade/z3r0x
+
+A-A3 Guntruck
+Mesh-Kubli | Textures-Kubli | Rigging-Kubli | Coding-SerbComrade
+
+NTB-630
+Original Mesh-Howard Day | Low Poly Mesh Re-build- Major Payne | Texture- Kalani6342 | Rigging-Kalani6342 | Coding-AshUzumaki
+
+Umbaran Fighter
+Mesh-Lucasart/z3r0xz3r0x  | Texture-z3r0x | Rigging-z3r0x | Coding-JPJones
+
+Clone Z-95
+Mesh-Grimley | Texture-Kalani6342 | Rigging-Kalani6342 | Coding-AshUzumaki
+
+Recalcitrant-class Light Cruiser `Commissioned` (Remake: Clone Wars Holdouts) 
+Mesh-Kharak | Texture-Kharak | Rigging-Emperor Niko | Coding-Dambo/JPJones | Commissioner-Arvis Taljik
+
+Gladiator-class Star destroyer (AotR)
+Mesh-(Gowron/Maxloef)/Steiner0815/z3r0x | Textures-(Gowron/Maxloef)/Steiner0815/z3r0x | Rigging-(Gowron/Maxloef)/Steiner0815/z3r0x | Coding-R3D2/JPJones
+
+RX-200 EMP Tank
+Mesh-Warb Null | Textures-Warb Null/z3r0x | Rigging-Warb Null | animations-z3r0x | Coding-AshUzumaki/JPJones
+
+Clone Personal Walker `Commissioned`
+Mesh-The Farseer | Textures-The Farseer | Rigging-The Farseer | Animations-The Farseer | Coding-Bucman55 | Commissioner-z3r0x
+
+Lance Walker
+Mesh-Warb Null | Textures-Warb Null | Rigging-Warb Null | Animations- Petroglyph/Warb Null | Coding-z3r0x
+
+Scarab
+Mesh-Grimley | Texture-Kalani6342  | Rigging-Kalani6342 
+
+Sabaoth Bomber:
+Mesh-Warbull | Texture-Warbnull | Rigging-Warbnull
+
+LAAT:
+Mesh-Bailknight\z3r0x | Animations-Bailknight\Warbnull | Texture-Bailknight\z3r0x| Rigging-z3r0x
+
+Anakin Delta Fighter:
+Mesh-Evillejedi | Texture-z3r0x | Animations-z3r0x | Rigging-z3r0x
+
+Razor Squadron ARC-170
+Mesh- Evillejedi | Texture- z3r0x/Evillejedi | Rigging-z3r0x | Animation-z3r0x
+
+Rothana Destroyer
+Mesh-Warbnull | Texture-Warbnull  | Rigging-z3r0x 
 
 ## Empire at War community models (readme credits copied as given; "feel free to use, but credit")
 Converted from .alo/.ala (alo_to_glb.py + unit_models.py).
@@ -141,6 +288,15 @@ cis_multi-troop_transport now animated (rack stowed).
 Third pass (2026-11-08): b1_battledroid_repcom (+ e-5_blaster_rifle), cis_b2_sbd_ptl (the hypothetical B3), CSA_Espo_Walker,
 cis_blue_stap, IF_I_BEAM_Fighter, Sabaoth_bomber, CIS_Vulture_Ground (walking Vulture droid, animated).
 Fourth pass (2026-11-09): rep_clone_z95 (Clone Z-95 Headhunter), rep_ntb (NTB-630 heavy bomber), Droch-class_boarding_ship.
+Fifth pass (2026-11-10): Sabaoth_fighter (CIS first starfighter, replaces the I-Beam fighter).
+Sixth pass (2026-11-10): NR_Quasar (Quasar Fire-class cruiser-carrier) - no longer used, replaced by the Imperial Escort Carrier.
+Seventh pass (2026-11-10, starships, map models + tech icons): Consular-class_LAC, victory_i-class_star_destroyer, victory_ii-class_star_destroyer,
+EV_Venator, ev_acclamator_i, dreadnaught, REP_MandatorII, CIS_MUNIFICENT, CIS_Recusant, CIS_captor, CIS_PROVIDENCE, CIS_Providence_Dreadnought,
+Providence_Lucid_Voice, lucrehulk_control_cship, CIS_Hardcell, lucrehulk_bship, subjugator.
+Ninth pass (2026-11-11, variant picker alternates, user picks): 2warpod, Z95_Bomber, Sabaoth_Defender, Scurrg_H-6_Bomber, RV_Ywing,
+Procurator-class_battlecruiser, Recusant-class_dreadnaught, Maelstrom-class_battlecruiser, Secutor_Star_Destroyer, tector_i-class_star_destroyer,
+Rep_Aurek_Mk2, Naboo_N1_Starfighter, NV_R22, CIS_Scarab, EV_TIEFighter, Venator_Hero, Gladiator_I-class_star_destroyer, SpaceARC,
+Rep_PraetorOne, TaggeCo_Battlecruiser, EV_AT-DP, Rep_AT-XT, Rep_VAATe, RV_Skyhopper, Rep_BARC_Speeder, Hutt_WLO5, Wook_Fluttercraft.
 
 ## Thrawn's Revenge 3.3 (Empire at War mod, Thrawn's Revenge team) - PERMISSION NEEDED BEFORE RELEASE
 The mod's Credits.txt grants no reuse rights; ask the team (ModDB / Discord) and copy their required credit lines here.
@@ -148,6 +304,11 @@ Converted from .alo/.ala (alo_to_glb.py + unit_models.py): at-rt (late-war AT-RT
 imperial_dropship_transport, Theta-class_T-2c_shuttle_land, ev_spmat (SPMA-T).
 Also EV_AT-AA (AT-AA walker): a vanilla Empire at War: Forces of Corruption unit (Petroglyph / LucasArts) shipped in TR's folder;
 its base texture is not in TR, so TR's EV_AT-AA_D1 damage texture is used.
+Imperial_Escort_Carrier (2026-11-10): Republic carrier tech 2 map model + icon, replacing FotR's NR_Quasar.
+
+Variant picker alternates (2026-11-11, user picks, 95 models): every _glb/alt_cand/tr model named in plans & scripts/sw_tree/alt_new.py
+(TIE / X-wing-family fighters and bombers, New Republic / Imperial / warlord / Hapan / Chiss frigates and star destroyers, super star
+destroyers, T-series hovertanks, AT-ST-A, AT-MP, SPMA-G, MAAT, B5 Juggernaut, Century tank, Firehawke...).
 
 ## Star Wars Empire at War / Forces of Corruption (Petroglyph / LucasArts) - game assets
 UI_DROIDEKA (Droideka Mk II, animated) and its UI_DROIDEKA.DDS texture, read from the installed game's corruption/Data .meg archives
@@ -155,6 +316,7 @@ UI_DROIDEKA (Droideka Mk II, animated) and its UI_DROIDEKA.DDS texture, read fro
 EV_AT-AA (AT-AA walker) now with its own EV_AT-AA.DDS from GameData/Data .meg (was Thrawn's Revenge's damage texture).
 EV_TIECRAWLER (the game's TIE Mauler, hover tank tech 3, repainted Confederate grey/blue) and its textures, from the installed
 game's GameData/Data .meg archives (static).
+RV_CORVETTE (CR90 corvette, Republic escort tech 1 icon, 2026-11-10): the vanilla Empire at War model, read from the copy shipped in FotR's folder.
 
 ## Star Wars: Republic Commando (LucasArts / Pandemic Studios) - game asset
 DwarfSpiderDroid (A-DSD, heavy walker tech 2) and its DwarfSpiderDroid texture, read from the installed game's Droid.ukx /
@@ -169,6 +331,7 @@ Converted from the mod's .pak (usw_vehicles.pak, EPLY meshes + textures) with pl
 - Scorpenek annihilator droid (con scorpenek_droid) - Separatist light walker tech 4
 - Umbaran hover tank (con umbaran_hovertank) - Separatist hover tank tech 3 (crawler tech)
 - Clone hover tank (rep clone_hovertank) - Republic heavy repulsortank
+- RX-200 Falchion assault tank (rep falchion_tank) - Republic px tank tech (2026-11-10, replaces the Rebel AAC-1)
 
 ## Garry's Mod workshop addons - PERMISSION NEEDED BEFORE RELEASE
 Converted from Source .mdl/.vtf (plans & scripts/source_mdl_to_obj.py + unit_models.py).

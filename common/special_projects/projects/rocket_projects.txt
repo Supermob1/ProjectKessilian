@@ -388,13 +388,7 @@ sp_rockets_ballistic_missile = {
 				}
 			}		
 		}
-
-		enable_equipments = {
-			limit = {
-				has_dlc = "Gotterdammerung"
-			}
-			ballistic_missile_equipment_1
-		}
+
 		enable_equipments = {
 			limit = {
 				NOT = { has_dlc = "Gotterdammerung" }
@@ -590,13 +584,7 @@ sp_rockets_medium_range_ballistic_missile = {
 					PROJECT = sp_rockets_medium_range_ballistic_missile
 				}
 			}		
-		}	
-		enable_equipments = {
-			limit = {
-				has_dlc = "Gotterdammerung"
-			}
-			ballistic_missile_equipment_2
-		}
+		}	
 		enable_equipments = {
 			limit = {
 				NOT = { has_dlc = "Gotterdammerung" }
@@ -1100,13 +1088,7 @@ sp_rocket_interceptor = {
 				limit = { has_dlc = "By Blood Alone" }
 				 SP_create_variant_based_on_country_improved_small_airframe_rocket_engine = yes	
 			}		
-		}
-		enable_equipments = {
-			limit = {
-				NOT = { has_dlc = "By Blood Alone" }
-			}
-			rocket_interceptor_equipment_1
-		}
+		}
 		enable_equipment_modules = {
 			limit = { 
 				has_dlc = "By Blood Alone" 

@@ -7,14 +7,14 @@ units = {
 		task_force = {
 			name = "Coruscant Sector Garrison"
 			location = 4808
-			ship = { name = "RSF Sentinel I" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Sentinel II" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Sentinel III" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Sentinel IV" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Picket I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Picket II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Picket III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Picket IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Sentinel I" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Sentinel II" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Sentinel III" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Sentinel IV" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket I" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket II" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket III" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Picket IV" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 	}
 }

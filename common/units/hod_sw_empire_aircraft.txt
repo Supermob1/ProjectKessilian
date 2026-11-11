@@ -7,6 +7,7 @@ sub_units = {
 		need = { imp_fighter_equipment = 1 }
 		categories = { category_fighter }
 		land_air_wing_size = 100
+		carrier_air_wing_size = 10	# HOD 2026-11-10: carrier-capable equipment needs it (error.log)
 	}
 
 	tie_heavy_fighter = { #defender - multi-role: CAS, naval strike, port strike, interception
@@ -26,6 +27,7 @@ sub_units = {
 		type = interceptor
 		need = { imp_interceptor_equipment = 1 }
 		land_air_wing_size = 100
+		carrier_air_wing_size = 10	# HOD 2026-11-10: carrier-capable
 	}
 
 	tie_bomber = {
@@ -36,6 +38,7 @@ sub_units = {
 		need = { imp_bomber_equipment = 1 }
 		categories = { category_strat_bomber }
 		land_air_wing_size = 100
+		carrier_air_wing_size = 10	# HOD 2026-11-10: carrier-capable
 	}
 
 	space_transport = {

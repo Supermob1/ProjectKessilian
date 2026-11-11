@@ -148,7 +148,7 @@ def main():
         print(f"dropped line {ln}: {l}")
     print(f"{len(moved)} moved, {len(dropped)} dropped" + (" (dry run, nothing written)" if dry else ""))
     if not dry and (moved or dropped):
-        open("map/buildings.txt", "w", encoding="utf-8", newline="").write("".join(out))
+        open("map/buildings.txt", "w", encoding="utf-8", newline="").write("".join(out).rstrip("\r\n"))  # no newline at EOF, like vanilla (else error.log "invalid arguments count")
 
 
 if __name__ == "__main__":

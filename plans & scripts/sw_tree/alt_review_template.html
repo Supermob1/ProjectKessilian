@@ -1,0 +1,165 @@
+<title>Variant Model Shortlist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* layout: sticky console bar (tabs, filters, tally, copy) over a dense hangar grid of model cards, grouped by class */
+:root {
+  --bg: #eef1f5; --panel: #ffffff; --well: #d9dfe7; --fg: #18202b; --muted: #5b6676; --line: #c9d1dc;
+  --accent: #b5321f; --keep: #1f7a4d; --keep-bg: #dcefe4; --drop: #8a94a3;
+  --display: "Chakra Petch", "Segoe UI", sans-serif; --body: "IBM Plex Sans", "Segoe UI", sans-serif; --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121820; --panel: #1b232e; --well: #2a3542; --fg: #e3e8ef; --muted: #97a3b4; --line: #2f3a48;
+  --accent: #e2604a; --keep: #4cc68a; --keep-bg: #183a2b; --drop: #66717f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121820; --panel: #1b232e; --well: #2a3542; --fg: #e3e8ef; --muted: #97a3b4; --line: #2f3a48;
+  --accent: #e2604a; --keep: #4cc68a; --keep-bg: #183a2b; --drop: #66717f; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 14px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.intro { padding-block: 24px 12px; display: grid; gap: 6px; max-width: 70ch; }
+h1 { font-family: var(--display); font-weight: 600; font-size: 28px; margin: 0; letter-spacing: .02em; text-wrap: balance; }
+.intro p { margin: 0; color: var(--muted); line-height: 1.5; }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line);
+  padding-block: 10px; display: grid; gap: 8px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tabs button, .chips button, .act { font: 500 13px var(--body); border: 1px solid var(--line); background: var(--bg); color: var(--fg);
+  border-radius: 4px; padding: 6px 10px; cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chips button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.chips button span { font-family: var(--mono); color: var(--muted); margin-left: 4px; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#q { font: 14px var(--body); padding: 6px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); color: var(--fg); min-width: 0; flex: 1 1 180px; }
+.tally { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tally b { color: var(--keep); font-weight: 500; }
+.act.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+main { padding-block: 16px 48px; display: grid; gap: 28px; }
+h2 { font-family: var(--display); font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
+  margin: 0 0 10px; display: flex; gap: 10px; align-items: baseline; }
+h2 small { font-family: var(--mono); letter-spacing: 0; text-transform: none; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+.card { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-rows: 110px auto; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 4px; overflow: hidden; position: relative; }
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card .img { background: var(--well); display: grid; place-items: center; padding: 6px; }
+.card img { max-width: 100%; max-height: 98px; object-fit: contain; }
+.card .txt { padding: 7px 9px 9px; display: grid; gap: 2px; min-width: 0; }
+.card .n { font-weight: 600; font-size: 13px; overflow-wrap: anywhere; }
+.card .m { font-size: 11.5px; color: var(--muted); overflow-wrap: anywhere; }
+.card .tag { position: absolute; top: 6px; right: 6px; font: 500 10.5px var(--mono); text-transform: uppercase; letter-spacing: .06em;
+  padding: 2px 6px; border-radius: 3px; background: var(--panel); color: var(--drop); border: 1px solid var(--line); }
+.card.on { border-color: var(--keep); box-shadow: inset 0 0 0 1px var(--keep); }
+.card.on .tag { background: var(--keep-bg); color: var(--keep); border-color: var(--keep); }
+.card:not(.on) img { opacity: .45; filter: grayscale(1); }
+.card:not(.on) .n { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--drop); }
+#out { width: 100%; box-sizing: border-box; font: 12px var(--mono); min-height: 70px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 4px; padding: 8px; }
+.empty { color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .card { transition: border-color .12s; } .card img { transition: opacity .12s; } }
+</style>
+
+<header class="intro wrap">
+  <h1>Variant Model Shortlist</h1>
+  <p>Click a model to switch it between <strong>keep</strong> and <strong>drop</strong>. Models already in the variant picker start as kept. New candidates from Fall of the Republic, Republic at War and Thrawn's Revenge start as dropped, so tick only the ones worth adding. Lookalikes from different mods sit next to each other. When you're done, press Copy choices and paste the text into the chat.</p>
+</header>
+<div class="bar wrap">
+  <div class="row">
+    <div class="tabs row" role="group" aria-label="List">
+      <button id="t-new" aria-pressed="true">New candidates</button>
+      <button id="t-cur" aria-pressed="false">In the picker now</button>
+    </div>
+    <input id="q" type="search" placeholder="Search name, mod or faction" aria-label="Search">
+    <span class="tally" id="tally"></span>
+    <button class="act" id="all-on">Keep shown</button>
+    <button class="act" id="all-off">Drop shown</button>
+    <button class="act primary" id="copy">Copy choices</button>
+  </div>
+  <div class="chips row" id="chips" role="group" aria-label="Class"></div>
+  <textarea id="out" readonly hidden aria-label="Choices to paste"></textarea>
+</div>
+<main class="wrap" id="main"></main>
+
+<script>
+const DATA = /*DATA*/null;
+const KEY = "hod-alt-review-v1";
+let state = {};                    // id -> true (keep) / false (drop), only where the viewer changed the default
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+const isOn = it => it.id in state ? state[it.id] : it.id.startsWith("cur:");
+let tab = "new", group = null, q = "";
+const list = () => DATA[tab];
+const shown = () => list().filter(it => (!group || it.group === group) &&
+  (!q || (it.name + " " + it.meta + " " + it.group).toLowerCase().includes(q)));
+
+function chips() {
+  const counts = {};
+  list().forEach(it => counts[it.group] = (counts[it.group] || 0) + 1);
+  const el = document.getElementById("chips");
+  el.innerHTML = "";
+  [null, ...Object.keys(counts)].forEach(g => {
+    const b = document.createElement("button");
+    b.setAttribute("aria-pressed", String(g === group));
+    b.innerHTML = (g || "All") + "<span>" + (g ? counts[g] : list().length) + "</span>";
+    b.onclick = () => { group = g; render(); };
+    el.appendChild(b);
+  });
+}
+function tally() {
+  const all = list(), kept = all.filter(isOn).length;
+  document.getElementById("tally").innerHTML = "<b>" + kept + "</b> kept / " + all.length;
+}
+function render() {
+  chips(); tally();
+  const main = document.getElementById("main");
+  main.innerHTML = "";
+  const groups = {};
+  shown().forEach(it => (groups[it.group] = groups[it.group] || []).push(it));
+  if (!Object.keys(groups).length) { main.innerHTML = '<p class="empty">Nothing matches that search.</p>'; return; }
+  for (const [g, items] of Object.entries(groups)) {
+    const sec = document.createElement("section");
+    sec.innerHTML = "<h2>" + g + " <small>" + items.length + "</small></h2>";
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    items.forEach(it => {
+      const c = document.createElement("button");
+      c.className = "card" + (isOn(it) ? " on" : "");
+      c.setAttribute("aria-pressed", String(isOn(it)));
+      c.innerHTML = '<div class="img">' + (it.img ? '<img alt="" loading="lazy" src="' + it.img + '">' : '<span class="m">no icon</span>') +
+        '</div><div class="txt"><span class="n"></span><span class="m"></span></div><span class="tag"></span>';
+      c.querySelector(".n").textContent = it.name;
+      c.querySelector(".m").textContent = it.meta + (it.kb ? " · " + (it.kb >= 1024 ? (it.kb / 1024).toFixed(1) + " MB" : it.kb + " KB") : "");
+      const tag = () => { c.querySelector(".tag").textContent = isOn(it) ? "keep" : "drop"; };
+      tag();
+      c.onclick = () => {
+        state[it.id] = !isOn(it); save();
+        c.classList.toggle("on", isOn(it)); c.setAttribute("aria-pressed", String(isOn(it))); tag(); tally();
+      };
+      grid.appendChild(c);
+    });
+    sec.appendChild(grid);
+    main.appendChild(sec);
+  }
+}
+function setTab(t) {
+  tab = t; group = null;
+  document.getElementById("t-new").setAttribute("aria-pressed", String(t === "new"));
+  document.getElementById("t-cur").setAttribute("aria-pressed", String(t === "cur"));
+  render();
+}
+document.getElementById("t-new").onclick = () => setTab("new");
+document.getElementById("t-cur").onclick = () => setTab("cur");
+document.getElementById("q").oninput = e => { q = e.target.value.trim().toLowerCase(); render(); };
+document.getElementById("all-on").onclick = () => { shown().forEach(it => state[it.id] = true); save(); render(); };
+document.getElementById("all-off").onclick = () => { shown().forEach(it => state[it.id] = false); save(); render(); };
+document.getElementById("copy").onclick = () => {
+  const keepNew = DATA.new.filter(isOn).map(it => it.id.slice(4));
+  const dropCur = DATA.cur.filter(it => !isOn(it)).map(it => it.id.slice(4));
+  const text = "keep new: " + keepNew.join(" ") + "\ndrop current: " + dropCur.join(" ");
+  const out = document.getElementById("out");
+  out.value = text; out.hidden = false;
+  const btn = document.getElementById("copy");
+  navigator.clipboard.writeText(text).then(() => { btn.textContent = "Copied"; },
+    () => { out.focus(); out.select(); btn.textContent = "Select and copy the text below"; });
+  setTimeout(() => { btn.textContent = "Copy choices"; }, 2500);
+};
+render();
+</script>

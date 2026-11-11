@@ -21,7 +21,7 @@ io_alamo_tools.register()
 IMPORT = getattr(bpy.ops, "import")          # operator id is "import.alo"
 
 SKIP = re.compile(r"collision|shadow|shields up|muzzle|flash|light|glow|engine|_lod[1-9]|^p_|^c_|hp_|proxy|goblin|bone|girder|_alt[1-9]", re.I)   # girder = build-up scaffold, _ALTn = damage states
-AUX = re.compile(r"(_?b|_?g|_?gloss|_?spec|_?normal|_?n|_?bump\w*|td|tb|glow|black|_bc(_d\d)?)$", re.I)   # not the diffuse map (_BC = EaW structure normal map)
+AUX = re.compile(r"(_?b|_?g|_?gloss|_?spec|_?normal|_?n|_?bump\w*|td|tb|glow|black|_bc(_d\d)?|[-_][ln]m)$", re.I)   # not the diffuse map (_BC = EaW structure normal map)
 
 
 def diffuse(mat):
@@ -33,9 +33,11 @@ def diffuse(mat):
 
 
 LIFTED = set()
+LIGHT_ONLY = re.compile(r"[-_]lm(\.dds)?$|blast|thruster_on", re.I)   # FotR light-map / engine-glow cards drew as black slabs
 
 
 REP_COLOUR = (0.62, 0.13, 0.10)     # EaW paints the faction colour into the alpha mask: Republic red
+TEAM_COLOUR = {"rep": REP_COLOUR, "cis": (0.23, 0.36, 0.66)}   # HOD_TEAM=cis: Separatist blue (as the CIS TIE droid repaint)
 CAMO = re.compile(r"arf", re.I)       # ARF scout troopers wear green camo: Republic clone white instead
 
 
@@ -55,9 +57,10 @@ def lift(img, target=0.45):
     if 0.02 < mean < target:
         rgb *= target / mean
     team = px[:, 3] > 0.5
-    if re.match(r"re", img.name, re.I) and painted.any() and team[painted].mean() < 0.3:   # small mask = team colour, big = gloss
+    colour = TEAM_COLOUR.get(os.environ.get("HOD_TEAM")) or (REP_COLOUR if re.match(r"re", img.name, re.I) else None)
+    if colour and painted.any() and team[painted].mean() < 0.3:   # small mask = team colour, big = gloss
         lum = rgb[team].mean(1, keepdims=True)
-        rgb[team] = lum * np.array(REP_COLOUR) * 1.8
+        rgb[team] = lum * np.array(colour) * 1.8
     if CAMO.search(img.name):
         lum = rgb.mean(1, keepdims=True)
         rgb[:] = 0.3 + 0.7 * lum / max(lum.max(), 1e-3)
@@ -122,7 +125,8 @@ def convert(path, out_dir, anim=False):
     if parts:
         main_arm = next(o for o in old if o.type == "ARMATURE")
         print("ALO bones", [b.name for b in main_arm.data.bones])
-    visible = [o for o in old if o.type == "MESH" and not o.hide_get() and not SKIP.search(o.name) and len(o.data.polygons)]
+    visible = [o for o in old if o.type == "MESH" and not o.hide_get() and not SKIP.search(o.name) and len(o.data.polygons)
+               and not LIGHT_ONLY.search(getattr(diffuse(o.material_slots[0].material if o.material_slots else None), "name", ""))]
     # per LOD group with a hidden LOD0 (inverted numbering: TR AT-AA, FotR UV_MAL), keep its highest visible LOD;
     # ALT1+ are damage states of ALT0
     groups = {}

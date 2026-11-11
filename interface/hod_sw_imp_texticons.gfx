@@ -76,4 +76,48 @@ spriteTypes = {
 		legacy_lazy_load = no
 		noOfFrames = 2
 	}
+
+	# imp_ support companies use vanilla's support pictures (error.log 2026-11-10: missing texticon)
+	spriteType = {
+		name = "GFX_unit_imp_engineer_icon_small"
+		texturefile = "gfx/texticons/support_engineer_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_imp_recon_icon_small"
+		texturefile = "gfx/texticons/unit_recon_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_imp_military_police_icon_small"
+		texturefile = "gfx/texticons/support_military_police_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_imp_field_hospital_icon_small"
+		texturefile = "gfx/texticons/support_field_hospital_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_imp_logistics_company_icon_small"
+		texturefile = "gfx/texticons/support_logistics_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_imp_maintenance_company_icon_small"
+		texturefile = "gfx/texticons/support_maintenance_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_imp_signal_company_icon_small"
+		texturefile = "gfx/texticons/support_signal_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
 }

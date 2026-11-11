@@ -305,6 +305,36 @@ SPECS["hod_x_mow_scorpenek"] = dict(src=_MOW + "con_scorpenek_droid.glb", mode="
 SPECS["hod_x_mow_umbaran_hovertank"] = dict(src=_MOW + "con_umbaran_hovertank.glb", mode="glb_static", yaw=-90, tris=5000, tex_px=1024, length=6.0, hover=True)
 SPECS["hod_x_mow_clone_hovertank"] = dict(src=_MOW + "rep_clone_hovertank.glb", mode="glb_static", yaw=-90, tris=5000, tex_px=1024, length=6.5, hover=True)
 SPECS["hod_x_mow_at_at_rep"] = dict(src=_MOW + "rep_at_at_rep.glb", mode="glb_static", yaw=-90, tris=7000, tex_px=1024, height=10.5, legs=dict(n=4, top=0.5, swing=12))
+# canon pass (user 2026-11-10): RX-200 Falchion replaces the Rebel AAC-1 (px), LAAT/c (RaW, carrying an AT-TE) replaces the
+# Rebel RM-09, Sabaoth starfighter replaces the made-up "I-Beam Fighter" (CIS torrent)
+SPECS["hod_x_mow_falchion"] = dict(src=_MOW + "rep_falchion_tank.glb", mode="glb_static", yaw=-90, tris=5000, tex_px=1024, length=7.0, hover=True)
+# 2026-11-10 Starfleet tab: one static map model per ship (plans & scripts/sw_tree/naval_tree.py wires <TAG>_<ship>_entity)
+for _n, _len in {"rev_pelta": 6, "rev_light_frigate": 6, "sev_diamond_cis_refit": 6, "sev_wavecrest": 6, "sev_patrol_frigate": 6,
+                 "rev_light_assault_cruiser": 7.5, "rev_lightcruiser": 7.5, "rev_centax_frigate": 7.5, "sev_munificent": 7.5,
+                 "sev_recusant": 8, "sev_carrier": 7.5, "rev_victory": 10, "ev_stardestroyer_mki": 11, "sev_providence": 10,
+                 "sev_bulwark": 10.5, "rev_venator": 11, "sev_invisible_hand": 11, "sev_lucrehulk": 12, "rev_acclamator1": 9,
+                 "sev_hardcell": 7, "sev_supplyship": 9, "rev_dreadnaught": 9, "rev_mandator": 14, "sev_subjugator": 14}.items():
+    SPECS["hod_ship_" + _n] = dict(src=RAWS + "/" + _n + ".glb", mode="glb_static", tris=8000, tex_px=1024, length=_len, plane=True)
+SPECS["hod_ship_rv_corvette"] = dict(src=FOTR + "/rv_corvette.glb", mode="glb_static", tris=8000, tex_px=1024, length=6, plane=True)
+SPECS["hod_ship_nr_quasar"] = dict(src=FOTR + "/nr_quasar.glb", mode="glb_static", tris=8000, tex_px=1024, length=9, plane=True)
+SPECS["hod_ship_tr_escort_carrier"] = dict(src=TR + "/imperial_escort_carrier.glb", mode="glb_static", tris=8000, tex_px=1024, length=10, plane=True)   # replaces the Quasar Fire (user: weird Venator sequel)
+# 2026-11-11 user picks from the alt_review page (FotR / RaW / Thrawn's Revenge): hod_m_<key>, picker only (sw_tree/alt_new.py)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "sw_tree"))
+import alt_new  # noqa: E402
+SPECS.update(alt_new.specs(WIP))
+# 2026-11-10 user: Venator / Victories / Acclamator II / Separatist ships looked poor -> FotR versions (alo_to_glb.py, HOD_TEAM=rep for the Republic red)
+for _n, (_src, _len) in {"fotr_consular_lac": (FOTR + "/consular-class_lac.glb", 7.5), "fotr_victory1": (FOTR + "/victory_i-class_star_destroyer.glb", 10),
+                         "fotr_victory2": (FOTR + "/victory_ii-class_star_destroyer.glb", 10), "fotr_venator": (FOTR + "/ev_venator.glb", 11),
+                         "fotr_acclamator1": (FOTR + "/ev_acclamator_i.glb", 9), "rev_acclamator_assault_ship": (RAWS + "/rev_acclamator_assault_ship.glb", 9.5),
+                         "fotr_dreadnaught": (FOTR + "/dreadnaught.glb", 9), "fotr_mandator2": (FOTR + "/rep_mandatorii.glb", 14),
+                         "fotr_munificent": (FOTR + "/cis_munificent.glb", 7.5), "fotr_recusant": (FOTR + "/cis_recusant.glb", 8),
+                         "fotr_captor": (FOTR + "/cis_captor.glb", 7.5), "fotr_providence": (FOTR + "/cis_providence.glb", 10),
+                         "fotr_provdread": (FOTR + "/cis_providence_dreadnought.glb", 10.5), "fotr_lucid_voice": (FOTR + "/providence_lucid_voice.glb", 11),
+                         "fotr_lucre_control": (FOTR + "/lucrehulk_control_cship.glb", 12), "fotr_hardcell": (FOTR + "/cis_hardcell.glb", 7),
+                         "fotr_lucre_bship": (FOTR + "/lucrehulk_bship.glb", 12), "fotr_subjugator": (FOTR + "/subjugator.glb", 14)}.items():
+    SPECS["hod_ship_" + _n] = dict(src=_src, mode="glb_static", tris=8000, tex_px=1024, length=_len, plane=True)
+SPECS["hod_x_raw_laatc"] = dict(src=RAWS + "/rev_laat-c_space.glb", mode="glb_static", tris=6000, tex_px=1024, length=5.0, plane=True)
+SPECS["hod_x_sabaoth_fighter"] = dict(src=FOTR + "/sabaoth_fighter.glb", mode="glb_static", tris=5000, tex_px=1024, length=3.2, plane=True)
 SPECS["hod_x_droch"] =dict(src=FOTR + "/droch-class_boarding_ship.glb", mode="glb_static", tris=5000, tex_px=1024, length=4.5, plane=True)   # 2026-11-09: real Droch (was the TF MAF stand-in)
 # A-DSD advanced dwarf spider (no model anywhere, 2026-11-09): the RaW dwarf spider, bigger, repainted gunmetal blue
 SPECS["hod_x_adsd"] = dict(SPECS["hod_x_raw_dwarf"], height=5.0, tint=(118, 128, 150))
@@ -446,6 +476,7 @@ def convert(*only):
         bie.export_meshfile(os.path.abspath(f"{OUT}/{name}.mesh"), exp_mesh=True, exp_skel=True, exp_locs=True)
         select([rig], rig)
         for game_anim, (action, f0, f1) in anims.items():
+            f1 = max(f1, f0 + 1)   # a static pose still needs 2 samples ("Animation has only one sample", error.log)
             rig.animation_data.action = bpy.data.actions[action]
             bpy.context.scene.frame_start, bpy.context.scene.frame_end = f0, f1
             bie.export_animfile(os.path.abspath(f"{OUT}/{name}_{game_anim}.anim"), frame_start=f0, frame_end=f1)

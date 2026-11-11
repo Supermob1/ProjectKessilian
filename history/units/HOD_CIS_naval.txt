@@ -14,24 +14,24 @@ units = {
 			name = "Raxus Command Group"
 			location = 8658
 
-			ship = { name = "Invisible Hand" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Trade Federation Command Ship Alpha" definition = battleship equipment = { battleship_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Invisible Hand" pride_of_the_fleet = yes definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Trade Federation Command Ship Alpha" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Banking Clan Enforcer I" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Banking Clan Enforcer II" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Banking Clan Enforcer III" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Banking Clan Enforcer I" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Banking Clan Enforcer II" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Banking Clan Enforcer III" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Corporate Escort A1" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Corporate Escort A2" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Corporate Escort A3" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Corporate Escort A1" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Corporate Escort A2" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Corporate Escort A3" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
 
 			# HEAVY SCREEN
-			ship = { name = "Security Droid Screen 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Security Droid Screen 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Security Droid Screen 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Security Droid Screen 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Security Droid Screen 5" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Security Droid Screen 6" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 1" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 2" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 3" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 4" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 5" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Security Droid Screen 6" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
 		}
 
 		# ESCORT GROUP
@@ -39,13 +39,13 @@ units = {
 			name = "Corporate Escort Wing"
 			location = 8658
 
-			ship = { name = "Escort Cruiser B1" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Escort Cruiser B2" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Escort Cruiser B1" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Escort Cruiser B2" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Escort Screen 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Escort Screen 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Escort Screen 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Escort Screen 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Escort Screen 1" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Escort Screen 2" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Escort Screen 3" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Escort Screen 4" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
 		}
 	}
 
@@ -61,26 +61,26 @@ units = {
 			name = "Geonosis Swarm Command"
 			location = 8658
 
-			ship = { name = "Hive Control Ship Omega" definition = battleship equipment = { battleship_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Hive Control Ship Omega" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Swarm Carrier A" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Swarm Carrier B" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Swarm Carrier C" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Swarm Carrier A" definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Swarm Carrier B" definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Swarm Carrier C" definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Recusant Strike Group I" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Recusant Strike Group II" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Recusant Strike Group III" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Recusant Strike Group IV" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Recusant Strike Group I" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Recusant Strike Group II" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Recusant Strike Group III" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Recusant Strike Group IV" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = CIS } } }
 
 			# MASS SWARM
-			ship = { name = "Drone Escort Wing 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Drone Escort Wing 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Drone Escort Wing 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Drone Escort Wing 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Drone Escort Wing 5" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Drone Escort Wing 6" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Drone Escort Wing 7" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Drone Escort Wing 8" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 1" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 2" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 3" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 4" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 5" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 6" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 7" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Drone Escort Wing 8" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
 		}
 
 		# PATROL SWARM (important for AI spread)
@@ -88,13 +88,13 @@ units = {
 			name = "Outer Rim Patrol Swarm"
 			location = 8658
 
-			ship = { name = "Light Patrol Cruiser 1" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Light Patrol Cruiser 2" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Light Patrol Cruiser 1" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Light Patrol Cruiser 2" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Patrol Droid 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Patrol Droid 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Patrol Droid 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Patrol Droid 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Patrol Droid 1" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Patrol Droid 2" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Patrol Droid 3" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Patrol Droid 4" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
 		}
 	}
 
@@ -109,22 +109,19 @@ units = {
 			name = "Shadow Droid Task Force"
 			location = 8658
 
-			ship = { name = "Silent Profit Carrier" definition = carrier equipment = { carrier_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Silent Profit Carrier" definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Spectre Command Cruiser I" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Spectre Command Cruiser II" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Spectre Command Cruiser I" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Spectre Command Cruiser II" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = CIS } } }
 
 			# RAID SWARM
-			ship = { name = "Raider Droid Swarm 1" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Raider Droid Swarm 2" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Raider Droid Swarm 3" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Raider Droid Swarm 4" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Raider Droid Swarm 5" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Raider Droid Swarm 6" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 1" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 2" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 3" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 4" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 5" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
+			ship = { name = "Raider Droid Swarm 6" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = CIS } } }
 
-			ship = { name = "Submersible Raider Unit A" definition = submarine equipment = { submarine_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Submersible Raider Unit B" definition = submarine equipment = { submarine_1 = { amount = 1 owner = CIS } } }
-			ship = { name = "Submersible Raider Unit C" definition = submarine equipment = { submarine_1 = { amount = 1 owner = CIS } } }
 		}
 	}
 

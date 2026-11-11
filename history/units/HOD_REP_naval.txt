@@ -14,24 +14,24 @@ units = {
 			name = "Coruscant Capital Fleet"
 			location = 313
 
-			ship = { name = "RSF Resolute" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Guardian" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Resolute" pride_of_the_fleet = yes definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Guardian" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Justice" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Valor" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Honor" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Justice" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Valor" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Honor" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Unity" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Peacekeeper" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Concord" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Unity" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Peacekeeper" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Concord" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
 
 			# SCREEN WALL
-			ship = { name = "RSF Shield I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Shield II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Shield III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Shield IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Shield V" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Shield VI" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield I" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield II" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield III" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield IV" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield V" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shield VI" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 
 		# CARRIER SUPPORT GROUP
@@ -39,15 +39,15 @@ units = {
 			name = "Coruscant Carrier Wing"
 			location = 313
 
-			ship = { name = "RSF Dawnstar" definition = carrier equipment = { carrier_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Dawnstar" definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Defender I" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Defender II" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Defender I" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Defender II" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Escort I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Escort II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Escort III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Escort IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort I" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort II" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort III" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort IV" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 
 		# DEFENSE PATROL
@@ -55,12 +55,12 @@ units = {
 			name = "Core Patrol Squadron"
 			location = 313
 
-			ship = { name = "RSF Patrol Cruiser I" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Patrol Cruiser II" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Patrol Cruiser I" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Patrol Cruiser II" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Patrol I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Patrol II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Patrol III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Patrol I" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Patrol II" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Patrol III" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 	}
 
@@ -76,19 +76,19 @@ units = {
 			name = "Ryloth Sector Group"
 			location = 313
 
-			ship = { name = "RSF Hammer of Ryloth" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Hammer of Ryloth" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Liberty's Spear" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Outer Vigil" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Liberty's Spear" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Outer Vigil" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Horizon" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Frontier" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Horizon" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Frontier" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Rimwarden I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rimwarden II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rimwarden III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rimwarden IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rimwarden V" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden I" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden II" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden III" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden IV" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rimwarden V" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 
 		# RESPONSE GROUP
@@ -96,12 +96,12 @@ units = {
 			name = "Outer Rim Rapid Response"
 			location = 313
 
-			ship = { name = "RSF Swift Justice" definition = carrier equipment = { carrier_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Swift Justice" definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Interceptor I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Interceptor II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Interceptor III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Interceptor IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Interceptor I" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Interceptor II" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Interceptor III" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Interceptor IV" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 	}
 
@@ -117,20 +117,20 @@ units = {
 			name = "Kamino Strike Group"
 			location = 313
 
-			ship = { name = "RSF Dawn of Order" pride_of_the_fleet = yes definition = carrier equipment = { carrier_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Spearhead" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Dawn of Order" pride_of_the_fleet = yes definition = imp_carrier equipment = { ship_hull_carrier_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Spearhead" definition = imp_battleship equipment = { ship_hull_heavy_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Vanguard I" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Vanguard II" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Vanguard I" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Vanguard II" definition = imp_heavy_cruiser equipment = { ship_hull_cruiser_heavy_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Rapid Response I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rapid Response II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rapid Response III" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rapid Response IV" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Rapid Response V" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response I" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response II" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response III" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response IV" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Rapid Response V" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Wayfarer" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Pathfinder" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Wayfarer" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Pathfinder" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 
 		# ESCORT GROUP
@@ -138,11 +138,11 @@ units = {
 			name = "Clone Escort Wing"
 			location = 313
 
-			ship = { name = "RSF Escort Alpha" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort Alpha" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Escort VII" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Escort V" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Escort VI" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort VII" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort V" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Escort VI" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 	}
 
@@ -157,15 +157,11 @@ units = {
 			name = "Ghost Operations Group"
 			location = 313
 
-			ship = { name = "RSF Silent Resolve" definition = submarine equipment = { submarine_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Silent Judgment" definition = submarine equipment = { submarine_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Silent Dawn" definition = submarine equipment = { submarine_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Silent Watch" definition = submarine equipment = { submarine_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Veilbreaker" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
-			ship = { name = "RSF Shadow Guard" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Veilbreaker" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Shadow Guard" definition = imp_destroyer equipment = { ship_hull_light_imp_1 = { amount = 1 owner = REP } } }
 
-			ship = { name = "RSF Echo Sentinel" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REP } } }
+			ship = { name = "RSF Echo Sentinel" definition = imp_light_cruiser equipment = { ship_hull_cruiser_light_imp_1 = { amount = 1 owner = REP } } }
 		}
 	}
 

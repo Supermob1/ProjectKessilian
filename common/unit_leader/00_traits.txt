@@ -271,12 +271,12 @@ leader_traits = {
 		
 		unit_trigger = {
 			OR = {
-				division_has_majority_template = infantry
-				division_has_majority_template = bicycle_battalion
-				division_has_majority_template = marine
-				division_has_majority_template = mountaineers
-				division_has_majority_template = paratrooper
-				division_has_majority_template = penal_battalion
+				division_has_majority_template = blaster_infantry # HOD: was infantry
+				always = no # HOD: was bicycle_battalion
+				always = no # HOD: was marine
+				always = no # HOD: was mountaineers
+				always = no # HOD: was paratrooper
+				always = no # HOD: was penal_battalion
 			}
 		}
 		
@@ -333,7 +333,7 @@ leader_traits = {
 		
 		unit_trigger = {
 			OR = {
-				division_has_battalion_in_template = engineer
+				division_has_battalion_in_template = imp_engineer # HOD: was engineer
 				division_has_battalion_in_template = light_flame_tank
 				division_has_battalion_in_template = medium_flame_tank
 				division_has_battalion_in_template = heavy_flame_tank

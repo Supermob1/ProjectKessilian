@@ -156,7 +156,7 @@ large_unit_tactics = {
         }
         flexible_division_structures = {
         #2
-           unit_infantry_design_cost_factor = -1
+           unit_blaster_infantry_design_cost_factor = -1
 
         }
         unit_knowledge_sharing = {
@@ -327,7 +327,6 @@ mounted_infantry = {
         breakthrough = 0.1
     }
 
-    unit_cavalry_design_cost_factor = -1
 
     # EFFECTS
 
@@ -470,8 +469,8 @@ irregulars = {
             factor = 0
             NOT = {
                 OR = {
-                has_template_containing_unit = irregular_infantry
-                has_template_containing_unit = militia
+                always = no # HOD: was irregular_infantry
+                always = no # HOD: was militia
                 }
             }
         }

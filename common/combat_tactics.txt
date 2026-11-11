@@ -1099,7 +1099,7 @@ tactic_sf_mouse_holing = { #House to House assaul, avoiding open streets where p
 		is_attacker = yes
 		phase = street_fighting
 		OR = {
-			has_unit_type = engineer
+			has_unit_type = imp_engineer # HOD: was engineer
 			has_unit_type = pioneer_support
 		}
 	}

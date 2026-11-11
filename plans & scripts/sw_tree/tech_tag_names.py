@@ -35,7 +35,7 @@ NAMES = {
     "improved_special_training2": S("Gunship Assault Doctrine", "Dropship Assault Programming", "Droids are programmed to fight straight out of the landing craft."),
     "elite_troopers": S("ARC Veterans", "Tactical Droid Command", "Tactical droids take direct command of the best-equipped units."),
     # armour tab refits
-    "tx130t": S("TX-130T Fighter Tank Refit", "AAT Refit Programme"),
+    "tx130t": S("TX-130 Refit Programme", "AAT Refit Programme"),   # 2026-11-10: the T came after the S in canon
     "mauler": S("Scout-class 2-M Repulsor Tank", "Scout Tank Droid Refit"),
     "imperial_tank": S("Repulsor Tank Refit", "Heavy Repulsor Refit"),
     "ammo_improvement2": S("Ammo Improvement II", "Ammo Improvement II", "Improved energiser chambers push the droids' power packs further still."),

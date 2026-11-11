@@ -262,7 +262,7 @@ def place(states, prov, pid, land, fel, state_ids, port_p, capital, rng):
     keep = [l for l in open("map/buildings.txt", encoding="utf-8-sig", newline="")
             if not (l.split(";")[0].isdigit() and int(l.split(";")[0]) in fel_ids)]
     end = "\r\n" if keep and keep[0].endswith("\r\n") else "\n"
-    open("map/buildings.txt", "w", encoding="utf-8", newline="").write("".join(keep) + "".join(r + end for r in rows))
+    open("map/buildings.txt", "w", encoding="utf-8", newline="").write("".join(keep) + "".join(r + end for r in rows).rstrip("\r\n"))  # no newline at EOF, like vanilla (else error.log "invalid arguments count")
     # unit stacks: the same set of stack types as other provinces of the same kind, around the province centre
     us = [l for l in open("map/unitstacks.txt", encoding="utf-8-sig", newline="")]
     fprov = {p for st in states.values() for p in st["provinces"]}
